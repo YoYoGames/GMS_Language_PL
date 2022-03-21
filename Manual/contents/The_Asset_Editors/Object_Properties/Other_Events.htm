@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Inne wydarzenia</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing the other events." />
+  <meta name="rh-index-keywords" content="Objects - Other Events" />
+  <meta name="search-keywords" content="other events,outside room,intersect boundary,view events,room start event,room end event,game start event,game end event,path ended,user events,broadcast message,animation end,animation update,animation event" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+  <script src="../../assets/scripts/main_script.js"></script>
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Pozostałe wydarzenia</h1>
+  <p><img alt="The Other Events" class="center" src="../../assets/Images/Asset_Editors/Editor_Objects_OtherEvents.png" /></p>
+  <p>Na tej stronie wyjaśniono poszczególne zdarzenia, które są gromadzone w kategorii <strong>Inne</strong> zdarzenia w Edytorze <span class="notranslate">Object</span>:</p>
+  <p> </p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Pomieszczenie zewnętrzne</a> </p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">To zdarzenie jest wyzwalane, gdy instancja wyjdzie poza obszar <span class="notranslate">room</span>, i jest oparte na sprawdzeniu przypisanej instancji <span class="notranslate">sprite</span> (i jej właściwości), więc nawet jeśli ustawisz skalę x lub y obrazu na wartość inną niż jeden, zdarzenie to
+      zostanie wywołane tylko wtedy, gdy cała strona <span class="notranslate">sprite</span> znajdzie się poza ekranem. Jeśli instancja nie ma <span class="notranslate">sprite</span>, to używana jest pozycja instancji i gdy jej pozycja x lub y znajdzie się poza <span class="notranslate">room</span>, to również wywoła to zdarzenie. To zdarzenie
+      jest zwykle używane dla takich rzeczy, jak kule, które są niszczone po opuszczeniu strony <span class="notranslate">room</span>, dzięki czemu nie dochodzi do sytuacji, w której miliony kul latają w nieskończoność, powodując spowolnienie gry. Zwróć uwagę, że to zdarzenie jest wywoływane tylko raz
+      gdy instancja początkowo opuści stronę <span class="notranslate">room</span>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Granica przecięcia</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">To zdarzenie jest wyzwalane, gdy instancja &quot;dotknie&quot; wewnętrznej krawędzi <span class="notranslate">room</span>, i podobnie jak zdarzenie zewnętrzne <span class="notranslate">room</span> jest oparte na sprawdzeniu przypisanej instancji <span class="notranslate">sprite</span>, więc nawet jeśli ustawiłeś skalę obrazu x lub y na wartość inną niż jeden, to zdarzenie to nadal będzie wyzwalane w momencie, gdy część przetnie granicę .
+      wartość inną niż jeden, zdarzenie to zostanie wywołane w momencie, gdy część <span class="notranslate">sprite</span> przetnie granicę <span class="notranslate">room</span>. Jeśli instancja <em>nie </em>ma sprite'a, to używana jest pozycja instancji, a w momencie, gdy jej pozycja x lub y przetnie granicę
+      <span class="notranslate">room</span> to również wywoła to zdarzenie. Możesz użyć tego zdarzenia do zrobienia takich rzeczy, jak nakazanie instancji, by &quot;odbiła się&quot; z powrotem w stronę <span class="notranslate">room</span>, zamiast wychodzić na zewnątrz.</p>
+    <p> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Widoki</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">Widoki z kamery są zwykle definiowane w edytorze <span class="notranslate">room</span> i służą do pokazywania tylko niewielkiego obszaru dużej strony <span class="notranslate">room</span> w danym momencie. Ta kategoria zdarzeń ma dwie oddzielne podkategorie<strong>(Widok zewnętrzny</strong> i <strong>Przecięcie granicy</strong>), a w każdej z nich znajduje się
+      W każdej z nich znajduje się osiem różnych zdarzeń odpowiadających ośmiu dostępnym portom widoku. Te dwie kategorie działają dokładnie tak samo, jak odpowiednie zdarzenia <span class="notranslate">room</span>, tylko że jako element sprawdzany przez instancję przyjmuje się granicę widoku z kamery
+      a nie <span class="notranslate">room</span>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Początek gry</a></p>
+  <div class="droptext" data-targetname="drop-down3">
+    <p class="dropspot">To specjalne zdarzenie jest wywoływane tylko raz w całej grze i tylko dla tych instancji, które mają akcje lub kod umieszczony w zdarzeniu. Te instancje muszą znajdować się w pierwszym <span class="notranslate">room</span> gry i zostać tam umieszczone w edytorze <span class="notranslate">room</span>, a nie
+      a nie zostały utworzone dynamicznie za pomocą kodu lub akcji. Należy zauważyć, że zdarzenie to występuje <em>po </em>zdarzeniu tworzenia wszystkich instancji, a więc może zawierać kod lub akcje ze zmiennymi, które zostały wcześniej zdefiniowane w tym zdarzeniu.
+      To zdarzenie jest zwykle zdefiniowane tylko w jednym &quot;kontrolerze&quot; <span class="notranslate">object</span> i jest zwykle używane do inicjalizacji zmiennych globalnych, uruchamiania muzyki, odczytywania z plików i innych czynności, które zwykle wykonuje się tylko raz na początku gry.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Koniec gry</a></p>
+  <div class="droptext" data-targetname="drop-down4">
+    <p class="dropspot">Podobnie jak w przypadku wspomnianego wyżej zdarzenia rozpoczęcia gry, to zdarzenie jest wywoływane tylko raz w całej grze i to tuż przed zamknięciem okna gry. Ponownie, aby instancja z tym zdarzeniem mogła cokolwiek zrobić, musi się znaleźć na stronie <span class="notranslate">room</span> w momencie
+      w momencie zamykania gry. Zwróć uwagę, że to zdarzenie ma zastosowanie tylko w grach dla systemów <strong>Windows</strong>, <strong>Ubuntu ( </strong><span class="notranslate">Linux</span>) i <strong>macOS</strong>, ponieważ urządzenia mobilne mogą po prostu zamknąć grę, nie dając <span class="notranslate">GameMaker Studio 2</span> 
+      na wywołanie tego zdarzenia. W przypadku gier przeglądarkowych wykonanych przy użyciu modułu HTML5 zdarzenie to powinno działać po zamknięciu karty gry lub przeglądarki, ale nie wszystkie przeglądarki obsługują tę funkcję (w momencie pisania tego tekstu Firefox, Chrome i Safari), więc należy
+      należy zachować ostrożność podczas korzystania z tej funkcji. Zazwyczaj to zdarzenie jest używane do zapisywania danych.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Początek pokoju</a></p>
+  <div class="droptext" data-targetname="drop-down5">
+    <p class="dropspot">Zdarzenie to występuje dla wszystkich instancji, które początkowo znajdują się w witrynie <span class="notranslate">room</span>, w momencie uruchomienia witryny <span class="notranslate">room</span>. Należy pamiętać, że dzieje się ono <em>po </em>zdarzeniu tworzenia, a więc może zależeć od zmiennych i rzeczy zdefiniowanych wcześniej w tym zdarzeniu.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Koniec pokoju</a></p>
+  <div class="droptext" data-targetname="drop-down6">
+    <p class="dropspot">Zdarzenie to występuje we wszystkich instancjach, które znajdują się na stronie <span class="notranslate">room</span>, gdy kończy się strona <span class="notranslate">room</span>. To zdarzenie jest bardzo przydatne do &quot;posprzątania&quot; po zakończeniu poziomu, np. można tu usunąć załadowane zasoby, usunąć system cząsteczek, aby zapobiec
+      wyciekom pamięci itd...</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Koniec animacji</a></p>
+  <div class="droptext" data-targetname="drop-down7">
+    <p class="dropspot">W witrynie <span class="notranslate">GameMaker Studio 2</span> <span class="notranslate">sprites</span> animacje nie są statyczne, ponieważ mogą mieć pod-obrazy i być animowane z różną szybkością. Każda klatka animacji (zwana podobrazem) ma swój własny numer, zaczynający się od 0, który można sprawdzić w kodzie lub za pomocą działań,
+      Czasami jednak wystarczy wiedzieć, kiedy animacja się zakończyła. Wtedy właśnie wywoływane jest to zdarzenie - tuż po zakończeniu animacji, gdy indeks podobrazu wskazuje, że osiągnięto ostatnią klatkę. To zdarzenie jest naprawdę przydatne
+      na przykład w przypadku eksplozji <span class="notranslate">object</span>, gdzie można ustawić instancję tak, aby zniszczyła się po osiągnięciu ostatniej klatki animacji.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Aktualizacja animacji</a></p>
+  <div class="droptext" data-targetname="drop-down8">
+    <p class="dropspot">To zdarzenie jest przeznaczone wyłącznie do użycia z <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">funkcjami animacji szkieletowej</a>. Jest to specjalne zdarzenie, które jest wywoływane co krok w instancji
+      instancji, która używa animacji szkieletowej <span class="notranslate">sprite</span> i ma na celu &quot;przechwycenie&quot; danych kości po obliczeniu orientacji kości dla bieżącego stanu animacji, ale zanim dane te zostaną wykorzystane do rysowania.
+      Umożliwia to modyfikowanie danych o kościach za pomocą odpowiednich funkcji.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Impreza animacyjna</a></p>
+  <div class="droptext" data-targetname="drop-down9">
+    <p class="dropspot"><strong></strong>To zdarzenie jest przeznaczone tylko do użycia z <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skeletal_Animation.htm">funkcjami animacji szkieletowej</a>. Zdarzenie to jest wywoływane w obiekcie
+      który ma przypisaną animację szkieletową <span class="notranslate">sprite</span> i gdzie <span class="notranslate">object</span> używa domyślnego rysowania dla przypisanej animacji <span class="notranslate">sprite</span>, lub <span class="notranslate">sprite</span> jest rysowana przez draw_self(). Obecnie nie wywołuje się go w animacji szkieletowej <span class="notranslate">sprites</span> narysowanej w inny sposób.
+      w inny sposób. Zdarzenie to służy do przechwytywania i przekazywania danych, które zostały przypisane do poszczególnych zdarzeń w animacji <span class="notranslate">sprite</span>, tak jak zostało to zdefiniowane w edytorze używanym do ich tworzenia.</p>
+    <p class="dropspot">Po wyzwoleniu zdarzenia animacji zostanie utworzona specjalna mapa <a href="../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">DS</a> o nazwie event_data map (podobnie jak w przypadku mapy async_load dla zdarzenia asynchronicznego).
+      Ta mapa będzie zawierać wszystkie następujące pary klucz-wartość, które można przetwarzać w celu uzyskania informacji o zdarzeniu:</p>
+    <ul class="dropspotlist">
+      <li>&quot;<span class="inline">name</span>&quot;: nazwa zdarzenia (zdefiniowana w programie animacji)</li>
+      <li>&quot;<span class="inline">track</span>&quot;: indeks ścieżki, na której odtwarzana jest animacja (domyślnie 0)</li>
+      <li>&quot;<span class="inline">integer</span>&quot;: wartość całkowita związana ze zdarzeniem (zdefiniowana w programie animacji, domyślnie 0)</li>
+      <li>&quot;<span class="inline">float</span>&quot;: wartość zmiennoprzecinkowa związana ze zdarzeniem (zdefiniowana w programie animacji, domyślnie 0,0)</li>
+      <li>&quot;<span class="inline">string</span>&quot;: wartość <span class="notranslate">string</span> związana ze zdarzeniem (zdefiniowana w programie animacji, domyślnie pusta <span class="notranslate">string</span> &quot;&quot;)</li>
+    </ul>
+    <p> </p>
+    <p><strong></strong></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Ścieżka Zakończenie</a></p>
+  <div class="droptext" data-targetname="drop-down10">
+    <p class="dropspot"><a href="../Paths.htm">Ścieżki</a> mogą być ważną częścią tworzenia każdej gry, niezależnie od tego, czy jest to gra typu tower defence, shoot-em-up czy jakakolwiek inna, a często naprawdę ważne jest, aby instancja wykonała jakąś konkretną akcję, gdy dotrze do
+      koniec swojej strony <span class="notranslate">path</span>. To zdarzenie wykrywa to i jest wywoływane, gdy to się stanie, co pozwala na dodanie kodu lub akcji, aby poradzić sobie z tą sytuacją, na przykład w grze typu tower defence można użyć tego zdarzenia do zniszczenia instancji i usunięcia punktu zdrowia z celu  .
+      z celu <span class="notranslate">object</span>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">Wydarzenia z udziałem użytkowników</a></p>
+  <div class="droptext" data-targetname="drop-down11">
+    <p class="dropspot">Są to specjalne zdarzenia, które nie są wywoływane automatycznie przez stronę <span class="notranslate">GameMaker Studio 2</span>, ale muszą być wywołane przez użytkownika za pomocą kodu lub akcji w trakcie gry. W sumie istnieje 12 zdarzeń użytkownika, które mogą zawierać kod lub akcje
+      i mogą być wywoływane w dowolnym momencie gry <span class="notranslate">loop</span>, co czyni je bardzo przydatnymi do tworzenia własnych zdarzeń, które pojawiają się wtedy, gdy <em>użytkownik </em>zdecyduje.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#">Nadawanie komunikatu</a></p>
+  <div class="droptext" data-targetname="drop-down12">
+    <p class="dropspot">To zdarzenie jest wyzwalane za każdym razem, gdy na stronie <span class="notranslate">sprite</span> lub <span class="notranslate">sequence</span> zostanie wygenerowana wiadomość rozsyłana <span class="notranslate">string</span>. Więcej informacji można znaleźć na stronie poświęconej <a href="../Sequence_Properties/Broadcast_Messages.htm">komunikatom</a> rozsyłanym.</p>
+    <p> </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="Object_Events.htm">Zdarzenia dotyczące obiektów</a></div>
+        <div style="float:right">Następny: <a href="Draw_Events.htm">Rysowanie zdarzeń</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+Other Events
+Outside Room
+Intersect Boundary
+View Events
+Outside View
+Interect View
+Game Start
+Game End
+Room Start
+Room End
+Animation End
+Animation Update
+Animation Event
+Path Ended
+User Events
+Broadcast Message
+-->
+  <!-- TAGS
+other_events
+-->
+</body>
+</html>

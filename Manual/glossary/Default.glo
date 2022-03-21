@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>        
+
+<glossgroup id="Default">          
+<title>Glossary Definitions</title>        
+<glossentry id="Default_absolute">
+<glossterm>absolutny</glossterm>
+<glossdef>Wartość bezwzględna to taka, w której znak wartości jest ignorowany, co w zasadzie zamienia wszystkie wartości na jedynki dodatnie lub zero. Zatem na przykład wartością bezwzględną dla -10 będzie 10.</glossdef></glossentry>
+<glossentry id="Default_algorithm">
+<glossterm>algorytm</glossterm>
+<glossdef>Algorytm to zbiór instrukcji lub reguł służących do rozwiązania określonego problemu. Problem ten może być prosty, jak dodanie dwóch liczb, lub złożony, jak konwersja pliku wideo z jednego formatu na drugi lub kompresja dźwięku do mniejszego rozmiaru pliku...</glossdef></glossentry>
+<glossentry id="Default_anti-aliasing">
+<glossterm>antyaliasing</glossterm>
+<glossdef>Jest to technika używana do wygładzania postrzępionych linii lub tekstur przez mieszanie koloru krawędzi z kolorem otaczających ją pikseli. Efekt powinien być bardziej przyjemny dla oka i realistyczny, w zależności od intensywności efektu.</glossdef></glossentry>
+<glossentry id="Default_API">
+<glossterm>API</glossterm>
+<glossdef>Akronim "API" oznacza Application Programming Interface (interfejs programowania aplikacji) i odnosi się do zestawów zasad, procedur i protokołów używanych do tworzenia aplikacji. Interfejsy API ułatwiają komunikację z programami i usługami innych firm, które mogą być wykorzystywane do tworzenia różnego rodzaju oprogramowania. Firmy takie jak Facebook i Twitter aktywnie korzystają z interfejsów API, aby ułatwić programistom dostęp do swoich usług. W GameMaker Studio 2 skrót API jest używany przy okazji omawiania rozszerzeń - na przykład Google Play Services API lub Amazon Game On API.</glossdef></glossentry>
+<glossentry id="Default_application_surface">
+<glossterm>powierzchnia zastosowania</glossterm>
+<glossdef>Powierzchnia aplikacji jest specjalną wbudowaną powierzchnią, na którą GameMaker Studio 2 narysuje wszystko w zdarzeniach rysowania gry (powierzchnia jest zasadniczo obszarem pamięci zarezerwowanym dla grafiki). Powierzchnia ta jest następnie rysowana do bufora wyświetlania na końcu każdej klatki gry, wyświetlając jego zawartość graczowi.</glossdef></glossentry>
+<glossentry id="Default_architectures">
+<glossterm>architektury</glossterm>
+<glossdef>Architektura procesora (CPU) to opis jego podstawowych komponentów i podstawowych operacji. Każda rodzina procesorów ma swoją własną architekturę, np. ARM lub x64.</glossdef></glossentry>
+<glossentry id="Default_ARGB">
+<glossterm>ARGB</glossterm>
+<glossdef>Jest to anakronim od nazw alfa, czerwień, zieleń, błękit i jest używany w odniesieniu do składników koloru określonych jako wartość szesnastkowa, np: #FF53E270, gdzie każdy zestaw dwóch cyfr reprezentuje jeden składnik. Rozkładając powyższy przykład ARGB, otrzymujemy następujące wartości składowe: Alfa(FF), Czerwony(53), Zielony(E2) i Niebieski(70).</glossdef></glossentry>
+<glossentry id="Default_argument">
+<glossterm>argument</glossterm>
+<glossdef>Argument (zwany też parametrem) to wartość przekazywana do funkcji. Na przykład funkcja języka GameMaker "sqr(num)" to funkcja, która daje kwadrat liczby, którą podajemy jako argument, np.: "a = sqr(4);" Argumentem jest 4, a funkcja zwraca 16, które jest przechowywane w zmiennej "a".</glossdef></glossentry>
+<glossentry id="Default_asset_key">
+<glossterm>klucz do aktywów</glossterm>
+<glossdef>Pozycja na osi czasu w dokumencie dope sheet, w której umieszczono składnik zasobów. Klucz zasobu może trwać wiele klatek.</glossdef></glossentry>
+<glossentry id="Default_Asset_Track">
+<glossterm>śledzenie aktywów</glossterm>
+<glossdef>Ścieżka w panelu ścieżek sekwencji, na której znajduje się pojedynczy zasób - sprite, dźwięk, instancja lub sekwencja.</glossdef></glossentry>
+<glossentry id="Default_assignment">
+<glossterm>zadanie</glossterm>
+<glossdef>Przypisanie to po prostu termin używany, gdy ustawiamy (przypisujemy) wartość do zmiennej.</glossdef></glossentry>
+<glossentry id="Default_backend">
+<glossterm>backend</glossterm>
+<glossdef>Backend to część programu, która jest wykonywana w tle i jest nieprzejrzysta dla użytkownika, zazwyczaj bez potrzeby jakiejkolwiek interakcji z użytkownikiem. Przykładem może być strona serwerowa podczas programowania sieciowego w Internecie lub przetwarzanie danych w grze RPG, które odbywa się za kulisami. Jest to zasadniczo przeciwieństwo frontendu.</glossdef></glossentry>
+<glossentry id="Default_bezier_interpolation">
+<glossterm>interpolacja metodą beziera</glossterm>
+<glossdef>Interpolacja metodą Beziera polega na oszacowaniu nowej wartości przez połączenie dwóch sąsiadujących ze sobą znanych wartości za pomocą matematycznie wygenerowanej krzywej splajnu, którą można edytować za pomocą "uchwytów" dołączonych do każdego punktu. Następnie można uzyskać interpolowaną wartość, sprawdzając dowolny punkt wzdłuż linii.</glossdef></glossentry>
+<glossentry id="Default_bit">
+<glossterm>bit</glossterm>
+<glossdef>Pojedyncza wartość danych, która może mieć wartość 1 lub 0 (prawda lub fałsz). Bity są łączone w bloki po 8, tworząc bajt.</glossdef></glossentry>
+<glossentry id="Default_bit_depth">
+<glossterm>głębokość bitowa</glossterm>
+<glossdef>Głębia bitowa to liczba bitów w każdej próbce pliku audio. Mniejsza głębia bitowa zapewnia gorszą jakość dźwięku, ale znacznie mniejszy rozmiar pliku. Mniejsza głębia bitowa jest zwykle używana w przypadku małych efektów dźwiękowych i formatów, w których może być problem z pamięcią (np. HTML5).</glossdef></glossentry>
+<glossentry id="Default_bit_rate">
+<glossterm>przepływność</glossterm>
+<glossdef>Szybkość transmisji jest mierzona w kilobitach na sekundę (kb/s lub k) i jest to liczba bitów kodowanych na sekundę lub liczba bitów wysyłanych bądź odbieranych na sekundę. Im wyższa szybkość bitowa i częstotliwość próbkowania, tym wyższa jakość dźwięku, ale tym większa moc obliczeniowa i większe zapotrzebowanie na pasmo. Niższe przepływności powodują zmniejszenie rozmiaru pliku i mniejsze wykorzystanie mocy obliczeniowej i szerokości pasma, ale wiąże się to ze spadkiem jakości dźwięku. W przypadku dobrej jakości muzyki preferowana jest szybkość transmisji 64-128 kb/s (zalecana 96 kb/s).</glossdef></glossentry>
+<glossentry id="Default_bitmap">
+<glossterm>bitmapa</glossterm>
+<glossdef>Bitmapa to termin używany do opisania dowolnego obrazu statycznego, który składa się z kolorowych pikseli zapisanych w postaci bitów (w przeciwieństwie do obrazów wektorowych, które są zapisywane za pomocą algorytmów matematycznych). PNG, JPG i BMP są przykładami obrazów bitmapowych, natomiast SWF jest przykładem obrazu wektorowego.</glossdef></glossentry>
+<glossentry id="Default_boolean">
+<glossterm>symbol boolean</glossterm>
+<glossdef>Boolean to typ zmiennej, która na podstawie swojej wartości może zwracać wartość true lub false i może być używana w warunkach i wyrażeniach. Do zmiennej typu boolean można zastosować stałe "false" lub "true", które są odpowiednikami wartości rzeczywistych 0 i 1.</glossdef></glossentry>
+<glossentry id="Default_bounding_box">
+<glossterm>ramka ograniczająca</glossterm>
+<glossdef>W przypadku sprite'ów pole ograniczające to nazwa krawędzi obszaru, w którym początkowo będą wykrywane kolizje, i nie musi ono mieć tego samego rozmiaru co sprite, do którego jest stosowane. W przypadku sekwencji ogranicznik jest zewnętrzną krawędzią obszaru zajmowanego przez jeden lub więcej obiektów w obszarze roboczym.</glossdef></glossentry>
+<glossentry id="Default_build_tools">
+<glossterm>narzędzia do budowy</glossterm>
+<glossdef>Narzędzia do budowania to zewnętrzne aplikacje, których GameMaker Studio 2 wymaga do wygenerowania pakietów wykonywalnych dla różnych platform docelowych.</glossdef></glossentry>
+<glossentry id="Default_byte">
+<glossterm>bajt</glossterm>
+<glossdef>Bajt to jednostka danych o długości ośmiu cyfr binarnych, a każda z cyfr składających się na bajt jest nazywana bitem, tzn. bajt to 8 bitów, a bit może mieć wartość 1 lub 0.</glossdef></glossentry>
+<glossentry id="Default_Cache">
+<glossterm>Pamięć podręczna</glossterm>
+<glossdef>Pamięć podręczna to zbiór plików, które są generowane przez program GameMaker raz, a następnie przechowywane i ponownie wykorzystywane w wielu uruchomieniach projektu. Należy pamiętać, że pamięć podręczna może czasami stać się "nieświeża", co oznacza, że należy ją wyczyścić, aby zmusić program GameMaker do odbudowania jej od podstaw, co zapewni, że żadne nieświeże pliki nie uszkodzą ostatecznej wersji gry.</glossdef></glossentry>
+<glossentry id="Default_callback">
+<glossterm>callback</glossterm>
+<glossdef>Wywołanie zwrotne to po prostu funkcja, która jest uruchamiana, a następnie wyzwala inną funkcję (lub blok kodu), gdy zakończy wykonywanie tego, do czego została przypisana. Na przykład funkcja sprite_add() wywoła wywołanie zwrotne w asynchronicznym zdarzeniu Image Loaded, gdy sprite zostanie załadowany.</glossdef></glossentry>
+<glossentry id="Default_catmull-rom_interpolation">
+<glossterm>interpolacja katmull-rom</glossterm>
+<glossdef>Jest to rodzaj interpolacji nieliniowej opartej na splajnach matematycznych. Służy do szacowania nowej wartości przez połączenie dwóch sąsiednich znanych wartości za pomocą "gładkich" krzywych (splajnów), a nową wartość można uzyskać z dowolnego punktu wzdłuż linii.</glossdef></glossentry>
+<glossentry id="Default_Compiling">
+<glossterm>Kompilacja</glossterm>
+<glossdef>Kompilacja polega na tym, że GameMaker pobiera Twój kod i zbiera go w taki sposób, aby utworzyć pakiet wykonywalny, który będzie działał na urządzeniu jako gra.</glossdef></glossentry>
+<glossentry id="Default_compression">
+<glossterm>kompresja</glossterm>
+<glossdef>Kompresja to wykorzystanie algorytmów matematycznych w celu zmniejszenia rozmiaru pliku. Stosuje się ją zwłaszcza w przypadku plików dźwiękowych i graficznych, gdzie formaty takie jak JPG (obraz) i MP3 (dźwięk) są formatami skompresowanymi. Kompresja zwykle powoduje zmniejszenie rozmiarów plików, ale wiąże się z pewną utratą danych, która może być zauważalna lub nie, w zależności od rodzaju i siły zastosowanej kompresji. Formaty nieskompresowane to BMP (obraz) lub WAV (dźwięk), które mają większe rozmiary plików, ale nie powodują utraty danych.</glossdef></glossentry>
+<glossentry id="Default_conditional">
+<glossterm>warunkowe</glossterm>
+<glossdef>Warunki, instrukcje warunkowe i wyrażenia warunkowe są cechami ogólnego języka programowania i pomagają kodowi dokonać wyboru, którego wynikiem jest prawda lub fałsz. Mogą one wykonywać różne czynności w zależności od potrzeb programisty, a wiele instrukcji warunkowych można łączyć w jeden warunek, o ile wartość końcowa warunku jest albo prawdziwa, albo fałszywa. Przykładami instrukcji warunkowych są instrukcje "if" i "while".</glossdef></glossentry>
+<glossentry id="Default_constants">
+<glossterm>niezmienny</glossterm>
+<glossdef>Stała to termin używany do opisania nazwanej wartości, która nie zmienia się w czasie wykonywania programu. GameMaker Studio 2 ma wiele wbudowanych stałych - na przykład os_windows - ale możesz także tworzyć własne stałe wartości do wykorzystania w swoich projektach (nazywane Makrami) i rozszerzeniach.</glossdef></glossentry>
+<glossentry id="Default_CPU_overhead">
+<glossterm>koszty ogólne procesora</glossterm>
+<glossdef>Obciążenie procesora mierzy ilość pracy, jaką może wykonać centralna jednostka obliczeniowa komputera, oraz procent tej wydajności wykorzystywany przez poszczególne zadania obliczeniowe.</glossdef></glossentry>
+<glossentry id="Default_deadzone">
+<glossterm>deadzone</glossterm>
+<glossdef>Strefa martwa to odległość, na jaką trzeba przesunąć drążek analogowy, aby gra rozpoznała, że został on przesunięty. Niska strefa martwa sprawi, że każdy niewielki ruch drążka analogowego spowoduje poruszenie gracza, celowanie lub cokolwiek innego. Wysoka wartość strefy martwej oznacza, że drążek analogowy musi wykonać znacznie większy ruch, zanim gra go wykryje i poruszy sterowanym obiektem.</glossdef></glossentry>
+<glossentry id="Default_back-buffer">
+<glossterm>bufor wyświetlacza</glossterm>
+<glossdef>Bufor wyświetlania to "płótno", na którym wszystko jest ostatecznie rysowane. Niektóre zdarzenia są skierowane bezpośrednio do tego miejsca (np. zdarzenie Pre Draw), podczas gdy inne najpierw rysują na powierzchni aplikacji, a dopiero potem do bufora wyświetlacza.</glossdef></glossentry>
+<glossentry id="Default_Dope_Sheet">
+<glossterm>Dope Sheet</glossterm>
+<glossdef>Dope Sheet to wizualna reprezentacja osi czasu sekwencji, na której można dodawać, usuwać i edytować różne klucze zasobów i parametry, które wpływają na zachowanie się poszczególnych ścieżek w sekwencji w czasie.</glossdef></glossentry>
+<glossentry id="Default_encoding">
+<glossterm>kodowanie</glossterm>
+<glossdef>Kodowanie przekształca dane w inny format za pomocą publicznie dostępnego schematu, który można łatwo odwrócić. Nie jest to to samo co szyfrowanie, ponieważ nie wymaga klucza do odszyfrowania. Kodowanie jest zwykle używane do zmiany danych na format, który będzie łatwiejszy do wykorzystania przez inny system (np. wysyłanie danych do serwera), lub do uczynienia danych nieczytelnymi dla ludzkiego oka.</glossdef></glossentry>
+<glossentry id="Default_EULA">
+<glossterm>EULA</glossterm>
+<glossdef>Umowa licencyjna użytkownika końcowego (EULA) to dokument prawny określający licencję na produkt, który otrzymujesz.</glossdef></glossentry>
+<glossentry id="Default_exception">
+<glossterm>wyjątek</glossterm>
+<glossdef>Specjalny, nieoczekiwany i anomalny stan napotkany podczas wykonywania programu jest znany jako wyjątek. Można go również określić mianem błędu lub stanu, który zmienia drogę programu lub mikroprocesora na inną. Przykładem wyjątku może być sytuacja, w której program próbuje uzyskać dostęp do zmiennej, ale ta zmienna nie istnieje. Wyjątki muszą być obsługiwane i usuwane w kodzie programu, aby uniknąć błędów krytycznych - proces ten nazywamy debugowaniem.</glossdef></glossentry>
+<glossentry id="Default_executable_package">
+<glossterm>pakiet wykonywalny</glossterm>
+<glossdef>Pakiet plików, które są używane do wykonania programu. W programie GameMaker Studio może to być pojedynczy plik - jak instalator dla systemu Windows - lub wiele plików - jak plik wyjściowy HTML5.</glossdef></glossentry>
+<glossentry id="Default_expression">
+<glossterm>wyrażenie</glossterm>
+<glossdef>Wyrażenie to kombinacja jednej lub więcej stałych, zmiennych, operatorów i/lub funkcji, które są interpretowane zgodnie z określonymi zasadami pierwszeństwa i asocjacji w celu zwrócenia innej wartości. Prostym wyrażeniem może być (5 5), które zwraca 10.</glossdef></glossentry>
+<glossentry id="Default_falsy">
+<glossterm>falsy</glossterm>
+<glossdef>Wartość, która jest uważana za "false", gdy jest używana jako boolean, na przykład w warunku if().</glossdef></glossentry>
+<glossentry id="Default_floating_point">
+<glossterm>zmiennoprzecinkowe</glossterm>
+<glossdef>Liczby zmiennoprzecinkowe to liczby, które zawierają przecinki dziesiętne. Na przykład liczby 5,5, 0,001 i -2 345,6789 są liczbami zmiennoprzecinkowymi. Liczby, które nie mają miejsc dziesiętnych, nazywamy liczbami całkowitymi (np. 2, 56, 1400).</glossdef></glossentry>
+<glossentry id="Default_font">
+<glossterm>czcionka</glossterm>
+<glossdef>Czcionka to zbiór glifów graficznych używanych do reprezentowania tekstu w danym języku. Czcionki mogą mieć różne wagi, rozmiary oraz style i są używane do wyświetlania zawartości pisemnej w projekcie.</glossdef></glossentry>
+<glossentry id="Default_framework">
+<glossterm>rama</glossterm>
+<glossdef>Szkielet to podstawa kodu, który może być modyfikowany i/lub rozbudowywany przez użytkownika. W skład szkieletu mogą wchodzić różne biblioteki programistyczne, interfejsy API, kompilatory i wiele innych. Mówiąc prościej, szkielet zapewnia korzystne środowisko dla określonego typu i poziomu programowania projektu. W GameMaker Studio 2 można na przykład tworzyć własne projekty szkieletowe (za pomocą pakietów Local Asset Packages), które zawierają skrypty i obiekty do ogólnego sterowania, zarządzania statystykami, tworzenia sieci i innych elementów często używanych w projektach, a następnie importować je do nowych projektów na samym początku, aby zapewnić sobie podstawy do kontynuowania pracy bez konieczności przeprogramowywania tych systemów za każdym razem.</glossdef></glossentry>
+<glossentry id="Default_frontend">
+<glossterm>frontend</glossterm>
+<glossdef>Frontend to część programu, która jest skierowana do użytkownika, tzn. część, z którą użytkownik końcowy wchodzi w interakcję. Na przykład w GameMaker Studio 2 interfejs, w którym programujesz, dodajesz zasoby itp., to frontend programu, ponieważ to właśnie tam wchodzisz w interakcję z programem, wprowadzasz wartości, pliki i inne rzeczy. Jest to zasadniczo przeciwieństwo backendu.</glossdef></glossentry>
+<glossentry id="Default_GameMaker:_Studio 1.4">
+<glossterm>GameMaker: Studio 1.4</glossterm>
+<glossdef>Poprzednia wersja oprogramowania GameMaker (często nazywana Legacy GameMaker), która nie jest już dostępna ani obsługiwana.</glossdef></glossentry>
+<glossentry id="Default_garbage_collector">
+<glossterm>odśmiecacz (garbage collector)</glossterm>
+<glossdef>Garbage collector to zautomatyzowane narzędzie, które jest częścią kodu gry i służy do usuwania pewnych rzeczy (takich jak tablice i struktury) z pamięci, gdy nie ma już do nich odwołań w kodzie, bez konieczności ich jawnego usuwania przez użytkownika.</glossdef></glossentry>
+<glossentry id="Default_gizmos">
+<glossterm>gizmos</glossterm>
+<glossdef>Gizmo to dające się bezpośrednio manipulować, samodzielne idiomy ekranu wizualnego - zasadniczo wszystko, co jest wizualne i z czym użytkownik może wchodzić w interakcje lub manipulować w celu wygenerowania efektu lub określonego rezultatu.</glossdef></glossentry>
+<glossentry id="Default_GUI">
+<glossterm>GUI</glossterm>
+<glossdef>Skrót od "Graphical User Interface", czyli interfejs użytkownika, który zawiera elementy graficzne, takie jak okna, ikony i przyciski. W GameMakerze masz specjalny zestaw zdarzeń obiektów (Draw GUI Events), które mogą rysować do tej warstwy, specjalnie zaprojektowanej dla takich rzeczy jak punkty, życia, inwentarz itd.</glossdef></glossentry>
+<glossentry id="Default_hard-code">
+<glossterm>twardo zakodowane</glossterm>
+<glossdef>W programowaniu komputerowym terminem "hardcoded" określa się kod, który jest uważany za stały i którego zmiana nie jest prawdopodobna. Funkcje "twardo zakodowane" są wbudowane w sprzęt lub oprogramowanie w taki sposób, że nie można ich później modyfikować. Na przykład, jeśli tworzymy grę i "twardo" kodujemy zdrowie gracza na 10, to w całym kodzie gry używamy wartości 10, a nie zmiennej.</glossdef></glossentry>
+<glossentry id="Default_hashing">
+<glossterm>haszowanie</glossterm>
+<glossdef>Hashing to metoda tworzenia ciągu lub wartości, która odnosi się do jednego źródła - zwykle pliku - i TYLKO tego źródła. Na przykład w programie GameMaker można wygenerować hash dla pliku zapisu, a następnie, przed uzyskaniem dostępu do niego później, wygenerować dla niego inny hash i sprawdzić oryginalny hash oraz nowy hash, aby ustalić, czy plik nie został naruszony.</glossdef></glossentry>
+<glossentry id="Default_HVS">
+<glossterm>HSV</glossterm>
+<glossdef>Jest to skrót od Hue (barwa), Saturation (nasycenie) i Value (wartość). Jest to sposób wyrażania koloru, zwykle przy użyciu wartości z zakresu od 0 do 255. Barwa to wartość odcienia koloru, nasycenie to ilość koloru, który ma być użyty, a wartość to jasność koloru.</glossdef></glossentry>
+<glossentry id="Default_HUD">
+<glossterm>HUD</glossterm>
+<glossdef>W grach HUD to skrót od Heads-Up Display (wyświetlacz przezierny). Jest to metoda wizualnego przekazywania informacji graczowi w ramach interfejsu użytkownika gry, a więc takie elementy, jak pasek zdrowia, ikony stanu, wynik itp. stanowią część HUD i zazwyczaj elementy HUD nie wymagają interakcji użytkownika.</glossdef></glossentry>
+<glossentry id="Default_IDE">
+<glossterm>IDE</glossterm>
+<glossdef>IDE, czyli zintegrowane środowisko programistyczne, to aplikacja zapewniająca programistom komputerowym wszechstronne możliwości tworzenia oprogramowania. W tym przypadku cały frontend programu GameMaker Studio 2 jest uważany za IDE i zawiera sekcje do tworzenia grafiki, dodawania dźwięków i kodu do tworzenia gier.</glossdef></glossentry>
+<glossentry id="Default_iteration">
+<glossterm>iteracja</glossterm>
+<glossdef>Iteracja to pojedyncze przejście przez zestaw operacji w kodzie projektu. Jedną z form iteracji w programowaniu komputerowym są pętle. Pętla powtarza pewien segment kodu, dopóki nie zostanie spełniony warunek i nie będzie można przejść dalej. Każde uruchomienie pętli przez komputer jest określane mianem iteracji. Najprościej mówiąc, iteracja to proces wielokrotnego powtarzania określonego fragmentu kodu w celu wykonania określonej czynności.</glossdef></glossentry>
+<glossentry id="Default_JSON">
+<glossterm>JSON</glossterm>
+<glossdef>JSON jest skrótem od JavaScript Object Notatio i jest lekkim formatem przechowywania danych. JSON jest często używany, gdy dane są przesyłane z serwera na stronę internetową, i jest uważany za "samoopisujący się" oraz łatwy do zrozumienia i śledzenia podczas przeglądania.</glossdef></glossentry>
+<glossentry id="Default_keyframe">
+<glossterm>klatka kluczowa</glossterm>
+<glossdef>Klatka kluczowa (zwana także kluczem parametru) to punkt na osi czasu w arkuszu Dope, w którym definiowana jest zmiana wartości parametru.</glossdef></glossentry>
+<glossentry id="Default_keyword">
+<glossterm>słowo kluczowe</glossterm>
+<glossdef>Słowa kluczowe to specjalne słowa, które są zarezerwowane przez język programowania lub program, ponieważ mają specjalne znaczenie. Te słowa kluczowe są zarezerwowane do wykonywania pewnych zadań i mogą to być zarówno polecenia, jak i parametry. Każdy język programowania ma zestaw zastrzeżonych słów kluczowych (zwanych też zastrzeżonymi nazwami), których nie można używać jako nazw zmiennych. Język GameMaker nie jest tu wyjątkiem - słowa takie jak return, while, if i break są zastrzeżonymi słowami kluczowymi używanymi w tym języku programowania.</glossdef></glossentry>
+<glossentry id="Default_linear_interpolation">
+<glossterm>interpolacja liniowa</glossterm>
+<glossdef>Interpolacja liniowa polega na oszacowaniu nowej wartości przez połączenie dwóch sąsiednich znanych wartości linią prostą. Następnie można uzyskać wartość interpolowaną, sprawdzając dowolny punkt wzdłuż tej linii. W grafice interpolacja liniowa odnosi się do podstawowej metody wygładzania krawędzi pikseli.</glossdef></glossentry>
+<glossentry id="Default_literal">
+<glossterm>dosłowne</glossterm>
+<glossdef>Wartość jawna zapisana w kodzie, np. gdy piszesz "A TEXT STRING", używasz dosłownego łańcucha znaków, w przeciwieństwie do zwracania łańcucha znaków przez zmienną lub funkcję. Podobnie [0, 1, 2] jest literałem tablicowym.</glossdef></glossentry>
+<glossentry id="Default_method">
+<glossterm>metoda</glossterm>
+<glossdef>W GameMakerze metoda to nazwa nadana funkcji zdefiniowanej przez użytkownika, która została powiązana z instancją, tak że zmienna instancji jest nazwą funkcji i tym, czego używasz do jej wywołania.</glossdef></glossentry>
+<glossentry id="Default_operand">
+<glossterm>operand</glossterm>
+<glossdef>Operand to termin używany do oznaczania wartości, którymi można manipulować za pomocą różnych operatorów. W wyrażeniu A B C operandami są A, B i C.</glossdef></glossentry>
+<glossentry id="Default_operator">
+<glossterm>operator</glossterm>
+<glossdef>Operator to termin oznaczający coś, co może manipulować różnymi operandami. W wyrażeniu A B - C, oraz - są operatorami. Przykłady różnych operatorów to (dodawanie), - (odejmowanie), = (równa się), != (nie równa się) i >= (większa lub równa), ale jest ich znacznie więcej.</glossdef></glossentry>
+<glossentry id="Default_parameter_key">
+<glossterm>klucz parametrów</glossterm>
+<glossdef>Klucz parametru (zwany także klatką kluczową) to punkt na osi czasu w arkuszu Dope, w którym definiowana jest zmiana wartości parametru.</glossdef></glossentry>
+<glossentry id="Default_parameter_tracks">
+<glossterm>ścieżki parametrów</glossterm>
+<glossdef>Ścieżka, która została przypisana do ścieżki zasobów w panelu ścieżek i która zmienia jeden parametr ścieżki zasobów, z którą jest powiązana, np. pozycję lub indeks obrazu.</glossdef></glossentry>
+<glossentry id="Default_physics">
+<glossterm>fizyka</glossterm>
+<glossdef>W GameMakerze, gdy mówimy o obiekcie, instancji lub pomieszczeniu korzystającym z "fizyki", mamy na myśli to, że korzysta on z wbudowanych funkcji symulacji fizyki, opartych na bibliotece fizyki Box2D.</glossdef></glossentry>
+<glossentry id="Default_playhead">
+<glossterm>playhead</glossterm>
+<glossdef>Bieżąca pozycja "odtwarzania" na osi czasu w oknie dialogowym Sekwencje lub w widoku klatek edytora Sprite. W sekwencjach (i sprite'ach) pozycja ta będzie się przesuwać w miarę wyświetlania podglądu animacji. Można ją umieszczać na określonych klatkach, aby zobaczyć i edytować klucze i klatki kluczowe w danej pozycji.</glossdef></glossentry>
+<glossentry id="Default_port_number">
+<glossterm>numer portu</glossterm>
+<glossdef>Numer portu to sposób identyfikacji konkretnego procesu, do którego ma być przekazana wiadomość internetowa lub inna wiadomość sieciowa po jej dotarciu do serwera.</glossdef></glossentry>
+<glossentry id="Default_Remote_Workers">
+<glossterm>Pracownicy zdalni</glossterm>
+<glossdef>Remote Worker to specjalny program, którego GameMaker Studio 2 będzie używał na niektórych platformach do tworzenia plików wykonywalnych gier bez konieczności uruchamiania IDE GameMaker Studio 2 na tej platformie.</glossdef></glossentry>
+<glossentry id="Default_render">
+<glossterm>renderowane</glossterm>
+<glossdef>Kiedy coś jest renderowane w GameMaker Studio 2, oznacza to, że zostało po prostu "narysowane do bufora wyświetlacza" lub "narysowane na powierzchni".  Renderowanie może także odnosić się do procesu przekształcania pewnego rodzaju źródła wektorowego (np. czcionki) w obraz bitmapowy.</glossdef></glossentry>
+<glossentry id="Default_RSS">
+<glossterm>RSS</glossterm>
+<glossdef>Jest to standardowy system dystrybucji treści od wydawcy internetowego do użytkowników Internetu.</glossdef></glossentry>
+<glossentry id="Default_Runtime">
+<glossterm>Runtime</glossterm>
+<glossdef>Runtime w GameMaker Studio 2 to zbiór zasobów kompilatora, które są wymagane przez program do utworzenia ostatecznego pakietu wykonywalnego dla danej platformy docelowej. Są one instalowane oddzielnie od IDE i można je zmieniać i aktualizować w dowolnym momencie.</glossdef></glossentry>
+<glossentry id="Default_sample_rate">
+<glossterm>częstotliwość próbkowania</glossterm>
+<glossdef>Częstotliwość próbkowania to liczba próbek dźwięku przesyłanych w ciągu sekundy, mierzona w Hz lub kHz (jeden kHz to 1000 Hz). Im wyższa częstotliwość próbkowania, tym bardziej dźwięk będzie zbliżony do oryginalnego analogowego kształtu fali, ale tym większy będzie rozmiar pliku. Ogólnie rzecz biorąc, efekty dźwiękowe mogą pracować z niższą częstotliwością próbkowania niż muzyka.</glossdef></glossentry>
+<glossentry id="Default_SCM">
+<glossterm>SCM</glossterm>
+<glossdef>SCM to skrót od Source Control Management, czyli programu (lub zestawu programów) odpowiedzialnego za utrzymywanie wersji kodu źródłowego projektu. SCM umożliwia między innymi przechowywanie bieżącej historii zmian kodu, a także przeglądanie i cofanie wszelkich zmian dokonanych w kodzie źródłowym.</glossdef></glossentry>
+<glossentry id="Default_SDK">
+<glossterm>SDK</glossterm>
+<glossdef>SDK to skrót od Software Development Kit (zestaw do tworzenia oprogramowania). Zwykle odnosi się to do zbioru oprogramowania i/lub pakietów używanych do tworzenia aplikacji dla określonego urządzenia lub systemu operacyjnego.</glossdef></glossentry>
+<glossentry id="Default_server">
+<glossterm>serwer</glossterm>
+<glossdef>W informatyce serwer to program komputerowy lub urządzenie, które udostępnia funkcje innym programom lub urządzeniom, zwanym "klientami".</glossdef></glossentry>
+<glossentry id="Default_shader">
+<glossterm>shadery</glossterm>
+<glossdef>Shader to zbiór małych programów, które są uruchamiane bezpośrednio na procesorze graficznym w celu tworzenia grafiki i efektów graficznych. Są one bardzo szybkie w działaniu i odciążają procesor centralny, który może wykonywać inne zadania.</glossdef></glossentry>
+<glossentry id="Default_smooth_interpolation">
+<glossterm>płynna interpolacja</glossterm>
+<glossdef>Płynna interpolacja polega na oszacowaniu nowej wartości przez połączenie dwóch sąsiednich znanych wartości za pomocą matematycznie wygenerowanej krzywej splajnu . Następnie można uzyskać wartość interpolowaną, sprawdzając dowolny punkt wzdłuż linii.</glossdef></glossentry>
+<glossentry id="Default_source_code">
+<glossterm>kod źródłowy</glossterm>
+<glossdef>Kod źródłowy to podstawowy składnik programu komputerowego, który jest wymagany do jego uruchomienia.</glossdef></glossentry>
+<glossentry id="Default_spline">
+<glossterm>spline</glossterm>
+<glossdef>Splajn to w zasadzie gładka krzywa służąca do łączenia punktów. Z matematycznego punktu widzenia jest to wystarczająco gładka funkcja wielomianowa, która jest zdefiniowana w sposób cząstkowy i ma wysoki stopień gładkości w miejscach, w których łączą się cząstki wielomianu.</glossdef></glossentry>
+<glossentry id="Default_sprites">
+<glossterm>sprite'y</glossterm>
+<glossdef>Sprite to grafika bitmapowa, która ma być częścią większej sceny. Może to być obraz statyczny lub animowany.</glossdef></glossentry>
+<glossentry id="Default_statement">
+<glossterm>oświadczenie</glossterm>
+<glossdef>W programowaniu instrukcja to pojedynczy wiersz kodu napisany zgodnie z prawem w języku programowania, wyrażający czynność, która ma zostać wykonana. Wypowiedź może mieć własne komponenty wewnętrzne, takie jak wyrażenia, operatory i funkcje. Przykładem instrukcji jest A = B 5. Program GameMaker Studio 2 to nic innego, jak sekwencja jednego lub więcej poleceń, które razem wykonują jakieś zadanie (np. przesuwają gracza).</glossdef></glossentry>
+<glossentry id="Default_swatches">
+<glossterm>swatche</glossterm>
+<glossdef>Próbka to po prostu mała kwadratowa próbka koloru lub materiału, służąca do zilustrowania jego wyglądu.</glossdef></glossentry>
+<glossentry id="Default_syntax">
+<glossterm>składnia</glossterm>
+<glossdef>Podobnie jak języki ludzkie, języki programowania mają własny zestaw reguł dotyczących sposobu przekazywania wypowiedzi, który jest znany jako składnia. Choć wiele języków programowania ma wiele wspólnych cech, funkcji i możliwości, różnią się one na ogół składnią. Bez właściwego stosowania składni nie można napisać programu wykonywalnego, a nieprawidłowa składnia prowadzi do błędów podczas kompilacji.</glossdef></glossentry>
+<glossentry id="Default_texel">
+<glossterm>texel</glossterm>
+<glossdef>Teksel (lub element tekstury) jest podstawową jednostką przestrzeni tekstury, podobnie jak piksel jest podstawowym elementem przestrzeni obrazu. Tekstury są reprezentowane przez tablice tekseli, podobnie jak obrazy są reprezentowane przez tablice pikseli. Podczas teksturowania powierzchni 3D (proces znany jako mapowanie tekstury) renderer mapuje teksele na odpowiednie piksele w obrazie wyjściowym.</glossdef></glossentry>
+<glossentry id="Default_texture_atlas">
+<glossterm>atlas tekstur</glossterm>
+<glossdef>Inna nazwa strony tekstur, która jest po prostu zbiorem obrazów wymaganych przez jedną lub więcej sprite'ów w grze, zorganizowanych w optymalny sposób, aby zużywać jak najmniej pamięci tekstur.</glossdef></glossentry>
+<glossentry id="Default_texture_page">
+<glossterm>strona tekstury</glossterm>
+<glossdef>Strona tekstur (zwana także atlasem tekstur) to zbiór obrazów (sprite'ów, zestawów kafelków, znaków czcionek itp.), które są pogrupowane w optymalny sposób, tak aby zajmowały jak najmniej pamięci tekstur podczas uruchamiania gry.</glossdef></glossentry>
+<glossentry id="Default_tile_map">
+<glossterm>mapa z płytkami</glossterm>
+<glossdef>Mapa kafelkowa to nazwa nadana kolekcji kafelków pobranych z zestawu kafelków i używanych do tworzenia poziomów w grze.</glossdef></glossentry>
+<glossentry id="Default_tile-sets">
+<glossterm>zestawy płytek</glossterm>
+<glossdef>Zestaw kafelków to zbiór kwadratowych lub prostokątnych elementów graficznych ułożonych na siatce jako pojedynczy obraz. Każdy element na siatce może być wielokrotnie umieszczany w pomieszczeniu, tworząc większą scenę, zwaną "mapą kafelkową".</glossdef></glossentry>
+<glossentry id="Default_timeline">
+<glossterm>linie czasowe</glossterm>
+<glossdef>Oś czasu w programie GameMaker Studio 2 to liniowy zbiór zdarzeń, które są uruchamiane w kolejności następującej po sobie. Każdemu zdarzeniu można przypisać kod lub akcję, które wykonają zadanie, a po uruchomieniu osi czasu zadania te będą wykonywane po osiągnięciu każdego zdarzenia na osi czasu.</glossdef></glossentry>
+<glossentry id="Default_Track_Panel">
+<glossterm>Panel torów</glossterm>
+<glossdef>Obszar edytora sekwencji, w którym widoczne są wszystkie ścieżki sekwencji - ścieżki zasobów, ścieżki parametrów, grupy ścieżek i grupy masek klipów.</glossdef></glossentry>
+<glossentry id="Default_truth_table">
+<glossterm>tabela prawdy</glossterm>
+<glossdef>Tablica prawdy to tabela matematyczna używana w logice - w szczególności w związku z algebrą booleańską i funkcjami booleańskimi - określająca wartości funkcyjne wyrażeń logicznych dla każdego z ich argumentów funkcyjnych, czyli dla każdej kombinacji wartości przyjmowanych przez ich zmienne logiczne.</glossdef></glossentry>
+<glossentry id="Default_truthy">
+<glossterm>prawda</glossterm>
+<glossdef>Wartość, która jest uważana za "prawdziwą", gdy jest używana jako boolean, na przykład w warunku if().</glossdef></glossentry>
+<glossentry id="Default_typo">
+<glossterm>literówka</glossterm>
+<glossdef>Błąd typograficzny.</glossdef></glossentry>
+<glossentry id="Default_URL">
+<glossterm>URL</glossterm>
+<glossdef>Skrót od "Universal Resource Locator" (Uniwersalny Lokalizator Zasobów), czyli po prostu adres czegoś w Internecie.</glossdef></glossentry>
+<glossentry id="Default_v-sync">
+<glossterm>v-sync</glossterm>
+<glossdef>V-sync, czyli synchronizacja pionowa, służy do synchronizowania szybkości aktualizacji gry z częstotliwością odświeżania monitora. Może to ograniczyć zjawisko rozrywania ekranu (screen tearing), czyli wyświetlania fragmentów wielu klatek za jednym razem, ale może też powodować problemy z wydajnością lub problemy na monitorach o wysokiej częstotliwości odświeżania.</glossdef></glossentry>
+<glossentry id="Default_variable">
+<glossterm>zmienna</glossterm>
+<glossdef>Zmienna jest nazwaną wartością w programie, którą można modyfikować, przechowywać i wyświetlać w dowolnym momencie. Na przykład, jeśli mamy zmienną całkowitą o nazwie XYZ, która przechowuje wartość 10, możemy wykonać takie czynności, jak A = XYZ 10, co spowoduje ustawienie wartości zmiennej A na 20, ponieważ XYZ wynosi 10, a my dodajemy do niej 10. Wartości zmiennych można również zmieniać za pomocą operatorów, tak więc wykonanie polecenia XYZ = XYZ 100 spowoduje, że wartość zmiennej XYZ będzie równa 110. Zmienne mogą być także używane do przechowywania identyfikatorów i odwołań do różnych zasobów.</glossdef></glossentry>
+<glossentry id="Default_vector">
+<glossterm>wektor</glossterm>
+<glossdef>Wektor to konstrukcja matematyczna, która ma określoną wielkość, zwaną magnitudą, oraz kierunek. W GameMakerze wektor jest zwykle używany do pokazywania odległości i kierunku, w którym coś się poruszyło. Wektor może być także używany do definiowania obrazów, a niektóre formaty obrazów, takie jak SWF, używają matematyki wektorowej do definiowania obrazów, które zawierają.</glossdef></glossentry>
+<glossentry id="Default_Version_Number">
+<glossterm>Numer wersji</glossterm>
+<glossdef>Numer wersji to unikatowy zestaw liczb przypisanych do konkretnego wydania programu, gry lub zasobów, zwykle w formacie MAJOR.MINOR.MAINTENANCE, np. v2.3.56. Zazwyczaj numer wersji zwiększa się w miarę wydawania aktualizacji i zupełnie nowych wydań gry lub zasobów.</glossdef></glossentry>
+<glossentry id="Default_vertex">
+<glossterm>wierzchołek</glossterm>
+<glossdef>Wierzchołek to nazwa nadana pojedynczemu punktowi wielokąta, który zawiera różne właściwości określające jego położenie, kolor i teksturę. W grafice komputerowej oznacza to zwykle narożnik trójkąta, który jest używany do tworzenia prymitywów, a kombinacja takich prymitywów tworzy grafikę na ekranie.</glossdef></glossentry>
+<glossentry id="Default_virtual_machine">
+<glossterm>Maszyna wirtualna (VM)</glossterm>
+<glossdef>W programie GameMaker maszyna wirtualna (VM) jest metodą kompilacji, która wykorzystuje ogólny program uruchamiający dla każdej platformy, a następnie używa go do interpretacji kodu gry.</glossdef></glossentry>
+<glossentry id="Default_VRAM">
+<glossterm>VRAM</glossterm>
+<glossdef>VRAM to ilość pamięci dostępnej dla obrazu, czyli miejsce w pamięci, w którym można przechowywać tekstury i obrazy.</glossdef></glossentry>
+<glossentry id="Default_weak_reference">
+<glossterm>słabe odniesienie</glossterm>
+<glossdef>Słaba referencja to referencja, która nie chroni obiektu, do którego się odwołujemy, przed zbieraniem przez garbage collector, a więc może być użyta do sprawdzenia, czy dana struktura jest wciąż "żywa" (odwołuje się do niej), czy nie gdzieś w grze.</glossdef></glossentry>
+<glossentry id="Default_YoYo_Compiler">
+<glossterm>YoYo Compiler (YYC)</glossterm>
+<glossdef>Jest to specjalny kompilator do tworzenia pakietów wykonywalnych, które używają natywnego kodu zamiast kodu interpretywnego i runnera (czyli tego, czego używa kompilator GameMaker VM). Skompilowany kod jest szybszy do uruchomienia, ale kompilacja pliku wykonywalnego zajmuje więcej czasu.</glossdef></glossentry>
+<glossentry id="Default_PURE">
+<glossterm>PURE</glossterm>
+<glossdef>Czysta funkcja nie ma żadnego wpływu na grę, niczego nie tworzy ani nie zmienia. Zwraca jedynie wartość. Przy takim samym zestawie argumentów zawsze zwraca tę samą wartość.</glossdef></glossentry></glossgroup>

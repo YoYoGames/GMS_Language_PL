@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>gml_pragma</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <script src="../../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for gml_pragma" />
+  <meta name="rh-index-keywords" content="gml_pragma" />
+  <meta name="search-keywords" content="gml_pragma" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>gml_pragma</h1>
+  <p>Funkcja <span class="inline">gml_pragma</span> wpływa na sposób, w jaki dany cel kompiluje Twój kod i powinna być wywoływana z różnymi poleceniami w celu dalszej optymalizacji końcowej kompilacji Twojego projektu. Polecenia te są <i>przetwarzane</i> przed kompilacją gry, dlatego funkcję można umieścić w dowolnym miejscu w projekcie, a i tak zostanie ona przetworzona przed pełną kompilacją gry. Dostępne są następujące polecenia:</p>
+  <ul class="colour">
+    <li>&quot;<b>forceinline</b>&quot; - Kiedy funkcja jest wywoływana z pragmatem &quot;forceinline&quot; w <b>funkcji skryptu</b>, YYC skompiluje projekt z funkcją inline, a nie referencją. Zapewni to dalsze zwiększenie wydajności przetwarzania, ale należy zachować ostrożność podczas używania tego pragmatu, ponieważ spowoduje to również zwiększenie rozmiaru końcowego pliku wykonywalnego, zwłaszcza jeśli kod inline jest duży i/lub używany w wielu różnych miejscach, a także znacznie wydłuży czas kompilacji. Zwróć uwagę, że pragma ta jest <b>ważna tylko podczas budowania przy użyciu YYC</b>.</li>
+    <li>&quot;<b>global</b>&quot;, &quot;<b>[gml code]</b>&quot; - Pragma &quot;global&quot; umożliwia wywołanie kodu <span class="notranslate">GML</span> sformatowanego jako <span class="notranslate">string</span>, w zakresie <b>globalnym</b>, w czasie kompilacji, przed wykonaniem pierwszej <span class="notranslate">room</span> gry. Na przykład:
+     <p class="code">gml_pragma(&quot;global&quot;, &quot;Init()&quot;);</p>
+      Spowoduje to wywołanie funkcji <span class="notranslate">script</span> &quot;Init&quot; przed uruchomieniem pierwszej <span class="notranslate">room</span> gry. Zauważ, że <span class="notranslate">GML</span> podany jako drugi argument <b>musi być stałą czasu komp</b>ilacji, a także zauważ, że nie możesz używać tej pragmy do tworzenia instancji lub wykonywania jakichkolwiek operacji, które wymagają <span class="notranslate">room</span> (lub czegokolwiek w <span class="notranslate">room</span>) do działania.
+    </li>
+    <li>&quot;<b>PNGCrush</b>&quot; - Pragma &quot;PNGCrush&quot; użyje programu <a href="https://pmt.sourceforge.io/pngcrush/" target="_blank">PNGCrush</a> na każdej utworzonej stronie <span class="notranslate">texture</span>. Zwróć uwagę, że może to znacznie wydłużyć czas kompilacji gry, więc nie chcesz, aby był włączony przez cały czas, choć może to znacznie zmniejszyć rozmiar pliku.</li>
+    <li>&quot;<b>Texgroup.Sc</b>ale&quot;, &quot;<b>[TextureGroupName]</b>&quot;, &quot;<b>[Scale Divisor]</b>&quot; - Funkcja &quot;Texgroup.Scale&quot; przeskaluje podaną grupę <span class="notranslate">texture</span> podczas kompilacji. Musisz tu podać dwa dodatkowe argumenty: &quot;[TexGroupName]&quot;, czyli nazwę ( <span class="notranslate">string</span>) grupy <span class="notranslate">texture</span>, która ma być skalowana, oraz &quot;[Scale Divisor]&quot; (również <span class="notranslate">string</span>), czyli dzielnik, którego chcesz użyć do skalowania, np:
+     <p class="code">gml_pragma(&quot;Texgroup.Scale&quot;, &quot;level1&quot;, &quot;2&quot;);</p>
+      Spowoduje to przepołowienie wszystkich stron <span class="notranslate">textures</span> w grupie &quot;level1&quot; <span class="notranslate">texture</span>.
+    </li>
+    <li>&quot;<b>UnityBuild</b>&quot;, &quot;<b>[enable/disable]</b>&quot; - Jeśli wywołasz funkcję z tym pragmatem i ustawisz argument enable/disable na <span class="inline">true</span>, to podczas kompilacji zwinie ona wszystkie pliki .cpp w projekcie do jednego pliku, którego następnie użyje do zbudowania wszystkiego, na przykład:
+     <p class="code">gml_pragma(&quot;UnityBuild&quot;, &quot;true&quot;);</p>
+      Zaletą kompilacji unity jest to, że kompilacja jest szybsza, ale minusem jest to, że za każdym razem wykonywana jest <i>pełna</i> kompilacja, więc nawet jeśli zmienisz jedną część kodu, wszystko zostanie zbudowane od nowa, bez użycia żadnych plików z pamięci podręcznej. Ta funkcja została dodana specjalnie dla eksportu na Xbox One przy użyciu YYC, chociaż może być wywołana dla innych buildów<b>(tylko YYC</b>). Więcej informacji na temat buildów unity można znaleźć <a href="http://buffered.io/posts/the-magic-of-unity-builds/" target="_blank">tutaj</a>.
+    </li>
+  </ul>
+  <p class="note"><b>UWAGA</b>: Pierwszy argument funkcji <span class="inline">gml_pragma</span> <b>musi być stałą czasu kompilacji <span class="notranslate">string</span> </b>, a nie zmienną.</p>
+  <p> </p>
+  <h4>Składnia:</h4>
+  <p class="code">gml_pragma(command, [optional...]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Typ</th>
+        <th>Opis</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">command</span></td>
+        <td><span data-keyref="Type_String">String</span></td>
+        <td><span class="notranslate">A string with one of the commands listed above.</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">[optional]</span></td>
+        <td><span data-keyref="Type_String">String</span></td>
+        <td><span class="notranslate">Some of the available commands require an optional argument or arguments. These are explained above for each command.</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Zwroty:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p> </p>
+  <h4>Przykład:</h4>
+  <p class="code">gml_pragma(&quot;forceinline&quot;);</p>
+  <p>Powyższy przykładowy kod spowoduje, że funkcja <span class="notranslate">script</span>, w której jest ona używana, będzie musiała być dołączona do linii podczas kompilacji.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="OS_And_Compiler.htm">System operacyjny i kompilator</a></div>
+        <div style="float:right">Następny: <a href="parameter_count.htm"><span class="notranslate">parameter_count</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+gml_pragma
+-->
+  <!-- TAGS
+gml_pragma
+-->
+</body>
+</html>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>tworzenie_instancji_głębokość</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <script src="../../../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the function instance_create_depth" />
+  <meta name="rh-index-keywords" content="instance_create_depth" />
+  <meta name="search-keywords" content="instance_create_depth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>tworzenie_instancji_głębokość</h1>
+  <p>Za pomocą tej funkcji można utworzyć nową instancję określonej strony <span class="notranslate">object</span> w dowolnym punkcie strony <span class="notranslate">room</span> i na podanej głębokości. Głębokość może być dowolną wartością, przy czym im mniejsza głębokość, tym bliżej kamery będą rysowane obiekty, a im większa głębokość, tym dalej od kamery, więc instancja na głębokości -200 zostanie narysowana nad instancją na głębokości +300 (na przykład).</p>
+  <p>Zauważ, że ta funkcja faktycznie utworzy warstwę <span class="notranslate">room</span> dla instancji, ponieważ wszystkie instancje <i>muszą</i> znajdować się na warstwie w <span class="notranslate">room</span>, ale ponieważ jest to warstwa <i>zarządzana</i> (tzn. nie taka, którą utworzyłeś za pomocą kodu lub w <span class="notranslate">room</span>, ale taka, którą <span class="notranslate">GameMaker Studio 2</span> utworzył automatycznie), nie możesz uzyskać do niej dostępu, a zmienna <a href="Instance_Variables/layer.htm"><span class="inline">layer</span></a> zmienna instancji zwróci wartość -1.</p>
+  <p class="note"><span class="important">WAŻNE</span> Minimalna i maksymalna głębokość warstwy wynosi od -16000 do 16000. Wszystko, co zostanie umieszczone na warstwie o głębokości spoza tego zakresu, <b>nie zostanie narysowane</b>, choć wszystkie wydarzenia będą przebiegać normalnie.</p>
+  <p>Funkcja ta zwraca wartość <a href="Instance_Variables/id.htm"><span class="inline">id</span></a> nowej instancji, którą można następnie zapisać w zmiennej lub użyć do uzyskania dostępu do tej instancji. Zauważ, że funkcja ta wywoła również zdarzenie <a href="../../../../The_Asset_Editors/Object_Properties/Object_Events.htm">Create</a> dla tworzonej instancji <i>przed</i> kontynuowaniem kodu lub akcji dla zdarzenia, które wywołało funkcję.</p>
+  <p> </p>
+  <h4>Składnia:</h4>
+  <p class="code">instance_create_depth(x, y, depth, obj);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Typ</th>
+        <th>Opis</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">x</span></td>
+        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span class="notranslate">The x position the object will be created at</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">y</span></td>
+        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span class="notranslate">The y position the object will be created at</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">depth</span></td>
+        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span class="notranslate">The depth to assign the created instance to</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">obj</span></td>
+        <td><span data-keyref="Type_Asset_Object">Obiekt Aktywa</span></td>
+        <td><span class="notranslate">The object index of the object to create an instance of</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Zwroty:</h4>
+  <p class="code"><span data-keyref="Type_ID_Instance">Instance ID</span></p>
+  <p> </p>
+  <h4>Przykład:</h4>
+  <p class="code">var inst = instance_create_depth(x, y, -10000, obj_Bullet);<br />
+    with (inst)<br />
+    {<br />
+        speed = other.shoot_speed;<br />
+        direction = other.image_angle;<br />
+    }</p>
+  <p>Powyższy kod tworzy nową instancję <span class="notranslate">object</span> &quot;obj_Bullet&quot; i zapisuje identyfikator instancji w zmiennej. Ta zmienna jest następnie używana do przypisywania <span class="inline">speed</span> i <span class="inline">direction</span> do nowej instancji.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="Instances.htm">Instancje</a></div>
+        <div style="float:right">Następny: <a href="instance_destroy.htm"><span class="notranslate">instance_destroy</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+instance_create_depth
+-->
+  <!-- TAGS
+instance_create_depth
+-->
+</body>
+</html>

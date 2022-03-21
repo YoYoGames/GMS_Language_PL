@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>audio_play_sound_at</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <script src="../../../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function audio_play_sound_at" />
+  <meta name="rh-index-keywords" content="audio_play_sound_at" />
+  <meta name="search-keywords" content="audio_play_sound_at" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>audio_play_sound_at</h1>
+  <p>Za pomocą tej funkcji można odtworzyć dowolny zasób dźwiękowy w określonym miejscu w przestrzeni dźwiękowej. Podajesz indeks dźwięku, a następnie przypisujesz mu pozycję w przestrzeni 3D. Domyślna pozycja słuchacza to (0, 0, 0), co oznacza, że jeśli słuchacz nie został przesunięty, a chcesz, aby dźwięk dochodził z lewej strony (na przykład), powinieneś ustawić pozycję x na wartość ujemną (więcej informacji na temat ustawiania pozycji słuchacza można znaleźć na stronie <a href="Audio_Listeners/audio_listener_position.htm"><span class="inline">audio_listener_position()</span></a>).</p>
+  <p>Można również ustawić odległość wyłączania (0 powoduje, że dźwięk jest cichy, domyślnie 100), która powoduje, że dźwięk zanika wraz z oddalaniem się od pozycji słuchacza. To, jak słyszalne będzie samo zanikanie, zależy od wartości odniesienia zanikania (czyli odległości, poniżej której głośność źródła dźwięku zmniejszyłaby się o połowę) oraz współczynnika wyciszenia (który wpływa na dźwięk tylko po przekroczeniu odległości odniesienia zanikania). Domyślny współczynnik wynosi zwykle 1, a efekt różnych wartości współczynnika redukcji szumów zależy od wybranego modelu (pełny przewodnik po różnych modelach redukcji szumów i sposobie korzystania z tych wartości można znaleźć w funkcji <a href="audio_falloff_set_model.htm"><span class="inline">audio_falloff_set_model()</span></a>).</p>
+  <p>Dwa ostatnie argumenty służą do ustawienia, czy dźwięk ma być odtwarzany na stronie <span class="notranslate">loop</span>, czy nie, oraz do przypisania mu priorytetu. Priorytet ten jest następnie używany do określania sposobu postępowania z dźwiękami, gdy liczba odtwarzanych dźwięków przekroczy limit określony przez funkcję <a href="audio_channel_num.htm"><span class="inline">audio_channel_num()</span></a>. Dźwięki o niższym priorytecie będą zatrzymywane na rzecz dźwięków o wyższym priorytecie, a wartość priorytetu może być dowolną liczbą rzeczywistą (rzeczywista wartość jest dowolna i może wynosić od 0 do 1 lub od 0 do 100, ponieważ <span class="notranslate">GameMaker Studio 2</span> nada im taki sam priorytet). Należy pamiętać, że w przypadku priorytetu im <i>wyższa</i> liczba, tym wyższy priorytet, a więc dźwięk o priorytecie 100 będzie miał pierwszeństwo przed dźwiękiem o priorytecie 1.</p>
+  <p>Funkcja ta zwraca unikatowy numer indeksu odtwarzanego dźwięku, który można zapisać w zmiennej, aby następnie wstrzymać lub zatrzymać go za pomocą odpowiednich funkcji. Oznacza to, że jeśli w danym momencie odtwarzanych jest wiele instancji tego samego dźwięku, można wybrać tylko jedną z nich do obsługi za pomocą funkcji audio.</p>
+  <p> </p>
+  <h4>Składnia:</h4>
+  <p class="code">audio_play_sound_at(index, x, y, z, falloff_ref, falloff_max, falloff_factor, loop, priority);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Typ</th>
+        <th>Opis</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">index</span></td>
+        <td><span data-keyref="Type_Asset_Sound">Aktywa dźwiękowe</span></td>
+        <td><span class="notranslate">The index of the sound to play.</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">x</span></td>
+        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span class="notranslate">The x position.</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">y</span></td>
+        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span class="notranslate">The y position.</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">z</span></td>
+        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span class="notranslate">The z position.</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">falloff_ref</span></td>
+        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span class="notranslate">The falloff reference relative to the listener (clamp).</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">falloff_max</span></td>
+        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span class="notranslate">The maximum falloff distance relative to the listener.</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">falloff_factor</span></td>
+        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span class="notranslate">The falloff factor (default 1).</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">loop</span></td>
+        <td><span data-keyref="Type_Bool">Boolean</span></td>
+        <td><span class="notranslate">Flags the sound as looping or not.</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">priority</span></td>
+        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span class="notranslate">Set the channel priority for the sound.</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Zwroty:</h4>
+  <p class="code"><span data-keyref="Type_ID_Sound_Instance">Sound Instance ID</span></p>
+  <p> </p>
+  <h4>Przykład:</h4>
+  <p class="code">if global.SFX<br />
+    {<br />
+        audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1);<br />
+    }</p>
+  <p>Powyższy kod sprawdza zmienną globalną &quot;SFX&quot; i jeśli zwróci ona wartość <span class="inline">true</span>, to dźwięk zaindeksowany w zmiennej &quot;snd_Waterfall&quot; zostanie zapętlony na pozycji <span class="notranslate">room</span>, z wartością odniesienia fall-off 100, odległością falloff 300, współczynnikiem falloff 1 i niskim priorytetem.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="Audio.htm">Audio</a></div>
+        <div style="float:right">Następny: <a href="audio_pause_sound.htm"><span class="notranslate">audio_pause_sound</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+audio_play_sound_at
+-->
+  <!-- TAGS
+audio_play_sound_at
+-->
+</body>
+</html>

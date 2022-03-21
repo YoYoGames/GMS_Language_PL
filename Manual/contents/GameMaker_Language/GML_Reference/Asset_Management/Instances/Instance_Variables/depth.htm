@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>głębokość</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../../assets/css/default.css" type="text/css" />
+  <script src="../../../../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the variable depth" />
+  <meta name="rh-index-keywords" content="depth" />
+  <meta name="search-keywords" content="depth" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>głębokość</h1>
+  <p> <span class="notranslate">object</span> Kiedy tworzysz stronę <span class="notranslate">object</span>, możesz przypisać jej początkową <i>głębokość</i>, która określa, jak instancje tej strony będą rysowane na stronie <span class="notranslate">room</span> podczas gry, a ta zmienna może być używana do uzyskiwania i zmieniania tej wartości głębokości podczas działania gry. Normalnie nie musisz używać tej zmiennej, ponieważ powinieneś ustawiać instancje, które mają być dodawane do dyskretnych <a href="layer.htm">warstw</a>, które z kolei są ustawione na określoną głębokość, ale może się zdarzyć, że będziesz chciał zmienić głębokość instancji za pomocą tej wartości, w którym to przypadku zostanie utworzona &quot;warstwa tymczasowa&quot; specjalnie dla tej instancji na danej głębokości. Zauważ, że jeśli żadna instancja nie będzie miała tej samej głębokości, to ta tymczasowa warstwa zostanie usunięta z pamięci (w przeciwieństwie do zwykłych warstw, które pozostaną, nawet jeśli nic na nich nie będzie).</p>
+  <p class="note"><b>WAŻNE!</b> Jeśli zmodyfikujesz zmienną <span class="inline">depth</span> i witryna <span class="notranslate">GameMaker Studio 2</span> zarządza warstwami, wbudowana <span style="font-size:1px;"><a href="layer.htm"><span class="inline">layer</span></a></span> zwróci -1, a nie identyfikator warstwy, ponieważ warstwami zarządzanymi nie można manipulować za pomocą kodu.</p>
+  <p>W serwisie <span class="notranslate">GameMaker Studio 2</span> im mniejsza wartość głębi dla instancji, tym &quot;bliżej kamery&quot; będzie ona rysowana, natomiast większa wartość głębi oznacza, że instancja będzie rysowana &quot;dalej od kamery&quot;, np.: -1000 jest rysowane na wierzchu -100, które jest rysowane na wierzchu 0, które jest rysowane na wierzchu 100, które jest rysowane na wierzchu 1000.</p>
+  <p><img>Należy pamiętać, że instancje strony <span class="notranslate">object</span> o <b>tej samej</b> głębokości mogą być rysowane <b>nad <i>lub</i></b> pod sobą, nawet jeśli w edytorze <span class="notranslate">room</span> wyglądają na umieszczone jedna na drugiej. Jeśli chcesz mieć pewność, że coś zostanie narysowane nad lub pod wszystkim innym, zawsze powinieneś jawnie ustawić głębokość (lub warstwę). Należy też pamiętać, że istnieje minimalna (-16000) i maksymalna (+16000) wartość głębokości, poza którą instancje nie będą rysowane, choć będą nadal istnieć i obsługiwać zdarzenia.</p>
+  <p class="note"><b><span class="note">UWAGA</span> </b> <b>Nie można</b> ustawić głębokości instancji w zdarzeniu Rysuj (wszystkie inne zdarzenia są w porządku).</p>
+  <p>Należy pamiętać, że modyfikacja głębokości instancji może zmienić <a href="../../../../../The_Asset_Editors/Room_Properties/Filters_and_Effects.htm">filtry i efekty,</a> które są na niej stosowane, ponieważ zmiana głębokości na mniejszą niż głębokość warstwy FX spowoduje, że jej efekt nie będzie już stosowany na instancji.</p>
+  <p> </p>
+  <h4>Składnia:</h4>
+  <p class="code">depth;</p>
+  <p> </p>
+  <h4>Zwroty:</h4>
+  <p class="code"><span data-keyref="Type_Real"></span> (single precision floating point value)</p>
+  <p> </p>
+  <h4>Przykład:</h4>
+  <p class="code">if y != yprevious<br />
+    {<br />
+        depth = -y;<br />
+    }</p>
+  <p>Powyższy kod sprawdzi, czy pozycja y uległa zmianie, a jeśli tak, to głębokość również zostanie ustawiona odpowiednio do tej zmiany.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="Instance_Variables.htm">Zmienne instancji</a></div>
+        <div style="float:right">Następny: <a href="layer.htm"><span class="notranslate">layer</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+depth
+-->
+  <!-- TAGS
+depth
+-->
+</body>
+</html>

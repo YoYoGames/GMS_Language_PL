@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>przełącznik</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <script src="../../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining the switch function" />
+  <meta name="rh-index-keywords" content="switch,case" />
+  <meta name="search-keywords" content="switch,default" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>przełącznik</h1>
+  <p>W wielu sytuacjach chcemy, aby instancje wykonywały różne akcje w zależności od określonej wartości. Możesz to zrobić, używając kilku następujących po sobie <a href="If_Else_and_Conditional_Operators.htm"><span class="inline">if / else</span></a> ale gdy liczba możliwych wyborów przekracza dwa lub trzy, zwykle łatwiej jest użyć instrukcji <span class="inline">switch</span>. Instrukcja <span class="inline">switch</span> ma następującą postać:</p>
+  <p class="code">switch (&lt;expression&gt;)<br />
+    {<br />
+        case &lt;constant1&gt;: &lt;statement1&gt;; ... ; break;<br />
+        case &lt;constant2&gt;: &lt;statement2&gt;; ... ; break;<br />
+        ...<br />
+        default: &lt;statement&gt;;<br />
+    }</p>
+  <p>Działa to w następujący sposób:</p>
+  <ul class="colour">
+    <li>Najpierw wykonywane jest <a class="glossterm" data-glossterm="wyrażenie" href="#">wyrażenie</a>.</li>
+    <li>Następnie jest ona porównywana z wynikami różnych <a href="../Variables/Constants.htm">stałych</a> po każdym z<span class="glossextra">wyrażeń</span> <span class="inline">case</span>. Kiedy mówimy &quot;stała&quot;, mamy na myśli to, że wartość w danym przypadku nie może być zmiennym wyrażeniem i musi być stałą wartością dowolnego <a href="../Data_Types.htm">typu danych</a>, taką jak &quot;walka&quot; lub 3 albo słowo kluczowe <span class="inline"><a href="../Instance_Keywords.htm">noone</a></span>. </li>
+    <li>Wykonywanie jest kontynuowane po pierwszej instrukcji <span class="inline">case</span> z poprawną wartością, <i>aż do napotkania instrukcji <a href="break.htm"><span class="notranslate">break</span></a> </i>.</li>
+    <li>Jeśli żadna instrukcja case nie ma właściwej wartości, zostanie wykonana instrukcja <span class="inline">default</span> (nie jest wymagane posiadanie instrukcji <span class="inline">default</span>, a jeśli nie zostanie podana żadna, nie zostanie podjęte żadne działanie).</li>
+  </ul>
+  <p>Prostym przykładem użycia oświadczenia <span class="notranslate">switch</span> może być coś takiego:</p>
+  <p class="code">switch (global.state)<br />
+    {<br />
+        case &quot;alert&quot;:<br />
+            if (instance_exists(obj_Player))<br />
+            {<br />
+                if (point_distance(x, y, obj_Player.x, obj_Player.y) &lt; 100)<br />
+                {<br />
+                    global.state = &quot;chase&quot;;<br />
+                }<br />
+            }<br />
+        break;<br />
+        case &quot;chase&quot;:<br />
+            var _lost = false;<br />
+            if (instance_exists(obj_Player))<br />
+            {<br />
+                move_towards_point(obj_Player.x, obj_Player.y, 2);<br />
+                if (point_distance(x, y, obj_Player.x, obj_Player.y) &gt; 100)<br />
+                {<br />
+                    _lost = true;<br />
+                }<br />
+            }<br />
+            else _lost = true;<br />
+    <br />
+            if (_lost)<br />
+            {<br />
+                speed = 0;<br />
+                global.state = &quot;alert&quot;;<br />
+            }<br />
+        break;<br />
+    }
+  </p>
+  <p>Mamy tu zmienną globalną przechowującą wartość <span class="notranslate">string</span>, która służy do ustawiania zachowania (stanu) instancji. W tym przykładzie instancja po prostu przełącza się między dwoma stanami, ale bardzo łatwo można to rozszerzyć o więcej stanów, dodając kolejne instrukcje <span class="inline">case</span> dla dodatkowych stanów <span class="notranslate">strings</span>, takich jak &quot;walcz&quot; lub &quot;umieraj&quot; itd.</p>
+  <p>Zwróć uwagę, że do wykonania tego samego polecenia można użyć wielu instrukcji <span class="inline">case</span>, ponieważ instrukcja <span class="inline">break</span> nie zawsze jest wymagana dla każdego <span class="inline">case</span>. Jeśli dla danego <span class="inline">case</span> nie ma instrukcji <span class="inline">break</span>, wykonywanie jest po prostu kontynuowane z kodem dla następnego przypadku, np:</p>
+  <p class="code">switch (keyboard_key)<br />
+    {<br />
+        case vk_left:<br />
+        case ord(&quot;A&quot;):<br />
+            x -= 4;<br />
+        break;<br />
+    <br />
+        case vk_right:<br />
+        case ord(&quot;D&quot;):<br />
+            x += 4;<br />
+        break;<br />
+    <br />
+        case vk_up:<br />
+        case ord(&quot;W&quot;):<br />
+            y -= 4;<br />
+        break;<br />
+    <br />
+        case vk_down:<br />
+        case ord(&quot;S&quot;):<br />
+            y += 4;<br />
+        break;<br />
+    }
+  </p>
+  <p>Powyższy kod wykorzystuje stronę <span class="inline">switch</span> do sprawdzenia zdarzenia na klawiaturze, a następnie porównuje je z każdą z wymienionych stron <span class="inline">case</span>. Jeśli spełnia on którąś z wymaganych wartości, wykonywany jest odpowiedni kod. Zauważ, że w kodzie wykorzystaliśmy sposób, w jaki <span class="inline">switch</span> może sprawdzać wiele <span class="inline">cases</span> i kontynuować, jeśli nie napotka <span class="inline">break</span>, aby umożliwić użycie różnych klawiszy w celu uzyskania tego samego wyniku. Zauważ, że każdy adres <span class="inline">case</span> może mieć swój własny kod, dzięki czemu można stworzyć swego rodzaju system &quot;dziedziczenia&quot;, w którym więcej niż jeden adres <span class="inline">case</span> i jego kod będą wykonywane kolejno po sobie, aż do osiągnięcia punktu przerwania, zależnego od wartości początkowego wyrażenia <span class="inline">switch</span>.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="../Language_Features.htm">Cechy językowe</a></div>
+        <div style="float:right">Następny: <a href="break.htm"><span class="notranslate">break</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+switch
+-->
+  <!-- TAGS
+switch
+-->
+</body>
+</html>

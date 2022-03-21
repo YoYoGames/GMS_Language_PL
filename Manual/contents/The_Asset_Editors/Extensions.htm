@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Rozszerzenia</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <script src="../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the extension editor works" />
+  <meta name="rh-index-keywords" content="Extension Editor" />
+  <meta name="search-keywords" content="extensions,extension editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Redaktor <span class="notranslate">Extension</span> </h1>
+  <p> <strong>Pakiet rozszerzeń</strong> może być używany do dodawania dodatkowych funkcji i <a class="glossterm" data-glossterm="niezmienny" href="#">stałych</a>do <span class="notranslate">GameMaker Language</span> (<span class="notranslate">GML</span>) i łatwego przenoszenia ich między projektami. Funkcje <span class="notranslate">Extension</span> mogą być również połączone z zewnętrznymi <a class="glossterm" data-glossterm="SDK" href="#">zestawami SDK</a>lub <a class="glossterm" data-glossterm="kod źródłowy" href="#">kodem źródłowym</a> napisanym w innych językach (np. Java dla <span class="notranslate">Android</span>, Objective-C dla <span class="notranslate">iOS</span>, itp.), które mogą być używane do rozszerzania funkcjonalności gry (zwykle używane do implementacji interfejsów API innych firm, takich jak reklamy, zakupy w aplikacji i inne).</p>
+  <p><img alt="Extensions Properties" class="center" src="../assets/Images/Asset_Editors/Editor_Extensions.png" /></p>
+  <p>Rozszerzenia mogą być używane do tworzenia biblioteki funkcji, które są często używane we wszystkich projektach. Zamiast importować tę samą stronę <span class="notranslate">scripts</span> do każdego projektu, można po prostu dodać jedną stronę <span class="notranslate">extension</span> <span class="notranslate">asset</span>, która zawiera zbiór ulubionych funkcji i stałych. Takie funkcje mogą być również specyficzne dla określonej platformy, a użytkownik może łatwo wybrać, na których platformach można używać <span class="notranslate">extension</span>.</p>
+  <p>Przykład tworzenia strony <span class="notranslate">extension</span> krok po kroku można znaleźć w części <a href="Extension_Creation/Creating_An_Extension.htm">Tworzenie rozszerzenia</a>.</p>
+  <h2>Importowanie rozszerzeń</h2>
+  <p>Zwykle strony trzecie <span class="notranslate">extensions</span> pochodzą z <a href="https://marketplace.yoyogames.com/">GameMaker Market</a>place, a te, które subskrybowałeś, zostaną wymienione w oknie <a href="../Introduction/The_Marketplace.htm">Marketplace Library</a> i można je stamtąd zainstalować. Jeśli nie otrzymałeś swojego pakietu <span class="notranslate">extension</span> z <span class="notranslate">Marketplace</span>, możesz go dodać do projektu, klikając prawym przyciskiem myszy na stronie <img> w dowolnym miejscu w <a href="../Introduction/The_Asset_Browser.htm">Asset Browser</a> i wybierając <em>Add Existing</em>, a następnie przechodząc do lokalizacji rozszerzenia i wybierając je.</p>
+  <p class="note"><strong>UWAGA</strong>: Jeśli masz pakiet <span class="inline">.yymps</span>/<span class="inline">.yymp</span>/<span class="inline">.gmez</span>, możesz przeciągnąć go na stronę <span class="notranslate">IDE</span>, aby go zaimportować, lub wejść do menu &quot;Narzędzia&quot; i wybrać opcję &quot;Importuj pakiet lokalny&quot;.</p>
+  <h2>Platformy docelowe</h2>
+  <p>Po dodaniu pliku <span class="notranslate">extension</span> do przeglądarki <span class="notranslate">Asset</span> należy nadać mu nazwę i numer wersji, a także określić, na jakie platformy ma być eksportowany. Odznaczając wybrane platformy, można powiedzieć <span class="notranslate">GameMaker Studio 2</span>, aby nie eksportował <span class="notranslate">extension</span> jako części pliku wykonywalnego dla tych platform. Należy również upewnić się, że właściwości <span class="notranslate">extension</span> są zgodne z wybraną platformą docelową (platformami docelowymi), a także wybrać kompatybilne platformy docelowe dla plików <span class="notranslate">extension</span> w oparciu o poniższe kryteria:</p>
+  <ul class="colour">
+    <li class="dropspot"><strong>Wszystkie</strong> platformy docelowe: <span class="notranslate">GML</span> <span class="notranslate">extensions</span>. Są to <span class="notranslate">extensions</span> wykonane przy użyciu <span class="notranslate">GameMaker Language</span> (<span class="notranslate">GML</span>) i są kompatybilne ze wszystkimi platformami docelowymi. (<em></em><em>Należy pamiętać, że jest to jedyny typ <span class="notranslate">extension</span> obsługiwany obecnie przez program Opera GX</em>. )</li>
+    <li class="dropspot"><strong>Windows (Standard, UWP, Xbox)</strong>: Możesz użyć plików <span class="notranslate">Windows</span> <span class="inline">DLL</span> (Dynamic Link Libraries). Pamiętaj, że jeśli zaznaczyłeś opcję &quot;Use x64 <span class="notranslate">Windows</span> Runtime&quot; w <a href="../Settings/Game_Options/Windows.htm">opcjach gry dla systemu Windows</a>, wszystkie biblioteki DLL dla projektu <strong>muszą być zgodne z 64-bitowymi</strong>. 32-bitowe biblioteki DLL nie będą działać z 64-bitowym plikiem wykonywalnym.</li>
+    <li class="dropspot"><strong>macOS</strong>: cel <span class="notranslate">macOS</span> może używać standardowych plików <span class="inline">DyLib</span> dla <span class="notranslate">extensions</span>.</li>
+    <li class="dropspot"><strong>Ubuntu (<span class="notranslate">Linux</span>)</strong>: W przypadku celu <span class="notranslate">Ubuntu</span> musisz się upewnić, że twój <span class="notranslate">extension</span> używa plików <span class="inline">.so</span>.</li>
+    <li class="dropspot"><strong>HTML5</strong>: Platformy te mogą korzystać z <span class="inline">JavaScript</span> <span class="notranslate">extensions</span>.</li>
+    <li class="dropspot"><strong>Android</strong>: Ta platforma wymaga, aby strona <span class="notranslate">extension</span> była napisana w języku <span class="inline">Java</span> lub <span class="inline">Android Framework SDK</span>.</li>
+    <li class="dropspot"><strong>iOS</strong> / <strong> tvOS</strong>: <span class="notranslate">Extensions</span> dla tej platformy są napisane w Objective C i wymagają pliku <span class="inline">*.mm</span> i <span class="inline">*.h</span> lub, jeśli użyto jakichkolwiek frameworków, prekompilowanego natywnego pliku <span class="inline">*.a</span>.</li>
+    <li class="dropspot"><strong>PlayStation</strong>: W przypadku konsoli PlayStation pliki <span class="notranslate">extensions</span> powinny być plikami <span class="inline">PRX</span>, przy czym każdy cel wymaga innego adresu <span class="inline">PRX</span>, aby dostosować się do specyfikacji celu (PS3, PS4 lub PS5). Jeśli pracujesz na PSVita, <span class="notranslate">extension</span> powinien być <span class="inline">SUPRX</span>.</li>
+  </ul>
+  <p class="note"><strong>UWAGA</strong>: W przypadku niektórych witryn <span class="notranslate">extensions</span> wymagane jest przestrzeganie określonych konwencji nazewnictwa, aby witryna <span class="notranslate">GameMaker</span> mogła prawidłowo identyfikować platformę i architekturę procesora, dla której została zaprojektowana. Więcej informacji można znaleźć w części <a data-xref="{text}" href="Extension_Creation/Creating_An_Extension.htm#h">Konwencje</a> nazewnictwa.</p>
+  <p>Ponieważ strona <span class="notranslate">extension</span> może zawierać różne powiązane pliki, możliwe jest utworzenie jednej strony <span class="notranslate">extension</span> dla wielu platform. W takim przypadku należy określić <em>wszystkie </em>kompatybilne platformy w głównym edytorze <span class="notranslate">extension</span> (tzn. zaznaczyć pole wyboru obok nich), a następnie we właściwościach poszczególnych plików dla każdej części strony <span class="notranslate">extension</span> określić platformę, na którą te pliki mają być eksportowane.</p>
+  <p>Aby zmienić platformę docelową dla konkretnego pliku <span class="notranslate">extension</span> lub placeholder, musisz najpierw otworzyć właściwości <span class="notranslate">extension</span> (kliknij dwukrotnie <img> lub <span class="notranslate">extension</span> w przeglądarce <span class="notranslate">Asset</span> ), a następnie we właściwościach <span class="notranslate">extension</span> wybrać z prawej strony plik zasobów, który chcesz edytować. W otwartym oknie można wybrać platformy, do których eksportowany jest dany plik:</p>
+  <p class="dropspot"><img alt="RMB Icon" class="icon" src="../assets/Images/Icons/Icon_RMB.png" /></p>
+  <h2>Usuń kompresję podczas kompilacji</h2>
+  <p>Opcja &quot;Uncompress on build&quot; może być użyta dla skompresowanych plików archiwalnych, które są przeznaczone na konkretną platformę docelową. Jeśli ta opcja jest włączona, zawartość takiego archiwum zostanie rozpakowana do katalogu Included Files budowanego pakietu, ale dopiero po skopiowaniu na platformę docelową.</p>
+  <p>Na przykład, jeśli włączysz tę funkcję dla pliku <span class="inline">.zip</span> w witrynie <span class="notranslate">extension</span>, a następnie rozpoczniesz kompilację systemu <strong>macOS </strong>od strony <span class="notranslate">Windows</span>, archiwum <span class="inline">.zip</span> zostanie skopiowane w stanie niezmienionym z <span class="notranslate">Windows</span> do <span class="notranslate">macOS</span>, a następnie zostanie nieskompresowane podczas kompilacji na platformie docelowej (w tym kontekście jest to <span class="notranslate">macOS</span>).</p>
+  <h2>Wywoływanie funkcji <span class="notranslate">Extension</span> </h2>
+  <p>Po skonfigurowaniu witryny <span class="notranslate">extension</span> można używać funkcji i stałych dla niej, tak jak wbudowanych funkcji i stałych używanych w witrynie <span class="notranslate">GameMaker Language</span>. Jeśli gra jest wieloplatformowa (na przykład jest przeznaczona do uruchamiania w systemach Windows i <span class="notranslate">Android</span> ), należy użyć stałych i <a href="../GameMaker_Language/GML_Reference/OS_And_Compiler/OS_And_Compiler.htm">funkcji systemu operacyjnego</a>, aby sprawdzić bieżącą platformę przed wywołaniem funkcji specyficznych dla <span class="notranslate">extension</span>, na przykład w celu uniknięcia problemów:</p>
+  <p class="code">switch(os_type)<br />
+    {<br />
+        case os_android:<br />
+            call_android_extension_function(x, y, z);<br />
+        break;<br />
+    <br />
+        case os_windows:<br />
+            call_windows_extension_function(x, y, z);<br />
+        break;<br />
+    }
+  </p>
+  <p>Zwróć uwagę, że dla różnych platform Twój <span class="notranslate">extensions</span> może mieć wspólne nazwy funkcji, więc jeśli masz <span class="notranslate">extension</span> z różnymi plikami do (na przykład) wyskakiwania komunikatu na <span class="notranslate">Windows</span> i dla <span class="notranslate">Android</span>, oba pliki <span class="notranslate">extension</span> mogą mieć te same nazwy funkcji, o ile są ustawione na eksportowanie tylko do odpowiednich platform.</p>
+  <p>Jeśli chcesz utworzyć własną stronę <span class="notranslate">extensions</span>, podstawowe informacje znajdziesz na kolejnych stronach:</p>
+  <ul class="colour">
+    <li><a href="Extension_Creation/Creating_An_Extension.htm">Tworzenie rozszerzenia</a></li>
+    <li><a href="Extension_Creation/Android_Extensions.htm">Rozszerzenia systemu Android</a></li>
+    <li><a href="Extension_Creation/iOS_Extensions.htm">iOS / <span class="notranslate">tvOS</span> Rozszerzenia</a></li>
+    <li><a data-xref="{title}" href="Extension_Creation/Extended_Examples.htm">Przykłady źródeł</a></li>
+  </ul>
+  <p> </p>
+  <h1>YoYo Games Rozszerzenia innych firm</h1>
+  <p>Starsze wersje <span class="notranslate">GameMaker</span> miały wbudowane wiele funkcji innych firm, ale było to nieefektywne i trudne do utrzymania, ponieważ jeśli jakaś konkretna funkcja została zmieniona przez inną firmę, trzeba było zaktualizować całe <span class="notranslate">GameMaker</span> <a class="glossterm" data-glossterm="IDE" href="#">IDE</a> i <a class="glossterm" data-glossterm="Runtime" href="#">Runtime</a>. Dlatego w obecnych wersjach do dodawania do gier obsługi przez inne firmy użyto pakietów <span class="notranslate">extensions</span>. Oznacza to, że można dodawać tylko te dodatkowe funkcje, które są potrzebne, a nawet dostosowywać i edytować je do własnych potrzeb.</p>
+  <p>Większość z tych stron <span class="notranslate">extensions</span> zostanie pobrana i zainstalowana po wybraniu określonych <a href="../Settings/Game_Options.htm">opcji gry</a> (np. Facebook lub Google Mobile Ads), ale dalsze informacje na ich temat można znaleźć w odpowiedniej sekcji dla każdej platformy w Bazie wiedzy <span class="notranslate">YoYo Games</span>:</p>
+  <ul class="colour">
+    <li><a href="https://help.yoyogames.com/hc/en-us/categories/204246668-GameMaker-Studio-2">Platformy i konfiguracja GameMaker Studio 2</a></li>
+  </ul>
+  <p>Same strony <span class="notranslate">extensions</span> można znaleźć na następującej stronie <span class="notranslate">Marketplace</span>:</p>
+  <ul class="colour">
+    <li><a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games">YoYo Games <span class="notranslate">Marketplace</span> Aktywa</a></li>
+  </ul>
+  <p>Należy pamiętać, że strona <span class="notranslate">extensions</span> jest dostarczana z wersją demonstracyjną i plikiem pomocy (w formacie <span class="inline">*.pdf</span> ), w których wyjaśniono sposób korzystania z tych funkcji, dlatego nie zostały one omówione w niniejszej instrukcji.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="The_Asset_Editors.htm">Redaktorzy Aktywów</a></div>
+        <div style="float:right">Następny: <a href="Fonts.htm">Czcionki</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+Extensions
+Extension Editor
+Android Extensions
+iOS Extensions
+-->
+  <!-- TAGS
+extension_editor
+-->
+</body>
+</html>

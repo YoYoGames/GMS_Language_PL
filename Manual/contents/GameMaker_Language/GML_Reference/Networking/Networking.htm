@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Tworzenie sieci</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <script src="../../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference section for the Networking  functions" />
+  <meta name="rh-index-keywords" content="" />
+  <meta name="search-keywords" content="Networking" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Tworzenie sieci</h1>
+  <p>Funkcje sieciowe <span class="notranslate">GameMaker Studio 2</span> są oparte na <i>gniazdach</i>, które są standardem przemysłowym na wszystkich platformach. Dzięki gniazdom można tworzyć zarówno klientów, jak i <span class="notranslate">servers</span> za pomocą prostej strony <span class="notranslate">GML</span>, co pozwala na stworzenie nawet gry dla jednego gracza w modelu klient/serwer (co pozwoli na łatwe dodanie trybu wieloosobowego w późniejszym czasie).</p>
+  <p>Zasadniczo gniazdo to adres <span class="notranslate">object</span>, który może wysyłać, odbierać, łączyć się i nasłuchiwać na <i>portach</i> w sieci. Funkcje te dotyczą wyłącznie połączeń TCP/IP, na których opiera się Internet (dokładniej IPv4). Zasadniczo umożliwia to połączenie jednego gniazda o adresie IP (powiedzmy 192.168.1.10) z innym gniazdem o innym adresie IP (powiedzmy 192.168.1.11). Po połączeniu te dwa gniazda mogą przesyłać dane tam i z powrotem za pomocą funkcji <span class="inline">network_send_*</span> (np. <a href="network_send_packet.htm"><span class="inline">network_send_packet()</span></a>) oraz dedykowanego zdarzenia asynchronicznego, które jest przez nie wywoływane. Zdarzenie asynchroniczne wygeneruje <a href="../Data_Structures/DS_Maps/DS_Maps.htm">mapę DS</a> zawierającą otrzymane dane oraz inne szczegóły. Szczegółowe informacje na ten temat można znaleźć w rozdziale <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">Zdarzenie asynchroniczne sieci</a>.</p>
+  <p>Zamiast tego, że programy muszą odczytywać i obsługiwać każdy bit ruchu sieciowego przychodzącego do maszyny, adresy IP obsługują również porty, które są ponumerowane od 0 do 65535. Dzięki temu każdy program otrzymuje tylko te pakiety danych, które go interesują, a nie wszystko, co zostało wysłane przez każdy inny program. Pozwala to również zaoszczędzić sporo czasu procesora, ponieważ znacznie skraca czas przetwarzania danych, dlatego za pomocą <span class="notranslate">GameMaker Studio 2</span> można również "nasłuchiwać" portów. Tak więc <span class="notranslate">server</span> utworzy gniazdo, a następnie powiąże je z określonym portem, na którym będzie nasłuchiwać. Następnie będzie otrzymywać powiadomienia o połączeniach, rozłączeniach i transferach danych z tego gniazda.</p>
+  <p>Same &quot;pakiety&quot; danych składają się z danych binarnych pobranych z witryny <span class="notranslate">buffer</span>. Tę witrynę <span class="notranslate">buffer</span> można utworzyć i manipulować nią za pomocą <a href="../Buffers/Buffers.htm">funkcji</a> <span class="notranslate">GameMaker Studio 2</span> <a href="../Buffers/Buffers.htm">Buffer</a>.</p>
+  <p>Warto zauważyć, że jeśli tworzysz projekt dla platformy docelowej HTML5, nie będziesz mógł użyć funkcji tworzenia <span class="notranslate">server</span> ze względu na ograniczenia przeglądarki i będziesz musiał napisać własną stronę <span class="notranslate">server</span> dla tej platformy, używając czegoś takiego jak <strong>Electron </strong>lub <strong>NodeJS</strong>. Zwróć też uwagę, że jeśli Twoja gra jest wieloplatformowa i przewidujesz połączenie z instancją HTML5 gry z <span class="notranslate">server</span> działającej na urządzeniu mobilnym lub stacjonarnym, to Twoja <span class="notranslate">server</span> może komunikować się z instancją HTML5 tylko za pomocą protokołu Web Socket (służy do tego stała <span class="inline">network_socket_ws</span> lub <span class="inline">network_socket_wss</span> - zob. <a href="network_create_server.htm"><span class="inline">network_create_server()</span></a> więcej informacji). Oznacza to, że Twój <span class="notranslate">server</span> może być zmuszony do utworzenia dwóch gniazd na różnych portach - jednego do łączenia się z instancjami nieobsługującymi HTML5 (<span class="notranslate">Android</span>, <span class="notranslate">Windows</span>, itd...) i jednego do łączenia się z instancją HTML5.</p>
+  <p>Do pracy w sieci można wykorzystać następujące funkcje:</p>
+  <ul class="colour">
+    <li><a href="network_create_server.htm"><span class="notranslate">network_create_server</span></a></li>
+    <li><a href="network_create_server_raw.htm"><span class="notranslate">network_create_server_raw</span></a></li>
+    <li><a href="network_create_socket.htm"><span class="notranslate">network_create_socket</span></a></li>
+    <li><a href="network_create_socket_ext.htm"><span class="notranslate">network_create_socket_ext</span></a></li>
+    <li><a href="network_connect.htm"><span class="notranslate">network_connect</span></a></li>
+    <li><a href="network_connect_async.htm"><span class="notranslate">network_connect_async</span></a></li>
+    <li><a href="network_connect_raw.htm"><span class="notranslate">network_connect_raw</span></a></li>
+    <li><a href="network_connect_raw_async.htm">network_connect_async_raw</a></li>
+    <li><a href="network_resolve.htm"><span class="notranslate">network_resolve</span></a></li>
+    <li><a href="network_set_config.htm"><span class="notranslate">network_set_config</span></a></li>
+    <li><a href="network_set_timeout.htm"><span class="notranslate">network_set_timeout</span></a></li>
+    <li><a href="network_send_broadcast.htm"><span class="notranslate">network_send_broadcast</span></a></li>
+    <li><a href="network_send_packet.htm"><span class="notranslate">network_send_packet</span></a></li>
+    <li><a href="network_send_raw.htm"><span class="notranslate">network_send_raw</span></a></li>
+    <li><a href="network_send_udp.htm"><span class="notranslate">network_send_udp</span></a></li>
+    <li><a href="network_send_udp_raw.htm"><span class="notranslate">network_send_udp_raw</span></a></li>
+    <li><a href="network_destroy.htm"><span class="notranslate">network_destroy</span></a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="../GML_Reference.htm">Odniesienie do GML</a></div>
+        <div style="float:right">Następny: <a href="../Web_And_HTML5/Web_And_HTML5.htm">Strona internetowa</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+Networking
+-->
+  <!-- TAGS
+networking_functions
+-->
+</body>
+</html>

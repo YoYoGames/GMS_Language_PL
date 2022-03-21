@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>szkielet_animacji_mix</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
+  <script src="../../../../../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page explaining the function skeleton_animation_mix" />
+  <meta name="rh-index-keywords" content="skeleton_animation_mix" />
+  <meta name="search-keywords" content="skeleton_animation_mix" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>szkielet_animacji_mix</h1>
+  <p>Zestawy animacji można łatwo znaleźć na stronie <span class="notranslate">switch</span>, używając funkcji <a href="skeleton_animation_set.htm"><span class="inline">skeleton_animation_set()</span></a> ale może to powodować przeskakiwanie lub zacinanie się animacji, gdy jedna animacja jest zamieniana na drugą. Aby temu zapobiec, możesz ustawić wartość mix między dwoma zestawami animacji, a <span class="notranslate">sprite</span> będzie interpolować między nimi. Zazwyczaj chcesz to zrobić w zdarzeniu Create Event instancji z animacją szkieletową, ponieważ wystarczy ustawić ją tylko raz, a <span class="notranslate">GameMaker Studio 2</span> będzie interpolować wszystkie dalsze zmiany na <span class="notranslate">sprite</span> przy użyciu zestawów animacji w tej instancji. Zauważ, że wartość czasu trwania mieści się w zakresie od 0 do 1, gdzie wartość 0,5 spowodowałaby interpolację &quot;pół na pół&quot; z jednego zestawu do drugiego.</p>
+  <p> </p>
+  <h4>Składnia:</h4>
+  <p class="code">skeleton_animation_mix(animfrom, animto, duration);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Typ</th>
+        <th>Opis</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">animfrom</span></td>
+        <td><span data-keyref="Type_String">String</span></td>
+        <td><span class="notranslate">The name (a string) of the first animation set to interpolate from.</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">animto</span></td>
+        <td><span data-keyref="Type_String">String</span></td>
+        <td><span class="notranslate">The name (a string) of the second animation set to interpolate to.</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">duration</span></td>
+        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span class="notranslate">The duration of the interpolation (from 0 to 1)</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <h4>Zwroty:</h4>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
+  <p> </p>
+  <h4>Przykład:</h4>
+  <p class="code">skeleton_animation_set(&quot;walk&quot;);<br />
+    skeleton_animation_mix(&quot;walk&quot;, &quot;jump&quot;, 0.2);<br />
+    skeleton_animation_mix(&quot;jump&quot;, &quot;walk&quot;, 0.4);</p>
+  <p>Powyższy kod zostanie umieszczony w zdarzeniu tworzenia instancji z animacją szkieletową <span class="notranslate">sprite</span> i ustawi czas trwania mieszanki animacji dla interpolacji między dwiema animacjami ustawionymi jako &quot;chód&quot; i &quot;skok&quot;.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="Animation.htm">Animacja</a></div>
+        <div style="float:right">Następny: <a href="skeleton_animation_list.htm"><span class="notranslate">skeleton_animation_list</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+skeleton_animation_mix
+-->
+  <!-- TAGS
+skeleton_animation_mix
+-->
+</body>
+</html>

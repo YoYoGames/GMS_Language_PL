@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>macOS</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <script src="../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page that details the macOS Game Options" />
+  <meta name="rh-index-keywords" content="Game Options - macOS" />
+  <meta name="search-keywords" content="macOS Game Options" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Opcje gry w systemie macOS</h1>
+  <p>W tej sekcji opisano różne dostępne opcje, które pozwalają kontrolować sposób kompilowania projektów gier <span class="notranslate">macOS</span>. Poszczególne sekcje to:</p>
+  <h2>Ogólne</h2>
+  <p><img>W sekcji <strong>Informacje o produkcie </strong>najpierw wpisz <strong>nazwę wyświetlaną </strong>gry, a następnie <strong>numer wersji</strong>, <strong>identyfikator aplikacji</strong>, <strong>plik wyjściowy</strong> aplikacji i informacje o prawach <strong>autorskich</strong>. Plik wyjściowy aplikacji to lokalizacja, do której trafiają pliki instalacyjne gry na komputerze Mac. Po utworzeniu pliku <span class="inline">.app.zip</span> plik ten może trafić gdziekolwiek (lokalizacja określona w dialogu zapisu nie jest jedyną kopią pliku <span class="inline">.app.zip</span>), ale plik <span class="inline">.pkg</span> i inne pliki pozostają w tym folderze, umożliwiając testowanie lokalnych instalacji za pomocą Terminala, tak aby symulować zakup w Mac Store itd.</p>
+  <p>W tym miejscu należy również podać <strong>identyfikator zespołu</strong>, który ma być używany do podpisywania końcowej aplikacji tworzonej przez <span class="notranslate">GameMaker Studio 2</span>. Ustawienie go w tym miejscu spowoduje zastąpienie identyfikatora zespołu podanego w <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/macOS.htm">Preferencjach systemu macOS</a>. Po podaniu identyfikatora zespołu można również podać identyfikator <strong>podpisywania</strong>, który jest wymagany przez firmę Apple dla wszystkich aplikacji spoza sklepu Appstore (np. gier <span class="notranslate">Steam</span> ).</p>
+  <p>Kolejną opcją jest włączenie funkcji <strong>Steam </strong>w swojej grze. Jeśli włączysz tę opcję, upewnij się, że masz zainstalowany pakiet Steamworks SDK (zobacz <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/Steam.htm">tutaj</a>) i że dodałeś <strong>identyfikator aplikacji Steam</strong> w <a href="../Game_Options.htm">opcjach ogólnych</a> gry.</p>
+  <p>Na koniec masz możliwość <strong>wyłączenia piaskownicy systemu plików</strong>. Zaznaczenie tej opcji spowoduje wyłączenie piaskownicy <span class="notranslate">GameMaker Studio 2</span> dla zapisywania i wczytywania plików, umożliwiając dostęp do plików z dowolnego miejsca w systemie, na którym uruchomiona jest gra. Opcja ta jest domyślnie odznaczona, ponieważ zalecamy zachowanie piaskownicy <span class="notranslate">GameMaker Studio 2</span> dla plików na wszystkich systemach, a po jej zaznaczeniu niektóre obszary zapisu/wczytywania mogą być nadal niedostępne, w zależności od uprawnień na poziomie systemu operacyjnego. Więcej informacji na temat piaskownicy można znaleźć na stronach poświęconych <a href="../../Additional_Information/The_File_System.htm">systemowi plików</a> <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <h2>Grafika</h2>
+  <p><img>Opcje grafiki to opcje, które należy skonfigurować w celu określenia sposobu, w jaki gra będzie wykorzystywać kartę graficzną docelowego komputera Mac. Dostępne są następujące opcje, które można modyfikować:</p>
+  <ul class="colour">
+    <li><strong>Zezwalaj na wyświetlanie menu i docka w trybie pełnoekranowym</strong>: Jeśli ta opcja jest zaznaczona, menu systemu operacyjnego i dok będą wyświetlane, jeśli gra działa w trybie pełnoekranowym. Domyślnie opcja ta jest wyłączona.</li>
+    <li><strong>Wyświetlaj</strong> kursor: Po zaznaczeniu tej opcji będzie wyświetlany zwykły kursor <span class="notranslate">macOS</span>. Usunięcie zaznaczenia spowoduje, że kursor nie będzie wyświetlany, chyba że został utworzony w kodzie gry. Domyślnie opcja ta jest wyłączona.</li>
+    <li><strong>Start Fullscreen</strong>: Jeśli ta opcja jest zaznaczona, gra będzie uruchamiana w trybie pełnoekranowym, w przeciwnym razie będzie uruchamiana w trybie okienkowym. Domyślnie opcja ta jest wyłączona.</li>
+    <li><strong>Zezwalaj na przełączanie peł</strong>noekranowe: Po zaznaczeniu tej opcji użytkownik może <span class="notranslate">switch</span> przechodzić z trybu pełnoekranowego do okienkowego i z powrotem, korzystając ze standardowych skrótów <span class="notranslate">macOS</span>. Domyślnie opcja ta jest wyłączona.</li>
+    <li><strong>Interpoluj kolory między pikselami</strong>: Włącza <a class="glossterm" data-glossterm="interpolacja liniowa" href="#">interpolację liniową</a>, która zasadniczo &quot;wygładza&quot; piksele. W przypadku wyraźnej grafiki pikselowej powinno być wyłączone, ale jeśli chcesz uzyskać ładne mieszanki alfa i grafikę o wygładzonych krawędziach, lepiej pozostawić to włączone. Domyślnie opcja ta jest wyłączona.</li>
+    <li><strong>Użyj synchronizacji, aby uniknąć rozrywania</strong>: Ta opcja włącza lub wyłącza synchronizację w trybie <a class="glossterm" data-glossterm="v-sync" href="#">v-sync</a>. Należy pamiętać, że jeśli w grze <span class="notranslate">room</span> prędkość wynosi 120, a gracz ma monitor z częstotliwością odświeżania 60, włączenie tej opcji spowoduje zablokowanie prędkości gry również na 60. Opcja ta jest domyślnie wyłączona.</li>
+    <li><strong>Zezwalaj na zmianę rozmiaru okna</strong>: Zaznaczenie tej opcji pozwala użytkownikowi na zmianę rozmiaru okna gry (aby to działało, opcja Okno bez obramowania musi być wyłączona). Opcja ta jest domyślnie wyłączona.</li>
+    <li><strong>Włącz Retinę</strong>: Zaznaczenie tej opcji spowoduje, że po uruchomieniu gry na monitorze z obsługą siatkówki tylna strona <span class="notranslate">buffer</span> będzie miała wyższą (rzeczywistą) rozdzielczość, natomiast odznaczenie tej opcji spowoduje, że tylna strona <span class="notranslate">buffer</span> będzie miała rozdzielczość pozorną (niższą). Oznacza to, że początkowe okno gry będzie miało dwukrotnie większą szerokość i wysokość niż pomieszczenie/widok, w którym znajduje się pierwsza strona <span class="notranslate">room</span>. Jednak NIE powoduje to odpowiedniego przeskalowania powierzchni aplikacji, dlatego jeśli chcesz, aby Twoja gra w pełni wykorzystywała możliwości wyświetlacza siatkówki, powinieneś ustawić powierzchnię aplikacji na taką samą jak rozmiar okna (zauważ, że spowoduje to podwojenie liczby pikseli na szerokości i wysokości, więc włącz tę funkcję i przeskaluj powierzchnię aplikacji tylko wtedy, gdy Twoja gra skorzysta ze zwiększonej rozdzielczości).<br>
+      <br>
+      Ta opcja jest domyślnie wyłączona, a jej włączenie nie spowoduje żadnej różnicy podczas uruchamiania lub debugowania gry za pomocą maszyny wirtualnej, ponieważ w tym przypadku runner jest już wstępnie zbudowany. Będzie to działać tylko wtedy, gdy budujesz plik wykonywalny za pomocą VM lub używasz YYC do testowania lub budowania gry, ponieważ spowoduje to przebudowanie runnera z opcjami gry dostosowanymi do Twoich potrzeb.
+    </li>
+    <li><strong>Skalowanie</strong>: W tym miejscu można wybrać opcję zachowania proporcji obrazu (więc obraz <span class="notranslate">room</span> o proporcjach 4:3 będzie &quot;letter boxed&quot; na ekranie 16:9) lub pełnego skalowania (rozciągnięcie obrazu tak, aby zmieścił się na całym ekranie).<br>
+      <br>
+      <span style="font-size:16px;"><strong>OSTRZEŻENIE!</strong> <em>Wyłączenie powierzchni aplikacji spowoduje wyłączenie wszystkich opcji skalowania ustawionych w opcjach gry na stronie <span class="notranslate">Windows</span> do momentu ponownego włączenia. Więcej informacji można znaleźć w części Powierzchnia aplikacji.</em></span>
+    </li>
+  </ul>
+  <p>Na koniec jest jeszcze opcja ustawienia rozmiaru <a class="glossterm" data-glossterm="strona tekstury" href="#">strony tekstury</a>. Domyślnym (i najbardziej kompatybilnym) rozmiarem jest 2048x2048, ale można wybrać dowolny rozmiar z zakresu od 256x256 do 8192x8192. Dostępny jest także przycisk oznaczony <strong><strong>Podgląd </strong></strong>który wygeneruje strony <span class="notranslate">texture</span> dla tej platformy, a następnie otworzy okno, w którym będzie można zobaczyć, jak wyglądają. Może to być bardzo przydatne, jeśli chcesz zobaczyć, jaką strukturę mają strony <span class="notranslate">texture</span> i uniknąć sytuacji, w której strony <span class="notranslate">texture</span> byłyby większe (lub mniejsze) niż to konieczne. Więcej informacji na temat stron <span class="notranslate">texture</span> można znaleźć <a href="../Texture_Information/Texture_Pages.htm">tutaj</a>.</p>
+  <p class="note"><strong>UWAGA</strong>: Należy pamiętać, że im większy rozmiar strony <span class="notranslate">texture</span>, tym mniejsza kompatybilność gry z komputerami o niższej specyfikacji.</p>
+  <h2>Zdjęcia</h2>
+  <p><img>W sekcji obrazów znajdują się obrazy, których wymaga Twoja gra. W przypadku komputerów Mac należy dostarczyć plik <strong>ikony </strong>(w formacie <span class="inline">.png</span> i rozdzielczości 1024x1024px) oraz <strong>ekran</strong> powitalny (w formacie <span class="inline">.png</span>, <span class="inline">.bmp</span>, <span class="inline">.jpg</span> lub <span class="inline">.gif</span> ). Ekran powitalny będzie wyświetlany podczas ładowania gry.</p>
+  <p>W przypadku pakietów DMG można dostarczyć obraz <strong>tła</strong> instalatora, który będzie wyświetlany jako tło instalatora DMG.</p>
+  <p>Warto zauważyć, że na stronie <span class="notranslate">GameMaker Studio 2</span> znajduje się narzędzie <a href="../../IDE_Tools/Project_Image_Generator.htm">Generator obrazów projektu</a>, które może być używane do automatycznego tworzenia wszystkich obrazów wymaganych dla różnych platform docelowych, na które kompilowana jest gra. Jeśli korzystasz z tego narzędzia, powinieneś zweryfikować utworzone obrazy, aby upewnić się, że spełniają one Twoje wymagania.</p>
+  <h2>Opakowania</h2>
+  <p><img>Jeśli chcesz, aby gotowa gra była gotowa do App Store, musisz zaznaczyć opcję <strong>Build for Mac App Store</strong>, ale pamiętaj, że będzie ona działać tylko wtedy, gdy jesteś zarejestrowanym deweloperem i masz niezbędne certyfikaty. Poniżej znajdują się <strong>Uprawnienia </strong>aplikacji, które powinieneś zaznaczać tylko wtedy, gdy są prawdziwe, ponieważ Apple może odrzucić Twoją aplikację, jeśli są zaznaczone, a nie są potrzebne, lub odwrotnie. Te opcje po prostu zezwalają Twojej grze na korzystanie z funkcji <span class="inline">http_</span> i <span class="inline">url_</span>. Warto zauważyć, że jeśli chcesz obsługiwać GamePady w swojej grze, opcja tworzenia pakietu gotowego do App Store powinna być <em>wyłączona</em>.</p>
+  <p>Na koniec należy wybrać <strong>kategorię aplikacji</strong> (więcej informacji na ten temat można znaleźć <a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html">tutaj</a>).</p>
+  <h2>Społeczny</h2>
+  <p><img>Ta opcja jest przeznaczona do używania <strong>rozszerzenia Apple Sign In Extension</strong> na komputerach Mac. Rozszerzenie <span class="notranslate">extension</span> można pobrać z <a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games">YoYo Games Marketplace</a>, a sama strona <span class="notranslate">extension</span> zawiera pełne instrukcje dotyczące jego używania. Jeśli nie używasz tej strony <span class="notranslate">extension</span>, nie powinieneś zaznaczać tej opcji.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Wstecz: <a href="../Game_Options.htm">Opcje gry</a></div>
+        <div style="float:right">Następny: <a href="Ubuntu.htm">Ubuntu</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+macOS Game Options
+Enable Retina
+-->
+  <!-- TAGS
+game_settings
+macos_options
+-->
+</body>
+</html>

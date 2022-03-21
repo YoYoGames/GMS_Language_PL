@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Zmienne i zakres zmiennych</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <script src="../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page outlining variables and their scoping in GML" />
+  <meta name="rh-index-keywords" content="Variables And Variable Scope" />
+  <meta name="search-keywords" content="variables,scope,local variables,instance variables,global variables" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Zmienne i zakres zmiennych</h1>
+  <p>Jak każdy język programowania <b>GML</b> używa <i>zmiennych</i> jako podstawowej jednostki dla większości operacji programistycznych. Zmienne służą do przechowywania informacji w pamięci urządzenia w celu ich późniejszego (lub natychmiastowego) wykorzystania. Nadaje się im nazwy, aby można było się do nich odwoływać w funkcjach <span class="notranslate">runtime</span> i <span class="notranslate">script</span>. Zmienna w <b>GML</b> może przechowywać wiele różnych <a href="Data_Types.htm"><strong>typy danych</strong></a>jak liczba rzeczywista (np. 100, 2.456575, -56 itd...), <span class="notranslate">string</span> (np. &quot;Hello world!&quot;), liczba całkowita (np. 1, 556, -7), boolean (<span class="inline">true</span> lub <span class="inline">false</span>), a także inne rzeczy:</p>
+  <p class="code">var _num = 126.4545;<br />
+    var _str = &quot;Hello World&quot;;<br />
+    new_num = _num * 100;<br />
+    global.my_string = _str + &quot; I said&quot;;</p>
+  <p>Zmiennych można również używać do przechowywania wartości zwracanych przez funkcje, np:</p>
+  <p class="code">var _id = instance_nearest(x, y, obj_Tree);<br />
+    root = sqrt(1000);<br />
+    global.str = string_upper(&quot;Hello World&quot;);</p>
+  <p>Tak więc zmienna to coś, co możemy nazwać i użyć do przechowywania wartości w celu późniejszego wykorzystania w jednej lub kilku operacjach. Doskonałym przykładem zmiennej w świecie rzeczywistym jest <b>pi 𝜋 .. </b>. jest to zmienna, którą każdy zna i która przechowuje wartość 3,14159265(itd...). Dlaczego mamy ją w naszym języku? Cóż, o wiele łatwiej jest powiedzieć komuś &quot;pi&quot; niż &quot;trzy punkty jeden cztery jeden pięć dziewięć dwa sześć pięć&quot;! Takie nazewnictwo znacznie upraszcza życie, a ponadto oznacza, że jeśli wartość zmiennej kiedykolwiek się zmieni, nie musimy wszędzie zmieniać liczby, ponieważ <i>nazwa</i> zmiennej pozostaje taka sama.</p>
+  <p>Podczas tworzenia zmiennych w <b>GML</b> nazwa zmiennej musi zaczynać się od litery lub symbolu podkreślenia &quot;_&quot; i może zawierać tylko litery, cyfry i symbol podkreślenia &quot;_&quot; o maksymalnej długości 64 symboli. Zatem poprawne zmienne to takie elementy, jak <span class="inline">fish</span>, <span class="inline">foo_bar</span>, <span class="inline">num1</span> lub <span class="inline">_str</span>, natomiast niepoprawne to <span class="inline">6fish</span>, <span class="inline">foo bar</span> lub <span class="inline">*num</span>.</p>
+  <p>W wielu językach programowania przed użyciem zmiennej należy utworzyć jej &quot;przypisanie&quot;. Zasadniczo oznacza to, że podajemy komputerowi nazwę, której chcemy użyć dla zmiennej, i przypisujemy jej wartość początkową. Następnie zmienna otrzymuje miejsce w pamięci, w którym może przechowywać wartość lub wykonywać na niej operacje. Przypisanie zmiennej ma postać:</p>
+  <p class="code">&lt;variable&gt; = &lt;expression&gt;;</p>
+  <p>Wyrażenie może być prostą wartością, ale może też być bardziej skomplikowane, więc zamiast przypisywać wartość zmiennej, można też dodać wartość do bieżącej wartości zmiennej, na przykład za pomocą <span class="inline"><b>+=</b></span>:</p>
+  <p class="code">a = 100;   // Assigning a simple value<br />
+    b = 200;<br />
+    c = 300;<br />
+    a += b;    // Assigning with operation<br />
+    a = b + c; // Assigning with expression</p>
+  <p class="note"><span class="note">UWAGA</span> Strona <span class="notranslate">GameMaker Language</span> akceptuje również adresy &quot;<span class="inline">:=</span>&quot;, choć nie jest to najczęstszy sposób ich wykonywania:</p>
+  <p class="code">&lt;variable&gt; := &lt;expression&gt;;</p>
+  <p>Podobnie, można odejmować za pomocą <span class="inline"><b>-=</b></span>, mnożyć za pomocą <span class="inline"><b>*=</b></span>, dzielić za pomocą <span class="inline"><b>/=</b></span>, lub używać operatorów bitowych za pomocą <span class="inline"><b>|=</b></span>, <span class="inline"><b>&amp;=</b></span>, lub <span class="inline"><b>^=</b></span>. Można również dodawać lub odejmować <i>jeden</i> od wartości za pomocą <span class="inline"><b>++</b></span>, <span class="inline"><b>--</b></span>. Więcej informacji można znaleźć w sekcji <a href="Expressions_And_Operators.htm">Wyrażenia i operatory</a>.</p>
+  <p>Należy pamiętać, że <i>nie można</i> wykonać poniższych czynności (ani żadnej ich odmiany):</p>
+  <p class="code">a = b = c = 4;</p>
+  <p>Zamiast tego należy to zrobić w następujący sposób:</p>
+  <p class="code">a = 4;<br />
+    b = 4;<br />
+    c = 4;</p>
+  <p>Przedstawione powyżej przypisania zmiennych są zmiennymi <strong>instancji </strong>, ale w rzeczywistości istnieją trzy inne główne kategorie zmiennych w programie <span class="notranslate">GameMaker Studio 2</span>, a każda z nich ma swój własny <strong>zakres </strong>(który można uznać za obszar działania lub zasięg). Różne rodzaje zmiennych i ich zakres są opisane na następnych stronach:</p>
+  <ul class="colour">
+    <li><a href="Variables/Local_Variables.htm">Zmienne lokalne</a></li>
+    <li><a href="Variables/Instance_Variables.htm">Zmienne instancji</a></li>
+    <li><a href="Variables/Global_Variables.htm">Zmienne globalne</a></li>
+    <li><a href="Variables/Constants.htm">Stałe</a></li>
+  </ul>
+  <p>Strona <span class="notranslate">GameMaker Language</span> zawiera także wiele różnych zmiennych wbudowanych, które mogą mieć dowolny z wyżej wymienionych zakresów (z wyjątkiem <i>lokalnego</i>). Zmienne te są specjalne, ponieważ są domyślnie dołączane do <span class="notranslate">objects</span> i <span class="notranslate">rooms</span> w świecie gry. Niektóre z wbudowanych zmiennych globalnych wymieniono we wspomnianej powyżej sekcji, a w różnych częściach instrukcji dotyczących <span class="notranslate">sprites</span>, <span class="notranslate">rooms</span>, <span class="notranslate">objects</span>, itd. również opisano zmienne wbudowane dostępne w każdym przypadku. Przykładami takich wbudowanych zmiennych instancji mogą być:</p>
+  <ul class="colour">
+    <li><span class="inline"><a href="../GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm">sprite_index</a></span></li>
+    <li><a href="../GML_Reference/Asset_Management/Paths/Path_Variables/path_index.htm"><span class="inline">path_scale</span></a></li>
+    <li><a href="../GML_Reference/Asset_Management/Instances/Instance_Variables/speed.htm"><span class="inline">speed</span></a></li>
+  </ul>
+  <p>Przykładami wbudowanych zmiennych globalnych mogą być:</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Cameras_And_Display/Cameras_And_Viewports/view_xport.htm"><span class="inline">view_xport</span></a></li>
+    <li><a href="../GML_Reference/OS_And_Compiler/GM_version.htm"><span class="inline">GM_version</span></a></li>
+    <li><a href="../GML_Reference/Asset_Management/Rooms/room.htm"><span class="inline">room</span></a></li>
+  </ul>
+  <p>Większość zmiennych wbudowanych można zmieniać i ustawiać tak jak inne zmienne, a niektóre z nich mogą być nawet <a href="Arrays.htm">tablicami</a>, tyle że nie trzeba ich ustawiać, aby je utworzyć, tak jak w przypadku zwykłej zmiennej, ponieważ są one już zainicjowane na wartość domyślną.</p>
+  <p>Na koniec należy wspomnieć o kilku funkcjach służących do ustawiania, pobierania lub sprawdzania zmiennych, dostępnych na następnej stronie:</p>
+  <ul class="colour">
+    <li><a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">Funkcje zmienne</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="GML_Overview.htm">Przegląd GML</a></div>
+        <div style="float:right">Następny: <a data-xref="{title}" href="Data_Types.htm">Typy danych</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+variables
+variables - built-in
+variables - scope
+declaring variables
+scope
+built-in variables
+-->
+  <!-- TAGS
+variables
+-->
+</body>
+</html>

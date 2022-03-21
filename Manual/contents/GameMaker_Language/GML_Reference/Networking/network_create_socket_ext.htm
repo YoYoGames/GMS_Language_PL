@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_create_socket_ext</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <script src="../../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_create_socket_ext" />
+  <meta name="rh-index-keywords" content="network_create_socket_ext,network_socket_tcp,network_socket_udp,network_socket_ws" />
+  <meta name="search-keywords" content="network_create_socket_ext,network_socket_tcp,network_socket_udp,network_socket_ws" />
+  <meta name="is_pure" content="true" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_create_socket_ext</h1>
+  <p>Ta funkcja służy do tworzenia nowego gniazda klienckiego dla Twojej gry do komunikacji przez sieć. Musisz określić typ gniazda (patrz lista stałych poniżej) i podać port, który ma być używany, a funkcja zwróci unikalny <i>identyfikator</i>, który powinien być używany we wszystkich dalszych wywołaniach funkcji dla tego gniazda, lub wartość mniejszą niż 0, jeśli połączenie nie powiedzie się.</p>
+  <div data-conref="../../../assets/snippets/network_socket_types.hts"> </div>
+  <p> </p>
+  <h4>Składnia:</h4>
+  <p class="code">network_create_socket_ext(protocol, port);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th><th>Typ</th>
+        <th>Opis</th>
+     </tr>
+      <tr>
+        <td><span class="notranslate">protocol</span></td><td><span data-keyref="Type_Constant_Network_Socket_Type"></span></td>
+        <td><span class="notranslate">The network protocol to use</span></td>
+     </tr>
+      <tr>
+        <td><span class="notranslate">port</span></td><td><span data-keyref="Type_Real"></span></td>
+        <td><span class="notranslate">The port to use</span></td>
+     </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Zwroty:</h4>
+  <p class="code"><span data-keyref="Type_ID_Network_Socket">Network Socket ID</span></p>
+  <p> </p>
+  <h4>Przykład:</h4>
+  <p class="code">client = network_create_socket_ext(network_socket_udp, 6510);</p>
+  <p>Powyższy kod utworzy nowe gniazdo UDP na porcie 6510.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="Networking.htm">Praca w sieci</a></div>
+        <div style="float:right">Następny: <a href="network_connect.htm"><span class="notranslate">network_connect</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_create_socket_ext
+-->
+  <!-- TAGS
+network_create_socket_ext
+-->
+</body>
+</html>

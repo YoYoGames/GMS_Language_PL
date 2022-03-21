@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Przeglądarka zasobów</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <script src="../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="GMS2 Asset Browser Overview" />
+  <meta name="rh-index-keywords" content="Asset Browser" />
+  <meta name="search-keywords" content="Asset Browser,Assets,filter,tags,favourites,quick access" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Przeglądarka <span class="notranslate">Asset</span> </h1>
+  <p>Rdzeń Twojej gry zostanie utworzony ze strony <span class="notranslate">assets</span> dodanej do <strong>Przeglądarki zasobów</strong>, znajdującej się domyślnie po prawej stronie <a class="glossterm" data-glossterm="IDE" href="#">IDE</a>. W tym miejscu można dodać wszystko, co jest potrzebne do uruchomienia gry, w tym grę <span class="notranslate">room</span>, <a class="glossterm" data-glossterm="sprite'y" href="#">sprite</a>'y, <span class="notranslate">objects</span>, <span class="notranslate">paths</span> i wiele innych rzeczy. Podstawowa gra w <span class="notranslate">GameMaker Studio 2</span> wymaga do działania adresu <span class="notranslate">room</span> (nowe projekty są zawsze tworzone z już utworzonym adresem <span class="notranslate">room</span> <span class="notranslate">asset</span> ), a także zazwyczaj co najmniej jednego adresu <span class="notranslate">object</span> i jednego adresu <span class="notranslate">sprite</span>, choć prawdopodobnie będziesz ich używać znacznie więcej!</p>
+  <p><img alt="The Asset Browser Components" class="center" src="../assets/Images/Introduction/QS_AssetBrowser.png" /></p>
+  <p>Przeglądarka <span class="notranslate">Asset</span> to miejsce, w którym tworzysz i organizujesz stronę <span class="notranslate">assets</span> dla swojej gry, a także modyfikujesz niektóre inne aspekty, takie jak ustawienia i konfiguracje specyficzne dla danej platformy. Poniżej znajdują się objaśnienia poszczególnych sekcji.</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down" href="#">Pasek wyszukiwania</a></p>
+  <div class="droptext" data-targetname="drop_down">
+    <p class="dropspot">Na pasku wyszukiwania można wpisać tekst i użyć go do filtrowania zawartości głównej listy <span class="notranslate">asset</span>. Na przykład wpisanie słowa &quot;pokój&quot; spowoduje wyświetlenie wszystkich stron <span class="notranslate">assets</span>, które zawierają w nazwie słowo &quot;pokój&quot;. Aby zresetować listę <span class="notranslate">asset</span> 
+      z powrotem do domyślnego widoku, wystarczy usunąć tekst z paska wyszukiwania.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down1" href="#">Dodaj aktywa</a></p>
+  <div class="droptext" data-targetname="drop_down1">
+    <p class="dropspot">Za pomocą przycisku Dodaj <span class="notranslate">Asset</span> można dodać do listy <span class="notranslate">asset</span> nową stronę <span class="notranslate">asset</span>. Kliknięcie tego przycisku spowoduje otwarcie następującego okna:</p>
+    <p class="dropspot"><img alt="Create Asset Window" class="center" src="../assets/Images/Introduction/QS_AssetBrowser_AddAsset.png" /></p>
+    <p class="dropspot">Możesz wybrać jeden z dwóch powyższych widoków, klikając ikonę listy <img> lub siatki <img>. Możesz także kliknąć ikonę importu <img>, aby zaimportować istniejący już widok <span class="notranslate">asset</span> z innego projektu. Jeśli nie chcesz nic importować, po prostu
+      wybierz stronę <span class="notranslate">asset</span>, którą chcesz utworzyć, i kliknij przycisk Utwórz znajdujący się w dolnej części okna. Zauważ, że nie jesteś ograniczony do dodania tylko jednej strony <span class="notranslate">asset</span>, ponieważ w dolnej części okna możesz ustawić liczbę do utworzenia, a następnie kliknąć przycisk Utwórz i ta liczba
+      wybranej strony <span class="notranslate">asset</span> zostanie dodana do wyszukiwarki <span class="notranslate">asset</span>. Wszystkie utworzone w ten sposób strony <span class="notranslate">assets</span> zostaną dodane na dole listy <span class="notranslate">asset</span>, poza wszelkimi folderami, a także zostaną otwarte w bieżącym oknie <span class="notranslate">workspace</span> i będą gotowe do edycji.</p>
+    <p class="dropspot">Adresy <span class="notranslate">assets</span>, które można dodać w tym miejscu, są wymienione w dalszej części instrukcji.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down2" href="#">Filtr</a></p>
+  <div class="droptext" data-targetname="drop_down2">
+    <p class="dropspot">Kliknięcie przycisku <span class="notranslate">Asset</span> Filter (Filtr ) spowoduje otwarcie następującego okna:</p>
+    <p class="dropspot"><img>W tym miejscu można wybrać sposób filtrowania i wyświetlania stron <span class="notranslate">assets</span> wymienionych w przeglądarce <span class="notranslate">asset</span>. Można je uporządkować od A do Z lub od
+      Z - A, a także uporządkować najpierw foldery, a następnie <span class="notranslate">assets</span> w folderach lub uporządkować wszystko razem. Jeśli wybierzesz filtr <strong>Custom Order</strong>, możesz zaznaczyć jedną lub więcej stron <span class="notranslate">assets</span> i przeciągnąć je w górę lub w dół drzewa
+      <span class="notranslate">asset</span> w górę lub w dół drzewa przeglądarki i dowolnie je rozmieszczać (należy pamiętać, że opcja &quot;najpierw foldery&quot; zostanie wyłączona).</p>
+    <p class="dropspot">Możesz także wybrać jeden lub więcej typów <span class="notranslate">asset</span> do filtrowania, a na liście <span class="notranslate">assets</span> będą widoczne tylko te <span class="notranslate">asset</span>, które znajdują się w projekcie danego typu. Wybranie opcji &quot;Dowolny typ&quot; spowoduje wyzerowanie filtra. Można także filtrować za pomocą dowolnych tagów, które zostały
+      (znaczniki zostały omówione w dalszej części instrukcji). Zwróć uwagę, że jeśli wybrano filtr inny niż &quot;Dowolny typ&quot;, przycisk filtra zmieni kolor, aby wizualnie wskazać, że filtrowanie jest aktywne.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down3" href="#">Dodatki</a></p>
+  <div class="droptext" data-targetname="drop_down3">
+    <p class="dropspot">Menu Dodatki umożliwia otwieranie następujących okien (każde z nich jest omówione osobno na stronach, do których prowadzą odnośniki):</p>
+    <ul class="colour">
+      <li class="dropspot"><a href="../Settings/The_Room_Manager.htm">Kierownik sali</a></li>
+      <li class="dropspot"><a href="../Settings/Configurations.htm">Config Editor</a></li>
+      <li class="dropspot"><a href="../Settings/Game_Options.htm">Opcje gry</a></li>
+      <li class="dropspot"><a href="../Settings/Included_Files.htm">Dołączone pliki</a></li>
+    </ul>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down4" href="#">Szybki dostęp</a></p>
+  <div class="droptext" data-targetname="drop_down4">
+    <p class="dropspot">Ta część przeglądarki <span class="notranslate">asset</span> służy do udostępniania różnych metod szybkiego dostępu do ważnych lub często używanych stron <span class="notranslate">assets</span> i jest podzielona na następujące sekcje:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Ostatnio</strong> używane: Tutaj można znaleźć listę ostatnio używanych stron <span class="notranslate">assets</span>. Domyślnie na liście znajduje się maksymalnie 10 stron <span class="notranslate">assets</span>, ale można to zmienić w <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Asset_Browser_Preferences.htm">Preferencjach przeglądarki zasobów</a>.</li>
+      <li class="dropspot"><strong>Ulubione</strong>: Po dodaniu niektórych stron <span class="notranslate">assets</span> do listy <span class="notranslate">asset</span> możesz mieć kilka takich, do których często wracasz w danym momencie, więc aby ułatwić sobie pracę, możesz <span class="notranslate">flag</span> te strony <span class="notranslate">assets</span> oznaczyć jako &quot;ulubione&quot;, co spowoduje dodanie ich
+        do tej listy i pozwoli szybko je znaleźć. Aby ustawić stronę <span class="notranslate">flag</span> <span class="notranslate">asset</span> jako <em>ulubioną</em>, kliknij na niej prawym przyciskiem myszy <img> i wybierz z menu podręcznego opcję Ulubione. Uwaga:
+        że możesz ponownie użyć prawego przycisku myszy <img>, aby <em>usunąć </em>ulubioną stronę <span class="notranslate">asset</span>, a jeśli użyjesz przycisku na głównym folderze Ulubione, możesz wybrać opcję <em>Wyczyść</em> wszystko, aby usunąć wszystko.</li>
+      <li class="dropspot"><strong>Kolejność pomieszczeń</strong>: W tym miejscu można zmienić kolejność, w jakiej będą uruchamiane strony <span class="notranslate">rooms</span>. Wszystkie projekty wymagają do działania co najmniej jednego <span class="notranslate">room</span>, a <span class="notranslate">room</span> na początku listy jest &quot;domem&quot; <span class="notranslate">room</span> i będzie pierwszym <span class="notranslate">room</span> wprowadzonym przy
+        przy uruchamianiu gry (jest oznaczony ikoną &quot;domu&quot; <img>). Aby szybko zmienić kolejność stron <span class="notranslate">room</span>, kliknij przycisk <img> i przeciągnij stronę <span class="notranslate">room</span> w górę lub w dół listy, a następnie zwolnij przycisk myszy, aby umieścić ją na nowej pozycji. Jeśli klikniesz ikonę &quot;domu&quot;, otworzy się <strong>Menedżer pokoi</strong>, a jeśli użyjesz prawego przycisku myszy <img> na stronie <span class="notranslate">room</span>, możesz utworzyć pokój <strong>dziecięcy </strong>. Więcej informacji na temat kolejności <span class="notranslate">room</span> i dzieci <span class="notranslate">rooms</span> można znaleźć na stronie poświęconej <a href="../Settings/The_Room_Manager.htm">programowi Room Manager</a>.</li>
+      <li class="dropspot"><strong>Zapisane filtry</strong>: Podczas korzystania z opcji filtrowania możesz zapisać dokonany wybór, aby móc go wykorzystać w przyszłości. W tym celu należy skonfigurować filtr, jak wyjaśniono w dalszej części tej strony, a następnie kliknąć prawym przyciskiem myszy <img> na tej opcji i wybrać opcję <em>Zapisz</em> filtr. Filtr zostanie zapisany na tej liście i w razie potrzeby będzie można zmienić jego nazwę. Aby użyć filtra, wystarczy dwukrotnie kliknąć na nim przycisk <img> lub użyć prawego przycisku myszy <img> i wybrać opcję menu <em>Zastosuj filtr</em>. Zapisane filtry można także <em>usuwać </em>i <em>zmieniać </em>ich nazwy
+        filtry z menu RMB <img>.</li>
+      <li class="dropspot"><strong>Znaczniki</strong>: Wszystkim witrynom <span class="notranslate">assets</span> w przeglądarce <span class="notranslate">Asset</span> można przypisać zdefiniowane przez użytkownika <strong>znaczniki</strong>. Będą one wyświetlane w tym miejscu i można ich używać do filtrowania stron <span class="notranslate">assets</span> wyświetlanych na liście <span class="notranslate">asset</span>. Dwukrotne kliknięcie dowolnego znacznika na stronie <img> (lub użycie prawego przycisku myszy <img> - opcja <em>Filtruj według</em> znacznika) powoduje zastosowanie tego znacznika do filtrowania listy <span class="notranslate">asset</span>.
+        Wszystkie zastosowane tagi są widoczne w dolnej części przeglądarki <span class="notranslate">asset</span> w sekcji <strong>Informacje </strong>. Więcej informacji na temat znaczników można znaleźć w dalszej części tej strony.</li>
+      <li class="dropspot"><strong>Opcje gry</strong>: W tym miejscu można szybko uzyskać dostęp do różnych <strong>opcji gry</strong> dla swojego projektu. Kontrolują one różne aspekty projektu związane z konfiguracją i kompilacją dla różnych platform
+        platformy docelowe (to, jakie opcje gry są dostępne, zależy od rodzaju posiadanej licencji). Więcej informacji na temat każdej z wymienionych opcji można znaleźć w sekcji Opcje <a href="../Settings/Game_Options.htm">gry</a>.</li>
+    </ul>
+    <div class="droptext" data-targetname="drop_down8">
+      <p class="dropspot"> </p>
+    </div>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down11" href="#">Lista aktywów</a></p>
+  <div class="droptext" data-targetname="drop_down11">
+    <p class="dropspot">W tej części przeglądarki <span class="notranslate">asset</span> znajduje się lista wszystkich różnych stron <span class="notranslate">assets</span> używanych w grze. Domyślnie - po utworzeniu nowego projektu - będzie ona zawierała wiele grup folderów oznaczonych różnymi rodzajami <span class="notranslate">assets</span>, które można
+      Można jednak zmieniać ich nazwy, a nawet je usuwać, i nie trzeba w każdej grupie przechowywać <span class="notranslate">assets</span> tego samego rodzaju. Na przykład bardziej użyteczne może być utworzenie grupy <span class="notranslate">assets</span> dla każdego poziomu gry niż dla każdego rodzaju gry.
+     <span class="notranslate">asset</span> Możesz więc utworzyć grupy folderów o nazwach &quot;Level 1&quot;, &quot;Level 2&quot; itd. i przechowywać wszystkie różne <span class="notranslate">assets</span> dla każdego poziomu w tym samym folderze. Sposób organizacji zależy tylko od Ciebie!</p>
+    <p class="dropspot"><img> Aby dodać nowy zasób <span class="notranslate">asset</span> do listy, można użyć przycisku <strong>Dodaj</strong> zasób w górnej części przeglądarki <span class="notranslate">Asset</span> lub otworzyć
+      prawym przyciskiem myszy menu <img> w dowolnym miejscu na liście <span class="notranslate">asset</span>, a następnie wybrać zasób do utworzenia:</p>
+    <p class="dropspot"><img> Po utworzeniu <span class="notranslate">asset</span> zostanie on otwarty w <span class="notranslate">workspace</span> i będzie można zmienić jego nazwę na odpowiednią dla danej gry.
+      Pamiętaj jednak, że nazwy <span class="notranslate">asset</span> mogą być wyłącznie alfanumeryczne, nie mogą zaczynać się od cyfry i mogą zawierać wyłącznie podkreślenie &quot;_&quot; jako znak dodatkowy. Możesz też użyć menu prawego przycisku myszy, aby utworzyć nowe grupy folderów z aktywami
+     <strong>Grupy</strong> te mogą mieć dowolne nazwy. Jeśli chcesz zmienić nazwę dowolnego folderu <span class="notranslate">asset</span> lub grupy folderów, możesz wykonać powolne dwukrotne kliknięcie <img> lub użyć opcji <em>Zmień</em> nazwę w menu RMB <img>.</p>
+    <p class="dropspot">Ważną cechą wyszukiwarki <span class="notranslate">asset</span> jest możliwość kolorowania stron <span class="notranslate">assets</span>, aby były lepiej rozpoznawalne na liście. Można to zrobić, klikając prawym przyciskiem myszy <img> na węźle listy <span class="notranslate">asset</span> po lewej stronie, a następnie wybierając kolor z wyświetlonej palety kolorów. Jeśli wykonasz tę czynność na folderze, kolorowane będą także wszystkie znajdujące się w nim strony <span class="notranslate">asset</span>:</p>
+    <p class="dropspot"><img>Zwróć uwagę, że po otwarciu palety kolorów z takiego węzła możesz kliknąć prawym przyciskiem myszy <img> na dowolną próbkę koloru, aby wygenerować własny kolor do użycia.</p>
+    <p class="dropspot">Poszczególne strony <span class="notranslate">assets</span> można także kolorować niezależnie od koloru grupy, używając RMB <img> na notatce <span class="notranslate">asset</span> lub korzystając z palety na dole menu RMB <img> (choć można to wyłączyć w <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Asset_Browser_Preferences.htm">Preferencjach przeglądarki zasobów</a>).
+      możesz użyć <img> lub <img> / <img> wraz z lewym przyciskiem myszy <img>, aby zaznaczyć wiele <span class="notranslate">assets</span> i przypisać kolor do wszystkich
+      im jednocześnie:</p>
+    <p class="dropspot"><img alt="List Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_List.png" width="20" /></p>
+    <p class="dropspot">Sposób kolorowania zależy od Ciebie - może to być typ <span class="notranslate">asset</span>, zastosowanie lub dowolne inne kryteria!</p>
+    <p class="dropspot">Ostatnią rzeczą, na którą należy zwrócić uwagę w przypadku listy <span class="notranslate">asset</span>, jest to, że można zaznaczyć foldery i <span class="notranslate">assets</span>, a następnie kliknąć <img> i przeciągnąć je, aby przenieść je z dowolnej grupy folderów lub do dowolnej innej grupy folderów na liście .
+     <span class="notranslate">asset</span> Można także usunąć dowolną lub wszystkie grupy folderów, jeśli nie są one potrzebne, co pozwala zachować porządek na liście assset i wyświetlać tylko elementy wymagane w projekcie.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down6" href="#">Informacje</a></p>
+  <div class="droptext" data-targetname="drop_down6">
+    <p class="dropspot">Pasek informacyjny w dolnej części przeglądarki <span class="notranslate">Asset</span> pokazuje, ile stron <span class="notranslate">assets</span> znajduje się łącznie na liście <span class="notranslate">asset</span>, a także liczbę stron <span class="notranslate">assets</span>, które są aktualnie zaznaczone. W tej sekcji są również wyświetlane wszystkie tagi, które zostały użyte do filtrowania listy zasobów
+      (więcej informacji na temat znaczników znajduje się w dalszej części rozdziału). W razie potrzeby można je kliknąć, aby usunąć filtr znaczników.</p>
+    <p class="dropspot"><img alt="Grid Icon" class="icon" src="../assets/Images/Icons/Icon_Grid.png" /></p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down7" href="#">Elementy sterujące powiększeniem</a></p>
+  <div class="droptext" data-targetname="drop_down7">
+    <p class="dropspot">Za pomocą elementów sterujących powiększeniem można powiększać lub pomniejszać zawartość przeglądarki <span class="notranslate">asset</span> w zakresie od minimum 50% do maksimum 250% bieżącego DPI przeglądarki <span class="notranslate">GameMaker Studio 2</span> <span class="notranslate">IDE</span>. Aby przywrócić domyślne 100%, wystarczy dwukrotnie kliknąć
+      <img> wartość procentową znajdującą się po lewej stronie suwaka. Należy pamiętać, że w <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Asset_Browser_Preferences.htm">Preferencjach przeglądarki zasobów</a> dostępnych jest kilka preferencji dotyczących sposobu działania.
+    </p>
+  </div>
+  <p> </p>
+  <p> </p>
+  <h1>Tagi</h1>
+  <p>Jak wspomniano w różnych częściach powyżej, przeglądarka <span class="notranslate">asset</span> umożliwia dodawanie tagów do poszczególnych <span class="notranslate">assets</span> oraz do folderów grupowych. Znaczniki są bardzo użytecznym narzędziem, nie tylko do organizowania i filtrowania stron <span class="notranslate">assets</span> w przeglądarce <span class="notranslate">asset</span>, ale także podczas programowania gry, ponieważ można używać przypisanych znaczników w kodzie.</p>
+  <p>Aby utworzyć znacznik, należy użyć menu RMB <img> na stronie <span class="notranslate">asset</span>, a następnie wybrać opcję <em>Edycja znacz</em> ników. Spowoduje to wyświetlenie <strong>edytora znacz</strong> ników, w którym można wpisać znacznik, którego chcemy użyć, a następnie nacisnąć przycisk <img> lub wpisać przecinek, aby go zastosować:</p>
+  <p><img>Do jednego elementu można przypisać wiele znaczników, można też użyć <img> lub <img> / <img> wraz z lewym przyciskiem myszy <img>, aby zaznaczyć wiele elementów <span class="notranslate">assets</span> i przypisać znacznik do wszystkich z nich jednocześnie. Po dodaniu wszystkie znaczniki będą widoczne w menu szybkiego dostępu, a także w opcjach filtrowania (jak wyjaśniono w rozdziałach powyżej), dzięki czemu można ich używać do szybkiego filtrowania listy <span class="notranslate">asset</span> i wyświetlania tylko tych elementów, które mają wybrany znacznik lub znaczniki.</p>
+  <p class="note"><strong>UWAGA</strong>: Przypisanie znacznika do grupy folderów <strong>nie </strong>spowoduje automatycznego przypisania go do strony <span class="notranslate">assets</span> znajdującej się w tej grupie.</p>
+  <p>Należy pamiętać, że strony <span class="notranslate">assets</span>, które są tworzone, gdy znaczniki są częścią aktywnego filtra, otrzymają <strong>te znaczniki automatycznie</strong>. Oznacza to, że jeśli na przykład przeglądasz wszystkie strony <span class="notranslate">assets</span> pod tagiem &quot;Poziom 1&quot;, to wszystkie nowe strony <span class="notranslate">assets</span> utworzone z aktywnym filtrem będą miały przy tworzeniu dodany tag &quot;Poziom 1&quot;.</p>
+  <p>Wreszcie, znaczników można także używać w kodzie projektu do identyfikowania dowolnego adresu <span class="notranslate">asset</span> i podejmowania na jego podstawie działań, co czyni z nich bardzo potężne narzędzie, ponieważ można kodować zachowania na podstawie znacznika lub grupy znaczników. Na przykład, wyobraź sobie, że masz projekt ze znacznikiem &quot;<span class="inline">Die On Touch</span>&quot;. Podczas programowania projektu możesz sprawdzić ten znacznik i zakodować odpowiednią funkcjonalność, a później artyści i projektanci poziomów mogą tworzyć nowe strony <span class="notranslate">assets</span> dowolnego typu i oznaczać je znacznikiem &quot;<span class="inline">Die On Touch</span>&quot;, a następnie używać <span class="notranslate">asset</span> podczas projektowania poziomu. Każdy kod, który został zaprogramowany do używania tego znacznika, będzie automatycznie uwzględniał te nowe <span class="notranslate">assets</span>.</p>
+  <p>Więcej informacji na temat używania znaczników w kodzie projektu można znaleźć w rozdziale <a href="../GameMaker_Language/GML_Reference/Asset_Management/Assets_And_Tags/Assets_And_Tags.htm">Aktywa i znaczniki</a>.</p>
+  <p> </p>
+  <p> </p>
+  <h1>Menu RMB</h1>
+  <p>Podczas pracy z przeglądarką <span class="notranslate">Asset</span> można użyć prawego przycisku myszy <img> na dowolnym zasobie lub folderze, aby otworzyć menu z opcjami:</p>
+  <p><img>Poniżej pokazujemy zawartość menu, które jest otwierane na stronie <span class="notranslate">asset</span> lub grupie folderów na liście <span class="notranslate">Asset</span> (w innych kontekstach będą widoczne niektóre z nich, ale nie wszystkie):</p>
+  <ul class="colour">
+    <li><strong>Create - </strong> tworzenie nowej strony <span class="notranslate">asset</span>. Po wybraniu tej opcji zostanie wyświetlona lista dostępnych typów <span class="notranslate">asset</span>, z której można wybrać jeden z nich. Zwróć uwagę, że jeśli otworzysz to menu na konkretnej stronie <span class="notranslate">asset</span>, pojawi się dodatkowa opcja utworzenia zasobu tego samego typu, wymieniona tuż poniżej, dzięki czemu nie będziesz musiał szukać typu <span class="notranslate">asset</span> na liście.</li>
+    <li><strong>Edytuj (Wszystkie) - </strong> otwiera edytor właściwości zasobów dla zaznaczonych zasobów lub grup folderów (zauważ, że możesz dwukrotnie kliknąć <img> na pojedynczym folderze <span class="notranslate">asset</span>, aby otworzyć go do edycji).</li>
+    <li><strong>Edytuj znacz</strong> niki - spowoduje otwarcie edytora znaczników, w którym można dodawać i usuwać znaczniki do wybranych zasobów lub grup folderów.</li>
+    <li>Zmień nazwę<strong>- </strong> zmiana nazwy strony <span class="notranslate">asset</span> lub grupy folderów.</li>
+    <li><strong>Duplikuj - </strong> tworzy duplikat zaznaczonej strony <span class="notranslate">asset</span> lub <span class="notranslate">assets</span>.</li>
+    <li><strong>Ulubione - </strong> Oznacz stronę <span class="notranslate">asset</span> lub <span class="notranslate">assets</span> jako ulubioną, dodając ją do sekcji szybkiego dostępu w górnej części przeglądarki <span class="notranslate">Asset</span>.</li>
+    <li><strong>Add Existing (Dodaj</strong> istniejące) - dodanie istniejącej strony <span class="notranslate">assets</span> z innego folderu projektu <span class="notranslate">GameMaker Studio 2</span>. Należy pamiętać, że strony <span class="notranslate">assets</span> utworzone w wersji starszej niż 2.3.0 będą wymagały konwersji, ponieważ format plików projektu uległ zmianie wraz z aktualizacją 2.3.0. Oznacza to, że jeśli strona <span class="notranslate">assets</span> jest często importowana do innych projektów, lepszym rozwiązaniem może być zaimportowanie całego projektu i przekonwertowanie wszystkiego, a następnie zapisanie w nowej lokalizacji.</li>
+    <li><strong>Dodaj istniejące z mojej biblioteki</strong> - dodaj <span class="notranslate">assets</span> do listy <span class="notranslate">asset</span> z pozycji w swojej bibliotece <span class="notranslate">Marketplace</span>. Należy pamiętać, że strona <span class="notranslate">Marketplace</span> <span class="notranslate">assets</span> utworzona przy użyciu wersji wcześniejszej niż 2.3.0 będzie wymagała konwersji, ponieważ format pliku projektu uległ zmianie wraz z aktualizacją 2.3.0.</li>
+    <li><strong>Usuń - </strong> usuwa zaznaczony składnik (składniki) z projektu. Nie można tego cofnąć!</li>
+    <li><strong>Create Group (Utwórz grupę</strong> ) - dodanie nowej grupy folderów do listy <span class="notranslate">asset</span>.</li>
+    <li><strong>Rozwiń dzieci</strong> - umożliwia rozwinięcie aktualnie zaznaczonej grupy folderów wraz z zawartymi w niej podfolderami.</li>
+    <li><strong>Rozwiń wszystkie</strong> - powoduje rozwinięcie wszystkich grup folderów na liście <span class="notranslate">asset</span>.</li>
+    <li>Kontraktuj<strong>wszystko</strong> - Kontraktuj wszystkie grupy folderów z listy <span class="notranslate">asset</span>.</li>
+    <li><strong>Otwórz w nowej przeglądarce <span class="notranslate">Asset</span> </strong> - ta opcja jest dostępna tylko dla grup folderów i powoduje otwarcie grupy w nowym oknie przeglądarki <span class="notranslate">Asset</span> zawierającym tylko zawartość grupy nadrzędnej, dla której wybrano tę opcję.</li>
+    <li><strong>Otwórz w eksp</strong> loratorze - spowoduje to otwarcie eksploratora plików w miejscu, w którym znajduje się plik zapisany dla danego zasobu w folderze projektu.</li>
+    <li><strong>Próbki kolorów</strong> - W tym miejscu można wybrać nowy kolor, który ma być używany przez stronę <span class="notranslate">asset</span>. Jeśli użyjesz go w grupie folderów, wszystkie strony <span class="notranslate">assets</span> w obrębie folderu otrzymają wybrany kolor, a jeśli użyjesz go w jednej lub więcej witrynach <span class="notranslate">assets</span>, spowoduje to nadpisanie wszystkich kolorów ustawionych dla grupy folderów (chyba że nadpisałeś tę opcję w <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Asset_Browser_Preferences.htm">Preferencjach przeglądarki zasobów</a>).</li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <h1>Rodzaje aktywów</h1>
+  <p>Teraz, gdy już wiesz, jak działa przeglądarka <span class="notranslate">Asset</span>, powinieneś poznać różne typy stron <span class="notranslate">asset</span>, które możesz do niej dodać. Poniżej przedstawiamy przegląd różnych typów <span class="notranslate">asset</span>, które można wykorzystać w swoich projektach:</p>
+  <p> </p>
+  <p style="margin-left: 48px"><img alt="Import Icon" class="icon" src="../assets/Images/Icons/Icon_Import.png" />  <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down17" href="#">Krzywe animacji</a>
+    <undefined data-targetname="drop_down8"></undefined>
+  </p>
+  <div class="droptext" data-targetname="drop_down17">
+    <p class="dropspot">Strona <span class="notranslate">animation curve</span> to zasób zawierający jedną lub więcej krzywych przedstawiających zmiany wartości w czasie. Do przechodzenia między wartościami na krzywej można użyć <a class="glossterm" data-glossterm="interpolacja liniowa" href="#">interpolacji liniowej</a> lub <a class="glossterm" data-glossterm="interpolacja katmull-rom" href="#">interpolacji katmull-rom</a>. Ustawione wartości mogą zawierać się w przedziale od -1 do 1 na osi pionowej, a czas trwania na osi poziomej jest zawsze znormalizowany od 0 do 1.
+      w kodzie gry. <span class="notranslate">Animation curves</span> składa się z &quot;kanałów&quot;, a każdy kanał może mieć własne ustawienia krzywej, co pozwala na przykład opisać pozycję przestrzenną za pomocą dwóch kanałów dla pozycji
+      <span class="notranslate">Animation curve</span> <span class="notranslate">assets</span> można używać podczas pracy z <span class="notranslate">sequences</span>, a dostęp do nich można uzyskać także za pomocą kodu, co czyni je potężnym narzędziem do tworzenia gier.</p>
+    <p class="dropspot">Więcej informacji na temat dodawania adresu <span class="notranslate">animation curves</span> można znaleźć w części poświęconej <a href="../The_Asset_Editors/Animation_Curves.htm">krzywym animacji</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p style="margin-left: 48px"><img> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down9" href="#">Rozszerzenia</a></p>
+  <div class="droptext" data-targetname="drop_down9">
+    <div class="droptext" data-targetname="drop_down9">
+      <p class="dropspot">Rozszerzenia to dodatkowe pliki i kod, które można dodać, aby rozszerzyć funkcjonalność <span class="notranslate">GameMaker Studio 2</span> oraz dodać <span class="notranslate">assets</span> do swojej gry z <a href="The_Marketplace.htm">Rynku</a>. Format pliku <span class="notranslate">extension</span> różni się w zależności od
+        platformy docelowej, ale na ogół są one napisane w języku C++, C# lub JavaScript.</p>
+    </div>
+    <p class="dropspot">Więcej informacji na temat dodawania strony <span class="notranslate">extensions</span> można znaleźć w rozdziale poświęconym <a href="../The_Asset_Editors/Extensions.htm">edytorowi rozszerzeń</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p style="margin-left: 48px"><img> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down12" href="#">Czcionki</a></p>
+  <div class="droptext" data-targetname="drop_down12">
+    <p class="dropspot">Kiedy chcesz narysować tekst w swojej grze, będzie on domyślnie narysowany standardową czcionką Arial 12 punktów <span class="notranslate">font</span>, ale aby stworzyć bardziej interesujący lub unikalnie wyglądający tekst, prawdopodobnie będziesz chciał użyć innej <span class="notranslate">fonts</span>. Do tego celu służy <strong>Edytor czcionek</strong>. Tutaj możesz wybrać czcionkę <span class="notranslate">font</span>, którą masz na swoim komputerze i zaimportować ją do <span class="notranslate">GameMaker Studio 2</span>, aby użyć jej w swojej grze, ustawiając różne atrybuty, takie jak rozmiar, waga czy styl. Po zaimportowaniu i dodaniu jako zasób możesz ustawić ją do
+      rysowania za pomocą odpowiedniego kodu lub akcji.</p>
+    <div class="dropspotnote"><strong>UWAGA</strong>: Jeśli dodajesz do swojej gry stronę <span class="notranslate">fonts</span>, upewnij się, że posiadasz licencję niezbędną do jej dalszego rozpowszechniania, chyba że jest to własność publiczna lub wolna od praw autorskich.</div>
+    <p class="dropspot">Menu RMB <img> na stronie <span class="notranslate">fonts</span> zawiera następujące opcje (oraz inne wymienione w dalszej części tej strony):</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Przypisz grupę <span class="notranslate">Texture</span> </strong> - po wybraniu tej opcji zostanie wyświetlona lista dostępnych grup <span class="notranslate">texture</span>. Można wybrać jedną z nich, do której zostanie dodana grupa <span class="notranslate">font</span>, lub utworzyć nową, jeśli jest to wymagane. Jeśli wybrano wiele stron <span class="notranslate">fonts</span> 
+        w przeglądarce <span class="notranslate">Asset</span> - lub wybrano folder grupowy <span class="notranslate">fonts</span> - wszystkie te pliki zostaną dodane do wybranej grupy <span class="notranslate">texture</span>. Więcej informacji na temat grup <span class="notranslate">texture</span> można znaleźć <a href="../Settings/Texture_Groups.htm">tutaj</a>.</li>
+      <li class="dropspot"><strong>Regeneruj czcionkę</strong> - ta opcja pozwala zmusić witrynę <span class="notranslate">GameMaker Studio 2</span> do<strong>zregenerowania czcionki</strong> <span class="notranslate">font</span> <span class="notranslate">cache</span>. Zwykle jest to wymagane tylko wtedy, gdy<strong>czcionka</strong> <span class="notranslate">font</span> jest uszkodzona lub uległa zmianie w systemie.</li>
+    </ul>
+    <p class="dropspot"><img>Więcej informacji na temat dodawania adresu <span class="notranslate">fonts</span> można znaleźć w części poświęconej <a href="../The_Asset_Editors/Fonts.htm">edytorowi czcionek</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p style="margin-left: 48px"><img> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down13" href="#">Uwagi</a></p>
+  <div class="droptext" data-targetname="drop_down13">
+    <p class="dropspot">Notatki to po prostu okna edytora kodu, w których można pisać cokolwiek. Są one zaprojektowane jako miejsce do przechowywania fragmentów kodu, informacji o grze, list rzeczy do zrobienia, komunikatów dla zespołu itp.</p>
+    <p class="dropspot">Więcej informacji na temat dodawania notatek można znaleźć w części poświęconej <a href="../The_Asset_Editors/Notes.htm">edytorowi notatek</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p style="margin-left: 48px"><img> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down14" href="#">Obiekty</a></p>
+  <div class="droptext" data-targetname="drop_down14">
+    <p class="dropspot">Obiekty to specjalne zasoby, których używamy do kontrolowania różnych aspektów gry oraz do wykonywania określonych czynności. W większości przypadków mają one przypisane <a class="glossterm" data-glossterm="sprite'y" href="#">sprite</a> 'y, dzięki czemu można je zobaczyć w grze.
+     <span class="notranslate">room</span> ale czasami są one używane jako kontroler &quot;za kulisami&quot;, który robi rzeczy związane z użytkownikiem, synchronizacją itp. Można im przypisać określone zachowania i mogą one reagować na pewne zdarzenia, a także na siebie nawzajem.
+      Większość rzeczy, które można zobaczyć w grze, opiera się na stronie <span class="notranslate">objects</span> i ich interakcjach. Zauważ, że mówimy &quot;na podstawie&quot;, ponieważ tak naprawdę nie umieszczasz <span class="notranslate">objects</span> bezpośrednio w grze <span class="notranslate">room</span>, ale raczej umieszczasz <strong>instancje </strong>tych <span class="notranslate">objects</span>, które
+      są w zasadzie kopiami (lub klonami, jeśli wolisz) zasobu <span class="notranslate">object</span>. Jest to bardzo ważna rzecz do zapamiętania, ponieważ instancje i <span class="notranslate">objects</span> to nie to samo i każda z nich ma swój własny zestaw funkcji, które mogą na nie wpływać.</p>
+    <p class="dropspot">Wszystkie strony <span class="notranslate">objects</span> mają zestaw właściwości, które można określić w edytorze <span class="notranslate">object</span>, np. <span class="notranslate">sprite</span>, czy używają <a class="glossterm" data-glossterm="fizyka" href="#">fizyki</a>, czy nie, lub czy są &quot;dzieckiem&quot; <span class="notranslate">object</span> innej strony.
+      Mają też szereg wbudowanych zmiennych, których można używać w akcjach, <span class="notranslate">scripts</span> i kodzie. Te wbudowane zmienne są używane do określania pozycji instancji w grze <span class="notranslate">room</span>, szybkości animacji, kierunku ruchu
+      i wielu innych rzeczy. Aby kontrolować zachowanie <span class="notranslate">object</span> w czasie, każda klatka gry jest podzielona na serię zdarzeń, dzięki czemu możesz dodać kod lub akcję do konkretnego zdarzenia, które zostanie uruchomione tylko wtedy, gdy zostanie ono wywołane.
+      Zdarzenia mogą być wywoływane przez takie rzeczy, jak naciśnięcia przycisków myszy lub kolizje z innymi obiektami.</p>
+    <p class="dropspot">Obiekty są w bardzo realnym sensie elementami konstrukcyjnymi gry i wraz z witryną <span class="notranslate">rooms</span> stanowią rdzeń każdego tworzonego projektu.</p>
+    <p class="dropspot">Menu RMB <img> na stronie <span class="notranslate">objects</span> zawiera następujące opcje (oraz inne wymienione w dalszej części tej strony):</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Otwórz wszystkie skrypty zdarzeń</strong> - wybranie tej opcji spowoduje otwarcie wszystkich zdarzeń przypisanych do strony <span class="notranslate">object</span> w nowym oknie <span class="notranslate">workspace</span> jako zakładki <span class="notranslate">script</span>.</li>
+    </ul>
+    <p class="dropspot"><img>Więcej informacji na temat dodawania adresu <span class="notranslate">objects</span> można znaleźć w rozdziale poświęconym <a href="../The_Asset_Editors/Objects.htm">Edytorowi obiektów</a>.</p>
+    <p class="dropspot"> </p>
+    <p><strong></strong></p>
+  </div>
+  <p style="margin-left: 48px"><img> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down18" href="#">Ścieżki</a></p>
+  <div class="droptext" data-targetname="drop_down18">
+    <p class="dropspot">W pewnym momencie tworzenia gry może zajść potrzeba, aby instancja jednego z <span class="notranslate">objects</span> podążała za <span class="notranslate">path</span> przez poziom. Można to zrobić, po prostu tworząc tablicę pozycji w <span class="notranslate">room</span>, a następnie każąc instancji poruszać się między nimi,
+      ale może to być trudne do skonfigurowania i trudno jest to zmienić, przetestować i dostosować do różnych rzeczy. Właśnie wtedy warto utworzyć zasób <span class="notranslate">path</span>.</p>
+    <p class="dropspot">Podstawowa idea zasobu <span class="notranslate">path</span> jest dość prosta - definiujesz stronę <span class="notranslate">path</span>, rysując ją w edytorze <span class="notranslate">path</span>, a następnie możesz umieścić akcję (lub kod) w zdarzeniu <span class="notranslate">object</span>, aby nakazać stronie <span class="notranslate">object</span> podążanie za tą konkretną stroną <span class="notranslate">path</span> w grze <span class="notranslate">room</span>. Możesz
+      ustawić prędkość podążania za <span class="notranslate">path</span> oraz wiele innych działań związanych z pozycją i orientacją <span class="notranslate">path</span> w obrębie <span class="notranslate">room</span>.</p>
+    <p class="dropspot">Więcej informacji na temat dodawania adresu <span class="notranslate">paths</span> można znaleźć w części poświęconej <a href="../The_Asset_Editors/Paths.htm">edytorowi ścieżek</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p style="margin-left: 48px"><img> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down19" href="#">Pokoje</a></p>
+  <div class="droptext" data-targetname="drop_down19">
+    <p class="dropspot">Wszystkie gry tworzone w <span class="notranslate">GameMaker Studio 2</span> wymagają do działania co najmniej jednego <span class="notranslate">room</span> (ale mogą mieć wiele, wiele więcej), a <span class="notranslate">room</span> to miejsce, w którym umieszcza się instancje <span class="notranslate">objects</span> tworzące grę i w którym rozgrywa się akcja gry.
+      w której będzie się toczyć akcja gry. Edytor <span class="notranslate">Room</span> jest jednak jednym z najpotężniejszych zasobów dostępnych dla Ciebie, ponieważ pozwala nie tylko dodawać instancje <span class="notranslate">objects</span>, ale także ustawiać &quot;widok&quot; na grę <span class="notranslate">room</span>, dodawać tła i <span class="notranslate">tiles</span>, które są rysowane
+      tworzenie świata gry, tworzenie dodatkowych efektów specjalnych, które są niezależne od systemu obiektów/instancji, a także uruchamianie kodu niezależnie od <span class="notranslate">object</span>. <span class="notranslate">Rooms</span> można również ustawić tak, aby <strong>dziedziczył </strong>właściwości z innych <span class="notranslate">rooms</span>, co oznacza, że
+      że można na przykład utworzyć pojedynczą witrynę <span class="notranslate">room</span> z ładunkiem <span class="notranslate">tiles</span>, a następnie utworzyć kolejną witrynę <span class="notranslate">room</span>, która będzie zawierać <span class="notranslate">inherits</span> te <span class="notranslate">tiles</span>, dzięki czemu nie trzeba będzie tworzyć ich ponownie.</p>
+    <p class="dropspot">Menu RMB <img> na stronie <span class="notranslate">rooms</span> zawiera następujące opcje (oraz inne wymienione w dalszej części tej strony):</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Utwórz pokój dziecięcy</strong> - spowoduje utworzenie nowego adresu <span class="notranslate">room</span> jako dziecka wybranego adresu <span class="notranslate">room</span>. Dziecko <span class="notranslate">rooms</span> to nowa witryna <span class="notranslate">room</span> <span class="notranslate">assets</span>, która <span class="notranslate">inherit</span> właściwości, warstwy i zawartość warstw z witryny nadrzędnej <span class="notranslate">room</span> i będzie wyświetlana jako powiązana z witryną nadrzędną
+        <span class="notranslate">room</span> w programie <a href="../Settings/The_Room_Manager.htm">Room Manager</a>.</li>
+    </ul>
+    <p class="dropspot"><img>Więcej informacji na temat dodawania adresu <span class="notranslate">rooms</span> można znaleźć w części poświęconej <a href="../The_Asset_Editors/Rooms.htm">edytorowi sal</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p style="margin-left: 48px"><img> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down20" href="#">Skrypty</a></p>
+  <div class="droptext" data-targetname="drop_down20">
+    <p class="dropspot">Zasób <span class="notranslate">script</span> to po prostu kontener dla jednej lub wielu funkcji, które napisałeś. Na przykład, powiedzmy, że chcesz, aby wszyscy wrogowie <span class="notranslate">objects</span> po śmierci tworzyli różne instancje, takie jak złoto, eksplozja i krew, a także
+      a także odtwarzać dźwięk. Mógłbyś dodać cały wymagany kod do każdej strony <span class="notranslate">object</span>, która tego wymaga, ale generalnie lepiej będzie utworzyć jedną funkcję w zasobach <span class="notranslate">script</span> i wywołać ją. Oznacza to, że wystarczy dodać tylko jeden wiersz
+      kodu do <span class="notranslate">objects</span>, aby wywołać tę nową funkcję skryptową, a jeśli chcesz coś zmienić, wystarczy, że zmienisz to tylko raz w <span class="notranslate">script</span>, a wszystkie <span class="notranslate">objects</span> automatycznie uruchomią nowy kod, zamiast przechodzić przez każdą <span class="notranslate">object</span> i
+      zmieniać tę samą rzecz w wielu miejscach.</p>
+    <p class="dropspot">Menu RMB <img> na stronie <span class="notranslate">scripts</span> zawiera następujące opcje (oraz inne wymienione w dalszej części tej strony):</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Konwertuj do DnD™ / GML</strong> - spowoduje to konwersję wybranej strony <span class="notranslate">script</span> do DnD™ lub <span class="notranslate">GML</span>. Jeśli strona <span class="notranslate">script</span> to <span class="notranslate">GML</span>, zostanie ona umieszczona w akcji <a href="../Drag_And_Drop/Drag_And_Drop_Reference/Common/Execute_Code.htm">Wykonaj kod</a>,
+        natomiast DnD™ zostanie przetłumaczone bezpośrednio na kod <span class="notranslate">GML</span> (jak pokazano w rozdziale <a href="../Drag_And_Drop/Drag_And_Drop_Overview/Changing_DnD_To_Code.htm">Zmiana DnD™ na</a> kod).</li>
+    </ul>
+    <p class="dropspot"><img>Więcej informacji na temat dodawania adresu <span class="notranslate">scripts</span> można znaleźć w części poświęconej <a href="../The_Asset_Editors/Scripts.htm">edytorowi skryptów</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p style="margin-left: 48px"><img> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down21" href="#">Sekwencje</a></p>
+  <div class="droptext" data-targetname="drop_down21">
+    <p class="dropspot">Strona <span class="notranslate">sequence</span> <span class="notranslate">asset</span> jest zasadniczo zbiorem innych zasobów, które wykonują dynamiczną animację w czasie. Mogą one zawierać <span class="notranslate">sprites</span>, instancje, dźwięki i inne elementy, a każdy z nich można ustawić tak, by się poruszał, zmieniał kolor lub zaczynał/zatrzymywał w czasie
+      w ramach samej strony <span class="notranslate">sequence</span>, przypisując stronę <span class="notranslate">assets</span> do określonych <strong>ścieżek </strong>w witrynie <span class="notranslate">sequence</span>. Do tych ścieżek można następnie zastosować różne atrybuty, które mogą być statyczne lub zmieniać się w czasie. Cała edycja strony <span class="notranslate">sequence</span> odbywa się
+      się w <strong>Edytorze sekwencji</strong>, który składa się z:</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"> <strong>płótno - </strong> miejsce, w którym umieszczane są strony <span class="notranslate">assets</span> tworzące sekwencję </li>
+      <li class="dropspot"> <strong>Panel</strong> ścieżek - gdzie można umieścić stronę <span class="notranslate">assets</span>, aby utworzyć ścieżki <span class="notranslate">asset</span>, a także utworzyć ścieżki parametrów, aby manipulować stroną <span class="notranslate">assets</span> w czasie</li>
+      <li class="dropspot"><strong>Dope Sheet</strong> - to miejsce, w którym można dodawać/usuwać/edytować stronę <span class="notranslate">keyframes</span> każdego utworu i kontrolować, jak zachowują się one w czasie.</li>
+    </ul>
+    <p class="dropspot">Należy pamiętać, że w obrębie strony <span class="notranslate">sequences</span> można umieścić stronę <span class="notranslate">sequences</span>, aby tworzyć złożone animacje i efekty, a strona <span class="notranslate">sequences</span> może być również dostępna i zmieniana za pomocą kodu, aby zapewnić jak największą kontrolę nad sposobem wyświetlania i używania tych elementów w grze.</p>
+    <p class="dropspot">Więcej informacji na temat dodawania adresu <span class="notranslate">sequences</span> można znaleźć w części poświęconej<a href="../The_Asset_Editors/Sequences.htm">edytorowi sekwencji</a> <strong> </strong><a href="../The_Asset_Editors/Sequences.htm"></a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p style="margin-left: 48px"><img> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down22" href="#">Shadery</a></p>
+  <div class="droptext" data-targetname="drop_down22">
+    <p class="dropspot">Shadery to bardzo potężne narzędzie, które można wykorzystać do manipulowania grafiką renderowaną przez grę na ekranie, co pozwala na uzyskanie niezwykle szybkich efektów, począwszy od np. dodania subtelnego odcienia koloru do strony <span class="notranslate">sprite</span>, aż po pełnoekranowe
+      efekty zniekształcenia. Zasadniczo jest to dwuczęściowy program, który działa bezpośrednio na karcie graficznej, co czyni go bardzo szybkim, ponieważ procesor graficzny wykonuje całą pracę, i zwalnia cykle procesora centralnego (CPU) na potrzeby kodu gry. Pełna wersja <span class="notranslate">shader</span> składa się z programu do obsługi wierzchołków
+      <span class="notranslate">shader</span> oraz fragmentu <span class="notranslate">shader</span> (znanego także jako pixel <span class="notranslate">shader</span>). Oba te małe programy współpracują ze sobą, aby manipulować tym, co karta graficzna renderuje na ekranie. Pozwala to na manipulowanie w czasie rzeczywistym położeniem,
+      kolorem i wartościami alfa, które są faktycznie renderowane na ekranie <span class="notranslate">buffer</span>.</p>
+    <p class="dropspot">GameMaker Studio 2 obsługuje następujące języki <span class="notranslate">shader</span>:</p>
+    <table class=" cke_show_border">
+      <tbody>
+        <tr>
+          <th>Język shaderów</th>
+          <th>Platforma docelowa</th>
+        </tr>
+        <tr>
+          <td>GLSL ES </td>
+          <td>Wszystkie platformy docelowe</td>
+        </tr>
+        <tr>
+          <td>GLSL</td>
+          <td>Mac i <span class="notranslate">Ubuntu</span> (<span class="notranslate">Linux</span>)</td>
+        </tr>
+        <tr>
+          <td>HLSL11</td>
+          <td>Windows, UWP, XboxOne</td>
+        </tr>
+        <tr>
+          <td>PSSL</td>
+          <td>Playstation 4</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="dropspot">   <br> Menu RMB <img> na stronie <span class="notranslate">shaders</span> zawiera następujące opcje (oraz inne wymienione w dalszej części tej strony):</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Typ shadera</strong> - tutaj można ustawić typ języka <span class="notranslate">shader</span>, który jest używany dla zasobu <span class="notranslate">shader</span>.</li>
+    </ul>
+    <p class="dropspot"><img alt="Asset Browser Filter Options" class="center" src="../assets/Images/Introduction/QS_AssetBrowser_AssetFilter.png" /></p>
+    <p class="dropspot">Więcej informacji na temat dodawania strony <span class="notranslate">shaders</span> można znaleźć w rozdziale poświęconym <a href="../The_Asset_Editors/Shaders.htm">edytorowi cieni</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p style="margin-left: 48px"><img> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down23" href="#">Brzmi:</a></p>
+  <div class="droptext" data-targetname="drop_down23">
+    <p class="dropspot"><strong></strong>Dźwięk jest ważnym elementem każdej gry, zarówno ze względu na dodawanie głębi do rozgrywki i przekazywanie informacji zwrotnych w postaci efektów dźwiękowych, jak i dodawanie atmosfery w postaci muzyki. <span class="notranslate">GameMaker Studio 2</span> akceptuje <span class="inline">WAV</span>,
+     <span class="inline">MP3 </span>oraz <span class="inline">OGG</span>.
+    </p>
+    <p class="dropspot">Ogólnie rzecz biorąc, pliki <span class="inline">WAV</span> są używane do krótkich efektów dźwiękowych, ponieważ mimo że są to większe pliki, będą odtwarzane natychmiast, ponieważ nie wymagają żadnego rodzaju dekodowania. Pliki <span class="inline">MP3</span> i <span class="inline">OGG</span> powinny być używane do muzyki w tle lub innych efektów, które są odtwarzane przez dłuższy czas lub mają dość duży rozmiar. Pliki te są znacznie mniejsze niż pliki WAV, ale wiąże się z nimi <a class="glossterm" data-glossterm="koszty ogólne procesora" href="#">obciążenie procesora</a>, ponieważ przed odtworzeniem muszą zostać zdekodowane.</p>
+    <p class="dropspot">Menu RMB <img> dla dźwięków zawiera następujące opcje (oraz te wymienione w dalszej części tej strony):</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Otwórz w mik</strong> serze dźwięków - spowoduje otwarcie wszystkich wybranych dźwięków w <a href="../IDE_Tools/Sound_Mixer.htm">mikserze dźwię</a>ków.</li>
+      <li class="dropspot"><strong>Przypisz grupę dźwię</strong> kową - po wybraniu tej opcji zostanie wyświetlona lista dostępnych grup dźwiękowych, z której można wybrać jedną, do której zostanie dodany dźwięk, lub w razie potrzeby utworzyć nową grupę. Jeśli wybrano wiele dźwięków
+        w przeglądarce <span class="notranslate">Asset</span> - lub wybrano folder grupy dźwięków - wówczas wszystkie dźwięki zostaną dodane do wybranej grupy dźwiękowej. Więcej informacji o grupach dźwiękowych można znaleźć <a href="../Settings/Audio_Groups.htm">tutaj</a>.</li>
+    </ul>
+    <p class="dropspot"><img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png" /></p>
+    <p class="dropspot">Więcej informacji na temat dodawania dźwięków można znaleźć w części poświęconej <a href="../The_Asset_Editors/Sounds.htm">edytorowi dźwię</a>ków.</p>
+    <p class="dropspot"> </p>
+    <p><strong></strong></p>
+  </div>
+  <p style="margin-left: 48px"><img> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down24" href="#">Sprites</a></p>
+  <div class="droptext" data-targetname="drop_down24">
+    <p class="dropspot">Sprite'y to zazwyczaj wizualne reprezentacje <span class="notranslate">objects</span> w tworzonych grach. Strona <span class="notranslate">sprite</span> jest obrazem narysowanym za pomocą <strong>edytora</strong> obrazów <span class="notranslate">GameMaker Studio 2</span> lub wykonanym w dowolnym zewnętrznym programie do rysowania i zaimportowanym do GameMaker
+      Studio 2. Używany obraz nie musi być pojedynczą, statyczną rzeczą... może to być także obraz &quot;paskowy&quot;, tzn. wiele obrazów w jednym pliku, które można następnie wykorzystać do stworzenia pojedynczej animacji <span class="notranslate">sprite</span>. Na przykład
+      10 obrazów tworzy stronę <span class="notranslate">sprite</span> dla postaci, która macha rękami podczas skoku ze spadochronem.<br>
+      <img> Po umieszczeniu w grze gotowa animacja wyglądałaby tak:
+    </p>
+    <p class="dropspot"><img> Taki plik <span class="notranslate">sprite</span> to zwykle plik w formacie <span class="inline">PNG</span>, ale <span class="notranslate">GameMaker Studio 2</span> akceptuje również sprite'y wektorowe
+      w formacie <span class="inline">SWF</span> oraz sprajty <strong>Spine </strong>w formacie <span class="inline">JSON</span> (z dołączonym do nich plikiem <span class="notranslate">texture</span> <span class="inline">atlas</span> ).</p>
+    <p class="dropspot">Menu RMB <img> dla strony <span class="notranslate">sprites</span> zawiera następujące opcje (oraz te wymienione w dalszej części strony):</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Przypisz grupę <span class="notranslate">Texture</span> </strong> - po wybraniu tej opcji zostanie wyświetlona lista dostępnych grup <span class="notranslate">texture</span>. Można wybrać jedną z nich, do której zostanie dodana grupa <span class="notranslate">sprite</span>, lub utworzyć nową, jeśli jest to wymagane. Jeśli wybrano wiele stron <span class="notranslate">sprites</span> 
+        w przeglądarce <span class="notranslate">Asset</span> - lub wybrano folder grupy <span class="notranslate">sprites</span> - wówczas wszystkie strony <span class="notranslate">sprites</span> zostaną dodane do wybranej grupy <span class="notranslate">texture</span>. Więcej informacji na temat grup <span class="notranslate">texture</span> można znaleźć <a href="../Settings/Texture_Groups.htm">tutaj</a>.</li>
+      <li class="dropspot"><strong>Create <span class="notranslate">Sprite</span> From Image(s)</strong> - Wybranie tej opcji spowoduje otwarcie eksploratora plików, w którym można wybrać jeden lub więcej obrazów, z których zostanie utworzona strona <span class="notranslate">sprite</span>. W przypadku wybrania wielu obrazów strona <span class="notranslate">sprite</span> zostanie utworzona z wieloma ramkami,
+        po jednej dla każdego wybranego obrazu.</li>
+      <li class="dropspot"><strong>Open In Image Editor (Otwórz</strong> w edytorze obrazów) - spowoduje otwarcie strony <span class="notranslate">sprite</span> w edytorze obrazów do edycji, bez uprzedniego otwierania edytora <span class="notranslate">Sprite</span>.</li>
+    </ul>
+    <p class="dropspot"><img alt="Icon RMB" class="icon" src="../assets/Images/Icons/Icon_RMB.png" /></p>
+    <p class="dropspot">Więcej informacji na temat dodawania adresu <span class="notranslate">sprites</span> można znaleźć w części poświęconej <a href="../The_Asset_Editors/Sprites.htm">edytorowi sprajtów</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p style="margin-left: 48px"><img> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down25" href="#">Tilesets</a></p>
+  <div class="droptext" data-targetname="drop_down25">
+    <p class="dropspot">Zestawy kafelków pochodzą z zasobów <span class="notranslate">sprite</span>, ale są klasyfikowane jako osobny zasób, ponieważ <span class="notranslate">GameMaker Studio 2</span> będzie je inaczej obsługiwać podczas tworzenia gry. Zasadniczo <span class="notranslate">tile set</span> to pojedynczy obraz, który <span class="notranslate">GameMaker Studio 2</span> podzieli na
+      oddzielne sekcje w zależności od wartości podanych przez Ciebie dla różnych ustawień. Możesz ich użyć w edytorze <span class="notranslate">room</span> (lub proceduralnie poprzez kod), aby wygenerować mapę <span class="notranslate">tile</span> w swojej grze <span class="notranslate">room</span>. Są one doskonałe do projektowania wszelkich statycznych elementów w witrynie <span class="notranslate">room</span>, takich jak
+      teren, ściany, tła itp., ponieważ nie mają one tego samego narzutu, co <span class="notranslate">objects</span>.</p>
+    <p class="dropspot"><img> Powyżej znajduje się przykład <span class="notranslate">sprite</span>, który może być użyty jako <span class="notranslate">tile set</span> do tworzenia ścian. Jak widać, można go &quot;podzielić&quot; na fragmenty o rozmiarach 64x64 pikseli, które
+      można następnie umieścić w edytorze <span class="notranslate">room</span>.</p>
+    <div class="dropspotnote"><span class="note">UWAGA</span> <span class="notranslate">Tiles</span> są zawsze kwadratowe, więc jeśli potrzebujesz czegoś innego, powinieneś użyć instancji z warstwą <span class="notranslate">sprite</span> lub <span class="notranslate">asset</span> w edytorze <span class="notranslate">room</span>.</div>
+    <p class="dropspot">Menu RMB <img> na stronie <span class="notranslate">tilesets</span> zawiera następujące opcje (oraz inne wymienione w dalszej części tej strony):</p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Przypisz grupę <span class="notranslate">Texture</span> </strong> - po wybraniu tej opcji zostanie wyświetlona lista dostępnych grup <span class="notranslate">texture</span>. Można wybrać jedną z nich, do której zostanie dodany zestaw kafelków, lub w razie potrzeby utworzyć nową. Jeśli w przeglądarce <span class="notranslate">tilesets</span> jest zaznaczonych kilka grup 
+        w przeglądarce <span class="notranslate">Asset</span> - lub wybrano folder grupy <span class="notranslate">tilesets</span> - to wszystkie one zostaną dodane do wybranej grupy <span class="notranslate">texture</span>. Więcej informacji o grupach <span class="notranslate">texture</span> można znaleźć <a href="../Settings/Texture_Groups.htm">tutaj</a>.</li>
+    </ul>
+    <p class="dropspot"><img alt="The Home Room Icon" class="icon" src="../assets/Images/Icons/Icon_AssetHome.png" /></p>
+    <p class="dropspot">Więcej informacji na temat dodawania strony <span class="notranslate">tilesets</span> można znaleźć w części poświęconej <a href="../The_Asset_Editors/Tile_Sets.htm">edytorowi zestawów płytek</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p style="margin-left: 48px"><img> <a class="dropspot" data-rhwidget="DropSpot" data-target="drop_down26" href="#">Linie czasowe</a></p>
+  <div class="droptext" data-targetname="drop_down26">
+    <p class="dropspot">W większości gier pewne rzeczy mają się dziać w określonym czasie. Można to osiągnąć za pomocą <em>zdarzeń alarmowych</em> w instancji, ale gdy sprawy staną się zbyt skomplikowane, nie będzie to już działać, zwłaszcza że
+      ogranicza się do zaledwie dwunastu alarmów. Dlatego właśnie mamy zasób <span class="notranslate">timeline</span>. W <span class="notranslate">timeline</span> określasz, jakie akcje muszą się wydarzyć w danym momencie w grze, i możesz użyć wszystkich akcji, które są dostępne dla <span class="notranslate">object</span> w jego różnych
+      zdarzeniach, a także w kodzie. Po utworzeniu linii czasu możesz przypisać ją do <span class="notranslate">object</span>, a instancja <span class="notranslate">object</span> wykona akcje i kod we wskazanych momentach czasu, gdy zostanie umieszczona lub utworzona w <span class="notranslate">room</span>.</p>
+    <p class="dropspot">Więcej informacji na temat dodawania strony <span class="notranslate">timelines</span> można znaleźć w części poświęconej <a href="../The_Asset_Editors/Timelines.htm">edytorowi osi czasu</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><br style="margin-left: 48px">
+    Aby uzyskać bardziej szczegółowe instrukcje dotyczące korzystania z poszczególnych edytorów wymienionych powyżej, należy zapoznać się z następującą częścią podręcznika:</p>
+  <ul class="colour">
+    <li><a href="../The_Asset_Editors/The_Asset_Editors.htm">Redakcja</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="Introduction_To_GameMaker_Studio_2.htm">Wprowadzenie do GameMaker Studio 2</a></div>
+        <div style="float:right">Następny: <a href="Compiling.htm">Kompilacja</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+Assets
+Asset Browser
+Asset Types
+Tags
+Favourites
+Resources
+Resource Types
+-->
+  <!-- TAGS
+resources
+resource_views
+sprites
+tilesets
+paths
+scripts
+fonts
+shaders
+timelines
+objects
+rooms
+included_files
+extensions
+notes
+configs
+rmb_menu
+project_view
+-->
+</body>
+</html>

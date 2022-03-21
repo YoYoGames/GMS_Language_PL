@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>network_send_broadcast</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
+  <script src="../../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for network_send_broadcast" />
+  <meta name="rh-index-keywords" content="network_send_broadcast" />
+  <meta name="search-keywords" content="network_send_broadcast" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>network_send_broadcast</h1>
+  <p>Za pomocą tej funkcji można rozgłaszać dane z adresu <span class="notranslate">buffer</span> lokalnie do zakresu adresów IP (więcej informacji na temat adresu <span class="notranslate">buffers</span> można znaleźć w części <a href="../Buffers/Buffers.htm">Odnośnik - Bufory</a>). Zakres jest ograniczony do zakresu urządzenia, na którym działa <span class="notranslate">server</span>, np. jeśli urządzenie ma adres IP 92.168.11.130, to dane zostaną rozesłane na zakres 92.168.11.*. Funkcja zwraca liczbę bajtów wysłanych danych lub liczbę mniejszą od 0, jeśli wysyłanie nie powiodło się.</p>
+  <p class="note"><b>UWAGA</b>: Ta funkcja będzie działać tylko w przypadku korzystania z protokołu UDP - witryna <span class="notranslate">server</span> musi być podłączona do protokołu TCP, a klient musi mieć gniazdo klienta UDP utworzone za pomocą protokołu <span style="font-size:1px;"><a href="network_create_socket_ext.htm"><span class="inline">network_create_socket_ext()</span></a></span> aby móc odbierać wszelkie transmisje wysyłane z <span class="notranslate">server</span>.</p>
+  <p class="note"><b>UWAGA</b>: Ta funkcja nie będzie działać, jeśli zostanie użyta w projekcie działającym na platformie docelowej HTML5.</p>
+  <p> </p>
+  <h4>Składnia:</h4>
+  <p class="code">network_send_broadcast(socket, port, bufferid, size);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th><th>Typ</th>
+        <th>Opis</th>
+     </tr>
+      <tr>
+        <td><span class="notranslate">socket</span></td><td><span data-keyref="Type_ID_Network_Socket"></span></td>
+        <td><span class="notranslate">The id of the socket to use.</span></td>
+     </tr>
+      <tr>
+        <td><span class="notranslate">port</span></td><td><span data-keyref="Type_Real"></span></td>
+        <td><span class="notranslate">The port that the server will use.</span></td>
+     </tr>
+      <tr>
+        <td><span class="notranslate">bufferid</span></td><td><span data-keyref="Type_ID_Buffer"></span></td>
+        <td><span class="notranslate">The id of the buffer to get the data from.</span></td>
+     </tr>
+      <tr>
+        <td><span class="notranslate">size</span></td><td><span data-keyref="Type_Real"></span></td>
+        <td><span class="notranslate">The size (in bytes) of the data.</span></td>
+     </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Zwroty:</h4>
+  <p class="code"><span data-keyref="Type_Real">Real</span></p>
+  <p> </p>
+  <h4>Przykład:</h4>
+  <p class="code">buffer_seek(broadcast_buffer, buffer_seek_start, 0);<br />
+    buffer_write(broadcast_buffer, buffer_string, global.ServerName);<br />
+    network_send_broadcast(server, 6511, broadcast_buffer, buffer_tell(broadcast_buffer));</p>
+  <p>Powyższy kod zapisuje nazwę <span class="notranslate">string</span> bieżącego adresu <span class="notranslate">server</span> (przechowywaną w pliku &quot;global.ServerName&quot;), a następnie zapisuje ją w pliku binarnym <span class="notranslate">buffer</span> o identyfikatorze &quot;broadcast_buffer&quot;. Dane te są następnie rozgłaszane lokalnie do szeregu adresów IP (adres IP urządzenia jest obecnie implikowany jako podstawowy zakres rozgłaszania) na porcie 6511.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="Networking.htm">Praca w sieci</a></div>
+        <div style="float:right">Następny: <a href="network_send_packet.htm"><span class="notranslate">network_send_packet</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+network_send_broadcast
+-->
+  <!-- TAGS
+network_send_broadcast
+-->
+</body>
+</html>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>wczytaj_csv</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
+  <script src="../../../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Reference page for load_csv" />
+  <meta name="rh-index-keywords" content="load_csv" />
+  <meta name="search-keywords" content="load_csv" />
+  <meta name="is_pure" content="true" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>wczytaj_csv</h1>
+  <p>Ta funkcja wczyta plik w formacie CSV i przekształci go w siatkę DS, zwracając unikatową wartość ID utworzonej siatki.</p>
+  <p> </p>
+  <h4>Składnia:</h4>
+  <p class="code">load_csv(filename)</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th><th>Typ</th>
+        <th>Opis</th>
+     </tr>
+      <tr>
+        <td><span class="notranslate">filename</span></td><td><span data-keyref="Type_String"></span></td>
+        <td><span class="notranslate">The name of the file to open (as a string)</span></td>
+     </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <h4>Zwroty:</h4>
+  <p class="code"><span data-keyref="Type_ID_DS_Grid">DS Grid ID</span></p>
+  <p> </p>
+  <h4>Przykład:</h4>
+  <p class="code">file_grid = load_csv(&quot;spreadsheet.csv&quot;);<br />
+    var ww = ds_grid_width(file_grid);<br />
+    var hh = ds_grid_height(file_grid);<br />
+    var xx = 32;<br />
+    var yy = 32;<br />
+    for (var i = 0; i &lt; ww; i++;)<br />
+    {<br />
+        for (var j = 0; j &lt; hh; j++;)<br />
+        {<br />
+            draw_text(xx, yy, string(file_grid[# i, j]));<br />
+            yy += 32;<br />
+        }<br />
+        yy = 32;<br />
+        xx += 32;<br />
+    }</p>
+  <p>Powyższy kod otworzy podany plik CSV i zapisze zwróconą siatkę DS w zmiennej &quot;file_grid&quot;. Siatka ta jest następnie parsowana w kilku krokach na stronie <span class="inline">for</span>, a jej zawartość jest rysowana na ekranie.</p>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="Encoding_And_Hashing.htm">Kodowanie plików</a></div>
+        <div style="float:right">Następny: <a href="json_encode.htm"><span class="notranslate">json_encode</span></a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+load_csv
+-->
+  <!-- TAGS
+load_csv
+-->
+</body>
+</html>

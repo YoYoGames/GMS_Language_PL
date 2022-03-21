@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Obiekty</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+  <script src="../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Mark Alexander" />
+  <meta name="topic-comment" content="Page detailing how the object editor works" />
+  <meta name="rh-index-keywords" content="Object Editor" />
+  <meta name="search-keywords" content="objects,object editor" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Redaktor <span class="notranslate">Object</span> </h1>
+  <p><img>Obiekty to zasoby, których używamy do kontrolowania aspektów gry i wykonywania określonych czynności. W większości przypadków mają one przypisany adres <span class="notranslate">sprite</span> 
+    aby można je było zobaczyć w grze <span class="notranslate">rooms</span>, ale czasami są używane jako kontrolery &quot;za kulisami&quot; do wykonywania czynności związanych z użytkownikiem lub do określania czasu itp. Można im przypisać określone zachowania i mogą one reagować na pewne zdarzenia, jak również na
+    Większość rzeczy, które można zobaczyć w grze, opiera się na stronie <span class="notranslate">objects</span> i ich interakcji. Mówimy &quot;na podstawie&quot;, ponieważ nie umieszczasz <span class="notranslate">objects</span> bezpośrednio w grze <span class="notranslate">rooms</span>, ale raczej umieszczasz <strong>instancje</strong> tych zasobów <span class="notranslate">objects</span>, które są w zasadzie kopiami (lub klonami, jeśli wolisz) zasobu <span class="notranslate">object</span>. Jest to bardzo ważna rzecz, o której należy pamiętać, ponieważ instancje i <span class="notranslate">objects</span> to <em>nie to samo</em>, a każda z nich ma własny zestaw funkcji, które mogą mieć na nie wpływ.
+    na nie.</p>
+  <p>Aby to wyjaśnić, pomyśl o grze stworzonej za pomocą <span class="notranslate">GameMaker Studio 2</span>. Wszystkie postacie, potwory, kule, ściany itp. to wszystko <span class="notranslate">objects</span>, które tworzysz w <a href="../Introduction/The_Asset_Browser.htm">Przeglądarce zasobów</a>. Następnie przeciągasz <em>obiekt </em>do
+    <span class="notranslate">room</span> w <a href="Rooms.htm">Edytorze pomieszczeń</a>, aby utworzyć <em>instancję </em>skopiowaną z podstawowego szablonu <span class="notranslate">object</span>. Instancję w <span class="notranslate">room</span> można następnie zmienić w samym edytorze lub za pomocą kodu, tak aby można było ją skalować, nadać jej kolor lub zmienić
+    inne szczegóły zmodyfikowane w stosunku do &quot;bazowego&quot; <span class="notranslate">object</span>. Kiedy więc mówimy, że coś wpływa na <strong>instancję</strong> lub ją zmienia, mamy na myśli, że wpływa to na tę <em>jedną konkretną kopię <span class="notranslate">object</span> w pomieszczeniu</em>. Tylko ta jedna instancja jest
+    ma wpływ, podczas gdy wszystkie pozostałe nie mają. Natomiast gdy mówimy o wpływaniu na <strong>obiekt</strong> lub jego zmianie, mamy na myśli, że modyfikujemy stronę <span class="notranslate">object</span> w przeglądarce <span class="notranslate">Asset</span> i wszystko, co z nią zrobimy, będzie miało wpływ na wszystkie instancje utworzone od tego momentu.
+    od tego momentu. Tak więc <span class="notranslate">object</span> jest szablonem dla instancji, a instancja jest tym, co umieszczamy w <span class="notranslate">room</span>, aby stworzyć naszą grę.</p>
+  <p>Aby utworzyć w grze witrynę <span class="notranslate">object</span>, kliknij prawym przyciskiem myszy witrynę <img> w przeglądarce <span class="notranslate">Asset</span> i kliknij opcję <em>Utwórz obiekt</em>. Spowoduje to otwarcie okna przedstawionego na
+    u góry tej strony, zawierające następujące sekcje:</p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Szczegóły</a></p>
+  <div class="droptext" data-targetname="drop-down">
+    <p class="dropspot">Tutaj możesz nadać nazwę swojej witrynie <span class="notranslate">object</span>. Nazwa ta nie powinna zawierać spacji ani niedozwolonych znaków (dozwolone są tylko znaki alfanumeryczne i znak &quot;_&quot;) i powinna być krótka, ale zapadająca w pamięć, aby można było łatwo zidentyfikować zasoby
+      aby można było łatwo zidentyfikować zasoby w późniejszym czasie, gdy będzie się ich miało wiele. Na przykład wiele osób używa przedrostka lub przyrostka, aby zidentyfikować różnice między zasobami, na przykład &quot;<span class="inline">obj_Ship</span>&quot; lub &quot;<span class="inline">Ship_obj</span>&quot;.</p>
+    <p class="dropspot">Następnie możesz wybrać adres <span class="notranslate">sprite</span> dla strony <span class="notranslate">object</span>, jeśli chcesz, aby była ona w nim umieszczona. Kliknij lewym przyciskiem myszy <img> na polu <span class="notranslate">sprite</span>, a pojawi się <strong>Eksplorator zasobów</strong> z listą wszystkich dostępnych <span class="notranslate">sprites</span> z przeglądarki <span class="notranslate">Asset</span>:</p>
+    <p class="dropspot"><img>Następnie możesz wybrać ten, którego chcesz użyć dla <span class="notranslate">object</span>. Mając <span class="notranslate">sprite</span> przypisany do <span class="notranslate">object</span>, możesz kliknąć przycisk <em>Edit Sprite</em> <img>, aby zmienić <a href="Sprites.htm">właściwości sprite</a>'a, lub - jeśli nie masz <span class="notranslate">sprite</span> dla <span class="notranslate">object</span>, ale chcesz go utworzyć - możesz kliknąć przycisk
+      przycisk <em>Add Sprite (Dodaj sprite</em> ) <img>, aby utworzyć nowy <span class="notranslate">sprite</span> <span class="notranslate">asset</span> i przypisać go. Możesz także edytować przypisany obrazek <span class="notranslate">sprite</span> <span class="notranslate">asset</span> 
+  <em>    </em> <img> <em>, klikając p</em> rzycisk Edit Image (Edytuj obraz) , aby otworzyć <a href="Image_Editor.htm">edytor obrazów</a>.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Maska antykolizyjna</a></p>
+  <div class="droptext" data-targetname="drop-down1">
+    <p class="dropspot">Pod obszarem przypisania <span class="notranslate">sprite</span> znajduje się przycisk umożliwiający wybranie określonej <strong>Maski</strong> kolizji. Domyślnie witryna <span class="notranslate">object</span> będzie generować właściwości kolizji na podstawie przypisanej do niej witryny <span class="notranslate">sprite</span>, ale w niektórych przypadkach można chcieć, aby
+      aby kolizje były oparte na innym kształcie z innej strony <span class="notranslate">sprite</span>. Na przykład w grze z widokiem z góry na dół główna witryna <span class="notranslate">sprite</span> ma prostokątną maskę kolizji, ale aby kolizje były bardziej płynne, lepsza może być maska okrągła. W takich przypadkach
+      możesz kliknąć przycisk Maska kolizji i wybrać inny zasób <span class="notranslate">sprite</span>, dzięki czemu instancje <span class="notranslate">object</span> będą <em>rysować </em>przypisaną im stronę <span class="notranslate">sprite</span>, ale <em>kolizje </em>będą bazować na masce <span class="notranslate">sprite</span>. Więcej informacji o maskach kolizji można znaleźć
+      Więcej informacji o maskach kolizji można znaleźć na stronie poświęconej <a href="Sprites.htm">edytorowi sprite</a>'ów.</p>
+    <p class="dropspot"> </p>
+  </div>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Właściwości</a></p>
+  <div class="droptext" data-targetname="drop-down2">
+    <p class="dropspot">W tym miejscu dostępne są następujące opcje dotyczące obiektu:<strong></strong></p>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Widoczny</strong>: Visible określa, czy instancje tej strony <span class="notranslate">object</span> są widoczne po uruchomieniu strony <span class="notranslate">room</span>. Zwykle większość instancji jest widoczna, ale czasami warto mieć niewidoczne - na przykład można ich użyć jako punktów orientacyjnych do
+        do sterowania poruszającym się potworem lub do śledzenia wartości i wykonywania określonych akcji w określonym czasie. Niewidzialne <span class="notranslate">objects</span> nadal będą reagować na zdarzenia, a jeśli mają przypisane <span class="notranslate">sprite</span> lub maskę, będą też reagować, gdy inne instancje zderzą się z nimi...
+        po prostu nie można ich zobaczyć i <em>nie </em>wykonują one swoich akcji <strong>rysowania</strong>. Domyślnie zaznaczona jest opcja widoczna <span class="notranslate">flag</span>.<strong></strong></li>
+      <li class="dropspot"><strong>Solid</strong>: Gdy <span class="notranslate">flag</span> instancji jest<strong>solidny</strong>, mówisz <span class="notranslate">GameMaker Studio 2</span>, że powinien spróbować rozwiązać wszelkie kolizje przed wywołaniem <strong>zdarzenia</strong> kolizji. Jest to bardzo podstawowa funkcjonalność i w rzeczywistości
+        w rzeczywistości wszystko, co robi, to cofnięcie instancji do pozycji, w której znajdowała się w chwili przed wykryciem kolizji, przed wykonaniem jakiegokolwiek kodu lub DnD™, który znajduje się w samym zdarzeniu kolizji, i jako taka ma ograniczone zastosowanie.</li>
+      <li class="dropspot"><strong>Trwały</strong>: Trwały <span class="notranslate">object</span> to taki, który nie znika po zmianie adresu <span class="notranslate">room</span>, ale raczej &quot;utrzymuje się&quot; i jest przenoszony do nowego <span class="notranslate">room</span>. Zniknie tylko wtedy, gdy go wyraźnie zniszczysz, albo za pomocą
+        akcji destroy lub w kodzie. Oznacza to, że jeśli umieścisz trwałą stronę <span class="notranslate">object</span> w jednej witrynie <span class="notranslate">room</span>, będzie ona nadal dostępna we wszystkich kolejnych <span class="notranslate">rooms</span> i będzie nadal wykonywać wszelkie akcje przypisane do zdarzeń we właściwościach <span class="notranslate">object</span>, <em>z wyjątkiem </em>zdarzenia
+       <strong>Create Event</strong>, które jest uruchamiane tylko <em>raz </em>, przy pierwszym utworzeniu, a nie przy zmianie na nową stronę <span class="notranslate">room</span>. Jest to przydatne, gdy na przykład masz głównego bohatera, który przenosi się z <span class="notranslate">room</span> na <span class="notranslate">room</span> i chcesz zachować
+        Należy jednak bardzo uważać, aby poprawnie tworzyć i niszczyć trwałe obiekty <span class="notranslate">objects</span>, ponieważ łatwo o pomyłkę, która może spowodować wkradnięcie się błędów do projektu.</li>
+    </ul>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#" style="margin-left:88px">Warstwy Persistence i <span class="notranslate">Room</span> </a>  </p>
+    <div class="droptext" data-targetname="drop-down7">
+      <p class="dropspot" style="margin-left: 132px">Po utworzeniu instancji z włączoną opcją trwałości w witrynie <span class="notranslate">room</span> zostanie jej przypisana warstwa lub głębokość (w zależności od tego, jakiej funkcji użyto do utworzenia instancji witryny <span class="notranslate">object</span>). Po zmianie adresu <span class="notranslate">room</span> i jeśli następująca po nim <span class="notranslate">room</span> nie ma
+        warstwy o takiej samej nazwie lub głębokości jak ta, która została przypisana, to<strong> dla instancji zostanie utworzona nowa warstwa, która będzie trwała w różnych pomieszczeniach</strong>. Jeśli podczas tworzenia instancji nadano nazwę warstwie, to nowa warstwa również
+        Jeśli podczas tworzenia instancji nadałeś jej nazwę, to nowa warstwa również będzie miała taką samą nazwę jak warstwa oryginalna, natomiast jeśli przypisałeś jej głębokość, to nowa warstwa będzie miała nazwę &quot;<span class="inline">_layer_XXX</span>&quot;, gdzie &quot;<span class="inline">XXX</span>&quot; to wartość heksadecymalna służąca do nadania warstwie unikalnej nazwy.
+        warstwie unikalną nazwę. Warstwy te zostaną usunięte z <span class="notranslate">room</span> na <strong>końcu pokoju</strong>.<br>
+        <br> Kolejną rzeczą, na którą należy zwrócić uwagę przy tworzeniu warstw i instancji trwałych, jest to, że jeśli podczas tworzenia instancji przypisałeś jej warstwę o tej samej nazwie, a w następnej części <span class="notranslate">rooms</span> znajduje się inna warstwa o tej samej nazwie, to instancja trwała zostanie przypisana
+        do warstwy o tej samej nazwie, niezależnie od głębokości warstwy.<br>
+        <br> Wreszcie, jeśli instancja persystowana zostanie przeniesiona na stronę <span class="notranslate">room</span> z warstwą na tej <em>samej</em> głębokości, na której została utworzona, <em>nie </em>zostanie przypisana do tej warstwy, lecz zostanie utworzona nowa warstwa na tej samej głębokości (zgodnie z konwencją nazewnictwa wyjaśnioną powyżej).
+        konwencję nazewnictwa wyjaśnioną powyżej).</p>
+    </div>
+    <p class="dropspot"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#" style="margin-left: 88px">Trwałość i zdarzenia</a></p>
+    <div class="droptext" data-targetname="drop-down6">
+      <p class="dropspot" style="margin-left: 132px">Jak wspomniano wcześniej, trwały obiekt <span class="notranslate">object</span> uruchomi swoje <strong>zdarzenie tworzenia</strong> tylko <em>raz</em>, ale w odpowiednim czasie będą też uruchamiane zdarzenia <strong>rozpoczęcia</strong> gry, <strong>zakończenia gry</strong>, <strong>rozpoczęcia</strong> i <strong>zakończenia</strong> <strong>pomieszczenia</strong>. Jeśli jednak zrestartujesz grę (np. za pomocą funkcji <span class="inline">game_restart()</span> ), <em>wszystkie trwałe <span class="notranslate">objects</span> zostaną usunięte i będą istnieć tylko wtedy, gdy zostaną ponownie utworzone przez grę</em>.<br>
+        <br> Pamiętaj też, że jeśli <strong>dezaktywujesz </strong>trwałą stronę <span class="notranslate">object</span>, nie będzie ona już przechodzić z jednej strony <span class="notranslate">room</span> na drugą, chyba że zostanie ponownie aktywowana przed wywołaniem zdarzenia <strong>końca pokoju</strong>. Ponowna aktywacja <em>wymaga wykonania pełnego kroku gry</em>,
+        więc użycie w tym celu zdarzenia <strong>zakończenia pomieszczenia</strong> nie działa, ponieważ nie daje grze pełnego kroku na ponowną aktywację <span class="notranslate">object</span>, więc musisz o tym pamiętać, używając dezaktywacji wraz z trwałym <span class="notranslate">objects</span> i odpowiednio zaplanować swój
+        kod odpowiednio.</p>
+    </div>
+    <ul class="dropspotlist">
+      <li class="dropspot"><strong>Korzysta z</strong> fizyki: Zaznaczając pole wyboru Wykorzystuje fizykę, informujesz stronę <span class="notranslate">GameMaker Studio 2</span>, że ta witryna <span class="notranslate">object</span> powinna być częścią świata fizyki (zgodnie z ustawieniami w<a href="Rooms.htm">edytorze pomieszczeń</a> <strong></strong><a href="Rooms.htm"></a>. Zaznaczenie tego pola spowoduje również
+        otworzy kolejne okno łańcuchowe, w którym można zdefiniować właściwości fizyczne wszystkich instancji tej strony <span class="notranslate">object</span>. Więcej informacji na ten temat można znaleźć w rozdziale <a href="Object_Properties/Physics_Objects.htm">Obiekty fizyki</a>.</li>
+    </ul>
+  </div>
+  <p> </p>
+  <p>Ostatnia część Edytora <span class="notranslate">Object</span> jest poświęcona różnym <strong>opcjom</strong> obiektów, z których każda została omówiona na osobnej stronie, do której odnośnik znajduje się poniżej:</p>
+  <ul class="colour">
+    <li><a href="Object_Properties/Object_Events.htm">Wydarzenia dotyczące obiektów</a></li>
+    <li><a href="Object_Properties/Parent_Objects.htm">Obiekty macierzyste</a></li>
+    <li><a href="Object_Properties/Physics_Objects.htm">Obiekty fizyczne</a></li>
+    <li><a href="Object_Properties/Object_Variables.htm">Zmienne obiektowe</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="The_Asset_Editors.htm">Redaktorzy Aktywów</a></div>
+        <div style="float:right">Następny: <a href="Paths.htm">Ścieżki</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+Object Editor
+Objects
+-->
+  <!-- TAGS
+object_editor
+-->
+</body>
+</html>
