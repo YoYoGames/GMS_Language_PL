@@ -1,0 +1,48 @@
+
+  
+  view_set_wport
+  Ta funkcja służy do ustawiania szerokości podanego portu widoku. Użytkownik podaje indeks portu widoku (od 0 do 7) oraz nową szerokość, która ma zostać użyta.
+   
+  Składnia:
+  view_set_wport(view_port, w)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        view_port
+        The view port to target (0 - 7)
+     
+      
+        w
+        The new width (in pixels)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if view_get_wport(0) != (display_get_width () / 2)
+    {
+        view_set_wport(0, display_get_width() / 2);
+    }
+  Powyższy kod sprawdzi szerokość portu widoku[0] i jeśli nie jest ona równa połowie szerokości wyświetlacza, zostanie ustawiona na tę wartość.
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: view_set_hport
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

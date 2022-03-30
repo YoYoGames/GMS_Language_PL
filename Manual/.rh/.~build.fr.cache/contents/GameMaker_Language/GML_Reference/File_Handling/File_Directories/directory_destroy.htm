@@ -1,0 +1,46 @@
+
+  
+  katalog_zniszcz
+  Ta funkcja usuwa katalog o podanej nazwie z obszaru zapisu.
+  UWAGA: Ta funkcja nie będzie działać w języku HTML5, ponieważ nie można tworzyć ani usuwać katalogów w lokalnej pamięci masowej przeglądarki.
+  OSTRZEŻENIE! Ta funkcja może nie działać zgodnie z oczekiwaniami użytkownika, ponieważ GameMaker Studio 2 jest sandboxed! Więcej informacji na ten temat można znaleźć w rozdziale System plików.
+   
+  Składnia:
+  directory_destroy(dname)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        dname
+        The name of the directory to remove.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if directory_exists("DLC")
+    {
+        directory_destroy("DLC");
+    }
+  Spowoduje to sprawdzenie, czy podany katalog istnieje w lokalnym folderze danych, a jeśli tak, to zostanie usunięty.
+   
+   
+   
+  
+    
+      
+        Powrót: Katalogi plików
+        Następny: temp_directory
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

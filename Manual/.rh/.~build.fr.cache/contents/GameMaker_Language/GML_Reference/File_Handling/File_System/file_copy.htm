@@ -1,0 +1,48 @@
+
+  
+  plik_kopia
+  Ta funkcja skopiuje określony plik, nadając mu nową, wybraną przez użytkownika nazwę.
+  Jeśli kopiujesz plik na Android z obszaru Dołączone pliki (który będzie znajdował się wewnątrz APK), zostanie on najpierw skopiowany do pamięci, więc pamiętaj, że kopiowanie bardzo dużych plików z APK może spowodować, że na urządzeniach zabraknie pamięci. W przypadku celu HTML5 do zapisywania plików po stronie klienta używamy interfejsu HTML5 Local Storage API, który nie obsługuje operacji na plikach binarnych, więc zakłada, że kopiujesz plik tekstowy.
+  Funkcja zakończy się niepowodzeniem, jeśli plik o nowej nazwie już istnieje.
+  OSTRZEŻENIE! Ta funkcja może nie działać zgodnie z oczekiwaniami użytkownika, ponieważ GameMaker Studio 2 jest sandboxed! Więcej informacji na ten temat znajduje się w rozdziale Limity systemu plików.
+   
+  Składnia:
+  file_copy(fname, newname);
+  
+    
+      
+        ArgumentTyp        Opis
+     
+      
+        fname        The name of the file to copy.
+     
+      
+        newname        The name of the new, copied file.
+     
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if file_exists("level1.txt")
+    {
+        file_copy("level1.txt", "level2.txt");
+    }
+  Spowoduje to sprawdzenie, czy dany plik istnieje, a jeśli tak, to zostanie skopiowany.
+   
+   
+   
+  
+    
+      
+        Powrót: System plików
+        Następny: file_find_first
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

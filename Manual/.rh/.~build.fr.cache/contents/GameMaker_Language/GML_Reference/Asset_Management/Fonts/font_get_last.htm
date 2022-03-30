@@ -1,0 +1,43 @@
+
+  
+  czcionka_get_ostatnia
+  Podczas definiowania strony font w GameMaker Studio 2 można określić zakres znaków, które mają być uwzględnione. Dzieje się tak dlatego, że sam adres font nie jest dołączany do gry (ze względów prawnych).
+    font jest umieszczany na stronie texture i to właśnie z niego będzie korzystać gra (podobnie jak z innych stron graficznych asset). Oznacza to, że powinieneś ograniczyć liczbę znaków do minimum i podawać tylko taki zakres znaków, jakiego
+    których będzie potrzebować gra, aby zoptymalizować wykorzystanie pamięci texture. Za pomocą tej funkcji można znaleźć ostatni znak (w postaci wartości UTF8), który był używany podczas dodawania do gry font asset.
+   
+  Składnia:
+  font_get_last(ind);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        ind
+        Index of the font to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  num = font_get_last(fnt_Main);
+  Powyższy kod zapisze wartość ASCII ostatniej litery z zakresu font dla adresu font indeksowanego w "fnt_Main".
+   
+   
+   
+  
+    
+      
+        Powrót: Czcionki
+        Następny: font_get_italic
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

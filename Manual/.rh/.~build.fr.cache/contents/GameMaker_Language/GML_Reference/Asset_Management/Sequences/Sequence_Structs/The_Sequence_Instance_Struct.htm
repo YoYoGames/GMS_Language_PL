@@ -1,0 +1,235 @@
+
+  
+  Struktura instancji Sequence 
+  Strona sequence, umieszczona na stronie room, jest umieszczana jako element na warstwie, a element ten zawiera instancję sekwencji. Ta instancja sequence będzie miała w swojej strukturze następujące właściwości:
+  
+    
+      
+      
+      
+    
+    
+      
+        Struktura instancji sekwencji
+      
+      
+        Zmienna
+        Typ
+        Opis
+      
+      
+        sequence
+        Sekwencja Object Struct
+        Jest to identyfikator obiektu sekwencji struct, na podstawie którego utworzono instancję sequence (zobacz tutajwięcej szczegółów). Możesz uzyskać lub ustawić ten identyfikator struct i w ten sposób zmienić bazę sequence, do której odwołuje się instancja.
+      
+      
+        headPosition
+        Real
+        Jest to bieżąca pozycja głowicy odtwarz ania (w klatkach) dla instancji sequence. Możesz uzyskać lub ustawić tę wartość, ale pamiętaj, że ustawienie jej na wartość większą lub mniejszą niż aktualnie zdefiniowany region odtwarzania będzie miało różne efekty w zależności od typu odtwarzania ustawionego dla sequence. Zobacz layer_sequence_headpos() aby uzyskać więcej informacji.
+      
+      
+        headDirection
+        Kierunek sekwencji Stała
+        Jest to bieżący kierunek odtwarzania dla instancji sequence. Wartość tę można uzyskać lub ustawić za pomocą stałych podanych w następnej tabeli (należy pamiętać, że można użyć funkcji warstwy layer_sequence_get_headdir() i layer_sequence_headdir() aby uzyskać lub ustawić tę wartość bez konieczności bezpośredniego dostępu do strony struct ).
+      
+      
+        speedScale
+        Real
+        Tej właściwości można użyć do uzyskania lub ustawienia skali prędkości odtwarzania. Skala szybkości jest mnożnikiem, gdzie 1 jest domyślną szybkością odtwarzania, a wartości mniejsze od 1 spowalniają odtwarzanie, a większe od 1 przyspieszają je, np. wartość 0,5 oznacza połowę szybkości odtwarzania, a wartość 2 - podwojenie szybkości odtwarzania. Należy pamiętać, że można użyć funkcji warstw layer_sequence_get_speedscale() oraz layer_sequence_speedscale() aby uzyskać lub ustawić tę wartość bez konieczności bezpośredniego dostępu do strony struct.
+      
+      
+        paused
+        Boolean
+        Można sprawdzić tę właściwość, aby dowiedzieć się, czy strona sequence została wstrzymana, czy nie. Jeśli tak, będzie to strona true, a w przeciwnym razie - false. Jest to właściwość tylko do odczytu, ale można użyć funkcji warstwy layer_sequence_pause() aby wstrzymać odtwarzanie, oraz layer_sequence_play() i wznawiać je w razie potrzeby. Można również sprawdzić tę właściwość za pomocą funkcji warstwy layer_sequence_is_paused() zamiast sprawdzać tę właściwość bezpośrednio na stronie struct.
+      
+      
+        finished
+        Boolean
+        Tę właściwość można sprawdzić, czy utwór sequence zakończył odtwarzanie, czy nie. Zwraca ona wartość true, jeśli zakończył odtwarzanie, i false w przeciwnym razie. Jest to właściwość tylko do odczytu i zwraca wartość true tylko dla ścieżek, które nie są ustawione na loop lub ping-pong. Właściwość tę można także sprawdzić za pomocą funkcji warstwy layer_sequence_is_finished() zamiast sprawdzać tę właściwość bezpośrednio na stronie struct.
+      
+      
+        elementID
+        Identyfikator elementu sekwencji
+        Ta właściwość przechowuje identyfikator elementu sequence. Ten identyfikator jest prostą wartością identyfikacyjną, która jest powiązana z warstwą w edytorze room i może być użyta z odpowiednimi funkcjami warstwy, aby znaleźć warstwę, do której został przypisany element sequence lub zmienić pewne właściwości sequence bez konieczności korzystania z struct.
+      
+      
+        activeTracks
+        Tablica z Sekwencja Aktywna ścieżka Strukturas
+        Ta właściwość zawiera tablicę "ewaluacji" structs zawierającą informacje o bieżącym stanie każdej ścieżki zasobów w witrynie sequence (grafika, sequence, audio itd.). Są to ścieżki najwyższego poziomu, a zwracana tablica jest tylko do odczytu. Informacje o zawartości ścieżki asset struct zwracanej w każdym wpisie tablicy można znaleźć w poniższej sekcji.
+      
+    
+  
+   
+  
+    
+      
+      
+      
+    
+    
+      
+        Kierunek sekwencji Stała
+      
+      
+        Stała
+        Opis
+        Wartość
+      
+      
+        seqdir_right
+        Strona sequence będzie odtwarzać klatki w porządku przyrostowym, od lewej do prawej
+        1
+      
+      
+        seqdir_left
+        Strona sequence będzie odtwarzać klatki w kolejności malejącej od prawej do lewej
+        -1
+      
+    
+  
+   
+  activeTracks Struct
+  Poniższa lista zawiera właściwości, które mogą być dostępne podczas uzyskiwania dostępu do aktywnej ścieżki struct (zawartej w tablicy activeTracks instancji Sequence struct , co wyjaśniono powyżej). Każda ścieżka asset struct może mieć dowolną z poniższych właściwości, w zależności od typu asset, którego używa ścieżka (zauważ, że możesz modyfikować wszystkie te właściwości, z wyjątkiem tych, które są określone jako tylko do odczytu), a wszystkie zwracane wartości dotyczą bieżącej pozycji głowicy odtwarzania:
+  
+    
+      
+      
+      
+    
+    
+      
+        Sekwencja Aktywna ścieżka Struktura
+      
+      
+        Zmienna
+        Typ
+        Opis
+      
+      
+        matrix
+        Matryca
+        Jest to macierz transformacji używana do rysowania ścieżki (sprite, ścieżki instancji i sequence ).
+      
+      
+        posx
+        Real
+        Pozycja asset w sequence wzdłuż osi X dla ścieżki w bieżącej pozycji głowicy odtwarzania (wszystkie assets).
+      
+      
+        posy
+        Real
+        Pozycja strony asset na stronie sequence wzdłuż osi Y dla ścieżki w bieżącej pozycji głowicy odtwarzania (wszystkie assets).
+      
+      
+        scalex
+        Real
+        Skala asset w sequence wzdłuż osi X dla ścieżki w bieżącej pozycji głowicy odtwarzania (sprite, ścieżki instancji i sequence ).
+      
+      
+        scaley
+        Real
+        Skala asset w sequence wzdłuż osi Y dla ścieżki w bieżącej pozycji głowicy odtwarzania (sprite, ścieżki instancji i sequence ).
+      
+      
+        xorigin
+        Real
+        Początek X strony asset dla ścieżki (wszystkie strony assets).
+      
+      
+        yorigin
+        Real
+        Początek Y strony asset dla ścieżki (wszystkie strony assets).
+      
+      
+        width
+        Real
+        Szerokość (w pikselach) strony asset dla ścieżki (sprite, ścieżki instancji i sequence ).
+      
+      
+        height
+        Real
+        Wysokość (w pikselach) strony asset dla ścieżki (sprite, ścieżki instancji i sequence ).
+      
+      
+        imageindex
+        Real
+        Indeks obrazu dla asset na ścieżce w sequence w bieżącej pozycji głowicy odtwarzania (sprite i ścieżki instancji).
+      
+      
+        imagespeed
+        Real
+        Prędkość obrazu dla asset na ścieżce w sequence w bieżącej pozycji głowicy odtwarzania (sprite i ścieżki instancji).
+      
+      
+        colourMultiply
+        Kolor
+        Wartość mnożenia kolorów dla asset na ścieżce w sequence w bieżącej pozycji głowicy odtwarzania (sprite, ścieżki instancji i sequence ). Wartość ta będzie tablicą czterech wartości ARGB w formacie [A, R, G, B]. Zwróć uwagę, że wartości dla każdego składnika są wyrażone w przedziale od 0 do 1, gdzie 0 odpowiada wartości HEX #00, a 1 odpowiada wartości HEX #FF (0 - 255, jak pokazano w oknie wyboru koloru dla ścieżek z multiplikacją kolorów w edytorze Sequences ).
+      
+      
+        gain
+        Real
+        Wzmocnienie (głośność) ścieżki w bieżącym położeniu głowicy odtwarzania (ścieżki audio).
+      
+      
+        pitch
+        Real
+        Wysokość ścieżki w bieżącej pozycji głowicy odtwarzania (ścieżki audio).
+      
+      
+        frameSizeX
+        Real
+        Poziomy rozmiar ramki tekstowej (ścieżki tekstowe).
+      
+      
+        frameSizeY
+        Real
+        Pionowy rozmiar ramki tekstowej (ścieżki tekstowe).
+      
+      
+        characterSpacing
+        Real
+        Wartość odstępu między znakami (ścieżki tekstowe).
+      
+      
+        lineSpacing
+        Real
+        Wartość odstępu między wierszami (ścieżki tekstowe).
+      
+      
+        paragraphSpacing
+        Real
+        Wartość odstępu między akapitami (ścieżki tekstowe).
+      
+      
+        track
+        Ścieżka sekwencji Struktura
+         Struktura ścieżki, na której opiera się ta ścieżka (wszystkie assets, wartość tylko do odczytu ).
+      
+      
+        parent
+        Struktura instancji sekwencji
+        Identyfikator instancji nadrzędnej sequence dla ścieżki (wszystkie assets, wartość tylko do odczytu ).
+      
+      
+        activeTracks
+        Tablica z Ścieżka sekwencji Strukturas
+        Jest to tablica zawierająca analizę structs dla każdej ścieżki parametru, którą zawiera ścieżka asset (wszystkie assets, wartość tylko do odczytu ). Zawartość każdej strony struct w tablicy podano w rozdziale Struktura ścieżek parametrów.
+      
+    
+  
+   
+   
+   
+   
+  
+    
+      
+        Powrót: Sekwencje
+        Następny: Struktura toru
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,78 @@
+
+  
+  array_copy
+  Za pomocą tej funkcji można skopiować całą tablicę lub jej część do innej tablicy w dowolnym miejscu. W tym celu należy podać zarówno tablicę źródłową, jak i docelową (obie muszą być wcześniej utworzone), a także pozycję w tablicy źródłowej, z której ma być kopiowana, oraz pozycję w tablicy docelowej, do której ma być kopiowana. Na koniec należy określić długość tablicy (lub długość części, którą chcemy skopiować). Jeżeli kopiowane dane przekroczą długość tablicy docelowej, zostanie ona rozszerzona, aby przyjąć te dane.
+  Funkcji tej można również używać w przypadku tablic wielowymiarowych, pod warunkiem że podczas podawania indeksu tablicy zostanie określony wymiar, który ma zostać skopiowany, zgodnie z poniższym wzorem:
+  // Copy to the first dimension of an array
+    // from the second dimension of an array
+    array_copy(item_array, 0, inventory_array[0], 0, len);
+    
+    // Copy to the third dimension of an array
+    // from the first dimension of an array
+    array_copy(item_array[0][0], 0, inventory_array, 0, len);
+    
+    // etc...
+  
+   
+  Składnia:
+  array_copy(dest, dest_index, src, src_index, length);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        dest
+        Tablica
+        The ID of the array to copy to.
+      
+      
+        dest_index
+        Real
+        The index within the array to copy to.
+      
+      
+        src
+        Tablica
+        The ID of the array to copy from.
+      
+      
+        src_index
+        Real
+        The index with the array to start copying from.
+      
+      
+        length
+        Real
+        The length (number of array indices) to copy.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if !array_equals(inventory_array, item_array)
+    {
+        var len = array_length(inventory_array);
+        array_copy(item_array, 0, inventory_array, 0, len);
+    }
+  Powyższy kod sprawdzi dwie tablice, czy przechowują one równoważne wartości, a jeśli nie, to skopiuje całą zawartość tablicy "inventory_array" do tablicy "item_array".
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: array_equals
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

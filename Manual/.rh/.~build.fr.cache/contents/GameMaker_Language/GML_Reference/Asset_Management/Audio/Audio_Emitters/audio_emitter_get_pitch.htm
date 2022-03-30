@@ -1,0 +1,46 @@
+
+  
+  audio_emitter_get_pitch
+  Ta funkcja zwraca bieżącą wartość wysokości dźwięku ustawioną dla danego emitera dźwięku.
+   
+  Składnia:
+  audio_emitter_get_pitch(emitter);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        emitter
+        Identyfikator emitera dźwięku
+        The index of the emitter to use.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if audio_emitter_get_pitch(emitter_player) != 1
+    {
+        audio_emitter_pitch(emitter_player, 1);
+    }
+  Powyższy kod sprawdza bieżącą wysokość danego emitera i jeśli nie jest ona równa 1, ustawia ją na 1.
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery dźwięku
+        Następny: audio_emitter_get_x
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

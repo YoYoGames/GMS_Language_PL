@@ -1,0 +1,210 @@
+
+  
+  Rysunek
+  Ta sekcja (oraz następująca po niej sekcja Ruch i sterowanie) ma na celu przedstawienie praktycznych przykładów z GML lub DnD™, abyś mógł jak najszybciej zacząć tworzyć swoje pierwsze projekty gier. Nie będziemy wyjaśniać wszystkiego zbyt dokładnie, ponieważ chcemy, abyś zaczął tworzyć gry tak szybko, jak to możliwe. Zachęcamy więc do zapoznania się z linkami na bieżąco oraz do korzystania z funkcji "szukaj" w podręczniku w celu znalezienia dodatkowych informacji na temat wszystkiego, czego nie jesteś pewien.
+  W tym rozdziale skoncentrujemy się na rysowaniu informacji na ekranie, zarówno w postaci tekstu, jak i obrazów, a także wyjaśnimy nieco więcej na temat różnych zdarzeń rysowania, a konkretnie głównego zdarzenia Draw oraz zdarzenia Draw GUI (należy pamiętać, że w niektórych przykładach konieczne będzie dodanie innych zdarzeń, ale wyjaśnimy je, gdy do nich dojdziemy).
+  
+  Zanim przejdziesz dalej, możesz utworzyć nowy projekt ( GML lub DnD™) na stronie startowej i dodać (lub utworzyć) kilka sprites oraz object lub dwa, ponieważ podamy Ci kod, który możesz przetestować przy ich użyciu. Na razie nawet biały kwadrat może posłużyć jako sprite dla naszego object!
+  Jak wspomniano w rozdziale Obiekty i instancje, jeśli do strony object nie zostanie dodane zdarzenie Draw Event, to strona GameMaker Studio 2 będzie domyślnie rysowana, co oznacza, że jeśli do strony object jest przypisana strona sprite, to ta strona sprite zostanie narysowana wraz z dodanymi transformacjami. Co rozumiemy przez transformacje? Otóż każda strona object ma wbudowanych kilka zmiennych, które kontrolują sposób, w jaki instancja object rysuje swoją stronę sprite podczas rysowania domyślnego, a Ty możesz zmieniać te zmienne w trakcie gry, aby zmienić sposób rysowania strony sprite.
+  UWAGA: Listę wszystkich wbudowanych zmiennych, których można używać do przekształcania instancji, można znaleźć tutaj sprites. Użytkownicy Drag and Drop™ mają do dyspozycji kilka dedykowanych akcji, które wpływają na te zmienne, które można znaleźć tutaj, można też użyć samych zmiennych wraz z akcjami Get Instance V ariable i Set Instance Variable.
+  Przyjrzyjmy się kilku przykładom:
+  Zmiana współczynnika alfa (przezroczystości)
+  
+    Wartość alfa określa przezroczystość rysowanych elementów, a w witrynie GameMaker Studio 2 można użyć wbudowanej zmiennej image_alpha do zmiany przezroczystości przypisanego elementu sprite. Aby zobaczyć, jak to działa, otwórz (lub utwórz) stronę object, przypisz jej adres sprite, a następnie nadaj stronie object zdarzenie Create Event. W zdarzeniu tworzenia wystarczy dodać następujące elementy DnD™ lub GML:
+    
+    var _val = random(1);
+      image_alpha = _val;
+    Wartość alfa obrazu jest obliczana jako wartość z zakresu od 0 do 1, gdzie 0 oznacza pełną przezroczystość, a 1 pełną nieprzezroczystość (domyślnie ustawiona jest na 1). W tym przykładzie ustawiamy więc tylko alfa obrazu na losową wartość dziesiętną z zakresu od 0 do 1. Umieść kilka instancji tej strony object na stronie room, a następnie kliknij przycisk Odtwórz   w górnej części strony IDE.
+    Należy zauważyć, że każda instancja strony object rysuje swoją stronę sprite z inną przezroczystością, np:
+    
+     
+  
+  Zmiana mieszanki kolorów (barwienie)
+  
+    Gdy na stronie object domyślnie rysowana jest strona sprite, ta strona sprite jest w rzeczywistości rysowana z domieszką  koloru (lub zabarwiona), a wartość tego koloru jest przechowywana we wbudowanej zmiennej image_blend. Domyślnie kolor ten jest biały, co oznacza, że do strony sprite nie zostanie dodany żaden kolor podczas wyświetlania jej na ekranie. Można jednak używać innych kolorów, aby uzyskać efekty specjalne, np. użyć koloru czerwonego, aby pokazać, że instancja otrzymała pewne obrażenia.
+    W tym przykładzie zamierzamy mieszać różne kolory z sprite, gdy klawisz jest naciśnięty i przytrzymany, dlatego należy otworzyć (lub utworzyć) stronę object, przypisać jej adres sprite, a następnie nadać object zdarzenie Key Down <Space> Event.
+    
+    W tym zdarzeniu Key Down dodaj następujące elementy DnD™ lub GML:
+    
+    var _col = choose(c_red, c_green, c_blue, c_yellow, c_fuchsia, c_orange);
+      image_blend = _col;
+    Umieść kilka instancji tej strony object na stronie room, a następnie kliknij przycisk Odtwarzaj  w górnej części strony IDE i przetestuj, czy można przytrzymać i zwolnić klawisz spacji . Powinieneś zauważyć, że każda instancja będzie szybko zmieniać kolor, gdy klawisz jest przytrzymany, i przestanie się zmieniać, gdy zostanie zwolniony:
+    
+     
+  
+  Zmieniająca się skala
+  
+    Kolejną właściwością, którą możemy zmienić w naszym arkuszu sprite, jest wartość skali , co pozwala nam rysować go w większym lub mniejszym rozmiarze, kiedy tylko chcemy. Skalę oblicza się niezależnie wzdłuż osi X i Y za pomocą dwóch osobnych zmiennych, zmiennej image_xscale i zmiennej image_yscale. Domyślnie są one ustawione na 1 i działają jak mnożniki, więc wartość 0,5 oznacza połowę skali, a wartość 2 - podwojenie skali.
+    WAŻNE! Zmiana skali strony sprite przy użyciu tych zmiennych spowoduje również zmianę rozmiaru ramki ograniczającej, co oznacza, że obszar wykrywania kolizji dla strony sprite również się zmniejszy.
+    W tym przykładzie użyjemy kilku prostych metod matematycznych, aby utworzyć instancję skalującą stronę sprite w górę i w dół na stronie loop. Na początek otwórz (lub utwórz) stronę object, przypisz ją do strony sprite, a następnie nadaj stronie object zdarzenie Create Event. W tym zdarzeniu dodaj następujące elementy:
+    
+    timer = 0;
+    Teraz dodaj zdarzenie Step Event do strony object w następujący sposób:
+    
+    timer = timer + 1;
+      var _val = dsin(timer);
+      image_xscale = 1 + _val;
+      image_yscale = 1 + _val;
+    Używamy tutaj funkcji matematycznej dsin() do wygenerowania wartości z przedziału od -1 do 1 przy użyciu zmiennej timer, a następnie zastosowania jej do zmiennych skali. Po umieszczeniu kilku instancji w witrynie room i naciśnięciu przycisku Odtwórz   powinieneś zobaczyć, jak instancje skalują się w górę i w dół od skali 0 do skali 2 i z powrotem.
+    
+    I ostatnia rzecz... zmień sekcję " image_yscale" na " 1 - _val" i zobacz, co się stanie!
+     
+  
+   
+  Powyższe przykłady ilustrują tylko niektóre z wielu sposobów manipulowania stroną object sprite, gdy GameMaker Studio 2 jest domyślnie narysowana, ale co zrobić, gdy chcemy narysować więcej niż jedną rzecz na stronie object? W takich przypadkach należy użyć zdarzenia Draw Event, aby wyraźnie powiedzieć GameMaker Studio 2, co ma narysować, co właśnie zrobimy w poniższych przykładach.
+  Rysowanie dwóch (lub więcej) stron Sprites razem
+  
+    W tym przykładzie potrzebne będą dwie strony sprites i jedna object. Nazwij te strony sprites " spr_One" i " spr_Two", a następnie ustaw początek strony " spr_One" na środku, a dla strony " spr_Two" ustaw jej początek na środku po lewej stronie:
+    Przypisz pierwszą stronę sprite (" spr_One" z centralnym początkiem) do utworzonej strony object, a następnie dodaj zdarzenie Create Event. W polu Utwórz zdarzenie dodaj następujące elementy DnD™ lub GML:
+    
+    draw_angle = 0;
+    Użyjemy tej zmiennej, aby obracać " spr_Two" w czasie i narysować ją nałożoną na sprite przypisaną do object (" spr_One"). Aby to zrobić, musimy dodać zdarzenie Draw Event do object. W ten sposób informujemy GameMaker Studio 2, że chcemy przejąć to, co rysuje instancja, co oznacza, że nasz kod będzie zawierał wywołanie funkcji draw_self() funkcji lub Rysuj siebie action. Ta akcja po prostu powiela to, co robi object, gdy nie ma zdarzenia Draw Event i domyślnie rysuje przypisaną mu stronę sprite. Następnie narysujemy drugą stronę sprite, którą chcemy wykorzystać jako nakładkę sprite, która się obraca. W DnD™ i na stronie GML wygląda to tak:
+    
+    draw_self();
+      draw_angle = draw_angle + 0.5;
+      draw_sprite_ext(spr_Two, 0, x, y, 1, 1, draw_angle, c_red, 1);
+    Dodaj kilka instancji pliku object do edytora room, a następnie naciśnij przycisk Odtwórz   znajdujący się w górnej części IDE. Jeśli wszystko przebiegło prawidłowo, powinieneś zobaczyć coś takiego:
+    
+    Zanim opuścimy ten przykład, zmodyfikujmy go nieco i zamiast po prostu obracać " spr_Two", sprawimy, że będzie on skierowany w stronę pozycji myszy. W tym celu musimy zmienić Draw Event DnD™ lub GML, aby wyglądało to tak:
+    
+    draw_self();
+      draw_angle = point_direction(x, y, mouse_x, mouse_y);
+      draw_sprite_ext(spr_Two, 0, x, y, 1, 1, draw_angle, c_red, 1);
+    Uruchom projekt ponownie i tym razem zobaczysz coś zupełnie innego!
+    Teraz strona sprite jest skierowana w stronę myszy, niezależnie od tego, w którą stronę ją przesuniesz! Jak widać, nakładanie warstw na stronę sprites to świetny sposób na dodanie szczegółów do strony object lub sprawienie, by coś poruszało się niezależnie od "bazowej" strony sprite przypisanej do object. Jest to potężne narzędzie, którego prawdopodobnie będziesz często używać w swoich projektach.
+     
+  
+  Rysowanie rzeczy innych niż sprite'y
+  
+    W zdarzeniu Draw można rysować także inne rzeczy niż sprites, np. tekst lub kształty. W tym przykładzie do narysowania GML object użyjemy funkcji DnD™ lub sprite draw_self(), ale narysujemy też inne rzeczy, zaczynając od tekstu. Do tego przykładu potrzebne będą: sprite oraz object (z przypisaną do niej funkcją sprite ). Na stronie object dodaj najpierw zdarzenie Create Event (Utwórz zdarzenie ) z tym DnD™ lub GML:
+    
+    name = choose("Fred", "Jonas", "Sharon", "Kate", "Frank", "John", "Monica", "Amanda");
+      number = irandom(100);
+    To wszystko sprawia, że GameMaker Studio 2 wybiera jedną z wymienionych nazw i przypisuje ją do zmiennej, a także generuje losową liczbę od 0 do 100 dla każdej instancji object. Chcemy narysować te wartości na ekranie, więc w tym celu musisz teraz dodać zdarzenie Draw Event, a w nim następującą instrukcję DnD™ lub GML:
+    
+    draw_self();
+      draw_set_halign(fa_center);
+      draw_text(x, y + 32, "My name is " + name);
+      draw_text(x, y + 48, "My number is " + string(number));
+    W powyższym kodzie można zauważyć, że używamy funkcji string() lub Number To String na zmiennej "liczba", którą chcemy narysować. Dzieje się tak dlatego, że cały tekst musi składać się ze znaków, a nie z wartości, dlatego musimy użyć tej funkcji/działania, aby przekształcić wartość liczbową w znaki, które chcemy narysować. W tym przypadku bierzemy wygenerowaną przez nas liczbę losową i zamieniamy ją w "ciąg" znaków, który można narysować. Zwróć też uwagę, że ustawiliśmy wyrównanie tekstu. W tym przypadku chcemy, aby tekst był wyśrodkowany wzdłuż osi x. Dzięki temu GameMaker Studio 2 będzie wiedział, w którym miejscu rozpocząć rysowanie tekstu w stosunku do podanej pozycji.
+    Dodaj kilka instancji pliku object do edytora room, a następnie naciśnij przycisk Odtwórz  w górnej części strony IDE. Powinieneś zobaczyć coś takiego:
+    
+    We wszystkich dotychczasowych przykładach rysowaliśmy na stronie sprite przypisanej do instancji, ale nie zawsze musi tak być. W zdarzeniu draw można narysować wszystko, co się chce, niezależnie od przypisanego adresu sprite. Aby zilustrować tę kwestię, zmienimy nasz obecny kod, usuwając wywołanie draw_self() i zastępując je funkcją rysującą kolorową elipsę, jak poniżej:
+    
+    draw_ellipse_colour(x - 50, y - 32, x + 50, y + 32, c_fuchsia, c_lime, false);
+      draw_set_halign(fa_center);
+      draw_text(x, y + 32, "My name is " + name);
+      draw_text(x, y + 48, "My number is " + string(number));
+    Uruchom ponownie projekt, a zobaczysz to:
+    
+    Należy zwrócić uwagę na jedną ważną rzecz: nawet jeśli nie rysujemy przypisanego elementu sprite, będzie on nadal używany do wykrywania kolizji. Tak więc podczas rysowania jednej rzeczy, kolizje nadal będą obliczane na podstawie przypisanej strony sprite, tak jakby była ona umieszczona na stronie room razem z instancją, nawet jeśli nie jest widoczna. Jest to całkiem przydatne, ponieważ oznacza, że możesz rysować różne sprites, ale zachować jedną maskę kolizji opartą na przypisanej sprite. Zauważ też, że nadal możesz stosować różne przekształcenia, takie jak skala X/Y, a kolizje będą oparte na zmienionym rozmiarze, mimo że nic nie jest rysowane, aby to pokazać.
+  
+   
+   
+  Warstwa GUI
+  Na górze strony wspomnieliśmy, że będziemy mówić o zdarzeniu Rysuj interfejs graficzny oraz o zdarzeniu Rysuj, więc przyjrzyjmy się teraz temu. Zdarzenie Draw GUI działa na czymś, co nazywa się  warstwą GU  I, czyli specjalną warstwą rysunkową o stałej szerokości i wysokości, która jest rysowana nad instancjami w witrynie room. Zaletą warstwy GUI jest to, że  nie porusza się ona wraz z kamerą room , więc jest to idealne miejsce do dodawania statycznych elementów GUI, takich jak wyniki, paski zdrowia i inne informacje, które gra musi przekazywać użytkownikowi. Więcej informacji na temat warstwy GUI można znaleźć w części podręcznika poświęconej zdarzeniom rysowania.
+  UWAGA: Strona Rooms może być większa niż rozmiar ekranu, dlatego można na niej tworzyć duże poziomy, po których gracz będzie mógł się poruszać. Oznacza to, że w edytorze Room (lub w kodzie) należy zdefiniować kamerę , która będzie podążać za akcją gry. Jest to sposób na ustawienie stałego obszaru ekranu, na którym wyświetlane są różne części większej strony room, na przykład w zależności od pozycji gracza na stronie room. Przypomnij sobie, że w klasycznych grach, takich jak Mario czy Zelda, widok zawsze podąża za głównym bohaterem. Jest to możliwe dzięki kamerom. Więcej informacji można znaleźć w rozdziale Właściwości pomieszczenia na stronie Room w sekcji Edytor.
+  Wszystkie poniższe przykłady będą korzystać ze zdarzenia Draw GUI, dlatego należy utworzyć stronę object i dodać do niej to zdarzenie. Zauważ, że object nie potrzebuje przypisanego sprite, ponieważ nie chcemy, aby domyślnie rysował cokolwiek, ani nie potrzebujemy go do wykrywania kolizji. Objects takie jak to, które są przeznaczone tylko do rysowania rzeczy lub kontrolowania pewnych aspektów gry, są często nazywane obiektami kontrolera. Zwróć uwagę, że we wszystkich przykładach będziemy używać tego samego adresu object, dlatego zalecamy, abyś zapoznał się z nimi jeden po drugim (choć nie jest to konieczne).
+   Rysowanie tekstu
+  
+    Podczas rysowania na warstwie GUI lewy górny róg jest pozycją początkową, natomiast w prawo jest +X, a w dół +Y. Dzięki temu pozycjonowanie tekstu i grafiki jest bardzo proste, o czym przekonasz się na tym przykładzie. Wszystko, co zamierzamy tutaj zrobić, to narysować wartość, która reprezentuje wynik gracza, więc w naszym object musimy dodać zdarzenie Create Event , aby zainicjować zmienną, która będzie przechowywać tę wartość, tak jak poniżej:
+    
+    player_score = 0;
+    Chcemy także dodać zdarzenie Keyboard Down <Space> do strony object, ponieważ będzie ono używane do zwiększania wyniku po każdym naciśnięciu klawisza spacji.
+    
+    W tym przypadku należy dodać następujące elementy:
+    
+    var _val = irandom(100);
+      player_score = player_score + _val;
+    Na koniec narysujmy wartość punktową w zdarzeniu Draw GUI, tak jak poniżej:
+    W tym przypadku należy dodać następujące elementy:
+    
+    draw_set_halign(fa_left);
+      draw_set_colour(c_yellow);
+      draw_text(32, 32, "SCORE:");
+      draw_set_colour(c_white);
+      var _str = string(player_score);
+      draw_text_transformed(32, 48, _str, 2, 2, 0);
+    Zauważysz, że użyliśmy twardo zakodowanych (lub stałych) wartości dla pozycji x/y rysowanego tekstu, ponieważ nie potrzebujemy, aby był on względny względem jakiejkolwiek instancji, ponieważ rysujemy do warstwy GUI. Użyliśmy także funkcji "ustaw kolor", aby zmienić kolor tekstu, oraz funkcji "przekształć", aby zwiększyć rzeczywistą wartość wyniku, co ilustruje, jak można dostosować elementy tekstowe w swoich grach.
+    Dodaj teraz pojedynczą instancję tej gry object do swojej witryny room, a następnie naciśnij przycisk Play (Graj) . Gdy gra się uruchomi, naciśnij i zwolnij przycisk <Space>, a powinieneś zobaczyć, że wartość punktacji rośnie.
+    
+     
+  
+  Rysowanie sprite'ów
+  
+    W tym przykładzie użyjemy warstwy GUI do narysowania strony sprites. Najbardziej oczywistym zastosowaniem jest narysowanie życia graczy, więc zróbmy to! Do tego przykładu będzie potrzebna strona sprite - powinna ona mieć rozmiar około 64x64 pikseli - ale nie powinna być przypisana do strony object, ponieważ będziemy ją rysować sami.
+    Na początek musimy dodać kilka nowych zmiennych do strony object w zdarzeniu Utwórz (jeśli korzystałeś z poprzedniego przykładu, dodaj poniższe zmienne poniżej tego, co już tam jest):
+    
+    player_lives = 3;
+      gui_w = display_get_gui_width();
+    W tym kodzie inicjalizujemy zmienną dla życia gracza, ale tworzymy także zmienną, która przechowuje szerokość warstwy GUI, abyśmy mogli prawidłowo rozmieścić elementy względem prawej strony ekranu. Moglibyśmy po prostu na sztywno zakodować wartość w kodzie i użyć jej, ale oznaczałoby to, że jeśli później zmienimy rozmiar strony room, lub jeśli dodamy kamery itp. Użycie display_get_gui_width() oznacza, że nie musimy się martwić o żadne tego typu zmiany w przyszłości, ponieważ kod automatycznie dostosuje się do rozmiaru warstwy GUI.
+    Następnie chcemy dodać zdarzenie Naciśnięcie klawisza <Enter> do strony object, ponieważ będziemy go używać do zmiany liczby żyć po każdym naciśnięciu klawisza Enter:
+    
+    W tym przypadku należy dodać następujące elementy:
+    
+    player_lives = player_lives - 1;
+      
+      if player_lives < 0
+      {
+          player_lives = 3;
+      }
+    
+    Na koniec musimy narysować na ekranie stronę sprites. Do tego celu użyjemy " for" loop (informacje o użyciu GML tutaj, a dla DnD™ tutaj), wraz ze zmienną GUI width, aby umieścić wszystko w prawym górnym rogu ekranu. Dlatego dodaj to do zdarzenia Draw Gui (po innych akcjach, które mogą być wykonane w poprzednich przykładach):
+    
+    for (var i = 0; i < player_lives; i += 1)
+      {
+          var _xx = gui_w - 48 - (i * 70);
+          draw_sprite(spr_Heart, 0, _xx, 48);
+      }
+    Jeśli jeszcze nie dodałeś instancji tej gry object do gry room, dodaj ją teraz (tylko jedną!), a następnie naciśnij przycisk Odtwórz  . Po uruchomieniu gry naciskaj wielokrotnie klawisz <Enter>, aby zobaczyć, jak zmieniają się życia.
+    
+    Zanim opuścisz ten przykład, powinieneś poeksperymentować z liczbą żyć i zobaczyć, co się stanie. W tej chwili jest ona ustawiona na 3, ale zmień zdarzenie tworzenia i zdarzenie naciśnięcia klawisza, aby ustawić wartość na 5 lub 10... jeśli wszystko zrobiłeś dobrze, to kod powinien się dostosować i narysować je wszystkie poprawnie!
+     
+  
+  Rysowanie paska zdrowia
+  
+    Ostatni przykład dotyczy rysowania paska zdrowia na warstwie GUI. Można to zrobić na wiele sposobów, ale GameMaker Studio 2 ma wbudowaną funkcję specjalnie do rysowania pasków zdrowia, więc właśnie jej użyjemy, choć można też tworzyć własne, używając sprites lub shapes. Na początek, tak jak poprzednio, musimy zainicjować zmienną, która będzie przechowywać wartość zdrowia, więc dodaj poniższy kod DnD™ lub GML do zdarzenia Create Event na stronie object (po każdym innym kodzie, który już tam jest):
+    
+    player_health = 100;
+    Chcemy użyć klawiszy strzałek, aby zmienić wartość zdrowia w górę lub w dół w zależności od tego, który klawisz strzałki zostanie naciśnięty. Można to zrobić, dodając dwa zdarzenia Keyboard Pressed <Arrow>, ale prawdopodobnie łatwiej będzie użyć zdarzenia Step Event i kodu sprawdzającego, czy klawisze są aktywne:
+    
+    if keyboard_check(vk_up)
+      {
+          if player_health < 100
+          {
+              player_health = player_health + 1;
+          }
+      }
+      
+      if keyboard_check(vk_down)
+      {
+          if player_health > 0
+          {
+              player_health = player_health - 1;
+          }
+      }
+    
+    Po wykonaniu tych czynności możemy zająć się rysowaniem paska zdrowia, co wykonujemy w zdarzeniu Draw GUI, dodając następujące elementy (po wszystkich innych, które już tam są):
+    
+    var _xx = gui_w / 2;
+      draw_healthbar(_xx - 50, 24, _xx + 50, 40, player_health, c_black, c_red, c_lime, 0, true, true);
+    Dodaj instancję tej strony object do strony room, jeśli jeszcze tego nie zrobiłeś (ale tylko jedną!), a następnie naciśnij przycisk odtwarzania  . Po uruchomieniu gry naciśnij kilka razy przyciski <Up Arrow> i <Down Arrow>, aby zobaczyć, jak zmienia się stan zdrowia.
+    
+  
+   
+  Mamy nadzieję, że po wykonaniu tych przykładów nabierzesz pewności siebie podczas korzystania z GameMaker Studio 2 i lepiej zrozumiesz, jak to wszystko działa. W następnym rozdziale dowiesz się, jak sprawić, by narysowane przez Ciebie rzeczy poruszały się po stronie room oraz akceptowały i reagowały na polecenia użytkownika.
+   
+   
+   
+  
+    
+      
+        Powrót: Indeks
+        Następny: Ruch i sterowanie
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

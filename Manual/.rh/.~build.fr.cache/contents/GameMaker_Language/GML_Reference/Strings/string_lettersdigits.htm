@@ -1,0 +1,45 @@
+
+  
+  string_lettersdigits
+  Ta funkcja zwraca kopię podanego adresu string z usuniętymi wszystkimi literami i cyframi, co oznacza, że można jej użyć do usunięcia niechcianych znaków (takich jak "#" lub "?"), na przykład z nazwy użytkownika lub hasła.
+  UWAGA Ta funkcja zwraca tylko 26 liter alfabetu angielskiego od A do Z (duże lub małe litery) oraz cyfry od 0 do 9.
+   
+  Składnia:
+  string_lettersdigits(string);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        string
+        The string to convert to letters and digits.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (string_length(password) > string_length(string_lettersdigits(password)))
+    {
+        draw_text(32,32, "Invalid Password! Only Letters and numbers please!");
+    }
+  Powyższy kod sprawdza długość strony string z długością tej samej strony string, ale z usuniętymi wszystkimi symbolami. Jeśli nie są one takie same, na ekranie zostanie wyświetlony komunikat.
+   
+   
+   
+  
+    
+      
+        Powrót: Struny
+        Następny: string_lower
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

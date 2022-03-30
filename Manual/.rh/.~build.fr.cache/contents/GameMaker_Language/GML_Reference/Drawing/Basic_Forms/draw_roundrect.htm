@@ -1,0 +1,65 @@
+
+  
+  draw_roundrect
+  Za pomocą tej funkcji można narysować kontur zaokrąglonego prostokąta lub wypełniony zaokrąglony prostokąt, w którym pozycja (x1,y1) jest lewym górnym rogiem, a pozycja (x2,y2) jest prawym dolnym rogiem. Dokładność rysowania narożników można określić za pomocą funkcji draw_set_circle_precision()ale ta funkcja używa dla nich stałego promienia (jeśli chcesz zmienić promień narożnika, użyj funkcji draw_roundrect_ext()). Należy pamiętać, że rysowany prostokąt może wymagać innych wartości (+/-1 na x, y, szerokości lub wysokości), aby został narysowany w pożądanych wymiarach, ze względu na różnice między różnymi obsługiwanymi platformami.
+  UWAGA: Jeśli chcesz narysować kształt za pomocą strony shader, musisz wiedzieć, że większość stron shaders oczekuje następujących danych wejściowych: vertex, texture, Kolor. Jednak w przypadku korzystania z tej funkcji przekazywane są tylko dane vertex i kolor, a zatem shader może niczego nie narysować (lub narysować coś, ale niepoprawnie). Jeśli konieczne jest rysowanie kształtów w ten sposób, należy dostosować stronę shader do tego celu.
+   
+  Składnia:
+  draw_roundrect(x1, y1, x2, y2, outline);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x1
+        Real
+        The x coordinate of the top left corner of the rounded rectangle (as if it were a normal rectangle).
+      
+      
+        y1
+        Real
+        The y coordinate of the top left corner of the rounded rectangle (as if it were a normal rectangle).
+      
+      
+        x2
+        Real
+        The x coordinate of the bottom right corner of the rounded rectangle (as if it were a normal rectangle).
+      
+      
+        y2
+        Real
+        The y coordinate of the bottom right corner of the rounded rectangle (as if it were a normal rectangle).
+      
+      
+        outline
+        Boolean
+        Whether the rounded rectangle is drawn filled (false) or as a one pixel wide outline (true).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_set_colour(c_lime);
+    draw_roundrect(50, 100, 250, 200, 0);
+  Spowoduje to narysowanie wypełnionego zaokrąglonego prostokąta, którego teoretyczny (przed zakrzywieniem) lewy górny róg będzie znajdował się w punkcie (50,100), a prawy dolny róg w punkcie (250,200).
+   
+   
+   
+  
+    
+      
+        Powrót: Formularze podstawowe
+        Następny: draw_roundrect_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

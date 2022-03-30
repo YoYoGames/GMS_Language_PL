@@ -1,0 +1,45 @@
+
+  
+  ds_list_shuffle
+  Za pomocą tej funkcji można przetasować listę, co spowoduje zmianę kolejności wszystkich wartości składowych na losowe pozycje w stosunku do tych, na których zostały pierwotnie dodane do listy.
+  UWAGA: Ta funkcja powoduje tasowanie elementów listy na tych samych pozycjach za każdym razem, gdy gra jest uruchamiana od nowa, ponieważ GameMaker Studio 2 generuje za każdym razem to samo początkowe losowe ziarno, aby ułatwić zadanie debugging. Aby uniknąć takiego zachowania, użyj randomise() na początku gry. Dotyczy to tylko testowania gry i strony debugging, ponieważ końcowy pakiet wykonywalny nie będzie wykazywał tego zachowania i będzie losowy podczas każdej rozgrywki.
+   
+  Składnia:
+  ds_list_shuffle(id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the list to shuffle.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if restart
+    {
+        ds_list_shuffle(card_list);
+    }
+  Powyższy kod przetasuje listę zindeksowaną w zmiennej "card_list", jeśli zmienna "restart" zostanie oznaczona jako true.
+   
+   
+   
+  
+    
+      
+        Powrót: Listy DS
+        Następny: ds_list_sort
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

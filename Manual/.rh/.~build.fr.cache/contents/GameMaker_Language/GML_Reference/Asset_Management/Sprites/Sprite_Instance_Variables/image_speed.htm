@@ -1,0 +1,32 @@
+
+  
+  image_speed
+  Ta zmienna określa szybkość, z jaką GameMaker Studio 2 będzie przechodzić przez pod-obrazy dla bieżącej instancji sprite. Podana wartość prędkości jest mnożnikiem, przy czym 1 jest wartością domyślną, a ustawienie jej na 0,5 spowoduje zmniejszenie prędkości animacji o połowę - zgodnie z ustawieniami w Edytorze Sprite 'ów lub Edytorze Obrazków - podczas gdy ustawienie jej na 2 spowoduje jej podwojenie. Jeśli używana witryna sprite nie ma żadnych podobrazów, ta zmienna nie będzie miała żadnego wpływu.
+   
+  Składnia:
+  image_speed;
+   
+  Zwroty:
+   (single precision floating point value)
+   
+  Przykład:
+  with (instance_create_layer(x, y, "Effects", obj_Explosion))
+    {
+        image_speed = 0.5;
+    }
+  Powyższy kod tworzy instancję obiektu object "obj_Explosion" i ustawia jego image_speed na 0,5 (co oznacza zmniejszenie o połowę prędkości ruchu).
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne instancji sprite'a
+        Następny: image_xscale
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

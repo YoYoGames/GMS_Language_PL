@@ -1,0 +1,65 @@
+
+  
+  draw_get_valign
+  Ta funkcja służy do uzyskania ustawienia wyrównania tekstu wzdłuż osi pionowej i zwraca jedną z poniższych stałych.
+   
+  Składnia:
+  draw_get_valign();
+   
+  Zwroty:
+  Constant
+  
+    
+      
+      
+    
+    
+      
+        Stała wyrównania pionowego
+      
+      
+        Stała
+        Wyrównanie
+      
+      
+        fa_top
+        
+      
+      
+        fa_middle
+        
+      
+      
+        fa_bottom
+        
+      
+    
+  
+   
+  Przykład:
+  var _cur_halign = draw_get_halign();
+    var _cur_valign = draw_get_valign();
+    
+    draw_set_halign(fa_right);
+    draw_set_valign(fa_bottom);
+    
+    draw_text(100, 32, "Score: " + string(score));
+    
+    draw_set_halign(_cur_halign);
+    draw_set_valign(_cur_valign);
+  
+  Powyższy kod zapisuje aktualnie stosowane wartości "halign" i "valign" do zmiennych lokalnych, a następnie zmienia ich wyrównanie w celu narysowania tekstu. Po narysowaniu tekstu przywraca wyrównanie do wartości zapisanych w zmiennych lokalnych.
+   
+   
+  
+    
+      
+        Powrót: Tekst
+        Następny: draw_text
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

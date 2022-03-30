@@ -1,0 +1,47 @@
+
+  
+  audio_sound_get_listener_mask
+  Ta funkcja zwraca dane maski bitowej określające, z których odbiorników audio ma być odtwarzany dźwięk. Więcej informacji na ten temat znajduje się w rozdziale Słuchawki audio.
+   
+  Składnia:
+  audio_sound_get_listener_mask(soundID);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        soundID
+        Identyfikator instancji dźwięku
+        The unique ID of the sound to get the mask of
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  var snd = audio_play_sound(snd_PlayerDead, 10, false);
+    if audio_sound_get_listener_mask(snd) != global.PlayerMask
+    {
+        audio_sound_set_listener_mask(snd, global.PlayerMask);
+    }
+  Powyższy kod odtwarza dźwięk, a następnie sprawdza dane maski słuchacza dla tego dźwięku i jeśli nie są one takie same jak dane zapisane w zmiennej globalnej, ustawia słuchacza(-ów) do odtwarzania, używając danych maski zapisanych w zmiennej globalnej.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_sound_length
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

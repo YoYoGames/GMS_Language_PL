@@ -1,0 +1,39 @@
+
+  
+  gra_restart
+  Za pomocą tej funkcji można ponownie uruchomić grę. Jest to zasadniczo to samo, co uruchomienie gry po raz pierwszy, a więc zostanie wywołane zdarzenie rozpoczęcia gry oraz zdarzenie zakończenia gry.
+   
+  Należy zauważyć, że niektóre elementy nie zostaną zresetowane po wywołaniu tej funkcji:
+  
+    Zmienne globalne nie będą ponownie inicjowane, chyba że zostaną tak wyraźnie zakodowane - na przykład wbudowana zmienna globalna score nie będzie zaczynać od zera po ponownym uruchomieniu gry, jeśli została już zmodyfikowana w grze.
+    Stan układu GPU nie zostanie zmieniony (więc jeśli na przykład został ustawiony kolor rysowania lub alfa, pozostanie on na zmienionej wartości).
+    Prędkość gry pozostanie taka, jaką ustawiłeś w kodzie gry (jeśli ją zmieniłeś, ta zmiana zostanie utrwalona).
+    Wszystkie strony asset z przeglądarki Asset, które zostały zmienione w czasie gry - na przykład jeśli zmienisz źródło dla zasobu sprite lub zmienisz położenie zasobu path - nie zostaną zresetowane.
+    Zasoby dynamiczne, takie jak buffers, powierzchnie, struktury danych czy importowane sprites również nie zostaną wyczyszczone ani usunięte (choć można stracić do nich odniesienia, dlatego przy korzystaniu z tej funkcji należy pamiętać, aby używać globalnych odniesień do zasobów dynamicznych lub wyczyścić je przed wywołaniem funkcji).
+    
+     
+  
+  Składnia:
+  game_restart();
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if keyboard_check_pressed(ord("R")) game_restart();
+  Spowoduje to ponowne uruchomienie gry po naciśnięciu przez gracza klawisza "R".
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne sterowanie grą
+        Następny: game_load
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

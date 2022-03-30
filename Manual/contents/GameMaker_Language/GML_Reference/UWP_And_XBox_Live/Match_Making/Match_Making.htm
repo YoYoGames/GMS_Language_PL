@@ -14,8 +14,8 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>Dopasowywanie</h1>
-  <p>Matchmaking (multiplayer) dla Xbox Live i UWP wymaga pewnej konfiguracji, częściowo za pomocą pliku konfiguracyjnego, który określa, jakich połączeń sieciowych będziesz używać, a częściowo poprzez ustawienie szablonów sesji i hopperów matchmakingowych w Xbox Developer Portal. <span class="notranslate">GameMaker Studio 2</span> obsługuje to poprzez wykorzystanie celu UWP i pozwala na następujące czynności:</p>
+  <h1>Matchmaking</h1>
+  <p>Matchmaking (multiplayer) dla Xbox Live i UWP wymaga nieco konfiguracji, poprzez ustawienie szablonów sesji i hopperów matchmakingowych na Xbox Developer Portal. <span data-keyref="GameMaker Name">GameMaker</span> obsługuje to za pomocą celu UWP i pozwala na następujące czynności:</p>
   <ul class="colour">
     <li>Tworzenie sesji dla wielu graczy</li>
     <li>Znajdź sesję dla wielu graczy (i/lub dołącz do niej)</li>
@@ -24,8 +24,6 @@
     <li>Uzyskaj listę użytkowników w sesji</li>
     <li>Opuść sesję</li>
   </ul>
-  <p>Łączność sieciowa Xbox Live opiera się na czymś, co nazywa się <b>Secure Device Association (Stowarzyszenie bezpiecznych urządzeń</b>). Jest to umowa określająca dokładnie sposób, w jaki urządzenie łączy się z innymi urządzeniami, oraz rodzaj danych, które może przesyłać za pomocą tego połączenia. Umowę tę konfiguruje się za pomocą pliku, który należy dołączyć do projektu. Przykład takiego pliku można znaleźć <a href="http://help.yoyogames.com/attachments/token/aF6pHTwVLjGal1JOQbV3NpyZg/?name=test_xbox_network_manifest.man" target="_blank">tutaj</a>. Najważniejsze punkty w pliku to protokół i numery portów dla każdego opisu gniazda, ponieważ muszą one być zgodne z tym, co zostało skonfigurowane w kodzie.</p>
-  <p>Po utworzeniu tego pliku manifestu sieciowego należy dodać go do projektu jako <a href="../../../../Settings/Included_Files.htm">plik dołączony</a>. Następnie w Opcjach gry UWP, na karcie Ogólne Xbox One, należy go zaznaczyć w polu kombi &quot;Dołączony plik manifestu konfiguracji sieci&quot;.</p>
   <p>Aby utworzyć sesję wieloosobową, musisz określić, jaki <b>szablon</b> sesji ma być użyty. Szablony sesji są zdefiniowane w XDP, ale przykład pokazano poniżej:</p>
   <p class="code">Session Name: MatchSession<br />
     Contract Version: 107<br />
@@ -45,9 +43,9 @@
             &quot;custom&quot;: {}<br />
         }<br />
     }</p>
-  <p>Opis tych pól można znaleźć w części &quot;Session Overview&quot; w pliku pomocy XDK. Należy pamiętać, że obecnie nie obsługujemy dynamicznego ustawiania parametrów sesji z poziomu strony <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p>Opis tych pól można znaleźć w sekcji &quot;Session Overview&quot; w pliku pomocy XDK. Należy pamiętać, że obecnie nie obsługujemy dynamicznego ustawiania parametrów sesji z poziomu programu <span data-keyref="GameMaker Name">GameMaker</span>.</p>
   <p>Wraz z szablonem sesji należy również skonfigurować hopper dopasowujący, aby umożliwić odnalezienie sesji (jest to również wykonywane w XDP). Hoppery są używane do definiowania reguł, które są używane podczas dopasowywania graczy. Podobnie jak w przypadku parametrów sesji, nie obsługujemy obecnie dynamicznego ustawiania parametrów hoppera z poziomu GameMaker: Studio. Zobacz sekcję &quot;SmartMatch Matchmaking Configuration&quot; w pliku pomocy XDK, aby uzyskać więcej szczegółów.</p>
-  <p>Następujące funkcje są dostępne w przypadku kojarzenia meczów na XboxLive (należy pamiętać, że konieczne będzie również korzystanie z <a href="../../Networking/Networking.htm">funkcji sieciowych</a> <span class="notranslate">GameMaker Studio 2</span> w celu nawiązywania połączeń itd:)</p>
+  <p>Następujące funkcje są dostępne dla kojarzeń Xbox Live (pamiętaj, że musisz również korzystać z <a href="../../Networking/Networking.htm">funkcji sieciowych</a> <span data-keyref="GameMaker Name">GameMaker</span> w celu nawiązywania połączeń itd:)</p>
   <ul class="colour">
     <li><a href="xboxlive_matchmaking_start.htm"><span class="notranslate">xboxlive_matchmaking_start</span></a></li>
     <li><a href="xboxlive_matchmaking_stop.htm"><span class="notranslate">xboxlive_matchmaking_stop</span></a></li>
@@ -58,7 +56,7 @@
     <li><a href="xboxlive_matchmaking_session_leave.htm"><span class="notranslate">xboxlive_matchmaking_session_leave</span></a></li>
   </ul>
   <p> </p>
-  <p>GameMaker Studio 2 udostępnia dodatkowy zestaw funkcji kojarzenia, za pomocą których można zapraszać innych graczy w sieci do udziału w sesji lub akceptować zaproszenia do udziału w cudzej sesji. Dostępne są następujące funkcje:</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> udostępnia dodatkowy zestaw funkcji kojarzenia, za pomocą których można zapraszać innych graczy w sieci do dołączenia do sesji lub akceptować zaproszenia do sesji innych graczy. Dostępne są następujące funkcje:</p>
   <ul class="colour">
     <li><a href="xboxlive_matchmaking_send_invites.htm"><span class="notranslate">xboxlive_matchmaking_send_invites</span></a></li>
     <li><a href="xboxlive_matchmaking_set_joinable_session.htm"><span class="notranslate">xboxlive_matchmaking_set_joinable_session</span></a></li>

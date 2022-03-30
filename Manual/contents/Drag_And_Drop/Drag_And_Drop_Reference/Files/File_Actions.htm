@@ -9,7 +9,7 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Section detailing all the File actions" />
-  <meta name="rh-index-keywords" content="DnD™ Overview - File Actions Library" />
+  <meta name="rh-index-keywords" content="GML Visual Overview - File Actions Library" />
   <meta name="search-keywords" content="File Actions" />
 </head>
 <body>
@@ -20,11 +20,11 @@
   <p><b>Pliki buforowe</b> tworzy się, zapisując dane z utworzonej wcześniej strony <span class="notranslate">buffer</span>. Dane te można następnie w dowolnym momencie w przyszłości ponownie załadować do strony <span class="notranslate">buffer</span>. Więcej informacji na temat strony <span class="notranslate">buffers</span> można znaleźć tutaj: <a href="../Buffers/Buffer_Actions.htm">Akcje bu</a>forowe.<b></b></p>
   <p><b>Pliki Ini</b> to małe, lekkie pliki, które są kompatybilne z większością platform. Są idealne do przechowywania niewielkich informacji, takich jak preferencje interfejsu, lokalne wyniki, dane poziomów itp. Pliki Ini nie muszą
     można odczytać z nieistniejącego pliku Ini i po prostu otrzymać wartość zwrotną <span class="inline">default</span> (określoną przez użytkownika), jednak zalecamy utworzenie co najmniej &quot;bazowego&quot; pliku
-    ini, który można otworzyć i zmodyfikować przed użyciem akcji. Taki bazowy plik ini można utworzyć, wywołując po prostu akcję <a a="" href="Open_Ini_File.htm">Open Ini File</a>, a następnie <a href="Close_Ini_File.htm">Close Ini File</a>, ponieważ zamknięcie
+    ini, który będzie można otwierać i modyfikować przed użyciem akcji. Taki bazowy plik ini można utworzyć, wywołując po prostu akcję <a a="" href="Open_Ini_File.htm">Open Ini File</a>, a następnie <a href="Close_Ini_File.htm">Close Ini File</a>, ponieważ zamknięcie
     plik zostanie zapisany na dysku, lub można go umieścić w folderze <a href="../../../Settings/Included_Files.htm">Included Files (Dołączone pliki</a> ) w przeglądarce <span class="notranslate">Asset</span>. Jeśli używasz pliku dołączonego do <span class="notranslate">Asset</span> Browser jako bazowego Ini, powinieneś również przeczytać
     rozdział podręcznika dotyczący <a href="../../../Additional_Information/The_File_System.htm">działania systemu plików</a>.</p>
-  <p class="note"><b>UWAGA</b>: W przypadku gier z lokalizacjami bardzo ważne jest, aby akcentowane litery mogły być odczytywane z plików zewnętrznych. Oznacza to, że należy najpierw utworzyć plik ini w <b>formacie UTF8</b>, a następnie dodać go do witryny <span class="notranslate">GameMaker Studio 2</span> jako plik dołączony
-    aby został on wyeksportowany podczas uruchamiania gry i użyty zamiast domyślnego pliku ini w formacie ANSI, który jest tworzony przez funkcje ini, jeśli wcześniej nie został dostarczony. W ten sposób można poprawnie odczytywać i zapisywać w nim tekst z zachowaniem wszystkich akcentów i liter nieromańskich.
+  <p class="note"><b>UWAGA</b>: W przypadku gier z lokalizacjami bardzo ważne jest, aby akcentowane litery mogły być odczytywane z plików zewnętrznych. Oznacza to, że należy najpierw utworzyć plik ini w <b>formacie UTF8</b>, a następnie dodać go do programu <span data-keyref="GameMaker Name">GameMaker</span> jako plik dołączony
+    aby był on eksportowany podczas uruchamiania gry i używany zamiast domyślnego pliku ini w formacie ANSI, który jest tworzony przez funkcje ini, jeśli wcześniej nie podano żadnego pliku. W ten sposób można poprawnie odczytywać i zapisywać w nim tekst z zachowaniem wszystkich akcentów i liter nieromańskich.
     zachowane są wszystkie akcenty i litery nieromanowe.</p>
   <p>Do pracy z plikami dostępne są następujące czynności:</p>
   <p> </p>
@@ -99,7 +99,7 @@
     <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
   </div>
   <!-- KEYWORDS
-Drag And Drop File Actions
+GML Visual File Actions
 File Actions
 -->
   <!-- TAGS

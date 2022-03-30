@@ -1,0 +1,43 @@
+
+  
+  vertex_end
+  Ta funkcja kończy tworzenie niestandardowego elementu pierwotnego. Po wywołaniu tego polecenia prymityw może być użyty w funkcji vertex_submit() do użycia w funkcji shader lub można zamrozić buffer (dzięki czemu vertex buffer będzie używany tylko do odczytu i znacznie szybciej), używając vertex_freeze().
+   
+  Składnia:
+  vertex_end(buffer);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        buffer
+        Vertex Buffer ID
+        The buffer to end writing to.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  vertex_end(buff);
+  Powyższy kod zakończy definiowanie niestandardowego elementu prymitywnego.
+   
+   
+   
+  
+    
+      
+        Powrót: Prymitywy i Vertex Formaty
+        Następny: vertex_freeze
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

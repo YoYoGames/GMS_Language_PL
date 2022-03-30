@@ -1,0 +1,45 @@
+
+  
+  layer_tilemap_get_id
+  Za pomocą tej funkcji można pobrać unikatową wartość ID elementu mapy tile na warstwie. Podajesz identyfikator warstwy (który otrzymujesz podczas tworzenia warstwy za pomocą layer_create()) lub nazwę warstwy (jako string - będzie to miało wpływ na wydajność), a funkcja zwróci wartość ID związaną z elementem mapy tile na warstwie. Zwróć uwagę, że funkcja ta jest przeznaczona specjalnie do użytku z mapami tile, które zostały dodane w serwisie IDE, ponieważ jeśli dodasz mapę tile do warstwy za pomocą kodu przy użyciu funkcji layer_tilemap_create()to zwróci ona unikalny identyfikator dodanego elementu mapy tile. Jeśli podany identyfikator mapy jest nieprawidłowy lub mapa nie istnieje, funkcja zwróci -1.
+   
+  Składnia:
+  layer_tilemap_get_id(layer_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_id
+        String lub Identyfikator warstwy
+        The unique ID value of the layer to target (or the layer name as a string)
+      
+    
+  
+   
+  Zwroty:
+  Tile Map Element ID or -1
+   
+  Przykład:
+  var lay_id = layer_get_id("tilemap_trees");
+    var tile_id = layer_tilemap_get_id(lay_id);
+    layer_tilemap_destroy(tile_id);
+  Powyższy kod pobierze identyfikator warstwy o nazwie "tilemap_trees", a następnie użyje go do uzyskania identyfikatora elementu mapy tile na tej warstwie. Identyfikator ten zostanie następnie użyty do usunięcia mapy tile z warstwy.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy mapy kafelkowej
+        Następny: layer_tilemap_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

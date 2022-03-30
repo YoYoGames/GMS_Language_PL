@@ -1,0 +1,58 @@
+
+  
+  array_get
+  Za pomocą tej funkcji można pobrać wartość z indeksu w tablicy. Funkcja wymaga podania zmiennej zawierającej tablicę oraz indeksu, z którego ma zostać pobrana wartość w tablicy. Należy pamiętać, że jeśli podany indeks tablicy jest poza granicami, to gra ulegnie awarii z błędem. Funkcja ta może być również używana dla tablic wielowymiarowych, o ile przy podawaniu indeksu tablicy zostanie określone, z którego wymiaru ma zostać pobrana wartość, zgodnie z poniższym wzorem:
+  // 1D array
+    array_get(my_array, 0);
+    // 2D array
+    array_get(my_array[0], 0);
+    // 3D array
+    array_get(my_array[0][0], 0);
+    // etc...
+   
+  Składnia:
+  array_get(variable, index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        variable
+        Tablica
+        The variable that holds the array.
+      
+      
+        index
+        Real
+        The index of the array element to get the value from.
+      
+    
+  
+   
+  Zwroty:
+  Variable (Any valid data type that an array can hold)
+   
+  Przykład:
+  for (var i = 0; i < 10; ++i;)
+    {
+        show_debug_message(array_get(my_array, i));
+    }
+  Powyższy kod wyświetli na konsoli 10 pierwszych elementów z podanej listy.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: array_set
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

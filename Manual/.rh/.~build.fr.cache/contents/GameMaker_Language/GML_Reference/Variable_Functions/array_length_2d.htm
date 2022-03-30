@@ -1,0 +1,55 @@
+
+  
+  array_length_2d DEPRECATED
+  OSTRZEŻENIE! Ta funkcja jest przestarzała (i zastąpiona przez array_length()), ponieważ tablice nie są już ograniczone do 1 lub 2 wymiarów, i jako taka jest dostarczana tylko w celu wsparcia starszych projektów. Wszystkie nowe projekty powinny korzystać z obecnego sposobu tworzenia tablic wielowymiarowych i uzyskiwania do nich dostępu (więcej informacji tutaj ).
+  Za pomocą tej funkcji można uzyskać długość (liczbę wpisów) drugiego wymiaru tablicy. Podajemy numer wpisu w pierwszym wymiarze, a funkcja zwraca liczbę wpisów w drugim wymiarze tablicy (aby znaleźć długość pierwszego wymiaru, należy użyć funkcji array_height_2D()). Funkcja zwróci 0, jeśli podana zmienna nie jest tablicą, lub 1, jeśli zmienna jest tablicą 1D (ponieważ nadal istnieje 1 wiersz).
+   
+  Składnia:
+  array_length_2d(array_index, n);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        array_index
+        Tablica
+        The index of the array to check.
+      
+      
+        n
+        Real
+        The entry of the array to get the length of.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  for (var i = 0; i < array_height_2d(a); ++i;)
+    {
+        for (var j = 0; j < array_length_2d(a, i); ++j;)
+        {
+            a[i, j] = -1;
+        }
+    }
+  Powyższy kod przejdzie przez tablicę 2D loop i ustawi każdy wpis na -1.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: array_height_2d
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

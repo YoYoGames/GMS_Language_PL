@@ -1,0 +1,59 @@
+
+  
+  mp_potential_settings
+  Funkcje mp_potential_ wykonują swoją pracę z wykorzystaniem szeregu parametrów, które można zmieniać za pomocą tej funkcji. Ogólnie metoda działa w następujący sposób: najpierw próbuje iść prosto w kierunku celu, patrząc o pewną liczbę kroków przed siebie, którą można ustawić za pomocą parametru "ahead" (domyślnie 3). Zmniejszenie tej wartości oznacza, że instancja zacznie zmieniać kierunek później, ponieważ nie będzie "widzieć" tak daleko przed sobą, a zwiększenie jej oznacza, że zacznie zmieniać kierunek wcześniej. Jeśli to sprawdzenie doprowadzi do kolizji, instancja zacznie patrzeć na kierunki bardziej na lewo i na prawo od idealnego, prostego kierunku. Robi to w krokach o wielkości "rotstep" (domyślna wartość to 10), a zmniejszenie tej wartości daje instancji więcej możliwości ruchu, ale będzie wolniejsza, ponieważ potrzebuje więcej mocy obliczeniowej.
+  Parametr "maxrot" jest nieco trudniejszy do wyjaśnienia! Instancja ma aktualny kierunek ruchu, a maxrot (domyślna wartość to 30) określa, jak bardzo może zmienić swój kierunek po obu stronach tego aktualnego kierunku w jednym kroku. Zatem nawet jeśli instancja może poruszać się np. prosto do celu, to zrobi to tylko wtedy, gdy nie naruszy tego maksymalnego ograniczenia zmiany kierunku. Jeśli ustawisz dużą wartość maxrot, to instancja będzie mogła zmieniać kierunek w każdym kroku, co ułatwi znalezienie krótkiej strony path, ale strona path będzie brzydsza i mniej naturalna. Jeśli wartość ta będzie mniejsza, wtedy path będzie bardziej płynna, ale może wymagać dłuższych objazdów (a czasem nawet nie znaleźć celu). Wreszcie, gdy nie można wykonać żadnego kroku, zachowanie zależy od wartości parametru "onspot". Jeśli onspot ma wartość true (wartość domyślna), to instancja będzie się obracać w miejscu o wartość wskazaną przez "maxrot", a jeśli ma wartość false, to nie będzie się w ogóle poruszać. Ustawienie wartości false jest użyteczne np. dla samochodów, ale zmniejsza szanse na znalezienie przez instancję adresu path.
+   
+  Składnia:
+  mp_potential_settings(maxrot, rotstep, ahead, onspot)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        maxrot
+        Real
+        The number of degrees either side of the current direction that the instance can rotate in a step
+      
+      
+        rotstep
+        Real
+        The number of degrees either side of the current direction that the instance can check for a collision
+      
+      
+        ahead
+        Real
+        The number of steps ahead that the instance can check for a collision. Larger values are slower than lower ones.
+      
+      
+        onspot
+        Boolean
+        Use this to allow the instance to rotate on the spot when no path is found (true) or not (false)
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  mp_potential_settings(45, 5, 5, 0);
+  Powyższy kod ustawi funkcje mp_potential_ w następujący sposób: instancja może patrzeć pięć kroków do przodu, zmieniać kierunek o 45 stopni co krok, patrzeć 5 stopni w bok od aktualnego kierunku, jeśli na drodze znajduje się przeszkoda, i nie obracać się w miejscu kolizji.
+   
+   
+   
+  
+    
+      
+        Powrót: Planowanie ruchu
+        Następny: mp_potential_step
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

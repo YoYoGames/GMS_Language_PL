@@ -1,0 +1,66 @@
+
+  
+  czcionka_zastąp_sprite_ext
+  Ta funkcja zastąpi stronę sprite font utworzoną wcześniej za pomocą funkcji font_add_sprite_ext(). Wykorzystuje ona "pasek sprite", w którym każdy podobraz jest indywidualnym symbolem lub literą, a obrazy są mapowane na litery na podstawie argumentu "string_map" funkcji. Ten argument to string, którego można użyć, aby powiedzieć GameMaker Studio 2, w jakiej kolejności są pod-obrazy w sprite font, a funkcja będzie je automatycznie mapować podczas pisania tekstu. Jeśli więc na przykład string-map ma postać "AaBbCcDdEeFfGgHh", na stronie sprite font podobrazy muszą być uporządkowane w ten sposób.
+  Można także ustawić odstępy między literami font, aby były proporcjonalne (true) lub nie (false), przy czym odstępy proporcjonalne font są zależne od rzeczywistej szerokości liter (na przykład litera "i" zajmuje mniej miejsca room niż litera "w"), a odstępy nieproporcjonalne font są zależne od szerokości podobrazia, podobnie jak odstępy jednoprzestrzenne font. Na koniec można określić odstęp, jaki ma być pozostawiony między każdą literą podczas pisania. Może to być dowolna wartość całkowita, przy czym 0 oznacza brak odstępu (litery będą się "stykać", jeśli są proporcjonalne). Funkcja zwraca wartość indeksu, którą należy zapisać w zmiennej, ponieważ będzie ona potrzebna we wszystkich kolejnych kodach odwołujących się do tej strony font.
+  Jeśli funkcja zawiedzie, to zakończy działanie bez zastąpienia podanego adresu sprite font.
+  UWAGA Ta funkcja wymaga wcześniejszego dodania strony sprite font za pomocą font_add_sprite()ponieważ zastąpi ona tę stronę i nie może być użyta na stronie fonts, która jest częścią zasobów gry.
+   
+  Składnia:
+  font_replace_sprite_ext(font, spr, string_map, prop, sep);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        font
+        Czcionka Aktywa
+        The font to replace.
+      
+      
+        spr
+        Aktywa Sprite
+        The sprite to add a font based on.
+      
+      
+        string_map
+        String
+        String from which sprite sub-image order is taken.
+      
+      
+        prop
+        Boolean
+        Set as proportional font or not.
+      
+      
+        sep
+        Real
+        The space to leave between each letter.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  font_replace_sprite_ext(global.Font, spr_CalcFont, "0123456789+-*/=", true, 2);
+  Powyższy kod zastąpi obrazek sprite font asset zaindeksowany w zmiennej "global.Font" obrazkiem sprite zaindeksowanym w zmiennej "spr_CalcFont".
+   
+   
+   
+  
+    
+      
+        Powrót: Czcionki
+        Następny: font_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

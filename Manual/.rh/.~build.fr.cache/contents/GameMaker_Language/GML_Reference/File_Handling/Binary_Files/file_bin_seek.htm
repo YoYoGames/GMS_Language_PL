@@ -1,0 +1,47 @@
+
+  
+  file_bin_seek
+  Ta funkcja przesuwa bieżącą pozycję odczytu w pliku na wskazaną pozycję. Podaje się wartość ID pliku zwróconą przez funkcję file_bin_open()i aby dołączyć plik, przed zapisem przesuwa pozycję do
+    rozmiaru pliku przed zapisem.
+  UWAGA: Te funkcje nie działają, gdy modułem docelowym jest HTML5.
+   
+  Składnia:
+  file_bin_seek(binfile, pos);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        binfile
+        The ID of the file to read from.
+     
+      
+        pos
+        The position in the file to move to.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  file = file_bin_open("myfile.bin", 2); size = file_bin_size(file); file_bin_seek(file, size);
+  Spowoduje to otwarcie pliku z tego samego katalogu, w którym znajduje się gra, i przypisanie jego indeksu do zmiennej "plik", a następnie pobranie rozmiaru pliku i ustawienie następnej pozycji zapisu na ten rozmiar.
+   
+   
+   
+  
+    
+      
+        Powrót: Pliki binarne
+        Następny: file_bin_write_byte
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

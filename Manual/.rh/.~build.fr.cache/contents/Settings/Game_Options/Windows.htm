@@ -1,0 +1,54 @@
+
+  
+  Opcje gry w systemie Windows
+  W tej sekcji opisano różne dostępne opcje, które pozwalają kontrolować sposób kompilowania projektów gier Windows. Poszczególne sekcje to:
+  Ogólne
+  Na stronie Ogólne dla gier Windows należy podać informacje niezbędne do wyświetlania na stronie Windows informacji o zainstalowanej i uruchomionej grze. Informacje te znajdują się w sekcji Informacje o produkcie i powinny być całkowicie wypełnione.
+  W sekcji Opcje tego okna możesz wybrać, gdzie ma zostać zainstalowany pakiet z grą - do folderów "%localappdata%" lub "%appdata%" - oraz czy chcesz ustawić opcję Kopiuj exe do folderu wyjściowego. Opcja ta jest przeznaczona dla użytkowników, którzy posiadają różne biblioteki DLL komunikujące się między sobą i z grą. Po jej włączeniu podczas testowania plik EXE gry będzie znajdował się w folderze wyjściowym, a nie w folderze Temp .
+  Następnie można ustawić Margines uśpienia systemu Windows. Ta opcja jest związana z redukcją zacinania się gry podczas uruchamiania jej na określonych systemach. Zasadniczo, jeśli gra działa szybciej niż prędkość room, GameMaker Studio 2 "uśpi" się na pozostały czas, ale to uśpienie może być dość niedokładne i często może się skończyć uśpieniem dłuższym niż to konieczne, powodując wydłużenie czasu wyświetlania klatek, co powoduje zacinanie się gry. Aby obejść ten problem, możemy spać krócej, a następnie przez resztę czasu siedzieć w ciasnym loop, co sprawi, że pomiar będzie bardziej dokładny. Problem z siedzeniem w loop polega jednak na tym, że powoduje to wzrost wykorzystania procesora, co z kolei może spowodować wzrost temperatury procesora i szybsze działanie wentylatora. Domyślnie wartość ta jest ustawiona na 10 i w 99,99% przypadków będzie z tym dobrze, ale w przypadku maszyn z niższej półki lub maszyn, na których działa wiele procesów w tle, może to nie być idealne rozwiązanie (lub w przypadku maszyn z bardzo wysokiej półki) i może być wymagana wartość 1 lub 15. Należy jednak pamiętać, że jest to konfiguracja specyficzna dla danego systemu i to, co działa na komputerze, może nie być odpowiednie dla innego użytkownika, dlatego w razie wątpliwości należy ustawić wartość 10.
+  UWAGA: Oprócz marginesu uśpienia można jeszcze bardziej kontrolować wydajność i zużycie energii na stronie Windows, dostosowując rozdzielczość harmonogramu wątków na stronie runtime.
+  Kolejną opcją jest włączenie funkcji Steam dla swojej gry. Jeśli włączysz tę opcję, upewnij się, że masz zainstalowany pakiet Steamworks SDK (zobacz tutaj) i że dodałeś identyfikator aplikacji Steam w opcjach ogólnych gry. Zwróć uwagę, że jeśli uruchamiasz grę GameMaker Studio 2 na stronie Windows i z wersji Steam na stronie IDE, a tworzysz gry na stronę Steam, konieczne może być również zaznaczenie opcji Użyj alternatywnego launchera dla aplikacji Steam. Ta opcja umożliwia uruchamianie gry podczas testów za pomocą alternatywnego programu uruchamiającego, aby zapobiec oznaczaniu jej przez Steam identyfikatorem aplikacji GameMaker Studio 2 zamiast identyfikatorem aplikacji Twojej gry. Powinieneś włączyć tę opcję tylko podczas tworzenia gry dla Steam i jeśli stwierdzisz, że masz problemy z uruchomieniem gry.
+  Przedostatnią dostępną opcją jest Wyłącz piaskownicę systemu plików. Zaznaczenie tej opcji spowoduje wyłączenie piaskownicy GameMaker Studio 2 dla zapisywania i ładowania plików, umożliwiając dostęp do plików z dowolnego miejsca w systemie, w którym uruchomiona jest gra. Opcja ta jest domyślnie odznaczona, ponieważ zalecamy zachowanie piaskownicy GameMaker Studio 2 dla plików na wszystkich systemach, a po jej zaznaczeniu niektóre obszary zapisu/wczytywania mogą być nadal niedostępne, w zależności od uprawnień na poziomie systemu operacyjnego. Więcej informacji na temat piaskownicy można znaleźć na stronach poświęconych systemowi plików GameMaker Studio 2.
+  Wreszcie, w projektach GameMaker Studio 2 można utworzyć plik wykonywalny x64 dla Windows. Gdy ta opcja jest włączona, podczas kompilacji gry zostanie utworzony 64-bitowy plik wykonywalny. Zdecydowanie zalecamy, aby wszystkie nowe projekty korzystały z tej opcji. Opcja ta stanie się domyślnym (i jedynym) formatem plików wykonywalnych Windows w dłuższej przyszłości, ponieważ runner 32-bitowy będzie stopniowo wycofywany. Należy pamiętać, że po włączeniu tej opcji wszystkie dll'e extension używane przez projekt będą musiały być również 64-bitowe (więcej informacji tutaj ).
+  Grafika
+  Opcje grafiki to opcje, które należy skonfigurować, aby określić sposób, w jaki gra będzie wykorzystywać kartę graficzną docelowego komputera Windows. Dostępne są następujące opcje, które można modyfikować:
+  
+    Wyświetlaj kursor: Gdy ta opcja jest zaznaczona, będzie wyświetlany zwykły kursor windowsowy, a odznaczenie jej spowoduje, że kursor nie będzie wyświetlany, chyba że utworzysz go w kodzie gry. Domyślnie opcja ta jest włączona.
+    Start Fullscreen: Jeśli ta opcja jest zaznaczona, gra będzie uruchamiana w trybie pełnoekranowym, w przeciwnym razie będzie uruchamiana w trybie okienkowym. Domyślnie opcja ta jest wyłączona.
+    Zezwalaj na przełączanie pełnoekranowe: Po zaznaczeniu tej opcji użytkownik może switch przechodzić z trybu pełnoekranowego do okienkowego i z powrotem, używając standardowych skrótów Windows. Domyślnie opcja ta jest wyłączona.
+    Interpoluj kolory między pikselami: Włącza interpolację liniową, która zasadniczo "wygładza" piksele. W przypadku wyraźnej grafiki pikselowej powinno być wyłączone, ale jeśli chcesz uzyskać ładne mieszanki alfa i grafikę o wygładzonych krawędziach, lepiej pozostawić to włączone.
+    Użyj synchronizacji, aby uniknąć rozrywania: Ta opcja włącza lub wyłącza synchronizację w trybie v-sync. Należy pamiętać, że jeśli w grze room prędkość wynosi 120, a gracz ma monitor z częstotliwością odświeżania 60, włączenie tej opcji spowoduje zablokowanie prędkości gry również na 60. Opcja ta jest domyślnie wyłączona.
+    Zezwalaj na zmianę rozmiaru okna: Zaznaczenie tej opcji pozwala użytkownikowi na zmianę rozmiaru okna gry (aby to działało, opcja Okno bez obramowania musi być wyłączona). Opcja ta jest domyślnie wyłączona.
+    Okno bez obramowania: Zaznaczenie tej opcji spowoduje, że gra będzie działać w oknie bez obramowania, z usuniętymi normalnymi przyciskami minimalizacji, maksymalizacji i zamykania oraz tytułem gry. Domyślnie opcja ta jest wyłączona.
+    Skalowanie: W tym miejscu można wybrać opcję zachowania proporcji obrazu (tak więc obraz room o proporcjach 4:3 będzie "letter boxed" na ekranie 16:9) lub pełnego skalowania (rozciągnięcie obrazu tak, aby zmieścił się na całym ekranie).
+      
+      OSTRZEŻENIE! Wyłączenie powierzchni aplikacji spowoduje wyłączenie wszystkich opcji skalowania ustawionych w opcjach gry na stronie Windows do momentu ponownego włączenia. Więcej informacji można znaleźć w części Powierzchnia aplikacji.
+    
+  
+  Na koniec jest jeszcze opcja ustawienia rozmiaru strony tekstury. Domyślnym (i najbardziej kompatybilnym) rozmiarem jest 2048x2048, ale można wybrać dowolny rozmiar z zakresu od 256x256 do 8192x8192. Dostępny jest także przycisk oznaczony Podgląd który wygeneruje strony texture dla tej platformy, a następnie otworzy okno, w którym będzie można zobaczyć, jak wyglądają. Może to być bardzo przydatne, jeśli chcesz zobaczyć, jaką strukturę mają strony texture i uniknąć sytuacji, w której strony texture byłyby większe (lub mniejsze) niż to konieczne. Więcej informacji na temat stron texture można znaleźć tutaj.
+  UWAGA: Należy pamiętać, że im większy rozmiar strony texture, tym mniejsza kompatybilność gry z komputerami o niższej specyfikacji.
+  Zdjęcia
+  W sekcji obrazów znajdują się obrazy, których wymaga Twoja gra. W przypadku Windows musisz dostarczyć plik ikony (w formacie .ico ) oraz splash screen (w formacie .png, .bmp, .jpg lub .gif ). Ekran powitalny będzie wyświetlany podczas ładowania gry i można go włączyć lub wyłączyć, zaznaczając opcję Use Splash Screen (domyślnie jest ona wyłączona).
+  Warto zauważyć, że na stronie GameMaker Studio 2 znajduje się narzędzie Generator obrazów projektu, które może być używane do automatycznego tworzenia wszystkich obrazów wymaganych dla różnych platform docelowych, na które kompilowana jest gra. Jeśli korzystasz z tego narzędzia, powinieneś zweryfikować utworzone obrazy, aby upewnić się, że spełniają one Twoje wymagania.
+  Instalator
+  Gry dla systemu Windows można tworzyć za pomocą instalatora . W tym miejscu można zdefiniować różne ustawienia i grafikę, których GameMaker Studio 2 użyje podczas tworzenia gry. Przede wszystkim mamy opcje graficzne, które określają wygląd samego instalatora:
+  
+    Zakończono: Grafika, która pojawi się na stronie "Zakończono" instalatora. Musi być w formacie *.bmp i mieć wymiary 164x314px.
+    Nagłówek: Grafika, która pojawia się podczas działania instalatora. Musi być w formacie *.bmp i mieć wymiary 150x57px.
+  
+  Można również wskazać określony plik Umowy Licencyjnej (przykład jest dostarczany z GameMaker Studio 2) i niestandardowy plik NSI script  (szczegóły tutaj), jeśli jest potrzebny, lub kliknąć odpowiednie przyciski, aby powrócić do domyślnych plików dostarczonych z GameMaker Studio 2.
+   
+   
+   
+  
+    
+      
+        Wstecz: Opcje gry
+        Następny: macOS
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

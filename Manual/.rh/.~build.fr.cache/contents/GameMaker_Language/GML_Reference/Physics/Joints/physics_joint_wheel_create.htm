@@ -1,0 +1,109 @@
+
+  
+  physics_joint_wheel_create
+  Przegub kołowy to po prostu połączenie przegubu tłokowego i obrotowego, jak w przypadku koła zamontowanego na amortyzatorze samochodu. Określasz punkt zakotwiczenia przegubu oraz dwie instancje fizyki, które mają zostać połączone. Pierwsza instancja będzie działać jako "ciało" przegubu, a druga jako "koło" i będzie mogła swobodnie poruszać się wokół osi przegubu. Można także ustawić wektor osi, czyli wyimaginowaną linię, wzdłuż której przegub będzie działał jak "sprężyna", pozwalając kołu odbijać się od niej w górę i w dół, gdy napotka przeszkody (podobnie jak w przypadku przegubu tłokowego). Ilustruje to poniższy rysunek:
+  Jeśli włączysz silnik, druga instancja będzie się obracać wokół pozycji zakotwiczenia. Możesz ustawić maksymalny moment obrotowy silnika, aby uzyskać żądaną prędkość silnika (N/m), a także prędkość, z jaką silnik ma się obracać. Ponieważ przegub koła również ma oś, wzdłuż której może się poruszać, można ustawić częstotliwość oscylacji (w Hz) oraz współczynnik tłumienia dla przegubu - może zajść potrzeba zmiany tych wartości w celu ich dostrojenia, dlatego zaleca się rozpoczęcie od mniejszych wartości i zwiększanie ich, aż do uzyskania pożądanego efektu.
+  Podobnie jak w przypadku wszystkich przegubów, jeśli ustawisz wartość "col" na true, dwie instancje będą mogły oddziaływać na siebie i zderzać się ze sobą, ale tylko wtedy, gdy wystąpią zdarzenia kolizji, natomiast jeśli ustawisz wartość " false, nie będą się zderzać bez względu na wszystko.
+   
+  Składnia:
+  physics_joint_wheel_create(inst1, inst2, anchor_x, anchor_y, axis_x, axis_y, enableMotor, max_motor_torque, motor_speed, freq_hz, damping_ratio, col)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        inst1
+        Identyfikator instancji
+        The first instance to connect with the joint
+      
+      
+        inst2
+        Identyfikator instancji
+        The second instance to connect with the joint
+      
+      
+        anchor_x
+        Real
+        The x coordinate where the joint is anchored, within the game world
+      
+      
+        anchor_y
+        Real
+        The y coordinate where the joint is anchored, within the game world
+      
+      
+        axis_x
+        Real
+        The x component of the wheel axis vector
+      
+      
+        axis_y
+        Real
+        The y component of the wheel axis vector
+      
+      
+        enableMotor
+        Boolean
+        Whether the motor should be active (true) or not (false)
+      
+      
+        max_motor_torque
+        Real
+        Sets the maximum motor torque used to achieve the desired motor speed (in Newtons per meter)
+      
+      
+        motor_speed
+        Real
+        This is the speed at which the motor should rotate
+      
+      
+        freq_hz
+        Real
+        This is the oscillation frequency for the joint, in hertz
+      
+      
+        damping_ratio
+        Real
+        This damping ratio for the joint
+      
+      
+        col
+        Kolor
+        Whether the two instances can collide (true) or not (false)
+      
+    
+  
+   
+  Zwroty:
+  Physics Joint ID
+   
+  Przykład:
+  var mainFixture = physics_fixture_create();
+    physics_fixture_set_box_shape(mainFixture, 128, 32);
+    var wheelFixture = physics_fixture_create();
+    physics_fixture_set_circle_shape(wheelFixture, 32);
+    var o_id = instance_create_layer(x+25, y + 100, "Instances", obj_Wheel);
+    physics_fixture_bind(mainFixture, id);
+    physics_fixture_bind(wheelFixture, o_id);
+    physics_joint_wheel_create(id, o_id, o_id.x, o_id.y, 0, 1, true, 10, 1, 15, 6, false);
+    physics_fixture_delete(mainFixture);
+    physics_fixture_delete(wheelFixture);
+  Powyższy kod tworzy i definiuje dwa nowe uchwyty. Są one następnie wiązane z instancją wywołującą oraz z nową instancją, która jest tworzona przed zastosowaniem przegubu koła do ich połączenia, po czym mocowania są usuwane z pamięci.
+   
+   
+   
+  
+    
+      
+        Plecy: Stawy
+        Następny: physics_joint_weld_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

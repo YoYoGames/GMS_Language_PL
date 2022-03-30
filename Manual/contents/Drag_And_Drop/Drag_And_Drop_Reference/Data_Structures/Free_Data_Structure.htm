@@ -9,14 +9,14 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains the Free Data Structure action" />
-  <meta name="rh-index-keywords" content="DnD™ Action - Free Data Structure" />
+  <meta name="rh-index-keywords" content="GML Visual Action - Free Data Structure" />
   <meta name="search-keywords" content="Free Data Structure" />
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><img> Dowolna struktura danych</h1>
-  <p>Ta akcja powoduje zwolnienie struktury danych z pamięci i powinna być wywoływana zawsze wtedy, gdy struktura danych nie jest już potrzebna, na przykład w zdarzeniu Destroy nawet instancji lub w zdarzeniu <span class="notranslate">Room</span> End, itd. Uwolnienie struktury danych oznacza, że żadne inne akcje
-    nie będzie można się do niej odwoływać, ponieważ przestanie ona istnieć, choć można to również sprawdzić za pomocą akcji <a href="If_Data_Structure_Exists.htm">If Data Structure Exists</a>.</p>
+  <p>Ta akcja powoduje zwolnienie struktury danych z pamięci i powinna być wywoływana zawsze wtedy, gdy struktura danych nie jest już potrzebna, na przykład w zdarzeniu Destroy nawet instancji lub w zdarzeniu <span class="notranslate">Room</span> End, itp. Uwolnienie struktury danych oznacza, że żadne inne akcje
+    nie można się do niej odwoływać, ponieważ nie będzie ona już istnieć, choć można to sprawdzić za pomocą akcji <a href="If_Data_Structure_Exists.htm">If Data Structure Exists</a>.</p>
   <p>Należy pamiętać, że jeśli struktura danych nie ma indeksu przypisanego do zmiennej o zasięgu globalnym, nie zostanie przeniesiona z jednej strony <span class="notranslate">room</span> na drugą. Na przykład, jeśli utworzysz instancję gracza, a struktura danych listy zostanie przypisana do zmiennej w tej instancji,
     lista będzie musiała zostać uwolniona, jeśli gracz zostanie zniszczony <i>lub</i> jeśli <span class="notranslate">room</span> zmieni się z instancją gracza (chyba że instancja gracza jest oznaczona jako persistent), więc instancja gracza będzie miała dwie akcje Free Data Structure dla obu tych zdarzeń.
     dla obu tych zdarzeń. Ważne jest, aby wszystkie utworzone struktury danych były niszczone w ten sposób, gdy nie są już potrzebne, aby zapobiec wyciekom pamięci, które mogą spowodować problemy z wydajnością lub nawet awarię gry.</p>

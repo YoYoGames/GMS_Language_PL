@@ -1,0 +1,46 @@
+
+  
+  sekwencja_zniszczenia
+  Za pomocą tej funkcji można zniszczyć dynamicznie utworzoną stronę sequence object. Podajesz albo adres sequence object struct (zwrócony przez funkcję sequence_create()) lub identyfikator sequence (zwracany przez funkcję layer_sequence_get_sequence() lub z instancji sequence struct właściwość sequence). Funkcji tej należy używać zawsze wtedy, gdy dynamicznie utworzony adres sequence nie jest już potrzebny, aby zwolnić związaną z nim pamięć.
+   
+  Składnia:
+  sequence_destroy(sequence_struct_or_id);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        sequence_struct_or_id
+        Aktywa sekwencji lub sekwencja Object Struktura
+        The sequence object struct or ID to destroy
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if sequence_exists(my_seq)
+    {
+        sequence_destroy(my_seq);
+    }
+  Powyższy kod sprawdza, czy podany adres sequence object istnieje, a jeśli tak, to zostaje zniszczony.
+   
+   
+   
+  
+    
+      
+        Powrót: Sekwencje
+        Następny: sequence_get
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,46 @@
+
+  
+  warstwa_niszczy_instancje
+  Za pomocą tej funkcji można zniszczyć wszystkie instancje przypisane do danej warstwy. Podajesz ID warstwy (które otrzymujesz podczas tworzenia warstwy za pomocą layer_create()) lub nazwę warstwy (jako string - będzie to miało wpływ na wydajność), a następnie wszystkie instancje, które znajdują się na danej warstwie, zostaną usunięte z gry, wywołując zdarzenia Destroy i Clean Up.
+   
+  Składnia:
+  layer_destroy_instances(layer_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_id
+        Ciąg lub identyfikator warstwy
+        The unique ID value of the layer (or the layer name as a string)
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if global.game_over
+    {
+        layer_destroy_instances(layer);
+    }
+  Powyższy kod sprawdzi zmienną globalną i jeśli ma ona wartość true, to wszystkie instancje znajdujące się na warstwie instancji wywołującej zostaną zniszczone (łącznie z instancją wywołującą).
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_element_move
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

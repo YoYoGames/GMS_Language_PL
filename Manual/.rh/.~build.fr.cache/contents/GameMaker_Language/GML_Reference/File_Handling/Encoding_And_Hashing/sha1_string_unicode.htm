@@ -1,0 +1,47 @@
+
+  
+  sha1_string_unicode
+  W kryptografii SHA-1 to kryptograficzna funkcja skrótu zaprojektowana przez Agencję Bezpieczeństwa Narodowego Stanów Zjednoczonych. Jest ona wykorzystywana w kilku powszechnie używanych aplikacjach i protokołach, takich jak popularny Git, gdzie służy do sprawdzania zmian w plikach.
+    Funkcja ta pobiera dane wejściowe w formacie unicode string i zwraca 160-bitowy skrót wiadomości w formacie ASCII, na przykład:
+  sha1 input string = "The quick brown fox jumps over the lazy dog" sha1 output hash = "2fd4e1c6 7a2d28fc ed849ee1 bb76e739 1b93eb12"
+  W ten sposób można wygenerować bezpieczny klucz, który może być przechowywany i używany do sprawdzania integralności informacji wysyłanych do (lub odbieranych z) zewnętrznej witryny server (na przykład).
+  UWAGA: Istnieją dwa formaty kodowania sha1, UTF-8 i unicode. Oba są przewidziane w celu ułatwienia komunikacji z różnymi konfiguracjami server, ale najczęściej używanym jest unicode.
+  UWAGA: SHA-1 nie jest całkowicie bezpieczny i może zostać złamany. Więcej informacji można znaleźć na tej stronie.
+   
+  Składnia:
+  sha1_string_unicode(string)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        string
+        The string to hash.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var hash, str; str = base64_encode(game_data); hash = sha1_string_unicode(str); http_get("http://www.MacSweeneyGames.com/CatchTheHaggis/gamedata?hash=" + hash); http_get("http://www.MacSweeneyGames.com/CatchTheHaggis/gamedata?data="
+    + str);
+  Powyższy kod zakoduje plik string w base64, a następnie wygeneruje skrót sha1. Na koniec zarówno hash, jak i zakodowana strona string są wysyłane do strony server.
+   
+   
+   
+  
+    
+      
+        Powrót: Kodowanie plików
+        Następny: sha1_file
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

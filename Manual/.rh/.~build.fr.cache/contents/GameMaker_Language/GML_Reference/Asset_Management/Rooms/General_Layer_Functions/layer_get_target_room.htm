@@ -1,0 +1,32 @@
+
+  
+  warstwa_get_target_room
+  Ta funkcja zwraca bieżącą stronę room, na którą skierowane są funkcje warstwy. Więcej informacji można znaleźć na stronie layer_set_target_room() aby uzyskać więcej informacji.
+   
+  Składnia:
+  layer_get_target_room()
+   
+  Zwroty:
+  Room Asset
+   
+  Przykład:
+  if layer_get_target_room() != room
+    {
+        layer_reset_target_room();
+    }
+  Powyższy kod sprawdza bieżący cel room i jeśli nie jest to bieżący cel room, to zerowany jest cel warstwy room.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_reset_target_room
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,42 @@
+
+  
+  sprite_duplicate
+  Ta funkcja zwraca indeks nowo utworzonej strony sprite, która jest duplikatem (kopią) strony podanej jako argument "index". Jeśli funkcja nie powiedzie się, zwracane jest -1. Ta funkcja musi być użyta do skopiowania sprites z oryginalnej assets, zanim będzie można wykonać na nich jakiekolwiek przekształcenia. Na przykład, jeśli chcesz zmienić ramkę ograniczającą dla sprite lub ustawić jej alfa w stosunku do innej sprite, musisz ją najpierw zduplikować, a następnie wykonać operację na zduplikowanej sprite i użyć jej. Zduplikowana strona sprite zostanie umieszczona na swojej własnej, unikalnej stronie texture podczas jej tworzenia, co oznacza, że powielanie wielu stron sprites spowoduje utworzenie wielu stron texture i wpłynie na wydajność, dlatego tej funkcji należy używać tylko w razie potrzeby.
+  UWAGA: Po zduplikowaniu adresu sprite w witrynie GameMaker Studio 2 należy pamiętać, aby usunąć go ponownie (za pomocą przycisku sprite_delete()), gdy nie jest już potrzebna, w przeciwnym razie istnieje ryzyko wycieku pamięci, który spowolni, a w końcu doprowadzi do awarii gry.
+   
+  Składnia:
+  sprite_duplicate(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the sprite to duplicate.
+     
+    
+  
+   
+  Zwraca
+  Sprite Asset or -1
+   
+  Przykład:
+  new_spr = sprite_duplicate(sprite_index)
+  Powyższy kod powiela adres sprite, który jest obecnie używany jako indeks instancji sprite, i zapisuje indeks dla tego nowego adresu sprite w zmiennej "new_spr".
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja sprite'ami
+        Następny: sprite_assign
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

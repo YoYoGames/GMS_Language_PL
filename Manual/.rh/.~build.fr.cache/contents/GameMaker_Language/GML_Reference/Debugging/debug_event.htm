@@ -1,0 +1,49 @@
+
+  
+  debug_event
+  Ta funkcja generuje niestandardowe zdarzenie debugowania, które będzie wyświetlane w widoku wykresu na stronie debugger, gdy gra jest uruchomiona w trybie debugowania. Jeśli chcesz, aby komunikaty były wyświetlane, gdy gra nie działa w trybie debugowania, powinieneś użyć funkcji show_debug_message(). Warto zauważyć, że funkcja przyjmuje również dwie zarezerwowane strings, aby ułatwić wykonywanie debugging przy użyciu zewnętrznych aplikacji, takich jak Visual Studio. Te strings to:
+  
+    "OutputDebugOn" - Umożliwia wywołanie adresu OutputDebugString dla celu w systemie Windows, co oznacza, że wszystkie dane wyjściowe debugowania - wszystko, co widać w oknie Output - mogą być przeglądane przez Visual Studio lub aplikacje innych firm.
+    "BreakOnError" - Ta opcja jest przeznaczona tylko dla kompilacji Windows YYC i oznacza, że projekty nie będą wyświetlać zwykłego ekranu błędu kodu, jeśli runtime wykryje błąd, ale zamiast tego po prostu kontynuują i ulegają awarii. Dzięki temu można zobaczyć ślad stacktrace w Visual Studio, jeśli debugging.
+  
+   
+  Składnia:
+  debug_event(string)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        string
+        The custom debug event string to use.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if !surface_exists(global.EffectsSurface)
+    {
+        debug_event("Recreating Effects Surface");
+        global.EffectsSurface = surface_create(room_width, room_height);
+    }
+  Powyższy kod sprawdza, czy powierzchnia istnieje, a jeśli nie, w widoku wykresu na stronie debugger wywoływane jest zdarzenie debugowania (aby było widoczne, gra musi być uruchomiona w trybie debugowania) i powierzchnia jest tworzona na nowo.
+   
+   
+   
+  
+    
+      
+        Powrót: Debugowanie
+        Następny: debug_get_callstack
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

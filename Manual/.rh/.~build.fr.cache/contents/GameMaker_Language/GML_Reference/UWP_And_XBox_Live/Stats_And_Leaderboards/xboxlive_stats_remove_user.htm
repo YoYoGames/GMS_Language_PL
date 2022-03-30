@@ -1,0 +1,55 @@
+
+  
+  xboxlive_stats_remove_user
+  Funkcja ta może być użyta do usunięcia (wyrejestrowania) danego użytkownika z menedżera statystyk, co spowoduje przepłukanie danych statystyk do live server. Zgodnie z dokumentacją XBox, gra nie musi usuwać użytkownika z menedżera statystyk, ponieważ system operacyjny XBox i tak okresowo przepłukuje statystyki. Podajesz identyfikator użytkownika zwrócony przez (na przykład) funkcję xboxlive_get_user()a funkcja zwróci -1, jeżeli wystąpił błąd lub identyfikator użytkownika jest nieprawidłowy, lub inną wartość, jeżeli funkcja została pomyślnie wywołana.
+  UWAGA: Usunięcie użytkownika może spowodować zwrócenie błędu, jeśli statystyki ustawione dla tego użytkownika są nieprawidłowe (np. nazwy statystyk zawierają znaki inne niż alfa numeryczne).
+  Funkcja wygeneruje wywołanie zwrotne, które spowoduje wywołanie systemowego zdarzenia asynchronicznego. Zdarzenie to będzie miało specjalną mapę DS async_load którą należy następnie przetworzyć pod kątem następujących kluczy:
+  
+    "id" - będzie utrzymywać stałą achievement_stat_event
+    "eventname" - będzie przechowywał string "LocalUserRemoved"
+    "userid" - identyfikator użytkownika powiązany z żądaniem
+    "error" - 0, jeśli się powiedzie, inna wartość, jeśli wystąpił błąd
+    "errormessage" - Adres string z komunikatem o błędzie, jeśli taki jest dostępny.
+  
+  Uwaga: jeśli chcesz w dowolnym momencie przepłukać dane statystyk do strony server bez usuwania użytkownika, możesz użyć funkcji xboxlive_stats_flush_user().
+   
+  Składnia:
+  xboxlive_stats_remove_user(user_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        user_id
+        The user ID (a pointer) to remove
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  for(var i = 0; i < xboxlive_get_user_count(); ++i;)
+    {
+        user_id[i] = xboxlive_get_user(i);
+        xboxlive_stats_remove_user(user_id[i]);
+    }
+  Powyższy kod loop przegląda zapisane identyfikatory kont użytkowników i usuwa (wyrejestrowuje) każdego z nich z menedżera statystyk.
+   
+   
+   
+  
+    
+      
+        Powrót: Statystyki i rankingi
+        Następny: xboxlive_stats_flush_user
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,57 @@
+
+  
+  narysuj_ścieżkę
+  Za pomocą tej funkcji możesz sprawić, że GameMaker Studio 2 narysuje na ekranie stronę path. path zostanie narysowana jako prosta linia i może być względna w stosunku do instancji wywołującej lub w pozycji bezwzględnej, w której została utworzona w edytorze path lub w kodzie. Funkcja ta jest niezwykle przydatna, gdy debugging dynamiczne paths (na przykład te utworzone dla instancji z funkcją mp_grid_path() ).
+  UWAGA: Jeśli chcesz narysować kształt za pomocą strony shader, musisz wiedzieć, że większość stron shaders oczekuje następujących danych wejściowych: vertex, texture, Kolor. Jednak w przypadku korzystania z tej funkcji przekazywane są tylko dane vertex i kolor, a zatem shader może niczego nie narysować (lub narysować coś, ale niepoprawnie). Jeśli konieczne jest rysowanie kształtów w ten sposób, należy dostosować stronę shader do tego celu.
+   
+  Składnia:
+  draw_path(path, x, y, absolute);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        path
+        The path to draw
+     
+      
+        x
+        The x coordinate of where the path is drawn
+     
+      
+        y
+        The y coordinate of where the path is drawn
+     
+      
+        absolute
+        Whether the path is drawn at the absolute position (true) lub położenia względnego (false)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if mp_grid_path(grid, path, x, y, obj_Player.x, obj_Player.y, 1)
+    {
+        draw_path(path, x, y, false);
+    }
+  Powyższy kod użyje funkcji mp_grid_path do wygenerowania adresu path i zapisania go w zmiennej "path". Jeśli path zostanie pomyślnie utworzony, zostanie narysowany na ekranie w pozycji względnej do instancji uruchamiającej kod.
+   
+   
+   
+  
+    
+      
+        Powrót: Formularze podstawowe
+        Następny: draw_arrow
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

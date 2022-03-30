@@ -1,0 +1,58 @@
+
+  
+   Rysowanie życia instancji
+  Ta akcja narysuje stronę sprite reprezentującą każde z żyć, które aktualnie posiada instancja. Liczba do narysowania jest pobierana z bieżącej wartości zmiennej lokalnej instancji lives, która jest specjalną zmienną tworzoną automatycznie wewnątrz
+    instancji, jeśli użyjesz którejś z akcji, które jej wymagają. Podajesz adres sprite, który ma zostać wylosowany dla życia, oraz kolejność stosu, która może być wierszowa (poziomo, od lewej do prawej) lub kolumnowa (pionowo, od góry do dołu), a także pozycję.
+    Pozycja może być bezwzględna w obrębie room lub względna w stosunku do pozycji instancji rysującej, a odstępy między obrazkami będą oparte na szerokości lub wysokości sprite. Zauważ, że jest to po prostu rysowanie statycznego obrazka
+    - początkowy pojedynczy obraz (klatka 0) danej instancji sprite - a wszelkie kolejne klatki zostaną zignorowane, podobnie jak wszelkie transformacje dodane do instancji przez zmianę zmiennych instancji (np. image_xscale lub image_blend).
+    Tekst napisu zostanie narysowany przed wartością lives i jeśli jest to tekst, powinien być zawinięty w "", a oba zostaną sformatowane przy użyciu bieżącego rysunku font, koloru i wyrównania.
+  
+  UWAGA: Ta akcja jest przeznaczona wyłącznie do użycia w różnych zdarzeniach losowania i nie spowoduje wylosowania niczego, jeśli zostanie użyta w innym miejscu.
+   
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Caption
+        Strona string do narysowania wraz z wartością punktową (poprzedzająca i może pozostać pusta)
+      
+      
+        Stack Order
+        Kolejność rysowania (wiersz lub kolumna)
+      
+      
+        x
+        Pozycja x, w której ma być rysowane życie
+      
+      
+        y
+        Pozycja y, w której ma być rysowane życie
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji rysuje sprites względem instancji, aby przedstawić
+    bieżącą wartość lives.
+   
+   
+   
+  
+    
+      
+        Powrót: Rysowanie działań
+        Następny: Ustaw kolor rysowania
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

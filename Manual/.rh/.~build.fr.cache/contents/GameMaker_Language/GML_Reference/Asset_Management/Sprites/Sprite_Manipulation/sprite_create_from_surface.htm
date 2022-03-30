@@ -1,0 +1,97 @@
+
+  
+  sprite_create_from_surface
+  Za pomocą tej funkcji można utworzyć stronę sprite na podstawie wcześniej zainicjalizowanej powierzchni (wartość ID indeksu powierzchni jest zwracana podczas tworzenia powierzchni za pomocą funkcji surface_create()). Współrzędne x i y, które następnie wprowadzisz do funkcji, powinny odnosić się do położenia (0,0) powierzchni (lewy górny róg), a nie do okna gry (ani widoku, jeśli jest aktywny). Argumenty width i height są wyrażone w pikselach i określają szerokość i wysokość części powierzchni, która ma zostać użyta.
+  Ustawienie argumentu "removeback" na true spowoduje usunięcie koloru z sprite, poprzez sprawdzenie lewego dolnego piksela sprite pod kątem występującego tam koloru, a następnie użycie go jako koloru do usunięcia.
+  Jeśli wybierzesz opcję "removeback", możesz także chcieć, aby GameMaker Studio 2 wygładził krawędzie sprite, ustawiając argument "smooth" na true. W ten sposób na krawędziach strony sprite zostanie utworzona półprzezroczysta obwódka po usunięciu z niej tła.
+  Możesz także określić początek x i y dla sprite. Jest to punkt, w którym sprite jest "przymocowana" do instancji, która jej używa, i jest zawsze obliczany jako względny w stosunku do 0,0 lewego górnego rogu jednego z podobrazi sprite. Tak więc na przykład obraz sprite o rozmiarach 32 x 32 pikseli z tymi wartościami ustawionymi na (16,16) będzie miał swój początek w środku.
+  Domyślnie wszystkie nowe strony sprites mają automatycznie obliczane ramki ograniczające (dokładna wielkość ramki zależy od rozmiaru i przezroczystości strony sprite), jednak można to dostosować do własnych potrzeb, w takim przypadku należy również użyć funkcji sprite_collision_mask().
+  UWAGA Jeśli utworzysz stronę sprite w GameMaker Studio 2 za pomocą tej metody, musisz pamiętać, aby usunąć ją ponownie (za pomocą sprite_delete()), gdy nie jest już potrzebna, w przeciwnym razie istnieje ryzyko wycieku pamięci, który spowolni, a w końcu doprowadzi do awarii gry.
+   
+  Składnia:
+  sprite_create_from_surface(index, x, y, w, h, removeback, smooth, xorig, yorig);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Identyfikacja powierzchni
+        The index of the surface to create from.
+      
+      
+        x
+        Real
+        The x position to copy from.
+      
+      
+        y
+        Real
+        The y position to copy from.
+      
+      
+        w
+        Real
+        The width of the area to be copied (from the x position).
+      
+      
+        h
+        Real
+        The height of the area to be copied (from the y position).
+      
+      
+        removeback
+        Boolean
+        Indicates whether to make all pixels with the background colour (left-bottom pixel) transparent.
+      
+      
+        smooth
+        Boolean
+        Indicates whether to smooth the edges.
+      
+      
+        xorig
+        Real
+        Indicates the x position of the origin in the sprite.
+      
+      
+        yorig
+        Real
+        Indicates the y position of the origin in the sprite.
+      
+    
+  
+   
+  Zwraca
+  Sprite Asset
+   
+  Przykład:
+  var surf;
+    surf = surface_create(32, 32);
+    surface_set_target(surf);
+    draw_clear_alpha(c_black, 0);
+    draw_sprite(spr_Body, 0, 0, 0);
+    draw_sprite(spr_Clothes, 0, 0, 0);
+    draw_sprite(spr_Hair, 0, 0, 0);
+    spr_custom = sprite_create_from_surface(surf, 0, 0, 32, 32, true, true, 16, 16);
+    surface_reset_target();
+    surface_free(surf);
+  Powyższy kod tworzy powierzchnię i przechowuje jej indeks w zmiennej lokalnej "surf". Następnie kieruje się na tę powierzchnię, oczyszcza ją i rysuje kilka sprites jeden na drugim. Na koniec tworzy nową stronę sprite z połączonego obrazu narysowanego na powierzchni i przypisuje jej indeks do zmiennej "spr_Custom", a następnie zwalnia pamięć używaną przez powierzchnię.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja sprite'ami
+        Następny: sprite_add_from_surface
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

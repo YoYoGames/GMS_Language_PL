@@ -1,0 +1,56 @@
+
+  
+  pokaż_wiadomość_async
+  Ta funkcja otwiera okno i wyświetla użytkownikowi komunikat zdefiniowany w funkcji. Jest to funkcja asynchroniczna i jako taka GameMaker Studio 2 nie blokuje urządzenia, na którym jest uruchamiana, w oczekiwaniu na odpowiedź, lecz kontynuuje normalne wykonywanie zdarzeń. Po naciśnięciu przez użytkownika przycisku "OK" uruchamiane jest zdarzenie asynchroniczne Dialog które tylko na czas trwania tego zdarzenia będzie miało mapę ds_map przechowywaną w zmiennej async_load.
+  Mapa ta będzie zawierać dwa klucze: "id" i "status", przy czym "id" to wartość zwrócona przez funkcję w momencie jej wywołania, a "status" to albo true w przypadku naciśnięcia przycisku "OK", albo false w przypadku anulowania komunikatu (jeśli jest to możliwe, ponieważ nie wszystkie platformy docelowe umożliwiają anulowanie dialogów).
+  UWAGA Ta funkcja jest przeznaczona  wyłącznie do debugowania i testowaniai nie powinna być używana w wydanych grach. W tym celu powinieneś stworzyć własny interfejs użytkownika, który będzie odbierał dane od graczy, tak abyś miał pełną kontrolę nad wyglądem i zachowaniem okien dialogowych.
+   
+  Składnia:
+  show_message_async(string);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        string
+        String
+        The message to show to the user.
+      
+    
+  
+   
+  Zwroty:
+  Async Request ID
+   
+  Przykład rozszerzony:
+   Zdarzenie lewego naciśnięcia myszy (na przykład) w witrynie object, w której wyświetlany jest komunikat, zawierałoby następujący kod:
+  msg = show_message_async("You will now be taken to the store");
+  Powyższe działanie spowoduje wyświetlenie komunikatu o podanym adresie string. Identyfikator komunikatu jest przechowywany w zmiennej "msg" i zostanie użyty w asynchronicznym zdarzeniu Dialogs, jak pokazano poniżej:
+  var i_d, stat;
+    i_d = ds_map_find_value(async_load, "id");
+    if i_d == msg
+    {
+        if ds_map_find_value(async_load, "status")
+        {
+            url_open("https://play.google.com/store");
+        }
+    }
+  Powyższy kod sprawdza, czy klucz "id" zwróconej strony DS Map jest zgodny z wartością przechowywaną w zmiennej "msg". Jeśli są one takie same, sprawdza, czy został naciśnięty przycisk "OK" (a nie czy okno zostało zamknięte/anulowane) i jeśli zwróci true, otwiera adres url.
+   
+   
+   
+  
+    
+      
+        Powrót: Dialog
+        Następny: show_question_async
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

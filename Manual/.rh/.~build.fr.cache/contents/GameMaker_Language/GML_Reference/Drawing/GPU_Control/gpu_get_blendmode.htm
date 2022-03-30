@@ -1,0 +1,69 @@
+
+  
+  gpu_get_blendmode
+  Za pomocą tej funkcji można uzyskać informacje o bieżącym trybie mieszania używanym podczas rysowania. Zwracaną wartością będzie jedna z poniższych stałych (wartością domyślną jest bm_normal):
+  
+    
+      
+      
+      
+    
+    
+      
+        Tryb mieszania Stała
+      
+      
+        Stała
+        Opis
+        Rozszerzony tryb mieszania
+      
+      
+        bm_normal
+        Normalne mieszanie (domyślny tryb mieszania).
+        (bm_src_alpha, bm_inv_src_alpha)
+      
+      
+        bm_add
+        Mieszanie addytywne. Wartości jasności jasnych obszarów są dodawane.
+        (bm_src_alpha, bm_one)
+      
+      
+        bm_subtract
+        Mieszanie subtrakcyjne. Wartości jasności jasnych obszarów są odejmowane.
+        (bm_zero, bm_inv_src_colour)
+      
+      
+        bm_max
+        Mieszanie maksymalne. Podobne do mieszania addytywnego.
+        (bm_src_alpha, bm_inv_src_colour)
+      
+    
+  
+   
+  Składnia:
+  gpu_get_blendmode();
+   
+  Zwroty:
+  Blend Mode Constant (see above for constants)
+   
+  Przykład:
+  if gpu_get_blendmode() != bm_normal
+    {
+        gpu_set_blendmode(bm_normal);
+    }
+  Powyższy kod pobiera bieżący tryb mieszania i jeśli nie jest to bm_normal, ustawia go na tę stałą.
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_get_blendmode_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

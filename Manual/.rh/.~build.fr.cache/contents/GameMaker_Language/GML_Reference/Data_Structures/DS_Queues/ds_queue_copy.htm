@@ -1,0 +1,52 @@
+
+  
+  ds_queue_copy
+  Tej funkcji można użyć do skopiowania zawartości jednej strony queue do drugiej. Należy pamiętać, że NIE usuwa to zawartości oryginalnej strony queue, ani nie niszczy oryginalnej strony queue. queue Jeśli przed kopiowaniem zawierał on jakieś elementy, zostaną one usunięte jako pierwsze (co oznacza, że informacje te zostaną utracone).
+   
+  Składnia:
+  ds_queue_copy(id, source);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        DS Queue ID
+        The id of the new queue.
+      
+      
+        source
+        DS Queue ID
+        The original queue to copy from.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  with (instance_create_layer(x, y, "Enemies", obj_Enemy))
+    {
+        queue = ds_queue_create();
+        ds_queue_copy(queue, other.queue);
+    }
+  Powyższa funkcja tworzy nową instancję, a następnie w tej instancji tworzy nową kolejkę DS i kopiuje zawartość strony queue w instancji uruchamiającej blok kodu, do nowo utworzonej instancji queue.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolejki DS.
+        Następny: ds_queue_read
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -9,7 +9,7 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains the If Collision Shape action" />
-  <meta name="rh-index-keywords" content="DnD™ Action - If Collision Shape" />
+  <meta name="rh-index-keywords" content="GML Visual Action - If Collision Shape" />
   <meta name="search-keywords" content="If Collision Shape" />
 </head>
 <body>
@@ -26,15 +26,15 @@
   <p>Następnie można zaznaczyć lub odznaczyć opcję <b>Zwróć listę</b>. Zaznaczenie tej opcji spowoduje, że akcja utworzy i zapełni <a href="../Data_Structures/Data_Structure_Actions.htm">listę</a><span> </span>strukturą danych zawierającą <i>wszystkie instancje</i>kolidujące
     z kształtem i ustawi zmienną <b>Target</b> na identyfikator listy DS. Jeśli nie jest zaznaczone, zmienna <b>Target</b> będzie miała wartość mniejszą od 0 tylko wtedy, gdy nie zostanie wykryta żadna kolizja, lub będzie miała unikatową wartość ID <i>jednej</i> z instancji w kolizji
     (zauważ, że jeśli w kolizji bierze udział wiele instancji, to nie wiadomo, który identyfikator instancji zostanie zwrócony, jeśli nie używa się listy).</p>
-  <p>Jeśli wybrano opcję zwracania listy, a zmienna Target <i>nie</i> jest ustawiona na <b>Temp</b>, można również wybrać opcję <b>Free Tar</b> get. Jeśli ustawisz ją na <span class="inline">true</span>, wówczas lista zawarta w zmiennej docelowej zostanie zniszczona, a
+  <p>Jeśli wybrano opcję zwracania listy, a zmienna Target <i>nie</i> jest ustawiona na <b>Temp</b>, można również wybrać opcję <b>Free Tar</b> get. Po ustawieniu na <span class="inline">true</span>, lista zawarta w zmiennej docelowej zostanie zniszczona i
     a nowa lista będzie tworzona (i zwracana do zmiennej docelowej) przy każdym wywołaniu akcji. W ten sposób można ponownie używać tej samej zmiennej bez obawy o wycieki pamięci, ponieważ jeśli <i>nie</i> zaznaczymy opcji Free <b>Target</b>, to stajemy się odpowiedzialni
     za zniszczenie listy przed ponownym użyciem zmiennej w akcji. Zauważ, że <i>niezależnie</i> od tego, czy ta opcja jest zaznaczona, czy nie, jeśli akcja została ustawiona na <b>Zwróć</b> listę, to zmienna docelowa <i>zawsze będzie zawierać identyfikator</i> listy,
     i jako taka będzie musiała zostać zwolniona, gdy instancja zostanie zniszczona lub gdy zakończy się działanie <span class="notranslate">room</span> (możesz do tego celu użyć np. zdarzenia <a href="../../../The_Asset_Editors/Object_Properties/Object_Events.htm"><b>Sprzątanie</b></a> na przykład wraz z akcją <a href="../Data_Structures/Free_Data_Structure.htm">Free Data Structure</a><span> </span>).
     Warto zauważyć, że można ustawić opcję <b>Free Target</b> tak, by używała predefiniowanej zmiennej lub wyrażenia i w ten sposób kontrolować, kiedy struktura danych listy zostanie zwolniona, ustawiając zmienną w innym miejscu (lub mając różne wyniki dla wyrażenia)
-    tak długo, jak będzie ono miało wynik <span class="inline">true</span>/<span class="inline">false</span>.</p>
-  <p>Na koniec należy podać zmienną <b>docelową</b>, która ma przechowywać wartość zwracaną lub identyfikator listy. Jeśli <span class="notranslate">flag</span> zmienna docelowa, która ma przechowywać wartość zwracaną, jest zmienną <b>Temp</b> (lokalną), to akcja utworzy tę zmienną, aby przechowywać wartość zwracaną tylko do końca zdarzenia.
-    W takim przypadku opcja Free Target nie robi nic, a użytkownik będzie odpowiedzialny za zniszczenie listy DS, jeśli opcja ta została zaznaczona. Jeśli nie podano zmiennej docelowej i zaznaczono opcję <b>Lista</b> zwracana, lista nie zostanie utworzona.</p>
-  <p class="note"><b>WAŻNE!</b> Kolizje zostaną zarejestrowane tylko dla tych instancji, które mają poprawną maskę kolizji, tzn. mają <span class="notranslate">sprite</span> przypisaną do <span class="inline">sprite_index</span>, lub <span class="notranslate">sprite</span> przypisaną do <span class="inline">mask_index</span>. Jeśli instancje <span class="notranslate">object</span> sprawdzane w tej akcji nie mają maski kolizji, to nie zostaną wykryte, niezależnie od tego, co w danej chwili rysuje instancja.
+    tak długo, jak będzie ono odpowiadać <span class="inline">true</span>/<span class="inline">false</span>.</p>
+  <p>Na koniec należy podać zmienną <b>docelową</b>, która ma przechowywać zwróconą wartość lub identyfikator listy. Jeśli <span class="notranslate">flag</span> zmienna docelowa, która ma przechowywać wartość zwracaną, jest zmienną <b>Temp</b> (lokalną), to akcja utworzy tę zmienną, aby przechowywać wartość zwracaną tylko do końca zdarzenia.
+    W tym przypadku opcja Free Target nie robi nic, a użytkownik będzie odpowiedzialny za zniszczenie listy DS, jeśli opcja ta została zaznaczona. Jeśli nie podano zmiennej docelowej i zaznaczono opcję <b>Lista</b> zwracana, lista nie zostanie utworzona.</p>
+  <p class="note"><b>WAŻNE!</b> Kolizje będą rejestrowane tylko dla tych instancji, które mają poprawną maskę kolizji, tzn. mają <span class="notranslate">sprite</span> przypisaną do <span class="inline">sprite_index</span>, lub <span class="notranslate">sprite</span> przypisaną do <span class="inline">mask_index</span>. Jeśli instancje <span class="notranslate">object</span> sprawdzane w tej akcji nie mają maski kolizji, to nie zostaną wykryte, niezależnie od tego, co w danej chwili rysuje instancja.
     sprawdzane w tej akcji nie mają maski kolizji, to kolizja nie zostanie wykryta, niezależnie od tego, co dana instancja rysuje w danym momencie.</p>
   <p>Należy pamiętać, że aby dodać akcje do bloku &quot;<span class="inline">if</span>&quot;, należy je upuścić z <i>boku</i> akcji, jak pokazano na poniższym rysunku:</p>
   <p><img alt="If Collision Shape Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Collisions/i_Collision_Shape.png" width="32" /></p>

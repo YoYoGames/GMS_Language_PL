@@ -1,0 +1,45 @@
+
+  
+  ścieżka_wyczyść_punkty
+  Za pomocą tej funkcji można usunąć wszystkie definicje punktów z adresu path, tworząc w efekcie "pusty" adres path. Nie usuwa to adresu path, do tego celu należy użyć path_delete()Należy jednak zauważyć, że ta funkcja zmienia rzeczywisty zasób path , a więc będzie trwale wpływać na sposób, w jaki path jest używany przez wszystkie instancje w grze od momentu użycia funkcji do końca gry. Jeśli to nie jest to, czego potrzebujesz, powinieneś użyć funkcji takiej jak path_duplicate(), aby najpierw utworzyć kopię path, a następnie wywołać tę funkcję na powielonej asset (nie zapomnij wywołać path_delete() na asset, gdy nie będzie już potrzebna).
+   
+  Składnia:
+  path_clear_points(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the path to clear.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if path_get_number(mypath) > 0
+    {
+        path_clear_points(mypath);
+    }
+  Powyższy kod sprawdza, czy na stronie path znajdują się punkty zaindeksowane w zmiennej "mypath", a jeśli tak, to czyści stronę path.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja ścieżką
+        Następny: path_append
+        
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

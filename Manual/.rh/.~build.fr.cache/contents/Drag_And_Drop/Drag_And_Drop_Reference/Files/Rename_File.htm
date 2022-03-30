@@ -1,0 +1,45 @@
+
+  
+   Zmień nazwę pliku
+  Za pomocą tej czynności można zmienić nazwę dowolnego pliku zapisanego w grze. Podajesz nazwę pliku do zmiany (jako string), a następnie nową nazwę (również jako string i łącznie z plikiem extension), a nazwa pliku zostanie zmieniona. Pamiętaj, że nie możesz zmienić nazwy pliku, który został dołączony do gry jako plik dołączony (więcej informacji na ten temat znajduje się w rozdziale System plików ).
+   
+  Składnia działania:
+  
+  Argumenty:
+   
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Filename
+        Nazwa (w postaci string) pliku, którego nazwa ma zostać zmieniona.
+      
+      
+        New Name
+        Nowa nazwa (w postaci string) dla pliku
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdzi, czy istnieje plik "checkpoint.sav", a jeśli
+    tak, to następnie sprawdza, czy istnieje plik "checkpoint_OLD.sav". Jeśli ten plik również istnieje, to jest usuwany, a następnie nazwa oryginalnego pliku "checkpoint.sav" jest zmieniana na "checkpoint_OLD.sav". Na koniec bufor
+    jest zapisywany jako "checkpoint.sav" (zasadniczo tworzymy kopię zapasową zapisanego pliku buffer za każdym razem, gdy go zapisujemy, tak że zawsze istnieje "bieżący" zapis i "stary" zapis).
+   
+   
+   
+  
+    
+      
+        Wstecz: Akcje plików
+        Następnie: Kopiowanie pliku
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

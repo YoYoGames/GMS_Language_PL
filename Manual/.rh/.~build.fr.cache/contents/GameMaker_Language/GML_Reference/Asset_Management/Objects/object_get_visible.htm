@@ -1,0 +1,44 @@
+
+  
+  obiekt_get_visible
+  Ta funkcja informuje, czy sprawdzana strona object została oznaczona jako "widoczna" (uruchamia zdarzenie rysowania) czy nie (nie uruchamia zdarzenia rysowania). Należy pamiętać, że nie jest to funkcja instancji! Można więc mieć widoczną object i niewidoczną instancję tej samej object i na odwrót. Widoczność poszczególnych instancji można ustawić za pomocą zmiennej visible zmiennej instance.
+   
+  Składnia:
+  object_get_visible(obj);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        obj
+        The index of the object to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (!visible) && (object_get_visible(object_index))
+    {
+        visible = true;
+    }
+  Powyższy kod sprawdzi, czy uruchomiona instancja jest widoczna, czy nie, a także sprawdzi indeks object tej instancji, aby zobaczyć, czy jest ona oznaczona jako widoczna, czy nie. Jeśli instancja nie jest widoczna, ale indeks object jest oznaczony jako włączony, to ustawi wartość "visible" na true dla tej instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Obiekty
+        Następny: object_get_physics
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

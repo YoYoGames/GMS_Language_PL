@@ -1,0 +1,223 @@
+
+  
+  Redaktor Sprite 
+  Edytor sprite 'ów służy do ustawiania ogólnych właściwości tworzonych sprite 'ów. Okno to można otworzyć, tworząc nowy adres sprite (kliknij prawym przyciskiem myszy adres  w Przeglądarce zasobów i wybierz opcję "Utwórz sprite"), klikając dwukrotnie adres  na istniejącym adresie sprite lub klikając prawym przyciskiem myszy adres  na istniejącym adresie sprite i wybierając opcję "Właściwości".
+  Edytor Sprite składa się z następujących części:
+   
+  Nazwa sprite'a
+  
+    W tym miejscu możesz nadać nazwę sprite. Nazwa sprite będzie używana w całym projekcie gry do identyfikacji zasobu sprite i może mieć tylko postać alfanumeryczną oraz zawierać symbol "_" pod paskiem. W nazwie można używać cyfr.
+      sprites w nazwie, nazwa nie może zaczynać się od cyfry, ponieważ w ten sposób nazwa zasobu nie będzie działać w grach GML lub DnD™.
+     
+  
+  Właściwości obrazu
+  
+    W tej sekcji można ustawić rozmiar obrazu, klikając przycisk Sprite Size (Rozmiar sprajtu ) . Spowoduje to otwarcie następującego okna:
+    Tutaj można zobaczyć podgląd strony sprite przed i po zastosowaniu wybranych przekształceń, a sekcja poniżej służy do
+      do ustawiania nowych właściwości strony sprite i jest podzielona na dwie części:
+    
+      Skaluj obraz: Dzięki tej opcji można zmienić rozmiar płótna rysunkowego sprite, a wszystkie obrazy znajdujące się na stronie sprite zostaną rozciągnięte i przeskalowane, aby dopasować je do nowego rozmiaru. Można wybrać skalowanie z zachowaniem proporcji obrazu podstawowego,
+        Możesz także wybrać skalowanie w pikselach lub w procentach. W zależności od typu obrazu, z którym pracujesz, możesz także włączyć lub wyłączyć interpolację liniową (interpolacja liniowa powoduje "wygładzenie" pikseli na danym obszarze i dlatego najlepiej ją wyłączyć).
+        obszarze, dlatego w przypadku pixel artu najlepiej jest ją wyłączyć).
+      Zmień rozmiar płótna: Ta opcja powoduje zmianę rozmiaru płótna rysunkowego do nowego rozmiaru bez skalowania zawartości. Możesz ustawić punkt zakotwiczenia dla zmiany rozmiaru za pomocą strzałek kierunkowych, a następnie ustawić wartość rozmiaru. Dostępna jest opcja
+        aby zachować proporcje obrazu podczas zmiany rozmiaru płótna, a na dole można wybrać ustawienie wartości zmiany rozmiaru w pikselach lub w procentach.
+    
+    Po zaakceptowaniu nowego rozmiaru można kliknąć przycisk Zastosuj , aby zastosować zmiany i zamknąć okno właściwości Zmień rozmiar. Pamiętaj, że podczas zmiany skali lub rozmiaru strony sprite możesz zdecydować, czy zmiana ma być zastosowana także do początku strony .
+      strony sprite, zaznaczając pole wyboru Zastosuj do początku obok przycisku Zastosuj . Po zaznaczeniu tego pola - jeśli początek nie jest jednym z ustawień domyślnych i nie jest zablokowany w witrynie sprite - jego położenie zostanie przeskalowane tak, aby
+      Po zaznaczeniu - jeśli początek nie jest jednym z ustawień domyślnych i nie jest zablokowany w witrynie sprite- jego położenie będzie skalowane, aby dopasować się do zmiany rozmiaru witryny . Jeśli pole nie jest zaznaczone, do początku nie będzie stosowane żadne skalowanie. Jeśli początek nie jest wartością niestandardową lub jest zablokowany, zostanie wyszarzony i będzie niedostępny. Opcję tę można ustawić dla wszystkich stron sprites w menu
+     Preferencje edytora sprite'ów.
+    
+    UWAGA Ta opcja jest dostępna tylko dla bitmap sprites i będzie wyszarzona dla animacji SWF lub szkieletowej sprites.
+    W tej sekcji możesz także otworzyć Edytor obrazów, aby narysować swoją stronę sprite, lub kliknąć przycisk "Importuj", aby zaimportować wcześniej utworzoną stronę sprite. Sprites można zaimportować z większości popularnych formatów
+      formatów bitmap ( PNG, JPG, GIF, itd...), ale GameMaker Studio 2 obsługuje także animacje wektorowe sprites (SWF) i szkieletowe sprites (
+     Spine). Więcej informacji na temat tych formatów można znaleźć w rozdziale Sprite'y niebitmapowe. Należy pamiętać, że podczas importowania bitmap sprites można wybrać
+      wiele plików graficznych w eksploratorze plików, a każdy z nich zostanie dodany do tej samej strony sprite jako osobne pod-obrazy (ramki).
+    
+     
+  
+  Ustawienia tekstury
+  
+    Ta część okna właściwości sprite dotyczy sposobu, w jaki witryna GameMaker Studio 2 przechowuje obrazy tworzącestrony tekstur sprite w celu ich wykorzystania przez
+      urządzeniami i przeglądarkami. W przypadku platform stacjonarnych może to nie być zbyt ważne, ale gdy zaczynasz tworzyć gry na urządzenia przenośne lub internetowe, właściwe zarządzanie obrazami assets (textures) staje się bardzo ważne, ponieważ niewłaściwe zarządzanie textures może mieć szkodliwy
+      mieć negatywny wpływ na grę, powodując problemy z wydajnością.
+    Pola wyboru Tile Horizontally (Kafelki w poziomie ) i Tile Vertically (Kafelki w pionie ) nie są domyślnie zaznaczone, ponieważ w większości przypadków nie są one potrzebne tile sprites. Jednak w pewnych okolicznościach możesz chcieć, aby były zaznaczone tile, co oznacza, że
+      Należy zaznaczyć te opcje, zwłaszcza jeśli widok ma być skalowany lub room, ponieważ skalowanie może powodować artefakty w grafice gry, jeśli strona texture nie jest generowana prawidłowo.
+    Jeśli witryna sprite ma być używana jako mapa texture w grze 3D, należy zaznaczyć pole wyboru Oddzielna strona Texture , a witryna sprite otrzyma własną stronę texture (należy pamiętać, że każdy obraz podrzędny otrzyma także własną stronę tekstury
+      więc jeśli sprite ma 10 obrazów, wygenerowanych zostanie 10 stron texture ). Zwiększa to zapotrzebowanie gry na pamięć texture, dlatego przy korzystaniu z tej opcji należy zachować szczególną ostrożność. Należy również pamiętać, że jeśli witryna sprite korzysta z tej opcji
+      dla 3D, to rozmiar strony textures powinien być potęgą liczby 2 (np. 128x128, 256x256, 512x512 itd...).
+    Kolejną opcją jest włączenie funkcji Wstępnie mnożona alfa dla obrazów sprite. Włączenie tej opcji spowoduje wstępne mnożenie alfa wszystkich podobrazów na stronie sprite. Zazwyczaj jest to konieczne tylko w przypadku rysowania sprites na powierzchniach lub w celu uzyskania określonych
+      efektów specjalnych. W przypadku normalnego korzystania z witryny sprite nie powinna być zauważalna żadna różnica między normalną witryną sprite a wstępnie pomnożoną.
+    Dostępna jest także opcja Filtrowanie krawędzi. Opcja ta jest przeznaczona specjalnie dla sytuacji, gdy w grze włączona jest interpolacja liniowa i widoczne są "aureole"
+      koloru wokół strony sprites. Jest to spowodowane interpolacją sprzętową na podstawie wielu teksturźródłowych na stronie texture jednocześnie.
+      być szczególnie widoczne przy zwiększaniu rozdzielczości gier. Włączenie tej funkcji spowoduje przefiltrowanie pikseli na krawędziach, tak aby przyjęły kolor najbliższego piksela sprite o pełnej alfie, dzięki czemu interpolowane piksele nie będą miały aureoli, która występowała wcześniej.
+    Na koniec możesz wybrać grupę tekstur, do której ma należeć zasób sprite. Zasadniczo grupa texture (zdefiniowana wcześniej w menedżerze grup tekstur) to coś, co można
+      można ustawić w taki sposób, aby wszystkie zasoby obrazów, które są potrzebne dla konkretnych stron rooms lub poziomów gry, były przechowywane razem. Możesz na przykład umieścić wszystkie obrazy poziomu 1 w jednej grupie texture, wszystkie obrazy poziomu 2 w innej itd.
+      GameMaker Studio 2 spróbuje umieścić wszystkie te zgrupowane zasoby na tej samej stronie texture, aby ograniczyć podmianę stron texture podczas działania gry na wybranej platformie docelowej.
+    UWAGA: Nie zawsze musi to być konieczne, a wzrost wydajności uzyskany dzięki tej metodzie będzie zależał od tego, czy urządzenie docelowe jest związane z procesorem czy z układem graficznym.
+    Więcej informacji na temat stron texture można znaleźć tutaj.
+    Grupy tekstur dotyczą tylko obrazów bitmapowych, a obrazy nie-bitmapowe sprites nie będą przypisane do grup texture i niektóre z powyższych opcji nie będą dla nich dostępne
+      dla nich. Niektóre strony sprites niebędące bitmapami mają już swoją własną, unikalną stronę texture (animacje szkieletowe sprites), a inne nie wymagają strony textures, ponieważ składają się z plików wektorowych (SWF sprites). Więcej informacji można znaleźć w następującej sekcji:
+    
+      Sprite'y bez mapy bitowej
+    
+     
+  
+  Maska antykolizyjna
+  
+    Wszystkie strony sprites mają maskę kolizji, odpowiadającą obszarowi strony sprite, który będzie używany do wykrywania kolizji, gdy strona sprite zostanie przypisana do instancji. Najpierw możesz ustawić tryb maski kolizji, który
+      może być jeden z poniższych:
+    
+      Automatycznie: witryna GameMaker Studio 2 automatycznie obliczy maskę kolizji na podstawie wartości alfa witryny sprite (zależy to od ustawienia Tolerancja, które wyjaśniono poniżej).
+      Pełny obraz: Maska zostanie obliczona tak, aby jej granice były takie same jak lewa, prawa, górna i dolna granica strony sprite.
+      Ręcznie: Wybranie tej opcji oznacza, że chcesz ustawić granice maski kolizji, używając wartości wejściowych dla lewej, prawej, górnej i dolnej strony.
+    
+    Oprócz trybu maski kolizji dostępne są również różne typy masek kolizji, które można wybrać z menu rozwijanego:
+    
+      Prostokąt: Prosta prostokątna maska kolizji. Jest to najszybsza maska do rozwiązania w projekcie.
+      Obrócony prostokąt: Jest to prosta prostokątna maska kolizji, która będzie się obracać wraz z wartością image_angle instancji z przypisanym adresem sprite. Jest ona wolniejsza do rozwiązania niż zwykła prostokątna
+        ale szybsze niż w przypadku precyzyjnej maski kolizji.
+      Elipsa: Tworzy eliptyczną maskę kolizji. Jej działanie jest wolniejsze niż w przypadku maski prostokątnej.
+      Diament: Tworzy "diamentową" maskę kolizji. Jest ona wolniejsza do rozwiązania i generuje więcej obciążenia procesora niż maski prostokątna i eliptyczna.
+      Precyzyjna: Tworzy precyzyjną maskę kolizji na podstawie konturu strony sprite. Jeśli strona sprite ma wiele podobrazów, będzie to kompozycja krawędzi wszystkich podobrazów umieszczonych nad sobą.
+        Należy pamiętać, że dokładna maska zostanie przycięta do ramki ograniczającej, jeśli w opcji Tryb wybrano ustawienie Ręcznie, a użytkownik zmieni wartości domyślne. Jest to bardzo powolne i generuje duże obciążenie procesora.
+      Precyzyjna (na klatkę): Tworzy precyzyjną maskę kolizji dla poszczególnych klatek (tzn. maska będzie się zmieniać, aby dostosować się do konturu każdej kolejnej klatki). Należy pamiętać, że precyzyjna maska zostanie przycięta do ramki ograniczającej, jeśli w opcji Tryb wybrano ustawienie Ręcznie i zmieniono wartości domyślne. Jest to zdecydowanie najwolniej działający typ maski kolizji i należy go unikać z wyjątkiem bardzo, bardzo specyficznych i rzadkich przypadków.
+        przypadków.
+      
+    
+    Na poniższej ilustracji przedstawiono różne opcje masek:
+    Opcje sprawdzania kolizji są bardzo ważne dla Twojej gry, ponieważ mają bezpośredni wpływ na sposób działania strony objects oraz na działanie gry.
+      Nieprawidłowe ustawienia mają nawet negatywny wpływ na ogólną wydajność. Dlaczego tak jest? Otóż, gdy spotkają się dwie instancje i obie mają poprawną maskę, generowane jest zdarzenie kolizji, sprawdzające nakładanie się pola ograniczającego i 
+      maski, która może być dokładna lub nie i dostosowana do indeksu obrazu lub nie. Poniżej znajduje się obrazek ilustrujący to zagadnienie:
+    
+    Poniżej ustawienia maski kolizji znajduje się suwak Tolerancja alfa , który określa tolerancję tworzenia maski w odniesieniu do przezroczystości pikseli na stronie sprites - przy wyższej tolerancji piksele, które są częściowo
+      przy wyższej tolerancji piksele częściowo przezroczyste pozostają poza maską, natomiast przy niższej tolerancji maska będzie uwzględniać te piksele. Ma to wpływ zarówno na ramkę ograniczającą (jeśli nie jest ustawiona jako ręczna), jak i na maskę w celu dokładnego sprawdzania kolizji.
+    Na koniec można ustawić granice pola ograniczającego dla maski. Ramka ograniczająca to nazwa nadana prostokątnemu obszarowi, w którym mieści się maska sprite. Tylko piksele znajdujące się wewnątrz tego obszaru są używane w masce i będą brały udział w sprawdzaniu
+      Domyślnie jest ona obliczana automatycznie z uwzględnieniem tolerancji alfa. Jeśli zaznaczona jest opcja "precyzyjna (na klatkę)", będzie ona obliczana osobno dla każdego podobrazu. Podczas samodzielnego ustawiania można
+      wprowadzić wartości w polach dla lewej, prawej góry i dołu lub kliknąć przycisk  w oknie podglądu sprite i przeciągnąć go, aby "narysować" go nad
+     sprite Należy pamiętać, że podczas rysowania ramki ograniczającej maska jest generowana automatycznie, aby zmieścić się w wartościach końcowych, a ramka ograniczająca może "przycinać" maskę.
+    Warto zauważyć, że jeśli przejdziesz do okna Podgląd, możesz dostosować maskę kolizji za pomocą "uchwytów" znajdujących się w każdym rogu. Kliknięcie i przeciągnięcie ich spowoduje dostosowanie maski kolizji w taki sam sposób, jak w przypadku wprowadzania wartości dla ramki
+      bounding box.
+     
+  
+  Dziewięć plasterków
+  
+    Plastrowanie dziewięciokrotne (znane także jako 9-krojenie) to technika stosowana do skalowania prostokątnych obrazów w celu zachowania szczegółów, dzięki czemu po przeskalowaniu zachowują one swój oryginalny kształt. Więcej informacji można znaleźć na stronie poświęconej plasterkom dziewięciokrotnym.
+    Sekcja Nine Slice (Dziewięć plasterków ) w witrynie Sprite Editor umożliwia włączenie funkcji Nine Slicing (Dziewięć plasterków ) na stronie sprite i jej podgląd w oknie Nine Slice Preview (Podgląd dziew ięciu plasterków) po prawej stronie.
+    Okno Podgląd dziewięciu plaster ków umożliwia zmianę rozmiaru obrazu i pokazuje, jak będzie wyglądał ostateczny obraz po przeskalowaniu go przy użyciu techniki dziewięciu plasterków. Ten podgląd sprite można również obracać.
+    W sekcji Dziewięć wycinków dostępne są następujące opcje:
+    
+      Aktywuj Nine Slice: Ta opcja określa, czy skalowanie Nine Slice jest używane podczas skalowania strony sprite. Gdy opcja jest włączona, skalowanie Nine Slice będzie stosowane dla sprite (i wszystkich instancji object korzystających z tej sprite) umieszczonych w warstwie Sequence lub Room oraz skalowanych sprites rysowanych za pomocą funkcji draw_sprite_ext() i innych podobnych funkcji.
+        
+        UWAGA: Funkcja Nine Slicing nie będzie działać z funkcjami, które rysują tylko część strony sprite lub ją zniekształcają, takimi jak draw_sprite_part() lub draw_sprite_pos().
+      
+      Prowadnice: W tej sekcji wyświetlane jest przesunięcie każdej prowadnicy względem jej osi, a także można zmieniać te przesunięcia. Prowadnice te można także przesuwać wewnątrz okna Sprite Preview, po prostu przeciągając je myszą.
+        
+       UWAGAProwadnice znajdujące się na tej samej osi nie mogą się krzyżować, a przeciągnięcie jednej nad drugą spowoduje wypchnięcie drugiej prowadnicy.
+        
+        
+        Przesunięcie każdej prowadnicy jest względne w stosunku do odpowiadającej jej krawędzi. Na przykład lewa prowadnica jest odsunięta od lewej krawędzi, prawa krawędź jest odsunięta od prawej krawędzi itd.
+        
+        Kolor i alfa każdej prowadnicy można zmienić, klikając kolorowy przycisk znajdujący się obok pozycji prowadnicy.
+        
+      
+      Podświetlenie: Ta opcja wpływa na sposób wyświetlania wybranego wycinka w oknie podglądu Sprite. Opcja "Odwrócony" powoduje podświetlenie strony sprite z nakładką, z wyjątkiem wybranego wycinka, a opcja "Nakładka" powoduje podświetlenie tylko wybranego wycinka z nakładką.
+        
+        Kolor i alfa nakładki można zmienić, klikając kolorowy przycisk znajdujący się obok menu rozwijanego.
+      
+      Wybrany plasterek: Tej opcji można użyć do zaznaczenia plasterka, wybierając jeden z plasterków brzegowych (lewy, górny, prawy, dolny) oraz środkowy. Plaster można także zaznaczyć, klikając go lewym przyciskiem myszy na stronie  w oknie Sprite Preview, a ponowne kliknięcie spowoduje jego odznaczenie.
+      Tryb kafelkowy: Ta opcja jest używana w połączeniu z opcją Wybrany plasterek w celu kontrolowania sposobu wyświetlania plasterka podczas skalowania strony sprite. Do każdego plasterka można zastosować jeden z następujących trybów Tile:
+        
+        
+          Rozciągnij: Wycinek zostanie rozciągnięty, aby wypełnić szczelinę między połączonymi narożnikami.
+          Powtórz: wycinek zostanie powtórzony lub ułożony w kafelki w celu zachowania szczegółów.
+          Lustro: Wycinek zostanie powtórzony przez odbicie lustrzane.
+          Pustepowtórzenie: wycinek zostanie powtórzony tylko raz, a po nim pozostanie pusty obszar.
+          Ukryj: Wycinek nie będzie w ogóle wyświetlany.
+        
+      
+    
+  
+  Komunikaty rozsyłane
+  
+    Ten przycisk doda wiadomość do strony sprite timeline, otwierając okno dialogowe, w którym można dodać wiadomość do nadania. Wiadomość zostanie dodana w dowolnym miejscu widoku ramki, w którym znajduje się głowica odtwarzania. Składa się ona z prostej strony string, którą można odebrać w zdarzeniu Roz głaszanie wiadomości, gdy zostanie ono wywołane, a następnie na nią zareagować.
+    Po dodaniu wiadomość zostanie wyświetlona w widoku ramki i można kliknąć na niej prawym przyciskiem myszy , aby otworzyć menu, w którym można usunąć wiadomość lub ją edytować. Więcej informacji na temat komunikatów rozsyłanych można znaleźć tutaj.
+     
+  
+  Prędkość ramki
+  
+    W tej sekcji można ustawić szybkość odtwarzania klatek animacji z pola wprowadzania po lewej stronie. Szybkość odtwarzania klatek może być ustawiona na podstawie liczby klatek nasekundę lub liczby klatekna klatkę gry,
+      gdzie ustawienie 30 "Klatek na sekundę" spowoduje wyświetlenie 30 klatek animacji w ciągu jednej sekundy, natomiast ustawienie 30 "Klatek na klatkę gry" spowoduje wyświetlenie wszystkich 30 klatek w jednym kroku gry, dlatego wartości "Klatek na klatkę gry"
+      są zwykle ustawione na 1 lub niżej (np. szybkość klatek na klatkę gry wynosząca 0,5 powoduje wyświetlanie nowej klatki co dwa kroki gry).
+    Należy pamiętać, że ustawienia szybkości klatek wpływają nie tylko na odtwarzanie animacji w oknie podglądu, ale także na sposób animowania strony sprite w grach. Ustawiona tutaj prędkość będzie wyświetlała
+      sprite tak, jak będzie ona działać w grze, przy mnożniku szybkości obrazu równym 1, ale można ją ustawić w kodzie za pomocą image_speed zmiennej .
+      co oznacza, że strona sprite może działać szybciej lub wolniej, w zależności od tego, co zostanie zaprogramowane. Jeśli więc na przykład ustawisz w sprite wartość 10 "klatek na sekundę", a następnie ustawisz w image_speed wartość 0,5, gra będzie rysować sprite'a
+      z połową prędkości - 5 klatek na sekundę. I odwrotnie, jeśli dla tego samego sprite ustawimy image_speed na 2, to w grze będzie on rysowany dwukrotnie szybciej - 20 klatek na sekundę. Należy pamiętać, że szybkość klatek można także ustawić
+      w Edytorze obrazów.
+     
+  
+  Pochodzenie Sprite'a
+  
+    Na górnym pasku edytora sprite znajdują się właściwości sprite origin. Jest to punkt na sprite, który odpowiada jego pozycji w room, tzn. gdy utworzysz instancję w określonej pozycji x/y, początek
+      sprite jest umieszczany w tym miejscu.
+    Domyślnie punktem początkowym jest lewy górny róg strony sprite, ale często wygodniej jest użyć środka lub wybrać inną pozycję (np. dla postaci z gry platformowej może to być środek dolny),
+      W tym celu należy kliknąć przycisk  w menu rozwijanym Origin i wybrać jedną z wartości domyślnych. Możesz także ustawić początek ręcznie, klikając przycisk  na obrazie podglądu sprite, co spowoduje przesunięcie krzyżyka znacznika początku do punktu, który kliknąłeś, lub wprowadzając różne wartości x i y w odpowiednich polach. Pamiętaj, że możesz ustawić początek poza obszarem sprite, używając ujemnych wartości
+      liczb ujemnych (w przypadku lewej strony i góry) lub liczb dodatnich większych niż szerokość i wysokość sprite (w przypadku prawej strony i dołu), co może być bardzo przydatne w przypadku stron objects, na których trzeba narysować złożoną stronę sprites.
+     
+  
+  Elementy sterujące powiększeniem
+  
+    W prawej górnej części okna Podgląd znajdują się przyciski sterowania powiększeniem. Przyciski te sterują aktualnym poziomem powiększenia podglądu sprite. Możesz powiększać lub pomniejszać, a kliknięcie przycisku  spowoduje zresetowanie podglądu do rozmiaru 1:1 z edytowaną stroną sprite. Możesz także kliknąć przycisk Dopasuj do okna , aby cały podgląd sprite zmieścił się w
+      w bieżącym oknie edytora (zostanie on odpowiednio powiększony/pomniejszony). Pamiętaj, że możesz powiększać i pomniejszać widok za pomocą przycisków  /  i kółka myszy , a naciśnięcie przycisków  /  +  spowoduje ustawienie podglądu
+      w stosunku 1:1 z rozmiarem actua sprite.
+     
+  
+  Podgląd
+  
+    Okno podglądu  sprite pokazuje stronę sprite tak, jak będzie ona wyglądać w grze. Można ją powiększać i pomniejszać za pomocą kółka myszy , a także przesuwać za pomocą
+      środkowego przycisku myszy  i przeciągania lub kombinacji klawiszy  +  i przeciągania. Do zmiany sposobu wyświetlania obrazu podglądu można także użyć elementów sterujących Ramka (objaśnione poniżej).
+    W oknie tym będzie także widoczny "krzyżyk" oznaczający początek strony sprite (więcej informacji można znaleźć w części Sprite Origin powyżej), a także maska kolizji, jeśli ta opcja jest edytowana (patrz sekcja
+      sekcja Maska kolizji, powyżej).
+     
+  
+  Elementy sterujące odtwarzaniem
+  
+    Elementy sterujące odtwarzaniem służą do odtwarzania w oknie podglądu animacji klatek, przy czym przycisk odtwarzania  służy do rozpoczynania/zatrzymywania
+      animacji, a przycisk Loop  służy do ustawiania, czy animacja sprite loops  (wraca do klatki 1 po osiągnięciu ostatniej klatki) czy ping-ponga  (przechodzi do tyłu przez wszystkie klatki po osiągnięciu ostatniej klatki).
+    Należy pamiętać, że opcja pętli/ping-ponga nie ma wpływu na sposób wyświetlania strony sprite w grze, więc ustawienie tych opcji w witrynie sprite nie zmieni sposobu, w jaki jest ona wyświetlana po skompilowaniu i uruchomieniu gry. Dotyczy to także punktów zapętlenia
+      które można ustawić w widoku klatek (więcej informacji poniżej) - są one widoczne wyłącznie w edytorze sprite i służą do testowania animacji, ale nie mają wpływu na sposób wyświetlania animacji sprite 
+      w grach.
+    Dodatkową częścią kontrolek ramki jest wyświetlanie bieżącej ramki i wprowadzanie danych, znajdujące się nieco dalej po lewej stronie. W polu tym jest wyświetlana całkowita liczba klatek animacji sprite oraz aktualnie wyświetlana klatka. W każdej chwili można zmienić
+      w dowolnym momencie zmienić bieżącą klatkę, klikając pole wprowadzania i wpisując numer klatki, którą chcesz wyświetlić.
+    WAŻNE! Ramki są ponumerowane od 1 do max numeru ramki, jednak w kodzie gry ramki będą ponumerowane od 0 do max numeru ramki - 1.
+  
+  Ramki
+  
+    W tej części edytora sprite pokazane są poszczególne ramki , które tworzą pojedynczy zestaw sprite wzdłuż strony sequence timeline. Można kliknąć  na dowolnej ramce i przeciągnąć ją w lewo lub w prawo, aby zmienić kolejność, w jakiej będą animowane, a także kliknąć dwukrotnie  na dowolnej ramce, aby uruchomić
+      aby uruchomić Edytor obrazów i je edytować. Ramki można wycinać, kopiować i wklejać, używając standardowych skrótów klawiaturowych lub opcji menu prawego przycisku myszy . Można także wybierać wiele ramek, na których mają być wykonywane operacje, używając  /  + .
+    W menu prawego przycisku myszy dostępne są następujące opcje:
+    
+    
+      Dodaj klatkę -dodanie nowej klatki do animacji na końcu.
+      Wstaw ram kę - wstawia nową ramkę do animacji po aktualnie wybranej ramce.
+      Wytnij /  Kopiuj /  Wklej -  wycinanie, kopiowanie i wklejanie jednej lub więcej ramek.
+      Usuń zaznaczone ramki - usuwanie aktualnie zaznaczonej ramki lub ramek.
+    
+    Oprócz podanej powyżej opcji rozciągania ramki można również umieścić kursor myszy na krawędzi ramki, a następnie, gdy kursor zmieni się w podwójną strzałkę, po prostu kliknąć stronę  i przeciągnąć, aby zmienić rozmiar ramki, co zajmie więcej czasu:
+    Wyświetlenie rozciągniętej ramki zajmie więcej czasu, podobnie jak w przypadku wielokrotnego powielania tej samej ramki. 
+    Można także powiększać ramkę timeline, używając "uchwytów" po obu stronach widoku ramki, jak pokazano na poniższej ilustracji:
+    
+  
+   
+   
+  
+    
+      
+        Powrót: Redaktorzy Aktywów
+        Następny: Zestawy płytek
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

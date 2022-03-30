@@ -1,0 +1,44 @@
+
+  
+  pomieszczenie_poprzednie
+  Za pomocą tej funkcji można pobrać indeks strony room przed stroną room wprowadzoną do funkcji. Na przykład można użyć zmiennej room aby uzyskać indeks bieżącego adresu room, a następnie użyć tej funkcji do znalezienia adresu room, który znajduje się przed nim, zgodnie z listą w programie Room Manager. Jeśli przed wprowadzonym przez Ciebie adresem nie ma adresu room, zwracane jest -1. Należy pamiętać, że ta funkcja nie rozpoznaje ani nie uwzględnia stron rooms, które zostały dodane dynamicznie przy użyciu room_add() lub room_duplicate().
+   
+  Składnia:
+  room_previous(numb);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        numb
+        The index of the room to get the one before from.
+     
+    
+  
+   
+  Zwroty:
+  Room Asset
+   
+  Przykład:
+  if room_previous(room) != -1
+    {
+        room_goto_previous();
+    }
+  Powyższy kod sprawdzi, czy istnieje poprzednia strona room, a jeśli tak, to przejdzie do niej.
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

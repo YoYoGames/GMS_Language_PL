@@ -1,0 +1,43 @@
+
+  
+  base64_decode
+  Ta funkcja konwertuje plik string zakodowany wcześniej w formacie base64 na standardowy tekst. Base64 to powszechnie stosowany schemat kodowania, który jest często używany w przypadku wszelkich mediów, które muszą być przechowywane lub przesyłane przez Internet jako tekst.
+    nieczytelny dla ludzkiego oka.
+   
+  Składnia:
+  base64_decode(string)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        string
+        The string to decode.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var str, file; str = base64_encode(game_data); file = file_text_open_read("save.txt"); str = file_text_read_string(file); level_data = base64_decode(str); file_text_close(file);
+  
+  Powyższy kod otworzy plik tekstowy i odczyta z niego adres string do zmiennej lokalnej "str". Następnie ten adres string zostanie zdekodowany, a wynik zapisany w zmiennej instancji "level_data".
+   
+   
+   
+  
+    
+      
+        Powrót: Kodowanie plików
+        Następny: md5_string_utf8
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

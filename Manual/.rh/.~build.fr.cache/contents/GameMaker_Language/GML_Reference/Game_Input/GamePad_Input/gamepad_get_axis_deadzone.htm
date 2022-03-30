@@ -1,0 +1,44 @@
+
+  
+  gamepad_get_axis_deadzone
+  Za pomocą tej funkcji można uzyskać wartość "martwej strefy" dla osi joysticka. Funkcja zwraca wartość z przedziału od 0 do 1, gdzie wartość odzwierciedla próg, poniżej którego oś joysticka jest traktowana jako 0.
+   
+  Składnia:
+  gamepad_get_axis_deadzone(device);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        device
+        Which gamepad device "slot" to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if gamepad_get_axis_deadzone(global.PadId) != 0.5
+    {
+        gamepad_set_axis_deadzone(global.PadId, 0.5);
+    }
+  Powyższy kod sprawdza próg osi analogowej gamepada podłączonego do urządzenia "slot", zapisany w zmiennej globalnej, i jeśli nie jest to wartość domyślna 0,5, ustawia ją na tę wartość.
+   
+   
+   
+  
+    
+      
+        Powrót: Wejście gamepada
+        Następna:  gamepad_get_option 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

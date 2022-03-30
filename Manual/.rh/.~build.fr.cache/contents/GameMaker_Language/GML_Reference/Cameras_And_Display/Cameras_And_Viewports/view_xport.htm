@@ -1,0 +1,32 @@
+
+  
+  widok_eksportu
+  Za pomocą tej wbudowanej tablicy można uzyskać lub ustawić pozycję x danego portu widoku. Port widoku to obszar na ekranie, na którym rysowany jest widok. W danym momencie może być aktywnych maksymalnie 8 portów (tablica przyjmuje wartości od 0 do 7, co daje 8
+    portów). Domyślnie w witrynie GameMaker Studio 2 okno gry (lub płótno tła) ma ten sam rozmiar co witryna room, jednak po włączeniu portów widoku i kamer zachowanie to ulega zmianie i wykorzystywany jest całkowity rozmiar ramki dla wszystkich portów widoku. Jeśli więc masz dwa różne porty widoku w dwóch różnych pozycjach, całkowity obszar, jaki zajmują, określa rozmiar okna gry. Ilustruje to poniższy obrazek:
+  Jeśli masz tylko jeden port widokowy, ustawienie wartości x lub y portu może
+    może mieć interesujące efekty, ale zazwyczaj nie jest praktyczne (zobacz poniższy rysunek), dlatego lepiej jest zachować położenie x i y jako (0,0).
+  
+  Składnia:
+  view_xport[0 .. 7];
+   
+  Zwroty:
+  
+   
+  Przykład:
+  view_xport[0] = 0; view_yport[0] = 0;
+  Powyższy kod resetuje pozycję portu widoku[0] do pozycji (0,0) (lewy górny róg ekranu).
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: view_yport
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

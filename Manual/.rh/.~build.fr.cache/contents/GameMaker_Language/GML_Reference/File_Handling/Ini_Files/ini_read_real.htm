@@ -1,0 +1,51 @@
+
+  
+  ini_read_real
+  Za pomocą tej funkcji można odczytać liczbę z pliku danych ini. Pliki ini są dzielone na sekcje, a następnie każda sekcja jest dzielona na pary klucz-wartość. Typowy plik ini wygląda więc następująco:
+  
+  Składnia:
+  ini_read_real(section, key, default);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        section
+        The section of the .ini to read from.
+     
+      
+        key
+        The key within the relevant section of the .ini to read from.
+     
+      
+        default
+        The value to return if a value is not found in the defined place (or the .ini file does not exist). Must be a real number.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  ini_open("savedata.ini"); score = ini_read_real("save1", "score", 0 ); ini_close();
+  
+  Spowoduje to otwarcie pliku "savedata.ini" i ustawienie wyniku na wartość pod pozycją "save1" > "score", a następnie ponowne zamknięcie pliku .ini. Jeśli nie ma żadnej wartości w "save1" > "score", lub nie ma pliku "savedata.ini"
+    , wynik zostanie ustawiony na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Pliki Ini
+        Następny: ini_read_string
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

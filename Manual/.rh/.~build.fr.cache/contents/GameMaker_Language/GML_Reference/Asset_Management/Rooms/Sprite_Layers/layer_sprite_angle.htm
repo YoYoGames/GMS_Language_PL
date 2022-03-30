@@ -1,0 +1,52 @@
+
+  
+  warstwa_sprite_angle
+  Za pomocą tej funkcji można zmienić kąt dla danego elementu sprite na warstwie. Podaje się identyfikator elementu sprite (który otrzymuje się podczas tworzenia elementu sprite za pomocą layer_sprite_create() lub po użyciu funkcji layer_sprite_get_id()), a następnie ustawia się wartość kąta w zakresie od 0 do 359, zgodnie z ruchem wskazówek zegara, gdzie 0 oznacza przesunięcie w prawo, 90 - w górę, 180 - w lewo, a 270 - w dół. Jeśli ustawisz wartość większą niż 360, zostanie ona zapętlona, aby zmieścić się w zakresie 0 - 359.
+   
+  Składnia:
+  layer_sprite_angle(sprite_element_id, angle);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        sprite_element_id
+        Identyfikator elementu sprite
+        The unique ID value of the sprite element to change
+      
+      
+        angle
+        Real
+        The angle of the sprite (default is 0)
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var asset_sprite = layer_sprite_get_id(layer, "gfc_Trees");
+    if layer_sprite_get_angle(asset_sprite) != 0
+    {
+        layer_sprite_angle(asset_sprite, 0);
+    }
+  Powyższy kod sprawdzi element sprite przypisany do warstwy, na której znajduje się instancja wykonująca kod, i jeśli jego kąt nie wynosi 0, ustawi go na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy Sprite'ów
+        Następny: layer_sprite_blend
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,52 @@
+
+  
+  warstwa_dodaj_instancję
+  Za pomocą tej funkcji można przenieść daną instancję z warstwy, na której się aktualnie znajduje, na inną warstwę. Podajesz ID warstwy (które otrzymujesz podczas tworzenia warstwy za pomocą layer_create()) lub nazwę warstwy (jako string - będzie to miało wpływ na wydajność) oraz identyfikator instancji, która ma zostać przeniesiona między warstwami. Na przykład, jeśli Twój gracz znajduje się na warstwie, która ma mniejszą głębokość niż inna warstwa i chcesz, aby pojawił się za warstwami pomiędzy nimi. Możesz użyć tej funkcji, aby switch przenieść gracza z warstwy pierwszoplanowej na warstwę tła i sprawić, że pojawi się on za innymi rysowanymi warstwami.
+  UWAGA Tej funkcji nie można użyć do dodania nowej instancji do warstwy. Należy wcześniej utworzyć instancję i zapisać jej identyfikator w zmiennej.
+  UWAGA: Ta funkcja jest ważna tylko w zakresie bieżącego adresu room i nie można jej używać, gdy zakres został zmieniony za pomocą funkcji layer_set_target_room().
+   
+  Składnia:
+  layer_add_instance(layer_id, instance_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_id
+        Ciąg lub identyfikator warstwy
+        The unique ID value of the instance layer to target (or the layer name as a string)
+      
+      
+        instance_id
+        Identyfikator instancji
+        The unique instance ID value of the instance to move over to the target layer
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var near = instance_nearest(x, y, obj_Tree);
+    var layer_id = layer_get_id("Instances Front");
+    layer_add_instance(layer_id, near);
+  Powyższy kod najpierw pobiera indeks instancji najbliższej podanej pozycji x/y i zapisuje go w zmiennej lokalnej. Następnie pobiera unikalny identyfikator warstwy instancji dla warstwy o nazwie "Instances Front" i przenosi znalezioną instancję na tę warstwę.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_has_instance
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

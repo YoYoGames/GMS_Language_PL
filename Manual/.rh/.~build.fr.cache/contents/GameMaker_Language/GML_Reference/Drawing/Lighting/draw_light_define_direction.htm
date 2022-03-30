@@ -1,0 +1,60 @@
+
+  
+  draw_light_define_direction
+  Ta funkcja służy do definiowania światła kierunkowego, którego kierunek i natężenie są określane przez wartości wprowadzone dla wektora jednostek x, y i z (co oznacza, że muszą one zawierać się w przedziale od -1 do 1, gdzie 1 lub -1 oznacza pełne natężenie, a 0 - brak natężenia). Światłom
+    światłom można także nadać kolor, co również wpłynie na postrzegane natężenie światła, ponieważ niektóre kolory wydają się "ciemniejsze" od innych. Należy także nadać światłu numer indeksu, który będzie używany w innych funkcjach do odwoływania się do niego.
+    do niego.
+  UWAGA: Dostępnych jest tylko 8 kontrolek sprzętowych, dlatego w danej chwili może być włączonych tylko 8 zdefiniowanych kontrolek (choć można zdefiniować ich więcej).
+   
+  Składnia:
+  draw_light_define_direction(ind, x, y, z, col);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        ind
+        The index number of the light (arbitrary)
+     
+      
+        x
+        The x component of the light vector
+     
+      
+        y
+        The y component of the light vector
+     
+      
+        z
+        The z component of the light vector
+     
+      
+        col
+        The colour to use for the light (either a constant, a real or a hex value).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_set_lighting(true); draw_light_define_direction(1, 0, 1, 0, c_white); draw_light_enable(1, true);
+  Powyższy kod włączy oświetlenie dla całej sceny, następnie zdefiniuje białe światło kierunkowe w przestrzeni room, a na koniec włączy to światło.
+   
+   
+   
+  
+    
+      
+        Powrót: Oświetlenie
+        Następny: draw_light_enable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

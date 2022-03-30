@@ -1,0 +1,50 @@
+
+  
+  warstwa_sprite_index
+  Tej funkcji można użyć do ustawienia indeksu obrazu w witrynie sprite asset, która ma wiele podobrazów na warstwie. Podajesz identyfikator elementu sprite (który otrzymujesz podczas tworzenia elementu sprite przy użyciu layer_sprite_create() lub po użyciu funkcji layer_sprite_get_id()), a następnie określasz indeks obrazu, który ma zostać użyty. Jeśli ustawisz wartość spoza zakresu podobrazów, indeks obrazu będzie loop.
+   
+  Składnia:
+  layer_sprite_index(sprite_element_id, image_index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        sprite_element_id
+        Aktywa Sprite
+        The unique ID value of the sprite element to set
+      
+      
+        index
+        Real
+        The image index to use for the sprite
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var lay_id = layer_get_id("sprite_trees");
+    var spr_id = layer_sprite_get_id(lay_id, "gfc_trees");
+    layer_sprite_index(spr_id, 1);
+  Powyższy kod pobierze identyfikator warstwy o nazwie "sprite_trees", a następnie użyje go do pobrania identyfikatora elementu sprite znajdującego się na tej warstwie. Identyfikator ten zostanie następnie użyty do zmiany indeksu obrazu elementu.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy Sprite'ów
+        Następny: layer_sprite_speed
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

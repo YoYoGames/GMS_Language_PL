@@ -1,0 +1,45 @@
+
+  
+   Pozycja zatrzasku
+  Ta akcja jest używana do "przyciągania" instancji do określonej pozycji współrzędnych siatki. Podajesz rozmiar "komórki" siatki, a instancja zostanie do niej przytrzaśnięta, na przykład jeśli ustawisz wartości przytrzaśnięcia siatki dla poziomu i
+    pionowej na 8, a instancja znajduje się na pozycji (4, 6), to zostanie ona przyciągnięta do pozycji (0, 8) - zasadniczo bieżąca pozycja jest zaokrąglana do najbliższej wartości podzielnej przez ustawienia przyciągania poziomego i pionowego, gdzie komórki siatki zaczynają się od
+    w lewym górnym rogu strony room (0, 0). Wartości domyślne są ustawione na przyciąganie (32, 32), ale można je zmienić na dowolną dodatnią wartość całkowitą.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        horizontal
+        Pozioma wartość komórki, do której ma nastąpić przyciąganie.
+      
+      
+        vertical
+        Pionowa wartość komórki, do której ma nastąpić przyciąganie
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdza, czy lewy przycisk myszy jest
+    i jeśli tak, to instancja podąża za myszą, a gdy przycisk zostanie zwolniony, instancja jest przyciągana do siatki 32 na 32.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje ruchowe
+        Następny: Wrap Around Room
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,63 @@
+
+  
+  mp_grid_clear_rectangle
+  Za pomocą tej funkcji można zdefiniować obszar we współrzędnych room , który następnie wyczyści odpowiadające mu komórki w określonej siatce MP. Nawet jeśli komórka częściowo mieści się w zdefiniowanym obszarze prostokątnym, zostanie wyczyszczona.
+   
+  Składnia:
+  mp_grid_clear_rectangle(id, x1, y1, x2, y2);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator siatki MP
+        Index of the mp_grid that is to be used
+      
+      
+        x1
+        Real
+        The x coordinate of the left side of the rectangle to check.
+      
+      
+        y1
+        Real
+        The y coordinate of the top side of the rectangle to check.
+      
+      
+        x2
+        Real
+        The x coordinate of the right side of the rectangle to check.
+      
+      
+        y2
+        Real
+        The x coordinate of the bottom side of the rectangle to check.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  mp_grid_clear_rectangle(grid, 0, 0, 100, 200);
+  Powyższy kod oznaczy jako wolne wszystkie komórki mp_grid indeksowane w zmiennej "grid", które mieszczą się w obszarze od 0,0 do 100,200.
+   
+   
+   
+  
+    
+      
+        Powrót: Planowanie ruchu
+        Następny: mp_grid_to_ds_grid
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

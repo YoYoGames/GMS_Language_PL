@@ -1,0 +1,48 @@
+
+  
+  layer_tilemap_destroy
+  Ta funkcja zniszczy podany element mapy tile. Podajesz identyfikator mapy tile (który otrzymujesz podczas tworzenia mapy tile za pomocą layer_tilemap_create() lub gdy użyjesz identyfikatora warstwy wraz z layer_get_tilemap_id()), a ta funkcja go usunie. Zauważ, że nie usuwa to warstwy, tylko mapę tile, a jeśli mapa tile została dodana w edytorze room, to przy kolejnym opuszczeniu strony room i powrocie mapa tile zostanie ponownie utworzona. Jeśli jednak strona room jest trwała, mapa tile zostanie usunięta, chyba że ponownie wyłączysz trwałość strony room.
+   
+  Składnia:
+  layer_tilemap_destroy(tilemap_element_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tilemap_element_id
+        Identyfikator elementu mapy kafelkowej
+        The unique ID value of the tile map to be destroyed
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var lay_id = layer_get_id("Tiles_trees");
+    var tile_id = layer_tilemap_get_id(lay_id);
+    if layer_tilemap_exists(lay_id, tile_id)
+    {
+        layer_tilemap_destroy(tile_id);
+    }
+  Powyższy kod sprawdza warstwę "Tiles_trees", czy istnieje podany element mapy tile, a jeśli tak, to zostaje on zniszczony (ale nie warstwa).
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy mapy kafelkowej
+        Następny: tilemap_tileset
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

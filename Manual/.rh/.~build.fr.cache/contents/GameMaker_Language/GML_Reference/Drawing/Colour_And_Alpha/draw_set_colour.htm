@@ -1,0 +1,45 @@
+
+  
+  draw_set_colour
+  Za pomocą tej funkcji można ustawić podstawowy kolor rysowania dla gry. Wartość ta będzie miała wpływ na wszystkie dalsze rysunki, w tym fonts, formularze, prymitywy i 3D. Jeśli którykolwiek z tych assets zostanie narysowany ze zmienioną wartością koloru, wartość ta
+    zostanie zignorowana.
+   
+  Składnia:
+  draw_set_colour(col);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        col
+        The colour to set for drawing.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_set_alpha(0.5); draw_set_colour(c_black);
+     draw_text(x+5, y+5, "LEVEL 1"); draw_set_alpha(1);
+     draw_set_colour(c_white);
+     draw_text(x, y, "LEVEL 1");
+  Powyższy kod narysuje w określonym miejscu tekst z efektem cienia utworzonym przez modyfikację alfa i koloru rysowania.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolor i Alfa
+        Następny: colour_get_blue
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

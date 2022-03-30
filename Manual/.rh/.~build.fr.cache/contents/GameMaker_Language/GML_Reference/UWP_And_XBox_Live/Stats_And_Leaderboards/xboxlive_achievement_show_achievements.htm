@@ -1,0 +1,34 @@
+
+  
+  xboxlive_osiągnięcia_pokazuje_osiągnięcia
+  Ta funkcja otworzy stronę osiągnięć dla wybranej platformy. Zwróć uwagę, że jest to funkcja asynchroniczna, tzn. Twoja gra będzie nadal działać w tle, podczas gdy strona osiągnięć będzie wyświetlana. W związku z tym należy uważać, gdzie się jej używa, i wstrzymać grę lub zezwolić na jej wyświetlanie tylko w tych miejscach gry, w których nie będzie ona przeszkadzać w rozgrywce.
+   
+  Składnia:
+  xboxlive_achievement_show_achievements()
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if achievements_enabled
+    {
+        global.Pause = true;
+        instance_create_layer(0, 0, "Controllers", obj_Pause);
+        xboxlive_achievement_show_achievements();
+    }
+  Powyższy kod sprawdza zmienną niestandardową, czy osiągnięcia są włączone, a jeśli tak, to ustawia zmienną globalną i tworzy instancję kontrolera "pause" przed wywołaniem funkcji wyświetlającej osiągnięcia na ekranie.
+   
+   
+   
+  
+    
+      
+        Powrót: Statystyki i rankingi
+        Next: xboxlive_achievement_load_friends
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+  część_cząstek_czysta
+  Za pomocą tej funkcji można wyczyścić wszystkie cząstki aktualnie utworzone przez system na stronie room. Nie resetuje ona ani nie usuwa samych typów cząstek, a jedynie ich wizualną reprezentację. Jeśli z emitora object płyną cząstki, to znikną one, ale zaczną pojawiać się ponownie w następnym kroku po wywołaniu tego kodu.
+   
+  Składnia:
+  part_particles_clear(ind);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Identyfikator systemu cząstek stałych
+        The index of the particle system.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if (lives <= 0)
+    {
+        part_particles_clear(global.Sname);
+        room_goto(rm_intro);
+    }
+  Powyższy kod sprawdza wartość zmiennej "lives" i jeśli jest ona równa 0, usuwa wszystkie cząstki z systemu, a następnie zmienia adres room.
+   
+   
+   
+  
+    
+      
+        Powrót: Układy cząstek stałych
+        Następny: part_particles_count
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

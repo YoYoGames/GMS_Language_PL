@@ -1,0 +1,43 @@
+
+  
+  tekstura_get_width
+  Zwraca szerokość strony texture o podanym identyfikatorze, który jest zawsze wartością z zakresu 0 - 1. Można jej użyć podczas mapowania strony textures do modeli lub prymitywów.
+   
+  Składnia:
+  texture_get_width(tex);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tex
+        Wskaźnik tekstury
+        The texture page asset pointer to use
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  tex_w = texture_get_width(sprite_get_texture(spr_Model_tex, 0));
+  Powyższy kod pozwoli uzyskać szerokość strony texture pobranej ze strony sprite asset.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekstury
+        Następny: texture_get_height
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

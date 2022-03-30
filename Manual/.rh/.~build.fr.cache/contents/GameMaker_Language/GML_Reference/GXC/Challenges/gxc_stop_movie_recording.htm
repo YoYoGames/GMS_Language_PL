@@ -1,0 +1,56 @@
+
+  
+  gxc_stop_movie_recording
+  Funkcja ta służy do zatrzymywania nagrań GXC, które zostały wcześniej uruchomione za pomocą gxc_start_movie_recording(). Powoduje ona również przesłanie nagrania na adres URL podany w argumentach, jednak zachowanie jest różne w zależności od rodzaju podanego adresu string:
+  
+    Jeśli podasz nazwę pliku, nagranie zostanie zapisane pod tą nazwą w folderze Pobrane
+    Jeśli podany zostanie adres URL, nagranie zostanie przesłane na ten adres
+  
+  Metoda URL powinna być stosowana, gdy nagranie ma być przesłane do GXC, a plik powinien być zapisany lokalnie tylko w celu sprawdzenia, czy nagranie się powiodło.
+   
+  Składnia:
+  gxc_stop_movie_recording(filename);
+  
+    
+      
+      
+      
+    
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        filename
+        String
+        The file name or URL where the recording is to be saved or uploaded
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  gxc_submit_challenge_score(_score, function(_status, _result) {
+        var _uploadUrl = _result.data.gameplayVideoUploadUrl;
+        gxc_stop_movie_recording(_uploadUrl);
+    });
+  Powyższy kod wykorzystuje bibliotekę GXC API Library do przesłania wyniku do aktualnie aktywnego wyzwania, a po otrzymaniu odpowiedzi w metodzie wywołania zwrotnego pobiera adres URL do przesłania filmu i przesyła do niego nagranie.
+   
+   
+   
+  
+    
+      
+        Powrót: Opera GX i GXC
+        Next: gxc_pause_movie_recording
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

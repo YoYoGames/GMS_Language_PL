@@ -1,0 +1,58 @@
+
+  
+  tilemap_get_at_pixel
+  Za pomocą tej funkcji można pobrać dane tile z pozycji (w obrębie room) elementu mapy tile. Podaj identyfikator elementu mapy tile (otrzymany podczas tworzenia elementu mapy tile przy użyciu layer_tilemap_create() lub po użyciu funkcji layer_tilemap_get_id()) oraz pozycję x i y w pomieszczeniu, z którego mają zostać pobrane dane tile, a funkcja zwróci "plamkę" danych tile. Dane te są w istocie maską bitową zawierającą indeks tile, booleany przerzucania/obracania/odbicia lustrzanego oraz wszelkie dane maski, które zostały zastosowane (zob. tilemap_set_mask() szczegóły), a wynikowa wartość danych może być użyta w funkcjach tile_* do zmiany właściwości tiles. Jeśli chcesz uzyskać dane tile z konkretnej komórki tile, powinieneś użyć funkcji tilemap_get() zamiast.
+  WAŻNE! Jeśli adresy tiles w mapie tile pozostały niezmienione (tzn. nie zostały obrócone, odwrócone itp.), wartość zwracana danych tile set będzie dokładnie równa indeksowi adresu tile na stronie tile set. Można więc na przykład utworzyć "mapy kolizji" tiles, używając jednego adresu tile o indeksie 1 na stronie tile set, a następnie użyć tej funkcji do sprawdzenia, czy indeks 1 lub 0 (pusty adres tile) jest równy 1 lub 0, aby obliczyć kolizje.
+   
+  Składnia:
+  tilemap_get_at_pixel(tilemap_element_id, x, y);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tilemap_element_id
+        Identyfikator elementu mapy kafelkowej
+        The unique ID value of the tile map element to get the tile-data of
+      
+      
+        x
+        Real
+        The position along the x-axis to get the tile data from (in room pixels)
+      
+      
+        y
+        Real
+        The position along the y-axis to get the tile data from (in room pixels)
+      
+    
+  
+   
+  Zwroty:
+  Tile Data (-1 if there is an error)
+   
+  Przykład:
+  var lay_id = layer_get_id("Tiles_sky");
+    var map_id = layer_tilemap_get_id(lay_id);
+    var data = tilemap_get_at_pixel(map_id, 64, 128);
+    data = tile_set_flip(data, true);
+    tilemap_set_at_pixel(map_id, data, 64, 128);
+  Powyższy kod pobiera identyfikator dla mapy tile "Clouds" na warstwie "Tiles_Sky", a następnie wykorzystuje go do pobrania danych z tile w pozycji (64, 128). Dane z tile są następnie odwracane przed ponownym użyciem ich do ustawienia tile na mapie tile.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy mapy kafelkowej
+        Następny: tilemap_get_cell_x_at_pixel
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

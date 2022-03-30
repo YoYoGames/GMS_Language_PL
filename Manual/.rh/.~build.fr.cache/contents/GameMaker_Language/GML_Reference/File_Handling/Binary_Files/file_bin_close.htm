@@ -1,0 +1,44 @@
+
+  
+  file_bin_close
+  Zamyka wcześniej otwarty plik binarny. Podawana jest wartość ID pliku, zwrócona przez funkcję file_bin_open().
+  UWAGA: Te funkcje nie działają, gdy modułem docelowym jest HTML5.
+   
+  Składnia:
+  file_bin_close(binfile);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        binfile
+        The ID of the file to close.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  file = file_bin_open("myfile.bin", 2); file_bin_rewrite(file);
+     file_bin_close(file);
+  
+  Spowoduje to otwarcie pliku w tym samym katalogu, w którym znajduje się gra, i przypisanie jego indeksu do zmiennej "plik". Następnie ponownie zapisuje plik (oczyszczając go z danych) i ponownie go zamyka.
+   
+   
+   
+  
+    
+      
+        Powrót: Pliki binarne
+        Następny: file_bin_size
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,34 @@
+
+  
+  numer_zdarzenia
+  Ta zmienna tylko do odczytu zwraca numer aktualnie wywoływanego zdarzenia, przy czym numer ten odnosi się do "zdarzenia podrzędnego" zdarzenia, np. dla zdarzenia krok numerem zdarzenia może być dowolna ze stałych ev_step_normal, ev_step_begin lub ev_step_end. Pełna lista stałych dostępnych dla poszczególnych zdarzeń podrzędnych znajduje się na stronie event_perform()a jeśli potrzebujesz informacji o samym zdarzeniu głównym, powinieneś sprawdzić stronę event_type.
+   
+  Składnia:
+  event_number;
+   
+  Zwroty:
+  Event Number Constant
+   
+  Przykład:
+  switch (event_number)
+    {
+        case ev_step_normal: show_debug_message("Step event!"); break;
+        case ev_game_start: show_debug_message("Game Start""); break;
+        case ev_room_start: show_debug_message("Room Start!"); break;
+    }
+  Powyższy kod można wywołać z adresu script i wykorzystać do wyświetlania komunikatów debugowania z informacją, które zdarzenie jest aktualnie wyzwalane.
+   
+   
+   
+  
+    
+      
+        Powrót: Generowanie zdarzeń Object 
+        Następny: event_object
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

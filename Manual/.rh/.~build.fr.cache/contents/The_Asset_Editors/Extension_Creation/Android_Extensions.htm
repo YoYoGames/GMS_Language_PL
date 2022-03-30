@@ -1,0 +1,93 @@
+
+  
+  Rozszerzenia systemu Android
+  Aby utworzyć extension dla Android, trzeba to zrobić w dwóch częściach. Pierwsza część to dodanie samego extension wraz z wymaganymi plikami, a druga to utworzenie funkcji i makr/konstant, których wymaga extension.
+  Funkcje i stałe są dodawane za pomocą plików zastępczych , aby je pogrupować, więc dodajesz plik zastępczy, a następnie definiujesz funkcje i makra, jak wyjaśniono w poprzedniej sekcji. Aby jednak dodać resztę plików, należy najpierw zaznaczyć pole wyboru Android w sekcji Extra Platforms edytora, co spowoduje otwarcie właściwości rozszerzenia Android:
+  
+  W tym miejscu można podać następujące dane:
+  
+    Nazwa klasy: Strona extension może mieć wiele klas, a każda z nich może mieć swoje własne funkcje i stałe, dlatego należy nadać jej nazwę, która będzie odzwierciedlać jej przeznaczenie.
+    Uprawnienia systemu Android: Tutaj możesz dodać wszelkie dodatkowe uprawnienia, których wymaga Twoja aplikacja extension. Jakie to będą uprawnienia, zależy całkowicie od zastosowania extension, dlatego należy sprawdzić dokumentację dostarczoną przez Google dla platformy Android lub, jeśli używasz SDK innej firmy, dokumentację dołączoną do SDK. Aby dodać nowe uprawnienie, musisz kliknąć przycisk , aby dodać uprawnienie zastępcze, a następnie dwukrotnie  kliknąć to uprawnienie, aby edytować je zgodnie z wymaganiami. Uprawnienia można usuwać za pomocą przycisku .
+    Wstrzykiwanie kodu: W tym miejscu możesz dodać dowolny kod, który ma być wstrzykiwany (dodawany) do aplikacji Android, gdy gra będzie budowana do testów lub ostatecznej wersji. Upewnij się, że przed wysłaniem gry do sklepu dokładnie sprawdzisz te ustawienia (i swoje uprawnienia), ponieważ nieprawidłowe ustawienia mogą spowodować, że gra nie zostanie wysłana. Więcej informacji można znaleźć w poniższej sekcji.
+  
+  Wstrzykiwanie kodu
+  Każdy kod wprowadzony w oknie "Wstrzykiwanie kodu" będzie musiał zostać rozdzielony na odrębne grupy XML, jak pokazano na powyższym zrzucie ekranu. Znacznik XML użyty w grupie określi, gdzie kod zostanie wstrzyknięty do aplikacji.
+  Do tworzenia grup wstrzykiwania kodu można użyć następującej składni:
+  <YYTagName>
+    
+    // Code to inject
+    
+    </YYTagName>
+  
+  Dla platformy Android dostępne są następujące znaczniki:
+  YYAndroidTopLevelGradle
+    YYAndroidTopLevelGradleBuildscript
+    YYAndroidTopLevelGradleBuildscriptRepositories
+    YYAndroidTopLevelGradleBuildscriptDependencies
+    YYAndroidTopLevelGradleAllprojects
+    YYAndroidTopLevelGradleAllprojectsRepositories
+    YYAndroidTopLevelGradleEnd
+    
+    YYAndroidGradle
+    YYAndroidGradleEnd
+    YYAndroidGradleAndroid
+    YYAndroidGradleDependencies 
+    YYAndroidManifestAttributes
+    YYAndroidManifestApplicationAttributes
+    YYAndroidManifestActivityAttributes
+    YYAndroidManifestActivityInject
+    YYAndroidManifestApplicationInject
+    YYAndroidStringValuesInjection
+    YYAndroidLayout
+  
+  Miejsce wstrzyknięcia kodu na stronie runtime zależy od typu znacznika:
+  
+    
+      
+      
+    
+    
+      
+        Typ znacznika
+        Ścieżka wtrysku
+      
+      
+        Gradle najwyższego poziomu
+        RUNTIME {RUNTIME} androidRootFiles {RUNTIME}build.gradle
+      
+      
+        Poziom modułu Gradle
+        RUNTIME} androidProjectFiles {RUNTIME}build.gradle
+      
+      
+        Manifest systemu Android
+        {RUNTIME} androidProjectFiles androidManifest.xml
+      
+      
+        Struny
+        {RUNTIME} androidy - ProjectFiles -src -mainstreams -strings.xml
+      
+      
+        Układ
+        {RUNTIME} androidy ProjectFiles isrcmain.xml
+      
+    
+  
+  UWAGA: Te paths są tylko dla VM; dla YYC wstrzyknięty kod trafi do katalogu {RUNTIME}\yyc\, gdzie paths może, ale nie musi, być równoważne z tymi dla VM.
+  Pliki źródłowe
+  Po prawidłowym skonfigurowaniu należy dodać pliki wymagane do działania pakietu extension. Aby to zrobić, należy kliknąć na przyciski na dole strony: Add SDK (Dodaj SDK ) lub Add Source (Dodaj źródło ), a następnie wybrać pliki, które chcesz dodać. Dodane pliki zostaną zapisane w katalogu AndroidSource wraz z pakietem extension. Lokalizację tę można otworzyć w dowolnym momencie, klikając prawym przyciskiem myszy  na stronie extension i wybierając polecenie Otwórz w Eksploratorze.
+  Informacje na temat tworzenia rodzimych stron extensions dla Android można znaleźć w części Przykłady źródeł.
+   
+   
+  
+    
+      
+        Powrót: Redaktor Extension 
+        Następny: Rozszerzenia systemu iOS
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

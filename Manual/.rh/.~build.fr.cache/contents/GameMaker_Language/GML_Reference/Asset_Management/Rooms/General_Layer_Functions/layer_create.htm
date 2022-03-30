@@ -1,0 +1,51 @@
+
+  
+  warstwa_tworzona
+  Ta funkcja służy do tworzenia nowej warstwy w obrębie bieżącej strony room. Funkcja zwraca unikalną wartość identyfikatora warstwy, która może być użyta do uzyskania dostępu do warstwy w innych funkcjach. Można również podać opcjonalny argument "nazwa", który umożliwi nadanie warstwie konkretnej nazwy (np. string). Zamiast korzystać z identyfikatora warstwy, aby uzyskać do niej dostęp, można użyć tej nazwy string, choć należy zauważyć, że użycie nazwy strings będzie miało większy wpływ na wydajność niż użycie tylko wartości identyfikatora. Jeśli nie określisz nazwy warstwy, utworzonej warstwie zostanie przypisana nazwa w formacie "_layer_XXX", gdzie "XXX" to wartość szesnastkowa służąca do nadania warstwie unikalnej nazwy.
+  Jeśli więc masz trzy warstwy o głębokości -100, 0, 100, warstwy będą rysowane w kolejności 100, 0, -100, a więc warstwa "górna" (czyli znajdująca się najbliżej widoku z kamery, a więc rysowana ponad wszystkimi innymi) będzie warstwą o głębokości -100.
+  Na poniższej ilustracji przedstawiono schemat działania głębokości dla warstw:
+  Warto zauważyć, że choć do jednej głębokości można przypisać więcej niż jedną warstwę, nie można zagwarantować, że warstwy na tej samej głębokości zostaną narysowane w określonej kolejności, dlatego najlepiej jest przypisać tylko jedną warstwę do danej głębokości. Należy również pamiętać, że minimalna i maksymalna głębokość warstwy to -16000 do 16000, a wszystko poza tymi głębokościami nie będzie renderowane. Jeśli potrzebujesz głębokości spoza tego zakresu, musisz użyć funkcji layer_force_draw_depth().
+   
+  Składnia:
+  layer_create(depth, [name])
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        depth
+        Real
+        The depth that the layer has to be created at.
+      
+      
+        name
+        String
+        OPTIONAL Nazwa, jaką należy nadać warstwie ( string).
+      
+    
+  
+   
+  Zwroty:
+  Layer ID
+   
+  Przykład:
+  global.Bullet_Layer = layer_create(-100);
+  Powyższy kod utworzy nową warstwę o wartości głębokości -100 i przypisze jej wartość ID do zmiennej globalnej.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,46 @@
+
+  
+  kamera_set_view_angle
+  Tej funkcji można użyć do aktualizacji kąta kamery widoku w witrynie room. Należy podać unikatową wartość identyfikatora kamery (zwracaną przez różne camera_create() funkcje), a następnie podajesz kąt, który
+    który ma być ustawiony w widoku kamery. Domyślną wartością jest 0°, przy czym wartości dodatnie powodują obrót kamery w kierunku przeciwnym do ruchu wskazówek zegara, np. ustawienie wartości 90 spowoduje obrót kamery o 90° w lewo.
+   
+  Składnia:
+  camera_set_view_angle(camera_id, angle)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        camera_id
+        The unique camera ID value returned when you created the camera
+     
+      
+        angle
+        The new angle to set the camera view to
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  camera_set_view_angle(view_camera[0], point_direction(x, y, mouse_x, mouse_y));
+  Powyższy kod ustawi kąt kamery widoku dla kamery przypisanej do portu widoku[0].
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: camera_set_view_target
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

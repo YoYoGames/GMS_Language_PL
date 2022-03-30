@@ -1,0 +1,39 @@
+
+  
+  powierzchnia_aplikacji_jest_wyłączona
+  Ta funkcja zwróci true, jeśli do rysowania używana jest powierzchnia aplikacji, lub false, jeśli używany jest ekran buffer.
+   
+  Składnia:
+  application_surface_is_enabled();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if keyboard_check_pressed(vk_space)
+    {
+        if application_surface_is_enabled()
+        {
+            application_surface_enable(false);
+        }
+        else
+        {
+            application_surface_enable(true);
+        }
+    }
+  Powyższy kod sprawdza, czy został naciśnięty klawisz, a następnie włącza lub wyłącza powierzchnię aplikacji w zależności od jej stanu (tak jak w menu opcji).
+   
+   
+   
+  
+    
+      
+        Powrót: Powierzchnie
+        Następny: application_get_position
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

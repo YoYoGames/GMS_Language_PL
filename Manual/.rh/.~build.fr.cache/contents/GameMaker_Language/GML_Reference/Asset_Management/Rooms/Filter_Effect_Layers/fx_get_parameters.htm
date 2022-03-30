@@ -1,0 +1,53 @@
+
+  
+  fx_get_parameters
+  Ta funkcja służy do pobierania adresu struct zawierającego wszystkie parametry dla danego FX struct. Użytkownik określa FX struct (zwrócony przez fx_create() lub layer_get_fx()), a ta funkcja zwraca struct zawierający zmienne dla wszystkich parametrów mających zastosowanie do tego filtra/efektu. Parametry, które używają wektorów (tzn. grup wartości), będą przedstawione w postaci tablic.
+  Należy pamiętać, że nazwy parametrów danego efektu odpowiadają nazwom używanym wewnętrznie przez jego shader, dlatego zawsze będą miały przedrostek "g_". Nazwy wszystkich parametrów można uzyskać w osobnej tablicy, wywołując fx_get_parameter_names().
+  Zmiana wartości na stronie struct nie spowoduje zastosowania tych zmian w filtrze/efektcie; aby zmiany zaczęły obowiązywać, należy wywołać stronę fx_set_parameters() w celu zastosowania zmodyfikowanej strony struct z powrotem do filtra/efektu.
+   
+  Składnia:
+  fx_get_parameters(filter_or_effect);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        filter_or_effect
+        The FX struct for which the parameters will be returned
+     
+    
+  
+   
+  Zwroty:
+   (or -1 on failure)
+   
+  Przykład:
+  var _fx_struct = layer_get_fx("TintEffect");
+    
+    if (_fx_struct != -1)
+    {
+        var _params = fx_get_parameters(_fx_struct);
+        var _osc = sin(current_time / 1000);
+        _params.g_TintCol = [_osc, 0.3 + _osc, 0.6 + _osc, 1];
+    
+        fx_set_parameters(_fx_struct, _params);
+    }
+  
+  Powyższy kod pobiera adres FX struct dla warstwy, która z założenia ma zastosowany filtr "Zabarwienie", i pobiera jego parametr struct, wywołując adres fx_get_parameters(). Następnie za pomocą adresów sin() i current_time tworzy wartość oscylującą, która jest używana do tworzenia wartości RGBA dla efektu zabarwienia, dzięki czemu jest on stale animowany. Tablica RGBA jest przypisywana do zmiennej g_TintCol w parametrze struct, a następnie struct jest z powrotem stosowana do FX struct przez wywołanie fx_set_parameters().
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje filtrów i efektów
+        Next: fx_get_name
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

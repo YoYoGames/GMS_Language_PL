@@ -1,0 +1,53 @@
+
+  
+  xboxlive_user_is_remote
+  Ta funkcja sprawdza podany identyfikator użytkownika i zwraca true, jeśli odtwarzacz jest odtwarzaczem zdalnym, lub false w przeciwnym przypadku.
+   
+  Składnia:
+  xboxlive_user_is_remote(user_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        user_id
+        The ID pointer of the user to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  global.PlayerNum = 0;
+    global.Player_ID = array_create();
+    for(var i = 0; i < xboxlive_get_user_count(); ++i;)
+    {
+        var _uid = xboxlive_get_user(i);
+        if xboxlive_user_is_active(_uid)
+        {
+            if !xboxlive_user_is_remote(_uid)
+            {
+                global.Remote_Player_ID[global.PlayerNum++] = _uid;
+            }
+        }
+    }
+  Powyższy kod loops przegląda konta użytkowników, a następnie sprawdza, czy któreś z nich jest aktywne. Jeśli tak, ich identyfikator użytkownika jest dodawany do tablicy globalnej, tylko jeśli nie są to użytkownicy zdalni.
+   
+   
+   
+  
+    
+      
+        Wstecz: Użytkownicy i konta
+        Następny: xboxlive_user_id_for_user
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

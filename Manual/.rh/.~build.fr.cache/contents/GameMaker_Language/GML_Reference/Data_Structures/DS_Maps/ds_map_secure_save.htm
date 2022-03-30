@@ -1,0 +1,48 @@
+
+  
+  ds_map_secure_save
+  Funkcja ta zapisuje zawartość podanej mapy DS do pliku powiązanego z urządzeniem, na którym została utworzona (co oznacza, że nie będzie można jej odczytać po przeniesieniu na inne urządzenie). Sam plik może mieć prawie dowolny adres extension (np. *.dat,
+   *.json, *.bin, itd...). Plik zostanie ukryty i zapisany w lokalnej pamięci masowej na platformie docelowej. Następnie można ponownie załadować ds_map za pomocą funkcji ds_map_secure_load(). Zwróć uwagę, że jeśli
+    zapisywana mapa DS zawiera tablicę, zostanie ona zamieniona na listę DS podczas zapisywania.
+  WAŻNE! Jedną z cech bezpiecznie zapisanego pliku jest to, że jest on zablokowany dla urządzenia, na którym został utworzony, dlatego nie można wczytać pliku zapisanego na jednym urządzeniu do projektu działającego na innym urządzeniu.
+   
+  Składnia:
+  ds_map_secure_save(map, filename);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        map
+        The id of the data structure to use
+     
+      
+        filename
+        The name of the file to save the map to
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  ds_map_secure_save(purchase_map, "p_data.dat");
+  Powyższy kod zapisze mapę DS zindeksowaną w zmiennej "p_data" do podanego pliku w celu późniejszego odtworzenia.
+   
+   
+   
+  
+    
+      
+        Powrót: Mapy DS
+        Następny: ds_map_secure_save_buffer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

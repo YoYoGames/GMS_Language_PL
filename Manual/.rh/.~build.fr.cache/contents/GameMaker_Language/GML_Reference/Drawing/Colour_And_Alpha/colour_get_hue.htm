@@ -1,0 +1,42 @@
+
+  
+  kolor_get_hue
+  Ta funkcja zwraca odcień podanego koloru. Jest to "czysty" ton koloru, który jest częścią metody określania barwy, nasycenia i wartości (luminacji). Poniższy rysunek ilustruje, jak ta wartość odpowiada skali
+    HSV skali kolorów:
+  
+  Składnia:
+  colour_get_hue(col);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        col
+        The colour to check
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  col = merge_colour(colour_get_hue(c_teal), c_white, 0.5);
+  Powyższy kod pobiera barwę użytą do utworzenia stałej koloru "c_teal", a następnie łączy ją z bielą w stosunku 50:50, zapisując uzyskany kolor w zmiennej "col".
+   
+   
+   
+  
+    
+      
+        Powrót: Kolor i alfa
+        Następny: colour_get_saturation
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

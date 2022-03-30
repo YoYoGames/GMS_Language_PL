@@ -1,0 +1,86 @@
+
+  
+  surface_copy_part
+  Ta funkcja po prostu pobiera obraz z jednej powierzchni i kopiuje go na inną powierzchnię w określonym położeniu lokalnym na tej powierzchni (gdzie położenie (0,0) jest lewym górnym rogiem powierzchni docelowej). Można określić lokalną pozycję x i y, z której ma zostać skopiowany, a także szerokość i wysokość odcinka. Należy pamiętać, że są to współrzędne oparte na rozmiarze powierzchni, a nie na położeniu, w którym powierzchnia jest rysowana w witrynie room. Jeśli powierzchnia docelowa zawiera już informacje, zostaną one nadpisane przez kopiowanie, a funkcja w żaden sposób nie zmienia powierzchni źródłowej.
+  UWAGA: Podczas pracy z powierzchniami istnieje możliwość, że w każdej chwili mogą one przestać istnieć, ponieważ są przechowywane w pamięci texture. Należy ZAWSZE sprawdzić, czy powierzchnia istnieje, używając polecenia surface_exists() przed bezpośrednim odwołaniem się do niej.
+   
+  Składnia:
+  surface_copy_part(destination, x, y, source, xs, ys, ws, hs);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        destination
+        Identyfikacja powierzchni
+        The ID of the surface to copy the other surface to.
+      
+      
+        x
+        Real
+        The x position to copy to.
+      
+      
+        y
+        Real
+        The y position to copy to.
+      
+      
+        source
+        Identyfikacja powierzchni
+        The ID of the surface to be copied.
+      
+      
+        xs
+        Real
+        The x position in the source surface to copy from.
+      
+      
+        ys
+        Real
+        The y position in the source surface to copy from.
+      
+      
+        ws
+        Real
+        The width of the area in the source surface to copy from.
+      
+      
+        hs
+        Real
+        The height of the area in the source surface to copy from.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if view_current == 0
+    {
+        surface_copy_part(surf, 0, 0, temp_surf, 0, 0, view_xview[1] - mouse_x, view_yview[1] - mouse_y);
+    }
+    else
+    {
+        draw_surface(surf, 0, 0);
+    }
+  Powyższy kod sprawdza, jaki jest aktualnie rysowany widok, i jeśli jest to widok[0], kopiuje powierzchnię indeksowaną zmienną "temp_surf" na powierzchnię indeksowaną zmienną "surf". Skopiowany obszar odpowiada prostokątowi utworzonemu przez względne położenie myszy na powierzchni, tak jak zostałaby ona narysowana w widoku[1]. Jeśli bieżący widok jest inny niż view[0], to powierzchnia "surf" zostanie narysowana na ekranie.
+   
+   
+   
+  
+    
+      
+        Powrót: Powierzchnie
+        Następny: surface_depth_disable
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

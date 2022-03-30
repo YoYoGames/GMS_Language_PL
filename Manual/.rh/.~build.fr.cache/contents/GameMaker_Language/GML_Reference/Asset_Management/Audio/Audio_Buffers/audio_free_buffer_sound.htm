@@ -1,0 +1,43 @@
+
+  
+  audio_free_buffer_sound
+  Za pomocą tej funkcji można zwolnić wartość indeksu wskaźnika powiązanego z identyfikatorem dźwięku. Zwolnione dźwięki nie będą dostępne do odtwarzania, a jeśli odtwarzanych jest wiele instancji danego dźwięku, wszystkie zostaną zatrzymane. Należy pamiętać, że przed usunięciem
+    buffer , należy najpierw zwolnić wszystkie powiązane z nim identyfikatory dźwięków.
+   
+  Składnia:
+  audio_free_buffer_sound(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the buffered sound to free.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  audio_free_buffer_sound(soundID);
+  Powyższy kod zwalnia buforowany dźwięk zaindeksowany w zmiennej "soundID".
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory audio
+        Następny: audio_create_play_queue
+        
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

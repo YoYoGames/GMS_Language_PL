@@ -9,7 +9,7 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains the Set Gamepad Axis Deadzone action" />
-  <meta name="rh-index-keywords" content="DnD™ Action - Set Gamepad Axis Deadzone" />
+  <meta name="rh-index-keywords" content="GML Visual Action - Set Gamepad Axis Deadzone" />
   <meta name="search-keywords" content="Set Gamepad Axis Deadzone" />
 </head>
 <body>
@@ -18,7 +18,7 @@
   <p>Tej akcji można użyć do ustawienia &quot;martwej strefy&quot; dla osi drążka gamepada. Określasz indeks gamepada, który chcesz ustawić, a następnie ustawiasz wartość z zakresu od 0 do 1. Jeśli wartość wejściowa jest mniejsza niż podana wartość, oś drążka gamepada jest traktowana jako
     jest ustawiona na 0. Należy pamiętać, że jest to ustawienie globalne, które ma wpływ na <i>wszystkie</i> osie podłączonego drążka.</p>
   <p>Należy pamiętać, że nie zmienia to wyniku działania polecenia <a href="Get_Gamepad_Axis.htm">Get Gamepad Axis</a>, które zawsze zwraca wartości z przedziałów -1 i 0 oraz 0 i 1. Na przykład ustawienie strefy martwej na 0,2 oznacza, że naciśnięcie drążka w prawo
-    zacznie zwracać wartość z zakresu 0 - 1 dopiero po przekroczeniu wartości <em>surowej</em> osi 0,2 - zatem gdy wartość surowa wynosi 0,2, wartość zwracana będzie 0, gdy wartość surowa wynosi 0,5, wartość zwracana będzie 0,375, a jeśli wartość surowa wynosi 0,9, wartość zwracana będzie 0,875.
+    zacznie zwracać wartość z zakresu 0 - 1, gdy wartość <em>surowa</em> osi przekroczy 0,2 - zatem gdy wartość surowa wynosi 0,2, wartość zwracana będzie 0, gdy wartość surowa wynosi 0,5, wartość zwracana będzie 0,375, a jeśli wartość surowa wynosi 0,9, wartość zwracana będzie 0,875.
     wyniesie 0,875.</p>
   <p> </p>
   <h4>Składnia działania:</h4>

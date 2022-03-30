@@ -1,0 +1,63 @@
+
+  
+  vertex_float4
+  Ta funkcja doda cztery wartości zmiennoprzecinkowe do danych vertex. Adres vertex musi być poprawnie sformatowany, aby można było zaakceptować tę funkcję. vertex_format_add_custom() funkcji.
+   
+  Składnia:
+  vertex_float4(buffer, float, float, float, float);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        buffer
+        Vertex Buffer ID
+        The buffer to write the information to.
+      
+      
+        float
+        Real
+        The first input value.
+      
+      
+        float
+        Real
+        The second input value.
+      
+      
+        float
+        Real
+        The third input value.
+      
+      
+        float
+        Real
+        The fourth input value.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  vertex_float4(buff, 0.05, 0.01, room_width / x, room_height / y);
+  Powyższy kod doda cztery wartości zmiennoprzecinkowe do definiowanych danych vertex.
+   
+   
+   
+  
+    
+      
+        Powrót: Prymitywy i Vertex Formaty
+        Następny: vertex_ubyte4
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

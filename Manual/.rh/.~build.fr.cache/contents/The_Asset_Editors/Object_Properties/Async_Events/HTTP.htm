@@ -1,0 +1,40 @@
+
+  
+  HTTP
+  Zdarzenie HTTP to takie, które jest wyzwalane przez wywołanie zwrotne jednej z funkcjihttp_*(),
+    np. http_post_string(). W rzeczywistości generuje ono mapę DS Map, która
+    która jest przypisana wyłącznie do tego zdarzenia i jest przechowywana w specjalnej zmiennej async_load (przykłady kodu wyjaśniające szczegółowo użycie tego zdarzenia można znaleźć w poszczególnych funkcjach).
+    przykłady kodu, które bardziej szczegółowo wyjaśniają użycie tego zdarzenia). Ta mapa DS ma następującą ogólną strukturę:
+  
+    "id": Identyfikator, który został zwrócony przez polecenie. Jeśli wystrzelisz serię żądań http_, musisz wiedzieć, na które z nich otrzymasz odpowiedź, dlatego użyjesz tej wartości
+      do porównania z wartością przechowywaną podczas wysyłania żądania, aby znaleźć to właściwe.
+    "status": Zwraca wartość mniejszą niż 0 w przypadku błędu, 0 w przypadku sukcesu i 1, jeśli pobierana jest zawartość.
+    "result": Odebrane dane (tylkostring ), lub path do pobranego pliku, jeśli użyto http_get_file().
+    "url": Pełny adres URL, którego zażądano.
+    "http_status": Nieprzetworzony kod stanu http (jeśli jest dostępny). Zwraca on standardowy kod statusu dla większości przeglądarek, np. 304 dla "Not Modified" lub 204 dla "No Content", itd.
+  
+  Powyżej pokazano, co można uzyskać po użyciu funkcji http_post_string() ale każda z funkcji http_ może zwracać nieco inną mapę, dlatego należy zapoznać się z wpisem w podręczniku dotyczącym danej funkcji, aby dowiedzieć się, jakie dokładnie dane są zwracane.
+  UWAGA: Ponieważ async_load tworzy mapę DS, funkcje te są szczególnie przydatne w połączeniu z funkcjami json_encode() oraz .
+    json_decode() funkcjami.
+  Mapa ta może również zawierać dodatkowe dane, jeśli użytkownik zażądał plików do pobrania. W takim przypadku "status" będzie miał wartość 1, a mapa DS będzie zawierała te dodatkowe klucze:
+  
+    "contentLength": Jest to rozmiar pliku, który według server powinieneś otrzymać (może być -1, jeśli server nie zwróci tych danych).
+    "sizeDownloaded": Rozmiar danych, które zostały już pobrane.
+  
+  Należy pamiętać, że zdarzenie to nie będzie wywoływane dla każdego odebranego pakietu danych, ale będzie aktualizowane w dowolnym momencie pobierania danych w ramach głównej gry loop. Należy również pamiętać, że obecnie ta funkcjonalność jest dostępna tylko dla zwykłych platform
+    platformy docelowe.
+   
+   
+   
+  
+    
+      
+        Powrót: Zdarzenia asynchroniczne
+        Następny: Zakupy w aplikacji
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

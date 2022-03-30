@@ -1,0 +1,47 @@
+
+  
+  ini_open
+  Otwiera to plik ini_file do odczytu i zapisu. Jeśli plik ini_file nie istnieje w sprawdzanej lokalizacji, GameMaker Studio 2 może go utworzyć, ale tylko wtedy, gdy użytkownik zapisze do niego dane. Jeśli informacje z pliku ini zostały tylko odczytane, wówczas
+    zostaną zwrócone wartości domyślne dla funkcji odczytu, ale plik ini nie zostanie utworzony.
+  Należy pamiętać, że w danej chwili można mieć otwarty tylko jeden plik .ini i używać ini_close() po zakończeniu odczytu/zapisu z pliku .ini, ponieważ do tego momentu informacje nie są zapisywane na
+    dysku do tego momentu (są one również przechowywane w pamięci do momentu zamknięcia pliku).
+  OSTRZEŻENIE! Ta funkcja może nie działać zgodnie z oczekiwaniami użytkownika, ponieważ GameMaker Studio 2 jest sandboxed! Więcej informacji na ten temat można znaleźć w rozdziale System plików.
+   
+  Składnia:
+  ini_open(name);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        name
+        The filename for the .ini file.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  ini_open("Settings/savedata.ini"); score = ini_read_real("save1", "score", 0); ini_close();
+  
+  Spowoduje to otwarcie pliku "savedata.ini" i odczytanie wartości wyniku w sekcji "save1" z kluczem "score", a następnie ponowne zamknięcie pliku .ini. Jeśli nie ma wartości w sekcji "save1", "score" lub nie ma pliku "savedata.ini"
+    , score zostanie ustawiony na 0 (wartość domyślna). Zwróć uwagę, że plik .ini został umieszczony w podkatalogu "Settings", który jest folderem zawierającym plik .ini w dołączonych plikach przeglądarki Asset.
+   
+   
+   
+  
+    
+      
+        Powrót: Pliki Ini
+        Następny: ini_close
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

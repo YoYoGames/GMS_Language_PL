@@ -1,0 +1,54 @@
+
+  
+  dźwięk_wznów_dźwięk
+  Za pomocą tej funkcji można wznowić odtwarzanie dowolnego dźwięku, który jest aktualnie wstrzymany (po użyciu funkcji audio_pause_sound()). Dźwięk może być pojedynczą instancją dźwięku (indeks poszczególnych odtwarzanych dźwięków można przechowywać w zmiennej przy użyciu funkcji audio_play_sound() lub audio_play_sound_at() ) lub dźwięk asset, w którym to przypadku wszystkie instancje danego dźwięku zostaną ponownie uruchomione.
+   
+  Składnia:
+  audio_resume_sound(index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Sound Asset lub Sound Instance ID
+        The index of the sound to resume.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if keyboard_check_pressed(ord("P"))
+    {
+        global.Pause = !global.Pause;
+        if global.Pause
+        {
+            audio_pause_sound(snd_Waterfall);
+        }
+        else
+        {
+            audio_resume_sound(snd_Waterfall);
+        }
+    }
+  Powyższy kod sprawdza, czy na klawiaturze jest naciśnięty klawisz "P", a jeśli go wykryje, ustawia zmienną globalną "Pause" na true lub false, a następnie wstrzymuje odtwarzanie dźwięku zaindeksowanego w zmiennej "snd_Waterfall" albo wznawia odtwarzanie od stanu wstrzymania.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_resume_all
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

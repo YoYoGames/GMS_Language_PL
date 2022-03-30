@@ -9,7 +9,7 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains the If Score action" />
-  <meta name="rh-index-keywords" content="DnD™ Action - If Score" />
+  <meta name="rh-index-keywords" content="GML Visual Action - If Score" />
   <meta name="search-keywords" content="If Score" />
 </head>
 <body>
@@ -25,7 +25,7 @@
     <li><b>Greater than or Equal to</b> - zmienna jest większa <i>lub</i> równa wartości</li>
   </ul>
   <p>Jeśli <span class="notranslate">flag</span> argument <b>Not</b>, to powyższe <i>wyrażenia zostaną zanegowane</i>, na przykład &quot;równa się&quot; stanie się &quot;<i>nie</i> równa się&quot;, czyli sprawdzane będzie, czy wartość <span class="inline">score</span> nie jest równa podanej wartości.</p>
-  <p class="note"><b>WAŻNA UWAGA</b>: Ze względu na <a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">problemy z precyzją zmiennoprzecinkową</a> sprawdzenie, czy dwie wartości są dokładnie równe, może zwrócić <span class="inline">false</span>, ponieważ jedna z nich może wynosić dokładnie 1, podczas gdy
+  <p class="note"><b>WAŻNA UWAGA</b>: Ze względu na <a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">problemy z precyzją zmiennoprzecinkową</a> sprawdzenie, czy dwie wartości są dokładnie równe, może zwrócić <span class="inline">false</span>, ponieważ jedna z nich może wynosić dokładnie 1, a
     druga może mieć wartość 1.00000000000001. Można tego uniknąć, stosując przed sprawdzeniem działanie <a href="../Data_Types/Decimal_To_Integer.htm">Decimal to Integer</a> lub używając wyrażeń &quot;greater than&quot; i &quot;less than&quot;.</p>
   <p>Należy pamiętać, że aby dodać akcje do bloku &quot;jeśli&quot;, należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:</p>
   <p><img>Te akcje będą teraz uruchamiane, jeśli &quot;if&quot; zakończy się wynikiem <span class="inline">true</span>, podczas gdy wszelkie

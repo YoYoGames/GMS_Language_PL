@@ -1,0 +1,71 @@
+
+  
+  ds_grid_add_grid_region
+  Funkcji tej można użyć w celu dodania wartości wszystkich komórek znajdujących się w obszarze źródłowym siatki do wartości w siatce docelowej, jak pokazano poniżej:
+  
+  UWAGA Funkcji tej można również użyć w tej samej siatce w celu dodania wartości z jednego regionu siatki do wartości przechowywanych w innym regionie (patrz przykład kodu poniżej).
+   
+  Składnia:
+  ds_grid_add_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the destination grid.
+     
+      
+        source
+        The index of the source grid.
+     
+      
+        x1
+        The left position of the region of cells to copy from the source grid.
+     
+      
+        y1
+        The top position of the region of cells to copy from the source grid.
+     
+      
+        x2
+        The right position of the region of cells to copy from the source grid.
+     
+      
+        y2
+        The bottom position of the region of cells to copy from the source grid.
+     
+      
+        xpos
+        The x position on the destination grid to add the source region to.
+     
+      
+        ypos
+        The y position on the destination grid to add the source region to.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  ds_grid_add_grid_region(grid, grid, 0, 0, 1, 5, 2, 0)
+  Powyższy kod skopiowałby region komórek od (0,0) do (1,5) siatki DS zindeksowanych w zmiennej "siatka" i dodałby je do komórek z pozycji (2,0) tej samej siatki DS .
+   
+   
+   
+  
+    
+      
+        Powrót: Siatki DS
+        Następny: ds_grid_multiply
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

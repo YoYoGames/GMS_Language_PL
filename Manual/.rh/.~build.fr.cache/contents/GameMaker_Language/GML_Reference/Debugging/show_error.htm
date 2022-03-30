@@ -1,0 +1,53 @@
+
+  
+  pokaż_błąd
+  Ta funkcja powoduje wyświetlenie niestandardowego adresu string jako komunikatu o błędzie.
+  WAŻNE Drugi argument istnieje tylko ze względu na kompatybilność wsteczną ze starszymi projektami i nie ma wpływu na wyświetlane okno dialogowe błędu.
+  UWAGA Ta funkcja jest przeznaczona wyłącznie do użytku w trybie debugowania.
+   
+  Składnia:
+  show_error(str, abort);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        str
+        String
+        The string to show in the pop-up message.
+      
+      
+        abort
+        Boolean
+        UNUSED Czy błąd powinien przerwać grę (true), czy pozwolić graczowi na zignorowanie go (false).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if (room != rm_Dungeon)
+    {
+        show_error("Error: Went to wrong area. Aborting game.", true);
+    }
+  Powyższy kod sprawdzi, czy bieżący adres room to rm_Dungeon, a jeśli nie, wyświetli komunikat o błędzie.
+   
+   
+   
+  
+    
+      
+        Powrót: Debugowanie
+        Następny: show_message
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

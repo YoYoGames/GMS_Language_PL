@@ -1,0 +1,50 @@
+
+  
+  instancja_deaktywuj_wszystkie
+  Ta funkcja dezaktywuje wszystkie instancje, które znajdują się na stronie room w momencie uruchamiania kodu. Może to obejmować instancję uruchamiającą kod, jeśli "notme" flag jest ustawione na false, ale normalnie chciałbyś, aby ta instancja była aktywna, w tym przypadku "notme" flag powinno być ustawione na true. Zauważ, że dezaktywacja nie jest natychmiastowa, a instancja, która została dezaktywowana w ten sposób, nie będzie uważana za nieaktywną do końca zdarzenia, w którym funkcja została wywołana.
+  UWAGA: Jeśli dezaktywujesz instancję na początku room (tzn. z kodu tworzenia room lub ze zdarzenia tworzenia instancji w room), wszystkie instancje, które są umieszczone w room z edytora room, będą nadal uruchamiać swoje zdarzenia tworzenia przed dezaktywacją.
+  UWAGA: Wyłączenie instancji, które mają włączoną fizykę, NIE spowoduje, że ich armatura przestanie oddziaływać w ramach symulacji fizyki. W tym celu należy ustawić ich zmienną phy_active na true lub false, gdy będziesz włączać/wyłączać te instancje.
+   
+  Składnia:
+  instance_deactivate_all(notme);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        notme
+        Boolean
+        Whether to keep the calling instance activated (true) or not (false).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  instance_deactivate_all(true);
+    var _vx = camera_get_view_x(view_camera[0]);
+    var _vy = camera_get_view_y(view_camera[0]);
+    var _vw = camera_get_view_width(view_camera[0]);
+    var _vh = camera_get_view_height(view_camera[0]);
+    instance_activate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false);
+  Powyższy kod dezaktywuje wszystkie instancje oprócz tej, która wykonuje kod, a następnie aktywuje region w witrynie room.
+   
+   
+   
+  
+    
+      
+        Powrót: Dezaktywacja instancji
+        Następny: instance_deactivate_object
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

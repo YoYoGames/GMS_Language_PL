@@ -1,0 +1,33 @@
+
+  
+  pomieszczenie_dodaj
+  Ta funkcja utworzy nowy, pusty adres room i doda go do gry, zwracając jego indeks, który będzie przechowywany w zmiennej dla wszystkich kolejnych kodów, które będą miały do czynienia z tym adresem room. Należy pamiętać, że każda strona room jest dodawana do gry na stałe, aż do zamknięcia pliku wykonywalnego, tzn. pomieszczenia dodane za pomocą kodu nie mogą być ponownie usunięte. Ma to istotny wpływ na wykorzystanie pamięci, dlatego należy używać tej funkcji z rozwagą.
+  UWAGA: Nowe strony rooms nie są częścią zwykłego porządku room, więc nie mają "poprzedniej" ani "następnej" strony room (co oznacza, że funkcje room_next() i room_previous() nie będą działać). Aby przejść z dodanej strony room do innej, należy użyć indeksu samej strony room.
+   
+  Składnia:
+  room_add();
+   
+  Zwroty:
+  Room Asset
+   
+  Przykład:
+  global.myroom = room_add();
+    room_set_width(global.myroom, 640);
+    room_set_height(global.myroom, 480);
+    room_set_persistent(global.myroom, false);
+  Spowoduje to utworzenie nowej strony room i zapisanie jej indeksu w zmiennej "global.myroom". Następnie ustawi jego szerokość na 640 pikseli, wysokość na 480 pikseli, a trwałość na false.
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room_duplicate
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

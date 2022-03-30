@@ -1,0 +1,48 @@
+
+  
+  jest_nieokreślony
+  Funkcja ta zwraca, czy dana zmienna jest zdefiniowana, czy nie. W niektórych przypadkach chcesz sprawdzić, jaki typ danych przechowuje zmienna w GameMaker Studio 2 i właśnie wtedy użyjesz tej funkcji. Zwraca ona wartość true lub false w zależności od tego, czy wartość jest zdefiniowana czy nie.
+  UWAGA: Tej funkcji nie można użyć do sprawdzenia istnienia zmiennej. Użyj variable_instance_exists() lub variable_global_exists() zamiast.
+   
+  Składnia:
+  is_undefined(n);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        n
+        Zmienna
+        The argument to check.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  var val = ds_map_find_value(map, 13);
+    if is_undefined(val)
+    {
+        show_debug_message("Map entry does not exist!");
+    }
+  Powyższy kod sprawdza, czy zmienna "val" ma wartość undefined, a jeśli tak, wyświetla komunikat debugowania.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: is_nan
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

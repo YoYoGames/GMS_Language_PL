@@ -1,0 +1,73 @@
+
+  
+  JSDoc Script Uwagi
+  Jeśli chcesz, aby Twoje funkcje były wyposażone w funkcję uzupełniania kodu i pokazywały wymagane argumenty w określony sposób w edytorze kodu, musisz dodać komentarze w stylu JSDoc. Komentarze te służą do informowania funkcji autouzupełniania o tym, w jaki sposób funkcja powinna być używana i wypełniana w edytorze skryptów.
+  Typowy nagłówek funkcji powinien zawierać nazwę funkcji, jej opis, a następnie listę różnych argumentów (parametrów), które przyjmuje funkcja. Należy pamiętać, aby każdy wiersz zaczynać od potrójnego odwrotnego ukośnika "
+   ///", ponieważ to informuje GameMaker Studio 2, że komentarz powinien być przetwarzany w stylu JSDoc. Samym komentarzom należy nadać identyfikator (poprzedzony znakiem "@") i treść, a dostępne są następujące identyfikatory
+    identyfikatory są następujące:
+   
+  
+    
+      
+        Identyfikator
+        Zawartość
+      
+      
+        @function / @func
+        Pełna nazwa funkcji i argumenty funkcji, np:
+          my_func(x, y, colour).
+      
+      
+        @description / @desc
+        Ogólny opis działania funkcji.
+      
+      
+        @param / @arg / @argument
+        Typ argumentu (opcjonalny), zawarty w {}, nazwa argumentu i krótki opis (ze spacjami pomiędzy nimi)
+      
+    
+  
+   
+  Aby zorientować się, jak to działa podczas pisania własnych funkcji, posłużmy się podstawowym przykładem:
+  function is_same_object(_id, _obj) {
+         if (_id.object_index == _obj)     {         return true;     }     else return false; }
+  
+  To, co robi script, to sprawdzenie, czy instancja ma ten sam adres object_index co dany adres object:
+  if is_same_object(id, obj_Player) {
+         instance_destroy() }
+  
+  Jednak wpisanie tego do edytora kodu spowoduje wyświetlenie bezpośrednio nazw zmiennych argumentu (_id i _obj), co w większości przypadków nie jest zbyt opisowe. Można użyć JSDoc do zdefiniowania własnych nazw i opisów argumentów, wraz z
+    również informacje o funkcji:
+  /// @function                is_same_object(id, object) /// @description             Compare an instance index with an object index. /// @param {real} inst_id    The unique instance ID value of the instance to check. /// @param {real}
+    object_id  The object index to be checked against.
+     function is_same_object(_id, _obj) {
+         if (_id.object_index == _obj)     {         return true;     }     else return false; }
+  
+  Teraz, gdy wywołasz tę funkcję w dowolnym miejscu projektu, zobaczysz nowe nazwy argumentów, które zostały wpisane w komentarzach JSDoc:
+  
+  Na powyższym obrazku górna część przedstawia funkcję w autouzupełnianiu, a dolna - działanie pomocnika argumentów znajdującego się na dole. Zwróć uwagę, że zarówno opcjonalna część "type", jak i obowiązkowa "description" w @param nie są domyślnie wyświetlane w IDE code complete i aby je zobaczyć, musisz aktywować opcje w Preferencjach GML.
+  Możesz zawinąć nazwę argumentu w nawiasy [], aby zaznaczyć, że jest on opcjonalny. Wówczas edytor kodu będzie oczekiwał dowolnej liczby argumentów pomiędzy minimalną wymaganą liczbą argumentów a całkowitą liczbą argumentów. Na przykład, patrz poniższy przykład
+    funkcja:
+  /// @function    animate_position(end_x, end_y, start_x, start_y) /// @desc        Animates the instance to ending point, from optional starting point /// @arg end_x /// @arg end_y /// @arg [start_x] /// @arg [start_y]
+     function animate_position (x1, y1, x2, y2) {
+         // Function code }
+  
+  Argumenty start_x i start_y są oznaczone jako opcjonalne, co oznacza, że edytor kodu będzie teraz oczekiwał od 2 do 4 argumentów, jak widać w komunikacie ostrzegawczym:
+  
+  UWAGA: Takie samo zachowanie uzyskasz, jeśli w deklaracji funkcji użyjesz opcjonalnych argumentów. Więcej informacji na ten temat można znaleźć w części Funkcje skryptu.
+  Ponieważ strona scripts może zawierać wiele funkcji, można dodać komentarze JSDoc dla każdej z nich przed jej deklaracją:
+  
+   
+   
+  
+    
+      
+        Powrót: Redaktor Script 
+        Następny: Urywki kodu
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

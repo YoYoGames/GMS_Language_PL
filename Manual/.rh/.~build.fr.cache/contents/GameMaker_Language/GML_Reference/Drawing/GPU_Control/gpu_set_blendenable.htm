@@ -1,0 +1,43 @@
+
+  
+  gpu_set_blendenable
+  Za pomocą tej funkcji można włączać i wyłączać mieszanie alfa. Zasadniczo, jeśli ustawisz tę funkcję na false, wszystkie rysowane obrazy będą w 100% nieprzezroczyste, co oznacza, że wszystkie przezroczyste lub półprzezroczyste obszary strony sprite lub tła będą
+    będą widoczne jako jednolity kolor. Dobrym pomysłem jest wyłączanie mieszania alfa, gdy tylko jest to możliwe (zwłaszcza w przypadku tworzenia aplikacji dla urządzeń przenośnych), ponieważ znacznie zwiększa to szybkość rysowania.
+  
+  Składnia:
+  gpu_set_blendenable(enable);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        enable
+        Enable or disable alpha blending value (true lub false).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  gpu_set_blendenable(false); draw_sprite(spr_Background, 0, 0, 0); gpu_set_blendenable(true);
+  
+  Powyższy kod wyłącza mieszanie alfa, aby narysować tło sprite, a następnie włącza je ponownie, aby kontynuować rysowanie.
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_set_ztestenable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

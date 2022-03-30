@@ -1,0 +1,56 @@
+
+  
+  ds_priorytet_zmiana_priorytetu
+  Ta funkcja pobiera podaną wartość i zmienia jej priorytet w ramach danego priorytetu queue. Podana wartość powinna już istnieć w priorytecie queue.
+   
+  Składnia:
+  ds_priority_change_priority(id, val, priority);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator priorytetu DS
+        The id of the priority queue to change.
+      
+      
+        val
+        Zmienna
+        The value to change the priority of.
+      
+      
+        priority
+        Real
+        The new priority of the value.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if (global.Game_Time < 1000)
+    {
+        ds_priority_change(ai_priority, AI_Search, 1);
+    }
+  Powyższy kod sprawdza zmienną globalną i jeśli jest ona mniejsza od pewnej wartości, zmienia priorytet indeksu funkcji script przechowywanego w priorytecie queue.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolejki priorytetowe DS
+        Następny: ds_priority_delete_max
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

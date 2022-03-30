@@ -1,0 +1,44 @@
+
+  
+  timeline_size
+  Za pomocą tej funkcji można uzyskać całkowitą liczbę aktywnych momentów dla strony timeline (moment "aktywny" to taki, do którego dodano kod lub DnD™). Może to być przydatne podczas tworzenia dynamicznych stron timelines przy użyciu funkcji timeline_moment_add_script() i timeline_moment_clear() ponieważ można sprawdzić, czy dana strona timeline ma odpowiednią liczbę aktywnych momentów, czy też nie ma ich wcale.
+   
+  Składnia:
+  timeline_size(ind);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        ind
+        The index of the timeline get the information from.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if timeline_size(global.tl) == 0
+    {
+        timeline_moment_add_script(global.tl, room_speed + irandom(room_speed), spawn_enemy);
+    }
+  Powyższy kod sprawdza podany rozmiar timeline, a jeśli zwróci 0 (tzn. że timeline nie ma aktywnych momentów), doda funkcję script, która zostanie użyta w losowym momencie w obrębie timeline indeksowanym w zmiennej globalnej "tl".
+   
+   
+   
+  
+    
+      
+        Powrót: Timelines
+        Następny: timeline_max_moment
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,36 @@
+
+  
+  display_get_sleep_margin
+  Ta funkcja umożliwia uzyskanie bieżącej wartości marginesu uśpienia używanego do taktowania renderowania gry i zwraca wartość w milisekundach. Więcej informacji na temat taktowania wyświetlania można znaleźć na stronie display_set_timing_method().
+   
+  Składnia:
+  display_get_sleep_margin();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if display_get_timing_method() != tm_sleep
+    {
+        display_set_timing_method(tm_sleep);
+        if display_get_sleep_margin() != 20
+        {
+            display_set_sleep_margin(20);
+        }
+    }
+  Powyższy kod sprawdzi metodę timingu, a następnie, jeśli nie jest ustawiona na tm_sleep, zostanie na nią ustawiona, a margines uśpienia zostanie ustawiony na 20.
+   
+   
+   
+  
+    
+      
+        Powrót: Aparaty i wyświetlacz
+        Next: display_get_frequency
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

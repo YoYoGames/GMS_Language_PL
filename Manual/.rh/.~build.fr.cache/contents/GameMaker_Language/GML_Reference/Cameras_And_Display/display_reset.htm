@@ -1,0 +1,54 @@
+
+  
+  wyświetl_reset
+  Ta funkcja resetuje ustawienia wyświetlania do tych, które zostały ustawione podczas uruchamiania gry, a także umożliwia zmianę bieżącego poziomu używanego pełnoekranowego antyaliasingu oraz tego, czy ma być używana synchronizacja pionowa. Dostępne poziomy antyaliasingu to 0,2,4 i 8, przy czym domyślną wartością początkową jest 0, a domyślnym ustawieniem v-sync jest false (wyłączony). Włączenie funkcji v-sync może zapewnić płynniejszą rozgrywkę, ale wymaga też większej mocy obliczeniowej, dlatego przed użyciem należy dokładnie rozważyć jej wpływ. To samo dotyczy antyaliasingu - im wyższa liczba, tym więcej przetwarzania jest wymagane.
+  Ponieważ nie wszystkie urządzenia docelowe są takie same, niektóre mogą nie obsługiwać na przykład antyaliasingu 8x lub 4x, dlatego dostępna jest zmienna tylko do odczytu, która pozwala uzyskać różne poziomy AA, jakie może wyświetlić urządzenie, na którym uruchomiona jest gra:
+  display_aa
+  Ta zmienna zwróci wartość całkowitą opartą na ustawieniu bitów dla różnych poziomów. Tak więc dla dostępności tylko 2xAA będzie to wartość 2, dla dostępności 2x i 4x będzie to wartość 6. Dla 8 i 4 będzie to 12. Dla wszystkich 3 poziomów (2, 4 i 8) wartość ta wyniesie 14.
+   
+  Składnia:
+  display_reset(aa, vsync);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        aa
+        Real
+        The level of anti-aliasing filtering (0, 2, 4 or 8).
+      
+      
+        vsync
+        Boolean
+        Toggle vertical synchronisation to on (true) or off (false).
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if (display_aa > 12)
+    {
+        display_reset(8, true);
+    }
+  Powyższy kod ustawi poziom antyaliasingu na 8, jeśli jest obsługiwany, oraz switch v-sync na włączony.
+   
+   
+   
+  
+    
+      
+        Powrót: Aparaty i wyświetlacz
+        Następny: display_get_width
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

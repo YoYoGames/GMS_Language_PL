@@ -1,0 +1,62 @@
+
+  
+  audio_play_sound_on
+  Za pomocą tej funkcji można odtwarzać dowolne zasoby dźwiękowe za pośrednictwem emitera, przy czym zmiany wzmocnienia, położenia, wysokości lub prędkości emitera mogą wpływać na to, jak użytkownik słyszy końcowy odtwarzany dźwięk. Użytkownik podaje indeks emitera, który ma być użyty, indeks dźwięku, który ma być odtwarzany, a następnie określa, czy dźwięk ma być loop czy nie. Na koniec można przypisać priorytet, który jest używany do określania sposobu postępowania z dźwiękami, gdy liczba odtwarzanych dźwięków przekroczy limit określony przez funkcję audio_channel_num(). Dźwięki o niższym priorytecie będą zatrzymywane na rzecz dźwięków o wyższym priorytecie, a wartość priorytetu może być dowolną liczbą rzeczywistą (rzeczywista wartość jest dowolna i może wynosić od 0 do 1 lub od 0 do 100, ponieważ GameMaker Studio 2 nada im taki sam priorytet). Należy pamiętać, że w przypadku priorytetu im wyższa liczba, tym wyższy priorytet, a więc dźwięk o priorytecie 100 będzie miał pierwszeństwo przed dźwiękiem o priorytecie 1.
+  Funkcja ta zwraca również unikatowy numer indeksu odtwarzanego dźwięku, który można zapisać w zmiennej, aby następnie wstrzymać lub zatrzymać go za pomocą odpowiednich funkcji. Oznacza to, że jeśli w danym momencie odtwarzanych jest wiele instancji tego samego dźwięku, można wybrać tylko jedną z nich do obsługi za pomocą funkcji audio.
+   
+  Składnia:
+  audio_play_sound_on(emitter, sound, loop, priority);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        emitter
+        Identyfikator emitera dźwięku
+        The index of the emitter to use.
+      
+      
+        sound
+        Aktywa dźwiękowe
+        The index of the sound to use.
+      
+      
+        loop
+        Boolean
+        Flags the sound as looping or not.
+      
+      
+        priority
+        Real
+        Set the channel priority for the sound.
+      
+    
+  
+   
+  Zwroty:
+  Sound Instance ID
+   
+  Przykład:
+  if global.SFX
+    {
+        audio_play_sound_on(s_emit, snd_Explode, false, 1);
+    }
+  Powyższy kod sprawdza zmienną globalną "SFX" i jeśli zwróci ona true, to dźwięk zaindeksowany w zmiennej "snd_Explode" zostanie odtworzony przez emiter zaindeksowany w zmiennej "s_emit" z niskim priorytetem i bez zapętlania.
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery dźwięku
+        Następny: audio_emitter_get_gain
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

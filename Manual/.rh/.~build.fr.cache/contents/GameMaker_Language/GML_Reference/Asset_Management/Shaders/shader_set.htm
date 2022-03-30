@@ -1,0 +1,43 @@
+
+  
+  shader_set
+  Za pomocą tej funkcji można ustawić cel rysowania na podany adres shader i wszystkie dalsze rysunki będą wykonywane przy jego użyciu. Możesz zakończyć używanie shader za pomocą funkcji shader_reset().
+   
+  Składnia:
+  shader_set(shader);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        shader
+        The index of the shader to use.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  shader_set(shader_Glass);
+    draw_self();
+    shader_reset();
+  Powyższy kod ustawi stronę shader jako używaną do rysowania, a następnie narysuje bieżącą stronę sprite używaną przez instancję, która jej używa.
+   
+   
+   
+  
+    
+      
+        Powrót: Shadery
+        Następny: shader_set_uniform_f
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

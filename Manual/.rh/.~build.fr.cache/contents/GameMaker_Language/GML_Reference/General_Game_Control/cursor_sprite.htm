@@ -1,0 +1,30 @@
+
+  
+  kursor_sprite
+  Ustawienie tej zmiennej spowoduje, że GameMaker Studio 2 będzie używać wskazanego adresu sprite jako kursora (w zasadzie ustawiając go co krok na bieżącą pozycję myszy x/y). Domyślną wartością jest -1, co oznacza brak sprite dla kursora, ale możesz przypisać dowolny indeks sprite z gry assets lub zaimportowany z zewnętrznego zasobu. Należy pamiętać, że nie ma możliwości sterowania szybkością animacji ani indeksem obrazów, więc jeśli na stronie sprite znajdują się podobrazy, będą one przewijane z taką samą szybkością jak na stronie room. Aby usunąć kursor sprite, można ponownie ustawić tę zmienną na -1.
+  Warto również zauważyć, że zmienna ta nie zastępuje kursora okna gry i nadal będzie on rysowany w normalny sposób. Aby tego uniknąć, można użyć funkcji window_set_cursor() i ustawić ją na stałą cr_none, co spowoduje, że standardowy kursor będzie niewidoczny.
+   
+  Składnia:
+  cursor_sprite;
+   
+  Zwroty:
+  Sprite Asset
+   
+  Przykład:
+  cursor_sprite = spr_CustomCursor;
+  Powyższy kod ustawi kursor sprite zaindeksowany w zmiennej "spr_CustomCursor" jako kursor sprite dla gry.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne sterowanie grą
+        Następny: game_id
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

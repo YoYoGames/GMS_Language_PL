@@ -1,0 +1,70 @@
+
+  
+   Jeśli Object w miejscu
+  Ta akcja jest używana do sprawdzania, czy istnieje kolizja z jedną lub wieloma instancjami danej strony object, przy czym bieżąca instancja jest umieszczona w punkcie na stronie room, na podstawie maski kolizji instancji wywołującej. W przypadku wykrycia kolizji akcja zwraca wartość true, a w przeciwnym razie false. Podajesz adres object do sprawdzenia i pozycję, w której instancja ma zostać umieszczona w celu sprawdzenia - może to być pozycja bezwzględna w room lub pozycja względna względem instancji.
+    - Możesz także sprawdzić Not flag, aby sprawdzić, czy w podanej pozycji nie ma kolizji, w którym to przypadku akcja zostanie oceniona jako true tylko wtedy, gdy nie znaleziono kolizji, a w przeciwnym razie jako false.
+  Po podaniu adresu object i pozycji można zaznaczyć/odznaczyć opcję Zwróć listę. Zaznaczenie tej opcji oznacza, że akcja utworzy i zapełni strukturę danych listą
+   wszystkimi instancjami będącymi w kolizji z daną instancją i ustawi zmienną docelową na identyfikator listy DS. Gdy nie jest zaznaczona, ustawi zmienną Target na wartość mniejszą od 0 tylko wtedy, gdy nie zostanie wykryta żadna kolizja, lub na unikatową wartość ID jednej z instancji w kolizji (zauważ, że jeśli w kolizji bierze udział wiele instancji, nie masz możliwości sprawdzenia, które ID instancji zostanie zwrócone, jeśli nie używasz listy).
+  Jeśli wybrano opcję zwracania listy, a zmienna Target nie jest ustawiona na Temp, można również wybrać opcję Free Tar get. Po ustawieniu na true, lista zawarta w zmiennej docelowej zostanie zniszczona i
+    a nowa lista będzie tworzona (i zwracana do zmiennej docelowej) przy każdym wywołaniu akcji. W ten sposób można ponownie używać tej samej zmiennej bez obawy o wycieki pamięci, ponieważ jeśli nie zaznaczymy opcji Free Target, to stajemy się odpowiedzialni
+    za zniszczenie listy przed ponownym użyciem zmiennej w akcji. Zauważ, że niezależnie od tego, czy ta opcja jest zaznaczona, czy nie, jeśli akcja została ustawiona na Zwróć listę, to zmienna docelowa zawsze będzie zawierać identyfikator listy,
+    i jako taka będzie musiała zostać zwolniona, gdy instancja zostanie zniszczona lub gdy zakończy się działanie room (możesz do tego celu użyć np. zdarzenia Sprzątanie na przykład wraz z akcją Free Data Structure ).
+    Warto zauważyć, że można ustawić opcję Free Target tak, by używała predefiniowanej zmiennej lub wyrażenia i w ten sposób kontrolować, kiedy struktura danych listy zostanie zwolniona, ustawiając zmienną w innym miejscu (lub mając różne wyniki dla wyrażenia)
+    tak długo, jak będzie ono odpowiadać true/false.
+  Na koniec należy podać zmienną docelową, która ma przechowywać wartość zwracaną lub identyfikator listy. Jeśli flag zmienna docelowa, która ma przechowywać wartość zwracaną, jest zmienną Temp (lokalną), to akcja utworzy tę zmienną, aby przechowywać wartość zwracaną tylko do końca zdarzenia.
+    W tym przypadku opcja Free Target nie robi nic, a użytkownik będzie odpowiedzialny za zniszczenie listy DS, jeśli opcja ta została zaznaczona. Jeśli nie podano zmiennej docelowej i zaznaczono opcję Lista zwracana, lista nie zostanie utworzona.
+  WAŻNE! Kolizje będą rejestrowane tylko dla tych instancji, które mają poprawną maskę kolizji, tzn. mają sprite przypisaną do sprite_index, lub sprite przypisaną do mask_index. Jeśli któraś z instancji w
+    kolizji nie ma maski kolizji, to kolizja nie zostanie wykryta, niezależnie od tego, co dana instancja rysuje w danym momencie.
+  Należy pamiętać, że aby dodać akcje do bloku "if", należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:
+  
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Object
+         object, aby sprawdzić, czy nie występują przypadki
+      
+      
+        x
+        Pozycja x do sprawdzenia
+      
+      
+        y
+        Pozycja y do sprawdzenia
+      
+      
+        Free Target
+        Może być ustawiona na zmienną lub wyrażenie, albo na true/false, aby kontrolować zwalnianie pamięci listy przy ponownym użyciu zmiennej listy
+      
+      
+        Target
+        Zmienna, która ma być docelową wartością zwracaną przez akcję
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdza, czy nie wystąpiła kolizja z instancjami object "
+   obj_Wall" po lewej i po prawej stronie, a jeśli taka kolizja zostanie znaleziona, odwraca kierunek poziomy wywoływanej instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Działania związane z kolizją
+        Następny: Jeśli kształt kolizji
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

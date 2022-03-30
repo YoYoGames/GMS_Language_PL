@@ -1,0 +1,63 @@
+
+  
+  gpu_set_fog
+  Za pomocą tej funkcji można włączyć lub wyłączyć rysowanie mgły. W grach 3D mgła może być używana do tego, aby obiekty znajdujące się w oddali wyglądały na rozmyte lub nawet znikały, co pomaga w tworzeniu atmosfery, a także w maskowaniu faktu, że nie rysuje się obiektów
+    które znajdują się daleko. Ustawia się, czy ma być włączona (true) czy wyłączona (false), kolor, którego mgła ma używać do mieszania, a także początkową i końcową odległość rysowania. Należy pamiętać, że początek mgły to promień względem
+    w stosunku do kamery widoku, od którego zaczyna się mgła, a koniec mgły określa, przy jakim promieniu (również względnym) instancje będą całkowicie niewidoczne.
+  Funkcja ta może przyjmować cztery pojedyncze argumenty (podane powyżej) lub tablicę o następującej strukturze (poniższy przykładowy kod przedstawia tę metodę):
+  
+    [0] = włączone przełączanie (wartość logiczna, true lub false), domyślnie false
+    [1] = kolor (rzeczywisty), wartość domyślna c_black
+    [2] = odległość początkowa (rzeczywista), domyślnie 0
+    [3] = odległość końcowa (rzeczywista), domyślnie 1
+  
+   
+  Składnia:
+  gpu_set_fog(enable, colour, start, end);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        enable
+        Enable or disable fog
+     
+      
+        colour
+        The fog colour
+     
+      
+        start
+        The distance to start applying fog from
+     
+      
+        end
+        The distance to end the fog
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var fog_a = gpu_get_fog(); fog_a[1] = c_red; gpu_set_fog(fog_a);
+  
+  Powyższy kod pobiera bieżące ustawienia mgły, a następnie ustawia element koloru w tablicy na c_red przed ponownym ustawieniem mgły przy użyciu zmienionej tablicy.
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_set_cullmode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

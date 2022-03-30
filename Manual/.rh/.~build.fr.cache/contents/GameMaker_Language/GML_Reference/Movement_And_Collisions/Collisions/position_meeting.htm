@@ -1,0 +1,59 @@
+
+  
+  stanowisko_spotkania
+  Za pomocą tej funkcji możesz sprawdzić pozycję pod kątem kolizji z inną instancją lub wszystkimi instancjami object. Używając tej funkcji, sprawdzasz pojedynczy punkt w room dla instancji lub object. To sprawdzenie zostanie wykonane względem bounding boxu instancji lub względem maski instancji, jeśli ta instancja ma zaznaczone dokładne kolizje. Jeśli chcesz uzyskać unikatową instancję id z którą koliduje object, powinieneś użyć instance_position(). Funkcja ta akceptuje również specjalne słowa kluczowe all i other.
+   
+  Składnia:
+  position_meeting(x, y, obj);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x
+        Real
+        The x position to check.
+      
+      
+        y
+        Real
+        The y position to check.
+      
+      
+        obj
+         Identyfikatorzasobu lub instancjiobiektu 
+        The object (or instance id, or the keywords "all" or "other") to check for a collision with.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if mouse_check_button(mb_left)
+    {
+        if !position_meeting(mouse_x, mouse_y, all)
+        {
+            instance_create_layer(mouse_x, mouse_y, "Walls", obj_Wall);
+        }
+    }
+  Powyższy kod sprawdza, czy jest wciśnięty lewy przycisk myszy, a jeśli tak, to sprawdza, czy pozycja x/y myszy nie koliduje z jakąś instancją. Jeśli nie ma żadnej, to tworzona jest instancja "obj_Wall".
+   
+   
+   
+  
+    
+      
+        Powrót: Kolizje
+        Następny: position_change
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

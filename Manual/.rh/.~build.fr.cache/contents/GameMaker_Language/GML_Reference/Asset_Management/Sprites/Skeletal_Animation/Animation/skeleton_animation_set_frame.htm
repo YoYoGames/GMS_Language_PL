@@ -1,0 +1,52 @@
+
+  
+  szkielet_animacji_set_frame
+  Ta funkcja ustawia animację przypisaną do danej ścieżki na podaną przez użytkownika klatkę. Indeks klatki powinien być wartością rzeczywistą z przedziału od 0 do liczby klatek animacji (którą można uzyskać za pomocą funkcji skeleton_animation_get_frames). Jeśli podasz wartość spoza tego zakresu, animacja zostanie zapętlona, aby nadrobić różnicę, np. jeśli animacja ma 5 klatek, a ustawisz liczbę klatek na 8, rzeczywista wyświetlana klatka będzie miała wartość 3.
+   
+  Składnia:
+  skeleton_animation_set_frame(track, index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        track
+        Real
+        The animation track to set the frame of.
+      
+      
+        index
+        Aktywa Sprite
+        The new index for the animation frame.
+      
+    
+  
+   
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if global.pause
+    {
+        skeleton_animation_set_frame(0, -image_speed);
+    }
+  Powyższy kod ustawi indeks klatek animacji w ścieżce 0 na ujemną prędkość obrazu, gdy zmienna globalna "pause" będzie miała adres true (zasadniczo wstrzyma to animację).
+   
+   
+   
+  
+    
+      
+        Powrót: Animacja
+        Następny: skeleton_skin_get
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

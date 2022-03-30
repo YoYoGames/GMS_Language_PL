@@ -1,0 +1,41 @@
+
+  
+  audio_pauza_wszystkie
+  Za pomocą tej funkcji można wstrzymać wszystkie aktualnie odtwarzane dźwięki.
+   
+  Składnia:
+  audio_pause_all();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if keyboard_check_pressed(ord("P"))
+    {
+        global.Pause = !global.Pause;
+        if global.Pause
+        {
+            audio_pause_all();
+        }
+        else
+        {
+            audio_resume_all();
+        }
+    }
+  Powyższy kod sprawdza, czy na klawiaturze jest naciśnięty klawisz "P", i jeśli go wykryje, ustawia zmienną globalną "Pause" na true lub false, a następnie wstrzymuje wszystkie dźwięki lub uruchamia ponownie wszystkie poprzednio wstrzymane dźwięki.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_resume_sound
+        
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,55 @@
+
+  
+  physics_joint_delete
+  Gdy dwie instancje z reprezentacjami fizyki zostaną połączone złączem, można je w każdej chwili ponownie usunąć. Zwykle dzieje się to automatycznie, gdy jedna z dwóch instancji zostanie zniszczona lub gdy zakończy się działanie strony room, ale zdarzają się sytuacje, gdy chcesz to zrobić ręcznie. W takich przypadkach należy użyć tej funkcji.
+  Należy również zauważyć, że gdy niszczona jest instancja będąca częścią zazębienia, za pomocą tej funkcji należy usunąć zazębienie przed wszystkimi instancjami biorącymi udział w tworzeniu zazębienia (ale pozostałe zazębienia zostaną usunięte automatycznie), na przykład w zdarzeniu destroy instancji.
+   
+  Składnia:
+  physics_joint_delete(joint)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        joint
+        Fizyka Wspólny identyfikator
+        The index of the joint that you wish to delete
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var reactionForceX, reactionForceY, reactionForce;
+    if shipJoint
+    {
+        reactionForceX = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x);
+        reactionForceY = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x);
+        reactionForce = sqrt((reactionForceX + reactionForceX) + (reactionForceY + reactionForceY));
+        if reactionForce > 2
+        {
+            physics_joint_delete(shipJoint);
+            shipJoint = -1;
+        }
+    }
+  Powyższy kod sprawdza, czy zmienna "shipJoint" zawiera indeks przegubu, a jeśli tak, oblicza siłę przyłożoną do tego przegubu, korzystając z dwóch stałych. Na koniec, jeśli całkowita siła jest większa niż 2, przegub zostaje usunięty.
+   
+   
+   
+  
+    
+      
+        Plecy: Stawy
+        Następny: physics_joint_enable_motor
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

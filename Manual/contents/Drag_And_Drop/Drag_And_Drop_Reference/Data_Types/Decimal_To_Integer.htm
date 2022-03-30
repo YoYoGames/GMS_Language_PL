@@ -9,7 +9,7 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains the Decimal To Integer action" />
-  <meta name="rh-index-keywords" content="DnD™ Action - Decimal To Integer" />
+  <meta name="rh-index-keywords" content="GML Visual Action - Decimal To Integer" />
   <meta name="search-keywords" content="Decimal To Integer" />
 </head>
 <body>
@@ -18,9 +18,9 @@
   <p>To działanie polega na przekształceniu liczby dziesiętnej na liczbę całkowitą. Podajesz wartość do konwersji, a następnie wybierasz rodzaj zaokrąglenia, które ma zostać wykonane, aby przekształcić ją w liczbę całkowitą. Dostępne są następujące rodzaje zaokrągleń:<b></b></p>
   <ul class="colour">
     <li><b>Zaokrąglij</b>: Pobiera liczbę dziesiętną i zaokrągla ją w górę <i>lub</i> w dół do najbliższej liczby całkowitej. W szczególnym przypadku, gdy podana liczba jest dokładnie połową liczby całkowitej (np. 1,5, 17,5, -2,5 itd...), zostanie ona zaokrąglona do
-      najbliższej wartości <b>parzystej</b>, na przykład 2,5 zostanie zaokrąglone do 2, a 3,5 do 4. Ten rodzaj zaokrąglania nazywany jest zaokrąglaniem <i>bankierskim</i> i przy dużej liczbie iteracji lub przy korzystaniu z matematyki zmiennoprzecinkowej daje statystycznie
+      najbliższej wartości <b>parzystej</b>, na przykład 2,5 zostanie zaokrąglone do 2, a 3,5 do 4. Ten typ zaokrąglania nazywany jest zaokrąglaniem <i>bankowym</i> i przy dużej liczbie iteracji lub przy użyciu matematyki zmiennoprzecinkowej daje statystycznie
       statystycznie lepsze zaokrąglenie niż tradycyjne podejście &quot;zaokrąglij w górę, jeśli powyżej .5, a w przeciwnym razie zaokrąglij w dół&quot;.</li>
-    <li>Zaokrąglenie: W tym przypadku wartość<b>dziesiętna</b> jest zaokrąglana <i>do</i> najbliższej liczby całkowitej. W przeciwieństwie do zaokrąglania (powyżej) nie uwzględnia ono części dziesiętnej wartości, więc liczba taka jak 5.0000001 zostanie zaokrąglona do 6. Warto
+    <li>Zaokrąglenie: W tym przypadku wartość<b>dziesiętna</b> jest zaokrąglana <i>do</i> najbliższej liczby całkowitej. W przeciwieństwie do zaokrąglania (powyżej) nie uwzględnia ona części dziesiętnej wartości, więc liczba taka jak 5.0000001 zostanie zaokrąglona do 6. Warto
       zauważyć, że jeśli używasz akcji Random <a href="../Random/Get_Random_Number.htm">Get Random Number</a> do wygenerowania losowej wartości dziesiętnej, a następnie wywołujesz tę akcję, aby ją zaokrąglić, to <i>możesz</i> otrzymać nieoczekiwane wyniki. Akcja random
       może potencjalnie zwrócić 0, a użycie &quot;Ceil&quot; nie da 1, lecz 0, więc jeśli otrzymasz losową liczbę dziesiętną od 0 do 9 i użyjesz tej funkcji, możesz spodziewać się otrzymania liczb całkowitych od 1 do 10, ale w rzeczywistości możesz otrzymać liczby całkowite od
       0 do 10. Jest to bardzo odległa możliwość, ale należy ją wziąć pod uwagę przy korzystaniu z tego działania.</li>

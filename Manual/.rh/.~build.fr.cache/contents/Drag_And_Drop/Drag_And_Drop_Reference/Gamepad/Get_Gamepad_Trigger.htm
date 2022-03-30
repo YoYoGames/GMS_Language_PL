@@ -1,0 +1,48 @@
+
+  
+   Pobierz wyzwalacz gamepada
+  Możesz użyć tej akcji, aby uzyskać wartości różnych wyzwalaczy z danego gamepada. Podajesz indeks gamepada (jest to numer "slotu", który zajmuje gamepad) i wybierasz wyzwalacz, który chcesz sprawdzić (lewy lub prawy). Zwracana wartość
+    będzie się zawierać w przedziale od 0 do 1, gdzie 0 oznacza brak nacisku na spust, a 1 pełny nacisk. Ta zwrócona wartość zostanie zapisana w zmiennej docelowej, którą podasz, do wykorzystania w przyszłości. Należy pamiętać, że ta funkcja nie uwzględnia ustawienia progu.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Gamepad
+        Indeks gamepada.
+      
+      
+        Trigger
+        Wyzwalacz do sprawdzenia (lewy/prawy)
+      
+      
+        Target
+        Zmienna docelowa, w której zostanie zapisana zwrócona wartość.
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji tworzy zmienną lokalną (tymczasową), a następnie wykorzystuje ją do przechowywania
+    aktualną wartość lewego wyzwalacza. Jeśli wartość wyzwalacza jest większa niż 0,5, to instancja jest tworzona na pozycji instancji wywołującej.
+   
+   
+   
+  
+    
+      
+        Powrót: Czynności gamepada
+        Następny: Gamepad Pobierz Licznik
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

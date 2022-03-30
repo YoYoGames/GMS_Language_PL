@@ -1,0 +1,46 @@
+
+  
+  clipboard_set_text
+  Ta funkcja ustawi schowek na określony adres string. Można ustawić ją na pustą string "", aby skutecznie wyczyścić schowek z tekstu.
+  UWAGA: Ta funkcja jest ważna tylko w przypadku systemu docelowego Windows.
+   
+  Składnia:
+  clipboard_set_text(string);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        string
+        The text (as a string) to set the clipboard to hold.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if clipboard_has_text()
+    {
+        str = clipboard_get_text();
+        clipboard_set_text("");
+    }
+  Powyższy kod sprawdza, czy w schowku znajduje się tekst i jeśli go zawiera, to jest on wczytywany jako string do zmiennej "str". Na koniec schowek jest czyszczony przez ustawienie go na pustą stronę string.
+   
+   
+   
+  
+    
+      
+        Powrót: Struny
+        Następny: ansi_char
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

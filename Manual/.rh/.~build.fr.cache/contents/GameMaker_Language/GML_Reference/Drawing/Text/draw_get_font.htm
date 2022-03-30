@@ -1,0 +1,51 @@
+
+  
+  draw_get_font
+  Ta funkcja pobiera adres font aktualnie przypisany do rysowania tekstu. Funkcja zwraca -1, jeśli nie ustawiono adresu font, lub wartość ID (dodatnią liczbę całkowitą) dla przypisanego adresu font asset.
+   
+  Składnia:
+  draw_get_font();
+   
+  Zwroty:
+  Font Asset or -1
+   
+  Przykład:
+  var _cur_font = draw_get_font();
+    var _y_offset = 0;
+    
+    switch (_cur_font)
+    {
+        case ft_small:
+            _y_offset = 10;
+        break;
+    
+        case ft_medium:
+            _y_offset = 22;
+        break;
+    
+        case ft_big:
+            _y_offset = 34;
+        break;
+    
+        default:
+            _y_offset = 8;
+    }
+    
+    draw_text(room_width / 2, 200 + _y_offset, "MENU");
+  
+  Powyższy kod pobiera aktualnie zastosowaną stronę font i uruchamia na niej instrukcję switch, stosując inną wartość przesunięcia Y w zależności od adresu font. Następnie wykorzystuje tę wartość przesunięcia podczas rysowania tekstu.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekst
+        Następny: draw_get_halign
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

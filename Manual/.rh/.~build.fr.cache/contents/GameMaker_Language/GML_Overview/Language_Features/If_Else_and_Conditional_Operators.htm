@@ -1,0 +1,104 @@
+
+  
+  if / else i operatory warunkowe
+  Podstawową cechą większości języków programowania jest możliwość zadania prostego pytania, które daje odpowiedź typu boolean true lub false. W języku GML można to osiągnąć za pomocą słowa kluczowego if. Prosty warunek if przyjmuje wyrażenie i wykonuje jedno lub więcejpoleceń, jeśli wyrażenie ma postać true, o następującej podstawowej postaci:
+  if (<expression>)
+    {
+        <statement>;
+        <statement>;
+        ...
+    }
+  
+    Mówisz, że jeśli wyrażenie ma postać true, to zrób coś. Zauważ, że część "wtedy" warunku jest niejawna, ale istnieje słowo kluczowe then, którego można użyć (choć prawie zawsze jest ono pomijane), więc można również tworzyć takie warunki:
+  if (<expression>) then
+    {
+        <statement>;
+        <statement>;
+        ...
+    }
+  Oprócz if i then, można również użyć słowa kluczowego else, aby zrobić coś innego, jeśli sprawdzane wyrażenie zostanie obliczone jako false. Ta forma "if... then... else..." wygląda następująco:
+  if (<expression>)
+    {
+        <statement>;
+    }
+    else
+    {
+        <statement>;
+    }
+  W tym przypadku wyrażenie zostanie obliczone i jeśli jego wynikiem będzie false, to zostanie wykonana instrukcja następująca po else, w przeciwnym razie zostanie wykonana instrukcja początkowa ( true).
+  UWAGA W języku GameMaker każda wartość mniejsza lub równa 0 będzie oznaczana jako false, natomiast każda wartość większa od 0 będzie oznaczana jako true.
+  Dobrym zwyczajem jest umieszczanie nawiasów wokół wyrażeń i nawiasów klamrowych {} wokół poleceń w if (w przeciwnym razie zostanie wykonane tylko pierwsze polecenie), a także zajmowanie nowego wiersza w bloku dla każdego polecenia, na przykład:
+  // This will work
+    if <expression> <statement>;
+    
+    // Example:
+    if test == true variable = false else variable = true;
+  
+  // This is better
+    if (<expression>)
+    {
+        <statement>
+    }
+    else
+    {
+        <statement>
+    }
+    
+    // Example
+    if (test == true)
+    {
+        variable = false;
+    }
+    else
+    {
+        variable = true;
+    }
+  
+  Zauważ, że choć jest to nieco bardziej czasochłonne, oznacza to, że w kodzie nie ma żadnych niejasności i że będzie on zawsze poprawnie kompilowany na wszystkich platformach. Jednak w początkowym przykładzie może być inaczej, co wyjaśniono w sekcji na stronie Wyrażenia i operatory.
+  UWAGA: Przy porównywaniu dwóch wartości w celu sprawdzenia, czy są równe, należy użyć operatora "==", a do przypisywania używać tylko operatora "=". Obecnie GameMaker traktuje je jako wymienne, ale w przyszłości może się to zmienić, a Twój kod będzie czystszy i bardziej oczywisty, jeśli będziesz używać właściwych operatorów do porównań i przypisań.
+  Aby podać właściwy przykład użycia if, rozważmy następujący kod, który przesunie instancję w kierunku pozycji x=200 w room, gdy zostanie umieszczona w zdarzeniu Step:
+  if (x < 200)
+    {
+        x += 4;
+    }
+    else
+    {
+        x = 200;
+    }
+  Należy pamiętać, że w if można również wykonywać sprawdzenia złożone, tzn. sprawdzać różne wartości lub wyrażenia w tej samej instrukcji. W takich sprawdzeniach można używać różnych operatorów łączenia (&& and, || or i ^^ xor). Gdy to zrobisz, GameMaker Studio 2 oceni każdą z nich po kolei i w zależności od tego, jak zostaną ocenione, reszta może zostać pominięta. Na przykład:
+  if (keyboard_check_pressed(vk_enter)) && (instance_exists(obj_Player))
+    {
+        go = false;
+        alarm[0] = room_speed;
+    }
+  Tutaj sprawdzamy, używając operatora "i" &&, a więc sprawdzane jest, czy oba warunki w if mają wartość true, a jeśli pierwszy z nich ma wartość false, to drugi nie zostanie nawet sprawdzony. Nazywa się to "zwarciem" kodu, dlatego łącząc wyrażenia do sprawdzenia, należy upewnić się, że "najtańsze" z punktu widzenia wydajności jest zawsze pierwsze, aby uniknąć sprawdzania droższych wyrażeń, jeśli pierwsze z nich będzie miało wartość false. W podobny sposób, jeśli warunek może być oceniony jako true lub false w czasie kompilacji, to cały warunek zostanie usunięty z kodu, np. powiedzmy, że masz makro DEBUG_ON dla debugging i może to być albo true, albo false - jeśli zostanie ono ustawione na false, to poniższy blok kodu zostanie usunięty z gry podczas kompilacji:
+  if DEBUG_ON == true
+    {
+        show_debug_message("Instances = " + string(instance_count));
+    }
+  Można również wykonywać operacje warunkowe (znane również jako operacje trójskładnikowe ), które są zasadniczo "skrótowym" sposobem wykonywania podstawowych operacji if. Ma ona następującą składnię:
+  variable = <condition> ? <statement1 (if true)> : <statement2 (if false)>
+  Operator warunkowy "?" zwróci jedną z dwóch podanych wartości, w zależności od tego, czy wyrażenie warunkowe zostanie obliczone jako true lub false, na przykład:
+  var temp_x = (x < (room_width / 2)) ? 32 : (room_width - 32);
+  Powyższy kod sprawdzi, czy wartość "x" jest równa połowie szerokości room, a następnie, jeśli jest mniejsza, ustawi "temp_x" na 32, w przeciwnym razie "temp_x" będzie równe szerokości room - 32. Poniżej znajduje się kilka innych przykładów użycia:
+  draw_text(x, y, "The fee is " + (global.Member ? "$2.00" : "$10.00"));
+    path_start(((global.level > 10) ? path_hard : path_easy;), 2, path_action_reverse, true);
+    (--hp <= 0) ? instance_destroy() : score += 10;
+  Warto również zauważyć, że można zagnieżdżać operacje warunkowe, ale w takim przypadku każda operacja będzie musiała być ujęta w nawiasy, np:
+  var c = a ? "foo" : (b ? "bar" : "whee"); // Correct
+    var c = a ? "foo" : b ? "bar" : "whee";   // Will cause an error
+   
+   
+   
+  
+    
+      
+        Powrót: Przegląd GML
+        Następny: Zwracanie się do zmiennych w innych przypadkach
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,51 @@
+
+  
+  tag_get_assets
+  Za pomocą tej funkcji można wyszukać nazwy wszystkich stron assets, którym przypisano dany znacznik lub znaczniki. Podajesz albo pojedynczy znacznik string albo tablicę, w której każdy element tablicy jest znacznikiem string. Funkcja zwróci tablicę, w której każdy wpis jest nazwą (w postaci string) strony asset z podanym znacznikiem. Jeśli potrzebny jest unikalny indeks dla asset, można użyć funkcji asset_get_index() wraz ze zwróconą nazwą. Jeśli nie istnieje żaden adres assets z podanym znacznikiem lub jeśli wystąpił błąd (np. podane znaczniki nie istnieją), zwrócona zostanie pusta tablica.
+   
+  Składnia:
+  tag_get_assets(tags);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tags
+        Łańcuch lub tablica łańcuchów
+        A single asset tag string or an array with various asset tags.
+      
+    
+  
+   
+  Zwroty:
+  Array
+   
+  Przykład:
+  backgrounds = ds_list_create();
+    var _assets = tag_get_assets("background");
+    for (var i = 0; i< array_length(_assets); ++i;)
+    {
+        if asset_get_type(_assets[i]) == asset_sprite
+        {
+            ds_list_add(backgrounds, asset_get_index(_assets[i]));
+        }
+    }
+  Powyższy kod tworzy listę, a następnie pobiera nazwy wszystkich stron assets z tagiem "background". Następnie loops przegląda tablicę zwróconych nazw, sprawdzając, czy wśród nich jest sprite assets, a jeśli tak, to do listy dodawana jest unikalna wartość indeksu dla asset do wykorzystania w przyszłości.
+   
+   
+   
+  
+    
+      
+        Powrót: Aktywa i znaczniki
+        Następny: asset_get_tags
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

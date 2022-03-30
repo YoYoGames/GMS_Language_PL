@@ -1,0 +1,45 @@
+
+  
+  część_systemowa_wyczyść
+  Za pomocą tej funkcji można wyczyścić system indeksowany do stanu domyślnego, usuwając wszystkie emitery i resetując głębokość oraz położenie (jeśli zostały zmienione). Należy zachować ostrożność podczas korzystania z tej funkcji, ponieważ w przypadku ustawienia instancji, wybuchu lub innej akcji z użyciem emitera powiązanego z tym systemem zostanie wyświetlony błąd, chyba że do sprawdzenia użyto funkcji part_emitter_exists() do sprawdzenia. Nie ma też potrzeby wywoływania funkcji part_emitter_destroy(), ponieważ ta funkcja również zajmuje się tym automatycznie.
+  UWAGA: ta funkcja wyczyści cząstki widoczne na stronie room, ale nie wyczyści właściwości cząstek ani nie usunie ich z pamięci. Do tego celu należy użyć funkcji part_type_clear() oraz . part_type_destroy().
+   
+  Składnia:
+  part_system_clear(ind);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Identyfikator systemu cząstek stałych
+        The index of the particle system to clear.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  part_system_clear(global.Sname);
+  Powyższy kod spowoduje przywrócenie domyślnego stanu systemu cząsteczek indeksowanego w zmiennej globalnej "Sname".
+   
+   
+   
+   
+  
+    
+      
+        Powrót: Układy cząstek stałych
+        Następny: part_system_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

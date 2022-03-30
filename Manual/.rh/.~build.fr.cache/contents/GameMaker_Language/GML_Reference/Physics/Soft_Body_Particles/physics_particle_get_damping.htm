@@ -1,0 +1,32 @@
+
+  
+  physics_particle_get_damping
+  Za pomocą tej funkcji można dowiedzieć się, jakie jest aktualne tłumienie liniowe cząstek w symulacji fizycznej (wartość tę można ustawić za pomocą polecenia physics_particle_set_damping()).
+   
+  Składnia:
+  physics_particle_get_damping()
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (physics_particle_get_damping() < 1)
+    {
+        physics_particle_set_damping(physics_particle_get_damping() + 0.01);
+    }
+  Powyższy kod sprawdzi aktualną wartość tłumienia dla wszystkich cząstek w układzie i jeśli jest ona mniejsza od 1, doda do niej 0,01.
+   
+   
+   
+  
+    
+      
+        Powrót: Miękkie cząstki ciała
+        Następny: physics_particle_get_gravity_scale
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

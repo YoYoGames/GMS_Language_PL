@@ -1,0 +1,38 @@
+
+  
+  gpu_get_fog
+  Ta funkcja służy do pobierania ustawień mgły. Funkcja zwraca 4-elementową tablicę 1D z następującymi informacjami:
+  
+    [0] = włączone przełączanie (wartość logiczna, true lub false), domyślnie false
+    [1] = Stała koloru, wartość domyślna c_black
+    [2] = odległość początkowa(Real), domyślnie 0
+    [3] = odległość końcowa(rzeczywista), domyślnie 1
+  
+  Należy pamiętać, że można zmienić te wartości i przekazać całą tablicę do funkcji gpu_set_fog() jako pojedynczy argument.
+   
+  Składnia:
+  gpu_get_fog();
+   
+  Zwroty:
+  Array (4 elements only; see above for details)
+   
+  Przykład:
+  var fog_a = gpu_get_fog();
+    fog_a[1] = c_red;
+    gpu_set_fog(fog_a);
+  Powyższy kod pobiera bieżące ustawienia mgły, a następnie ustawia element koloru w tablicy na c_red przed ponownym ustawieniem mgły przy użyciu zmienionej tablicy.
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_get_cullmode
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

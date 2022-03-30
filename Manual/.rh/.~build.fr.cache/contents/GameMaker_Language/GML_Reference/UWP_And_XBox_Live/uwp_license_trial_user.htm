@@ -1,0 +1,36 @@
+
+  
+  uwp_license_trial_user
+  Funkcja ta zwróci wskaźnik ID użytkownika, którego licencja próbna jest aktualnie używana, lub zwróci pointer_null, jeśli użytkownik nie jest aktualnie aktywny lub gra nie jest aktualnie w trybie próbnym.
+   
+  Składnia:
+  uwp_license_trial_user();
+   
+  Zwroty:
+  Xbox User ID
+   
+  Przykład:
+  if gamepad_button_check_pressed(0, gp_start)
+    {
+        if uwp_license_trial_version()
+        {
+            var _uid = uwp_license_trial_user();
+            uwp_show_help(_uid);
+        }
+    }
+  Powyższy kod sprawdza, czy został naciśnięty przycisk, a następnie sprawdza, czy aplikacja działa na licencji próbnej. Jeśli tak, to pobiera identyfikator użytkownika licencji i otwiera plik pomocy dla tego użytkownika.
+   
+   
+   
+  
+    
+      
+        Powrót: UWP i XBox Live
+        Następny: uwp_license_trial_time_remaining
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,54 @@
+
+  
+  skrypt_execute
+  Funkcja ta została pierwotnie zaprojektowana do dynamicznego wywoływania zasobów script, ale po wprowadzeniu funkcji definiowanych przez użytkownika można ją teraz wykorzystać na dwa sposoby:
+  
+    Pierwszy sposób polega na obsłudze starszych wersji scripts, gdzie każdy script był pojedynczą funkcją, a tytuł script był jednocześnie nazwą funkcji. Użyta w ten sposób funkcja będzie działać tak jak poprzednio, czyli uruchomi utworzony przez użytkownika skrypt script asset i przekaże do niego podane argumenty. Zauważ, że w tym przypadku nie jest to wywołanie skryptu, lecz funkcji skryptu o tej samej nazwie w script. 
+    Drugi sposób polega na wywołaniu funkcji z adresu script asset, który zawiera wiele funkcji lub definicji zmiennych. W tym przypadku zamiast nazwy script asset należy podać nazwę funkcji i wymagane przez nią argumenty. Należy pamiętać, że działa to tylko w przypadku funkcji skryptu, a nie metod, ponieważ tylko funkcje script mają przypisany identyfikator script.
+  
+  Chociaż funkcja ta jest przeznaczona głównie do obsługi starszych funkcji, nie jest ona przestarzała, ponieważ nadal ma swoje miejsce w sieciach i sytuacjach związanych ze zdalnym wywoływaniem procedur. Warto również zauważyć, że funkcja ta jest wolna, a jej częste używanie może negatywnie wpłynąć na wydajność.
+  UWAGA: Tej funkcji nie można używać z funkcjami wbudowanymi.
+   
+  Składnia:
+  script_execute(scr, arg0, arg1, arg2..., etc...);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        scr
+        Zasób skryptu lub funkcja skryptu
+        The function/script that you want to call
+      
+      
+        arg0, arg1, arg2..., etc...
+        Zmienna
+        The different arguments that you want to pass through to the function/script
+      
+    
+  
+   
+  Zwroty:
+  Variable (Will depend on the return value from the script/function being called)
+   
+  Przykład:
+  script_execute(choose(move_up, move_down, move_left, move_right), irandom(5));
+  Powyższy przykładowy kod użyje adresu script_execute, aby wybrać jedną z czterech funkcji zdefiniowanych przez użytkownika (w tym przypadku związanych z ruchem) i przekazać jej jako pierwszy argument losową liczbę całkowitą.
+   
+   
+   
+  
+    
+      
+        Powrót: Skrypty
+        Następny: script_execute_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

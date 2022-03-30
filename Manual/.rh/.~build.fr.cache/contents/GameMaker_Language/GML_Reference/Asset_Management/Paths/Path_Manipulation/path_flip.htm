@@ -1,0 +1,42 @@
+
+  
+  ścieżka_przesunięcie
+  Ta funkcja bierze wszystkie punkty path i odwraca je wzdłuż osi poziomej. Ta funkcja zmienia rzeczywisty zasób path , a więc na stałe wpływa na sposób, w jaki path jest używany przez wszystkie instancje w grze od momentu użycia funkcji do końca gry.Jeśli nie tego potrzebujesz, powinieneś użyć funkcji takiej jak path_duplicate(), aby najpierw utworzyć kopię path, a następnie wywołać tę funkcję na powielonej asset (nie zapomnij wywołać path_delete() na asset, gdy nie będzie już potrzebna).
+  
+  Składnia:
+  path_flip(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the path to flip.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  path_flip(mypath);
+  Spowoduje to przesunięcie strony path indeksowanej w zmiennej "moja ścieżka" wzdłuż osi poziomej.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja ścieżką
+        Następny: path_mirror
+        
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

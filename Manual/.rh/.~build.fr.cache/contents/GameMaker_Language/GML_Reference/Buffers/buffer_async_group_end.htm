@@ -1,0 +1,43 @@
+
+  
+  buffer_async_group_end
+  Ta funkcja kończy definiowanie grupy zapisu buffer. Wcześniej należy wywołać funkcję buffer_async_group_begin() aby zainicjować grupę, a następnie wywołać funkcję buffer_save_async() dla każdego pliku, który ma być zapisany. Na koniec należy wywołać tę funkcję, która rozpocznie zapisywanie plików. Funkcja zwróci unikalną wartość ID dla zapisu, którą można wykorzystać w zdarzeniu Asynchronous Save / Load do pobrania wyników z mapy DS. async_load DS map.
+   
+  Składnia:
+  buffer_async_group_end();
+   
+  Zwroty:
+  Async Request ID
+   
+  Przykład rozszerzony:
+  Funkcję buffer_async_group_end() można wywołać z dowolnego zdarzenia, a ponieważ jest to funkcja asynchroniczna, wywołanie zwrotne może być niemal natychmiastowe lub może trwać kilka sekund. Wywołanie funkcji jest proste i wygląda mniej więcej tak:
+  buffer_async_group_begin("SaveGame");
+    save1 = buffer_save_async(buff1, "Player_Save1.sav", 0, 16384);
+    save2 = buffer_save_async(buff2, "Player_Save2.sav", 0, 16384);
+    save3 = buffer_save_async(buff3, "Player_Save3.sav", 0, 16384);
+    save4 = buffer_save_async(buff4, "Player_Save4.sav", 0, 16384);
+    save_id = buffer_async_group_end();
+  Powyższy kod uruchamia grupę buffer, a następnie ustawia ją na asynchroniczne zapisywanie 4 plików. Następnie kończy definicję grupy (w tym momencie rozpocznie się zapisywanie), zapisując identyfikator wywołania funkcji w zmiennej "save_id". Po zakończeniu zapisywania zostanie wywołane zdarzenie asynchroniczne Save/Load i będzie można odczytać mapę async_load w celu znalezienia właściwego identyfikatora funkcji, jak poniżej:
+  if ds_map_find_value(async_load, "id") == saveid
+    {
+        if ds_map_find_value(async_load, "status") == false
+        {
+            show_debug_message("Save failed!");
+        }
+    }
+  Powyższy kod najpierw sprawdzi identyfikator utworzonej mapy DS, a następnie sprawdzi stan wywołania zwrotnego, publikując komunikat debugowania, jeśli wystąpiły jakieś problemy.
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_copy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

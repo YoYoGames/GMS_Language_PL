@@ -1,0 +1,64 @@
+
+  
+  array_resize
+  Za pomocą tej funkcji można zmienić rozmiar istniejącej tablicy do nowego rozmiaru. W tym celu należy podać tablicę, której rozmiar ma zostać zmieniony, oraz nową liczbę indeksów w tablicy, a funkcja zmieni rozmiar tablicy. Należy pamiętać, że funkcja ta jest przeznaczona do zmiany rozmiaru tablicy na mniejszy, ponieważ można zmienić rozmiar tablicy przez ustawienie nowego indeksu w tablicy. Jeśli jednak funkcja zostanie użyta do zwiększenia rozmiaru tablicy, to nowe indeksy zostaną ustawione na domyślną wartość 0.
+  Funkcji tej można również używać w przypadku tablic wielowymiarowych, pod warunkiem że podczas podawania indeksu tablicy zostanie określony wymiar, którego wielkość ma zostać zmieniona, zgodnie z poniższym wzorem:
+  // Resize the first dimension of the array
+    array_resize(my_array, 10);
+    
+    // Resize the second dimension of the array (only for the first slot)
+    array_resize(my_array[0], 10);
+    
+    // Resize the third dimension of the array (only for the first slots)
+    array_resize(my_array[0][0], 10);
+    
+    // ...and so on.
+  
+  W kodzie podano, że zmieniany jest rozmiar tylko pierwszego gniazda w drugim wymiarze, ponieważ gniazda w danym wymiarze tablicy nie są ze sobą połączone i mogą mieć różne rozmiary; na przykład:
+  array_resize(my_array[0], 10);
+    array_resize(my_array[1], 22);
+  W powyższym kodzie długość drugiego wymiaru tablicy wynosi 10 w pierwszym gnieździe, ale 22 w drugim.
+   
+  Składnia:
+  array_resize(array_index, new_size);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        array_index
+        The index of the array to resize.
+     
+      
+        new_size
+        The new size for the array (an integer, starting from 0).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if array_length(a) > 10
+    {
+        array_resize(a, 10);
+    }
+  Powyższy kod sprawdza długość tablicy i jeśli ma ona więcej niż 10 indeksów, jest zmieniany jej rozmiar.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: array_length_1d
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

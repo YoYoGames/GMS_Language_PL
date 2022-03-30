@@ -1,0 +1,47 @@
+
+  
+  gpu_set_alphatestref
+  Ta funkcja ustawia wartość odniesienia dla testowania alfa (jeśli zostało ono włączone za pomocą przycisku gpu_set_alphatestenable()). Jest to próg "odcięcia", po przekroczeniu którego piksele z alfą nie będą rysowane.
+  Zasadniczo, jeśli wartość ta jest ustawiona na 0 i włączona jest interpolacja liniowa (w Opcjach gry lub za pomocą przycisku gpu_set_texfilter()), nadal mogą występować błędy wizualne na krawędziach nakładających się obszarów objects. Dzieje się tak dlatego, że możesz mieć prawie całkowicie przezroczyste obszary, które blokują rysowane za nimi elementy, ale jeśli ustawisz tę wartość odniesienia na przykład na 254 (czyli o jeden poniżej maksimum), zagwarantuje to, że rysowane będą tylko piksele w 100% nieprzezroczyste. Można również wyłączyć interpolację texture, co zazwyczaj pozwala na bezproblemowe korzystanie z wartości domyślnych i nie ma potrzeby używania tej funkcji, jednak wiele zależy od źródłowej grafiki.
+  UWAGA: Jest to zaawansowana funkcja rysowania, więc jeśli nie jesteś pewien, czy jej potrzebujesz, lub nie wiesz dokładnie, co ona robi, lepiej z niej nie korzystaj, ponieważ może ona poważnie zepsuć sposób rysowania gry.
+   
+  Składnia:
+  gpu_set_alphatestref(val);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        val
+        Sets the reference value for alpha testing from 0 to 255 (default value is 0)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if !gpu_get_alphatestenable()
+    {
+        gpu_set_alphatestenable(true);
+        gpu_set_alphatestref(128);
+    }
+  Powyższy kod sprawdzi, czy testowanie alfa jest włączone, a jeśli nie, to switch włączy testowanie alfa i ustawi próg testowania na 128 (rysowane będą tylko piksele o alfa powyżej 0,5).
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_set_texfilter
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

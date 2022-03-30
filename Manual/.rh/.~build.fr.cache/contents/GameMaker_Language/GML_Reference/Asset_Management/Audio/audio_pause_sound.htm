@@ -1,0 +1,54 @@
+
+  
+  audio_pauza_dźwiękowa
+  Za pomocą tej funkcji można wstrzymać dowolny aktualnie odtwarzany dźwięk. Dźwięk może być pojedynczą instancją dźwięku (indeks dla poszczególnych odtwarzanych dźwięków można zapisać w zmiennej przy użyciu funkcji audio_play_sound() lub audio_play_sound_at() ) lub dźwiękiem asset, w którym to przypadku wszystkie instancje danego dźwięku zostaną wstrzymane.
+   
+  Składnia:
+  audio_pause_sound(index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Sound Asset lub Sound Instance ID
+        The index of the sound to pause.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if keyboard_check_pressed(ord("P"))
+    {
+        global.Pause = !global.Pause;
+        if global.Pause
+        {
+            audio_pause_sound(snd_Waterfall);
+        }
+        else
+        {
+            audio_resume_sound(snd_Waterfall);
+        }
+    }
+  Powyższy kod sprawdza, czy na klawiaturze jest naciśnięty klawisz "P", a jeśli go wykryje, ustawia zmienną globalną "Pause" na true lub false, a następnie wstrzymuje odtwarzanie dźwięku zaindeksowanego w zmiennej "snd_Waterfall" albo wznawia odtwarzanie od stanu wstrzymania.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_pause_all
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

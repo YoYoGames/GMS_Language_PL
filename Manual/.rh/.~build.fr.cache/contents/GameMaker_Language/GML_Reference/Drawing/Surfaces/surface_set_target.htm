@@ -1,0 +1,74 @@
+
+  
+  surface_set_target
+  Za pomocą tej funkcji ustawiasz wszystkie dalsze rysunki na powierzchni docelowej, a nie na ekranie. W ten sposób możesz powiedzieć GameMaker Studio 2, aby rysował tylko określone rzeczy na określonej powierzchni. Należy pamiętać, że jeśli nie wywołasz funkcji surface_reset_target() po zakończeniu pracy, nic nie będzie rysowane na ekranie, ponieważ wszystkie dalsze rysunki (nawet w innych przypadkach) będą wykonywane na powierzchni. Powinieneś również zdawać sobie sprawę, że nic nie będzie widać, jeśli sama powierzchnia nie zostanie narysowana na ekranie w zdarzeniu draw instancji. Możesz także sprawdzić wartość zwracaną tej funkcji jako narzędzie debugowania, aby sprawdzić, czy cel powierzchniowy został ustawiony, czy nie, przy czym wartość zwracana równa 0 oznacza niepowodzenie ustawienia celu, a każda inna dodatnia wartość oznacza sukces.
+  Należy zwrócić uwagę na to, że powierzchnie są ułożone w stos, więc nie można przeskakiwać z jednego celu do drugiego, a na końcu powrócić do normalnego celu rysowania, lecz trzeba otwierać i zamykać cele renderowania. Na przykład, nie będzie to działać poprawnie:
+  surface_set_target(surf1);
+    draw_text(32, 32, "surface1");
+    surface_set_target(surf2);
+    draw_text(32, 64, "surface2");
+    surface_reset_target();
+  Zamiast tego należy zresetować cel dla każdej z ustawionych powierzchni, podobnie jak w przypadku bloków kodu należy używać nawiasów otwierających i zamykających {}. Powyższe polecenie należy więc zapisać w następujący sposób:
+  surface_set_target(surf1);
+    draw_text(32, 32, "surface1");
+    surface_reset_target();
+    surface_set_target(surf2);
+    draw_text(32, 64, "surface2");
+    surface_reset_target();
+  lub w ten sposób:
+  surface_set_target(surf1);
+    draw_text(32, 32, "surface1");
+    surface_set_target(surf2);
+    draw_text(32, 64, "surface2");
+    surface_reset_target();
+    surface_reset_target();
+  UWAGA: Podczas pracy z powierzchniami istnieje możliwość, że w każdej chwili mogą one przestać istnieć, ponieważ są przechowywane w pamięci texture. Należy ZAWSZE sprawdzić, czy powierzchnia istnieje, używając polecenia surface_exists() przed bezpośrednim odwołaniem się do niej.
+   
+  Składnia:
+  surface_set_target(surface_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        surface_id
+        The ID of the surface to set as the drawing target.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if view_current = 0
+    {
+        surface_set_target(surf);
+        with (obj_Effect)
+        {
+            draw_self();
+        }
+        surface_reset_target();
+    }
+    else
+    {
+        draw_surface(surf, 0, 0);
+    }
+  Powyższy kod sprawdzi, który widok jest aktualnie rysowany, i jeśli jest to widok[0], ustawi cel rysowania na powierzchnię i narysuje wszystkie instancje object "obj_Effect" przed ponownym zresetowaniem celu rysowania. Jeśli widok nie jest widokiem[0], to powierzchnia jest rysowana na ekranie.
+   
+   
+   
+  
+    
+      
+        Powrót: Powierzchnie
+        Następny: surface_set_target_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

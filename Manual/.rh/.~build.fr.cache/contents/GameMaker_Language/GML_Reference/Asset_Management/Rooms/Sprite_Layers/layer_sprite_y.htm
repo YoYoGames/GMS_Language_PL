@@ -1,0 +1,45 @@
+
+  
+  warstwa_sprite_y
+  Ta funkcja steruje położeniem wzdłuż osi y elementu room znajdującego się na warstwie asset sprite. Podajesz identyfikator elementu sprite (który otrzymujesz podczas tworzenia elementu sprite za pomocą funkcji layer_sprite_create()    lub po użyciu funkcji layer_sprite_get_id()), a następnie ustawia wartość y, która ma być użyta (na podstawie współrzędnych room ).
+   
+  Składnia:
+  layer_sprite_y(sprite_element_id, y);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sprite_element_id
+        The unique ID value of the sprite element to change
+     
+      
+        y
+        The y position for the sprite
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var lay_id = layer_get_id("Asset_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); layer_sprite_y(spr_id, 50 + irandom(room_height - 200));
+  Powyższy kod pobiera wartość ID strony sprite asset "Clouds" przypisanej do warstwy "Asset_sky", a następnie ustawia jej pozycję y na losową wartość z przedziału od 50 do wysokości strony room minus 200.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy Sprite'ów
+        Następny: layer_sprite_get_sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

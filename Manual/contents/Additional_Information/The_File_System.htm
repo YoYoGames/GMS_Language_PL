@@ -15,23 +15,23 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>System plików</h1>
-  <p>Przy korzystaniu z <a href="../GameMaker_Language/GML_Reference/File_Handling/File_Handling.htm">funkcji systemu plików</a> lub <a href="../Settings/Included_Files.htm">plików dołączonych</a> do <span class="notranslate">GameMaker Studio 2</span> bardzo ważne jest, aby dokładnie wiedzieć, jak
-    jak działa system plików i co się dzieje za kulisami. W tym celu ta sekcja ma za zadanie wyjaśnić i objaśnić, <em>jak</em> dokładnie są przechowywane rzeczy, <em>gdzie</em> są przechowywane i jakie są możliwe ograniczenia lub obejścia tego systemu.
+  <p>Podczas korzystania z <a href="../GameMaker_Language/GML_Reference/File_Handling/File_Handling.htm">funkcji systemu plików</a> lub <a href="../Settings/Included_Files.htm">dołączonych plików</a> w programie <span data-keyref="GameMaker Name">GameMaker</span> niezwykle ważna jest dokładna znajomość
+    jak działa system plików i co dzieje się za kulisami. W tym celu ten rozdział ma za zadanie wyjaśnić i objaśnić dokładnie, <em>jak</em> rzeczy są przechowywane, <em>gdzie</em> są przechowywane i jakie są możliwe ograniczenia lub obejścia tego systemu.
     w tym systemie.</p>
-  <p>Pierwszą i najważniejszą rzeczą, na którą należy zwrócić uwagę w przypadku funkcji plików, jest to, że są one ograniczone - ogólnie i domyślnie - do <strong>piaskownicy</strong>. Oznacza to, że na stronie <span class="notranslate">GameMaker Studio 2</span> <strong>nie można zapisywać ani wczytywać plików z dowolnego miejsca, które nie jest częścią pakietu z grą lub lokalnej pamięci urządzenia</strong>, bez <em>wyraźnego </em>polecenia użytkownika, a nawet wtedy polecenie to jest ograniczone tylko do platform docelowych <span class="notranslate">Windows</span>, <span class="notranslate">macOS</span> i <span class="notranslate">Ubuntu</span> (<span class="notranslate">Linux</span>).</p>
+  <p>Pierwszą i najważniejszą rzeczą, na którą należy zwrócić uwagę w przypadku funkcji plików, jest to, że są one ograniczone - ogólnie i domyślnie - do <strong>piaskownicy</strong>. Oznacza to, że <span data-keyref="GameMaker Name">GameMaker</span> <strong>nie może zapisywać ani wczytywać plików z dowolnego miejsca, które nie jest częścią pakietu gry lub pamięci lokalnej urządzenia</strong>, bez <em>wyraźnego </em>polecenia użytkownika, a nawet wtedy polecenie to jest ograniczone tylko do platform docelowych <span class="notranslate">Windows</span>, <span class="notranslate">macOS</span> i <span class="notranslate">Ubuntu</span> (<span class="notranslate">Linux</span>).</p>
   <p class="note"><strong>WAŻNE!</strong> Na platformach docelowych Desktop (<span class="notranslate">Windows</span>, <span class="notranslate">macOS</span> oraz <span class="notranslate">Ubuntu</span> (<span class="notranslate">Linux</span>)) można jednak wyłączyć piaskownicę, zaznaczając opcję <strong>Disable file system sandbox (Wyłącz piaskownicę systemu plików</strong> ) w <a href="../Settings/Game_Options.htm">opcjach gry</a> dla platformy docelowej. Robisz to na własne ryzyko i chociaż otworzy to możliwość zapisywania i wczytywania plików oraz umożliwi dostęp do plików w dowolnym miejscu w systemie, może to być nadal ograniczone przez uprawnienia systemu operacyjnego i nie będzie można zapisywać
     do <a href="../GameMaker_Language/GML_Reference/File_Handling/File_Directories/program_directory.htm"><span style="font-size:1px;"><span class="inline" style="font-size: 14px">program_katalog</span></span></a> folderu.</p>
   <p>Aby zrozumieć działanie piaskownicy, należy przede wszystkim zrozumieć, że istnieją dwa odrębne obszary dla plików:</p>
   <ul class="colour">
-    <li><strong>The File Bundle</strong> - w tym miejscu znajdują się wszystkie pliki spakowane z grą wykonywalną, w tym pliki dodane do listy <strong>Included Files</strong> <span class="notranslate">asset</span> na stronie <span class="notranslate">GameMaker Studio 2</span> <span class="notranslate">IDE</span> (są to
-      są to pliki zewnętrzne, które mają być spakowane z grą).</li>
+    <li><strong>The File Bundle</strong> - w tym miejscu przechowywane są wszystkie pliki spakowane z grą wykonywalną, w tym pliki dodane do listy <strong>Included Files</strong> <span class="notranslate">asset</span> z programu <span data-keyref="GameMaker Name">GameMaker</span> <span class="notranslate">IDE</span> (są to
+      są plikami zewnętrznymi, które mają być spakowane z grą).</li>
     <li><strong>Obszar</strong> zapisu - jest to obszar pamięci masowej urządzenia, do którego gra może bezpiecznie zapisywać dane, a gra ma gwarancję, że jest to obszar, do którego można zapisywać dane.</li>
   </ul>
   <p>Poniższy schemat może pomóc w lepszej wizualizacji tego zjawiska:</p>
   <p><img alt="File System Save Areas" class="center" src="../assets/Images/Scripting_Reference/Additional_Information/Files_SaveAreas.png" /></p>
   <p class="note"><strong>UWAGA</strong>: Nigdy nie można zapisywać w katalogu File Bundle (program).</p>
-  <p>Gdy gra jest sandboxowana, dwa obszary docelowe - katalog bundle i lokalny obszar przechowywania - są dostępne na każdej platformie docelowej, ale na każdej z nich będą działać nieco inaczej. Jednak <span class="notranslate">GameMaker Studio 2</span> wyabstrahował główną
-    co można, a czego nie można zrobić, co ułatwia zmianę przeznaczenia gry na wiele środowisk.</p>
+  <p>Gdy gra jest sandboxowana, dwa docelowe obszary - katalog bundle i lokalny obszar przechowywania - są dostępne na każdej platformie docelowej, ale na każdej z nich będą działać nieco inaczej. Jednak <span data-keyref="GameMaker Name">GameMaker</span> wyabstrahował główną
+    co można, a czego nie można zrobić, ułatwiając w ten sposób dostosowanie gry do wielu środowisk.</p>
   <p>Na początek należy zrozumieć, co mamy na myśli, gdy mówimy o <a href="../GameMaker_Language/GML_Reference/File_Handling/File_Directories/working_directory.htm"><span class="inline">working_directory</span></a>. Jest to synonim dwóch
     możliwych miejsc zapisu (jak pokazano na powyższym diagramie) i kiedy użyjesz tego katalogu, zrobi on jedną z dwóch rzeczy, w zależności od tego, czy czytasz, czy piszesz, oraz od tego, czy plik, z którego czytasz, został zmieniony, czy nie:</p>
   <ul class="colour">
@@ -39,7 +39,7 @@
       i używa go (jeśli szukany plik jest dołączony do gry).</li>
     <li><strong>Operacje</strong> zapisu - można je wykonywać tylko w obszarze zapisu.</li>
   </ul>
-  <p class="note"><strong>UWAGA</strong>: na ogół <span class="notranslate">GameMaker Studio 2</span> zrobi to wszystko za Ciebie i <strong>rzadko </strong>trzeba używać wbudowanej zmiennej <span class="inline" style="font-size: 14px">working_directory</span>.</p>
+  <p class="note"><strong>UWAGA</strong>: ogólnie rzecz biorąc, <span data-keyref="GameMaker Name">GameMaker</span> zrobi to wszystko za Ciebie i <strong>rzadko </strong>będziesz musiał używać wbudowanej zmiennej <span class="inline" style="font-size: 14px">working_directory</span>.</p>
   <p>Korzystając z tych dwóch prostych reguł, możemy teraz zobaczyć, jak działają następujące funkcje (są to przykłady ułatwiające wizualizację procesu dla różnych dostępnych funkcji):</p>
   <ul class="colour">
     <li><a href="../GameMaker_Language/GML_Reference/File_Handling/File_Directories/directory_create.htm"><span class="inline">directory_create()</span></a> (oraz inne funkcje katalogów) będą działać tylko w obszarze <strong>zapisu </strong>.</li>

@@ -1,0 +1,63 @@
+
+  
+  ścieżka_wstaw_punkt
+  Za pomocą tej funkcji można wstawić nowy punkt do strony path (strona path mogła zostać utworzona w edytorze path lub za pomocą kodu przy użyciu path_add()). Punkt zostanie dodany do strony path przed punktem "n", który jest określony w funkcji.
+   
+  Składnia:
+  path_insert_point(index, n, x, y, speed);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Aktywa na ścieżce
+        The index of the path to insert the point into.
+      
+      
+        n
+        Real
+        The defining point to insert the new point BEFORE.
+      
+      
+        x
+        Real
+        The x coordinate (relative to the path) of the new point.
+      
+      
+        y
+        Real
+        The y coordinate (relative to the path) of the new point.
+      
+      
+        speed
+        Real
+        The speed factor of the point.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  path_insert_point(mypath, 0, 50, 50, 100);
+  Spowoduje to wstawienie punktu na samym początku strony path indeksowanej zmienną "mypath", w punkcie (50,50), ze współczynnikiem szybkości 100%.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja ścieżką
+        Następny: path_delete_point
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

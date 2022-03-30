@@ -1,0 +1,50 @@
+
+  
+  Edytowanie kodu
+  Gdy zaczniesz korzystać z edytora script, wystarczy wpisać kod, który ma się znaleźć na stronie script asset lub w wydarzeniu, zgodnie z poprawną składnią GML. W tym czasie,
+    otrzymasz pomoc z okna autouzupełniania:
+  To okno pojawi się w trakcie pisania kodu (zwykle po lekkiej przerwie, ale można to ustawić w Preferencjach)
+    i wyświetli wybór "najlepiej pasujących" odpowiedzi w porządku alfabetycznym.
+  Podczas korzystania z edytora kodu można kliknąć przycisk  i przeciągnąć myszą, aby zaznaczyć wiersz kodu, lub przytrzymać przycisk , a następnie kliknąć przycisk  i przeciągnąć, aby zaznaczyć kolumny kodu. Wszystkie zaznaczone w ten sposób elementy można kopiować, wycinać i wklejać , używając
+    standardowych skrótów klawiaturowych:  /  + " C",  /  + "X" oraz  /  + "V".
+  Warto zauważyć, że kod można komentować na różne sposoby. Komentowanie kodu jest bardzo ważne dla zachowania wydajności, ponieważ pozwala zachować przejrzystość i oddziela fragmenty kodu w taki sposób, że jest oczywiste, co każda
+    część i dlaczego jest tam umieszczona. Oznacza to również, że jeśli pracujesz w zespole, możesz zostawiać notatki dla innych członków zespołu i będą oni dokładnie wiedzieć, co zrobiłeś lub do czego służy dana sekcja kodu. Nawet jeśli jesteś samodzielnym programistą,
+    zostawianie komentarzy w kodzie jest ważne, zwłaszcza jeśli musisz opuścić projekt i wrócić do niego w późniejszym czasie.
+  Komentowanie kodu jest proste, ponieważ wystarczy użyć "//" przed każdym wierszem tekstu lub można komentować całe akapity, używając "/* text here */". Istnieją nawet dwa skróty klawiaturowe
+    skróty klawiaturowe do komentowania i usuwania komentarzy w wybranych liniach kodu:  /  + "K", aby zakomentować, oraz  /  +  + "K", aby odkomentować. Poniższy obrazek ilustruje kod napisany przy użyciu obu tych metod
+    jak również niektóre komentarze JS Doc (wyjaśnione bardziej szczegółowo poniżej):
+  Do skryptów można także dodawać komentarze w stylu JSDoc, określające właściwości funkcji, które zawierają, tak aby podczas używania
+    funkcji w kodzie pojawiały się one w autouzupełnianiu wraz z ich argumentami i innymi szczegółami. Więcej informacji na ten temat można znaleźć w sekcji Komentarze JSDoc Script .
+  Domyślnie wszystkie napisane kody będą miały ikony zwijania kodu obok każdego zestawu pasujących nawiasów {}. Mają one postać małych ikonek plusa + lub minusa -, a kliknięcie ich spowoduje "zwinięcie" kodu w pasujących nawiasach, tak aby zajmował mniej miejsca.
+  Można również ręcznie ustawić regiony zwijania kodu, używając specjalnych znaczników #region do oznaczenia fragmentu kodu. Działa to w ten sposób, że dodajesz znacznik #region (wraz z tekstem komentarza) na początku
+    sekcji kodu, a następnie dodajesz odpowiadający mu znacznik #endregion na dole tej sekcji i wtedy możesz "zwinąć" kod, tzn. ukryć go, aby zmniejszyć liczbę linii kodu widocznych w edytorze
+    w dowolnym momencie:
+  Faktyczny kod wygląda mniej więcej tak:
+  #region This is an example region
+     width = sprite_get_width(sprite); height = sprite_get_height(sprite); xoff = sprite_get_xoffset(sprite); yoff = sprite_get_yoffset(sprite);
+     #endregion Further comment here if required
+  Jak być może zauważyłeś, fragmenty tekstu script są oznaczone kolorami. Edytor script "wie" o istniejących zmiennych objects, wbudowanych zmiennych i funkcjach itd. i odpowiednio je koloruje. Kodowanie kolorami bardzo pomaga w unikaniu błędów
+    ponieważ od razu widać, czy błędnie wpisano jakąś nazwę, czy użyto słowa kluczowego jako zmiennej lub czy wystąpił błąd w składni. Jeśli jednak nie podoba Ci się kodowanie za pomocą kolorów, w Preferencjach możesz je włączyć lub wyłączyć na stronie switch (możesz także użyć F10, aby włączyć lub wyłączyć je w edytorze), a także dostosować używane kolory.
+  Klikając prawym przyciskiem myszy stronę  w dowolnym miejscu edytora, można otworzyć następujące menu:
+  Oprócz funkcji typowych dla wycinania, kopiowania i wklejania wierszy kodu masz także możliwość komentowania lub usuwania komentarzy
+    zaznaczony tekst, dodawać lub usuwać wcięcia, a także dzielić okno kodu na 1, 2 lub 3 osobne szyby (należy pamiętać, że opcje dotyczące strony #regions nie będą dostępne, jeśli nie zostały zdefiniowane w edytowanym kodzie).
+  Ostatnia opcja podziału na szyby spowoduje podzielenie aktualnego okna na różne części, w których można przeciągnąć stronę script lub zdarzenie i wyświetlić je obok innych w celu porównania i edycji.
+  Jest to wyjątkowo przydatne do porównywania dwóch stron scripts lub przeglądania połączonych stron scripts w tym samym czasie, bez potrzeby otwierania kolejnego okna
+    lub konieczności ciągłego przechodzenia między zakładkami na stronie switch.
+  Pozostałe opcje w tym menu służą do przełączania strony breakpoint do użytku z debuggerem oraz do konwersji kodu GML na DnD™ lub odwrotnie. Należy pamiętać, że w przypadku konwersji kodu do DnD™ nie będą tworzone
+    poszczególnych akcji dla każdej linii kodu, ale raczej użyje pojedynczej akcji kodu, aby pomieścić wszystko, co wcześniej znajdowało się w zdarzeniu lub na stronie script.
+   
+   
+   
+  
+    
+      
+        Powrót: Redaktor Script 
+        Następny: Komentarze JSDoc
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

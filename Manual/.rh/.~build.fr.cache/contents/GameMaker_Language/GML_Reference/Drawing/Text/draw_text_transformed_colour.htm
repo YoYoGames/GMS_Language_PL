@@ -1,0 +1,85 @@
+
+  
+  draw_text_transformed_colour
+  Funkcja ta jest połączeniem funkcji podstawowej draw_text() z funkcjami draw_text_transformed() oraz draw_text_colour()    umożliwia skalowanie i obracanie tekstu, a także kolorowanie go za pomocą wypełnienia gradientowego i zmienianie jego wartości alfa, ignorując podstawowe ustawienia alfa i koloru dla rysowania.
+  UWAGA Mieszanie gradientowe nie jest dostępne w przypadku celu HTML5, chyba że włączona jest obsługa WebGL, choć nadal można ustawić kolory mieszania, a strona font zostanie połączona z pierwszym podanym kolorem. Jednak wszystkie mieszania w ten sposób tworzą duplikat
+    font który jest następnie przechowywany w witrynie cache i używany w razie potrzeby, co nie jest optymalne, a wielokrotne zmiany kolorów spowalniają działanie gry. Aby ograniczyć to zjawisko, można ustawić rozmiar font cache 
+    używając funkcji font_set_cache_size().
+   
+  Składnia:
+  draw_text_transformed_colour(x, y, string, xscale, yscale, angle, c1, c2, c3, c4, alpha);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x
+        The x coordinate of the drawn string.
+     
+      
+        y
+        The y coordinate of the drawn string.
+     
+      
+        string
+        The string to draw.
+     
+      
+        xscale
+        The horizontal scale.
+     
+      
+        yscale
+        The vertical scale.
+     
+      
+        angle
+        The angle of the text.
+     
+      
+        c1
+        The colour for the top left of the drawn text.
+     
+      
+        c2
+        The colour for the top right of the drawn text.
+     
+      
+        c3
+        The colour for the bottom right of the drawn text.
+     
+      
+        c4
+        The colour for the bottom left of the drawn text.
+     
+      
+        alpha
+        The alpha for the text.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_set_halign(fa_center); draw_set_valign(fa_middle);
+     image_angle += 1; draw_text_transformed_colour(room_width / 2, room_height / 2, keyboard_string, 2, 2, image_angle, c_red, c_red, c_yellow, c_yellow, 0.5);
+  Powyższy kod narysuje na środku strony room podany tekst, obracający się wokół własnej osi i przeskalowany do dwukrotności oryginalnego rozmiaru, z gradientem koloru od żółtego do czerwonego oraz alfą 0,5.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekst
+        Następny: draw_text_ext_transformed_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

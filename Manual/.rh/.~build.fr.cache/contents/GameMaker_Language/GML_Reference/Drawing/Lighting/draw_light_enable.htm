@@ -1,0 +1,51 @@
+
+  
+  draw_light_enable
+  Ta funkcja służy do włączania zdefiniowanego światła. Po zdefiniowaniu światła pozycyjnego lub kierunkowego należy przypisać mu numer indeksu, który jest następnie wykorzystywany przez tę funkcję do switch włączania lub wyłączania światła. Domyślnie światło jest wyłączone (false).
+  UWAGA: Dostępnych jest tylko 8 kontrolek sprzętowych, dlatego w danej chwili może być włączonych tylko 8 zdefiniowanych kontrolek (choć można zdefiniować ich więcej).
+   
+  Składnia:
+  draw_light_enable(ind, enable);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Real
+        The index number of the light (from 0 to 7)
+      
+      
+        enable
+        Boolean
+        Enable or disable all lighting (true lub false)
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_set_lighting(true);
+    draw_light_define_direction(1, 0, 1, 0, c_white);
+    draw_light_enable(1, true);
+  Powyższy kod włączy oświetlenie dla całej sceny, następnie zdefiniuje białe światło kierunkowe w przestrzeni room, a na koniec włączy to światło.
+   
+   
+   
+  
+    
+      
+        Powrót: Oświetlenie
+        Następny: draw_set_lighting
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

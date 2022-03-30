@@ -1,0 +1,46 @@
+
+  
+  audio_sound_get_pitch
+  Ta funkcja służy do uzyskiwania wysokości danego dźwięku. Dźwięk może być wywołany z indeksu odtwarzanego dźwięku, który został zapisany w zmiennej przy użyciu funkcji audio_play_sound() lub audio_play_sound_at() lub rzeczywisty dźwięk asset z przeglądarki Asset.
+   
+  Składnia:
+  audio_sound_get_pitch(index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Sound Asset lub Sound Instance ID
+        The index of the sound to get the pitch of.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if audio_sound_get_pitch(snd_Explode) != 1
+    {
+        audio_sound_pitch(snd_Explode, 1);
+    }
+  Powyższy kod zmieni wysokość dźwięku odtwarzanego z dźwięku indeksowanego jako "snd_Explode", jeśli jego wysokość nie jest równa 1.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_sound_is_playable
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

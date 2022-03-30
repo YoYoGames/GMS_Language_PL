@@ -1,0 +1,56 @@
+
+  
+  draw_primitive_begin_texture
+  Funkcja ta musi być wywołana przed zdefiniowaniem wierzchołków prymitywu teksturowanego. Należy podać rodzaj prymitywu, który ma być użyty (zobacz draw_primitive_begin() więcej informacji) oraz identyfikator texture do użycia, którym może być sprite lub obraz tła asset. Identyfikator asset można uzyskać z funkcji sprite_get_texture()na przykład (użyj -1, aby nie używać texture).
+  UWAGA Aby strona texture mogła się powtarzać, jej rozmiar musi być potęgą dwójki, tzn. 32x32, 128x128 itd.
+   
+  Składnia:
+  draw_primitive_begin_texture(kind, tex)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        kind
+        Typ prymitywny Stała
+        The kind of primitive you are going to draw.
+      
+      
+        tex
+        Wskaźnik tekstury
+        The texture to use with the primitive.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_set_colour(c_white);
+    var tex = sprite_get_texture(spr_Background, 0);
+    draw_primitive_begin_texture(pr_trianglestrip, tex);
+    draw_vertex_texture(0, 0, 0, 0);
+    draw_vertex_texture(640, 0, 1, 0);
+    draw_vertex_texture(0, 480, 0, 1);
+    draw_vertex_texture(640, 480, 1, 1);
+    draw_primitive_end();
+  Powyższy kod narysuje 4 vertex trójkątny pasek (tworzący prostokąt) o teksturze texture przechowywanej w zmiennej "tex", a cała strona texture zostanie użyta do pokrycia gotowego prymitywu.
+   
+   
+   
+  
+    
+      
+        Powrót: Prymitywy i Vertex Formaty
+        Następny: draw_primitive_end
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

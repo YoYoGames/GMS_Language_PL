@@ -3,26 +3,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Utwórz układ cząstek</title>
+  <title>Utwórz układ cząsteczek</title>
   <meta name="generator" content="Adobe RoboHelp 2019" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains the Create Particle System action" />
-  <meta name="rh-index-keywords" content="DnD™ Action - Create Particle System" />
+  <meta name="rh-index-keywords" content="GML Visual Action - Create Particle System" />
   <meta name="search-keywords" content="Create Particle System" />
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1><img> Utwórz układ cząstek</h1>
+  <h1><img> Utwórz układ cząsteczek</h1>
   <p>Ta akcja inicjalizuje system cząsteczek, umożliwiając tworzenie i używanie w nim typów cząsteczek i emiterów. Podajesz nazwę warstwy jako <span class="notranslate">string</span> - na przykład &quot;Particle Layer&quot; (która musi istnieć w edytorze <span class="notranslate">room</span> ) - a następnie <span class="notranslate">flag</span>.
     system jako <b>trwały</b> lub <b>nietrwały</b>. Jeśli system zostanie oznaczony jako Persistent, pozostanie aktywny na wszystkich stronach <span class="notranslate">rooms</span> po jego utworzeniu i zostanie mu przypisana warstwa zarządzana, jeśli warstwa początkowa nie będzie istnieć w kolejnych <span class="notranslate">rooms</span>.
     Jeśli <i>nie</i> zaznaczono opcji trwałości, system zostanie automatycznie zniszczony po zakończeniu działania strony <span class="notranslate">room</span>, na której został utworzony, podobnie jak wszystkie emitery powiązane z systemem. Jeśli chcesz ręcznie usunąć system z pamięci, musisz użyć
     akcji <a href="Destroy_Particle_System.htm">Zniszcz system cząstek</a>.</p>
-  <p>Należy również podać zmienną docelową, która będzie przechowywać unikalną wartość identyfikatora systemu cząsteczek. To właśnie ta wartość ID będzie używana w innych funkcjach do ustawiania właściwości systemu lub informowania <span class="notranslate">GameMaker Studio 2</span>, jakiego systemu użyć podczas tworzenia cząstek.
-    Możesz wybrać <span class="notranslate">flag</span> tę zmienną jako tymczasową zmienną lokalną, ale będzie to oznaczać, że zostanie ona usunięta po zakończeniu akcji <span class="notranslate">script</span> lub zdarzenia, co oznacza, że system będzie nadal istniał, ale nie będziesz miał do niego dostępu.
+  <p>Musisz także podać zmienną docelową, która będzie przechowywać unikalną wartość identyfikatora systemu cząsteczek. To właśnie ta wartość ID będzie używana w innych funkcjach do ustawiania właściwości systemu lub informowania programu <span data-keyref="GameMaker Name">GameMaker</span>, jakiego systemu użyć podczas tworzenia cząsteczek.
+    Możesz wybrać stronę <span class="notranslate">flag</span> jako tymczasową zmienną lokalną, ale będzie to oznaczało, że zostanie ona usunięta po zakończeniu akcji <span class="notranslate">script</span> lub zdarzenia, co oznacza, że system będzie nadal istniał, ale nie będziesz miał do niego dostępu, więc należy zachować ostrożność
     (ogólnie rzecz biorąc, nie ma potrzeby przechowywania układów w tymczasowej zmiennej lokalnej, ale w przypadku niektórych rzeczy, takich jak przyciąganie cząsteczek do powierzchni, może to być wymagane).</p>
-  <p class="note"><b>UWAGA</b>: Raz utworzony trwały system cząsteczek pozostaje w pamięci systemu przez cały czas trwania gry, więc jeśli w dowolnym momencie trzeba go odtworzyć (na przykład po wywołaniu akcji <a href="../Game/Restart_Game.htm">Restart Game</a> ), <b>należy najpierw zniszczyć bieżący system</b>, w przeciwnym razie nastąpi wyciek pamięci. Przeciek pamięci występuje wtedy, gdy zasób jest dodawany do pamięci, a następnie &quot;de-referencjonowany&quot;, co oznacza, że <span class="notranslate">GameMaker Studio 2</span> nie ma już możliwości interakcji z tym zasobem.
+  <p class="note"><b>UWAGA</b>: Raz utworzony trwały system cząsteczek pozostaje w pamięci systemu przez cały czas trwania gry, więc jeśli musisz go odtworzyć w dowolnym momencie (na przykład po wywołaniu akcji <a href="../Game/Restart_Game.htm">Restart Game</a> ), <b>musisz najpierw zniszczyć bieżący system</b>, w przeciwnym razie nastąpi wyciek pamięci. Przeciek pamięci ma miejsce, gdy zasób jest dodawany do pamięci, a następnie &quot;de-referencjonowany&quot;, co oznacza, że <span data-keyref="GameMaker Name">GameMaker</span> nie ma możliwości interakcji z tym zasobem.
     z tym zasobem. Prowadzi to do zapchania pamięci niedostępnymi zasobami, co z kolei może powodować problemy w grze. Aby zniszczyć stały system cząsteczek, gdy nie jest już potrzebny, użyj akcji <a href="Destroy_Particle_System.htm">Zniszcz system cząst</a>eczek.</p>
   <p> </p>
   <h4>Składnia działania:</h4>

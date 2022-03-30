@@ -1,0 +1,50 @@
+
+  
+  bufor_crc32
+  Ta funkcja pobiera dane wejściowe z adresu buffer i zwraca skrót sumy kontrolnej crc32. Podajesz identyfikator buffer identyfikator buffer, którego chcesz użyć, następnie wartość offsetu (w bajtach) określającą miejsce rozpoczęcia, a następnie rozmiar (również w bajtach) regionu, który ma zostać zhashowany.
+    a funkcja zwróci 32-bitową liczbę całkowitą dla tego regionu.
+   
+  Składnia:
+  buffer_crc32(buffer, offset, size);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        buffer
+        The index of the buffer to use.
+     
+      
+        offset
+        The data offset value.
+     
+      
+        size
+        The size of the buffer.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  check_val = buffer_crc32(buff, 0, buffer_get_size(buff));
+  Powyższy kod utworzy wartość skrótu sumy kontrolnej crc32 dla pełnych danych przechowywanych w pliku buffer indeksowanym przez zmienną "buff" i zapisze zwróconą wartość skrótu w zmiennej "check_val".
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_base64_encode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

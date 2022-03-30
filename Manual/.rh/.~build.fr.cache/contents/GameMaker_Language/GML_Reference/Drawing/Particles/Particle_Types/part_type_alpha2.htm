@@ -1,0 +1,53 @@
+
+  
+  typ_części_alfa2
+  Za pomocą tej funkcji można ustawić gradient wartości alfa (przezroczystości) dla każdej utworzonej cząstki danego typu. Pierwsza wartość alfa jest tą, od której wszystkie cząstki zaczną, a druga alfa jest tą, od której cząstka skończy, a płynna zmiana gradientu będzie zachodzić w alfie w czasie życia cząstek od jednej do drugiej. Może to być wartość od 0 (przezroczysta) do 1 (nieprzezroczysta).
+   
+  Składnia:
+  part_type_alpha2(ind, alpha1, alpha2);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Typ cząstki ID
+        The index of the particle type to change.
+      
+      
+        alpha1
+        Real
+        The start alpha of the particle.
+      
+      
+        alpha2
+        Real
+        The end alpha of the particle.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  part_type_alpha2(global.Snow_Part, 0, 1);
+  Powyższy kod spowoduje, że wszystkie cząstki utworzone dla typu cząstki indeksowanego w zmiennej globalnej "Snow_Part" będą miały wartość alfa równą 0 (przezroczyste), a następnie po zakończeniu życia będą miały wartość alfa równą 1 (nieprzezroczyste).
+   
+   
+   
+  
+    
+      
+        Powrót: Typy cząstek
+        Następny: part_type_alpha3
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

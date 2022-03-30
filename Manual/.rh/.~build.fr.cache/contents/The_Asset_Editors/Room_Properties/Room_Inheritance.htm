@@ -1,0 +1,26 @@
+
+  
+  Dziedziczenie pomieszczeń
+  Ważną cechą edytora room jest dziedziczenie. Dziedziczenie oznacza, że można utworzyć "rodzica" room, a następnie na jego podstawie "dziecko" room, które będzie inherit posiadało wszystkie właściwości pomieszczenia rodzica. Dziecko room jest w zasadzie klonem rodzica i wszystko w nim jest powiązane z pomieszczeniem macierzystym. Oznacza to, że jeśli zmienisz widok w pomieszczeniu nadrzędnym, przesuniesz tile lub dodasz instancje, zostanie to odzwierciedlone w dziecku room. Co więcej, w dziecku room można selektywnie switch wyłączyć dziedziczenie dla określonych warstw, instancji, assets lub czegokolwiek innego, co jest potrzebne.
+  Na stronie room, która ma odziedziczone właściwości, będą świeciły się przyciski inherit - jak pokazano na poniższym obrazku - i można za ich pomocą włączać lub wyłączać dziedziczenie dla danej warstwy, zasobu itp.
+  Na początku może to być nieco trudne do zrozumienia, więc spójrzmy na przykład: na stronie room znajduje się miasto i zamek w środku. Miasto i zamek są narysowane przy użyciu różnych warstw tile. Masz też instancje i kilka paths dla postaci niezależnych, które mogą się po nich poruszać. Chcesz, aby w grze zamek został zniszczony, ale wszystko inne w mieście wyglądało i zachowywało się tak samo. Utworzysz początkową stronę room, na której wszystko będzie wyglądało tak, jak zwykle, a następnie utworzysz dziecko room, które będzie miało warstwy inherits i room. room W dziecku switch można by wyłączyć dziedziczenie warstwy tile (lub nawet pojedynczych tiles) dla obszaru zamku, a następnie przesuwać/dodawać/usuwać tiles, aby uzyskać wygląd zniszczonego zamku. Gdy gracz wejdzie na stronę room, wszystkie instancje z warstwy nadrzędnej room i wszystkie tiles itd. pozostaną dokładnie takie same, z wyjątkiem tych, które dotyczą zniszczonego zamku.
+  WAŻNE! Jeśli edytujesz odziedziczoną właściwość, automatycznie wyłączy ona dziedziczenie w sekcji, do której należy, bez konieczności wcześniejszego włączania przycisku inherit.
+  Aby utworzyć dziedzictwo room, wystarczy wybrać w Przeglądarce aktywów stronę room, z której chcesz utworzyć dziecko, a następnie kliknąć prawym przyciskiem myszy . Spowoduje to otwarcie menu room, w którym można wybrać opcję Utwórz pokój dziec ięcy, aby utworzyć nowe dziecko room. Zostanie ono utworzone w przeglądarce Asset:
+  Aby zmienić kolejność room i/lub dziedziczenie, należy użyć programu Room Manager, który można otworzyć za pomocą menu w prawym górnym rogu przeglądarki Asset. W tym miejscu możesz przejść do karty Dziedziczenie , a następnie kliknąć przycisk  i przeciągnąć dowolny adres room na dowolny inny adres room, aby stał się dzieckiem tego adresu room (lub przeciągnąć dziecko room z rodzica, aby przerwać dziedziczenie).
+  Zauważ, że w obrębie strony room dziedziczenie jest wielopoziomowe i możesz zaznaczać jako dziedziczące pojedyncze elementy, grupy elementów na jednej warstwie, właściwości elementów lub całe strony rooms, a także inherit z kolejnych stron rooms (tak więc room C inherits z room B, który z kolei odziedziczył po Room A). Jeśli na przykład utworzysz bazę room, w której nie będzie nic oprócz ustawień widoku, możesz utworzyć wszystkie kolejne rooms jako jej dzieci i wszystkie one będą miały właściwości widoku inherit rodzica room. Możesz jednak pójść o krok dalej i utworzyć kolejną bazę room z "widokiem" room jako rodzicem, który przechowuje ogólną instancję GUI i kontrolery wymagane w każdej grze room. Teraz możesz utworzyć z niej dzieci rooms, które będą inherit miały zarówno kontrolery i GUI z rodzica room, jak i widok z rodzica room!
+  Jak można zauważyć, dziedziczenie jest bardzo potężne i można go używać do utrzymania znacznie czystszej struktury room, przyspieszenia pracy i ogólnie do optymalizacji czasu spędzanego na tworzeniu i projektowaniu rooms.
+   
+   
+   
+  
+    
+      
+        Powrót: Redaktor Room 
+        Następny: Filtry i efekty
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,79 @@
+
+  
+  os_check_permission
+  Za pomocą tej funkcji możesz sprawdzić, czy użytkownik nadał grze określone uprawnienie. Uprawnienie, które chcesz sprawdzić, podajesz jako string w formacie "android.permission.<permission>", więc aby sprawdzić np. uprawnienie RECORD_AUDIO, wywołujesz polecenie
+  os_check_permission("android.permission.RECORD_AUDIO");
+  Funkcja zwróci jedną z trzech stałych - pokazanych poniżej - informujących grę o stanie uprawnienia. Więcej informacji na temat uprawnień do aplikacji można znaleźć w Dokumentacji systemu Android.
+  WAŻNE! Ta funkcja jest przeznaczona wyłącznie dla systemu Android.
+   
+  Składnia:
+  os_check_permission(permission)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        permission
+        String
+        The permission to check (a string)
+      
+    
+  
+   
+  Zwroty:
+  Permission State Constant
+  
+    
+      
+      
+    
+    
+      
+        Stała stanu zezwolenia
+      
+      
+        Stała
+        Opis
+      
+      
+        os_permission_granted
+        Oznacza to, że zezwolenie zostało udzielone
+      
+      
+        os_permission_denied
+        Oznacza to, że pozwolenie nie zostało udzielone
+      
+      
+        os_permission_denied_dont_request
+        Oznacza to, że dane uprawnienie zostało zablokowane w ustawieniach telefonu lub że użytkownik wcześniej odrzucił prośbę i wybrał opcję "Nie pytaj ponownie".
+      
+    
+  
+   
+  Przykład:
+  if (os_type == os_android)
+    {
+        if (os_check_permission("android.permission.INTERNET") == os_permission_denied)
+        {
+            os_request_permission("android.permission.INTERNET");
+        }
+    }
+  Powyższy kod sprawdza typ systemu operacyjnego i jeśli jest to Android, sprawdza uprawnienia i jeśli uprawnienie "INTERNET" nie zostało jeszcze przyznane, żąda go.
+   
+   
+   
+  
+    
+      
+        Powrót: System operacyjny i kompilator
+        Następny: os_request_permission
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

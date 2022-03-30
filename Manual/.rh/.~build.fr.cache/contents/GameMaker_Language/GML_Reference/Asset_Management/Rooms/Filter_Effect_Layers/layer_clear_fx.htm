@@ -1,0 +1,61 @@
+
+  
+  layer_clear_fx
+  Ta funkcja służy do usuwania efektu FX struct, który jest stosowany do określonej warstwy. Podaj identyfikator lub nazwę warstwy, którą chcesz zmodyfikować, a ta funkcja usunie mechanizm FX struct zastosowany do tej warstwy, całkowicie wyłączając jego efekty.
+  Jeśli użyjesz tej funkcji do tymczasowego wyłączenia efektu i chcesz przywrócić go na warstwie, powinieneś najpierw zapisać FX struct dla warstwy, wywołując layer_get_fx(), a następnie wywołać tę funkcję, aby wyczyścić go na warstwie. Później można go z powrotem zastosować na warstwie, wywołując layer_set_fx(), co spowoduje ponowne włączenie efektu.
+   
+  Składnia:
+  layer_clear_fx(layer_name_or_id);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_name_or_id
+        Ciąg lub identyfikator warstwy
+        The name or ID of the layer to clear the FX for
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  // Disable effect
+    if (keyboard_check_pressed(ord("E")))
+    {
+        if (layer_get_fx("EffectLayer") != -1)
+        {
+            temp_fx = layer_get_fx("EffectLayer");
+            layer_clear_fx("EffectLayer");
+        }
+    }
+    // Re-enable effect
+    else if (keyboard_check_pressed(ord("F")))
+    {
+        if (temp_fx != -1)
+        {
+            layer_set_fx("EffectLayer", temp_fx);
+            temp_fx = -1;
+        }
+    }
+  Powyższy kod sprawdza, czy został naciśnięty klawisz "E", a następnie sprawdza, czy na warstwie "EffectLayer" został zastosowany filtr/efekt; w takim przypadku zapisuje jego FX struct w tymczasowej zmiennej instancji i oczyszcza warstwę z wszelkich filtrów/efektów. Po naciśnięciu klawisza "F" sprawdzane jest, czy zmienna tymczasowa zawiera wartość inną niż -1, i w takim przypadku następuje ponowne zastosowanie tego efektu do warstwy i przywrócenie zmiennej tymczasowej wartości -1. Wszystko to umożliwia włączanie i wyłączanie efektu w dowolnym momencie bez utraty jego parametrów.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje filtrów i efektów
+        Next: fx_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

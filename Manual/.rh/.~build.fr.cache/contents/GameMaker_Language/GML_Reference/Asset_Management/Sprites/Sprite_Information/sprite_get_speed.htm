@@ -1,0 +1,51 @@
+
+  
+  sprite_get_speed
+  Za pomocą tej funkcji można pobrać prędkość sprite zdefiniowaną dla zasobu sprite w edytorze sprajtów. Zwróconą wartość można wykorzystać np. do obliczenia, ile
+    ile klatek może zostać narysowanych dla różnych image_speed. Zwróć uwagę, że wartość zwracana będzie bardzo różna w zależności od typu prędkości
+    która została zastosowana w edytorze Sprite - Frames Per Second (klatki na sekundę) lub Frames Per Game Frame (klatka na grę). Ilustrują to dwa poniższe przykłady:
+  
+    Jeśli masz stronę sprite, która rysuje 1 klatkę na sekundę i ustawisz szybkość obrazu na 0,5, będzie ona rysować z szybkością 0,5 klatki na sekundę. Jeśli częstotliwość odświeżania gry wynosi 60 klatek na sekundę, witryna sprite będzie rysować 1 klatkę na każde 120
+      klatek gry.
+    Jeśli masz stronę sprite, która rysuje 1 klatkę na klatkę gry i ustawisz szybkość obrazu na 0,5, będzie ona rysować 0,5 klatki na klatkę gry. Jeśli częstotliwość odświeżania gry wynosi 60 klatek na sekundę, witryna sprite będzie rysować 30 klatek na
+      na każde 60 klatek gry.
+  
+  Aby dowiedzieć się, jaki typ szybkości animacji został użyty podczas definiowania strony sprite, należy użyć funkcji sprite_get_speed_type()a prędkość i typ animacji można ustawić
+    za pomocą funkcji sprite_set_speed().
+   
+  Składnia:
+  sprite_get_speed(index)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the sprite to get the speed of
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  s_speed = sprite_get_speed(sprite_index); s_type = sprite_get_speed_type(sprite_index);
+  Powyższy kod pobiera prędkość sprite oraz typ animacji sprite i zapisuje je w zmiennych instancji do wykorzystania w przyszłości.
+   
+   
+   
+  
+    
+      
+        Powrót: Informacje o Sprite
+        Następny: sprite_get_speed_type
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

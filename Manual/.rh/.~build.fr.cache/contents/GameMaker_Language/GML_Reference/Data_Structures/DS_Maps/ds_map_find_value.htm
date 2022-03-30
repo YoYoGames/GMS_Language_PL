@@ -1,0 +1,48 @@
+
+  
+  ds_map_find_value
+  Za pomocą tej funkcji można uzyskać wartość z określonego klucza. Wartościami wejściowymi funkcji są (uprzednio utworzona) mapa DS, której należy użyć, oraz klucz, który należy sprawdzić.
+  UWAGA: Jeśli taki klucz nie istnieje, funkcja zwróci undefined. Należy to zawsze sprawdzić za pomocą is_undefined() funkcji .
+   
+  Składnia:
+  ds_map_find_value(id, key)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the map to use.
+     
+      
+        key
+        The key to find.
+     
+    
+  
+   
+  Zwroty:
+  Variable or undefined
+   
+  Przykład:
+  amount = ds_map_find_value(inventory, "food");
+  Można też użyć akcesora mapy "?":
+  amount = inventory[? "food"];
+  Powyższy kod pobierze wartość klucza "food" i zapisze ją w zmiennej "amount".
+   
+   
+   
+  
+    
+      
+        Powrót: Mapy DS
+        Następny: ds_map_keys_to_array
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

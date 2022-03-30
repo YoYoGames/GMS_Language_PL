@@ -32,7 +32,7 @@
     <li>Przerzucanie krajobrazu</li>
     <li>Odwrócona w pionie</li>
   </ul>
-  <p>Domyślnie wszystkie zostaną wybrane i należy usunąć zaznaczenie tych, które nie są potrzebne.</p>
+  <p>Domyślnie wszystkie zostaną zaznaczone i należy usunąć zaznaczenie tych, które nie są potrzebne.</p>
   <p>Po ustawieniu opcji orientacji możesz następnie zasygnalizować różne <strong>uprawnienia </strong>, których będzie potrzebować Twoja aplikacja UWP, korzystając z następujących opcji:</p>
   <ul class="Disc">
     <li style="margin-top: 10px"><strong>Włącz uprawnienia do korzystania z Internetu</strong>: <span class="notranslate">Flags</span> gra ma dostęp do Internetu. Domyślnie opcja ta jest wyłączona.</li>
@@ -65,7 +65,7 @@
       w projekcie gry (opcja ta jest domyślnie włączona).</li>
     <li><strong>Start Fullscreen</strong>: Jeśli ta opcja jest zaznaczona, gra będzie uruchamiana w trybie pełnoekranowym, w przeciwnym razie będzie uruchamiana w trybie okienkowym. Domyślnie opcja ta jest wyłączona.</li>
     <li><strong>Zezwalaj na przełączanie peł</strong> <span class="notranslate">switch</span> <strong></strong>noekranowe: Po zaznaczeniu tej opcji użytkownik może przechodzić z trybu pełnoekranowego do okienkowego i z powrotem za pomocą standardowych skrótów systemu operacyjnego <span class="notranslate">Ubuntu</span>. Domyślnie opcja ta jest wyłączona.</li>
-    <li><strong>Skalowanie</strong>: W tym miejscu można wybrać opcję zachowania proporcji obrazu (tak więc obraz <span class="notranslate">room</span> o proporcjach 4:3 będzie &quot;letter boxed&quot; na ekranie 16:9) lub pełnego skalowania (rozciągnięcie obrazu tak, aby zmieścił się na całym ekranie).<br>
+    <li><strong>Skalowanie</strong>: W tym miejscu można wybrać opcję zachowania proporcji obrazu (więc obraz <span class="notranslate">room</span> o proporcjach 4:3 będzie &quot;letter boxed&quot; na ekranie 16:9) lub pełnego skalowania (rozciągnięcie obrazu tak, aby zmieścił się na całym ekranie).<br>
       <br>
       <span style="font-size:16px;"><strong>OSTRZEŻENIE!</strong> <em>Wyłączenie powierzchni aplikacji spowoduje wyłączenie wszystkich opcji skalowania ustawionych w opcjach gry na stronie <span class="notranslate">Windows</span> do momentu ponownego włączenia. Więcej informacji można znaleźć w części Powierzchnia aplikacji.</em></span></li>
   </ul>
@@ -81,19 +81,19 @@
     <li> <strong>Mały obrazek na kafelku</strong> to obrazek logo, który jest wyświetlany obok nazwy aplikacji na pasku wyszukiwania i w innych miejscach interfejsu użytkownika. Powinien mieć rozmiar 44 x 44 piksele.</li>
     <li>Obraz <strong>średniej płytki</strong> powinien mieć rozmiar 71x71 pikseli.</li>
     <li>Kolejny obrazek <span class="notranslate">tile</span> to <strong>logo sklepu <span class="notranslate">tile</span> </strong>. Jego rozmiar powinien wynosić 50 x 50 pikseli.</li>
-    <li><strong>Kafelek</strong> z <strong>szerokim obraz</strong>em to ten, który pojawia się, gdy witryna <span class="notranslate">tile</span> ma <strong>szeroki</strong>format i powinien mieć wymiary 310 x 150 pikseli. Jeśli ten obrazek nie zostanie dostarczony, witryna <span class="notranslate">tile</span> może być wyświetlana tylko w formacie kwadratowym i nie może przyjmować powiadomień
-      opartych na szerokich typach szablonów. Ponieważ użytkownik może decydować o formacie strony <span class="notranslate">tile</span>, zaleca się dołączenie szerokiego obrazu <span class="notranslate">tile</span>. Należy również pamiętać, że jeśli podano szeroki obrazek <span class="notranslate">tile</span>, strona <span class="notranslate">tile</span> może początkowo wyświetlać się w szerokim formacie.</li>
+    <li><strong>Kafelek</strong> z <strong>szerokim obraz</strong>em to ten, który pojawia się, gdy witryna <span class="notranslate">tile</span> ma <strong>szeroki</strong>format i powinien mieć wymiary 310 x 150 pikseli. Jeśli ten obraz nie zostanie dostarczony, witryna <span class="notranslate">tile</span> może być wyświetlana tylko w formacie kwadratowym i nie może przyjmować powiadomień
+      opartych na szerokich typach szablonów. Ponieważ użytkownik może decydować o formacie strony <span class="notranslate">tile</span>, zaleca się dołączenie szerokiego obrazu <span class="notranslate">tile</span>. Należy również pamiętać, że jeśli podany zostanie szeroki obraz <span class="notranslate">tile</span>, strona <span class="notranslate">tile</span> może początkowo wyświetlać się w szerokim formacie.</li>
     <li> <strong>Duży kafelek obrazu</strong> ma format <strong>dużego obrazu</strong> na żywo <span class="notranslate">tile</span> i powinien mieć rozmiar 310 x 310 pikseli. Należy pamiętać, że będzie on używany tylko w stacjonarnym systemie operacyjnym.</li>
   </ul>
   <p>Kolejna sekcja służy do definiowania <strong>logo</strong> gry. Jest to zasadniczo ikona, której Twoja gra będzie używać w ekosystemie UWP. Warto zauważyć, że te obrazy mogą być przezroczystymi plikami <span class="inline">.png</span>.
     W takim przypadku będą one rysowane na <strong>tle koloru tła</strong> określonego w tej sekcji. Ten kolor tła jest także stosowany do koloru przycisków w oknach dialogowych należących do aplikacji oraz na stronie Opis aplikacji w Sklepie na urządzeniach.</p>
   <p><img>Po skonfigurowaniu logo możesz ustawić <strong>ekran pow</strong> italny gry. Jest to ekran, który będzie wyświetlany po
     Nie może on być większy niż 620 x 300 pikseli i podobnie jak logo może być przezroczystym plikiem <span class="inline">.png</span>, w którym to przypadku zostanie użyty wybrany przez Ciebie <strong>kolor tła</strong>.<img></p>
-  <p>Warto zauważyć, że <span class="notranslate">GameMaker Studio 2</span> posiada narzędzie <a href="../../IDE_Tools/Project_Image_Generator.htm">Project Image Generator</a>, za pomocą którego można automatycznie tworzyć wszystkie obrazy wymagane dla różnych platform docelowych, na które kompilowana jest gra.
+  <p>Warto zauważyć, że <span data-keyref="GameMaker Name">GameMaker</span> posiada narzędzie <a href="../../IDE_Tools/Project_Image_Generator.htm">Project Image Generator</a>, które może być używane do automatycznego tworzenia wszystkich obrazów wymaganych dla różnych platform docelowych, na które kompilowana jest gra.
     na które kompilowana jest gra. Jeśli korzystasz z tego narzędzia, powinieneś zweryfikować utworzone obrazy, aby upewnić się, że spełniają one Twoje wymagania.</p>
   <p> </p>
   <h2>Opakowania</h2>
-  <p><img>GameMaker Studio 2 dostarcza domyślny <strong>klucz programisty</strong> do tworzenia aplikacji <span class="notranslate">Windows UWP</span>, ale zalecane jest wygenerowanie
+  <p><img><span data-keyref="GameMaker Name">GameMaker</span> dostarcza domyślny <strong>klucz programisty</strong> dla <span class="notranslate">Windows UWP</span>, ale zaleca się, abyś wygenerował
     swój własny i wskazać go tutaj. Aby to zrobić, utwórz pusty projekt w <span class="notranslate">Visual Studio</span>, a następnie przechowuj gdzieś w bezpiecznym miejscu kopię automatycznie wygenerowanego pliku <span class="inline">*.pfx</span>, który zostanie dołączony do pustego projektu (jest to
     klucz programisty). Następnie należy umieścić tutaj łącze do tego pliku <span class="inline">*.pfx</span>.</p>
   <p>Po połączeniu się z plikiem należy kliknąć odpowiedni przycisk <strong>Instaluj </strong>, a następnie postępować zgodnie z instrukcjami w wierszu poleceń, który zostanie otwarty. Jeśli tego nie zrobisz, to użycie przycisków Uruchom/Debug (lub naciśnięcie klawisza F5) nie powiedzie się i
@@ -101,7 +101,7 @@
   <p class="note"><strong>UWAGA</strong>: Aby wgrać swoją aplikację do sklepu, musisz uzyskać prawidłowy plik <span class="inline" style="font-size: 14px">*.pfx </span>dla swojego tytułu. Można to zrobić poprzez powiązanie aplikacji z <span class="notranslate">Windows</span> Store w Visual
     Studio, co spowoduje, że <span class="notranslate">Visual Studio</span> wygeneruje nowy plik * <span class="inline" style="font-size: 14px">.pfx </span>specjalnie dla tej aplikacji. Warto również zauważyć, że <strong>każdą </strong>aplikację można powiązać ze sklepem <span class="notranslate">Windows</span> w witrynie <span class="notranslate">Visual Studio</span>,
     Oznacza to, że można powiązać pusty projekt z aplikacją Sklepu <span class="notranslate">Windows</span> i po prostu skopiować wygenerowany plik <span class="inline" style="font-size: 14px">*.pfx </span>do bezpiecznej lokalizacji, której można następnie użyć w Opcjach gier UWP. Możesz znaleźć instrukcje
-    jak to zrobić, można znaleźć w <a href="https://help.yoyogames.com/hc/en-us/articles/115001349488">Bazie wiedzy YoYo Games</a>.</p>
+    jak to zrobić, w <a href="https://help.yoyogames.com/hc/en-us/articles/115001349488">Bazie wiedzy YoYo Games</a>.</p>
   <p>W tej sekcji należy również podać<strong> nazwę wydawcy</strong>, która została użyta do wygenerowania certyfikatu podpisu. Dane wejściowe powinny być zawsze poprzedzone znakiem &quot;<span class="inline">CN=</span>&quot;, np.: <span class="inline">CN=YoYoGames</span>.</p>
   <p> </p>
   <h2>Xbox Live</h2>
@@ -111,10 +111,10 @@
     <li>Zaloguj się do Xbox Live z poziomu aplikacji</li>
     <li>Wykorzystanie tożsamości użytkownika Xbox Live w jakiś sposób w projekcie (np. pokazanie gamertagu lub zdjęcia gracza)</li>
   </ul>
-  <p>Zanim jednak będziesz mógł wykonać te czynności, musisz się upewnić, że kliknąłeś pole wyboru <strong>Włącz Xbox Live</strong>, a jeśli jesteś uczestnikiem <a href="https://www.xbox.com/en-US/developers/creators-program/">programu Microsoft Creators Program</a>, powinieneś również zaznaczyć opcję Creators <strong>Program App</strong>. Jeśli należysz do Programu Twórców, musisz dodać <strong>ID tytułu</strong> i <strong>ID konfiguracji usługi</strong> (więcej informacji na ten temat można uzyskać
+  <p>Zanim jednak będziesz mógł wykonać te czynności, musisz się upewnić, że kliknąłeś pole wyboru <strong>Włącz Xbox Live</strong>, a jeśli jesteś uczestnikiem <a href="https://www.xbox.com/en-US/developers/creators-program/">programu Microsoft Creators Program</a>, powinieneś także zaznaczyć opcję Creators <strong>Program App</strong>. Jeśli należysz do Programu Twórców, musisz dodać <strong>ID tytułu</strong> i <strong>ID konfiguracji usługi</strong> (więcej informacji na ten temat można uzyskać
     można uzyskać od firmy <a href="https://docs.microsoft.com/en-us/gaming/xbox-live/test-release/portal-config/live-service-config-ids-mp">Microsoft</a>).</p>
-  <p>Należy pamiętać, że obecnie, aby przetestować funkcjonalność Xbox Live w projekcie, należy użyć opcji <strong>Utwórz plik wykonywalny</strong>, a nie Uruchom, ponieważ wyjście UWP Xbox musi używać certyfikatu podpisującego Sklepu <span class="notranslate">Windows</span>, który podasz w ramach Pakowania
-    (patrz wyżej), a nie tymczasowego dostarczonego z <span class="notranslate">GameMaker Studio 2</span>, który zostanie użyty po uruchomieniu.</p>
+  <p>Zauważ, że obecnie, aby przetestować funkcjonalność Xbox Live w swoim projekcie, musisz użyć opcji <strong>Utwórz plik wykonywalny</strong>, a nie Uruchom, ponieważ wyjście UWP Xbox musi używać certyfikatu podpisującego ze sklepu <span class="notranslate">Windows</span>, który podałeś w informacji o opakowaniu (patrz wyżej), a nie tymczasowego certyfikatu dostarczonego z GameMakerem.
+    (patrz wyżej), a nie tymczasowego dostarczonego z programem <span data-keyref="GameMaker Name">GameMaker</span>, który zostanie użyty po uruchomieniu.</p>
   <p>Po włączeniu usługi XBox Live możesz korzystać z funkcji XBox Live w swoim projekcie, ale pamiętaj, że do korzystania z najbardziej podstawowych funkcji wymagane jest uczestnictwo w <a href="https://docs.microsoft.com/en-us/gaming/xbox-live/get-started/setup-partner-center/legacy/live-get-started-creators">Programie Twórców</a>, a do korzystania z zaawansowanych funkcji wymagane jest <a href="https://www.xbox.com/es-ES/developers/id">konto ID@XBox</a>.</p>
   <p> </p>
   <p> </p>

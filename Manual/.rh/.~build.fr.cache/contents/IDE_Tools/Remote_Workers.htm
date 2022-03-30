@@ -1,0 +1,89 @@
+
+  
+  Pracownicy zdalni
+  Podczas kompilacji gry zwykle używa się lokalnego pracownika, czyli komputera, na którym zainstalowano witrynę GameMaker Studio 2. Jednak w pewnych okolicznościach może zajść potrzeba użycia innego komputera do budowania projektów. Na przykład,
+    Jeśli pracujesz na komputerze Mac i chcesz zbudować projekt Windows, skonfiguruj robotnika zdalnego, a następnie zleć budowę projektu na komputerze Windows. Zasadniczo, gdy używasz zdalnego pracownika, GameMaker Studio 2 wyśle wszystkie
+    wymagane pliki z komputera (lokalnego), na którym jest uruchomiony, do komputera zdalnego pracownika, a następnie użyje tego komputera do zbudowania ostatecznego pliku wykonywalnego projektu (zapisując go na komputerze zdalnym lub zwracając na komputer lokalny).
+    Zanim jednak będzie można skorzystać z tej funkcji, trzeba będzie zainstalować pewne narzędzia na maszynie budującej i przeprowadzić pewne konfiguracje, które wyjaśnimy poniżej.
+  WAŻNE! Pracownika zdalnego można skonfigurować przy użyciu lokalnego komputera Windows PC i zdalnego Windows PC lub między lokalnym komputerem Mac PC i zdalnym Windows PC, ale obecnie nie można skonfigurować lokalnego komputera Windows (lub Mac) i zdalnego komputera Mac PC, tzn. nie można
+    mieć zdalnego pracownika Maca, tylko Windows.
+  Konfiguracja początkowa
+  
+    Aby skonfigurować zdalnego pracownika, należy najpierw zainstalować na komputerze, który ma być używany, aplikację narzędzia do budowania Remote Worker. Narzędzie to można znaleźć w menu Build w witrynie GameMaker Studio 2 na komputerze lokalnym i wybierając opcję "Show Remote Worker Installer" (Pokaż instalator Remote Worker):
+    Alternatywnie można kliknąć ikonę "oka" w Menedżerze celów i pobrać
+      instalator Remote Worker w ten sposób:
+    
+       Instalator będzie nosił nazwę "GameMakerStudio-Remote-Installer-X.X.X.XXX.exe".
+      i należy go skopiować na komputer, który ma być używany jako zdalny pracownik (na zdalnym pracowniku nie musi być zainstalowany program GameMaker Studio 2, wystarczy ten program).
+    Po skopiowaniu go na komputer instalacyjny należy zainstalować go zgodnie z instrukcjami wyświetlanymi na ekranie. Po zakończeniu instalacji system operacyjny może poprosić o dostęp do sieci przez zaporę sieciową. Po udzieleniu dostępu instalator otworzy
+      Należy zanotować adres IP i numer portu widoczne na tej stronie, ponieważ będą one potrzebne w następnym kroku.
+    Musisz teraz wrócić do komputera, na którym masz zainstalowane GameMaker Studio
+      2 i kliknąć przycisk Target Manager , aby otworzyć okno Target Manager,
+      a następnie przejdź do sekcji Worker i kliknij przycisk Add Worker (Dodaj pracownika) . Spowoduje to otwarcie
+      następujące okno:
+    W tym miejscu należy nadać zdalnemu robotowi nazwę (będzie ona wyświetlana na liście robotów w Menedżerze celów).
+      Następnie w sekcji Nazwa hosta należy dodać adres wraz z portem, który został wcześniej pokazany i zanotowany na komputerze robotniczym.
+    Jeśli wszystko przebiegło prawidłowo, powinieneś otrzymać komunikat o pomyślnym połączeniu z komputerem pracownika zdalnego. Po zainstalowaniu aplikacji Remote Worker i podłączeniu jej do głównego komputera IDE, należy skonfigurować Lokalne
+      Ustawienia budowania dla każdej platformy (więcej szczegółów znajdziesz w poniższej sekcji), zanim będziesz mógł skompilować swój projekt.
+     
+  
+  Ustawienia zdalne
+  
+    Strona ustawień przedstawia różne paths i ustawienia budowania aplikacji Pracownika zdalnego. W górnej części ustawień znajdują się różne strony paths, które będą używane przez aplikację Remote Worker.
+      Należy je zweryfikować i w razie potrzeby ustawić na alternatywne paths (ogólnie rzecz biorąc, domyślny paths powinien być w porządku). Dostęp do strony z ustawieniami Remote Worker można uzyskać za pomocą jednej z poniższych metod:
+    
+      Kliknij łącze "Ustawienia" u góry strony programu Remote Worker, która zostanie otwarta w przeglądarce komputera zdalnego:
+      Użyj przycisku RMB na ikonie zasobnika Remote Worker, aby otworzyć ustawienia w przeglądarce komputera zdalnego:
+      Na komputerze lokalnym otwórz Menedżera celów i kliknij ikonę "cog", aby otworzyć ustawienia pracownika w oknie na komputerze lokalnym:
+    
+    Spowoduje to wyświetlenie strony ustawień, na której można zobaczyć (i ustawić) różne opcje umożliwiające ustawienie adresu paths w celu zbudowania projektu:
+    
+  
+  Lokalne ustawienia kompilacji
+  
+    Po zaznaczeniu strony paths, z której ma korzystać aplikacja Pracownika zdalnego, można następnie ustawić (w razie potrzeby) różne ustawienia kompilacji lokalnej. Różne platformy wymagają zainstalowania na komputerze różnych narzędzi do budowania, a zdalny pracownik
+      a zdalny pracownik będzie musiał mieć możliwość korzystania z nich do budowania gier za pośrednictwem strony Ustawienia . Pierwsze ustawienia to Ustawienia ogólne :
+    W tym miejscu można ustawić port dla
+     Serwera Pomocy oraz port, z którego będzie korzystać Debugger . Można je zmienić, jeśli wystąpią problemy z połączeniem podczas korzystania z modułu debugowania, ale generalnie należy pozostawić wartości domyślne.
+    Teraz można przejść do konfiguracji różnych opcji dla platform, na których pracownik zdalny może budować:
+    Jeśli masz dostęp do platformy docelowej Windows,
+      powinieneś być w stanie budować za pomocą zdalnego pracownika na komputerze Windows natychmiast, używając opcji maszyny wirtualnej (VM). Jeśli jednak chcesz używać kompilatora YoYo (YYC), musisz także ustawić path na Visual Studio na komputerze do kompilacji. Szczegółowe informacje na temat konfigurowania komputera Windows do kompilacji projektów można znaleźć w poniższym artykule pomocy technicznej:
+    
+      Konfiguracja systemu Windows
+    
+    
+  
+  Kompilacja
+  
+    Po skonfigurowaniu programu Remote Worker i wprowadzeniu ustawień kompilacji lokalnej (patrz rozdział powyżej) można zacząć używać go do kompilacji gier. W tym celu należy po prostu wybrać Zdalnego robota z listy Menedżera celów
+      wybierz platformę, na którą chcesz testować/kompilować, a także inne opcje (takie jak typ kompilacji czy konfiguracja), a następnie naciśnij przycisk Odtwórz  lub Utwórz plik wykonywalny .
+    UWAGA: Platformy dostępne w Menedżerze celów będą się zmieniać w zależności od możliwości komputera Pracownika zdalnego i nie wszystkie platformy będą dostępne. Należy również pamiętać, że nie ma celu "Test" dla Pracowników Zdalnych.
+    Jeśli po prostu odtwarzasz projekt, wówczas maszyna Remote Worker skompiluje go i uruchomi, ale jeśli tworzysz plik wykonywalny, wówczas Remote Worker skompiluje projekt, a następnie zwróci plik *.zip do
+      lokalnego komputera w celu zapisania.
+    Należy zauważyć, że ani przycisk Debuguj , ani przycisk Wyczyść  nie będą dostępne podczas korzystania ze Zdalnego robotnika. Należy również pamiętać, że obecnie można wykonać tylko jedną kompilację zdalną w tym samym czasie.
+    
+  
+   Po zainstalowaniu i uruchomieniu programu Remote Worker na zdalnym komputerze na pasku zadań pojawi się ikona, którą można kliknąć prawym przyciskiem myszy, aby wyświetlić następujące opcje:
+  
+  
+    Otwórz: Otwórz aplikację Remote Worker w domyślnej przeglądarce.
+    Pokaż dziennik: Otwórz w przeglądarce plik dziennika pracy zdalnej.
+    Ustawienia sieciowe: W tym miejscu możesz filtrować, które maszyny mają mieć możliwość wysyłania kompilacji do maszyny Pracownika Zdalnego. Każdy filtr może być filtrem w stylu CIDR lub nazwą hosta maszyny, która ma być dopuszczona. Należy pamiętać, że jeśli chcesz, aby wiele maszyn łączyło się z jednym pracownikiem zdalnym, lub jeśli mieszasz typy połączeń (np. przewodowe i bezprzewodowe), to może być konieczna edycja dozwolonego zakresu IP.
+    Edytuj ustawienia: Otwórz menu ustawień Remote Worker (wyjaśnione w części Ustawienia powyżej).
+    Zakończ: Zakończenie pracy z aplikacją Remote Worker. Oznacza to, że nie będzie można połączyć się (ani skompilować) z aplikacją z lokalnego komputera do momentu ponownego uruchomienia aplikacji Remote Worker.
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Dodatkowe narzędzia IDE 
+        Następny: Kontrola źródła
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

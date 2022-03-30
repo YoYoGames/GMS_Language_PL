@@ -1,0 +1,60 @@
+
+  
+  xboxlive_set_rich_presence
+  Ta funkcja ustawia bogatą obecność string dla podanego użytkownika. Bogata Obecność string pokazuje aktywność użytkownika w grze po nazwie gry, w którą gra, oddzielonej myślnikiem. Ta strona string jest wyświetlana pod Gamertagiem gracza na liście "Friends & Clubs" oraz w profilu użytkownika Xbox Live.
+  Używając tej funkcji, musisz podać wskaźnik ID użytkownika, a następnie możesz flag określić, czy użytkownik jest aktualnie aktywny w grze, czy nie (używając true/false). Jeśli zostanie ustawiona na false, to do bogatej obecności string zostanie dołączony napis "/afk" lub coś innego. Kolejnym argumentem jest identyfikator string, który ma być wyświetlany, a na końcu można (opcjonalnie) podać service_config_id string. Ten argument jest opcjonalny, a jeśli nie zostanie podany, zostanie użyty identyfikator SCID określony w opcjach gry Xbox.
+   
+  Składnia:
+  xboxlive_set_rich_presence(user_id, is_user_active, rich_presence_string, [service_config_id]);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        user_id
+        Identyfikator użytkownika konsoli Xbox
+        The ID pointer of the user to check.
+      
+      
+        is_user_active
+        Boolean
+        Flag the user as active or not.
+      
+      
+        rich_presence_string
+        String
+        The rich presence string ID to use (as defined in the Partner Center - max 50 characters)
+      
+      
+        service_config_id
+        String
+        OPTIONAL Jest to config_id string dla gry.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var pad_uid = xboxlive_user_for_pad(0);
+    xboxlive_set_rich_presence(pad_uid, true, "Playing_Challenge");
+  Powyższy kod pobiera wskaźnik ID użytkownika przypisanego do slotu gamepada [0], a następnie ustawia bogatą obecność string dla tego użytkownika.
+   
+   
+   
+  
+    
+      
+        Wstecz: Użytkownicy i konta
+        Następny: xboxlive_gamedisplayname_for_user
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

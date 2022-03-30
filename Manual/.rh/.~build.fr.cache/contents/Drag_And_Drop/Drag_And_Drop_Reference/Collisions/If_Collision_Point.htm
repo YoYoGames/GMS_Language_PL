@@ -1,0 +1,85 @@
+
+  
+   Jeśli punkt kolizji
+  Ta akcja jest używana do sprawdzania, czy w określonym miejscu na stronie object występuje kolizja z jedną lub kilkoma instancjami danego obiektu room. W przypadku wykrycia kolizji akcja przyjmuje wartość true, a w przeciwnym razie false. Użytkownik podaje obiekt
+    który ma być sprawdzany, oraz pozycję, w której ma być sprawdzany - może to być pozycja bezwzględna w room lub pozycja względem instancji - i możesz także sprawdzić Not flag, aby sprawdzić, czy w podanej pozycji nie ma kolizji, co oznacza, że
+    że działanie zostanie ocenione jako true tylko wtedy, gdy nie zostaną znalezione żadne kolizje, w przeciwnym razie zostanie ocenione jako false. Możesz także ustawić opcję Wyklucz siebie, aby wykluczyć instancję wywołującą ze sprawdzania kolizji.
+  Następnie możesz zaznaczyć/odznaczyć opcję Zwróć listę. Zaznaczenie tej opcji oznacza, że akcja utworzy i zapełni strukturę danych Lista wszystkimi instancjami w kolizji z punktem i ustawi zmienną Cel na identyfikator listy DS.
+    z punktem i ustawi zmienną Target na identyfikator listy DS. Jeśli nie jest zaznaczone, zmienna Target będzie miała wartość mniejszą od 0 tylko wtedy, gdy nie zostanie wykryta żadna kolizja, lub będzie miała unikatową wartość ID jednej z instancji w kolizji
+    (zauważ, że jeśli w kolizji bierze udział wiele instancji, to nie wiadomo, który identyfikator instancji zostanie zwrócony, jeśli nie używa się listy).
+  Jeśli wybrano opcję zwracania listy, a zmienna Target nie jest ustawiona na Temp, można również wybrać opcję Free Tar get. Jeśli ustawisz ją na true, wówczas lista zawarta w zmiennej docelowej zostanie zniszczona, a
+    a nowa lista będzie tworzona (i zwracana do zmiennej docelowej) przy każdym wywołaniu akcji. W ten sposób można ponownie używać tej samej zmiennej bez obawy o wycieki pamięci, ponieważ jeśli nie zaznaczymy opcji Free Target, to stajemy się odpowiedzialni
+    za zniszczenie listy przed ponownym użyciem zmiennej w akcji. Zauważ, że niezależnie od tego, czy ta opcja jest zaznaczona, czy nie, jeśli akcja została ustawiona na Zwróć listę, to zmienna docelowa zawsze będzie zawierać identyfikator listy,
+    i jako taka będzie musiała zostać zwolniona, gdy instancja zostanie zniszczona lub gdy zakończy się działanie strony room (możesz do tego użyć zdarzenia Clean Up, na przykład wraz z akcją Free Data Structure ).
+    Warto zauważyć, że można ustawić opcję Free Target tak, aby używała predefiniowanej zmiennej lub wyrażenia i w ten sposób kontrolować, kiedy struktura danych listy zostanie zwolniona, ustawiając zmienną w innym miejscu (lub mając różne wyniki dla wyrażenia)
+    tak długo, jak będzie ono odpowiadać true/false.
+  Na koniec należy podać zmienną docelową, która ma przechowywać wartość zwracaną lub identyfikator listy. Jeśli flag zmienna docelowa, która ma przechowywać wartość zwracaną, jest zmienną Temp (lokalną), to akcja utworzy tę zmienną, aby przechowywać wartość zwracaną tylko do końca zdarzenia.
+    W tym przypadku opcja Free Target nie robi nic, a użytkownik będzie odpowiedzialny za zniszczenie listy DS, jeśli opcja ta została zaznaczona. Jeśli nie podano zmiennej docelowej i zaznaczono opcję Lista zwracana, lista nie zostanie utworzona.
+  WAŻNE! Kolizje zostaną zarejestrowane tylko dla tych instancji, które mają poprawną maskę kolizji, tzn. mają sprite przypisaną do sprite_index, lub sprite przypisaną do mask_index. Jeśli instancje object sprawdzane w tej akcji nie mają maski kolizji, to nie zostaną wykryte, niezależnie od tego, co w danej chwili rysuje instancja.
+    sprawdzane w tej akcji nie mają maski kolizji, to kolizja nie zostanie wykryta, niezależnie od tego, co dana instancja rysuje w danym momencie.
+  Należy pamiętać, że aby dodać akcje do bloku "if", należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:
+  
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Shape
+        Kształt, którego należy użyć
+      
+      
+        Object
+         object, aby sprawdzić, czy nie występują przypadki
+      
+      
+        x1
+        Pozycja x, od której należy rozpocząć pracę
+      
+      
+        y1
+        Pozycja y, od której ma rozpocząć się praca
+      
+      
+        x2
+        Pozycja x, na której ma się zakończyć
+      
+      
+        y2
+        Pozycja y, na której ma się zakończyć
+      
+      
+        Free Target
+        Może być ustawiona na zmienną lub wyrażenie, albo na true/false, aby kontrolować zwalnianie pamięci listy przy ponownym użyciu zmiennej listy
+      
+      
+        Target
+        Zmienna, która ma być docelową wartością zwracaną przez akcję
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdza, czy w położeniu x/y myszy nie wystąpiła kolizja z instancją
+    object "obj_Enemy". Jeśli zostanie znaleziona jedna (lub więcej) kolizja, tworzony jest efekt na pozycji instancji o identyfikatorze zapisanym w zmiennej Target, a następnie instancja jest niszczona. Jeśli nie zostanie znaleziona żadna kolizja, w pozycji myszy zostanie utworzony inny
+    efekt zostanie utworzony w miejscu, w którym znajduje się mysz.
+   
+   
+   
+  
+    
+      
+        Powrót: Działania związane z kolizją
+        Następny: If Any Object At Place
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+  audio_emiter_free
+  Za pomocą tej funkcji możesz usunąć podany emiter z pamięci. Powinno się to robić zawsze wtedy, gdy emiter nie będzie już używany w room lub w grze, np. w zdarzeniu zniszczenia instancji lub w zdarzeniu zakończenia pomieszczenia, w przeciwnym razie może dojść do wycieku pamięci, który spowolni i zawiesi grę.
+   
+  Składnia:
+  audio_emitter_free(emitter);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        emitter
+        Identyfikator emitera dźwięku
+        The index of the emitter to free.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if lives = 0
+    {
+        audio_emitter_free(s_emit);
+        room_goto(rm_Menu);
+    }
+  Powyższy kod sprawdza wartość zmiennej globalnej "lives" i jeśli zwróci 0, zniszczy emiter zaindeksowany w zmiennej "s_emit", a następnie przejdzie do strony room zaindeksowanej w zmiennej "rm_Menu".
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery dźwięku
+        Następny: audio_play_sound_on
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

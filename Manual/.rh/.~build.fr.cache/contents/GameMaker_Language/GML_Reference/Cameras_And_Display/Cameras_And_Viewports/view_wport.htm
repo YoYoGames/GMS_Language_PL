@@ -1,0 +1,32 @@
+
+  
+  widok_wport
+  Ta zmienna może być użyta do uzyskania lub ustawienia szerokości określonego portu widoku. Szerokość portu widoku (lub połączonych portów widoku, jeśli aktywnych jest więcej niż jeden) określa szerokość okna gry lub tła obrazu na początku gry,
+    więc zmiana tej wartości po rozpoczęciu gry nie będzie miała widocznego wpływu na rozmiar okna gry, chyba że zostanie wywołana razem z funkcją window_set_size(). Jeśli masz większy lub mniejszy
+    Jeśli rozmiar portu jest większy lub mniejszy niż rozmiar przypisany do kamery, obraz z kamery zostanie przeskalowany w dół lub w górę, aby go dopasować, jak pokazano na poniższym rysunku.
+  
+   
+  Składnia:
+  view_wport[0 ... 7];
+   
+  Zwroty:
+  
+   
+  Przykład:
+  camera_set_view_size(view_camera[0], view_wport[0], view_hport[0]);
+  Powyższy kod ustawia szerokość i wysokość widoku z kamery tak, aby były takie same jak szerokość i wysokość portu widoku.
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: view_hport
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+  gra_zapis
+  Jest to starsza funkcja, która może być używana do zapisywania bieżącego stanu gry i nie jest już zalecana do użytku. Zamiast tego użyj funkcji Plik, aby utworzyć własny system zapisu, w którym będziesz zapisywać i wczytywać tylko określone dane gry.
+  Funkcja ta zapisuje stan gry, jednak nie zapisuje żadnych zasobów dynamicznych używanych w tym czasie, takich jak struktury danych, powierzchnie, assets dodane na stronie runtime, itp. Jeśli taki plik zapisu zostanie wczytany, wszelkie aktualizacje gry dokonane po zapisie nie będą widoczne, ponieważ zostanie przywrócona wersja gry, która została użyta do utworzenia zapisu.
+  Należy pamiętać, że pliki zapisu utworzone przy użyciu tej funkcji mogą nie być obsługiwane przez zaktualizowane wersje Runtime, dlatego zastąpienie tej funkcji nowym systemem zapisu jest niezbędne do zapewnienia zgodności z przyszłymi aktualizacjami GameMaker oraz, z powodów wymienionych powyżej, z aktualizacjami własnej gry.
+   
+  Składnia:
+  game_save(filename);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        filename
+        The name of the file to save the game to.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if keyboard_check_pressed(ord("S"))
+    {
+        global.Saved = true;
+        game_save("Save.dat");
+    }
+  Powyższy kod ustawi zmienną globalną na true, a następnie zapisze grę do pliku "Save.dat" po naciśnięciu klawisza "S".
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne sterowanie grą
+        Następny: game_save_buffer
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

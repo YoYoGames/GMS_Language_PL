@@ -15,7 +15,7 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Akcesoria</h1>
-  <p>Program <span class="notranslate">GameMaker Language</span> (<span class="notranslate">GML</span>) umożliwia także dostęp do pewnych <a href="../GML_Reference/Data_Structures/Data_Structures.htm">struktur danych</a> i <a href="Arrays.htm">tablic</a> za pomocą wyrażeń logicznych zwanych <b>accessorami</b>. Struktura jest podobna jak w przypadku normalnej pracy z tablicą, z tą różnicą, że przed pierwszym argumentem używamy <em>symbolu identyfikatora</em>, aby poinformować <span class="notranslate">GameMaker Studio 2</span>, że pracujemy nad (wcześniej utworzoną) strukturą danych lub literałem tablicy.</p>
+  <p>Strona <span class="notranslate">GameMaker Language</span> (<span class="notranslate">GML</span>) pozwala także na dostęp do pewnych <a href="../GML_Reference/Data_Structures/Data_Structures.htm">struktur danych</a> i <a href="Arrays.htm">tablic</a> za pomocą wyrażeń logicznych zwanych <b>accessorami</b>. Struktura jest podobna do normalnej pracy z tablicą, z tą różnicą, że używamy <em>symbolu identyfikatora</em> przed pierwszym argumentem, aby poinformować <span data-keyref="GameMaker Name">GameMakera</span>, że pracujemy nad (wcześniej utworzoną) strukturą danych lub literałem tablicy.</p>
   <p> </p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Listy DS [| ]</a></p>
   <div class="droptext" data-targetname="drop-down10">
@@ -75,7 +75,7 @@
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down15" href="#">Tablice [@ ]</a></p>
   <div class="droptext" data-targetname="drop-down15">
     <p class="dropspot">Ten accessor jest używany tylko wtedy, gdy włączona jest <a href="../../Settings/Game_Options.htm">opcja Copy on Write</a>.</p>
-    <p class="dropspot">Tablice posiadają również własne accessory, które działają w podobny sposób, jak te wymienione powyżej dla struktur danych. Dostęp do tablic ma jednak pewną ciekawą właściwość, a mianowicie pozwala na modyfikowanie tablicy z poziomu <a href="Script_Functions.htm">funkcji skryptu</a> lub <a href="Method_Variables.htm"><span class="notranslate">method</span></a> bez konieczności jej kopiowania. Gdy przekazujemy tablicę do funkcji, jest ona przekazywana <strong>przez referencję</strong>, co oznacza, że sama tablica nie jest <strong>przekazywana</strong> do <span class="notranslate">script</span>, lecz po prostu jest do niej odwoływana w celu uzyskania danych. W normalnej sytuacji, jeśli trzeba by zmienić tablicę, należałoby ją <em>skopiować </em>na stronę <span class="notranslate">script</span>, a następnie przekazać z powrotem (zwrócić) skopiowaną tablicę, aby oryginalna tablica została zaktualizowana. Może to powodować kosztowne koszty przetwarzania, dlatego zamiast tego można skorzystać z narzędzia dostępu, które zmieni oryginalną tablicę <em>bezpośrednio </em>, bez konieczności jej kopiowania. Jak to działa, można zobaczyć na poniższych przykładach.</p>
+    <p class="dropspot">Tablice posiadają również własne accessory, które działają w podobny sposób, jak te wymienione powyżej dla struktur danych. Jednak dostęp do tablic ma jeszcze jedną ciekawą właściwość, a mianowicie pozwala na modyfikowanie tablicy z poziomu <a href="Script_Functions.htm">funkcji skryptu</a> lub <a href="Method_Variables.htm"><span class="notranslate">method</span></a> bez konieczności jej kopiowania. Gdy przekazujemy tablicę do funkcji, jest ona przekazywana <strong>przez referencję</strong>, co oznacza, że sama tablica nie jest <strong>przekazywana</strong> do <span class="notranslate">script</span>, lecz po prostu jest do niej odwoływana w celu uzyskania danych. W normalnej sytuacji, jeśli trzeba by zmienić tablicę, należałoby ją <em>skopiować </em>na stronę <span class="notranslate">script</span>, a następnie przekazać z powrotem (zwrócić) skopiowaną tablicę, aby oryginalna tablica została zaktualizowana. Może to powodować kosztowne koszty przetwarzania, dlatego zamiast tego można skorzystać z narzędzia dostępu, które zmieni oryginalną tablicę <em>bezpośrednio </em>, bez konieczności jej kopiowania. Jak to działa, można zobaczyć w poniższych przykładach.</p>
     <p class="dropspot">Składnia dla tablic, przy użyciu narzędzia dostępu <span class="inline">@</span>, jest następująca:</p>
     <p class="code">array[@ i]</p>
     <p class="dropspot">Po utworzeniu tablicy w instancji można przekazać ją do <span class="notranslate">script</span> przez referencję i użyć akcesora <span class="inline">@</span>, aby ją bezpośrednio zmienić. Na przykład można utworzyć tablicę i wywołać funkcję w następujący sposób:</p>
@@ -113,7 +113,7 @@
     <p class="dropspot"> </p>
   </div>
   <p> </p>
-  <p>Ważną cechą akcesorów jest to, że można je <i>łączyć w łańcuchy</i>. Oznacza to, że jeśli mamy kilka zagnieżdżonych struktur danych i/lub tablic, nie ma już potrzeby używania wielu funkcji, aby uzyskać dostęp do wartości znajdującej się głęboko w zagnieżdżonej strukturze. Na przykład, powiedzmy, że mamy tablicę, a każdy element w tablicy jest listą DS, jak poniżej:</p>
+  <p>Ważną cechą akcesorów jest to, że można je <i>łączyć w łańcuchy</i>. Oznacza to, że jeśli masz kilka zagnieżdżonych struktur danych i/lub tablic, nie musisz już używać wielu funkcji, aby uzyskać dostęp do wartości, która znajduje się głęboko w zagnieżdżonej strukturze. Na przykład, powiedzmy, że mamy tablicę, a każdy element w tablicy jest listą DS, jak poniżej:</p>
   <p class="code">array = array_create(3);<br />
     for (var i = 0; i &lt; 3; ++i;)<br />
     {<br />
@@ -137,9 +137,9 @@
   <p>W powyższym kodzie utworzyliśmy tablicę składającą się z 3 elementów i przypisaliśmy każdej z nich listę DS, a następnie wypełniliśmy poszczególne listy identyfikatorami instancji różnych <span class="notranslate">objects</span> w grze. Teraz, aby uzyskać dostęp do identyfikatora na jednej z list, możemy wykonać następujące czynności:</p>
   <p class="code">var _list = array[0];<br />
     var _id = ds_list_find_value(_list, 0);</p>
-  <p>Można jednak zrobić to samo, używając łańcuchowych accessorów w znacznie czystszy sposób, który wymaga mniej kodu:</p>
+  <p>Można jednak zrobić to samo, używając łańcuchowych accessorów, w znacznie czystszy sposób i przy użyciu mniejszej ilości kodu:</p>
   <p class="code">var _id = array[0][| 0];</p>
-  <p>W ten sposób można połączyć łańcuchowo wiele akcesorów i mogą one być różnych typów, aby uzyskać dostęp do informacji przechowywanych w każdej części zagnieżdżonej struktury. Oto kilka kolejnych przykładów:</p>
+  <p>W ten sposób można łączyć ze sobą wiele akcesorów i mogą one być różnych typów, aby uzyskać dostęp do informacji przechowywanych w każdej części zagnieżdżonej struktury. Oto kilka kolejnych przykładów:</p>
   <p class="code">// Access a grid that has been added to a list that is part of a map:<br />
     var _a = data[? &quot;lists&quot;][| 0][# 0, 0];<br />
     <br />

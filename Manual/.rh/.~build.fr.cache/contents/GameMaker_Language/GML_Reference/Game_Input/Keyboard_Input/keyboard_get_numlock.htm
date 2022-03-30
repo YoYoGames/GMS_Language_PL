@@ -1,0 +1,37 @@
+
+  
+  keyboard_get_numlock
+  Za pomocą tej funkcji można sprawdzić stan blokady klawiatury numerycznej - wartość true jest zwracana jako włączona, a false jako wyłączona.
+  UWAGA Ta funkcja jest dostępna tylko w kompilacji Windows exe i nie będzie działać na żadnym innym urządzeniu.
+   
+  Składnia:
+  keyboard_get_numlock();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if keyboard_get_numlock()
+    {
+        keyboard_set_numlock(false);
+    }
+    else
+    {
+        keyboard_set_numlock(true);
+    }
+  Powyższy przykładowy kod pobierze stan klawisza blokady numerycznej i jeśli jest on włączony (true), ustawi go na wyłączony (false) i odwrotnie.
+   
+   
+   
+  
+    
+      
+        Powrót: Wejście klawiatury
+        Następny: keyboard_key_press
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,517 @@
+
+  
+  Wydarzenia związane z gestami
+  
+  Zdarzenia z kategorii Zdarzenia gestów będą wyzwalane za każdym razem, gdy witryna GameMaker Studio 2 wykryje "gest" myszy lub zdarzenie związane z ekranem dotykowym (chociaż te zdarzenia gestów zostały zaprojektowane specjalnie do użytku w urządzeniach przenośnych, można ich również używać na innych obiektach do wykrywania myszy, choć w tym przypadku nie będą one wykrywać wielokrotnych dotknięć). Celem systemu gestów jest próba rozpoznawania danych wejściowych na wyższym poziomie niż bezpośrednie funkcje odczytu myszy i dotyku, a jego zadaniem jest uproszczenie implementacji powszechnie używanych danych wejściowych na urządzeniach dotykowych.
+  UWAGA Te zdarzenia nie będą wywoływane na platformie HTML5 ze względu na brak obsługi wielodotyku przy użyciu tych zdarzeń na tej platformie. Jeśli szukasz gestów na tym celu, powinieneś użyć funkcji urządzenia.
+  Możesz wybrać wykrywanie gestów instancji lub gestów globalnych , przy czym zdarzenia gestów instancji będą wyzwalane tylko wtedy, gdy pierwsze dotknięcie/kliknięcie zostanie wykonane na instancji w grze room. Należy pamiętać, że aby zdarzenie zostało wyzwolone, instancja musi mieć prawidłową maskę kolizji (więcej szczegółów znajdziesz w sekcjach Edytor Sprite - Mas ka kolizji i Edytor Object - Mas ka kolizji). Zdarzenia globalne będą natomiast wyzwalane przez dotknięcie/kliknięcie w dowolnym miejscu w grze room i we wszystkich instancjach, które mają to zdarzenie.
+  Po rozpoznaniu gestu zostanie uruchomione jedno lub więcej dostępnych zdarzeń, a rodzaj uruchomionego zdarzenia będzie zależał od rodzaju wykrytego gestu. W każdym przypadku zostanie jednak wygenerowana mapa DS Map, która zostanie zapisana we wbudowanej zmiennej event_data. Dostępne przyciski zależą od rodzaju zdarzenia, w wyniku którego została utworzona, i zostały przedstawione w każdym z poniższych podpunktów.
+  UWAGA: Zmienna event_data jest ważna tylko w tych zdarzeniach, ponieważ mapa DS, na którą wskazuje, jest automatycznie tworzona na początku zdarzenia, a następnie ponownie niszczona na końcu, przy czym w pozostałych przypadkach wartość zmiennej jest ustawiana na -1.
+  Warto zauważyć, że jeśli pod dotykaną pozycją znajduje się wiele instancji i wszystkie one mają zdarzenie gestu, to zostaną uruchomione wszystkie z nich, a nie tylko "najwyższa" instancja. Zwróć też uwagę, że gdy używasz wielu widoków kamery i przeciągasz instancję, zwracane wartości będą oparte na widoku, w którym znajdowałeś się, gdy odebrano początkowe dotknięcie/kliknięcie - dotyczy to wszystkich kolejnych zdarzeń w tym geście dla tej instancji. Tak więc dotknięcie i przeciągnięcie instancji w jednym widoku, a następnie zwolnienie dotknięcia w innym widoku, zwróci wartości względem początkowego widoku, w którym gest został wykryty po raz pierwszy.
+   
+      Stukanie, przeciąganie i przesuwanie zdarzeń
+  
+    Wszystkie zdarzenia "Stuknij", "Przeciągnij" i "Kliknij" są oparte na pojedynczym dotknięciu ekranu lub kliknięciu myszą. Mapa event_data DS Map będzie zawierać następujące klawisze:
+    
+    
+    
+      
+        
+          Kluczowe
+          Opis
+        
+        
+          "gesture"
+           Jest to wartość ID, która jest unikatowa dla wykonywanego gestu. Umożliwia to łączenie różnych części gestów wieloczęściowych (takich jak początek przeciągania, przeciąganie i koniec przeciągania).
+        
+        
+          "touch"
+           Jest to indeks dotyku, który jest używany do wykonania gestu. Na ogół wartość ta zaczyna się od 0 i zwiększa się dla każdego przytrzymanego palca, a następnie powraca do 0 po usunięciu wszystkich palców, ale jeśli użytkownik dotyka ekranu
+            gdziekolwiek indziej, gdy zdarzenie to zostanie wywołane przez inne dotknięcie, wartość będzie większa niż 0.
+        
+        
+          "posX"
+           Jest to położenie X dotyku w przestrzeni pomieszczenia.
+        
+        
+          "posY"
+           Jest to położenie Y elementu dotykowego w przestrzeni pomieszczenia.
+        
+        
+          "rawposX"
+           Jest to nieprzetworzona pozycja X dotknięcia w przestrzeni okna (odpowiednik uzyskania pozycji myszy za pomocą polecenia device_mouse_raw_x()).
+        
+        
+          "rawposY"
+           Jest to nieprzetworzona pozycja Y dotknięcia w przestrzeni okna (odpowiednik uzyskania pozycji myszy za pomocą polecenia device_mouse_raw_y()).
+        
+        
+          "guiposX"
+           Jest to pozycja X przestrzeni gui-space dotknięcia (odpowiednik uzyskania pozycji myszy za pomocą polecenia device_mouse_x_to_gui()).
+        
+        
+          "guiposY"
+           Jest to pozycja Y dotknięcia w przestrzeni gui (odpowiednik uzyskania pozycji myszy za pomocą polecenia device_mouse_y_to_gui()).
+        
+        
+          "diffX"
+           Jest to różnica X w przestrzeni pomieszczenia między pozycją bieżącego dotknięcia a pozycją ostatniego dotknięcia w tym geście.
+        
+        
+          "diffY"
+           Jest to różnica Y przestrzeni między pozycją bieżącego dotknięcia a pozycją ostatniego dotknięcia w tym geście.
+        
+        
+          "rawdiffX"
+           Jest to nieprzetworzona różnica X między pozycją bieżącego dotknięcia a pozycją ostatniego dotknięcia w tym geście.
+        
+        
+          "rawdiffY"
+           Jest to nieprzetworzona różnica w Y między pozycją bieżącego dotknięcia a pozycją ostatniego dotknięcia w tym geście.
+        
+        
+          "guidiffX"
+           Jest to różnica X w przestrzeni gui-space między pozycją bieżącego dotknięcia a pozycją ostatniego dotknięcia w tym geście.
+        
+        
+          "guidiffY"
+           Jest to różnica Y przestrzeni gui między pozycją bieżącego dotknięcia a pozycją ostatniego dotknięcia w tym geście.
+        
+        
+          "viewstartposX"
+           Jest to pozycja początkowa room X bieżącego gestu.
+        
+        
+          "viewstartposY"
+           Jest to pozycja początkowa room Y bieżącego gestu.
+        
+        
+          "rawstartposX"
+           Jest to surowa pozycja początkowa X bieżącego gestu.
+        
+        
+          "rawstartposY"
+           Jest to nieprzetworzona pozycja początkowa Y bieżącego gestu.
+        
+        
+          "guistartposX"
+           Jest to pozycja początkowa X gui-space bieżącego gestu.
+        
+        
+          "guistartposY"
+           Jest to pozycja początkowa Y bieżącego gestu w przestrzeni gui.
+        
+        
+          "isflick"
+          
+
+             Dostępne tylko w zdarzeniu Zakończenie przeciągania. Jest ustawiane na 1, jeśli koniec przeciągania jest wykrywany jako przeciągnięcie, co oznacza, że nie jest potrzebne osobne zdarzenie przeciągnięcia, jeśli i tak obsługujesz przeciąganie.
+        
+      
+    
+     
+    Tap
+    
+      Zdarzenie Stuknięcie zostanie wyzwolone, gdy instancja zostanie dotknięta lub kliknięta, lub - jeśli jest to zdarzenie globalne - gdy gra zarejestruje dotknięcie lub kliknięcie w dowolnym miejscu na stronie room. Stuknięcie jest traktowane jako szybkie dotknięcie i zwolnienie, a jeśli trwa zbyt długo, zostanie potraktowane jako Przeciągnięcie (i wyzwoli gest Przeciągnięcia zamiast zdarzenia Stuknięcie).
+        Jeśli dotknięcie trwa zbyt długo, będzie traktowane jako przeciągnięcie (i spowoduje wyzwolenie zdarzenia gestu przeciągnięcia zamiast zdarzenia stuknięcia). Zdarzenie to wygeneruje mapę event_data DS, której można następnie użyć do uzyskania informacji o zdarzeniu. Na przykład:
+      Utwórz wydarzenie
+      x_goto = x; y_goto = y;
+      Wydarzenie z użyciem kranu
+      x_goto = event_data[? "posX"]; y_goto = event_data[? "posY"];
+      Krok Impreza
+      var _pd = point_distance(x, y, x_goto, y_goto); move_towards_point(x_goto, y_goto, clamp(_pd, 0, 5);
+      Powyższy kod wykryje stuknięcie w ekran, a następnie pobierze pozycję stuknięcia, aby przesunąć instancję na tę pozycję. Zauważ, że jeśli chcesz mieć dłuższy lub krótszy czas wykrywania stuknięcia, możesz go ustawić za pomocą funkcji gesture_drag_time().
+        Ustawia ona czas, jaki upływa od początkowego wykrycia do momentu, gdy stuknięcie staje się przeciągnięciem, dlatego ustaw wyższą wartość, by wydłużyć czas wykrywania stuknięcia, lub niższą, by go skrócić (wartość jest podawana w sekundach i domyślnie wynosi 0,16).
+       
+    
+    Podwójne stuknięcie
+    
+      Zdarzenie podwójnego stuknięcia zostanie wywołane, gdy instancja zostanie dotknięta lub kliknięta dwa razy z rzędu (lub - jeśli jest to zdarzenie globalne - gdy gra zarejestruje dwa szybkie dotknięcia lub kliknięcia w dowolnym miejscu na stronie room). Podwójne stuknięcie jest traktowane jako dwa
+        szybkie dotknięcie i zwolnienie, ale jeśli któreś z dotknięć trwa zbyt długo, zostanie uznane za przeciągnięcie (i spowoduje wyzwolenie zdarzeń gestu przeciągnięcia zamiast zdarzenia podwójnego stuknięcia). To zdarzenie spowoduje wygenerowanie mapy event_data DS
+        której można następnie użyć do uzyskania informacji o zdarzeniu. Na przykład:
+      Utwórz wydarzenie
+      x_goto = x; y_goto = y;
+      Impreza z podwójnym stuknięciem
+      instance_destroy();
+      Powyższy kod po prostu wykrywa podwójne stuknięcie, a następnie niszczy instancję. Zauważ, że możesz ustawić czas pomiędzy kolejnymi stuknięciami, aby wywołać podwójne stuknięcie, używając funkcji gesture_double_tap_time() (która
+        ma domyślną wartość - w sekundach - 0,16), a także możesz ustawić odległość wykrywania między stuknięciami za pomocą funkcji gesture_double_tap_distance() (jeśli
+        wykrycie drugiego stuknięcia poza tą odległością będzie traktowane jako zwykłe stuknięcie).
+       
+    
+    Przeciągnij Start
+    
+      Zdarzenie Rozpoczęcie przeciągania zostanie wywołane, gdy użytkownik utrzyma dotknięcie lub kliknięcie bez zwalniania go. Zostanie ono wywołane raz, gdy minie określony czas od pierwszego dotknięcia, który domyślnie wynosi 0,16 sekundy (choć można ustawić dowolną inną wartość w sekundach za pomocą funkcji
+        inną wartość w sekundach za pomocą funkcji gesture_drag_time()). Po wyzwoleniu tego zdarzenia i tak długo, jak
+        użytkownik ma przytrzymany dotyk/kliknięcie, to zdarzenie Przeciąganie będzie wywoływane co krok, aż do zwolnienia dotyku/kliknięcia. To zdarzenie wygeneruje mapę event_data DS, którą można wykorzystać do uzyskania informacji
+        o zdarzeniu. Na przykład:
+      Utwórz wydarzenie
+      drag_offsetX = 0; drag_offsetY = 0;
+      Zdarzenie rozpoczęcia przeciągania
+      drag_offsetX = x - event_data[?"posX"]; drag_offsetY = y - event_data[?"posY"];
+      Powyższy kod wykorzystuje zdarzenie rozpoczęcia przeciągania, aby uzyskać pozycję dotknięcia/kliknięcia i użyć jej do ustawienia wartości przesunięcia dla osi x i y. Można tego użyć podczas przeciągania instancji, aby nie "przeskakiwała" do pozycji
+        w której wykryto dotknięcie/kliknięcie (kontynuacja tego przykładu znajduje się w zdarzeniu Przeciąganie poniżej).
+       
+    
+    Przeciąganie
+    
+      Zdarzenie Przeciąganie jest wyzwalane po zdarzeniu Początek przeciągania i będzie wywoływane dla każdego kroku, w którym użytkownik utrzymuje dotyk/kliknięcie na instancji (lub na ekranie, jeśli jest to zdarzenie globalne) i przesuwa się o więcej niż zdefiniowany próg przeciągania.
+        Domyślnie odległość ta wynosi 0,1 cala, ale można ją ustawić za pomocą funkcji gesture_drag_distance(). Jeśli nie ma
+        ruchu lub ruch jest poniżej zdefiniowanego progu, zdarzenie nie zostanie wywołane. To zdarzenie spowoduje wygenerowanie mapy event_data DS, której można użyć do uzyskania informacji o zdarzeniu. Na przykład:
+      Utwórz wydarzenie
+      drag_offsetX = 0; drag_offsetY = 0;
+      Zdarzenie rozpoczęcia przeciągania
+      drag_offsetX = x - event_data[?"posX"]; drag_offsetY = y - event_data[?"posY"];
+      Zdarzenie przeciągania
+      x = event_data[?"posX"] + drag_offsetX; y = event_data[?"posY"] + drag_offsetY;
+      Powyższy przykładowy kod wykorzystuje zmienne przesunięcia ustawione w zdarzeniu Drag Start do przesunięcia instancji, gdy zostanie wywołane zdarzenie Dragging.
+       
+    
+    Koniec przeciągania
+    
+      Zdarzenie zakończenia przeciągania jest wyzwalane, gdy użytkownik zwolni dotyk/kliknięcie na instancji (lub na ekranie, jeśli zdarzenie ma charakter globalny). Zdarzenie to wygeneruje mapę event_data DS, której możesz użyć do uzyskania informacji o zdarzeniu.
+        ale w tym zdarzeniu mapa będzie miała dodatkowy klucz: "isflick". Migotanie jest obliczane jako odległość w ciągu sekundy, na jaką nastąpiło przeciągnięcie, a wartość klucza "isflick" będzie prawdziwa, jeśli będzie większa niż wartość klucza " ".
+        będzie prawdziwa, jeśli będzie większa od zdefiniowanej wartości odległości na sekundę, a w przeciwnym razie będzie fałszywa. Domyślnie jest to 2 cale na sekundę, ale można ją ustawić na inną wartość za pomocą funkcji gesture_flick_speed().
+        Zwróć też uwagę, że istnieje specjalne zdarzenie Flick, które również zostanie wywołane, jeśli zmienna "isflick" będzie miała wartość true. Przykładem użycia może być:
+      Utwórz wydarzenie
+      flickVelX = 0.0; flickVelY = 0.0;
+      Zdarzenie zakończenia przeciągania
+      isFlick = event_data[?"isflick"]; if (isFlick)     {     flickVelX = event_data[?"diffX"];     flickVelY = event_data[?"diffY"];     } else
+             {     flickVelX = 0;     flickVelY = 0;     }
+      
+      Krok Impreza
+      x += flickVelX; y += flickVelY; flickVelX *= 0.7; flickVelY *= 0.7;
+      Powyższy kod po prostu pobiera różnicę w pozycjach x i y z ostatniego zdarzenia Dragging i bieżącego zdarzenia Drag End, a jeśli ruch był większy niż próg migotania, ustawia pewne zmienne, które są używane do przesuwania instancji
+        w zdarzeniu krok.
+       
+    
+    Flick
+    
+      Zdarzenie Flick jest wyzwalane tylko wtedy, gdy dotknięcie/kliknięcie zostało przytrzymane, przeciągnięte i zwolnione, a odległość między ostatnim położeniem przeciągnięcia a położeniem zwolnienia jest większa niż 2 cale na sekundę (jest to ustawienie domyślne, choć można je zmienić za pomocą funkcji
+        można zmienić za pomocą funkcji gesture_flick_speed()). To zdarzenie spowoduje wygenerowanie mapy event_data DS, której można następnie użyć do uzyskania informacji o zdarzeniu. Na przykład:
+      Utwórz wydarzenie
+      flickVelX = 0.0; flickVelY = 0.0;
+      Impreza Flick
+      flickVelX = event_data[?"diffX"]; flickVelY = event_data[?"diffY"];
+      Krok Impreza
+      x += flickVelX; y += flickVelY; flickVelX *= 0.7; flickVelY *= 0.7;
+      Powyższy kod po prostu pobiera różnicę w pozycjach x i y z ostatniego zdarzenia Dragging i bieżącego zdarzenia Flick, a jeśli ruch był większy niż próg flick, ustawia pewne zmienne, które są używane do przesuwania instancji w zdarzeniu
+        zdarzeniu step.
+    
+     
+  
+  Imprezy z udziałem szczypty 
+  
+    Zdarzenia "Uszczypnięcie" polegają na jednoczesnym rozpoznaniu dwóch dotknięć ekranu urządzenia, z których jedno (lub oba) zostało przesunięte na odległość większą niż określona. O wykryciu zdarzenia "Uszczypnięcie" lub "Obrót" decyduje kąt ruchu dotknięć oraz ruch każdego z nich.
+      decyduje o wykryciu zdarzenia typu Uszczypnięcie lub Obrót, gdzie (w przypadku zdarzenia typu Uszczypnięcie):
+    
+      Jeśli jedno z dotknięć nie porusza się, drugie musi poruszać się w jego kierunku lub oddalać się od niego o pewien kąt (który można ustawić za pomocą funkcji gesture_pinch_angle_towards() oraz .
+        - gesture_pinch_angle_away()).
+      Jeśli poruszają się oba elementy dotykowe, ich prędkości muszą być w przybliżeniu przeciwne, a ponadto sprawdzany jest ten sam próg kątowy, aby upewnić się, że elementy dotykowe poruszają się w przybliżeniu równolegle.
+    
+    Po wykryciu dwóch dotknięć i ruchu spełniających powyższe kryteria zostanie uruchomione zdarzenie uszczypnięcia, a w każdym z tych zdarzeń mapa event_data DS Map zostanie wypełniona następującymi klawiszami:
+    
+    
+    
+      
+        
+          Kluczowe
+          Opis
+        
+        
+          "gesture"
+           Jest to wartość identyfikacyjna, która jest unikatowa dla wykonywanego gestu. Umożliwia to łączenie różnych części gestów wieloczęściowych (takich jak początek przeciągania, przeciąganie i koniec przeciągania).
+        
+        
+          "touch1"
+           Jest to indeks pierwszego dotknięcia, które jest używane jako część gestu uszczypnięcia. Na ogół będzie to 0, ale jeśli użytkownik dotyka ekranu w innym miejscu, gdy zdarzenie to zostanie wywołane przez inne dotknięcie, wartość będzie
+            większa niż 0.
+        
+        
+          "touch2"
+           Jest to indeks drugiego dotknięcia, które jest używane jako część gestu uszczypnięcia. Na ogół będzie to wartość o 1 większa od wartości dla touch1, ale może to być inna wartość, zależna od liczby dotknięć wykrywanych w innych miejscach.
+        
+        
+          "posX1"
+           Jest to położenie X w przestrzeni pomieszczenia dla pierwszego dotknięcia.
+        
+        
+          "posY1"
+           Jest to położenie Y w przestrzeni pomieszczenia dla pierwszego dotknięcia.
+        
+        
+          "rawposX1"
+           Jest to nieprzetworzona pozycja X w przestrzeni okna pierwszego dotknięcia (odpowiednik uzyskania pozycji myszy za pomocą polecenia device_mouse_raw_x()).
+        
+        
+          "rawposY1"
+           Jest to nieprzetworzona pozycja Y w przestrzeni okna pierwszego dotknięcia (odpowiednik uzyskania pozycji myszy za pomocą polecenia device_mouse_raw_y()).
+        
+        
+          "guiposX1"
+           Jest to pozycja X przestrzeni gui-space pierwszego dotknięcia (odpowiednik uzyskania pozycji myszy za pomocą polecenia device_mouse_x_to_gui()).
+        
+        
+          "guiposY1"
+           Jest to pozycja Y w przestrzeni gui drugiego dotknięcia (odpowiednik uzyskania pozycji myszy za pomocą polecenia device_mouse_y_to_gui()).
+        
+        
+          "posX2"
+           Jest to położenie X w przestrzeni pomieszczenia dla drugiego dotknięcia.
+        
+        
+          "posY2"
+           Jest to położenie Y w przestrzeni pomieszczenia dla drugiego dotknięcia.
+        
+        
+          "rawposX2"
+           Jest to nieprzetworzona pozycja X w przestrzeni okna pierwszego dotknięcia.
+        
+        
+          "rawposY2"
+           Jest to nieprzetworzona pozycja Y przestrzeni okna drugiego dotknięcia.
+        
+        
+          "guiposX2"
+           Jest to pozycja X przestrzeni gui w drugim dotknięciu.
+        
+        
+          "guiposY2"
+           Jest to pozycja Y przestrzeni gui drugiego dotknięcia.
+        
+        
+          "midpointX"
+           Pozycja X punktu środkowego między dwoma dotknięciami w przestrzeni room.
+        
+        
+          "midpointY"
+           Położenie Y punktu środkowego między dwoma dotknięciami w przestrzeni room.
+        
+        
+          "rawmidpointX"
+           Jest to surowe położenie X punktu środkowego w przestrzeni okna.
+        
+        
+          "rawmidpointY"
+           Jest to nieprzetworzona pozycja Y punktu środkowego w przestrzeni okna.
+        
+        
+          "guimidpointX"
+           Jest to położenie X punktu środkowego w przestrzeni gui.
+        
+        
+          "guimidpointY"
+           Jest to położenie Y punktu środkowego w przestrzeni gui.
+        
+        
+          "relativescale"
+           Jest to różnica w skali w porównaniu z ostatnim zdarzeniem w tym geście (zatem dla zdarzeń typu Pinch In będzie ona zawsze mniejsza niż 1,0, natomiast dla zdarzeń typu Pinch Out będzie ona zawsze większa niż 1,0).
+        
+        
+          "absolutescale"
+           Jest to skala w porównaniu z tym, gdzie znajdowały się palce w momencie rozpoczęcia wykonywania gestu (jeśli odległość między palcami zmniejszyła się o połowę, będzie to 0,5, a jeśli zwiększyła się dwukrotnie - 2,0).
+        
+      
+    
+     
+    Początek szczypania
+    
+      Zdarzenie Pinch Start zostanie wywołane, gdy instancja (lub ekran, jeśli zdarzenie ma charakter globalny) zostanie dotknięta dwoma "palcami" (i dotyk zostanie utrzymany), a następnie jeden lub oba "palce" zostaną przesunięte. Jeśli dotknięcia oddalą się
+        od siebie lub do siebie na odległość większą niż minimalna odległość kontrolna (domyślnie wynosi ona 0,1 cala, ale można ją ustawić za pomocą funkcji gesture_pinch_distance()),
+        a kąt między nimi mieści się w określonej wartości (domyślnie jest to 45°, ale można go ustawić za pomocą funkcji gesture_pinch_angle_towards() oraz .
+        gesture_pinch_angle_away()), to zostanie wywołane zdarzenie Start szczypania. W tym zdarzeniu można ustawić zmienne lub zapisać datę pozycji do wykorzystania w przyszłości. Na przykład:
+      
+      Wydarzenie "Uszczypnij Start
+      pinching = true; pinch_x = event_data[? "midpointX"]; pinch_y = event_data[? "midpointY"];
+      Powyższy kod wykryje punkt zbiegu i zapisze położenie punktu środkowego dla tego punktu zbiegu.
+       
+    
+    Zaciskanie / zaciskanie
+    
+      Zdarzenia "Uszczypnięcie" i "Uszczypnięcie" będą wyzwalane za każdym razem, gdy odległość między dwoma dotknięciami tworzącymi uszczypnięcie przekroczy minimalny próg (domyślnie ustawiony na +/- 0,1 cala, ale można go zmienić za pomocą funkcji gesture_pinch_distance).
+        Jeśli nie ma żadnego ruchu w miejscach uszczypnięcia, zdarzenia te nie będą wyzwalane. Zdarzenia te wygenerują mapę event_data DS, której można następnie użyć do uzyskania informacji o zdarzeniu. Na przykład:
+      Globalne zdarzenie typu "wciśnij/wyciśnij
+      var _scale = event_data[? "relativescale"]; var _w = camera_get_view_width(view_camera[0]); var _h = camera_get_view_height(view_camera[0]); var _x = camera_get_view_x(view_camera[0]) + (_w / 2); var _y = camera_get_view_y(view_camera[0])
+        + (_h / 2);
+         _w *= _scale; _h = _w * (room_height / room_width); _x -= _w / 2; _y -= _h / 2;
+         camera_set_view_pos(view_camera[0], _x, _y); camera_set_view_size(view_camera[0], _w, _h);
+      
+      Powyższy kod spowoduje przeskalowanie widoku na podstawie względnej skali dotknięć szczypiec.
+       
+    
+    Końcówka zaciskowa
+    
+      Zdarzenie Pinch End zostanie wyzwolone, gdy użytkownik zwolni jedno (lub oba) dotknięcia z urządzenia. Zdarzenie to wygeneruje mapę event_data DS, której można następnie użyć do uzyskania informacji o zdarzeniu. Na stronie
+        na przykład:
+      Zdarzenie z końcówką zaciskową
+      var _pinchx = event_data[? "midpointX"]; var _pinchy = event_data[? "midpointY"]; var _w = camera_get_view_width(view_camera[0]); var _h = camera_get_view_height(view_camera[0]); var _x = _pinchx - (_w / 2); var _y = _pinchy - (_h / 2);
+         camera_set_view_pos(view_camera[0], _x, _y);
+      
+      Powyższy kod spowoduje, że po zwolnieniu dotknięć pozycja widoku zostanie wyśrodkowana w punkcie środkowym dwóch dotknięć, które tworzyły uszczypnięcie.
+      
+    
+     
+  
+  Obracanie zdarzeń
+  
+    Zdarzenia "Obrót" polegają na jednoczesnym rozpoznaniu dwóch dotknięć ekranu urządzenia, przy czym w określonym czasie następuje stały obrót kątowy między nimi. Kąt ruchu dotknięć wraz z
+      ruchu każdego dotknięcia decydują o wykryciu zdarzenia typu "uszczypnięcie" lub "obrót", gdzie (w przypadku typu zdarzenia "obrót"):
+    
+      Dwa dotknięcia muszą być przytrzymane przez określony minimalny czas (domyślnie czas ten wynosi 0,16 sekundy, ale można go zmienić za pomocą funkcji gesture_rotate_time()).
+      W tym minimalnym okresie czasu muszą obracać się w stałym kierunku (jeśli kierunek obrotu zmieni się w tym czasie, obrót nie jest rozpoczynany).
+      Wartość obrotu musi przekraczać minimalny kąt progowy (domyślnie ustawiony na 5°, ale można go zmienić za pomocą funkcji gesture_rotate_angle()).
+    
+    Po wykryciu dwóch dotknięć i ruchu spełniających powyższe kryteria zostanie wyzwolone zdarzenie Rotate Event (Obrót), a w każdym z tych zdarzeń mapa event_data DS Map (Mapa DS) zostanie wypełniona następującymi klawiszami:
+    
+    
+    
+      
+        
+          Kluczowe
+          Opis
+        
+        
+          "gesture"
+           Jest to wartość identyfikacyjna, która jest unikatowa dla wykonywanego gestu. Umożliwia to łączenie różnych części gestów wieloczęściowych (takich jak początek przeciągania, przeciąganie i koniec przeciągania).
+        
+        
+          "touch1"
+           Jest to indeks pierwszego dotknięcia, które jest używane jako część gestu uszczypnięcia. Zwykle będzie to 0, ale jeśli użytkownik dotyka ekranu gdziekolwiek indziej, gdy zdarzenie to zostanie wywołane przez inne dotknięcie, wartość będzie
+            większa niż 0.
+        
+        
+          "touch2"
+           Jest to indeks drugiego dotknięcia, które jest używane jako część gestu uszczypnięcia. Zazwyczaj będzie to wartość o 1 większa od wartości dla touch1, ale może to być inna wartość, zależna od liczby dotknięć wykrytych w innych miejscach.
+        
+        
+          "posX1"
+           Jest to położenie X w przestrzeni pomieszczenia dla pierwszego dotknięcia.
+        
+        
+          "posY1"
+           Jest to położenie Y w przestrzeni pomieszczenia dla pierwszego dotknięcia.
+        
+        
+          "rawposX1"
+           Jest to nieprzetworzona pozycja X w przestrzeni okna pierwszego dotknięcia (odpowiednik uzyskania pozycji myszy za pomocą polecenia device_mouse_raw_x()).
+        
+        
+          "rawposY1"
+           Jest to nieprzetworzona pozycja Y w przestrzeni okna pierwszego dotknięcia (odpowiednik uzyskania pozycji myszy za pomocą polecenia device_mouse_raw_y()).
+        
+        
+          "guiposX1"
+           Jest to pozycja X przestrzeni gui-space pierwszego dotknięcia (odpowiednik uzyskania pozycji myszy za pomocą polecenia device_mouse_x_to_gui()).
+        
+        
+          "guiposY1"
+           Jest to pozycja Y w przestrzeni gui drugiego dotknięcia (odpowiednik uzyskania pozycji myszy za pomocą polecenia device_mouse_y_to_gui()).
+        
+        
+          "posX2"
+           Jest to położenie X w przestrzeni pomieszczenia dla drugiego dotknięcia.
+        
+        
+          "posY2"
+           Jest to położenie Y w przestrzeni pomieszczenia dla drugiego dotknięcia.
+        
+        
+          "rawposX2"
+           Jest to nieprzetworzona pozycja X w przestrzeni okna pierwszego dotknięcia.
+        
+        
+          "rawposY2"
+           Jest to nieprzetworzona pozycja Y przestrzeni okna drugiego dotknięcia.
+        
+        
+          "guiposX2"
+           Jest to pozycja X przestrzeni gui w drugim dotknięciu.
+        
+        
+          "guiposY2"
+           Jest to pozycja Y przestrzeni gui drugiego dotknięcia.
+        
+        
+          "pivotX"
+           Położenie X punktu obrotu w przestrzeni room.
+        
+        
+          "pivotY"
+           Położenie Y punktu obrotu w przestrzeni room.
+        
+        
+          "rawpivotX"
+           Jest to surowe położenie X punktu obrotu w przestrzeni okna.
+        
+        
+          "rawpivotY"
+           Jest to nieprzetworzone położenie Y punktu obrotu w przestrzeni okna.
+        
+        
+          "guipivotX"
+           Jest to pozycja X przestrzeni gui w obrotowym punkcie obrotu.
+        
+        
+          "guipivotY"
+           Jest to położenie Y punktu obrotu w przestrzeni gui.
+        
+        
+          "relativeangle"
+           Jest to różnica obrotów w stosunku do ostatniego zdarzenia w tym geście, mierzona w stopniach.
+        
+        
+          "absoluteangle"
+           Jest to różnica kąta w porównaniu z położeniem palców w momencie rozpoczęcia gestu, mierzona w stopniach. Na przykład, jeśli od momentu rozpoczęcia gestu palce obróciły się o ćwierć koła, wartość ta będzie wynosić 90°
+            lub -90°, w zależności od kierunku obrotu.
+        
+      
+    
+     
+    Obrót Start
+    
+      Zdarzenie Rotate Start zostanie wywołane, gdy instancja (lub ekran, jeśli zdarzenie ma charakter globalny) zostanie dotknięta dwoma "palcami" (i dotyk zostanie utrzymany), a następnie jeden lub oba "palce" zostaną obrócone z pozycji początkowej
+        pozycji początkowej. Obrót dotknięć musi się rozpocząć w krótkim czasie (domyślnie 0,16 sekundy, ale można go ustawić za pomocą funkcji gesture_rotate_time())
+        oraz być większy niż minimalny próg kątowy (domyślnie 5°, ale można go zmienić za pomocą funkcji gesture_rotate_angle()).
+        Jeśli te kontrole są prawdziwe, zostanie wyzwolone zdarzenie Rotate Start, które można wykorzystać do przechowywania wartości lub ustawiania zmiennych do użycia z pozostałymi zdarzeniami rotate. Na przykład:
+      Utwórz wydarzenie
+      rotating = false; view_a = camera_get_view_angle(view_camera[0]);
+      Zdarzenie rozpoczęcia obrotu
+      rotating = true;
+      Powyższy kod po prostu ustawia kilka zmiennych do obracania kamery, a następnie w zdarzeniu Rotate Start ustawia jedną z nich na wartość true.
+       
+    
+    Obrotowa strona
+    
+      Zdarzenie Obrót będzie wyzwalane za każdym razem, gdy elementy dotykowe na ekranie będą się obracać wokół siebie, o ile ruch będzie większy niż minimalny próg kątowy (domyślnie 5°, ale można go zmienić za pomocą funkcji gesture_rotate_angle()).
+        Zdarzenia tego można używać do ustawiania zmiennych i manipulowania instancjami, na przykład:
+      Zdarzenie rotacyjne
+      var _relangle = event_data[?"relativeangle"]; var _a = camera_get_view_angle(view_camera[0]); _a += _relangle; camera_set_view_angle(view_camera[0], _a);
+      Powyższy kod obraca widok z kamery w zależności od ruchu obrotowego elementów dotkniętych w zdarzeniu.
+       
+    
+    Obróć Koniec
+    
+      Zdarzenie Rotate End zostanie wywołane, gdy jedno (lub oba) dotknięcia składające się na gest zostaną zwolnione z ekranu urządzenia. To zdarzenie można wykorzystać na przykład do ustawiania zmiennych i manipulowania instancjami:
+      Zdarzenie zakończenia obrotu
+      rotating = false;
+      Krok Impreza
+      if !rotating     {     var _a = camera_get_view_angle(view_camera[0]);     var _adif = angle_difference(view_a, _a);     _a += median(-5, _adif, 5);     camera_set_view_angle(view_camera[0], _a);     }
+      Powyższy kod wykorzystuje zdarzenie Rotate End do wykrycia, kiedy użytkownik zatrzymuje gest, a następnie ustawia zmienną. Zmienna ta jest następnie używana w zdarzeniu krok do obrócenia kamery widoku z powrotem do jej pierwotnej pozycji.
+       
+    
+     
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Zdarzenia dotyczące obiektów
+        Następny: Kolejność zdarzeń
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

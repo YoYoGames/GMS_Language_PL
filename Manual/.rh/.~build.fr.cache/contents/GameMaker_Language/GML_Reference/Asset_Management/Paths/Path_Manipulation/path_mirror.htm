@@ -1,0 +1,44 @@
+
+  
+  path_mirror
+  Ta funkcja bierze wszystkie punkty path i odbija je wzdłuż osi pionowej. Ta funkcja zmienia rzeczywisty zasób path , a więc będzie trwale wpływać na sposób, w jaki path jest używany przez wszystkie instancje w grze od momentu użycia funkcji
+    aż do końca gry. Jeśli to nie jest to, czego potrzebujesz, powinieneś użyć funkcji takiej jak path_duplicate(), aby najpierw utworzyć kopię path, a następnie wywołać tę funkcję na
+    asset (nie zapomnij wywołać path_delete() na asset, gdy nie będzie już potrzebna).
+  
+  Składnia:
+  path_mirror(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the path to mirror.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  path_mirror(mypath);
+  Spowoduje to wyświetlenie wzdłuż osi pionowej strony path indeksowanej w zmiennej "moja ścieżka".
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja ścieżką
+        Następny: path_reverse
+        
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,54 @@
+
+  
+  xboxlive_matchmaking_send_invites
+  Ta funkcja wywołuje systemowe okno dialogowe Xbox Live, aby umożliwić użytkownikowi wysyłanie zaproszeń do swojej gry. Określasz lokalnego użytkownika, który ma sterować oknem dialogowym (i którego lista znajomych będzie używana przez okno dialogowe), unikalną wartość ID sesji dla sesji, do której chcesz zapraszać ludzi, oraz pewien domyślny tekst, który ma być wyświetlany w oknie dialogowym. Identyfikator sesji można uzyskać z mapy async_load DS wygenerowanego przez funkcję xboxlive_matchmaking_create().
+  Funkcja zwraca -1, jeśli argumenty są nieprawidłowe lub użytkownik nie jest zalogowany do Xbox Live, lub wartość większą niż 0 w przeciwnym wypadku.
+   
+  Składnia:
+  xboxlive_matchmaking_send_invites(from_user, session_to_invite_into, text_to_add_to_invite);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        from_user
+        The local user ID for controlling the dialogue.
+     
+      
+        session_to_invite_into
+        The unique session ID for the session to join.
+     
+      
+        text_to_add_to_invite
+        A short text to add to the invitation.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if gamepad_button_check_pressed(0, gp_face1)
+    {
+        var _uid = xboxlive_user_for_pad(0);
+        xboxlive_matchmaking_send_invites(_uid, global.session_ID, "Come and join my game!");
+    }
+  Powyższy kod sprawdza, czy został naciśnięty przycisk gamepada, a jeśli zostanie wykryty, zostanie otwarte okno dialogowe Xbox Live do zapraszania do sesji.
+   
+   
+   
+  
+    
+      
+        Powrót: Dopasowywanie
+        Następny: xboxlive_matchmaking_set_joinable_session
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

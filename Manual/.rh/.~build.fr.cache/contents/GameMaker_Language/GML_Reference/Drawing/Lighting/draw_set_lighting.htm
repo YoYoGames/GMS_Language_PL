@@ -1,0 +1,45 @@
+
+  
+  narysuj_ustaw_oświetlenie
+  Ta funkcja służy do włączania wszystkich efektów świetlnych. Domyślnie jest wyłączona (false).
+   
+  Składnia:
+  draw_set_lighting(enable);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        enable
+        Boolean
+        Enable or disable all lighting (true lub fałszywe)
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_set_lighting(true);
+    draw_light_define_direction(1, 0, 1, 0, c_white);
+    draw_light_enable(1, true);
+  Powyższy kod włączy oświetlenie dla całej sceny, następnie zdefiniuje białe światło kierunkowe w przestrzeni room, a na koniec włączy to światło.
+   
+   
+   
+  
+    
+      
+        Powrót: Oświetlenie
+        Następny: draw_light_get_ambient
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

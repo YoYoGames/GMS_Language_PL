@@ -1,0 +1,66 @@
+
+  
+  część_cząstek_tworzona
+  Funkcja ta jest idealna dla tych efektów, które nie wymagają żadnych funkcji oferowanych przez emitery cząstek (na przykład do tworzenia dymu z pocisku lub prostego efektu eksplozji), ponieważ umożliwia szybkie i łatwe tworzenie cząstek w dowolnym miejscu w grze room. Aby można było korzystać z tej funkcji, należy wcześniej utworzyć system cząsteczek i typ cząsteczki.
+   
+  Składnia:
+  part_particles_create(ind, x, y, parttype, number);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Identyfikator systemu cząstek stałych
+        The index of the particle system.
+      
+      
+        x
+        Real
+        The x coordinate of where to create the particles.
+      
+      
+        y
+        Real
+        The y coordinate of where to create the particles.
+      
+      
+        parttype
+        Typ cząstki ID
+        The index (type) of the particles to be created.
+      
+      
+        number
+        Real
+        The number of particles to create.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if mouse_check_button(mb_left)
+    {
+        part_particles_create(sname, mouse_x, mouse_y, p_CursorEffect, 5);
+    }
+  Powyższy kod sprawdza, czy przycisk myszy został naciśnięty i jeśli zwróci true, wygeneruje 5 cząstek w miejscu, w którym znajduje się mysz.
+   
+   
+   
+  
+    
+      
+        Powrót: Układy cząstek stałych
+        Następny: part_particles_create_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,67 @@
+
+  
+  xboxlive_matchmaking_join_session
+  Ta funkcja umożliwia dołączenie do określonej sesji za pomocą uchwytu sesji. Jest to podobne do dołączania do zaproszenia do sesji, ale przydaje się, gdy masz własną stronę server, która zajmuje się dobieraniem graczy, a nie polega na dobieraniu graczy przez xbox live.
+  Funkcja wymaga podania identyfikatora użytkownika - który można uzyskać dla danego game pada, wywołując funkcję xboxlive_user_for_pad() a także szablonu Secure Device Association, który należy wcześniej utworzyć w pulpicie nawigacyjnym XDP.
+  Aby uzyskać uchwyt sesji, należy najpierw pobrać "id korelacji" z sesji, do której chcemy się przyłączyć. Podczas tworzenia oryginalnej sesji zdarzenie Asynchronous Social będzie miało adres "session_created" i będzie zawierało wpis "correlationid" w zwróconej mapie (zob. xboxlive_matchmaking_create()). Musisz przekazać ten identyfikator z powrotem do server, aby mógł on zostać przekazany podczas otrzymywania prośby o dopasowanie. Gdy dołączająca gra otrzyma "identyfikator korelacji" z powrotem od server, może wywołać tę funkcję, przekazując identyfikator korelacji jako argument uchwytu sesji.
+  Funkcja zwróci -1, jeśli wystąpił błąd (w tym przypadku powinien pojawić się komunikat konsoli opisujący problem), lub wartość Request ID w przeciwnym przypadku. Wartość Request ID można następnie wykorzystać do określenia właściwego zdarzenia asynchronicznego Social dla tej funkcji. Zdarzenie to zostanie wywołane po utworzeniu sesji i będzie zawierało DS Map w zmiennej async_load zawierającą następujące pary klucz/wartość:
+  
+    "requestid" - zawiera identyfikator wniosku zwrócony przez funkcję wywołującą
+    "status" - zawiera adres string "session_player_joined", informujący o rodzaju zdarzenia, które zostało wywołane.
+    "sessionid" - zawiera identyfikator sesji lub -1 w przypadku niepowodzenia.
+    "sessionOwner<index>" - zawiera identyfikator gospodarza sesji, jeśli sesja została znaleziona (<index> jest wartością z zakresu od 0 do "num_results" - 1)
+    "id" - zawiera stałą MATCHMAKING_SESSION
+    "error" - będzie wynosić 0, jeśli wszystko jest w porządku, lub -1, jeśli coś się nie powiodło
+  
+  Gdy nowy gracz dołączy do sesji, na mapie DS pojawią się takie pary klucz-wartość:
+  
+    "id" - zawiera stałą MATCHMAKING_SESSION
+    "sessionid" - zawiera identyfikator sesji
+    "status" - zawiera string "session_player_joined"
+    "requestid" - wartość ID, która została zwrócona przez funkcję, która utworzyła żądanie
+  
+   
+  Składnia:
+  xboxlive_matchmaking_join_session(user_id, session_handle, sdatemplate);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        user_id
+        The User ID pointer to use
+     
+      
+        session_handle
+        The "correlation id" to use for the session ID (see description, above)
+     
+      
+        sdatemplate
+        The name of the secure device association template to use
+     
+    
+  
+   
+  Zwroty:
+  Async Request ID
+   
+  Przykład:
+  Request_ID = xboxlive_matchmaking_join_session(global.UserID, global.SessionID, "PeerServerTraffic");
+  Powyższe polecenie wyśle żądanie dołączenia do podanej sesji wieloosobowej, przechowując wartość identyfikatora żądania w zmiennej, aby można ją było sprawdzić w zdarzeniu asynchronicznym.
+   
+   
+   
+  
+    
+      
+        Powrót: Dopasowywanie
+        Następny: xboxlive_matchmaking_session_leave
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

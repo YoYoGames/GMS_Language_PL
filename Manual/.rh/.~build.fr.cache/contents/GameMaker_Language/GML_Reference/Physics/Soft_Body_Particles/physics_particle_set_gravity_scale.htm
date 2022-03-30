@@ -1,0 +1,47 @@
+
+  
+  physics_particle_set_gravity_scale
+  Za pomocą tej funkcji można ustawić współczynnik skali grawitacji dla cząstek w symulacji fizyki. Funkcja ta ma na celu zapobieganie niestabilności symulacji fizyki, zwłaszcza w przypadku użycia bardzo małych cząstek, które mogą zachowywać się nieprzewidywalnie
+    (tzn. naruszać zasadę zachowania pędu) w scenariuszach takich jak eksplozje. Spowolnienie tych cząstek przez zmniejszenie skali grawitacji może ustabilizować ich zachowanie. Ta funkcja ma zasięg globalny, ponieważ zmieni skalę grawitacji nie tylko
+    dla nowych cząstek utworzonych po zmianie, ale także dla tych, które już są obecne w symulacji.
+  UWAGA: Dostosowanie liczby iteracji aktualizacji na krok (za pomocą funkcji physics_world_update_iterations()    może również wpływać na wpływ grawitacji na cząstki. Większe rozmiary iteracji zapewniają większą odporność na grawitację.
+   
+  Składnia:
+  physics_particle_set_gravity_scale(scale)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        scale
+        The scaling factor to be applied to gravity for all particles.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  physics_particle_set_radius(15); physics_particle_set_density(0.5);
+     physics_particle_set_damping(1);
+     physics_particle_set_gravity_scale(1);
+  
+  Powyższy kod ustawi właściwości podstawowe dla wszystkich cząstek w symulacji.
+   
+   
+   
+  
+    
+      
+        Powrót: Miękkie cząstki ciała
+        Następny: physics_particle_get_max_count
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

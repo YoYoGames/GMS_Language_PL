@@ -1,0 +1,52 @@
+
+  
+  tileset_get_uvs
+  Funkcja zwraca tablicę zawierającą współrzędne UV i inne dane dla strony texture podanego adresu tile set na stronie texture. Funkcja zwraca tablicę zawierającą 8 następujących elementów:
+  
+    [0] = lewy
+    [1] = góra
+    [2] = prawo
+    [3] = dół
+    [4] = ilość pikseli, którą kompilator asset odciął od lewej strony tile set 
+    [5] = ilość pikseli, którą kompilator asset odciął od górnej strony tile set 
+    [6] = znormalizowany procent danych pikseli z oryginalnej szerokości tile set, które zostały zapisane na stronie texture 
+    [7] = znormalizowany procent danych pikseli z oryginalnej wysokości tile set, które zostały zapisane na stronie texture 
+  
+  Tę tablicę można następnie wykorzystać w innych funkcjach rysowania, zwłaszcza podczas pracy w trybie 3D lub przy użyciu funkcji prymitywów 2D, a także podczas pracy z funkcjami cieniowania.
+   
+  Składnia:
+  tileset_get_uvs(tileset);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        tileset
+        The index of the tile set to use.
+     
+    
+  
+   
+  Zwraca
+   (1D, 8 elements)
+   
+  Przykład:
+  var tex = tileset_get_uvs(tl_Grass); tex_left = tex[0]; tex_top = tex[1]; tex_right = tex[2]; tex_bottom = tex[3];
+  Powyższy kod zapisze współrzędne UV dla podanej strony tile set w lokalnej tablicy, a następnie przypisze te wartości do zmiennych instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Zestawy płytek
+        Następny: tileset_get_name
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

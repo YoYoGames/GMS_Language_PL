@@ -15,83 +15,82 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Przestarzałe funkcje</h1>
-  <p>W tym miejscu znajduje się lista wszystkich funkcji, które stały się nieaktualne podczas porównywania <span class="notranslate">GameMaker Studio 2</span> ze starszymi wersjami produktu. Wymienione tutaj funkcje zostaną przekształcone w <a href="Compatibility_Scripts.htm">skrypty zgodności</a> podczas importowania strony <span class="inline">*.yyz</span> utworzonej w starszej wersji, a pracę nad projektem można kontynuować tak jak dotychczas. Zalecamy jednak zrewidowanie wszystkich skryptów zgodności <span class="notranslate">scripts</span> utworzonych w projekcie i zadbanie o to, aby w przyszłych projektach korzystano z nowych funkcji/metod pracy, a nie uzależniano się od tych <span class="notranslate">scripts</span>.</p>
+  <p>Tutaj znajdziesz listę wszystkich funkcji, które stały się nieaktualne podczas porównywania <span data-keyref="GameMaker Name">GameMakera</span> ze starszymi wersjami produktu. Wymienione tutaj funkcje zostaną zamienione na <a href="Compatibility_Scripts.htm">skrypty zgodności</a>, gdy zaimportujesz projekt <span class="inline">*.yyz</span> utworzony w starszej wersji, a Ty będziesz mógł kontynuować pracę nad projektem tak, jak dotychczas. Zalecamy jednak, byś zrewidował wszystkie utworzone w projekcie skrypty zgodności <span class="notranslate">scripts</span> i zadbał o to, by w przyszłych projektach korzystać z nowych funkcji/metod pracy, a nie polegać na tych <span class="notranslate">scripts</span>.</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Tła</a></p>
   <div class="droptext" data-targetname="drop-down">
-    <p class="dropspot">W starszej wersji <span class="notranslate">GameMaker</span> istniał osobny zasób <strong>tła </strong>, do którego można było dodawać obrazy używane jako tło. W <span class="notranslate">GameMaker Studio 2</span> wszystkie obrazy są traktowane jako <span class="notranslate">sprites</span>, a sposób ich wykorzystania zależy od warstwy, do której są przypisane w .
-     <span class="notranslate">room</span> Oznacza to, że nie ma już zasobu &quot;tła&quot;, a także, że poniższe funkcje są przestarzałe:</p>
-    <table class=" cke_show_border">
+    <p class="dropspot">W starszej wersji <span class="notranslate">GameMaker</span> miałeś osobny zasób <strong>tła </strong>, gdzie mogłeś dodawać obrazy, które miały być używane jako tła. W <span data-keyref="GameMaker Name">GameMakerze</span> wszystkie obrazy są traktowane jako <span class="notranslate">sprites</span>, a sposób ich wykorzystania zależy od warstwy, do której są przypisane w <span class="notranslate">room</span>. Oznacza to, że nie ma już zasobu &quot;tła&quot;, a także, że poniższe funkcje są przestarzałe:</p>
+    <table>
       <tbody>
         <tr>
           <td>rysowanie tła</td>
           <td style="">draw_background_ext</td>
-          <td style="">rysowanie_zakresu_tła<br> rozciągnięte
-          </td>
-          <td>rysowanie_zakresu_tła<br> rozciągnięty_ekstra
-          </td>
+          <td style="">rysowanie tła<br>
+            rozciągnięte</td>
+          <td>rysowanie tła<br>
+            rozciągnięty_ekstra</td>
         </tr>
         <tr>
-          <td>rysowanie tła<br> część
-          </td>
-          <td style="">rysowanie_tła_<br> część_ekstra
-          </td>
-          <td style="">rysowanie_tła_<br> ogólne
-          </td>
-          <td>rysowanie_tła_<br> kafelki
-          </td>
+          <td>rysowanie tła<br>
+            część</td>
+          <td style="">rysowanie tła<br>
+            część_ekstra</td>
+          <td style="">rysowanie tła<br>
+            ogólne</td>
+          <td>rysowanie tła<br>
+            kafelki</td>
         </tr>
         <tr>
-          <td>rysowanie_tła_<br> kafelkowy_ekstra
-          </td>
+          <td>rysowanie tła<br>
+            kafelkowy_ekstra</td>
           <td style="">tło_nazwa</td>
           <td style="">tło_istnieje</td>
-          <td>tło_get_<br> name
-          </td>
+          <td>background_get_<br>
+            name</td>
         </tr>
         <tr>
           <td>rysowanie tła</td>
           <td style="">draw_background_ext</td>
-          <td style="">rysowanie_zakresu_tła<br> rozciągnięte
-          </td>
-          <td>rysowanie_zakresu_tła<br> rozciągnięty_ekstra
-          </td>
+          <td style="">rysowanie tła<br>
+            rozciągnięte</td>
+          <td>rysowanie tła<br>
+            rozciągnięty_ekstra</td>
         </tr>
         <tr>
-          <td>background_get_<br> width
-          </td>
-          <td style="">background_get_<br> height
-          </td>
-          <td style="">background_get_<br> przezroczysty
-          </td>
-          <td>tło_get_<br> smooth
-          </td>
+          <td>background_get_<br>
+            width</td>
+          <td style="">background_get_<br>
+            height</td>
+          <td style="">background_get_<br>
+            przezroczysty</td>
+          <td>background_get_<br>
+            smooth</td>
         </tr>
         <tr>
-          <td>tło_get_<br> załaduj wstępnie
-          </td>
+          <td>background_get_<br>
+            załaduj wstępnie</td>
           <td style="">background_get_uvs</td>
-          <td style="">tło_get_<br> tekstura
-          </td>
-          <td>tło_set_alpha_<br> od_tła
-          </td>
+          <td style="">background_get_<br>
+            tekstura</td>
+          <td>background_set_alpha_<br>
+            od_tła</td>
         </tr>
         <tr>
-          <td>tło_twórz_<br> z_powierzchni
-          </td>
-          <td style="">tło_twórz_<br> kolor
-          </td>
-          <td style="">tło_twórz_<br> kolor
-          </td>
-          <td>tło_twórz_<br> gradient
-          </td>
+          <td>tło_twórz_<br>
+            z_powierzchni</td>
+          <td style="">tło_twórz_<br>
+            kolor</td>
+          <td style="">tło_twórz_<br>
+            kolor</td>
+          <td>tło_twórz_<br>
+            gradient</td>
         </tr>
         <tr>
           <td>tło_dodaj</td>
           <td style="">tło_zastąpić</td>
-          <td style="">tło_dodaj_<br> alfa
-          </td>
-          <td>tło_zastąpione_<br> alfa
-          </td>
+          <td style="">tło_dodaj_<br>
+            alfa</td>
+          <td>tło_zastępcze_<br>
+            alfa</td>
         </tr>
         <tr>
           <td>tło_usuń</td>
@@ -101,80 +100,76 @@
         </tr>
         <tr>
           <td>tło_prefetch</td>
-          <td style="">tło_<br> przedszukanie_wielu
-          </td>
+          <td style="">tło_<br>
+            przedszukanie_wielu</td>
           <td style="">tło_flush</td>
-          <td>tło_flush_<br> multi
-          </td>
+          <td>tło_flush_<br>
+            multi</td>
         </tr>
         <tr>
           <td>room_set_background</td>
-          <td style="">pomieszczenie_zestaw_<br> tło_kolor
-          </td>
+          <td style="">pomieszczenie_zestaw_<br>
+            tło_kolor</td>
           <td style=""> </td>
         </tr>
       </tbody>
     </table>
-    <p class="dropspot">Starsze wersje <span class="notranslate">GameMaker</span> zawierały także wiele różnych zmiennych tła, które korzystały z globalnej tablicy tła. Nie są one już wymagane w GameMaker Studio 2:</p>
-    <table class=" cke_show_border">
+    <p class="dropspot">Starsze wersje <span class="notranslate">GameMaker</span> również posiadały wiele różnych zmiennych tła, które korzystały z globalnej tablicy tła. Nie są one już potrzebne w programie <span data-keyref="GameMaker Name">GameMaker</span>:</p>
+    <table>
       <tbody>
         <tr>
         </tr>
         <tr>
-          <td>tło_<br> index[0..7]
-          </td>
-          <td>tło_<br> visible[0..7]
-          </td>
-          <td>background_<br> alpha[0..7]
-          </td>
-          <td>background_<br> blend[0..7]
-          </td>
+          <td>tło_<br>
+            index[0..7]</td>
+          <td>tło_<br>
+            visible[0..7]</td>
+          <td>tło_<br>
+            alpha[0..7]</td>
+          <td>tło_<br>
+            blend[0..7]</td>
         </tr>
         <tr>
           <td>background_x[0..7]</td>
           <td>background_y[0..7]</td>
-          <td>tło_<br> kolor
-          </td>
-          <td>tło_<br> showcolour
-          </td>
+          <td>tło_<br>
+            kolor</td>
+          <td>tło_<br>
+            showcolour</td>
         </tr>
         <tr>
-          <td>tło_<br> foreground[0..7]
-          </td>
-          <td>tło_<br> hspeed[0..7]
-          </td>
-          <td>tło_<br> vspeed[0..7]
-          </td>
-          <td>background_<br> htiled[0..7]
-          </td>
+          <td>tło_<br>
+            foreground[0..7]</td>
+          <td>tło_<br>
+            hspeed[0..7]</td>
+          <td>tło_<br>
+            vspeed[0..7]</td>
+          <td>tło_<br>
+            htiled[0..7]</td>
         </tr>
         <tr>
-          <td>background_<br> vtiled[0..7]
-          </td>
-          <td>background_<br> width[0..7]
-          </td>
-          <td>background_<br> height[0..7]
-          </td>
-          <td>background_<br> xscale[0..7]
-          </td>
+          <td>tło_<br>
+            vtiled[0..7]</td>
+          <td>tło_<br>
+            width[0..7]</td>
+          <td>tło_<br>
+            height[0..7]</td>
+          <td>tło_<br>
+            xscale[0..7]</td>
         </tr>
         <tr>
-          <td>background_<br> yscale[0..7]
-          </td>
+          <td>tło_<br>
+            yscale[0..7]</td>
         </tr>
       </tbody>
     </table>
-    <p class="dropspot">Więcej informacji na temat <b>warstw tła</b> można znaleźć w części poświęconej <a href="../The_Asset_Editors/Room_Properties/Layer_Properties.htm">edytorowi pokoi</a>, a więcej informacji na temat funkcji sterujących warstwami tła za pomocą kodu można znaleźć w części
-     <a href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Background_Layers/Background_Layers.htm">Warstwy</a> tła.
-    </p>
+    <p class="dropspot">Więcej informacji na temat <b>warstw tła</b> można znaleźć w rozdziale <a href="../The_Asset_Editors/Room_Properties/Layer_Properties.htm">Edytor pomieszczeń</a>, a więcej informacji na temat funkcji sterujących warstwami tła za pomocą kodu można znaleźć w rozdziale <a href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Background_Layers/Background_Layers.htm">Warstwy</a> tła.</p>
     <p> </p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Płytki</a></p>
   <div class="droptext" data-targetname="drop-down1">
-    <p class="dropspot">Podobnie jak w przypadku tła (wyjaśnionego powyżej), zasób <strong>kafelków </strong>ze starszego GameMakera już nie istnieje, a zamiast tego w <span class="notranslate">GameMaker Studio 2</span> mamy <strong>zestawy kafelków</strong>. W starszych wersjach <span class="notranslate">GameMaker</span>, <span class="notranslate">tiles</span> używano zasobu tła i umieszczano je na różnych głębokościach w edytorze lub za pomocą kodu.
-      na różnych głębokościach w edytorze <span class="notranslate">room</span> lub za pomocą kodu, jednak stosowana metoda nie była zbyt elastyczna i nie była też zbyt wydajna. Aby rozwiązać te problemy, w <span class="notranslate">GameMaker Studio 2</span> <span class="notranslate">tilesets</span> są one teraz tworzone z zasobu <span class="notranslate">sprite</span> i mogą mieć
-      różne właściwości (takie jak animacja czy automatyczne kafelkowanie). Są one następnie umieszczane na warstwie mapy kafelkowej w edytorze <span class="notranslate">room</span> lub za pomocą kodu. W związku z tymi zmianami następujące funkcje są obecnie nieaktualne:</p>
-    <table class=" cke_show_border">
+    <p class="dropspot">Podobnie jak w przypadku tła (wyjaśnionego powyżej), zasób <strong>kafelków </strong>ze starszego GameMakera już nie istnieje, a zamiast tego w <span data-keyref="GameMaker Name">GameMakerze</span> mamy <strong>zestawy kafelków</strong>. W starszych wersjach <span class="notranslate">GameMaker</span>, <span class="notranslate">tiles</span> korzystały z zasobów tła i były umieszczane na różnych głębokościach w edytorze <span class="notranslate">room</span> lub za pomocą kodu, jednak stosowana metoda nie była zbyt elastyczna i nie była też zbyt wydajna. Aby rozwiązać te problemy, w <span data-keyref="GameMaker Name">GameMakerze</span> <span class="notranslate">tilesets</span> są teraz tworzone z zasobu <span class="notranslate">sprite</span> i mogą mieć różne właściwości (takie jak animacje czy automatyczne kafelkowanie). Są one następnie umieszczane na warstwie mapy z kafelkami w edytorze <span class="notranslate">room</span> lub za pomocą kodu. W związku z tymi zmianami poniższe funkcje są już nieaktualne:</p>
+    <table>
       <tbody>
         <tr>
           <td>tile_get_x</td>
@@ -235,16 +230,13 @@
         </tr>
       </tbody>
     </table>
-    <p class="dropspot">Więcej informacji o stronie <span class="notranslate">Tile Sets</span> można znaleźć w części podręcznika poświęconej <a href="../The_Asset_Editors/Tile_Sets.htm">edytorowi zestawów kafelków</a>, a o tym, jak ich używać w edytorze <span class="notranslate">room</span> - w części poświęconej warstwom <a href="../The_Asset_Editors/Room_Properties/Layer_Properties.htm">kafelków</a>.
-      Więcej informacji na temat funkcji sterujących warstwami tła za pomocą kodu można znaleźć w sekcji <a href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">Warstwy mapy kafelków (Tilemap Layers</a>). Warto też zauważyć, że język GameMaker
-      Language posiada pewne specjalne funkcje związane z używaniem starszych wersji <span class="notranslate">tiles</span> w importowanych projektach, a informacje na ich temat można znaleźć <a href="Compatibility_Functions.htm">tutaj</a>.</p>
+    <p class="dropspot">Więcej informacji o stronie <span class="notranslate">Tile Sets</span> można znaleźć w części podręcznika poświęconej <a href="../The_Asset_Editors/Tile_Sets.htm">edytorowi zestawów kafelków</a>, a o tym, jak ich używać w edytorze <span class="notranslate">room</span> - w części poświęconej warstwom <a href="../The_Asset_Editors/Room_Properties/Layer_Properties.htm">kafelków</a>. Więcej informacji na temat funkcji sterujących warstwami tła za pomocą kodu można znaleźć w części <a href="../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/Tile_Map_Layers.htm">Warstwy mapy</a> kafelkowej. Warto również zauważyć, że edytor <span class="notranslate">GameMaker Language</span> ma pewne specyficzne funkcje związane z używaniem starszych wersji <span class="notranslate">tiles</span> w importowanych projektach, a informacje na ich temat można znaleźć <a href="Compatibility_Functions.htm">tutaj</a>.</p>
     <p class="dropspot"> </p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Obiekty</a></p>
   <div class="droptext" data-targetname="drop-down2">
-    <p class="dropspot">W związku z wprowadzeniem warstw w edytorze <span class="notranslate">objects</span> zmienił się nieco sposób traktowania strony <span class="notranslate">GameMaker Studio 2</span> w <span class="notranslate">room</span>. Nadal istnieje zmienna &quot;głębokość&quot;, ale jest ona teraz używana tylko w celu zapewnienia kompatybilności i nie można już
-      nie można już uzyskać ani ustawić głębokości dla <span class="notranslate">objects</span>, a jedynie instancje. W związku z tym następujące funkcje stały się przestarzałe:</p>
-    <table class=" cke_show_border">
+    <p class="dropspot">Sposób traktowania stron <span class="notranslate">objects</span> w <span data-keyref="GameMaker Name">GameMakerze</span> uległ niewielkim zmianom w związku z wprowadzeniem warstw w edytorze <span class="notranslate">room</span>. Nadal istnieje zmienna &quot;depth&quot;, ale jest ona teraz używana tylko do celów kompatybilności i nie można już uzyskać ani ustawić głębokości dla <span class="notranslate">objects</span>, tylko dla instancji. W związku z tym następujące funkcje stały się przestarzałe:</p>
+    <table>
       <tbody>
         <tr>
           <td>obiekt_get_depth</td>
@@ -259,8 +251,8 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Brzmi:</a></p>
   <div class="droptext" data-targetname="drop-down3">
-    <p class="dropspot">Starszy GameMaker miał dwa różne interfejsy API dźwięku - jeden korzystał z przestarzałych funkcji <span class="inline">sound_</span> (które tak naprawdę były ważne tylko dla platformy docelowej HTML5), a drugi z funkcji <span class="inline">audio_</span>. Interfejs API dźwięku został ulepszony i rozszerzony w witrynie <span class="notranslate">GameMaker Studio 2</span>, dzięki czemu wymienione poniżej funkcje stały się nieaktualne:</p>
-    <table class=" cke_show_border">
+    <p class="dropspot">Starszy GameMaker miał dwa różne interfejsy API dźwięku, jeden, który korzystał z przestarzałych funkcji <span class="inline">sound_</span> (które tak naprawdę były ważne tylko dla platformy docelowej HTML5), i drugi, który korzystał z funkcji <span class="inline">audio_</span>. Interfejs API dźwięku został ulepszony i rozszerzony w programie <span data-keyref="GameMaker Name">GameMaker</span>, przez co przestarzałe funkcje wymienione poniżej stały się nieaktualne:</p>
+    <table>
       <tbody>
         <tr>
           <td>nazwa_dźwięku</td>
@@ -308,9 +300,8 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">D3D</a></p>
   <div class="droptext" data-targetname="drop-down4">
-    <p class="dropspot">Podczas używania modeli 3D lub prymitywów w starszych wersjach <span class="notranslate">GameMaker</span> trzeba było korzystać z funkcji <span class="inline">d3d_</span>. Używały one przestarzałego API do rysowania i w wielu przypadkach nie były ściśle związane z Direct 3D API, a nawet z samym używaniem 3D.
-      Wraz z pojawieniem się <span class="notranslate">vertex</span> <span class="notranslate">buffers</span>, matryc i kamer w <span class="notranslate">GameMaker Studio 2</span>, następujące funkcje stały się przestarzałe:</p>
-    <table class=" cke_show_border">
+    <p class="dropspot">Podczas używania modeli 3D lub prymitywów w starszej wersji <span class="notranslate">GameMaker</span> trzeba było korzystać z funkcji <span class="inline">d3d_</span>. Używały one przestarzałego API do rysowania i w wielu przypadkach nie były ściśle związane z Direct 3D API, a nawet z samym używaniem 3D. Wraz z pojawieniem się <span class="notranslate">vertex</span> <span class="notranslate">buffers</span>, macierzy i kamer w programie <span data-keyref="GameMaker Name">GameMaker</span>, poniższe funkcje stały się przestarzałe:</p>
+    <table>
       <tbody>
         <tr>
         </tr>
@@ -333,70 +324,70 @@
           <td>d3d_set_projection_ext</td>
         </tr>
         <tr>
-          <td>d3d_set_projekcja_<br> ortho
-          </td>
-          <td>d3d_set_projekcja_<br> perspektywa
-          </td>
-          <td>d3d_transform_set_<br> tożsamość
-          </td>
-          <td>d3d_transform_<br> set_translation
-          </td>
+          <td>d3d_set_projekcja_<br>
+            ortho</td>
+          <td>d3d_set_projekcja_<br>
+            perspektywa</td>
+          <td>d3d_transform_set_<br>
+            tożsamość</td>
+          <td>d3d_transform_<br>
+            set_translation</td>
         </tr>
         <tr>
-          <td>d3d_transform_set_<br> skalowanie
-          </td>
-          <td>d3d_transform_<br> set_rotation_x
-          </td>
-          <td>d3d_transform_set_<br> rotacja_y
-          </td>
-          <td>d3d_transform_<br> set_rotation_z
-          </td>
+          <td>d3d_transform_set_<br>
+            skalowanie</td>
+          <td>d3d_transform_<br>
+            set_rotation_x</td>
+          <td>d3d_transform_set_<br>
+            rotacja_y</td>
+          <td>d3d_transform_<br>
+            set_rotation_z</td>
         </tr>
         <tr>
-          <td>d3d_transform_set_<br> oś_obrotu
-          </td>
-          <td>d3d_transform_<br> dodaj_translację
-          </td>
-          <td>d3d_transform_add_<br> skalowanie
-          </td>
-          <td>d3d_transform_<br> add_rotation_x
-          </td>
+          <td>d3d_transform_set_<br>
+            oś_obrotu</td>
+          <td>d3d_transform_<br>
+            dodaj_translację</td>
+          <td>d3d_transform_add_<br>
+            skalowanie</td>
+          <td>d3d_transform_<br>
+            add_rotation_x</td>
         </tr>
         <tr>
-          <td>d3d_transform_add_<br> obrót_y
-          </td>
-          <td>d3d_transform_<br> add_rotation_z
-          </td>
-          <td>d3d_transform_add_<br> oś_obrotu
-          </td>
-          <td>d3d_transform_<br> usuwanie stosu
-          </td>
+          <td>d3d_transform_add_<br>
+            obrót_y</td>
+          <td>d3d_transform_<br>
+            add_rotation_z</td>
+          <td>d3d_transform_add_<br>
+            oś_obrotu</td>
+          <td>d3d_transform_<br>
+            usuwanie stosu</td>
         </tr>
         <tr>
-          <td>d3d_transform_stack_<br> pusta
-          </td>
-          <td>d3d_transform_<br> stos_push
-          </td>
-          <td>d3d_transform_stack_<br> pop
-          </td>
-          <td>d3d_transform_<br> stos_górny
-          </td>
+          <td>d3d_transform_stack_<br>
+            pusta</td>
+          <td>d3d_transform_<br>
+            stos_push</td>
+          <td>d3d_transform_stack_<br>
+            pop</td>
+          <td>d3d_transform_<br>
+            stos_górny</td>
         </tr>
         <tr>
-          <td>d3d_transform_stack_<br> odrzuć
-          </td>
+          <td>d3d_transform_stack_<br>
+            odrzuć</td>
           <td>d3d_transform_vertex</td>
-          <td>d3d_light_define_<br> otoczenie
-          </td>
-          <td>d3d_light_define_<br> kierunek
-          </td>
+          <td>d3d_light_define_<br>
+            otoczenie</td>
+          <td>d3d_light_define_<br>
+            kierunek</td>
         </tr>
         <tr>
           <td>d3d_light_define_point</td>
           <td>d3d_light_enable</td>
           <td>d3d_primitive_begin</td>
-          <td>d3d_primitive_<br> begin_texture
-          </td>
+          <td>d3d_primitive_<br>
+            begin_texture</td>
         </tr>
         <tr>
           <td>d3d_primitive_end</td>
@@ -406,25 +397,25 @@
         </tr>
         <tr>
           <td>d3d_vertex_texture</td>
-          <td>d3d_vertex_texture_<br> color
-          </td>
-          <td>d3d_vertex_texture_<br> kolor
-          </td>
+          <td>d3d_vertex_texture_<br>
+            color</td>
+          <td>d3d_vertex_texture_<br>
+            kolor</td>
           <td>d3d_vertex_normal</td>
         </tr>
         <tr>
-          <td>d3d_vertex_normal_<br> kolor
-          </td>
-          <td>d3d_vertex_normal_<br> kolor
-          </td>
-          <td>d3d_vertex_normal_<br> tekstura
-          </td>
-          <td>d3d_vertex_normal_<br> kolor_tekstury
-          </td>
+          <td>d3d_vertex_normal_<br>
+            kolor</td>
+          <td>d3d_vertex_normal_<br>
+            kolor</td>
+          <td>d3d_vertex_normal_<br>
+            tekstura</td>
+          <td>d3d_vertex_normal_<br>
+            kolor_tekstury</td>
         </tr>
         <tr>
-          <td>d3d_vertex_normal_<br> tekstura_kolor
-          </td>
+          <td>d3d_vertex_normal_<br>
+            tekstura_kolor</td>
           <td>d3d_draw_block</td>
           <td>d3d_rysuj_cylinder</td>
           <td>d3d_rysuj_stożka</td>
@@ -443,39 +434,39 @@
         </tr>
         <tr>
           <td>d3d_model_rysuj</td>
-          <td>d3d_model_prymitywny_<br> begin
-          </td>
-          <td>d3d_model_<br> primitive_end
-          </td>
+          <td>d3d_model_prymitywny_<br>
+            begin</td>
+          <td>d3d_model_<br>
+            primitive_end</td>
           <td>d3d_model_vertex</td>
         </tr>
         <tr>
-          <td>d3d_model_vertex_<br> kolor
-          </td>
-          <td>d3d_model_vertex_<br> kolor
-          </td>
-          <td>d3d_model_<br> tekstura wierzchołka
-          </td>
-          <td>d3d_model_vertex_<br> tekstura_kolor
-          </td>
+          <td>d3d_model_vertex_<br>
+            kolor</td>
+          <td>d3d_model_vertex_<br>
+            kolor</td>
+          <td>d3d_model_<br>
+            tekstura wierzchołka</td>
+          <td>d3d_model_vertex_<br>
+            tekstura_kolor</td>
         </tr>
         <tr>
-          <td>d3d_model_vertex_<br> tekstura_kolor
-          </td>
-          <td>d3d_model_vertex_<br> normal
-          </td>
-          <td>d3d_model_<br> vertex_normal_color
-          </td>
-          <td>d3d_model_vertex_<br> normalny_kolor
-          </td>
+          <td>d3d_model_vertex_<br>
+            tekstura_kolor</td>
+          <td>d3d_model_vertex_<br>
+            normal</td>
+          <td>d3d_model_<br>
+            vertex_normal_color</td>
+          <td>d3d_model_vertex_<br>
+            normalny_kolor</td>
         </tr>
         <tr>
-          <td>d3d_model_vertex_<br> normalna_tekstura
-          </td>
-          <td>d3d_model_vertex_<br> normal_texture_color
-          </td>
-          <td>d3d_model_vertex_<br> normal_texture_colour
-          </td>
+          <td>d3d_model_vertex_<br>
+            normalna_tekstura</td>
+          <td>d3d_model_vertex_<br>
+            normal_texture_color</td>
+          <td>d3d_model_vertex_<br>
+            normal_texture_colour</td>
           <td>d3d_model_block</td>
         </tr>
         <tr>
@@ -489,15 +480,13 @@
         </tr>
       </tbody>
     </table>
-    <p class="dropspot">Więcej o stronie <span class="notranslate">vertex</span> <span class="notranslate">buffers</span> można dowiedzieć się <a href="../GameMaker_Language/GML_Reference/Drawing/Primitives/Primitives_And_Vertex_Formats.htm">tutaj</a>, więcej o macierzach <a href="../GameMaker_Language/GML_Reference/Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">tutaj</a>,
-      więcej o kamerach <a href="../GameMaker_Language/GML_Reference/Cameras_And_Display/Cameras_And_Viewports/Cameras_And_View_Ports.htm">tutaj</a>, a więcej o funkcjach GPU <a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/GPU_Control.htm">tutaj</a>.</p>
+    <p class="dropspot">Więcej informacji o stronie <span class="notranslate">vertex</span> <span class="notranslate">buffers</span> można znaleźć <a href="../GameMaker_Language/GML_Reference/Drawing/Primitives/Primitives_And_Vertex_Formats.htm">tutaj</a>, więcej o macierzach <a href="../GameMaker_Language/GML_Reference/Maths_And_Numbers/Matrix_Functions/Matrix_Functions.htm">tutaj</a>, więcej o kamerach <a href="../GameMaker_Language/GML_Reference/Cameras_And_Display/Cameras_And_Viewports/Cameras_And_View_Ports.htm">tutaj</a>, a więcej o funkcjach GPU <a href="../GameMaker_Language/GML_Reference/Drawing/GPU_Control/GPU_Control.htm">tutaj</a>.</p>
     <p class="dropspot"> </p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Zmienne widoku i funkcje okna</a></p>
   <div class="droptext" data-targetname="drop-down5">
-    <p class="dropspot">Wraz z pojawieniem się funkcji kamery w witrynie <span class="notranslate">GameMaker Studio 2</span> oznacza to, że wiele zmiennych widoku nie jest już potrzebnych, a w szczególności te, które odnoszą się do widoku w witrynie <span class="notranslate">room</span>, a nie do view_port (który jest nadal używany). Dodano również
-      kilka funkcji kontrolujących sposób wyświetlania elementów, które były dostępne w starszych wersjach GameMaker Studio, a które również nie są już potrzebne. Te zmienne i funkcje są wymienione poniżej:</p>
-    <table class=" cke_show_border">
+    <p class="dropspot">Wraz z pojawieniem się funkcji kamery w programie <span data-keyref="GameMaker Name">GameMaker</span> wiele zmiennych widoku przestało być potrzebnych, zwłaszcza te, które odnoszą się do widoku na stronie <span class="notranslate">room</span>, a nie do view_port (który jest nadal używany). Istnieje także kilka funkcji kontrolujących sposób wyświetlania elementów, które były dostępne w starszych wersjach GameMaker Studio, a które również nie są już potrzebne. Te zmienne i funkcje są wymienione poniżej:</p>
+    <table>
       <tbody>
         <tr>
           <td>widok_obiektu</td>
@@ -512,18 +501,18 @@
           <td>view_vborder</td>
         </tr>
         <tr>
+          <td>view_hspeed</td>
           <td>widok_prędkości</td>
-          <td>widok_prędkości</td>
-          <td>display_set_windows_<br> vertex_buffer_method
-          </td>
-          <td>display_get_windows_<br> vertex_buffer_method
-          </td>
+          <td>display_set_windows_<br>
+            vertex_buffer_method</td>
+          <td>display_get_windows_<br>
+            vertex_buffer_method</td>
         </tr>
         <tr>
-          <td>display_set_windows_<br> alternate_sync
-          </td>
-          <td>wyświetl_get_windows_<br> naprzemiennie_synchronizuj
-          </td>
+          <td>display_set_windows_<br>
+            alternate_sync</td>
+          <td>display_get_windows_<br>
+            naprzemiennie_synchronizuj</td>
           <td>room_set_view</td>
         </tr>
       </tbody>
@@ -533,7 +522,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Pomoc techniczna osób trzecich</a></p>
   <div class="droptext" data-targetname="drop-down6">
-    <p class="dropspot">GameMaker Studio 2 przenosi wiele wbudowanych funkcji z poprzednich wersji do <a href="../The_Asset_Editors/Extensions.htm">rozszerzeń</a>, co oznacza, że poniższe funkcje pomocnicze innych firm są uważane za przestarzałe:</p>
+    <p class="dropspot"><span data-keyref="GameMaker Name">GameMaker</span> przenosi wiele wbudowanych funkcji z poprzednich wersji do <a href="../The_Asset_Editors/Extensions.htm">rozszerzeń</a>, co oznacza, że poniższe funkcje pomocnicze innych firm są uważane za przestarzałe:</p>
     <table>
       <tbody>
         <tr>
@@ -648,12 +637,10 @@
     <p class="dropspot">Oficjalną <a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games">stronę</a> <span class="notranslate">YoYo Games</span> <span class="notranslate">extensions</span>, na której można umieszczać reklamy i inne rzeczy, można znaleźć na <a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games">stronie Marketplace</a>.</p>
     <p class="dropspot"> </p>
   </div>
-  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Akcje Drag And Drop™</a></p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Akcje<span data-keyref="GML_Visual">wizualne GML</span> </a></p>
   <div class="droptext" data-targetname="drop-down7">
-    <p class="dropspot">Zarówno starsze wersje <span class="notranslate">GameMaker</span>, jak i <span class="notranslate">GameMaker Studio 2</span> posiadają wizualny, skryptowy interfejs <strong>Drag and Drop™</strong> (DnD™) do tworzenia gier, jednak sposób, w jaki jest on obsługiwany w <span class="notranslate">GameMaker Studio 2</span> jest zupełnie inny niż poprzednie metody. Poprzednio,
-      wszystkie akcje DnD™ miały swoje odpowiednie funkcje, które działały &quot;za kulisami&quot;, aby uzyskać pożądane wyniki, jednak nie było to zbyt przejrzyste i powodowało dodatkowe koszty ogólne związane z wywołaniami funkcji, co skutkowało gorszą wydajnością.
-      W <span class="notranslate">GameMaker Studio 2</span> zostało to zmienione i teraz wszystkie akcje są kompilowane do czystego kodu (i mogą być pokazywane jako takie, jeśli jest to wymagane), co oznacza, że następujące funkcje akcji są przestarzałe:</p>
-    <table class=" cke_show_border">
+    <p class="dropspot">Zarówno starsza wersja <span class="notranslate">GameMaker</span>, jak i <span data-keyref="GameMaker Name">GameMaker</span> posiadają wizualny interfejs skryptowy <strong>GML Visual</strong> do tworzenia gier, jednak sposób obsługi tego interfejsu w <span data-keyref="GameMaker Name">GameMakerze</span> jest zupełnie inny niż poprzednio. Wcześniej wszystkie akcje <span class="notranslate">GML</span> Visual miały przypisane odpowiednie funkcje, które działały &quot;za kulisami&quot;, aby uzyskać pożądane rezultaty. Nie było to jednak zbyt przejrzyste i powodowało dodatkowe koszty ogólne związane z wywołaniami funkcji, co skutkowało gorszą wydajnością. W <span data-keyref="GameMaker Name">GameMakerze</span> zostało to zmienione i obecnie wszystkie akcje są kompilowane do czystego kodu (i mogą być w ten sposób wyświetlane, jeśli jest to wymagane), co oznacza, że poniższe funkcje akcji są przestarzałe:</p>
+    <table>
       <tbody>
         <tr>
           <td>działanie_ścieżka_dawna</td>
@@ -668,7 +655,7 @@
           <td>action_line_colour</td>
         </tr>
         <tr>
-          <td>działanie_wysoki wynik</td>
+          <td>działanie_wynik_wysokości</td>
           <td>action_set_relative</td>
           <td>działanie_ruch</td>
           <td>akcja_ustaw_ruch</td>
@@ -759,8 +746,8 @@
         </tr>
         <tr>
           <td>akcja_zastąp_dźwięk</td>
-          <td>działanie_zastąpić_<br> tło
-          </td>
+          <td>działanie_zastępcze_<br>
+            tło</td>
           <td>action_if_empty</td>
           <td>działanie_jeśli_zderzenie</td>
         </tr>
@@ -813,7 +800,7 @@
           <td>działanie_typ_życia</td>
         </tr>
         <tr>
-          <td>typ_działania_prędkość</td>
+          <td>action_parttype_speed</td>
           <td>typ_działania_grawitacja</td>
           <td>działanie_typ_podstawowy</td>
           <td>akcja_partemit_twórz</td>
@@ -849,14 +836,14 @@
           <td>akcja_rysuj_elipsę</td>
         </tr>
         <tr>
-          <td>akcja_rysuj_<br> elipsa_gradient
-          </td>
+          <td>akcja_rysuj_<br>
+            elipsa_gradient</td>
           <td>akcja_rysuj_linię</td>
           <td>akcja_rysuj_strzałkę</td>
           <td>action_color</td>
         </tr>
         <tr>
-          <td>działanie_kolor</td>
+          <td>akcja_kolor</td>
           <td>action_font</td>
           <td>action_fullscreen</td>
           <td>action_snapshot</td>
@@ -866,7 +853,7 @@
         </tr>
       </tbody>
     </table>
-    <p class="dropspot">Więcej informacji na temat nowego DnD™ można znaleźć w części podręcznika poświęconej <a href="../Drag_And_Drop/Drag_And_Drop_Index.htm">Drag And Drop™</a>.</p>
+    <p class="dropspot">Więcej informacji o nowej stronie <span class="notranslate">GML</span> Visual można znaleźć w części podręcznika poświęconej <a href="../Drag_And_Drop/Drag_And_Drop_Index.htm">GML Visual</a>.</p>
     <p class="dropspot"> </p>
   </div>
   <p> </p>

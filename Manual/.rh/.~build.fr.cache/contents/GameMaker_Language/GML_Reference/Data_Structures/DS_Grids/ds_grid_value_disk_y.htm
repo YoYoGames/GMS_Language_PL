@@ -1,0 +1,61 @@
+
+  
+  ds_grid_value_disk_y
+  Za pomocą tej funkcji można uzyskać współrzędną y (w podanym obszarze w kształcie dysku siatki) szukanej wartości. W tym celu należy podać indeks siatki DS (zwrócony przez ds_grid_create()) wraz z pozycjami x/y dla środkowej komórki dysku. Następnie podajesz promień (jako liczbę całkowitą) wokół komórki środkowej, którą chcesz przeszukać, po czym podajesz szukaną wartość. Jeśli szukana wartość nie istnieje, funkcja zwróci -1.
+   
+  Składnia:
+  ds_grid_value_disk_y(index, xm, ym, r, val);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the grid.
+     
+      
+        xm
+        The x position of the disk on the grid.
+     
+      
+        ym
+        The y position of the disk on the grid.
+     
+      
+        r
+        The radius of the disk on the grid.
+     
+      
+        val
+        The value to find.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if ds_grid_value_disk_exists(grid, 5, 5, 5, val)
+    {
+        xpos = ds_grid_value_disk_x(grid, 5, 5, 5, val);
+        ypos = ds_grid_value_disk_y(grid, 5, 5, 5, val);
+    }
+  Powyższy kod sprawdza siatkę DS w poszukiwaniu określonej wartości w regionie dysku. Jeśli wartość zostanie znaleziona, zapisuje jej położenie x i y w dwóch zmiennych do późniejszego wykorzystania.
+   
+   
+   
+  
+    
+      
+        Powrót: Siatki DS
+        Następny: ds_grid_copy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,427 @@
+
+  
+  Budowanie z wiersza poleceń
+  UWAGA Budowanie pakietów wykonywalnych za pomocą wiersza poleceń jest dostępne tylko w przypadku określonych licencji, dlatego sprawdź na tej stronie, czy Twoja licencja to umożliwia. W przypadku wszystkich innych licencji możesz uruchamiać i debugować swój projekt z wiersza poleceń bez żadnych ograniczeń.
+  Oprócz budowania projektu za pomocą IDE, GameMaker Studio 2 umożliwia budowanie projektów za pomocą interfejsu wiersza poleceń z wykorzystaniem wielu opcji i poleceń opisanych poniżej. Można tego użyć do zbudowania projektu, przetestowania go i rozmieszczenia na wielu platformach za pomocą jednego pliku wsadowego, a także do skonfigurowania ciągłej integracji za pomocą automatyzacji server, takiej jak Jenkins.
+  Można to zrobić, uruchamiając plik wykonywalny Igor.exe znajdujący się w folderze runtime i przekazując opcje i polecenia wymienione na tej stronie. W przypadku Windows plik ten znajduje się w folderze C:\ProgramData\GameMakerStudio2\Cache\runtimes\runtime-[version]\bin, a w przypadku komputerów Mac pod adresem /Users/Shared/GameMakerStudio2/Cache/runtimes/runtime-[version]/bin.
+   
+  Budynek CI Igor
+  Konfiguracja
+  Aby skonfigurować budowanie CI na komputerze, należy wykonać następujące czynności:
+  
+    Zainstaluj GMS2 i potrzebne strony runtimes 
+    Zbuduj projekty poprzez stronę IDE dla wymaganych celów, aby upewnić się, że działają prawidłowo.
+    Testowanie budowania z wiersza poleceń (zobacz przykłady poniżej)
+    Utwórz plik wsadowy, który wykona kompilację wymaganą w zadaniu (przetestuj to z wiersza poleceń)
+    Skonfiguruj środowisko CI (zależy to od tego, jak zamierzasz budować swoje gry); sugerujemy użycie Jenkinsa
+    Skonfiguruj zadanie CI i upewnij się, że wszystkie warunki wstępne są spełnione (np. source control zsynchronizuj się z projektem).
+    Zhakuj plik wsadowy do zadania CI i testuj w środowisku Jenkinsa
+  
+  Uwagi
+  
+    Niektóre platformy mogą mieć problemy z długością pliku paths, w takim przypadku należy subst wirtualne napędy na komputerze (jak to robi IDE ) przed przekazaniem ich do poleceń
+    Niektóre platformy (zwłaszcza Android) automatycznie subst dysk podczas budowania, więc w razie błędu może być konieczne ręczne wyczyszczenie go
+  
+  Opcje
+  Poniżej przedstawiono opcje, których można użyć podczas uruchamiania pliku wykonywalnego Igora :
+  
+    
+      
+      
+    
+    
+      
+        Opcja
+        Opis
+      
+      
+        /uf=[user_folder]
+        Folder użytkownika używany do pobierania informacji o licencjach
+          
+          W witrynie Windows będzie to: %appdata%\GameMakerStudio2\<user_name>_<number>
+          Na stronie macOS, będzie to: ~/.config/GameMakerStudio2/<user_name>_<number>
+        
+      
+      
+        /rp=[runtime_root]
+        Folder główny runtime
+      
+      
+        /project=[project_YYP_file]
+        Pełny adres path do pliku .yyp projektu
+      
+      
+        /cache=[cache_dir_path]
+        Katalog cache, który ma być użyty (domyślnie \cache w bieżącym katalogu).
+      
+      
+        /temp=[temp_dir_path]
+        Katalog tymczasowy, który ma być używany (domyślnie c:\temp)
+      
+      
+        /of=[output_folder_filename]
+        Katalog wyjściowy, do którego zostanie rozpakowany build; nie podawaj tylko katalogu, ponieważ końcowy wpis jest zawsze usuwany (np.: podanie d:\game\output spowoduje umieszczenie plików gry w d:\game)
+          
+          Jeśli nie zostanie to określone, katalog o nazwie output zostanie utworzony w tym samym katalogu co plik .bat (lub w miejscu, z którego uruchamiane jest polecenie), zawierający wyodrębnione pliki kompilacji
+        
+      
+      
+        /tf=[target_file]
+        Rzeczywista nazwa pliku ZIP lub instalatora NSIS, który jest tworzony
+      
+      
+        /config=[configName]
+        Nazwa konfiguracji do użycia (domyślnie Default).
+      
+      
+        /runtime=YYC|VM
+        Typ wyjścia (YYC lub VM), wartość domyślna to VM.
+      
+      
+        /j=[NumCPUs]
+        Liczba procesorów, które będą używane podczas procesu kompilacji
+      
+      
+        /device=[device_name_from_IDE]
+        Nazwa urządzenia docelowego skonfigurowana w IDE
+      
+    
+  
+  Przykłady
+  Poniżej znajdują się przykłady poleceń budowania dla wszystkich platform:
+  Opera GX
+  
+    Czyszczenie projektu Opera GX:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- OperaGX Clean
+    Uruchomienie Opery GX:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- OperaGX Run
+  
+  Windows
+  
+    Projekt sprzątania Windows:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- Windows Clean
+    Tworzenie maszyny wirtualnej dla Windows -- Run, PackageZip oraz PackageNsis:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- Windows Run
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] -- Windows PackageZip
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] -- Windows PackageNsis
+    Budowanie YYC dla Windows - Run, PackageZip oraz PackageNsis:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /platform=YYC -- Windows Run
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC -- Windows PackageZip
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC -- Windows PackageNsis
+  
+  macOS
+  
+    Projekt sprzątania macOS:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- Mac Clean
+    Tworzenie maszyny wirtualnej na potrzeby witryny macOS na komputerze Mac:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] -- Mac Package
+    Należypamiętać, że na Macu do uruchomienia Igora konieczne jest użycie mono, dlatego przed wszystkimi poleceniami należy wpisać mono, np: mono Igor.exe [options]
+    Tworzenie maszyny wirtualnej na potrzeby witryny macOS na komputerze PC:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- Mac Package
+    Tworzenie aplikacji YYC dla macOS na komputerze Mac:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC -- Mac Package
+    Budowanie YYC na macOS przy użyciu komputera:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- Mac Package
+  
+  Linux / Ubuntu
+  
+    Projekt sprzątania Linux:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- Linux Clean
+    Tworzenie maszyny wirtualnej na potrzeby witryny Linux na komputerze PC:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- Linux Package
+    Budowanie YYC na Linux przy użyciu komputera:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- Linux Package
+  
+  HTML5
+  
+    Czyszczenie projektu HTML5:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- HTML5 Clean
+    Budowanie folderu HTML5 (pamiętaj, aby określić folder docelowy za pomocą /tf):
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_folder] -- HTML5 folder
+  
+  iOS
+  
+    Tworzenie maszyny wirtualnej na potrzeby witryny iOS na komputerze Mac:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] -- ios Package
+    Tworzenie maszyny wirtualnej na potrzeby witryny iOS na komputerze PC:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- ios Package
+    Tworzenie aplikacji YYC dla iOS na komputerze Mac:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC -- ios Package
+    Budowanie YYC na iOS przy użyciu komputera:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- ios Package
+  
+  Android
+  
+    Projekt sprzątania Android:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- Windows Clean
+    Tworzenie pliku Android APK przy użyciu maszyny wirtualnej:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] -- Android Package
+    Tworzenie Android APK przy użyciu YYC:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC -- Android Package
+  
+  tvOS
+  
+    Projekt sprzątania tvOS:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- tvos Clean
+    Tworzenie maszyny wirtualnej na potrzeby witryny tvOS na komputerze Mac:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] -- tvos Package
+    Tworzenie maszyny wirtualnej na potrzeby witryny tvOS na komputerze PC:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- tvos Package
+    Tworzenie aplikacji YYC dla tvOS na komputerze Mac:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC -- tvos Package
+    Budowanie YYC na tvOS przy użyciu komputera:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- tvos Package
+  
+  PS4
+  
+    Sprzątanie projektu PS4:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- ps4 Clean
+    Tworzenie maszyny wirtualnej dla PS4 na komputerze PC:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- ps4 Package
+    Tworzenie gry YYC dla PS4 na komputerze PC:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- ps4 Package
+  
+  PS5
+  
+    Czyszczenie projektu PS5:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- ps5 Clean
+    Tworzenie maszyny wirtualnej dla PS5 na komputerze PC:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- ps5 Package
+    Tworzenie gry YYC dla PS5 na komputerze PC:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- ps5 Package
+  
+  Xbox One
+  
+    Czyszczenie projektu Xbox One:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- XBoxOne Clean
+    Tworzenie maszyny wirtualnej dla konsoli Xbox One na komputerze PC:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- XBoxOne Package
+    Tworzenie gry YYC na konsolę Xbox One na komputerze PC:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- XBoxOne Package
+  
+  Xbox Seria X/S
+  
+    Czyszczenie projektu Xbox Series X/S:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- XBoxOneSeriesXS Clean
+    Tworzenie maszyny wirtualnej dla konsoli Xbox Series X/S:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- XBoxOneSeriesXS Package
+    Budowa YYC dla konsoli Xbox Series X/S:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- XBoxOneSeriesXS Package
+  
+  Przełącznik
+  
+    Projekt sprzątania Switch:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] -- Switch Clean
+    Tworzenie maszyny wirtualnej na potrzeby witryny Switch na komputerze PC:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /device=[device_IDE_Name] -- Switch Package
+    Tworzenie maszyny wirtualnej dla YYC na komputerze PC:
+    Igor.exe /uf=[user_folder] /rp=[runtime_path] /project=[project_YYP_file] /cache=[cache_dir_path] /temp=[temp_dir_path] /of=[output_folder_filename] /tf=[target_file] /platform=YYC /device=[device_IDE_Name] -- Switch Package
+  
+   
+  Czas działania Igora
+  Poniżej przedstawiono opcje, które można wykorzystać w runtime'ie Igor:
+  
+    
+      
+        Opcja
+        Opis
+      
+      
+        /uf=[user_folder]
+        Ustaw folder użytkownika używany do pobierania informacji o licencji, aby GMS2 wiedział, które moduły można zainstalować
+      
+      
+        /lf=[license_file]
+        Ustaw bezpośredni path na plik licencyjny, może być używany jako alternatywa dla ustawienia folderu użytkownika (/uf)
+      
+      
+        /ru=[runtime_url]
+        Ustaw adres URL, z którego mają być pobierane informacje o stronie runtime (domyślnie stabilne wydanie)
+      
+      
+        /rp=[runtime_root]
+        Ustaw lokalny folder instalacyjny runtime, aby wyświetlić listę zainstalowanych runtimes lub zainstalować nowe runtime'y
+      
+    
+  
+  Oto polecenia, których można używać z runtime'em Igor:
+  Składnia:
+  Igor.exe [command]
+  
+    
+      
+      
+    
+    
+      
+        Polecenie
+        Opis
+      
+      
+        Runtime List
+        Lista stron runtimes dostępnych w kanale (numer wersji, data/czas kompilacji)
+      
+      
+        Runtime ListInstalled [directory]
+        Wyświetla listę adresów runtimes dostępnych w bieżącym folderze (directory= pełny path do folderu)
+          
+          Można podać katalog, w którym ma być szukana, ale jeśli nie zostanie on podany, domyślnie będzie to katalog bieżący
+          
+          Sprawdza również, czy w katalogu znajduje się plik receipt.json i folder manifest (upewniając się, że jest to faktycznie folder runtime).
+        
+      
+      
+        Runtime Info [version]
+        Wypisuje informacje o najnowszym runtime w podanym kanale; wymaga także pliku licencji, aby wyświetlić informacje o modułach dostępnych dla użytkownika
+          
+          version może mieć postać string używaną do przeszukiwania tytułów kanałów (np.: "739" pokaże informacje o wszystkich buildach zawierających 739 w numerze wersji) lub all, aby pokazać informacje dla wszystkich kanałów
+          
+          Wyświetlona zostanie lista modułów wraz z nazwami plików .zip dla każdego modułu
+        
+      
+      
+        Runtime Install [version]
+        Instaluje najnowszą wersję runtime z podanego kanału, używając podanego adresu version jako filtru wyszukiwania; jeśli nie zostanie on podany, domyślnie pobierana jest najnowsza wersja. Pobiera wszystkie moduły, które użytkownik ma na swojej licencji.
+      
+      
+        Runtime Verify [folder=.]
+        Oblicza sumy kontrolne dla wszystkich zainstalowanych plików i porównuje je z sumami kontrolnymi zapisanymi w manifeście folder. Można określić folder do sprawdzenia, ale jeśli nie zostanie on podany, domyślnie będzie to bieżący katalog.
+          
+          Na stronie flag zostaną wyświetlone wszystkie pliki, których sumy kontrolne nie zgadzają się, pliki, których brakuje, oraz pliki, których nie powinno tam być.
+          
+          Należy pamiętać, że same pliki manifestów nie są weryfikowane i użytkownik może zmienić pliki manifestów, aby dopasować je do zainstalowanych.
+        
+      
+    
+  
+   
+  Testy Igora
+  Poniżej przedstawiono opcje, które można wykorzystać do testowania kompilacji za pomocą Igora:
+  
+    
+      
+        Opcja
+        Opis
+      
+      
+        /uf=[user_folder]
+        Ustaw folder użytkownika używany do pobierania informacji o licencji, aby GMS2 wiedział, które moduły można zainstalować
+      
+      
+        /lf=[license_file]
+        Ustaw bezpośredni adres path do pliku licencyjnego, może być używany jako alternatywa do ustawienia folderu użytkownika (/uf)
+      
+      
+        /df=[device_file]
+        Ustaw bezpośredni path na plik devices.json, może być używany jako alternatywa dla ustawienia folderu użytkownika (/uf).
+      
+      
+        /timeout=[number_of_seconds_to_wait]
+        Czas oczekiwania na wykonanie testu w sekundach, domyślnie 120 sekund; po upływie tego czasu test zostanie zatrzymany i oznaczony jako nieudany.
+      
+      
+        /waittime=[number_of_seconds_to_wait]
+        Liczba sekund, które należy odczekać w głównym oknie loop przed uznaniem testu za zaliczony, domyślnie 30 sekund.
+      
+      
+        /device=[device_name]
+        Służy do wyszukiwania nazwy urządzenia w pliku devices.json w folderze użytkownika.
+      
+      
+        /target=[list_of_targets]
+        Oddzielona przecinkami lista celów w formacie PLATFORM|DEVICE, np: /target="Windows|Local,HTML|Firefox"
+          
+          Jeśli podasz wszystkie, testy będą próbowały uruchomić się dla każdego urządzenia w pliku devices.json.
+        
+      
+    
+  
+  Istnieje jedno polecenie, którego można użyć do uruchomienia testów w programie Igor:
+  Igor.exe Tests RunTests [test_directory/test_filename]
+  Należy określić katalog testowy lub nazwę pliku testowego.
+  
+    Jeśli jest to katalog, Igor poszuka pliku o nazwie tests.json w tym katalogu
+      
+        Jeśli plik nie zostanie znaleziony, Igor będzie rekurencyjnie szukał plików .yyz i .yyp w katalogu
+          
+            Każdy znaleziony projekt zostanie zbudowany i uruchomiony w systemie Windows
+            Poczeka, aż biegacz dotrze do pętli głównej
+              
+                Test zakończy się pomyślnie, jeśli po upływie czasu oczekiwania runner jest nadal uruchomiony.
+                Test kończy się niepowodzeniem, jeśli projekt nie skompiluje się w określonym czasie lub zawiesi się przed upływem czasu oczekiwania.
+              
+            
+          
+        
+        Jeśli zostanie znaleziony plik tests.json, Igor uruchomi testy opisane w tym pliku (patrz przykład poniżej)
+      
+    
+    Alternatywnie można podać bezpośredni adres path do pliku tests.json zamiast katalogu
+  
+   
+  Plik Tests.json
+  Format
+  Plik tests.json musi mieć następujący format:
+  
+    Plik JSON powinien zawierać tablicę obiektów
+    Każda strona object powinna opisywać jeden test
+      
+        Test object musi zawierać następujące klucze:
+          
+            name: Nazwa używana do informowania o tym, czy test przeszedł pomyślnie czy nie.
+            path: A path do pliku lub folderu .yyp, .yyz, .gml, .js dla testu
+            command: Polecenie Igora dla testu (Run, CreatePackage, itd., jak opisano powyżej)
+          
+        
+        Test object może również zawierać te klucze:
+          
+            platform: Przekazane bezpośrednio do Igora w celu wykonania testu
+            device: Nazwa urządzenia z pliku devices.json 
+            target: Cel w formacie "PLATFORM|TARGET", np.: "Windows|Local"
+            timeout: limit czasu dla całego testu, w tym kompilacji i uruchomienia; jeśli zostanie przekroczony, test zostanie zatrzymany i oznaczony jako nieudany
+            waittime: Długość czasu, jaki należy odczekać po wejściu na stronę główną loop przed podjęciem decyzji, czy test został zaliczony
+            owneradres e-mail użytkownika, do którego zostanie wysłana wiadomość e-mail w przypadku niepowodzenia testu.
+          
+        
+      
+    
+  
+  Przykład
+  Oto przykład pliku tests.json:
+  [
+        {
+            "name" : "Game Idea Windows",
+            "path" : "C:/scratch/GameIdea.yyz",
+            "platform" : "Windows",
+            "command" : "Run",
+            "timeout" : "500",
+            "waittime" : "30"
+        },
+        {
+            "name" : "Platformer Game Windows",
+            "path" : "C:/Users/<MY USERNAME>/Documents/GameMakerStudio2/Platformer Game/PlatformerGame.yyp",
+            "target" : "Windows|Local,HTML5|selenium:firefox,PS4|Default",
+            "command" : "Run"
+        },
+        {
+            "name" : "Puzzle Game Windows",
+            "path" : "C:/Users/<MY USERNAME>/Documents/GameMakerStudio2/Puzzle Game/PuzzleGame.yyp",
+            "platform" : "HTML5",
+            "command" : "Run",
+            "device" : "selenium:chrome"
+        }
+    ]
+   
+   
+  
+    
+      
+        Powrót: Biegacz i kompilator
+        Następny: Pliki wsadowe / skrypty kompilatora
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

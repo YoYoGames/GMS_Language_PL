@@ -1,0 +1,99 @@
+
+  
+  try / catch / finally
+  Instrukcje try, catch oraz finally mogą być używane w grze do sprawdzania błędów i pozwalają na testowanie bloków kodu oraz kontrolowanie, co się stanie, jeśli wystąpią wyjątki. Użycie tych instrukcji zapobiegnie zamknięciu gry przez wyjątek i wyświetleniu standardowego komunikatu o błędzie użytkownikowi, ale oznacza to, że będziesz musiał zająć się tym, co stanie się potem w takim przypadku, na przykład zapisaniem plików dziennika i zakończeniem gry (zauważ, że jeśli zdecydujesz się nie robić nic, Twoja gra może stać się niestabilna i nie działać poprawnie).
+  Najbardziej podstawowa składnia strony try jest następująca:
+  try
+    {
+        <statement1>;
+        <statement2>;
+        ...
+    }
+  Jednak posiadanie adresu try bez niczego do faktycznej obsługi wyjątków, które może wygenerować kod, nie będzie zbyt pomocne, dlatego zwykle łączymy go z adresem catch, o następującej składni:
+  try
+    {
+        <statement1>;
+        <statement2>;
+        ...
+    }
+    catch(<variable>)
+    {
+        <statement1>;
+        <statement2>;
+        ...
+    }
+  Adres catch pozwala na uruchomienie dodatkowego kodu dostarczonego w następnym bloku, gdy wyjątek z poprzedniego bloku try został przechwycony. Jeśli jest to wyjątek runtime, to dostarczonej zmiennej można użyć do uzyskania dostępu do struktury, która będzie zawierała następujące informacje:
+  {
+    message : "",               // a string that is a short message for this exception
+    longMessage : "",           // a string that is a longer message for this exception
+    script : "",                // a string that describes where the exception came from
+    stacktrace : [ "", "" ],    // an array of strings that is the stack frame the exception was generated
+    }
+  Poniżej przedstawiono prosty przykład użycia:
+  var a = 0, b = 0, c = 0;
+    try
+    {
+        c = a div b;
+    }
+    catch( _exception)
+    {
+        show_debug_message(_exception.message);
+        show_debug_message(_exception.longMessage);
+        show_debug_message(_exception.script);
+        show_debug_message(_exception.stacktrace);
+    }
+  Może się zdarzyć, że będziesz chciał uruchomić jakiś kod niezależnie od tego, czy wyjątek został rzucony, czy nie. W tym celu możesz dodać blok finally. Składnia finally jest następująca:
+  finally
+    {
+        <statement1>;
+        <statement2>;
+        etc...
+    }
+  Warto zauważyć, że można zastosować dowolną kombinację tych elementów, np:
+  
+    try / finally
+    try / catch
+    try / catch / finally
+  
+  Należy pamiętać, że w bloku finally nie można używać break, continue, exit lub return ponieważ nie mają one żadnego znaczenia w tym kontekście i kompilator wygeneruje błąd, jeśli zostaną użyte.
+  Można także zagnieżdżać różne try / catch / finally wewnątrz siebie, na przykład:
+  var a = 0, b = 0, c = 0;
+    try
+    {
+        try
+        {
+            c = a div b;
+        }
+        finally
+        {
+            ++a;
+        }
+    }
+    catch(_exception)
+    {
+        ++a;
+        show_debug_message(_exception.message);
+        show_debug_message(_exception.longMessage);
+        show_debug_message(_exception.script);
+        show_debug_message(_exception.stacktrace);
+    }
+    finally
+    {
+        show_debug_message("a = " + string(a));
+    }
+  Warto zauważyć, że można przejąć domyślny komunikat o błędzie GML i użyć własnego kodu obsługi, wywołując funkcję exception_unhandled_handler(). Ta funkcja runtime umożliwia dostarczenie niestandardowego method który będzie wywoływany za każdym razem, gdy w grze wystąpią nieobsługiwane wyjątki.
+   
+   
+   
+  
+    
+      
+        Powrót: Cechy językowe
+        Następny: throw
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  przesuń_odbijanie_wszystkich
+  Za pomocą tej funkcji możesz nakazać instancji odbijanie się od wszystkich instancji w obrębie room, z wyjątkiem tych, które nie mają przypisanego adresu sprite lub indeksu maski. Możesz także nakazać jej, by używała precyzyjnego sprawdzania kolizji, gdy jest ono włączone, ale pamiętaj, że wymaga to, by wszystkie instancje miały włączone precyzyjne maski i znacznie spowolni grę, gdy zaangażowanych jest wiele instancji, ze względu na ilość przetwarzania, które trzeba wykonać. Zazwyczaj powinno to być wykonywane w zdarzeniu kroku instancji, ale można tego użyć selektywnie także w zdarzeniu kolizji, co ilustruje poniższy przykład kodu.
+   
+  Składnia:
+  move_bounce_all( adv );
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        adv
+        Whether to enable advanced bouncing (true) or not (false).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if other.visible
+    {
+        move_bounce_all(false);
+    }
+  Powyższy kod zostałby umieszczony w zdarzeniu kolizji z inną stroną object. Najpierw sprawdza, czy object jest widoczny, a jeśli tak, to wykonuje działanie move_bounce_all(). Zauważ, że w tym przypadku odbicie jest selektywne i będzie obliczane tylko dla tej kolizji, a nie dla każdego przypadku, w każdym kroku.
+   
+   
+   
+  
+    
+      
+        Powrót: Ruch
+        Następny: move_bounce_solid
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

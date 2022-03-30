@@ -1,0 +1,31 @@
+
+  
+  sekwencja_tworzona
+  Za pomocą tej funkcji można utworzyć nową stronę sequence object, do której następnie można dodać ścieżki. Funkcja zwraca strukturę struct, do której można uzyskać dostęp, aby skonfigurować utworzony nowy adres sequence. Zawartość tej strony struct jest szczegółowo opisana na tej stronie. Strona sequence object struct może być następnie użyta do utworzenia instancji strony sequence na warstwie room za pomocą funkcji layer_sequence_create(). Należy pamiętać, że podczas tworzenia sequence objects w ten sposób należy je ponownie usunąć, wywołując funkcję sequence_destroy() jeśli nie są już potrzebne. W przeciwnym razie może dojść do wycieku pamięci, co może spowolnić, a w końcu doprowadzić do awarii gry.
+   
+  Składnia:
+  sequence_create();
+   
+  Zwroty:
+  Sequence Object Struct
+   
+  Przykład:
+  myseq = sequence_create();
+    myseq.length = 120;
+    myseq.loopmode = seqplay_pingpong;
+  Powyższy kod tworzy nową stronę sequence object struct i ustawia jej długość odtwarzania oraz tryb loop.
+   
+   
+   
+  
+    
+      
+        Powrót: Sekwencje
+        Następny: sequence_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

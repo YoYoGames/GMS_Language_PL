@@ -1,0 +1,33 @@
+
+  
+  phy_collision_y
+  Ta tablica tylko do odczytu zwraca pozycję y wszystkich punktów wykrytych podczas kolizji między dwoma instancjami fizyki.
+  UWAGA: Ta zmienna jest dostępna tylko w zdarzeniu kolizji instancji z włączoną fizyką.
+   
+  Składnia:
+  phy_collision_y;
+   
+  Zwroty:
+   (single precision floating point value, or undefined if the instance is not physics enabled)
+   
+  Przykład:
+  for(var i = 0; i < phy_collision_points; i += 1;)
+    {
+        part_particles_create(global.Sname, phy_collision_x[i], phy_collision_y[i], global.Spark, 5);
+    }
+  Powyższy kod tworzy cząstki we wszystkich zdefiniowanych punktach kolizji między dwiema instancjami z włączoną fizyką.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne fizyki
+        Następny: phy_col_normal_x
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

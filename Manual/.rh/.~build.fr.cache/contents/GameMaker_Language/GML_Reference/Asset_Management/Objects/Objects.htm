@@ -1,0 +1,56 @@
+
+  
+  Obiekty
+  W GameMaker Studio 2 masz objects i masz instancje. Objects są w zasadzie szablonem bazowym dla instancji i jako takie nigdy nie występują bezpośrednio w room... tylko instancje object są umieszczane w room. To
+    Oznacza to, że jeśli chcesz coś zmienić we wszystkich instancjach, które zamierzasz utworzyć, możesz to zrobić, zmieniając obiekt.
+  WAŻNE! Zmiana czegokolwiek w witrynie object nie zmieni żadnych instancji obecnych w witrynie room, a jedynie te, które zostaną utworzone po wprowadzeniu zmiany.
+  Możesz także uzyskać dostęp do informacji o bazie object i użyć ich do narzucenia zachowań lub zmian w grze. Na przykład możesz sprawdzić, czy istnieje rodzic object ID, a w poniższym kodzie, jeśli zostanie znaleziona instancja z tym rodzicem, możesz sprawdzić
+    jej object_index, aby zdecydować, co należy zrobić.
+  GameMaker Studio 2 udostępnia szereg funkcji, które pozwalają uzyskać różne szczegóły na temat strony object. Należy pamiętać, że strona object nie jest instancją (bytem w grze), a jedynie zasobem, z którego tworzone są wszystkie instancje. Oznacza to, że
+    że wartości zwracane przez te funkcje mogą się różnić od rzeczywistych wartości pokazywanych przez instancje na stronie room, ponieważ raz utworzona instancja może być zmieniana za pomocą kodu i akcji DnD™.
+   
+  
+    object_index
+    object_exists
+    object_get_name
+    object_get_mask
+    object_get_parent
+    object_get_persistent
+    object_get_solid
+    object_get_sprite
+    object_get_visible
+    object_get_physics
+    object_is_ancestor
+  
+   
+  Istnieje także wiele funkcji umożliwiających ustawianie właściwości obiektu object. Należy zauważyć, że funkcje te nie mają wpływu na instancje obiektu object, które już istnieją w witrynie room, ale na wszystkie nowe instancje tego obiektu
+    utworzone w room będą miały, dlatego zaleca się, aby nigdy nie zmieniać właściwości objects, gdy instancje tego object są obecne w bieżącym room.
+   
+  
+    object_set_mask
+    object_set_persistent
+    object_set_solid
+    object_set_sprite
+    object_set_visible
+  
+   
+  Można także używać pewnych funkcji do generowania zdarzeń z kodu wewnątrz określonej instancji lub na stronie object. Funkcje te mogą być bardzo przydatne, zwłaszcza w przypadku relacji z rodzicami i dziećmi,
+    i zostały omówione w następnej sekcji:
+  
+    Generowanie zdarzeń Object 
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Zarządzanie aktywami
+        Następny: Instancje
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,51 @@
+
+  
+  sprite_set_offset
+  Ta funkcja może być używana do ustawiania początku x i y strony sprite i przyjmuje wartości względne w oparciu o to, że pozycja (0,0) jest lewym górnym rogiem strony sprite. Ilustruje to poniższy rysunek:
+  
+  UWAGA Ta funkcja wpływa na zasób sprite'a w taki sposób, że wszystkie kolejne instancje z tym adresem sprite będą miały to samo przesunięcie.
+   
+  Składnia:
+  sprite_set_offset(ind, xoff, yoff);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        ind
+        The index of the sprite to change the offset of.
+     
+      
+        xoff
+        The x position of the origin.
+     
+      
+        yoff
+        The y position of the origin.
+     
+    
+  
+   
+  Zwraca
+  
+   
+  Przykład:
+  sprite_assign(spr_Custom, spr_Base); sprite_set_offset(spr_Custom, sprite_get_xoffset(spr_Base), sprite_get_yoffset(spr_Base));
+  Powyższy kod przypisuje adres sprite zaindeksowany w "spr_Base" do adresu sprite zaindeksowanego w "spr_Custom", a następnie używa wartości przesunięcia x i y z "spr_Base" do ustawienia początku nowego sprite'a.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja sprite'ami
+        Następny: sprite_set_bbox_mode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

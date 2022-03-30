@@ -1,0 +1,64 @@
+
+  
+  physics_mass_properties
+  Za pomocą tej funkcji można ustawić niestandardowe wartości masy i bezwładności obrotowej dla instancji z włączoną fizyką. Zazwyczaj masa, środek masy i bezwładność obrotowa instancji są obliczane na podstawie kombinacji pola powierzchni powiązanych elementów i ich gęstości. Jednak w wyjątkowych sytuacjach może zajść potrzeba przesunięcia środka masy lub zmiany bezwładności i właśnie wtedy można użyć tej funkcji.
+  Masa
+  Masa jest obliczana w rzeczywistej wadze (tzn. kilogramach), więc zawsze staraj się zachować wartości realistyczne dla tego, co modelujesz. Jeśli więc witryna object ma reprezentować osobę, jej masa może wynosić np. 70 kg, a nie 2 kg.
+  Masa nie może być ujemna.
+  Środek masy
+  Środek masy jest obliczany automatycznie na podstawie kształtu uchwytu (lub uchwytów), który zdefiniowałeś. Aby uzyskać ogólne wyobrażenie o tym, gdzie może znajdować się środek masy, jeśli masz stronę sprite, która jest tego samego kształtu, co zamocowania, które chcesz utworzyć, wybierz opcję "środek początkowy", a zobaczysz w przybliżeniu, gdzie będzie znajdował się środek masy.
+  Może się jednak okazać, że nie jest to poprawne lub że szukasz specyficznego efektu w fizyce object, w którym to przypadku można również użyć tej funkcji do zmiany współrzędnych x i y środka masy. Są to wartości lokalne/względne, więc 0,0 to punkt, w którym armatura jest związana z instancją (początek instancji). Zatem ustawienie środka masy na -4,0 spowoduje przesunięcie środka masy na lewo od początku o 4 piksele.
+  Bezwładność obrotowa
+  Wartość bezwładności określa, jak bardzo instancja jest odporna na zmiany prędkości obrotowej. Większa bezwładność powoduje, że instancja jest bardziej odporna, a mniejsza bezwładność - mniej odporna.
+  Bezwładność obrotowa nie może być ujemna.
+  UWAGA Ta funkcja nie ustawia masy i bezwładności dla poszczególnych opraw, lecz dla całej instancji z włączoną fizyką, niezależnie od tego, ile opraw jest z nią powiązanych.
+  UWAGA Funkcja ta powinna być używana tylko w razie potrzeby, ponieważ symulacja fizyki została zaprojektowana tak, aby masa i bezwładność były optymalne w zależności od gęstości i rozmiaru osprzętu. Zmiana tych wartości może przynieść nieoczekiwane rezultaty.
+   
+  Składnia:
+  physics_mass_properties(mass, local_center_x, local_center_y, inertia)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        mass
+        The new mass that you want the fixture to have.
+     
+      
+        local_center_x
+        The local x coordinate of the new center of mass.
+     
+      
+        local_center_y
+        The local y coordinate of the new center of mass.
+     
+      
+        inertia
+        The rotational inertia for the fixture.
+     
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  physics_mass_properties(phy_mass, -10, -10, phy_inertia);
+  Powyższy kod spowoduje przesunięcie środka masy ciała fizycznego w lewo.
+   
+   
+   
+  
+    
+      
+        Powrót: Fizyka
+        Następny: physics_test_overlap
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

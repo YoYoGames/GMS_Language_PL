@@ -1,0 +1,53 @@
+
+  
+  window_handle
+  Za pomocą tej funkcji można uzyskać wewnętrzną wartość identyfikatora Windows (HWND, wskaźnik). Ta funkcja jest naprawdę przydatna tylko dla autorów extension, którzy potrzebują window handle do wywołania API Windows w kodzie DLL (zwrócony wskaźnik należy zamienić na string, a następnie w C++ zamienić go na HWND). Poniższa tabela przedstawia obsługiwane platformy wraz z tym, co zwracają:
+  
+    
+      
+        Platforma
+        Zwraca
+      
+      
+        Windows
+        Okno HWND
+      
+      
+        macOS
+        Klasa NSWindow
+      
+      
+        Ubuntu (Linux)
+        Uchwyt XWindow
+      
+      
+        HTML5
+        Identyfikator płótna
+      
+    
+  
+   
+  Składnia:
+  window_handle();
+   
+  Zwroty:
+  Pointer
+   
+  Przykład:
+  win_id = windows_handle();
+  Powyższy kod zapisze identyfikator okna gry w zmiennej.
+   
+   
+   
+  
+    
+      
+        Powrót: Okno gry
+        Następny: window_get_caption
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

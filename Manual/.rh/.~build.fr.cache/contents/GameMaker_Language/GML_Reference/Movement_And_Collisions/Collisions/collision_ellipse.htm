@@ -1,0 +1,79 @@
+
+  
+  kolizja_elipsa
+  Collision_ellipse używa pierwszych czterech argumentów (x1,y1,x2,y2) do określenia szerokości i wysokości elipsy w obrębie bieżącej strony room, a następnie sprawdza, czy jakakolwiek strona object określona przez argument "obj" nie wchodzi w kolizję z tym obszarem. Kolizja ta może być sprawdzona jako dokładna lub nie, a także można zdecydować się na sprawdzenie instancji wykonującej sam kod lub nie. Weźmy pod uwagę poniższy obrazek:
+  Tutaj instancja w środku używa elipsy kolizji do sprawdzania, czy piłka objects. Niebieskie kulki nie mają precyzyjnego ogranicznika i jak widać, nawet jeśli sprite nie dotyka elipsy, to i tak może dojść do kolizji (nawet jeśli ustawisz opcję "precise" w funkcji na true), ponieważ ogranicznik sprite zachodzi na eliptyczny obszar zdefiniowany przez collision_circle. Z drugiej strony, zielone kulki zostaną uznane za kolizyjne tylko wtedy, gdy rzeczywisty obszar sprite wykracza poza zdefiniowaną elipsę. Pamiętaj, że aby precyzyjne kolizje zostały uwzględnione, zarówno na stronie object sprite, jak i w funkcji kolizji musi być zaznaczona opcja precise. Należy również zauważyć, że wartością zwracaną przez funkcję może być identyfikator dowolnej z instancji uznanych za kolizyjne.
+  Zauważ, że zamiast indeksu object można podać instancję id aby sprawdzić konkretną instancję, lub słowa kluczowe instancji all, lub other (w zależności od zdarzenia i bieżącego zakresu kodu).
+   
+  Składnia:
+  collision_ellipse(x1, y1, x2, y2, obj, prec, notme);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x1
+        Real
+        The x coordinate of the left side of the ellipse to check.
+      
+      
+        y1
+        Real
+        The y coordinate of the top side of the ellipse to check.
+      
+      
+        x2
+        Real
+        The x coordinate of the right side of the ellipse to check.
+      
+      
+        y2
+        Real
+        The y coordinate of the bottom side of the ellipse to check.
+      
+      
+        obj
+         Identyfikatorzasobu lub instancjiobiektu 
+        The object to check for instance collisions.
+      
+      
+        prec
+        Boolean
+        Whether the check is based on precise collisions (trueco jest wolniejsze) lub ogólnie jego ramki (false, szybciej).
+      
+      
+        notme
+        Boolean
+        Whether the calling instance, if relevant, should be excluded (true) lub nie (false).
+      
+    
+  
+   
+  Zwroty:
+  Instance ID or noone
+   
+  Przykład:
+  if collision_ellipse(50, 50, 200, 100, obj_Player, false, true)
+    {
+        instance_create_layer(obj_Player.x, obj_Player.y, "Effects", obj_Splash);
+    }
+  Spowoduje to sprawdzenie eliptycznej strefy w granicach 50x, 50y i 200x, 100y dla object "obj_Player". Jeśli dojdzie do kolizji z tym obszarem object, to zostanie utworzona instancja "obj_Splash" na współrzędnych x/y obj_Player.
+   
+   
+   
+   
+  
+    
+      
+        Powrót: Kolizje
+        Następny: collision_ellipse_list
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

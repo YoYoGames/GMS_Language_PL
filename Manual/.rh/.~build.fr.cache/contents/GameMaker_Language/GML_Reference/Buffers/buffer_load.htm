@@ -1,0 +1,48 @@
+
+  
+  bufor_obciążenie
+  Ta funkcja służy do wczytywania strony buffer, która została wcześniej zapisana przy użyciu buffer_save() jak również wszelkich dołączonych plików lub plików załadowanych z zewnątrz. Zwraca ona identyfikator nowego bufora, który jest tworzony przez funkcję jako "grow" buffer (patrz tutaj) z wyrównaniem do 1 bajtu. Ten identyfikator powinien być przechowywany w zmiennej i używany we wszystkich dalszych wywołaniach funkcji na tej stronie buffer. Jeżeli ładowanie nie powiedzie się z jakiegokolwiek powodu, funkcja zwróci -1, a w oknie wyjściowym kompilatora pojawi się komunikat informujący, że ładowanie nie powiodło się.
+  UWAGA Ważne jest, aby usuwać z pamięci wszelkie dynamicznie tworzone zasoby, gdy nie są już potrzebne, aby zapobiec wyciekom pamięci, dlatego po zakończeniu pracy z utworzoną stroną buffer należy ją ponownie zwolnić, korzystając z polecenia buffer_delete().
+  Uwagi dotyczące poszczególnych platform
+  
+    W przypadku HTML5 wszelkie pliki buffers załadowane z lokalnego magazynu zostaną zdekodowane przy użyciu base64 (ponieważ są zapisane jako base64 strings), jednak użycie tej funkcji w przypadku plików dołączonych lub jakichkolwiek plików zewnętrznych nie spowoduje dekodowania base64, ponieważ nie oczekuje się, że będą one miały format base64.
+    W HTML5 wszystkie dołączone pliki są przechowywane jako tekst zakodowany w formacie UTF-8, co może spowodować zwiększenie rozmiaru wczytanego pliku buffer w porównaniu z plikiem oryginalnym, ponieważ wersja pliku zakodowana w UTF-8 może mieć inny rozmiar niż plik oryginalny (ze względu na zmianę formatu).
+  
+   
+   
+  Składnia:
+  buffer_load(filename);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        filename
+        The name of the file to load from.
+     
+    
+  
+   
+  Zwroty:
+  Buffer ID
+   
+  Przykład:
+  player_buffer = buffer_load("Player_Save.sav");
+  Powyższy kod wczyta do pamięci zapisaną wcześniej stronę buffer, tworząc nową stronę buffer. Indeks tej nowej strony buffer jest przechowywany w zmiennej "player_buffer".
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: bufor_load_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

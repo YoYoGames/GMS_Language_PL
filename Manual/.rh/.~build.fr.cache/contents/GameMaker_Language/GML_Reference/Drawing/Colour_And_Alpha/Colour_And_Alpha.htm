@@ -1,0 +1,171 @@
+
+  
+  Kolor i alfa
+  GameMaker Studio 2 zawiera wiele funkcji umożliwiających manipulowanie kolorem i alfą elementów rysowanych na ekranie. Za pomocą tych funkcji można rozdzielać kolory na ich części składowe, tworzyć nowe kolory i manipulować alfą rysowania, aby zmienić sposób, w jaki różne elementy w grze są rysowane razem.
+  Informacje na temat mieszania obrazów przy użyciu specjalnych trybów mieszania i innych funkcji specyficznych dla układu GPU można znaleźć w sekcji Sterowanie układem GPU.
+  Istnieje również pewna liczba stałych, które mogą być używane jako kolory podstawowe w tych (i innych) funkcjach:
+  
+    
+      
+      
+      
+    
+    
+      
+        Kolor
+      
+      
+        Stała
+        Kolor
+        Wartość dziesiętna
+      
+      
+        c_aqua
+         
+        16776960
+      
+      
+        c_black
+         
+        0
+      
+      
+        c_blue
+         
+        16711680
+      
+      
+        c_dkgray
+         
+        4210752
+      
+      
+        c_fuchsia
+         
+        16711935
+      
+      
+        c_gray
+         
+        8421504
+      
+      
+        c_green
+         
+        32768
+      
+      
+        c_lime
+         
+        65280
+      
+      
+        c_ltgray
+         
+        12632256
+      
+      
+        c_maroon
+         
+        128
+      
+      
+        c_navy
+         
+        8388608
+      
+      
+        c_olive
+         
+        32896
+      
+      
+        c_orange
+         
+        4235519
+      
+      
+        c_purple
+         
+        8388736
+      
+      
+        c_red
+         
+        255
+      
+      
+        c_silver
+         
+        12632256
+      
+      
+        c_teal
+         
+        8421376
+      
+      
+        c_white
+         
+        16777215
+      
+      
+        c_yellow
+         
+        65535
+      
+    
+  
+  Kolory sześciokątne
+  Kolory można tworzyć z wartości szesnastkowych, używając uprzednio symbolu $. Wartości te można również stosować w różnych funkcjach kolorów, aby uzyskać osobne wartości składowe. Wartość szesnastkowa koloru jest podzielona na trzy części, w formacie: Blue/Green/Red(lub $BBGGRR), więc na przykład, aby określić kolor jasnoniebieski/aqua, można użyć:
+  col = $FFCC11;
+  Tutaj FF to składowa niebieska, CC to składowa zielona, a 11 to składowa czerwona.
+  
+  Można również użyć "kolorów CSS", które zaczynają się od znaku haszu/ funta(#). Wykorzystuje to format Red/Green/Blue(lub #RRGGBB), który jest szerzej stosowany i kompatybilny z różnymi innymi aplikacjami.
+  col = #11CCFF;
+  Jest to ten sam kolor, który został przedstawiony w poprzednim bloku kodu, tylko wartości RR i BB zostały zamienione, aby dopasować się do formatu.
+  UWAGA GML obsługuje również format $AABBGGRR (z wartością alfa w formacie heksadecymalnym na początku), jednak większość funkcji kolorów GML będzie w stanie wykorzystać tylko część kolorystyczną i zignorować alfa.
+   
+  Funkcje
+  Poniższych funkcji można użyć do uzyskania odcieni składowych, odcienia złożonego, nasycenia i luminacji wybranego koloru, a także alfa i innych właściwości:
+  
+    colour_get_blue
+    colour_get_green
+    colour_get_red
+    colour_get_hue
+    colour_get_saturation
+    colour_get_value
+    draw_getpixel
+    draw_getpixel_ext
+    draw_get_colour
+    draw_get_alpha
+  
+   
+  Funkcje te mogą być używane do tworzenia kolorów z surowych wartości wejściowych dla składowych koloru:
+  
+    make_colour_hsv
+    make_colour_rgb
+    merge_colour
+  
+   
+  Do ustawiania różnych opcji rysowania na ekranie, w tym alfa, koloru i mieszania, można użyć następujących funkcji:
+  
+    draw_clear
+    draw_clear_alpha
+    draw_set_alpha
+    draw_set_colour
+  
+   
+   
+  
+    
+      
+        Powrót: Rysunek
+        Następny: Sterowanie procesorem graficznym
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

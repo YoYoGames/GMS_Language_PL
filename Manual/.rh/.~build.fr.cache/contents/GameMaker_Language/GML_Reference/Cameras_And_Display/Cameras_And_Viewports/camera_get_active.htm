@@ -1,0 +1,33 @@
+
+  
+  camera_get_active
+  Za pomocą tej funkcji można pobrać unikatową wartość identyfikatora kamery dla aktualnie aktywnej kamery.
+   
+  Składnia:
+  camera_get_active()
+   
+  Zwroty:
+  Camera ID
+   
+  Przykład:
+  var active = camera_get_active();
+    if active != view_camera[0]
+    {
+        view_camera[0] = active;
+    }
+  Powyższy kod pobiera identyfikator aktywnej kamery i ustawia kamerę widoku dla portu[0], aby z niej korzystała.
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: view_camera
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

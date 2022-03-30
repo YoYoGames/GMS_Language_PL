@@ -1,0 +1,63 @@
+
+  
+  draw_text_transformed
+  Ta funkcja rysuje tekst w sposób podobny do draw_text() tylko teraz można wybrać skalowanie tekstu wzdłuż osi poziomej lub pionowej (efektywne rozciąganie lub zmniejszanie), a także
+    GameMaker Studio 2 rysować go pod kątem (gdzie 0 oznacza normalny tekst, a każdy stopień powyżej 0 powoduje jego obrót w kierunku przeciwnym do ruchu wskazówek zegara).
+   
+  Składnia:
+  draw_text_transformed(x, y, string, xscale, yscale, angle);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x
+        The x coordinate of the drawn string.
+     
+      
+        y
+        The y coordinate of the drawn string.
+     
+      
+        string
+        The string to draw.
+     
+      
+        xscale
+        The horizontal scale (default 1).
+     
+      
+        yscale
+        The vertical scale(default 1).
+     
+      
+        angle
+        The angle of the text.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_set_halign(fa_center); draw_set_valign(fa_middle);
+     image_angle += 1; draw_text_transformed(room_width / 2, room_height / 2, "GAME OVER!", 2, 2, image_angle);
+  Powyższy kod narysuje podany tekst na środku strony room, obracając go wokół własnej osi i skalując do dwukrotności jego oryginalnego rozmiaru.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekst
+        Następny: draw_text_ext_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

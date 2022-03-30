@@ -1,0 +1,29 @@
+
+  
+  obrazek_alfa
+  Ta zmienna służy do uzyskiwania lub ustawiania wartości alfa dla sprite. Alfa jest zawsze obliczana jako wartość z przedziału od 0 do 1, gdzie 0 oznacza całkowitą przezroczystość, a 1 - całkowitą nieprzezroczystość. Należy pamiętać, że aby zmiany w tej zmiennej były widoczne, instancja nie powinna mieć zdarzenia draw (a więc GameMaker Studio 2 będzie domyślnie rysować sprite) lub powinna być rysowana przy użyciu jednej z rozszerzonych funkcji rysowania, takich jak  draw_self() lub . draw_sprite_ext().
+   
+  Składnia:
+  image_alpha;
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  image_alpha = clamp(image_alpha - 0.01, 0, 1);
+  Powyższy kod będzie powoli zmniejszał wartość parametru image_alpha, aż osiągnie wartość 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne instancji sprite'a
+        Następny: image_angle
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

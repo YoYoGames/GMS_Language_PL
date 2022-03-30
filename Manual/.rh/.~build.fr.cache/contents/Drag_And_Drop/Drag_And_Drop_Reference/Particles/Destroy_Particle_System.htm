@@ -1,0 +1,42 @@
+
+  
+   Zniszcz układ cząstek
+  Ta akcja "zniszczy" podany system cząstek (tzn. zwolni pamięć używaną przez system cząstek). Podajesz unikatową wartość ID systemu, który chcesz zniszczyć, zwróconą podczas tworzenia systemu za pomocą akcji Utwórz system cząsteczek.
+    Tę akcję należy wywoływać zawsze, gdy system cząsteczek nie jest już potrzebny w grze lub gdy chcesz go ponownie utworzyć (na przykład tuż przed wywołaniem polecenia Uruchom ponownie grę). Zwróć uwagę, że jeśli
+    system cząsteczek nie został oznaczony jako trwały, nie musisz wywoływać tej akcji, ponieważ system cząsteczek (i wszystkie powiązane z nim emitery) zostanie automatycznie wyczyszczony na stronie room.
+  WAŻNE! Ta funkcja zniszczy i usunie również wszystkie emitery, które mogły zostać utworzone i powiązane z niszczonym systemem (więcej informacji można znaleźć w temacie Tworzenie emitera cząstek ).
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        System
+        Unikalna wartość identyfikacyjna systemu, który ma zostać zniszczony
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji będzie sprawdzał, czy klawisz "Spacja"
+    i jeśli zostanie wykryty, usunie system cząsteczek i różne typy cząsteczek zdefiniowane w podanych zmiennych globalnych, a następnie ponownie uruchomi grę.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje cząstek
+        Następny: System cząstek czystych
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

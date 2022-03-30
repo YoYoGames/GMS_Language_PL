@@ -1,0 +1,63 @@
+
+  
+  vertex_create_buffer_from_buffer_ext
+  Podobnie jak w przypadku funkcji vertex_create_buffer()ta funkcja utworzy nową stronę vertex buffer, tyle że teraz dane vertex, które przechowuje, są kopiowane ze zwykłej strony buffer, która jest podana jako źródło. Strona buffer jest wstępnie sformatowana zgodnie z formatem vertex służącym do tworzenia prymitywów do użycia z (na przykład) shaders. Można również podać przesunięcie w obrębie źródła buffer, z którego ma zostać skopiowana, oraz liczbę wierzchołków, jaką ma mieć ostateczna wersja buffer. Należy pamiętać, że jeśli liczba wierzchołków nie odpowiada liczbie kopiowanych, dane vertex mogą być uszkodzone.
+   
+  Składnia:
+  vertex_create_buffer_from_buffer_ext(buffer, format, src_offset, vert_num);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        buffer
+        Identyfikator bufora
+        The buffer to create the vertex buffer from.
+      
+      
+        format
+        Typ prymitywny Stała
+        The primitive vertex format to use.
+      
+      
+        src_offset
+        Real
+        The offset within the the source buffer to copy from.
+      
+      
+        vert_num
+        Real
+        The number of vertices the buffer should have.
+      
+    
+  
+   
+  Zwroty:
+  Vertex Buffer ID
+   
+  Przykład:
+  vertex_format_begin();
+    vertex_format_add_position_3d();
+    vertex_format_add_colour();
+    vertex_format_add_textcoord();
+    var my_format = vertex_format_end();
+    v_buff = vertex_create_buffer_from_buffer(global.modelBuff, myFormat, 0, 512);
+  Powyższy kod utworzy nowy format vertex, a następnie utworzy nowy format vertex buffer z utworzonego wcześniej zwykłego formatu buffer, stosując do niego niestandardowy format vertex z przesunięciem 0. Funkcja informuje nową stronę vertex buffer, że powinna oczekiwać 512 wierzchołków.
+   
+   
+   
+  
+    
+      
+        Powrót: Prymitywy i Vertex Formaty
+        Następny: vertex_get_buffer_size
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,51 @@
+
+  
+  urządzenie_mouse_x
+  Ta funkcja zwraca pozycję x dotknięcia na urządzeniu. Jeśli korzystasz z modułów HTML5 lub PC i Mac, wartość ta jest aktualizowana stale, dopóki urządzenie (zwykle mysz) jest podłączone, jednak w przypadku urządzeń przenośnych będzie ona aktualizowana tylko wtedy, gdy ekran jest dotykany, a maksymalna liczba dotknięć, które można wykryć, zależy w dużym stopniu od używanego urządzenia i systemu operacyjnego.
+   
+  Składnia:
+  device_mouse_x(device);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        device
+        The device (from 0 - n) that is being checked.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if device_mouse_check_button(0, mb_left)
+    {
+        if device_mouse_x(0) > x-32 && device_mouse_x(0) < x+32
+        {
+            pressed = true;
+        }
+        else
+        {
+            pressed = false;
+        }
+    }
+  Powyższy kod sprawdza, czy urządzenie jest naciskane, a jeśli tak, to sprawdza położenie x urządzenia, aby sprawdzić, czy mieści się ono w parametrach. Jeśli tak, ustawia zmienną "naciśnięto" na true, w przeciwnym razie ustawia ją na false.
+   
+   
+   
+  
+    
+      
+        Powrót: Wejście urządzenia
+        Następny: device_mouse_y
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

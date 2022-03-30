@@ -1,0 +1,93 @@
+
+  
+   Ustaw zmienną widoku
+  Ta czynność umożliwia ustawienie pewnych wbudowanych zmiennych związanych z wyświetlaniem przez port widokowy wid oku z kamery na stronie room. Wybierz zmienną portu widokowego do edycji, następnie podaj port widokowy jako cel (od 0 do 7), a na końcu nową wartość
+    dla zmiennej. Port widoku to obszar ekranu, który będzie używany do rysowania danego widoku z kamery (zgodnie z ustawieniami w edytorze room ), a różne zmienne, które można ustawić w ten sposób, przedstawiono w poniższej tabeli:
+  
+    
+      
+        Zmienna
+        Opis
+      
+      
+        Camera
+        Służy do ustawienia rzutni tak, aby pokazywała inny widok z kamery. Należy podać unikatową wartość ID kamery, na którą ma zostać zmieniony widok (więcej informacji na ten temat można znaleźć tutaj 
+          więcej informacji).
+      
+      
+        Visibility
+        Jest to przełącznik widoczności portu widoku i oczekuje wartości true lub false, gdzie ustawienie wartości true spowoduje, że port widoku będzie widoczny (tzn. będzie rysował na ekranie), a wartość false nie spowoduje rysowania
+          niczego na ekranie.
+      
+      
+        View Port X Coordinate
+        Jest to pozycja X portu widoku w oknie gry. Zauważ jednak, że jest ona wymagana tylko wtedy, gdy aktywny jest więcej niż jeden port widoku - na przykład w celu utworzenia efektu podzielonego ekranu - a jeśli zostanie użyta, gdy aktywny jest tylko jeden port, uzyskasz
+          nieoczekiwane rezultaty.
+      
+      
+        View Port Y Coordinate
+        Jest to pozycja Y portu widoku w oknie gry. Zauważ jednak, że jest ona wymagana tylko wtedy, gdy aktywny jest więcej niż jeden port widoku - na przykład w celu utworzenia efektu podzielonego ekranu - a jeśli zostanie użyta, gdy aktywny jest tylko jeden port, uzyskasz
+          nieoczekiwane rezultaty.
+      
+      
+        View Port Width
+        Jest to szerokość (w pikselach) portu widoku. Szerokość portu widoku (lub połączonych portów widoku, jeśli aktywnych jest więcej niż jeden) określa szerokość okna gry lub tła obrazu na początku gry, więc zmiana tej wartości po
+          po rozpoczęciu gry nie będzie miała widocznego wpływu na rozmiar okna gry, chyba że zostanie wywołana razem z funkcją GML window_set_size().
+          Należy również pamiętać, że jeśli rozmiar portu jest większy lub mniejszy niż rozmiar przypisany do kamery, widok z kamery zostanie przeskalowany w dół lub w górę, aby go dopasować.
+      
+      
+        View Port Height
+        Jest to wysokość (w pikselach) portu widoku. Wysokość portu widoku (lub połączonych portów widoku, jeśli aktywnych jest więcej niż jeden) określa wysokość okna gry lub tła obrazu na początku gry, więc zmiana tej wartości po
+          po rozpoczęciu gry nie będzie miała widocznego wpływu na rozmiar okna gry, chyba że zostanie wywołana razem z funkcją GML window_set_size().
+          Należy również pamiętać, że jeśli rozmiar portu jest większy lub mniejszy niż rozmiar przypisany do widoku z kamery, to widok z kamery zostanie przeskalowany w dół lub w górę, aby go dopasować.
+      
+      
+        View Port Surface ID
+        Za pomocą tej zmiennej można ustawić, aby zawartość danego okna podglądu była rysowana na powierzchni, przy czym wartość podawana przez użytkownika jest wartością powierzchni, na którą ma być rysowane okno podglądu. Więcej informacji na ten temat można znaleźć tutaj.
+      
+    
+  
+   
+  Składnia działania:
+  
+  Argumenty:
+   
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Variable
+        Wbudowana zmienna widoku do ustawiania
+      
+      
+        View
+        Port widoku, który ma być docelowy (od 0 do 7)
+      
+      
+        Value
+        Nowa wartość dla wbudowanej zmiennej
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdzi, czy został naciśnięty klawisz i jeśli zostanie wykryty, to
+    sprawi, że port widokowy [0] stanie się widoczny, w przeciwnym razie będzie niewidoczny.
+   
+   
+   
+  
+    
+      
+        Powrót: Działania aparatu
+        Dalej: Pobierz zmienną widoku
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

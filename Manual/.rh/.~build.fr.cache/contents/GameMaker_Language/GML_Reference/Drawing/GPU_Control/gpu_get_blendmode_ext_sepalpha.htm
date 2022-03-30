@@ -1,0 +1,93 @@
+
+  
+  gpu_get_blendmode_ext_sepalpha
+  Za pomocą tej funkcji można pobrać bieżący rozszerzony tryb mieszania używany do rysowania, rozdzielając tryby mieszania na dwie części - składową RGB i składową alfa. Funkcja zwraca 4-elementową tablicę 1D zawierającą następujące elementy:
+  
+    [0] = źródłowy tryb mieszania pomniejszony o składową alfa (domyślnie bm_src_alpha (As, As, As))
+    [1] = docelowy tryb mieszania pomniejszony o składową alfa (domyślnie bm_inv_src_alpha (1-As, 1-As, 1-As))
+    [2] = Składowa alfa źródła (domyślnie bm_src_alpha (As))
+    [3] = Docelowy składnik alfa (domyślnie bm_inv_src_alpha (1-As))
+  
+  Wartości w tablicy będą jedną z poniższych stałych ("s" oznacza wartość pobraną ze źródła, a "d" - z miejsca przeznaczenia):
+  
+    
+      
+        Stała
+        Współczynnik mieszania (czerwony, zielony, niebieski, alfa)
+      
+      
+        bm_zero
+        (0, 0, 0, 0)
+      
+      
+        bm_one
+        (1, 1, 1, 1)
+      
+      
+        bm_src_colour
+        (Rs, Gs, Bs, As)
+      
+      
+        bm_inv_src_colour
+        (1-Rs, 1-Gs, 1-Bs, 1-As)
+      
+      
+        bm_src_alpha
+        (As, As, As, As)
+      
+      
+        bm_inv_src_alpha
+        (1-As, 1-As, 1-As, 1-As, 1-As)
+      
+      
+        bm_dest_alpha
+        (Ad, Ad, Ad, Ad, Ad)
+      
+      
+        bm_inv_dest_alpha
+        (1-Ad, 1-Ad, 1-Ad, 1-Ad, 1-Ad)
+      
+      
+        bm_dest_colour
+        (Rd, Gd, Bd, Ad)
+      
+      
+        bm_inv_dest_colour
+        (1-Rd, 1-Gd, 1-Bd, 1-Ad)
+      
+      
+        bm_src_alpha_sat
+        (f, f, f, 1) gdzie f = min(As, 1-Ad)
+      
+    
+  
+  Podczas tworzenia rozszerzonych trybów mieszania w ten sposób składowe RGB zostaną pobrane z jednego trybu mieszania, a składowa alfa z innego, tak więc na przykład jeśli użyjesz bm_zero (0, 0, 0, 0) jako trybu mieszania RGB i bm_one jako trybu mieszania alfa, otrzymasz mieszankę kompozytową o wartości (0,0,0,1).
+  Należy pamiętać, że wartości te można zmieniać bezpośrednio w tablicy i przekazać całą tablicę do funkcji jako pojedynczy argument (jak pokazano w poniższym przykładzie).
+   
+  Składnia:
+  gpu_get_blendmode_ext_sepalpha();
+   
+  Zwroty:
+   (4 elements only; see above for constants)
+   
+  Przykład:
+  var bm = gpu_get_blendmode_ext_sepalpha();
+    bm[0] = bm_src_alpha;
+    bm[1] = bm_inv_src_alpha;
+    gpu_set_blendmode_ext_sepalpha(bm);
+  Powyższy kod tworzy lokalną tablicę i pobiera bieżący rozszerzony tryb mieszania z oddzielnymi wartościami alfa. Tablica ta jest następnie manipulowana i zwracana w celu ustawienia trybu mieszania.
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_get_blendmode_src
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

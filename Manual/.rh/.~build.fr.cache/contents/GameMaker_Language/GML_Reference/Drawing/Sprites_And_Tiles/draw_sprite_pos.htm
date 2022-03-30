@@ -1,0 +1,87 @@
+
+  
+  draw_sprite_pos
+  Za pomocą tej funkcji można narysować obraz sprite zniekształcony na obszarze określonym przez cztery współrzędne narożników. Pierwsze dwa argumenty to rysunek sprite do narysowania oraz podobraz sprite (taki sam jak w funkcji draw_sprite())
+    , ale kolejne to te, które określają położenie każdego z czterech narożników ramki danego sprite. Należy je podawać w kolejności zgodnej z ruchem wskazówek zegara, a więc pierwsza współrzędna to lewy górny róg, następnie prawy górny róg, prawy dolny róg, a na końcu lewy dolny róg.
+    prawa, a na końcu lewa dolna. Można również ustawić wartość alfa dla strony sprite, aby narysować ją z przezroczystością. Poniższy rysunek ilustruje działanie tej funkcji:
+  
+  OSTRZEŻENIE! Powyższy obrazek ma charakter poglądowy. Jeśli użyjesz tej funkcji na stronie sprite, uzyskasz inne wyniki i może wystąpić "ścinanie" strony texture ze względu na sposób, w jaki strona sprite jest zbudowana z czworoboku prymitywów.
+  UWAGA: Ta funkcja jest przydatna tylko w przypadku map bitowych sprites i nie będzie działać z plikami SWF lub JSON (Spine) sprites.
+  UWAGA: Podczas korzystania z tej funkcji należy wyłączyć ustawienie Automatycznie przycinaj dla stron texture.
+   
+  Składnia:
+  draw_sprite_pos(sprite, subimg, x1, y1, x2, y2, x3, y3, x4, y4, alpha);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sprite
+        The index of the sprite to draw.
+     
+      
+        subimg
+        The subimg (frame) of the sprite to draw (image_index or -1 correlate to the current frame of animation in the object).
+     
+      
+        x1
+        The first x coordinate.
+     
+      
+        y1
+        The first y coordinate.
+     
+      
+        x2
+        The second x coordinate.
+     
+      
+        y2
+        The second y coordinate.
+     
+      
+        x3
+        The third x coordinate.
+     
+      
+        y3
+        The third y coordinate.
+     
+      
+        x4
+        The fourth x coordinate.
+     
+      
+        y4
+        The fourth y coordinate.
+     
+      
+        alpha
+        The alpha of the sprite (from 0 to 1 where 0 is transparent and 1 opaque).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_sprite_pos(sprite_index, image_index, x - 100, y - 50, x - 50, y +150, x + 100, y + 200, x + 100, y, 1);
+  Powyższy kod narysuje stronę sprite powiązaną z instancją, na której uruchomiony jest kod, zniekształconą wokół pozycji x / y instancji i z całkowicie nieprzezroczystą alfą.
+   
+   
+   
+  
+    
+      
+        Powrót: Sprite'y i płytki
+        Następny: draw_sprite_tiled
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

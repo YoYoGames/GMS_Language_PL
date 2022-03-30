@@ -1,0 +1,44 @@
+
+  
+  os_lock_orientacja
+  Za pomocą tej funkcji można "zablokować" urządzenie w bieżącej orientacji do czasu jej "uwolnienia", aby umożliwić ponowne korzystanie ze wszystkich orientacji włączonych w opcjach gry dla danej platformy docelowej. Należy pamiętać, że przed zablokowaniem orientacji należy sprawdzić, czy jest ona zgodna z oczekiwaniami.
+   
+  Składnia:
+  os_lock_orientation(flag)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        flag
+        Set to true lub false, aby włączyć lub wyłączyć blokadę orientacji.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (os_type == os_android) || (os_type == os_ios)
+    {
+        os_lock_orientation(true);
+    }
+  Powyższy kod sprawdza typ systemu operacyjnego i jeśli jest to Android lub iOS, to blokada orientacji jest oznaczana jako true.
+   
+   
+   
+  
+    
+      
+        Powrót: System operacyjny i kompilator
+        Następny: os_check_permission
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

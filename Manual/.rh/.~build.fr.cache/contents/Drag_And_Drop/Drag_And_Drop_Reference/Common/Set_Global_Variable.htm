@@ -1,0 +1,56 @@
+
+  
+   Ustaw zmienną globalną
+  Ta akcja służy do przypisania zmiennej globalnej wartości (tworząc ją w procesie) lub do zmiany wartości istniejącej zmiennej globalnej. Zmienne globalne to zmienne, które "nie należą" do żadnej konkretnej instancji, lecz do całego
+    projektu i jako takie mogą być dostępne i zmieniane przez dowolną instancję, script lub kod. Bardziej zaawansowane informacje na temat zmiennych globalnych można znaleźć tutaj.
+  Podajesz nazwę zmiennej globalnej, a następnie wartość, która w razie potrzeby może zostać dodana względem oryginalnej wartości. Jeśli podasz nazwę nowej zmiennej (np. zmiennej, która nigdy wcześniej nie była przypisana w całej grze), to polecenie
+    utworzy nową zmienną globalną i przypisze jej podaną przez Ciebie wartość, natomiast jeśli podasz nazwę istniejącej zmiennej globalnej, to po prostu zmieni jej wartość na nową. Zauważ, że zaznaczenie opcji Względna spowoduje dodanie wartości do istniejącej
+    wartości zmiennej globalnej (do odejmowania należy użyć liczby ujemnej), a jako wartości można również użyć wyrażeńi zmiennych utworzonych wcześniej.
+  Warto zauważyć, że kiedy mówimy o "wartościach", nie mamy na myśli tylko wartości liczbowych, ponieważ zmienną może być string, wskaźnik, identyfikator zasobu lub cokolwiek innego, co funkcja może zwrócić lub wykorzystać. W przypadku string, zaznaczenie opcji Relative spowoduje konkatenację wartości z tym, co zmienna posiadała poprzednio, więc jeśli zmienną było "Hello" i przypiszesz do niej " World", używając opcji relative check, końcową wartością zmiennej będzie "Hello World". Należy
+    Należy jednak uważać, aby obie wartości zmiennych były tego samego typu danych, ponieważ próba dodania, na przykład, liczby całkowitej i string spowoduje błąd kompilatora.
+  Można również dodać dodatkowe zmienne w tej samej akcji, klikając ikonę plusa  obok akcji, a następnie podając kolejną zmienną globalną
+    nazwę i wartość. Bardziej zaawansowane informacje na temat zmiennych można znaleźć w rozdziale Zmienne i zakres zmiennych.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Name
+        Nazwa nowej zmiennej globalnej, którą należy utworzyć, lub nazwa istniejącej zmiennej globalnej, którą należy zmienić.
+      
+      
+        Value
+        Wartość, jaką powinna mieć zmienna globalna.
+      
+      
+        Relative
+        Zaznacz, aby ustawić wartość względem poprzedniej.
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdza, czy nie wystąpiła kolizja między instancją wywołującą a obiektem
+    "obj_player", a jeśli taka kolizja zostanie znaleziona, to od zmiennej globalnej "player_hp" odejmowana jest wartość 1, a zmienna globalna "player_score" ustawiana jest na 0.
+    na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Wspólne działania
+        Następnie: Pobierz zmienną globalną
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

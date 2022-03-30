@@ -1,0 +1,50 @@
+
+  
+  audio_stop_sound
+  Ta funkcja zatrzymuje podany dźwięk, jeśli jest on aktualnie odtwarzany. Dźwięk może być pojedynczą instancją dźwięku (indeks dla poszczególnych odtwarzanych dźwięków można przechowywać w zmiennej przy użyciu funkcji audio_play_sound() lub audio_play_sound_at() ) lub dźwiękiem asset, w którym to przypadku zatrzymane zostaną wszystkie instancje danego dźwięku.
+   
+  Składnia:
+  audio_stop_sound(index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Sound Asset lub Sound Instance ID
+        The index of the sound to stop.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if !global.SFX
+    {
+        audio_stop_sound(snd_Waterfall);
+    }
+    else
+    {
+        audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1);
+    }
+  Powyższy kod sprawdza zmienną globalną "SFX" i jeśli zwróci false, zatrzyma aktualnie odtwarzany dźwięk zaindeksowany w zmiennej "snd_Waterfall", a jeśli zwróci true, uruchomi stronę loop.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_stop_all
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,31 @@
+
+  
+  room_speed (przestarzałe)
+  Ta zmienna przechowuje prędkość działania wszystkich stron rooms (i gry) w klatkach na sekundę. Należy pamiętać, że NIE jest to FPS (klatki na sekundę), ale raczej liczba kroków gry, które GameMaker Studio 2 będzie próbował utrzymać w każdej
+    sekundę.
+  WAŻNE! Ta zmienna jest utrzymywana wyłącznie dla wsparcia dla starszych wersji gry i nie powinna być używana, ponieważ nie ustawia ona prędkości dla pojedynczej strony room, ale dla WSZYSTKICH stron rooms w grze. Aby zmienić prędkość gry, powinieneś użyć funkcji game_set_speed().
+   
+  Składnia:
+  room_speed;
+   
+  Zwroty:
+  
+   
+  Przykład:
+  alarm[0] = room_speed * 10;
+  W powyższym kodzie użyto zmiennej room_speed do ustawienia alarmu tak, aby działał przez 10 sekund. Użycie zmiennej w ten sposób zapewni, że alarm będzie działał przez 10 sekund, bez względu na to, jaką prędkość ustawiono dla room.
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room_height
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

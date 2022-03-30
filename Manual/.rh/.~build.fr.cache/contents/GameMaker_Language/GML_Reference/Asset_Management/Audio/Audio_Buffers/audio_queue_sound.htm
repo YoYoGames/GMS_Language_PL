@@ -1,0 +1,62 @@
+
+  
+  audio_queue_sound
+  Ta funkcja doda dane z adresu buffer do pliku audio queue utworzonego wcześniej za pomocą funkcji audio_create_play_queue(). Określasz indeks queue, do którego mają zostać dodane dane, oraz identyfikator buffer, z którego mają zostać pobrane dane, a także pozycję (offset) w obrębie adresu buffer i liczbę bajtów do dodania. Po dodaniu dźwięku z adresu buffer do adresu queue nie można usunąć adresu buffer, dopóki nie zostanie zwolniony adres queue za pomocą funkcji audio_free_play_queue()a właściwości adresu buffer powinny odpowiadać właściwościom adresu queue, do którego jest dodawany dźwięk.
+   
+  Składnia:
+  audio_queue_sound(queueIndex, bufferId, bufferOffset, bufferLength);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        queueIndex
+        Audio Queue ID
+        The index of the queue to add to.
+      
+      
+        bufferId
+        Identyfikator bufora
+        The buffer to add to the queue.
+      
+      
+        bufferOffset
+        Real
+        The offset within the source buffer to start from.
+      
+      
+        bufferLength
+        Real
+        The length of the buffer (the number of the bytes in the buffer).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  len = async_load[? "data_len"];
+    audio_buff = buffer_create(len, buffer_fast, 1);
+    buffer_copy(async_load[? "buffer_id"], 0, len, buff, 0);
+    audio_queue_sound(audio_queue, audio_buff, 0, len);
+    audio_play_sound(audio_queue, 10, 0);
+  Powyższy kod zostanie wywołany w zdarzeniu asynchronicznego nagrywania dźwięku i przypisze nagrane dane do strony buffer, która następnie zostanie dodana do pliku audio queue. Następnie jest ono odtwarzane.
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory audio
+        Następny: audio_start_recording
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

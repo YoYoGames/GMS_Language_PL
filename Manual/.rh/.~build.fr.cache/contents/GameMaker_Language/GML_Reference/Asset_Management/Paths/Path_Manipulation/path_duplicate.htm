@@ -1,0 +1,41 @@
+
+  
+  ścieżka_duplikacja
+  Ta funkcja pobiera adres path i kopiuje go do nowego adresu path. W trakcie tego procesu tworzony jest nowy adres path, a jego indeks jest zwracany w celu wykorzystania go we wszystkich kolejnych wywołaniach, w których będzie używany ten nowy adres path.
+   
+  Składnia:
+  path_duplicate(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the existing path to duplicate.
+     
+    
+  
+   
+  Zwroty:
+  Path Asset
+   
+  Przykład:
+  mypath = path_duplicate(choose(pth_1, pth_2, pth_3, pth_4));
+  Powyższy kod wybiera jeden z czterech zasobów path i powiela go, zapisując indeks nowego zasobu path w zmiennej "mypath".
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja ścieżką
+        Następny: path_flip
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

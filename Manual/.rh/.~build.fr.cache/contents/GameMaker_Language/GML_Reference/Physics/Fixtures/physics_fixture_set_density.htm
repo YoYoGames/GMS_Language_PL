@@ -1,0 +1,54 @@
+
+  
+  physics_fixture_set_density
+  Gęstość czegoś definiuje się jako masę na jednostkę objętości, co oznacza, jak wiele masy mieści się w przestrzeni, którą zajmuje dany przedmiot w świecie. Zatem balon ma małą gęstość, ponieważ ma małą masę, a zajmuje dużą przestrzeń,
+    natomiast sztabka ołowiu miałaby dużą gęstość, ponieważ ma dużą masę, ale zajmuje mało miejsca.
+  W świecie fizyki GameMaker Studio 2 2D, masa jest obliczana automatycznie
+    na podstawie wartości wprowadzonych dla gęstości oraz powierzchni kształtu zdefiniowanego przez ciebie dla elementu mocującego. Będzie to miało bezpośredni wpływ na stopień bezwładności, jak również na reakcję na kolizje i siły, więc
+    jeśli zdefiniujesz mały kształt o dużej gęstości, będzie on miał bardzo dużą masę (jak sztabka ołowiu), ale jeśli zdefiniujesz duży kształt o małej gęstości, będzie on miał dużo mniejszą masę (jak balon).
+  UWAGA: Jeśli chcesz, by instancja, która ma otrzymać element mocujący była statyczna (tzn. nieruchoma w świecie gry), wówczas gęstość powinna być ustawiona na 0, co w istocie daje jej nieskończoną gęstość.
+  UWAGA Statyczny uchwyt można uczynić kinematycznym (tzn. może się on poruszać, ale bez efektów siły lub grawitacji) przez nadanie mu gęstości 0, a następnie ustawienie parametrów phy_speed_x
+    , phy_speed_y
+    , , lub phy_angular_velocity
+     zmienne.
+   
+  Składnia:
+  physics_fixture_set_density(fixture, density)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fixture
+        the index of the fixture
+     
+      
+        density
+        the density of the fixture calculated as kg/m²
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  physics_fixture_set_density(fix_Balloon, 0.1);
+  Powyższy kod ustawi gęstość osprzętu zindeksowanego w "fix_Ballon" na 0,1.
+   
+   
+   
+  
+    
+      
+        Powrót: Armatura
+        Następny: physics_fixture_set_friction
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

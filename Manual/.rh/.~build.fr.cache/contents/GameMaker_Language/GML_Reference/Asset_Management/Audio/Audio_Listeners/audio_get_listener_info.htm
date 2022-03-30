@@ -1,0 +1,59 @@
+
+  
+  audio_get_listener_info
+  Ta funkcja tworzy mapę DS i wypełnia ją informacjami dla podanego słuchacza.
+  UWAGA Użytkownik jest odpowiedzialny za zniszczenie zwróconej strony DS Map przy użyciu odpowiedniej funkcji.
+  Mapa DS będzie zawierać następujące klucze:
+  
+    "name" - nazwa listenera w postaci string, przy czym "default" jest standardową nazwą listenera na większości platform docelowych
+    "maska" - maska bitowa dla słuchacza
+    "index" - unikalna wartość indeksu słuchacza
+  
+  Wartość maski może być użyta do ustawienia dźwięku lub emitera tak, aby był odtwarzany z wielu słuchaczy jednocześnie, po prostu używając bitowego or "|" do wygenerowania maski dla dźwięku (zobacz przykładowy kod poniżej), podczas gdy indeks jest używany do ustawiania właściwości takich jak pozycja lub prędkość dla danego słuchacza za pomocą funkcji takich jak audio_listener_set_position().
+   
+  Składnia:
+  audio_get_listener_info(num);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        num
+         Identyfikator słuchaczarzeczywistego lub dźwiękowego
+        The listener number to get the data for.
+      
+    
+  
+   
+  Zwroty:
+  DS Map ID
+   
+  Przykład:
+  var num = audio_get_listener_count();
+    var mask = 0; for(var i = 0; i < num; ++i;)
+    {
+        var info = audio_get_listener_info(i);
+        var m = audio_listener_get_data(info[? "mask"]);
+        mask = mask | m;
+        ds_map_destroy(info);
+    }
+    audio_set_listener_mask(mask);
+  Powyższy kod sprawdza liczbę dostępnych listenerów, a następnie loops pobiera z nich bity masek, które są następnie łączone w jedną maskę bitową, która jest stosowana do globalnego listenera.
+   
+   
+   
+  
+    
+      
+        Powrót: Słuchacze audio
+        Następny: audio_get_listener_mask
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

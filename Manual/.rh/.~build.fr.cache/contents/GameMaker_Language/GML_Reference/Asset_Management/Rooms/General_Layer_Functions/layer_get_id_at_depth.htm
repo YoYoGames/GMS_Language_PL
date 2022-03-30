@@ -1,0 +1,50 @@
+
+  
+  warstwa_get_id_na_głębokości
+  Możesz użyć tej funkcji, aby uzyskać identyfikatory wszystkich warstw przypisanych do określonej głębokości. Podajesz głębokość do sprawdzenia, a funkcja zwróci tablicę zawierającą 1 lub więcej wpisów, w zależności od tego, czy na danej głębokości są jakieś warstwy, czy nie. Jeśli na danej głębokości nie ma żadnych warstw, to tablica będzie miała pojedynczy wpis na pozycji [0] o wartości -1, ale jeśli na danej głębokości są warstwy, to dla każdej znalezionej warstwy zostanie utworzony wpis w tablicy - wartość wpisu będzie unikalnym identyfikatorem warstwy.
+   
+  Składnia:
+  layer_get_id_at_depth(depth)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        depth
+        Real
+        The depth to check and retrieve the layer IDs from.
+      
+    
+  
+   
+  Zwroty:
+  Array
+   
+  Przykład:
+  var a = layer_get_id_at_depth(0);
+    if a[0] != -1
+    {
+        for (var i = 0; i < array_length(a); i++;)
+        {
+            layer_destroy(a[i]);
+        }
+    }
+  Powyższy kod pobiera dane o warstwach o głębokości 0. Sprawdzane jest, czy na tej głębokości istnieją jakieś warstwy, a jeśli tak, to zwracana tablica jest parsowana i każda ze znalezionych warstw jest niszczona.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_get_name
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

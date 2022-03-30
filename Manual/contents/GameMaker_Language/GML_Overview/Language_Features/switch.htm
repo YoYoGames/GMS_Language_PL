@@ -15,55 +15,53 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>przełącznik</h1>
-  <p>W wielu sytuacjach chcemy, aby instancje wykonywały różne akcje w zależności od określonej wartości. Możesz to zrobić, używając kilku następujących po sobie <a href="If_Else_and_Conditional_Operators.htm"><span class="inline">if / else</span></a> ale gdy liczba możliwych wyborów przekracza dwa lub trzy, zwykle łatwiej jest użyć instrukcji <span class="inline">switch</span>. Instrukcja <span class="inline">switch</span> ma następującą postać:</p>
+  <p>W wielu sytuacjach chcemy, aby instancje wykonywały różne czynności w zależności od określonej wartości. Możesz to zrobić, używając kilku następujących po sobie <a href="If_Else_and_Conditional_Operators.htm"><span class="inline">if / else</span></a> ale gdy liczba możliwych wyborów przekracza dwa lub trzy, zwykle łatwiej jest użyć instrukcji <span class="inline">switch</span>.</p>
+  <p>Polecenie <span class="inline">switch</span> ma następującą składnię:</p>
   <p class="code">switch (&lt;expression&gt;)<br />
     {<br />
-        case &lt;constant1&gt;: &lt;statement1&gt;; ... ; break;<br />
-        case &lt;constant2&gt;: &lt;statement2&gt;; ... ; break;<br />
-        ...<br />
-        default: &lt;statement&gt;;<br />
-    }</p>
+        case &lt;constant1&gt;:<br />
+            &lt;code&gt;<br />
+        break;<br />
+    <br />
+        case &lt;constant2&gt;:<br />
+            &lt;code&gt;<br />
+        break;<br />
+        <br />
+        // more cases (with breaks)<br />
+    <br />
+        default:<br />
+            &lt;code&gt;;<br />
+    }
+  </p>
   <p>Działa to w następujący sposób:</p>
   <ul class="colour">
     <li>Najpierw wykonywane jest <a class="glossterm" data-glossterm="wyrażenie" href="#">wyrażenie</a>.</li>
-    <li>Następnie jest ona porównywana z wynikami różnych <a href="../Variables/Constants.htm">stałych</a> po każdym z<span class="glossextra">wyrażeń</span> <span class="inline">case</span>. Kiedy mówimy &quot;stała&quot;, mamy na myśli to, że wartość w danym przypadku nie może być zmiennym wyrażeniem i musi być stałą wartością dowolnego <a href="../Data_Types.htm">typu danych</a>, taką jak &quot;walka&quot; lub 3 albo słowo kluczowe <span class="inline"><a href="../Instance_Keywords.htm">noone</a></span>. </li>
-    <li>Wykonywanie jest kontynuowane po pierwszej instrukcji <span class="inline">case</span> z poprawną wartością, <i>aż do napotkania instrukcji <a href="break.htm"><span class="notranslate">break</span></a> </i>.</li>
-    <li>Jeśli żadna instrukcja case nie ma właściwej wartości, zostanie wykonana instrukcja <span class="inline">default</span> (nie jest wymagane posiadanie instrukcji <span class="inline">default</span>, a jeśli nie zostanie podana żadna, nie zostanie podjęte żadne działanie).</li>
+    <li>Następnie jej wynik jest porównywany z różnymi stałymi występującymi po każdym z<span class="glossextra">wyrażeń</span> <span class="inline">case</span>. Kiedy mówimy &quot;stała&quot;, mamy na myśli to, że wartość w danym przypadku nie może być zmiennym wyrażeniem, lecz musi być stałą wartością dowolnego <a href="../Data_Types.htm">typu danych</a>, taką jak <span class="inline2">&quot;walka&quot;</span>, <span class="inline2">3</span> lub słowo kluczowe <span class="inline2"><span class="inline"><a href="../Instance_Keywords.htm">noone</a></span></span>. </li>
+    <li>Wykonywanie rozpoczyna się od pierwszej instrukcji <span class="inline">case</span> z pasującą wartością, <i>aż do napotkania instrukcji <a href="break.htm"><span class="notranslate">break</span></a> </i>.</li>
+    <li>Jeśli żadna z instrukcji <span class="inline">case</span> nie zawiera pasującej wartości, zostanie wykonana instrukcja <span class="inline">default</span>. Nie jest wymagane posiadanie instrukcji <span class="inline">default</span>, a jeśli nie ma żadnej, to nie zostanie podjęta żadna akcja, gdy nie ma pasujących przypadków. Instrukcja <span class="inline">default</span> może być umieszczona w dowolnym miejscu bloku <span class="notranslate">switch</span>, jednak tradycyjnie umieszcza się ją na dole, po wszystkich przypadkach.</li>
   </ul>
+  <p class="note"><span class="note">UWAGA</span> Instrukcja <span class="notranslate">switch</span> będzie kontynuować wykonywanie kodu w obrębie <span class="inline">case</span>, dopóki nie zostanie napotkana instrukcja <span class="inline">break</span>. Jeśli nie użyjesz <span class="inline">break</span>s na końcu swoich przypadków, spowoduje to &quot;przeciek&quot; <span class="notranslate">switch</span> do następnej sekcji <span class="inline">case</span>, a nawet do sekcji <span class="inline">default</span>, jeśli na drodze nie ma <span class="inline">break</span>s. Może to powodować niezamierzone zachowania, ponieważ wykonanie jednej strony <span class="inline">case</span> może spowodować wykonanie wielu stron <span class="inline">case</span>, dlatego należy używać strony <span class="inline">break</span> tam, gdzie jest to wskazane.</p>
   <p>Prostym przykładem użycia oświadczenia <span class="notranslate">switch</span> może być coś takiego:</p>
-  <p class="code">switch (global.state)<br />
+  <p class="code">switch (player_lives)<br />
     {<br />
-        case &quot;alert&quot;:<br />
-            if (instance_exists(obj_Player))<br />
-            {<br />
-                if (point_distance(x, y, obj_Player.x, obj_Player.y) &lt; 100)<br />
-                {<br />
-                    global.state = &quot;chase&quot;;<br />
-                }<br />
-            }<br />
+        case 3:<br />
+            draw_sprite(20, 20, spr_face_healthy);<br />
         break;<br />
-        case &quot;chase&quot;:<br />
-            var _lost = false;<br />
-            if (instance_exists(obj_Player))<br />
-            {<br />
-                move_towards_point(obj_Player.x, obj_Player.y, 2);<br />
-                if (point_distance(x, y, obj_Player.x, obj_Player.y) &gt; 100)<br />
-                {<br />
-                    _lost = true;<br />
-                }<br />
-            }<br />
-            else _lost = true;<br />
     <br />
-            if (_lost)<br />
-            {<br />
-                speed = 0;<br />
-                global.state = &quot;alert&quot;;<br />
-            }<br />
+        case 2:<br />
+            draw_sprite(20, 20, spr_face_hurt);<br />
         break;<br />
+    <br />
+        case 1:<br />
+            draw_sprite(20, 20, spr_face_fatal);<br />
+        break;<br />
+    <br />
+        default:<br />
+            draw_sprite(20, 20, spr_face_fainted);<br />
+        break;<br />
     }
   </p>
-  <p>Mamy tu zmienną globalną przechowującą wartość <span class="notranslate">string</span>, która służy do ustawiania zachowania (stanu) instancji. W tym przykładzie instancja po prostu przełącza się między dwoma stanami, ale bardzo łatwo można to rozszerzyć o więcej stanów, dodając kolejne instrukcje <span class="inline">case</span> dla dodatkowych stanów <span class="notranslate">strings</span>, takich jak &quot;walcz&quot; lub &quot;umieraj&quot; itd.</p>
-  <p>Zwróć uwagę, że do wykonania tego samego polecenia można użyć wielu instrukcji <span class="inline">case</span>, ponieważ instrukcja <span class="inline">break</span> nie zawsze jest wymagana dla każdego <span class="inline">case</span>. Jeśli dla danego <span class="inline">case</span> nie ma instrukcji <span class="inline">break</span>, wykonywanie jest po prostu kontynuowane z kodem dla następnego przypadku, np:</p>
+  <p>Zauważ, że do wykonania tej samej instrukcji można użyć wielu instrukcji <span class="inline">case</span>, ponieważ instrukcja <span class="inline">break</span> nie zawsze jest wymagana dla każdej z nich <span class="inline">case</span>. Jeśli dla danego <span class="inline">case</span> nie ma instrukcji <span class="inline">break</span>, wykonywanie jest po prostu kontynuowane z kodem dla następnego przypadku, np:</p>
   <p class="code">switch (keyboard_key)<br />
     {<br />
         case vk_left:<br />
@@ -87,7 +85,8 @@
         break;<br />
     }
   </p>
-  <p>Powyższy kod wykorzystuje stronę <span class="inline">switch</span> do sprawdzenia zdarzenia na klawiaturze, a następnie porównuje je z każdą z wymienionych stron <span class="inline">case</span>. Jeśli spełnia on którąś z wymaganych wartości, wykonywany jest odpowiedni kod. Zauważ, że w kodzie wykorzystaliśmy sposób, w jaki <span class="inline">switch</span> może sprawdzać wiele <span class="inline">cases</span> i kontynuować, jeśli nie napotka <span class="inline">break</span>, aby umożliwić użycie różnych klawiszy w celu uzyskania tego samego wyniku. Zauważ, że każdy adres <span class="inline">case</span> może mieć swój własny kod, dzięki czemu można stworzyć swego rodzaju system &quot;dziedziczenia&quot;, w którym więcej niż jeden adres <span class="inline">case</span> i jego kod będą wykonywane kolejno po sobie, aż do osiągnięcia punktu przerwania, zależnego od wartości początkowego wyrażenia <span class="inline">switch</span>.</p>
+  <p>Powyższy kod wykorzystuje stronę <span class="inline">switch</span> do sprawdzenia zdarzenia na klawiaturze, a następnie porównuje je z każdą z wymienionych stron <span class="inline">case</span>. Jeśli spełnia on którąś z wymaganych wartości, wykonywany jest odpowiedni kod. Zwróć uwagę, że strona <span class="inline">switch</span> może sprawdzać wiele stron <span class="inline">cases</span> i wykonywać kod aż do następnej <span class="inline">break</span>, aby umożliwić użycie różnych klawiszy w celu uzyskania tego samego wyniku.</p>
+  <p>Każda strona <span class="inline">case</span> może mieć swój własny kod, dzięki czemu można utworzyć system &quot;dziedziczenia&quot;, w którym sprawa wykonuje swój własny kod, a następnie kod dla następnej sprawy.</p>
   <p> </p>
   <p> </p>
   <p> </p>
@@ -98,7 +97,7 @@
         <div style="float:right">Następny: <a href="break.htm"><span class="notranslate">break</span></a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
   </div>
   <!-- KEYWORDS
 switch

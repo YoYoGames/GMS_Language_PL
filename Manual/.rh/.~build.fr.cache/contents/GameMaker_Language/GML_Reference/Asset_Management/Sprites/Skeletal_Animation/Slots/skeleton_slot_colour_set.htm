@@ -1,0 +1,64 @@
+
+  
+  szkielet_szczeliny_zestaw kolorów
+  Za pomocą tej funkcji można ustawić kolor i alfa szczeliny dołączania, tak aby wszystkie dołączone do niej strony sprites były rysowane z tymi wartościami mieszania. Należy pamiętać, że instancja sprite może mieć ustawiony kolor mieszanki i alfa (image_blend oraz image_alpha), podobnie jak element dołączony (zobacz funkcję skeleton_attachment_create_colour()), a więc ostateczny kolor i alfa, jakie będzie miał załącznik sprite przypisany do gniazda, będzie złożeniem wszystkich tych wartości.
+   
+  Składnia:
+  skeleton_slot_colour_set(slot, colour, alpha);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        slot
+        String
+        The slot name to set, a string
+      
+      
+        colour
+        Kolor
+        The colour to set, either an integer, a constant, or a hex value.
+      
+      
+        alpha
+        Real
+        The alpha to set from 0 to 1.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  slot_list = ds_list_create();
+    skeleton_find_slot(mouse_x, mouse_y, slot_list);
+    if !ds_list_empty(slot_list)
+    {
+        for (var i = 0; i < ds_list_size(slot_list); ++i)
+        {
+            if skeleton_slot_colour_get(slot_list[| i]) != c_white
+            {
+                skeleton_slot_colour_set(slot_list[| i], c_white, 1);
+            }
+        }
+    }
+  Powyższy kod tworzy listę DS, a następnie wypełnia ją nazwami szczelin znalezionych w miejscu, w którym znajduje się mysz na stronie room. Następnie loops przegląda listę szczelin i ustawia kolor znalezionych szczelin na biały z alfą o wartości 1, jeśli kolor nie jest jeszcze biały.
+   
+   
+   
+  
+    
+      
+        Powrót: Szczeliny
+        Następny: skeleton_slot_colour_get
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

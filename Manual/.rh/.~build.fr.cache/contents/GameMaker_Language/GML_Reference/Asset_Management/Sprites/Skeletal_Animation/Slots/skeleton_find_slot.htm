@@ -1,0 +1,54 @@
+
+  
+  skeleton_find_slot
+  Za pomocą tej funkcji można sprawdzić, które gniazda znajdują się w określonej pozycji w przestrzeni pomieszczenia na stronie Spine sprite powiązanej z bieżącą instancją. Tworzysz listę DS i podajesz jej identyfikator wraz z pozycją x/y do sprawdzenia, a lista zostanie wypełniona nazwami string dla każdego z dostępnych gniazd przyłączeniowych dla sprite (wraz z wszelkimi modyfikacjami przyłączeniowymi). Należy pamiętać, że lista jest zawsze sortowana w porządku malejącym, począwszy od najwyższego gniazda.
+   
+  Składnia:
+  skeleton_find_slot(x, y, list);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x
+        Real
+        The x position in the room to check.
+      
+      
+        y
+        Real
+        The y position in the room to check.
+      
+      
+        list
+        Identyfikator listy DS
+        The ID of the DS list to populate with the DS maps.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  slot_list = ds_list_create();
+    skeleton_find_slot(mouse_x, mouse_y, slot_list);
+  Powyższy kod tworzy listę DS, a następnie wypełnia ją nazwami slotów znalezionych w miejscu, w którym znajduje się mysz na stronie room.
+   
+   
+   
+  
+    
+      
+        Powrót: Szczeliny
+        Następny: skeleton_slot_colour_set
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

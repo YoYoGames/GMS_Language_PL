@@ -1,0 +1,59 @@
+
+  
+  xboxlive_pad_for_user
+  Użytkownicy konsoli Xbox mogą mieć przypisane różne pady do swojego identyfikatora użytkownika, a każdy z nich wypełnia "slot". Sloty te są numerowane od 0 i mogą zawierać dowolny indeks pada, tak więc slot 0 może być przypisany do pada 3, a slot 1 do pada 2. Funkcja ta jest szczególnie przydatna w przypadku, gdy użytkownik pozostawi gamepada bez wejścia na pewien czas, ponieważ switch sam się wyłączy. Za pomocą tej funkcji można więc sprawdzić, czy dany użytkownik ma aktywny gamepad, a jeśli nie, to odpowiednio zareagować, np. wstrzymując grę. Jeśli pad jest aktywny, zwrócona zostanie wartość jego indeksu, jeśli nie, funkcja zwróci -1.
+  Jeśli więc mamy trzy aktywne pady przypisane do gniazd 0, 1 i 2, a pad w gnieździe 0 jest nieaktywny, to gniazda 1 i 2 staną się gniazdami 0 i 1, a więc w gnieździe 0 zawsze powinien być aktywny pad, chyba że wszystkie pady są wyłączone (w takim przypadku zwraca -1).
+   
+  Składnia:
+  xboxlive_pad_for_user(user_id, slot);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        user_id
+        Identyfikator użytkownika konsoli Xbox
+        The User ID (a pointer) to check
+      
+      
+        slot
+        Real
+        The index (an integer) of the gamepad slot to check
+      
+    
+  
+   
+  Zwroty:
+  Xbox Pad ID
+   
+  Przykład:
+  if (xboxlive_pad_for_user(user_id, 0) == -1)
+    {
+        for(var i = 0; i < gamepad_get_device_count(); i++;)
+        {
+            var u_id = xboxlive_user_for_pad(i);
+            if (u_id == -1)
+            {
+                async_ID = xboxlive_pad_for_user(i, u_id);
+            }
+        }
+    }
+  Powyższy kod sprawdza, czy w slocie 0 dla podanego wskaźnika ID użytkownika nie ma już przypisanych gamepadów, a jeśli nie, to czy jeden z nich jest przypisany.
+   
+   
+   
+  
+    
+      
+        Wstecz: Użytkownicy i konta
+        Następny: xboxlive_pad_count_for_user
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

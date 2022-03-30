@@ -1,0 +1,51 @@
+
+  
+  ds_grid_get
+  Za pomocą tej funkcji można uzyskać wartość z dowolnej komórki w podanej siatce DS. Jeśli do funkcji zostaną przekazane nieprawidłowe współrzędne siatki, zwrócona wartość będzie miała adres undefined, a w oknie wyjściowym zostanie wyświetlony błąd.
+   
+  Składnia:
+  ds_grid_get(index, x, y);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the grid.
+     
+      
+        x
+        The x position of the cell you want to find the value of.
+     
+      
+        y
+        The y position of the cell you want to find the value of.
+     
+    
+  
+   
+  Zwroty:
+  Variable
+   
+  Przykład:
+  var xx = irandom(ds_grid_width(grid) - 1);
+    var yy = irandom(ds_grid_height(grid) - 1);
+    val = ds_grid_get(grid, xx, yy)
+  Powyższy kod wybiera losową komórkę z siatki DS indeksowaną w zmiennej "grid" i zapisuje jej wartość w zmiennej "val".
+   
+   
+   
+  
+    
+      
+        Powrót: Siatki DS
+        Następny: ds_grid_get_max
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

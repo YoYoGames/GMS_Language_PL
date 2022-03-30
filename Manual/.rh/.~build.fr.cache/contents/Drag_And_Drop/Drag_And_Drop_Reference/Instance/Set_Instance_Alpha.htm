@@ -1,0 +1,42 @@
+
+  
+   Ustaw alfę pierwszoplanową
+  Ten blok akcji ustawia wartość image_alpha dla instancji. Wartość alfa obrazu jest wartością "przezroczystości" dla rysowania dowolnego sprite przypisanego do instancji i ma wartość pomiędzy 0 a 1, gdzie 0 oznacza pełną przezroczystość, a 1 - pełną nieprzezroczystość.
+    jest całkowicie nieprzezroczysta. Zauważ, że jeśli na stronie sprite znajdują się przezroczyste lub półprzezroczyste piksele, to ich przezroczystość będzie skalowana o tę wartość, więc jeśli na stronie sprite znajdują się piksele o przezroczystości 50% i ustawisz alfę instancji na 0,5, to ostateczna alfa
+    dla przezroczystych pikseli wyniesie 25%. Można ustawić tę wartość jako wielkość względną
+  Należy pamiętać, że aby zmiany w tej zmiennej były widoczne, instancja powinna albo nie mieć zdarzenia draw (a więc GameMaker Studio 2 domyślnie narysuje sprite), albo być narysowana za pomocą akcji Draw Self .
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        alpha
+        Wartość alfa do ustawienia (od 0 do 1, domyślnie 1).
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji ustawia nową stronę sprite oraz szereg innych właściwości
+    właściwości dotyczące sposobu wyświetlania tej strony sprite, w tym ustawienie alfa obrazu na 0,5.
+   
+   
+   
+  
+    
+      
+        Powrót: Działania instancji
+        Następnie: Ustaw kolor instancji
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

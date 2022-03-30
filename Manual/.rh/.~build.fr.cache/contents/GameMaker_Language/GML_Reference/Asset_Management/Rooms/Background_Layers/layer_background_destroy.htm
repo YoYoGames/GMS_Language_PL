@@ -1,0 +1,48 @@
+
+  
+  warstwa_tła_zniszcz
+  Ta funkcja niszczy podany element tła. Podajesz identyfikator tła (który otrzymujesz podczas tworzenia tła za pomocą layer_background_create() lub gdy użyjesz identyfikatora warstwy wraz z layer_get_background_id()), a ta funkcja je usunie. Jeśli tło zostało dodane w edytorze room, to przy kolejnym wyjściu z room i powrocie tło zostanie ponownie utworzone. Jeśli jednak warstwa room jest trwała, tło zostanie usunięte, chyba że ponownie wyłączysz trwałość warstwy room.
+   
+  Składnia:
+  layer_background_destroy(background_element_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        background_element_id
+        Identyfikator elementu tła
+        The unique ID value of the background element to be destroyed
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var lay_id = layer_get_id("Background_trees");
+    var bck_id = layer_background_get_id("Forrest");
+    if layer_background_exists(lay_id, bck_id)
+    {
+        layer_background_destroy(bck_id);
+    }
+  Powyższy kod sprawdza warstwę "Tło_drzewa", czy dany element tła istnieje, a jeśli tak, to zostaje on zniszczony (ale nie warstwa).
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy tła
+        Następny: layer_background_visible
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

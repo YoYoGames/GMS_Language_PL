@@ -1,0 +1,65 @@
+
+  
+  draw_set_valign
+  Funkcja ta służy do wyrównywania tekstu wzdłuż osi pionowej, a zmiana wyrównania w pionie spowoduje zmianę pozycji i kierunku rysowania całego dalszego tekstu. Domyślną wartością jest fa_top. Akceptowane są następujące stałe:
+  
+    
+      
+        Stała
+        Wyrównanie
+      
+      
+        fa_top
+        
+      
+      
+        fa_middle
+        
+      
+      
+        fa_bottom
+        
+      
+    
+  
+   
+  Składnia:
+  draw_set_valign(valign);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        valign
+        Stała wyrównania pionowego
+        Vertical alignment constant (from the table above).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_set_halign(fa_center);
+    draw_set_valign(fa_middle);
+    draw_text(100, 32, "Score: " + string(score));
+  Powyższy kod spowoduje narysowanie wyniku wyśrodkowanego na samym środku tekstu.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekst
+        Następny: draw_get_font
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

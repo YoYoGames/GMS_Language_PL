@@ -1,0 +1,37 @@
+
+  
+   Ukryj klawiaturę wirtualną
+  Tej akcji można użyć do ukrycia wirtualnej klawiatury na urządzeniu, na którym uruchomiona jest gra. Wywołanie tej akcji spowoduje wygenerowanie systemowego zdarzenia asynchronicznego, w którym mapa async_load  DS zostanie wypełniona następującymi parami klucz/wartość:
+  
+    "event_type" - będzie to "stan klawiatury wirtualnej", jeśli zostanie wywołany przez działania na klawiaturze wirtualnej.
+    "screen_height" - wysokość wirtualnej klawiatury (w pikselach). Wartość ta będzie równa 0, jeśli klawiatura jest niewidoczna.
+    "keyboard_status" - aktualny stan klawiatury, zwracany jako jeden z następujących ciągów znaków:
+      
+        "ukrycie"
+        "hidden"
+        "showing"
+        "widoczna"
+      
+    
+  
+   
+  Składnia działania:
+  
+  Przykład:
+  Powyższy kod bloku akcji sprawdza, czy nie została wykryta akcja opuszczenia myszy, a jeśli zostanie wykryta
+    zostanie wykryta, wówczas sprawdzane jest, czy jest wyświetlana wirtualna klawiatura systemu operacyjnego. Jeśli nie jest, to jest ona ustawiana na pokazywanie - przy użyciu klawiatury numerycznej - a jeśli jest już pokazywana, to jest ukrywana.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje myszy i klawiatury
+        Następny: Uzyskaj wysokość klawiatury wirtualnej
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

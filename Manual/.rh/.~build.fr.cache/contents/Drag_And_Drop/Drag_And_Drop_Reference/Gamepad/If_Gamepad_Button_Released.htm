@@ -1,0 +1,53 @@
+
+  
+   Jeśli przycisk gamepada jest zwolniony
+  Ta akcja sprawdza, czy przycisk gamepada został zwolniony dla podanego indeksu gamepada. Zwraca true w przypadku pojedynczego kliknięcia w grze, w którym przycisk został zwolniony, oraz false we wszystkich innych przypadkach. Jeśli włączysz modyfikator not,
+    to działanie zostanie odwrócone i będzie sprawdzać, czy przycisk nie został zwolniony, zwracając false w momencie, w którym przycisk został zwolniony, oraz true we wszystkich pozostałych przypadkach.
+  Jeśli sprawdzany przycisk jest przyciskiem analogowym, zwolnienie nie zostanie wykryte, dopóki wartość przycisku nie spadnie poniżej progu ustawionego za pomocą akcji Ustaw próg przycisku gamepada.
+  Należy pamiętać, że aby dodać akcje do bloku "jeśli", należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:
+  Te akcje będą teraz uruchamiane, jeśli wartość "if" będzie równa
+   true podczas gdy wszelkie działania wykonane w innym miejscu zostaną wykonane po bloku "if".
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Gamepad
+        Indeks gamepada.
+      
+      
+        Button
+        Nazwa przycisku, który ma być sprawdzany.
+      
+      
+        Not
+        Negacja sprawdzenia (prawda staje się fałszem i odwrotnie)
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji co krok sprawdza stan przycisków na gamepadzie 0 i
+    jeśli przycisk jest przytrzymywany, sprawdza, czy nie nastąpiło pierwsze naciśnięcie przycisku. Jeśli sprawdzane jest true początkowe naciśnięcie przycisku, odtwarzany jest dźwięk, a następnie, gdy przycisk jest przytrzymany, prędkość instancji jest ustawiana na 10. Jeśli przycisk nie jest
+    nie jest przytrzymywany, po zwolnieniu przycisku sprawdzana jest prędkość, aby ponownie ustawić ją na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Czynności gamepada
+        Następny: Gamepad Get Axis
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

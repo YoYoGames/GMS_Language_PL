@@ -1,0 +1,41 @@
+
+  
+   Usuń plik
+  Za pomocą tej czynności można usunąć plik, który został utworzony wcześniej. Podajesz nazwę pliku (w postaci string), który ma zostać usunięty. Należy pamiętać, że nie można usunąć plików zawartych w pakiecie z grą, a jedynie te, które zostały utworzone
+    za pomocą akcji Zamknij Ini lub Zapisz bufor (więcej informacji na ten temat znajduje się w rozdziale System plików ).
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Filename
+        Nazwa (w postaci string) pliku do usunięcia
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdzi, czy istnieje plik "checkpoint.sav", a jeśli
+    tak, to następnie sprawdza, czy istnieje plik "checkpoint_OLD.sav". Jeśli ten plik również istnieje, to jest usuwany, a następnie nazwa oryginalnego pliku "checkpoint.sav" jest zmieniana na "checkpoint_OLD.sav". Na koniec bufor
+    jest zapisywany jako "checkpoint.sav" (zasadniczo tworzymy kopię zapasową zapisanego pliku buffer za każdym razem, gdy go zapisujemy, tak że zawsze istnieje "bieżący" zapis i "stary" zapis).
+   
+   
+   
+  
+    
+      
+        Wstecz: Akcje plików
+        Następny: Otwórz plik Ini
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

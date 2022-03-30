@@ -1,0 +1,47 @@
+
+  
+  pomieszczenie_gotowe
+  Ta funkcja umożliwia przejście do dowolnej strony room w projekcie gry, utworzonej za pomocą kodu lub przeglądarki Asset. Podajesz indeks room (przechowywany w zmiennej dla nazwy room lub jako zmienna zwracana przez funkcję room_add()). Zwróć uwagę, że adres room nie zmieni się do końca zdarzenia, w którym wywołano funkcję, więc każdy kod po jej wywołaniu będzie nadal działał, jeśli zostanie wykonany w tym samym zdarzeniu. Funkcja ta wywoła również zdarzenie Koniec pokoju.
+   
+  UWAGA Identyfikatory Room nie są oparte na ich kolejności w Przeglądarce Asset lub Menedżerze Room, dlatego należy unikać bezpośredniego podawania wartości liczbowych. Zamiast tego należy użyć stałej pokojowej dla strony asset, do której chcemy się odwołać (jest to po prostu jej nazwa) lub pobrać ją za pomocą funkcji.
+  Składnia:
+  room_goto(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the room to go to.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  switch (global.level)
+    {
+        case 0: room_goto(rm_level1); break;
+        case 1: room_goto(rm_level2); break;
+        case 2: room_goto(rm_level3); break;
+    }
+  Powyższy kod sprawdzi zmienną globalną i zmieni adres room na podstawie wartości, jaką ona posiada.
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room_goto_next
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

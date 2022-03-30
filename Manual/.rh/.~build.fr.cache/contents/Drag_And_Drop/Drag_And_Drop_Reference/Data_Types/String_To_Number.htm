@@ -1,0 +1,75 @@
+
+  
+   String To Number
+  To działanie umożliwia przekształcenie adresu string w liczbę. Użytkownik podaje adres string, który ma zostać zmieniony, a następnie podaje zmienną docelową, do której ma powrócić liczba rzeczywista (zmienna ta może być oznaczona jako tymczasowa zmienna lokalna). Zwróć uwagę, że jeśli na stronie string znajdują się jakiekolwiek znaki
+    inne niż cyfry i kropka dziesiętna, nie zostaną one przekonwertowane. Jeśli jednak adres string zaczyna się od cyfry, to właśnie one zostaną przekonwertowane, a reszta adresu string zostanie pominięta. Należy pamiętać, że w przypadku podania w tej akcji wartości dziesiętnych
+    string zostanie zaokrąglony tylko do dwóch miejsc po przecinku. Poniżej znajduje się tabela z wartościami wejściowymi i oczekiwanymi wartościami zwrotnymi
+  
+    
+      
+        String
+        Wartość zwracana
+      
+      
+        "123"
+        123
+      
+      
+        "123 Hello World"
+        123
+      
+      
+        "Hello World"
+        0 (domyślnie, jeśli adresu string nie można przekonwertować, zwracane jest 0)
+      
+      
+        "Hello World 123"
+        0
+      
+      
+        "123.45678"
+        123.46
+      
+    
+  
+   
+  Składnia działania:
+  
+  Argumenty:
+   
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Value
+        Strona string do konwersji
+      
+      
+        Target
+        Zmienna docelowa, która ma przechowywać zwróconą wartość
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji inicjalizuje zmienną globalną, a następnie ładuje plik z
+    buffer . Z pliku strings odczytywane są dwie strony buffer i zapisywane w tymczasowych zmiennych lokalnych, a następnie jedna z nich jest zamieniana na liczbę rzeczywistą i zapisywana w innej tymczasowej zmiennej lokalnej. Następnie zmienne te są przypisywane do zmiennych globalnych, a
+    strona buffer zostaje usunięta.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje typu danych
+        Następny: przekształcanie liczby w ciąg znaków
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

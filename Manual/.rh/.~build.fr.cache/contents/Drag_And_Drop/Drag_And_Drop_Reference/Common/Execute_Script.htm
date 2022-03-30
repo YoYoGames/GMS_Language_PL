@@ -1,0 +1,52 @@
+
+  
+   Wykonaj skrypt
+  Tej akcji można użyć do wywołania funkcji script lub funkcji zdefiniowanej przez użytkownika. Ogólnie rzecz biorąc, akcja ta powinna być stosowana tylko w starszych projektach i nie powinna być używana w bieżących lub nowych projektach. Aby użyć tej
+    podajesz nazwę script asset do wywołania - lub nazwę zmiennej funkcji zdefiniowanej przez użytkownika do wywołania - a następnie podajesz wszelkie wymagane przez nią argumenty, tzn. wszelkie wartości (strings, liczby całkowite, indeksy zasobów itp...), które chcesz wprowadzić do skryptu
+    ), które chcesz wprowadzić do skryptu lub funkcji, aby mogły z nich skorzystać. W razie potrzeby można dodać dodatkowe argumenty, klikając ikonę plusa  obok danej akcji.
+  Niektóre scripts i funkcje zdefiniowane przez użytkownika mogą również zwracać wartość do późniejszego wykorzystania na liście bloków akcji, dlatego można określić zmienną docelową, która powinna przechowywać tę wartość zwrotną. Może to być zmienna utworzona wcześniej lub nowa, tymczasowa zmienna
+    lokalna (jeśli zaznaczysz pole wyboru "Temp"). Zarówno pole celu, jak i argumentu można pozostawić puste, jeśli nie są one wymagane.
+  Zwróć uwagę, że do wywoływania funkcji zdefiniowanych przez użytkownika lepiej jest używać akcji Wywołanie funkcji i generalnie nie powinno być potrzeby używania tej akcji ani wywoływania strony script asset bezpośrednio w kodzie.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Script
+        Nazwa funkcji script lub funkcji zdefiniowanej przez użytkownika, która ma zostać wywołana.
+      
+      
+        Argument0 ... Argument3
+        Różne argumenty (wartości), które mają być przekazane do script lub funkcji (nieużywane argumenty można pozostawić puste)
+      
+      
+        Target
+        Nazwa zmiennej, do której mają być kierowane zwracane wartości (może pozostać pusta)
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji wywołuje funkcję zdefiniowaną przez użytkownika, przekazując dwa argumenty dotyczące
+    losowego położenia w obrębie strony room. Funkcja nie zwraca niczego.
+   
+   
+   
+  
+    
+      
+        Powrót: Wspólne działania
+        Następny: Nowy
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

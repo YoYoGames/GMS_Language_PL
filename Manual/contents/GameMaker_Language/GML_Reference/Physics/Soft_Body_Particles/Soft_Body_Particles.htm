@@ -15,7 +15,7 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Miękkie cząstki ciała</h1>
-  <p>GameMaker Studio 2 korzysta z biblioteki fizyki ciała sztywnego Box2D i jako taka nie pozwala na stosowanie fizyki ciała miękkiego. Jednak program <a href="https://google.github.io/liquidfun/"><b>Płynna zabawa</b></a> <span class="notranslate">extension</span> dodaje do systemu fizyki <i>cząsteczki</i>, które umożliwiają tworzenie symulowanych ciał miękkich przy użyciu fizyki ciała sztywnego. Zasadniczo można utworzyć <i>kształt</i> cząstek, które zachowują spójność i w ten sposób symulują pełne ciało, które ze względu na interakcję cząstek sprawia wrażenie ciała miękkiego. Cząstki fizyki można także wykorzystać do symulowania cieczy i innych systemów fizyki opartych na cząsteczkach.</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> korzysta z biblioteki fizyki ciała sztywnego Box2D i jako taka nie pozwala na stosowanie fizyki ciała miękkiego. Jednakże <a href="https://google.github.io/liquidfun/"><b>Płynna zabawa</b></a> <span class="notranslate">extension</span> dodaje do systemu fizyki <i>cząsteczki</i>, które umożliwiają tworzenie symulowanych ciał miękkich przy użyciu fizyki ciała sztywnego. Zasadniczo można utworzyć <i>kształt</i> cząstek, które zachowują spójność i w ten sposób symulują pełne ciało, które ze względu na interakcję cząstek sprawia wrażenie ciała miękkiego. Cząstki fizyki można także wykorzystać do symulowania cieczy i innych systemów fizyki opartych na cząsteczkach.</p>
   <p>Zanim zaczniesz tworzyć cząstki fizyki, będziesz musiał ustawić dla nich podstawowe właściwości fizyki, tak jak dla <i>elementów</i> stałych w zwykłej fizyce. Należy jednak pamiętać, że ustawienie tych właściwości będzie miało wpływ na <i>wszystkie cząstki utworzone wcześniej</i>, a także na wszystkie nowe cząstki, które zostaną utworzone, więc zwykle używa się tych funkcji tylko na początku gry lub poziomu. Istnieją jednak specjalne funkcje do ustawiania <i>flag</i> cząstek dla poszczególnych cząstek (i grup cząstek), które zmienią ich właściwości, takie jak &quot;odbijanie&quot; czy &quot;lepkość&quot;, umożliwiając tworzenie różnych typów cząstek w zakresie tych globalnych ustawień.</p>
   <p>Do ustawiania i uzyskiwania danych globalnego systemu cząstek stałych dostępne są następujące funkcje:</p>
   <ul class="colour">
@@ -40,6 +40,7 @@
     <li><a href="physics_particle_set_group_flags.htm"><span class="notranslate">physics_particle_set_group_flags</span></a></li>
     <li><a href="physics_particle_get_group_flags.htm"><span class="notranslate">physics_particle_get_group_flags</span></a></li>
     <li><a href="physics_particle_group_get_inertia.htm"><span class="notranslate">physics_particle_group_get_inertia</span></a></li>
+    <li><a data-xref="{title}" href="physics_particle_group_get_mass.htm">physics_particle_group_get_mass</a></li>
     <li><a href="physics_particle_group_get_centre_x.htm"><span class="notranslate">physics_particle_group_get_centre_x</span></a></li>
     <li><a href="physics_particle_group_get_centre_y.htm"><span class="notranslate">physics_particle_group_get_centre_y</span></a></li>
     <li><a href="physics_particle_group_get_vel_x.htm"><span class="notranslate">physics_particle_group_get_vel_x</span></a></li>

@@ -1,0 +1,50 @@
+
+  
+  ds_list_mark_as_map
+  Ta funkcja "zaznacza" (lub "oflagowuje") daną pozycję w uprzednio utworzonej liście DS jako zawierającą mapę DS. Funkcja ta jest wymagana podczas kodowania JSON strings (który można utworzyć za pomocą json_encode()), ale może być również przydatna podczas zagnieżdżania struktur danych, ponieważ pozycje oznaczone w ten sposób będą automatycznie usuwane (niszczone), gdy nadrzędna lista DS zostanie zniszczona. Oznacza to, że nie trzeba ręcznie przeglądać zawartości listy i niszczyć zaznaczonych struktur danych pojedynczo przed zniszczeniem listy "rodzica". Jeśli jednak usuniesz pozycję listy pojedynczo, struktura danych, którą zawierała, nie zostanie usunięta, dlatego przed usunięciem pozycji listy nadrzędnej należy wywołać odpowiednią funkcję niszczącą mapę DS. Należy także pamiętać, że jeśli wywołasz funkcję ds_list_clear() na liście, wszystkie pozycje oznaczone jako mapy zostaną również zniszczone podczas kasowania listy.
+  Warto również zauważyć, że jeśli pozycja, która została zaznaczona, zmieni się w obrębie listy, "znak" przesunie się wraz z nią, więc jeśli zaznaczono pozycję 3 na liście (na przykład), a następnie wstawiono pod nią 2 kolejne pozycje, tak że przesunęła się ona na pozycję 5, nadal będzie zaznaczona jako mapa.
+   
+  Składnia:
+  ds_list_mark_as_map(id, pos);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the list to mark.
+     
+      
+        pos
+        The position within the list to mark.
+     
+    
+  
+   
+  Zwroty:
+  DS Map ID or -1 (if it fails)
+   
+  Przykład:
+  var sub_map = ds_map_create();
+    ds_map_add(sub_map, "player", player_array);
+    ds_map_add(sub_map, "enemy", enemy_array);
+    ds_list_add(j_list, sub_map);
+    ds_list_mark_as_map(j_list, 0);
+  Powyższy kod tworzy mapę DS, a następnie wypełnia ją dwoma kluczami, z których każdy zawiera tablicę wartości. Mapa ta jest następnie dodawana do podanej listy DS, a pozycja "oznaczana" jako taka, aby można ją było później poprawnie zakodować.
+   
+   
+   
+  
+    
+      
+        Powrót: Listy DS
+        Następny: ds_list_is_list
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

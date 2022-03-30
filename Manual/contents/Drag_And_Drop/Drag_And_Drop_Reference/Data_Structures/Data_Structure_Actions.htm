@@ -9,17 +9,17 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Section detailing all the Data Structure actions" />
-  <meta name="rh-index-keywords" content="DnD™ Overview - Data Structure Actions Library" />
+  <meta name="rh-index-keywords" content="GML Visual Overview - Data Structure Actions Library" />
   <meta name="search-keywords" content="Data Structure Actions" />
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Biblioteka działań na strukturach danych</h1>
   <p><img alt="Data Structure Library" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/Lib_DS.png" /></p>
-  <p>W grach często zachodzi potrzeba przechowywania informacji w precyzyjny i uporządkowany sposób. Na przykład można przechowywać listę przedmiotów, które nosi dana osoba, lub siatkę miejsc, które należy jeszcze odwiedzić. Do tego celu można użyć wielu zmiennych
+  <p>W grach często zachodzi potrzeba przechowywania informacji w precyzyjny i uporządkowany sposób. Na przykład można przechowywać listy przedmiotów, które nosi dana osoba, lub siatkę miejsc, które trzeba jeszcze odwiedzić. Do tego celu można użyć wielu zmiennych
     ale jeśli chcesz wykonać bardziej skomplikowane operacje, takie jak sortowanie danych lub wyszukiwanie określonego elementu, musisz napisać duże fragmenty kodu bloków akcji, który może być powolny w wykonaniu, trudny do debugowania i naprawdę uciążliwy w pisaniu!</p>
-  <p>Aby temu zaradzić, <span class="notranslate">GameMaker Studio 2</span> ma kilka wbudowanych struktur danych, do których można uzyskać dostęp za pomocą specjalistycznych funkcji. Na stronie <span class="notranslate">Drag and Drop</span> dostępne są cztery różne typy struktur danych (w przypadku <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/Data_Structures.htm">GML</a> jest ich sześć),
-    Każdy z nich ma swoje zalety i wady, w zależności od rodzaju informacji, które chcesz przechowywać, oraz od tego, w jaki sposób chcesz nimi później manipulować - te cztery typy to:</p>
+  <p>Aby temu zaradzić, <span data-keyref="GameMaker Name">GameMaker</span> posiada szereg wbudowanych struktur danych, do których można uzyskać dostęp za pomocą specjalistycznych funkcji. Istnieją cztery różne typy struktur danych dostępne na stronie <span class="notranslate">GML</span> Visual (jest ich sześć, jeśli używasz <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/Data_Structures.htm">GML</a>),
+    Każdy z nich ma swoje wady i zalety, zależnie od rodzaju informacji, które chcesz przechowywać, oraz sposobu, w jaki chcesz nimi później manipulować:</p>
   <table class="icons" style="margin-left: 32auto">
     <tbody>
       <tr>
@@ -41,14 +41,14 @@
       <tr>
         <td class="icons" style="text-align: center"><img alt="Create Stack Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Data_Structures/i_DS_Create_Stack.png" /></td>
         <td class="icons"><strong>Stosy</strong></td>
-        <td class="text"><span>Struktura danych stosu jest tak zwaną strukturą LIFO (last-in-first-out). Możesz wciskać wartości na stos, a następnie usuwać je ze stosu, przy czym wartość, która została ostatnio wciśnięta na stos, jest pierwszą, która zostanie z niego wyciągnięta (pomyśl o stosie monet, gdzie każda dodawana moneta musi zostać najpierw usunięta, zanim będziesz mógł dostać się do pozostałych monet pod spodem). Stosy są często używane do obsługi przerwań, funkcji rekurencyjnych, a nawet do konstruowania podstawowej sztucznej inteligencji w grach.</span></td>
+        <td class="text"><span>Struktura danych stosu jest tak zwaną strukturą LIFO (last-in-first-out). Możesz wciskać wartości na stos, a następnie usuwać je ze stosu, przy czym wartość, która została wciśnięta na stos jako ostatnia, jest pierwszą, która zostanie z niego wyciągnięta (pomyśl o stosie monet, gdzie każda dodawana moneta musi zostać najpierw usunięta, zanim będziesz mógł dostać się do pozostałych monet pod spodem). Stosy są często używane do obsługi przerwań, funkcji rekurencyjnych, a nawet do konstruowania podstawowej sztucznej inteligencji w grach.</span></td>
       </tr>
     </tbody>
   </table>
   <p> </p>
   <p>Zasadniczo wszystkie struktury danych działają w ten sam sposób - tworzysz strukturę danych i przechowujesz wartość jej indeksu w zmiennej. Następnie używasz tego indeksu do odwoływania się do struktury danych we wszystkich kolejnych wywołaniach funkcji, które mogą wykonywać na niej operacje. Na koniec,
-    po zakończeniu pracy ponownie niszczysz strukturę danych, aby usunąć ją z pamięci. Możesz używać dowolnej liczby struktur jednocześnie, a wszystkie struktury mogą przechowywać zarówno <span class="notranslate">strings</span>, jak i wartości rzeczywiste.</p>
-  <p class="note"><b>UWAGA</b>: Podobnie jak wszystkie zasoby dynamiczne, struktury danych zajmują pamięć, dlatego powinny <b>być zawsze niszczone, gdy nie są już potrzebne</b>, aby zapobiec wyciekom pamięci, które spowolnią, a w końcu doprowadzą do awarii gry.</p>
+    po zakończeniu pracy ponownie niszczysz strukturę danych, aby usunąć ją z pamięci. W tym samym czasie można używać dowolnej liczby struktur, a wszystkie struktury mogą przechowywać zarówno wartości <span class="notranslate">strings</span>, jak i wartości rzeczywiste.</p>
+  <p class="note"><b>UWAGA</b>: Tak jak wszystkie zasoby dynamiczne, struktury danych zajmują pamięć, dlatego powinny <b>być zawsze niszczone, gdy nie są już potrzebne</b>, aby zapobiec wyciekom pamięci, które spowolnią, a w końcu doprowadzą do awarii gry.</p>
   <p>Biblioteka <b>Struktury danych</b> ma następujące działania:</p>
   <p> </p>
   <table class="dnd" style="text-align: left;margin-left:">
@@ -185,7 +185,7 @@
     <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
   </div>
   <!-- KEYWORDS
-Drag And Drop Data Structure Actions
+GML Visual Data Structure Actions
 Data Structure Actions
 -->
   <!-- TAGS

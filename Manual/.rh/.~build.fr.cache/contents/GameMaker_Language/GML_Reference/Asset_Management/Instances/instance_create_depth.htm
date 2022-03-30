@@ -1,0 +1,66 @@
+
+  
+  tworzenie_instancji_głębokość
+  Za pomocą tej funkcji można utworzyć nową instancję określonej strony object w dowolnym punkcie strony room i na podanej głębokości. Głębokość może być dowolną wartością, przy czym im mniejsza głębokość, tym bliżej kamery będą rysowane obiekty, a im większa głębokość, tym dalej od kamery, więc instancja na głębokości -200 zostanie narysowana nad instancją na głębokości +300 (na przykład).
+  Zauważ, że ta funkcja faktycznie utworzy warstwę room dla instancji, ponieważ wszystkie instancje muszą znajdować się na warstwie w room, ale ponieważ jest to warstwa zarządzana (tzn. nie taka, którą utworzyłeś za pomocą kodu lub w room, ale taka, którą GameMaker Studio 2 utworzył automatycznie), nie możesz uzyskać do niej dostępu, a zmienna layer zmienna instancji zwróci wartość -1.
+  WAŻNE Minimalna i maksymalna głębokość warstwy wynosi od -16000 do 16000. Wszystko, co zostanie umieszczone na warstwie o głębokości spoza tego zakresu, nie zostanie narysowane, choć wszystkie wydarzenia będą przebiegać normalnie.
+  Funkcja ta zwraca wartość id nowej instancji, którą można następnie zapisać w zmiennej lub użyć do uzyskania dostępu do tej instancji. Zauważ, że funkcja ta wywoła również zdarzenie Create dla tworzonej instancji przed kontynuowaniem kodu lub akcji dla zdarzenia, które wywołało funkcję.
+   
+  Składnia:
+  instance_create_depth(x, y, depth, obj);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x
+        Real
+        The x position the object will be created at
+      
+      
+        y
+        Real
+        The y position the object will be created at
+      
+      
+        depth
+        Real
+        The depth to assign the created instance to
+      
+      
+        obj
+        Obiekt Aktywa
+        The object index of the object to create an instance of
+      
+    
+  
+   
+  Zwroty:
+  Instance ID
+   
+  Przykład:
+  var inst = instance_create_depth(x, y, -10000, obj_Bullet);
+    with (inst)
+    {
+        speed = other.shoot_speed;
+        direction = other.image_angle;
+    }
+  Powyższy kod tworzy nową instancję object "obj_Bullet" i zapisuje identyfikator instancji w zmiennej. Ta zmienna jest następnie używana do przypisywania speed i direction do nowej instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Instancje
+        Następny: instance_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

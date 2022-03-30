@@ -1,0 +1,65 @@
+
+  
+  ds_grid_value_y
+  Za pomocą tej funkcji można uzyskać współrzędną y (w podanym obszarze siatki prostokątnej) szukanej wartości. W tym celu należy podać indeks siatki DS (zwrócony przez ds_grid_create()) wraz z pozycjami x/y dla lewego górnego i prawego dolnego rogu szukanego obszaru siatki, a następnie podajesz szukaną wartość. Jeśli szukana wartość nie istnieje, funkcja zwraca -1.
+   
+  Składnia:
+  ds_grid_value_y(index, x1, y1, x2, y2, val);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the grid.
+     
+      
+        x1
+        The x position of the left of the region in the grid, from 0 to (grid width - 1).
+     
+      
+        y1
+        The y position of the top of the region in the grid, from 0 to (grid height - 1).
+     
+      
+        x2
+        The x position of the right of the region in the grid, from 0 to (grid width - 1).
+     
+      
+        y2
+        The y position of the bottom of the region in the grid, from 0 to (grid height - 1)
+     
+      
+        val
+        The value to find.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if ds_grid_value_exists(grid, 0, 1, 5, 6, val)
+    {
+        xpos = ds_grid_value_x(grid, 0, 1, 5, 6, val);
+        ypos = ds_grid_value_y(grid, 0, 1, 5, 6, val);
+    }
+  Powyższy kod sprawdza kratkę ds_grid w poszukiwaniu określonej wartości w prostokątnym obszarze. Jeśli wartość zostanie znaleziona, zapisuje jej położenie x i y w dwóch zmiennych do późniejszego wykorzystania.
+   
+   
+   
+  
+    
+      
+        Powrót: Siatki DS
+        Następny: ds_grid_value_disk_x
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

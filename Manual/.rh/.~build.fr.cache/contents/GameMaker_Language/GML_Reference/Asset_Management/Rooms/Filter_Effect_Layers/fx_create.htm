@@ -1,0 +1,96 @@
+
+  
+  fx_create
+  Przegląd
+  Funkcja ta służy do tworzenia nowego FX Struct dla danego typu efektu, który zawiera informacje o efekcie i wartości jego parametrów. Parametry efektu można odczytać, wywołując funkcję fx_get_parameter/s na zwróconym adresie struct, a nowe wartości można im przypisać, wywołując adresy fx_set_parameter/s.
+  Do tej funkcji można przekazać dowolny z poniższych adresów strings, aby utworzyć odpowiadający mu efekt:
+  
+    
+      
+        String
+        Opis
+      
+      
+        "_filter_colourise"
+        Filtr koloryzujący
+      
+      
+        "_filter_edgedetect"
+        Filtr wykrywający krawędzie
+      
+      
+        "_filter_greyscale"
+        Filtr skali szarości
+      
+      
+        "_filter_large_blur"
+        Duży filtr rozmywający
+      
+      
+        "_filter_pixelate"
+        Filtr pikselowy
+      
+      
+        "_filter_posterise"
+        Filtr posteryzacyjny
+      
+      
+        "_filter_screenshake"
+        Filtr wstrząsów ekranu
+      
+      
+        "_filter_tintfilter"
+        Filtr barwny
+      
+    
+  
+  Należy pamiętać, że strona struct zwrócona przez tę funkcję nie będzie zawierała żadnych widocznych elementów i będzie można ją zmodyfikować tylko za pomocą jednej z funkcji Filtr/Efekt.
+  Awarie funkcji
+  Funkcja zwróci -1, jeśli z jakiegoś powodu nie uda się utworzyć strony struct; może się tak zdarzyć, jeśli podana nazwa FX jest nieprawidłowa lub FX nie został załadowany do pakietu gry.
+  Aby zapewnić prawidłowe działanie tej funkcji, należy upewnić się, że w pakiecie z grą zostały załadowane potrzebne efekty FX, jak wyjaśniono na stronie Funkcje filtrów i efektów:
+  
+     
+  
+  Jeśli te warunki nie zostaną spełnione, tzn. nie zostanie przekazany dosłowny adres string, a filtr/efekt nie będzie występował w żadnym z adresów rooms, wówczas funkcja nie będzie mogła załadować tego filtra/efektu i zwróci -1.
+   
+   
+  Składnia:
+  fx_create(filter_or_effect_name);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        filter_or_effect_name
+        String
+        The name of the filter/effect to create (from the table listed at the top).
+      
+    
+  
+   
+  Zwroty:
+  FX Struct or -1 (on failure)
+   
+  Przykład:
+  var _fx_tint = fx_create("_filter_tintfilter");
+    fx_set_parameter(_fx_tint, "g_TintCol", [1, 0, 0, 1]);
+    layer_set_fx("EffectLayer", _fx_tint);
+  Powyższy kod tworzy nowy FX struct z efektu "_filter_tintfilter", który jest filtrem "Colour Tint" znajdującym się w edytorze Room. Przypisuje on parametrowi "g_TintCol" wartość, która jest kolorem tinty, a ponieważ jest to wewnętrzna strona vec4, przyjmuje tablicę zawierającą cztery wartości (odpowiadające wartościom czerwonej, zielonej, niebieskiej i alfa). Następnie do warstwy FX struct zostaje zastosowana warstwa FX dla odcienia.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje filtrów i efektów
+        Next: fx_get_parameter
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

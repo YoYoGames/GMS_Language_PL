@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>audio_sound_pitch</title>
+  <title>dźwięk/dźwięk/dźwięk</title>
   <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../../../assets/css/default.css" type="text/css" />
   <script src="../../../../assets/scripts/main_script.js"></script>
@@ -17,7 +17,7 @@
   <h1>audio_sound_pitch</h1>
   <p>Za pomocą tej funkcji można zmienić wysokość dźwięku. Dźwięk może mieć odniesienie do indeksu odtwarzanego dźwięku, który został zapisany w zmiennej przy użyciu funkcji <a href="audio_play_sound.htm"><span class="inline">audio_play_sound()</span></a> lub <a href="audio_play_sound_at.htm"><span class="inline">audio_play_sound_at()</span></a> lub rzeczywisty dźwięk <span class="notranslate">asset</span> z przeglądarki <span class="notranslate">Asset</span>. Jeśli jest to indeks odtwarzanego dźwięku, zmieniona zostanie tylko jego instancja, jednak w przypadku użycia dźwięku <span class="notranslate">asset</span> z przeglądarki <span class="notranslate">Asset</span> zmienione zostaną wszystkie kolejne odtwarzane instancje tego dźwięku.</p>
   <p>Argument pitch jest <i>mnożnikiem</i> wysokości dźwięku, co oznacza, że wartość wejściowa mnoży bieżącą wysokość dźwięku przez tę wartość. Wartość domyślna 1 nie powoduje zmiany wysokości dźwięku, natomiast wartość mniejsza od 1 obniża wysokość dźwięku, a większa od 1 podwyższa ją. W przypadku tej funkcji najlepiej jest stosować małe przyrosty, ponieważ wartości poniżej 0 lub powyżej 5 mogą być niesłyszalne. Warto zauważyć, że całkowita dozwolona zmiana wysokości dźwięku jest ograniczona do (1/256) - 256 oktaw, więc wartości powyżej lub poniżej tej wartości nie zostaną zarejestrowane.</p>
-  <p class="note"><b><span class="note">UWAGA</span> </b>Zaciskana wartość podana powyżej jest tym, do czego <span class="notranslate">GameMaker Studio 2</span> próbuje zacisnąć zakres, ale wartość ta <b>nie</b> jest gwarantowana na wszystkich platformach docelowych. <span class="notranslate">iOS</span> Na przykład  zaciska się na (1/256) - 8, więc może być konieczne eksperymentowanie na każdej platformie docelowej i posiadanie różnych wersji zasobów dźwiękowych, z których każda jest wstępnie przesunięta, jeśli potrzebne są wyższe lub niższe wartości oktaw.</p>
+  <p class="note"><b><span class="note">UWAGA</span> </b>Wartość zaciśnięta podana powyżej jest tym, do czego <span data-keyref="GameMaker Name">GameMaker</span> próbuje zaciśnięcia zakresu, ale wartość ta <b>nie</b> jest gwarantowana na wszystkich platformach docelowych. <span class="notranslate">iOS</span> Na przykład wartość (1/256) - 8, więc może być konieczne eksperymentowanie na każdej platformie docelowej i posiadanie różnych wersji zasobu dźwiękowego, z których każda jest wstępnie przesunięta, jeśli potrzebne są wyższe lub niższe wartości oktaw.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">audio_sound_pitch(index, pitch);</p>

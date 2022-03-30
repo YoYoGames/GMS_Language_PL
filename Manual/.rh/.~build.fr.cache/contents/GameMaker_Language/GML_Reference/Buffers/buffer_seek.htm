@@ -1,0 +1,89 @@
+
+  
+  bufor_poszukiwania
+  Za pomocą tej funkcji można poruszać się po stronie buffer, znajdując początek, koniec lub pozycję względną w stosunku do ostatnio używanej podczas odczytu lub zapisu danych. Wartość "offset" to przesunięcie (w bajtach), które należy dodać do podanej pozycji szukania, na przykład jeśli podstawa jest względna, a offset wynosi 4, to pozycja buffer przesunie się o 4 bajty od bieżącej pozycji. Należy zwrócić uwagę na następujące kwestie:
+  
+    Można używać wartości ujemnych przesunięcia, aby szukać wstecz przez stronę buffer, jak również wartości dodatnich.
+    Jeśli strona buffer jest typu "wrap" i przesunięcie nastąpi poza koniec strony buffer, pozycja szukania również zostanie zawinięta.
+    Jeśli adres buffer nie jest typu "wrap", wyszukiwanie zostanie zaciśnięte na początku lub końcu adresu buffer, nawet jeśli przesunięcie spowodowałoby wyjście poza granice adresu buffer.
+  
+  Następujące stałe są akceptowane jako argument "bazowy" przy wyszukiwaniu do:
+  
+    
+      
+      
+    
+    
+      
+        Stała szukania bufora
+      
+      
+        Stała
+        Opis
+      
+      
+        buffer_seek_start
+        Początek bufora
+      
+      
+        buffer_seek_relative
+        Pozycja względem bieżącej pozycji odczytu/zapisu
+      
+      
+        buffer_seek_end
+        Koniec bufora
+      
+    
+  
+   
+  Składnia:
+  buffer_seek(buffer, base, offset);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        buffer
+        Identyfikator bufora
+        The index of the buffer to use.
+      
+      
+        base
+        Real
+        The base position to seek.
+      
+      
+        offset
+        Real
+        The data offset value.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  buffer_seek(buff, buffer_seek_start, 0);
+    buffer_write(buff, buffer_s16, 0);
+    buffer_write(buff, buffer_s16, x);
+    buffer_write(buff, buffer_s16, y);
+  Powyższy kod znajduje początek strony buffer o identyfikatorze zapisanym w zmiennej "buff" i zapisuje do niej serię podpisanych 16-bitowych wartości całkowitych.
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_tell
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

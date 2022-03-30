@@ -1,0 +1,56 @@
+
+  
+  Struktura klatek kluczowych
+  Do każdej ścieżki (zdefiniowanej na stronie poświęconej strukturom ścieżek) przypisana jest jedna lub więcej struktur keyframe (które można uzyskać z właściwości keyframes ścieżki struct), a każda z nich ma następujące właściwości:
+  
+    
+      
+      
+      
+    
+    
+      
+        Sekwencja Keyframe Struct
+      
+      
+        Zmienna
+        Typ
+        Opis
+      
+      
+        frame
+        Real
+        Pozycja (w ramkach) wzdłuż strony timeline dla strony keyframe. Domyślna wartość to 0.
+      
+      
+        length
+        Real
+        Długość ścieżki keyframe. Domyślną wartością jest 1, a jeśli zostanie ustawiona na większą wartość, właściwość ścieżki, do której odnosi się keyframe, zostanie utrzymana na początkowej wartości przez czas trwania podanej długości. Należy pamiętać, że właściwość stretch zastąpi tę wartość, jeśli zostanie ustawiona na true.
+      
+      
+        stretch
+        Boolean
+        Jeśli ta właściwość jest ustawiona na true, to keyframe rozciąga się albo do następnej keyframe ścieżki, albo do końca ścieżki, jeśli jest to ostatnia keyframe. Wartość tę można uzyskać lub ustawić, a wartością domyślną jest false.
+      
+      
+        channels
+        Tablica of Sekwencja Keyframe Struktura danychs
+        Właściwość ta umożliwia dostęp do listy struktur danych klatek kluczowych dla kanałów ścieżki. Przy pobieraniu tej właściwości zwracana jest tablica danych keyframe structs , a przy ustawianiu należy określić tablicę danych keyframe structs .
+      
+    
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Sekwencje
+        Następny: Struktura danych klatek kluczowych
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

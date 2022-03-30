@@ -1,0 +1,106 @@
+
+  
+  os_get_language
+  Ta funkcja zwraca adres string z dwuliterowym kodem języka systemu operacyjnego, w którym uruchomiona jest gra, zgodnie z normą ISO639. Jeśli informacje te nie są dostępne, funkcja zwraca pusty adres string "" lub "en" dla języka angielskiego. Należy pamiętać, że niektóre języki mają także odpowiedni kod regionalny, więc aby rozróżnić różne regiony w tym samym kraju, należy użyć funkcji os_get_region().
+  W poniższej tabeli przedstawiono przykłady niektórych głównych dwuliterowych kodów językowych określonych w normie ISO 639:
+  
+    
+      
+        Język
+        Kod
+      
+      
+        Arabski
+        ar
+      
+      
+        Chiński
+        zh
+      
+      
+        duński
+        da
+      
+      
+        Język angielski
+        pl
+      
+      
+        Francuski
+        fr
+      
+      
+        Niemiecki
+        de
+      
+      
+        Grecka strona
+        el
+      
+      
+        Włoski
+        to
+      
+      
+        Japońska
+        ja
+      
+      
+        Norweski
+        nie
+      
+      
+        Polska
+        pl
+      
+      
+        Portugalski
+        pt
+      
+      
+        Rosyjska
+        ru
+      
+      
+        Hiszpański
+        es
+      
+      
+        Szwedzki
+        sv
+      
+    
+  
+   
+  UWAGA: Zwracany jest nie kod kraju lokalizacji, ale kod języka systemu operacyjnego.
+   
+  Składnia:
+  os_get_language()
+   
+  Zwroty:
+  
+   
+  Przykład:
+  switch (os_get_language())
+    {
+        case "es": ini_open("spanish.ini"); break;
+        case "fr": ini_open("french.ini"); break;
+        case "it": ini_open("italian.ini"); break;
+        default: ini_open("english.ini"); break;
+    }
+  Powyższy kod sprawdza język systemu operacyjnego i w zależności od zwróconej wartości otwiera inny plik *.ini.
+   
+   
+   
+  
+    
+      
+        Powrót: System operacyjny i kompilator
+        Następny: os_get_region
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

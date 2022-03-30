@@ -1,0 +1,53 @@
+
+  
+  xboxlive_stats_add_user
+  Za pomocą tej funkcji można dodać wskaźnik ID użytkownika do menedżera statystyk. Należy to zrobić przed użyciem innych funkcji statystyk, aby automatycznie zsynchronizować grę z XBox Live server i pobrać najnowsze wartości. Podajesz identyfikator użytkownika zwrócony przez (na przykład) funkcję xboxlive_get_user()a funkcja zwróci -1, jeśli wystąpił błąd lub jeśli identyfikator użytkownika jest nieprawidłowy, lub inną wartość, jeśli funkcja została pomyślnie wywołana.
+  Funkcja wygeneruje wywołanie zwrotne, które spowoduje wywołanie systemowego zdarzenia asynchronicznego. Zdarzenie to będzie miało specjalną mapę DS async_load którą należy następnie przetworzyć pod kątem następujących kluczy:
+  
+    "id" - będzie utrzymywać stałą achievement_stat_event
+    "eventname" - będzie zawierał adres string "LocalUserAdded"
+    "userid" - identyfikator użytkownika powiązany z żądaniem
+    "error" - 0, jeśli się powiedzie, inna wartość, jeśli wystąpił błąd
+    "errormessage" - Adres string z komunikatem o błędzie, jeśli taki jest dostępny.
+  
+   
+  Składnia:
+  xboxlive_stats_add_user(user_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        user_id
+        The user ID (a pointer) to add
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  for(var i = 0; i < xboxlive_get_user_count(); ++i;)
+    {
+        user_id[i] = xboxlive_get_user(i);
+        xboxlive_stats_add_user(user_id[i]);
+    }
+  Powyższy kod pobierze liczbę dostępnych kont użytkowników, a następnie przejrzy je na stronie loop i przypisze identyfikator konta do tablicy, a także zarejestruje użytkownika w menedżerze statystyk.
+   
+   
+   
+  
+    
+      
+        Powrót: Statystyki i rankingi
+        Następny: xboxlive_stats_remove_user
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,74 @@
+
+  
+  draw_roundrect_colour
+  Za pomocą tej funkcji można narysować kontur zaokrąglonego prostokąta lub wypełniony zaokrąglony prostokąt, w którym pozycja (x1,y1) jest lewym górnym rogiem, a pozycja (x2,y2) jest prawym dolnym rogiem. Jeśli jest wypełniony, można zdefiniować indywidualne kolory dla środka i krawędzi, a jeśli kolory te nie są takie same, uzyskany zostanie efekt gradientu od jednego do drugiego (ustawienia kolorów zastąpią kolor podstawowy ustawiony za pomocą funkcji draw_set_colour()).Za pomocą funkcji można określić, jak dokładne ma być rysowanie narożników. draw_set_circle_precision(), ale rogi są zawsze rysowane ze stałym promieniem. W razie potrzeby zmiany promienia narożnika należy użyć funkcji draw_roundrect_colour_ext(). Należy pamiętać, że rysowany prostokąt może wymagać innych wartości (+/-1 na x, y, szerokości lub wysokości), aby został narysowany w pożądanych wymiarach, ze względu na różnice między różnymi obsługiwanymi platformami.
+  UWAGA: Jeśli chcesz narysować kształt za pomocą strony shader, musisz wiedzieć, że większość stron shaders oczekuje następujących danych wejściowych: vertex, texture, Kolor. Jednak w przypadku korzystania z tej funkcji przekazywane są tylko dane vertex i kolor, a zatem shader może niczego nie narysować (lub narysować coś, ale niepoprawnie). Jeśli konieczne jest rysowanie kształtów w ten sposób, należy dostosować stronę shader do tego celu.
+   
+  Składnia:
+  draw_roundrect_colour(x1, y1, x2, y2, col1, col2, outline);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x1
+        Real
+        The x coordinate of the left of the rounded rectangle.
+      
+      
+        y1
+        Real
+        The y coordinate of the top of the rounded rectangle.
+      
+      
+        x2
+        Real
+        The x coordinate of the right of the rounded rectangle.
+      
+      
+        y2
+        Real
+        The y coordinate of the bottom of the rounded rectangle.
+      
+      
+        col1
+        Kolor
+        The center colour.
+      
+      
+        col2
+        Kolor
+        The outside edge colour.
+      
+      
+        outline
+        Boolean
+        Whether the rectangle is an outline (true) or filled in (false).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_roundrect_colour(50, 50, 200, 200, c_black, c_white, false);
+  Spowoduje to narysowanie wypełnionego kwadratu z zaokrąglonymi rogami i płynnym gradientem czerni/białości od środka do krawędzi.
+   
+   
+   
+  
+    
+      
+        Powrót: Formularze podstawowe
+        Następny: draw_roundrect_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

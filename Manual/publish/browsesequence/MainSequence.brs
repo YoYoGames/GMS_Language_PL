@@ -57,7 +57,6 @@
 <item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/General/Resources.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/General/Workspace.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/Start_Screen_Preferences.htm"></item>
-<item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/Drag_And_Drop_Preferences.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/Image_Editor_Preferences.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/Sprite_Editor_Preferences.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/Object_Editor_Preferences.htm"></item>
@@ -69,6 +68,8 @@
 <item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/Extension_Editor_Preferences.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/Text_Editor_Preferences.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/Language_Preferences.htm"></item>
+<item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/GML_Code_Preferences.htm"></item>
+<item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/GML_Visual_Preferences.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/Marketplace_Preferences.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/Plugin_Preferences.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/IDE_Preferences/Runtime_Feed_Preferences.htm"></item>
@@ -79,6 +80,7 @@
 <item link="../../contents/Setting_Up_And_Version_Information/Platform_Preferences.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/Platform_Preferences/Android.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/Platform_Preferences/HTML5.htm"></item>
+<item link="../../contents/Setting_Up_And_Version_Information/Platform_Preferences/Opera_GX_Preferences.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/Platform_Preferences/iOS.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/Platform_Preferences/tvOS.htm"></item>
 <item link="../../contents/Setting_Up_And_Version_Information/Platform_Preferences/macOS.htm"></item>
@@ -180,6 +182,7 @@
 <item link="../../contents/The_Asset_Editors/Room_Properties/Room_Properties.htm"></item>
 <item link="../../contents/The_Asset_Editors/Room_Properties/Room_Inheritance.htm"></item>
 <item link="../../contents/The_Asset_Editors/Room_Properties/Filters_and_Effects.htm"></item>
+<item link="../../contents/The_Asset_Editors/Room_Properties/FX/All_Filter_Effect_Types.htm"></item>
 <item link="../../contents/The_Asset_Editors/Scripts.htm"></item>
 <item link="../../contents/The_Asset_Editors/Code_Editor_Properties/Editing_Code.htm"></item>
 <item link="../../contents/The_Asset_Editors/Code_Editor_Properties/JSDoc_Script_Comments.htm"></item>
@@ -220,6 +223,7 @@
 <item link="../../contents/Additional_Information/Compatibility_Functions.htm"></item>
 <item link="../../contents/Additional_Information/Compatibility_Scripts.htm"></item>
 <item link="../../contents/Additional_Information/Obsolete_Functions.htm"></item>
+<item link="../../contents/GameMaker_Language.htm"></item>
 <item link="../../contents/Drag_And_Drop/Drag_And_Drop_Index.htm"></item>
 <item link="../../contents/Drag_And_Drop/Drag_And_Drop_Overview/DnD_Overview.htm"></item>
 <item link="../../contents/Drag_And_Drop/Drag_And_Drop_Overview/Constructing_Action_Block_Code.htm"></item>
@@ -618,6 +622,7 @@
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_get_channel.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_channel_evaluate.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_create.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_exists.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_channel_new.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_point_new.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_destroy.htm"></item>
@@ -699,6 +704,7 @@
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Animation/skeleton_animation_get_frames.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Animation/skeleton_animation_get_frame.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Animation/skeleton_animation_set_frame.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Animation/skeleton_animation_get_event_frames.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skins/Skins.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skins/skeleton_skin_get.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Skins/skeleton_skin_set.htm"></item>
@@ -731,6 +737,8 @@
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_instance.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_collision.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_skeleton_time.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_enable_skeleton_blendmodes.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Skeletal_Animation/Drawing_And_Miscellaneous/draw_get_enable_skeleton_blendmodes.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Nine_Slice_Functions.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Sprites/Nine_Slice_Struct.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Tilsets/Tile_Sets.htm"></item>
@@ -1230,6 +1238,8 @@
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/layer_set_fx.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/layer_get_fx.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/layer_clear_fx.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/layer_enable_fx.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/layer_fx_is_enabled.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/General_Game_Control/General_Game_Control.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/General_Game_Control/game_id.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/General_Game_Control/game_save_id.htm"></item>
@@ -1615,7 +1625,18 @@
 <item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_open.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_close.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_draw.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/YUV_Videos.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_set_volume.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_pause.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_resume.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_enable_loop.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_seek_to.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_is_looping.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_get_volume.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_get_duration.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_get_position.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_get_status.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Drawing/Videos/video_get_format.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Drawing/draw_enable_drawevent.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Drawing/draw_flush.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Cameras_And_Display/Cameras_And_Display.htm"></item>
@@ -2218,6 +2239,7 @@
 <item link="../../contents/GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_set_group_flags.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_get_group_flags.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_group_get_inertia.htm"></item>
+<item link="../../contents/GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_group_get_mass.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_group_get_centre_x.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_group_get_centre_y.htm"></item>
 <item link="../../contents/GameMaker_Language/GML_Reference/Physics/Soft_Body_Particles/physics_particle_group_get_vel_x.htm"></item>

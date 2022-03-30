@@ -1,0 +1,46 @@
+
+  
+  Fizyka
+  Zintegrowanie specjalnej biblioteki fizyki z GameMaker Studio 2 oznacza, że można teraz przejąć kontrolę nad wszystkimi aspektami fizycznego zachowania objects w świecie gry, w szczególności nad kolizjami i interakcjami object. Tradycyjny" system kolizji (domyślnie używany przez GameMaker Studio 2 ) jest systemem "reaktywnym", w którym sprawdzane jest, czy doszło do kolizji, a następnie reaguje się na nią za pomocą kodu umieszczanego w poszczególnych witrynach objects. Jest to dobre rozwiązanie dla prostych gier, ale gdy masz wiele stron objects i musisz napisać, jak reagują na różne sytuacje w świecie gry, szybko staje się jasne, że ten system nie wystarczy. Wtedy trzeba sięgnąć po system fizyki GameMaker Studio 2.
+  System fizyki działa w zupełnie inny sposób niż zwykłe kolizje. Jest to raczej system "pasywny", w którym definiuje się szereg właściwości strony objects w świecie gry, a także właściwości samego świata gry, zanim dojdzie do jakichkolwiek kolizji lub interakcji. Te zakodowane "zasady" będą następnie regulować sposób, w jaki wszystkie elementy świata gry wchodzą w interakcje. W ten sposób, przy użyciu kilku prostych kodów i odpowiedniej konfiguracji room, możesz tworzyć bardzo złożone interakcje między objects a światem gry, które będą zachodzić i rozwiązywać się bez konieczności kodowania wszystkich możliwych wyników.
+  Podczas pracy ze światem fizyki GameMaker Studio 2 należy zwrócić uwagę na kilka rzeczy:
+  
+    System fizyki istnieje "poza" podstawową strukturą room i instancji GameMaker Studio 2, co oznacza, że jego czasy i funkcje nie są koniecznie powiązane z prędkością i kolejnością kroków room, jak wszystko inne.
+    System fizyki zastępuje wiele normalnych funkcji instancji. Na przykład zamiast ustawiać prędkość i kierunek dla instancji, jeśli została ona zadeklarowana jako w pełni symulowane ciało fizyczne, użyjesz siły lub impulsu, aby poruszała się w świecie gry, lub jeśli nie ma włączonej fizyki, będziesz musiał sam ustawić pozycje x i y. Trzeba się do tego trochę przyzwyczaić, więc przed włączeniem ich do projektu poeksperymentuj z funkcjami fizyki i poznaj ich działanie.
+    Należy ograniczyć liczbę tworzonych instancji, a także liczbę kolizji i grup kolizji, z którymi musi sobie poradzić świat fizyki. Nie można mieć tysięcy instancji, wszystkich z właściwościami fizycznymi i kolizjami, i oczekiwać, że wszystko będzie działać dobrze, ponieważ fizyka wymaga dość intensywnych obliczeń, więc należy się ograniczać i optymalizować tam, gdzie to możliwe.
+    Podczas ustawiania kolizji należy jak najczęściej używać rodzica, ponieważ system kolizji ma ograniczoną liczbę bitów kolizji, które można przypisać do instancji, aby Box2D mógł wykrywać kolizje. Na przykład jeśli masz pięć różnych ścian objects, nie sprawdzaj pięciu kolizji, lecz utwórz rodzica object i przypisz go do pięciu ścian, a następnie wykonaj JEDNO sprawdzenie kolizji z rodzicem. Właściwości fizyczne strony objects nie są dziedziczone, a jedynie kolizje. W ten sposób można utrzymać grę zoptymalizowaną i wolną od błędów.
+    Staraj się nie przenosić instancji z jednego punktu strony room do drugiego w inny sposób niż za pomocą funkcji fizyki (np. nie ustawiaj ręcznie współrzędnych x/y). Chociaż można to zrobić i w pewnych okolicznościach może to być konieczne, generalnie należy tego unikać ze względu na nieprzewidywalne skutki, jakie może to mieć dla silnika fizyki, zwłaszcza przy próbach rozwiązywania kolizji.
+    Należy zachować ostrożność podczas wiązania uchwytów, ponieważ mogą one być powiązane z objects i instancjami niezależnie. Oznacza to, że jeśli zwiążesz uchwyt z (na przykład) "o_Wall", wszystkie instancje tego object otrzymają ten uchwyt. Jeśli chcesz powiązać uchwyt tylko z jedną instancją, to użyj id tej instancji w odpowiedniej funkcji.
+    Należy pamiętać, że ze względu na różnice w precyzji obliczeń zmiennoprzecinkowych może się okazać, że wersje gry na różne platformy docelowe będą zachowywać się inaczej niż standardowa wersja Windows, choć każda wersja będzie spójna w kolejnych uruchomieniach.
+    Aby zapobiec niestabilności symulacji fizycznej, w Box2D wprowadzono górne ograniczenia wielkości obrotu i translacji ciała w ramach pojedynczej aktualizacji. Widoczne ograniczenia różnią się w zależności od dokładności symulacji fizycznej, liczby aktualizacji i szybkości aktualizacji świata fizyki, a także skalowania świata fizyki. Oznacza to, że (na przykład) jeśli prędkość aktualizacji świata wynosi 60, maksymalna prędkość ruchu wyniesie 20.
+  
+  Informacje na temat funkcji fizyki można znaleźć na kolejnych stronach:
+  
+    Świat fizyki
+    Siły
+    Armatura
+    Stawy
+    Miękkie cząstki ciała
+    Zmienne z fizyki
+  
+   
+  Wreszcie, istnieje kilka specjalnych funkcji fizyki, które mogą być przydatne w bardziej zaawansowanych symulacjach fizycznych. Pierwsza z nich służy do testowania możliwych kolizji w określonym punkcie na stronie room, a druga do generowania niestandardowych właściwości masy i bezwładności w obrębie instancji:
+  
+    physics_test_overlap
+    physics_mass_properties
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Odniesienie do GML
+        Następny: Zakupy w aplikacji
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

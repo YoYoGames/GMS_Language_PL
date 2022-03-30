@@ -1,0 +1,56 @@
+
+  
+  physics_joint_set_value
+  Niektóre właściwości połączenia można zmieniać i ustawiać nawet po utworzeniu połączenia. Istnieje wiele stałych, które można wykorzystać w tej funkcji, a które można znaleźć tutaj: Physics Joint Constants.
+   
+  Składnia:
+  physics_joint_set_value(joint, field, value)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        joint
+        Fizyka Wspólny identyfikator
+        The index of the joint that you wish to change
+      
+      
+        field
+        Fizyka Stała wspólna
+        The constant for the joint property that you wish to change
+      
+      
+        value
+        Real
+        The new value for the joint property
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if physics_joint_get_value(revJoint, phy_joint_max_motor_torque) < 2
+    {
+        physics_joint_set_value(revJoint, phy_joint_max_motor_torque, 2);
+    }
+  Powyższy kod sprawdza, czy maksymalny moment obrotowy silnika w złączach jest ustawiony na wartość mniejszą niż 2, a jeśli tak, to ustawia go na 2.
+   
+   
+   
+  
+    
+      
+        Plecy: Stawy
+        Następny: physics_joint_distance_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

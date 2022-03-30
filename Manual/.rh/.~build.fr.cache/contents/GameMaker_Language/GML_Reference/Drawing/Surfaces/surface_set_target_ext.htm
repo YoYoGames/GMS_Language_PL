@@ -1,0 +1,46 @@
+
+  
+  surface_set_target_ext
+  Ta funkcja jest przeznaczona do stosowania z funkcjami cie niowania i ustawia MRT (0 - 3) dla poziomu natywnego shaders (DX9, DX11, OpenGL).
+  UWAGA: Podczas pracy z powierzchniami istnieje możliwość, że w każdej chwili mogą one przestać istnieć, ponieważ są przechowywane w pamięci texture. Należy ZAWSZE sprawdzić, czy powierzchnia istnieje, używając polecenia surface_exists()    przed bezpośrednim odwołaniem się do niej.
+   
+  Składnia:
+  surface_set_target_ext(index, surface_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The render target index to use (from 0 to 3).
+     
+      
+        surface_id
+        The ID of the surface to use.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  surface_set_target_ext(0, surf);
+  Powyższy kod ustawi cel renderowania 0 na identyfikator powierzchni zindeksowany w zmiennej "surf".
+   
+   
+   
+  
+    
+      
+        Powrót: Powierzchnie
+        Następny: surface_get_target
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

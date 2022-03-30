@@ -1,0 +1,44 @@
+
+  
+  oś czasu_max_moment
+  Ta funkcja zwróci wartość momentu, w którym timeline wykona swoje ostatnie działanie. Jeśli więc masz stronę timeline z 8 różnymi akcjami rozmieszczonymi w odstępie 20 chwil, funkcja ta zwróci wartość chwili ostatniej akcji w tej timeline, czyli 160. Funkcja ta jest dobrym sposobem sprawdzenia, czy timeline minął ostatni aktywny moment, ponieważ pozycja timeline będzie się zwiększać co krok, niezależnie od tego, czy będą wykonywane kolejne akcje, czy nie.
+   
+  Składnia:
+  timeline_max_moment(ind);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        ind
+        The index of the timeline to get the last moment of.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if timeline_position > timeline_max_moment(timeline_index)
+    {
+        timeline_running = false;
+    }
+  Powyższy kod sprawdzi aktualne położenie strony timeline pod kątem maksymalnego aktywnego momentu i jeśli będzie on większy, strona timeline zostanie zatrzymana.
+   
+   
+   
+  
+    
+      
+        Powrót: Timelines
+        Następny: timeline_index
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,275 @@
+
+  
+  Fizyka Stałe zespolone
+  W witrynie GameMaker Studio 2 GML znajduje się wiele stałych, które są specyficzne dla złączy między mocowaniami w świecie fizyki. Można ich używać w połączeniu z wieloma różnymi funkcjami złączy do ustawiania lub uzyskiwania informacji z nich w czasie rzeczywistym podczas działania symulacji fizyki. Należy jednak pamiętać, że podczas ich wywoływania wykonywane są skomplikowane obliczenia, dlatego należy ich używać ostrożnie i tylko w razie potrzeby, a także pamiętać, że wiele z nich jest unikalnych dla konkretnego typu złącza. Należy także pamiętać, że choć wszystkie te wartości można uzyskać za pomocą odpowiedniej funkcji, to ustawiać można tylko te, które są oznaczone jako nie przeznaczone tylko do odczytu.
+  Ogólnie rzecz biorąc, stałych tych należy używać w połączeniu z następującymi funkcjami:
+  
+    physics_joint_get_value
+    physics_joint_set_value
+  
+   
+  Ogólne
+  Poniższe stałe można zastosować do każdego z dostępnych typów przegubów:
+  
+    
+      
+      
+      
+    
+    
+      
+        Fizyka Stała wspólna
+      
+      
+        Stała
+        Opis
+        Tylko do odczytu
+      
+      
+        phy_joint_anchor_1_x
+        Współrzędna x pierwszego punktu zaczepienia przegubu w pomieszczeniu
+        Yes
+      
+      
+        phy_joint_anchor_1_y
+        Współrzędna y pierwszego punktu zaczepienia przegubu w pomieszczeniu
+        Yes
+      
+      
+        phy_joint_anchor_2_x
+        Współrzędna x drugiego punktu zaczepienia przegubu w pomieszczeniu
+        Yes
+      
+      
+        phy_joint_anchor_2_y
+        Współrzędna y drugiego punktu zaczepienia przegubu w pomieszczeniu
+        Yes
+      
+      
+        phy_joint_reaction_force_x
+        Jest to siła reakcji przyłożona do drugiej instancji w stawie w pozycji kotwicy x
+        Yes
+      
+      
+        phy_joint_reaction_force_y
+        Jest to siła reakcji przyłożona do drugiej instancji w przegubie w pozycji zakotwiczenia y
+        Yes
+      
+      
+        phy_joint_reaction_torque
+        Jest to moment obrotowy przyłożony do drugiej instancji w stawie w pozycji zakotwiczenia
+        Yes
+      
+    
+  
+  
+    Silniki
+  
+  Stałe te dotyczą przegubów, do których dołączony jest silnik (obrotowe, pryzmatyczne, kołowe):
+  
+    
+      
+        Fizyka Stała wspólna
+      
+      
+        Stała
+        Opis
+        Tylko do odczytu
+      
+      
+        phy_joint_max_motor_force
+        Wartość określona podczas tworzenia przegubu dla maksymalnej siły silnika.
+        No
+      
+      
+        phy_joint_max_motor_torque
+        Wartość określona podczas tworzenia połączenia dla maksymalnego momentu obrotowego silnika.
+        No
+      
+      
+        phy_joint_motor_force
+        Aktualna siła silnika
+        Yes
+      
+      
+        phy_joint_motor_speed
+        Bieżąca prędkość silnika
+        No
+      
+      
+        phy_joint_motor_torque
+        Aktualny moment obrotowy silnika
+        Yes
+      
+    
+  
+  
+    Przeguby obrotowe
+  
+  W przypadku przegubu obrotowego można użyć następującej stałej (oraz stałych silnika, jeśli taki został dodany):
+  
+    
+      
+      
+      
+    
+    
+      
+        Fizyka Stała wspólna
+      
+      
+        Stała
+        Opis
+        Tylko do odczytu
+      
+      
+        phy_joint_angle
+        Kąt, jaki tworzy linia łącząca dwa punkty zakotwiczenia stawu. Jest on obliczany przy użyciu współrzędnych świata fizyki 
+         (nie współrzędnych GameMaker Studio 2 room ) w radianach.
+        Tak
+      
+      
+        phy_joint_angle_limits
+        Włącza lub wyłącza ograniczanie kąta dla przegubu. Ustaw wartość na true, aby włączyć, lub false, aby wyłączyć.
+        Nr
+      
+      
+        phy_joint_upper_angle_limit
+        Górna granica kąta dla stawu w stopniach.
+        Nr
+      
+      
+        phy_joint_lower_angle_limit
+        Dolna granica kąta dla stawu w stopniach.
+        Nr
+      
+    
+  
+  
+    Połączenia pryzmatyczne
+  
+  W przypadku połączenia pryzmatycznego można zastosować następującą stałą:
+  
+    
+      
+        Fizyka Stała wspólna
+      
+      
+        Stała
+        Opis
+        Tylko do odczytu
+      
+      
+        phy_joint_translation
+        Otrzymuje odległość między współrzędnymi x/y kotwicy a lokalnymi współrzędnymi x/y.
+        Yes
+      
+      
+        phy_joint_speed
+        Bieżąca prędkość ruchu stawu.
+        Yes
+      
+    
+  
+  
+    Złącza dystansowe, złącza spawane i złącza kół
+  
+  W przypadku połączeń na odległość, spoiny i koła można użyć następujących stałych (podobnie jak w przypadku połączeń na koło pasowe):
+  
+    
+      
+      
+      
+    
+    
+      
+        Fizyka Stała wspólna
+      
+      
+        Stała
+        Opis
+        Tylko do odczytu
+      
+      
+        phy_joint_damping_ratio
+        Współczynnik tłumienia jest niewymiarowy i określa "sprężystość" połączenia. Wartość tej stałej wynosi zwykle od 0 do 1, ale może być większa, a przy wartości 1 tłumienie jest krytyczne, co oznacza, że wszystkie oscylacje powinny zaniknąć.
+        No
+      
+      
+        phy_joint_frequency
+        Zwraca ona (lub ustawia) częstotliwość oscylacji dla przegubu w hercach. Zazwyczaj częstotliwość powinna być mniejsza niż połowa częstotliwości kroku czasowego, ustawionej za pomocą funkcji physics_world_update_speed().
+        No
+      
+      
+        phy_joint_length_1
+        Zwraca długość przegubu od pierwszej lokalnej współrzędnej x/y do pierwszej współrzędnej kotwicy x/y (tylko przeguby odległościowe, można odczytać tylko z)
+        Yes
+      
+      
+        phy_joint_length_2
+        Spowoduje to zwrócenie długości przegubu od drugiej lokalnej współrzędnej x/y do drugiej współrzędnej kotwicy x/y (tylko przeguby odległościowe, można je tylko zapisywać)
+        No
+      
+    
+  
+  
+    Połączenia cierne
+  
+  W przypadku połączenia ciernego można użyć następujących stałych:
+  
+    
+      
+        Fizyka Stała wspólna
+      
+      
+        Stała
+        Opis
+        Tylko do odczytu
+      
+      
+        phy_joint_max_torque
+        Maksymalna wartość momentu obrotowego dla połączenia.
+        No
+      
+      
+        phy_joint_max_force
+        Maksymalna wartość siły dla danego połączenia.
+        No
+      
+    
+  
+  
+    Połączenia linowe
+  
+  W przypadku połączenia linowego można zastosować następującą stałą:
+  
+    
+      
+        Fizyka Stała wspólna
+      
+      
+        Stała
+        Opis
+        Tylko do odczytu
+      
+      
+        phy_joint_max_length
+        Maksymalny adres extension dla połączenia pomiędzy dwoma punktami kotwiczenia.
+        No
+      
+    
+  
+   
+   
+   
+  
+    
+      
+        Plecy: Stawy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

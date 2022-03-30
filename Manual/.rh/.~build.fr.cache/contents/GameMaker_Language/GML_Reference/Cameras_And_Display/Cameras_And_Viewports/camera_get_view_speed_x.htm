@@ -1,0 +1,46 @@
+
+  
+  camera_get_view_speed_x
+  Za pomocą tej funkcji można uzyskać prędkość ruchu danej kamery wzdłuż osi x (ruch poziomy). Zwracana wartość będzie wyrażona w pikselach na klatkę gry.
+   
+  Składnia:
+  camera_get_view_speed_x(camera_id)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        camera_id
+        The unique camera ID value returned when you created the camera
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var xs = camera_get_view_speed_x(view_camera[0]);
+    var ys = camera_get_view_speed_y(view_camera[0]);
+    if xs != 5 || ys != 5
+    {
+        camera_set_view_speed(view_camera[0], 5, 5);
+    }
+  Powyższy kod pobiera prędkości xspeed i yspeed kamery przypisanej do portu widoku[0], a następnie sprawdza, czy odpowiadają one podanej wartości. Jeśli tak nie jest, to kamera widoku jest ustawiana na tę prędkość.
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: camera_get_view_speed_y
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

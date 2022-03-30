@@ -1,0 +1,36 @@
+
+  
+  Dezaktywacja instancji
+  GameMaker Studio 2 oferuje możliwość "wyłączania" instancji, tak że nie są one już w żaden sposób przetwarzane. Technicznie rzecz biorąc, tak naprawdę już nie istnieją, chyba że jako wskaźnik w samym procesie dezaktywacji, co oznacza, że wyłączoną instancją nie można w żaden sposób manipulować ani jej zmieniać, dopóki nie zostanie ponownie aktywowana. Dlatego funkcji tych należy używać z wielką ostrożnością, ponieważ mogą one powodować problemy, jeśli nie są używane właściwie, zwłaszcza w przypadku trwałych obiektów objects, ponieważ trwały obiekt object, który został dezaktywowany, nie zostanie przeniesiony do następnego obiektu room, chyba że zostanie najpierw ponownie aktywowany (co w efekcie spowoduje usunięcie go z gry). Należy również pamiętać, że aktywacja i dezaktywacja nie są natychmiastowe, a instancja, której stan został zmieniony w ten sposób, nie będzie uważana za aktywną/nieaktywną do końca zdarzenia, w którym wywołano funkcję.
+  Zazwyczaj nie jest konieczne wyłączanie instancji na każdym etapie gry, co może powodować problemy z wydajnością gry. Zamiast tego zaleca się uruchamianie tych funkcji tylko co kilka kroków w alarmie (na przykład) lub gdy widok kamery zmienił położenie, a szczególnie ważne jest, aby nie używać tych funkcji w zdarzeniu losowania, ponieważ może to prowadzić do poważnych błędów w grze.
+  Dezaktywowana instancja w rzeczywistości przestaje istnieć w grze, ale do poszczególnych instancji można nadal mieć dostęp do ich zmiennych. Nie możesz jednak używać with(object) ani with(instance), lecz musisz uzyskać bezpośredni dostęp do instancji, używając jej unikalnego identyfikatora w następującej formie:
+  val = inst.variable;
+  W powyższym przykładzie "inst" będzie zmienną przechowującą identyfikator dezaktywowanej instancji i jest to jedyny sposób, w jaki można odwoływać się do dezaktywowanej instancji bez jej wcześniejszego uaktywnienia.
+  UWAGA Jeśli dezaktywujesz instancję na starcie room (tzn. z kodu tworzenia room lub ze zdarzenia tworzenia instancji w room), wszystkie instancje, które są umieszczone w room z edytora room, będą nadal uruchamiać swoje zdarzenia tworzenia przed dezaktywacją.
+  UWAGA: Wyłączenie instancji, które mają włączoną fizykę, NIE spowoduje, że ich armatura przestanie oddziaływać w ramach symulacji fizyki. W tym celu należy ustawić ich zmienną phy_active na true lub false, gdy aktywujesz/dezaktywujesz instancje.
+  Do dezaktywowania instancji służą następujące funkcje:
+  
+    instance_activate_all
+    instance_activate_object
+    instance_activate_region
+    instance_activate_layer
+    instance_deactivate_all
+    instance_deactivate_object
+    instance_deactivate_region
+    instance_deactivate_layer
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Instancje
+        Następny: Zmienne instancji
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

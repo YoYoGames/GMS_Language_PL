@@ -1,0 +1,105 @@
+
+  
+  physics_particle_get_data
+  Ta funkcja zwraca różne informacje o każdej cząstce w symulacji fizycznej przy użyciu podanego adresu flags. Używany adres buffer musi być utworzony wcześniej za pomocą funkcji buffer_create()i powinien być typu "grow", a jego rozmiar powinien być zbliżony do oczekiwanego rozmiaru zwracanych danych. Adres flags ustawia się za pomocą dowolnej z podanych poniżej stałych, a do utworzenia pojedynczej wartości flag w celu uzyskania żądanych informacji należy użyć bitownicy lub "|".
+  
+    
+      
+      
+      
+    
+    
+      
+        Dane dotyczące cząstek fizyki Flag Stała
+      
+      
+        Stała
+        Opis
+        Typ danych
+      
+      
+        phy_particle_data_flag_typeflags
+        Wartość flags dla cząstki.
+        buffer_u32
+      
+      
+        phy_particle_data_flag_position
+        Położenie x i y cząstki.
+        2 x buffer_f32
+      
+      
+        phy_particle_data_flag_velocity
+        Prędkość pozioma i pionowa.
+        2 x buffer_f32
+      
+      
+        phy_particle_data_flag_colour
+        Kolor i wartość alfa (w systemie szesnastkowym).
+        buffer_f32
+      
+      
+        phy_particle_data_flag_category
+        Kategoria cząstki (określona podczas tworzenia cząstki lub grupy, do której należy).
+        buffer_u32
+      
+    
+  
+   
+  Składnia:
+  physics_particle_get_data(buffer, flags)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        buffer
+        Identyfikator bufora
+        The (previously created) buffer to use to store the data.
+      
+      
+        flags
+        Dane dotyczące cząstek fizycznych Flag Stała(s)
+        The flags to use to extract data about specific particle types.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var count = physics_particle_count();
+    var flags = phy_particle_data_flag_position | phy_particle_data_flag_colour;
+    if (count > 0)
+    {
+        var buffer = buffer_create(count * 12, buffer_grow, 4);
+        physics_particle_get_data(buffer, flags);
+        for (var n = 0; n < count; n++;)
+        {
+            var xx = buffer_read(buffer, buffer_f32);
+            var yy = buffer_read(buffer, buffer_f32);
+            var argb = buffer_read(buffer, buffer_u32);
+            var alpha = (argb >> 24) & 255;
+            draw_sprite_ext(sprBlob, 0, xx, yy, 1, 1, 0, c_green, alpha);
+        }
+        buffer_delete(buffer);
+    }
+  Powyższy kod pobiera liczbę cząstek i tworzy zmienną z danymi flags do sprawdzenia, a następnie sprawdza, czy na stronie room znajdują się jakieś cząstki. Jeśli tak, tworzona jest strona buffer, a następnie wypełniana danymi cząstek, które są sprawdzane i używane do narysowania strony sprite w miejscu, w którym znajdują się cząstki.
+   
+   
+   
+  
+    
+      
+        Powrót: Miękkie cząstki ciała
+        Następny: physics_particle_get_data_particle
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

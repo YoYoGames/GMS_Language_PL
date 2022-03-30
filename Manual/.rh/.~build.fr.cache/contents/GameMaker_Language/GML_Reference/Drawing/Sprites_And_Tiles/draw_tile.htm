@@ -1,0 +1,95 @@
+
+  
+  draw_tile
+  Za pomocą tej funkcji można narysować dowolny adres tile na podstawie adresu tile set - rywalizując z obrotami, odwróceniami i odbiciami lustrzanymi - ustawiając ramkę (jeśli jest animowana) i pozycję w obrębie adresu room. Wartość identyfikacyjna adresu tile set to indeks tile set ustawiony w adresie IDE, a dane tile to "blob" danych zawierający wszystkie informacje o indeksie tile i zastosowanych przekształceniach. Można użyć funkcji tilemap_get() aby uzyskać dane tile, którymi można następnie manipulować za pomocą funkcji kafelkowych, lub można je skonstruować samodzielnie, używając następujących stałych tile wraz z wartością indeksu tworzonej strony tile:
+  
+    
+      
+        Stała
+        Opis
+      
+      
+        tile_rotate
+        Służy do ustawiania/odbierania bitu rotacji w bloku danych tile.
+      
+      
+        tile_mirror
+        Służy do ustawiania/odbierania bitu lustrzanego w bloku danych tile.
+      
+      
+        tile_flip
+        Służy do ustawiania/odbierania bitu przerzucania w bloku danych tile.
+      
+      
+        tile_index_mask
+        Specjalna stała, która służy do łączenia się z blokiem danych tile w celu uzyskania indeksu tile.
+      
+    
+  
+  
+    Aby uzyskać ostateczne dane kafelkowe, należy bitowo "ortodoksyjnie" połączyć te stałe z wartością indeksu tile:
+  var tiledata = 8 | tile_rotate | tile_flip;
+  Powyższy kod po prostu tworzy zmienną lokalną przechowującą dane kafelkowe dla strony tile o indeksie 8 na stronie tile set, a następnie obraca ją i odwraca. Następnie można ją wykorzystać do narysowania strony tile o tym indeksie na stronie tile set, którą podasz. Nie jest ona powiązana z żadną warstwą mapy kafelkowej, a strona tile zostanie narysowana na głębokości warstwy instancji wykonującej rysowanie, w pozycji x/y, którą podasz na stronie room. Zauważ, że możesz także ustawić klatkę, która ma być rysowana. Jeśli indeksowana strona tile jest częścią zestawu animacji, to możesz tutaj ustawić numer klatki (od 0 do liczby klatek - 1), a indeksowana strona tile będzie po prostu wskaźnikiem, której animacji tile set używasz, natomiast rysowana będzie dana klatka. Jeśli strona tile nie jest częścią zestawu animowanego, ramka powinna być ustawiona na 0.
+   
+  Składnia:
+  draw_tile(tileset, tiledata, frame, x, y)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tileset
+        Zestaw płytek Aktywa
+        The ID of the tile set to use
+      
+      
+        tiledata
+        Dane o płytkach
+        The tile data to use
+      
+      
+        frame
+        Real
+        The frame number for the animated tile to use (default 0 for non-animated tiles)
+      
+      
+        x
+        Real
+        The x position within the room to draw at
+      
+      
+        y
+        Real
+        The y position within the room to draw at
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  var lay_id = layer_get_id("Tiles_sky");
+    var map_id = layer_tilemap_get_id(lay_id);
+    var data = tilemap_get(map_id, 0, 0);
+    tile_set_flip(data, true);
+    draw_tile(set_Wall, data, 0, x, y);
+  Powyższy kod pobierze dane o stronie tile z podanej mapy, a następnie ustawi parametr "flip" flag i użyje tych danych do narysowania strony tile odwróconej w pozycji instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Sprite'y i płytki
+        Następny: draw_tilemap
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

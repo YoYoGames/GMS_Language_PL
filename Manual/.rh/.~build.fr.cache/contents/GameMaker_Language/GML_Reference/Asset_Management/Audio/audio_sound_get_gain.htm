@@ -1,0 +1,46 @@
+
+  
+  audio_sound_get_gain
+  Ta funkcja zwraca bieżącą wartość wzmocnienia dla podanego dźwięku. Dźwięk może być wywołany z indeksu odtwarzanego dźwięku, który został zapisany w zmiennej przy użyciu funkcji audio_play_sound() lub audio_play_sound_at() lub rzeczywisty dźwięk asset z przeglądarki Asset. Wzmocnienie jest zwykle obliczane jako wartość od 0 do 1, ale na niektórych platformach można uzyskać wzmocnienie większe niż 1, chociaż wartość 1 jest uważana za "pełną głośność", a większa wartość może spowodować przycięcie dźwięku.
+   
+  Składnia:
+  audio_sound_get_gain(index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Sound Asset lub Sound Instance ID
+        The index of the sound to get the gain of.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if audio_sound_get_gain(snd_Music) != 1
+    {
+        audio_sound_gain(snd_Music, 1, 0);
+    }
+  Powyższy kod zmieni wzmocnienie dźwięku odtwarzanego z dźwięku indeksowanego jako "snd_Music", jeśli jego wzmocnienie nie jest równe 1.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_master_gain
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

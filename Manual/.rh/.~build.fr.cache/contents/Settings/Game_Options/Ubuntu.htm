@@ -1,0 +1,59 @@
+
+  
+  Opcje gier w Ubuntu
+  W tej sekcji opisano różne dostępne opcje, które pozwalają kontrolować sposób kompilowania projektów gier Ubuntu (Linux). Poszczególne sekcje to:
+   
+  Ogólne
+  W tej zakładce można ustawić nazwę gry, która będzie wyświetlana podczas pracy, a także podać e-mail kontaktowy i opis (krótki i długi) oraz adres URL strony głównej gry lub jej twórcy.
+    (krótki i długi), a także adres URL do strony głównej gry lub jej twórcy.
+  W tym miejscu masz również możliwość włączenia obsługi Steam w swojej grze. Jeśli włączysz tę opcję, upewnij się, że masz zainstalowany pakiet Steamworks SDK (zobacz tutaj),
+    oraz że dodałeś identyfikator aplikacji Steam w opcjach ogólnych gry.
+  Na koniec masz możliwość wyłączenia piaskownicy systemu plików. Zaznaczenie tej opcji spowoduje wyłączenie piaskownicy GameMaker Studio 2 dla zapisywania i wczytywania plików, umożliwiając dostęp do plików z dowolnego miejsca w systemie, na którym uruchomiona jest gra.
+    Opcja ta jest domyślnie odznaczona, ponieważ zalecamy zachowanie piaskownicy GameMaker Studio 2 dla plików na wszystkich systemach, a po jej zaznaczeniu niektóre obszary zapisu/wczytywania mogą być nadal niedostępne, w zależności od uprawnień na poziomie systemu operacyjnego. Więcej informacji
+    na temat piaskownicy można znaleźć na stronach poświęconych systemowi plików GameMaker Studio 2.
+   
+  Grafika
+  Opcje grafiki to opcje, które należy skonfigurować, aby określić sposób, w jaki gra będzie wykorzystywać kartę graficzną komputera docelowego Ubuntu.
+    Do modyfikacji dołączone są następujące opcje:
+  
+    Start Fullscreen: Jeśli ta opcja jest zaznaczona, gra będzie uruchamiana w trybie pełnoekranowym, w przeciwnym razie będzie uruchamiana w trybie okienkowym. Domyślnie opcja ta jest wyłączona.
+    Zezwalaj na przełączanie peł switch noekranowe: Po zaznaczeniu tej opcji użytkownik może przechodzić z trybu pełnoekranowego do okienkowego i z powrotem za pomocą standardowych skrótów systemu operacyjnego Ubuntu. Domyślnie opcja ta jest wyłączona.
+    Interpoluj kolory między pikselami: Włącza interpolację liniową, która zasadniczo "wygładza" piksele. W przypadku wyraźnej grafiki pikselowej powinno być wyłączone, ale
+      Jeśli chcesz uzyskać ładne mieszanki alfa i grafikę o wygładzonych krawędziach, lepiej pozostawić tę opcję włączoną.
+    Wyświetlaj kursor: Gdy ta opcja jest włączona, w grze będzie wyświetlany domyślny kursor systemu operacyjnego. Jeśli ta opcja jest wyłączona, to gdy mysz znajduje się nad oknem gry, kursor nie będzie widoczny, chyba że został utworzony jako część
+      w projekcie gry (opcja ta jest domyślnie włączona).
+    Użyj synchronizacji, aby uniknąć rozrywania: Włącza lub wyłącza funkcję v-sync. Należy pamiętać, że jeśli w grze room prędkość wynosi 120, a gracz ma monitor z częstotliwością odświeżania
+      60, włączenie tej opcji spowoduje zablokowanie szybkości gry również na poziomie 60. Opcja ta jest domyślnie wyłączona.
+    Zezwalaj na zmianę rozmiaru okna: Zaznaczenie tej opcji pozwala użytkownikowi na zmianę rozmiaru okna gry (aby to działało, opcja Okno bez obramowania musi być wyłączona). Opcja ta jest domyślnie wyłączona.
+    Skalowanie: W tym miejscu można wybrać opcję zachowania proporcji obrazu (tak więc obraz room o proporcjach 4:3 będzie "letter boxed" na ekranie 16:9) lub pełnego skalowania (rozciągnięcie obrazu tak, aby zmieścił się na całym ekranie).
+      
+      OSTRZEŻENIE! Wyłączenie powierzchni aplikacji spowoduje wyłączenie wszystkich opcji skalowania ustawionych w opcjach gry na stronie Windows do momentu ponownego włączenia. Więcej informacji można znaleźć w części Powierzchnia aplikacji.
+  
+   
+  Na koniec jest jeszcze opcja ustawienia rozmiaru strony tekstury. Domyślnym (i najbardziej kompatybilnym) rozmiarem jest 2048x2048, ale można wybrać dowolny rozmiar z zakresu od 256x256 do 8192x8192. Na stronie
+    znajduje się również przycisk oznaczony Podgląd który wygeneruje strony texture dla tej platformy, a następnie otworzy okno, w którym będzie można zobaczyć, jak wyglądają. Może to być bardzo przydatne, jeśli chcesz zobaczyć, jak wyglądają strony texture 
+    i uniknąć sytuacji, w której strony texture byłyby większe (lub mniejsze) niż to konieczne. Więcej informacji na temat stron texture można znaleźć tutaj.
+  UWAGA: Należy pamiętać, że im większy rozmiar strony texture, tym mniejsza kompatybilność gry z komputerami o niższej specyfikacji.
+   
+   
+  Zdjęcia
+  Tutaj możesz dodać ekran pow italny dla swojej gry i ustawić ikonę gry, która będzie używana. Ikona musi być
+    obraz o wymiarach 64x64 pikseli w formacie .png, a splash screen powinien mieć co najmniej taki sam rozmiar jak pierwszy room w Twojej grze (lub jego port widoku) i być w formacie .png. Ekran powitalny
+    będzie wyświetlany podczas ładowania gry i można go włączyć lub wyłączyć, zaznaczając opcję Use Splash Screen (domyślnie jest ona wyłączona).
+  Warto zauważyć, że GameMaker Studio 2 posiada narzędzie Project Image Generator, za pomocą którego można automatycznie tworzyć wszystkie obrazy wymagane dla różnych platform docelowych, na które kompilowana jest gra.
+    na które kompilowana jest gra. Jeśli korzystasz z tego narzędzia, powinieneś zweryfikować utworzone obrazy, aby upewnić się, że spełniają one Twoje wymagania.
+   
+   
+   
+  
+    
+      
+        Wstecz: Opcje gry
+        Następny: Windows UWP
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

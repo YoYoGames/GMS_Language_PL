@@ -1,0 +1,50 @@
+
+  
+  tekstura_jest_gotowa
+  Za pomocą tej funkcji można sprawdzić, czy określona strona texture została rozpakowana i jest gotowa do użycia, lub czy grupa stron texture została rozpakowana i jest gotowa do użycia. Podajesz unikalny identyfikator strony tekstury (zwrócony przez funkcje texturegroup_* ) lub identyfikator grupy texture string (zdefiniowany w Edytorze grup Texture ), a funkcja zwróci true, jeśli strony zostały rozpakowane, lub false w przeciwnym wypadku.
+   
+  Składnia:
+  texture_is_ready(tex_id);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tex_id
+        Wskaźnik tekstury lub ciągznaków
+        The texture page pointer or a texture group name (a string)
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  var _tex_array = texturegroup_get_textures( "MainMenu");
+    for (var i = 0; i < array_length(_tex_array); ++i;)
+    {
+        if !texture_is_ready(_tex_array[i])
+        {
+            texture_prefetch(_tex_array[i]);
+        }
+    }
+  Powyższy kod pobierze identyfikatory stron texture dla grupy texture "MainMenu", następnie sprawdzi, czy są one rozpakowane, a jeśli nie, to zostaną wstępnie zapisane w pamięci VRAM.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekstury
+        Następny: texturegroup_get_textures
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

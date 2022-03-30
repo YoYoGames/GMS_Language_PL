@@ -1,0 +1,46 @@
+
+  
+  shader_is_compiled
+  Ta funkcja sprawdza w czasie wykonywania programu shader, czy został on pomyślnie skompilowany. Jeśli tak, funkcja zwraca true, w przeciwnym razie zwraca false. Funkcja ta powinna być używana na początku gry, aby upewnić się, że platforma, na której działa gra, pomyślnie skompilowała każdą używaną stronę shaders (szczególnie na Windows, gdzie niektóre komputery mogą używać DX9 z Shader poziomem 2.0, a nie późniejszej wersji z shader poziomem 3.0).
+  Jeśli Twój adres shader NIE został skompilowany i wywołasz polecenie shader_set() gra się zawiesi, więc warto jest mieć jakiś rodzaj sprawdzania, kiedy używasz czegoś innego niż prosty GLSL ES shaders.
+   
+  Składnia:
+  shader_is_compiled(shader);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        shader
+        The shader to check.
+     
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  global.GFX = false;
+    if (shader_is_compiled(sh_glass) && shader_is_compiled(sh_warp))
+    {
+        global.GFX = true;
+    }
+  Powyższy kod ustawi zmienną globalną na false, a następnie, jeśli obie sprawdzane strony shaders skompilowały się poprawnie, zostanie ona ustawiona na true.
+   
+   
+   
+  
+    
+      
+        Powrót: Shadery
+        Następny: shaders_are_supported
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

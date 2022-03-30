@@ -1,0 +1,47 @@
+
+  
+  physics_fixture_set_restitution
+  W fizyce, restytucja jest definiowana jako "powrót object lub systemu do stanu pierwotnego po sprężystym odkształceniu", ale ponieważ uchwyty w GameMaker Studio 2 są naprawdę sztywnymi ciałami i nie mogą być odkształcone, restytucja jest tak naprawdę
+    tak naprawdę sposobem na określenie, jak "sprężyste" jest mocowanie. To ustawienie wpływa na to, jak bardzo object "odbija się", gdy zderza się z innymi objects i jest współzależne od innych sił działających na instancję, takich jak grawitacja i tarcie,
+    i zwykle ma wartość od 0 do 1 (można używać wyższych wartości, ale mogą one dać nieprzewidywalne wyniki). Poniżej pokazano, jak to działa:
+  
+  Składnia:
+  physics_fixture_set_restitution(fixture, restitution)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fixture
+        The index of the fixture
+     
+      
+        restitution
+        The restitution of the fixture (usually between 0 and 1)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  physics_fixture_set_restitution(fix_Ball, 0.9);
+  Powyższy kod ustawi wartość restytucji elementu zaindeksowanego w "fix_ball" na 0,9.
+   
+   
+   
+  
+    
+      
+        Powrót: Armatura
+        Następny: physics_fixture_set_sensor
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

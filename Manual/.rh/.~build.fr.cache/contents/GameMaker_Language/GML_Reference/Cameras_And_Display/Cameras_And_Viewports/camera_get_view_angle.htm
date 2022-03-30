@@ -1,0 +1,45 @@
+
+  
+  kamera_get_view_angle
+  Za pomocą tej funkcji można pobrać kąt podanej kamery. Zwracana wartość będzie zawierać się w przedziale od 0 do 360. Należy pamiętać, że funkcja ta jest ważna tylko dla kamer utworzonych za pomocą camera_create_view() lub tych dodanych w edytorze room.
+   
+  Składnia:
+  camera_get_view_angle(camera_id)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        camera_id
+        The unique camera ID value returned when you created the camera
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var ang = camera_get_view_angle(view_camera[0]);
+    if ang != 0
+    {
+        camera_set_view_angle(view_camera[0], 0);
+    }
+  Powyższy kod pobiera kąt kamery przypisanej do portu widoku[0], a następnie sprawdza, czy jest on zgodny z podaną wartością. Jeśli nie, to kamera widoku jest ustawiana pod tym kątem.
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: camera_get_view_target
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

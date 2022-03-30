@@ -1,0 +1,49 @@
+
+  
+  obiekt_istnieje
+  Ta funkcja zwraca, czy podana wartość jest object asset (true), czy nie (false). Zwróć uwagę, że funkcja sprawdza, czy object znajduje się w przeglądarce Asset, a nie w grze room. W tym celu powinieneś użyć funkcji instance_exists().
+   
+  Składnia:
+  object_exists(obj);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        obj
+        The index of the object to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var object_id = buffer_read(net_buffer, buffer_u16);
+    var pos_x = buffer_read(net_buffer, buffer_u16);
+    var pos_y = buffer_read(net_buffer, buffer_u16);
+    
+    if (object_exists(object_id))
+    {
+        instance_create_layer(pos_x, pos_y, "Instances", object_id);
+    }
+  
+  Powyższy kod odczytuje dane z adresu buffer, który został odebrany przez sieć. Ponieważ zawiera on identyfikator object (używany do tworzenia instancji), musimy się najpierw upewnić, że wartość ta nie jest nieprawidłowa i że object rzeczywiście istnieje. W tym celu wywołujemy w warunku adres object_exists() i jeśli jest on prawdziwy, tworzymy instancję tego adresu object na otrzymanej pozycji.
+   
+   
+   
+  
+    
+      
+        Powrót: Obiekty
+        Następny: object_get_name
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

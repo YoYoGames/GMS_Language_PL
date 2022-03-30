@@ -9,14 +9,14 @@
   <script src="../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Article explaining how to apply actions to other instances" />
-  <meta name="rh-index-keywords" content="DnD™ Overview - Applying Actions To Other Instances" />
+  <meta name="rh-index-keywords" content="GML Visual Overview - Applying Actions To Other Instances" />
   <meta name="search-keywords" content="DnD,Code DnD,Apply DnD" />
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Stosowanie akcji do innych instancji</h1>
-  <p>Większość akcji w bibliotekach DnD™ posiada opcję zastosowania akcji na różne sposoby. Nazywa się to ustawieniem <strong>zakresu akcji</strong> i może to być jedna z kilku rzeczy:</p>
-  <p><img>Zasadniczo to, co mówisz <span class="notranslate">GameMaker Studio 2</span>, to to, która instancja powinna uruchomić akcję. Domyślnym zakresem akcji
+  <p>Większość akcji w bibliotekach <span class="notranslate">GML</span> Visual ma możliwość zastosowania ich na różne sposoby. Nazywa się to ustawieniem <strong>zakresu akcji</strong> i może to być jedna z kilku rzeczy:</p>
+  <p><img>Zasadniczo to, co mówisz <span data-keyref="GameMaker Name">GameMakerowi</span>, to to, która instancja powinna wykonać akcję. Domyślnym zakresem akcji
     jest <span class="inline">self</span>, co oznacza, że gdy <span class="notranslate">object</span> zostanie utworzona jako instancja w <span class="notranslate">room</span>, ta instancja wykona kod akcji. Jednak nie zawsze jest to zgodne z oczekiwaniami użytkownika, który może chcieć, aby niektóre akcje oddziaływały na inne, a nawet
     lub nawet wszystkie instancje w <span class="notranslate">room</span>. W tym miejscu przydaje się zmiana zakresu akcji.</p>
   <p>Poniżej wymieniono różne zakresy wykonywania akcji, ale należy zauważyć, że zmiana zakresu akcji w ten sposób spowoduje zastosowanie nowego zakresu tylko do tej akcji, <em>a nie do kolejnych akcji w łańcuchu</em>. Jeśli chcesz zastosować
@@ -32,7 +32,7 @@
     <p class="dropspot">Zakres <span class="inline">other</span> ma dwie główne funkcje, a wartość, którą zwraca, zależy od tego, gdzie i jak jej używasz. W <strong>zdarzeniu kolizji</strong> <span class="inline">other</span> zwróci unikatową wartość identyfikatora instancji
       (unikatowa wartość, która jest używana do rozróżniania poszczególnych instancji każdego <span class="notranslate">object</span>), więc można na przykład utworzyć instancję &quot;pocisku&quot; i wywołać zdarzenie kolizji z instancją &quot;gracza&quot;, a następnie użyć zakresu <span class="inline">other</span> do usunięcia punktów trafienia z instancji &quot;gracza&quot; <span class="notranslate">object</span> i powrócić do zakresu <span class="inline">self</span>, aby zniszczyć instancję &quot;pocisku&quot;.</p>
     <p class="dropspot">Poza zdarzeniem kolizji ustawienie <span class="inline">other</span> będzie się zachowywało tak, jakby było ustawione na <span class="inline">noone</span>, chyba że zostanie wywołane z bloku akcji o określonym zakresie. Oznacza to, że jeśli zmienisz zakres
-      zakres grupy akcji na określony <span class="notranslate">object</span>, to podczas wywoływania tych akcji zakres <span class="inline">other</span> zwróci identyfikator instancji, która pierwotnie wywołała grupę akcji. Na przykład można uruchomić
+      zakres grupy akcji na określony <span class="notranslate">object</span>, to podczas wywoływania tych akcji zakres <span class="inline">other</span> będzie zwracał identyfikator instancji, która pierwotnie wywołała grupę akcji. Na przykład można uruchomić
       akcję <a href="../Drag_And_Drop_Reference/Common/Apply_To...htm">Apply to</a>..., a następnie w następnym bloku kodu ustawić zakres na <span class="inline">other</span>, aby wykonać akcję na instancji uruchamiającej cały blok zdarzeń, a nie na instancji, która jest przypisana w bloku zdarzenia.
       a nie instancji, do której odnosi się blok kodu apply to. Poniższa ilustracja przedstawia przykład:</p>
     <p class="dropspot"><img>Na obrazku sprawdzamy, czy w instancji jest naciśnięcie myszy, a jeśli takowe zostanie wykryte, zmieniamy zakres za pomocą akcji <strong>Apply To.</strong>... Kolejne dwa bloki akcji są teraz wywoływane z instancji &quot;obj_Player&quot; (jeśli jest ich więcej niż jeden, to będą uruchamiane dla wszystkich), więc <span class="notranslate">object</span> zmieni swoją <span class="notranslate">sprite</span>, a następnie utworzy <span class="notranslate">object</span> w innej pozycji,
@@ -41,7 +41,7 @@
   </div>
   <p><img><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Wszystkie</a></p>
   <div class="droptext" data-targetname="drop-down2">
-    <p class="dropspot">Gdy określasz akcję dla wszystkich, mówisz <span class="notranslate">GameMaker Studio 2</span>, by uruchomił ten blok dla <strong>każdej aktywnej instancji w bieżącym pomieszczeniu</strong>. Na przykład utworzenie akcji <a href="../Drag_And_Drop_Reference/Instance/Destroy_Object_Instance.htm">Zniszcz instancję <span class="notranslate">Object</span> </a> 
+    <p class="dropspot">Gdy określasz akcję dla wszystkich, mówisz <span data-keyref="GameMaker Name">GameMakerowi</span>, by uruchomił ten blok dla <strong>każdej pojedynczej aktywnej instancji w bieżącym pomieszczeniu</strong>. Na przykład utworzenie akcji <a href="../Drag_And_Drop_Reference/Instance/Destroy_Object_Instance.htm">Destroy <span class="notranslate">Object</span> Instance</a> 
       i ustawienie jej zakresu na <span class="inline">all</span> spowoduje, że każda instancja w <span class="notranslate">room</span> zniknie, bez względu na to, z jakiej strony <span class="notranslate">object</span> została utworzona.</p>
     <p class="dropspot"> </p>
   </div>
@@ -73,7 +73,7 @@
     <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
   </div>
   <!-- KEYWORDS
-Drag And Drop Applying Actions
+GML Visual Applying Actions
 -->
   <!-- TAGS
 drag_and_drop_applying

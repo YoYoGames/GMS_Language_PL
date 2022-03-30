@@ -1,0 +1,75 @@
+
+  
+  matrix_build
+  Funkcja ta może być użyta do utworzenia własnej macierzy i zwraca tablicę macierzy, którą należy przechowywać w zmiennej w celu przyszłego odniesienia i użycia. Funkcja przyjmuje trójwymiarowe(x, y, z) wartości translacji, obrotu i skali, a następnie wykorzystuje je do utworzenia macierzy.
+  Tablica macierzy zawiera w sumie 16 wartości, gdzie 4 początkowe elementy to. wiersz/kolumna 1kolejne 4 elementy to wiersz/kolumna 2 i tak dalej, jako część macierzy 4x4. To, czy macierz jest uporządkowana według wierszy czy według kolumn, zależy od platformy docelowej, ponieważ renderer graficzny używany przez daną platformę może używać macierzy o wielkości wierszy lub macierzy o wielkości kolumn.
+  UWAGA W przypadku tworzenia nowej matrycy w ten sposób kolejność operacji to YXZ.
+   
+  Składnia:
+  matrix_build(x, y, z, xrotation, yrotation, zrotation, xscale, yscale, zscale);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x
+        The x component of the translation vector.
+     
+      
+        y
+        The y component of the translation vector.
+     
+      
+        z
+        The z component of the translation vector.
+     
+      
+        xrotation
+        The angle to rotate around the x-axis (in degrees °).
+     
+      
+        yrotation
+        The angle to rotate around the y-axis (in degrees °).
+     
+      
+        zrotation
+        The angle to rotate around the z-axis (in degrees °).
+     
+      
+        xscale
+        The x scale amount.
+     
+      
+        yscale
+        The y scale amount.
+     
+      
+        zscale
+        The z scale amount.
+     
+    
+  
+   
+  Zwroty:
+  Matrix Array
+   
+  Przykład:
+  t_matrix = matrix_build(x, y, 0, 0, 90, 0, 1, 2, 1);
+  Powyższy kod utworzy nową transformatę macierzy i zapisze wynikowy indeks macierzy w zmiennej "t_matrix".
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje matrycy
+        Następny: matrix_multiply
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

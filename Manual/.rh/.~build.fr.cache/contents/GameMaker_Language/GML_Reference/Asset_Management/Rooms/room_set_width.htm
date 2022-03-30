@@ -1,0 +1,51 @@
+
+  
+  room_set_width
+  Za pomocą tej funkcji można zmienić (lub ustawić) szerokość dowolnej strony room w grze, z wyjątkiem bieżącej.
+   
+  Składnia:
+  room_set_width(index, w);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Pokój Aktywa
+        The index of the room to set the width of.
+      
+      
+        w
+        Real
+        The new width of the room in pixels.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  global.myroom = room_add();
+    room_set_width(global.myroom, 640);
+    room_set_height(global.myroom, 480);
+    room_set_persistent(global.myroom, false);
+  Spowoduje to utworzenie nowej strony room i zapisanie jej indeksu w zmiennej "global.myroom". Następnie ustawi jego szerokość na 640 pikseli, wysokość na 480 pikseli, napis na "Game Room", a trwałość na "false".
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room_set_persistent
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

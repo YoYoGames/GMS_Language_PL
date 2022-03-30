@@ -1,0 +1,56 @@
+
+  fx_set_single_layer
+  Ta funkcja służy do włączania lub wyłączania trybu "Pojedyncza warstwa" dla filtra/efektu. Domyślnie filtr/efekt jest stosowany na warstwie, do której jest przypisany, oraz na wszystkich warstwach poniżej tej warstwy. Można jednak włączyć tryb "Pojedyncza warstwa" na stronie struct, aby mieć pewność, że filtr/efekt będzie stosowany tylko na warstwie, do której jest przypisany.
+  Określasz FX struct (zwrócony przez fx_create() lub layer_get_fx()) oraz wartość logiczną, aby włączyć (true) lub wyłączyć (false) tryb jednowarstwowy.
+  Poniższa ilustracja przedstawia filtr używany z wyłączonym trybem pojedynczej warstwy (który jest domyślnym zachowaniem dla wszystkich warstw FX) oraz ten sam filtr z włączonym trybem pojedynczej warstwy:
+  
+    
+      Tryb jednowarstwowy WYŁ.
+    
+    
+      Tryb jednowarstwowy WŁ.
+    
+  
+  UWAGA Po włączeniu trybu pojedynczej warstwy dla efektu FX należy upewnić się, że jest on stosowany na warstwie, która nie jest warstwą FX, ponieważ warstwa FX sama w sobie nic nie zawiera, a więc żaden filtr/efekt nie będzie widoczny.
+   
+  Składnia:
+  fx_set_single_layer(filter_or_effect, enable);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        filter_or_effect
+        The FX struct to modify
+     
+      
+        enable
+        A boolean value to enable (true) lub wyłączyć (false) Tryb jednowarstwowy
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  shake_fx = fx_create("_filter_screenshake");
+    fx_set_single_layer(shake_fx, true);
+    layer_set_fx("ShakeyThings", shake_fx);
+  Powyższy kod tworzy nowy filtr screenshake FX, włącza na nim tryb pojedynczej warstwy, a następnie stosuje go do warstwy room. Oznacza to, że filtr screenshake zostanie zastosowany tylko do warstwy "ShakeyThings".
+   
+   
+  
+    
+      
+        Powrót: Funkcje filtrów i efektów
+        Następny: layer_set_fx
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

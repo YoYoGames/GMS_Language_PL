@@ -1,0 +1,33 @@
+
+  
+  Maski przycinania
+  Jak wspomniano na stronie Panel ścieżek, w edytorze ścieżek dostępna jest akcja umożliwiająca utworzenie tzw. grupy masek przycinających . Jest ona dostępna po kliknięciu przycisku  w dolnej części panelu ścieżek:
+  Kliknięcie tego przycisku spowoduje utworzenie grupy masek przycinania składającej się z dwóch podzbiorów strony assets, które można wykorzystać jako
+   temat lub maska grupy. Zasadniczo obiektem jest strona asset, która ma zostać zamaskowana, a maską jest strona asset, która ma wykonać maskowanie:
+  Zasada działania maski przycinającej polega na tym, że dodajesz obiekt sprite, a następnie maskę sprite, a maska sprite "ukryje" (zamaskuje)
+    (zamaskuje) obiekt. Następnie można użyć animacji maski sprite lub przesunąć albo przeskalować maskę sprite, aby zmienić widoczność obiektu (lub jego części). Każda grupa (maska i obiekt) może zawierać wiele stron assets, a każda z nich assets może mieć wiele ścieżek parametrów.
+    mieć wiele ścieżek parametrów.
+  Aby dodać obiekt i maskę, wystarczy przeciągnąć stronę sprite, object lub sequence z przeglądarki Asset nad folder, do którego chcesz go dodać:
+  
+  Maska sprite alfa będzie używana do "ukrywania" obiektów znajdujących się pod nią, gdzie wartość 100% alfa (nieprzezroczysta) będzie maskować całkowicie, a wartość 0% alfa (przezroczysta) będzie je pokazywać. Na przykład do maskowania służy ta strona sprite:
+  Następnie możemy zastosować to jako maskę przycinającą do ikon, aby uzyskać efekt "schłodzenia", jak poniżej:
+  W powyższym przykładzie "Sprite_2" to po prostu statyczna ikona sprite asset, która jest ikoną bazową,
+    a następnie utworzyliśmy grupę masek przycinających z wersją sprite w skali szarości oraz maską (na przykładzie sprite pokazanym powyżej). Po połączeniu i odtworzeniu strony sequence grupa masek przycinających odsłania podstawowy sprite
+    pod spodem, tworząc nasz efekt chłodzenia.
+  Należy pamiętać, że grupy masek przycinających mogą być traktowane jako pojedynczy element na liście ścieżek i na stronie dope sheet, a do grupy jako całości można dodawać ścieżki z parametrami obrotu i położenia. Grupy masek przycinania można także stosować do folderów grup zasobów
+    lub nawet do innych grup masek przycinania, co czyni je bardzo potężnym narzędziem.
+   
+   
+   
+  
+    
+      
+        Powrót: Sekwencje
+        Następny: Korzystanie z Arkusza Dope
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

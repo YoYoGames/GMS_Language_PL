@@ -1,0 +1,32 @@
+
+  
+  phy_linear_velocity_x
+  Ta zmienna może być użyta do uzyskania lub zmiany składowej x wektora prędkości liniowej instancji i jest zdefiniowana w pikselach na sekundę (informacje o pikselach na krok można znaleźć w sekcji phy_speed_x). Zmiana tej wartości dla instancji statycznej (tj. instancji o gęstości 0) zmieni ją w instancję kinematyczną
+   
+  Składnia:
+  phy_linear_velocity_x;
+   
+  Zwroty:
+   (single precision floating point value, or undefined if the instance is not physics enabled)
+   
+  Przykład:
+  if (phy_linear_velocity_x != 0)
+    {
+        phy_linear_velocity_x = 0;
+    }
+  Powyższy kod sprawdzi składową x wektora prędkości liniowej i jeśli będzie ona różna od 0, ustawi ją na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne fizyki
+        Następny: phy_linear_velocity_y
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

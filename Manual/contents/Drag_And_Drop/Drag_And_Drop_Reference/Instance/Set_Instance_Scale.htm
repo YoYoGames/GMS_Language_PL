@@ -9,7 +9,7 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains the Set Instance Scale action" />
-  <meta name="rh-index-keywords" content="DnD™ Action - Set Instance Scale" />
+  <meta name="rh-index-keywords" content="GML Visual Action - Set Instance Scale" />
   <meta name="search-keywords" content="Set Instance Scale" />
 </head>
 <body>
@@ -19,7 +19,7 @@
     skalowanie (1:1), mniejsze wartości będą skalowane w dół (na przykład 0,5 zmniejszy o połowę szerokość <span class="notranslate">sprite</span>), a większe wartości będą skalowane w górę. Wartości ujemne powodują odwrócenie strony <span class="notranslate">sprite</span> i jej przeskalowanie, chyba że użyta wartość wynosi dokładnie -1 (w takim przypadku strona
     <span class="notranslate">sprite</span> zostanie po prostu odwrócona lub odbita lustrzanie od swojego początku bez skalowania). Skalę poziomą lub pionową można ustawić względem bieżących wartości, w takim przypadku nowa wartość będzie dodawana lub odejmowana od bieżących wartości skali.</p>
   <p>Należy pamiętać, że zmiana tych wartości spowoduje również zmianę sposobu wykrywania kolizji przez instancję, chyba że w <a href="../../../The_Asset_Editors/Objects.htm">edytorze obiektów</a> podałeś osobny adres <span class="inline">mask_index</span> (maska kolizji). Pamiętaj, że
-    aby zmiany w tej zmiennej były widoczne, instancja powinna albo <i>nie</i> mieć zdarzenia draw (a więc <span class="notranslate">GameMaker Studio 2</span> będzie domyślnie rysować <span class="notranslate">sprite</span>), albo być rysowana za pomocą akcji <a href="../Drawing/Draw_Self.htm">Draw Self</a>.</p>
+    aby zmiany w tej zmiennej były widoczne, instancja powinna albo <i>nie</i> mieć zdarzenia rysowania (a więc <span data-keyref="GameMaker Name">GameMaker</span> domyślnie narysuje <span class="notranslate">sprite</span>), albo być rysowana za pomocą akcji <a href="../Drawing/Draw_Self.htm">Draw Self</a>.</p>
   <p><img alt="Set Instance Scale Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Scale.png" width="32" /></p>
   <p> </p>
   <h4>Składnia działania:</h4>
@@ -43,8 +43,8 @@
   </table>
   <p> </p>
   <h4>Przykład:</h4>
-  <p><span><img></span>Powyższy kod bloku akcji ustawia nową stronę <span class="notranslate">sprite</span> oraz szereg innych właściwości
-    właściwości dotyczące sposobu wyświetlania strony <span class="notranslate">sprite</span>, w tym ustawienie jej skalowania do trzech czwartych rozmiaru podstawowego wzdłuż obu osi.</p>
+  <p><span><img></span>Powyższy kod bloku akcji ustawia nową stronę <span class="notranslate">sprite</span> oraz szereg innych
+    właściwości wyświetlania strony <span class="notranslate">sprite</span>, w tym skalowanie jej do trzech czwartych rozmiaru podstawowego wzdłuż obu osi.</p>
   <p> </p>
   <p> </p>
   <p> </p>

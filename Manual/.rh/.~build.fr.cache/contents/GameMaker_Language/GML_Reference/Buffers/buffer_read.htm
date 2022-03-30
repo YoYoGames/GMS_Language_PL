@@ -1,0 +1,110 @@
+
+  
+  bufor_odczyt
+  Funkcja ta służy do odczytywania danych z wcześniej utworzonej strony buffer. Wartość zwracana zależy od typu odczytywanych danych, który jest definiowany przez następujące stałe:
+  
+    
+      
+        Stała
+        Opis
+      
+      
+        buffer_u8
+        8-bitowa liczba całkowita bez znaku. Jest to wartość dodatnia z zakresu od 0 do 255.
+      
+      
+        buffer_s8
+        Podpisana, 8-bitowa liczba całkowita. Może to być wartość dodatnia lub ujemna z zakresu od -128 do 127 (0 oznacza wartość dodatnią).
+      
+      
+        buffer_u16
+        Niepodpisana, 16-bitowa liczba całkowita. Jest to wartość dodatnia z zakresu od 0 do 65 535.
+      
+      
+        buffer_s16
+        Podpisana, 16-bitowa liczba całkowita. Może to być wartość dodatnia lub ujemna z zakresu od -32,768 do 32,767 (wartość 0 jest dodatnia).
+      
+      
+        buffer_u32
+        Niepodpisana, 32-bitowa liczba całkowita. Jest to wartość dodatnia z zakresu od 0 do 4 294 967 295.
+      
+      
+        buffer_s32
+        Podpisana, 32-bitowa liczba całkowita. Może to być wartość dodatnia lub ujemna z zakresu od -2,147,483,648 do 2,147,483,647 (0 oznacza wartość dodatnią).
+      
+      
+        buffer_u64
+        Niepodpisana 64-bitowa liczba całkowita.
+      
+      
+        buffer_f16
+        16-bitowa liczba zmiennoprzecinkowa. Może to być wartość dodatnia lub ujemna z zakresu +/- 65504. (Obecnie nieobsługiwana!)
+      
+      
+        buffer_f32
+        32-bitowa liczba zmiennoprzecinkowa. Może to być wartość dodatnia lub ujemna z zakresu +/-16777216.
+      
+      
+        buffer_f64
+        64-bitowa liczba zmiennoprzecinkowa.
+      
+      
+        buffer_bool
+        Wartość logiczna. Może wynosić tylko 1 lub 0 (true lub false).
+      
+      
+        buffer_string
+         string o dowolnej wielkości.
+      
+      
+        buffer_text
+        Adres string o dowolnym rozmiarze, bez końcowego znaku null.
+      
+    
+  
+  Jeśli funkcja się powiedzie, zwróci wartość podanego typu, natomiast jeśli się nie powiedzie, spowoduje wystąpienie błędu runnera.
+  UWAGA: Użycie nieprawidłowego typu danych dla odczytywanych danych spowoduje zwrócenie błędnych wartości.
+   
+  Składnia:
+  buffer_read(buffer, type)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        buffer
+        Identyfikator bufora
+        The index of the buffer to read from.
+      
+      
+        type
+        Typ danych bufora Stała
+        The type of data that is to be read from the buffer (see the list of constants above).
+      
+    
+  
+   
+  Zwroty:
+  Real, Boolean or String
+   
+  Przykład:
+  var cmd = buffer_read(buff, buffer_s16);
+  Powyższy kod wczytuje z adresu buffer o identyfikatorze przechowywanym w zmiennej "buff" podpisaną wartość 16-bitową do zmiennej lokalnej "cmd".
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_write
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

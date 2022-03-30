@@ -1,0 +1,53 @@
+
+  
+  zmienna_struktura_get
+  Za pomocą tej funkcji można uzyskać wartość z podanej zmiennej nazwanej w obrębie strony struct. Należy podać odnośnik do strony struct oraz nazwę zmiennej, której wartość chcemy uzyskać w postaci łańcucha znaków (patrz przykładowy kod poniżej). Funkcja zwróci wartość przechowywaną przez zmienną lub undefined, jeśli zmienna nazwana nie istnieje.
+  WAŻNE! Jeśli zmienna, którą pobierasz, nie istnieje, funkcja zwróci słowo kluczowe undefined i mogą pojawić się błędy, które uniemożliwią działanie gry, więc jeśli masz wątpliwości, użyj funkcji variable_struct_exists() po pierwsze.
+   
+  Składnia:
+  variable_struct_get(struct, name);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        struct
+        The struct reference to use
+     
+      
+        name
+        The name of the variable to get (as a string)
+     
+    
+  
+   
+  Zwroty:
+  Variable (any data type) or undefined (if the named variable does not exist)
+   
+  Przykład:
+  if variable_struct_exists(mystruct, "shields")
+    {
+        var ss = variable_struct_get(mystruct, "shields");
+    }
+    else
+    {
+        var ss = -1;
+    }
+  Powyższy kod sprawdzi, czy w podanym adresie struct istnieje zmienna, a jeśli tak, to jej wartość zostanie pobrana i zapisana w zmiennej lokalnej. Jeśli zmienna nie istnieje, zmienna lokalna zostanie ustawiona na -1.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: variable_struct_set
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

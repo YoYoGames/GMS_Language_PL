@@ -1,0 +1,41 @@
+
+  
+  część_emitera_tworzy
+  Ta funkcja musi być użyta do utworzenia nowego emitera i przypisania go do danego systemu cząsteczek. Funkcja zwróci wartość indeksu nowego emitera, która musi być przechowywana w zmiennej i używana we wszystkich innych funkcjach odwołujących się do tego emitera, a sam emiter musi zostać zniszczony, gdy nie jest już używany, aby zapobiec wyciekom pamięci (można to osiągnąć za pomocą funkcji destroy emittera lub przez zniszczenie całego systemu cząsteczek, do którego należy emiter).
+   
+  Składnia:
+  part_emitter_create(ps);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        ps
+        The particle system to create the emitter in.
+     
+    
+  
+   
+  Zwroty:
+  Particle Emitter ID
+   
+  Przykład:
+  p_emit1 = part_emitter_create(Sname);
+  Spowoduje to utworzenie nowego emitera cząstek i zapisanie jego indeksu w zmiennej "p_emit".
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery cząstek
+        Następny: part_emitter_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

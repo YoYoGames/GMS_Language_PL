@@ -1,0 +1,43 @@
+
+  
+  pomieszczenie_kolejne
+  Za pomocą tej funkcji można pobrać indeks strony room po stronie room wprowadzonej do funkcji. Na przykład można użyć zmiennej room aby uzyskać indeks bieżącego adresu room, a następnie użyć tej funkcji do znalezienia adresu room, który po nim następuje, zgodnie z listą w programie Room Manager. Jeśli po wprowadzonym adresie nie ma adresu room, zwracane jest -1. Należy pamiętać, że ta funkcja nie rozpozna ani nie uwzględni stron rooms, które zostały dodane dynamicznie przy użyciu room_add() lub room_duplicate().
+   
+  Składnia:
+  room_next(numb);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        numb
+        The index of the room to get the next one after.
+     
+    
+  
+   
+  Zwroty:
+  Room Asset
+   
+  Przykład:
+  if room_next(room) != -1
+    {
+        room_goto_next();
+    }
+  Powyższy kod sprawdzi, czy istnieje następna strona room, a jeśli tak, przejdzie do niej.
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room_previous
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,96 @@
+
+  
+  draw_text_ext_transformed_colour
+  Funkcja ta jest połączeniem funkcji podstawowej draw_text() z funkcją draw_text_ext(), draw_text_transformed()    oraz draw_text_colour() funkcji. Jest to najbardziej ogólna ze wszystkich funkcji służących do rysowania tekstu i zapewnia dużą elastyczność podczas rysowania. Należy pamiętać, że argument "width"
+    jest oparty na skali 1, więc jeśli skala jest inna, wartość ta powinna zostać proporcjonalnie zmieniona. Na przykład, jeśli podstawowa szerokość łamu linii wynosi 300, a skala jest ustawiona na 2, tekst będzie wyświetlany nieprawidłowo, przekraczając podaną
+    szerokość. Zamiast tego należało ustawić szerokość na 150, aby skompensować skalowanie.
+  UWAGA: Mieszanie gradientowe nie jest dostępne w przypadku celu HTML5, chyba że włączona jest obsługa WebGL, choć nadal można ustawić kolory mieszania, a strona font będzie mieszana z pierwszym podanym kolorem. Jednak wszystkie mieszania w ten sposób tworzą duplikat
+    font który jest następnie przechowywany w witrynie cache i używany w razie potrzeby, co nie jest optymalne, a wielokrotne zmiany kolorów spowalniają działanie gry. Aby ograniczyć to zjawisko, można ustawić rozmiar font cache 
+    używając funkcji font_set_cache_size().
+   
+  Składnia:
+  draw_text_ext_transformed_colour(x, y, string, sep, w, xscale, yscale, angle, c1, c2, c3, c4, alpha);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x
+        The x coordinate of the drawn string.
+     
+      
+        y
+        The y coordinate of the drawn string.
+     
+      
+        string
+        The string to draw.
+     
+      
+        sep
+        The distance in pixels between lines of text.
+     
+      
+        w
+        The maximum width in pixels of the string before a line break.
+     
+      
+        xscale
+        The horizontal scale.
+     
+      
+        yscale
+        The vertical scale.
+     
+      
+        angle
+        The angle of the text.
+     
+      
+        c1
+        The colour for the top left of the drawn text.
+     
+      
+        c2
+        The colour for the top right of the drawn text.
+     
+      
+        c3
+        The colour for the bottom right of the drawn text.
+     
+      
+        c4
+        The colour for the bottom left of the drawn text.
+     
+      
+        alpha
+        The alpha for the text.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_set_halign(fa_center); draw_set_valign(fa_middle);
+     draw_text_ext_transformed_colour(200, 200, "My name is" + global.name +".", 20, 200, 0.5, 0.5, 180, c_blue, c_blue, c_navy, c_navy, 1);
+  Spowoduje to narysowanie podanego tekstu z gradientem w dół w kolorze od niebieskiego do ciemnoniebieskiego w pozycji (200,200) na stronie room, obróconego do góry nogami i o połowę mniejszego od normalnego rozmiaru punktów na stronie font. Między każdą linią będzie 20 pikseli, jeśli będzie więcej niż
+    a każda linia będzie miała maksymalną szerokość 200 pikseli.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekst
+        Następny: draw_highscore
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,87 @@
+
+  
+  Bufory
+   buffer to region pamięci fizycznej używany do tymczasowego przechowywania danych podczas przenoszenia ich z jednego miejsca do drugiego lub manipulowania nimi w jakiś sposób, na przykład można użyć buffer do przechowywania pakietów danych oczekujących na transmisję przez sieć lub do przechowywania pakietów odebranych przez sieć. GameMaker Studio 2 ma wiele specyficznych funkcji związanych z tworzeniem, modyfikowaniem i ładowaniem/zapisywaniem buffers, ale przed ich użyciem należy zwrócić uwagę na następujące kwestie:
+  
+    Po utworzeniu strony buffer jest ona automatycznie czyszczona i wypełniana do wartości 0.
+    Argument "size" funkcji buffer zawsze odnosi się do rozmiaru w bajtach strony buffer.
+    Argument "Wyrównanie" określa sposób przechowywania danych w adresie buffer. Jeśli wyrównanie jest ustawione np. na 4, a użytkownik napisze pojedynczy fragment danych o rozmiarze 1 bajta i wykona polecenie buffer_tell, otrzyma przesunięcie o 1. Jeśli jednak napisze inny fragment danych, również o rozmiarze 1 bajta, a następnie wykona polecenie buffer_tell, otrzyma przesunięcie o 5, ponieważ wyrównanie spowodowało "wypchanie" danych do tego rozmiaru. Wyrównanie wpływa tylko na miejsce zapisu, więc jeśli wykonasz buffer_tell po napisaniu czegoś, zwróci to bieżącą pozycję zapisu, która znajduje się bezpośrednio po napisanych danych. Zauważ jednak, że jeśli następnie napiszesz kolejną porcję danych, to buffer przesunie pozycję zapisu do następnej wielokrotności rozmiaru wyrównania, zanim faktycznie napiszesz porcję danych.
+    Jeśli chodzi o "offset", jest to wartość w bajtach, o jaką należy przesunąć dane w obrębie danej strony buffer. Jeśli więc adres buffer jest wyrównany do 2 bajtów i chcesz pominąć pierwsze 4 wyrównane miejsca, zastosujesz offset 2 * 4 bytes.
+    Niektóre z funkcji buffer tworzą także nowy adres buffer (na przykład buffer_load ). Pamiętaj, że te buffers będą musiały zostać usunięte z pamięci, gdy nie będą używane, za pomocą funkcji buffer_delete.
+    Pamięć używana do tworzenia strony buffers jest pamięcią systemową, więc nawet jeśli gra nie jest skoncentrowana, wszelkie dane przechowywane w witrynie buffer powinny być bezpieczne, jednak jeśli aplikacja zostanie zamknięta lub ponownie uruchomiona, zostaną utracone.
+  
+  Na następnych stronach wyjaśniono, jak działa buffers w kontekście GameMaker Studio 2, oraz zamieszczono kilka przykładów kodu dla użytkowników, którzy nie są pewni, jak z nich korzystać:
+  
+    Używanie buforów
+  
+  WAŻNE! Kiedy tworzysz buffer, wartość indeksu używana do jego identyfikacji jest wartością całkowitą zaczynającą się od 0. Indeksy te są ponownie używane przez GameMaker, więc zniszczona wartość indeksu buffer może być później używana przez nowo utworzoną, dlatego zalecamy ustawienie każdej zmiennej przechowującej indeks bufora na -1 po zniszczeniu buffer.
+  W grach można używać następujących funkcji w odniesieniu do binarnych stron buffers:
+  
+    buffer_exists
+    buffer_create
+    buffer_create_from_vertex_buffer
+    buffer_create_from_vertex_buffer_ext
+    buffer_delete
+    buffer_read
+    buffer_write
+    buffer_fill
+    buffer_seek
+    buffer_tell
+    buffer_peek
+    buffer_poke
+    buffer_save
+    buffer_save_ext
+    buffer_save_async
+    buffer_load
+    buffer_load_ext
+    buffer_load_async
+    buffer_load_partial
+    buffer_compress
+    buffer_decompress
+    buffer_async_group_begin
+    buffer_async_group_option
+    buffer_async_group_end
+    buffer_copy
+    buffer_copy_from_vertex_buffer
+    buffer_get_type
+    buffer_get_alignment
+    buffer_get_address
+    buffer_get_size
+    buffer_get_surface
+    buffer_set_surface
+    buffer_resize
+    buffer_sizeof
+    buffer_md5
+    buffer_sha1
+    buffer_crc32
+    buffer_base64_encode
+    buffer_base64_decode
+    buffer_base64_decode_ext
+    bufor_set_used_size
+  
+   
+  Istnieją także dwie dodatkowe funkcje związane z adresem buffers, których można użyć do zapisywania i wczytywania stanów gry (należy pamiętać, że wymagają one, aby wcześniej utworzono stronę buffer ):
+  
+    game_load_buffer
+    game_save_buffer
+  
+   
+  Można także używać specjalnych buforów wierzchołków, aby tworzyć własne prymitywy, modele itp. Więcej informacji na ten temat można znaleźć w następnej części instrukcji:
+  
+    Budownictwo prymitywne
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Odniesienie do GML
+        Następny: UWP i XBox Live
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

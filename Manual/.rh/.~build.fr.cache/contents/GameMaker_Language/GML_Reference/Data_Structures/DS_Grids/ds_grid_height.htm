@@ -1,0 +1,51 @@
+
+  
+  ds_grid_height
+  Ta funkcja zwraca wysokość podanej siatki. Wartość ta jest liczbą komórek siatki wzdłuż osi y i jest zawsze liczbą całkowitą, jak pokazano na poniższym rysunku:
+  
+   
+  Składnia:
+  ds_grid_height(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        This index of the grid to find the height of.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  for (var i = 0; i < ds_grid_width(grid); ++i)
+    {
+        for (var j = 0; j < ds_grid_height(grid); ++j)
+        {
+            if (ds_grid_get(grid, i, j) == 1)
+            {
+                instance_create_Layer(i * 32, j * 32, "Walls", obj_Wall);
+            }
+        }
+    }
+   loop Powyższy kod przejdzie przez siatkę DS zindeksowaną w zmiennej "siatka" i jeśli wartość znaleziona w dowolnej komórce będzie równa 1, utworzy instancję "obj_Wall" w odpowiedniej pozycji w room.
+   
+   
+   
+  
+    
+      
+        Powrót: Siatki DS
+        Następny: ds_grid_resize
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

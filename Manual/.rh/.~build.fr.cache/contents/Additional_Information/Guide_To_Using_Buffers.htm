@@ -1,0 +1,212 @@
+
+  
+  Przewodnik po używaniu buforów
+  Strona buffer (w programowaniu) to miejsce w pamięci systemowej, które służy do przechowywania małych pakietów danych dotyczących praktycznie wszystkiego (na przykład: przesyłania danych, kolizji, kolorów itp...). Ponieważ jest przechowywana w pamięci systemowej, dostęp do niej jest bardzo szybki, a buffer jest zwykle używana do przechowywania bardzo krótkoterminowych danych, takich jak odbieranie informacji z sieci przed ich przetworzeniem lub do przechowywania punktu kontrolnego w grze (wyjaśniono to w przykładzie podanym w dalszej części strony).
+  Bufory są tworzone poprzez przydzielenie miejsca w pamięci systemowej , liczonego w bajtach, które jest następnie rezerwowane dla Twojej gry tak długo, jak gra jest uruchomiona lub do momentu usunięcia buffer za pomocą odpowiedniej funkcji (wszystkie funkcje GML buffer znajdziesz tutaj). Oznacza to, że nawet jeśli gra nie jest w centrum uwagi (np. na urządzeniu przenośnym, gdy odbierasz połączenie, gra przechodzi w tło), adres buffer nadal istnieje, ale jeśli gra zostanie zamknięta lub ponownie uruchomiona, adres buffer zostanie utracony.
+  UWAGA: Ponowne uruchomienie gry nie spowoduje wyczyszczenia ani usunięcia adresu buffer! Uniemożliwi jednak dalszy dostęp do wcześniej utworzonej strony buffer, ponieważ utracony zostanie uchwyt identyfikacyjny, co spowoduje wyciek pamięci, który w końcu doprowadzi do awarii gry. Dlatego przy ponownym uruchamianiu gry pamiętaj, aby najpierw usunąć wszystkie buffers.
+  GameMaker Studio 2 pozwala na tworzenie czterech różnych typów buffer. Powodem tego jest fakt, że buffers został zaprojektowany jako wysoce zoptymalizowany tymczasowy nośnik danych i dlatego należy utworzyć buffer odpowiedni do typu danych, które mają być przechowywane, w przeciwnym razie mogą wystąpić błędy lub wąskie gardło w kodzie. Zanim wyjaśnimy to dalej, przyjrzyjmy się czterem dostępnym typom buffer (zdefiniowanym jako stałe w GML):
+   
+  
+    
+      
+        Stała
+        opis
+      
+      
+        buffer_fixed
+        
+          Adres buffer o stałym rozmiarze w bajtach. Rozmiar ten jest ustalany podczas tworzenia strony buffer i nie może być ponownie zmieniony.
+      
+      
+        buffer_grow
+        
+          Strona buffer, która będzie się dynamicznie powiększać w miarę dodawania danych. Tworzy się ją z rozmiarem początkowym (który powinien być przybliżony do rozmiaru danych, które mają być przechowywane), a następnie rozszerza się ją, aby przyjąć dalsze dane, które przekraczają ten rozmiar początkowy.
+      
+      
+        buffer_wrap
+        
+          Adres buffer, na który będą zawijane dane. Gdy dodawane dane osiągną limit rozmiaru buffer, nadpisanie zostanie umieszczone z powrotem na początku buffer, a dalszy zapis będzie kontynuowany od tego miejsca.
+      
+      
+        buffer_fast
+        
+          Jest to specjalny, "okrojony" adres buffer, na którym można bardzo szybko odczytywać i zapisywać dane. Można go jednak używać tylko z typami danych buffer_u8 i musi być wyrównany do 1 bajta. (Informacje o typach danych i wyrównaniu bajtów można znaleźć w dalszej części tej strony).
+      
+    
+  
+   
+  Są to typy buffer dostępne podczas korzystania z GameMaker Studio 2, a to, który z nich wybierzesz, zależy w dużej mierze od tego, do czego chcesz go wykorzystać. Na przykład strona grow buffer byłaby używana do przechowywania "migawek" danych w celu utworzenia zapisu gry, ponieważ nie znasz rzeczywistej ilości danych, które zostaną w niej umieszczone, a strona fast buffer byłaby używana, gdy wiesz, że wszystkie wartości, z którymi pracujesz, zawierają się w przedziale od 0 do 255 lub od -128 do 127, na przykład podczas przetwarzania danych ARGB z obrazu.
+  Tworząc stronę buffer, należy zawsze starać się nadać jej rozmiar odpowiedni dla danego typu, przy czym ogólna zasada mówi, że powinna ona być utworzona tak, aby pomieścić maksymalny rozmiar danych, które ma przechowywać, a w razie wątpliwości należy użyć grow buffer, aby zapobiec błędom nadpisywania.
+  Faktyczny kod tworzący stronę buffer wygląda mniej więcej tak:
+  player_buffer = buffer_create(16384, buffer_fixed, 2);
+  
+    W ten sposób powstanie stała strona buffer o rozmiarze 16384 bajtów i wyrównana do 2 bajtów. Funkcja zwróci unikatową wartość identyfikacyjną przechowywaną w zmiennej, która umożliwi późniejsze odwoływanie się do tej strony buffer.
+  Podczas odczytywania i zapisywania danych na stronie buffer robi się to w "kawałkach" danych określonych przez ich "typ danych". Typ danych" określa liczbę bajtów przydzielonych w ramach buffer dla zapisywanej wartości i bardzo ważne jest, aby go poprawnie określić, w przeciwnym razie można uzyskać bardzo dziwne wyniki (lub nawet błędy) w swoim kodzie.
+  Bufory są zapisywane (i odczytywane) sekwencyjnie, tzn. jedna porcja danych jest zapisywana po drugiej, a każda porcja danych jest określonego typu. Oznacza to, że użytkownik powinien zawsze wiedzieć, jakie dane zapisuje w buforze buffer. Te typy danych są zdefiniowane w witrynie GML za pomocą następujących stałych:
+   
+  
+    
+      
+        Typ danych Stała
+        Bajty
+        Opis
+      
+      
+        buffer_u8
+        1
+        
+          8-bitowa liczba całkowita bez znaku. Jest to wartość dodatnia z zakresu od 0 do 255.
+      
+      
+        buffer_s8
+        1
+        
+          Podpisana, 8-bitowa liczba całkowita. Może to być wartość dodatnia lub ujemna z zakresu od -128 do 127 (0 oznacza wartość dodatnią).
+      
+      
+        buffer_u16
+        2
+        
+          Niepodpisana, 16-bitowa liczba całkowita. Jest to wartość dodatnia z zakresu od 0 do 65 535.
+      
+      
+        buffer_s16
+        2
+        
+          Podpisana, 16-bitowa liczba całkowita. Może to być wartość dodatnia lub ujemna z zakresu od -32,768 do 32,767 (wartość 0 jest dodatnia).
+      
+      
+        buffer_f16
+        2
+        
+          16-bitowa liczba zmiennoprzecinkowa. Może to być wartość dodatnia lub ujemna z zakresu +/- 65504. (Obecnie nieobsługiwana!)
+      
+      
+        buffer_u32
+        4
+        
+          Niepodpisana, 32-bitowa liczba całkowita. Jest to wartość dodatnia z zakresu od 0 do 4 294 967 295.
+      
+      
+        buffer_s32
+        4
+        
+          Podpisana, 32-bitowa liczba całkowita. Może to być wartość dodatnia lub ujemna z zakresu od -2,147,483,648 do 2,147,483,647 (0 oznacza wartość dodatnią).
+      
+      
+        buffer_f32
+        4
+        
+          32-bitowa liczba zmiennoprzecinkowa. Może to być wartość dodatnia lub ujemna z zakresu +/-16777216.
+      
+      
+        buffer_u64
+        8
+        
+          64-bitowa liczba całkowita bez znaku.(Obecnie nie jest obsługiwana przez wszystkie funkcje buffer!)
+      
+      
+        buffer_f64
+        8
+        
+          64-bitowa liczba zmiennoprzecinkowa.
+      
+      
+        buffer_bool
+        1
+        
+          Wartość logiczna. Może wynosić tylko 1 lub 0 (true lub false).
+      
+      
+        buffer_string
+        N/A
+        
+          Jest to plik UTF-8 zakończony zerem (0x00) string. Zasadniczo adres GameMaker string jest umieszczany w adresie buffer, a na końcu jest umieszczane 0.
+      
+    
+  
+   
+  Jeśli więc utworzyłeś stronę buffer i chcesz zapisywać na niej informacje, użyj następującego kodu:
+  buffer_write(buff, buffer_bool, global.Sound);
+    buffer_write(buff, buffer_bool, global.Music);
+    buffer_write(buff, buffer_s16, obj_Player.x);
+    buffer_write(buff, buffer_s16, obj_Player.y);
+    buffer_write(buff, buffer_string, global.Player_Name);
+  Patrząc na powyższy przykład, widać, że można zapisywać różne typy danych na stronie buffer w tym samym czasie (w przypadku korzystania z szybkiego bufora jesteśmy ograniczeni tylko do określonego typu danych), a dane te będą kolejno dodawane do strony buffer (choć ich faktyczna pozycja w buffer będzie zależała od wyrównania bajtów, co wyjaśniono poniżej). Tak samo jest w przypadku odczytywania informacji z buffer. W powyższym przykładzie dane z buffer należy odczytywać w takiej samej kolejności, w jakiej zostały zapisane, sprawdzając, czy dane są tego samego typu, np:
+  global.Sound = buffer_read(buff, buffer_bool);
+    global.Music = buffer_read(buff, buffer_bool);
+    obj_Player.x = buffer_read(buff, buffer_s16);
+    obj_Player.y = buffer_read(buff, buffer_s16);
+    global.Player_Name = buffer_read(buff, buffer_string);
+  Jak widać, informacje są odczytywane w takiej samej kolejności, w jakiej zostały wczytane do buffer. Więcej informacji na temat dodawania i usuwania danych z buffer można znaleźć w poniższych przykładach.
+  Jeśli czytałeś tę stronę, na pewno widziałeś wzmianki o wyrównaniu bajtów w adresie buffer. Odnosi się to do pozycji, na której nowe dane będą zapisywane w danym adresie buffer. Jak to działa? Otóż w przypadku strony buffer z wyrównaniem do jednego bajtu każda porcja danych jest zapisywana na stronie buffer kolejno, przy czym każda nowa porcja danych jest dodawana bezpośrednio po poprzedniej. Natomiast w przypadku strony buffer z wyrównaniem do 2 bajtów każdy fragment danych będzie zapisywany w odstępach 2-bajtowych, więc nawet jeśli początkowy zapis wyniesie 1 bajt danych, następny zapis zostanie wyrównany do dwóch bajtów:
+  Jeśli więc wyrównanie bajtowe jest ustawione na, powiedzmy, 4 bajty i zapiszesz pojedynczy fragment danych o rozmiarze 1 bajta, a następnie wykonasz tell  buffer (tell określa bieżącą pozycję do odczytu/zapisu dla buffer), otrzymasz przesunięcie o 1 bajt (przesunięcie w tym przypadku to liczba bajtów od początku adresu buffer do bieżącej pozycji odczytu/zapisu).
+  Jeśli jednak zapiszesz kolejną porcję danych, również o rozmiarze 1 bajta, a następnie wykonasz buffer tell, otrzymasz przesunięcie o 5 bajtów (mimo że zapisałeś tylko 2 bajty danych), ponieważ wyrównanie spowodowało wyścielenie danych, aby wyrównać je do 4-bajtowego wyrównania buffer.
+  Zasadniczo oznacza to, że wyrównanie będzie miało wpływ tylko na miejsce zapisu, więc jeśli wykonasz buffer tell po zapisaniu czegoś, zwróci ono bieżącą pozycję zapisu, która znajduje się bezpośrednio za wcześniej zapisanymi danymi. Zauważ jednak, że jeśli następnie napiszesz kolejną porcję danych, to buffer wewnętrznie przesunie pozycję zapisu do następnej wielokrotności rozmiaru wyrównania przed faktycznym zapisem porcji danych.
+  Poniżej przedstawiamy kilka przykładów wykorzystania strony buffers w projekcie:
+   
+  Bufor Punkt kontrolny
+  
+    Prostym przykładem zastosowania strony buffer w dowolnej grze GameMaker Studio 2 na dowolną platformę jest funkcja game_save_buffer(). Funkcja ta wykonuje "migawkę" bieżącego stanu gry i zapisuje ją na wcześniej zdefiniowanej stronie buffer, z której następnie można ją odczytać w celu ponownego załadowania gry w tym punkcie.
+    UWAGA: Ta funkcja jest bardzo ograniczona i została zaprojektowana dla początkujących graczy, aby szybko uruchomić system punktów kontrolnych. Bardziej zaawansowani użytkownicy mogą jednak preferować kodowanie własnego systemu przy użyciu funkcji pliku, ponieważ gra nie zapisze żadnych zasobów dynamicznych, które można utworzyć w czasie gry, takich jak struktury danych, powierzchnie, dodane strony sprites, itp.
+    Pierwszą rzeczą, którą musimy zrobić, jest utworzenie nowego adresu object, który będzie sterował zapisywaniem i ładowaniem danych, dlatego należy go utworzyć i nadać mu zdarzenie Create. W tym zdarzeniu można umieścić następujący kod:
+    SaveBuffer = buffer_create(1024, buffer_grow, 1);
+      StateSaved = false;
+    W pierwszym wierszu tworzony jest plik grow buffer (ponieważ nie znamy ostatecznego rozmiaru zapisanych danych) o rozmiarze 1024 bajtów i wyrównany do 1 bajta. Następnie tworzona jest zmienna, która będzie sprawdzać, czy gra została zapisana, czy nie (zostanie ona użyta podczas wczytywania).
+    Następnie dodajemy zdarzenie naciśnięcia klawisza (na przykład), w którym zapiszemy bieżący stan gry do utworzonego bufora:
+    StateSaved = true;
+      buffer_seek(SaveBuffer, buffer_seek_start, 0);
+      game_save_buffer(SaveBuffer);
+    Powyższe działanie spowoduje najpierw ustawienie zmiennej sterującej na true (dzięki czemu zostanie ona zapisana podczas zapisywania gry na stronie buffer), a następnie przejście na początek strony buffer przed zapisaniem do niej bieżącego stanu zapisu. Dlaczego używamy buffer_seek()? Otóż, jak już wspomniano na tej stronie, czytasz i zapisujesz na stronie buffer od miejsca, w którym ostatnio zostały do niej dodane dane. Oznacza to, że jeśli nie ustawisz buffer tell z powrotem na początek, to podczas zapisywania dane zostaną dodane do buffer w bieżącej pozycji odczytu/zapisu buffer. Dlatego użyjemy funkcji buffer_seek(), aby przenieść tell na początek buffer.
+    Aktualny stan gry został zapisany na stronie buffer. Następnym krokiem będzie zakodowanie sposobu jego wczytania, prawdopodobnie w innym zdarzeniu Keypress Event:
+    if StateSaved
+      {
+          buffer_seek(SaveBuffer, buffer_seek_start, 0);
+          game_load_buffer(SaveBuffer);
+      }
+    Gra zostanie załadowana na końcu zdarzenia, w którym umieszczono powyższy kod.
+    UWAGA: Można tego używać tylko w tej samej witrynie room, a nie do generowania kompletnych zapisanych gier po zamknięciu lub ponownym uruchomieniu gry!
+    Ostatnią rzeczą, którą należy dodać do kontrolera object, jest kod "czyszczący". Buffers są przechowywane w pamięci i jeśli nie wyczyścisz ich po zakończeniu, mogą wystąpić wycieki pamięci, które w końcu spowodują lagi i awarię gry. Można więc dodać zdarzenie zakończenia pomieszczenia (z kategorii Inne zdarzenia ) o treści:
+    buffer_delete(SaveBuffer);
+    Tę stronę object można teraz umieścić w witrynie room, a po naciśnięciu klawisza zapisać i wczytać stan room z witryny buffer.
+     
+  
+  Bufory sieciowe
+  
+    Podczas pracy z funkcjami sieciowymi GameMaker Studio 2 należy użyć buffers do utworzenia pakietu danych, który jest przesyłany przez połączenie sieciowe. Ten przykład ma na celu pokazanie, jak to się robi, ale ze względu na zakres możliwości sieciowych ma on na celu jedynie pokazanie, jak korzystać z samych funkcji buffers, a nie z całego systemu sieciowego.
+    Pierwszą rzeczą, którą pokażemy, jest tworzenie i używanie buffer po stronie klienta połączenia sieciowego. Ta strona buffer będzie używana do tworzenia małych pakietów danych, które następnie będą mogły być wysyłane do strony server, dlatego w zdarzeniu tworzenia instancji przypisalibyśmy jej adres buffer w następujący sposób:
+    send_buff = buffer_create(256, buffer_grow, 1);
+    Strona buffer jest niewielka (256 bajtów), ponieważ nie jest przeznaczona do przechowywania dużych ilości danych, a następnie jest powiększana (grow buffer ), aby zapewnić brak błędów w przypadku konieczności dodania większej ilości danych do wysłania w dowolnym momencie, a wyrównanie jest ustawione na jeden dla wygody.
+    Załóżmy, że chcemy, aby nasz klient wysyłał dane do server. W tym celu musimy utworzyć "pakiet" buffer. W tym przykładzie wyślemy zdarzenie naciśnięcia klawisza, np. gdy gracz naciśnie strzałkę w lewo , aby poruszać się w grze. Aby to zrobić, najpierw zapisujemy niezbędne dane na stronie buffer, a następnie je wysyłamy:
+    buffer_seek(buff, buffer_seek_start, 0);
+      buffer_write(buff, buffer_u8, 1);
+      buffer_write(buff, buffer_s16, vk_left);
+      buffer_write(buff, buffer_bool, true);
+      network_send_packet(client, buff, buffer_tell(buff));
+    Przed zapisem na stronie buffer ustawiamy "tell" na początek strony buffer, ponieważ sieci zawsze pobierają dane od początku strony buffer. Następnie wpisujemy wartość kontrolną (zostanie ona wykorzystana przez stronę server do określenia typu zdarzenia, które ma zostać przetworzone), używany klawisz, a następnie stan klawisza (w tym przypadku true oznacza naciśnięty). Ta strona buffer jest następnie wysyłana przez funkcję sieciową jako pakiet danych. Zwróć uwagę, że nie wysyłamy całej strony buffer! Wysyłamy tylko zapisane dane, używając funkcji buffer_tell do zwrócenia aktualnej pozycji odczytu/zapisu na stronie buffer (pamiętaj, że zapis na stronie buffer przenosi "tell" na koniec tego, co zostało zapisane). Ma to na celu uniknięcie wysyłania większej liczby bajtów, niż jest to konieczne.
+    A co z odbiorem danych na stronie server? Odebrany pakiet danych musi zostać zapisany w buffer na stronie server, a następnie wykorzystany do aktualizacji gry. W tym celu należy użyć zdarzenia asynchronicznego Networking w kontrolerze sieciowym object na stronie server, jak pokazano w poniższym uproszczonym kodzie:
+    var buff = ds_map_find_value(async_load, "buffer");
+      if cmd == buffer_read(buff, buffer_u8);
+      {
+          key = buffer_read(buff, buffer_s16);
+          key_state = buffer_read(buff, buffer_bool);
+      }
+    Zdarzenie asynchroniczne będzie zawierało specjalną tymczasową mapę DS async_load (jest ona usuwana z pamięci po zakończeniu zdarzenia automatycznie), która zawiera różne informacje w zależności od typu danych przychodzących z sieci. W tym przypadku zakładamy, że mapa została sprawdzona i uznana za pakiet danych buffer wysłany od klienta. Sprawdzamy teraz pierwszą część danych, która znajduje się na stronie buffer, aby sprawdzić, jakiego rodzaju zdarzenie zostało wysłane - w tym przypadku wartość "1" oznacza zdarzenie związane z klawiszem, jednak podczas kodowania takich rzeczy należy zdefiniować stałe przechowujące te wartości, aby uprościć pracę - a następnie zapisujemy naciśnięty klawisz i jego stan (true = naciśnięty, false = zwolniony). Te informacje zostaną następnie użyte do aktualizacji wszystkich klientów o nowy stan gracza wysyłającego.
+    UWAGA: Strona buffer utworzona z mapy DS jest automatycznie usuwana na końcu zdarzenia asynchronicznego sieci, więc nie ma potrzeby używania tutaj funkcji buffer_delete().
+     
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Informacje dodatkowe
+        Następny: Operatory bitowe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

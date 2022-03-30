@@ -1,0 +1,43 @@
+
+  
+  layer_get_id
+  Funkcji tej można użyć do uzyskania unikalnej wartości ID dla danej warstwy. W serwisie IDE wszystkie warstwy mają nazwę i typ, a żeby móc je edytować lub zmieniać za pomocą kodu, należy podać wartość ID warstwy. Ta funkcja służy do pobierania tego identyfikatora przy użyciu nazwy (a string) warstwy (zapisanej w IDE). Jeśli utworzysz nową warstwę za pomocą kodu, używając funkcji layer_create() to funkcja ta zwróci zamiast tego unikalną wartość ID (warstwy tworzone dynamicznie nie otrzymują nazw). Należy pamiętać, że jeśli podasz nazwę warstwy, która nie istnieje w bieżącej witrynie room, zostanie wyświetlony błąd i projekt ulegnie awarii.
+   
+  Składnia:
+  layer_get_id(layer_name)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        layer_name
+        The name of the layer (a string)
+     
+    
+  
+   
+  Zwroty:
+  Layer ID or -1 (if the layer specified doesn't exist)
+   
+  Przykład:
+  var near = instance_nearest(x, y, obj_Tree);
+    var layer_id = layer_get_id("Instances Front");
+    layer_add_instance(layer_id, near);
+  Powyższy kod najpierw pobiera indeks instancji najbliższej podanej pozycji x/y i zapisuje go w zmiennej lokalnej. Następnie pobiera unikalny identyfikator warstwy instancji dla warstwy o nazwie "Instances Front" i przenosi znalezioną instancję na tę warstwę.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_get_depth
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

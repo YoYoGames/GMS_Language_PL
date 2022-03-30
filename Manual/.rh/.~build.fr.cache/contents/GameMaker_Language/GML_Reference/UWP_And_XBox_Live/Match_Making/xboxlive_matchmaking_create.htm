@@ -1,0 +1,104 @@
+
+  
+  xboxlive_matchmaking_create
+  Ta funkcja utworzy sesję dla wielu graczy przy użyciu szablonu sesji, lejka meczowego i szablonu Secure Device Association, które należy wcześniej utworzyć w pulpicie nawigacyjnym XDP. Identyfikator użytkownika, który można pobrać dla danego pada do gry, wywołując funkcję xboxlive_user_for_pad() i widoczności będzie jedną z poniższych stałych:
+  
+    
+      
+      
+    
+    
+      
+        Stała widoczności meczu Xbox
+      
+      
+        Stała
+        Opis
+      
+      
+        xboxlive_match_visibility_open
+        określa, że do sesji mogą dołączyć inne osoby.
+      
+      
+        xboxlive_match_visibility_private
+        określa, że sesja nie jest widoczna dla użytkowników, którzy nie są członkami sesji.
+      
+      
+        xboxlive_match_visibility_usetemplate
+        określa, że należy użyć wartości użytej w szablonie sesji (zwykle należy używać tej opcji, ponieważ nie można zastąpić wartości szablonu, jeśli została ona ustawiona w XDP).
+      
+    
+  
+  Funkcja zwraca unikalną wartość Request ID, którą można wykorzystać do zidentyfikowania właściwego zdarzenia asynchronicznego Social dla tej funkcji. Zdarzenie to zostanie wywołane po utworzeniu sesji i będzie zawierało DS Map w zmiennej async_load z następującymi parami klucz/wartość:
+  
+    "requestid" - zawiera identyfikator wniosku zwrócony przez funkcję wywołującą
+    "status" - zawiera adres string "session_created", informujący o rodzaju zdarzenia, które zostało wywołane.
+    "sessionid" - zawiera identyfikator sesji lub -1 w przypadku niepowodzenia
+    "error" - zawiera 0 w przypadku powodzenia, lub -1 w przypadku niepowodzenia
+    "correlationid" - uchwyt sesji do korelacji z funkcją xboxlive_matchmaking_join_session()
+  
+   
+  Składnia:
+  xboxlive_matchmaking_create(user_id, visibility, template, hopper, sdatemplate, [matchattributes]);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        user_id
+        Identyfikator użytkownika konsoli Xbox
+        The user ID pointer to use
+      
+      
+        visibility
+        Stała widoczności meczu Xbox
+        One of the constants listed above
+      
+      
+        template
+        String
+        The name of the session template
+      
+      
+        hopper
+        String
+        The name of the matchmaking hopper
+      
+      
+        sdatemplate
+        String
+        The name of the secure device association template
+      
+      
+        matchattributes
+        Real
+        OPTIONAL Atrybuty meczu
+      
+    
+  
+   
+  Zwroty:
+  Async Request ID
+   
+  Przykład:
+  var userID = xboxlive_user_for_pad(global.PadIndex);
+    result = xboxlive_matchmaking_create(userID, xboxlive_match_visibility_usetemplate, "MatchTicketSession", "MatchTicketHopper", "PeerServerTraffic");
+  Powyższe polecenie pobierze identyfikator użytkownika na podanym gamepadzie, a następnie zainicjuje dla niego sesję kojarzenia.
+   
+   
+   
+  
+    
+      
+        Powrót: Dopasowywanie
+        Następny: xboxlive_matchmaking_find
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

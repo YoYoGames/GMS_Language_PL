@@ -1,0 +1,31 @@
+
+  
+  delta_time
+  Ta zmienna zwraca czas delta ramki, czyli różnicę czasu między poprzednią a bieżącą ramką. Wartość ta jest podawana w mikrosekundach, gdzie 1 mikrosekunda to 1 000 000 sekundy.
+  Celem taktowania delta jest wyeliminowanie efektów opóźnienia lub spowolnienia komputerów, które próbują obsługiwać złożoną grafikę lub dużą ilość kodu. Jest to wartość, którą można dodać do prędkości strony objects, tak aby ostatecznie poruszały się one z taką samą prędkością, niezależnie od opóźnienia. W witrynie GameMaker Studio 2 można to osiągnąć, używając co krok zmiennej delta_time, która mierzy czas, jaki upłynął między jednym a drugim krokiem, w mikrosekundach. Dlatego zmiennej delta_time można użyć do obliczenia, o ile szybciej (na przykład) musi się poruszać postać w grze, aby nadrobić opóźnienie w grze.
+   
+  Składnia:
+  delta_time
+   
+  Zwroty:
+  Real (integer)
+   
+  Przykład:
+  var _dt = delta_time / 1000000;
+    speed = spd * _dt;
+  Powyższy kod ustawi prędkość instancji, używając czasu delta do skorygowania opóźnienia. Zmienna "_dt" będzie używana do przechowywania obliczonej wcześniej wartości czasu delta, tak aby można było użyć tego współczynnika do pomnożenia wartości bazowej prędkości (przechowywanej w zmiennej "spd") i w ten sposób uzyskać stałą prędkość dla instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Data i godzina
+        Następny: date_set_timezone
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

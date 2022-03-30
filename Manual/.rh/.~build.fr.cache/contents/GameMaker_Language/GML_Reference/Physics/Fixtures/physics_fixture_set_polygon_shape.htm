@@ -1,0 +1,43 @@
+
+  
+  physics_fixture_set_polygon_shape
+  Ta funkcja ustawia kształt wielokąta dla twojego obiektu, ale będziesz musiał użyć physics_fixture_add_point() aby faktycznie zdefiniować kształt tego wielokąta względem początku uchwytu. Wielokąt
+    jest zamykany, gdy uchwyt jest związany z instancją. Powinieneś także zauważyć, że ta funkcja musi zostać wywołana przed zdefiniowaniem jakichkolwiek punktów, a także musisz mieć przynajmniej trzy punkty zdefiniowane dla twojego wielokąta przed związaniem go z instancją, w przeciwnym razie
+    pojawi się błąd.
+   
+  Składnia:
+  physics_fixture_set_polygon_shape(fixture)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fixture
+        the index of the fixture
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  physics_fixture_set_polygon_shape(fix_Ship); physics_fixture_add_point(fix_Ship, 0,0); physics_fixture_add_point(fix_Ship, -40, 100); physics_fixture_add_point(fix_Ship, 40, 100);
+  Powyższy kod zastosuje kształt wielokąta do elementu mocującego indeksowanego w zmiennej "fix_Ship", a następnie zdefiniuje trzy punkty, aby utworzyć kształt trójkąta.
+   
+   
+   
+  
+    
+      
+        Powrót: Armatura
+        Następny: physics_fixture_add_point
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

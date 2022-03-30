@@ -1,0 +1,33 @@
+
+  
+  nazwa_gry_projektu
+  Ta zmienna tylko do odczytu zwraca nazwę wyświetlaną gry dla platformy docelowej w formacie "przyjaznym dla zapisującego" dla platformy docelowej. Jeśli nazwa zawiera jakiekolwiek znaki niedozwolone w nazwie pliku, zostaną one
+    zostaną automatycznie zastąpione znakiem "_". Nazwę wyświetlaną można ustawić w Opcjach gry. Ponieważ w przypadku HTML5 nie ma ograniczeń co do nazw plików, adres string będzie prawdopodobnie taki sam, jak adres
+    jak ta zwracana przez game_display_name.
+   
+  Składnia:
+  game_project_name
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var file = game_project_name + ".ini"; ini_open(file);
+     ini_write_real("Scores", "Highscore", score); ini_close();
+  
+  Powyższy kod pobiera nazwę projektu i wykorzystuje ją do otwarcia (lub utworzenia) pliku ini, który następnie jest zapisywany.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne sterowanie grą
+        Następny: game_end
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

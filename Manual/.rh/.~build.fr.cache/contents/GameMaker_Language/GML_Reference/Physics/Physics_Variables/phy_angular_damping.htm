@@ -1,0 +1,36 @@
+
+  
+  phy_angular_damping
+  Ta zmienna może być użyta do ustawienia tłumienia kątowego instancji lub do uzyskania bieżącego tłumienia kątowego. Tłumienie to wielkość "oporu" na obrót kątowy, jaki ma instancja z włączoną fizyką. Niższa wartość pozwala na szybszy obrót instancji po zderzeniu (na przykład), a wyższa wartość sprawia, że wymaga ona silniejszego pchnięcia i obraca się wolniej.
+   
+  Składnia:
+  phy_angular_damping;
+   
+  Zwroty:
+   (single precision floating point value, or undefined if the instance is not physics enabled)
+   
+  Przykład:
+  if place_meeting(phy_position_x, phy_position_y, obj_Water)
+    {
+        phy_angular_damping = 10;
+    }
+    else
+    {
+        phy_angular_damping = 3;
+    }
+  Powyższy kod sprawdzi, czy istnieje kolizja między instancją wywołującą a instancjami "obj_Water" i odpowiednio zmieni tłumienie kątowe.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne fizyki
+        Następny: phy_linear_velocity_x
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

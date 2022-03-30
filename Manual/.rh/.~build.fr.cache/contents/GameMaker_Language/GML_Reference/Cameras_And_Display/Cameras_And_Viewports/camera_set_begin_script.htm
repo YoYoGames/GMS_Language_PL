@@ -1,0 +1,59 @@
+
+  
+  camera_set_begin_script
+  Za pomocą tej funkcji można ustawić funkcję skryptu, która będzie wywoływana na początku każdej klatki gry, w której kamera jest przypisana do widocznego i aktywnego portu widoku. Użytkownik podaje unikatową wartość identyfikatora kamery (zwracaną przez różne funkcje camera_create() ) oraz identyfikator funkcji, która ma zostać wywołana. Kolejność wywoływania funkcji scripts dołączonych do kamer i faktycznego renderowania widoku z kamery jest następująca:
+  
+    Kamery dla wszystkich widocznych i aktywnych portów widokowych mają funkcję aktualizacji o nazwie
+    Następnie dla każdego widoku:
+      
+        Zostanie wywołana funkcja rozpoczęcia dla kamery dla danego widoku
+        Dla danego widoku wykonywane są zdarzenia rysowania
+        Zostanie wywołana funkcja zakończenia dla kamery
+      
+    
+    Przejdź do następnego aktywnego widocznego widoku i powtórz czynność...
+  
+   
+  Składnia:
+  camera_set_begin_script(camera_id, script)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        camera_id
+        Identyfikator kamery
+        The unique camera ID value returned when you created the camera.
+      
+      
+        script
+        Funkcja skryptu
+        The script function to run each game frame
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  camera_set_begin_script(view_camera[0], beginCamera);
+  Powyższy kod ustawia funkcję begin script dla kamery przypisanej do portu podglądu [0].
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: camera_set_end_script
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

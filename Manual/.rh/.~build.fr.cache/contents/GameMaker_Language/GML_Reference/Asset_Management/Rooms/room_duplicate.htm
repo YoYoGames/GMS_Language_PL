@@ -1,0 +1,42 @@
+
+  
+  pomieszczenie_duplikat
+  Spowoduje to zduplikowanie danej strony room i zwróci indeks duplikatów, który będzie używany we wszystkich kolejnych wywołaniach w celu odwołania się do nowej strony room.
+  UWAGA: Nowe strony rooms nie są częścią zwykłego porządku room, więc nie mają "poprzedniej" ani "następnej" strony room (co oznacza, że funkcje room_next() i room_previous() nie będą działać). Aby przejść z dodanej strony room do innej, należy użyć indeksu samej strony room.
+   
+  Składnia:
+  room_duplicate(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the original room to be duplicated.
+     
+    
+  
+   
+  Zwroty:
+  Room Asset
+   
+  Przykład:
+  global.myroom = room_duplicate(rm_level);
+  Spowoduje to zduplikowanie strony room indeksowanej przez "rm_level" i przypisanie indeksu room tej nowej strony room do zmiennej "global.myroom".
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room_assign
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

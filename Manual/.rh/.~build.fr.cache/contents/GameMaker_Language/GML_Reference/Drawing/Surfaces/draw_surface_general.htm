@@ -1,0 +1,115 @@
+
+  
+  rysuj_powierzchnię_ogólną
+  Ta funkcja łączy funkcję draw_surface_ext() z funkcją draw_surface_part()dodając kilka dodatkowych opcji mieszania, dzięki czemu każdy narożnik końcowej części powierzchni może być mieszany z innym kolorem.
+  UWAGA Mieszanie gradientowe nie jest dostępne w przypadku celu HTML5, chyba że włączona jest obsługa WebGL.
+   
+   
+  Składnia:
+  draw_surface_general(id, left, top, w, h, x, y, xscale, yscale, rot, c1, c2, c3, c4, alpha);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikacja powierzchni
+        The unique ID value of the surface to draw.
+      
+      
+        left
+        Real
+        The left position in the surface of the part to be drawn.
+      
+      
+        top
+        Real
+        The top position in the surface of the part to be drawn.
+      
+      
+        w
+        Real
+        The width of the part to be draw, from left.
+      
+      
+        h
+        Real
+        The height of the part to be draw, from top.
+      
+      
+        x
+        Real
+        The x position of where to draw the surface.
+      
+      
+        y
+        Real
+        The y position of where to draw the surface.
+      
+      
+        xscale
+        Real
+        The horizontal scaling to draw the surface with.
+      
+      
+        yscale
+        Real
+        The vertical scaling to draw the surface with.
+      
+      
+        rot
+        Real
+        The rotation or angle to draw the surface with.
+      
+      
+        c1
+        Kolor
+        The colour of the top left corner of the surface.
+      
+      
+        c2
+        Kolor
+        The colour of the top right corner of the surface.
+      
+      
+        c3
+        Kolor
+        The colour of the bottom right corner of the surface.
+      
+      
+        c4
+        Kolor
+        The colour of the bottom left corner of the surface.
+      
+      
+        alpha
+        Real
+        The alpha transparency to draw the surface with..
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_surface_general(surf, 8, 8, 32, 32, x, y, 2, 0.5, 180, c_white, c_white, c_black, c_black, 1);
+  Spowoduje to narysowanie na powierzchni obszaru o rozmiarach 32x32 pikseli o wymiarach 8x8 pikseli. Zostanie on rozciągnięty do podwójnej szerokości, ale do połowy wysokości. Będzie nieprzezroczysty i odwrócony do góry nogami. Górna część powierzchni będzie biała, a więc normalna, ale dolna będzie czarna, co oznacza, że powierzchnia będzie przechodzić od normalnej do sylwetki w dół w płynnym gradiencie.
+   
+   
+   
+  
+    
+      
+        Powrót: Powierzchnie
+        Następny: application_surface
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

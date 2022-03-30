@@ -1,0 +1,46 @@
+
+  
+  sekwencja_warstw_uzyskaj_kąt
+  Za pomocą tej funkcji podajesz identyfikator elementu sequence - zwrócony przez layer_sequence_create() lub przez jedną z funkcji elementów warstwy - a funkcja zwróci aktualny kąt elementu sequence w grze room. Należy pamiętać, że kąty są zwracane w stopniach, a 0º oznacza kierunek w prawo, 90º - w górę, 180º - w lewo, a 270º - w dół.
+   
+  Składnia:
+  layer_sequence_get_angle(sequence_element_id)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sequence_element_id
+        The unique ID value of the sequence element to target
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var _ang = layer_sequence_get_angle(title_sequence)
+    if _ang > 0
+    {
+        _ang -= 1;
+        layer_sequence_angle(title_sequence, _ang);
+    }
+  Powyższy kod pobiera bieżący kąt elementu sequence o identyfikatorze zapisanym w zmiennej "title_sequence", a jeśli nie jest to 0, to od bieżącego kąta odejmowana jest wartość 1.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy sekwencji
+        Następny: layer_sequence_get_xscale
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

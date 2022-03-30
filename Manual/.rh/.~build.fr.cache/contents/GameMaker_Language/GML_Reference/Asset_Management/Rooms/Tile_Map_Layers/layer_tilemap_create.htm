@@ -1,0 +1,69 @@
+
+  
+  layer_tilemap_create
+  Za pomocą tej funkcji możesz przypisać zasób zestawu kafelków do warstwy, która ma być użyta jako mapa tile w Twoim projekcie. Podajesz identyfikator warstwy (który otrzymujesz podczas tworzenia warstwy za pomocą layer_create()) lub nazwę warstwy (jako string - będzie to miało wpływ na wydajność), a następnie początkową pozycję (x, y), aby dodać mapę tile do room, zasób tile set do użycia, a następnie szerokość i wysokość mapy tile w komórkach (np. szerokość 20 i wysokość 10 utworzą mapę tile z 200 komórkami, która ma 20 komórek szerokości i 10 komórek wysokości), przy czym rozmiar samych komórek jest określany przez wybrany zasób tile set. Warto zauważyć, że nie można umieszczać tiles w negatywnych pozycjach na mapie tile, dlatego wszystkie tiles muszą być umieszczone w komórkach o szerokości od 0 do 1 i wysokości od 0 do 1.
+   
+  Składnia:
+  layer_tilemap_create(layer_id, x, y, tileset, width, height)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_id
+        Ciąg lub identyfikator warstwy
+        The unique ID value of the layer to target (or the layer name as a string)
+      
+      
+        x
+        Real
+        The x position of the tile map in the room
+      
+      
+        y
+        Real
+        The y position of the tile map in the room
+      
+      
+        tileset
+        Zestaw płytek Aktywa
+        The Tile Set asset to be used
+      
+      
+        width
+        Real
+        The width tile map (in cells)
+      
+      
+        height
+        Real
+        The height of the tile map (in cells)
+      
+    
+  
+   
+  Zwroty:
+  Tile Map Element ID
+   
+  Przykład:
+  global.back_layer = layer_create(10000);
+    global.back_tiles = layer_tilemap_create(global.back_layer, 0, 0, tmap_Trees, 16, 32);
+  Powyższy kod tworzy nową warstwę, a następnie dodaje do niej nowy element mapy tile, ustawiając pozycję mapy tile na (0,0), a także adres tile set, który ma zostać użyty, oraz szerokość i wysokość mapy tile.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy mapy kafelkowej
+        Następny: layer_tilemap_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

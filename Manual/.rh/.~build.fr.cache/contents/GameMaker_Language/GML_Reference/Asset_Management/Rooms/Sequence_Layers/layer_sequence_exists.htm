@@ -1,0 +1,52 @@
+
+  
+  sekwencja_warstw_istnieje
+  Za pomocą tej funkcji można sprawdzić, czy na podanej warstwie istnieje element sequence. Podajesz identyfikator warstwy, który może być string nazwy warstwy - zdefiniowanej w edytorze room - lub unikalnym identyfikatorem warstwy - zwróconym przez funkcję layer_get_id()a także identyfikator elementu sequence - zwrócony przez layer_sequence_create() lub przez jedną z funkcji elementu warstwy - i zwróci true, jeśli podany element istnieje, lub false w przeciwnym razie.
+   
+  Składnia:
+  layer_sequence_exists(layer_id, sequence_element_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_ID
+        Ciąg lub identyfikator warstwy
+        The unique ID or name of the layer to check
+      
+      
+        sequence_element_id
+        Identyfikator elementu sekwencji
+        The unique ID value of the sequence element to target
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if !layer_sequence_exists("Background", my_seq)
+    {
+        my_seq = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground);
+        layer_sequence_pause(my_seq);
+    }
+  Powyższy kod sprawdza, czy podany element sequence istnieje, a jeśli nie, to tworzy nowy element sequence na podanej warstwie i wstrzymuje go.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy sekwencji
+        Następny: layer_sequence_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

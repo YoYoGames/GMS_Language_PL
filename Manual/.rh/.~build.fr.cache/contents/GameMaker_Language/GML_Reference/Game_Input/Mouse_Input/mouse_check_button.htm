@@ -1,0 +1,46 @@
+
+  
+  mouse_check_button
+  Ta funkcja zwróci true, jeśli sprawdzany przycisk myszy jest przytrzymany, lub false, jeśli nie jest. Przycisk myszy, który ma zostać sprawdzony, można wybrać z jednej z poniższych stałych:
+   
+  Składnia:
+  mouse_check_button(numb);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        numb
+        Przycisk myszy Stała
+        Which mouse button constant to check for.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if mouse_check_button(mb_left)
+    {
+        instance_create_layer(mouse_x, mouse_y, "Effects", obj_Star);
+    }
+  Powyższy kod będzie sprawdzał obecność lewego przycisku myszy i za każdym razem, gdy będzie on przytrzymany, będzie tworzył instancję strony object indeksowanej w "obj_Star".
+   
+   
+   
+  
+    
+      
+        Wstecz: Wejście myszy
+        Następny: mouse_check_button_pressed
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,71 @@
+
+  
+  ds_grid_set_grid_region
+  Funkcji tej można użyć do skopiowania zawartości prostokątnego obszaru komórek siatki z jednej (uprzednio zdefiniowanej) siatki DS do innej lub do skopiowania regionu z tej samej siatki. Poniższe ilustracje przedstawiają oba sposoby
+    użycia tej funkcji:
+  
+   
+  Składnia:
+  ds_grid_set_grid_region(index, source, x1, y1, x2, y2, xpos, ypos);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the destination grid.
+     
+      
+        source
+        The index of the source grid.
+     
+      
+        x1
+        The left position of the region of cells to copy from the source grid.
+     
+      
+        y1
+        The top position of the region of cells to copy from the source grid.
+     
+      
+        x2
+        The right position of the region of cells to copy from the source grid.
+     
+      
+        y2
+        The bottom position of the region of cells to copy from the source grid.
+     
+      
+        xpos
+        The x position on the destination grid to copy the source region to.
+     
+      
+        ypos
+        The y position on the destination grid to copy the source region to.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  ds_grid_set_grid_region(grid, t_grid, 0, 0, 5, 5, 10, 10)
+  Spowoduje to skopiowanie obszaru komórek od (0,0) do (5,5) siatki indeksowanej zmienną "t_grid" i skopiowanie ich na pozycję (10,10) w siatce indeksowanej zmienną "grid".
+   
+   
+   
+  
+    
+      
+        Powrót: Siatki DS
+        Następny: ds_grid_set_region
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

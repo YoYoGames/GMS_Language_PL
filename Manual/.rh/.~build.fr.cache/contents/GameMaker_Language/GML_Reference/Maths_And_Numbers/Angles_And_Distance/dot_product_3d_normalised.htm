@@ -1,0 +1,69 @@
+
+  
+  dot_product_3d_normalised
+  Iloczyn punktowy to wartość wyrażająca relację kątową między dwoma wektorami, którą uzyskuje się przez pomnożenie dwóch wektorów, a następnie dodanie wyników. Nazwa "iloczyn punktowy" pochodzi od wyśrodkowanej kropki "-"
+    która jest często używana do oznaczania tej operacji (alternatywna nazwa "iloczyn skalarny" podkreśla raczej skalarny niż wektorowy charakter wyniku).
+  Rzeczywistą formułę matematyczną można zapisać w następujący sposób:
+  
+  W 2D iloczynem punktowym wektorów a[x1,y1] i b[x2,y2] jest x1x2 + y1y2, więc w 3D iloczynem punktowym wektorów a[x1,y1,z1] i b[x1,y1,z1] jest x1x2 + y1y2 + z1z2. Zatem dot_product_3d w GameMaker Studio 2 oblicza się jako:
+  a · b = (x1*x2) + (y1*y2) + (z1*z2);
+  Co z normalizowanym iloczynem punktowym? Znormalizowany iloczyn punktowy został skorygowany w taki sposób, aby wartość zwracana mieściła się w przedziale od -1 do 1 (szczegółowe informacje na ten temat można znaleźć w części Wektory ).
+    ), co jest wyjątkowo przydatne w wielu sytuacjach, zwłaszcza w przypadku oświetlenia i innych funkcji 3D.
+   
+  Składnia:
+  dot_product_3d_normalised(x1, y1, z1, x2, y2, z2)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x1
+        The x coordinate of the first vector.
+     
+      
+        y1
+        The y coordinate of the first vector.
+     
+      
+        z1
+        The z coordinate of the first vector.
+     
+      
+        x2
+        The x coordinate of the second vector.
+     
+      
+        y2
+        The y coordinate of the second vector.
+     
+      
+        z2
+        The z coordinate of the second vector.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var x1, y1, x2, y2; x1 = 0; y1 = 1; z1 = 0; x2 = o_Player.x - x; y2 = o_Player.y - y; z2 = o_Player.z - z; if dot_product_3d_normalised(x1, y1, z1, x2, y2, z2) > 0 above=true else above=false;
+  Powyższy kod tworzy wektor normalny wzdłuż osi y (góra) instancji, a następnie pobiera do siebie wektor gracza object "o_Player". Na koniec oblicza iloczyn punktowy tych dwóch wektorów i jeśli jest on większy od 0, ustawia zmienną
+    "powyżej" na wartość true, a jeśli jest mniejszy lub równy 0, ustawia zmienną "false" na wartość false.
+   
+   
+   
+  
+    
+      
+        Powrót: Kąty i odległości
+        Następny: angle_difference
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

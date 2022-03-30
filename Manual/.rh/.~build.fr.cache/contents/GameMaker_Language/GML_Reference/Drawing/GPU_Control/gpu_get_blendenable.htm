@@ -1,0 +1,32 @@
+
+  
+  gpu_get_blendenable
+  Za pomocą tej funkcji można uzyskać informacje o stanie mieszania alfa. Jeśli zwróci ona wartość true, to alfa-blending jest włączony, a jeśli zwróci wartość false, to jest wyłączony. Domyślnie jest ono włączone, więc funkcja zwróci wartość true
+   
+  Składnia:
+  gpu_get_blendenable();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if gpu_get_blendenable() == false
+    {
+        gpu_set_blendenable(true);
+    }
+  Powyższy kod sprawdza stan mieszania alfa i jeśli jest ono wyłączone, zostaje ponownie włączone.
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_get_ztestenable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,43 @@
+
+  
+  bufor_dekompresji
+  Za pomocą tej funkcji można zdekompresować wcześniej skompresowany plik buffer przy użyciu kompresji zlib. Podajesz identyfikator buffer, który ma zostać zdekompresowany, a funkcja zwróci nowy identyfikator buffer, który zawiera nieskompresowane dane. Jeżeli dekompresja nie powiodła się (np. dostarczono buffer, który nie został skompresowany), funkcja zwróci wartość mniejszą od 0.
+   
+  Składnia:
+  buffer_decompress(buffer);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        buffer
+        The index of the buffer to decompress.
+     
+    
+  
+   
+  Zwroty:
+  Buffer ID
+   
+  Przykład:
+  var cmpBuff = buffer_load("Player_Save.sav");
+    var srcBuff = buffer_decompress(cmpBuff);
+    global.DataString = buffer_read(srcBuff, buffer_string);
+  Powyższy kod najpierw wczyta zapisaną stronę buffer, następnie ją zdekompresuje, a na końcu wczyta dane string z zdekompresowanej strony buffer do zmiennej globalnej.
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_async_group_begin
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

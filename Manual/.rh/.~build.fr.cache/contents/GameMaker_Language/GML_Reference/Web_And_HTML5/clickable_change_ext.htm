@@ -1,0 +1,72 @@
+
+  
+  clickable_change_ext
+  Za pomocą tej funkcji można zmienić adres sprite i położenie klikalnej ikony utworzonej wcześniej za pomocą clickable_add(). Należy pamiętać, że pozycja jest określana na podstawie pozycji okna, a nie płótna (0,0), oraz że do strony sprite należy odwoływać się bezpośrednio ze strony texture (zobacz: sprite_get_tpe()). Funkcja ta umożliwia także zmianę skali strony sprite (mnożnik, czyli 1 jest wartością domyślną, 0,5 oznacza połowę, a 2 - podwojenie) oraz wartości alfa z 0 (całkowicie przezroczysta) do 1 (całkowicie nieprzezroczysta) dla końcowej ikony na ekranie.
+   
+  Składnia:
+  clickable_change_ext(index, tpe, x, y, alpha, scale)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Identyfikator klikalny
+        The index of the clickable icon to change.
+      
+      
+        tpe
+        Strona tekstury Wprowadzenie
+        The texture page entry for the sprite to be used
+      
+      
+        x
+        Real
+        The new x position within the window.
+      
+      
+        y
+        Real
+        The new y position within the window.
+      
+      
+        scale
+        Real
+        The scale of the icon (default 1).
+      
+      
+        alpha
+        Real
+        The image alpha of the icon (default 1).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  switch (room)
+    {
+        case rm_Menu: clickable_change_ext(global.Help_Icon, sprite_get_tpe(spr_MS_Help, 1), 32, 32, 2, 1); break;
+        case rm_Game: clickable_change_ext(global.Help_Icon, sprite_get_tpe(spr_MS_Help, 0), 200, 32, 1, 0.5); break;
+    }
+  Powyższy kod zmieni indeks obrazu i położenie klikalnej ikony indeksowanej w zmiennej "global.Help" w zależności od bieżącej strony room, zmieniając także skalę i alfa ikony.
+   
+   
+   
+  
+    
+      
+        Powrót: Sieć i HTML5
+        Następny: clickable_set_style
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

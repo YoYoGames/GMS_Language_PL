@@ -1,0 +1,75 @@
+
+  
+  Szkielet_stanu_kości
+  Twoja animacja szkieletowa składa się z pewnej liczby "kości", które zostały zdefiniowane i nazwane w programie do animacji. Należy pamiętać, że dane te odnoszą się do aktualnej pozy szkieletu, zależnie od użytego zestawu animacji, a funkcja wymaga uprzednio utworzonej mapy DS, która po wywołaniu funkcji będzie miała następujące klucze i odpowiadające im wartości:
+  
+    "x": Lokalna pozycja x kości względem kości macierzystej.
+    "y": Lokalna pozycja y kości względem kości macierzystej.
+    "angle": Lokalny obrót kości względem kości macierzystej.
+    "xscale": Lokalna skala pozioma kości, w odniesieniu do kości macierzystej.
+    "yscale": Lokalna skala pionowa kości, w odniesieniu do kości macierzystej.
+    "worldScaleX": Wielkość (zawsze dodatnia) skali świata X (jest to wartość tylko do odczytu ).
+    "worldScaleY": Wielkość (zawsze dodatnia) skali świata Y (jest to wartość tylko do odczytu ).
+    "worldAngleX": Obrót świata dla osi X (jest to wartość tylko do odczytu ).
+    "worldAngleY": Obrót świata dla osi Y (jest to wartość tylko do odczytu ).
+    "worldX": Pozycja X świata (jest to wartość tylko do odczytu ).
+    "worldY": Światowa pozycja Y (jest to wartość tylko do odczytu ).
+    "appliedAngle": Jest to lokalny obrót używany do pozycjonowania kości szkieletu.
+    "parent": Nazwa (a string) kości nadrzędnej.
+  
+  Zwracane dane mapy są podobne do tych zwracanych dla domyślnej pozy, gdy użyjesz skeleton_bone_data_get()z tą różnicą, że teraz występują dodatkowe klucze "world". Odnoszą się one do pozycji kości względem korzenia (początku) animacji szkieletu sprite, a zwracane wartości nie uwzględniają żadnego skalowania ani obrotu, które zostały wykonane przez ustawienie wbudowanych zmiennych sprite, takich jak image_xscale lub image_angle. Wartości świata są tylko do odczytu i nie można ich ustawiać.
+  Funkcja ta jest przeznaczona do "przechwytywania" danych animacji i modyfikowania ich przed narysowaniem na ekranie. W związku z tym należy jej użyć w zdarzeniu Inne - Aktualizacja anim acji, ponieważ zdarzenie to jest wywoływane tuż przed zdarzeniem Rysuj.
+   
+  Składnia:
+  skeleton_bone_state_get(bone, map);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        bone
+        String
+        The name (as a string) of the bone.
+      
+      
+        map
+        Identyfikator mapy DS
+        The (previously created) DS map that stores the bone data.
+      
+    
+  
+   
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var map = ds_map_create();
+    skeleton_bone_state_get("head", map);
+    var xx = ds_map_find_value(map, "worldX");
+    var yy = ds_map_find_value(map, "worldY");
+    var deltax = mouse_x - (x + xx);
+    var deltay = mouse_y - (y + yy);
+    var angle = -radtodeg(arctan2(deltay, deltax));
+    ds_map_replace(map, "angle", angle);
+    skeleton_bone_state_set("head", map);
+    ds_map_destroy(map);
+  Powyższy kod tworzy mapę DS, a następnie wypełnia ją danymi z kości o nazwie "głowa". Następnie pobiera pozycję na świecie dla tej kości i wykorzystuje te dane do ustawienia "kąta" kości, aby śledzić pozycję myszy w grze.
+   
+   
+   
+  
+    
+      
+        Grzbiet: kości
+        Następny: skeleton_bone_state_set
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

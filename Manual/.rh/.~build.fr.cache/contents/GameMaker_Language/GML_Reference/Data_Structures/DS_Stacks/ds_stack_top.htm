@@ -1,0 +1,41 @@
+
+  
+  ds_stack_top
+  Ta funkcja odczyta tylko pierwszą wartość na stosie (tę, która jest "na wierzchu"). Nie odczyta tej wartości, co oznacza, że może ona zostać odczytana w przyszłości przez tę funkcję lub funkcję ds_stack_pop(). Jeśli stos jest pusty, funkcja zwróci stałą undefined, w przeciwnym razie zwróci wartość rzeczywistą lub string znajdującą się na stosie.
+   
+  Składnia:
+  ds_stack_top(id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the data structure to read from.
+     
+    
+  
+   
+  Zwroty:
+  Variable (Data type value that is stored in the stack) or undefined
+   
+  Przykład:
+  num = ds_stack_top(control_stack);
+  Powyższy kod odczyta wartość ze stosu zaindeksowanego w zmiennej "control_stack" i zapisze wartość zwracaną w zmiennej "num".
+   
+   
+   
+  
+    
+      
+        Powrót: ds_stack_create
+        Następny: ds_stack_pop
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

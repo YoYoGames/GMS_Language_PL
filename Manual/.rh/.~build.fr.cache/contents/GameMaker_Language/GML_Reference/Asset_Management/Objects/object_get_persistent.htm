@@ -1,0 +1,44 @@
+
+  
+  obiekt_get_persistent
+  Ta funkcja informuje, czy sprawdzany adres object został oznaczony jako "trwały", czy nie. Trwały object to taki, który powoduje, że wszystkie jego instancje są przenoszone z room na room, chyba że zostaną jawnie zniszczone. Należy pamiętać, że nie jest to funkcja instancji! Możesz więc mieć trwałą instancję object i nietrwałą instancję tej samej object i na odwrót. Możesz ustawić persystencję pojedynczej instancji flag za pomocą persistent zmiennej instance.
+   
+  Składnia:
+  object_get_persistent(obj);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        obj
+        The index of the object to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (!persistent) && (object_get_persistent(object_index))
+    {
+        persistent = true;
+    }
+  Powyższy kod sprawdzi, czy uruchomiona instancja jest persystentna, czy nie, a także sprawdzi indeks object tej instancji, by zobaczyć, czy jest ona oznaczona jako persystentna, czy nie. Jeśli instancja nie jest persystentna, ale indeks object jest oznaczony jako persystentny, ustawi on wartość "persistent" na true dla tej instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Obiekty
+        Następny: object_get_solid
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

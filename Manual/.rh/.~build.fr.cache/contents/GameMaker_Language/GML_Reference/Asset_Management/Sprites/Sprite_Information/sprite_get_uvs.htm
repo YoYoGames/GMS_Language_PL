@@ -1,0 +1,57 @@
+
+  
+  sprite_get_uvs
+  Ta funkcja zwraca tablicę zawierającą współrzędne UV i inne dane dla texture podobrazu sprite na stronie texture. Funkcja zwraca tablicę zawierającą 8 następujących elementów:
+  
+    [0] = lewa
+    [1] = góra
+    [2] = prawo
+    [3] = dół
+    [4] = ilość pikseli, którą kompilator asset odciął od lewej strony sprites 
+    [5] = ilość pikseli, którą kompilator asset odciął od górnej strony sprites 
+    [6] = znormalizowany procent danych pikseli z oryginalnej szerokości sprites, które zostały zapisane na stronie texture 
+    [7] = znormalizowany procent danych pikseli z oryginalnej wysokości sprites, które zostały zapisane na stronie texture 
+  
+  Tę tablicę można następnie wykorzystać w innych funkcjach rysowania, zwłaszcza podczas pracy w trybie 3D lub przy użyciu funkcji prymitywów 2D, a także podczas pracy z funkcjami cieniowania.
+  UWAGA: Ta funkcja nie będzie działać w przypadku animacji wektorowej sprites lub animacji szkieletowej sprites.
+   
+  Składnia:
+  sprite_get_uvs(sprite, subimage);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sprite
+        The index of the sprite to use.
+     
+      
+        subimage
+        The sub-image of the sprite to use.
+     
+    
+  
+   
+  Zwraca
+   (1D, 8 elements)
+   
+  Przykład:
+  var tex = sprite_get_uvs(sprite, 0); tex_left = tex[0]; tex_top = tex[1]; tex_right = tex[2]; tex_bottom = tex[3];
+  Powyższy kod zapisze współrzędne UV dla podanej strony sprite w lokalnej tablicy, a następnie przypisze te wartości do zmiennych instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Informacje o Sprite
+        Next: sprite_get_info
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

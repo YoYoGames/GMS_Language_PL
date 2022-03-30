@@ -1,0 +1,43 @@
+
+  
+  file_bin_size
+  Funkcja zwraca rozmiar (w bajtach) pliku, który został otwarty do odczytu i/lub zapisu. Identyfikator pliku jest wartością zwracaną przez funkcję file_bin_open().
+  UWAGA: Te funkcje nie działają, gdy modułem docelowym jest HTML5.
+   
+  Składnia:
+  file_bin_size(binfile);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        binfile
+        The ID of the file to get the size of.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  file = file_bin_open("myfile.bin", 2); size = file_bin_size(file); file_bin_close(file);
+  
+  Spowoduje to otwarcie pliku z lokalnego katalogu gry i przypisanie jego indeksu do zmiennej "plik". Następnie pobierze rozmiar tego pliku i ponownie go zamknie.
+   
+   
+   
+  
+    
+      
+        Powrót: Pliki binarne
+        Następny: file_bin_position
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

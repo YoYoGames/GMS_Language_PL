@@ -1,0 +1,53 @@
+
+  
+  sprite_set_cache_size_ext
+  Podczas wykonywania mieszania obrazów HTML5 nie może robić tego dynamicznie w taki sam sposób, jak w przypadku plików wykonywalnych. Dlatego GameMaker Studio 2 musi tymczasowo zapisać kopię mieszanego obrazu i załadować ją. Ta funkcja określa, ile mieszanych kopii danego sprite może zostać zbuforowanych, zanim stare zostaną nadpisane. Domyślnie jest to 4. Funkcja ta jest stosowana do pojedynczego podobrazu danej strony sprite.
+   
+  Składnia:
+  sprite_set_cache_size_ext(ind, index, max);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Aktywa Sprite
+        The index of the sprite to change the cache size of.
+      
+      
+        index
+        Real
+        The sub-image of ind to change the cache size of.
+      
+      
+        max
+        Real
+        The maximum number of cached copies of the sprite that can be stored.
+      
+    
+  
+   
+  Zwraca
+  N/A
+   
+  Przykład:
+  sprite_set_cache_size_ext(sprite0, 0, 2);
+  Spowoduje to ustawienie adresu sprite cache pierwszego podobrazu sprite0 na 2 kopie.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja sprite'ami
+        Następny: sprite_save
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

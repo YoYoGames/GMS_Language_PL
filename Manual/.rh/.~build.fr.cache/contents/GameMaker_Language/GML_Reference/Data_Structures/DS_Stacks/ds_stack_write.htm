@@ -1,0 +1,44 @@
+
+  
+  ds_stack_write
+  Funkcja zwraca adres string, który można zapisać lub przenieść do innej struktury danych za pomocą funkcji ds_stack_read() funkcji.
+  UWAGA: Zwracany adres string nie jest adresem czytelnym dla człowieka string, ale raczej zrzutem zawartości struktury danych
+   
+  Składnia:
+  ds_stack_write(id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the data structure to write.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  ini_open("save.ini"); var str = ds_stack_write(stack); ini_write_string("Stacks", "0", str); ds_stack_clear(stack);
+     ini_close();
+  
+  Powyższy kod otwiera plik ini, a następnie zapisuje w nim stronę string zawierającą informacje przechowywane na stosie DS indeksowanym zmienną "stack". Następnie stos zostaje wyczyszczony, a plik ini zamknięty.
+   
+   
+   
+  
+    
+      
+        Powrót: ds_stack_create
+        Następny: ds_stack_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

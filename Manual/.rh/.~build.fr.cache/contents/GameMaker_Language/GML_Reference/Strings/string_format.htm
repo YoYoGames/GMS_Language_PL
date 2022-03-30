@@ -1,0 +1,55 @@
+
+  
+  string_format
+  Zamienia liczbę rzeczywistą na string z użyciem własnego formatowania, przy czym można wybrać, ile "miejsc" zostanie zapisanych na stronie string oraz ile miejsc po przecinku zostanie zapisanych. Obie te opcje mogą być bardzo przydatne - niektóre gry preferują wyświetlanie wyniku jako określonej liczby cyfr, natomiast kontrola nad miejscami dziesiętnymi może być przydatna, jeśli chodzi o wysoką dokładność, której nie zapewniają dwa miejsca po przecinku w funkcji string() nie są w stanie zapewnić. Jeśli podana liczba miejsc jest większa niż wartość, która ma zostać wyświetlona, i/lub liczba plus podane miejsca dziesiętne jest mniejsza niż całkowita liczba miejsc, przed wartością zostaną dodane spacje, aby wyrównać różnicę (patrz przykład poniżej). Zera zostaną dodane po prawej stronie przecinka dziesiętnego, jeśli podana wartość jest mniejsza niż suma i liczba miejsc po przecinku do uwzględnienia. Domyślny format to brak dodatkowych spacji po lewej stronie i tylko dwa miejsca po przecinku po prawej stronie, np. "265,73".
+   
+  Składnia:
+  string_format(val, tot, dec);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        val
+        Real
+        The real number to be turned into a string.
+      
+      
+        tot
+        Real
+        The total number of places of the main number to be shown. Zeroes or spaces will be inserted to match this.
+      
+      
+        dec
+        Real
+        The number of decimal places to be included.
+      
+    
+  
+   
+  Zwroty:
+  String
+   
+  Przykład:
+  str1 = string_format(1234, 8, 0);
+    str2 = string_format(pi, 1, 10);
+    str3 = string_format(pi, 5, 5);
+  Spowoduje to ustawienie adresu str1 na " 1234", adresu str2 na "3.1415926535", a adresu str3 na " 3.14159".
+   
+   
+   
+  
+    
+      
+        Powrót: Struny
+        Następny: string_insert
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,61 @@
+
+  
+  fizyka_zastosuj_impuls
+  Dzięki fizyce przedstawionej na stronie object można nie tylko stosować siłę i grawitację w stosunku do obiektu GameMaker Studio 2, ale także można stosować impuls. Impuls różni się nieco od siły, ponieważ po jego przyłożeniu natychmiast wpływa na prędkość i potencjalnie na moment obrotowy (lub "obrót") strony object, zwłaszcza jeśli punkt wybrany do przyłożenia impulsu nie znajduje się w jednej linii ze środkiem masy (uwaga: środek masy niekoniecznie jest tożsamy z początkiem!). Poniżej znajduje się ilustracja:
+  Jak widać, gracz kliknął na piłkę, co dało jej impuls do przesunięcia się w prawą górną stronę, obracając się przy tym. Dokładny impuls jest zdefiniowany przez wektor, który otrzymujemy ze składowych ximpulse/yimpulse w odniesieniu do współrzędnych xpos/ypos - co oznacza, że impuls jest obliczany jako odległość od xpos/ypos do ximpulse/yimpulse w Newtonach, a kierunek jest kątem, który otrzymujemy od xpos/ypos do ximpulse/yimpulse.
+  UWAGA: Świat fizyki używa metrów do wszystkich swoich obliczeń, a stosunek pikseli na metr definiuje się w edytorze room lub za pomocą physics_world_create().
+   
+  Składnia:
+  physics_apply_impulse(xpos, ypos, ximpulse, yimpulse)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        xpos
+        The x coordinate in the room where the impulse will be applied
+     
+      
+        ypos
+        The y coordinate in the room where the impulse will be applied
+     
+      
+        ximpulse
+        the x component of the impulse vector
+     
+      
+        yimpulse
+        the y component of the impulse vector
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if mouse_check_button_pressed(mb_left)
+    {
+        with (place_meeting(mouse_x, mouse_y, all))
+        {
+            physics_apply_impulse(mouse_x, mouse_y, -10 + irandom(20), -10 + irandom(20));
+        }
+    }
+  Powyższy kod spowoduje zastosowanie impulsu o losowym wektorze do instancji, która znajduje się w pozycji myszy po naciśnięciu lewego przycisku.
+   
+   
+   
+  
+    
+      
+        Powrót: Siły
+        Następny: physics_apply_local_force
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

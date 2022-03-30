@@ -1,0 +1,45 @@
+
+  
+  physics_set_restitution
+  Kiedy wiążesz uchwyt z instancją używając physics_fixture_bind() to zwraca "id" dla powiązanego powiązania. Możesz użyć tego id by ustawić wartość restytucji powiązanego elementu, a nie "bazowego" elementu, w dowolnym momencie używając tej funkcji. Restytucja jest zwykle ustawiana jako wartość pomiędzy 0 i 1, ale możesz użyć wyższych wartości, jeśli jest to wymagane, choć wyniki mogą być nieprzewidywalne.
+   
+  Składnia:
+  physics_set_restitution(fixture, restitution)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fixture
+        the id of the bound fixture
+     
+      
+        restitution
+        the new restitution value to apply
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var rest = physics_get_restitution(fix_id); physics_set_restitution(fix_id, rest * 2);
+  Powyższy kod pobiera bieżącą wartość restytucji dla powiązanych właściwości fizycznych instancji, a następnie ustawia je na inną wartość.
+   
+   
+   
+  
+    
+      
+        Powrót: Armatura
+        Następny: physics_fixture_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

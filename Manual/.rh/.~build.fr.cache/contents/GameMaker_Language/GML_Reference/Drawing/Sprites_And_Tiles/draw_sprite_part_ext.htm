@@ -1,0 +1,94 @@
+
+  
+  draw_sprite_part_ext
+  Ta funkcja narysuje fragment wybranej strony sprite w podanym miejscu, stosując te same zasady, co funkcja draw_sprite_part()z tą różnicą, że teraz można tę część przeskalować, nadać jej kolor lub zmienić jej alfa podczas
+    (tak samo jak w przypadku rysowania strony sprite za pomocą draw_sprite_ext()). Należy pamiętać, że jeśli strona texture umożliwia automatyczne przycinanie, funkcja ta może nie działać zgodnie z oczekiwaniami, ponieważ
+    dodatkowe "puste" miejsce wokół strony sprite zostanie usunięte podczas tworzenia strony texture. Aby rozwiązać ten problem, należy w ustawieniach strony texture (w Edytorze grup tekstur)
+    aby wyłączyć funkcję automatycznego kadrowania.
+  UWAGA Podczas rysowania przy użyciu tej funkcji przesunięcie x i y w sprite jest ignorowane, a część sprite zostanie narysowana z lewym górnym rogiem w określonym położeniu x / y w room.
+  UWAGA: Ta funkcja jest przydatna tylko w przypadku map bitowych sprites i nie będzie działać z plikami SWF lub JSON (Spine) sprites.
+  UWAGA: Mieszanie kolorów jest zalecane dla celu HTML5 tylko wtedy, gdy włączona jest obsługa WebGL, choć jeśli nie jest ona włączona, nadal można ustawić kolor mieszania, który będzie mieszał stronę sprite w normalny sposób. Jednak wszystkie mieszania w ten sposób tworzą duplikat
+    sprite który jest następnie przechowywany w witrynie cache i używany w razie potrzeby. Jest to rozwiązanie dalekie od optymalnego, a wielokrotna zmiana kolorów spowolni działanie gry, chyba że zostanie włączona obsługa WebGL. Jeśli nie chcesz używać WebGL, możesz ustawić
+    rozmiar font cache, aby ograniczyć to zjawisko w razie potrzeby, używając funkcji sprite_set_cache_size().
+   
+  Składnia:
+  draw_sprite_part_ext(sprite, subimg, left, top, width, height, x, y, xscale, yscale, colour, alpha);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sprite
+        The index of the sprite to draw.
+     
+      
+        subimg
+        The subimg (frame) of the sprite to draw (image_index or -1 correlate to the current frame of animation in the object).
+     
+      
+        left
+        The x position on the sprite of the top left corner of the area to draw.
+     
+      
+        top
+        The y position on the sprite of the top left corner of the area to draw.
+     
+      
+        width
+        The width of the area to draw.
+     
+      
+        height
+        The height of the area to draw.
+     
+      
+        x
+        The x coordinate of where to draw the sprite.
+     
+      
+        y
+        The y coordinate of where to draw the sprite.
+     
+      
+        xscale
+        The horizontal scaling of the sprite, as a multiplier: 1 = normal scaling, 0.5 is half etc...
+     
+      
+        yscale
+        The vertical scaling of the sprite, as a multiplier: 1 = normal scaling, 0.5 is half etc...
+     
+      
+        colour
+        The colour with which to blend the sprite. c_white is to display it normally.
+     
+      
+        alpha
+        The alpha of the sprite (from 0 to 1 where 0 is transparent and 1 opaque).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_sprite_part_ext(sprite_index, image_index, 8, 8, sprite_width-16, sprite_height-16, x, y, 2, 0.5, c_black, 1);
+  Spowoduje to narysowanie przypisanego do instancji sprite (sprite_index) i jego bieżącej klatki animacji (image_index), jednak spowoduje usunięcie 8px marginesu ze wszystkich czterech stron sprite. Następnie zostanie on rozciągnięty do podwójnej szerokości, ale połowy swojej zwykłej wysokości.
+    i chociaż alfa nadal wynosi 1, zostanie zmieszana z czernią (co zmieni ją w sylwetkę).
+   
+   
+   
+  
+    
+      
+        Powrót: Sprite'y i płytki
+        Next: draw_sprite_streteched
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,61 @@
+
+  
+  mp_grid_add_cell
+  Za pomocą tej funkcji można oznaczyć poszczególne komórki w obrębie danej siatki MP jako "zabronione", co oznacza, że funkcje wyszukiwania path nigdy ich nie przekroczą. Zazwyczaj pracuje się we współrzędnych x/y pomieszczenia, a nie we współrzędnych komórek siatki MP. Rozważmy więc poniższy rysunek, który pokazuje, jak te dwie wielkości mogą być skorelowane:
+  Jak widać, siatka mp_grid jest ponumerowana jako seria komórek (zaczynających się od 0,0 w lewym górnym rogu), a po umieszczeniu tej siatki na stronie room istnieje bezpośrednia korelacja między współrzędnymi room (które także zaczynają się od 0,0 w lewym górnym rogu) a komórkami siatki. Na rysunku widać, że instancja w pozycji 260,130 znajduje się w komórce siatki 8,4. Dokładną komórkę, na której znajduje się dana pozycja, można łatwo obliczyć matematycznie, dzieląc liczbę przez rozdzielczość siatki i zaokrąglając w dół lub, jeśli używasz rozdzielczości siatki równej potędze 2 (np. 8, 16, 32 itd.), możesz użyć operatorów bitowych. Należy zauważyć, że operacja bitowa jest szybsza, a poniższy przykład przedstawia obie metody.
+   
+  Składnia:
+  mp_grid_add_cell(id, h, v);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator siatki MP
+        Index of the mp_grid that is to be used
+      
+      
+        h
+        Real
+        Horizontal position of the cell in the grid
+      
+      
+        v
+        Real
+        Vertical position of the cell in the grid
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  with (obj_Wall)
+    {
+        mp_grid_add_cell(grid, floor(x / 32), floor(y / 32));
+    }
+    with (obj_Door)
+    {
+        mp_grid_add_cell(grid, x>>5, y>>5);
+    }
+  Powyższy kod spowoduje, że wszystkie obj_Wall i wszystkie obj_Door dodadzą swoje równoważne pozycje komórek do mp_grid indeksowanej w zmiennej "grid". W pierwszej części przykładu odbywa się to przez pobranie współrzędnych x/y strony object i podzielenie ich przez rozdzielczość siatki (przy użyciu floor, aby zachować wartości jako liczby całkowite), a w drugiej części (ponieważ rozdzielczość siatki jest potęgą 2) odbywa się to przez przesunięcie bitowe współrzędnych x,y o 5 miejsc w prawo.
+   
+   
+   
+  
+    
+      
+        Powrót: Planowanie ruchu
+        Następny: mp_grid_add_instances
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

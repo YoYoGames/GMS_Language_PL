@@ -1,0 +1,45 @@
+
+  
+  sprite_get_xoffset
+  Gdy zdefiniujesz stronę sprite w edytorze sprite, musisz ustawić początek dla tej strony sprite. Jest to punkt, w którym sprite zostanie "przyczepiony" lub "narysowany", gdy zostanie użyty z instancją. Ta funkcja zwraca względne przesunięcie osi x w stosunku do punktu początkowego, przy czym lewy górny róg to pozycja 0,0, a +x oznacza przesunięcie w prawo, a -x - w lewo od tego punktu. Ilustruje to poniższy rysunek:
+  
+   
+  Składnia:
+  sprite_get_xoffset(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the sprite to find the xoffset of.
+     
+    
+  
+   
+  Zwraca
+  
+   
+  Przykład:
+  if x - sprite_get_xoffset(sprite_index) < 0
+    {
+        x = sprite_get_xoffset(sprite_index);
+    }
+  Powyższy kod zapewni, że instancja będzie utrzymywana w ramach room na podstawie sprite (tak więc sprite jest zawsze widoczna).
+   
+   
+   
+  
+    
+      
+        Powrót: Informacje o Sprite
+        Następny: sprite_get_yoffset
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

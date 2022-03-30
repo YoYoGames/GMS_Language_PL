@@ -1,0 +1,138 @@
+
+  
+  Shadery
+  Shadery to niezwykle potężne narzędzie do manipulowania tym, co i w jaki sposób jest renderowane na ekranie przez kartę graficzną. Ponieważ te niewielkie programy są uruchamiane na samej karcie graficznej, ich przetwarzanie przebiega niezwykle szybko, co pozwala uwolnić cenne cykle procesora dla większej logiki gry.
+  Aby utworzyć stronę shader, musisz mieć napisany zarówno Vertex Shader, jak i Fragment Shader (znany również jako Pixel Shader) za pomocą edytora shaderów. Nawet jeśli (na przykład) chcesz tylko zmienić pozycje vertex dla rysowanej instancji lub jeśli chcesz tylko zmienić wartości kolorów dla pikseli, nadal będziesz potrzebował obu programów, aby kompletna strona shader działała.
+  UWAGA Shadery nie pozwalają na zmianę wartości zmiennych, które są do nich przekazywane, dlatego w całej dokumentacji będą one nazywane stałymi shadera.
+  Pełny przegląd dostępnych funkcji i zmiennych języka GLSL ES, które można wykorzystać do programowania strony shaders, można znaleźć na stronach referencyjnych OpenGL ES Shading Language (GLSL ES). Poniższy link jest również przydatny, ponieważ zawiera kilka kart szybkiego odniesienia do API OpenGL ES (zauważ, że tylko dwie ostatnie karty mają zastosowanie do GameMaker Studio 2): OpenGL ES Reference Cards.
+  Używanie strony shader w projektach jest bardzo proste i wymaga tylko kilku wierszy kodu, aby uzyskać najbardziej podstawowe korzyści:
+  shader_set(myShader);
+    draw_self();
+    shader_reset();
+  Jak widać, używa się ich w podobny sposób jak trybów mieszania i powierzchni, gdzie najpierw wybiera się (ustawia) powierzchnię shader, rysuje za jej pomocą to, co się chce, a następnie ponownie ustawia cel rysowania. Jeśli chcesz renderować cały ekran przez stronę shader, a nie tylko pojedynczą stronę sprite lub tło, musisz skonfigurować powierzchnię, która przechwyci bieżący widok, a następnie przekaże go do strony shader (więcej informacji na ten temat można znaleźć w części Powierzchnie ).
+  UWAGA: Shaders, podobnie jak wszystko, co jest związane z rysowaniem, może być używane tylko w zdarzeniu draw. Warto również zauważyć, że jeśli próbujesz użyć wartości koloru w shader, a object nie ma texture, wynik będzie czarny.
+  Jeśli używana witryna shader ma wartości wejściowe, są one ustawiane za pomocą funkcji uniformu. Najpierw uzyskałbyś uchwyt uniformu (który jest zasadniczo wartością identyfikacyjną uniformu, który ma zostać ustawiony) za pomocą funkcji shader_get_uniform() w zdarzeniu Create Event instancji używającej shader, a następnie przechowywać te uchwyty w zmiennych, na przykład w taki sposób:
+  colour_to_find = shader_get_uniform(sShaderDemo5, "f_Colour1");
+    colour_to_set = shader_get_uniform(sShaderDemo5, "f_Colour2");
+  Po utworzeniu jednolitych uchwytów można je ustawić w kodzie shader dla zdarzenia Draw w następujący sposób:
+  shader_set(sShaderDemo5);
+    shader_set_uniform_f(colour_to_find, 1,1,1 );
+    shader_set_uniform_f(colour_to_set, 1,0,0 );
+    draw_sprite(sprite_index,image_index,x+24, y);
+    shader_reset();
+  Ostatnią rzeczą, na którą należy zwrócić uwagę, jest to, że chociaż shaders są akceptowane na wszystkich platformach, to jednak są specyficzne dla danego urządzenia i jeśli sprzęt lub oprogramowanie urządzenia nie może używać shaders, pojawi się błąd. Dlatego zaleca się sprawdzenie, czy shader został skompilowany przed ustawieniem uniformów lub użyciem samego shader, jak poniżej:
+  if (shader_is_compiled(myShader))
+    {
+        shader_set(myShader);
+        draw_self();
+        shader_reset();
+    }
+    else show_debug_message("Shader failed");
+  Jako dodatkowe sprawdzenie można również wywołać funkcję shaders_are_supported() aby sprawdzić, czy sprzęt w ogóle obsługuje shaders. Zazwyczaj takie sprawdzanie przeprowadza się przy starcie gry, a wyniki zapisuje się w zmiennej globalnej, aby móc je później sprawdzić.
+  Należy zauważyć, że witryna GameMaker Studio 2 obsługuje również pewne makra kompilacji warunkowej, które można wykorzystać w witrynie GLSL ES shaders, aby wykonać alternatywny kod na określonych obsługiwanych platformach. Makra i platformy, na których będą generowane, są przedstawione w poniższej tabeli:
+   
+  
+    
+      
+        Makro Shader
+        Wartość
+        Platforma docelowa
+      
+      
+        _YY_GLSLES_
+        1
+        Wszystkie platformy docelowe
+      
+      
+        _YY_GLSL_
+        2
+        Mac i Ubuntu (Linux)
+      
+      
+        _YY_HLSL11_
+        3
+        Windows, UWP, XboxOne
+      
+      
+        _YY_PSSL_
+        4
+        PS4
+      
+    
+  
+   
+  Po skompilowaniu projektu GameMaker Studio 2 na dowolnej z wymienionych platform przy użyciu formatu GLSL ES shader zostanie wygenerowane jedno z powyższych makr, które można następnie wykorzystać w kodzie shader w sposób opisany poniżej:
+  #ifdef _YY_HLSL11_
+    // HLSL shader code here
+    #else
+    // GLSL shader code here
+    #endif
+  Jeśli jesteś nowym użytkownikiem strony shaders lub chcesz uzyskać bardziej kompletny przewodnik dotyczący tworzenia i korzystania z nich za pomocą strony GameMaker Studio 2, zapoznaj się z następną stroną podręcznika:
+  
+    Przewodnik po użyciu shaderów
+  
+   
+  Do rysowania i ustawiania shaderów dostępne są następujące funkcje:
+   
+  
+    shader_get_name
+    shader_get_uniform
+    shader_get_sampler_index
+    shader_set
+    shader_set_uniform_f
+    shader_set_uniform_f_array
+    shader_set_uniform_i
+    shader_set_uniform_i_array
+    shader_set_uniform_matrix
+    shader_set_uniform_matrix_array
+    shader_reset
+    shader_is_compiled
+    shaders_are_supported
+    shader_current
+  
+   
+  Mamy też specjalną funkcję, która definiuje stan globalny dla wszystkich shaderów:
+  
+    shader_enable_corner_id
+  
+   
+  Podczas pracy z samplerami texture w serwisie shaders potrzebne są informacje o używanym serwisie texture. W tym celu można skorzystać z następujących funkcji:
+   
+  
+    sprite_get_texture
+    sprite_get_uvs
+    font_get_texture
+    font_get_uvs
+    texture_get_width
+    texture_get_height
+    texture_get_texel_width
+    texture_get_texel_height
+    texture_set_stage
+    gpu_set_texfilter_ext
+    gpu_set_texrepeat
+  
+   
+  Niniejsza instrukcja nie obejmuje wszystkich funkcji i zmiennych Open GL shader, ale zawiera listę tych, które są unikalne dla GameMaker Studio 2. Te stałe nie są częścią specyfikacji Open GL dla shaders i są dostarczane w celu uproszczenia integracji shaders w projektach.
+  
+    Stałe shadera
+  
+   
+  Wreszcie, witryna GameMaker Studio 2 umożliwia definiowanie własnych formatów wierzchołków, na podstawie których można tworzyć własne prymitywy. Może to znacznie przyspieszyć operacje wykonywane na stronie shader lub rozszerzyć ich możliwości i stworzyć zaskakujące efekty. Informacje na ten temat można znaleźć w kolejnych rozdziałach:
+  
+    Prymitywy i Vertex Formaty
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Zarządzanie aktywami
+        Następny: Sekwencje
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

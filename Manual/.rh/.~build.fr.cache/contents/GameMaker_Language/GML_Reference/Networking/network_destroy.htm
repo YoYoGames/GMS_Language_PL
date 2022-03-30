@@ -1,0 +1,45 @@
+
+  
+  zniszczenie sieci
+  Za pomocą tej funkcji można usunąć z gry połączenie z gniazdem sieciowym.
+  UWAGA: Ta funkcja nie będzie działać, jeśli zostanie użyta w projekcie działającym na platformie docelowej HTML5.
+   
+  Składnia:
+  network_destroy(socket);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        socket
+        The id of the socket to remove.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if !os_is_network_connected()
+    {
+        network_destroy(sock);
+    }
+  Powyższy kod sprawdzi, czy istnieje połączenie transmisji danych, a jeśli nie zostanie znalezione, zniszczy gniazdo o identyfikatorze "sock".
+   
+   
+   
+  
+    
+      
+        Powrót: Praca w sieci
+        Następny: network_create_server
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

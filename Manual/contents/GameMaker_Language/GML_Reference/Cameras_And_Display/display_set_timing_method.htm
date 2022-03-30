@@ -34,7 +34,7 @@
     </tbody>
   </table>
   <p>Metoda taktowania vsync wykorzystuje obsługę synchronizacji pionowej platformy docelowej, aby zapewnić punkt odniesienia dla obliczeń taktowania renderowania gry, podczas gdy ustawienie trybu na margines uśpienia spowoduje, że każda klatka będzie trwała przez odpowiednią ilość czasu (powiedzmy 1/30 lub 1/60 sekundy) poprzez oczekiwanie lub uśpienie. Ogólnie rzecz biorąc, domyślne taktowanie vsync da najbardziej płynne rezultaty, ale należy pamiętać, że podczas korzystania z metody vsync wartości marginesu uśpienia są nadal istotne, choć ich wpływ będzie mniejszy, dlatego zalecamy pozostawienie wartości domyślnej podczas korzystania z tej metody.</p>
-  <p>Domyślnie na wszystkich platformach <i>z wyjątkiem</i> PS4, <span class="notranslate">Ubuntu</span> i HTML5 strona <span class="notranslate">GameMaker Studio 2</span> będzie używać metody taktowania vsync, natomiast na platformach nieobsługiwanych może być używane <i>tylko</i> taktowanie marginesu snu.</p>
+  <p>Domyślnie na wszystkich platformach <i>z wyjątkiem</i> PS4, <span class="notranslate">Ubuntu</span> i HTML5 program <span data-keyref="GameMaker Name">GameMaker</span> będzie używał metody taktowania vsync, natomiast na nieobsługiwanych platformach można używać <i>tylko</i> taktowania sleep margin.</p>
   <p>Jeśli chcesz ustawić margines uśpienia, możesz to zrobić za pomocą funkcji <a href="display_set_sleep_margin.htm"><span class="inline">display_set_sleep_margin()</span></a> Za pomocą funkcji można sprawdzić, która metoda odliczania czasu jest aktualnie używana <a href="display_get_timing_method.htm"><span class="inline">display_get_timing_method()</span></a>.</p>
   <p> </p>
   <h4>Składnia:</h4>
@@ -48,7 +48,7 @@
       </tr>
       <tr>
         <td><span class="notranslate">method</span></td>
-        <td><span data-keyref="Type_Constant_Display_Timing_Method">Metoda wyświetlania czasu Stała</span></td>
+        <td><span data-keyref="Type_Constant_Display_Timing_Method">Metoda odmierzania czasu wyświetlania Stała</span></td>
         <td><span class="notranslate">The timing method to use (see the list of constants, above)</span></td>
       </tr>
     </tbody>

@@ -1,0 +1,60 @@
+
+  
+  display_get_timing_method
+  Ta funkcja służy do pobierania metody odliczania czasu, która będzie używana do renderowania gry. Metoda może być jedną z poniższych stałych.
+  Więcej informacji na temat różnych metod pomiaru czasu można znaleźć w części display_set_timing_method().
+   
+  Składnia:
+  display_get_timing_method();
+   
+  Zwroty:
+  Display Timing Method Constant
+  
+    
+      
+      
+    
+    
+      
+        Metoda wyświetlania czasu Stała
+      
+      
+        Stała
+        Opis
+      
+      
+        tm_sleep
+        Wartość marginesu snu jest główną metodą pomiaru czasu.
+      
+      
+        tm_countvsyncs
+        Taktowanie Vsync to główna metoda taktowania (domyślna dla wszystkich obsługiwanych platform)
+      
+    
+  
+   
+  Przykład:
+  if display_get_timing_method() != tm_sleep
+    {
+        display_set_timing_method(tm_sleep);
+        if display_get_sleep_margin() != 20
+        {
+            display_set_sleep_margin(20);
+        }
+    }
+  Powyższy kod sprawdzi metodę timingu, a następnie, jeśli nie jest ustawiona na tm_sleep, zostanie na nią ustawiona, a margines uśpienia zostanie ustawiony na 20.
+   
+   
+   
+  
+    
+      
+        Powrót: Aparaty i wyświetlacz
+        Następny: display_get_sleep_margin
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

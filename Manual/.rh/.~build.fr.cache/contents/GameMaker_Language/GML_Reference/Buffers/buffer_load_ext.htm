@@ -1,0 +1,51 @@
+
+  
+  bufor_load_ext
+  Ta funkcja wczyta dane buffer zapisane wcześniej za pomocą buffer_save() funkcji do istniejącego pliku buffer. Podajesz identyfikator utworzonego wcześniej pliku buffer, do którego chcesz wczytać dane, następnie zapisany plik buffer, który chcesz wczytać, a na końcu offset od początku pliku buffer (w bajtach), do którego chcesz wczytać dane.
+  Informacje dotyczące poszczególnych platform można znaleźć na stronie buffer_load().
+   
+  Składnia:
+  buffer_load_ext(buffer, filename, offset);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        buffer
+        The index of the buffer to load into.
+     
+      
+        filename
+        The name of the file to load from.
+     
+      
+        offset
+        The offset within the buffer to load to (in bytes).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var pos = buffer_seek(player_buffer, buffer_seek_end, 0);
+    buffer_load(player_buffer, "Data_Save.sav", pos);
+  Powyższy kod najpierw pobierze pozycję końca strony buffer zaindeksowaną w zmiennej "player_buffer", a następnie załaduje dane z podanej strony do tej pozycji (zwróć uwagę, że ten przykład będzie działał tylko z typami "grow" lub "wrap" buffer ).
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_load_async
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

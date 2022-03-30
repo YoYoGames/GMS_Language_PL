@@ -45,7 +45,7 @@
       <tr>
         <td style=""><strong>xoffset</strong></td>
         <td>prawdziwy</td>
-        <td style="">Przesunięcie X sprite'a/pochodzenie (w pikselach)</td>
+        <td style="">Przesunięcie X sprite'a lub jego początek (w pikselach)</td>
       </tr>
       <tr>
         <td style=""><strong>yoffset</strong></td>
@@ -230,12 +230,12 @@
         <tr>
           <td style=""><strong>wiadomość</strong></td>
           <td>ciąg</td>
-          <td style="">Ciąg komunikatu nadawczego</td>
+          <td style="">Ciąg komunikatów nadawczych</td>
         </tr>
       </tbody>
     </table>
     <p> </p>
-    <p>Zmienna <span class="inline">frame_info</span> jest tablicą, która zawiera informacje o czasie trwania klatek sprite'a. Każda klatka w tej tablicy jest adresem <span class="notranslate">struct</span> zawierającym następujące zmienne:</p>
+    <p>Zmienna <span class="inline">frame_info</span> jest tablicą zawierającą informacje o czasie trwania klatek sprite'a. Każda klatka w tej tablicy jest adresem <span class="notranslate">struct</span> zawierającym następujące zmienne:</p>
     <table class=" cke_show_border">
       <tbody>
         <tr>
@@ -276,7 +276,7 @@
         <tr>
           <td style=""><strong>y</strong></td>
           <td>prawdziwy</td>
-          <td style="">Położenie Y tej ramki na stronie <span class="notranslate">texture</span> (w pikselach)</td>
+          <td style="">Pozycja Y tej ramki na stronie <span class="notranslate">texture</span> (w pikselach)</td>
         </tr>
         <tr>
           <td style=""><strong>w</strong></td>
@@ -306,7 +306,7 @@
         <tr>
           <td style=""><strong>crop_width</strong></td>
           <td>prawdziwy</td>
-          <td style="">Rzeczywista szerokość ramki na stronie <span class="notranslate">texture</span> po wykadrowaniu i przeskalowaniu (ponieważ GMS2 automatycznie przycina pustą przestrzeń wokół obrazu, a także skaluje go w dół, jeśli się nie mieści)</td>
+          <td style="">Rzeczywista szerokość ramki na stronie <span class="notranslate">texture</span> po przycięciu i przeskalowaniu (ponieważ <span data-keyref="GameMaker Name">GameMaker</span> automatycznie przycina pustą przestrzeń wokół obrazu, a także skaluje go w dół, jeśli się nie mieści)</td>
         </tr>
         <tr>
           <td style=""><strong>crop_height</strong></td>
@@ -330,7 +330,7 @@
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Kręgosłup <span class="notranslate">Sprite</span> Dane</a></p>
   <div class="droptext" data-targetname="drop-down1">
     <p>Ta sekcja zawiera informacje na temat zmiennych zawartych w serwisie <span class="notranslate">struct</span> na stronie <span class="notranslate">Spine</span> <span class="notranslate">sprites</span>.</p>
-    <p>Zmienna <span class="inline">bones</span> jest tablicą, która zawiera informacje o wszystkich kościach w podanym adresie <span class="notranslate">Spine</span> <span class="notranslate">sprite</span>. Każda kość w tej tablicy jest adresem <span class="notranslate">struct</span> zawierającym następujące zmienne:</p>
+    <p>Zmienna <span class="inline">bones</span> jest tablicą, która zawiera informacje o wszystkich kościach w podanej witrynie <span class="notranslate">Spine</span> <span class="notranslate">sprite</span>. Każda kość w tej tablicy jest adresem <span class="notranslate">struct</span> zawierającym następujące zmienne:</p>
     <table class=" cke_show_border">
       <tbody>
         <tr>
@@ -476,7 +476,7 @@
         </tr>
       </tbody>
     </table>
-    <p class="note">* <strong>UWAGA</strong>: Zmienne ciemnego koloru są dostępne tylko wtedy, gdy w gnieździe jest włączona opcja <a href="http://en.esotericsoftware.com/spine-slots#Tint-black" title="Tint Black">Tint Black</a>.</p>
+    <p class="note">* <strong>UWAGA</strong>: Zmienne dotyczące ciemnych kolorów są dostępne tylko wtedy, gdy w gnieździe jest włączona opcja <a href="http://en.esotericsoftware.com/spine-slots#Tint-black" title="Tint Black">Tint Black</a>.</p>
     <p> </p>
   </div>
   <p> </p>

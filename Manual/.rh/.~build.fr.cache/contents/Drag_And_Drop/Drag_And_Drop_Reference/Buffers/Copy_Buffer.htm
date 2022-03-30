@@ -1,0 +1,45 @@
+
+  
+   Bufor kopiowania
+  Tej akcji można użyć do skopiowania wszystkich danych przechowywanych w jednej witrynie buffer do drugiej. W przypadku korzystania z dwóch stron buffers i kopiowania danych z jednej do drugiej, obie strony buffers muszą być wcześniej utworzone za pomocą akcji Utwórz bufor,
+    a jako argumenty od/do należy podać unikalne identyfikatory buffer zwrócone przez użytkownika.
+  UWAGA: Nie można kopiować na tę samą stronę buffer.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Buffer
+        Indeks buffer (przechowywany w zmiennej) do skopiowania z
+      
+      
+        Copy To
+        Indeks buffer (przechowywany w zmiennej), który ma zostać skopiowany do
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji utworzy nową stronę buffer i zapisze jej identyfikator w zmiennej tymczasowej.
+    Następnie sprawdza, czy istnieje strona buffer indeksowana w podanej zmiennej globalnej, a jeśli tak, to kopiuje ją do tymczasowej strony buffer i przywraca początkową pozycję odczytu/zapisu, a jeśli nie istnieje, to ją tworzy.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje buforowe
+        Następny: Usuń bufor
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

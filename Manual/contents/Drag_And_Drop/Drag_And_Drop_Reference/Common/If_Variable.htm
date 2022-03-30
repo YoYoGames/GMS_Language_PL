@@ -9,13 +9,13 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Section detailing If Variable" />
-  <meta name="rh-index-keywords" content="DnD™ Action - If Variable" />
+  <meta name="rh-index-keywords" content="GML Visual Action - If Variable" />
   <meta name="search-keywords" content="" />
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><img> Jeśli zmienna</h1>
-  <p>Ta akcja służy do sprawdzania stanu danej zmiennej względem danej wartości przy użyciu określonego wyrażenia. Instrukcja &quot;if&quot; zawsze zwraca wartość <span class="inline">true</span> lub <span class="inline">false</span>, a wyrażeniem sprawdzającym może być dowolne z następujących wyrażeń
+  <p>Ta akcja służy do sprawdzania stanu danej zmiennej względem danej wartości przy użyciu określonego wyrażenia. Instrukcja &quot;if&quot; zawsze zwróci albo <span class="inline">true</span> albo <span class="inline">false</span>, a wyrażeniem sprawdzającym może być dowolne z następujących wyrażeń
     następujących:</p>
   <ul class="colour">
     <li><b>Equals to</b> - zmienna i wartość są dokładnie równe<b></b></li>
@@ -27,7 +27,7 @@
   <p>Jeśli <span class="notranslate">flag</span> argument &quot;Not&quot;, to powyższe wyrażenia zostaną zanegowane, na przykład &quot;równa się&quot; stanie się &quot;<i>nie</i> równa się&quot;. Należy również pamiętać, że ani zmienna, ani argument "value" nie są ograniczone do wartości liczbowych
     i mogą to być <span class="notranslate">string</span>, wskaźnik, identyfikator zasobu lub cokolwiek innego, co funkcja może zwrócić lub wykorzystać (więcej informacji na ten temat znajduje się w rozdziale dotyczącym <a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm">typów danych</a> ), ale nie można porównywać dwóch
     ale nie można porównywać dwóch różnych typów danych bez otrzymania błędu - na przykład jeśli zmienna przechowuje adres <span class="notranslate">string</span> i próbujesz sprawdzić, czy jest ona równa liczbie, otrzymasz błąd składni.</p>
-  <p class="note"><b>WAŻNA UWAGA</b>: Ze względu na <a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">problemy z precyzją zmiennoprzecinkową</a> sprawdzenie, czy dwie wartości są dokładnie równe, może zwrócić <span class="inline">false</span>, ponieważ jedna z nich może wynosić dokładnie 1, podczas gdy
+  <p class="note"><b>WAŻNA UWAGA</b>: Ze względu na <a href="http://floating-point-gui.de/formats/fp/" target="·_blank&quot;">problemy z precyzją zmiennoprzecinkową</a> sprawdzenie, czy dwie wartości są dokładnie równe, może zwrócić <span class="inline">false</span>, ponieważ jedna z nich może wynosić dokładnie 1, a
     druga może mieć wartość 1.00000000000001. Można tego uniknąć, stosując przed sprawdzeniem działanie <a href="../Data_Types/Decimal_To_Integer.htm">Decimal to Integer</a> lub używając wyrażeń &quot;greater than&quot; i &quot;less than&quot;.</p>
   <p>Należy pamiętać, że aby dodać akcje do bloku &quot;jeśli&quot;, należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:</p>
   <p><img>Te akcje będą teraz uruchamiane, jeśli &quot;if&quot; zakończy się wynikiem <span class="inline">true</span>, podczas gdy wszelkie
@@ -48,7 +48,7 @@
       </tr>
       <tr>
         <td><span class="notranslate">Not</span></td>
-        <td>Ustawiane w celu sprawdzenia, czy wyrażenie <i>nie</i> ma wartości true.</td>
+        <td>Ustawia się w celu sprawdzenia, czy wyrażenie <i>nie</i> ma wartości true.</td>
       </tr>
       <tr>
         <td><span class="notranslate">Expression</span></td>

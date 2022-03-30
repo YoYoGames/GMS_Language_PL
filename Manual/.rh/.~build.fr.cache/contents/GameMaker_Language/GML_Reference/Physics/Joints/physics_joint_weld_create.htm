@@ -1,0 +1,96 @@
+
+  
+  physics_joint_weld_create
+  Spoina została zaprojektowana w celu połączenia dwóch elementów mocnych, ale elastycznych. Połączenie zgrzewane umożliwia zginanie dwóch połączonych elementów, ale bez rozciągania związanego na przykład ze złączem dystansowym, i zawsze będzie próbowało "sprężynować" z powrotem do kąta odniesienia, gdy zostanie poddane jakiemukolwiek naprężeniu lub obciążeniu. Użytkownik określa punkt na stronie room, w którym ma zostać utworzone połączenie, a także kąt, który ma być utrzymywany przez cały czas, jak pokazano na poniższym rysunku:
+  Jak widać, punkty zakotwiczenia są określone jako współrzędne room, więc należy zachować ostrożność przy ich definiowaniu, zwłaszcza jeśli instancje są tworzone w tym samym czasie co przeguby, a nie są umieszczane na stronie room poprzez edytor room. Należy również pamiętać, że połączenia są tworzone niezależnie od rozmiaru sprite instancji lub zamocowań, do których są dołączone. Jeśli więc utworzysz spoinę w innym miejscu niż początek instancji, będzie ona nadal ważna i będzie ograniczać dwie instancje względem pozycji, w której została utworzona.
+  Ponieważ spoina jest elastyczna i będzie się wyginać i zginać pod wpływem naprężeń, można ustawić częstotliwość drgań (w Hz) oraz współczynnik tłumienia spoiny, aby uzyskać różne efekty - konieczne może być dostrojenie tych wartości, dlatego zaleca się rozpoczęcie od mniejszych wartości i zwiększanie ich aż do uzyskania pożądanego efektu.
+  Jeśli ustawisz wartość "col" na true, to dwie instancje mogą oddziaływać na siebie i zderzać się ze sobą, ale tylko wtedy, gdy wystąpią zdarzenia kolizji, natomiast jeśli ustawisz tę wartość na false, to bez względu na wszystko nie będą się one zderzać.
+   
+  Składnia:
+  physics_joint_weld_create(inst1, inst2, anchor_x, anchor_y, ref_angle, freq_hz, damping_ratio, col)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        inst1
+        Identyfikator instancji
+        The first instance to connect with the joint
+      
+      
+        inst2
+        Identyfikator instancji
+        The second instance to connect with the joint
+      
+      
+        anchor_x
+        Real
+        The x coordinate for the joint, within the game world
+      
+      
+        anchor_y
+        Real
+        The y coordinate for the joint, within the game world
+      
+      
+        ref_angle
+        Real
+        The joint angle to maintain
+      
+      
+        freq_hz
+        Real
+        This is the oscillation frequency for the joint, in hertz
+      
+      
+        damping_ratio
+        Real
+        This damping ratio for the joint
+      
+      
+        col
+        Boolean
+        Whether the two instances can collide (true) or not (false)
+      
+    
+  
+   
+  Zwroty:
+  Physics Joint ID
+   
+  Przykład:
+  var i, fix, o_id, p_id;
+    p_id = noone;
+    o_id = noone;
+    fix = physics_fixture_create();
+    physics_fixture_set_box_shape(fix, 64, 32);
+    for (i = 0; i < 5; i++;)
+    {
+        o_id = instance_create_layer(x + (128 * i), y, "Instances", obj_BridgePart);
+        physics_fixture_bind(fix, o_id);
+        if i > 0 && i < 4
+        {
+            physics_joint_weld_create(p_id, o_id, x + (128 * i) - 64, y, 0, 10, 12, true);
+        }
+        p_id = o_id;
+    }
+    physics-fixture_delete(fix);
+  Powyższy kod utworzy mocowanie, następnie użyje loop do utworzenia wielu instancji, wiążąc mocowanie z każdą nową instancją, a następnie połączy je wszystkie razem za pomocą złącza spawanego. Na koniec uchwyt jest usuwany z pamięci.
+   
+   
+   
+  
+    
+      
+        Plecy: Stawy
+        Następny: physics_joint_friction_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,55 @@
+
+  
+  xboxlive_stats_set_stat_string
+  Za pomocą tej funkcji można ustawić stat na string dla podanego identyfikatora użytkownika. Podaje się identyfikator użytkownika zwrócony przez (na przykład) funkcję xboxlive_get_user()następnie stat string do ustawienia(jeśli stat string jeszcze nie istnieje, to zostanie utworzony nowy stat i ustawiony na podaną wartość), a następnie string, na który stat ma zostać ustawiony. Należy pamiętać, że nazwa statystyki musi być wyłącznie alfanumeryczna, bez symboli i spacji, natomiast ustawiana wartość string może zawierać spacje i znaki specjalne.
+  Ustawiając stat string, wszystkie poprzednie stat string zostaną nadpisane, dlatego do Ciebie należy ustalenie, czy stat string powinien zostać zaktualizowany, czy nie, poprzez porównanie aktualnego stat string z nowym przed jego ustawieniem.
+  Funkcja zwróci -1, jeśli wystąpił błąd lub identyfikator użytkownika jest nieprawidłowy, lub dowolną inną wartość, jeśli funkcja została pomyślnie wywołana.
+   
+  Składnia:
+  xboxlive_stats_set_stat_string(user_id, stat, value);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        user_id
+        Identyfikator użytkownika konsoli Xbox
+        The user ID pointer to set the stat for
+      
+      
+        stat
+        String
+        The statistic to set (a string)
+      
+      
+        value
+        String
+        The value to set the stat to (a string)
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  xboxlive_stats_set_stat_string(p_user_id, "LevelName", global.LevelName);
+  Powyższy kod ustawia stat "LevelName" na wartość string zapisaną w podanej zmiennej globalnej. 
+   
+   
+   
+  
+    
+      
+        Powrót: Statystyki i rankingi
+        Następny: xboxlive_stats_delete_stat
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

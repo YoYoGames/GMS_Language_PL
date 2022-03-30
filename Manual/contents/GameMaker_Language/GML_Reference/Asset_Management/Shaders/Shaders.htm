@@ -18,7 +18,7 @@
   <p>Shadery to niezwykle potężne narzędzie do manipulowania tym, co i w jaki sposób jest <a class="glossterm" data-glossterm="renderowane" href="#">renderowane</a> na ekranie przez kartę graficzną. Ponieważ te niewielkie programy są uruchamiane na samej karcie graficznej, ich przetwarzanie przebiega niezwykle szybko, co pozwala uwolnić cenne cykle procesora dla większej logiki gry.</p>
   <p>Aby utworzyć stronę <span class="notranslate">shader</span>, musisz mieć napisany zarówno <b>Vertex</b> Shader, jak i <b>Fragment</b> Shader (znany również jako <b>Pixel</b> Shader) za pomocą <a href="../../../../The_Asset_Editors/Shaders.htm">edytora sh</a>aderów. Nawet jeśli (na przykład) chcesz tylko zmienić pozycje <span class="notranslate">vertex</span> dla rysowanej instancji lub jeśli chcesz tylko zmienić wartości kolorów dla pikseli, nadal będziesz potrzebował <b>obu</b> programów, aby kompletna strona <span class="notranslate">shader</span> działała.</p>
   <p class="note"><span class="note">UWAGA</span> Shadery <b>nie</b> pozwalają na zmianę wartości zmiennych, które są do nich przekazywane, dlatego w całej dokumentacji będą one nazywane <b>stałymi shadera</b>.</p>
-  <p>Pełny przegląd dostępnych funkcji i zmiennych <a href="https://www.khronos.org/registry/OpenGL/specs/es/2.0/es_cm_spec_2.0.pdf" target="_blank">języka</a> GLSL ES, które można wykorzystać do programowania <a href="https://www.khronos.org/registry/OpenGL/specs/es/2.0/es_cm_spec_2.0.pdf" target="_blank">strony</a> <span class="notranslate">shaders</span>, można znaleźć na <a href="https://www.khronos.org/registry/OpenGL/specs/es/2.0/es_cm_spec_2.0.pdf" target="_blank">stronach referencyjnych OpenGL ES Shading Language (GLSL ES)</a>. Poniższy link jest również przydatny, ponieważ zawiera kilka kart szybkiego odniesienia do API OpenGL ES (zauważ, że tylko dwie ostatnie karty mają zastosowanie do <span class="notranslate">GameMaker Studio 2</span>): <a href="https://www.khronos.org/opengles/sdk/docs/reference_cards/OpenGL-ES-2_0-Reference-card.pdf">OpenGL ES Reference Cards</a>.</p>
+  <p>Pełny przegląd dostępnych funkcji i zmiennych GLSL ES, których można używać do programowania <a href="https://www.khronos.org/registry/OpenGL/specs/es/2.0/es_cm_spec_2.0.pdf" target="_blank">strony</a> <span class="notranslate">shaders</span>, można znaleźć na <a href="https://www.khronos.org/registry/OpenGL/specs/es/2.0/es_cm_spec_2.0.pdf" target="_blank">stronach referencyjnych OpenGL ES Shading Language (GLSL ES)</a>. Poniższy odnośnik jest również przydatny, ponieważ zawiera kilka kart referencyjnych dotyczących API OpenGL ES (zauważ, że tylko dwie ostatnie karty mają zastosowanie w <span data-keyref="GameMaker Name">GameMakerze</span>): OpenGL <a href="https://www.khronos.org/opengles/sdk/docs/reference_cards/OpenGL-ES-2_0-Reference-card.pdf">ES Reference Cards</a>.</p>
   <p>Używanie strony <span class="notranslate">shader</span> w projektach jest bardzo proste i wymaga tylko kilku wierszy kodu, aby uzyskać najbardziej podstawowe korzyści:</p>
   <p class="code">shader_set(myShader);<br />
     draw_self();<br />
@@ -43,7 +43,7 @@
     }<br />
     else show_debug_message(&quot;Shader failed&quot;);</p>
   <p>Jako dodatkowe sprawdzenie można również wywołać funkcję <a href="shaders_are_supported.htm"><span class="inline">shaders_are_supported()</span></a> aby sprawdzić, czy sprzęt w ogóle obsługuje <span class="notranslate">shaders</span>. Zazwyczaj takie sprawdzanie przeprowadza się przy starcie gry, a wyniki zapisuje się w <a href="../../../GML_Overview/Variables/Global_Variables.htm">zmiennej globalnej</a>, aby móc je później sprawdzić.</p>
-  <p>Należy zauważyć, że witryna <span class="notranslate">GameMaker Studio 2</span> obsługuje również pewne <b>makra</b> kompilacji warunkowej, które można wykorzystać w witrynie GLSL ES <span class="notranslate">shaders</span>, aby wykonać alternatywny kod na określonych obsługiwanych platformach. Makra i platformy, na których będą generowane, są przedstawione w poniższej tabeli:</p>
+  <p>Należy zauważyć, że <span data-keyref="GameMaker Name">GameMaker</span> obsługuje również pewne <b>makra</b> kompilacji warunkowej, które mogą być używane w GLSL ES <span class="notranslate">shaders</span>, aby mogły wykonywać alternatywny kod na określonych obsługiwanych platformach. Makra i platformy, na których będą generowane, są przedstawione w poniższej tabeli:</p>
   <p> </p>
   <table>
     <tbody>
@@ -75,13 +75,13 @@
     </tbody>
   </table>
   <p> </p>
-  <p>Po skompilowaniu projektu <span class="notranslate">GameMaker Studio 2</span> na dowolnej z wymienionych platform przy użyciu formatu GLSL ES <span class="notranslate">shader</span> zostanie wygenerowane <i>jedno</i> z powyższych makr, które można następnie wykorzystać w kodzie <span class="notranslate">shader</span> w sposób opisany poniżej:</p>
+  <p>Gdy skompilujesz swój projekt <span data-keyref="GameMaker Name">GameMakera</span> na dowolnej z wymienionych platform, używając formatu GLSL ES <span class="notranslate">shader</span>, zostanie wygenerowane <i>jedno</i> z powyższych makr, które można następnie wykorzystać w kodzie <span class="notranslate">shader</span> w sposób opisany poniżej:</p>
   <p class="code">#ifdef _YY_HLSL11_<br />
     // HLSL shader code here<br />
     #else<br />
     // GLSL shader code here<br />
     #endif</p>
-  <p>Jeśli jesteś nowym użytkownikiem strony <span class="notranslate">shaders</span> lub chcesz uzyskać bardziej kompletny przewodnik dotyczący tworzenia i korzystania z nich za pomocą strony <span class="notranslate">GameMaker Studio 2</span>, zapoznaj się z następną stroną podręcznika:</p>
+  <p>Jeśli jesteś początkującym użytkownikiem strony <span class="notranslate">shaders</span> lub chcesz poznać bardziej kompletny przewodnik po tworzeniu i używaniu ich w programie <span data-keyref="GameMaker Name">GameMaker</span>, zajrzyj na następną stronę podręcznika:</p>
   <ul class="colour">
     <li><a href="../../../../Additional_Information/Guide_To_Using_Shaders.htm">Przewodnik po użyciu shaderów</a></li>
   </ul>
@@ -126,12 +126,12 @@
     <li><a href="../../Drawing/GPU_Control/gpu_set_texrepeat.htm"><span class="notranslate">gpu_set_texrepeat</span></a></li>
   </ul>
   <p> </p>
-  <p>Niniejsza instrukcja <b>nie</b> obejmuje wszystkich funkcji i zmiennych Open GL <span class="notranslate">shader</span>, ale zawiera listę tych, które są unikalne dla <span class="notranslate">GameMaker Studio 2</span>. Te stałe nie są częścią specyfikacji Open GL dla <span class="notranslate">shaders</span> i są dostarczane w celu uproszczenia integracji <span class="notranslate">shaders</span> w projektach.</p>
+  <p>Chociaż niniejszy podręcznik <b>nie</b> obejmuje wszystkich funkcji i zmiennych Open GL <span class="notranslate">shader</span>, zawiera listę tych, które są unikalne dla programu <span data-keyref="GameMaker Name">GameMaker</span>. Stałe te nie są częścią specyfikacji Open GL dla <span class="notranslate">shaders</span> i są dostarczane w celu uproszczenia integracji <span class="notranslate">shaders</span> w Twoich projektach.</p>
   <ul class="colour">
     <li><a href="Shader_Constants.htm">Stałe shadera</a></li>
   </ul>
   <p> </p>
-  <p>Wreszcie, witryna <span class="notranslate">GameMaker Studio 2</span> umożliwia definiowanie własnych <b>formatów wierzchołków</b>, na podstawie których można tworzyć własne prymitywy. Może to znacznie przyspieszyć operacje wykonywane na stronie <span class="notranslate">shader</span> lub rozszerzyć ich możliwości i stworzyć zaskakujące efekty. Informacje na ten temat można znaleźć w kolejnych rozdziałach:</p>
+  <p>Ponadto <span data-keyref="GameMaker Name">GameMaker</span> umożliwia definiowanie własnych <b>formatów wierzchołków (Vertex Formats</b> ), na podstawie których można tworzyć własne prymitywy. Może to znacznie przyspieszyć operacje wykonywane na stronie <span class="notranslate">shader</span> lub rozszerzyć ich możliwości i stworzyć zaskakujące efekty. Informacje na ten temat można znaleźć w kolejnych rozdziałach:</p>
   <ul class="colour">
     <li><a href="../../Drawing/Primitives/Primitives_And_Vertex_Formats.htm">Prymitywy i <span class="notranslate">Vertex</span> Formaty</a></li>
   </ul>

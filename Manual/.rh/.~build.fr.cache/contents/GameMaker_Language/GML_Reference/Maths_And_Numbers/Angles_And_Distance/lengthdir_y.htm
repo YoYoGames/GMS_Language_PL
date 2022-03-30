@@ -1,0 +1,51 @@
+
+
+
+
+
+  
+  lengthdir_y
+  Ta funkcja służy do uzyskiwania składowej y pozycji "len" w pikselach od punktu początkowego i w kierunku "dir". Jeśli wyobrazimy sobie okrąg wokół naszej instancji, a następnie punkt w dowolnym miejscu na tym okręgu, to aby przejść do tego punktu, musimy przesunąć
+    do tego punktu musimy przesunąć stronę object o tyle pikseli w tym kierunku... dlatego ta funkcja (użyta z lengthdir_x()) uzyskuje pozycję tego punktu na okręgu, którą instancja może wykorzystać w kodzie. Zobacz .
+    poniższy obrazek, aby poznać szczegóły:
+  
+  Składnia:
+  lengthdir_y(len, dir);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        len
+        The length away of the point to return.
+     
+      
+        dir
+        The direction of the point to return.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var _xx = x + lengthdir_x(64, image_angle); var _yy = y + lengthdir_y(64, image_angle); instance_create_layer(_xx, _yy, "Bullets", obj_bullet);
+  Spowoduje to utworzenie instancji pocisku w (_xx, _yy), która będzie oddalona o 64 piksele od instancji nadrzędnej w kierunku kąta obrazu.
+   
+   
+   
+  
+    
+      
+        Powrót: Kąty i odległości
+        Następny: arccos
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

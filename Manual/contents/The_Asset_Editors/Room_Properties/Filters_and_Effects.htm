@@ -20,26 +20,15 @@
   <p><img class="icon_small" src="../../assets/Images/Icons/Icon_FX_Layer.png" /></p>
   <p>Warstwa Filtr/Efekt (lub FX) służy do stosowania filtrów wizualnych lub efektów do niektórych warstw. Możesz wybrać efekt z listy rozwijanej &quot;Typ efektu&quot;, co spowoduje wyświetlenie jego parametrów w oknie Właściwości warstwy, umożliwiając modyfikację jego wyglądu i zachowania. Na przykład wybranie efektu &quot;Wstrząs ekranu&quot; pozwoli Ci zmienić jego wielkość, szybkość wstrząsów oraz zastosować teksturę szumu <span class="notranslate">sprite</span>:</p>
   <p><img>Dodanie warstwy FX spowoduje zastosowanie wybranego efektu do wszystkich innych warstw, które znajdują się <em>poniżej</em> warstwy FX, jak pokazano na poniższej ilustracji:</p>
-  <p><img>Oznacza to, że do wszystkich &quot;dotkniętych&quot; warstw zostanie zastosowany wybrany filtr (w tym przypadku &quot;Desaturacja&quot;), ponieważ znajdują się one poniżej warstwy FX. Wszystkie warstwy znajdujące się powyżej warstwy FX pozostaną nienaruszone. Nie należy zapominać, że na warstwę może wpływać wiele warstw efektów znajdujących się nad nią w dowolnej kolejności warstw.</p>
-  <p>Można również łatwo modyfikować <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_depth.htm">głębokość warstwy</a> lub <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/depth.htm">instancji</a> na stronie <span class="notranslate">runtime</span>, zmieniając warstwy FX, które są do niej stosowane, poprzez zwiększenie jej głębokości powyżej głębokości warstwy FX (zasadniczo znajduje się <em>pod</em> warstwą FX i jest dotknięta) lub zmniejszenie jej głębokości <em>poniżej</em> głębokości warstwy FX (znajduje się <em>powyżej</em> warstwy FX i nie jest dotknięta).</p>
+  <p><img>Oznacza to, że do wszystkich &quot;dotkniętych&quot; warstw zostanie zastosowany wybrany filtr (w tym przypadku &quot;Desaturacja&quot;), ponieważ znajdują się one poniżej warstwy FX. Warstwy znajdujące się powyżej warstwy FX pozostaną nienaruszone. Na warstwę może wpływać wiele warstw efektów, które znajdują się nad nią w dowolnym miejscu w kolejności warstw.</p>
+  <p>Aby utworzyć filtry/efekty, które są stosowane tylko do jednej warstwy, zobacz: <a href="#h">Single-Layer FX</a>.</p>
+  <p class="note"><span class="note">UWAGA</span> Modyfikowanie głębokości <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/General_Layer_Functions/layer_depth.htm">warstwy</a> lub <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/depth.htm">instancji</a> na stronie <span class="notranslate">runtime</span> może zmienić, które warstwy FX są na niej stosowane, poprzez zwiększenie jej głębokości w stosunku do głębokości warstwy FX (zasadniczo znajduje się <em>pod</em> warstwą FX i jest dotknięta) lub zmniejszenie jej głębokości w stosunku do głębokości warstwy FX (znajduje się <em>nad</em> warstwą FX i nie jest dotknięta).</p>
   <h2>Typy efektów</h2>
-  <p>Na liście rozwijanej <strong>&quot;Typ efektu&quot;</strong> można wybrać jeden z następujących efektów:</p>
-  <ul class="colour">
-    <li><strong>Koloryzuj</strong>: Zmienia wszystko na jeden odcień o regulowanej wartości intensywności.</li>
-    <li><strong>Duże roz</strong>mycie: powoduje rozmycie obrazu przy użyciu określonego szumu <span class="notranslate">texture</span>, umożliwiając zmianę promienia rozmycia w celu zwiększenia lub zmniejszenia efektu rozmycia.</li>
-    <li><strong>Wykryj</strong> krawędzie: Włącza wykrywanie krawędzi <span class="notranslate">shader</span> dla renderowanej zawartości, z regulowaną wartością progową.</li>
-    <li><strong>Ciepła</strong> mgiełka: Ta opcja wykorzystuje zamglenie cieplne <span class="notranslate">shader</span> i jest przydatna do wyświetlania gorących środowisk.</li>
-    <li><strong>Nasycenie</strong>: Zmniejsza nasycenie renderowanej zawartości o określoną wartość intensywności.</li>
-    <li><strong>Posteryzuj</strong>: Zastosuje efekt posteryzacji do renderowanej zawartości, umożliwiając zmianę maksymalnych poziomów kolorów dla każdego odcienia.</li>
-    <li>Trzęsienie<strong>ekranu</strong>: Powoduje, że renderowana zawartość drży, symulując efekt drgania aparatu fotograficznego, umożliwiając dostosowanie wielkości (jak bardzo drży), szybkości drżenia (jak szybko drży) oraz szumu <span class="notranslate">texture</span>, który kontroluje ruch.</li>
-    <li><strong>Pikselizacja</strong>: Sprawia, że renderowana zawartość wygląda na rozpikselowaną, umożliwiając zmianę rozmiaru każdego piksela; dzięki temu renderowana zawartość wygląda jak w niskiej rozdzielczości</li>
-    <li><strong>Odcień</strong> koloru: powoduje zastosowanie odcienia koloru do renderowanej zawartości.</li>
-    <li>Zniekształcenie wirowe:<strong>Tworzy</strong> efekt zniekształcenia wirowego i umożliwia zmianę jego położenia za pomocą wartości przesunięcia</li>
-    <li><strong>Pod wodą</strong>: Dzięki temu renderowana zawartość wygląda tak, jakby znajdowała się pod wodą, a także zawiera opcje barwienia kolorów.</li>
-  </ul>
-  <h2>Jednowarstwowa wymiana walut</h2>
-  <p>Można utworzyć warstwę FX, aby zastosować filtr do wielu warstw, ale można też przypisać filtr tylko do jednej, określonej warstwy, korzystając z <a href="../../IDE_Tools/The_Inspector.htm">Inspektora</a>. Otwarcie inspektora i wybranie warstwy <span class="notranslate">room</span> umożliwi zastosowanie do niej filtra/efektu, a jeśli jest to warstwa nie-FX (np. warstwa instancji, <span class="notranslate">Asset</span> itp.), efekt zostanie zastosowany tylko do tej warstwy, a nie do innych warstw poniżej niej.</p>
+  <p>Wszystkie filtry i efekty z listy rozwijanej <strong>&quot;Typ efektu&quot;</strong> są udokumentowane na tej stronie: <a data-xref="{title}" href="FX/All_Filter_Effect_Types.htm">Wszystkie typy filtrów/efektów</a>.</p>
+  <h2 id="h">Jednowarstwowa wymiana walut</h2>
+  <p>Można utworzyć warstwę FX, aby zastosować filtr do wielu warstw, ale można też przypisać filtr tylko do jednej, określonej warstwy, korzystając z <a href="../../IDE_Tools/The_Inspector.htm">Inspektora</a>. Otwarcie inspektora i wybranie warstwy <span class="notranslate">room</span> umożliwi zastosowanie do niej filtru/efektu, a jeśli jest to warstwa nie-FX (np. warstwa instancji, <span class="notranslate">Asset</span> itp.), efekt zostanie zastosowany tylko do tej warstwy, a nie do innych warstw poniżej niej.</p>
   <p><img class="center" src="../../assets/Images/Asset_Editors/Editor_Room_LayerFilterProperties.png" /></p>
+  <p>Można również kliknąć ikonę <img>, aby włączyć lub wyłączyć efekty FX dla wybranej warstwy.</p>
   <h2>Użycie w czasie pracy</h2>
   <p>Efekty można dodawać i kontrolować na stronie <span class="notranslate">runtime</span> za pomocą <a href="../../GameMaker_Language/GML_Reference/Asset_Management/Rooms/Filter_Effect_Layers/Filter_Effect_Functions.htm">funkcji Filtr/Efekt <span class="notranslate">GML</span> </a>.</p>
   <div data-conref="../../assets/snippets/FX_only_added_through_IDE.hts"> </div>
@@ -50,7 +39,7 @@
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Powrót: <a href="../Rooms.htm">Redaktor <span class="notranslate">Room</span> </a></div>
-        <div style="float:right">Następny: <a href="Layer_Properties.htm">Typy i właściwości warstw</a></div>
+        <div style="float:right">Następny: <a data-xref="{title}" href="FX/All_Filter_Effect_Types.htm">Wszystkie typy filtrów/efektów</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>

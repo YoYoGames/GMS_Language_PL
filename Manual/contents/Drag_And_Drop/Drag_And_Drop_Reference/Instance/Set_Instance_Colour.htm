@@ -8,7 +8,7 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains the Set Instance Colour action" />
-  <meta name="rh-index-keywords" content="DnD™ Action - Set Instance Colour" />
+  <meta name="rh-index-keywords" content="GML Visual Action - Set Instance Colour" />
   <meta name="search-keywords" content="Set Instance Colour" />
 </head>
 <body>
@@ -16,8 +16,8 @@
   <h1><img> Ustaw kolor pierwiastka</h1>
   <p>Ten blok akcji ustawia kolor <span class="inline">image_blend</span> do &quot;mieszania&quot; z instancją <span class="notranslate">sprite</span>. Domyślną wartością jest kod heksadecymalny $FFFFFFFF (który reprezentuje kolor biały w formacie <a class="glossterm" data-glossterm="ARGB" href="#">ARGB</a> ). Spowoduje to narysowanie <span class="notranslate">sprite</span> bez mieszania i z pełną alfą. Każda inna wartość (w tym wewnętrzne stałe koloru, takie jak <span class="inline">c_red</span>, lub <span class="inline">c_aqua</span>) spowoduje <i>wymieszanie</i> określonego koloru z oryginalnym kolorem <span class="notranslate">sprite</span> oraz ustawienie składowej dla instancji, ale tylko wtedy, gdy jest ona ustawiona na wartość alfa.
     <span class="inline">image_alpha</span> dla instancji, ale tylko wtedy, gdy zaznaczone jest pole wyboru <strong>Użyj al</strong> fa. Spowoduje to nadpisanie wszystkich wartości alfa ustawionych wcześniej za pomocą akcji <a href="Set_Instance_Alpha.htm">Ustaw alfa</a> instancji.</p>
-  <p>Należy pamiętać, że aby zmiany w tej akcji były widoczne, instancja powinna albo <i>nie</i> mieć zdarzenia draw (a więc <span class="notranslate">GameMaker Studio 2</span> domyślnie narysuje <span class="notranslate">sprite</span>), albo być narysowana za pomocą akcji <a href="../Drawing/Draw_Self.htm">Draw Self</a>. Jest
-    Należy również zauważyć, że na platformie <b>HTML5</b> należy ograniczyć mieszanie (chyba że używa się WebGL), ponieważ każda mieszana strona <span class="notranslate">sprite</span> musi być buforowana osobno, a zatem posiadanie wielu mieszanych stron <span class="notranslate">sprites</span> może negatywnie wpłynąć na wydajność.</p>
+  <p>Należy pamiętać, że aby zmiany w tej akcji były widoczne, instancja powinna albo <i>nie</i> mieć zdarzenia rysowania (a więc <span data-keyref="GameMaker Name">GameMaker</span> domyślnie narysuje <span class="notranslate">sprite</span>), albo być narysowana za pomocą akcji <a href="../Drawing/Draw_Self.htm">Draw Self</a>. It is
+    że na platformie <b>HTML5</b> powinieneś starać się ograniczyć mieszanie (chyba że korzystasz z WebGL), ponieważ każda mieszana strona <span class="notranslate">sprite</span> musi być buforowana osobno, a zatem posiadanie wielu mieszanych stron <span class="notranslate">sprites</span> może negatywnie wpłynąć na wydajność.</p>
   <p><img alt="Set Instance Colour Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/i_Instance_Set_Colour.png"/></p>
   <h4>Składnia działania:</h4>
   <p><img alt="Example of sprites being coloured" class="center" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Instance/sprite_colour.png"/></p>

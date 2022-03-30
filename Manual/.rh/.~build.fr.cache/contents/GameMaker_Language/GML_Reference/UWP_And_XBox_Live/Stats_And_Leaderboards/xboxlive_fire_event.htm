@@ -1,0 +1,50 @@
+
+  
+  xboxlive_fire_event
+  Ta funkcja może być użyta do wywołania zdarzenia statystyk. Argument "event_name" jest nazwą zdarzenia, które ma zostać wywołane, jak zdefiniowano w konsoli XDP dla twojej gry, a następujące dodatkowe parametry będą również zależały od tego, co masz ustawione dla stat. Funkcja zwróci 0, jeśli zdarzenie zostało wysłane (i powinno zostać odebrane/przetworzone przez server) lub -1, jeśli wystąpił błąd (np. zdarzenie nie zostało ustawione, ponieważ plik manifestu zdarzeń dołączony do projektu mówi o innym numerze).
+   
+  Składnia:
+  xboxlive_fire_event(event_name, [stat_parameters...]);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        event_name
+        String
+        The name of the event to fire.
+      
+      
+        stat_parameters
+        Zmienna
+        OPTIONAL Dodatkowe parametry, które należy dodać do zdarzenia.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  var _user = xboxlive_get_user(0);
+    var _uid = xboxlive_user_id_for_user(_user);
+    result = xboxlive_fire_event("PlayerSessionStart", _uid, global.guid_str, 0, 42, 42);
+  Powyższy kod pobiera pewne informacje o użytkowniku, a następnie uruchamia zdarzenie stat wraz z tymi (i dodatkowymi) danymi.
+   
+   
+   
+  
+    
+      
+        Powrót: Statystyki i rankingi
+        Next:  xboxlive_stats_setup 
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

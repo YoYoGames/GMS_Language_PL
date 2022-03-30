@@ -1,0 +1,60 @@
+
+  
+  json_encode
+  WAŻNE! Ta funkcja - choć nadal ważna - została zastąpiona funkcją json_stringify(), dlatego zalecamy korzystanie z niej wyłącznie w celu zapewnienia wsparcia dla starszych funkcji.
+  JSON (JavaScript Object Notation) to lekki format wymiany danych, który jest łatwy do odczytu i zapisu zarówno dla ludzi, jak i maszyn. Jest on zbudowany na dwóch podstawowych strukturach:
+  
+    Zbiór par nazwa/wartość, nazywany DS Map w GameMaker Studio 2, ale w innych językach programowania znany również jako "słownik" lub "obiekt".
+    Uporządkowana lista wartości, zwana DS List w GameMaker Studio 2, ale w innych językach programowania można ją również nazwać "tablicą" lub "sekwencją".
+  
+  json_encode() pobiera utworzoną wcześniej mapę lub tablicę DS i koduje ją jako JSON string, którego można następnie użyć jako (na przykład) części wywołania http_post_string() lub - aby można było je przechowywać na zewnątrz - można je zapisać w pliku. Jeśli jako struktury najwyższego poziomu używasz tablicy, to może ona zawierać tylko prawidłowe wartości lub inne tablice, a nie struktury danych. Do tego celu należy użyć odpowiednich funkcji DS.
+  WAŻNE! JSON jest agnostykiem w kwestii liczb. W każdym języku programowania może występować wiele typów liczb o różnych pojemnościach i dopełnieniach, stałych lub zmiennopozycyjnych, binarnych lub dziesiętnych. Może to utrudniać wymianę danych między różnymi językami programowania. JSON oferuje natomiast tylko taką reprezentację liczb, jakiej używa człowiek: sequence cyfr. Wszystkie języki programowania wiedzą, jak posługiwać się adresem sequences, nawet jeśli nie zgadzają się co do wewnętrznej reprezentacji. Więcej informacji można znaleźć w dokumencie ECMA JSON Standard.
+  Uwaga: należy zachować ostrożność podczas zapisywania JSON do pliku ini, ponieważ specyfikacje ini mogą powodować problemy podczas używania cudzysłowów i znaków escape. Więcej informacji na ten temat można znaleźć w funkcji ini_write_string() aby uzyskać więcej informacji. Należy również pamiętać, że jeśli zakodujesz int64 do JSON, zostanie on zapisany jako int, jeśli mieści się w prawidłowym zakresie dla int32, jako double, jeśli można to zrobić bez utraty precyzji, lub (jeśli żaden z tych przypadków nie ma zastosowania) jako łańcuch z identyfikatorem "@i64@" przed nim i "$i64$" po nim. Po ponownym zdekodowaniu JSON do mapy GameMaker Studio 2 wyłapie te identyfikatory i ponownie przekonwertuje wartość na int64. Oznacza to, że jeśli JSON jest przeznaczony dla server lub innego celu niezwiązanego z programem GameMaker, wartości te nie będą odpowiednie i należy ich unikać.
+  UWAGA: Hierarchiczna funkcjonalność JSON jest dostępna dzięki specjalnym funkcjom DS map i DS list (na przykład ds_map_add_list() lub ds_list_mark_as_map()), dzięki czemu można kodować podlisty i mapy.
+   
+  Składnia:
+  json_encode(map)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        map
+        Identyfikator mapy DS
+        A DS map with the information to encode (or an array)
+      
+    
+  
+   
+  Zwroty:
+  String
+   
+  Przykład:
+  var hiscore_map, i, str;
+    hiscore_map = ds_map_create();
+    for (i = 0; i < 10; i ++;)
+    {
+        ds_map_add(hiscore_map, name[i], score[i]);
+    }
+    str = json_encode(hiscore_map);
+    get[0] = http_post_string("http://www.angusgames.com/game?game_id=" + string(global.game_id), str)
+    ds_map_destroy(hiscore_map);
+  Powyższy kod tworzy mapę DS, a następnie loops przez tablice "name" i "score", dodając każdą parę klucz-wartość do nowej mapy. Następnie mapa ta jest kodowana przy użyciu json_encode() i przechowywana jako string w zmiennej "str". Ta mapa string jest następnie wysyłana do witryny server przy użyciu adresu http_post_string(), a mapa DS jest niszczona, aby zapobiec wyciekowi pamięci, ponieważ nie jest już potrzebna.
+   
+   
+   
+  
+    
+      
+        Powrót: Kodowanie plików
+        Następny: json_decode
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

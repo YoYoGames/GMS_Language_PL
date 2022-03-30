@@ -1,0 +1,51 @@
+
+  
+  nadajnik_dźwiękowy_istnieje
+  Ta funkcja zwraca, czy emiter dźwięku istnieje (true), czy nie (false). Zwróć uwagę, że jeśli szukany indeks nie został wcześniej zainicjalizowany, funkcja ta spowoduje błąd, ponieważ szuka nieistniejących indeksów.
+   
+  Składnia:
+  audio_emitter_exists(index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Identyfikator emitera dźwięku
+        The index of the emitter to check the existence of.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if audio_emitter_exists(s_emit)
+    {
+        audio_play_sound_on(s_emit, snd_Explode, false, 1);
+    }
+    else
+    {
+        s_emit = audio_emitter_create();
+        audio_play_sound_on(s_emit, snd_Explode, false, 1);
+    }
+  Powyższy kod sprawdza, czy istnieje emiter, zaindeksowany w (uprzednio zainicjalizowanej) zmiennej "s_emit". Jeśli tak, to odtwarzany jest przez niego dźwięk, jeśli zaś nie, to jest on tworzony, a następnie odtwarzany jest dźwięk.
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery dźwięku
+        Następny: audio_emitter_position
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

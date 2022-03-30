@@ -1,0 +1,42 @@
+
+  
+  obiekt_get_name
+  Ta funkcja zwraca nazwę w postaci ciągu znaków określonego adresu object. Jest to nazwa, która została określona dla strony object w przeglądarce Asset głównego okna GameMaker Studio 2. Należy pamiętać, że jest to tylko ciąg znaków
+    i nie można go użyć do bezpośredniego odwołania do strony object - do tego potrzebny jest indeks obiektu. Można jednak użyć tej strony string, aby uzyskać indeks obiektu, używając zwróconej strony string wraz z funkcją asset_get_index().
+   
+  Składnia:
+  object_get_name(obj);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        obj
+        The index of the object to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  str = object_get_name(object_index);
+  Powyższy kod pobierze nazwę indeksu object dla instancji uruchamiającej kod i zapisze zwróconą wartość w zmiennej "str".
+   
+   
+   
+  
+    
+      
+        Powrót: Obiekty
+        Następny: object_get_mask
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

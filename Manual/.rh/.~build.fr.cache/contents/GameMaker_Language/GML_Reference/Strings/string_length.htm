@@ -1,0 +1,44 @@
+
+  
+  string_length
+  Ta funkcja zwraca liczbę znaków składających się na dany adres string. Może to być przydatne, np. przy ustalaniu, kiedy ograniczyć długość znaków w niestandardowym wpisie tekstowym (np. ograniczyć imię gracza do 10 znaków). Pamiętaj, że ta wartość różni się od string_width() tym, że mierzy ona liczbę znaków w string, a nie ich szerokość na ekranie w pikselach.
+   
+  Składnia:
+  string_length(string);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        string
+        The string to measure the number of characters of.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (string_length(name) > 10)
+    {
+        name = string_copy(name, 1, 10);
+    }
+  Funkcja ta sprawdzi, czy adres string nazwy jest większy niż dziesięć znaków, a jeśli tak, to skopiuje i wykorzysta tylko pierwsze dziesięć znaków.
+   
+   
+   
+  
+    
+      
+        Powrót: Struny
+        Następny: string_letters
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

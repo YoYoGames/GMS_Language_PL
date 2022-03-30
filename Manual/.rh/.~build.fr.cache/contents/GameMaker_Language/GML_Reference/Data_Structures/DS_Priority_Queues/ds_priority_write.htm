@@ -1,0 +1,47 @@
+
+  
+  ds_priorytet_write
+  Funkcja zwraca adres string, który można zapisać lub przenieść do innej struktury danych za pomocą funkcji ds_priority_read() funkcji.
+  UWAGA: Zwracany adres string nie jest adresem czytelnym dla człowieka string, ale raczej zrzutem zawartości struktury danych
+   
+  Składnia:
+  ds_priority_write(id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the data structure to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var str;
+    ini_open("save.ini");
+    str = ds_priority_write(p_queue);
+    ini_write_string("P_Queues", "0", str);
+    ds_priority_clear(p_queue);
+    ini_close();
+  Powyższy kod otwiera plik ini, a następnie zapisuje w nim stronę string zawierającą informacje zapisane w priorytecie DS queue indeksowanym w zmiennej "p_queue". Następnie priorytet queue jest kasowany, a plik ini zamykany.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolejki priorytetowe DS
+        Następny: ds_priority_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

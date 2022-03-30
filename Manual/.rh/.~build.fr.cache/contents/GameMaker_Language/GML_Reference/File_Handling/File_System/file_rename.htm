@@ -1,0 +1,49 @@
+
+  
+  plik_nazwa
+  Ta funkcja zmieni nazwę podanego pliku na nazwę o podanej nazwie. Funkcja zwróci true, jeżeli nazwa pliku została zmieniona pomyślnie, lub false w innych okolicznościach.
+  OSTRZEŻENIE! Ta funkcja może nie działać zgodnie z oczekiwaniami użytkownika, ponieważ GameMaker Studio 2 jest sandboxed! Więcej informacji na ten temat można znaleźć w rozdziale System plików.
+   
+  Składnia:
+  file_rename(oldname, newname);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        oldname
+        The name of the file to change.
+     
+      
+        newname
+        The new name to give the file.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if file_exists("level1.txt")
+    {
+        file_rename("level1.txt", "level.txt");
+    }
+  Spowoduje to sprawdzenie, czy dany plik istnieje, a jeśli tak, to zostanie mu zmieniona nazwa.
+   
+   
+   
+  
+    
+      
+        Powrót: System plików
+        Następny: file_copy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

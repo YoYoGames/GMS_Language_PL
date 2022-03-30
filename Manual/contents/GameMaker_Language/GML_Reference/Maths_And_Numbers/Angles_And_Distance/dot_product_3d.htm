@@ -24,7 +24,7 @@
     która jest często używana do oznaczania tej operacji (alternatywna nazwa &quot;iloczyn skalarny&quot; podkreśla raczej skalarny niż wektorowy charakter wyniku).</p>
   <p>Rzeczywistą formułę matematyczną można zapisać w następujący sposób:</p>
   <p><img alt="Dot Product formula" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image.png"/></p>
-  <p>W 2D iloczynem punktowym wektorów <span class="inline">a[x1,y1]</span> i <span class="inline">b[x2,y2]</span> jest <span class="inline">x1x2 + y1y2</span>, więc w 3D iloczynem punktowym wektorów <span class="inline">a[x1,y1,z1]</span> i <span class="inline">b[x1,y1,z1]</span> jest <span class="inline">x1x2 + y1y2 + z1z2</span>. Zatem dot_product_3d w <span class="notranslate">GameMaker Studio 2</span> oblicza się jako:</p>
+  <p>W 2D iloczynem punktowym wektorów <span class="inline">a[x1,y1]</span> i <span class="inline">b[x2,y2]</span> jest <span class="inline">x1x2 + y1y2</span>, więc w 3D iloczynem punktowym wektorów <span class="inline">a[x1,y1,z1]</span> i <span class="inline">b[x1,y1,z1]</span> jest <span class="inline">x1x2 + y1y2 + z1z2</span>. Zatem w programie <span data-keyref="GameMaker Name">GameMaker</span> iloczyn punktowy3d oblicza się w następujący sposób:</p>
   <p class="code">a · b = (x1*x2) + (y1*y2) + (z1*z2);</p>
   <p>Ciekawostką związaną z iloczynem kropkowym jest jego związek z kątem utworzonym przez wektory wejściowe, który można wyrazić jako:</p>
   <p class="code">a · b = (length of a) * (length of b) * cos(angle)</p>
@@ -40,7 +40,7 @@
   <p>Co to oznacza dla tych, którzy tworzą gry? Cóż, tę matematyczną zależność można wykorzystać w wielu okolicznościach, ale najlepszym sposobem, aby się o tym przekonać, jest zbudowanie rzeczywistego scenariusza i sprawdzenie, co się dzieje. Jednym z najprostszych
     sposobów jest wygenerowanie prostego sprawdzania &quot;wysokości&quot; wroga w grze platformowej, tak aby wróg &quot;widział&quot; gracza, jeśli znajduje się on powyżej płaszczyzny utworzonej przez wektor <i>normalny</i> wroga i podłogę 3d.</p>
   <p><img>Zasadniczo pobieramy wektor normalny od wroga prostopadły do podłogi, a następnie
-    wektor gracza do wroga. Następnie otrzymujemy iloczyn kropkowy tych wektorów i jeśli wynik jest dodatni, gracz znajduje się &quot;powyżej&quot; płaszczyzny podłogi przeciwnika, a jeśli jest ujemny, to jest poniżej. Właściwy kod do wykonania tego działania
+    wektor gracza do wroga. Następnie otrzymujemy iloczyn kropkowy tych wektorów i jeśli wynik jest dodatni, gracz znajduje się &quot;nad&quot; płaszczyzną podłogi przeciwnika, a jeśli jest ujemny, to jest pod nią. Właściwy kod do wykonania tego działania
     znajduje się w poniższym przykładzie.</p>
   <p> </p>
   <h4><b>Składnia:</b></h4>

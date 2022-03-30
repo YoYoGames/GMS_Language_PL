@@ -1,0 +1,38 @@
+
+  
+  parametr_string
+  Parametry wiersza poleceń to dodatkowe polecenia, które można dodać do programu exe, aby zmienić sposób jego działania. Za pomocą tej funkcji można uzyskać wybrany parametr wiersza poleceń w postaci string. Liczbę parametrów bieżącej gry można sprawdzić za pomocą funkcji parameter_count()gdzie pierwszy parametr ma indeks 1, a ostatni indeks zwracany przez funkcję (wartość 0 jest szczególna, ponieważ jest to nazwa pliku wykonywalnego gry, łącznie z path). Należy zauważyć, że funkcja ta będzie działać na platformie HTML5, pobierając parametry adresu url.
+   
+  Składnia:
+  parameter_string(n);
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var p_num;
+    p_num = parameter_count();
+    if p_num > 0
+    {
+        var i;
+        for (i = 0; i < p_num; i += 1)
+        {
+            p_string[i] = parameter_string(i + 1);
+        }
+    }
+  Powyższy kod pobierze liczbę parametrów wiersza poleceń, a jeśli jest ich 1 lub więcej, przejrzy je na stronie loop i zapisze w tablicy jako strings.
+   
+   
+   
+  
+    
+      
+        Powrót: System operacyjny i kompilator
+        Następny: environment_get_variable
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

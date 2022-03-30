@@ -1,0 +1,79 @@
+
+
+
+
+
+  
+  kropka_produktu
+  Iloczyn punktowy to wartość wyrażająca relację kątową między dwoma wektorami, którą uzyskuje się przez pomnożenie dwóch wektorów, a następnie dodanie wyników. Nazwa "iloczyn punktowy" pochodzi od wyśrodkowanej kropki "-"
+    która jest często używana do oznaczania tej operacji (alternatywna nazwa "iloczyn skalarny" podkreśla raczej skalarny niż wektorowy charakter wyniku).
+  Rzeczywistą formułę matematyczną można zapisać w następujący sposób:
+  
+  Zatem w przypadku 2D iloczynem punktowym wektorów a[x1,y1] i b[x2,2] jest x1x2 + y1y2, co oznacza, że iloczyn punktowy w GameMaker Studio 2 jest obliczany jako:
+  a · b = (x1*x2)+(y1*y2);
+  Ciekawostką związaną z iloczynem kropkowym jest jego związek z kątem utworzonym przez wektory wejściowe, który można wyrazić jako:
+  a · b = (length of a) * (length of b) * cos(angle)
+  Oznacza to, że iloczyn punktowy dwóch wektorów będzie równy cosinusowi kąta między tymi wektorami, pomnożonemu przez długości każdego z nich. Poniżej znajduje się ilustracja:
+  
+  UWAGA: Więcej informacji na temat wektorów można znaleźć tutaj.
+  Jest kilka rzeczy, które możemy teraz stwierdzić na podstawie dwóch dowolnych wektorów w odniesieniu do wyniku ich iloczynu punktowego:
+  
+    Jeśli a i b są prostopadłe do siebie (pod kątem 90 stopni), to iloczyn kropkowy będzie równy zero, ponieważ cos(ang) będzie równy zero.
+    Jeśli kąty między a i b są mniejsze niż 90 stopni, to iloczyn kropkowy będzie dodatni (większy od zera), ponieważ cos(ang) będzie dodatni.
+    Jeśli kąty między a i b są większe niż 90 stopni, to iloczyn punktowy będzie ujemny (mniejszy od zera), ponieważ cos(ang) będzie ujemny.
+  
+  Co to oznacza dla tych, którzy tworzą gry? Cóż, tę matematyczną zależność można wykorzystać w wielu okolicznościach, ale najlepszym sposobem, aby się o tym przekonać, jest zbudowanie rzeczywistego scenariusza i sprawdzenie, co się dzieje. Jednym z najprostszych
+    sposobów jest wygenerowanie prostego sprawdzania "linii widzenia" dla wroga w grze platformowej, tak aby wróg "widział" gracza, jeśli znajdzie się on w odległości 90° po obu stronach swojego wektora normalnego.
+  Zasadniczo musimy uzyskać wektor normalny od wroga (tj. składający się z kierunku i odległości widzenia)
+    a następnie musimy uzyskać wektor gracza do wroga. Następnie otrzymujemy iloczyn kropkowy tych wektorów i jeśli wynik jest dodatni, to gracz został zauważony, a jeśli ujemny, to nie. Właściwy kod do wykonania tego zadania znajduje się
+    w poniższym przykładzie.
+   
+  Składnia:
+  dot_product(x1, y1, x2, y2)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x1
+        The x coordinate of the first vector.
+     
+      
+        y1
+        The y coordinate of the first vector.
+     
+      
+        x2
+        The x coordinate of the second vector.
+     
+      
+        y2
+        The y coordinate of the second vector.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var x1, y1, x2, y2; x1 = lengthdir_x(1, image_angle); y1 = lengthdir_y(1, image_angle); x2 = o_Player.x - x; y2 = o_Player.y - y; if dot_product(x1, y1, x2, y2) > 0 seen=true else seen=false;
+  Powyższy kod tworzy wektor na podstawie kąta obrazu instancji, a następnie pobiera do siebie wektor gracza object "o_Player". Na koniec oblicza iloczyn punktowy tych dwóch wektorów i jeśli jest on większy od 0, ustawia zmienną
+    "seen" na wartość true, a jeśli jest równy lub mniejszy od 0, ustawia zmienną "false" na wartość false.
+   
+   
+   
+  
+    
+      
+        Powrót: Kąty i odległości
+        Następny: dot_product_3d
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

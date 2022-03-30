@@ -1,0 +1,47 @@
+
+  
+  ds_queue_dequeue
+  Ta funkcja usunie wartość head z DS queue, usuwając ją z queue i zwracając wartość, która ma być przechowywana w zmiennej. Jeśli adres queue jest pusty, funkcja zwróci stałą undefined, w przeciwnym razie zwróci wartość zawartą w adresie queue.
+   
+  Składnia:
+  ds_queue_dequeue(id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the queue to dequeue from.
+     
+    
+  
+   
+   
+  Zwroty:
+  Variable (Data type value stored in the queue) or undefined
+   
+  Przykład:
+  if !ds_queue_empty(move_queue)
+    {
+        var xx = ds_queue_dequeue(move_queue);
+        var yy = ds_queue_dequeue(move_queue);
+        move_towards_point(xx, yy, 4);
+    }
+  Powyższy kod sprawdza kolejkę DS zaindeksowaną w zmiennej "move_queue", czy jest pusta, a jeśli nie jest, to odlicza dwie wartości z nagłówka strony queue i używa ich do wyznaczenia kierunku ruchu.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolejki DS.
+        Następny: ds_queue_enqueue
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

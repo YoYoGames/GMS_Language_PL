@@ -1,0 +1,51 @@
+
+  
+  powierzchnia_istnieje
+  Funkcja ta jest niezbędna podczas pracy z powierzchniami ze względu na ich zmienną naturę. Powierzchnie są zawsze przechowywane w pamięci texture, co oznacza, że mogą zostać zniszczone z chwili na chwilę (na przykład po uruchomieniu wygaszacza ekranu w systemie Windows lub po zminimalizowaniu na urządzeniu Android ), dlatego zawsze należy sprawdzić, czy powierzchnia istnieje, zanim cokolwiek się z nią zrobi (w tym narysuje na ekranie). Poniższy przykładowy kod pokazuje typowe użycie tego polecenia w zdarzeniu draw instancji w celu sprawdzenia, czy istnieje powierzchnia, i ponownego jej utworzenia, jeśli została usunięta (należy pamiętać, że powierzchnia została pierwotnie utworzona w zdarzeniu create na stronie object).
+   
+  Składnia:
+  surface_exists(surface_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        surface_id
+        The ID of the surface to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if !surface_exists(surf)
+    {
+        surf = surface_create(1024, 1024);
+    }
+    else
+    {
+        if view_current = 1
+        {
+            draw_surface(surf,0,0);
+        }
+    }
+  Powyższy kod sprawdzi, czy istnieje powierzchnia indeksowana w zmiennej "surf", a jeśli nie, utworzy ją ponownie. Jeśli istnieje, to sprawdza, który widok jest aktualnie rysowany i jeśli jest to widok[1], to rysuje powierzchnię.
+   
+   
+   
+  
+    
+      
+        Powrót: Powierzchnie
+        Następny: surface_create
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,74 @@
+
+  
+  draw_ellipse_colour
+  Za pomocą tej funkcji można narysować kontur elipsy lub elipsę z wypełnieniem, definiując prostokątny obszar, do którego następnie zostanie dopasowana elipsa. Jeśli elipsa jest wypełniona, można zdefiniować wewnętrzne i zewnętrzne kolory wypełnienia. Jeśli kolory te nie będą takie same, uzyskasz efekt gradientu (ustawienia kolorów będą miały pierwszeństwo przed kolorem podstawowym ustawionym za pomocą funkcji draw_set_colour()). Dokładność rysunku można określić za pomocą funkcji draw_set_circle_precision().
+  UWAGA: Jeśli chcesz narysować kształt za pomocą strony shader, musisz wiedzieć, że większość stron shaders oczekuje następujących danych wejściowych: vertex, texture, Kolor. Jednak w przypadku korzystania z tej funkcji przekazywane są tylko dane vertex i kolor, a zatem shader może niczego nie narysować (lub narysować coś, ale niepoprawnie). Jeśli konieczne jest rysowanie kształtów w ten sposób, należy dostosować stronę shader do tego celu.
+   
+  Składnia:
+  draw_ellipse_colour(x1, y1, x2, y2, col1, col2, outline);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x1
+        Real
+        The x coordinate of the left of the ellipse.
+      
+      
+        y1
+        Real
+        The y coordinate of the top of the ellipse.
+      
+      
+        x2
+        Real
+        The x coordinate of the right of the ellipse.
+      
+      
+        y2
+        Real
+        The y coordinate of the bottom of the ellipse.
+      
+      
+        col1
+        Kolor
+        The colour of the center.
+      
+      
+        col2
+        Kolor
+        The colour of the edge.
+      
+      
+        outline
+        Boolean
+        Whether the ellipse is an outline (true) or filled in (false).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_ellipse_colour(50, 50, 200, 100, c_black, c_white, false);
+  Spowoduje to narysowanie wypełnionej, poziomo rozciągniętej elipsy o czarnym środku i białej krawędzi.
+   
+   
+   
+  
+    
+      
+        Powrót: Formularze podstawowe
+        Następny: draw_line
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

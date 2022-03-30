@@ -1,0 +1,62 @@
+
+  
+  audio_channel_num
+  Za pomocą tej funkcji można określić, ile kanałów audio jest dostępnych do odtwarzania dźwięku w witrynie GameMaker Studio 2. Jeśli liczba ta przekroczy ustaloną wartość, dźwięki o niższym priorytecie zostaną zatrzymane, aby zwolnić kanał dla dźwięków o wyższym priorytecie. Możesz użyć tej funkcji do zoptymalizowania gry pod kątem urządzeń, ponieważ im mniejsza liczba kanałów audio, tym lepsza wydajność, ale pamiętaj, że może to również spowodować zauważalne odcięcie niektórych dźwięków, jeśli wiele z nich jest odtwarzanych jednocześnie.
+   
+  Składnia:
+  audio_channel_num(num);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        num
+        Number of available audio channels (default is 128).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  switch (os_browser)
+    {
+        case browser_not_a_browser:
+            switch (os_type)
+            {
+                case os_windows:
+                case os_macos:
+                    audio_channel_num(200);
+                break;
+    
+                default:
+                    audio_channel_num(64);
+                break;
+            }
+        break;
+    
+        default:
+            audio_channel_num(16);
+        break;
+    }
+  
+  Powyższy kod sprawdza platformę, na której działa gra, i zmienia liczbę dostępnych kanałów dźwiękowych w celu zwiększenia wydajności.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_debug
+        
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

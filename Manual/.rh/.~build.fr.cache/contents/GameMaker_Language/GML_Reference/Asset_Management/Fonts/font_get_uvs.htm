@@ -1,0 +1,48 @@
+
+  
+  font_get_uvs
+  Ta funkcja zwraca tablicę ze współrzędnymi UV dla strony font texture na stronie texture, wypełniając tablicę następującymi wartościami:
+  
+    [0] = lewa
+    [1] = góra
+    [2] = prawo
+    [3] = dół
+  
+  Tę wartość można następnie wykorzystać w innych funkcjach rysowania, zwłaszcza w rysowaniu ogólnym przy użyciu prymitywów, a także w funkcjach Shadera.
+   
+  Składnia:
+  font_get_uvs(font);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        font
+        The index of the font to use.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var tex = font_get_uvs(fnt_Main); tex_left = tex[0]; tex_top = tex[1]; tex_right = tex[2]; tex_left = tex[3];
+  Powyższy kod zapisze współrzędne UV dla podanego tła w lokalnej tablicy, a następnie przypisze wartości do zmiennych instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Czcionki
+        Next: font_get_info
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

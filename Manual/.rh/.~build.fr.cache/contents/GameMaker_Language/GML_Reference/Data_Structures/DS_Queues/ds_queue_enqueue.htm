@@ -1,0 +1,51 @@
+
+  
+  ds_queue_enqueue
+  Ta funkcja dodaje wartość (rzeczywistą lub string) na końcu kolejki DS. Funkcja może przyjąć 14 kolejnych opcjonalnych argumentów (co daje w sumie 15 możliwych dodawań), umożliwiając dodanie wielu wartości
+    kolejno do ogona kolejki queue w jednym wywołaniu.
+   
+  Składnia:
+  ds_queue_enqueue(id, val [, val2, ... val15]);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the queue to add to.
+     
+      
+        val
+        The value to add to the queue.
+     
+      
+        [val2, ... val15]
+        Optional values to be added to the queue.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  move_queue = ds_queue_create(); ds_queue_enqueue(move_queue, x + 200); ds_queue_enqueue(move_queue, y); ds_queue_enqueue(move_queue, x + 200); ds_queue_enqueue(move_queue, y + 200); ds_queue_enqueue(move_queue, x); ds_queue_enqueue(move_queue,
+    y + 200); ds_queue_enqueue(move_queue, x); ds_queue_enqueue(move_queue, y);
+  Powyższy kod tworzy nową kolejkę DS i zapisuje jej indeks w zmiennej "move_queue". Następnie przesuwa pewną liczbę wartości na stronę queue w celu wykorzystania w przyszłości.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolejki DS.
+        Następny: ds_queue_head
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

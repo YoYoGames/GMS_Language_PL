@@ -1,0 +1,46 @@
+
+  
+  audio_emitter_get_gain
+  Ta funkcja zwraca bieżące wzmocnienie (głośność) ustawione dla danego emitera dźwięku, zwykle w zakresie od 0 do 1, gdzie 0 oznacza ciszę, a 1 pełną głośność. Należy pamiętać, że na niektórych platformach można mieć wzmocnienie większe niż 1, chociaż wartość 1 jest uważana za "pełną głośność", a większa może spowodować przycięcie dźwięku.
+   
+  Składnia:
+  audio_emitter_get_gain(emitter);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        emitter
+        Identyfikator emitera dźwięku
+        The index of the emitter to use.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if audio_emitter_get_gain(emitter_player) < 1
+    {
+        audio_emitter_gain(emitter_player, 1);
+    }
+  Powyższy kod sprawdza aktualne wzmocnienie danego emitera i jeśli jest ono mniejsze od 1, ustawia je na 1.
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery dźwięku
+        Następny: audio_emitter_get_pitch
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

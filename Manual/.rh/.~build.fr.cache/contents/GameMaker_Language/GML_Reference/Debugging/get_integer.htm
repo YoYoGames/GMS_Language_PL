@@ -1,0 +1,49 @@
+
+  
+  get_integer
+  Funkcja tworzy wyskakujące okienko z niestandardowym komunikatem oraz przyciskiem "Ok" i prosi użytkownika o wprowadzenie wartości całkowitej. Funkcja zwróci wpisaną liczbę całkowitą lub wartość domyślną, jeśli nic nie zostało wprowadzone.
+  UWAGA Ta funkcja jest przeznaczona do użytku w debugowaniu tylko na obiektach typu Desktop, ale jest wycofywana z użycia na wszystkich innych obiektach.
+   
+  Składnia:
+  get_integer(str, def);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        str
+        String
+        The string to show in the pop-up message.
+      
+      
+        def
+        Real
+        The default value in the text box.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  global.level = get_integer("Level to test?", 1);
+  Powyższy kod wyświetli komunikat z prośbą o wybranie poziomu do testowania. Wartość zwracana zostanie zapisana w zmiennej globalnej "global.level".
+   
+   
+   
+  
+    
+      
+        Powrót: Debugowanie
+        Następny: get_string
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

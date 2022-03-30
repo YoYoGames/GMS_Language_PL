@@ -1,0 +1,48 @@
+
+  
+  pozycja_zniszczenia
+  Funkcja ta po prostu niszczy wszystkie instancje, które znajdują się w kolizji z określoną pozycją. Kolizje są oparte na masce instancji i jeśli jakaś część maski pokrywa się z punktem docelowym, to funkcja zniszczy tę instancję. Zniszczone w ten sposób instancje będą wyzwalać swoje zdarzenia Destroy i Clean Up.
+   
+  Składnia:
+  position_destroy(x, y);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x
+        The x coordinate of where to destroy colliding instances.
+     
+      
+        y
+        The y coordinate of where to destroy colliding instances.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if mouse_check_button_pressed(mb_left)
+    {
+        position_destroy(mouse_x, mouse_y);
+    }
+  Spowoduje to zniszczenie wszystkich instancji, które kolidują z położeniem kursora myszy po naciśnięciu lewego przycisku myszy.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolizje
+        Następny: collision_circle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,49 @@
+
+  
+  ruch_losowy
+  Za pomocą tej funkcji możesz ustawić instancję w dowolnym miejscu na stronie room, ale wyrównaną do "niewidzialnej" siatki. Zatem wartość 32 dla hsnap i vsnap ustawi instancję w losowej pozycji, która jest wyrównana do siatki 32x32 kwadraty. możesz ustawić te wartości na 1, aby uzyskać pozycję w dowolnym miejscu w room.
+  UWAGA: Ta funkcja będzie się zatrzymywać na tych samych pozycjach za każdym razem, gdy gra jest uruchamiana od nowa, ponieważ GameMaker Studio 2 generuje za każdym razem to samo początkowe losowe ziarno, aby ułatwić pracę z kodem debugging. Aby uniknąć tego zachowania, użyj randomise() na początku gry. Dotyczy to tylko testowania gry i strony debugging, ponieważ końcowy pakiet wykonywalny nie będzie wykazywał tego zachowania i będzie losowy podczas każdej rozgrywki.
+   
+  Składnia:
+  move_random(hsnap, vsnap);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        hsnap
+        The horizontal snapping (the size in pixels between 'cells').
+     
+      
+        vsnap
+        The vertical snapping (the size in pixels between 'cells').
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if keyboard_check(vk_space)
+    {
+        move_random(1, 1);
+    }
+  Po naciśnięciu klawisza spacji instancja zostanie przeniesiona na losowe miejsce w dowolnym miejscu w witrynie room.
+   
+   
+   
+  
+    
+      
+        Powrót: Ruch
+        Następny: move_snap
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

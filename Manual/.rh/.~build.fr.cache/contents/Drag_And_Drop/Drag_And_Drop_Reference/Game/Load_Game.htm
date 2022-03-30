@@ -1,0 +1,40 @@
+
+  
+   Załaduj grę
+  Ta akcja wczytuje grę, która została wcześniej zapisana za pomocą akcji Zapisz grę. Podajesz nazwę pliku do wczytania (jako string, łącznie z extension), a gra zostanie wczytana i będzie kontynuowana
+    od zapisanego punktu. Należy pamiętać, że nie jest to uniwersalny system zapisywania i wczytywania, a próba wczytania gry zapisanej w poprzednim uruchomieniu projektu może spowodować błędy (zwłaszcza jeśli używałeś struktur danych lub cząsteczek). Dlatego powinieneś wczytywać tylko gry, które zostały zapisane w trakcie rozgrywki (np. punkty kontrolne). Należy również pamiętać, że plik nie zostanie wczytany do końca bieżącego zdarzenia lub do momentu zakończenia script, więc wszelkie działania po wywołaniu akcji wczytywania będą nadal wykonywane. Bardziej szczegółowe informacje na temat ładowania zapisanych danych gry można znaleźć w sekcji Akcje plików.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Timeline
+        Zasób timeline, który ma być przypisany do instancji
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdzi zmienną globalną i jeśli będzie ona mniejsza lub równa
+    0, zostanie wczytana poprzednio zapisana gra.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje gry
+        Następny: Uruchom ponownie grę
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

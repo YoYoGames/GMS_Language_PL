@@ -1,0 +1,47 @@
+
+  
+  jest_rzeczywisty
+  Funkcja ta zwraca, czy dana zmienna jest liczbą rzeczywistą (pojedynczą, podwójną lub całkowitą), czy nie. W niektórych przypadkach chcemy sprawdzić, czy dana zmienna jest liczbą rzeczywistą, i właśnie wtedy używamy tej funkcji. Nie zwraca ona liczby rzeczywistej, lecz raczej true lub false, więc wartość np. "ryba" zwróciłaby false, natomiast wartość 200 zwróciłaby true.
+  UWAGA: Ta funkcja zwróci false dla wszystkich enum wartości, ponieważ są one przechowywane jako int64s. Właściwą funkcją do sprawdzenia tego typu danych jest is_int64().
+   
+  Składnia:
+  is_real(n);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        n
+        Zmienna
+        The argument to check.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if is_real(val)
+    {
+        score += val;
+    }
+  Powyższy kod sprawdza, czy zmienna "val" jest liczbą rzeczywistą, a jeśli tak, to dodaje ją do wyniku.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: is_numeric
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

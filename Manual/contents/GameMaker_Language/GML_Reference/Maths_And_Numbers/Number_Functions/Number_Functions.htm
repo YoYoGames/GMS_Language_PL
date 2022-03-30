@@ -15,7 +15,7 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Funkcje liczbowe</h1>
-  <p>Liczby rzeczywiste w serwisie <span class="notranslate">GameMaker Studio 2</span> są liczbami <i>zmiennoprzecinkowymi o podwójnej precyzji</i> - to znaczy, że mają w sobie kropkę dziesiętną bez ustalonej liczby cyfr przed lub po kropce - lub liczbami <i>całkowitymi</i> - to znaczy, że są to liczby całkowite bez wartości dziesiętnej. Na przykład 2 jest liczbą całkowitą, ale 2,01 jest liczbą rzeczywistą zmiennoprzecinkową.</p>
+  <p>Liczby rzeczywiste w programie <span data-keyref="GameMaker Name">GameMaker</span> są liczbami <i>zmiennoprzecinkowymi o podwójnej precyzji</i> - to znaczy, że mają w sobie kropkę dziesiętną i nie mają ustalonej liczby cyfr przed ani po kropce - lub liczbami <i>całkowitymi</i> - to znaczy, że są to liczby całkowite bez wartości dziesiętnej. Na przykład 2 jest liczbą całkowitą, ale 2,01 jest liczbą rzeczywistą zmiennoprzecinkową.</p>
   <p class="note"><b>UWAGA</b>: W celu <b>HTML5</b> wszystkie liczby rzeczywiste są podwojone.</p>
   <p>To rozróżnienie między liczbami całkowitymi a zmiennoprzecinkowymi jest bardzo ważne w przypadku programowania międzyplatformowego, ponieważ precyzja obliczeń wykonywanych na komputerze <span class="notranslate">Windows</span> <i>nie</i> jest taka sama jak precyzja tych samych obliczeń wykonywanych na urządzeniach przenośnych. Oznacza to, że należy zwracać szczególną uwagę podczas wykonywania porównań, na przykład:</p>
   <p class="code">if (image_index == 1)<br />
@@ -30,14 +30,14 @@
   <p>Warto również zauważyć, że podczas korzystania z docelowych platform <b>kompilatora YoYo</b> wszystkie wyrażenia i funkcje są <i>obliczane od lewej do prawej</i>, podczas gdy na wszystkich innych platformach docelowych są one obliczane <i>od prawej do lewej</i>, co oznacza, że np. to da różne wyniki w zależności od platformy:</p>
   <p class="code">val = max(num, ++num, num++);</p>
   <p class="note"><strong>UWAGA</strong>: Więcej informacji na ten temat znajduje się w rozdziale <a href="../../../GML_Overview/Evaluation_Order.htm">Zamówienie na ocenę</a>.</p>
-  <p>Można również użyć specjalnej funkcji dostępnej w witrynie <span class="notranslate">GameMaker Studio 2</span> do ustawienia wartości <b>epsilon</b> dla matematyki zmiennoprzecinkowej. Gdy liczba rzeczywista jest zaokrąglana do najbliższej liczby zmiennoprzecinkowej, epsilon (znany również jako &quot;epsilon maszynowy&quot;) tworzy górną granicę błędu względnego. Wartość epsilon można uzyskać i ustawić za pomocą następujących funkcji:</p>
+  <p>Możesz także użyć specjalnej funkcji dostępnej w programie <span data-keyref="GameMaker Name">GameMaker</span>, aby ustawić wartość <b>epsilon</b> dla matematyki zmiennoprzecinkowej. Gdy liczba rzeczywista jest zaokrąglana do najbliższej liczby zmiennoprzecinkowej, epsilon (znany także jako &quot;epsilon maszynowy&quot;) tworzy górną granicę błędu względnego. Wartość epsilon można uzyskać i ustawić za pomocą następujących funkcji:</p>
   <ul class="colour">
     <li><a href="math_set_epsilon.htm"><span class="notranslate">math_set_epsilon</span></a></li>
     <li><a href="math_get_epsilon.htm"><span class="notranslate">math_get_epsilon</span></a></li>
   </ul>
   <p> </p>
   <p>Wszystkie te funkcje zajmują się używaniem liczb i wartości losowych:</p>
-  <p class="note"><b><span class="note">UWAGA</span> </b>Kiedy używasz funkcji losowych, <span class="notranslate">GameMaker Studio 2</span> zachowuje to samo losowe ziarno przy każdym uruchomieniu gry. To znacznie ułatwia <span class="notranslate">debugging</span>, ponieważ masz gwarancję, że funkcje losowe będą zawsze zwracać tę samą wartość. Jeśli jednak nie chcesz, aby tak się stało, musisz najpierw ustawić nowe ziarno losowe na samym początku gry, używając <span style="font-size:1px;"><a href="randomise.htm"><span class="inline">randomise()</span></a></span> lub . <span style="font-size:1px;"><a href="random_set_seed.htm"><span class="inline">random_set_seed()</span></a></span>.</p>
+  <p class="note"><b><span class="note">UWAGA</span> </b>Kiedy używasz funkcji losowych, <span data-keyref="GameMaker Name">GameMaker</span> zachowuje to samo losowe ziarno za każdym razem, kiedy rozpoczynasz grę. To znacznie ułatwia <span class="notranslate">debugging</span>, ponieważ masz gwarancję, że funkcje losowe będą zawsze zwracać tę samą wartość. Jeśli jednak nie chcesz, aby tak się stało, musisz najpierw ustawić nowe losowe ziarno na samym początku gry, używając <span style="font-size:1px;"><a href="randomise.htm"><span class="inline">randomise()</span></a></span> lub . <span style="font-size:1px;"><a href="random_set_seed.htm"><span class="inline">random_set_seed()</span></a></span>.</p>
   <ul class="colour">
     <li><a href="choose.htm"><span class="notranslate">choose</span></a></li>
     <li><a href="random.htm"><span class="notranslate">random</span></a></li>

@@ -1,0 +1,32 @@
+
+  
+  physics_particle_get_max_count
+  Za pomocą tej funkcji można dowiedzieć się, jaka jest bieżąca wartość limitu cząstek dozwolonych w symulacji fizyki (wartość tę można ustawić za pomocą polecenia physics_particle_set_max_count()).
+   
+  Składnia:
+  physics_particle_get_max_count()
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (physics_particle_count() < physics_particle_get_max_count())
+    {
+        physics_particle_create(0, x, y, 0, 0, c_white, 1, 1)
+    }
+  Powyższy kod sprawdzi, czy na stronie room znajduje się mniej niż maksymalna dozwolona liczba cząstek, a jeśli tak, to utworzy jeszcze jedną.
+   
+   
+   
+  
+    
+      
+        Powrót: Miękkie cząstki ciała
+        Następny: physics_particle_get_radius
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

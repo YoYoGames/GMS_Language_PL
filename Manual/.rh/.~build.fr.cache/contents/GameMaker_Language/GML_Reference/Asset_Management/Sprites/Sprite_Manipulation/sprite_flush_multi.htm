@@ -1,0 +1,44 @@
+
+  
+  sprite_flush_multi
+  Za pomocą tej funkcji można usunąć z pamięci texture dowolną liczbę stron sprites dla podanego adresu texture. Podajesz indeksy sprite jako tablicę, a strony texture, do których są przypisane, zostaną usunięte z pamięci texture. Zwróć uwagę, że jeśli jedna z
+    ze stron texture jest używana w innym miejscu w room (przez inną instancję sprite lub tło itp...) może to spowodować niewielki spadek wydajności, ponieważ strona jest natychmiast ponownie ładowana do pamięci, dlatego należy zachować ostrożność podczas używania tej funkcji.
+    Zwróć uwagę, że funkcja zwróci -1, jeśli spłukiwanie nie jest obsługiwane dla wybranych zasobów, lub zwróci 0, jeśli wszystko działa poprawnie.
+   
+  Składnia:
+  sprite_flush_multi(array);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        array
+        Array with the sprite indices to flush
+     
+    
+  
+   
+  Zwroty:
+   (-1 or 0)
+   
+  Przykład:
+  spr_a[0] = spr_Player_Aura1; spr_a[1] = spr_Player_Aura2; spr_a[2] = spr_Player_Aura3; spr_a[3] = spr_Player_Aura4; sprite_flush_multi(spr_a);
+  
+  Powyższy kod tworzy tablicę, w której każdy element zawiera indeks sprite. Tablica ta jest następnie używana do usuwania z pamięci adresu sprite textures.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja sprite'ami
+        Następny: sprite_prefetch
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

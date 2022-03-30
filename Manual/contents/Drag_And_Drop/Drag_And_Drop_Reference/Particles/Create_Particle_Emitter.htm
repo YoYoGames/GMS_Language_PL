@@ -9,7 +9,7 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains the Create Particle Emitter action" />
-  <meta name="rh-index-keywords" content="DnD™ Action - Create Particle Emitter" />
+  <meta name="rh-index-keywords" content="GML Visual Action - Create Particle Emitter" />
   <meta name="search-keywords" content="Create Particle Emitter" />
 </head>
 <body>
@@ -19,10 +19,10 @@
     unikatową wartość ID, która będzie używana w dalszych akcjach. Możesz wybrać stronę <span class="notranslate">flag</span> jako tymczasową zmienną lokalną, ale będzie to oznaczać, że zostanie ona usunięta po zakończeniu akcji <span class="notranslate">script</span> lub zdarzenia, co oznacza, że emiter będzie nadal istniał, ale nie będzie
     (ogólnie rzecz biorąc, emiterów nie trzeba przechowywać w tymczasowej zmiennej lokalnej, ale w niektórych przypadkach, takich jak przyciąganie cząsteczek do powierzchni, może to być konieczne).</p>
   <p class="note"><b>WAŻNE!</b> Jeśli Twój system cząsteczek jest <b>trwały</b>, musisz albo zniszczyć wszystkie emitery na końcu każdej strony <span class="notranslate">room</span>, używając polecenia <a href="Destroy_Particle_Emitter.htm">Destroy Particle Emitter (Zniszcz emiter cząsteczek</a> ), i utworzyć je ponownie w następnej <span class="notranslate">room</span> w zależności od potrzeb,
-    albo przechowywać ich wartości ID w zmiennych <b>globalnych</b>, tak by można było do nich sięgnąć w dowolnym momencie na dowolnej stronie <span class="notranslate">room</span>, albo utworzyć je w trwałej witrynie <span class="notranslate">object</span>, tak by witryna <span class="notranslate">object</span> była trwała i miała do nich dostęp poprzez zmienne instancji. Pamiętaj też, że
+    albo przechowywać ich wartości ID w zmiennych <b>globalnych</b>, aby można było do nich sięgnąć w dowolnym momencie w dowolnym <span class="notranslate">room</span>, albo utworzyć je w trwałym <span class="notranslate">object</span>, dzięki czemu <span class="notranslate">object</span> będzie trwały i będzie można do nich sięgać za pomocą zmiennych instancji. Pamiętaj też, że
     jeśli wywołasz akcję <a href="../Game/Restart_Game.htm">Restart gry</a>, powinieneś wcześniej zniszczyć system cząsteczek, aby system i przypisane do niego emitery zostały usunięte z pamięci przed ponownym uruchomieniem. Nieprawidłowe usunięcie emiterów
-    z pamięci systemu, jak opisano powyżej, doprowadzi do <b>wycieku pamięci</b>. Dzieje się tak, gdy zasób jest dodawany do pamięci, a następnie &quot;usuwany&quot;, co oznacza, że strona <span class="notranslate">GameMaker Studio 2</span> nie ma już możliwości interakcji z tym zasobem. Prowadzi to
-    do zapchania pamięci niedostępnymi zasobami, co z kolei może powodować problemy w grze.</p>
+    z pamięci systemu, jak opisano powyżej, doprowadzi do <b>wycieku pamięci</b>. Dzieje się tak, gdy zasób jest dodawany do pamięci, a następnie &quot;usuwany&quot;, co oznacza, że <span data-keyref="GameMaker Name">GameMaker</span> nie ma już możliwości interakcji z tym zasobem. Prowadzi to
+    do zapchania pamięci niedostępnymi zasobami, co z kolei może powodować problemy z grą.</p>
   <p> </p>
   <h4>Składnia działania:</h4>
   <p><img alt="Create Particle Emitter Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_Emitter.png" /></p>

@@ -1,0 +1,44 @@
+
+  
+  view_get_wport
+  Ta funkcja służy do pobierania szerokości podanego portu widoku.
+   
+  Składnia:
+  view_get_wport(view_port)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        view_port
+        The view port to target (0 - 7)
+     
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if view_get_wport(0) != (display_get_width () / 2)
+    {
+        view_set_wport(0, display_get_width() / 2);
+    }
+  Powyższy kod sprawdzi szerokość portu widoku[0] i jeśli nie jest ona równa połowie szerokości wyświetlacza, zostanie ustawiona na tę wartość.
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: view_get_hport
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

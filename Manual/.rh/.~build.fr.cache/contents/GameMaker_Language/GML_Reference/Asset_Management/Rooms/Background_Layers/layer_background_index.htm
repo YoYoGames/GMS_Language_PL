@@ -1,0 +1,50 @@
+
+  
+  layer_background_index
+  Ta funkcja służy do ustawiania indeksu obrazu tła sprite, które ma wiele podobrazów. Podajesz identyfikator elementu tła (który otrzymujesz podczas tworzenia elementu tła za pomocą layer_background_create() lub po użyciu funkcji layer_background_get_id()), a następnie ustawiasz indeks obrazu, który ma być używany. Jeśli ustawisz wartość spoza zakresu podobrazów, indeks obrazu będzie loop się zmieniał.
+   
+  Składnia:
+  layer_background_index(background_element_id, image_index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        background_element_id
+        Identyfikator elementu tła
+        The unique ID value of the background element to change
+      
+      
+        index
+        Real
+        The image index to use for the background
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var lay_id = layer_get_id("Background_trees");
+    var back_id = layer_background_get_id(lay_id);
+    layer_background_index(back_id, 1);
+  Powyższy kod pobierze identyfikator warstwy o nazwie "Tło_drzewa", a następnie użyje go do uzyskania identyfikatora elementu tła na tej warstwie. Identyfikator ten zostanie następnie użyty do zmiany indeksu obrazu elementu.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy tła
+        Następny: layer_background_speed
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

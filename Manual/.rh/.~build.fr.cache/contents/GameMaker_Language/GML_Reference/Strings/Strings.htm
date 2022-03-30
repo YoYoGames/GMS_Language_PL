@@ -1,0 +1,135 @@
+
+  
+  Struny
+  W pewnym momencie tworzenia gry konieczne będzie użycie tekstu. Tekst w grach jest obsługiwany za pomocą funkcji łańcuchowych ( string to po prostu inny sposób na określenie wiersza tekstu). GameMaker Studio 2 ma kompletny zestaw funkcji, które umożliwiają manipulowanie strings na wiele sposobów, w tym wstawianie jednego string do drugiego, kopiowanie strings oraz analizowanie strings pod kątem zawartych w nim cyfr lub liter. Ogólnie rzecz biorąc, stronę string można utworzyć tylko przez dodanie tekstu w cudzysłowach " ", a pojedyncze cudzysłowy strings nie są akceptowane. Nie można też rozdzielić adresu string na wiele wierszy i oczekiwać, że GameMaker Studio 2 będzie go wyświetlać tak, jakby linie były znakami nowej linii (chyba że użyto dosłownego identyfikatora @, jak wyjaśniono poniżej).
+  Warto zauważyć, że istnieją pewne konwencje, których można używać podczas tworzenia stron strings, głównie dotyczące stosowania znaków ucieczki. Są to znaki, które są poprzedzone symbolem "\". Tak więc, na przykład, jeśli chcesz umieścić cudzysłów wewnątrz adresu string, otrzymasz coś takiego:
+  str = "Hello\"World\"";
+  GameMaker Studio 2 ma także pełną obsługę znaków Unicode o szerokości czterech bajtów, co pozwala na dekodowanie i kodowanie znaków Unicode w górnych granicach standardu (w tym - ale nie tylko - emoji). Aby poradzić sobie ze znakami Unicode, można użyć "\" do poprzedzania literałów Unicode - cyfry heksadecymalne poprzedzone "u", na przykład "\u00e2" dla "á"- gdzie cyfry są numerem znaku Unicode. Pracując z Unicode w ten sposób, trzeba mieć świadomość, że GameMaker Studio 2 będzie interpretować wszystkie cyfry następujące po "u", więc gdybyśmy chcieli na przykład napisać "áa", powinniśmy użyć:
+  "\u00e2\a"
+  lub .
+  "\u00e2\u61"
+  lub .
+  "\u00e2" + "a"
+  ponieważ samo użycie "\u00e2a" spowodowałoby w rzeczywistości użycie znaku Unicode "ส" (stając się w istocie znakiem "\ue2a").
+  GameMaker Studio 2 może również obsługiwać dowolne literały szesnastkowe - zwykle zapisywane jako cyfry heksadecymalne po "0x", na przykład "0xff", gdzie cyfry oznaczają numer znaku, który ma być użyty. W GameMaker Studio 2 są one zapisywane za pomocą "\x", a następnie wartości heksadecymalnej. Te i inne predefiniowane znaki ucieczki są wymienione w poniższej tabeli:
+  
+    
+      
+        Stała
+        Opis
+      
+      
+        \n
+        Newline
+      
+      
+        \r
+        Powrót karetki
+      
+      
+        \b
+        Backspace (0x08)
+      
+      
+        \f
+        Form Feed (0x0c)
+      
+      
+        \t
+        Zakładka pozioma (0x09)
+      
+      
+        \v
+        Zakładka pionowa (0x0b)
+      
+      
+        \\
+        Sam odwrotny ukośnik (0x5c)
+      
+      
+        \a
+        Alert (0x07)
+      
+      
+        \u[Hex Digits]
+        Wstaw znak Unicode
+      
+      
+        \x[Hex Digits]
+        Wstaw literalny znak heksadecymalny
+      
+      
+        \[Octal Digits]
+        Wstaw oktalny znak Unicode
+      
+    
+  
+  UWAGA: Strona Strings obsługuje form feed, vertical tab itd., ale nie oznacza to, że renderowanie również, a podczas rysowania strony strings znaki te mogą być ignorowane.
+  Można również tworzyć dosłowne dos łowne łańcuchy znaków, poprzedzając cały adres string znakiem @:
+  var test = @"
+    Line breaks
+    over multiple
+    lines
+    ";
+  Powyższy kod wyrenderuje stronę string w wielu wierszach, tak jakby dołączony był znak escape łamania wiersza. Dosłowne string są podobne do poprzednich wersji GameMaker, string, ale również używają podwójnych lub pojedynczych cudzysłowów i muszą być poprzedzone symbolem @, mogą być łamane w wielu liniach pliku kodu i NIE obsługują ucieczki znaków, np. @"Hello\World" nie będzie próbował uciec od W w World i będzie zapisany dosłownie. Należy jednak pamiętać, że podczas używania literałów string w ten sposób, trzeba będzie złamać string, jeśli chcesz włączyć cudzysłów jako część string, tzn:
+  var test = @"Hello " + "\"" + @"World" + "\""
+  Kolejną rzeczą, na którą należy zwrócić uwagę, jest to, że znak Unicode 9647 (▯) jest używany do zastępowania brakujących glifów, które mogą znajdować się na wskazanej stronie font, podczas renderowania jej w zdarzeniu draw. Jeśli więc na przykład na stronie font nie ma symbolu °, to napisanie 90° spowoduje wygenerowanie 90▯.
+  Poniższa lista funkcji służy do pracy z łańcuchami znaków:
+  
+    ansi_char
+    chr
+    ord
+    real
+    string
+    string_byte_at
+    string_byte_length
+    string_set_byte_at
+    string_char_at
+    string_ord_at
+    string_copy
+    string_count
+    string_delete
+    string_digits
+    string_format
+    string_insert
+    string_length
+    string_letters
+    string_lettersdigits
+    string_lower
+    string_pos
+    string_pos_ext
+    string_last_pos
+    string_last_pos_ext
+    string_repeat
+    string_replace
+    string_replace_all
+    string_upper
+    string_height
+    string_height_ext
+    string_width
+    string_width_ext
+    string_hash_to_newline
+    is_string
+  
+   
+  Poza funkcjami związanymi z adresem strings, cel systemu Windows umożliwia także korzystanie ze schowka w celu uzyskania i ustawienia informacji tekstowych:
+  
+    clipboard_has_text
+    clipboard_get_text
+    clipboard_set_text
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Odniesienie do GML
+        Następny: Matematyka i liczby
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -15,49 +15,10 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>fx_create</h1>
-  <h2>Przegląd</h2>
-  <p>Funkcja ta służy do tworzenia nowego FX <span class="notranslate">Struct</span> dla danego typu efektu, który zawiera informacje o efekcie i wartości jego parametrów. Parametry efektu można odczytać, wywołując funkcję <a href="fx_get_parameter.htm"><span class="inline">fx_get_parameter</span></a>/<a href="fx_get_parameters.htm"><span class="inline">s</span></a> na zwróconym adresie <span class="notranslate">struct</span>, a nowe wartości można im przypisać, wywołując adresy <span class="inline"><a href="fx_set_parameter.htm">fx_set_parameter</a></span>/<span class="inline"><a href="fx_set_parameters.htm">s</a></span>.</p>
-  <p>Do tej funkcji można przekazać dowolny z poniższych adresów <span class="notranslate">strings</span>, aby utworzyć odpowiadający mu efekt:</p>
-  <table>
-    <tbody>
-      <tr>
-        <th>String</th>
-        <th>Opis</th>
-      </tr>
-      <tr>
-        <td><span class="notranslate"><span class="inline">&quot;_filter_colourise&quot;</span></td>
-        <td>Filtr koloryzujący</td>
-      </tr>
-      <tr>
-        <td><span class="notranslate"><span class="inline">&quot;_filter_edgedetect&quot;</span></td>
-        <td>Filtr wykrywający krawędzie</td>
-      </tr>
-      <tr>
-        <td><span class="notranslate"><span class="inline">&quot;_filter_greyscale&quot;</span></td>
-        <td>Filtr skali szarości</td>
-      </tr>
-      <tr>
-        <td><span class="notranslate"><span class="inline">&quot;_filter_large_blur&quot;</span></td>
-        <td>Duży filtr rozmywający</td>
-      </tr>
-      <tr>
-        <td><span class="notranslate"><span class="inline">&quot;_filter_pixelate&quot;</span></td>
-        <td>Filtr pikselowy</td>
-      </tr>
-      <tr>
-        <td><span class="notranslate"><span class="inline">&quot;_filter_posterise&quot;</span></td>
-        <td>Filtr posteryzacyjny</td>
-      </tr>
-      <tr>
-        <td><span class="notranslate"><span class="inline">&quot;_filter_screenshake&quot;</span></td>
-        <td>Filtr wstrząsów ekranu</td>
-      </tr>
-      <tr>
-        <td><span class="notranslate"><span class="inline">&quot;_filter_tintfilter&quot;</span></td>
-        <td>Filtr barwny</td>
-      </tr>
-    </tbody>
-  </table>
+  <p>Ta funkcja służy do tworzenia nowej strony FX <span class="notranslate">Struct</span> dla danego typu efektu, który można następnie <a href="layer_set_fx.htm">zastosować do warstwy</a>.</p>
+  <p>Na tej stronie podano nazwy filtrów/efektów, które można włączyć do tej funkcji: <a data-xref="{title}" href="../../../../../The_Asset_Editors/Room_Properties/FX/All_Filter_Effect_Types.htm">Wszystkie typy filt</a>rów/efektów.</p>
+  <h2>Zastosowanie</h2>
+  <p>Parametry utworzonego efektu można odczytać, wywołując polecenie <a href="fx_get_parameter.htm"><span class="inline">fx_get_parameter</span></a>/<a href="fx_get_parameters.htm"><span class="inline">s</span></a> na zwróconym adresie <span class="notranslate">struct</span> i przypisać im nowe wartości, wywołując <span class="inline"><a href="fx_set_parameter.htm">fx_set_parameter</a></span>/<span class="inline"><a href="fx_set_parameters.htm">s</a></span>.</p>
   <p>Należy pamiętać, że strona <span class="notranslate">struct</span> zwrócona przez tę funkcję nie będzie zawierała żadnych widocznych elementów i będzie można ją zmodyfikować tylko za pomocą jednej z <a href="Filter_Effect_Functions.htm">funkcji Filtr/Efekt</a>.</p>
   <h2>Awarie funkcji</h2>
   <p>Funkcja zwróci -1, jeśli z jakiegoś powodu nie uda się utworzyć strony <span class="notranslate">struct</span>; może się tak zdarzyć, jeśli podana nazwa FX jest nieprawidłowa lub FX nie został załadowany do pakietu gry.</p>
@@ -80,7 +41,7 @@
       <tr>
         <td><span class="notranslate">filter_or_effect_name</span></td>
         <td><span data-keyref="Type_String"><a data-rhwidget="HyperlinkPopover" href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
-        <td><span class="notranslate">The name of the filter/effect to create (from the table listed at the top).</span></td>
+        <td><span class="notranslate">The name of the filter/effect to create (get them from <a data-xref="{title}" href="../../../../../The_Asset_Editors/Room_Properties/FX/All_Filter_Effect_Types.htm">All Filter/Effect Types</a>).</span></td>
       </tr>
     </tbody>
   </table>

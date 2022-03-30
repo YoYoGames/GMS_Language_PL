@@ -1,0 +1,41 @@
+
+  
+  camera_get_view_mat
+  Ta funkcja służy do pobierania macierzy widoku. Funkcja zwraca tablicę macierzy, którą można następnie wykorzystać w innych funkcjach macierzy lub do ustawienia macierzy widoku innego aparatu (za pomocą funkcji camera_set_view_mat()). Należy pamiętać, że funkcja ta jest przeznaczona do użytku z kamerami utworzonymi przy użyciu funkcji camera_create(), ale można jej także użyć w przypadku kamer utworzonych w edytorze room (lub przy użyciu camera_create_view()) - w takim przypadku zwrócona matryca będzie ważna dopiero po pierwszym użyciu danej kamery w porcie widoku.
+   
+  Składnia:
+  camera_get_view_mat(camera_id)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        camera_id
+        The unique camera ID value returned when you created the camera
+     
+    
+  
+   
+  Zwroty:
+  Matrix Array
+   
+  Przykład:
+  mat = camera_get_view_mat(camera_view[0]);
+  Powyższy kod pobiera macierz widoku dla kamery przypisanej do portu widoku[0].
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: camera_get_proj_mat
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,81 @@
+
+  
+  Dopasowywanie
+  Matchmaking (multiplayer) dla Xbox Live i UWP wymaga pewnej konfiguracji, częściowo za pomocą pliku konfiguracyjnego, który określa, jakich połączeń sieciowych będziesz używać, a częściowo poprzez ustawienie szablonów sesji i hopperów matchmakingowych w Xbox Developer Portal. GameMaker Studio 2 obsługuje to poprzez wykorzystanie celu UWP i pozwala na następujące czynności:
+  
+    Tworzenie sesji dla wielu graczy
+    Znajdź sesję dla wielu graczy (i/lub dołącz do niej)
+    Otrzymywanie powiadomień o dołączeniu lub opuszczeniu sesji przez odpowiednich graczy, a także otrzymywanie szczegółów ich połączenia sieciowego
+    Powiadomienie o migracji gospodarza sesji do innego użytkownika
+    Uzyskaj listę użytkowników w sesji
+    Opuść sesję
+  
+  Łączność sieciowa Xbox Live opiera się na czymś, co nazywa się Secure Device Association (Stowarzyszenie bezpiecznych urządzeń). Jest to umowa określająca dokładnie sposób, w jaki urządzenie łączy się z innymi urządzeniami, oraz rodzaj danych, które może przesyłać za pomocą tego połączenia. Umowę tę konfiguruje się za pomocą pliku, który należy dołączyć do projektu. Przykład takiego pliku można znaleźć tutaj. Najważniejsze punkty w pliku to protokół i numery portów dla każdego opisu gniazda, ponieważ muszą one być zgodne z tym, co zostało skonfigurowane w kodzie.
+  Po utworzeniu tego pliku manifestu sieciowego należy dodać go do projektu jako plik dołączony. Następnie w Opcjach gry UWP, na karcie Ogólne Xbox One, należy go zaznaczyć w polu kombi "Dołączony plik manifestu konfiguracji sieci".
+  Aby utworzyć sesję wieloosobową, musisz określić, jaki szablon sesji ma być użyty. Szablony sesji są zdefiniowane w XDP, ale przykład pokazano poniżej:
+  Session Name: MatchSession
+    Contract Version: 107
+    Session Template (JSON text):
+    {
+        "constants": {
+            "system": {
+                "version": 1,
+                "maxMembersCount": 12,
+                "capabilities": {
+            },
+                "memberInitialization": {
+                    "externalEvaluation": false,
+                    "membersNeededToStart": 1
+                }
+            },
+            "custom": {}
+        }
+    }
+  Opis tych pól można znaleźć w części "Session Overview" w pliku pomocy XDK. Należy pamiętać, że obecnie nie obsługujemy dynamicznego ustawiania parametrów sesji z poziomu strony GameMaker Studio 2.
+  Wraz z szablonem sesji należy również skonfigurować hopper dopasowujący, aby umożliwić odnalezienie sesji (jest to również wykonywane w XDP). Hoppery są używane do definiowania reguł, które są używane podczas dopasowywania graczy. Podobnie jak w przypadku parametrów sesji, nie obsługujemy obecnie dynamicznego ustawiania parametrów hoppera z poziomu GameMaker: Studio. Zobacz sekcję "SmartMatch Matchmaking Configuration" w pliku pomocy XDK, aby uzyskać więcej szczegółów.
+  Następujące funkcje są dostępne w przypadku kojarzenia meczów na XboxLive (należy pamiętać, że konieczne będzie również korzystanie z funkcji sieciowych GameMaker Studio 2 w celu nawiązywania połączeń itd:)
+  
+    xboxlive_matchmaking_start
+    xboxlive_matchmaking_stop
+    xboxlive_matchmaking_create
+    xboxlive_matchmaking_find
+    xboxlive_matchmaking_session_get_users
+    xboxlive_matchmaking_join_session
+    xboxlive_matchmaking_session_leave
+  
+   
+  GameMaker Studio 2 udostępnia dodatkowy zestaw funkcji kojarzenia, za pomocą których można zapraszać innych graczy w sieci do udziału w sesji lub akceptować zaproszenia do udziału w cudzej sesji. Dostępne są następujące funkcje:
+  
+    xboxlive_matchmaking_send_invites
+    xboxlive_matchmaking_set_joinable_session
+    xboxlive_matchmaking_join_invite
+  
+   
+  Gdy gracz przyjmie zaproszenie od innego gracza, dzieje się jedna z dwóch rzeczy:
+  
+    Jeśli gra jest aktualnie uruchomiona, otrzymasz Asynchroniczne zdarzenie społecznościowe z async_load mapą DS zawierającą następujące klucze/wartości:
+      
+        "id" - Wartość ta zostanie ustawiona na MATCHMAKING_INVITATION.
+        "invitation_id" - Jest to unikalna wartość identyfikatora sesji
+        "invitation_host" - jest to unikatowa wartość identyfikatora gospodarza sesji
+      
+      Powinieneś zapisać wartości ID i hosta, a następnie opuścić wszystkie sesje i wywołać funkcję xboxlive_matchmaking_join_invite(), przekazując jako argumenty wartości ID zaproszenia i hosta zaproszenia w zdarzeniu Step.
+    
+    Jeśli gra nie jest jeszcze uruchomiona, zostanie uruchomiona przez system operacyjny. Otrzymasz ten sam typ asynchronicznego zdarzenia społecznościowego z tymi samymi kluczami, które wymieniono powyżej. Zapisz je w zmiennych, a następnie połącz się z systemem dobierania gier Xbox Live i zadzwoń pod adres xboxlive_matchmaking_join_invite().
+  
+  Po wywołaniu adresu xboxlive_matchmaking_join_invite() użytkownik będzie próbował dołączyć do sesji, a Ty otrzymasz Asynchroniczne Zdarzenia Społeczne, tak jakbyś wywołał adres xboxlive_matchmaking_find() w tej sesji.
+   
+   
+   
+  
+    
+      
+        Powrót: UWP i XBox Live
+        Następny: Użytkownicy i konta
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

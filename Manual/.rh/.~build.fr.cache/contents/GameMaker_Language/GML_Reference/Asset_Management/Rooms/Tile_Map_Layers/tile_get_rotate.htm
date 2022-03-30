@@ -1,0 +1,50 @@
+
+  
+  tile_get_rotate
+  Za pomocą tej funkcji można sprawdzić, czy w danym zbiorze danych kafelków strona tile została obrócona o 90 stopni, czy nie. Podajesz dane o kafelkach, które można pobrać za pomocą funkcji tilemap_get()a funkcja zwróci true, jeśli tile jest obrócona, lub false, jeśli nie.
+   
+  Składnia:
+  tile_get_rotate(tiledata)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tiledata
+        Dane o płytkach
+        the tile-data to check
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  var lay_id = layer_get_id("Tiles_sky");
+    var map_id = layer_tilemap_get_id(lay_id);
+    var mx = tilemap_get_cell_x_at_pixel(map_id, mouse_x, mouse_y);
+    var my = tilemap_get_cell_y_at_pixel(map_id, mouse_x, mouse_y);
+    var data = tilemap_get(map_id, mx, my);
+    var bool = !tile_get_rotate(data);
+    data = tile_set_rotate(data, bool);
+    tilemap_set(map_id, data, mx, my);
+  Powyższy kod pobiera identyfikator mapy tile z podanej warstwy, a następnie pobiera pozycję komórki x i y dla tile pod myszą. Pozycja ta jest następnie wykorzystywana do uzyskania danych kafelka, które są obracane, a następnie wykorzystywane do ponownego ustawienia adresu tile.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy mapy kafelkowej
+        Następny: tile_set_empty
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

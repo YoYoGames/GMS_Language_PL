@@ -1,0 +1,47 @@
+
+  
+  file_text_eof
+  Ta funkcja zwraca true, gdy osiągnięto koniec podanego otwartego pliku tekstowego, lub false, jeśli nie.
+   
+  Składnia:
+  file_text_eof(fileid);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fileid
+        The id of the file to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var num = 0;
+    var file = file_text_open_read(working_directory + "Game_Data.txt");
+    while (!file_text_eof(file))
+    {
+        str[num++] = file_text_readln(file);
+    }
+    file_text_close(file);
+  Powyższy kod otwiera plik do zapisu, a następnie loops przez wiersze tekstu już zapisanego w pliku aż do końca, zapisując każdy wiersz w tablicy "str".
+   
+   
+   
+  
+    
+      
+        Powrót: Pliki tekstowe
+        Następny: file_text_close
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

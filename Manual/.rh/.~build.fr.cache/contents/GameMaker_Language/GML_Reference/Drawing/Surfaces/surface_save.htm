@@ -1,0 +1,48 @@
+
+  
+  powierzchnia_zapisu
+  Ta funkcja umożliwia zapisanie na dysku powierzchni o podanej nazwie pliku. Powierzchnia musi być zapisana jako plik w formacie *.png.
+   
+  Składnia:
+  surface_save(surface_id, fname);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        surface_id
+        The ID of the surface to set as the drawing target.
+     
+      
+        fname
+        The name of the saved image file.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if keyboard_check_pressed(ord("S")
+    {
+        surface_save(surf, "test.png");
+    }
+  Powyższy kod sprawdzi, czy użytkownik naciśnie klawisz "S" na klawiaturze i jeśli tak się stanie, zapisze na dysku powierzchnię indeksowaną w zmiennej "surf".
+   
+   
+   
+  
+    
+      
+        Powrót: Powierzchnie
+        Następny: surface_save_part
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

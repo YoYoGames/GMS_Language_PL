@@ -1,0 +1,55 @@
+
+  
+  xboxlive_matchmaking_join_invite
+  Tę funkcję można wywołać w celu przetworzenia zaproszenia do dołączenia po pomyślnym wywołaniu xboxlive_matchmaking_start(). Użytkownik podaje lokalny identyfikator UserID oraz wartości zaproszenia (ID i ID hosta)
+    które zostały zwrócone po otrzymaniu zaproszenia, wraz z nazwą szablonu sesji, który utworzyłeś ( string). Następnie użytkownik zostanie dołączony do sesji, do której został zaproszony, a Ty otrzymasz Asynchroniczne zdarzenia społeczne, tak jak
+    jakbyś wywołał xboxlive_matchmaking_find().
+   
+  Składnia:
+  xboxlive_matchmaking_join_invite(user_who_received_invite, invitation_id, invitation_host, sda_template_name);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        user_who_received_invite
+        The local user ID pointer.
+     
+      
+        invitation_id
+        The invitation ID.
+     
+      
+        invitation_host
+        The invitation host ID.
+     
+      
+        sda_template_name
+        The session template name.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var userID = xboxlive_user_for_pad(global.PadIndex); xboxlive_matchmaking_join_invite(userID, global.InviteID, global.InviteHost, global.SessionTemplate);
+  Powyższe polecenie pobiera identyfikator użytkownika dla danego gamepada, a następnie próbuje dołączyć do sesji, do której został zaproszony.
+   
+   
+   
+  
+    
+      
+        Powrót: Dopasowywanie
+        Następny: xboxlive_matchmaking_start
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

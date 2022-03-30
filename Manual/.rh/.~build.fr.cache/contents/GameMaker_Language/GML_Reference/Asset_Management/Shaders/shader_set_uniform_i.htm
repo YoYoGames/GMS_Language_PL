@@ -1,0 +1,53 @@
+
+  
+  shader_set_uniform_i
+  Za pomocą tej funkcji można ustawić wartość (lub wartości) stałej shader. Wcześniej musisz uzyskać "uchwyt" do stałej za pomocą funkcji shader_get_uniform()i musisz wiedzieć, jakiego typu jest to stała, aby przekazać jej odpowiednią liczbę wartości całkowitych, np. jeśli masz stałą vec2, musisz przekazać do funkcji dwie wartości.
+  UWAGA: Wszystkie uniformy muszą być ustawione po wywołaniu funkcji shader_set(), a przed wywołaniem funkcji shader_reset().
+   
+  Składnia:
+  shader_set_uniform_i(handle, value1 [, value2, value3, value4]);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        handle
+        Jednolity uchwyt shadera
+        The handle of the shader constant to set.
+      
+      
+        value1 ... value4
+        Real
+        The integer value (or values) to set the shader constant to.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  shader_set(shader_Glass);
+    shader_params = shader_get_uniform(shader_glass, "u_vParams");
+    shader_set_uniform_i(shader_params, 0, 65, 255);
+    draw_self();
+    shader_reset();
+  Powyższy kod pobierze uchwyt stałej shader "u_vParams" ( a vec3), a następnie ustawi tę stałą na podane wartości całkowite.
+   
+   
+   
+  
+    
+      
+        Powrót: Shadery
+        Następny: shader_set_uniform_i_array
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

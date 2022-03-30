@@ -1,0 +1,43 @@
+
+  
+  camera_set_default
+  Za pomocą tej funkcji można ustawić domyślną kamerę tak, aby używała kamery niestandardowej, utworzonej wcześniej za pomocą jednej z funkcji camera_create() funkcji. W przypadku utworzenia strony room bez aktywnych portów widoku
+    lub kamery widoku, witryna GameMaker Studio 2 nadal używa kamery do wyświetlania akcji w grze. Kamera ta jest nazywana kamerą domyślną i można ją ustawiać, manipulować nią (a nawet niszczyć) tak samo jak każdą inną kamerę.
+   
+  Składnia:
+  camera_set_default(camera_id)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        camera_id
+        The unique camera ID value returned when you created the camera
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var new_cam = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1); camera_set_default(new_cam);
+  
+  Powyższy kod tworzy nową kamerę, a następnie przypisuje ją jako domyślną kamerę, która ma być używana.
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: camera_get_view_mat
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

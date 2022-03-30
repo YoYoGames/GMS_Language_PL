@@ -1,0 +1,52 @@
+
+  
+  tilemap_get_frame
+  Ponieważ witryna tiles może być animowana, czasami warto wiedzieć, która klatka jest aktualnie rysowana, i odpowiednio na nią reagować, dlatego za pomocą tej funkcji można uzyskać indeks bieżącej klatki dla danej mapy tile. Podajesz identyfikator elementu mapy tile (który otrzymujesz podczas tworzenia elementu mapy tile przy użyciu layer_tilemap_create() lub po użyciu funkcji layer_tilemap_get_id()), a funkcja zwróci indeks ramki.
+   
+  Składnia:
+  tilemap_get_frame(tilemap_element_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tilemap_element_id
+        Identyfikator elementu mapy kafelkowej
+        The unique ID value of the tile map element to get the frame index of
+      
+    
+  
+   
+  Zwroty:
+  Real (between 0 (inclusive) and the maximum number of frames of animation (exclusive))
+   
+  Przykład:
+  var lay_id = layer_get_id("Tiles_Traps");
+    var map_id = layer_tilemap_get_id(lay_id);
+    if tilemap_get_frame(map_id) >= 2 && tilemap_get_frame(map_id) < 4
+    {
+        global.activate = true;
+    }
+    else
+    {
+        global.activate = false;
+    }
+  Powyższy kod sprawdza bieżącą klatkę animacji dla danej mapy tile na danej warstwie i ustawia zmienną globalną na podstawie wartości zwracanej.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy mapy kafelkowej
+        Następny: tilemap_get_tile_width
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

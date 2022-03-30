@@ -1,0 +1,68 @@
+
+  
+  Mapy DS.
+  Struktura danych mapy DS jest wyjątkowo użyteczna, ponieważ umożliwia przechowywanie par kluczy i wartości. Na przykład postać w grze może mieć pewną liczbę różnych przedmiotów(klucze), a dla każdego przedmiotu może mieć ich określoną liczbę(wartości), tak jak w grze RPG, w której można mieć 10 mikstur zdrowia, 5 mikstur many i 100 sztuk złota. Mapy przechowują takie pary w jednym miejscu, a Ty możesz dodawać pary do mapy i wyszukiwać wartości odpowiadające określonym kluczom, korzystając z kilku prostych funkcji. Jest jednak kilka rzeczy, które powinieneś wiedzieć o mapach, zanim zaczniesz z nich korzystać! Mapy nie są posortowane w żaden (rozpoznawalny) sposób, co oznacza, że aby znaleźć konkretny klucz, trzeba będzie iterować przez całą mapę (co jest bardzo powolne). Nie ma też możliwości przechowywania dwóch takich samych kluczy, ani przypisania jednemu kluczowi dwóch wartości.
+  UWAGA: Zaleca się używanie struktów zamiast map DS, ponieważ mają one podobne właściwości, są łatwiejsze w użyciu i są automatycznie odśmiecane.
+  UWAGA Podobnie jak wszystkie zasoby dynamiczne, struktury danych zajmują pamięć, dlatego powinny być zawsze niszczone, gdy nie są już potrzebne, aby zapobiec wyciekom pamięci, które spowalniają grę i prowadzą do jej awarii.
+  Poza wymienionymi poniżej funkcjami do dodawania lub modyfikowania zawartości mapy DS można użyć wyrażenia (zwanego accessorem). Taki accessor wygląda podobnie jak tablica 1D o następującej składni:
+  map_index[? key]
+  Więcej informacji oraz przykłady można znaleźć na stronie GML Overview page on Accessors.
+  Istnieją następujące funkcje związane z mapami DS:
+  
+    ds_map_exists
+    ds_map_create
+    ds_map_add
+    ds_map_clear
+    ds_map_copy
+    ds_map_replace
+    ds_map_delete
+    ds_map_empty
+    ds_map_size
+    ds_map_find_first
+    ds_map_find_last
+    ds_map_find_next
+    ds_map_find_previous
+    ds_map_find_value
+    ds_map_keys_to_array
+    ds_map_values_to_array
+    ds_map_set
+    ds_map_read
+    ds_map_write
+    ds_map_destroy
+  
+   
+  Dostępne są cztery kolejne funkcje służące do zapisywania i wczytywania mapy DS. Funkcje te zaszyfrują mapę i zapiszą ją w bezpiecznym miejscu na platformie docelowej, korzystając z formatu pliku, który uniemożliwia przenoszenie pliku końcowego między urządzeniami:
+   
+  
+    ds_map_secure_save
+    ds_map_secure_save_buffer
+    ds_map_secure_load
+    ds_map_secure_load_buffer
+  
+   
+  Jednym z zastosowań map DS jest praca z plikiem JSON, dlatego też istnieje kilka specjalnych funkcji, które są do tego celu przeznaczone:
+   
+  
+    ds_map_add_list
+    ds_map_add_map
+    ds_map_replace_list
+    ds_map_replace_map
+    ds_map_is_list
+    ds_map_is_map
+  
+  UWAGA Chociaż funkcje te umożliwiają dodawanie list i map w obrębie mapy, są bezużyteczne dla niczego innego niż JSON, a zagnieżdżone mapy i listy nie będą poprawnie odczytywane przy zapisie na dysk lub dostępie w jakikolwiek inny sposób.
+   
+   
+   
+  
+    
+      
+        Powrót: Struktury danych
+        Następny: Kolejki priorytetowe DS
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

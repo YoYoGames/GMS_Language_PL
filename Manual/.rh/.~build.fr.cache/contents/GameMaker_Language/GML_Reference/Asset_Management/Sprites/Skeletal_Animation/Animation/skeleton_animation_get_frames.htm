@@ -1,0 +1,41 @@
+
+  
+  szkielet_animacji_get_frames
+  Za pomocą tej funkcji można uzyskać informację o liczbie klatek, jakie zawiera dana animacja szkieletowa. Podajesz nazwę animacji szkieletowej (w postaci string, zdefiniowaną w programie użytym do wykonania animacji lub zwróconą za pomocą funkcji     skeleton_animation_geta funkcja zwraca liczbę klatek, które ma animacja, w postaci liczby całkowitej. Funkcja zwraca 0, jeśli podana animacja nie istnieje.
+   
+  Składnia:
+  skeleton_animation_get_frames(anim_name);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        anim_name
+        The animation name to get the frames of.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var num = skeleton_animation_get_frames(skeleton_animation_get()); image_index = num -1; image_speed = 0;
+  Powyższy kod pobierze liczbę klatek animacji, a następnie ustawi adres sprite na ostatnią klatkę i zatrzyma animację.
+   
+   
+   
+  
+    
+      
+        Powrót: Animacja
+        Następny: skeleton_animation_get_frame
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

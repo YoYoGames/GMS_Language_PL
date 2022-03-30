@@ -1,0 +1,45 @@
+
+  
+  physics_fixture_set_kinematic
+  W grach opartych na fizyce zdarzają się sytuacje, w których użytkownik chce się poruszać, ale nie chcą na niego działać siły takie jak grawitacja ani siły wynikające z kolizji z dynamiczną stroną objects (na przykład ruchome platformy w grze platformowej).
+    na przykład). Dla takich objects po prostu ustawienie gęstości mocowania na 0 będzie oznaczało, że fizyka przyjmie, że object ma być statyczna. Jednakże, jeśli ustawisz gęstość phy_speed_x,
+    phy_speed_y lub phy_angular_velocity dla instancji, z którą związany jest taki uchwyt, zostanie ona przekonwertowana
+    w kinematykę object i rozpocznie ruch. Zmiana instancji ze statycznej na kinematyczną w trakcie symulacji może być kosztowna pod względem przetwarzania (w zależności od stanu instancji w świecie fizyki) i dlatego zalecane jest ustawienie
+    na kinematyczny za pomocą tej funkcji przed powiązaniem go z instancją, dzięki czemu nie będą na niego oddziaływać kolizje i siły (takie jak grawitacja), ale będzie się on poruszał ze stałą prędkością liniową i/lub kątową.
+   
+  Składnia:
+  physics_fixture_set_kinematic(fixture)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fixture
+        the index of the fixture
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  physics_fixture_set_kinematic(fix_Cloud);
+  Powyższy kod wskaże, że uchwyt zindeksowany w "fix_Cloud" powinien być oznaczony jako kinematyczny.
+   
+   
+   
+  
+    
+      
+        Powrót: Armatura
+        Następny: physics_fixture_set_awake
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

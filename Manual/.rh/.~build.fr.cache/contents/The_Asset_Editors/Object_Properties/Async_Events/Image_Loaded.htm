@@ -1,0 +1,33 @@
+
+  
+  Obraz wczytany
+  To zdarzenie jest wywoływane, gdy wczytasz obraz do GameMaker Studio 2 za pomocą HTML5 lub adresu URL. Na przykład, powiedzmy, że chcesz załadować obrazek sprite i dopiero po jego załadowaniu zmienić aktualny adres sprite na nowy. W zdarzeniu Create (lub jakimkolwiek innym zdarzeniu) znalazłoby się coś takiego:
+  var _url = "http://www.angusgames.com/game/background1.png"; spr = sprite_add(_url, 0, false, false, 0, 0);
+  Spowoduje to teraz rozpoczęcie ładowania obrazu do urządzenia lub przeglądarki, ale nie zablokuje strony GameMaker Studio 2 w oczekiwaniu na załadowanie pliku. Zamiast tego witryna GameMaker Studio 2 będzie działać normalnie, dopóki obraz nie zostanie załadowany, a wywołanie zwrotne nie wywoła zdarzenia Image Loaded, w którym zostanie utworzona mapa DS Map i zapisana w zmiennej specjalnej
+    async_load. Mapa zawiera następujące informacje:
+  
+    "filename": Pełny adres path do żądanego pliku.
+    "id": Identyfikator zasobu, który wczytałeś. Będzie on taki sam, jak zmienna, do której przypisałeś zasób.
+    "status": Zwraca wartość mniejszą niż 0 w przypadku błędu.
+  
+  Następnie w tym zdarzeniu należy przypisać nowo załadowany obraz do strony sprite. Poniższy przykład kodu demonstruje sposób wykorzystania zwróconych informacji:
+  if ds_map_find_value(async_load, "id") == spr {
+         if ds_map_find_value(async_load, "status") >= 0     {         sprite_index = spr;     } }
+  
+  Powyższy kod najpierw sprawdzi adres id utworzonej mapy DS, a następnie sprawdzi adres status wywołania zwrotnego. Jeśli wartość jest większa lub równa 0 (co sygnalizuje powodzenie), to wynik z
+    z wywołania zwrotnego zostanie użyty do ustawienia indeksu sprite na nowo załadowanym obrazie.
+   
+   
+   
+  
+    
+      
+        Powrót: Zdarzenia asynchroniczne
+        Następny: Tworzenie sieci
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

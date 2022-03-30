@@ -1,0 +1,72 @@
+
+  
+  część_cząsteczek_tworzy_kolor
+  Funkcja ta jest idealna dla tych efektów, które nie wymagają żadnej funkcjonalności emiterów cząst eczek (na przykład do tworzenia dymu z pocisku lub prostego efektu eksplozji), ponieważ umożliwia szybkie i łatwe tworzenie cząsteczek w dowolnym miejscu w grze room. Za pomocą tej funkcji można także nadawać cząstkom kolor "w locie", gdy są one tworzone. Kolor ten zastąpi wcześniej zdefiniowany kolor cząstki, ale nie będzie się mieszał z kolorem cząstki przez cały czas jej istnienia. Pamiętaj, że aby można było użyć tej funkcji, musisz wcześniej utworzyć system cząstek i typ cząstki.
+   
+  Składnia:
+  part_particles_create_colour(ind, x, y, parttype, colour, number);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Identyfikator systemu cząstek stałych
+        The index of the particle system.
+      
+      
+        x
+        Real
+        The x coordinate of where to create the particles.
+      
+      
+        y
+        Real
+        The y coordinate of where to create the particles.
+      
+      
+        parttype
+        Typ cząstki ID
+        The index (type) of the particles to be created.
+      
+      
+        colour
+        Kolor
+        The colour blending for the particles.
+      
+      
+        number
+        Real
+        The number of particles to create.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if (speed > 1)
+    {
+        var _c = choose(c_aqua, c_lime, c_fuchsia, c_orange);
+        part_particles_create_colour(sname, x, y, p_Smoke, _c, 1);
+    }
+  Powyższy kod wygeneruje jedną cząstkę w każdym kroku, w którym instancja z kodem będzie miała prędkość większą od jeden. Cząstki te będą miały losowy kolor.
+   
+   
+   
+  
+    
+      
+        Powrót: Układy cząstek stałych
+        Następny: part_system_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

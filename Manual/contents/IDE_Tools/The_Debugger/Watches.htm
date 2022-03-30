@@ -16,8 +16,8 @@
   <h1>Zegarki</h1>
   <p>Cała idea serwisu <span class="notranslate">Debugger</span> polega na umożliwieniu &quot;oglądania&quot; każdego szczegółu gry. Służą do tego &quot;okna obserwacji&quot;, które domyślnie są otwarte w <a href="../../Introduction/The_Output_Window.htm">oknie Wyjście</a> zadokowanym na dole strony .
    <span class="notranslate">IDE</span> Niektóre z nich mogą być aktualizowane w czasie rzeczywistym (po włączeniu funkcji czasu rzeczywistego <span class="notranslate">debugging</span> <img> na pasku narzędzi <span class="notranslate">Debugger</span> ), podczas gdy inne wymagają wstrzymania gry na stronie <span class="notranslate">debugger</span>.</p>
-  <p>Gdy obserwujesz <strong>zmienne</strong> w dowolnym oknie, może to być jeden z wielu <strong>typów danych</strong>. Jednak ze względu na sposób, w jaki <span class="notranslate">GameMaker Studio 2</span> przechowuje pewne dane, <span class="notranslate">Debugger</span> nie zawsze wie dokładnie, co przechowuje dana
-    co przechowuje zmienna. Dzieje się tak dlatego, że wewnętrzne wartości ID struktur danych lub instancji są <em>liczbami całkowitymi </em>, więc <span class="notranslate">Debugger</span> nie zawsze wie, czy wartość całkowita przechowywana w zmiennej dotyczy struktury danych lub instancji, czy też jest to
+  <p>Gdy obserwujesz <strong>zmienne</strong> w którymś z okien, może to być jeden z wielu <strong>typów danych</strong>. Jednak ze względu na sposób, w jaki <span data-keyref="GameMaker Name">GameMaker</span> przechowuje pewne rzeczy, <span class="notranslate">Debugger</span> nie zawsze wie dokładnie, co przechowuje dana
+    co przechowuje zmienna. Dzieje się tak dlatego, że wewnętrzne wartości ID struktur danych lub instancji są <em>liczbami całkowitymi </em>, a więc <span class="notranslate">Debugger</span> nie zawsze wie, czy wartość całkowita przechowywana w zmiennej dotyczy struktury danych lub instancji, czy też jest to
     po prostu wartością całkowitą. Z tego powodu można kliknąć prawym przyciskiem myszy <img> na dowolnej wartości zmiennej i wyświetlić okno z listą dostępnych typów danych
     którymi może być ta zmienna:</p>
   <p><img>Łańcuchy i tablice nie pozwalają na taką opcję, a warto zauważyć, że nawet jeśli struktura danych jest przechowywana w zmiennej instancji, to jej numer ID
@@ -52,8 +52,8 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Instance</a></p>
   <div class="droptext" data-targetname="drop-down3">
-    <p class="dropspot"><img>Jak sama nazwa wskazuje, okno to pokaże wszystkie zmienne <strong>instancji </strong>,
-      zmienne <strong>lokalne </strong>dla zdarzenia instancji, zmienne <strong>wbudowane </strong>oraz <strong>struktury</strong> związane z instancją aktualnie przeglądaną w oknie Source (jeśli instancja jest przywoływana przy użyciu
+    <p class="dropspot"><img>Jak sama nazwa wskazuje, okno to pokaże wszystkie zmienne <strong>instancji, </strong>
+      zmienne <strong>lokalne </strong>dla zdarzenia instancji, zmienne <strong>wbudowane </strong>oraz <strong>struktury</strong> związane z instancją, przez którą aktualnie przechodzimy w oknie Source (jeśli do instancji odwołujemy się, używając
       słowa kluczowego &quot;other&quot; lub instrukcji <span class="inline">with </span>, to w tym oknie zostaną pokazane właściwości tej instancji). Jeśli klikniesz prawym przyciskiem myszy <img> na wartości, możesz ustawić jej <strong>typ</strong>, usunąć ją lub wyczyścić wszystkie zegarki z okna. </p>
     <p class="dropspot"><br /></p>
   </div>
@@ -89,7 +89,7 @@
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Profil</a></p>
   <div class="droptext" data-targetname="drop-down10">
     <p class="dropspot">W tym oknie można zobaczyć aktualny <strong>profil </strong>systemowy testowanej gry i sprawdzić wszystkie elementy gry, od całych zdarzeń do pojedynczych wywołań funkcji, aby sprawdzić ich działanie i wykryć
-      Można tu sprawdzić wszystkie elementy gry, od całych zdarzeń po pojedyncze wywołania funkcji, aby sprawdzić ich wydajność i wykryć ewentualne problemy lub wąskie gardła. Więcej informacji na temat profilowania można znaleźć na następującej stronie: </p>
+      Można tu sprawdzić wszystkie elementy gry, od całych zdarzeń po pojedyncze wywołania funkcji, aby sprawdzić ich działanie i wykryć ewentualne problemy lub wąskie gardła. Więcej informacji na temat profilowania można znaleźć na następującej stronie: </p>
     <ul class="dropspotlist">
       <li class="dropspot"><a href="The_Profiler.htm">Profiler</a></li>
     </ul>

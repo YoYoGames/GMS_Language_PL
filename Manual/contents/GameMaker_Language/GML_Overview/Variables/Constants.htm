@@ -16,10 +16,10 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Stałe</h1>
   <p>Stała to rodzaj zmiennej, która jest ustawiana raz na początku gry i nigdy się nie zmienia. W rzeczywistości wartości stałych <em>nie można zmieniać po ich zadeklarowaniu</em>. Dzięki temu idealnie nadają się do przechowywania wartości, które są używane w grze do identyfikacji specjalnych danych.</p>
-  <p>W witrynie <span class="notranslate">GameMaker Language</span> istnieją dwa rodzaje stałych definiowanych przez użytkownika: <strong>makra</strong> i <strong>enumy</strong>, które zostały omówione poniżej. Należy również pamiętać, że każda wartość, która jest zawsze taka sama, jest klasyfikowana jako stała, niezależnie od <a href="../Data_Types.htm">typu danych</a>, na przykład <span class="notranslate">string</span> lub liczba 3.</p>
-  <p class="note"><strong>UWAGA</strong>: Strona <span class="notranslate">GameMaker Language</span> ma także szereg wbudowanych stałych wartości, które służą do identyfikacji określonych rzeczy. Są one opisane na odpowiednich stronach dla funkcji <span class="notranslate">runtime</span>, które ich wymagają, w sekcji <a href="../../GML_Reference/GML_Reference.htm">GML Reference</a>.</p>
+  <p>W witrynie <span class="notranslate">GameMaker Language</span> istnieją dwa rodzaje stałych definiowanych przez użytkownika: <strong>makra</strong> i <strong>enumy</strong>, które zostały omówione poniżej. Należy również pamiętać, że każda wartość, która jest zawsze taka sama, jest klasyfikowana jako stała, niezależnie od <a href="../Data_Types.htm">typu danych</a>, np. <span class="notranslate">string</span> lub liczba 3.</p>
+  <p class="note"><span class="note">UWAGA</span> Strona <span class="notranslate">GameMaker Language</span> ma także szereg wbudowanych stałych wartości, które służą do identyfikacji określonych rzeczy. Są one opisane na odpowiednich stronach dla funkcji <span class="notranslate">runtime</span>, które ich wymagają, w sekcji <a href="../../GML_Reference/GML_Reference.htm">GML Reference</a>.</p>
   <h2>Makra</h2>
-  <p>Makra, choć nie są zmiennymi, są do nich podobne pod względem sposobu użycia, tzn. są nazwanymi wartościami, których można używać w kodzie w celu zastąpienia wartości <a class="glossterm" data-glossterm="twardo zakodowane" href="#">zakodowanych</a> na sztywno. Zasadniczo makro jest zmienną nazwaną, która przechowuje wyrażenie. Makra można definiować za pomocą <a href="../Script_Functions.htm">Edytora skryptów</a>, a następnie używać ich w kodzie i na stronie <span class="notranslate">DnD</span> tak jak zwykłych zmiennych, z tą różnicą, że <i>nie można ich zmieniać w grze</i>.</p>
+  <p>Makra, choć nie są zmiennymi, są do nich podobne pod względem sposobu użycia, tzn. są nazwanymi wartościami, których można używać w kodzie w celu zastąpienia wartości <a class="glossterm" data-glossterm="twardo zakodowane" href="#">zakodowanych</a> na sztywno. Zasadniczo makro jest zmienną nazwaną, która przechowuje wyrażenie. Makra można definiować za pomocą <a href="../Script_Functions.htm">Edytora skryptów</a>, a następnie używać ich w kodzie i akcjach tak, jakby były zwykłymi zmiennymi, z tą różnicą, że <i>nie można ich zmieniać w grze</i>.</p>
   <p>Struktura składni makra jest następująca:</p>
   <p class="code">#macro <i>&lt;variable&gt;</i> <i>&lt;expression&gt;</i></p>
   <p>Na przykład, zdefiniuj następujące makro &quot;<span class="inline">total_weapons</span>&quot;:</p>
@@ -44,7 +44,7 @@
   <p>Zauważ, że nie będziesz mógł zmienić wartości stałej, więc taki kod spowoduje awarię gry:</p>
   <p class="code">total_weapons = 11;</p>
   <p>Makro można zdefiniować w dowolnym miejscu w kodzie lub w skrypcie, a zostanie ono <i>prekompilowane</i> i dołączone do gry, tak jakby było tam od początku. Zalecamy jednak utworzenie specjalnej strony <span class="notranslate">script</span> <span class="notranslate">asset</span> i zdefiniowanie tam wszystkich makr. Będzie to łatwiejsze do zorganizowania i późniejszego debugowania!</p>
-  <p>Jeśli wartość makra ma się zmieniać w czasie wykonywania gry, to prawdopodobnie należy uczynić z niego <a href="Global_Variables.htm">zmienną globalną</a>, ponieważ można je zmieniać z poziomu kodu podczas gry, chyba że makro zostanie ustawione jako<span> <a href="../Runtime_Functions.htm">runtime </a></span> <a href="../Runtime_Functions.htm"><span class="notranslate">function</span></a>. Ustawienie makra jako funkcji oznacza, że funkcja ta będzie wywoływana za każdym razem, gdy użyjesz makra. Na przykład:</p>
+  <p>Jeśli wartość makra ma się zmieniać w czasie wykonywania gry, to prawdopodobnie należy uczynić z niego <a href="Global_Variables.htm">zmienną globalną</a>, ponieważ można je zmieniać z poziomu kodu w czasie gry, chyba że makro zostanie ustawione jako<span> <a href="../Runtime_Functions.htm">runtime </a></span> <a href="../Runtime_Functions.htm"><span class="notranslate">function</span></a>. Ustawienie makra jako funkcji oznacza, że funkcja ta będzie wywoływana za każdym razem, gdy użyjesz makra. Na przykład:</p>
   <p class="code">#macro col make_colour_hsv(irandom(255), 255, 255)</p>
   <p>Makro to można wywołać w następujący sposób:</p>
   <p class="code">image_blend = col;</p>
@@ -52,14 +52,14 @@
   <p class="code">#macro hello show_debug_message(&quot;Hello&quot; + \<br />
     string(player_name) + \<br />
     &quot;, how are you today?&quot;);</p>
-  <p>Jest to rozwiązanie czysto kosmetyczne, ponieważ podział makra w ten sposób nie będzie miał żadnego wpływu na wynik działania makra końcowego, a jego celem jest po prostu zapewnienie obsługi tekstu wielowierszowego w makrach zawierających dłuższe wiersze kodu.</p>
-  <p>Bardzo ważną cechą makr jest to, że można je zdefiniować do użycia z określonymi <a href="../../../Settings/Configurations.htm">konfiguracjami</a> (configami), co oznacza, że można mieć tę samą nazwę makra, ale nadać mu różne wartości w zależności od aktualnie wybranego configu. Na przykład, jeśli masz konfigurację dla <span class="notranslate">Android</span> Ads i inną dla <span class="notranslate">iOS</span> Ads, możesz zdefiniować jedno makro, które będzie przechowywało wymaganą wartość App ID:</p>
+  <p>Jest to rozwiązanie czysto kosmetyczne, ponieważ podział makra w ten sposób nie będzie miał żadnego wpływu na wynik działania makra końcowego, a jego celem jest po prostu zapewnienie obsługi tekstu wielowierszowego w makrach zawierających dłuższe linie kodu.</p>
+  <p>Bardzo ważną cechą makr jest to, że można je zdefiniować do użycia z określonymi <a href="../../../Settings/Configurations.htm">konfiguracjami</a> (configami), co oznacza, że można mieć tę samą nazwę makra, ale nadawać mu różne wartości w zależności od aktualnie wybranego configu. Na przykład, jeśli masz konfigurację dla <span class="notranslate">Android</span> Ads i inną dla <span class="notranslate">iOS</span> Ads, możesz zdefiniować jedno makro, które będzie przechowywało wymaganą wartość App ID:</p>
   <p class="code">#macro ad_id &quot;&quot;;<br />
     #macro Android:ad_id &quot;com.yoyogames.googlegame&quot;<br />
     #macro iOS:ad_id &quot;com.yoyogames.appstoregame&quot;</p>
   <p>Jak widać, najpierw podajesz nazwę konfiguracji, potem dwukropek <span class="inline">:</span>, a następnie nazwę i wartość makra. Zwróć uwagę, że pomiędzy dwukropkiem <span class="inline">:</span> a nazwą konfiguracji lub nazwą makra nie może być białych spacji, w przeciwnym razie zostanie wyświetlony błąd.</p>
   <h2 id="enumhead">Enumy</h2>
-  <p>Enum to &quot;wyliczarka&quot;, która zasadniczo umożliwia utworzenie własnego ograniczonego typu danych z listą stałych wartości, które mają następującą strukturę:</p>
+  <p>Enum to &quot;wyliczarka&quot;, która umożliwia utworzenie własnego ograniczonego typu danych z listą stałych wartości o następującej strukturze:</p>
   <p class="code">enum <i>&lt;variable&gt;</i><br />
     {<br />
     <i>    &lt;constant&gt;</i> [= <i>&lt;value&gt;</i>],<br />
@@ -139,11 +139,11 @@
       </tr>
       <tr>
         <td><span class="notranslate"><span class="inline">true</span></td>
-        <td>Ta stała reprezentuje wartość 1, czyli to, co <span class="notranslate">GameMaker Studio</span> oceni jako boolean &quot;true&quot; (zauważ, że każda wartość równa lub większa od 1 będzie oceniana jako <span class="inline">true</span>).</td>
+        <td>Ta stała reprezentuje wartość 1, którą <span data-keyref="GameMaker Name">GameMaker</span> oceni jako wartość logiczną &quot;true&quot; (zauważ, że każda wartość równa lub większa od 1 zostanie oceniona jako <span class="inline">true</span>).</td>
       </tr>
       <tr>
         <td><span class="notranslate"><span class="inline">false</span></td>
-        <td>Ta stała reprezentuje wartość 0, czyli to, co <span class="notranslate">GameMaker Studio</span> oceni jako boolean &quot;false&quot; (zauważ, że każda wartość mniejsza lub równa 0 będzie oceniana jako <span class="inline">false</span>).</td>
+        <td>Ta stała reprezentuje wartość 0, którą <span data-keyref="GameMaker Name">GameMaker</span> oceni jako wartość logiczną &quot;false&quot; (zauważ, że każda wartość mniejsza lub równa 0 zostanie oceniona jako <span class="inline">false</span>).</td>
       </tr>
       <tr>
         <td><span class="notranslate"><span class="inline">pi</span></td>

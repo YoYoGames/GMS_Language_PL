@@ -1,0 +1,46 @@
+
+  
+  sekwencja_warstw_get_xscale
+  Za pomocą tej funkcji podajesz identyfikator elementu sequence - zwrócony przez layer_sequence_create() lub przez jedną z funkcji elementów warstwy - a funkcja zwróci aktualną skalę wzdłuż osi X elementu sequence w grze room.
+   
+  Składnia:
+  layer_sequence_get_xscale(sequence_element_id)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sequence_element_id
+        The unique ID value of the sequence element to target
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var _xs = layer_sequence_get_xscale(title_sequence)
+    if _xs < 1
+    {
+        _xs += 0.01;
+        layer_sequence_xscale(title_sequence, _xs);
+    }
+  Powyższy kod pobiera bieżącą skalę wzdłuż osi X elementu sequence o identyfikatorze zapisanym w zmiennej "title_sequence" i jeśli jest ona mniejsza od 1, to do bieżącej skali X dodawana jest wartość 0,01.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy sekwencji
+        Następny: layer_sequence_get_yscale
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

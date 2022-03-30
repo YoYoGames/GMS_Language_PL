@@ -1,0 +1,32 @@
+
+  
+  physics_particle_group_end
+  Ta funkcja służy do zakończenia definiowania kształtu grupy cząstek. Wywołanie tej funkcji spowoduje utworzenie cząstek w ramach podanych parametrów kształtu, a także zwróci wartość ID, którą można zapisać i wykorzystać w dalszych funkcjach do interakcji z grupą cząstek.
+   
+  Składnia:
+  physics_particle_group_end()
+   
+  Zwroty:
+  Physics Particle Group ID
+   
+  Przykład:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;
+    var groupflags = phy_particle_group_flag_solid;
+    physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);
+    physics_particle_group_circle(100);
+    mLastGroup = physics_particle_group_end();
+  Powyższy kod przechowuje w zmiennych flags właściwości typu cząstki i grupy cząstek, a następnie wykorzystuje je do utworzenia okrągłej grupy cząstek o promieniu 100px w miejscu, w którym znajduje się mysz. Identyfikator utworzonej grupy jest przechowywany w zmiennej "mLastGroup".
+   
+   
+  
+    
+      
+        Powrót: Miękkie cząstki ciała
+        Następny: physics_particle_group_join
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

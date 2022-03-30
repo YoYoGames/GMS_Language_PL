@@ -1,0 +1,48 @@
+
+  
+   Jeśli przycisk w dół
+  Za pomocą tej akcji można sprawdzać, czy na klawiaturze jest aktualnie przytrzymywany jakiś klawisz. Akcja zwraca wartość true w każdym kroku, w którym klawisz jest wciśnięty, lub false w przeciwnym razie, choć jeśli klikniesz modyfikator not, możesz sprawdzić, czy klawisz nie jest wciśnięty, tzn. akcja zwróci wartość true, jeśli żaden klawisz nie jest wciśnięty, oraz false, jeśli jest wciśnięty. Jeśli konieczne jest sprawdzenie tylko jednego naciśnięcia klawisza, należy użyć akcji If Key Pressed.
+  Należy pamiętać, że aby dodać akcje do bloku "jeśli", należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:
+  Wszelkie działania zrzucone w innym miejscu zostaną wykonane po bloku "if".
+    blok.
+   
+  Składnia działania:
+  
+  Argumenty:
+   
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Key
+        Nazwa klawisza klawiatury, który ma zostać sprawdzony.
+      
+      
+        Not
+        Negacja sprawdzenia (prawda staje się fałszem i odwrotnie)
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji co krok sprawdza stan klawiatury i jeśli klawisz jest
+    sprawdzane jest początkowe naciśnięcie klawisza. Jeśli sprawdzane jest true początkowe naciśnięcie klawisza, odtwarzany jest dźwięk, a następnie, gdy klawisz jest przytrzymany, kolor mieszania sprite jest zmieniany na czerwony. Jeśli klawisz nie jest trzymany wciśnięty, sprawdzane jest
+    po zwolnieniu klawisza, aby przywrócić kolor mieszania na biały.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje myszy i klawiatury
+        Następny: Gdyby klawiatura została zwolniona
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

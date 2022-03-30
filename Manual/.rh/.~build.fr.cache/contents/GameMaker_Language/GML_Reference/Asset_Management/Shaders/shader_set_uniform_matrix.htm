@@ -1,0 +1,48 @@
+
+  
+  shader_set_uniform_matrix
+  Za pomocą tej funkcji można ustawić wartość (lub wartości) stałej shader na bieżącą macierz przekształcenia (ustawioną za pomocą funkcji Macierz). Wcześniej należy uzyskać "uchwyt" do stałej za pomocą funkcji shader_get_uniform().
+  UWAGA: Wszystkie uniformy muszą być ustawione po wywołaniu funkcji shader_set(), a przed wywołaniem funkcji shader_reset().
+   
+  Składnia:
+  shader_set_uniform_matrix(handle);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        handle
+        Jednolity uchwyt shadera
+        The handle of the shader constant to set.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  shader_set(shader_Glass);
+    shader_matrix = shader_get_uniform(shader_glass, "u_vMatrix");
+    shader_set_uniform_matrix(shader_matrix);
+    draw_self();
+    shader_reset();
+  Powyższy kod pobierze uchwyt stałej shader "u_vMatrix", a następnie ustawi tę stałą na bieżącą macierz transformacji.
+   
+   
+   
+  
+    
+      
+        Powrót: Shadery
+        Następny: shader_set_uniform_matrix_array
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

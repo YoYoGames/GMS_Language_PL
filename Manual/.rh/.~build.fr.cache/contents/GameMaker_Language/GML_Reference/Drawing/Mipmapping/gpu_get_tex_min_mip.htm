@@ -1,0 +1,32 @@
+
+  
+  gpu_get_tex_min_mip
+  Za pomocą tej funkcji można uzyskać minimalny poziom aktualnie używanej mipmapy, gdzie wartość 0 oznacza najwyższą rozdzielczość, 1 oznacza użycie pierwszej mipmapy, 2 - drugiej itd.
+   
+  Składnia:
+  gpu_get_tex_min_mip();
+   
+  Zwroty:
+   (default: 0)
+   
+  Przykład:
+  if gpu_get_tex_min_mip() != 0
+    {
+        gpu_set_tex_min_mip(0);
+    }
+  Powyższy kod sprawdzi aktualny minimalny poziom mapy mip i jeśli nie wynosi on 0, zostanie ustawiony na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Mipmapping
+        Następny: gpu_get_tex_min_mip_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

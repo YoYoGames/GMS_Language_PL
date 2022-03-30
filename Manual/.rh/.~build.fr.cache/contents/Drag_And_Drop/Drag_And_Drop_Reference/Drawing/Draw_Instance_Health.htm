@@ -1,0 +1,76 @@
+
+  
+   Rysuj stan zdrowia
+  Za pomocą tej akcji możesz narysować kolorowy pasek, aby pokazać graficzną reprezentację zmiennej instancji health (gdy użyjesz dowolnej akcji "health" w GameMaker Studio 2, instancja, która ją wywoła, będzie miała dodaną nową zmienną instance scope
+    instancji o nazwie health ). Wartość, która ma być wyświetlana, jest wartością procentową z zakresu 0-100. Możesz ustawić kierunek, w którym będzie rysowany pasek zdrowia (od lewej do prawej lub od prawej do lewej oraz od góry do dołu lub od dołu do góry)
+    a także pozycję - w obrębie strony room lub względem instancji wywołującej akcję. Możesz także ustawić kolor, który ma być mieszany z każdego z czterech rogów paska zdrowia, tworząc gradienty od czerwonego do zielonego (na przykład, ale możesz
+    użyć dowolnych kolorów). Poniżej znajduje się obrazek przedstawiający wygląd prostego paska zdrowia z różnymi opcjami:
+  
+  UWAGA: Ta akcja jest przeznaczona wyłącznie do użycia w różnych zdarzeniach losowania i nie spowoduje wylosowania niczego, jeśli zostanie użyta w innym miejscu.
+   
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Direction
+        Kierunek, w którym ma być rysowana zawartość paska zdrowia
+      
+      
+        Left
+        Położenie lewej strony paska zdrowia
+      
+      
+        Top
+        Położenie górnej części paska zdrowia
+      
+      
+        Right
+        Położenie prawej strony paska zdrowia
+      
+      
+        Bottom
+        Pozycja dolnej części paska zdrowia
+      
+      
+        Background
+        Kolor, który ma być tłem paska zdrowia.
+      
+      
+        Outline
+        Kolor, który ma być używany do obrysowania paska zdrowia.
+      
+      
+        Min Colour
+        Kolor, który ma być mieszany z wartością minimalną
+      
+      
+        Max Colour
+        Kolor, który ma być mieszany z wartością maksymalną
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji rysuje pasek zdrowia w lewym górnym rogu ekranu.
+   
+   
+   
+  
+    
+      
+        Powrót: Rysowanie działań
+        Następny: Rysowanie życia instancji
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

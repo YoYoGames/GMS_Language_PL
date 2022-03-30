@@ -1,0 +1,43 @@
+
+  
+  sprite_flush
+  Za pomocą tej funkcji możesz usunąć z pamięci texture podaną stronę sprite dla podanego adresu texture. Podajesz indeks sprite (zdefiniowany podczas tworzenia zasobu sprite ), a strona texture, do której jest on przypisany, zostanie usunięta z pamięci texture.
+    Zwróć uwagę, że jeśli strona texture jest używana gdzie indziej w room (przez inną instancję sprite lub tło, itp...), może to spowodować niewielki spadek wydajności, ponieważ strona jest natychmiast przeładowywana, więc należy zachować ostrożność podczas używania tej funkcji. Zwróć uwagę, że
+    zwróci -1, jeśli spłukiwanie nie jest obsługiwane dla wybranego zasobu, lub zwróci 0, jeśli wszystko działa poprawnie.
+   
+  Składnia:
+  sprite_flush(ind)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        ind
+        The index (resource name) of the sprite asset to flush
+     
+    
+  
+   
+  Zwroty:
+   (-1 or 0)
+   
+  Przykład:
+  sprite_flush(spr_Player_Aura);
+  Powyższy kod wypłukuje z pamięci stronę sprite "spr_Player_Aura".
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja sprite'ami
+        Następny: sprite_flush_multi
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

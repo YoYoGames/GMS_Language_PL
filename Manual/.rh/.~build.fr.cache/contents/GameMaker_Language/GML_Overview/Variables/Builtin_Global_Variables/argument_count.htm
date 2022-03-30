@@ -1,0 +1,44 @@
+
+  
+  argument_liczba
+  Ta zmienna tylko do odczytu zwraca liczbę "argumentów", które są przekazywane do funkcji skryptu lub funkcji method. Zazwyczaj używana w połączeniu z tablicą argumentów (argument[0...15]), aby umożliwić zmienne argumenty wejściowe dla danej funkcji.
+  UWAGA: Nie jest to już ściśle wymagane i służy bardziej do obsługi starszych funkcji niż do czegokolwiek innego. Wszystkie funkcje zdefiniowane przez użytkownika będą przyjmować zmienne argumenty, a każdy argument przekazany do funkcji, który nie jest częścią nazwanych danych wejściowych, będzie domyślnie zainicjowany jako niezdefiniowany, co można sprawdzić za pomocą funkcji is_undefined().
+   
+  Składnia:
+  argument_count;
+   
+  Zwroty:
+  
+   
+  Przykład:
+  function my_array()
+    {
+        var i, arg;
+        for (i = 0; i < 5; i += 1;)
+        {
+            if argument_count > i
+            {
+                arg[i] = argument[i]
+            }
+            else
+            {
+                arg[i] = -1;
+            }
+        }
+    }
+  Powyższy kod używa zmiennej argument_count wraz z tablicą argument do inicjalizacji zmiennych i jest przykładem na to, jak można pozwolić, by funkcja zdefiniowana przez użytkownika przyjmowała zmienną liczbę argumentów.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne globalne
+        Następny: async_load
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

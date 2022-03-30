@@ -1,0 +1,92 @@
+
+  
+  Redaktor Object 
+  Obiekty to zasoby, których używamy do kontrolowania aspektów gry i wykonywania określonych czynności. W większości przypadków mają one przypisany adres sprite 
+    aby można je było zobaczyć w grze rooms, ale czasami są używane jako kontrolery "za kulisami" do wykonywania czynności związanych z użytkownikiem lub do określania czasu itp. Można im przypisać określone zachowania i mogą one reagować na pewne zdarzenia, jak również na
+    Większość rzeczy, które można zobaczyć w grze, opiera się na stronie objects i ich interakcji. Mówimy "na podstawie", ponieważ nie umieszczasz objects bezpośrednio w grze rooms, ale raczej umieszczasz instancje tych zasobów objects, które są w zasadzie kopiami (lub klonami, jeśli wolisz) zasobu object. Jest to bardzo ważna rzecz, o której należy pamiętać, ponieważ instancje i objects to nie to samo, a każda z nich ma własny zestaw funkcji, które mogą mieć na nie wpływ.
+    na nie.
+  Aby to wyjaśnić, pomyśl o grze stworzonej za pomocą GameMaker Studio 2. Wszystkie postacie, potwory, kule, ściany itp. to wszystko objects, które tworzysz w Przeglądarce zasobów. Następnie przeciągasz obiekt do
+    room w Edytorze pomieszczeń, aby utworzyć instancję skopiowaną z podstawowego szablonu object. Instancję w room można następnie zmienić w samym edytorze lub za pomocą kodu, tak aby można było ją skalować, nadać jej kolor lub zmienić
+    inne szczegóły zmodyfikowane w stosunku do "bazowego" object. Kiedy więc mówimy, że coś wpływa na instancję lub ją zmienia, mamy na myśli, że wpływa to na tę jedną konkretną kopię object w pomieszczeniu. Tylko ta jedna instancja jest
+    ma wpływ, podczas gdy wszystkie pozostałe nie mają. Natomiast gdy mówimy o wpływaniu na obiekt lub jego zmianie, mamy na myśli, że modyfikujemy stronę object w przeglądarce Asset i wszystko, co z nią zrobimy, będzie miało wpływ na wszystkie instancje utworzone od tego momentu.
+    od tego momentu. Tak więc object jest szablonem dla instancji, a instancja jest tym, co umieszczamy w room, aby stworzyć naszą grę.
+  Aby utworzyć w grze witrynę object, kliknij prawym przyciskiem myszy witrynę  w przeglądarce Asset i kliknij opcję Utwórz obiekt. Spowoduje to otwarcie okna przedstawionego na
+    u góry tej strony, zawierające następujące sekcje:
+  Szczegóły
+  
+    Tutaj możesz nadać nazwę swojej witrynie object. Nazwa ta nie powinna zawierać spacji ani niedozwolonych znaków (dozwolone są tylko znaki alfanumeryczne i znak "_") i powinna być krótka, ale zapadająca w pamięć, aby można było łatwo zidentyfikować zasoby
+      aby można było łatwo zidentyfikować zasoby w późniejszym czasie, gdy będzie się ich miało wiele. Na przykład wiele osób używa przedrostka lub przyrostka, aby zidentyfikować różnice między zasobami, na przykład "obj_Ship" lub "Ship_obj".
+    Następnie możesz wybrać adres sprite dla strony object, jeśli chcesz, aby była ona w nim umieszczona. Kliknij lewym przyciskiem myszy  na polu sprite, a pojawi się Eksplorator zasobów z listą wszystkich dostępnych sprites z przeglądarki Asset:
+    Następnie możesz wybrać ten, którego chcesz użyć dla object. Mając sprite przypisany do object, możesz kliknąć przycisk Edit Sprite , aby zmienić właściwości sprite'a, lub - jeśli nie masz sprite dla object, ale chcesz go utworzyć - możesz kliknąć przycisk
+      przycisk Add Sprite (Dodaj sprite ) , aby utworzyć nowy sprite asset i przypisać go. Możesz także edytować przypisany obrazek sprite asset 
+        , klikając p rzycisk Edit Image (Edytuj obraz) , aby otworzyć edytor obrazów.
+     
+  
+  Maska antykolizyjna
+  
+    Pod obszarem przypisania sprite znajduje się przycisk umożliwiający wybranie określonej Maski kolizji. Domyślnie witryna object będzie generować właściwości kolizji na podstawie przypisanej do niej witryny sprite, ale w niektórych przypadkach można chcieć, aby
+      aby kolizje były oparte na innym kształcie z innej strony sprite. Na przykład w grze z widokiem z góry na dół główna witryna sprite ma prostokątną maskę kolizji, ale aby kolizje były bardziej płynne, lepsza może być maska okrągła. W takich przypadkach
+      możesz kliknąć przycisk Maska kolizji i wybrać inny zasób sprite, dzięki czemu instancje object będą rysować przypisaną im stronę sprite, ale kolizje będą bazować na masce sprite. Więcej informacji o maskach kolizji można znaleźć
+      Więcej informacji o maskach kolizji można znaleźć na stronie poświęconej edytorowi sprite'ów.
+     
+  
+  Właściwości
+  
+    W tym miejscu dostępne są następujące opcje dotyczące obiektu:
+    
+      Widoczny: Visible określa, czy instancje tej strony object są widoczne po uruchomieniu strony room. Zwykle większość instancji jest widoczna, ale czasami warto mieć niewidoczne - na przykład można ich użyć jako punktów orientacyjnych do
+        do sterowania poruszającym się potworem lub do śledzenia wartości i wykonywania określonych akcji w określonym czasie. Niewidzialne objects nadal będą reagować na zdarzenia, a jeśli mają przypisane sprite lub maskę, będą też reagować, gdy inne instancje zderzą się z nimi...
+        po prostu nie można ich zobaczyć i nie wykonują one swoich akcji rysowania. Domyślnie zaznaczona jest opcja widoczna flag.
+      Solid: Gdy flag instancji jestsolidny, mówisz GameMaker Studio 2, że powinien spróbować rozwiązać wszelkie kolizje przed wywołaniem zdarzenia kolizji. Jest to bardzo podstawowa funkcjonalność i w rzeczywistości
+        w rzeczywistości wszystko, co robi, to cofnięcie instancji do pozycji, w której znajdowała się w chwili przed wykryciem kolizji, przed wykonaniem jakiegokolwiek kodu lub DnD™, który znajduje się w samym zdarzeniu kolizji, i jako taka ma ograniczone zastosowanie.
+      Trwały: Trwały object to taki, który nie znika po zmianie adresu room, ale raczej "utrzymuje się" i jest przenoszony do nowego room. Zniknie tylko wtedy, gdy go wyraźnie zniszczysz, albo za pomocą
+        akcji destroy lub w kodzie. Oznacza to, że jeśli umieścisz trwałą stronę object w jednej witrynie room, będzie ona nadal dostępna we wszystkich kolejnych rooms i będzie nadal wykonywać wszelkie akcje przypisane do zdarzeń we właściwościach object, z wyjątkiem zdarzenia
+       Create Event, które jest uruchamiane tylko raz , przy pierwszym utworzeniu, a nie przy zmianie na nową stronę room. Jest to przydatne, gdy na przykład masz głównego bohatera, który przenosi się z room na room i chcesz zachować
+        Należy jednak bardzo uważać, aby poprawnie tworzyć i niszczyć trwałe obiekty objects, ponieważ łatwo o pomyłkę, która może spowodować wkradnięcie się błędów do projektu.
+    
+    Warstwy Persistence i Room   
+    
+      Po utworzeniu instancji z włączoną opcją trwałości w witrynie room zostanie jej przypisana warstwa lub głębokość (w zależności od tego, jakiej funkcji użyto do utworzenia instancji witryny object). Po zmianie adresu room i jeśli następująca po nim room nie ma
+        warstwy o takiej samej nazwie lub głębokości jak ta, która została przypisana, to dla instancji zostanie utworzona nowa warstwa, która będzie trwała w różnych pomieszczeniach. Jeśli podczas tworzenia instancji nadano nazwę warstwie, to nowa warstwa również
+        Jeśli podczas tworzenia instancji nadałeś jej nazwę, to nowa warstwa również będzie miała taką samą nazwę jak warstwa oryginalna, natomiast jeśli przypisałeś jej głębokość, to nowa warstwa będzie miała nazwę "_layer_XXX", gdzie "XXX" to wartość heksadecymalna służąca do nadania warstwie unikalnej nazwy.
+        warstwie unikalną nazwę. Warstwy te zostaną usunięte z room na końcu pokoju.
+         Kolejną rzeczą, na którą należy zwrócić uwagę przy tworzeniu warstw i instancji trwałych, jest to, że jeśli podczas tworzenia instancji przypisałeś jej warstwę o tej samej nazwie, a w następnej części rooms znajduje się inna warstwa o tej samej nazwie, to instancja trwała zostanie przypisana
+        do warstwy o tej samej nazwie, niezależnie od głębokości warstwy.
+         Wreszcie, jeśli instancja persystowana zostanie przeniesiona na stronę room z warstwą na tej samej głębokości, na której została utworzona, nie zostanie przypisana do tej warstwy, lecz zostanie utworzona nowa warstwa na tej samej głębokości (zgodnie z konwencją nazewnictwa wyjaśnioną powyżej).
+        konwencję nazewnictwa wyjaśnioną powyżej).
+    
+    Trwałość i zdarzenia
+    
+      Jak wspomniano wcześniej, trwały obiekt object uruchomi swoje zdarzenie tworzenia tylko raz, ale w odpowiednim czasie będą też uruchamiane zdarzenia rozpoczęcia gry, zakończenia gry, rozpoczęcia i zakończenia pomieszczenia. Jeśli jednak zrestartujesz grę (np. za pomocą funkcji game_restart() ), wszystkie trwałe objects zostaną usunięte i będą istnieć tylko wtedy, gdy zostaną ponownie utworzone przez grę.
+         Pamiętaj też, że jeśli dezaktywujesz trwałą stronę object, nie będzie ona już przechodzić z jednej strony room na drugą, chyba że zostanie ponownie aktywowana przed wywołaniem zdarzenia końca pokoju. Ponowna aktywacja wymaga wykonania pełnego kroku gry,
+        więc użycie w tym celu zdarzenia zakończenia pomieszczenia nie działa, ponieważ nie daje grze pełnego kroku na ponowną aktywację object, więc musisz o tym pamiętać, używając dezaktywacji wraz z trwałym objects i odpowiednio zaplanować swój
+        kod odpowiednio.
+    
+    
+      Korzysta z fizyki: Zaznaczając pole wyboru Wykorzystuje fizykę, informujesz stronę GameMaker Studio 2, że ta witryna object powinna być częścią świata fizyki (zgodnie z ustawieniami wedytorze pomieszczeń . Zaznaczenie tego pola spowoduje również
+        otworzy kolejne okno łańcuchowe, w którym można zdefiniować właściwości fizyczne wszystkich instancji tej strony object. Więcej informacji na ten temat można znaleźć w rozdziale Obiekty fizyki.
+    
+  
+   
+  Ostatnia część Edytora Object jest poświęcona różnym opcjom obiektów, z których każda została omówiona na osobnej stronie, do której odnośnik znajduje się poniżej:
+  
+    Wydarzenia dotyczące obiektów
+    Obiekty macierzyste
+    Obiekty fizyczne
+    Zmienne obiektowe
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Redaktorzy Aktywów
+        Następny: Ścieżki
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

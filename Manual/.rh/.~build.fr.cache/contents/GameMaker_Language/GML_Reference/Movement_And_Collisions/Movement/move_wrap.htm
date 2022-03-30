@@ -1,0 +1,53 @@
+
+  
+  przenieść_opaskę
+  Ta funkcja automatycznie "zawija" instancję, która opuściła stronę room na osi poziomej lub pionowej (lub obu). Możesz określić margines poza krawędziami room, by to nastąpiło, a gdy instancja wyjedzie poza ten margines, GameMaker Studio 2 automatycznie zawinie ją z powrotem do room po drugiej stronie. Zauważ, że aby zawijanie działało, instancja musi mieć prędkość, ponieważ kierunek zawijania jest zależny od kierunku ruchu.
+   
+  Składnia:
+  move_wrap(hor, vert, margin);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        hor
+        Boolean
+        Whether to wrap horizontally (true) or not (false).
+      
+      
+        vert
+        Boolean
+        Whether to wrap vertically (true) or not (false).
+      
+      
+        margin
+        Real
+        How far outside the room, in pixels, the object must be to initiate wrapping.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  move_wrap(true, false, sprite_width);
+  Spowoduje to, że instancja będzie zawijana w poziomie, ale nie w pionie, gdy przekroczy swoją własną szerokość sprite poza obszarem room.
+   
+   
+   
+  
+    
+      
+        Powrót: Ruch
+        Następny: place_snapped
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

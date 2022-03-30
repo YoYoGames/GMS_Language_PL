@@ -1,0 +1,44 @@
+
+  
+  window_set_caption
+  Za pomocą tej funkcji można zmienić lub ustawić podpis okna dla strony room, na której aktualnie się znajdujesz. Napis ten jest wyświetlany w górnej części okna, obok ikony gry, gdy gra nie działa w trybie pełnoekranowym.
+   
+  Składnia:
+  window_set_caption(caption);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        caption
+        The new caption.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if window_get_caption() != ""
+    {
+        window_set_caption("");
+    }
+  Powyższy kod sprawdzi, czy w podpisie okna znajduje się tekst, a jeśli tak, ustawi go na pusty adres string, tak aby nie był wyświetlany żaden podpis.
+   
+   
+   
+  
+    
+      
+        Powrót: Okno gry
+        Następny: window_set_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

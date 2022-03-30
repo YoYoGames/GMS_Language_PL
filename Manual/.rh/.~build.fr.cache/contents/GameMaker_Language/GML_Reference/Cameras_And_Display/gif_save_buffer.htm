@@ -1,0 +1,58 @@
+
+  
+  gif_save_buffer
+  Za pomocą tej funkcji można zapisać animację GIF. Podajesz indeks GIF (zwrócony przez funkcję gif_open()), a funkcja zwróci wyrównany do 1 bajta plik grow buffer z danymi GIF. Należy pamiętać, że ostateczne dane GIF zostaną spolaryzowane przy użyciu palety Universal 884 Palette (więcej informacji tutaj ).
+   
+  Składnia:
+  gif_save_buffer(gif_index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        gif_index
+        The ID of gif to save
+     
+    
+  
+   
+  Zwroty:
+  Buffer ID
+   
+  Przykład:
+  if save_gif == true
+    {
+        if count == 0
+        {
+            gif_image = gif_open(room_width, room_height);
+        }
+        else if count < 30
+        {
+            gif_add_surface(gif_image, application_surface, 6/100);
+        }
+        else
+        {
+            global.capture_buff = gif_save_buffer(gif_image);
+            count = 0;
+            save_gif = false;
+        }
+        count++;
+    }
+  Powyższy kod utworzy plik obrazu GIF zawierający 30 klatek pobranych z powierzchni aplikacji, a następnie zapisze go na stronie buffer.
+   
+   
+   
+  
+    
+      
+        Powrót: Aparaty i wyświetlacz
+        Następny: display_reset
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

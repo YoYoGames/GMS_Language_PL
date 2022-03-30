@@ -1,0 +1,69 @@
+
+  
+  aktywuj_instancję_regionu
+  Za pomocą tej funkcji można zdefiniować w witrynie room region, w którym będą aktywowane instancje, które wcześniej zostały wyłączone. Region ten może być oznaczony jako "wewnętrzny" lub "zewnętrzny", jak pokazano na poniższym rysunku:
+  Na powyższym rysunku widać, że instancja "jabłka" jest zawsze aktywna, ponieważ nawet jeśli sama strona sprite nie pokrywa się z regionem, to jej ramka brzegowa już tak. Tak więc instancje są uważane za znajdujące się w określonym regionie, gdy ich ramka nachodzi na niego, a stan maski kolizji (dokładny lub nie) nie jest brany pod uwagę. Zauważ, że aktywacja nie jest natychmiastowa, a instancja, która została aktywowana w ten sposób, nie będzie uważana za aktywną aż do końca zdarzenia, w którym wywołano tę funkcję.
+   
+  Składnia:
+  instance_activate_region(left, top, width, height, inside);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        left
+        Real
+        The x coordinate of the left of the rectangular region to activate.
+      
+      
+        top
+        Real
+        The y coordinate of the top of the rectangular region to activate.
+      
+      
+        width
+        Real
+        The width of the region to activate.
+      
+      
+        height
+        Real
+        The height of the region to activate.
+      
+      
+        inside
+        Boolean
+        Whether to activate instances on the inside of the region (true) or the outside (false).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  instance_deactivate_all(true);
+    var _vx = camera_get_view_x(view_camera[0]);
+    var _vy = camera_get_view_y(view_camera[0]);
+    var _vw = camera_get_view_width(view_camera[0]);
+    var _vh = camera_get_view_height(view_camera[0]);
+    instance_activate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false);
+  Powyższy kod dezaktywuje wszystkie instancje oprócz tej, która wykonuje kod, a następnie aktywuje region w witrynie room.
+   
+   
+   
+  
+    
+      
+        Powrót: Dezaktywacja instancji
+        Następny: instance_activate_layer
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,105 @@
+
+  
+  z
+  Jak wskazano w rozdziale Adresowanie zmiennych w innych instancjach, możliwe jest odczytywanie i zmienianie wartości zmiennych w instancjach i strukturach innych niż ta, w której aktualnie wykonywany jest dany kod. Jednak w wielu przypadkach chcesz zrobić znacznie więcej niż tylko zmienić pojedynczą zmienną w tych innych instancjach i możesz chcieć wykonać bardziej złożone działania, które wymagają wielu funkcji i linii kodu. Na przykład, wyobraź sobie, że chcesz przesunąć wszystkie instancje piłki object w swojej grze o 8 pikseli w dół. Może Ci się wydawać, że można to osiągnąć za pomocą następującego fragmentu kodu:
+  obj_ball.y = obj_ball.y + 8;
+  Ale to nie jest poprawne, ponieważ prawa strona przypisania pobiera wartość współrzędnej y pierwszej kulki i dodaje do niej 8. Następnie ta nowa wartość jest ustawiana jako współrzędna y wszystkich kulek, więc w rezultacie wszystkie kulki otrzymują tę samą współrzędną y i nawet jeśli użyjesz następującego rozwiązania:
+  obj_ball.y += 8;
+  będzie miało dokładnie taki sam efekt, ponieważ jest po prostu skrótem pierwszego wyrażenia. Jak więc osiągnąć coś takiego? Właśnie dlatego w GML istnieje instrukcja with. Stwierdzenie with ma następującą składnię:
+  with (<expression>)
+    {
+        <statement>;
+        <statement>;
+        ...
+    }
+  W wyrażeniu można wskazać jedną lub więcej instancji (lub struct), na których ma zostać wykonany kod, używając identyfikatora instancji, identyfikatora object (który wskazuje, że wszystkie instancje w room tego object mają wykonać blok kodu), identyfikatora struct lub jednego ze specjalnych słów kluczowych (all lub other). Spowoduje to zmianę zakresu kodu w nawiasach klamrowych {} z instancji, struct lub funkcji, w której faktycznie znajduje się kod, na instancję (lub instancje lub struct) podaną w wyrażeniu.
+  Po ustawieniu przez wyrażenie zakresu with, instrukcja zostanie wykonana dla każdej ze wskazanych instancji, tak jakby ta instancja była instancją bieżącą ( self). Tak więc, wracając do naszego oryginalnego problemu, aby przesunąć wszystkie instancje kulki object o 8 pikseli w dół, należałoby wpisać:
+  with (obj_ball)
+    {
+        y += 8;
+    }
+  Zasadniczo jest to strona loop, a każda iteracja strony loop powoduje uruchomienie kodu na jednej instancji strony object obj_ball.
+  Jeśli chcesz wykonać wiele poleceń, po prostu umieść je w nawiasach klamrowych, tak samo jak każdy inny blok kodu. Na przykład, aby przesunąć wszystkie kulki w naszym przykładzie w losowe położenie i nadać im losową prędkość i kierunek, użyjesz polecenia:
+  with (obj_ball)
+    {
+        x = random(room_width);
+        y = random(room_height);
+        speed = 1 + random(2);
+        direction = random(360);
+    }
+  Jak wspomniano powyżej, w instrukcji (instrukcjach) wskazana instancja lub struktura stała się instancją docelową (self), która uruchamia blok kodu, co oznacza, że oryginalna instancja (zawierająca with i cały blok kodu) stała się instancją other instancją. Tak więc - na przykład - aby przenieść wszystkie kulki na pozycję bieżącej instancji, która faktycznie zawiera kod, można napisać tak:
+  with (obj_ball)
+    {
+        x = other.x;
+        y = other.y;
+    }
+  Oświadczenie with to niezwykle potężne narzędzie, przydatne w wielu, wielu okolicznościach, dlatego ważne jest, aby w pełni zrozumieć, jak można je wykorzystać. Dla ułatwienia poniżej podajemy kilka przykładów użycia:
+  with (instance_create_layer(x, y, "Instances", obj_Ball))
+    {
+        speed = other.speed;
+        direction = other.direction;
+    }
+  Powyższy kod utworzy instancję obj_Ball i przypisze jej prędkość i kierunek instancji, która uruchamia cały blok kodu.
+  with (instance_nearest(x, y, obj_Ball))
+    {
+        instance_destroy();
+    }
+  Powyższy kod zniszczy instancję obj_Ball znajdującą się najbliżej instancji uruchamiającej kod.
+  with(clone_struct)
+    {
+        xx = other.x;
+        yy = other.y;
+        spd = other.speed;
+        dir = other.direction;
+    }
+  Powyższy kod używa adresu with, aby wycelować w struct i ustawić zmienne członkowskie struct na wartości przechowywane w zmiennych instancji wywołującej kod.
+  var _inst = noone;
+    with (obj_ball)
+    {
+        if (str > other.str)
+        {
+            _inst = id;
+        }
+    }
+    if (_inst != noone)
+    {
+        target = _inst;
+    }
+  Powyższy kod jest nieco bardziej skomplikowany niż poprzednie, ponieważ wykorzystuje zmienną lokalną. Zmienna ta jest lokalna dla zdarzenia lubfunkcji skryptu , a nie dla instancji lub struct i dlatego może być używana i dostępna dla wszystkich instancji, do których odwołujemy się w bloku kodu. Tak więc w powyższym kodzie ustawiliśmy zmienną lokalną na specjalne słowo kluczowe noone, a następnie użyliśmy konstrukcji with, aby każda instancja obj_Ball sprawdziła swoją zmienną str względem zmiennej instancji uruchamiającej blok kodu. Jeśli wartość zmiennej jest większa, to zapisują one swój unikalny identyfikator w zmiennej lokalnej inst, co oznacza, że na końcu kodu w zmiennej lokalnej _inst będą przechowywane tylko instancje o wartości większej niż instancja wywołująca (lub słowo kluczowe noone, jeśli żadna nie jest większa).
+  Warto zauważyć, że w ramach wywołania można używać specjalnych instrukcji break i continue. z również w wywołaniu. Użycie break spowoduje natychmiastowe opuszczenie bloku kodu with i przejście do dowolnego kodu znajdującego się w zdarzeniu lub funkcji po zakończeniu with, np:
+  var count = 0;
+    with (obj_Enemy)
+    {
+        if (++count > 10)
+        {
+            break;
+        }
+        hp = 100;
+    }
+  Powyższy kod loops przegląda instancje w room z object obj_Enemy i ustawia zmienną hp na 100 dla pierwszych 10, które znajdzie. Jeśli istnieje więcej niż 10 instancji, kod ten wywoła stronę break i zakończy działanie.
+  Przykładem użycia adresu continue w pętli with może być:
+  with (obj_Enemy_Parent)
+    {
+        if (invulnerable == true)
+        {
+            continue;
+        }
+        hp -= 25;
+    }
+  Ten kod loop przechodzi przez wszystkie instancje z rodzicem obj_Enemy_Parent, a następnie sprawdza każdą z nich, czy zmienna instancji invulnerable jest true czy nie. Jeśli tak, słowo kluczowe continue kończy bieżącą iterację loop i przechodzi do następnej dostępnej instancji, w przeciwnym razie usuwa 25 ze zmiennej hp. Czynność ta jest powtarzana do momentu, aż zostaną sprawdzone wszystkie instancje z tym rodzicem.
+   
+   
+   
+   
+  
+    
+      
+        Powrót: Cechy językowe
+        Następny: return
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

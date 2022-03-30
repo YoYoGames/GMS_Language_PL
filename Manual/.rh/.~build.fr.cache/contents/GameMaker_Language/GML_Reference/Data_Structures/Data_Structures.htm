@@ -1,0 +1,42 @@
+
+  
+  Struktury danych
+  W grach często zachodzi potrzeba przechowywania informacji w precyzyjny i uporządkowany sposób. Na przykład można przechowywać listę przedmiotów, które nosi dana osoba, lub siatkę miejsc, które trzeba jeszcze odwiedzić. Do tego celu można użyć tablic, ale jeśli chcesz wykonać bardziej skomplikowane operacje, takie jak sortowanie danych lub wyszukiwanie określonego elementu, musisz napisać duże fragmenty kodu GML, który może być powolny w wykonaniu, trudny do debugowania i naprawdę uciążliwy w pisaniu!
+  Aby temu zaradzić, GameMaker Studio 2 posiada szereg wbudowanych struktur danych, do których można uzyskać dostęp za pomocą specjalistycznych funkcji. Dostępnych jest sześć różnych typów struktur danych, z których każdy ma swoje zalety w zależności od rodzaju informacji, które chcemy przechowywać, i sposobu późniejszego manipulowania nimi: stosy, queues, listy, mapy, priorytety queues i siatki.
+  UWAGA: Zaleca się używanie tablic i struktów zamiast list DS i map, ponieważ mają one podobne właściwości, są łatwiejsze w użyciu i są automatycznie odśmiecane.
+  Zasadniczo wszystkie struktury danych działają w ten sam sposób - tworzysz strukturę danych i przechowujesz wartość jej indeksu w zmiennej. Następnie używasz tego indeksu do odwoływania się do struktury danych we wszystkich kolejnych wywołaniach funkcji, które mogą wykonywać na niej operacje. Na koniec, po zakończeniu pracy, ponownie niszczysz strukturę danych, aby usunąć ją z pamięci. W tym samym czasie można używać dowolnej liczby struktur, a wszystkie struktury mogą przechowywać dowolny z dostępnych typów danych.
+  UWAGA Podobnie jak wszystkie zasoby dynamiczne, struktury danych zajmują pamięć, dlatego powinny być zawsze niszczone, gdy nie są już potrzebne, aby zapobiec wyciekom pamięci, które spowalniają grę i prowadzą do jej awarii.
+  Gdy tworzysz strukturę danych, wartość indeksu używana do jej identyfikacji jest liczbą całkowitą zaczynającą się od 0. Oznacza to, że różne struktury danych mogą mieć tę samą wartość indeksu, więc jeśli masz wątpliwości, powinieneś użyć funkcji ds_exists przed uzyskaniem do nich dostępu. Należy również pamiętać, że indeksy są używane ponownie, więc wartość indeksu zniszczonej struktury danych może zostać użyta przez nowo utworzoną strukturę. Zalecamy więc, aby po zniszczeniu struktury danych ustawić każdą zmienną przechowującą indeks DS na -1.
+  Informacje na temat różnych struktur danych można znaleźć w kolejnych rozdziałach:
+  
+    Siatki
+    Listy
+    Mapy
+    Kolejki priorytetowe
+    Kolejki
+    Stosy
+  
+   
+  Przed użyciem struktur danych w grze należy pamiętać, że w pewnych momentach, z powodu błędów zaokrąglania, można uzyskać wynik niezgodny z oczekiwaniami. Można temu zaradzić, zmieniając precyzję DS za pomocą poniższej funkcji:
+  
+    ds_set_precision
+  
+   
+  Istnieje również specjalna funkcja sprawdzająca, czy istnieje struktura danych danego typu:
+  
+    ds_exists
+  
+   
+   
+  
+    
+      
+        Powrót: Odniesienie do GML
+        Następny: Struny
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

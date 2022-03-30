@@ -1,0 +1,52 @@
+
+  
+  ds_map_set
+  Za pomocą tej funkcji można ustawić wartość klucza w obrębie danej mapy DS. Należy podać wartość identyfikatora mapy DS (zwróconą przez funkcję ds_map_create()), a następnie podajesz klucz, który chcesz ustawić i wartość, na jaką ma zostać ustawiony. Klucze mogą być liczbami całkowitymi lub strings, a jeśli podany klucz nie istnieje, zostanie utworzony dla użytkownika i ustawiony na wartość. Ta funkcja jest taka sama jak użycie akcesora DS map do ustawienia/utworzenia pary klucz-wartość. Funkcja ta nie zwraca niczego, więc jeśli chcesz sprawdzić, czy wartość klucza została zastąpiona lub czy został utworzony nowy klucz, powinieneś użyć funkcji ds_map_replace().
+   
+  Składnia:
+  ds_map_set(id, key, value)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the map to use.
+     
+      
+        key
+        The key to set.
+     
+      
+        value
+        The value to set the key to.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if is_undefined(ds_map_find_value(map, "score"))
+    {
+        ds_map_set(map, "score", 0);
+    }
+  Powyższy kod sprawdzi, czy podany klucz istnieje, a jeśli nie, to zostanie utworzony i ustawiony.
+   
+   
+   
+  
+    
+      
+        Powrót: Mapy DS
+        Następny: ds_map_read
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

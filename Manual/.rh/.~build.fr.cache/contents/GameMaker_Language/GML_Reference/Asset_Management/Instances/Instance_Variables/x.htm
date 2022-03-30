@@ -1,0 +1,32 @@
+
+  
+  x
+  Wartość x instancji to pozioma pozycja w bieżącej witrynie room, mierzona w pikselach. Wartość ta może być albo 0, albo dodatnia, albo ujemna, gdzie 0 jest lewą stroną room i przesuwanie w prawo zwiększa x, a przesuwanie w lewo zmniejsza x (ujemna wartość x oznacza, że instancja wyszła poza lewą stronę ).
+    oznacza, że instancja wyszła poza lewą stronę room). Możesz nawet nadać x wartość rzeczywistą, taką jak 12,345, ale ponieważ nie możesz uzyskać 0,345 piksela, może się wydawać, że instancja się nie poruszyła, choć wartości te będą utrzymywane
+    i używane wewnętrznie przez GameMaker Studio 2 i są całkowicie poprawne.
+  Ustawiając wartości x (i y), można sprawić, że witryna object będzie przeskakiwać wokół strony room do wybranej pozycji. Można też dodawać i odejmować do nich mniejsze wartości, aby uzyskać złudzenie ruchu bez korzystania z wbudowanych funkcji speed    i direction funkcji. Należy wziąć to pod uwagę podczas tworzenia gier, ponieważ często jeden rodzaj ruchu nadaje się bardziej do określonego stylu gry niż inny.
+   
+  Składnia:
+  x;
+   
+  Zwroty:
+   (single precision floating point value)
+   
+  Przykład:
+  if keyboard_check(vk_left) x += 5; if keyboard_check(vk_right) x -= 5;
+  Powyższy kod będzie używał klawiszy strzałek do dodawania lub odejmowania pozycji x, tworząc w ten sposób iluzję ruchu.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne instancji
+        Następny: y
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,36 @@
+
+  
+  tarcie
+  Friction jest jedną z "wbudowanych" właściwości, jakie mogą mieć instancje, i może być używana do spowalniania instancji w czasie, gdy wartość parametru speed jest inna niż zero. Działa po prostu przez odejmowanie pewnej wartości od prędkości co krok, aż prędkość object wyniesie 0. Jeśli więc tarcie jest ustawione na przykład na 0,1, a prędkość instancji wynosi 1 (1 piksel na krok), to zwolni ona i zatrzyma się po 10 krokach. Zauważ też, że tarcie jest stosowane w równym stopniu do prędkości dodatnich i ujemnych, a wynikiem netto jest zawsze to, że po danym czasie object ma prędkość 0.
+   
+  Składnia:
+  friction;
+   
+  Zwroty:
+   (single precision floating point value)
+   
+  Przykład:
+  if abs(speed) > 0
+    {
+        friction = 0.05;
+    }
+    else
+    {
+        friction = 0;
+    }
+  Powyższy kod zastosuje tarcie tylko wtedy, gdy prędkość bezwzględna instancji będzie większa od 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne instancji
+        Następny: gravity
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

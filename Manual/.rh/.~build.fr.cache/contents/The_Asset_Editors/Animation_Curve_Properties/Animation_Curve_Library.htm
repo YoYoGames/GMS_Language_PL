@@ -1,0 +1,60 @@
+
+  
+  Biblioteka krzywych animacji
+  W oknie Biblioteka krzyw ych animacji można zmienić typ krzywej dla krzywej animacji oraz zastosować
+    ustawienie wstępne do wybranego kanału. Można je otworzyć, klikając lewym przyciskiem myszy  przycisk  w oknie Animation Curve Editor lub Sequence Dope Sheet albo klikając prawym przyciskiem myszy  w dowolnym miejscu okna Channel Editor.
+    w dowolnym miejscu edytora kanałów.
+  Typ łuku
+  
+     Typ krzywej kontroluje sposób przepływu kanału od punktu do punktu i można go ustawić na jedną z poniższych opcji:
+    
+      Liniowy: Spowoduje to utworzenie liniowej progresji między punktami na kanale.
+      Smooth: Spowoduje to zastosowanie interpolacji katmull-rom w celu utworzenia płynnej progresji między punktami na kanale.
+      Beziera: Ta funkcja wykorzystuje matematykę krzywej Beziera do utworzenia płynnej progresji między punktami na kanale, przy czym można kontrolować wygląd krzywej, manipulując "uchwytami" na punktach.
+    
+    Należy pamiętać, że zmiana typu krzywej spowoduje zastosowanie tego typu do wszystkich kanałów w krzywej animacji.
+  
+  Ustawienia wstępne krzywej
+  
+    Ustawienie wstępne krzywej zmienia kształtkrzywej.  Kliknięcie lewym przyciskiem myszy ustawienia wstępnego w menu Ustawienia wstępne spowoduje jego zastosowanie do wybranego kanału.
+      do wybranego kanału, a kliknięcie przycisku Resetuj spowoduje przywrócenie kanału do stanu sprzed otwarcia okna Biblioteka krzywych animacji.
+    UWAGA: Ustawienia wstępne mogą być stosowane tylko wtedy, gdy Typ krzywej jest ustawiony na Beziera.
+    Domyślnie ustawienie wstępne jest stosowane do całego kanału. Możesz zaznaczyć fragment kanału, przeciągając go za pomocą lewego przycisku myszy  w Edytorze kanałów, a następnie otworzyć okno Biblioteka krzywych animacji za pomocą przycisku  lub klikając prawym przyciskiem myszy , co spowoduje zastosowanie wszystkich ustawień wstępnych tylko do zaznaczonego fragmentu.
+    Należy pamiętać, że kanał krzywej (lub wybór w obrębie tego kanału) musi mieć nachylenie, aby ustawienie wstępne przyniosło jakikolwiek efekt, ponieważ zastosowana
+      interpolacja opiera się na pionowej różnicy między punktem początkowym i końcowym. Płaska krzywa nie ma takiej różnicy między dwoma punktami, więc po zastosowaniu ustawienia wstępnego do takiej krzywej nie będzie widać żadnych rezultatów.
+    Do wyboru są dwa tryby Zastosuj, które wpływają na sposób zastosowania ustawienia wstępnego do kanału (lub do zaznaczenia w obrębie tego kanału):
+    
+      
+    
+      Nadpisz: Jest to ustawienie domyślne, gdy okno jest otwierane za pomocą przycisku  w Edytorze krzywych animacji lub na stronie Sequence Dope Sheet. Powoduje ono nadpisanie
+        wszystkie punkty znajdujące się między punktem początkowym i końcowym kanału lub zaznaczenia.
+      Pomiędzy: Jest to ustawienie domyślne, gdy okno jest otwierane przez  kliknięciem prawym przyciskiem myszy w dowolnym miejscu Edytora kanałów. Ustawienie wstępne jest stosowane między każdą parą zaznaczonych punktów,
+        i dodaje nowe punkty, które są potrzebne, nie usuwając żadnych istniejących.
+    
+    Na poniższej ilustracji pokazano wstępne ustawienie krzywej  Expo zastosowane do kanału przy użyciu trybów stosowania Between i Overwrite :
+    
+    Jak widać na powyższej ilustracji, funkcja Pomiędzy stosuje wstępnie ustawioną krzywą do każdej pary punktów i wstawia nowe punkty, które są potrzebne. Polecenie Overwrite usuwa wszystkie punkty znajdujące się pomiędzy punktem początkowym i końcowym, a następnie
+      stosuje ustawienie wstępne.
+    Dostępne są również trzy tryby łag odzenia, które kontrolują sposób przyspieszania lub zwalniania krzywej. Domyślnym trybem łagodzenia jest Wyrównanie.
+    
+    
+      Łatwiejsze wejście: Krzywa zaczyna się od większego przyspieszenia, a następnie zwalnia.
+      Ułatwienie: Krzywa zaczyna się od wolniejszego przyspieszania, a następnie z czasem przyspiesza.
+      Łatwiejsze wchodzenie i wychodzenie: Krzywa zaczyna się od wolniejszego przyspieszenia, z czasem przyspiesza, a następnie zwalnia.
+    
+    Na poniższej ilustracji pokazano wstępne ustawienie krzywej Quart we wszystkich trzech trybach easing:
+    
+  
+   
+  
+    
+      
+        Powrót: Krzywe animacji
+        Następny: Rozszerzenia
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

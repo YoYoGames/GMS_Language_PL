@@ -1,0 +1,59 @@
+
+  
+  Planowanie ruchu
+  W wielu grach chcesz, aby przeciwnicy, postacie niezależne, wrogowie itp. wchodzili w interakcję z graczem i wykazywali się pewną inteligencją podczas poruszania się, np. aby omijali przeszkody, planowali trasy i ogólnie nie wpadali na wszystko, co znajdzie się na ich drodze path! Aby pomóc w tym GameMaker Studio 2 posiada szereg funkcji, które zajmują się planowaniem ruchu. Należy pamiętać, że choć zostały one zaprojektowane z myślą o wrogach w grach, można ich używać do różnych rzeczy, takich jak tworzenie płynnego sposobu wprowadzania tekstu, tworzenie przejść itp. Niezależnie od tego, co wybierzesz z poniższej listy w swojej grze, należy pamiętać, że w wielu sytuacjach jeden zestaw funkcji nie zapewni Ci idealnego rozwiązania i że będziesz musiał "mieszać i dopasowywać" funkcje, używając jednej lub drugiej w zależności od sytuacji w grze.
+  Planowaniem ruchu w witrynie GameMaker Studio 2 zajmują się funkcje mp_, które dzielą się na trzy następujące grupy:
+  Funkcje liniowe
+  Ten rodzaj funkcji próbuje obliczyć bezkolizyjny adres path dla instancji. Po obliczeniu adresu path możesz przypisać go do instancji, by poruszała się w kierunku celu. Obliczenie strony path zajmie trochę czasu, ale potem wykonanie strony path będzie szybkie. Oczywiście jest to ważne tylko wtedy, gdy w międzyczasie sytuacja się nie zmieniła. Na przykład, jeśli zmienią się przeszkody, być może trzeba będzie ponownie obliczyć path. Ponownie zauważ, że te funkcje mogą zawieść i że dla instancji nie można znaleźć path.
+  
+    mp_linear_step
+    mp_linear_step_object
+    mp_linear_path
+    mp_linear_path_object
+  
+   
+  Potencjalne funkcje
+  Są to podstawowe funkcje unikania, dobre dla prostego AI. Ich działanie polega na tym, że instancja robi krok w kierunku określonej pozycji docelowej, starając się iść prosto, jeśli to możliwe, ale w razie potrzeby obierając inny kierunek. Te funkcje powinny być używane w zdarzeniu Step instancji.
+  
+    mp_potential_settings
+    mp_potential_step
+    mp_potential_step_object
+    mp_potential_path
+    mp_potential_path_object
+  
+   
+  Funkcje siatki
+  Ostatni typ funkcji wykorzystuje znacznie bardziej złożony mechanizm oparty na podejściu siatkowym (czasami nazywany algorytmem A*). Będzie on znacznie skuteczniejszy w znajdowaniu adresu paths (choć nadal może zawieść) i znajdzie najkrótszy możliwy adres paths, ale jego skonfigurowanie wymaga więcej pracy ze strony użytkownika.
+  Ogólna idea jest następująca - najpierw tworzymy siatkę, która pokrywa stronę room (lub jej odpowiednią część). Możesz wybrać siatkę drobną, która będzie wolniejsza, lub siatkę zgrubną, ale obie powinny być oparte na rozdzielczości strony room, tak aby wyszukiwanie ścieżek było jak najdokładniejsze. Na przykład jeśli masz stronę room o rozdzielczości 400x200 pikseli, możesz zastosować siatkę o rozdzielczości 40, 20 lub 10... Wszystko zależy od tego, jak dokładna ma być strona path i jak dużo przetwarzania ma wykonać GameMaker, aby ją wygenerować.
+  Następnie dla wszystkich odpowiednich stron objects, które chcemy ominąć, musimy określić komórki siatki, na które się one nakładają (na podstawie ich pól ograniczających lub dokładnej strony sprite), i oznaczyć te komórki jako zabronione. Tak więc komórka zostanie oznaczona jako całkowicie zabroniona, nawet jeśli przeszkoda tylko częściowo na nią zachodzi.
+  Na koniec podajemy pozycję startową i docelową, które muszą leżeć w wolnych komórkach, a funkcja oblicza najkrótszą możliwą trasę path między tymi pozycjami. Strona path będzie przebiegać między środkami wszystkich wolnych komórek, więc jeśli komórki są na tyle duże, że instancja umieszczona w ich środku będzie leżeć całkowicie wewnątrz nich, to zadanie się powiedzie. Ten path jest następnie przypisywany do instancji, która ma podążać za nim, przy użyciu path_* funkcji. Powinieneś zdać sobie sprawę, jak ważny jest rozmiar komórek, ponieważ muszą one być na tyle duże, by ruchoma instancja object umieszczona w środku komórki leżała całkowicie wewnątrz niej. (Uważaj na położenie początku adresu object. Pamiętaj też, że możesz przesunąć adres path, jeśli początek adresu object nie znajduje się w jej środku)! Z drugiej strony, im mniejsze komórki, tym więcej jest możliwych paths. Jeśli komórki będą zbyt duże, otwory między przeszkodami mogą zostać zamknięte, ponieważ wszystkie komórki przecinają przeszkodę.
+  
+    mp_grid_create
+    mp_grid_destroy
+    mp_grid_path
+    mp_grid_add_cell
+    mp_grid_add_instances
+    mp_grid_add_rectangle
+    mp_grid_get_cell
+    mp_grid_clear_all
+    mp_grid_clear_cell
+    mp_grid_clear_rectangle
+    mp_grid_to_ds_grid
+    mp_grid_draw
+  
+   
+  Podejście oparte na siatce jest bardzo efektywne (i jest stosowane w wielu profesjonalnych grach), ale wymaga od Ciebie dokładnego przemyślenia, ponieważ musisz określić, jaki obszar i rozmiar komórki są wystarczające do rozwiązania gry. Trzeba też określić, których stron objects należy unikać i czy ważne jest dokładne sprawdzanie. Wszystkie te parametry mają duży wpływ na efektywność rozwiązania. Musisz także zdecydować, czy jest to rzeczywiście konieczne, ponieważ być może jedna z mniej kosztownych funkcji mp_* może wykonać to zadanie równie dobrze.
+   
+   
+  
+    
+      
+        Powrót: Ruch i zderzenia
+        Następny: Kolizje
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,38 @@
+
+  
+  koniec_gry
+  Za pomocą tej funkcji możesz zakończyć grę (zostanie wywołane zdarzenie zakończenia gry). Nie nastąpi to natychmiastowo, lecz raczej na końcu bieżącego kroku, więc każdy kod
+    który znajduje się w tym samym kroku po wywołaniu tej funkcji, będzie nadal działał. Należy pamiętać, że ta funkcja ma następujące ograniczenia:
+  
+    Na urządzeniach Android wywołanie adresu game_end() spowoduje przejście aplikacji w tło, ale nie spowoduje jej zamknięcia. Musi to zrobić użytkownik.
+    Na stronie iOS nie wykona żadnych czynności i po cichu zawiedzie.
+    Na wszystkich konsolach (w tym UWP na konsoli Xbox) może to spowodować awarię gry lub w najlepszym wypadku cichy błąd, a także błąd składania, dlatego nie wolno używać tej funkcji.
+    W przypadku HTML5 zakończy to grę, ale pozostawi użytkownika wpatrzonego w puste płótno do rysowania na stronie internetowej, dlatego nie zaleca się używania tego rozwiązania na tej platformie docelowej.
+    Na stronach Windows (w tym UWP na komputerach PC), Linux i macOS funkcja po prostu kończy grę i zamyka okno gry (wywołane zostanie także zdarzenie zakończenia gry).
+    
+  
+   
+  Składnia:
+  game_end();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if keyboard_check_pressed(vk_escape) game_end();
+  Zakończy to grę, jeśli gracz naciśnie klawisz "escape".
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne sterowanie grą
+        Następny: game_restart
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

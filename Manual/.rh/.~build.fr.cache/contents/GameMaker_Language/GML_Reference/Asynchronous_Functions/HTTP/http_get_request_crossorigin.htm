@@ -1,0 +1,33 @@
+
+  
+  http_get_request_crossorigin
+  Ta funkcja może być użyta do uzyskania zestawu typów cross-origin dla gier HTML5 i zwróci string (na wszystkich innych platformach zwrócony zostanie pusty string "").
+   
+  Składnia:
+  http_get_request_crossorigin();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if string_lower(http_get_request_crossorigin()) != "use-credentials"
+    {
+        http_set_request_crossorigin("use-credentials");
+    }
+    sprite_add("sprites/player_outfit_1.png", 0, false, false, 0, 0);
+  Powyższy kod najpierw sprawdzi aktualnie ustawiony typ pochodzenia krzyża i jeśli nie jest to "use-credentials", to zostanie ustawiony na "use-credentials", a następnie z pliku zostanie dodany adres sprite.
+   
+   
+   
+  
+    
+      
+        Powrót: HTTP
+        Następny: http_set_request_crossorigin
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

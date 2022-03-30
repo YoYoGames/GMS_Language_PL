@@ -1,0 +1,41 @@
+
+  
+   Zapisz grę
+  Ta akcja wykona podstawowy zapis gry do podanego pliku. Podajesz nazwę pliku (jako string i łącznie z extension), a akcja wykona ograniczony zapis bieżącego stanu gry. Ważne jest, aby zrozumieć, że ta akcja jest
+    ma na celu zrobienie "migawki" aktualnego stanu gry i jest przeznaczona bardziej do użytku jako system punktów kontrolnych niż uniwersalny system zapisu, ponieważ nie zapisuje żadnych zasobów dynamicznych (takich jak struktury danych czy cząsteczki). W związku z tym należy używać tej akcji bardzo ostrożnie, aby nie spowodować błędów lub wycieków pamięci. Więcej informacji na temat zapisywania danych w grze można znaleźć w sekcji Akcje plików.
+   
+  Składnia działania:
+  
+  Argumenty:
+   
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Filename
+        Nazwa - w postaci string i z extension - nadawana zapisywanemu plikowi (jeśli plik już istnieje, zostanie nadpisany).
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdzi, czy nie doszło do kolizji z inną instancją, a jeśli takowa zostanie znaleziona, sprawdzi
+    zmienną instancji. Jeśli zmienna zwraca wartość true, gra jest zapisywana, a zmienna ustawiana na false.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje gry
+        Następny: Załaduj grę
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

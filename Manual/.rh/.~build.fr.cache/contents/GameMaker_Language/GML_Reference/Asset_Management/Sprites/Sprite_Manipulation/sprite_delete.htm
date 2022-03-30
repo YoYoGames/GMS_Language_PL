@@ -1,0 +1,44 @@
+
+  
+  sprite_delete
+  Ta funkcja usuwa stronę sprite z gry, zwalniając pamięć, która była dla niej zarezerwowana. Jest to bardzo ważna funkcja w tych momentach, gdy musisz tworzyć i zmieniać sprites z zewnętrznych źródeł (np. ładowanie sprite z pliku za pomocą
+   sprite_add() lub duplikowanie sprite za pomocą sprite_duplicate()) i powinna być zawsze używana do usuwania tych assets, które nie są już
+    nie są już potrzebne w grze, lub do usunięcia zaindeksowanej strony asset ze zmiennej przed ponownym przypisaniem do niej innej strony asset. Nie można używać tej funkcji do usuwania stron sprites, które są dołączone do gry jako część strony assets w przeglądarce Asset .
+   
+  Składnia:
+  sprite_delete(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the sprite to be deleted.
+     
+    
+  
+   
+  Zwraca
+  
+   
+  Przykład:
+  var spr = sprite_create_from_surface(application_surface, 0, 0, 32, 32, false, false, 16, 16); sprite_merge(spr_Player, spr); sprite_delete(spr);
+  
+  Powyższy kod tworzy zmienną lokalną i przechowuje w niej indeks strony sprite utworzonej z powierzchni aplikacji. Ta strona sprite jest następnie łączona ze stroną asset zaindeksowaną w zmiennej "spr_Player", zanim zostanie ponownie usunięta z pamięci.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja sprite'ami
+        Następny: sprite_set_alpha_from_sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

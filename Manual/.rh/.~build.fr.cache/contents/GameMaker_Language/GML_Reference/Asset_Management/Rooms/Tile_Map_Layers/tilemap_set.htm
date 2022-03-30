@@ -1,0 +1,62 @@
+
+  
+  tilemap_set
+  Za pomocą tej funkcji można ustawić dowolną komórkę (kwadrat siatki) w elemencie mapy tile na warstwie na nową komórkę tile. Podaje się identyfikator elementu mapy tile (który otrzymuje się podczas tworzenia elementu mapy tile za pomocą funkcji layer_tilemap_create() lub po użyciu funkcji layer_tilemap_get_id()), a następnie dane tile, które mają zostać ustawione, oraz pozycję w obrębie mapy tile. Dane tile można pobrać za pomocą funkcji tilemap_get() a następnie użyć funkcji tile_, aby je zmienić przed ustawieniem komórki za pomocą tej funkcji. Funkcja zwróci true, jeśli komórka tile została ustawiona pomyślnie, lub false, jeśli wystąpił problem i nie została ustawiona.
+   
+  Składnia:
+  tilemap_set(tilemap_element_id, tiledata, xcell, ycell)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tilemap_element_id
+        Identyfikator elementu mapy kafelkowej
+        The unique ID value of the tile map element to change
+      
+      
+        tiledata
+        Dane kafelka (rzeczywiste)
+        The tile data to set
+      
+      
+        xcell
+        Real
+        The cell (grid) position to set along the x-axis
+      
+      
+        ycell
+        Real
+        The cell (grid) position to set along the y-axis
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  var lay_id = layer_get_id("Tiles_sky");
+    var map_id = layer_tilemap_get_id(lay_id);
+    var data = tilemap_get(map_id, 0, 0);
+    data = tile_set_flip(data, true);
+    tilemap_set(map_id, data, 0, 0);
+  Powyższy kod pobiera identyfikator mapy tile na warstwie "Tiles_Sky", a następnie wykorzystuje go do pobrania danych z tile w komórce (0, 0). Dane z tile są następnie odwracane przed ponownym użyciem ich do ustawienia tile na mapie tile.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy mapy kafelkowej
+        Następny: tilemap_set_at_pixel
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

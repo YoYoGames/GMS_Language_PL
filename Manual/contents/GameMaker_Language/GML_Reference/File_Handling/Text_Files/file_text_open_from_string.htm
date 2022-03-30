@@ -15,9 +15,9 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>file_text_open_from_string</h1>
-  <p>Ta funkcja tworzy plik tekstowy z adresu <span class="notranslate">string</span> i otwiera go do odczytu, zwracając uchwyt pliku, który powinien być używany we wszystkich następnych wywołaniach funkcji pliku do odczytu z tego pliku. Należy pamiętać, że plik ten jest tymczasowy i <i>tylko</i> do odczytu, dlatego zostanie usunięty z pamięci w momencie jego zamknięcia.</p>
+  <p>Funkcja ta tworzy plik tekstowy z adresu <span class="notranslate">string</span> i otwiera go do odczytu, zwracając uchwyt pliku, który powinien być używany we wszystkich następnych wywołaniach funkcji pliku do odczytu z tego pliku. Należy pamiętać, że plik ten jest tymczasowy i <i>tylko</i> do odczytu, dlatego zostanie usunięty z pamięci w momencie jego zamknięcia.</p>
   <p class="note"><b>UWAGA</b>: W danym momencie można mieć otwarte maksymalnie 32 pliki. Należy również <b>zawsze</b> zamykać pliki po zakończeniu pracy, ponieważ powoduje to zapisanie informacji i zwolnienie pamięci związanej z plikiem.</p>
-  <p class="note"><b></b><b>OSTRZEŻENIE!</b> Ta funkcja może nie działać zgodnie z oczekiwaniami użytkownika, ponieważ <span class="notranslate">GameMaker Studio 2</span> jest sandboxed! Więcej informacji na ten temat można znaleźć w rozdziale <a href="../../../../Additional_Information/The_File_System.htm">System plików</a>.</p>
+  <p class="note"><b></b><b>OSTRZEŻENIE!</b> Ta funkcja może nie działać tak, jak tego oczekujesz, ponieważ <span data-keyref="GameMaker Name">GameMaker</span> jest sandboxed! Więcej informacji na ten temat znajdziesz w rozdziale <a href="../../../../Additional_Information/The_File_System.htm">System plików</a>.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">file_text_open_from_string(string);</p>

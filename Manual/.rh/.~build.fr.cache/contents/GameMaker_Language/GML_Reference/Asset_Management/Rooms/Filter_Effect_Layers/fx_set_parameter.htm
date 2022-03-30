@@ -1,0 +1,58 @@
+
+  
+  fx_set_parameter
+  Ta funkcja służy do zmiany wartości parametru w podanym FX struct. Podaje się adres FX struct (zwrócony przez fx_create() lub layer_get_fx()), nazwę parametru w postaci string oraz jego nową wartość. Dzięki temu zmiany będą widoczne w warstwie, do której jest przypisany FX struct.
+  Można przekazać wiele argumentów dla parametru w przypadku, gdy jest to wektor, ale można też po prostu podać tablicę jako jedyny argument, który będzie zawierał wiele wartości.
+  Należy pamiętać, że nazwy parametrów danego efektu odpowiadają nazwom używanym wewnętrznie przez jego witrynę shader, dlatego zawsze będą miały przedrostek "g_". Ze względu na to, że nazwy parametrów nie są ustandaryzowane, znajomość nazw parametrów filtrów/efektów może nie być intuicyjna, dlatego można użyć funkcji fx_get_parameter_names() aby poznać nazwy wszystkich parametrów, które mają zastosowanie dla danego filtra/efektu.
+   
+  Składnia:
+  fx_set_parameter(filter_or_effect, parameter_name, val, ...);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        filter_or_effect
+        Struktura walutowa
+        The FX struct to modify
+      
+      
+        parameter_name
+        String
+        The name of the parameter to change the value of (as a string)
+      
+      
+        val...
+        Rzeczywiste lub tablica
+        The new value(s) for that parameter as a real or array
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var _fx_tint = fx_create("_filter_tintfilter");
+    fx_set_parameter(_fx_tint, "g_TintCol", [1, 0, 0, 1]);
+    layer_set_fx("EffectLayer", _fx_tint);
+  Powyższy kod tworzy nowy FX struct z efektu "_filter_tintfilter", który jest filtrem "Colour Tint" znajdującym się w edytorze Room. Przypisuje on parametrowi "g_TintCol" wartość, która jest kolorem tinty, a ponieważ jest to wewnętrzna strona vec4, przyjmuje tablicę zawierającą cztery wartości (odpowiadające wartościom czerwonej, zielonej, niebieskiej i alfa). Następnie do warstwy FX struct zostaje zastosowana warstwa FX dla odcienia.
+  Zauważ, że do wektora można również przekazywać wartości jako osobne argumenty, a nie jako tablicę:
+  fx_set_parameter(_fx_tint, "g_TintCol", 1, 0, 0, 1);
+   
+   
+  
+    
+      
+        Powrót: Funkcje filtrów i efektów
+        Next: fx_set_parameters
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

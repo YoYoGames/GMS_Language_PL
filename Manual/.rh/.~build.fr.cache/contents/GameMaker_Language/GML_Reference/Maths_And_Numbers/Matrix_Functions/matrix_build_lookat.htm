@@ -1,0 +1,77 @@
+
+  
+  matrix_build_lookat
+  Ta funkcja tworzy macierz "patrzenia" (widoku) na podstawie podanych poniżej parametrów. Ponieważ funkcja ta modyfikuje macierz widoku, a nie macierz rzutowania, należy najpierw zainicjować macierz rzutowania za pomocą innej funkcji macierzy matrix_build_projection_perspective()a następnie użyć tej funkcji do przesunięcia kamery w obrębie rzutowania.
+  Aby ustawić widok, musisz najpierw określić pozycję, z której patrzysz, co jest określane za pomocą parametrów (xfrom, yfrom, zfrom). Następnie musisz określić kierunek, w którym patrzysz, co jest realizowane przez podanie drugiego punktu, w kierunku którego patrzysz, za pomocą argumentów (xto, yto, zto). Na koniec można jeszcze obrócić kamerę wokół linii prowadzącej od punktu widzenia do punktu patrzenia i aby to określić, musimy podać wektor "up" - kierunek, który w kamerze jest skierowany ku górze. Jest on podawany przez trzy ostatnie argumenty (xup, yup, zup).
+   
+  Składnia:
+  matrix_build_lookat(xfrom, yfrom, zfrom, xto, yto, zto, xup, yup, zup);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        xfrom
+        The x coordinate of the position to look from.
+     
+      
+        yfrom
+        The y coordinate of the position to look from.
+     
+      
+        zfrom
+        The z coordinate of the position to look from.
+     
+      
+        xto
+        The x coordinate of the position to look to.
+     
+      
+        yto
+        The y coordinate of the position to look to.
+     
+      
+        zto
+        The z coordinate of the position to look to.
+     
+      
+        xup
+        The x coordinate of the "up" vector.
+     
+      
+        yup
+        The y coordinate of the "up" vector.
+     
+      
+        zup
+        The z coordinate of the "up" vector.
+     
+    
+  
+   
+  Zwroty:
+  Matrix Array
+   
+  Przykład:
+  viewmat = matrix_build_lookat(640, 240, -10, 640, 240, 0, 0, 1, 0);
+    projmat = matrix_build_projection_ortho(640, 480, 1.0, 32000.0);
+    camera_set_view_mat(view_camera[0], viewmat);
+    camera_set_proj_mat(view_camera[0], projmat);
+  Powyższy kod tworzy nową macierz patrzenia i macierz ortograficzną, zapisuje ich identyfikatory w zmiennych lokalnych, a następnie używa ich do ustawienia macierzy widoku i rzutowania dla kamery przypisanej do portu widoku[0].
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje matrycy
+        Następny: matrix_build_projection_ortho
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

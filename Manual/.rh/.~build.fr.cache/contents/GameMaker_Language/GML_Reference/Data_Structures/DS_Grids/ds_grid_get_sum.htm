@@ -1,0 +1,58 @@
+
+  
+  ds_grid_get_sum
+  Tej funkcji można użyć do dodania wszystkich wartości wszystkich komórek znajdujących się w określonym regionie siatki, jak pokazano na poniższym rysunku:
+  
+   
+  Składnia:
+  ds_grid_get_sum(index, x1, y1, x2, y2);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the grid.
+     
+      
+        x1
+        The left cell column of the region.
+     
+      
+        y1
+        The top cell row of the region.
+     
+      
+        x2
+        The right cell column of the region.
+     
+      
+        y2
+        The bottom cell row of the region.
+     
+    
+  
+   
+  Zwroty:
+  Real or String
+   
+  Przykład:
+  val = ds_grid_get_sum(grid, 0, 0, 5, 5)
+  Powyższy kod ustawi zmienną "val" na sumę wszystkich wartości zawartych w danym regionie siatki DS, indeksowanym zmienną "grid".
+   
+   
+   
+  
+    
+      
+        Powrót: Siatki DS
+        Następny: ds_grid_get_disk_max
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+  
+  Menu Edycja
+  
+  Na stronie edit menu można korzystać z ogólnych narzędzi edycyjnych interfejsu GameMaker Studio 2. Dostępne opcje to:
+  
+    Cofnij -  cofnięcie działania.
+    Ponów-  ponowne wykonanie poprzedniej czynności.
+    Szukaj i zamieniaj -  w tym miejscu zostanie otwarte okno wyszukiwania, które umożliwia przeszukiwanie całego kodu (w tym kodu tworzenia room, scripts i zdarzeń) pod kątem podanych danych wejściowych - więcej informacji na ten temat można znaleźć poniżej.
+  
+  Po wybraniu opcji Search & Replace (Wyszukaj i zamień) z listy Edit menu, zostanie otwarte następujące okno:
+  Za jego pomocą można przeszukiwać wszystkie skryptowane strony assets w grze, w tym kody room, kody zdarzeń, scripts i shaders. Podczas wyszukiwania można
+    możesz wpisać nowe hasło w polu na górze lub kliknąć ikonę strzałki po prawej stronie, aby otworzyć listę wcześniej wyszukiwanych terminów. Istnieje również możliwość podania terminu zastępczego, który zostanie użyty do zastąpienia początkowo wyszukiwanego terminu.
+    i również w tym przypadku istnieje możliwość użycia poprzednio używanego terminu zastępczego string za pomocą przycisku strzałki po prawej stronie.
+  Wyszukiwania mogą być ogólne lub można je zawęzić, korzystając z opcji znajdujących się pod wpisywanymi terminami:
+  
+    Można wybrać opcję rozróżniania wielkości liter, w którym to przypadku w wynikach wyszukiwania będą uwzględniane tylko słowa dokładnie odpowiadające wielkości liter podanej w wyszukiwaniu string, np. szukając "My_Var" bez tej opcji, otrzymasz wyniki zawierające "my_var",
+      "mY_VAR" lub "My_Var", ale po zaznaczeniu tej opcji w wynikach wyszukiwania pojawi się tylko "My_Var".
+    Możesz wybrać, aby uwzględniać tylko wyniki wyszukiwania zawierające całe słowo, w tym przypadku wszystkie wyniki zawierające szukane słowo, ale nie będące dokładnym dopasowaniem, zostaną zignorowane, np. wyszukiwanie "gra" bez zaznaczenia tej opcji
+      wyświetli rzeczy takie jak funkcja "game_end()" lub zmienne takie jak "game_state", podczas gdy zaznaczenie tej opcji i wykonanie wyszukiwania wyświetli tylko wyniki zawierające samo słowo "gra".
+    Można wybrać opcję ignorowania komentarzy przez wyszukiwarkę. Gdy ta opcja jest zaznaczona, wszelkie komentarze w kodzie zawierające szukane wyrażenie będą ignorowane i nie będą pokazywane w wynikach wyszukiwania.
+    Do wyników wyszukiwania można zastosować filtr oparty na różnych typach stron asset w przeglądarce asset. Domyślnie jest on ustawiony na "Wszystko", ale kliknięcie go spowoduje otwarcie następującego menu, w którym można zaznaczyć lub usunąć zaznaczenie
+      assets które mają być uwzględnione w wyszukiwaniu:
+  
+  Po podaniu terminu wyszukiwania (i opcjonalnie zamiany) oraz ustawieniu opcji wyszukiwania można użyć różnych przycisków na dole strony
+    aby wybrać sposób wykonania wyszukiwania i ewentualne działania. Przyciski te to:
+  
+    Znajdź wszystko: Znajdź wszystkie wyszukiwane hasła i pokaż je w oknie wyjściowym.
+    Znajdź poprzednie: Znajdź poprzednie wystąpienie szukanego wyrażenia. Spowoduje to otwarcie strony asset zawierającej odniesienie w workspace (jeśli nie jest ona jeszcze otwarta) i przejście do niej.
+    Znajdź następny: Znajduje następne wystąpienie szukanego terminu. Spowoduje to otwarcie strony asset zawierającej odniesienie w workspace (jeśli nie jest jeszcze otwarta) i przejście do niej.
+    Zastąp wszystko: Spowoduje to wyszukanie podanego terminu z ustawionymi opcjami, a także zastąpienie go w witrynie assets nowym terminem zastępczym, który został określony.
+    Zamień: Zastąpi aktualnie zaznaczony termin w bieżącym edytorze, w którym jest on podświetlony, wybranym terminem zastępczym.
+    Zatrzymaj wyszukiwanie: Zatrzymanie bieżącego wyszukiwania, jeśli jest ono w toku.
+  
+  Naciśnięcie klawisza Escape , gdy to okno jest otwarte, spowoduje wyczyszczenie wybranego pola, ale jeśli pole to jest już puste, spowoduje zamknięcie okna.
+  Wszystkie wyniki użycia okna Search & Replace zostaną wyświetlone w oknie Search Output Window na dole strony IDE. Każdy wynik można  kliknąć dwukrotnie, aby otworzyć stronę asset z terminem w bieżącej witrynie workspace i przejść do niego, gotowego do edycji.
+   
+   
+  
+    
+      
+        Powrót: Menu
+        Następny: Menu budowania
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

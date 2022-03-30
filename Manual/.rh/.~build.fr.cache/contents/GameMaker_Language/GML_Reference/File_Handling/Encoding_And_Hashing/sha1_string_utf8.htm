@@ -1,0 +1,49 @@
+
+  
+  sha1_string_utf8
+  W kryptografii SHA-1 jest kryptograficzną funkcją skrótu zaprojektowaną przez Agencję Bezpieczeństwa Narodowego Stanów Zjednoczonych i stosowaną w kilku powszechnie używanych aplikacjach i protokołach, takich jak popularny Git, gdzie jest używana do sprawdzania zmian w plikach.
+    Funkcja ta pobiera wejściowy plik UTF-8 string (który ma zmienną liczbę bajtów na znak) i zwraca 160-bitowy skrót wiadomości w formacie ASCII, na przykład:
+  sha1 input string = "The quick brown fox jumps over the lazy dog" sha1 output hash = "2fd4e1c6 7a2d28fc ed849ee1 bb76e739 1b93eb12"
+  W ten sposób można wygenerować bezpieczny klucz, który może być przechowywany i używany do sprawdzania integralności informacji wysyłanych do (lub odbieranych z) zewnętrznej witryny server (na przykład).
+  UWAGA: Istnieją dwa formaty kodowania sha1, UTF-8 i unicode. Oba są przewidziane w celu ułatwienia komunikacji z różnymi konfiguracjami server, ale najczęściej używanym jest unicode.
+  UWAGA: SHA-1 nie jest całkowicie bezpieczny i może zostać złamany. Więcej informacji można znaleźć na tej stronie.
+   
+  Składnia:
+  sha1_string_utf8(string)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        string
+        The string to hash.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var hash, str; str = json_encode(hiscore_map); hash = sha1_string_utf8(str); ini_open("local.ini");
+     ini_write_string("info", "0", hash); ini_close();
+     get[0] = http_post_string("http://www.MacSweeney Games.com/CatchTheHaggis?game_hiscores=" + string(global.game_id), str)
+  Powyższy kod koduje mapę DS do pliku JSON string. Następnie generowany jest skrót sha1 i zapisywany w pliku ini, aby można go było później użyć do sprawdzenia integralności JSON, gdyby te same informacje zostały później otrzymane z server. JSON
+    jest następnie wysyłany.
+   
+   
+   
+  
+    
+      
+        Powrót: Kodowanie plików
+        Następny: sha1_string_unicode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

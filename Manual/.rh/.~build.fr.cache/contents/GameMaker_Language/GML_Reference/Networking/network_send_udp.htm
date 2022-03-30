@@ -1,0 +1,58 @@
+
+  
+  network_send_udp
+  Za pomocą tej funkcji można wysyłać dane przez sieć przy użyciu protokołu UDP na adres server. Funkcja pobiera identyfikator gniazda, przez które ma się łączyć, adres URL, z którym ma się łączyć, oraz port, którego ma używać. Następnie należy podać identyfikator bufora, który zawiera dane do wysłania (więcej informacji na ten temat można znaleźć na stronie buffers w rozdziale Reference - Buffers) oraz rozmiar (w bajtach) danych. UDP jest "bezpołączeniowe", ponieważ nie nawiązuje się połączenia, tylko wysyła pakiet bezpośrednio do adresu IP, a server otrzymuje dane przychodzące z adresu IP i musi się nimi zająć "tak jak są". Funkcja zwraca liczbę bajtów wysłanych danych lub liczbę mniejszą od 0, jeśli wysyłanie nie powiodło się. Warto zauważyć, że ostateczny rozmiar wysyłanych danych, zwracany przez tę funkcję, będzie zawierał również informacje z nagłówka GameMaker, co stanowi dodatkowe 12 bajtów.
+  UWAGA: Ta funkcja nie będzie działać, gdy zostanie użyta w projekcie działającym na platformie docelowej HTML5, a projekty HTML5 nie będą mogły odbierać UDP.
+   
+  Składnia:
+  network_send_udp(socket, url, port, bufferid, size);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        socket
+        The id of the socket to use.
+     
+      
+        url
+        The url or IP to connect to (a string).
+     
+      
+        port
+        The port to connect to.
+     
+      
+        bufferid
+        The id of the buffer to get the data from.
+     
+      
+        size
+        The size (in bytes) of the data.
+     
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  network_send_udp(sock, "www.macsweeneygames.com", 6510, buff, buffer_tell(buff));
+  Powyższy kod wyśle pakiet UDP na port 6510 na adres server określony przez adres URL. Dane są pobierane ze strony buffer indeksowanej w zmiennej "buff".
+   
+   
+   
+  
+    
+      
+        Powrót: Praca w sieci
+        Następny: network_send_udp_raw
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

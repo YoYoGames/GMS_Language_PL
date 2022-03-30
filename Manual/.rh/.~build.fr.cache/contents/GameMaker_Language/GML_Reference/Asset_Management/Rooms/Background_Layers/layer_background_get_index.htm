@@ -1,0 +1,46 @@
+
+  
+  layer_background_get_index
+  Za pomocą tej funkcji można uzyskać bieżącą wartość indeksu obrazu elementu tła. Podajesz identyfikator elementu tła (który otrzymujesz podczas tworzenia elementu tła za pomocą layer_background_create() lub po użyciu funkcji layer_background_get_id()), a funkcja zwróci wartość rzeczywistą, która reprezentuje indeks obrazu wyświetlanego dla strony sprite. Funkcja zwróci -1, jeśli element tła nie istnieje lub nie ma przypisanego prawidłowego adresu sprite.
+   
+  Składnia:
+  layer_background_get_index(background_element_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        background_element_id
+        The unique ID value of the background element to get the information from
+     
+    
+  
+   
+  Zwroty:
+  Real (the current sprite image index or -1)
+   
+  Przykład:
+  var lay_id = layer_get_id("Background_sky");
+    var back_id = layer_background_get_id(lay_id);
+    if layer_background_get_index(back_id) < 4
+    {
+        layer_background_index(back_id, 4);
+    }
+  Powyższy kod pobierze identyfikator warstwy o nazwie "Tło_sky", a następnie użyje go do uzyskania identyfikatora elementu tła na tej warstwie. Identyfikator ten zostanie następnie użyty do sprawdzenia, czy indeks obrazu tego elementu jest mniejszy niż 4, a jeśli tak, to zostanie ustawiony na 4.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy tła
+        Następny: layer_background_get_speed
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

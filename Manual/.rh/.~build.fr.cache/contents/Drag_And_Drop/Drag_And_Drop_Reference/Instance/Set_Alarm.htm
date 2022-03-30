@@ -1,0 +1,46 @@
+
+  
+   Ustawianie odliczania alarmu
+  Ten blok akcji ustawia dany alarm na odliczanie, a gdy alarm osiągnie zero, zostanie wyzwolone powiązane zdarzenie alarmowe. Użytkownik podaje numer alarmu z zakresu od 0 do 11, a następnie
+    a następnie wartość, na którą ma być ustawiony alarm. Użyta wartość to liczba "kroków gry", które mają upłynąć, zanim zostanie wyzwolone zdarzenie alarmowe. Można ją ustawić jako względną w stosunku do bieżącej wartości alarmu (dodawanie lub odejmowanie do bieżącej wartości).
+    wartości). Wartość ta musi być liczbą całkowitą i można ją ustawić na -1, aby zatrzymać alarm. Należy pamiętać, że gdy alarm odlicza w dół, zdarzenie jest uruchamiane po osiągnięciu wartości 0, ale alarm odlicza w dół do -1, aby pokazać, że alarm się zakończył. Ustawienie
+    alarmu na 0 nie spowoduje uruchomienia zdarzenia, ponieważ w następnym kroku będzie ono odliczane do -1, więc aby alarm został uruchomiony natychmiast, należy ustawić go na 1. Należy pamiętać, że w tej samej akcji można ustawić dodatkowe alarmy, klikając ikonę plusa  obok akcji.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Alarm
+        Alarm, który ma być ustawiony (odpowiednie zdarzenie alarmowe zostanie wyzwolone po osiągnięciu wartości 0).
+      
+      
+        Countdown
+        Wartość odliczania w krokach gry.
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji tworzy zmienną lokalną (tymczasową) i przechowuje w niej bieżącą wartość
+    alarmu[0]. Następnie jest ona sprawdzana i jeśli jest mniejsza od 0, alarm jest ustawiany na 60.
+   
+   
+   
+  
+    
+      
+        Powrót: Działania instancji
+        Następny: Pobierz odliczanie alarmu
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

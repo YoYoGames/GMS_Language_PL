@@ -1,0 +1,40 @@
+
+  
+  HTTP
+  W tej sekcji wymieniono wszystkie różne funkcje asynchronicznego protokołu HTTP dostępne w witrynie GameMaker Studio 2. Funkcje te będą generować zdarzenie Asynchroniczny HTTP we wszystkich instancjach, które je posiadają:
+  
+    http_request
+    http_get
+    http_get_file
+    http_post_string
+  
+   
+  Należy pamiętać, że powyższe funkcje http_* mogą nie działać zgodnie z oczekiwaniami z powodu problemów z bezpieczeństwem domen. Oznacza to, że żądania kierowane do witryny server lub próby załadowania zasobów z innych domen są blokowane i mogą zwracać puste wyniki lub błędy 404. Jednym ze sposobów na obejście tego problemu jest zainstalowanie po stronie server PHP, które pozwala określonym domenom na dostęp do server (jest to również sposób na ochronę zasobów i blokowanie servers, które nie znajdują się na liście PHP allow).
+  Poniżej znajduje się przykład kodu PHP, który można wykorzystać w tym celu:
+  $http_origin = $_SERVER['HTTP_ORIGIN'];
+    if ($http_origin == "http://127.0.0.1:51268")
+    {
+        header("Access-Control-Allow-Origin: *");
+    }
+  W przypadku żądań ładowania obrazów, w których ważne jest określenie lub ustawienie ich typu pochodzenia krzyżowego, dostępne są następujące funkcje:
+  
+    http_get_request_crossorigin
+    http_set_request_crossorigin
+  
+   
+  W większości przypadków nie ma potrzeby korzystania z tych funkcji, ale jeśli gra jest przechowywana na zabezpieczonej stronie server - gdzie niektóre strony assets mogą wymagać podstawowego uwierzytelnienia i generować błędy bezpieczeństwa podczas ładowania - konieczne może być ustawienie typu cross-origin dla żądań obrazu na "use-credentials" (w przeciwieństwie do domyślnego ustawienia "anonymous").
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje asynchroniczne
+        Następny: Dialog
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

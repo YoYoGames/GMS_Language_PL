@@ -1,0 +1,45 @@
+
+  
+  physics_set_friction
+  Kiedy wiążesz uchwyt z instancją używając physics_fixture_bind() to zwraca "id" dla powiązanego uchwytu. Możesz użyć tego id by ustawić wartość tarcia powiązanego elementu, a nie "bazowego" elementu, w dowolnym momencie używając tej funkcji. Zauważ, że tarcie jest zwykle ustawiane na wartość pomiędzy 0 a 1, ale możesz użyć dowolnej nieujemnej wartości, jeśli jest to wymagane.
+   
+  Składnia:
+  physics_set_friction(fixture, friction)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fixture
+        the id of the bound fixture
+     
+      
+        friction
+        the new friction value to apply
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var fric = physics_get_friction(fix_id); physics_set_friction(fix_id, fric + 0.1);
+  Powyższy kod pobiera bieżącą wartość tarcia dla powiązanych właściwości fizyki instancji, a następnie ustawia je na inną wartość.
+   
+   
+   
+  
+    
+      
+        Powrót: Armatura
+        Następny: physics_set_density
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

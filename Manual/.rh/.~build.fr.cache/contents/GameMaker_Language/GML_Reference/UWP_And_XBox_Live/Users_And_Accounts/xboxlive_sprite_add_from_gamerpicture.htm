@@ -1,0 +1,72 @@
+
+  
+  xboxlive_sprite_add_from_gamerpicture
+  Za pomocą tej funkcji można uzyskać obrazek gracza dla podanego wskaźnika ID użytkownika. Funkcja działa asynchronicznie i wywoła zdarzenie asynchroniczne Image Loaded, aby poinformować o zakończeniu działania (podobnie jak w przypadku wywołań HTML5/URL do sprite_add()). Zdarzenie Asynchronous Image Loaded będzie miało mapę DS przechowywaną we wbudowanej zmiennej async_load. Mapa ta zawiera następujące informacje:
+  
+    "filename": Pełny adres path do żądanego pliku.
+    "id": Identyfikator zasobu, który wczytałeś. Będzie on taki sam, jak zmienna, do której przypisałeś zasób.
+    "status": Zwraca wartość mniejszą niż 0 w przypadku błędu.
+  
+  UWAGA: Jeśli dynamicznie wczytujesz stronę sprite do gry pod adresem runtime, musisz pamiętać, aby usunąć ją ponownie za pomocą polecenia sprite_delete() w przeciwnym razie istnieje ryzyko wycieku pamięci, który spowolni działanie gry i doprowadzi do jej awarii.
+   
+  Składnia:
+  xboxlive_sprite_add_from_gamerpicture(user_id, imagesize, xorig, yorig);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        user_id
+        The user ID (a pointer) to get the gamer picture for
+     
+      
+        imagesize
+        Size in pixels of the sprite to be returned
+     
+      
+        xorig
+        Indicate the x position of the origin in the sprite
+     
+      
+        yorig
+        Indicate the y position of the origin in the sprite
+     
+    
+  
+   
+  Zwroty:
+  Async Request ID
+   
+  Przykład:
+  var _a = 0;
+    var _num = xboxlive_get_user_count();
+    for (var i = 0; i < _num; ++i;)
+    {
+        var _uid = xboxlive_get_user(i);
+        if _uid != pointer_null
+        {
+            global.UserName[_a] = xboxlive_gamedisplayname_for_user(_uid);
+            global.UserScore[_a] = xboxlive_gamerscore_for_user(_uid);
+            global.UserRep[_a] = xboxlive_reputation_for_user(_uid);
+            global.UserAvatar[_a] = xboxlive_sprite_add_from_gamerpicture(_uid, 256, 0, 0);
+            ++a;
+        }
+    }
+  Powyższy kod loops przegląda zalogowanych użytkowników i zapisuje ich dane o graczach w różnych tablicach globalnych.
+   
+   
+   
+  
+    
+      
+        Wstecz: Użytkownicy i konta
+        Następny: xboxlive_generate_player_session_id
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

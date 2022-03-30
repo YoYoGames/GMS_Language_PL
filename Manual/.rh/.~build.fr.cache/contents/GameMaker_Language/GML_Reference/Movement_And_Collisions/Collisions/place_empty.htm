@@ -1,0 +1,59 @@
+
+  
+  miejsce_puste
+  Możesz użyć tej funkcji do sprawdzenia, czy wywołana instancja nie zderzy się z inną instancją object lub ze wszystkimi instancjami w Twojej grze. Aby kolizja została rozwiązana poprawnie, instancja uruchamiająca kod musi mieć poprawną maskę kolizji (albo dla samej strony sprite, albo przez funkcję mask_index) i będzie ona rejestrować kolizje tylko z tymi instancjami, które również mają ważną maskę.
+  Funkcja sprawdza, czy nie ma kolizji, jeśli wywołująca ją instancja zostanie umieszczona w określonym miejscu, przy czym można podać opcjonalny argument, aby zawęzić sprawdzanie tylko do sprawdzania, czy pozycja jest wolna od kolizji z instancjami danego typu. Zauważ, że jeśli nie podano opcjonalnego identyfikatora object, to sprawdzenie zostanie wykonane dla wszystkich instancji w obrębie room. Sprawdzanie kolizji będzie albo dokładne, albo oparte na bounding box instancji, w zależności od tego, jaki rodzaj maski kolizji został wybrany, ale aby dokładne kolizje działały poprawnie, wszystkie instancje w sprawdzeniu powinny mieć dokładne maski kolizji.
+  Należy pamiętać, że podane współrzędne x/y zostaną spolszczone do najbliższej liczby całkowitej przed wykonaniem sprawdzenia.
+   
+  Składnia:
+  place_empty(x, y, [object_id]);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x
+        Real
+        The x position to check.
+      
+      
+        y
+        Real
+        The y position to check.
+      
+      
+        [object_id]
+        Obiekt Aktywa
+        OPTIONAL Obiekt, który ma być sprawdzany.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if place_empty(mouse_x, mouse_y, obj_Enemy)
+    {
+        x = mouse_x;
+        y = mouse_y;
+    }
+  Powyższy kod sprawdzi, czy nie doszło do kolizji z dowolną inną instancją object "obj_Enemy", tak jakby instancja wywołująca została umieszczona w tym samym miejscu co mysz. Jeśli nie zostanie wykryta kolizja, to instancja ma ustawione współrzędne x/y na współrzędne myszy.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolizje
+        Następny: place_free
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

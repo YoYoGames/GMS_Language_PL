@@ -1,0 +1,79 @@
+
+  
+  layer_script_begin
+  Za pomocą tej funkcji można przypisać do warstwy funkcję skryptu, która zostanie wywołana przed wyrenderowaniem warstwy. Podczas dodawania funkcji do warstwy będzie ona uruchamiana na początku każdego z różnych zdarzeń rysowania, dlatego warto sprawdzić w przypisanej funkcji, które zdarzenie jest aktualnie renderowane, i odpowiednio dostosować kod. Można to zrobić, sprawdzając wartość event_type i/lub event_number (patrz rozszerzony przykład poniżej). Należy pamiętać, że funkcja ta nie jest wywoływana w żadnych zdarzeniach losowania ani w zdarzeniach kroków, lecz tylko na początku room w kodzie tworzenia pomieszczenia lub w zdarzeniu tworzenia /  rozpoczęcia pomieszczenia przez instancję.
+   
+  Składnia:
+  layer_script_begin(layer_id, script);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_id
+        Ciąg lub identyfikator warstwy
+        The unique ID value of the layer to target (or the layer name as a string)
+      
+      
+        script
+        Funkcja skryptu
+        The script function index to assign to the layer
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład rozszerzony:
+  W tym rozszerzonym przykładzie pokażemy najpierw, jak skonstruowana jest prosta funkcja script służąca do ustawiania pewnych jednolitych danych shader, tak aby po narysowaniu danej warstwy funkcja ta została uruchomiona, a shader działała poprawnie. W przykładzie warto zwrócić uwagę na to, w jaki sposób sprawdzamy, które zdarzenie jest wywoływane, tak aby reszta funkcji była uruchamiana tylko przy tym konkretnym zdarzeniu, przy którym chcemy, aby działała - w tym przypadku tylko przy głównym zdarzeniu rysowania:
+  /// @function layer_shader_start();
+    function layer_shader_start()
+    {
+        if event_type == ev_draw
+        {
+            if event_number == 0
+            {
+                colour_to_find = shader_get_uniform(sShaderDemo5, "f_Colour1");
+                colour_to_set = shader_get_uniform(sShaderDemo5, "f_Colour2");
+                shader_set(s_ColourChanger);
+                shader_set_uniform_f(colour_to_find, 1,1,1 );
+                shader_set_uniform_f(colour_to_set, 1,0,0 );
+            }
+        }
+    }
+  Po zakończeniu rysowania należałoby użyć dodatkowej funkcji do zresetowania strony shader:
+  /// @function layer_shader_end();
+    function layer_shader_end()
+    {
+        if event_type == ev_draw
+        {
+            if event_number == 0
+            {
+                shader_reset();
+            }
+        }
+    }
+  Po zdefiniowaniu naszych funkcji script służących do ustawiania shader, musimy przypisać je do konkretnej warstwy, aby wiedziała ona, że ma je wywoływać. Można to zrobić w kodzie tworzenia room albo w zdarzeniu create lub room start jakiegoś kontrolera object (nie muszą być one ustawiane co krok, ale raczej raz na początku room lub gdy warstwa jest tworzona):
+  var lay_id = layer_get_id("Instances");
+    layer_script_begin(lay_id, layer_shader_start);
+    layer_script_end(lay_id, layer_shader_end);
+  Ten ostatni blok kodu przypisuje warstwę scripts do warstwy.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_script_end
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

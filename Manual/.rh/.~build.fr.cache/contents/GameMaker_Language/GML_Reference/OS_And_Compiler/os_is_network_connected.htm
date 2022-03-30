@@ -1,0 +1,48 @@
+
+  
+  os_is_network_connected
+  Za pomocą tej funkcji można sprawdzić, czy urządzenie ma obecnie połączenie z Internetem. Funkcja zwróci true, jeśli ma, lub false, jeśli nie ma, a w zależności od systemu operacyjnego może próbować nawiązać połączenie przed zwróceniem wartości.
+  Funkcja posiada opcjonalny argument umożliwiający włączenie/wyłączenie próby nawiązania połączenia przy jej wywołaniu. Opcja ta jest obecnie dostępna tylko dla celu Nintendo Switch. Po ustawieniu na true funkcja będzie próbowała nawiązać połączenie, a po ustawieniu na false ograniczy się do sprawdzenia połączenia. Należy pamiętać, że próba nawiązania połączenia może spowodować zawieszenie systemu operacyjnego Switch na kilka sekund. 
+  UWAGA Ta funkcja sprawdza wewnętrzny interfejs API urządzenia, który kontroluje połączenia, i dlatego może zwrócić wartość true, jeśli istnieje połączenie bluetooth, połączenie Wi-Fi lub zwykłe połączenie sieciowe umożliwiające dostęp do Internetu.
+   
+  Składnia:
+  os_is_network_connected([attempt_connection]);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        attempt_connection
+        Boolean
+        OPTIONAL Tylko dla celu Nintendo Switch. Ustaw na true, aby po wywołaniu próbować nawiązać połączenie na poziomie systemu operacyjnego.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if os_is_network_connected()
+    {
+        global.connected = true;
+    }
+  Powyższy kod sprawdza, czy urządzenie ma połączenie z Internetem, a jeśli tak, ustawia zmienną globalną.
+   
+   
+   
+  
+    
+      
+        Powrót: System operacyjny i kompilator
+        Następny: os_get_config
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

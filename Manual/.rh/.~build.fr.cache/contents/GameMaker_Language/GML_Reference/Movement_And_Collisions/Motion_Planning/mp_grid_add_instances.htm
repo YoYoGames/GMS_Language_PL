@@ -1,0 +1,54 @@
+
+  
+  mp_grid_add_instances
+  Funkcja ta wykorzystuje maskę kolizji instancji (ustaloną na podstawie właściwości sprite lub indeksu maski instancji wywołującej) do oznaczania komórek jako zabronione lub nie w siatce MP, gdzie komórki zabronione nie mogą być przekraczane przez żadną z funkcji wyznaczania ścieżek. W funkcji można określić, czy ma ona uwzględniać dokładne kolizje, czy nie, a zaznaczone komórki zabronione będą się zmieniać w zależności od tego ustawienia. Ten rysunek ilustruje to zachowanie:
+  Dwie powyższe instancje zostały dodane do siatki MP za pomocą funkcji mp_grid_add_instances() z precyzyjnie ustawioną wartością true. Jak widać, zielona instancja zaznaczyła jako zabronione tylko te kwadraty siatki, których "dotyka", ponieważ jej maska sprite jest również ustawiona na precise. Jednak druga instancja zaznaczyła także inne komórki, które nie wydają się dotykać. Dzieje się tak dlatego, że maska sprite nie jest ustawiona na precyzyjną, co oznacza, że nawet jeśli w funkcji zastosowano ustawienie precyzyjne, pod uwagę będzie brane tylko pole ograniczające maski sprite. Tak samo stałoby się, gdybyś ustawił argument precyzyjny funkcji na false - nawet instancje z precyzyjną maską sprite zostaną dodane do siatki na podstawie ich pól ograniczających.
+   
+  Składnia:
+  mp_grid_add_instances(id, obj, prec);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator siatki MP
+        Index of the mp_grid that is to be used
+      
+      
+        obj
+         Identyfikatorzasobu lub instancjiobiektu 
+        Object index, or instance id, of the instances to be added into the mp_grid
+      
+      
+        prec
+        Boolean
+        Whether the check is based on pixel-perfect collisions (true = slow) or its bounding box in general (false = fast).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  mp_grid_add_instances(grid, obj_Wall, true);
+  Powyższy kod doda wszystkie instancje "obj_Wall" do mp_grid indeksowanej w zmiennej "grid", używając dokładnej maski kolizji, a nie ramki ograniczającej.
+   
+   
+   
+  
+    
+      
+        Powrót: Planowanie ruchu
+        Następny: mp_grid_add_rectangle
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,85 @@
+
+  
+  gamepad_set_option
+  Funkcja ta służy do ustawiania dowolnej z dostępnych opcji gamepada. Podaje się "slot" gamepada, na którym ma być ustawiona opcja, a także opcję string, którą należy ustawić i wartość, której należy użyć. Dostępne opcje string zależą od platformy, na której jest uruchamiany projekt, zgodnie z poniższą listą:
+   
+  
+    
+      
+        Opcja
+        Platforma
+        Opis
+        Wartość
+      
+      
+        "allow_rotation"
+        tvOS
+        Określ, czy pilot Siri Remote ma mieć blokadę obrotu (tzn. może być używany tylko w pionie), czy nie. Gdy pilot jest odblokowany (wartość true), obracanie go spowoduje zmianę danych wejściowych, np. obrót o 90º w lewo spowoduje, że "prawa" strona panelu dotykowego powróci do pozycji "w górę" itd. Gdy funkcja jest zablokowana (wartość false), dane wejściowe nie będą zmieniane względem położenia kontrolera i będą zawsze traktowane tak, jakby kontroler znajdował się w pozycji pionowej.
+        Boolean
+      
+      
+        "dpad_absolute"
+        tvOS
+        Określa, czy panel dotykowy pilota Siri Remote akceptuje wprowadzanie danych bezwzględnych czy względnych. W trybie bezwzględnym (wartość true) środek panelu dotykowego jest traktowany jako pozycja (0,0) - czyli tam, gdzie spoczywa drążek analogowy lub gdzie znajdowałby się środek dpada - a ruch wokół tej pozycji będzie generował dane wejściowe. Jeśli ustawiona jest opcja względna (wartość false ), za pozycję (0,0) będzie uważane miejsce pierwszego dotknięcia panelu i wszystkie dane wejściowe będą generowane z tej pozycji, a nie ze środka panelu.
+        Boolean
+      
+    
+  
+   
+  Składnia:
+  gamepad_set_option(device, option_name, value);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        device
+        Real
+        Which gamepad device "slot" to set.
+      
+      
+        option_name
+        String
+        The name of the option to set (a string, see the table above)
+      
+      
+        value
+        Rzeczywiste, logiczne lub łańcuchowe
+        The value to set the option to (can be boolean, real or string - see the table above)
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  for(var i = 0; i < 12; ++i;)
+    {
+        if gamepad_is_connected(i) && gamepad_get_description(i) == "tvOS Siri Remote"
+        {
+            if gamepad_get_option(i, "allow_rotation") == false
+            {
+                gamepad_set_option(i, "allow_rotation", true);
+            }
+        }
+    }
+  Powyższy kod loops przegląda wszystkie gniazda gamepadów i sprawdza, czy na platformie tvOS nie ma pilota "Siri Remote". Jeśli taki pilot zostanie wykryty, ustawia go tak, aby umożliwiał obracanie danych wejściowych.
+   
+   
+   
+  
+    
+      
+        Powrót: Wejście gamepada
+        next:  gamepad_axis_count 
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

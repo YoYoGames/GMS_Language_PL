@@ -1,0 +1,42 @@
+
+  
+  string_width
+  Ta funkcja zwraca szerokość (w pikselach) wprowadzonego tekstu string, z uwzględnieniem ewentualnych przerw między wierszami. Jest ona bardzo przydatna do obliczania odległości między elementami tekstu na podstawie całkowitej szerokości liter tworzących ciąg znaków
+    tak jak zostałby on narysowany za pomocą draw_text() przy użyciu aktualnie zdefiniowanej strony font.
+   
+  Składnia:
+  string_width(string);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        string
+        The string to measure the width of.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var ww = string_width(str_Name + " "); draw_text(32, 32, str_Name)); draw_text(32 + ww, 32, "has won the game!");
+  Powyższy kod pobierze szerokość podanego adresu string, a następnie narysuje dwa wiersze tekstu, używając zwróconej szerokości string jako separatora.
+   
+   
+   
+  
+    
+      
+        Powrót: Struny
+        Następny: string_width_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

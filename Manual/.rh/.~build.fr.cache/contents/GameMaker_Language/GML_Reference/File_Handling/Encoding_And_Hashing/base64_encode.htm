@@ -1,0 +1,43 @@
+
+  
+  base64_encode
+  Ta funkcja konwertuje plik string na zakodowany w formacie base64 plik string. Jest to powszechnie stosowany schemat kodowania, często wykorzystywany w przypadku wszelkich mediów, które muszą być przechowywane lub przesyłane przez Internet jako tekst, i sprawia, że dane wyjściowe są nieczytelne dla
+    ludzkiego oka.
+   
+  Składnia:
+  base64_encode(string)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        string
+        The string to encode.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var str, file; str = base64_encode(game_data); file = file_text_open_write("save.txt"); file_text_write_string(file, str); file_text_close(file);
+  
+  Powyższy kod przekształci adres string zapisany w "game_data" w zakodowany w base64 adres string, który następnie zostanie zapisany w zewnętrznym pliku tekstowym.
+   
+   
+   
+  
+    
+      
+        Powrót: Kodowanie plików
+        Następny: base64_decode
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

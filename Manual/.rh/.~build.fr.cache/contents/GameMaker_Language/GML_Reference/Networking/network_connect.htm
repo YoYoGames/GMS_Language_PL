@@ -1,0 +1,50 @@
+
+  
+  network_connect
+  Za pomocą tej funkcji można wysłać żądanie połączenia z adresem server. Funkcja pobiera identyfikator gniazda, przez które ma się połączyć (zob. network_create_socket()) i wymaga podania adresu IP, z którym chcesz się połączyć ( string) oraz portu, przez który chcesz się połączyć, a jeśli połączenie nie powiedzie się, zwrócona zostanie wartość mniejsza niż 0. Połączenie wykorzystuje specjalny protokół, który zapewnia, że tylko gry GameMaker Studio 2 łączą się ze sobą, jednak jeśli chcesz połączyć się z grą server, która nie jest grą GameMaker Studio 2, możesz użyć network_connect_raw(). Należy pamiętać, że domyślnie funkcja jest synchroniczna, co oznacza, że gra może się "zawiesić" podczas nawiązywania połączenia. Możesz ustawić czas oczekiwania na połączenie lub sprawić, by tworzenie było asynchroniczne, używając funkcji network_set_config(), albo zamiast niej użyć funkcji network_connect_async().
+   
+  Składnia:
+  network_connect(socket, url, port);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        socket
+        The id of the socket to use.
+     
+      
+        url
+        The URL or IP to connect to (a string).
+     
+      
+        port
+        The port to connect to.
+     
+    
+  
+   
+  Zwroty:
+  Real or Network Socket ID
+   
+  Przykład:
+  client = network_create_socket(network_socket_tcp);
+    network_connect(client, "192.134.0.1", 6510);
+  Powyższy kod utworzy nowe gniazdo TCP, a następnie spróbuje się przez nie połączyć z podanym adresem IP na porcie 6510.
+   
+   
+   
+  
+    
+      
+        Powrót: Praca w sieci
+        Następny: network_connect_async
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

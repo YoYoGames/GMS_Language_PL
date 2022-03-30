@@ -1,0 +1,41 @@
+
+  
+  zdarzenie_dane
+  Ta zmienna ma zasięg globalny i jest używana do przechowywania mapy DS, gdy jest używana w odpowiednim zdarzeniu (np. w zdarzeniach gestów i komunikatach rozsyłanych), a w pozostałych przypadkach wynosi -1. Rzeczywista zawartość mapy DS zależy od typu zdarzenia, które ją wywołało, dlatego należy zapoznać się z poszczególnymi sekcjami dotyczącymi tych zdarzeń.
+   
+  Składnia:
+  event_data;
+   
+  Zwroty:
+  DS Map ID
+   
+  Przykład:
+  isFlick = event_data[?"isflick"];
+    
+    if (isFlick)
+    {
+        flickVelX = event_data[?"diffX"];
+        flickVelY = event_data[?"diffY"];
+    }
+    else
+    {
+        flickVelX = 0;
+        flickVelY = 0;
+    }
+  
+  Powyższy kod jest pobierany ze zdarzenia gestu " Przeciągnij i zakończ " i sprawdza, czy jest to zdarzenie typu "flick", a jeśli tak, pobiera wymagane dane z mapy event_data DS i używa ich do ustawienia pewnych zmiennych. Jeśli zdarzenie "pstryknięcia" nie zostanie wykryte, te same zmienne są ustawiane na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne globalne
+        Następnie: wynik
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

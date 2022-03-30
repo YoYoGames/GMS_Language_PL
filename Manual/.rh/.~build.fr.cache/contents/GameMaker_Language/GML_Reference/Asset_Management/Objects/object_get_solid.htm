@@ -1,0 +1,44 @@
+
+  
+  object_get_solid
+  Ta funkcja informuje, czy sprawdzana witryna object została oznaczona jako "stała", czy nie. Solidna strona object generuje specjalne zdarzenie kolizji przy korzystaniu z tradycyjnego systemu kolizji (tzn. świat fizyki jest wyłączony). Należy pamiętać, że nie jest to funkcja instancji! Można więc mieć stałą instancję object i normalną instancję tej samej object i na odwrót. Możesz ustawić solid flag dla poszczególnych instancji za pomocą solid zmiennej instance.
+   
+  Składnia:
+  object_get_solid(obj);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        obj
+        The index of the object to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (!solid) && (object_get_solid(object_index))
+    {
+        solid = true;
+    }
+  Powyższy kod sprawdzi, czy uruchomiona instancja jest stała, czy nie, a także sprawdzi indeks object tej instancji, czy jest ona oznaczona jako stała, czy nie. Jeśli instancja nie jest stała, ale indeks object jest oznaczony jako stały, to ustawi wartość "stały" na true dla tej instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Obiekty
+        Następny: object_get_sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

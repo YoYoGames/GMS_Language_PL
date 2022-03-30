@@ -1,0 +1,66 @@
+
+  
+  draw_set_halign
+  Ta funkcja służy do wyrównywania tekstu wzdłuż osi poziomej, a zmiana wyrównania poziomego spowoduje zmianę pozycji i kierunku rysowania całego dalszego tekstu, przy czym wartością domyślną jest fa_left. Akceptowane są następujące stałe:
+  
+    
+      
+        Stała
+        Wyrównanie
+      
+      
+        fa_left
+        
+      
+      
+        fa_center
+        
+      
+      
+        fa_right
+        
+      
+    
+  
+   
+  Składnia:
+  draw_set_halign(halign);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        halign
+        Stała wyrównania poziomego
+        Horizontal alignment constant (from the table above).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_set_halign(fa_left);
+    draw_text(100, 32, "Score: " + string(score));
+    draw_set_halign(fa_right);
+    draw_text(room_width - 100, 32, "Health: " + string(health));
+  Powyższy kod narysuje dwie strony strings na tej samej linii, przy czym wynik będzie wyrównany do lewej strony, a stan zdrowia do prawej.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekst
+        Następny: draw_set_valign
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

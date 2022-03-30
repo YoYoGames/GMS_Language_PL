@@ -1,0 +1,44 @@
+
+  
+  keyboard_key_press
+  Za pomocą tej funkcji można symulować naciśnięcie dowolnego klawisza na klawiaturze. Po użyciu klawisz będzie oznaczony jako naciśnięty do momentu wywołania odpowiedniej funkcji zwalniającej (zob. keyboard_key_release()).
+    Funkcja przyjmuje wartość keycode zwróconą przez funkcję ord() (tylko wielkie litery od A-Z lub cyfry od 0-9), lub dowolną stałą vk_* wymienioną na głównej stronie Keyboard Input.
+  Należy pamiętać, że po wywołaniu tej funkcji, jeśli klawisz zostanie fizycznie naciśnięty na klawiaturze, zdarzenie naciśnięcia nie zostanie ponownie zarejestrowane, dopóki klawisz nie zostanie fizycznie zwolniony (co spowoduje wywołanie zdarzenia zwolnienia i zatrzymanie tej funkcji),
+    lub zostanie wywołana odpowiednia funkcja klawisza zwalniającego i klawisz zostanie ponownie naciśnięty.
+   
+  Składnia:
+  keyboard_key_press(key);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        key
+        The key to simulate a press of.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  keyboard_key_press(vk_space);
+  Będzie to symulować naciśnięcie klawisza spacji.
+   
+   
+   
+  
+    
+      
+        Powrót: Wejście klawiatury
+        Następny: keyboard_key_release
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

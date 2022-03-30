@@ -1,0 +1,43 @@
+
+  
+   Otwórz plik Ini
+  Za pomocą tej czynności można otworzyć plik Ini do odczytu i/lub zapisu. Jeśli plik Ini nie istnieje w sprawdzanej lokalizacji, GameMaker Studio 2 może go utworzyć, ale tylko wtedy, gdy będziesz do niego zapisywać dane. Jeśli tylko odczytano informacje z
+    z pliku Ini, wówczas zostaną zwrócone wartości domyślne funkcji odczytu, ale plik Ini nie zostanie utworzony.
+  Należy pamiętać, że w danej chwili można mieć otwarty tylko jeden plik Ini i po zakończeniu odczytu/zapisu z pliku Ini należy użyć polecenia Zamknij plik I ni, ponieważ informacje nie są do tego momentu zapisywane na dysku (są przechowywane w pamięci do momentu zamknięcia pliku).
+    do tego momentu (są przechowywane w pamięci do momentu zamknięcia pliku).
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Filename
+        Nazwa - w postaci string i .ini extension - pliku do otwarcia
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji otworzy plik ini do użytku, a następnie pobierze wartość związaną z kluczem
+    kluczem "name" w nagłówku "player". Jeśli zwrócona nazwa odpowiada domyślnej wartości nazwy (tzn. plik, sekcja lub klucz nie istnieją), to przed zamknięciem pliku (i zapisaniem nowych danych na dysk) zostanie do niego zapisana zmienna globalna.
+    nowych danych na dysku).
+   
+   
+   
+  
+    
+      
+        Wstecz: Akcje plików
+        Następny: Zamknij plik Ini
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

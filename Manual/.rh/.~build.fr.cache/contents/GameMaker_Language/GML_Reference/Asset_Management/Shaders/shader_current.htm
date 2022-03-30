@@ -1,0 +1,32 @@
+
+  
+  shader_current
+  Ta funkcja zwraca wartość identyfikatora indeksu shader aktualnie używanego do renderowania lub zwraca -1, jeśli nie jest używana żadna strona shader.
+   
+  Składnia:
+  shader_current();
+   
+  Zwroty:
+  Shader Asset or -1 (if no shader is assigned)
+   
+  Przykład:
+  if (shader_current() == -1)
+    {
+        shader_set(sh_warp)
+    }
+  Powyższy kod sprawdzi, jaka jest bieżąca strona shader, a jeśli zwróci -1 (nie jest używana strona shader ), to zostanie ustawiona strona shader.
+   
+   
+   
+  
+    
+      
+        Powrót: Shadery
+        Następny: shader_enable_corner_id
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

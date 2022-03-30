@@ -1,0 +1,46 @@
+
+  
+  layer_background_get_blend
+  Za pomocą tej funkcji można uzyskać kolor mieszanki elementu tła. Podajesz identyfikator elementu tła (który otrzymujesz podczas tworzenia elementu tła za pomocą layer_background_create() lub po użyciu funkcji layer_background_get_id()), a funkcja zwróci wartość rzeczywistą, która reprezentuje przypisany kolor.
+   
+  Składnia:
+  layer_background_get_blend(background_element_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        background_element_id
+        The unique ID value of the background element to get the information from
+     
+    
+  
+   
+  Zwroty:
+  Colour Constant
+   
+  Przykład:
+  var lay_id = layer_get_id("Background_sky");
+    var back_id = layer_background_get_id(lay_id);
+    if layer_background_get_blend(back_id) == c_white
+    {
+        layer_background_blend(back_id, make_colour_rgb(random(255), random(255), 255));
+    }
+  Powyższy kod pobierze identyfikator warstwy o nazwie "Tło_sky", a następnie użyje go do uzyskania identyfikatora elementu tła na tej warstwie. Ten identyfikator jest następnie używany do sprawdzania koloru mieszania elementu i jeśli jest on równy stałej c_white, to kolor mieszania warstwy jest ustawiany na losowy.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy tła
+        Następny: layer_background_get_alpha
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

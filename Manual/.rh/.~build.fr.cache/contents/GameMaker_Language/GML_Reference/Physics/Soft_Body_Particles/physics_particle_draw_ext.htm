@@ -1,0 +1,86 @@
+
+  
+  physics_particle_draw_ext
+  Ta funkcja narysuje stronę sprite w miejscu wszystkich cząstek, które mają tę samą, zdefiniowaną przez użytkownika wartość kategorii i które mają stronę flags pokrywającą się z wartością ustawioną dla maski. Wartość maski definiuje się w taki sam sposób, w jaki definiuje się flags podczas tworzenia cząstek (patrz funkcje physics_particle_create() ), tzn. używając funkcji bitowej lub "|", aby zamaskować odpowiednie bity dla każdej strony flag.
+  UWAGA: Ta funkcja narysuje wszystkie cząstki w symulacji fizycznej z adresem flags, który pokrywa się z adresem maski, niezależnie od tego, czy są to pojedyncze cząstki, czy grupy, jeśli kategoria użytkownika jest taka sama.
+  Narysowana cząstka zignoruje wartości koloru i alfa ustawione podczas jej tworzenia, a zamiast tego zostanie narysowana przy użyciu parametrów skali, kąta, koloru i alfa podanych w tej funkcji. Funkcja ta służy wyłącznie do rysowania strony sprite w miejscu, w którym znajduje się cząstka, i w żaden sposób nie wpływa na jej zachowanie.
+   
+  Składnia:
+  physics_particle_draw_ext(typemask, category, sprite, subimg, xscale, yscale, ang, col, alpha)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        typemask
+        Fizyka Cząstka Flag Stała(y)
+        The mask to compare the particles flags with.
+      
+      
+        category
+        Real
+        The user defined category to draw (use 0 to draw all categories).
+      
+      
+        sprite
+        Aktywa Sprite
+        The sprite to use for each particle.
+      
+      
+        subimg
+        Real
+        The image_index sprite'a, który ma zostać narysowany.
+      
+      
+        xscale
+        Real
+        The scale factor to apply to the sprite along the x axis.
+      
+      
+        yscale
+        Real
+        The scale factor to apply to the sprite along the y axis.
+      
+      
+        ang
+        Real
+        The angle (in degrees) to draw the sprite at.
+      
+      
+        col
+        Kolor
+        The colour to blend with the sprite (default is c_white).
+      
+      
+        alpha
+        Real
+        The alpha value to use when drawing (0 - 1).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;
+    physics_particle_draw_ext(flags, 2, sprBlob, 0, 2, 2, 0, c_white, 0.5);
+  Powyższy kod narysuje stronę sprite dla wszystkich cząstek ze zdefiniowanej przez użytkownika kategorii "2", które mają taki sam adres flags jak podana maska, przeskalowaną o 2 wzdłuż obu osi i z alfą 0,5.
+   
+   
+   
+  
+    
+      
+        Powrót: Miękkie cząstki ciała
+        Następny: physics_particle_count
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

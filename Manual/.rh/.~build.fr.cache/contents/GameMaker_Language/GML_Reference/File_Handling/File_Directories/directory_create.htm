@@ -1,0 +1,46 @@
+
+  
+  katalog_tworzony
+  Ta funkcja tworzy w obszarze zapisu katalog o podanej nazwie.
+  UWAGA: Ta funkcja nie będzie działać w języku HTML5, ponieważ nie można tworzyć ani usuwać katalogów w lokalnej pamięci masowej przeglądarki.
+  OSTRZEŻENIE! Ta funkcja może nie działać zgodnie z oczekiwaniami użytkownika, ponieważ GameMaker Studio 2 jest sandboxed! Więcej informacji na ten temat można znaleźć w rozdziale System plików.
+   
+  Składnia:
+  directory_create(dname)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        dname
+        The name of the directory to create.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if !directory_exists("Games")
+    {
+        directory_create("Games");
+    }
+  Sprawdzi, czy podany katalog istnieje w lokalnym folderze danych, a jeśli nie, utworzy go dla Ciebie.
+   
+   
+   
+  
+    
+      
+        Powrót: Katalogi plików
+        Następny: directory_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -9,7 +9,7 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains the Set Instance Variable action" />
-  <meta name="rh-index-keywords" content="DnD™ Action - Set Instance Variable" />
+  <meta name="rh-index-keywords" content="GML Visual Action - Set Instance Variable" />
   <meta name="search-keywords" content="Set Instance Variable" />
 </head>
 <body>
@@ -35,14 +35,14 @@
     <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/depth.htm">Głębokość</a> - wartość głębokości przypisana do warstwy.</li>
     <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/sprite_index.htm">Sprite</a> - Zasób <span class="notranslate">sprite</span> przypisany do instancji.</li>
     <li>Indeks obrazu<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_index.htm">-</a> indeks obrazu przypisanej strony <span class="notranslate">sprite</span>. Ta wartość ustawia klatkę <span class="notranslate">sprite</span> przypisaną do instancji, a jeśli
-      wartość jest większa niż liczba klatek animacji, to animacja będzie się &quot;zapętlać&quot;, np. na stronie <span class="notranslate">sprite</span> z 5 klatkami, jeśli ustawiona jest klatka 7, będzie wyświetlana klatka 2.</li>
+      wartość jest większa niż liczba klatek animacji, to animacja będzie się &quot;zapętlać&quot;, np. na stronie <span class="notranslate">sprite</span> z 5 klatkami, jeśli zostanie ustawiona na klatkę 7, w rzeczywistości zostanie wyświetlona klatka 2.</li>
     <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_angle.htm">Kąt obrazu</a> - Kąt, pod jakim powinna być ustawiona instancja (domyślnie 0, gdzie w prawo jest 0°, w górę 90°, w lewo 180°, a w dół 270°).
       wynosi 270°).</li>
     <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_alpha.htm">Alfa obrazu -</a> wartość alfa dla instancji (domyślnie 1) z zakresu od 0 do 1, gdzie 0 oznacza pełną przezroczystość, a 1 - pełną nieprzezroczystość.</li>
     <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_blend.htm">Image Blend</a> - kolor, który ma być mieszany z instancją <span class="notranslate">sprite</span> (domyślnie jest to kolor biały).</li>
     <li>Szybkość<a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_speed.htm">obrazu</a> - szybkość animacji dla instancji.</li>
     <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_xscale.htm">Horizontal Scale</a> - skala pozioma, w jakiej ma być rysowana instancja <span class="notranslate">sprite</span> (ma to także wpływ na bounding box i kolizje instancji).
-      i kolizje). Skala 1 oznacza brak skalowania (1:1), mniejsze wartości będą skalowane w dół (na przykład 0,5 spowoduje zmniejszenie szerokości <span class="notranslate">sprite</span> o połowę), większe wartości będą skalowane w górę, a ujemne wartości będą odzwierciedleniem <span class="notranslate">sprite</span> <i>i</i> przeskalują go, chyba że
+      i kolizje). Skala równa 1 oznacza brak skalowania (1:1), mniejsze wartości będą skalowane w dół (na przykład 0,5 zmniejszy szerokość <span class="notranslate">sprite</span> o połowę), większe wartości będą skalowane w górę, a ujemne wartości będą odzwierciedlały <span class="notranslate">sprite</span> <i>i</i> skalowały go, chyba że
       użyta wartość to dokładnie -1 (w takim przypadku strona <span class="notranslate">sprite</span> zostanie odbita lustrzanie wzdłuż osi y bez skalowania).</li>
     <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/image_yscale.htm">Vertical Scale</a> - skala pionowa, w jakiej powinna być rysowana instancja <span class="notranslate">sprite</span> (ma to także wpływ na ramkę ograniczającą instancję i kolizje).
       i kolizje). Skala 1 oznacza brak skalowania (1:1), mniejsze wartości będą skalowane w dół (na przykład 0,5 zmniejszy wysokość <span class="notranslate">sprite</span> o połowę), większe wartości będą skalowane w górę, a ujemne wartości odwrócą <span class="notranslate">sprite</span> <i>i</i> przeskalują go, chyba że
@@ -54,12 +54,12 @@
     <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/gravity.htm">Grawitacja</a> - Grawitacja spowoduje przyłożenie stałej siły w kierunku grawitacji (patrz poniżej) instancji, wpływając na jej prędkość (domyślnie
       0). Zauważ, że grawitacja jest siłą kumulatywną i będzie przyspieszać <span class="notranslate">object</span>, jeśli nie zdecydujesz się na ograniczenie prędkości końcowej.</li>
     <li><a href="../../../GameMaker_Language/GML_Reference/Asset_Management/Instances/Instance_Variables/gravity_direction.htm">Kierunek grawitacji</a> - w tym miejscu można ustawić kierunek ruchu, gdy grawitacja instancji jest większa niż 0 (domyślnie
-      wynosi 270). Zwróć uwagę, że kierunki w <span class="notranslate">GameMaker Studio 2</span> są obliczane jako 0° w prawo, 90° w górę, 180° w lewo i 270° w dół.</li>
+      wynosi 270). Należy pamiętać, że kierunki w <span data-keyref="GameMaker Name">GameMakerze</span> są obliczane jako 0° w prawo, 90° w górę, 180° w lewo i 270° w dół.</li>
     <li><a href="../Instance_Vars/Set_Score.htm">Score</a> - Ustawienie zmiennej <span class="inline">score</span>.</li>
     <li><a href="../Instance_Vars/Set_Lives.htm">Lives</a> - ustawia zmienną <span class="inline">lives</span>.</li>
     <li><a href="../Instance_Vars/Set_Health.htm">Zdrowie</a> - ustawienie zmiennej <span class="inline">health</span>.</li>
   </ul>
-  <p>Po wybraniu wbudowanej zmiennej, która ma być używana, należy ustawić jej wartość. Wartość, której użyjesz, będzie zależała od wybranej zmiennej (zobacz powyższą listę wartości domyślnych i zakresów) i możesz <span class="notranslate">flag</span> ustawić ją tak, aby była <i>względna</i> w stosunku do bieżącej
+  <p>Po wybraniu wbudowanej zmiennej, która ma być używana, należy ustawić jej wartość. Wartość, której użyjesz, będzie zależała od wybranej zmiennej (zobacz powyższą listę wartości domyślnych i zakresów) i możesz <span class="notranslate">flag</span> ustawić ją jako <i>względną</i> w stosunku do bieżącej
     wartości dla danej zmiennej. Można także dodać dodatkowe zmienne do ustawienia w tej samej akcji, klikając ikonę plusa <span><img> </span>obok strony .
     akcji, wybierając kolejną zmienną instancji i nadając jej wartość.</p>
   <p> </p>

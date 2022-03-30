@@ -1,0 +1,54 @@
+
+  
+   Zestaw Sequence Głowica
+  Za pomocą tej akcji można ustawić pozycję głowicy odtwarzania danego elementu sequence w witrynie room na określoną klatkę. Podaj identyfikator elementu sequence (zwrócony przez akcję Utwórz sekwencję) oraz
+    nową pozycję głowicy odtwarzania w ramkach. Informacje o nagłówku odtwarzania można znaleźć w temacie Korzystanie z arkusza Dope Sheet.
+  Należy pamiętać, że pozycja jest podawana wramkach   i jeśli zostanie ustawiona wartość większa niż całkowita liczba ramek (lub mniejsza niż 0), rzeczywista końcowa pozycja głowicy odtwarzania będzie zależeć od rodzaju sequence odtwarzania, który został wybrany,
+    zgodnie z tymi zasadami:
+  
+    Bez zapętlania: Głowica odtwarzająca zostanie przymocowana do końca strony loop (lub do początku, jeśli podana wartość jest ujemna).
+    Pętla: Głowica odtwarzająca będzie zawijać się z powrotem do początku strony sequence plus dodatkowe klatki, np.: jeśli ustawisz głowicę odtwarzającą na stronie sequence z 30 klatkami w pozycji 45, rzeczywista pozycja głowicy będzie wynosić 15. Jeśli podasz
+      wartość ujemną, to głowica odtwarzania sequence będzie zawijana w odwrotnym kierunku.
+    Pętla pingpongowa: Głowica odtwarzająca przesunie się do końca, a następnie cofnie się o dodatkową liczbę klatek, która przekracza całkowitą długość klatki, odwracając kierunek odtwarzania, np: Jeśli strona sequence ma 30 klatek i ustawisz głowicę odtwarzania
+      na 40, końcowa pozycja głowicy odtwarzania będzie równa 20, a kierunek odtwarzania zostanie odwrócony (zejście do 0). Zwróć uwagę, że nie powinieneś nigdy podawać ujemnej wartości dla odtwarzania ping-pongowego na stronie sequence, ponieważ może to mieć niezdefiniowane
+      wyniki.
+  
+  Ustawienie pozycji głowicy w ten sposób nie spowoduje zatrzymania odtwarzania, a odtwarzanie na stronie sequence będzie kontynuowane od nowej pozycji głowicy, chyba że zostanie wstrzymane.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Variable
+        Identyfikator elementu sequence, którego położenie ma zostać zmienione.
+      
+      
+        Head (frames)
+        Nowe położenie głowy (w klatkach) dla elementu sequence.
+      
+    
+  
+   
+  Przykład:
+  Powyższy blok akcji pobiera bieżącą pozycję głowy elementu sequence o identyfikatorze zapisanym w
+    zmiennej "seq_id". Wartość ta jest następnie wykorzystywana do ustawienia pozycji nagłówka tego samego elementu sequence, przesuwając go o 4 ramki.
+   
+   
+  
+    
+      
+        Powrót: Sekwencja działań
+        Następny: Utwórz element Sequence  
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

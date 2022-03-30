@@ -1,0 +1,47 @@
+
+  
+  gpu_set_zwriteenable
+  Za pomocą tej funkcji można włączać (true) i wyłączać (false) porządkowanie głębokości za pomocą bufora z. Gdy instancja jest renderowana w GameMaker Studio 2, głębia wygenerowanego piksela (jego współrzędna z) jest przechowywana w buforze z, a następnie, jeśli inna instancja sceny musi być wyrenderowana na tym samym pikselu, obie głębokości są porównywane (testowanie z - zob. gpu_set_ztestenable()) i ta "bliższa" obserwatorowi jest zapisywana do bufora z, zastępując starą głębię. Jednak nie zawsze jest to zgodne z oczekiwaniami i zdarzają się sytuacje, gdy chcemy, aby coś było rysowane ponad innymi, niezależnie od wartości z. W takich przypadkach można użyć tej funkcji, aby switch wyłączyć zapis do bufora z i w ten sposób wymusić rysowanie tego, co jest rysowane, ponad wszystkimi innymi. Należy pamiętać, że podany tu opis dotyczy domyślnego trybu porównywania z-testów, ale można to zmienić
+  Domyślnie buforowanie z jest włączone (true).
+   
+  Składnia:
+  gpu_set_zwriteenable(enable);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        enable
+        The comparison mode to use (see list above)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  gpu_set_zwriteenable(false);
+    with (obj_Menu_Containers)
+    {
+        draw_self();
+    }
+    gpu_set_zwriteenable(true);
+  Powyższy kod wyłącza zapis w buforze z, rysuje pewną liczbę stron objects, a następnie ponownie go włącza, aby kontynuować rysowanie.
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_set_fog
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

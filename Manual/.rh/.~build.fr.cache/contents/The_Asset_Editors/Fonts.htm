@@ -1,0 +1,113 @@
+
+  
+  Redaktor Font 
+  
+  Kiedy chcesz narysować tekst w grze, jest on rysowany standardową czcionką Arial 12 punktów, ale aby stworzyć bardziej interesujące lub unikalnie wyglądające teksty, prawdopodobnie będziesz chciał użyć innych fonts. Aby używać różnych fonts, które masz na swoim komputerze, musisz utworzyć zasób czcion ki w GameMaker Studio 2. Można to zrobić, klikając prawym przyciskiem myszy stronę  w przeglądarce zasobów i wybierając opcję"Utwórz" -> "Czcionka". Dla każdej utworzonej strony font asset określasz konkretny typ strony font z komputera, który może być następnie użyty w grze za pomocą akcji lub kodu do ustawienia strony font do rysowania.
+  Podczas pierwszego tworzenia zasobu font zostanie otwarte okno edytora font z następującymi opcjami:
+  Szczegóły
+  
+    W tym miejscu można nadać witrynie font unikalną nazwę (tylko znaki alfanumeryczne i symbol "_" pod paskiem), a także wybrać witrynę font, która ma być używana. Program font musi być zainstalowany na komputerze, a ze względu na kwestie licencyjne, GameMaker Studio 2 nie
+      domyślnie nie przechowuje rzeczywistych plików font w pliku projektu, ale raczej font jest renderowany na stronie tekstury jako seria
+      bitmapowych glifów. Strona texture zostanie przypisana do grupy tekstur, którą można wybrać za pomocą opcji Grupa.
+    Jeśli chcesz rozpowszechniać rzeczywisty plik font (tylko *.ttf lub *.otf ) wraz z projektem podczas tworzenia Marketplace asset lub z innego powodu, możesz zaznaczyć opcję Kopiuj do projektu. Ta opcja
+      Otworzy to okno eksploratora plików, w którym można wybrać plik font. Zostanie on dodany do plików dołączonych do projektu.
+    WAŻNE! Należy korzystać wyłącznie z witryny fonts, na której redystrybucję lub wykorzystanie w swoim projekcie masz pozwolenie i licencję.
+     
+  
+  Ustawienia wstępne
+  
+    W tej sekcji można ustawić rozmiar (w punktach - domyślnie 12pt) oraz określić, czy strona font ma być rysowana jako pogrubiona lub kursywna oraz czy ma mieć zastosowany antyaliasing. Okno podglądu po prawej stronie
+      pokazuje tekst w przybliżeniu tak, jak będzie on wyglądał w grze, z rozmiarem i przekształceniami, które zostały określone.
+    
+    
+  
+  Regulatory zasięgu
+  
+    Tworząc zasób font, rzadko kiedy chcesz uwzględnić wszystkie glify font. Dlatego GameMaker Studio 2 domyślnie używa tylko znaków od 32 do 127 z wybranej strony font, ponieważ daje nam to cyfry i
+      małe i wielkie litery, a także niektóre znaki interpunkcyjne. Możesz jednak zmienić zakres używanych znaków, aby zoptymalizować swoje gry, np. jeśli potrzebujesz tylko cyfr z konkretnej strony font, wybierz tylko cyfry. Aby to zrobić
+      Aby to zrobić, należy najpierw kliknąć przycisk Usuń , aby wyczyścić bieżący zakres (aby to zrobić, należy zaznaczyć zakres, klikając na nim  w oknie
+      w oknie podglądu), a następnie kliknąć przycisk Dodaj , aby dodać nowy zakres. Spowoduje to otwarcie następującego okna łańcuchowego:
+    
+    W tym oknie znajdują się przyciski ułatwiające ustalenie zakresu standardowego dla czcionki:
+       - Normalny zakres od 32 do 127
+          - Zakres ASCII od 0 do 255
+          - Zakres cyfr , który zawiera tylko 10 cyfr
+          - Zakres liter , który zawiera tylko wszystkie duże i małe litery
+    
+    Inne zakresy można stosować, wpisując w polach wprowadzania zakresu znaków indeks pierwszego i ostatniego znaku zakresu, który chcesz ustawić (jeśli znak nie mieści się w zakresie, jest zastępowany spacją). Oprócz tych przycisków i pól wprowadzania,
+      dostępne są jeszcze dwie inne opcje, które są szczególnie przydatne:
+    
+    
+      Z kodu: jeśli klikniesz ten przycisk, a następnie klikniesz OK, GameMaker Studio 2 automatycznie przetworzy kod gry na strings, a następnie utworzy różne zakresy znaków, aby pokryć cały tekst w grze. Zwróć uwagę, że szukane są
+        wszystkich strings (zarówno w obrębie "", jak i ''), a więc w zakresach znaków mogą znaleźć się także nazwy plików.
+      
+      Z pliku: działa podobnie jak opcja "z kodu" opisana powyżej. Po kliknięciu tej opcji użytkownik zostanie poproszony o podanie pliku, a następnie o kliknięcie przycisku OK. GameMaker Studio 2 przetworzy plik i utworzy zakresy znaków dla tekstu w nim zawartego.
+        plik i utworzy zakresy znaków dla znajdującego się w nim tekstu.
+    
+    Należy pamiętać, że zakres tekstu można edytować ręcznie, dodając lub usuwając glify tekstowe bezpośrednio w oknie podglądu.
+     
+  
+  Sterowanie teksturą
+  
+    Jak wspomniano powyżej (w części poświęconej szczegółom czcionki), domyślnie wszystkie glify font będą renderowane na stronie texture jako część grupy texture w celu przekształcenia ich w zasoby graficzne, a gdy gra zostanie skompilowana, strona font zostanie dodana do tymczasowej strony texture w celu utworzenia pojedynczego obrazu zawierającego wszystkie wymagane glify font, a następnie zostanie dodana do głównej grupy texture w celu wyeksportowania. Przyciski tutaj służą do zmiany sposobu generowania font texture lub do regeneracji nowej font texture.
+    Przycisk Opcje otwiera zaawansowane opcje strony font texture:
+    Opcje te mogą, czasem radykalnie, zmienić sposób wyświetlania strony font w grze i nie wszystkie strony fonts będą wymagały takich samych ustawień. Poniższe opcje mają na celu zapewnienie jak największej możliwości dostosowania czcionki do własnych potrzeb:
+    
+      Podpowiedzi: Font Podpowiedzi (zwane też instruktażem) to wykorzystanie instrukcji matematycznych w celu dostosowania wyświetlania konturu font tak, aby był zgodny z rastrową siatką. Przy niskich rozdzielczościach ekranu podpowiadanie ma decydujące znaczenie dla uzyskania wyraźnego, czytelnego tekstu. W tym miejscu można wybrać jeden z różnych algorytmów podpowiadania, aby uzyskać jak najlepszy efekt. Domyślnie jest to "Normalny".
+      Opcje glifów: Za pomocą tych opcji można zmienić sposób wczytywania glifów przez włączenie/wyłączenie różnych operacji. Są to:
+        
+          Wyłącz podpowiadanie: Powoduje wyłączenie natywnego podpowiadania fonts i automatycznego podpowiadania.
+          Wyłącz autointer: Powoduje wyłączenie automatycznej podpowiedzi i użycie zamiast niej rodzimej podpowiedzi fonts (jeśli ją posiada). Zwróć uwagę, że zastępuje to opcję "Preferuj autointer".
+          Preferuj autointer: Ta opcja powoduje, że GameMaker Studio 2 będzie preferować używanie autopowielacza zamiast rodzimego podpowiadania, które może mieć font. Zwróć uwagę, że jest to nadrzędne w stosunku do opcji "Wyłącz autointer" i "Wyłącz podpowiadanie".
+          Wypaczanie: Włączenie tej opcji spowoduje nieznaczne wypaczenie glifów w celu poprawienia wyrównania siatki. Należy pamiętać, że wymaga to autopodpowiedzi i "Normalnego" trybu podpowiadania.
+          Bez skali: Gdy ta opcja jest zaznaczona, glify będą przechowywane w jednostkach font i będą ignorować żądany rozmiar. Oznacza to, że podpowiadanie jest wyłączone.
+        
+        Domyślnym stanem dla wszystkich powyższych opcji jest wyłączenie.
+      
+      Interpreter: Tutaj możesz wybrać wersję TrueType, której GameMaker Studio 2 ma używać do renderowania strony font. Domyślnie jest to TrueType v40.
+      Zaokrąglanie: Opcja służy do ustawiania metody zaokrąglania podczas konwersji z liczby dziesiętnej na całkowitą. Domyślnie jest to "floor".
+      Zastosuj kerning: Określa, czy dane kerningu z pliku font będą używane do renderowania w grze. Tę opcję należy wyłączyć, jeśli dane kerningu dla źródłowego pliku font są nieprawidłowe i powodują, że plik font nie jest wyświetlany poprawnie.
+    
+    Przycisk Regeneruj służy do regeneracji strony font texture. Jest to konieczne, jeśli chcesz zaktualizować zmiany wprowadzone w istniejącej stronie font lub jeśli utworzyłeś nową stronę font i chcesz zobaczyć jej wygląd w oknie podglądu. Pamiętaj, że możesz także zregenerować stronę fonts za pomocą menu prawego przycisku  dla strony font (lub fonts) w przeglądarce Asset.
+    Ważne jest, aby pamiętać, że przy pierwszym tworzeniu nowej strony font, jeśli nie zregenerujesz strony texture w edytorze, to strona texture zostanie utworzona przy pierwszym uruchomieniu lub testowaniu gry, ale jest to jedyny moment, w którym zostanie ona automatycznie wygenerowana. font Oznacza to, że po wygenerowaniu strony texture, wszelkie zmiany wprowadzone do zasobu font będą wymagały zregenerowania strony font, aby zmiany były widoczne w grze, w przeciwnym razie nadal będzie używana "stara" strona font texture.
+    GameMaker Studio 2 będzie renderować wygenerowany plik font texture jako plik PNG wraz z pozostałymi plikami projektu, a jeśli po wczytaniu projektu okaże się, że nie znaleziono podstawowego pliku font, gra nadal będzie poprawnie wyświetlać tekst przy użyciu zapisanego pliku texture. Brak pliku font oznacza jednak, że nie będzie można zmienić żadnych jego właściwości, poza nazwą, rodziną font i grupą texture (w Edytorze grup tekstur).
+     
+  
+  Tryb podglądu
+  
+    W tej sekcji można wybrać, czy w oknie podglądu ma być wyświetlany przykładowy tekst z zaznaczonej strony font, czy też wyrenderowany obraz texture wygenerowany dla strony font.
+     
+  
+  Podgląd
+  
+    Okno podglądu
+      W oknie podglądu można wyświetlić podgląd strony font w postaci próbki tekstu lub strony texture. Gdy tryb
+     Tryb podglądu jest ustawiony na
+     Próbka, możesz wpisać dowolny tekst, który chcesz przetestować, bezpośrednio w oknie podglądu, aby zobaczyć, jak wygląda, natomiast wybranie opcji
+     Podgląd gry wyświetli wyrenderowany obraz texture, który został wygenerowany dla strony font. Jeśli nie ma żadnego obrazu, należy kliknąć przycisk
+     Regenerate , aby wygenerować obraz texture.
+    
+    Zwróć uwagę, że obraz texture może być inny niż próbka, ponieważ obraz texture nie będzie
+     nie będzie regenerowany, chyba że zostanie to wyraźnie nakazane. Oznacza to, że po wstępnym wygenerowaniu font texture zmiany dokonane w zasobach font nie zostaną przeniesione do gry, chyba że zostanie zregenerowana strona texture.
+    
+     
+  
+  Podgląd zasięgu
+  
+    W tym miejscu zostaną wyszczególnione różne zakresy znaków, które zostały dodane do strony font. Wartości zakresów są wyświetlane po lewej stronie, a glify zakresów odpowiadające tym wartościom - po prawej.
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Redaktorzy Aktywów
+        Następny: Notatki
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

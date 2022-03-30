@@ -1,0 +1,32 @@
+
+  
+  physics_particle_get_radius
+  Za pomocą tej funkcji można dowiedzieć się, jaki jest bieżący promień (w pikselach) cząstek w symulacji fizycznej (wartość tę można ustawić za pomocą polecenia physics_particle_set_radius()).
+   
+  Składnia:
+  physics_particle_get_radius()
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (physics_particle_get_radius() < 32)
+    {
+        physics_particle_set_radius(physics_particle_get_radius() + 1);
+    }
+  Powyższy kod sprawdzi bieżący promień cząstek w symulacji i jeśli będzie on mniejszy niż 32, zwiększy ich rozmiar o 1.
+   
+   
+   
+  
+    
+      
+        Powrót: Miękkie cząstki ciała
+        Następny: physics_particle_get_density
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

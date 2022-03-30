@@ -1,0 +1,44 @@
+
+  
+  physics_apply_angular_impulse
+  Ta funkcja daje impuls kątowy dla instancji z włączoną fizyką. Ten impuls ustawi obrót kątowy o podaną wartość, ignorując bieżący moment obrotowy, zasadniczo ustawiając ilość "spinów", które ma uchwyt. Jeśli chcesz zastosować siłę kątową do instancji używając momentu obrotowego, powinieneś użyć funkcji physics_apply_torque().
+   
+  Składnia:
+  physics_apply_angular_impulse(impulse)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        impulse
+        The impulse (in Newton metres) to be applied
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if keyboard_check(vk_up)
+    {
+        physics_apply_angular_impulse(10);
+    }
+  Powyższy kod spowoduje, że po naciśnięciu klawisza element fizyki otrzyma impuls kątowy.
+   
+   
+   
+  
+    
+      
+        Powrót: Siły
+        Następny: physics_apply_force
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

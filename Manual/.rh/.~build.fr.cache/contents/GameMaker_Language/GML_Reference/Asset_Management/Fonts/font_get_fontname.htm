@@ -1,0 +1,42 @@
+
+  
+  font_get_fontname
+  Za pomocą tej funkcji można uzyskać rzeczywistą nazwę systemową podanej strony font asset. Funkcja ta zwraca łańcuch znaków, a nie indeks, a zwracana nazwa zależy od używanej strony font. Na przykład w przeglądarce font może znajdować się strona asset Asset o nazwie "fnt_Main", a sama strona font może być systemem Windows font Arial. W tym przypadku funkcja zwróci "Arial", ponieważ jest to nazwa systemowa font. Jeśli potrzebujesz nazwy, która pojawi się w przeglądarce Asset, użyj font_get_name().
+  Opisane powyżej zachowanie dotyczy tylko plików font assets dodanych za pośrednictwem strony IDE. W przypadku użycia funkcji na pliku font załadowanym z adresu runtime (przy użyciu adresu font_add()), funkcja zwróci pełny adres path do tego pliku font zamiast jego nazwy font.
+   
+  Składnia:
+  font_get_fontname(ind);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        ind
+        Index of the font to check.
+     
+    
+  
+   
+  Zwroty:
+  String
+   
+  Przykład:
+  fnt_Name = font_get_fontname(font0);
+  Powyższy kod pobierze nazwę systemową zasobu font i zapisze ją jako string w zmiennej "fnt_Name".
+   
+   
+   
+  
+    
+      
+        Powrót: Czcionki
+        Następny: font_get_first
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

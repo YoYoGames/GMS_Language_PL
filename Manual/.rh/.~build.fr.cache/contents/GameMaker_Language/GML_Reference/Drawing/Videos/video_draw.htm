@@ -1,0 +1,43 @@
+
+  wideo_rysuj
+  Ta funkcja rysuje bieżącą klatkę otwartego filmu na powierzchni. Zwraca tę powierzchnię jako część swojej tablicy zwrotnej, którą można narysować ręcznie.
+  Funkcja zwraca również dane dotyczące stanu obrazu wideo, które omówiono poniżej.
+  Upewnij się, że jest on wywoływany tylko po wywołaniu video_open(), ale przed wywołaniem video_close(), w przeciwnym razie nie wykona żadnego działania (ponieważ nie zostanie załadowany film).
+  Dane dotyczące powrotu
+  Funkcja zwróci tablicę, której pierwszy element ([0]) będzie wartością rzeczywistą. Wartość ta określa stan filmu i będzie to:
+  
+    0, jeśli film jest odtwarzany bez żadnych problemów
+    -1, jeśli wystąpił błąd, lub
+    -2, jeśli film zakończył odtwarzanie (w tym momencie można go usunąć z pamięci za pomocą wywołania video_close() )
+  
+  Jeśli wartość pozycji [0] wynosi 0, wówczas pozycja [1 ] będzie zawierać identyfikator powierzchni, na której narysowano klatkę wideo. Można pobrać ten identyfikator powierzchni i narysować ją ręcznie.
+  Konsole
+  Na platformach konsolowych tablica będzie miała pozycje [1] i [2] wypełnione unikatowymi wartościami identyfikacyjnymi dwóch powierzchni:
+  
+    [1] to główna powierzchnia wideo w czerni i bieli
+    [2] to powierzchnia chromatyczna, która zawiera wszystkie dane o kolorze
+  
+   shader Obie te powierzchnie są następnie łączone za pomocą dołączonego do zestawu programu YUV texture, a następnie wykorzystywane do tworzenia niestandardowego quada, który będzie rysował obraz wideo na ekranie w dowolnym miejscu.
+  Szczegółowe informacje na temat implementacji danej konsoli można znaleźć w jej dokumentacji w dziale pomocy technicznej YoYo Games.
+   
+  Składnia:
+  video_draw();
+   
+  Zwroty:
+  Array
+   
+   
+   
+   
+  
+    
+      
+        Powrót: Filmy
+        Next: video_set_volume
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

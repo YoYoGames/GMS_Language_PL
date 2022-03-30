@@ -1,0 +1,44 @@
+
+  
+  zewnętrzna_wolna
+  Ta funkcja zwalnia pamięć związaną z plikiem dll lub dylib o podanej nazwie. Powinno się to robić zawsze, gdy dany plik nie jest już potrzebny w grze, zwykle (na przykład) w zdarzeniu zakończenia gry.
+   
+  Składnia:
+  external_free(id);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Funkcja zewnętrzna
+        The name of the dll lub dylib, które chcesz uwolnić
+      
+    
+  
+   
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  external_free("MyDLL.dll");
+  Powyższy przykładowy kod zwolni pamięć związaną z podanym plikiem dll.
+   
+   
+   
+  
+    
+      
+        Powrót: System operacyjny i kompilator
+        Next: scheduler_resolution_get
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

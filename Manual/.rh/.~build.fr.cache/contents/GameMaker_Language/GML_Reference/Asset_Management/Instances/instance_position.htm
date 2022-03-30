@@ -1,0 +1,59 @@
+
+  
+  instancja_pozycja
+  Za pomocą tej funkcji możesz sprawdzić pozycję pod kątem kolizji z inną instancją lub wszystkimi instancjami object. Używając tej funkcji sprawdzasz pojedynczy punkt w room dla instancji lub object. To sprawdzenie zostanie wykonane względem bounding box instancji lub względem maski instancji, jeśli ta instancja ma sprawdzone dokładne kolizje i zwróci unikalną instancję id. Jeśli nie potrzebujesz identyfikatora kolidującej instancji, powinieneś rozważyć użycie position_meeting() zamiast. Funkcja ta akceptuje również specjalne słowa kluczowe all oraz other i zwróci słowo kluczowe noone, jeśli nie wystąpi kolizja, lub unikatową wartość ID znalezionej instancji, jeśli wystąpi kolizja.
+   
+  Składnia:
+  instance_position( x, y, obj );
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x
+        Real
+        The x position to check for instances.
+      
+      
+        y
+        Real
+        The y position to check for instances.
+      
+      
+        obj
+         Identyfikatorzasobu lub instancjiobiektu 
+        The object to check for instances of.
+      
+    
+  
+   
+  Zwroty:
+  Instance ID or noone
+   
+  Przykład:
+  var inst;
+    inst = instance_position(mouse_x, mouse_y, obj_Pause_Button);
+    if (inst != noone)
+    {
+        with (inst) image_index=1;
+        instance_create_layer(room_width / 2, 0, "Controllers", obj_Menu);
+    }
+  Powyższy kod sprawdzi, czy istnieje kolizja z instancją "obj_Pause_Button" w pozycji myszy, a jeśli tak, to użyje zwróconego identyfikatora do ustawienia jego image_index na nową wartość przed utworzeniem nowej instancji object "obj_Menu".
+   
+   
+   
+  
+    
+      
+        Powrót: Instancje
+        Następny: instance_position_list
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

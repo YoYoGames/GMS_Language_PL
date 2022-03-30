@@ -1,0 +1,188 @@
+
+  
+  Ruchy i kontrole
+  W poprzedniej części Podręcznika szybkiego startu podaliśmy kilka przykładów rysowania elementów na ekranie, ale samo rysowanie nie jest dobre, jeśli nie można ich poruszać... dlatego w tej części podamy kilka przykładów poruszania się po stronie objects, a także kilka podstawowych schematów sterowania dla różnych typów gier. Wszystkie przykłady są podane przy użyciu Drag and Drop™ (DnD™) oraz GameMaker Language (GML), więc możesz użyć tego, z czym czujesz się bardziej komfortowo. Pamiętaj, że nie będziemy tu zbyt szczegółowo wyjaśniać poszczególnych zagadnień, ponieważ chcemy, abyś jak najszybciej zaczął tworzyć gry. Zachęcamy więc do zapoznania się z linkami na bieżąco oraz do korzystania z funkcji "szukaj" w podręczniku w celu znalezienia dodatkowych informacji na temat wszystkiego, czego nie jesteś pewien.
+  Zanim przejdziesz dalej, utwórz nowy projekt ( GML lub DnD™) na stronie startowej, dodaj (lub utwórz) kilka sprites i object - ponieważ będziemy podawać kod, który możesz przetestować przy ich użyciu - i upewnij się, że w projekcie jest room, w którym możesz umieszczać instancje. Nie przejmuj się zbytnio wyglądem strony sprites, ponieważ wystarczy nawet zwykły biały kwadrat, a gdy wszystko będzie gotowe, możesz zacząć pracować nad poniższymi przykładami.
+   
+  Przesuń w kierunku myszy
+  
+    Jednym z najprostszych sposobów poruszania się i interakcji object z graczem jest użycie myszy. W tym przykładzie pokażemy, jak za pomocą podstawowego kodu sprawić, by object poruszał się w kierunku miejsca, w którym użytkownik kliknął lewy przycisk myszy .
+    Na początek otwórz stronę object, przypisz do niej adres sprite, a następnie nadaj jej zdarzenie Globalny lewy przycisk myszy w dół:
+    
+    Używamy globalnych zdarzeń myszy, ponieważ wykrywają one kliknięcie w dowolnym miejscu na stronie room, podczas gdy zwykłe zdarzenia myszy wykryją kliknięcie tylko wtedy, gdy mysz kliknie w polu ograniczającym instancji. W tym zdarzeniu chcemy dodać to DnD™ lub GML:
+    
+    move_towards_point(mouse_x, mouse_y, 2);
+    W tym miejscu mówimy instancji, by przesunęła się w kierunku pozycji na ekranie, w tym przypadku pozycji "mouse_x" i "mouse_y" ("mouse_x" i "mouse_y" to zmienne wbudowane , które zawsze przechowują aktualną pozycję kursora myszy). W DnD™ odbywa się to poprzez ustawienie "direction" i " speed" Zmienne instancji, natomiast GML robi to za pomocą funkcji move_towards_point() (ustawia ona również zmienne speed i direction , tylko w jednej, łatwej w użyciu funkcji).
+    Umieść instancję tej strony object na stronie room, a następnie naciśnij przycisk Odtwórz , po czym kliknij  wokół strony room, aby instancja poruszała się w kierunku myszy:
+    Świetnie! Instancja strony object przesuwa się teraz w kierunku miejsca kliknięcia, a jeśli przytrzymasz przycisk, instancja będzie podążać za kursorem myszy. Jest jednak pewien problem... Po jednokrotnym kliknięciu i zwolnieniu przycisku instancja nadal będzie się poruszać i w końcu opuści stronę room! Jest kilka sposobów, by to naprawić, a to, który z nich wybierzesz, zależy od tego, co chcesz zrobić, ale najłatwiejszym rozwiązaniem jest dodanie zdarzenia globalnego zwolnienia przycisku myszy, więc dodaj je teraz do object i wpisz następujący kod:
+    
+    speed = 0;
+    Dzięki temu instancja będzie podążać za kursorem myszy tylko tak długo, jak długo będzie przytrzymywany przycisk myszy, a po jego zwolnieniu przestanie się poruszać. Naciśnij przycisk Play  i przetestuj działanie.
+    Zanim opuścimy ten przykład, musimy jeszcze rozwiązać jeden problem... Jeśli klikniesz i przytrzymasz przycisk myszy, ale nie przesuniesz kursora, to instancja przesunie się w kierunku kursora, a następnie będzie wokół niego "wibrować". Dzieje się tak dlatego, że instancja porusza się szybciej niż o 1 piksel na raz, a więc "przeskakuje" pozycję i próbuje się cofnąć, a potem znowu przeskakuje, itd... (ustaw prędkość ruchu na 5 lub coś podobnego, aby zobaczyć problem, jeśli nie jest on od razu oczywisty).
+    Aby rozwiązać ten problem, należy dodać zdarzenie Step do strony object za pomocą poniższego kodu:
+    
+    var _dist = point_distance(x, y, mouse_x, mouse_y);
+      
+      if _dist <= speed
+      {
+          speed = 0;
+      }
+    
+    W tym przypadku po prostu sprawdzamy odległość instancji od pozycji myszy i jeśli jest ona taka sama lub mniejsza niż bieżąca prędkość, ustawiamy prędkość na 0. Dzięki temu instancja zatrzymuje się, gdy jest wystarczająco blisko pozycji myszy, a my nie mamy tego nieprzyjemnego problemu z "drganiem".
+     
+  
+  Ruch 4 i 8 kierunkowy za pomocą klawiatury
+  
+    Na początku tego poradnika pokazaliśmy Ci następujący kod DnD™ i GML, aby przesuwać instancję w prawo o dwa piksele w każdym kroku gry:
+    
+    x = x + 2;
+    Ten rodzaj ruchu nazywany jest ruchem pozycyjnym , ponieważ w istocie podnosimy instancję i umieszczamy ją ponownie w nowej pozycji za każdym razem, gdy uruchamiany jest kod. W tym przykładzie pokażemy, jak używać tego typu ruchu do poruszania instancją w czterech kierunkach: w górę, w dół, w lewo i w prawo.
+    Na początek otwórz stronę object i przypisz jej adres sprite. W tym momencie moglibyśmy dodać różne zdarzenia klawiatury, a w każdym z nich kazać instancji poruszać się w wybranym kierunku, jednak chcemy, aby gracz mógł poruszać się tylko w jednym kierunku na raz, a zrobienie tego tylko za pomocą zdarzeń klawiatury jest nieco bardziej skomplikowane niż zrobienie tego za pomocą kodu. Zamiast tego użyjemy zdarzenia Step - które powinieneś dodać teraz do object - z następującymi instrukcjami DnD™ lub GML, aby używać klawiszy strzałek do poruszania się:
+    
+    if keyboard_check(vk_left)
+      {
+          x = x - 2;
+      }
+      else if keyboard_check(vk_right)
+      {
+          x = x + 2;
+      }
+      else if keyboard_check(vk_up)
+      {
+          y = y - 2;
+      }
+      else if keyboard_check(vk_down)
+      {
+          y = y + 2;
+      }
+    Używamy struktury " if... else if... else if...", aby zapewnić, że instancja będzie poruszać się tylko w jednym kierunku na raz, a więc instancja powinna być w stanie poruszać się tylko w górę, w dół, w lewo lub w prawo, ale nie po przekątnej. Umieść instancję object na stronie room i naciśnij przycisk Odtwarzaj  , aby ją teraz przetestować! Jeśli wszystko przebiegło poprawnie, powinieneś otrzymać coś takiego:
+    
+    Kod ten można łatwo zmodyfikować, aby przekształcić ruch 4-kierunkowy w ruch 8-kierunkowy. Wystarczy usunąć polecenia " else" z bloków kodu, aby wszystko wyglądało tak, jak poniżej:
+    
+    if keyboard_check(vk_left)
+      {
+          x = x - 2;
+      }
+      if keyboard_check(vk_right)
+      {
+          x = x + 2;
+      }
+      if keyboard_check(vk_up)
+      {
+          y = y - 2;
+      }
+      if keyboard_check(vk_down)
+      {
+          y = y - 2;
+      }
+    Teraz po naciśnięciu przycisku odtwarzania   będzie to wyglądało następująco:
+    
+    Ostatnia rzecz, na którą warto zwrócić uwagę użytkownikom kodującym za pomocą GML... Podczas używania DnD™ możesz wybrać klawisz klawiatury, którego chcesz użyć z rozwijanej listy, ale w przypadku GML nie jest to takie proste. Istnieje wiele stałych klawiaturowych, których można używać - na przykład stałe klawiszy strzałek pokazane w powyższym kodzie - ale nie ma stałych dla klawiszy alfanumerycznych. Są one obsługiwane w nieco inny sposób i wymagają użycia funkcji ord(). Poniższy kod pokazuje, jak to działa przy użyciu klawisza WASD zamiast klawiszy strzałek:
+    if keyboard_check(ord("A"))
+      {
+          x = x - 2;
+      }
+      if keyboard_check(ord("D"))
+      {
+          x = x + 2;
+      }
+      if keyboard_check(ord("W"))
+      {
+          y = y - 2;
+      }
+      if keyboard_check(ord("S"))
+      {
+          y = y - 2;
+      }
+     
+  
+  Ruch gamepada
+  
+    Omówiliśmy już ruchy myszy i klawiatury, więc nadszedł czas, aby omówić ruchy gamepada . Nie będziemy się zajmować d-padem, ponieważ działa on tak samo jak klawiatura (wystarczy zmienić funkcje klawiatury w powyższym przykładzie na gamepad_button_check() lub If Gamepad button Down), więc w tym przykładzie zajmiemy się używaniem drążka analogowego do poruszania się.
+    Na początek musimy wykryć, jaki gamepad jest używany. Gamepady mają przypisane wartości ID od 0 do 11, więc użyjemy polecenia " for" loop, aby wykryć ID wszystkich podłączonych gamepadów i zapisać tę wartość ID w zmiennej do wykorzystania w przyszłości. Ponieważ chcemy wykryć tylko pierwszy podłączony gamepad, a nie wszystkie, po wykryciu gamepada użyjemy polecenia " break", aby "przerwać" działanie loop (na przykład, jeśli pierwszy podłączony gamepad ma ID 4, to loop uruchomi się tylko 5 razy, sprawdzając wartości ID 0 - 4, a następnie wyłączy się z loop po napotkaniu gamepada). Utwórz więc (lub otwórz) stronę object, przypisz jej adres sprite, a następnie dodaj zdarzenie Create Event o następującej treści:
+    
+    gamepad_id = -1;
+      
+      for (var i = 0; i < 12; i += 1;)
+      {
+          if gamepad_is_connected(i)
+          {
+              gamepad_id = i;
+              gamepad_set_axis_deadzone(gamepad_id, 0.2);
+      
+              break;
+          }
+      }
+    
+    Zauważ, że w powyższym kodzie ustawiliśmy wartość  deadzone dla gamepada. Dzieje się tak dlatego, że drążki analogowe w gamepadach różnych marek mają różną wrażliwość, a czasami mogą być tak wrażliwe, że jeśli nie ustawisz strefy martwej, mogą powodować niepożądane ruchy w grach. Dlatego ustawiamy strefę martwą na wartość taką jak 0,2, aby strona GameMaker Studio 2 ignorowała wszelkie wartości drążków gamepada poniżej tej wartości bezwzględnej.
+    Aby dodać rzeczywisty ruch, będziemy potrzebować zdarzenia Step Event, więc dodaj je teraz i nadaj mu następującą postać DnD™ lub GML:
+    
+    if gamepad_id > -1
+      {
+          var _h = gamepad_axis_value(gamepad_id, gp_axislh);
+          var _v = gamepad_axis_value(gamepad_id, gp_axislv);
+          x += _h * 4;
+          y += _v * 4;
+      }
+    W tym przypadku sprawdzamy, czy lewy drążek porusza się w poziomie lub w pionie. Funkcje osi zwracają wartości z przedziału od -1 do 1, więc dla osi poziomej -1 oznacza lewo, 0 - brak ruchu, a 1 - prawo, natomiast dla osi pionowej -1 oznacza górę, 0 - brak ruchu, a 1 - dół. Zauważ też, że wartości zawierają się w przedziale od -1 do 1, więc na przykład oś pozioma może zwrócić wartość 0,5, co oznacza, że drążek jest w połowie drogi między położeniem spoczynkowym a pełnym wychyleniem w prawo. Z tego powodu mnożymy tę wartość przez 4 (możesz ją pomnożyć przez dowolną wartość, zależnie od prędkości, z jaką chcesz, by instancja się poruszała) - oznacza to, że prędkość instancji będzie się zmieniać w zależności od tego, jak duży ruch został wykonany na osi drążka.
+    Umieść instancję tej strony object w witrynie room i naciśnij przycisk Play (Graj).  a następnie poruszaj się, używając lewego drążka podłączonego gamepada. Powinieneś zobaczyć coś takiego:
+    
+     
+  
+  Zaawansowany ruch 8-drożny
+  
+    W tym ostatnim przykładzie ponownie przyjrzymy się naszemu kodowi ruchu 8-kierunkowego i zajmiemy się problemem, który w nim występuje: ruch po przekątnej jest szybszy niż ruch w górę/dół/lewo/prawo. Dzieje się tak po prostu dlatego, że podczas ruchu po przekątnej poruszasz się wzdłuż przeciwprostokątnej trójkąta prostokątnego utworzonego przez wartości ruchu x/y:
+    
+    Aby lepiej zrozumieć, co się dzieje, usuńmy cały tekst oraz stronę sprites i po prostu pokażmy tę samą linię ruchu obróconą o 45°, tak aby była pozioma:
+    
+    Jak widać, różnica jest dość oczywista, a jeśli instancja porusza się o więcej niż 1 lub 2 piksele na krok, to można zauważyć, że ruch po przekątnej jest znacznie szybszy! Jak więc to ograniczyć? Można to zrobić na wiele sposobów, ale my skoncentrujemy się na jednym z nich, ponieważ wprowadza on kilka funkcji i pojęć, które przydadzą się później w grach.
+    Aby sobie z tym poradzić, będziemy musieli przechowywać w zmiennychwartości wejściowe z naciśniętych niezależnie klawiszy, a następnie sprawdzać je i poruszać się zgodnie z kombinacją naciśniętych klawiszy. Do tego celu potrzebny będzie object z przypisaną stroną sprite, której trzeba będzie nadać zdarzenie Step Event za pomocą następującej instrukcji DnD™ lub GML:
+    
+    UWAGA: Aby ułatwić wizualizację, podzieliliśmy powyższy tekst na dwie kolumny, ale w edytorze DnD™ będzie on umieszczony po kolei.
+    var _left = keyboard_check(vk_left);
+      var _right = keyboard_check(vk_right);
+      var _up = keyboard_check(vk_up);
+      var _down = keyboard_check(vk_down);
+      var _hspd = _right - _left;
+      var _vspd = _down - _up;
+    Aby móc się poruszać, musimy dodać trochę więcej kodu, ale zanim to zrobimy, wyjaśnijmy to trochę. Chcemy przekonwertować wartości lewo/prawo/góra/dół na równoważne wartości prędkości w poziomie i pionie, więc aby to zrobić, pobieramy wartość każdego klawisza, a następnie wykonujemy na niej podstawowe działania matematyczne, aby uzyskać wartości prędkości. Działa to w ten sposób, że jeśli klawisz jest wciśnięty, to akcja lub funkcja sprawdzająca zwróci "1", a jeśli nie jest wciśnięty, to funkcja zwróci "0". Jeśli więc na przykład wciśnięto prawy klawisz, to dla " _hspd" masz "1 - 0 = 1", a jeśli wciśnięto lewy, to dla " _hspd" masz "0 - 1 = -1" (a jeśli wciśnięto oba, to "1 - 1 = 0", więc instancja się nie poruszy). Pamiętaj, że w przypadku GameMaker Studio 2 room, aby przesunąć się w prawo, dodajemy do pozycji x , a aby przesunąć się w lewo, odejmujemy, więc ten kod da nam dodatnią lub ujemną wartość, którą możemy dodać lub odjąć, aby przesunąć się w poziomie lub w pionie, zależnie od tego, co wprowadzimy z klawiatury.
+    Teraz możemy dodać kod, który faktycznie przesunie instancję, a więc - nadal w zdarzeniu Step i po powyższym kodzie - dodajemy to:
+    
+    if (_hspd != 0 || _vspd != 0)
+      {
+          var _spd = 4;
+          var _dir = point_direction(0, 0, _hspd, _vspd);
+          var _xadd = lengthdir_x(_spd, _dir);
+          var _yadd = lengthdir_y(_spd, _dir);
+          x = x + _xadd;
+          y = y + _yadd;
+      }
+    Powyższy kod najpierw sprawdza, czy jedno z dwóch wyrażeńjest prawdziwe, tzn. czy zmienne prędkości poziomej lub pionowej nie są równe 0. Zwróć uwagę, że w sprawdzeniu " if" GML użyto symbolu " ||". W języku programowania oznacza to " or", a więc - mówiąc wprost - sprawdzasz
+    if the variable _hspd does not equal zero
+      or
+      if the variable _vspd does not equal zero
+    
+    W ten sposób można string wiele wyrażeń razem w " if" sprawdzać, a wyrażenia te mogą być obliczane na wiele różnych sposobów (więcej informacji na ten temat można znaleźć w rozdziale Wyrażenia tutaj).
+    W następnej części kodu zapisujemy w zmiennej wartość rzeczywistej prędkości ruchu, a następnie pobieramy kierunek, korzystając z wartości _hspd i _vspd , które mogą wynosić -1, 0 lub 1. Funkcja kierunku sprawdza kierunek od (0, 0), ponieważ nie używamy współrzędnych room, a zamiast tego chcemy, aby na podstawie wartości zmiennych obliczyła kierunek od 0° do 360°. Poniższy diagram lepiej ilustruje to, co się dzieje, niż próby wyjaśnienia tego słowami:
+    
+    UWAGA: Kierunek w witrynie GameMaker Studio 2 jest obliczany przeciwnie do ruchu wskazówek zegara, a więc 0° i 360° znajdują się po prawej stronie, 90° - w górę, 180° - po prawej stronie, a 270° - w dół.
+    Na koniec używamy lengthdir_x() oraz lengthdir_y() aby faktycznie przesunąć zmienną. Są to  wektor  które pobierają długość (odległość) i kierunek, a następnie na podstawie tych wartości obliczają nową pozycję na danej osi (bardziej szczegółowe objaśnienia znajdują się w opisach funkcji).
+    To bardzo dużo do ogarnięcia na raz i nie przejmuj się, jeśli nie do końca to wszystko rozumiesz! Z czasem zrozumiesz! Teraz pozostaje tylko dodać instancję tej strony object do strony room, a następnie nacisnąć przycisk Odtwórz  a powinieneś uzyskać jedwabiście gładki ruch w 8 kierunkach, bez żadnych problemów związanych z poruszaniem się po przekątnej:
+    
+  
+   
+  Mamy nadzieję, że dzięki tym przykładom - a także poprzednim, dotyczącym rysowania - zrozumiałeś wystarczająco dużo, aby zacząć tworzyć własne projekty! Na ostatniej stronie tego podręcznika znajduje się podsumowanie tego, czego się nauczyłeś, a także łącza do dodatkowych materiałów edukacyjnych.
+   
+   
+  
+    
+      
+        Powrót: Indeks
+        Następny: Podsumowanie
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

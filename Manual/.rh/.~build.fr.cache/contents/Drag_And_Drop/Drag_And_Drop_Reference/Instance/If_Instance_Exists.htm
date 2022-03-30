@@ -1,0 +1,45 @@
+
+  
+   Jeśli instancja istnieje
+  Tej akcji można użyć do sprawdzenia, czy w grze object istnieje instancja konkretnej instancji room lub czy istnieje sama konkretna instancja. Podajesz adres object z eksploratora asset i jeśli jakaś instancja istnieje w room, to akcja zwróci true, w przeciwnym razie zwróci false. Zauważ, że możesz tu użyć zmiennej z unikalnym identyfikatorem konkretnej instancji (na przykład zwróconym przez akcję Create Object Instance) lub nawet z identyfikatorem instancji
+    zwróconym przez edytor room podczas dodawania instancji.
+  Jeśli flag argument "Not", to działanie sprawdzi, czy nie istnieje żadna instancja i jeśli żadna nie zostanie znaleziona, zwróci true, a jeśli nawet jedna istnieje, zwróci false.
+  Należy pamiętać, że aby dodać akcje do bloku "jeśli", należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:
+  
+  Te działania będą teraz uruchamiane, jeśli wartość "if" będzie równa true, natomiast wszelkie działania porzucone w innym miejscu będą wykonywane po bloku "if".
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Object
+        Nazwa strony object, której instancję należy sprawdzić (lub identyfikator instancji).
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdza, czy wystąpiła kolizja, i zwraca unikatową wartość ID instancji
+    z którą nastąpiła kolizja. Wartość ta jest przechowywana w zmiennej tymczasowej, a następnie sprawdzane jest, czy odpowiada ona instancji, która znajduje się obecnie na stronie room (jeśli nie zostanie znaleziona żadna kolizja, zmienna będzie zawierać słowo kluczowe "noone"),
+    a jeśli tak, to zmienna jest ustawiana w instancji, z którą się zderzyła.
+   
+   
+   
+  
+    
+      
+        Powrót: Działania instancji
+        Następny: Wezwanie do udziału w imprezie dla rodziców
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

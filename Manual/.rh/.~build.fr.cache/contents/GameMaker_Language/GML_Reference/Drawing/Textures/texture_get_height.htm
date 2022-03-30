@@ -1,0 +1,43 @@
+
+  
+  texture_get_height
+  Zwraca wysokość strony texture o podanym identyfikatorze, który jest zawsze wartością z zakresu 0-1. Można jej użyć podczas mapowania strony textures na modele lub prymitywy.
+   
+  Składnia:
+  texture_get_height(tex);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tex
+        Wskaźnik tekstury
+        The texture page asset pointer to use
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  tex_h = texture_get_height(surface_get_texture(global.Surf));
+  Powyższy kod pozwoli uzyskać wysokość strony texture pobraną z wcześniej utworzonej powierzchni.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekstury
+        Następny: texture_get_texel_width
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

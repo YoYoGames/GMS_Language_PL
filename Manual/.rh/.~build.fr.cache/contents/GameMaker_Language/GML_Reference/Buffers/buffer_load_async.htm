@@ -1,0 +1,68 @@
+
+  
+  bufor_load_async
+  Za pomocą tej funkcji można wczytać plik utworzony wcześniej za pomocą funkcji buffer_save() (lub dowolnej innej funkcji służącej do zapisywania buffers) do pliku buffer. "Offset" określa pozycję początkową w buffer do załadowania (w bajtach), a "rozmiar" jest rozmiarem obszaru buffer, który ma zostać załadowany od tego offsetu (również w bajtach). Można podać wartość -1 dla argumentu size, a zostanie wczytany cały obszar buffer. Zwróć uwagę, że funkcja załaduje plik z "domyślnego" folderu, który nie musi być dołączony do pliku path, który podajesz. Folder ten zostanie utworzony, jeśli nie istnieje, lub gdy zapiszesz plik przy użyciu polecenia buffer_save_async().
+  Funkcja zwraca unikatową wartość ID, którą można następnie wykorzystać w zdarzeniu asynchronicznym Save / Load do sprawdzenia wartości async_load ID, jak pokazano w poniższym przykładzie rozszerzonym. Mapa async_load w zdarzeniu będzie zawierała następujące dwie pary klucz/wartość:
+  
+    "id": identyfikator funkcji asynchronicznej zwrócony przez funkcję zapisu.
+    "status": zwraca true, jeśli dane zostały zapisane/wczytane poprawnie, a false w przeciwnym wypadku.
+  
+  UWAGA W HTML5 jest to preferowana metoda ładowania pliku, jeśli ładowanie odbywa się ze strony server, a nie z pamięci lokalnej, ponieważ ładowanie synchroniczne zostało wycofane z większości przeglądarek i w końcu przestanie być stosowane.
+  Informacje dotyczące poszczególnych platform można znaleźć na stronie buffer_load().
+   
+  Składnia:
+  buffer_load_async(buffer, filename, offset, size);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        buffer
+        The index of the buffer to load.
+     
+      
+        filename
+        The name of the file to load.
+     
+      
+        offset
+        The offset within the buffer to load to (in bytes).
+     
+      
+        size
+        The size of the buffer area to load (in bytes).
+     
+    
+  
+   
+  Zwroty:
+  Async Request ID
+   
+  Przykład rozszerzony:
+  Funkcję buffer_load_async() można wywołać z dowolnego zdarzenia, a ponieważ jest to funkcja asynchroniczna, wywołanie zwrotne może być niemal natychmiastowe lub może trwać kilka sekund. Wywołanie funkcji jest proste i wygląda mniej więcej tak:
+  loadid = buffer_load_async(buff, "Player_Save.sav", 0, 16384);
+  Powyższy kod wczytuje zawartość pliku "Player_Save.sav" na podany adres buffer, zapisując ID wywołania funkcji w zmiennej "loadid". Po zakończeniu ładowania zostanie wywołane asynchroniczne zdarzenie Save/Load, a Ty będziesz mógł przeanalizować mapę async_load w poszukiwaniu właściwego identyfikatora funkcji, tak jak poniżej:
+  if ds_map_find_value(async_load, "id") == loadid
+    {
+        if ds_map_find_value(async_load, "status") == false
+        {
+            show_debug_message("Load failed!");
+        }
+    }
+  Powyższy kod najpierw sprawdzi identyfikator utworzonej mapy DS, a następnie sprawdzi stan wywołania zwrotnego, publikując komunikat debugowania, jeśli wystąpiły jakieś problemy.
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_load_partial
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

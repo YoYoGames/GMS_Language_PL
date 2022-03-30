@@ -1,0 +1,45 @@
+
+  
+  zamrożenie wierzchołka
+  Za pomocą tej funkcji można "zamrozić" stronę vertex buffer. Ta strona buffer staje się tylko do odczytu, co oznacza, że jeśli chcesz ją zmienić, musisz usunąć całą stronę buffer i utworzyć ją od nowa. Zamrożona strona buffer może być przesłana na stronę shader szybciej niż normalna, dynamiczna strona buffer i jest zalecana dla tych efektów, które wymagają niezmiennego niestandardowego elementu pierwotnego przez cały czas trwania poziomu lub gry.
+  Funkcja zwróci 0, jeśli zamrożenie określonej strony vertex buffer zakończy się powodzeniem, natomiast jeśli z jakiegokolwiek powodu nie powiedzie się, zwróci -1.
+   
+  Składnia:
+  vertex_freeze(buffer);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        buffer
+        Vertex Buffer ID
+        The vertex buffer to freeze.
+      
+    
+  
+   
+  Zwroty:
+  Real (0 for success, -1 for failure)
+   
+  Przykład:
+  // Create event
+    vertex_freeze(vbuff);
+  Powyższy kod zamrozi podany adres vertex buffer w zdarzeniu Create, dzięki czemu będzie można go użyć jako "statycznego" adresu buffer w innych zdarzeniach, aby uzyskać do niego szybszy dostęp.
+   
+   
+   
+  
+    
+      
+        Powrót: Prymitywy i Vertex Formaty
+        Następny: vertex_submit
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

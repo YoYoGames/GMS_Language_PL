@@ -18,6 +18,11 @@
   <h1>animcurve_get_channel</h1>
   <p>Ta funkcja zwraca <a href="../../../GML_Overview/Structs.htm">strukturę</a> zawierającą dane kanału określonego w <span class="notranslate">animation curve</span> <span class="notranslate">asset</span>. Należy podać identyfikator <span class="notranslate">animation curve</span> lub <span class="notranslate">struct</span> oraz nazwę lub indeks kanału, a funkcja zwróci <span class="notranslate">struct</span> w następującym formacie:</p>
   <table>
+    <colgroup>
+      <col />
+      <col style="width: 183px;" />
+      <col style="width: 883px;" />
+    </colgroup>
     <tbody>
       <tr>
         <th>Nazwa zmiennej</th>
@@ -25,31 +30,30 @@
         <th>Opis</th>
       </tr>
       <tr>
-        <td>nazwa</td>
-        <td>ciąg</td>
-        <td>Jest to nazwa kanału.</td>
+        <td><span class="inline">name</span></td>
+        <td style="">ciąg</td>
+        <td style="">Jest to nazwa kanału.</td>
       </tr>
       <tr>
-        <td>typ</td>
-        <td>niezmienny</td>
-        <td>Będzie to jedna ze stałych <span class="inline"><b>animcurvetype_linear</b></span> dla interpolacji liniowej między punktami lub <span class="inline"><b>animcurvetype_catmullrom</b></span> dla &quot;gładkiej&quot; interpolacji między punktami przy użyciu interpolacji katmull-rom.</td>
+        <td><span class="inline">type</span></td>
+        <td style=""><span data-keyref="Type_Constant_AnimCurve_Interp_Type"><a data-rhwidget="HyperlinkPopover" href="../../../../../GameMaker_Language/GML_Reference/Asset_Management/Animation_Curves/animcurve_channel_new.htm">Typ interpolacji krzywej animacji Stała</a></span></td>
+        <td style="">Będzie to jedna ze stałych <span class="inline"><b>animcurvetype_linear</b></span> dla interpolacji liniowej między punktami, <span class="inline"><b>animcurvetype_catmullrom</b></span> dla &quot;gładkiej&quot; interpolacji między punktami z wykorzystaniem interpolacji katmull-rom lub <span class="inline">animcurvetype_bezier</span> dla interpolacji Beziera.</td>
       </tr>
       <tr>
-        <td>iteracje</td>
-        <td>liczba całkowita</td>
-        <td>Jeśli kanał używa interpolacji katmull-rom (&quot;gładkiej&quot;), wartość ta określa, ile punktów zostało wygenerowanych dla każdego segmentu krzywej (należy pamiętać, że te dodatkowe punkty są wewnętrzne dla funkcji i używane tylko do obliczeń <span class="notranslate">runtime</span> ). Jeśli kanał korzysta z interpolacji liniowej, wartość ta nadal będzie istnieć, ale można ją zignorować, ponieważ nie ma ona wpływu na sposób interpolacji krzywej.</td>
+        <td><span class="inline">iterations</span></td>
+        <td style="">liczba całkowita</td>
+        <td style="">Jeśli kanał używa interpolacji katmull-rom (&quot;gładkiej&quot;), wartość ta określa, ile punktów zostało wygenerowanych dla każdego segmentu krzywej (należy pamiętać, że te dodatkowe punkty są wewnętrzne dla funkcji i używane tylko do obliczeń <span class="notranslate">runtime</span> ). Jeśli kanał korzysta z interpolacji liniowej, wartość ta nadal będzie istnieć, ale można ją zignorować, ponieważ nie ma ona wpływu na sposób interpolacji krzywej.</td>
       </tr>
       <tr>
-        <td>punkty</td>
-        <td>wskaźnik do tablicy</td>
-        <td>Jest to tablica, w której każdy element tablicy jest punktem <span class="notranslate">struct</span>.</td>
+        <td><span class="inline">points</span></td>
+        <td style="">wskaźnik do tablicy</td>
+        <td style="">Jest to tablica, w której każdy element tablicy jest punktem <span class="notranslate">struct</span>.</td>
       </tr>
     </tbody>
   </table>
   <p><br>
     Identyfikator <span class="notranslate">animation curve</span> to nazwa strony <span class="notranslate">animation curve</span> zdefiniowana w przeglądarce <span class="notranslate">Asset</span> lub wskaźnik <span class="notranslate">struct</span> zwrócony przez funkcję <a href="animcurve_create.htm"><span class="inline">animcurve_create()</span></a>. Nazwa kanału to znak <span class="notranslate">string</span>, który odnosi się do kanału zdefiniowanego w krzywej animacji <span class="notranslate">asset</span>, lub można podać wartość indeksu z zakresu od 0 do <i>n</i>, gdzie <i>n</i> to ostatni kanał w krzywej <span class="notranslate">asset</span> (np.: jeśli <span class="notranslate">animation curve</span> ma 4 kanały, będą one indeksowane od 0 do 3). Należy zauważyć, że przekazanie wartości indeksu będzie wymagało mniej przetwarzania niż przekazanie nazwy kanału. Jeśli funkcja się nie powiedzie (tzn. nie istnieje kanał o podanej nazwie lub indeksie), zostanie wyświetlony błąd.</p>
   <p>Punkty na pojedynczym kanale są przechowywane jako <span class="notranslate">structs</span> w <a href="../../../GML_Overview/Arrays.htm">tablicy</a>, gdzie każda pozycja w tablicy jest pojedynczym punktem <span class="notranslate">struct</span>. Punkt <span class="notranslate">struct</span> ma następujące zmienne:</p>
-  <p> </p>
   <table>
     <tbody>
       <tr>
@@ -58,12 +62,12 @@
         <th>Opis</th>
       </tr>
       <tr>
-        <td>posx</td>
+        <td><span class="inline">posx</span></td>
         <td>prawdziwy</td>
         <td>Położenie w czasie (znormalizowane od 0 do 1) punktu.</td>
       </tr>
       <tr>
-        <td>wartość</td>
+        <td><span class="inline">value</span></td>
         <td>prawdziwy</td>
         <td>Wartość punktu.</td>
       </tr>

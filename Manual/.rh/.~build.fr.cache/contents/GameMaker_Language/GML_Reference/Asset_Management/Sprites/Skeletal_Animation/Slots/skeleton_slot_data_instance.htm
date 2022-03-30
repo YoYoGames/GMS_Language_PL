@@ -1,0 +1,69 @@
+
+  
+  szkielet_gniazda_danych_instancja
+  Za pomocą tej funkcji można wypełnić (utworzoną wcześniej) listę DS danymi dla każdego dostępnego gniazda przyłączenia dla strony Spine sprite powiązanej z bieżącą instancją (łącznie z wszelkimi modyfikacjami załączników). Dane te są zwracane w postaci mapy DS, która zawiera następujące pary klucz-wartość:
+  
+    "name": Nazwa slotu.
+    "bone": Nazwa kości.
+    "załącznik": Nazwa załącznika, jeśli taki jest używany, lub "(brak)", jeśli nie ma przypisanego załącznika.
+  
+  Wartości dla każdego klucza zostaną strings i będą mogły być wykorzystane w innych funkcjach dołączania szkieletu dla tych typów sprite. Należy pamiętać, że utworzone DS Map nie są niszczone, więc trzeba będzie loop przejrzeć listę DS i samodzielnie zniszczyć każdą z utworzonych map.
+   
+  Składnia:
+  skeleton_slot_data_instance(list);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        list
+        Identyfikator listy DS
+        The ID of the DS list to populate with the DS maps.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var list = ds_list_create();
+    var open = true;
+    slot_name = "";
+    skeleton_slot_data_instance(list);
+    for (var i = 0; i < ds_list_size(list); i++)
+    {
+        var map = list[| i];
+        if open
+        {
+            if map[? "attachment"] == "(none)"
+            {
+                open = false;
+                slot_name = map[? "name"];
+            }
+        }
+    
+        ds_map_destroy(map);
+    }
+    
+    ds_list_destroy(list);
+  
+  Powyższy kod tworzy listę DS, a następnie wypełnia ją danymi o slotach dla instancji sprite. Dane te są następnie parsowane w celu wyodrębnienia poszczególnych map DS z danymi slotów. Następnie sprawdzane jest, czy nie ma pustego slotu, a jeśli tak, to przed zniszczeniem mapy DS zmiennej "slot_name" przypisywana jest nazwa pustego slotu. Na koniec niszczymy listę DS, gdyż nie jest ona już potrzebna.
+   
+   
+   
+  
+    
+      
+        Powrót: Szczeliny
+        Następny: skeleton_find_slot
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

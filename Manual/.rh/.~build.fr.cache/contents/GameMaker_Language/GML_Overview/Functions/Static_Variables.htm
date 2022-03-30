@@ -1,0 +1,81 @@
+
+  
+  Zmienne statyczne
+  Interesującą cechą funkcji skryptowych i zmiennych metod jest to, że mogą one posiadać zmienne statyczne. Zmienna statyczna to taka, która jest definiowana przy pierwszym wywołaniu funkcji i która od tego momentu będzie utrzymywać swoją wartość. Aby utworzyć zmienną statyczną, należy zdefiniować ją za pomocą słowa kluczowego static, jak pokazano w tym prostym przykładzie:
+  counter = function()
+    {
+        static num = 0;
+        return num++;
+    }
+  W powyższym przykładzie zmienna num jest zmienną statyczną, a więc zostanie zdefiniowana jako 0 przy pierwszym wywołaniu funkcji, ale przy każdym kolejnym wywołaniu funkcji inicjalizacja zmiennej zostanie zignorowana. Jeśli więc następnie wywołasz tę funkcję w następujący sposób:
+  for (var i = 0; i < 10; ++i;)
+    {
+        show_debug_message(counter());
+    }
+  Dane wyjściowe będą następujące:
+  0
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+  Gdybyś nie użył tutaj słowa kluczowego static, to wyjściem byłoby po prostu 0 dla każdej iteracji funkcji loop, ponieważ zmienna num będzie definiowana jako 0 przy każdym wywołaniu funkcji przed jej zwróceniem. Zwróć uwagę, że zmienna statyczna może być zmieniana tylko wewnątrz oryginalnej funkcji, a zwrócenie jej da po prostu kopię jej wartości - zasadniczo współdzielona zmienna statyczna może być zmieniana tylko przez funkcję, która ją zawiera.
+  Zmienna statyczna jest zawsze inicjalizowana na początku funkcji, więc niezależnie od tego, gdzie w funkcji zdefiniujemy zmienną statyczną, będzie ona zawsze dostępna do odczytu i zmiany w całej funkcji (nawet jeśli zostanie użyta przed jej zdefiniowaniem). Zobacz poniższy przykład:
+  function add_health()
+    {
+        my_health++;
+        show_debug_message(my_health);
+        static my_health = 1;
+    }
+  Tutaj zmienna statyczna "my_health" jest zmieniana i wypisywana na wyjście kompilatora przed jej zainicjalizowaniem. Chociaż wygląda to źle, jest to całkowicie w porządku, ponieważ zmienne statyczne są inicjowane przed wykonaniem jakiegokolwiek kodu funkcji. Należy pamiętać, że jeśli w funkcji znajduje się wiele zmiennych statycznych, to przy ich inicjalizacji na początku zostanie zachowana kolejność, w jakiej zostały zdefiniowane.
+  Można również użyć słowa kluczowego static wewnątrz funkcji, aby utworzyć funkcję statyczną, co - podobnie jak w przypadku zmiennych - oznacza po prostu, że funkcja zostanie zdefiniowana tylko raz, na przykład przy pierwszym wywołaniu funkcji:
+  function(_x, _y) Vector2 constructor
+    {
+        x = _x;
+        y = _y;
+    
+        static Add = function( _other )
+        {
+            x += _other.x;
+            y += _other.y;
+        }
+    }
+  
+  W powyższym przykładzie można użyć funkcji konstruktora Vector2 do utworzenia strony struct, a strona struct będzie miała kilka zmiennych, z których jedną jest zmienna metody Add. Ponieważ zmienna ta została zdefiniowana jako statyczna, funkcja, którą zawiera, zostanie zainicjalizowana tylko raz , przy pierwszym wywołaniu funkcji Vector2, a wszystkie kolejne structs utworzone za pomocą tego konstruktora będą odwoływać się do funkcji Add, która została utworzona na początku, zamiast tworzyć nową funkcję dla każdego struct (więcej informacji na temat structs i słowa kluczowego constructor można znaleźć tutaj).
+  Gdy używamy dziedziczenia z konstruktorami, wszelkie zmienne statyczne w konstruktorze potomnym zostaną zainicjowane dopiero po wykonaniu konstruktora nadrzędnego, więc zmienne statyczne konstruktora potomnego nie będą nadpisywać zmiennych statycznych konstruktora nadrzędnego. Zobacz poniższy przykład:
+  function Parent() constructor
+    {
+        show_debug_message(value);
+        static value = 10;
+    }
+    
+    function Child() : Parent() constructor
+    {
+        show_debug_message(value);
+        static value = 20;
+    }
+    
+    var _child = new Child();
+  
+  Wywołanie konstruktora Child() powoduje wypisanie tego do dziennika wyjściowego:
+  10
+    20
+  Pierwsza wartość pochodzi z konstruktora rodzica, a druga z konstruktora dziecka. Pokazuje to, że zmienna statyczna value dziecka nie została zainicjalizowana do momentu zakończenia konstruktora rodzica, a w każdym konstruktorze zmienna statyczna została zainicjowana przed wywołaniem show_debug_message().
+   
+   
+  
+    
+      
+        Powrót: Przegląd GML
+        Następny: Tablice
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

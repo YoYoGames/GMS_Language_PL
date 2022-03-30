@@ -1,0 +1,32 @@
+
+  
+  gc_collect
+  Za pomocą tej funkcji można uruchomić garbage collector, wymuszając jego uruchomienie na końcu bieżącej ramki (kroku). Warto zauważyć, że aby to zadziałało, garbage collector nie musi być aktywny. Wywołanie tej funkcji po wyłączeniu garbage collectora (za pomocą funkcji gc_enable()) spowoduje włączenie garbage collectora na jedną ramkę, w której wszystkie objects oznaczone do zbierania zostaną usunięte z pamięci, zanim garbage collector zostanie ponownie wyłączony.
+   
+  Składnia:
+  gc_collect();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (global.debug == true && keyboard_check_pressed(vk_f1))
+    {
+        gc_collect();
+    }
+  Powyższy kod sprawdza zmienną globalną i naciśnięty klawisz, a jeśli są to adresy true, to na koniec ramki (kroku) uruchamiane jest odśmiecanie.
+   
+   
+   
+  
+    
+      
+        Powrót: Garbage Collection
+        Next: gc_target_frame_time
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

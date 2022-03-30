@@ -17,8 +17,8 @@
   <h1>physics_fixture_set_density</h1>
   <p>Gęstość czegoś definiuje się jako masę na jednostkę objętości, co oznacza, <i>jak wiele masy mieści się w przestrzeni, którą zajmuje dany przedmiot w świecie</i>. Zatem balon ma małą gęstość, ponieważ ma małą masę, a zajmuje dużą przestrzeń,
     natomiast sztabka ołowiu miałaby dużą gęstość, ponieważ ma dużą masę, ale zajmuje mało miejsca.</p>
-  <p><img>W świecie fizyki <span class="notranslate">GameMaker Studio 2</span> 2D, masa jest obliczana automatycznie
-    na podstawie wartości wprowadzonych dla <b>gęstości</b> oraz <b>powierzchni</b> kształtu zdefiniowanego przez ciebie dla elementu mocującego. Będzie to miało bezpośredni wpływ na stopień bezwładności, jak również na reakcję na kolizje i siły, więc
+  <p><img>W świecie fizyki 2D programu <span data-keyref="GameMaker Name">GameMaker</span> masa jest obliczana automatycznie
+    na podstawie wartości wprowadzonych przez ciebie dla <b>gęstości</b> oraz <b>powierzchni</b> kształtu, który zdefiniowałeś dla uchwytu. Będzie to miało bezpośredni wpływ na to jak dużą bezwładność ma element, jak reaguje na kolizje i siły, więc
     jeśli zdefiniujesz mały kształt o dużej gęstości, będzie on miał bardzo dużą masę (jak sztabka ołowiu), ale jeśli zdefiniujesz duży kształt o małej gęstości, będzie on miał dużo mniejszą masę (jak balon).</p>
   <p class="note"><b>UWAGA</b>: Jeśli chcesz, by instancja, która ma otrzymać element mocujący była <strong>statyczna </strong>(tzn. nieruchoma w świecie gry), wówczas gęstość powinna być ustawiona na 0, co w istocie daje jej nieskończoną gęstość.</p>
   <p class="note"><span class="note">UWAGA</span> Statyczny uchwyt można uczynić <strong>kinematycznym</strong> (tzn. może się on poruszać, ale bez efektów siły lub grawitacji) przez nadanie mu gęstości 0, a następnie ustawienie parametrów <span class="inline"><a href="../Physics_Variables/phy_speed_x.htm"><span style="font-size:14px;">phy_speed_x</span>

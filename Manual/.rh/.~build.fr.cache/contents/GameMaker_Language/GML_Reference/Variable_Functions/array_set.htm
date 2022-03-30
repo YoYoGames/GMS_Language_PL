@@ -1,0 +1,63 @@
+
+  
+  array_set
+  Za pomocą tej funkcji można ustawić wartość indeksu w tablicy na wartość. Funkcja wymaga podania zmiennej przechowującej tablicę, a także indeksu do ustawienia oraz wartości, na którą ma zostać ustawiona. Funkcja ta może być również stosowana do tablic wielowymiarowych, o ile przy podawaniu indeksu tablicy zostanie określony wymiar, który ma być ustawiony, według następującego schematu:
+  // 1D array
+    array_set(my_array, 0, 100);
+    // 2D array
+    array_set(my_array[0], 0, 100);
+    // 3D array
+    array_set(my_array[0][0], 0, 100);
+    // etc...
+   
+  Składnia:
+  array_set(variable, index, value);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        variable
+        Tablica
+        The variable that holds the array.
+      
+      
+        index
+        Real
+        The index of the array element to set the value for.
+      
+      
+        value
+        Zmienna
+        The value to set.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  for (var i = 0; i < 10; ++i;)
+    {
+        array_set(score_array, i, i*100));
+    }
+  Powyższy kod ustawi pierwsze 10 elementów w podanej tablicy na wartość.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: array_push
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

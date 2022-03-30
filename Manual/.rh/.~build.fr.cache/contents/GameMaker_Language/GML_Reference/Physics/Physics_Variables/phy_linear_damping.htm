@@ -1,0 +1,36 @@
+
+  
+  phy_linear_damping
+  Ta zmienna może być użyta do ustawienia tłumienia liniowego instancji lub do uzyskania bieżącego tłumienia liniowego. Tłumienie to wielkość "oporu" przed ruchem do przodu, jaki ma instancja z włączoną fizyką, przy czym niższa wartość pozwala instancji poruszać się i przyspieszać szybciej, a wyższa wartość sprawia, że wymaga ona silniejszego pchnięcia.
+   
+  Składnia:
+  phy_linear_damping;
+   
+  Zwroty:
+   (single precision floating point value, or undefined if the instance is not physics enabled)
+   
+  Przykład:
+  if place_meeting(phy_position_x, phy_position_y, obj_Water)
+    {
+        phy_linear_damping = 10;
+    }
+    else
+    {
+        phy_linear_damping = 3;
+    }
+  Powyższy kod sprawdzi, czy istnieje kolizja między instancją wywołującą a instancjami "obj_Water" i odpowiednio zmieni tłumienie liniowe.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne fizyki
+        Następny: phy_speed_x
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

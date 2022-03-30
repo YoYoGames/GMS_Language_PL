@@ -1,0 +1,50 @@
+
+  
+  obrót_ścieżki
+  Możesz użyć tej funkcji do obrócenia danej strony path wokół jej środka. Pamiętaj, że w GameMaker Studio 2 (o ile nie używasz fizyki) kąty są obliczane przeciwnie do ruchu wskazówek zegara, więc obrót path o 90 stopni spowoduje obrót path w lewo. Ta funkcja zmienia rzeczywisty zasób path , a więc będzie trwale wpływać na to, jak path jest używany przez wszystkie instancje w grze od momentu użycia funkcji do końca gry. Jeśli nie tego potrzebujesz, powinieneś użyć funkcji takiej jak path_duplicate(), aby najpierw utworzyć kopię path, a następnie wywołać tę funkcję na powielonej asset (nie zapomnij wywołać path_delete() na asset, gdy nie będzie już potrzebna).
+  
+  UWAGA: Po przypisaniu zmiennej path do instancji za pomocą funkcji path_start() można użyć zmiennej path_orientation, aby zmienić także obrót path.
+   
+  Składnia:
+  path_rotate(index, angle);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Aktywa na ścieżce
+        The index of the path to flip.
+      
+      
+        angle
+        Real
+        The angle of rotation degrees.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  path_rotate(pth_Patrol, 90);
+  Spowoduje to obrócenie danego elementu o 90 stopni w kierunku przeciwnym do ruchu wskazówek zegara.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja ścieżką
+        Następny: path_rescale
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,54 @@
+
+  
+  physics_particle_delete_region_box
+  Za pomocą tej funkcji można usunąć z symulacji fizyki w bieżącym oknie room wszystkie cząstki, które znajdują się w granicach zdefiniowanego prostokątnego obszaru. Funkcja pobiera pozycję x i y dla środka obszaru do usunięcia oraz
+    a także połowę szerokości i wysokości prostokąta (w pikselach), który definiuje ten obszar.
+   
+  Składnia:
+  physics_particle_delete_region_box(x, y, halfWidth, halfHeight)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x
+        The x position of the center of the area to delete.
+     
+      
+        y
+        The y position of the center of the area to delete.
+     
+      
+        halfWidth
+        The half width of the rectangle.
+     
+      
+        halfHeight
+        The half height of the rectangle.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  physics_particle_delete_region_box(mouse_x, mouse_y, 32, 32);
+  Powyższy kod usunie wszystkie cząsteczki znajdujące się w prostokątnym obszarze wokół pozycji myszy.
+   
+   
+   
+  
+    
+      
+        Powrót: Miękkie cząstki ciała
+        Następny: physics_particle_delete_region_poly
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

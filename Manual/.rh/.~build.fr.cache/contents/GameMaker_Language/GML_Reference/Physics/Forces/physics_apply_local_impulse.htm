@@ -1,0 +1,58 @@
+
+  
+  fizyka_zastosuj_lokalny_impuls
+  Za pomocą fizyki dostępnej na stronie object można nie tylko stosować siłę i grawitację do obiektu GameMaker Studio 2, ale także można stosować impuls. Impuls różni się nieco od siły tym, że po jego zastosowaniu natychmiast wpłynie na prędkość i potencjalnie na moment obrotowy (lub "obrót") obiektu object, zwłaszcza jeśli punkt wybrany do zastosowania impulsu ma wektor, który nie jest wyrównany ze środkiem masy (uwaga: środek masy niekoniecznie jest tożsamy z początkiem!). Ta funkcja stosuje impuls lokalnie do instancji. Oznacza to, że siła i kierunek impulsu są obliczane na podstawie początku (lub pozycji, jeśli nie ma adresu sprite) instancji, bez uwzględniania kierunku lub obrotu, jaki może ona mieć w grze room lub w świecie fizyki. Poniżej znajduje się ilustracja:
+  Jak widać, żaba na obrazku otrzymuje od dołu impuls, który powoduje, że "skacze". Dokładny impuls jest zdefiniowany przez wektor, który otrzymujemy ze składowych ximpulse/yimpulse w odniesieniu do współrzędnych xpos/ypos - co oznacza, że impuls jest obliczany jako odległość od xpos/ypos do ximpulse/yimpulse w Newtonach, a kierunek jest kątem, który otrzymujemy od xpos/ypos do ximpulse/yimpulse.
+  UWAGA: Świat fizyki używa metrów do wszystkich swoich obliczeń, a stosunek pikseli na metr definiuje się w edytorze room lub za pomocą physics_world_create().
+   
+  Składnia:
+  physics_apply_local_impulse(xpos, ypos, ximpulse, yimpulse)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        xpos
+        The x coordinate relative to the origin where the impulse will be applied
+     
+      
+        ypos
+        The y coordinate relative to the origin where the impulse will be applied
+     
+      
+        ximpulse
+        the x component of the impulse vector (relative to the xpos coordinate)
+     
+      
+        yimpulse
+        the y component of the impulse vector (relative to the ypos coordinate)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if jump
+    {
+        physics_apply_local_impulse(0, 20, 0, 50);
+    }
+  Powyższy kod zastosuje impuls o sile 30 niutonów i kierunku od dołu do góry względem początku instancji, jeśli zmienna "jump" jest prawdziwa.
+   
+   
+   
+  
+    
+      
+        Powrót: Siły
+        Następny: physics_apply_torque
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

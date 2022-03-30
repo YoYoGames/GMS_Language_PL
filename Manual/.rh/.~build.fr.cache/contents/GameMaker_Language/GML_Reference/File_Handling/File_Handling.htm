@@ -1,0 +1,66 @@
+
+  
+  Obsługa plików
+  W pewnym momencie podczas tworzenia gry konieczne będzie przechowywanie informacji z zewnątrz i możliwość ich wyszukiwania. Na przykład, możesz chcieć przechowywać dane logowania, wyniki, lub postępy gracza w przechodzeniu poziomów. Niezależnie od tego, jaki jest powód, trzeba wiedzieć, jak korzystać z różnych funkcji plików dostępnych podczas pracy z GameMaker Studio 2.
+  Bardzo ważne jest, aby zdawać sobie sprawę, że GameMaker Studio 2 jest domyślnie Sandboxed , co oznacza, że istnieje szereg ograniczeń i drobnych komplikacji podczas korzystania z dostępnych funkcji systemu plików, a także warto zauważyć, że system plików będzie działał nieco inaczej w zależności od platformy, na którą jest przeznaczony. Więcej informacji na ten temat można znaleźć w następującej sekcji:
+  
+    System plików
+  
+  W opcjach gry dla wybranej platformy można wyłączyć piaskownicę w celach na pulpicie (Windows, macOS i Ubuntu (Linux)), co oznacza, że można zapisywać i wczytywać dane z dowolnego miejsca, w granicach uprawnień systemu operacyjnego.
+  Jeśli otrzymałeś pozwolenie od Steam na używanie w swojej grze dedykowanego API, przekonasz się, że dostępny jest również nowy zestaw funkcji plików. Zostały one wyjaśnione w części niniejszej instrukcji poświęconej interfejsowi Steam API.
+  Na koniec należy zauważyć, że istnieją pewne różnice między niektórymi platformami docelowymi, które należy wziąć pod uwagę przy korzystaniu z funkcji plików. Są to:
+  
+    iOS: Na iOS, jeśli ładujesz dołączony plik z folderu, np. z path coś w rodzaju "Backgrounds/background1.png", NIE musisz dołączać folderu jako części path i wystarczy podanie nazwy pliku. Na wszystkich innych platformach musisz podać folder(y) jako część adresu path do pliku.
+    macOS i Ubuntu (Linux): Na platformach macOS i Ubuntu, w nazwach plików i paths wielkość liter ma znaczenie na tych platformach, dlatego aby zapobiec potencjalnym problemom, GameMaker Studio 2 automatycznie sprawi, że wszystkie nazwy/ścieżki będą domyślnie używać małych liter.
+    HTML5: W HTML5 zapisywanie i ładowanie do i z pamięci lokalnej będzie działać tak, jak wyjaśniono na stronach z różnymi funkcjami, jednak jeśli ładujesz plik z server, musisz użyć tylko funkcji buffer_load_async(), ponieważ ładowanie synchroniczne zostało wycofane z większości przeglądarek i w końcu zostanie zastąpione. Należy również pamiętać, że nie można tworzyć ani niszczyć katalogów w lokalnej pamięci masowej przeglądarki.
+  
+  Informacje o różnych funkcjach plików można znaleźć na kolejnych stronach:
+  
+    System plików
+    Pliki Ini
+    Pliki tekstowe
+    Pliki binarne
+    Katalogi plików
+  
+   
+  GameMaker Studio 2 zawiera także szereg funkcji do kodowania i haszowania plików i danych, które można znaleźć tutaj:
+  
+    Kodowanie i haszowanie
+  
+   
+  Należy również pamiętać, że na poniższych stronach dostępnych jest kilka podstawowych funkcji plików do zapisywania gier (należy pamiętać, że funkcje te są przeznaczone dla początkujących, aby jak najszybciej uruchomić podstawowy system zapisywania, ale w przypadku bardziej złożonych projektów należy utworzyć własny system zapisywania, korzystając z funkcji wymienionych w powyższych sekcjach):
+  
+    game_load
+    game_load_buffer
+    game_save
+    game_save_buffer
+  
+   
+  Na kolejnych stronach można znaleźć bardziej zaawansowane funkcje bufora, które można wykorzystać do ładowania i zapisywania danych:
+  
+    buffer_save
+    buffer_save_ext
+    buffer_save_async
+    buffer_load
+    buffer_load_ext
+    buffer_load_async
+    buffer_load_partial
+    buffer_async_group_begin
+    buffer_async_group_option
+    buffer_async_group_end
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Odniesienie do GML
+        Następny: Bufory
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

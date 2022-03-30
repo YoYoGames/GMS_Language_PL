@@ -1,0 +1,66 @@
+
+  
+  powierzchnia_kopii
+  Ta funkcja po prostu pobiera obraz z jednej powierzchni i kopiuje go na inną powierzchnię w określonym położeniu lokalnym w obrębie tej powierzchni (gdzie położenie (0,0) jest lewym górnym rogiem powierzchni docelowej). Jeśli na powierzchni docelowej znajdują się już informacje, zostaną one nadpisane przez kopię, a funkcja nie zmienia w żaden sposób powierzchni źródłowej.
+  UWAGA: Podczas pracy z powierzchniami istnieje możliwość, że w każdej chwili mogą one przestać istnieć, ponieważ są przechowywane w pamięci texture. Należy ZAWSZE sprawdzić, czy powierzchnia istnieje, używając polecenia surface_exists() przed bezpośrednim odwołaniem się do niej.
+   
+  Składnia:
+  surface_copy(destination, x, y, source);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        destination
+        Identyfikacja powierzchni
+        The ID of the surface to copy the other surface to.
+      
+      
+        x
+        Real
+        The x position to copy to.
+      
+      
+        y
+        Real
+        The y position to copy to.
+      
+      
+        source
+        Identyfikacja powierzchni
+        The ID of surface to be copied.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if view_current == 0
+    {
+        surface_copy(surf, 0, 0, temp_surf);
+    }
+    else
+    {
+        draw_surface(surf, 0, 0);
+    }
+  Powyższy kod sprawdzi, jaki jest aktualnie rysowany widok, i jeśli jest to widok[0], skopiuje powierzchnię indeksowaną zmienną "temp_surf" na powierzchnię indeksowaną zmienną "surf". Jeśli aktualny widok jest inny niż view[0], to powierzchnia "surf" zostanie narysowana na ekranie.
+   
+   
+   
+  
+    
+      
+        Powrót: Powierzchnie
+        Następny: surface_copy_part
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

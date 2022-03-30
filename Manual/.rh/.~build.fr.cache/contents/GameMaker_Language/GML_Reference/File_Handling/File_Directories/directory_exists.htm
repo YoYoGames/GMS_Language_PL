@@ -1,0 +1,44 @@
+
+  
+  katalog_istnieje
+  Ta funkcja zwróci true, jeśli wskazany katalog istnieje, lub false, jeśli nie istnieje. Podana nazwa musi zawierać pełną path, a nie względną path. Domyślnie nie można uzyskać dostępu do żadnych katalogów spoza pakietu gier, ponieważ wszystkie gry są sandboxowane (więcej informacji na ten temat znajduje się w rozdziale System plików ).
+   
+  Składnia:
+  directory_exists(dname)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        dname
+        The name of the directory to look for.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if directory_exists(working_directory + "Saves/")
+    {
+        file = file_find_first(working_directory + "Saves/*.doc", fa_readonly);
+    }
+  Polecenie to sprawdzi, czy podany katalog istnieje, a następnie, jeśli tak, przejdzie do niego i zwróci pierwszy znaleziony plik "tylko do odczytu" doc.
+   
+   
+   
+  
+    
+      
+        Powrót: Katalogi plików
+        Następny: directory_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

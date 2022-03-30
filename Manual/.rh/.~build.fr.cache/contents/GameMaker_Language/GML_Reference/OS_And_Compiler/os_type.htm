@@ -1,0 +1,109 @@
+
+  
+  os_type
+  Ta zmienna tylko do odczytu przechowuje jedną z różnych stałych GameMaker Studio 2, które informują, dla jakiego systemu operacyjnego została stworzona gra. Na przykład gra może być uruchomiona na systemie Amazon Fire, ale będzie przeznaczona na platformę Android (w tym przypadku os_type to os_android).
+  Zwracane mogą być następujące stałe:
+  
+    
+      
+      
+    
+    
+      
+        Typ OS Stała
+      
+      
+        Stała
+        Opis
+      
+      
+        os_windows
+        Windows OS
+      
+      
+        os_uwp
+        Uniwersalna platforma Windows 10 Windows 
+      
+      
+        os_operagx
+        Opera GX
+      
+      
+        os_linux
+        Linux
+      
+      
+        os_macosx
+        macOS X
+      
+      
+        os_ios
+        iOS (iPhone, iPad, iPod Touch)
+      
+      
+        os_tvos
+        Apple tvOS
+      
+      
+        os_android
+        Android
+      
+      
+        os_ps4
+        Sony PlayStation 4
+      
+      
+        os_ps5
+        Sony PlayStation 5
+      
+      
+        os_xboxone
+        Microsoft Xbox One
+      
+      
+        os_xboxseriesxs
+        Microsoft Xbox Seria X/S
+      
+      
+        os_switch
+        Nintendo Switch
+      
+      
+        os_unknown
+        Nieznany system operacyjny
+      
+    
+  
+   
+  Składnia:
+  os_type;
+   
+  Zwroty:
+  OS Type Constant
+   
+  Przykład:
+  switch (os_type)
+    {
+        case os_windows: global.Config = 0; break;
+        case os_android: global.Config = 1; break;
+        case os_linux: global.Config = 2; break;
+        case os_macosx: global.Config = 3; break;
+        case os_ios: global.Config = 4; break;
+        case os_winphone: global.Config = 5; break;
+    }
+  Powyższy kod sprawdza system operacyjny, w którym uruchomiona jest gra, i odpowiednio ustawia zmienną globalną.
+   
+   
+   
+  
+    
+      
+        Powrót: System operacyjny i kompilator
+        Następny: os_version
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

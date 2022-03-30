@@ -1,0 +1,54 @@
+
+  
+  instancja_najdalsza
+  Ta funkcja sprawdzi wszystkie instancje podanej strony object, aby zobaczyć, która z nich jest najdalej od podanego punktu x/y. Wszystkie sprawdzenia będą wykonywane od podanej pozycji x/y do początku (pozycji x/y) instancji podanej strony object. Jeśli nie istnieją instancje object, funkcja zwróci słowo kluczowe nooneale jeśli istnieją instancje, to zwróci wartość id znalezionej instancji. Zwróć uwagę, że jeśli instancja wykonująca kod ma ten sam indeks object co sprawdzana object, to zostanie ona uwzględniona w sprawdzeniu (dotyczy to także sprawdzenia instancji nadrzędnej objects, jeśli instancja wywołująca jest także dzieckiem instancji nadrzędnej).
+   
+  Składnia:
+  instance_furthest(x, y, obj);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x
+        The x position to check for instances far from.
+     
+      
+        y
+        The y position to check for instances far from.
+     
+      
+        obj
+        The object to check for instances of.
+     
+    
+  
+   
+  Zwroty:
+  Instance ID or noone
+   
+  Przykład:
+  var inst;
+    inst = instance_furthest(x, y, object_index);
+    if inst != id
+    {
+        draw_line(x, y, inst.x, inst.y);
+    }
+  Powyższy kod znajdzie najdalszą instancję, która ma ten sam indeks object co instancja wykonująca kod, i zapisze jej id w zmiennej. Następnie zmienna ta jest sprawdzana, czy jest taka sama jak id instancji wywołującej, a jeśli nie, to między tymi dwiema instancjami jest rysowana linia.
+   
+   
+   
+  
+    
+      
+        Powrót: Instancje
+        Następny: instance_nearest
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

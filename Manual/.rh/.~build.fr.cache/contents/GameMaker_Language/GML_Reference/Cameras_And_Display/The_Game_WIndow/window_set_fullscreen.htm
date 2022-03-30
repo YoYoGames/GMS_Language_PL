@@ -1,0 +1,51 @@
+
+  
+  window_set_fullscreen
+  Za pomocą tej funkcji można ustawić, aby okno gry było pełnoekranowe (true) lub nie (false). Zwróć uwagę, że w przypadku systemu macOS musisz usunąć zaznaczenie opcji "Start In Fullscreen" i zaznaczyć opcję "Allow the player to resize the game window" w Opcjach gry, w przeciwnym razie ta funkcja nie zadziała. Należy również pamiętać, że ta funkcja nie będzie działać w HTML5, chyba że zostanie dodana jako "klikalne" wywołanie zwrotne (zobacz tutaj, aby uzyskać więcej szczegółów).
+   
+  Składnia:
+  window_set_fullscreen(full);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        full
+        Whether to set the screen to fullscreen (true) or not (false).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if mouse_check_button_pressed(mb_left)
+    {
+        if window_get_fullscreen()
+        {
+            window_set_fullscreen(false);
+        }
+        else
+        {
+            window_set_fullscreen(true);
+        }
+    }
+  Powyższy kod sprawdza, czy został naciśnięty przycisk myszy, a następnie ustawia okno na pełny ekran, jeśli jeszcze nie jest, lub ustawia je na okno, jeśli już jest.
+   
+   
+   
+  
+    
+      
+        Powrót: Okno gry
+        Następny: window_set_position
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

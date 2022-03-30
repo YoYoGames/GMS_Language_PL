@@ -1,0 +1,60 @@
+
+  
+  sequence_track_new
+  Za pomocą tej funkcji można utworzyć nową strukturę ścieżek sequence, podając typ ścieżki, którą chcemy utworzyć. Argument type może być jedną ze stałych typu ścieżki sekwencyjnej wymienionych na tej stronie.
+  Funkcja zwraca strukturę sequence track, do której można dodać dane przed przypisaniem jej do obiektu sekwencji.
+   
+  Składnia:
+  sequence_track_new(type);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        type
+        Typ ścieżki sekwencji Stała
+        The type of track to create.
+      
+    
+  
+   
+  Zwroty:
+  Sequence Track Struct
+   
+  Przykład:
+  myseq = sequence_create();
+    var mytracks = array_create(1);
+    mytracks[0] = sequence_track_new(seqtracktype_graphic);
+    var graphickeys = array_create(1);
+    graphickeys[0] = sequence_keyframe_new(seqtracktype_graphic);
+    graphickeys[0].frame = 0;
+    graphickeys[0].length = 1;
+    graphickeys[0].stretch = true;
+    graphickeys[0].disabled = false;
+    var graphickeydata = array_create(1);
+    graphickeydata[0] = sequence_keyframedata_new(seqtracktype_graphic);
+    graphickeydata[0].spriteIndex = spr_Platform;
+    graphickeydata[0].channel = 0;
+    graphickeys[0].channels = graphickeydata;
+    mytracks[0].name = "TestGraphicTrack";
+    mytracks[0].keyframes = graphickeys;
+    myseq.tracks = mytracks;
+  Powyższy kod tworzy nową stronę sequence, a następnie tworzy graficzną ścieżkę asset i umieszcza na niej dane keyframe. Ta ścieżka jest następnie przypisywana do instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Sekwencje
+        Następny: sequence_keyframe_new
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

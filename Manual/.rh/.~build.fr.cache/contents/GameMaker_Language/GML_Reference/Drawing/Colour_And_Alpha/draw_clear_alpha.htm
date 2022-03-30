@@ -1,0 +1,50 @@
+
+  
+  draw_clear_alpha
+  Za pomocą tej funkcji można wyczyścić cały ekran danym kolorem, a składnik alfa miejsca docelowego zostanie ustawiony na ustawioną wartość - funkcja ta nie wykonuje żadnego mieszania, ale wszelkie kolejne operacje mieszania można
+    być skonfigurowane tak, aby używały ustawionej alfy miejsca docelowego. Funkcja ta jest przeznaczona tylko do użycia w zdarzeniu draw instancji (nie będzie widoczna, jeśli zostanie użyta w innym zdarzeniu) i może być bardzo przydatna do czyszczenia powierzchni, gdy są one nowo tworzone.
+  Warto zauważyć, że w przypadku korzystania z modułu HTML5 można użyć tej funkcji, aby tło płótna stało się przezroczyste, dzięki czemu obrazy używane w hostingu HTML będą widoczne, gdy gra będzie się nad nimi toczyć. Aby osiągnąć ten efekt
+    musisz najpierw wejść do edytora room i usunąć wszystkie warstwy t ła z edytora pokoju, a następnie usunąć zaznaczenie opcji Wyczyść tło widoku we właściwościach widoku.
+    Na koniec musisz utworzyć nową stronę object, umieścić ją na pierwszej stronie room gry i nadać jej bardzo dużą głębokość (na przykład 10000). Następnie w zdarzeniu Pre Draw użyj tej funkcji, aby ustawić alfa płótna na kolor i przezroczystość, które
+    jakie ma mieć.
+   
+  Składnia:
+  draw_clear_alpha(col, alpha);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        col
+        The colour with which the screen will be cleared
+     
+      
+        alpha
+        The transparency of the colour with which the screen will be cleared
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_clear_alpha(c_red, 0.5);
+  Spowoduje to wyczyszczenie ekranu z przezroczystością 50% (0,5) i kolorem czerwonym.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolor i alfa
+        Następny: draw_set_alpha
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

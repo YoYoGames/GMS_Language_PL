@@ -1,0 +1,45 @@
+
+  
+  asset_get_index
+  Za pomocą tej funkcji można uzyskać unikalny indeks identyfikacyjny dla gry asset na podstawie jej nazwy. Jeśli asset nie zostanie znaleziony, funkcja zwróci wartość -1, w przeciwnym razie zwróci unikalny id indeksu dla sprawdzanej gry asset. Tego id można następnie użyć w innych funkcjach, tak jak każdej innej wartości indeksu, np. sprite_index lub path_index, na przykład. Należy pamiętać, że chociaż funkcja ta może być używana do odwoływania się do assets z strings (patrz przykład poniżej), należy zawsze upewnić się, że asset istnieje przed jej użyciem, w przeciwnym razie mogą wystąpić błędy, które spowodują awarię gry.
+   
+  Składnia:
+  asset_get_index(name);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        name
+        The name of the game asset to get the index of (a string).
+     
+    
+  
+   
+  Zwroty:
+  Asset (any asset type)
+   
+  Przykład:
+  var obj = asset_get_index("obj_Enemy_" + string(global.Level));
+    if obj > -1
+    {
+        instance_create_layer(random(room_width), random(room_height), obj, "Enemy_Layer");
+    }
+  Powyższy kod pobierze indeks object z string, a jeśli ten indeks istnieje, utworzy instancję object w grze.
+   
+   
+   
+  
+    
+      
+        Powrót: Aktywa i znaczniki
+        Następny: asset_get_type
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

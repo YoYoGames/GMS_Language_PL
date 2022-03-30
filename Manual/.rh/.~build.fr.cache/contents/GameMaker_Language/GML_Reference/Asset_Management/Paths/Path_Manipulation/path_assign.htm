@@ -1,0 +1,48 @@
+
+  
+  przyporządkuj ścieżkę
+  Za pomocą tej funkcji można skopiować dane path z jednej strony path do drugiej. Najpierw wyczyszczona zostanie strona path (jeśli ma jakieś punkty path ), a następnie zostanie całkowicie nadpisana przez stronę path, z której dane są kopiowane.
+    kopiowany z. Żaden z adresów path nie jest usuwany w tym procesie, a wynikiem są dwa adresy paths o dwóch różnych indeksach, ale dokładnie tej samej formie i punktach. Na ogół warto używać tej funkcji na stronie path utworzonej przy użyciu path_add(),
+    ponieważ użycie jej na path assetbędzie miało trwały wpływ na path we wszystkich instancjach w grze od momentu użycia funkcji do końca gry.
+   
+  Składnia:
+  path_assign(index, path);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the path to be overwritten.
+     
+      
+        path
+        The index of the path that will overwrite 'index'.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  mypath = path_add(); path_assign(mypath, choose(path_1, path_2, path_3));
+  Powyższy kod utworzy nową, pustą stronę path indeksowaną w zmiennej "mypath", a następnie skopiuje dane path z jednego z trzech dostępnych zasobów path.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja ścieżką
+        Następny: path_delete
+        
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

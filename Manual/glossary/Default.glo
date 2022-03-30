@@ -4,16 +4,16 @@
 <title>Glossary Definitions</title>        
 <glossentry id="Default_absolute">
 <glossterm>absolutny</glossterm>
-<glossdef>Wartość bezwzględna to taka, w której znak wartości jest ignorowany, co w zasadzie zamienia wszystkie wartości na jedynki dodatnie lub zero. Zatem na przykład wartością bezwzględną dla -10 będzie 10.</glossdef></glossentry>
+<glossdef>Wartość bezwzględna to taka, w której znak wartości jest ignorowany, co oznacza, że wszystkie wartości są zamieniane na jedynki dodatnie lub zero. Zatem na przykład wartością bezwzględną dla -10 będzie 10.</glossdef></glossentry>
 <glossentry id="Default_algorithm">
 <glossterm>algorytm</glossterm>
 <glossdef>Algorytm to zbiór instrukcji lub reguł służących do rozwiązania określonego problemu. Problem ten może być prosty, jak dodanie dwóch liczb, lub złożony, jak konwersja pliku wideo z jednego formatu na drugi lub kompresja dźwięku do mniejszego rozmiaru pliku...</glossdef></glossentry>
 <glossentry id="Default_anti-aliasing">
 <glossterm>antyaliasing</glossterm>
-<glossdef>Jest to technika używana do wygładzania postrzępionych linii lub tekstur przez mieszanie koloru krawędzi z kolorem otaczających ją pikseli. Efekt powinien być bardziej przyjemny dla oka i realistyczny, w zależności od intensywności efektu.</glossdef></glossentry>
+<glossdef>Jest to technika używana do wygładzania postrzępionych linii lub tekstur przez mieszanie koloru krawędzi z kolorem pikseli znajdujących się wokół niej. Efekt powinien być bardziej przyjemny dla oka i realistyczny, w zależności od intensywności efektu.</glossdef></glossentry>
 <glossentry id="Default_API">
 <glossterm>API</glossterm>
-<glossdef>Akronim "API" oznacza Application Programming Interface (interfejs programowania aplikacji) i odnosi się do zestawów zasad, procedur i protokołów używanych do tworzenia aplikacji. Interfejsy API ułatwiają komunikację z programami i usługami innych firm, które mogą być wykorzystywane do tworzenia różnego rodzaju oprogramowania. Firmy takie jak Facebook i Twitter aktywnie korzystają z interfejsów API, aby ułatwić programistom dostęp do swoich usług. W GameMaker Studio 2 skrót API jest używany przy okazji omawiania rozszerzeń - na przykład Google Play Services API lub Amazon Game On API.</glossdef></glossentry>
+<glossdef>Akronim "API" oznacza Application Programming Interface (interfejs programowania aplikacji) i odnosi się do zestawów zasad, procedur i protokołów używanych do tworzenia aplikacji. Interfejsy API pomagają w komunikacji z programami lub usługami innych firm, które mogą być wykorzystywane do tworzenia różnego rodzaju oprogramowania. Firmy takie jak Facebook i Twitter aktywnie korzystają z interfejsów API, aby ułatwić programistom dostęp do swoich usług. W GameMaker Studio 2 skrót API jest używany przy okazji omawiania rozszerzeń - na przykład Google Play Services API lub Amazon Game On API.</glossdef></glossentry>
 <glossentry id="Default_application_surface">
 <glossterm>powierzchnia zastosowania</glossterm>
 <glossdef>Powierzchnia aplikacji jest specjalną wbudowaną powierzchnią, na którą GameMaker Studio 2 narysuje wszystko w zdarzeniach rysowania gry (powierzchnia jest zasadniczo obszarem pamięci zarezerwowanym dla grafiki). Powierzchnia ta jest następnie rysowana do bufora wyświetlania na końcu każdej klatki gry, wyświetlając jego zawartość graczowi.</glossdef></glossentry>
@@ -43,7 +43,7 @@
 <glossdef>Interpolacja metodą Beziera polega na oszacowaniu nowej wartości przez połączenie dwóch sąsiadujących ze sobą znanych wartości za pomocą matematycznie wygenerowanej krzywej splajnu, którą można edytować za pomocą "uchwytów" dołączonych do każdego punktu. Następnie można uzyskać interpolowaną wartość, sprawdzając dowolny punkt wzdłuż linii.</glossdef></glossentry>
 <glossentry id="Default_bit">
 <glossterm>bit</glossterm>
-<glossdef>Pojedyncza wartość danych, która może mieć wartość 1 lub 0 (prawda lub fałsz). Bity są łączone w bloki po 8, tworząc bajt.</glossdef></glossentry>
+<glossdef>Pojedyncza wartość danych, która może wynosić 1 lub 0 (prawda lub fałsz). Bity są łączone w bloki po 8, tworząc bajt.</glossdef></glossentry>
 <glossentry id="Default_bit_depth">
 <glossterm>głębokość bitowa</glossterm>
 <glossdef>Głębia bitowa to liczba bitów w każdej próbce pliku audio. Mniejsza głębia bitowa zapewnia gorszą jakość dźwięku, ale znacznie mniejszy rozmiar pliku. Mniejsza głębia bitowa jest zwykle używana w przypadku małych efektów dźwiękowych i formatów, w których może być problem z pamięcią (np. HTML5).</glossdef></glossentry>
@@ -67,7 +67,7 @@
 <glossdef>Bajt to jednostka danych o długości ośmiu cyfr binarnych, a każda z cyfr składających się na bajt jest nazywana bitem, tzn. bajt to 8 bitów, a bit może mieć wartość 1 lub 0.</glossdef></glossentry>
 <glossentry id="Default_Cache">
 <glossterm>Pamięć podręczna</glossterm>
-<glossdef>Pamięć podręczna to zbiór plików, które są generowane przez program GameMaker raz, a następnie przechowywane i ponownie wykorzystywane w wielu uruchomieniach projektu. Należy pamiętać, że pamięć podręczna może czasami stać się "nieświeża", co oznacza, że należy ją wyczyścić, aby zmusić program GameMaker do odbudowania jej od podstaw, co zapewni, że żadne nieświeże pliki nie uszkodzą ostatecznej wersji gry.</glossdef></glossentry>
+<glossdef>Pamięć podręczna to zbiór plików, które są generowane przez program GameMaker raz, a następnie przechowywane i ponownie wykorzystywane w wielu uruchomieniach projektu. Należy pamiętać, że pamięć podręczna może czasami stać się "nieaktualna", co oznacza, że należy ją wyczyścić, aby zmusić program GameMaker do odbudowania jej od podstaw, co gwarantuje, że żadne nieaktualne pliki nie uszkodzą ostatecznej wersji gry.</glossdef></glossentry>
 <glossentry id="Default_callback">
 <glossterm>callback</glossterm>
 <glossdef>Wywołanie zwrotne to po prostu funkcja, która jest uruchamiana, a następnie wyzwala inną funkcję (lub blok kodu), gdy zakończy wykonywanie tego, do czego została przypisana. Na przykład funkcja sprite_add() wywoła wywołanie zwrotne w asynchronicznym zdarzeniu Image Loaded, gdy sprite zostanie załadowany.</glossdef></glossentry>
@@ -79,7 +79,7 @@
 <glossdef>Kompilacja polega na tym, że GameMaker pobiera Twój kod i zbiera go w taki sposób, aby utworzyć pakiet wykonywalny, który będzie działał na urządzeniu jako gra.</glossdef></glossentry>
 <glossentry id="Default_compression">
 <glossterm>kompresja</glossterm>
-<glossdef>Kompresja to wykorzystanie algorytmów matematycznych w celu zmniejszenia rozmiaru pliku. Stosuje się ją zwłaszcza w przypadku plików dźwiękowych i graficznych, gdzie formaty takie jak JPG (obraz) i MP3 (dźwięk) są formatami skompresowanymi. Kompresja zwykle powoduje zmniejszenie rozmiarów plików, ale wiąże się z pewną utratą danych, która może być zauważalna lub nie, w zależności od rodzaju i siły zastosowanej kompresji. Formaty nieskompresowane to BMP (obraz) lub WAV (dźwięk), które mają większe rozmiary plików, ale nie powodują utraty danych.</glossdef></glossentry>
+<glossdef>Kompresja to wykorzystanie algorytmów matematycznych w celu zmniejszenia rozmiaru pliku. Stosuje się ją zwłaszcza w przypadku plików dźwiękowych i graficznych, gdzie formaty takie jak JPG (obraz) i MP3 (dźwięk) są formatami skompresowanymi. Kompresja zwykle powoduje zmniejszenie rozmiaru pliku, ale wiąże się z pewną utratą danych, która może być zauważalna lub nie, w zależności od rodzaju i siły zastosowanej kompresji. Formaty nieskompresowane to BMP (obraz) lub WAV (dźwięk), które mają większe rozmiary plików, ale nie powodują utraty danych.</glossdef></glossentry>
 <glossentry id="Default_conditional">
 <glossterm>warunkowe</glossterm>
 <glossdef>Warunki, instrukcje warunkowe i wyrażenia warunkowe są cechami ogólnego języka programowania i pomagają kodowi dokonać wyboru, którego wynikiem jest prawda lub fałsz. Mogą one wykonywać różne czynności w zależności od potrzeb programisty, a wiele instrukcji warunkowych można łączyć w jeden warunek, o ile wartość końcowa warunku jest albo prawdziwa, albo fałszywa. Przykładami instrukcji warunkowych są instrukcje "if" i "while".</glossdef></glossentry>
@@ -100,7 +100,7 @@
 <glossdef>Dope Sheet to wizualna reprezentacja osi czasu sekwencji, na której można dodawać, usuwać i edytować różne klucze zasobów i parametry, które wpływają na zachowanie się poszczególnych ścieżek w sekwencji w czasie.</glossdef></glossentry>
 <glossentry id="Default_encoding">
 <glossterm>kodowanie</glossterm>
-<glossdef>Kodowanie przekształca dane w inny format za pomocą publicznie dostępnego schematu, który można łatwo odwrócić. Nie jest to to samo co szyfrowanie, ponieważ nie wymaga klucza do odszyfrowania. Kodowanie jest zwykle używane do zmiany danych na format, który będzie łatwiejszy do wykorzystania przez inny system (np. wysyłanie danych do serwera), lub do uczynienia danych nieczytelnymi dla ludzkiego oka.</glossdef></glossentry>
+<glossdef>Kodowanie przekształca dane w inny format przy użyciu schematu, który jest publicznie dostępny, tak że można go łatwo odwrócić. Nie jest to to samo co szyfrowanie, ponieważ nie wymaga klucza do odszyfrowania. Kodowanie jest zwykle używane do zmiany danych na format, który będzie łatwiejszy do wykorzystania przez inny system (np. wysyłanie danych na serwer), lub do uczynienia danych nieczytelnymi dla ludzkiego oka.</glossdef></glossentry>
 <glossentry id="Default_EULA">
 <glossterm>EULA</glossterm>
 <glossdef>Umowa licencyjna użytkownika końcowego (EULA) to dokument prawny określający licencję na produkt, który otrzymujesz.</glossdef></glossentry>
@@ -124,7 +124,7 @@
 <glossdef>Czcionka to zbiór glifów graficznych używanych do reprezentowania tekstu w danym języku. Czcionki mogą mieć różne wagi, rozmiary oraz style i są używane do wyświetlania zawartości pisemnej w projekcie.</glossdef></glossentry>
 <glossentry id="Default_framework">
 <glossterm>rama</glossterm>
-<glossdef>Szkielet to podstawa kodu, który może być modyfikowany i/lub rozbudowywany przez użytkownika. W skład szkieletu mogą wchodzić różne biblioteki programistyczne, interfejsy API, kompilatory i wiele innych. Mówiąc prościej, szkielet zapewnia korzystne środowisko dla określonego typu i poziomu programowania projektu. W GameMaker Studio 2 można na przykład tworzyć własne projekty szkieletowe (za pomocą pakietów Local Asset Packages), które zawierają skrypty i obiekty do ogólnego sterowania, zarządzania statystykami, tworzenia sieci i innych elementów często używanych w projektach, a następnie importować je do nowych projektów na samym początku, aby zapewnić sobie podstawy do kontynuowania pracy bez konieczności przeprogramowywania tych systemów za każdym razem.</glossdef></glossentry>
+<glossdef>Szkielet to podstawa kodu, który może być modyfikowany i/lub rozbudowywany przez użytkownika. W skład szkieletu mogą wchodzić różne biblioteki programistyczne, interfejsy API, kompilatory i wiele innych. Mówiąc prościej, szkielet zapewnia korzystne środowisko dla określonego typu i poziomu programowania projektu. W GameMaker Studio 2 możesz na przykład tworzyć własne projekty szkieletowe (za pomocą pakietów Local Asset Packages), które zawierają skrypty i obiekty do ogólnego sterowania, zarządzania statystykami, tworzenia sieci i innych rzeczy, których często używasz w swoich projektach, a następnie importować je do nowych projektów na samym początku, aby zapewnić sobie podstawy do kontynuowania pracy bez konieczności przeprogramowywania tych systemów za każdym razem.</glossdef></glossentry>
 <glossentry id="Default_frontend">
 <glossterm>frontend</glossterm>
 <glossdef>Frontend to część programu, która jest skierowana do użytkownika, tzn. część, z którą użytkownik końcowy wchodzi w interakcję. Na przykład w GameMaker Studio 2 interfejs, w którym programujesz, dodajesz zasoby itp., to frontend programu, ponieważ to właśnie tam wchodzisz w interakcję z programem, wprowadzasz wartości, pliki i inne rzeczy. Jest to zasadniczo przeciwieństwo backendu.</glossdef></glossentry>
@@ -157,7 +157,7 @@
 <glossdef>IDE, czyli zintegrowane środowisko programistyczne, to aplikacja zapewniająca programistom komputerowym wszechstronne możliwości tworzenia oprogramowania. W tym przypadku cały frontend programu GameMaker Studio 2 jest uważany za IDE i zawiera sekcje do tworzenia grafiki, dodawania dźwięków i kodu do tworzenia gier.</glossdef></glossentry>
 <glossentry id="Default_iteration">
 <glossterm>iteracja</glossterm>
-<glossdef>Iteracja to pojedyncze przejście przez zestaw operacji w kodzie projektu. Jedną z form iteracji w programowaniu komputerowym są pętle. Pętla powtarza pewien segment kodu, dopóki nie zostanie spełniony warunek i nie będzie można przejść dalej. Każde uruchomienie pętli przez komputer jest określane mianem iteracji. Najprościej mówiąc, iteracja to proces wielokrotnego powtarzania określonego fragmentu kodu w celu wykonania określonej czynności.</glossdef></glossentry>
+<glossdef>Iteracja to pojedyncze przejście przez zestaw operacji w kodzie projektu. Jedną z form iteracji w programowaniu komputerowym są pętle. Pętla powtarza pewien segment kodu, dopóki nie zostanie spełniony warunek i nie będzie można przejść dalej. Każde uruchomienie pętli przez komputer jest nazywane iteracją. Najprościej mówiąc, iteracja to proces wielokrotnego powtarzania określonego fragmentu kodu w celu wykonania określonej czynności.</glossdef></glossentry>
 <glossentry id="Default_JSON">
 <glossterm>JSON</glossterm>
 <glossdef>JSON jest skrótem od JavaScript Object Notatio i jest lekkim formatem przechowywania danych. JSON jest często używany, gdy dane są przesyłane z serwera na stronę internetową, i jest uważany za "samoopisujący się" oraz łatwy do zrozumienia i śledzenia podczas przeglądania.</glossdef></glossentry>
@@ -166,7 +166,7 @@
 <glossdef>Klatka kluczowa (zwana także kluczem parametru) to punkt na osi czasu w arkuszu Dope, w którym definiowana jest zmiana wartości parametru.</glossdef></glossentry>
 <glossentry id="Default_keyword">
 <glossterm>słowo kluczowe</glossterm>
-<glossdef>Słowa kluczowe to specjalne słowa, które są zarezerwowane przez język programowania lub program, ponieważ mają specjalne znaczenie. Te słowa kluczowe są zarezerwowane do wykonywania pewnych zadań i mogą to być zarówno polecenia, jak i parametry. Każdy język programowania ma zestaw zastrzeżonych słów kluczowych (zwanych też zastrzeżonymi nazwami), których nie można używać jako nazw zmiennych. Język GameMaker nie jest tu wyjątkiem - słowa takie jak return, while, if i break są zastrzeżonymi słowami kluczowymi używanymi w tym języku programowania.</glossdef></glossentry>
+<glossdef>Słowa kluczowe to specjalne słowa, które są zarezerwowane przez język programowania lub program, ponieważ mają specjalne znaczenie. Te słowa kluczowe są zarezerwowane do wykonywania określonych zadań i mogą to być zarówno polecenia, jak i parametry. Każdy język programowania ma zestaw zastrzeżonych słów kluczowych (zwanych też zastrzeżonymi nazwami), których nie można używać jako nazw zmiennych. Język GameMaker nie jest tu wyjątkiem - słowa takie jak return, while, if i break są zastrzeżonymi słowami kluczowymi używanymi w tym języku programowania.</glossdef></glossentry>
 <glossentry id="Default_linear_interpolation">
 <glossterm>interpolacja liniowa</glossterm>
 <glossdef>Interpolacja liniowa polega na oszacowaniu nowej wartości przez połączenie dwóch sąsiednich znanych wartości linią prostą. Następnie można uzyskać wartość interpolowaną, sprawdzając dowolny punkt wzdłuż tej linii. W grafice interpolacja liniowa odnosi się do podstawowej metody wygładzania krawędzi pikseli.</glossdef></glossentry>
@@ -229,7 +229,7 @@
 <glossdef>Płynna interpolacja polega na oszacowaniu nowej wartości przez połączenie dwóch sąsiednich znanych wartości za pomocą matematycznie wygenerowanej krzywej splajnu . Następnie można uzyskać wartość interpolowaną, sprawdzając dowolny punkt wzdłuż linii.</glossdef></glossentry>
 <glossentry id="Default_source_code">
 <glossterm>kod źródłowy</glossterm>
-<glossdef>Kod źródłowy to podstawowy składnik programu komputerowego, który jest wymagany do jego uruchomienia.</glossdef></glossentry>
+<glossdef>Kod źródłowy to podstawowy element programu komputerowego, który jest niezbędny do jego uruchomienia.</glossdef></glossentry>
 <glossentry id="Default_spline">
 <glossterm>spline</glossterm>
 <glossdef>Splajn to w zasadzie gładka krzywa służąca do łączenia punktów. Z matematycznego punktu widzenia jest to wystarczająco gładka funkcja wielomianowa, która jest zdefiniowana w sposób cząstkowy i ma wysoki stopień gładkości w miejscach, w których łączą się cząstki wielomianu.</glossdef></glossentry>
@@ -244,7 +244,7 @@
 <glossdef>Próbka to po prostu mała kwadratowa próbka koloru lub materiału, służąca do zilustrowania jego wyglądu.</glossdef></glossentry>
 <glossentry id="Default_syntax">
 <glossterm>składnia</glossterm>
-<glossdef>Podobnie jak języki ludzkie, języki programowania mają własny zestaw reguł dotyczących sposobu przekazywania wypowiedzi, który jest znany jako składnia. Choć wiele języków programowania ma wiele wspólnych cech, funkcji i możliwości, różnią się one na ogół składnią. Bez właściwego stosowania składni nie można napisać programu wykonywalnego, a nieprawidłowa składnia prowadzi do błędów podczas kompilacji.</glossdef></glossentry>
+<glossdef>Podobnie jak języki ludzkie, języki programowania mają swój własny zestaw reguł dotyczących sposobu przekazywania wypowiedzi, który jest znany jako składnia. Choć wiele języków programowania ma wiele wspólnych cech, funkcji i możliwości, różnią się one składnią. Bez właściwego stosowania składni nie można napisać programu wykonywalnego, a nieprawidłowa składnia prowadzi do błędów podczas kompilacji.</glossdef></glossentry>
 <glossentry id="Default_texel">
 <glossterm>texel</glossterm>
 <glossdef>Teksel (lub element tekstury) jest podstawową jednostką przestrzeni tekstury, podobnie jak piksel jest podstawowym elementem przestrzeni obrazu. Tekstury są reprezentowane przez tablice tekseli, podobnie jak obrazy są reprezentowane przez tablice pikseli. Podczas teksturowania powierzchni 3D (proces znany jako mapowanie tekstury) renderer mapuje teksele na odpowiednie piksele w obrazie wyjściowym.</glossdef></glossentry>

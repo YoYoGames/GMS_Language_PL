@@ -15,9 +15,9 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Błędy kompilacji</h1>
-  <p>Drugim rodzajem błędu, który może zostać zgłoszony w grze, jest błąd <strong>kompilatora</strong>. Błąd kompilatora występuje wtedy, gdy gra napotka błąd, którego nie wykrył system sprawdzania składni - na przykład bardzo łatwo jest zapomnieć o zadeklarowaniu zmiennej lub omyłkowo wpisać adres <span class="notranslate">string</span> jako real - lub gdy błąd jest związany z ustawieniami narzędzi kompilacji w <a href="../../Setting_Up_And_Version_Information/Platform_Preferences.htm">Preferencjach platformy</a> dla platformy docelowej. Błędy te zostaną wychwycone przez <span class="notranslate">GameMaker Studio 2</span> w trakcie kompilacji gry, a informacje o nich zostaną także wyświetlone w oknie <a href="../../Introduction/The_Output_Window.htm">Compiler Error Output (Wyjście błędów kompilatora</a>), jak pokazano poniżej:</p>
+  <p>Drugim rodzajem błędu, który może zostać zgłoszony w grze, jest błąd <strong>kompilatora</strong>. Błąd kompilatora pojawia się, gdy gra napotka błąd, którego nie wykrył system sprawdzania składni - bardzo łatwo jest zapomnieć o zadeklarowaniu zmiennej lub omyłkowo wpisać adres <span class="notranslate">string</span> jako rzeczywisty - lub gdy błąd dotyczy sposobu skonfigurowania narzędzi kompilacji w <a href="../../Setting_Up_And_Version_Information/Platform_Preferences.htm">Preferencjach platformy</a> dla platformy docelowej. Błędy te zostaną wychwycone przez program <span data-keyref="GameMaker Name">GameMaker</span> podczas kompilacji gry, a informacje o nich zostaną wyświetlone w oknie <a href="../../Introduction/The_Output_Window.htm">Compiler Error Output</a>, jak pokazano poniżej:</p>
   <p><img alt="Compile Errors" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/Errors_Compile_Output.png" /></p>
-  <p class="note"><span class="note">UWAGA</span> Błędy te zwykle nie powodują wyświetlenia okna, a w oknie wyjściowym kompilatora pojawia się po prostu komunikat &quot;<span class="inline" style="font-size: 14px">Build Failed</span>&quot;. Jeśli wyskakuje okno, jest to zwykle błąd runnera, który jest wyjaśniony <a href="Runner_Errors.htm">tutaj</a>.</p>
+  <p class="note"><span class="note">UWAGA</span> Błędy te zwykle nie powodują wyświetlenia okna, a w oknie wyjściowym kompilatora pojawia się po prostu komunikat &quot;<span class="inline" style="font-size: 14px">Build Failed</span>&quot;. Jeśli wyskakuje okno, jest to zwykle Błąd runnera, który jest wyjaśniony <a href="Runner_Errors.htm">tutaj</a>.</p>
   <p>Wszystkie komunikaty o błędach kompilatora będą miały ten sam format:</p>
   <p class="code">[object] - [event] - [Line Number]: [error string]</p>
   <p>Jeśli błąd zostanie znaleziony w witrynie <span class="notranslate">script</span>, będzie to po prostu informacja:</p>
@@ -45,7 +45,7 @@
       </tr>
       <tr>
         <td>Nie jest obsługiwana rekursywna interpretacja makr</td>
-        <td>Użyłeś makr rekurencyjnych, które odwołują się do siebie i stale rozszerzają</td>
+        <td>Użyłeś makr rekurencyjnych, które odwołują się do siebie i ciągle rozszerzają</td>
       </tr>
       <tr>
         <td>Nie można znaleźć grupy tekstur <span class="inline">[group]</span></td>
@@ -108,7 +108,7 @@
       </tr>
       <tr>
         <td>Nieudana próba parsowania funkcji action_execute_script() - otrzymano nieprawidłową liczbę argumentów</td>
-        <td>Akcja DnD™ Execute <span class="notranslate">Script</span> ma zbyt wiele lub zbyt mało argumentów dla wywoływanej strony <span class="notranslate">script</span>.</td>
+        <td>Akcja wizualna <span class="notranslate">GML</span> Wykonaj <span class="notranslate">Script</span> ma zbyt wiele lub zbyt mało argumentów dla wywoływanej strony <span class="notranslate">script</span>.</td>
       </tr>
       <tr>
         <td>Nieznana funkcja <span class="inline">[function]</span> sprawdź, czy <span class="notranslate">script</span> jest pusta</td>
@@ -116,7 +116,7 @@
       </tr>
       <tr>
         <td>Funkcja <span class="inline">[function]</span> oczekuje argumentów <span class="inline">n</span>, <span class="inline">a</span> podano</td>
-        <td><span>Funkcja otrzymała niewłaściwą liczbę argumentów (<span class="inline">n</span>), podczas gdy oczekiwano pewnej ich liczby (<span class="inline">a</span>)</span></td>
+        <td><span>Funkcja otrzymała niewłaściwą liczbę argumentów (<span class="inline">n</span>), gdy oczekiwano określonej liczby (<span class="inline">a</span>)</span></td>
       </tr>
       <tr>
         <td>Przypisanie pustej wartości (funkcja nie zwraca niczego?)</td>
@@ -158,7 +158,7 @@
       </tr>
       <tr>
         <td>Nie można użyć argumentu poza skryptem </td>
-        <td>Wbudowane zmienne argumentów mogą być używane tylko wewnątrz <span class="notranslate">script</span>, ale próbowałeś użyć ich w innym miejscu</td>
+        <td>Wbudowane zmienne argumentów mogą być używane tylko wewnątrz <span class="notranslate">script</span>, ale próbowałeś użyć ich gdzie indziej</td>
       </tr>
       <tr>
         <td>Brak odniesień do strony <span class="inline">argument[num]</span>, ale odniesienia <span class="inline">argument[num]</span></td>
@@ -312,7 +312,7 @@
         </td>
       </tr>
       <tr>
-        <td>Brak wartości zwracanej przez wyrażenie (czy wyrażenie ma wartość zwracaną?)</td>
+        <td>Brak wartości zwracanej z wyrażenia (czy wyrażenie ma wartość zwracaną?)</td>
         <td>Próbowałeś przypisać wartość zwracaną przez wyrażenie do zmiennej, gdy wyrażenie nie zwraca nic</td>
       </tr>
       <tr>

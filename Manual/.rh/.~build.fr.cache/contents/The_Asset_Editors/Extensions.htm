@@ -1,0 +1,76 @@
+
+  
+  Redaktor Extension 
+   Pakiet rozszerzeń może być używany do dodawania dodatkowych funkcji i stałychdo GameMaker Language (GML) i łatwego przenoszenia ich między projektami. Funkcje Extension mogą być również połączone z zewnętrznymi zestawami SDKlub kodem źródłowym napisanym w innych językach (np. Java dla Android, Objective-C dla iOS, itp.), które mogą być używane do rozszerzania funkcjonalności gry (zwykle używane do implementacji interfejsów API innych firm, takich jak reklamy, zakupy w aplikacji i inne).
+  
+  Rozszerzenia mogą być używane do tworzenia biblioteki funkcji, które są często używane we wszystkich projektach. Zamiast importować tę samą stronę scripts do każdego projektu, można po prostu dodać jedną stronę extension asset, która zawiera zbiór ulubionych funkcji i stałych. Takie funkcje mogą być również specyficzne dla określonej platformy, a użytkownik może łatwo wybrać, na których platformach można używać extension.
+  Przykład tworzenia strony extension krok po kroku można znaleźć w części Tworzenie rozszerzenia.
+  Importowanie rozszerzeń
+  Zwykle strony trzecie extensions pochodzą z GameMaker Marketplace, a te, które subskrybowałeś, zostaną wymienione w oknie Marketplace Library i można je stamtąd zainstalować. Jeśli nie otrzymałeś swojego pakietu extension z Marketplace, możesz go dodać do projektu, klikając prawym przyciskiem myszy na stronie  w dowolnym miejscu w Asset Browser i wybierając Add Existing, a następnie przechodząc do lokalizacji rozszerzenia i wybierając je.
+  UWAGA: Jeśli masz pakiet .yymps/.yymp/.gmez, możesz przeciągnąć go na stronę IDE, aby go zaimportować, lub wejść do menu "Narzędzia" i wybrać opcję "Importuj pakiet lokalny".
+  Platformy docelowe
+  Po dodaniu pliku extension do przeglądarki Asset należy nadać mu nazwę i numer wersji, a także określić, na jakie platformy ma być eksportowany. Odznaczając wybrane platformy, można powiedzieć GameMaker Studio 2, aby nie eksportował extension jako części pliku wykonywalnego dla tych platform. Należy również upewnić się, że właściwości extension są zgodne z wybraną platformą docelową (platformami docelowymi), a także wybrać kompatybilne platformy docelowe dla plików extension w oparciu o poniższe kryteria:
+  
+    Wszystkie platformy docelowe: GML extensions. Są to extensions wykonane przy użyciu GameMaker Language (GML) i są kompatybilne ze wszystkimi platformami docelowymi. (Należy pamiętać, że jest to jedyny typ extension obsługiwany obecnie przez program Opera GX. )
+    Windows (Standard, UWP, Xbox): Możesz użyć plików Windows DLL (Dynamic Link Libraries). Pamiętaj, że jeśli zaznaczyłeś opcję "Use x64 Windows Runtime" w opcjach gry dla systemu Windows, wszystkie biblioteki DLL dla projektu muszą być zgodne z 64-bitowymi. 32-bitowe biblioteki DLL nie będą działać z 64-bitowym plikiem wykonywalnym.
+    macOS: cel macOS może używać standardowych plików DyLib dla extensions.
+    Ubuntu (Linux): W przypadku celu Ubuntu musisz się upewnić, że twój extension używa plików .so.
+    HTML5: Platformy te mogą korzystać z JavaScript extensions.
+    Android: Ta platforma wymaga, aby strona extension była napisana w języku Java lub Android Framework SDK.
+    iOS /  tvOS: Extensions dla tej platformy są napisane w Objective C i wymagają pliku *.mm i *.h lub, jeśli użyto jakichkolwiek frameworków, prekompilowanego natywnego pliku *.a.
+    PlayStation: W przypadku konsoli PlayStation pliki extensions powinny być plikami PRX, przy czym każdy cel wymaga innego adresu PRX, aby dostosować się do specyfikacji celu (PS3, PS4 lub PS5). Jeśli pracujesz na PSVita, extension powinien być SUPRX.
+  
+  UWAGA: W przypadku niektórych witryn extensions wymagane jest przestrzeganie określonych konwencji nazewnictwa, aby witryna GameMaker mogła prawidłowo identyfikować platformę i architekturę procesora, dla której została zaprojektowana. Więcej informacji można znaleźć w części Konwencje nazewnictwa.
+  Ponieważ strona extension może zawierać różne powiązane pliki, możliwe jest utworzenie jednej strony extension dla wielu platform. W takim przypadku należy określić wszystkie kompatybilne platformy w głównym edytorze extension (tzn. zaznaczyć pole wyboru obok nich), a następnie we właściwościach poszczególnych plików dla każdej części strony extension określić platformę, na którą te pliki mają być eksportowane.
+  Aby zmienić platformę docelową dla konkretnego pliku extension lub placeholder, musisz najpierw otworzyć właściwości extension (kliknij dwukrotnie  lub extension w przeglądarce Asset ), a następnie we właściwościach extension wybrać z prawej strony plik zasobów, który chcesz edytować. W otwartym oknie można wybrać platformy, do których eksportowany jest dany plik:
+  
+  Usuń kompresję podczas kompilacji
+  Opcja "Uncompress on build" może być użyta dla skompresowanych plików archiwalnych, które są przeznaczone na konkretną platformę docelową. Jeśli ta opcja jest włączona, zawartość takiego archiwum zostanie rozpakowana do katalogu Included Files budowanego pakietu, ale dopiero po skopiowaniu na platformę docelową.
+  Na przykład, jeśli włączysz tę funkcję dla pliku .zip w witrynie extension, a następnie rozpoczniesz kompilację systemu macOS od strony Windows, archiwum .zip zostanie skopiowane w stanie niezmienionym z Windows do macOS, a następnie zostanie nieskompresowane podczas kompilacji na platformie docelowej (w tym kontekście jest to macOS).
+  Wywoływanie funkcji Extension 
+  Po skonfigurowaniu witryny extension można używać funkcji i stałych dla niej, tak jak wbudowanych funkcji i stałych używanych w witrynie GameMaker Language. Jeśli gra jest wieloplatformowa (na przykład jest przeznaczona do uruchamiania w systemach Windows i Android ), należy użyć stałych i funkcji systemu operacyjnego, aby sprawdzić bieżącą platformę przed wywołaniem funkcji specyficznych dla extension, na przykład w celu uniknięcia problemów:
+  switch(os_type)
+    {
+        case os_android:
+            call_android_extension_function(x, y, z);
+        break;
+    
+        case os_windows:
+            call_windows_extension_function(x, y, z);
+        break;
+    }
+  
+  Zwróć uwagę, że dla różnych platform Twój extensions może mieć wspólne nazwy funkcji, więc jeśli masz extension z różnymi plikami do (na przykład) wyskakiwania komunikatu na Windows i dla Android, oba pliki extension mogą mieć te same nazwy funkcji, o ile są ustawione na eksportowanie tylko do odpowiednich platform.
+  Jeśli chcesz utworzyć własną stronę extensions, podstawowe informacje znajdziesz na kolejnych stronach:
+  
+    Tworzenie rozszerzenia
+    Rozszerzenia systemu Android
+    iOS / tvOS Rozszerzenia
+    Przykłady źródeł
+  
+   
+  YoYo Games Rozszerzenia innych firm
+  Starsze wersje GameMaker miały wbudowane wiele funkcji innych firm, ale było to nieefektywne i trudne do utrzymania, ponieważ jeśli jakaś konkretna funkcja została zmieniona przez inną firmę, trzeba było zaktualizować całe GameMaker IDE i Runtime. Dlatego w obecnych wersjach do dodawania do gier obsługi przez inne firmy użyto pakietów extensions. Oznacza to, że można dodawać tylko te dodatkowe funkcje, które są potrzebne, a nawet dostosowywać i edytować je do własnych potrzeb.
+  Większość z tych stron extensions zostanie pobrana i zainstalowana po wybraniu określonych opcji gry (np. Facebook lub Google Mobile Ads), ale dalsze informacje na ich temat można znaleźć w odpowiedniej sekcji dla każdej platformy w Bazie wiedzy YoYo Games:
+  
+    Platformy i konfiguracja GameMaker Studio 2
+  
+  Same strony extensions można znaleźć na następującej stronie Marketplace:
+  
+    YoYo Games Marketplace Aktywa
+  
+  Należy pamiętać, że strona extensions jest dostarczana z wersją demonstracyjną i plikiem pomocy (w formacie *.pdf ), w których wyjaśniono sposób korzystania z tych funkcji, dlatego nie zostały one omówione w niniejszej instrukcji.
+   
+   
+  
+    
+      
+        Powrót: Redaktorzy Aktywów
+        Następny: Czcionki
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,72 @@
+
+  
+  Warstwy mapy kafelków
+   Edytor pomieszczeń GameMaker Studio 2 umożliwia dodawanie tiles do dowolnej strony room za pomocą warstw. Jak sama nazwa wskazuje, warstwa mapy tile to po prostu zbiór warstw tile set tiles, które są uważane za znajdujące się na tej samej głębokości w room. Układając warstwy w stos, można sprawić, że niektóre elementy będą rysowane nad innymi lub pod nimi. Niektóre aspekty warstw można także kontrolować za pomocą kodu, dodając lub usuwając elementy albo zmieniając pewne właściwości warstwy lub tego, co zawiera, w czasie uruchamiania. Należy pamiętać, że w edytorze room użytkownik jest ograniczony do jednej mapy tile na warstwę (przycisk Warstwa płytek), ale podczas pracy z nimi w kodzie można przypisać wiele map tile do jednej warstwy, przy czym każda mapa ma swój unikalny identyfikator i właściwości, więc:
+  
+     Zestaw kafelków to zasób, którego używa się do tworzenia warstw tile i map tile.
+     Warstwa płytki jest tym, co tworzy się w Edytorze Room, aby dodać do niej stronę tile sets.
+     Mapą kafelkową nazywamy zbiór stron tiles, które są dodawane do warstwy w edytorze room lub w kodzie jako pojedynczy element na tej warstwie.
+  
+  Poniżej znajduje się lista wszystkich funkcji, które można wykorzystać do edycji warstw mapy kafelkowej:
+  
+    layer_tilemap_get_id
+    layer_tilemap_exists
+    layer_tilemap_create
+    layer_tilemap_destroy
+    tilemap_tileset
+    tilemap_clear
+    tilemap_x
+    tilemap_y
+    tilemap_set
+    tilemap_set_at_pixel
+    tilemap_set_mask
+    tilemap_set_global_mask
+    tilemap_set_width
+    tilemap_set_height
+    tilemap_get_mask
+    tilemap_get_global_mask
+    tilemap_get_tileset
+    tilemap_get_frame
+    tilemap_get_tile_width
+    tilemap_get_tile_height
+    tilemap_get_width
+    tilemap_get_height
+    tilemap_get_x
+    tilemap_get_y
+    tilemap_get
+    tilemap_get_at_pixel
+    tilemap_get_cell_x_at_pixel
+    tilemap_get_cell_y_at_pixel
+    draw_tilemap
+  
+   
+  Oprócz wymienionych powyżej funkcji służących do ustawiania map tile użytkownik ma do dyspozycji szereg funkcji, które mogą być używane do manipulowania danymi poszczególnych stron tiles. Blob" danych tile składa się z indeksu tile oraz kilku dodatkowych bitów wskazujących, czy adres tile został obrócony, odwrócony lub odbity lustrzanie. Istnieje także możliwość dodania własnej maski bitowej do danych tile, choć jest to opcja przeznaczona wyłącznie dla zaawansowanych użytkowników, ponieważ maskowane są bity zarezerwowane dla indeksu tile - zasadniczo dla indeksów tile zarezerwowanych jest 19 bitów, ale jeśli użyjesz tylko 8 z nich, pozostanie Ci 11 bitów, które można wykorzystać do utworzenia własnej maski. Maska ta może być następnie użyta i sprawdzona w kodzie w celu utworzenia niestandardowych kolizji tile lub innych. Zazwyczaj jednak nie trzeba tworzyć własnych plamek danych tile, a zamiast tego należy użyć funkcji tilemap_get() aby uzyskać dane tile, następnie manipulować nimi za pomocą poniższych funkcji, a potem ponownie ustawić je za pomocą funkcji tilemap_set().
+  Poniżej znajduje się lista wszystkich funkcji, które można wykorzystać do edycji poszczególnych płytek:
+  
+    tile_get_empty
+    tile_get_index
+    tile_get_flip
+    tile_get_mirror
+    tile_get_rotate
+    tile_set_empty
+    tile_set_index
+    tile_set_flip
+    tile_set_mirror
+    tile_set_rotate
+    draw_tile
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: Warstwy tła
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,45 @@
+
+  
+  random_set_seed
+  Aby wygenerować liczbę losową, GameMaker Studio 2 zaczyna od losowego ziarna. Za pomocą tej funkcji można ustawić to ziarno na znaną wartość i w ten sposób "wymusić", aby wynik wszystkich zdarzeń losowych był taki sam za każdym razem, gdy program jest uruchamiany. Funkcji tej można na przykład użyć w połączeniu z random_get_seed() do tworzenia proceduralnie generowanej zawartości i zapisywania wyników bez konieczności tworzenia ogromnych savegame'ów (zapisujesz tylko ziarno, nic więcej nie jest potrzebne). Jeśli potrzebujesz prawdziwie losowych wyników dla wszystkiego, powinieneś użyć funkcji randomise() function.
+  UWAGA Mimo, że to ziarno daje spójne wyniki na każdej platformie docelowej, wyniki mogą się różnić między platformami ze względu na inny sposób działania każdej z nich.
+   
+  Składnia:
+  random_set_seed(val);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        val
+        The seed to set.
+     
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if debug
+    {
+        random_set_seed(1);
+    }
+  Powyższy kod ustawia losowe ziarno na 1 tylko wtedy, gdy zmienna "debug" jest prawdziwa.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje numeryczne
+        Następny: random_get_seed
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

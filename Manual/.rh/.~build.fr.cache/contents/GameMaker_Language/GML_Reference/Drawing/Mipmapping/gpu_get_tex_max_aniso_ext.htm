@@ -1,0 +1,49 @@
+
+  
+  gpu_get_tex_max_aniso_ext
+  Za pomocą tej funkcji można uzyskać bieżący maksymalny poziom anizotropii podczas korzystania z trybu filtra tf_anisotropic (zob. gpu_get_tex_mip_filter() więcej informacji) na próbniku shader. Podajesz wartość indeksu próbnika shader (zwróconą przez funkcję shader_get_sampler_index()a funkcja zwróci wartość z zakresu od 1 do 16.
+   
+  Składnia:
+  gpu_get_tex_max_aniso_ext(sampler_index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sampler_index
+        The index of the shader sampler to get
+     
+    
+  
+   
+  Zwroty:
+   (default: 16)
+   
+  Przykład:
+  var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background");
+    var _spriteTex = sprite_get_texture(sprite_index, 0);
+    shader_set(shd_Glass);
+    if gpu_get_tex_max_aniso_ext(_sampleIndex) != 8
+    {
+        gpu_set_tex_max_aniso_ext(_sampleIndex, 8);
+    }
+    texture_set_stage(_sampleIndex , _spriteTex);
+    shader_reset();
+  Powyższy kod ustawia maksymalny poziom anizotropii na 8 dla danego próbnika shader texture, jeśli nie został on wcześniej ustawiony na 8.
+   
+   
+   
+  
+    
+      
+        Powrót: Mipmapping
+        Następny: gpu_get_tex_mip_enable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

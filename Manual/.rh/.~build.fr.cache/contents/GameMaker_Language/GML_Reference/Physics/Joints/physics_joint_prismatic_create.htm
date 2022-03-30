@@ -1,0 +1,113 @@
+
+  
+  physics_joint_prismatic_create
+  Podobnie jak przegub obrotowy, przegub pryzmatyczny ma tylko jeden stopień swobody, ale w przypadku tego przegubu jest on kierunkowy względem osi, a nie obrotowy, i w rzeczywistości uniemożliwia obrót w jakiejkolwiek formie. Poniżej znajduje się rysunek, który pomoże zwizualizować sposób działania tego przegubu:
+  Mamy dwie instancje połączone w punkcie zakotwiczenia, z osią ruchu zdefiniowaną na podstawie wektora dwóch współrzędnych x/y osi w_ względem współrzędnych (0,0) świata fizyki (zatem składowa x równa 0, a składowa y równa 1 (0,1) uczyniłaby przegub pionowym przegubem pryzmatycznym). Przegub ten może się wtedy poruszać tylko względem tej osi, podobnie jak sprężyna lub tłok. Jeśli ustawisz dolne lub górne ograniczenie tranzycji, to w zasadzie ograniczasz zakres ruchu wzdłuż tej osi, gdzie pozycja 0 jest dokładnie tym miejscem, które zdefiniowałeś za pomocą w_anchor x/y, więc wartość ujemna będzie się przesuwać w "lewo" od tego punktu na osi, a wartość dodatnia w "prawo", jak pokazano na poniższym rysunku (pamiętaj, że "lewo" i "prawo" to pojęcia względne!):
+  Można także określić, czy przegub ma silnik, czy nie. Kierunek ten jest określany przez prędkość silnika, przy czym liczba dodatnia oznacza ruch w kierunku współrzędnych osi ("w prawo"), a liczba ujemna - w kierunku punktu zakotwiczenia ("w lewo"). Argument "max_motor_force" służy do ograniczania prędkości ruchu, aby uniknąć ciągłego przyspieszania silnika oraz aby ograniczyć wpływ kolizji na ruch. W ten sposób można użyć silnika stawowego do symulowania tarcia stawowego, ustawiając prędkość stawu na zero, a maksymalną siłę na jakąś małą, ale znaczącą wartość. Silnik będzie starał się nie dopuścić do ruchu stawu, ale ugnie się pod znacznym obciążeniem.
+  Podobnie jak w przypadku wszystkich przegubów, jeśli ustawisz wartość "col" na true, dwie instancje będą mogły oddziaływać na siebie i zderzać się ze sobą, ale tylko wtedy, gdy wystąpią zdarzenia kolizji, natomiast jeśli ustawisz wartość " false, nie będą się zderzać bez względu na wszystko.
+   
+  Składnia:
+  physics_joint_prismatic_create(inst1, inst2, w_anchor_x, w_anchor_y, w_axis_x, w_axis_x, lower_trans_limit, upper_trans_limit, limit, max_motor_force, motor_speed, motor, col)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        inst1
+        Identyfikator instancji
+        The first instance to connect with the joint
+      
+      
+        inst2
+        Identyfikator instancji
+        The second instance to connect with the joint
+      
+      
+        w_anchor_x
+        Real
+        The x coordinate where the joint is anchored, within the game world
+      
+      
+        w_anchor_y
+        Real
+        The y coordinate where the joint is anchored, within the game world
+      
+      
+        w_axis_x
+        Real
+        The x component of the axis vector
+      
+      
+        w_axis_y
+        Real
+        The y component of the axis vector
+      
+      
+        lower_trans_limit
+        Real
+        The lower permitted limit for the joint movement
+      
+      
+        upper_trans_limit
+        Real
+        The lower permitted limit for the joint movement
+      
+      
+        limit
+        Boolean
+        Whether to limit the movement of the joint (true) or not (false)
+      
+      
+        max_motor_force
+        Real
+        Sets the maximum movement speed for the motor
+      
+      
+        motor_speed
+        Real
+        This is the speed at which the motor should move
+      
+      
+        motor
+        Boolean
+        Whether the motor should be active (true) or not (false)
+      
+      
+        col
+        Boolean
+        Whether the two instances can collide (true) or not (false)
+      
+    
+  
+   
+  Zwroty:
+  Physics Joint ID
+   
+  Przykład:
+  var mainFixture, o_id;
+    mainFixture = physics_fixture_create();
+    physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);
+    o_id = instance_create_layer(x+25, y, "Instances", obj_Piston);
+    physics_fixture_bind(mainFixture, id);
+    physics_fixture_bind(mainFixture, o_id);
+    physics_joint_prismatic_create(id, o_id, x, y, 0, 10, 0, 0, 0, 5, 0, 1, 1);
+    physics_fixture_delete(mainFixture);
+  Powyższy kod tworzy i definiuje nowy uchwyt, a następnie tworzy instancję "obj_Piston", wiążąc utworzony uchwyt z dwoma nowymi instancjami objects. Są one następnie połączone przegubem pryzmatycznym z pozycją zakotwiczenia na tych samych współrzędnych x/y pierwszej instancji oraz osią utworzoną przez wektor pozycji x/y i oś x/y (w tym przypadku 0,10, czyli "w dół"). Nie ma ograniczeń co do wielkości ruchu wzdłuż tej osi, ale dodaliśmy silnik o prędkości 0 i maksymalnej sile 5, aby zasymulować tarcie w stawie.
+   
+   
+   
+  
+    
+      
+        Plecy: Stawy
+        Następny: physics_joint_pulley_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

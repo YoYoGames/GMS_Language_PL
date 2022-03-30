@@ -1,0 +1,98 @@
+
+  
+  Wydarzenia związane z losowaniem
+  Kategoria Rysuj zdarzenia zawiera wszystkie zdarzenia, które wpływają na to, co widać na ekranie po uruchomieniu gry. Jest ona podzielona na różne
+    aby lepiej radzić sobie z różnymi wymaganiami dotyczącymi rysowania w grze. Poniższa ilustracja przedstawia kolejność wykonywania poszczególnych zdarzeń:
+  Zwykłe zdarzenie Draw dzieli się na trzy podtypy: Początek rysunku, Standardowy rysunek i Koniec rysunku.
+    Draw End. Ogólnie rzecz biorąc, będziesz musiał używać tylko standardowego zdarzenia Draw i powinieneś wiedzieć, że wszystkie instancje w room będą miały wywoływane to zdarzenie w każdym kroku gry, więc zdarzenie to będzie zawsze wywoływane, dopóki
+    jeśli instancja ma ustawioną flagę visible na true. Ważne jest, by zrozumieć, że nawet jeśli nie zdefiniowałeś nic dla tego podzdarzenia we właściwościach object (tzn. żadnego kodu ani akcji), jeśli object ma przypisaną stronę sprite , to i tak zdarzenie losowania zostanie wywołane.
+    Dzieje się tak dlatego, że witryna GameMaker Studio 2 ma dwa sposoby rysowania elementów w zdarzeniu Draw:
+  
+    rysowanie domyślne, czyli takie, w którym definiuje się stronę sprite we właściwościach object i nie umieszcza się żadnych akcji ani kodu w normalnym zdarzeniu Draw, a w tym przypadku GameMaker Studio 2 automatycznie narysuje przypisaną stronę sprite. Należy pamiętać, że wszelkie transformacje
+      w innych zdarzeniach w celu zmiany skali obrazu, indeksu, mieszania itp. również zostaną uwzględnione, o ile zdarzenie Draw jest puste.
+     niestandardowe rysowanie, które polega na umieszczeniu kodu lub akcji w zdarzeniu rysowania. Jest to informacja dla GameMaker Studio 2 " Chcę kontrolować to, co rysujesz dla instancji tego obiektu" i całkowicie zastępuje domyślne
+      rysowanie. Oznacza to, że na przykład możesz mieć object z przypisanym sprite, a następnie ustawić zdarzenie draw na draw text i tekst zostanie narysowany na ekranie, ale sprite nie zostanie narysowany, ponieważ nie powiedziałeś GameMaker Studio 2, aby
+      rysować go razem z tekstem.
+  
+  Pozostałe zdarzenia losowania są opisane w poniższych sekcjach:
+   
+  Rysuj początek i rysuj koniec
+  
+    Oprócz głównego zdarzenia losowania, masz także zdarzenia  Początek losowania i Koniec losowania. Zachowują się one dokładnie tak samo jak standardowe zdarzenia Draw (tzn. będą rysować wszystko, co w nich umieścisz, na każdym etapie gry i we wszystkich rzutniach).
+      ), ale nie będą one "domyślnie rysować" niczego, jeśli nie zostały jawnie dodane do strony object i zawsze będą działać przed/po standardowym zdarzeniu Draw. Tak więc podczas gry zawsze będzie występować zdarzenie
+      Draw Begin dla wszystkich instancji, następnie Draw dla wszystkich instancji, a na końcu Draw End dla wszystkich instancji.
+    W ten sposób można rysować rzeczy lub ustawiać właściwości rysowania w kroku Rozpocznij rysowanie w jednej instancji i mieć pewność, że wszystkie instancje ze standardowym zdarzeniem Rysuj lub Zakończ rysowanie wykorzystają te właściwości lub narysują to, co narysowała pierwsza instancja. Zasadniczo
+      jest to pewny sposób na zagwarantowanie, że pewne rzeczy zostaną narysowane w określonym czasie, podobnie jak robią to zdarzenia Begin Step i End Step .
+    Podczas rysowania elementów w witrynie GameMaker Studio 2 należy zwrócić uwagę na kilka rzeczy, niezależnie od tego, czy jest to witryna sprite, czy shader, czy też bufor 3D:
+    
+      Zdarzenie draw jest bardzo intensywne, ponieważ jest to jedno ze zdarzeń, które pochłania najwięcej czasu i zasobów... z tego powodu nie jest dobrym pomysłem robienie w zdarzeniu draw czegokolwiek innego niż rysowanie. Zachowaj więc swój duży kod lub złożone działania
+        dla zdarzenia Step lub Alarms, lub jakiegokolwiek innego zdarzenia, ale pozostaw zdarzenie draw dla rysowania, ponieważ jest to jego najlepsza funkcja.
+      Jeśli dla strony object parametr visible ustawiono na off (czyli instancje strony object nie są rysowane), to wszystkie zdarzenia rysowania są pomijane (z wyjątkiem zdarzenia Resize ). Oznacza to, że uczynienie instancji
+        niewidzialną spowoduje, że cały kod umieszczony w którymkolwiek z tych zdarzeń przestanie działać, więc nie umieszczaj istotnego kodu w zdarzeniach rysowania, jeśli nie mają być one widoczne.
+      To, co narysujesz, nie ma nic wspólnego z wybranym silnikiem kolizyjnym (tradycyjnym lub fizycznym), ponieważ jest on definiowany przez właściwości object i adres sprite (lub maskę), który został nadany stronie object.
+    
+     
+  
+  Rysuj GUI
+  
+    Typ zdarzenia Rysuj GUI należy do kategorii Zdarzenie rysunku i jest przeznaczony specjalnie do rysowania elementów GUI, na które nie ma wpływu skala ani obrót kamery widoku. Oznacza to, że
+      że instancja może rysować wszystkie elementy HUD lub interfejsu użytkownika bez konieczności opierania pozycjonowania elementów na pozycji instancji w room lub pozycji
+      bieżącego widoku z kamery.
+    Podczas rysowania w tym przypadku należy pamiętać, że współrzędne rysowania nie zmieniają się nawet wtedy, gdy aktywne są widoki z kamery, a (0,0) jest zawsze lewym górnym rogiem powierzchni aplikacji lub wyświetlacza (zob.
+      w dolnej części tej sekcji), a domyślna szerokość i wysokość są ustawione w stosunku 1:1 do powierzchni aplikacji. Porządek głębokości jest nadal zachowywany między instancjami na różnych warstwach (instancja na wyższej warstwie będzie rysowana pod instancją na niższej warstwie), a także
+      na niższej warstwie), a także w samych zdarzeniach, ponieważ zdarzenie Draw GUI Begin narysuje najpierw wszystkie instancje, następnie standardowe Draw GUI narysuje wszystkie instancje powyżej, a na końcu zostanie wywołane zdarzenie Draw Gui End 
+      jest wywoływane.
+    W ten sposób można rysować rzeczy lub ustawiać właściwości rysowania w zdarzeniu Draw GUI Begin w jednej instancji i mieć pewność, że wszystkie instancje ze standardowym zdarzeniem Draw GUI lub Draw GUI End będą używać tych właściwości lub rysować ponad to, co narysowała pierwsza instancja. Zasadniczo
+      jest to pewny sposób na zagwarantowanie, że pewne rzeczy zostaną narysowane w określonym czasie, podobnie jak robią to zdarzenia Begin Step i End Step.
+    Zdarzeń tych można także używać w połączeniu z normalnymi zdarzeniami Rysuj (na które będą miały wpływ pozycja, skala i obrót widoku kamery, tak jak zwykle). Jeśli nie masz zdarzenia Draw, ale masz zdarzenie Draw GUI, to GameMaker Studio 2 nadal będzie
+      domyślnie narysuje stronę sprite dla instancji (jeśli ją posiada) w normalny sposób.
+    Jeśli chodzi o inne zdarzenia rysowania, zdarzenia Rysuj interfejs graficzny zawsze będą rysować nad wszystkim, co zostało narysowane w normalnych zdarzeniach rysowania. Tak więc, jeśli masz instancję na niższej warstwie ze zdarzeniem Draw GUI, będzie ona rysowana nad instancją, która znajduje się na wyższej warstwie
+      z normalnym zdarzeniem rysowania. Jeśli obie instancje mają zdarzenie Draw GUI, to kolejność warstw zostanie zachowana.
+    UWAGA: To zdarzenie domyślnie będzie rysować 1:1 z rozmiarem powierzchni aplikacji, który zwykle jest rozmiarem room lub portu widoku. Oznacza to, że jeśli w opcjach gry włączona jest korekcja współczynnika proporcji (Aspect Ratio Correction )
+      GUI nie będzie rysowany nad czarnymi pasami, które "literują" grę. To zachowanie można wyłączyć za pomocą  display_set_gui_maximise() funkcji,
+      Można również zablokować zdarzenie GUI do określonego rozmiaru, który będzie automatycznie skalowany w celu dopasowania do wymiarów wyświetlacza lub powierzchni aplikacji za pomocą funkcji display_set_gui_size().
+     
+  
+  Przed i po losowaniu
+  
+    Zdarzenia Pre Draw i Post Draw należą do kategorii zdarzeń Draw. Jednak w odróżnieniu od innych zdarzeń Draw, te rysują bezpośrednio do bufora wyświetlacza, który będzie miał rozmiar
+      łącznego obszaru ekranu dla wszystkich aktualnie widocznych rzutni lub rozmiaru okna, jeśli używana jest tylko jedna rzutnia lub żadna. Ilustruje to poniższy rysunek:
+    Jeśli więc używasz zdarzeń Pre lub Post draw, rysujesz do pełnoekranowego obiektu docelowego renderowania (display buffer), który będzie miał
+      taki sam rozmiar jak okno, do którego dopasowywane są wszystkie rzutnie. Jeśli nie ma aktywnych rzutni, rozmiar ten jest ustawiany na wielkość samego okna.
+    Zdarzenie Pre Draw jest wywoływane przed każdym innym zdarzeniem rysowania i można w nim ustawiać wartości, właściwości rysowania, a nawet rysować rzeczy, nie przejmując się rzutniami ani rozmiarem warstwy GUI (rozmiar warstwy GUI może być taki sam jak ekranu
+     buffer ale może też nie być, ponieważ rozdzielczość GUI można ustawić w kodzie).
+    Warto zauważyć, że to zdarzenie ma miejsce, zanim ekran buffer zostanie wyczyszczony do normalnego rysowania, co oznacza, że jeśli nie switch wyłączysz wyczyszczania widoku w edytorze room, to nic, co zostanie narysowane w zdarzeniu Pre Draw, nie będzie widoczne, ponieważ
+      ponieważ pierwsze rysowanie rzutni spowoduje jej wyczyszczenie. Jeśli chcesz widzieć przez same rzutnie lub w ogóle nie używasz rzutni, powinieneś ustawić kolor tła na alfa równy 0 w polu Edytor pokoju.
+    UWAGA: Jeśli switch wyłączysz te opcje, możesz zauważyć niepożądane artefakty rysowane na ekranie podczas testowania gry (takie jak "smugi" z instancji). Dzieje się tak dlatego, że rysujesz bezpośrednio nad poprzednią klatką
+      wyświetlacza buffer bez jej wyczyszczenia. Możesz jednak użyć draw_clear_alpha() aby to zrobić
+      samodzielnie.
+    Zdarzenie Post Draw jest wywoływane po wszystkich standardowych zdarzeniach rysowania, ale przed zdarzeniami Draw GUI. Podobnie jak zdarzenie Pre Draw, jest ono oparte na rozmiarze ekranu buffer i jest umieszczane przed zdarzeniami Draw GUI, aby umożliwić
+      wykonywanie efektów postprocessingu i innych czynności na pełnym ekranie, bez zakłócania działania elementów HUD/ GUI 
+      które mogą występować w grze.
+     
+  
+  Zmiana rozmiaru okna
+  
+    Ten typ zdarzenia należy do kategorii zdarzeń rysowania i choć w rzeczywistości niczego nie rysuje, to reaguje na zmiany w wyświetlanym obrazie buffer - w szczególności jest przeznaczony do reagowania na zmianę rozmiaru wyświetlacza buffer UWP, gdy okno gry jest "przyciągane".
+      gdy okno gry jest "przyciągane".
+    Na platformie docelowej UWP ważne jest, aby wychwytywać wszelkie zmiany rozmiaru wyświetlacza buffer wynikające z "przytrzaśnięcia" okna gry (na przykład gdy użytkownik przeciągnie okno na bok wyświetlacza). To zdarzenie właśnie do tego służy i
+      jest wywoływane za każdym razem, gdy okno jest zmieniane, co pozwala na dodanie własnego kodu, który zmieni rozmiar widoku lub rozmieszczenie elementów HUD w razie potrzeby. Funkcja ta została udostępniona jako wygodny
+      wygodny sposób na uniknięcie konieczności ciągłego sprawdzania kodu zdarzeń, który sprawdza te rzeczy.
+    UWAGA: Nie można rysować w tym zdarzeniu! Jest ono wywoływane przez zmianę rozmiaru okna i służy tylko do wychwycenia tej zmiany... wszelkie rysowanie, które powinno być wykonane, musi być wykonane w jednym z innych zdarzeń draw.
+     
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Zdarzenia dotyczące obiektów
+        Następny: Zdarzenia asynchroniczne
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

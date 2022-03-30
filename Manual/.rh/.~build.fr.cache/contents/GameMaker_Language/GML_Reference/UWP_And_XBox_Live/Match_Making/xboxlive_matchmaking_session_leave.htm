@@ -1,0 +1,44 @@
+
+  
+  xboxlive_matchmaking_session_leave
+  Ta funkcja powoduje, że użytkownik, który utworzył lub znalazł określoną sesję, opuszcza ją. Wskaźnik do identyfikatora sesji można uzyskać z mapy async_load DS map, które są zwracane w asynchronicznym zdarzeniu społecznościowym podczas tworzenia lub znajdowania sesji (zob. xboxlive_matchmaking_create() więcej szczegółów).
+   
+  Składnia:
+  xboxlive_matchmaking_session_leave(session_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        session_id
+        The Session ID pointer of the session to leave.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if gamepad_button_check_pressed(0, gp_start)
+    {
+        xboxlive_matchmaking_session_leave(global.SessionID);
+    }
+  Powyższy kod sprawdza, czy naciśnięto przycisk gamepada, a jeśli tak, to użytkownik zostanie wylogowany z danej sesji dobierania meczów.
+   
+   
+   
+  
+    
+      
+        Powrót: Dopasowywanie
+        Następny: xboxlive_matchmaking_send_invites
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

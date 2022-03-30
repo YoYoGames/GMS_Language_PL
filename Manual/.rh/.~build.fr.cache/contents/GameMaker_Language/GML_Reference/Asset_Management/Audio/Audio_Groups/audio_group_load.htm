@@ -1,0 +1,46 @@
+
+  
+  audio_group_load
+  Ta funkcja wczytuje do pamięci wszystkie dźwięki, które są oznaczone jako należące do podanej grupy dźwiękowej. Funkcja zwróci true, jeśli ładowanie zostało zainicjowane i false, jeśli identyfikator grupy jest nieprawidłowy lub została ona już oznaczona do załadowania. Funkcja jest asynchroniczna, więc gra będzie nadal działać podczas ładowania dźwięku w tle. Oznacza to, że wywoła ona również zdarzenie asynchronicznego wczytywania/zapisu, aby poinformować, że cała grupa została wczytana do pamięci i można teraz używać dźwięków.
+   
+  Składnia:
+  audio_group_load(groupID);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        groupID
+        Identyfikator grupy audio
+        The index of the audio group to load (as defined in the Audio Groups Window)
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if !audio_group_is_loaded(audiogroup_level1)
+    {
+        audio_group_load(audiogroup_level1);
+    }
+  Powyższy kod sprawdza, czy grupa audio została już załadowana, a jeśli nie, ładuje ją.
+   
+   
+   
+  
+    
+      
+        Powrót: Grupy audio
+        Następny: audio_group_unload
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

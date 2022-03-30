@@ -1,0 +1,30 @@
+
+  
+  Emitery cząstek stałych
+   Emitery cząstek są używane w witrynie GameMaker Studio 2 do emitowania na obszarze ekranu cząstek, które mogą mieć różne kształty i rozmieszczenie. W zależności od sposobu użycia funkcji mogą one także tworzyć ciągły strumień cząstek lub wyrzucać kilka cząstek naraz.
+  Ponieważ emiter cząsteczek jest zasobem tworzonym dynamicznie, musisz go utworzyć i przechowywać zwrócony indeks w zmiennej, aby móc odwoływać się do niego we wszystkich kolejnych wywołaniach funkcji. Bardzo ważne jest też, aby zniszczyć emiter, gdy nie będzie już potrzebny, w przeciwnym razie nastąpi wyciek pamięci, który spowolni działanie gry i doprowadzi do jej awarii. Warto również zauważyć, że emitery cząsteczek będą działać wiecznie po ich utworzeniu, nawet jeśli indeks nie jest już przechowywany. Tak więc nawet jeśli zmienisz stronę room lub uruchomisz grę ponownie, systemy i cząsteczki pozostaną widoczne na wszystkich kolejnych stronach rooms, dlatego należy je zniszczyć, gdy nie będą już potrzebne.
+  Aby ustawić emitery i pozwolić im tworzyć cząstki, dostępne są następujące funkcje. Zauważ, że każda z nich jako pierwszy argument otrzymuje indeks systemu cząstek, do którego należy.
+  
+    part_emitter_exists
+    part_emitter_create
+    part_emitter_clear
+    part_emitter_region
+    part_emitter_burst
+    part_emitter_stream
+    part_emitter_destroy
+    part_emitter_destroy_all
+  
+   
+   
+  
+    
+      
+        Powrót: Cząsteczki
+        Następny: Układy cząstek stałych
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

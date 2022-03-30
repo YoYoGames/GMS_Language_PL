@@ -1,0 +1,56 @@
+
+  
+  physics_particle_group_join
+  Za pomocą tej funkcji można połączyć ze sobą dwie grupy cząstek. Połączone grupy będą się zachowywać tak, jakby były częścią jednej całości. Grupy powinny być utworzone z zachodzącymi na siebie krawędziami, ponieważ jeśli nie są one jeszcze stykające się, nie zostaną połączone. Funkcja pobiera unikatowe identyfikatory grup do połączenia, zwrócone przez funkcję physics_particle_group_end()Można jej użyć dowolną liczbę razy dla jednej grupy, aby połączyć ze sobą różne bryły miękkie.
+   
+  Składnia:
+  physics_particle_group_join(to, from)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        to
+        Identyfikator grupy cząstek fizycznych
+        The first particle group to join.
+      
+      
+        from
+        Identyfikator grupy cząstek fizycznych
+        The second particle group to join.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;
+    var groupflags = phy_particle_group_flag_solid;
+    physics_particle_group_begin(flags, groupflags, mouse_x- 45, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);
+    physics_particle_group_circle(50);
+    var g1 = physics_particle_group_end();
+    physics_particle_group_begin(flags, groupflags, mouse_x + 45, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);
+    physics_particle_group_circle(50);
+    var g2 = physics_particle_group_end();
+    physics_particle_group_join(g1, g2);
+  Powyższy kod tworzy dwie okrągłe grupy cząstek i łączy je ze sobą.
+   
+   
+   
+  
+    
+      
+        Powrót: Miękkie cząstki ciała
+        Następny: physics_particle_group_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

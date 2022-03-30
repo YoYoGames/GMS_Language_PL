@@ -1,0 +1,53 @@
+
+  
+  Sieć i HTML5
+  GameMaker Studio 2 udostępnia różne funkcje umożliwiające interakcję z Internetem lub witryną server, które można wykorzystać na wszystkich dostępnych platformach docelowych. Funkcje te to:
+  
+    url_open
+    url_open_ext
+    url_open_full
+    url_get_domain
+    http_request
+    http_get
+    http_get_file
+    http_post_string
+  
+   
+  Oprócz wymienionych powyżej ogólnych funkcji, docelowy HTML5 ma kilka dodatkowych funkcji sieciowych, które zostały zaprojektowane specjalnie do wykorzystania w grach, które z niego korzystają:
+  
+    browser_height
+    browser_width
+    browser_input_capture
+    webgl_enabled
+    clickable_exists
+    clickable_add
+    clickable_add_ext
+    clickable_change
+    clickable_change_ext
+    clickable_set_style
+    clickable_delete
+    analytics_event
+    analytics_event_ext
+    os_browser
+    http_get_request_crossorigin
+    http_set_request_crossorigin
+  
+   
+  Oprócz tych funkcji dla modułu docelowego HTML5 istnieje także specjalna zmienna JavaScript, która może być używana w tych rzadkich przypadkach, gdy zawartość folderu html5game jest przechowywana w zupełnie innym miejscu (URL). Normalnie ta zmienna path jest na stałe zakodowana w pliku JavaScript i jest względna w stosunku do lokalizacji, z której wywoływany jest JavaScript, ale można ustawić zmienną g_GameMakerHTML5Dir przed wywołaniem gry script i gra zostanie uruchomiona z nowo zdefiniowanej lokalizacji. Na przykład:
+  <script>var g_GameMakerHTML5Dir = "http://mygamealternatedirectory.com/";</script>
+  Warto również zauważyć, że można flag script funkcje z prefiksem gmcallback_, co oznacza, że nie będą one obfuskowane podczas kompilacji projektu dla HTML5. Jest to bardzo użyteczne, gdy korzysta się z wymienionych wyżej funkcji clickable_* (więcej informacji na ten temat można znaleźć tutaj).
+   
+   
+   
+  
+    
+      
+        Powrót: Odniesienie do GML
+        Następny: Steam
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,47 @@
+
+  
+  audio_emitter_get_listener_mask
+  Ta funkcja zwraca dane maski bitowej określające, z których odbiorników audio emiter ma odtwarzać dźwięki. Więcej informacji na ten temat znajduje się w rozdziale Słuchający dźwięku.
+   
+  Składnia:
+  audio_emitter_get_listener_mask(emitterID);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        emitterID
+        Identyfikator emitera dźwięku
+        The unique ID of the emitter to get the mask of
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  s_emit = audio_emitter_create();
+    if audio_emitter_get_listener_mask(s_emit) != global.PlayerMask
+    {
+        audio_emitter_set_listener_mask(snd, global.PlayerMask);
+    }
+  Powyższy kod tworzy emiter, a następnie sprawdza dane maski słuchacza i jeśli nie są one takie same jak te, które są przechowywane w zmiennej globalnej, ustawia słuchacza (słuchaczy), który ma grać, używając danych maski przechowywanych w zmiennej globalnej.
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery dźwięku
+        Następny: audio_emitter_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

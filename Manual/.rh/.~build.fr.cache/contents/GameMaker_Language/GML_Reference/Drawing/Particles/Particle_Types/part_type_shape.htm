@@ -1,0 +1,131 @@
+
+  
+  part_type_shape
+  Za pomocą tej funkcji można ustawić kształt sprite, który będzie używany dla danego typu cząstek, przy czym dopuszczalne są następujące stałe:
+  
+    
+      
+      
+    
+    
+      
+        Stała kształtu cząstek
+      
+      
+        Stała
+        Opis
+      
+      
+        pt_shape_pixel
+        Piksel 1x1. (Jest to ustawienie domyślne).
+      
+      
+        pt_shape_disk
+        Wypełniony okrąg.
+      
+      
+        pt_shape_square
+        Wypełniony kwadrat.
+      
+      
+        pt_shape_line
+        Linia pozioma o szerokości 8px.
+      
+      
+        pt_shape_star
+        Pięcioramienna wypełniona gwiazda.
+      
+      
+        pt_shape_circle
+        Okrąg o obrysie 3px.
+      
+      
+        pt_shape_ring
+        Okrąg z poświatą do wewnątrz (wygląda jak bańka).
+      
+      
+        pt_shape_sphere
+        Okrąg z zewnętrzną poświatą ' stały w środku, świecący na zewnątrz.
+      
+      
+        pt_shape_flare
+        Mocno świecący punkt (wygląda jak prawdziwa gwiazda w nocy).
+      
+      
+        pt_shape_spark
+        Efekt iskry " jak gwiazda z wieloma punktami, które gasną.
+      
+      
+        pt_shape_explosion
+        Kwadratowa chmura dymu ' wymaga wielu kolorów, aby przypominała wybuch.
+      
+      
+        pt_shape_cloud
+        Cienka chmura wymaga skalowania i wielu cząstek, aby przypominała chmurę.
+      
+      
+        pt_shape_smoke
+        Płynna wersja efektu eksplozji. Użyj kilku, aby utworzyć chmurę dymu.
+      
+      
+        pt_shape_snow
+        Ogólny kształt płatka śniegu.
+      
+    
+  
+  
+   
+  Składnia:
+  part_type_shape(ind, shape);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Typ cząstki ID
+        The index of the particle type to set.
+      
+      
+        shape
+        Stała kształtu cząstek
+        The shape to choose.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  global.p1 = part_type_create();
+    part_type_shape(global.p1, pt_shape_square);
+    part_type_size(global.p1, 1, 3, 0, 0);
+    part_type_scale(global.p1, 1, 1);
+    part_type_colour1(global.p1, c_white);
+    part_type_alpha2(global.p1, 1, 0);
+    part_type_speed(global.p1, 2, 4, 0, 0);
+    part_type_direction(global.p1, 0, 180, 0, 0);
+    part_type_gravity(global.p1, 0.20, 270);
+    part_type_orientation(global.p1, 0, 0, 0, 0, 1);
+    part_type_blend(global.p1, 1);
+    part_type_life(global.p1, 15, 60);
+  Powyższy kod ustawia typ cząstki indeksowany w zmiennej globalnej "p1" na kształt kwadratu, a następnie ustawia różne inne właściwości cząstki.
+   
+   
+   
+  
+    
+      
+        Powrót: Typy cząstek
+        Następny: part_type_sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

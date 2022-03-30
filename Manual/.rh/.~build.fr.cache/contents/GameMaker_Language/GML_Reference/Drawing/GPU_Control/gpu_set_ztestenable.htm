@@ -1,0 +1,45 @@
+
+  
+  gpu_set_ztestenable
+  Za pomocą tej funkcji można włączać lub wyłączać testowanie bufora z, co wpływa na sposób rysowania (zasadniczo funkcja ta jest przydatna tylko przy pracy z projektami 3D). Zasadniczo domyślnie, gdy testowanie z jest wyłączone i masz dwie strony objects rysujące w tej samej przestrzeni,
+   obie strony objects zostaną wyrenderowane, niezależnie od tego, czy jedna z nich nie przerysuje drugiej, co spowoduje niepotrzebne wywołania rysowania. Jeśli opcja switch jest włączona, bufor z jest sprawdzany, czy object będzie "widoczny", i nie jest rysowany, jeśli nie jest
+    nie. Uwaga: jest to zachowanie domyślne, ale można je zmienić, zmieniając typ porównania używanego do testowania bufora z (zobacz funkcję gpu_set_zfunc().
+  Domyślnie testowanie bufora z jest wyłączone (false).
+   
+  Składnia:
+  gpu_set_ztestenable(enable);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        enable
+        Enable or disable z-buffer testing (true lub false).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  gpu_set_ztestenable(true); draw_sprite(spr_Background, 0, 0, 0); gpu_set_ztestenable(false);
+  
+  Powyższy kod włącza testowanie bufora z, aby narysować tło sprite, a następnie wyłącza je ponownie, aby kontynuować rysowanie.
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_set_zfunc
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

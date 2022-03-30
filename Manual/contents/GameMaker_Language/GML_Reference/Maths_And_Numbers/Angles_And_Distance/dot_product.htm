@@ -25,11 +25,11 @@
     która jest często używana do oznaczania tej operacji (alternatywna nazwa &quot;iloczyn skalarny&quot; podkreśla raczej skalarny niż wektorowy charakter wyniku).</p>
   <p>Rzeczywistą formułę matematyczną można zapisać w następujący sposób:</p>
   <p><img alt="Dot Product formula" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image.png"/></p>
-  <p>Zatem w przypadku 2D iloczynem punktowym wektorów <span class="inline">a[x1,y1]</span> i <span class="inline">b[x2,2]</span> jest <span class="inline">x1x2 + y1y2</span>, co oznacza, że iloczyn punktowy w <span class="notranslate">GameMaker Studio 2</span> jest obliczany jako:</p>
+  <p>Zatem w 2D iloczyn punktowy wektorów <span class="inline">a[x1,y1]</span> i <span class="inline">b[x2,2]</span> wynosi <span class="inline">x1x2 + y1y2</span>, co oznacza, że w programie <span data-keyref="GameMaker Name">GameMaker</span> iloczyn punktowy oblicza się w następujący sposób:</p>
   <p class="code">a · b = (x1*x2)+(y1*y2);</p>
   <p>Ciekawostką związaną z iloczynem kropkowym jest jego związek z kątem utworzonym przez wektory wejściowe, który można wyrazić jako:</p>
   <p class="code">a · b = (length of a) * (length of b) * cos(angle)</p>
-  <p>Oznacza to, że iloczyn punktowy dwóch wektorów będzie równy cosinusowi kąta między tymi wektorami, pomnożonemu przez długości każdego z nich. Poniżej znajduje się ilustracja:</p>
+  <p>Oznacza to, że iloczyn punktowy dwóch wektorów będzie równy cosinusowi kąta między tymi wektorami, pomnożonemu przez długości każdego z nich. Poniżej znajduje się obrazek, który to ilustruje:</p>
   <p><img alt="Dot Product ilustration" class="center" height="143" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Maths/dot_product_image_2.png" width="406"/></p>
   <p class="note"><strong>UWAGA</strong>: Więcej informacji na temat wektorów można znaleźć <a href="../../../../Additional_Information/Vectors.htm">tutaj</a>.</p>
   <p>Jest kilka rzeczy, które możemy teraz stwierdzić na podstawie dwóch dowolnych wektorów w odniesieniu do wyniku ich iloczynu punktowego:</p>

@@ -1,0 +1,93 @@
+
+  
+  Kompilacja
+  Kompilowanie gry może oznaczać jedną z dwóch rzeczy: skompilowanie jej do testów lub skompilowanie w celu stworzenia ostatecznej wersji na określoną platformę docelową. pakiet wykonywalny na konkretną platformę docelową. Ta strona ma na celu szczegółowe wyjaśnienie obu tych opcji.
+  Kompilacja do testów
+  Aby skompilować grę do testów, wystarczy nacisnąć przycisk Odtwórz  w górnej części strony IDE, co spowoduje uruchomienie gry do testów przy użyciu określonego celu. Możesz także uruchomić grę w trybie Debug Mode, testując ją za pomocą przycisku Debug . Spowoduje to uruchomienie gry, ale także otwarcie okna Debugowanie, w którym można monitorować działanie gry i sprawdzać ewentualne problemy (więcej informacji na ten temat znajduje się w rozdziale Debugowanie ).
+  Ustawienia docelowe
+  Domyślnie GameMaker Studio 2 uruchamia się i debuguje przy użyciu wbudowanej maszyny wirtualnej (VM), co jest mniej więcej tym samym, co uruchamianie na używanym stacjonarnym systemie operacyjnym. Jednak GameMaker Studio 2 jest silnikiem wieloplatformowym i można testować, debugować i kompilować pakiety wykonywalne swoich projektów na wielu różnych platformach docelowych (dostępne platformy zależą od szczegółów licencji). Aby zmienić aktualną platformę docelową, należy kliknąć  na przycisku Targets , aby otworzyć okno Targets Window, które będzie wyglądało tak jak poniżej (dokładne szczegóły zależą od rodzaju licencji):
+  U góry, obok przycisku Cele, znajdują się bieżące ustawienia, które informują o aktualnie używanej platformie i konkretnych ustawieniach, a następnie pozostała część okna zawiera szczegóły i opcje wszystkich dostępnych celów, które można wybrać do użycia w zamian. Poniżej wyjaśniono poszczególne sekcje tego okna:
+  
+    
+    
+  
+  Platforma
+  
+    W tej sekcji znajduje się lista wszystkich dostępnych platform docelowych. Zawartość tej listy zależy od posiadanej licencji, ale zawsze będzie zawierała przynajmniej platformę docelową "Opera GX". Aby wybrać platformę docelową, wystarczy kliknąć na niej . Spowoduje to zaktualizowanie pozostałych okien opcji, tak aby wyświetlały różne szczegóły w zależności od wybranej platformy.
+    Szczegółowe informacje na temat kompilacji dla każdej platformy znajdują się w sekcji "Tworzenie ostatecznego pakietu wykonywalnego" poniżej.
+  
+  Wyjście
+  
+    Każda platforma docelowa może mieć jeden lub więcej formatów wyjściowych, z których najważniejsze to:
+    
+      VM: VM (Virtual Machine) wykorzystuje ogólny runner dla każdej platformy, a następnie interpretuje kod dla Twojej gry. Zazwyczaj ta opcja jest używana do testowania ze względu na szybszy czas kompilacji, ale nie oferuje takiego samego wzrostu wydajności, jaki oferuje opcja YYC (jeśli jest dostępna). Można jej używać do kompilowania pakietów wykonywalnych dla mniejszych gier lub gier, w których wydajność nie będzie problemem.
+      YYC: Kompilator YYC (YoYo Compiler) pobiera normalny plik wyjściowy GameMaker Studio 2 i kompiluje go do natywnego kodu dla platformy docelowej, "usuwając" niepotrzebne funkcje i wykonując wiele innych technik optymalizacji, aby stworzyć mniejszy i bardziej wydajny pakiet wykonywalny. Może to zwiększyć wydajność gry co najmniej dwu- lub trzykrotnie, zwłaszcza w przypadku gier o dużej zawartości logiki, i jest idealnym rozwiązaniem w przypadku większych projektów lub projektów wymagających dużej mocy procesora. Czas kompilacji może być dłuższy i zawsze należy wyczyścić kompilator cache przed zbudowaniem ostatecznego, kompletnego pakietu asset dla platformy docelowej. Należy pamiętać, że platforma docelowa YYC może wymagać zainstalowania dodatkowych narzędzi dla wybranej platformy, w przeciwnym razie nie będzie działać - więcej informacji na ten temat można znaleźć w Centrum Pomocy YoYo Games oraz na stronach Preferencje poszczególnych platform docelowych, wyszczególnionych w tym podręczniku.
+      JavaScript: Cel JavaScript będzie dostępny tylko dla określonych celów, takich jak cel HTML5, i ustawia grę tak, aby była kompilowana do czystego JavaScriptu. Gra używa ECMAScript 2015 (lub ES6) do wypisywania kodu JS.
+    
+  
+  Urządzenie
+  
+    Niektóre platformy (np. iOS lub Android) umożliwiają powiązanie jednego lub kilku urządzeń z GameMaker Studio 2, dzięki czemu można na nich selektywnie kompilować gry. Początkowo lista urządzeń będzie pusta i aby otworzyć Edytor urządzeń, należy kliknąć  na ikonie ołówka :
+    W tym miejscu można dodawać nowe urządzenia, a także zlecać stronie GameMaker Studio 2 testowanie połączenia z dowolnym urządzeniem lub urządzeniami, które mogą być podłączone. Dokładna zawartość
+      tego okna zależy od specyfiki platformy (szczegółowe informacje na temat danej platformy można znaleźć w rozdziale Menedżer urządzeń ). Po znalezieniu lub dodaniu urządzenia,
+      zostanie ono wyświetlone w tym oknie, tak jak na poniższym obrazku dla systemu Android:
+    Dokładne procedury i wymagania dotyczące konfigurowania urządzeń oraz rozwiązywania problemów można znaleźć w odpowiedniej sekcji Bazy wiedzy programu GameMaker Studio 2.
+  
+  Konfiguracja
+  
+    Jak wyjaśniono w rozdziale Konfiguracjemożna przechowywać pewne szczegóły dotyczące kompilacji gry jako Configs. Ta sekcja okna Targets pozwala na automatyczne wybranie przez GameMaker Studio 2 określonej konfiguracji dla konkretnej platformy docelowej.
+  
+  Istnieje również szereg preferencji, które można ustawić w celu zmodyfikowania i dostosowania przepływu pracy kompilacji, co opisano na następnej stronie:
+  
+    Preferencje dotyczące kompilacji
+  
+  Tworzenie końcowego pakietu wykonywalnego
+  Przegląd
+  Można po prostu kliknąć przycisk Utwórz plik wykonywalny  na stronie IDE, aby rozpocząć budowanie kompilatora, lub wybrać polecenie Utwórz plik wykonywalny z menu Budowa. W obu przypadkach rozpocznie się proces kompilacji, który zależy od wybranej platformy docelowej.
+  Na obiekcie Opera GX otworzy się specjalne okno umożliwiające skompilowanie i przesłanie gry do GXC; na wszystkich innych obiektach otworzy się okno eksploratora plików, w którym można nadać ostateczną nazwę pliku wykonywalnego gry, a następnie kliknąć przycisk Zapisz , aby rozpocząć proces kompilacji i budowania. Po wykonaniu tych czynności zostaną wygenerowane niezbędne pliki, dzięki czemu będzie można rozpowszechniać grę w dowolny sposób.
+  W przypadku niektórych platform kompilacja projektu gry będzie wymagała skonfigurowania odpowiednich ustawień  narzędzia budowania (zobacz tutaj), a także wypełnił odpowiednie pola w Preferencjach platformy.
+  W zależności od posiadanej licencji może istnieć możliwość budowania gry z wiersza poleceń, co pozwala na ustawienie ciągłej integracji projektu i usprawnienie procesu budowania i testowania. Więcej informacji na temat budowania z wiersza poleceń można znaleźć na tej stronie.
+  UWAGA Przed ostateczną kompilacją projektu do wydania, zawsze powinieneś wyczyścić pamięć  podręcznąkompilatora Asset  (używając ikony "miotły"  w górnej części strony IDE). GameMaker Studio 2 cache wiele plików gry, aby utrzymać prędkość kompilacji na minimalnym poziomie, a te mogą czasami zostać uszkodzone, więc bezpieczniej jest wyczyścić tę stronę cache przed kompilacją do wydania.
+  Formaty docelowe
+  Każda opcja docelowa zapisuje dane w formacie właściwym dla danej platformy, wymienionym poniżej:
+  
+    Opera GX - Podczas kompilacji dla celu "Opera GX" zobaczysz okno "Opera GX Packaging", które najpierw poprosi Cię o zalogowanie się przy użyciu konta Opera:Uwaga: nie musisz się tu logować, jeśli już zalogowałeś się do GMS2 przy użyciu konta Opera.
+      
+      Po zalogowaniu rozpocznie się kompilacja Twojej gry i przesłanie jej do GXC. Następnie możesz kliknąć na "Edit Game on Opera", aby edytować grę w GXC DevCloud i opublikować ją:
+      Aby dowiedzieć się więcej na temat procesu przesyłania gry przez Operę do GXC, zapoznaj się z tą stroną na YoYo Games Helpdesk.
+    
+    Windows -  Kompilacja dla ogólnego systemu operacyjnego Windows wymaga najpierw wyboru między utworzeniem pakietu instalacyjnego lub pakietu Zip , gdzie instalator będzie pojedynczym plikiem wykonywalnym, który zainstaluje grę, a plik Zip będzie pojedynczym skompresowanym plikiem w formacie *.zip zawierającym wszystkie pliki gry (pliki będą musiały zostać rozpakowane, aby gra mogła zostać uruchomiona). Jeśli zaznaczysz pole wyboru Remember Packaging Option (Zapamiętaj opcję pakowania ), GameMaker Studio 2 zapamięta ten wybór dla wszystkich przyszłych kompilacji (można go zresetować lub zmienić w Preferencjach Windows). Więcej informacji na ten temat można znaleźć w Centrum Pomocy YoYo Games. Należy pamiętać, że Windows może kompilować pliki wykonywalne 32- lub 64-bitowe, w zależności od tego, co zostało wybrane w Ogólnych opcjach gry. Zdecydowanie zalecamy, aby wszystkie nowe projekty używały Runtime do tworzenia 64-bitowych plików wykonywalnych, ponieważ 32-bitowy runtime będzie w przyszłości wycofywany i usuwany.
+    AplikacjeUbuntu (Linux) - Ubuntu (Linux) mogą być kompilowane jako pliki *.zip - zawierające plik wykonywalny x64 lub ARM - w zależności od urządzenia, na które są przeznaczone. Więcej informacji można znaleźć w Centrum pomocy YoYo Games.
+    HTML5 -  Jeśli wybrałeś HTML5, zostanie utworzony plik index.html (jest to nazwa domyślna, ale możesz nadać własną nazwę w Preferencjach platformy) wraz z folderem zawierającym pliki gry, który zostanie zapisany we wskazanej lokalizacji. Aby gra działała, oba te pliki muszą zostać przesłane na serwer. Stronę index.html można również dostosować do własnych potrzeb, aby wyświetlała grę w innym kolorze tła, w innym położeniu itp., ale do tego potrzebna jest znajomość języka HTML. Więcej informacji można znaleźć w Centrum Pomocy YoYo Games.
+    Android -  w przypadku urządzeń z systemem Android możesz wybrać plik *.apk lub *.aab (Android App Bundle) w oknie wyświetlanym w celu zapisania gry:
+      
+      Rodzaj wybranego pliku zależy od sklepu, do którego chcesz trafić - plik *.aab jest wymagany w sklepie Google Play, natomiast plik *.apk może być używany w innych sklepach. Więcej informacji można znaleźć w Centrum pomocy YoYo Games.
+    
+    iOS -  Kompilacja do iOS spowoduje utworzenie pliku xarchive, który jest następnie używany w programie Xtools do utworzenia ostatecznego pakietu iOS. Należy pamiętać, że do kompilacji do iOS potrzebny jest komputer Apple Mac z systemem OSX lub nowszym oraz odpowiednimi certyfikatami i uprawnieniami. Więcej informacji na ten temat można znaleźć w Centrum pomocy YoYo Games.
+    macOS -  Kompilacja dla celu macOS wymaga najpierw wyboru między utworzeniem pliku DMG lub Zip :
+      Opcja "Package as DMG" spowoduje utworzenie pakietu instalacyjnego .dmg, który może być użyty do zainstalowania gry na komputerze Mac. Należy pamiętać, że podczas procesu kompilacji na komputerze Mac pojawi się instalator, który zniknie po zakończeniu procesu kompilacji.
+      
+      Polecenie "Package as Zip" spowoduje utworzenie pliku *.app lub *.pkg, w zależności od tego, czy chcesz go później przesłać do Mac App Store, czy nie. Podobnie jak w przypadku iOS, wymagany jest komputer Apple Mac z systemem OSX lub nowszym, a także odpowiednie certyfikaty i uprawnienia. Więcej informacji na ten temat można znaleźć w Centrum Pomocy YoYo Games.
+    
+    Windows UWP - Na stronie Windows UWP, GameMaker Studio 2 zostanie utworzony pakiet *.appxbundle, który można następnie przesłać do sklepu Windows lub dystrybuować w innych miejscach. Po kliknięciu przycisku Create Executable (Utwórz plik wykonywalny) zostaniesz poproszony o poinformowanie GameMaker Studio 2, jakiego typu pakiet chcesz utworzyć (może być dla architektur ARM, x64 i/lub x86), a także powinieneś wybrać te platformy docelowe, na których gra będzie obsługiwana (musisz wybrać co najmniej jedną, ale możesz wybrać wszystkie trzy lub dowolną kombinację): 
+      
+      Jeśli zaznaczysz pole wyboru Package For Store Upload (Pakiet do przesłania do sklepu), utworzony pakiet będzie miał postać pliku *.appxupload, który według specyfikacji firmy Microsoft powinien być używany do przesyłania aplikacji do sklepu, jak wyjaśniono w tym artykule (uwzględnione zostaną wszystkie wybrane architektury, podobnie jak w przypadku *.appxbundle). Więcej informacji na temat konfigurowania i kompilowania do platformy UWP można znaleźć w Centrum Pomocy YoYo Games.
+    
+  
+  Po utworzeniu wykonywalnego pakietu asset można udostępnić plik innym osobom lub umieścić go na swojej stronie internetowej do pobrania, przesłać te pliki do różnych serwisów hostingowych w celu indywidualnej dystrybucji lub nawet do sklepów internetowych (takich jak Google Play, Apple App Store lub Microsoft Store) w celu ogólnej dystrybucji i sprzedaży detalicznej.
+  Pamiętaj, że możesz rozpowszechniać gry stworzone za pomocą GameMaker Studio 2 w dowolny sposób, także sprzedawać je. Oczywiście zakłada to, że sprites, obrazy i dźwięki, których użyłeś do stworzenia gry, mogą być również rozpowszechniane lub sprzedawane oraz że posiadasz prawa do wszystkich assets, a także, że gra jest zgodna z umową EULA firmy YoYo Games dla GameMaker Studio 2.
+   
+   
+   
+  
+    
+      
+        Powrót: Wprowadzenie do GameMaker Studio 2
+        Następny: Debugowanie
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

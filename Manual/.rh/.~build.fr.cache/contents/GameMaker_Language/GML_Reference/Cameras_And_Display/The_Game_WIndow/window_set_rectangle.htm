@@ -1,0 +1,53 @@
+
+  
+  window_set_rectangle
+  Za pomocą tej funkcji można ustawić pozycję okna gry w przeglądarce (HTML5) lub na wyświetlaczu (Windows, Ubuntu (Linux) lub macOS), a także ustawić skalę okna. Więcej informacji na temat pozycji okna i jego rozmiaru można znaleźć na stronach window_set_position()    oraz . window_set_size().
+   
+  Składnia:
+  window_set_rectangle(x, y, w, h);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x
+        The new x coordinate of the window.
+     
+      
+        y
+        The new y coordinate of the window.
+     
+      
+        w
+        The new width of the window.
+     
+      
+        h
+        The new height of the window.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  window_set_rectangle(0, 0, display_get_width(), display_get_height());
+  Powyższy kod ustawi okno gry tak, aby zajmowało cały obszar wyświetlania (albo przeglądarkę, albo ekran, w zależności od platformy docelowej).
+   
+   
+   
+  
+    
+      
+        Powrót: Okno gry
+        Następny: window_set_cursor
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

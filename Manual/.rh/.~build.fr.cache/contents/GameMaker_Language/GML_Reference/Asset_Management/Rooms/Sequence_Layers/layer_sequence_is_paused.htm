@@ -1,0 +1,44 @@
+
+  
+  sekwencja_warstw_jest_pauzowana
+  Za pomocą tej funkcji podajesz identyfikator elementu sequence - zwrócony przez layer_sequence_create() lub przez jedną z funkcji elementów warstwy - i sprawdzi ona, czy strona sequence jest aktualnie wstrzymana, zwracając true, jeśli jest wstrzymana, i false, jeśli nie jest.
+   
+  Składnia:
+  layer_sequence_is_paused(sequence_element_id)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sequence_element_id
+        The unique ID value of the sequence element to target
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if layer_sequence_is_paused(title_sequence) != 0
+    {
+        layer_sequence_play(title_sequence);
+    }
+  Powyższy kod sprawdza, czy element sequence o identyfikatorze przechowywanym w zmiennej "title_sequence" jest wstrzymany, a jeśli tak, rozpoczyna jego odtwarzanie.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy sekwencyjne
+        Następny: layer_sequence_is_finished
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

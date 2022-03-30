@@ -15,10 +15,10 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>buffer_async_group_option</h1>
-  <p>Za pomocą tej funkcji można ustawić pewne specyficzne dla platformy opcje zapisywanej grupy <span class="notranslate">buffer</span>. Dostępne są następujące opcje:</p>
+  <p>Za pomocą tej funkcji można ustawić pewne specyficzne dla platformy opcje zapisywanej/wczytywanej grupy <span class="notranslate">buffer</span>. Dostępne są następujące opcje:</p>
   <ul class="colour">
     <li>&quot;<b>subtitle</b>&quot; lub &quot;<b>slottitle</b>&quot; - Wartością tej opcji będzie <span class="notranslate">string</span>, który będzie wyświetlany użytkownikowi podczas zarządzania danymi zapisu w systemie operacyjnym. Ma to znaczenie tylko przy zapisywaniu danych, a nie przy ich ponownym wczytywaniu.</li>
-    <li>&quot;<b>showdialog</b>&quot; - Wartością tej opcji jest boolean <span class="inline">true</span> lub <span class="inline">false</span>. Jeśli ustawiona na <span class="inline">true</span>, podczas zapisywania <i>lub</i> ładowania <span class="notranslate">GameMaker Studio 2</span> pokaże UI systemu, w przeciwnym razie będzie to quicksave/quickload bez pokazywania UI. Zazwyczaj jest ona potrzebna tylko w przypadku obsługi wielu gniazd zapisu, aby umożliwić użytkownikowi wybór gniazda, ale jeśli obsługujesz tylko jedno gniazdo na użytkownika, ustaw ją na <span class="inline">false</span>.</li>
+    <li>&quot;<b>showdialog</b>&quot; - Wartością tej opcji jest boolean <span class="inline">true</span> lub <span class="inline">false</span>. Jeśli ustawiona na <span class="inline">true</span>, podczas zapisu <i>lub</i> ładowania <span data-keyref="GameMaker Name">GameMaker</span> pokaże UI systemu, w przeciwnym razie wykona quicksave/quickload bez pokazywania UI. Zazwyczaj jest to potrzebne tylko wtedy, gdy obsługujesz wiele miejsc zapisu, aby umożliwić użytkownikowi wybór miejsca, ale jeśli obsługujesz tylko jedno miejsce na użytkownika, ustaw tę opcję na <span class="inline">false</span>.</li>
     <li>&quot;<b>savepadindex</b>&quot; - W tej opcji należy podać <i>indeks</i> gracza, który zapisuje <i>lub</i> ładuje dane, a system będzie zapisywał i odczytywał dane z folderu zapisów tego gracza.</li>
     <li>&quot;<b>saveslotsize</b>&quot; - Ta opcja wymaga podania rzeczywistego rozmiaru w bajtach, który ma zostać zapisany (można więc wykonać operację <a href="buffer_seek.htm"><span class="inline">buffer_seek()</span></a> i <a href="buffer_tell.htm"><span class="inline">buffer_tell()</span></a> aby to uzyskać). Należy pamiętać, że podanie tej wartości nie jest obowiązkowe, ponieważ wszystkim zapisom jest wstępnie przypisywane minimalne miejsce, które zwykle różni się w zależności od platformy docelowej.</li>
     <li>&quot;<strong>ps_create_backup</strong>&quot; - <em>(tylko PlayStation)</em> - ustawienie tej opcji na <span class="inline">true</span> daje pewność, że dane zapisu zostaną zarchiwizowane, gdy katalog zapisu zostanie odmontowany (tj. gdy zostanie wywołana funkcja <span class="inline"><a href="buffer_async_group_end.htm">buffer_async_group_end()</a></span> ). Więcej informacji można znaleźć w dokumentacji konsoli.</li>
@@ -36,12 +36,12 @@
       </tr>
       <tr>
         <td><span class="notranslate">option</span></td>
-        <td><span data-keyref="Type_String">String</span></td>
+        <td><span data-keyref="Type_String"><a data-rhwidget="HyperlinkPopover" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
         <td><span class="notranslate">The option to set.</span></td>
       </tr>
       <tr>
         <td><span class="notranslate">value</span></td>
-        <td>Wartość<span data-keyref="Type_Real">rzeczywista</span> lub <span data-keyref="Type_String">łańcuch</span></td>
+        <td><span data-keyref="Type_Real"><a data-rhwidget="HyperlinkPopover" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span> lub <span data-keyref="Type_String"><a data-rhwidget="HyperlinkPopover" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
         <td><span class="notranslate">The value to set (can be a real or string, depending on the option).</span></td>
       </tr>
     </tbody>

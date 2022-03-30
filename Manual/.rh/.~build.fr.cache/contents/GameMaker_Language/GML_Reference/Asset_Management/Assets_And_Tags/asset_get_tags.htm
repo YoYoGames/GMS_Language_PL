@@ -1,0 +1,104 @@
+
+  
+  asset_get_tags
+  Za pomocą tej funkcji można pobrać z przeglądarki asset wszystkie znaczniki przypisane do adresu Asset. Podajesz albo nazwę asset (jako string) albo jej indeks asset, a funkcja zwróci tablicę znaczników dla tego adresu asset. Jeśli nie zostaną znalezione żadne znaczniki lub wystąpi błąd (np. podana nazwa string nie istnieje), zwrócona tablica będzie pusta. Jeśli podasz wartość indeksu asset, będziesz musiał podać opcjonalny argument asset type (stała), ponieważ assets różnych typów mogą mieć ten sam indeks, choć nie mogą mieć tej samej nazwy. Dostępne typy asset są wymienione w poniższej tabeli:
+  
+    
+      
+        Stała
+        Opis
+      
+      
+        asset_object
+        Podana nazwa odnosi się do obiektu.
+      
+      
+        asset_sprite
+        Podana nazwa odnosi się do sprite'a.
+      
+      
+        asset_sound
+        Nadana nazwa odnosi się do dźwięku.
+      
+      
+        asset_room
+        Nazwa odnosi się do room.
+      
+      
+        asset_tiles
+        Podana nazwa odnosi się do zestawu płytek.
+      
+      
+        asset_path
+        Podana nazwa odnosi się do ścieżki.
+      
+      
+        asset_script
+        Nazwa odnosi się do script.
+      
+      
+        asset_font
+        Podana nazwa odnosi się do czcionki.
+      
+      
+        asset_timeline
+        Imię odnosi się do linii czasu.
+      
+      
+        asset_shader
+        Podana nazwa odnosi się do shadera.
+      
+      
+        asset_animationcurve
+        Podana nazwa odnosi się do krzywej animacji.
+      
+      
+        asset_sequence
+        Podana nazwa odnosi się do sekwencji.
+      
+    
+  
+   
+  Składnia:
+  asset_get_tags(name_or_index, [asset_type]);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        name_or_index
+        Ciąg lub aktywa
+        The name of the asset (a string) or its index.
+      
+      
+        [asset_type]
+        Rodzaj aktywów Stała
+        OPTIONAL! The type of asset to get the tags for, only used when supplying an index for the first argument.
+      
+    
+  
+   
+  Zwroty:
+  Array
+   
+  Przykład:
+  my_tags = asset_get_tags(object_get_name(object_index));
+  Powyższy kod pobierze wszystkie tagi przypisane do strony object, z której została utworzona instancja uruchamiająca ten kod.
+   
+   
+   
+  
+    
+      
+        Powrót: Aktywa i znaczniki
+        Następny: asset_add_tags
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

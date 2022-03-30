@@ -1,0 +1,43 @@
+
+  video_set_volume
+  Ta funkcja zmienia głośność dźwięku w aktualnie załadowanym filmie. Przyjmuje ona wartość z przedziału od 0 do 1, gdzie 0 oznacza ciszę, a 1 - maksymalną głośność.
+  Upewnij się, że jest on wywoływany tylko po wywołaniu video_open(), ale przed wywołaniem video_close(), w przeciwnym razie nie wykona żadnego działania (ponieważ nie zostanie załadowany film).
+   
+  Składnia:
+  video_set_volume(value);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        value
+        Real
+        Volume value between 0 and 1
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  my_video = video_open("splash.mp4");
+    video_set_volume(0.5);
+  Powyższy kod wczytuje plik splash.mp4 z katalogu Included Files gry i zmienia jego głośność na 0,5 (50% maksymalnej głośności).
+   
+   
+  
+    
+      
+        Powrót: Filmy
+        Next: video_open
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

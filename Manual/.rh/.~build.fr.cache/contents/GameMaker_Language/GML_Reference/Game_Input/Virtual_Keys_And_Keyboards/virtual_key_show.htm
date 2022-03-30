@@ -1,0 +1,52 @@
+
+  
+  virtual_key_show
+  Po utworzeniu klucza wirtualnego dla urządzeń może zajść potrzeba sprawdzenia, czy jest on prawidłowo umieszczony i działa prawidłowo. W tym celu należy wywołać tę funkcję, używając indeksu wirtualnego klawisza, który ma być widoczny (utworzonego wcześniej i przechowywanego za pomocą funkcji virtual_key_add()), co spowoduje narysowanie na ekranie kolorowego prostokąta reprezentującego ten klawisz. Po uzyskaniu zadowalających efektów zaleca się utworzenie i umieszczenie w jego obszarze własnej grafiki.
+  UWAGA Na rysowany prostokąt będą miały wpływ opcje mieszania, koloru i alfa ustawione przez odpowiednie funkcje rysowania.
+   
+  Składnia
+  virtual_key_show(index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Identyfikator klucza wirtualnego
+        The index of the virtual key to show.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if global.Debug
+    {
+        virtual_key_show(global.Left);
+    }
+    else
+    {
+        virtual_key_hide(global.Left);
+    }
+  Powyższy kod sprawdza zmienną globalną "global.Debug" i jeśli jest ona prawdziwa, to na ekranie zostanie narysowany wirtualny klucz indeksowany w zmiennej "global.Left", a jeśli jest fałszywa, to klucz zostanie ukryty.
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Klawisze i klawiatury wirtualne
+        Następny: virtual_key_hide
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

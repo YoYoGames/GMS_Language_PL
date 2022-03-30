@@ -1,0 +1,47 @@
+
+  
+  layer_background_xscale
+  Za pomocą tej funkcji można ustawić skalę wzdłuż osi x elementu tła. Podajesz identyfikator elementu tła (który otrzymujesz podczas tworzenia elementu tła za pomocą layer_background_create()    lub po użyciu funkcji layer_background_get_id()), a następnie ustawia wartość skali. Podana wartość skali to mnożnik, który zostanie użyty do zmiany sposobu wyświetlania elementu tła,
+    gdzie wartość 0,5 spowoduje wyświetlenie elementu w połowie skali, a wartość 2 - w podwójnej skali. Należy pamiętać, że dopuszczalne są wartości ujemne, które spowodują "odwrócenie" elementu wokół pozycji (0,0), więc skala x równa -1 spowoduje wyświetlenie
+    obraz odwrócony.
+   
+  Składnia:
+  layer_background_xscale(background_element_id, xscale);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        background_element_id
+        The unique ID value of the background element to change
+     
+      
+        xscale
+        The scale value to use (1 is no scaling)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var lay_id = layer_get_id("Background_water"); var back_id = layer_background_get_id(lay_id); layer_background_xscale(back_id, -1);
+  Powyższy kod pobierze identyfikator warstwy o nazwie "Tło_wody", a następnie użyje go do uzyskania identyfikatora elementu tła na tej warstwie. Identyfikator ten zostanie następnie użyty do zmiany skali x elementu.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy tła
+        Następny: layer_background_yscale
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

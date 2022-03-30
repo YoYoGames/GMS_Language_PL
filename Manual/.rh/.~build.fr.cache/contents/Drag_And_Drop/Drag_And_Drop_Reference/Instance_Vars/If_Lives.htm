@@ -1,0 +1,61 @@
+
+  
+   Jeśli życie
+  Ta akcja służy do sprawdzania wartości zmiennej instancji lives za pomocą określonego wyrażenia. Podajesz typ wyrażenia do sprawdzenia oraz wartość, z którą ma być porównywana aktualna wartość lives, a instrukcja "if" zawsze
+    zawsze zwraca albo true, albo false, w zależności od użytych wyrażeń i wartości. Dostępne są następujące wyrażenia:
+  
+    Equals to - zmienna i wartość są dokładnie równe
+    Mniej niż - zmienna jest mniejsza od wartości
+    Większa niż - zmienna jest większa niż wartość
+    Less than or Equal to - zmienna jest mniejsza lub równa wartości
+    Greater than or Equal to - zmienna jest większa lub równa wartości
+  
+  Jeśli flag argument Not, to powyższe wyrażenia zostaną zanegowane, na przykład "równa się" stanie się "nie równa się", czyli sprawdzane będzie, czy wartość lives nie jest równa podanej wartości.
+  WAŻNA UWAGA: Ze względu na problemy z precyzją zmiennoprzecinkową sprawdzenie, czy dwie wartości są dokładnie równe, może zwrócić false, ponieważ jedna z nich może wynosić dokładnie 1, podczas gdy
+    druga może mieć wartość 1.00000000000001. Można tego uniknąć, stosując przed sprawdzeniem działanie Decimal to Integer lub używając wyrażeń "greater than" i "less than".
+  Należy pamiętać, że aby dodać akcje do bloku "jeśli", należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:
+  Te akcje będą teraz uruchamiane, jeśli "if" zakończy się wynikiem true, podczas gdy wszelkie
+    zostaną wykonane po bloku "if".
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Not
+        Ustawia się w celu sprawdzenia, czy wyrażenie nie ma wartości true.
+      
+      
+        Expression
+        Typ wyrażenia, które ma być użyte do sprawdzenia.
+      
+      
+        Value
+        Wartość, względem której ma być sprawdzana strona lives.
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdzi, czy wartość lives jest mniejsza lub równa
+    0, a jeśli tak, to nastąpi ponowne uruchomienie strony room.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje zmiennej instancji
+        Następny: Jeśli zdrowie
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

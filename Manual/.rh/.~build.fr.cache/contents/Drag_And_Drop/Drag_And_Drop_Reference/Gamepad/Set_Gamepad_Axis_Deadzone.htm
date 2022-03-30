@@ -1,0 +1,47 @@
+
+  
+   Ustaw strefę martwej strefy osi gamepada
+  Tej akcji można użyć do ustawienia "martwej strefy" dla osi drążka gamepada. Określasz indeks gamepada, który chcesz ustawić, a następnie ustawiasz wartość z zakresu od 0 do 1. Jeśli wartość wejściowa jest mniejsza niż podana wartość, oś drążka gamepada jest traktowana jako
+    jest ustawiona na 0. Należy pamiętać, że jest to ustawienie globalne, które ma wpływ na wszystkie osie podłączonego drążka.
+  Należy pamiętać, że nie zmienia to wyniku działania polecenia Get Gamepad Axis, które zawsze zwraca wartości z przedziałów -1 i 0 oraz 0 i 1. Na przykład ustawienie strefy martwej na 0,2 oznacza, że naciśnięcie drążka w prawo
+    zacznie zwracać wartość z zakresu 0 - 1 dopiero po przekroczeniu wartości surowej osi 0,2 - zatem gdy wartość surowa wynosi 0,2, wartość zwracana będzie 0, gdy wartość surowa wynosi 0,5, wartość zwracana będzie 0,375, a jeśli wartość surowa wynosi 0,9, wartość zwracana będzie 0,875.
+    wyniesie 0,875.
+   
+  Składnia działania:
+  
+   
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Gamepad
+        Indeks gamepada.
+      
+      
+        Deadzone
+        Wartość strefy martwej (0 - 1)
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji ustawia strefę martwego pola dla wszystkich indeksów gamepada na 0,2.
+   
+   
+   
+  
+    
+      
+        Powrót: Czynności gamepada
+        Następny: Jeśli naciśnięto przycisk Gamepada
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

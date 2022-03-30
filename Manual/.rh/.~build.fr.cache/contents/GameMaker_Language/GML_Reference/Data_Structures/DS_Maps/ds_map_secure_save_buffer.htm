@@ -1,0 +1,55 @@
+
+  
+  ds_map_secure_save_buffer
+  Ta funkcja umożliwia zapisanie utworzonej wcześniej mapy DS na stronie buffer. Użytkownik podaje wartość ID mapy DS (zwracaną przez funkcję ds_map_create()) oraz identyfikator strony buffer, na której ma zostać zapisana (zwrócony przez funkcję buffer_create()). Zwróć uwagę, że jeśli zapisywana mapa DS zawiera tablicę, to przy zapisie zostanie ona zamieniona na listę DS.
+  WAŻNE! Bezpiecznie zapisany plik mapy DS można wczytać tylko do urządzenia, które go utworzyło, i jeśli spróbujesz wczytać plik zapisany na innym urządzeniu, nie będzie on działał.
+  UWAGA: Ta funkcja nie jest obsługiwana w językach HTML5 i UWP.
+   
+  Składnia:
+  ds_map_secure_save_buffer(filename);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator mapy DS
+        The DS map ID value.
+      
+      
+        buffer
+        Identyfikator bufora
+        The buffer to save to.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  buff = buffer_create(128,buffer_grow,4);
+    var map = ds_map_create();
+    ds_map_add(map,"bob","ajob");
+    ds_map_add(map,"money",10);
+    ds_map_secure_save_buffer(map, buff);
+    ds_map_destroy(map);
+  Powyższy kod utworzy stronę buffer i mapę DS, a następnie wypełni mapę pewnymi wartościami i zapisze je na stronie buffer przed usunięciem mapy.
+   
+   
+   
+  
+    
+      
+        Powrót: Mapy DS
+        Następny: ds_map_secure_load
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

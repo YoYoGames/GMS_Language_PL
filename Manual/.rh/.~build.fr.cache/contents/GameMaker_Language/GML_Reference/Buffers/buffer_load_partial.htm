@@ -1,0 +1,62 @@
+
+  
+  bufor_load_partial
+  Ta funkcja wczyta niektóre dane buffer zapisane wcześniej za pomocą buffer_save() funkcji do istniejącego pliku buffer. Podajesz identyfikator utworzonego wcześniej pliku buffer, do którego chcesz wczytać dane, następnie zapisany plik buffer, który chcesz wczytać, a następnie offset od początku pliku buffer (w bajtach), z którego chcesz wczytać dane. Kolejne argumenty służą do ustawiania długości danych buffer (w bajtach) od początkowego punktu odsunięcia, do którego mają zostać wczytane, oraz punktu odsunięcia, do którego mają zostać wczytane dane w buffer (również w bajtach).
+  Informacje dotyczące poszczególnych platform można znaleźć na stronie buffer_load().
+   
+  Składnia:
+  buffer_load_partial(buffer, filename, offset, src_len, dest_offset);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        buffer
+        The index of the buffer to load into (destination).
+     
+      
+        filename
+        The name of the file to load from (source).
+     
+      
+        offset
+        The offset within the destination buffer to load to (in bytes).
+     
+      
+        src_len
+        The length of the part of the source buffer to load (in bytes).
+     
+      
+        dest_offset
+        The offset where to start putting the partial data in the destination buffer (in bytes).
+     
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  buff = buffer_create(256, buffer_grow, 1);
+    var _file = "save.dat";
+    var _so = 6;
+    var _sl = 5;
+    var _do= 0;
+    buffer_load_partial(buff, _file, _so, _sl, _do);
+  Powyższy kod utworzy nową stronę "grow" buffer, a następnie wczyta do niej część danych zapisanych w pliku "save.dat".
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_compress
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

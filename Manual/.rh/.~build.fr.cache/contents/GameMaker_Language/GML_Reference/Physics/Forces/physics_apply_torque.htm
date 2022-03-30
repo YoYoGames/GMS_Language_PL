@@ -1,0 +1,45 @@
+
+  
+  fizyka_zastosuj_moment obrotowy
+  Kiedy mówimy o momencie obrotowym, mówimy ogólnie o tendencji siły lub impulsu do obracania instancji wokół jej środka masy, ale w GameMaker Studio 2 można również zastosować moment obrotowy niezależnie do instancji, powodując jej obrót w danym kierunku. To, jak duży moment obrotowy zastosujesz, aby uzyskać pożądany obrót, zależy od rozmiaru i gęstości uchwytu przypisanego do instancji, ponieważ obie te właściwości definiują jej masę, która definiuje jej bezwładność, która wpływa na moment obrotowy! Ogólna zasada jest taka, że jeśli instancja ma dużą bezwładność, będziesz potrzebował dużego momentu obrotowego, aby zaczęła się obracać. Należy również zauważyć, że inne czynniki, takie jak grawitacja i kolizje, również mogą wpływać na moment obrotowy instancji. Poniżej znajduje się obrazek, który pomoże to wyjaśnić:
+  Jak widać, wielkość momentu obrotowego potrzebnego do obrócenia object zależy od masy i bezwładności, jakie daje ten element. Wszystko to jest obliczane przez GameMaker Studio 2 na podstawie rozmiaru i gęstości oprzyrządowania, które jest przypisane do instancji podczas jej tworzenia. Zauważ także, że dla obrotu w kierunku przeciwnym do ruchu wskazówek zegara wartość powinna być ujemna.
+   
+  Składnia:
+  physics_apply_torque(torque)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        torque
+        The torque (in Newton metres) to be applied
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if keyboard_check(vk_left)
+    {
+        physics_apply_torque(-100);
+    }
+  Powyższy kod spowoduje obrót instancji w kierunku przeciwnym do ruchu wskazówek zegara (w lewo) z momentem obrotowym 100 Nm po naciśnięciu klawisza strzałki w lewo.
+   
+   
+   
+  
+    
+      
+        Powrót: Siły
+        Next: physics_apply_angular_impulse
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

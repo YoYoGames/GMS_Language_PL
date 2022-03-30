@@ -1,0 +1,46 @@
+
+  
+  tileset_get_name
+  Ta funkcja zwraca nazwę w postaci ciągu znaków określonego adresu tile set. Jest to nazwa, która została określona dla strony tile set w przeglądarce Asset w głównym oknie GameMaker Studio 2. Należy pamiętać, że jest to tylko strona string i nie można jej używać do bezpośredniego odwoływania się do strony tile set - do tego potrzebny jest indeks zestawu kafelków. Można jednak użyć tej strony string do uzyskania indeksu zestawu kafelków, używając zwróconej strony string wraz z funkcją asset_get_index().
+   
+  Składnia:
+  tileset_get_name(index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Zestaw płytek Aktywa
+        The index of the tile set to get the name of.
+      
+    
+  
+   
+  Zwraca
+  String
+   
+  Przykład:
+  var _l = layer_get_id("tilemap_trees");
+    var _m = layer_tilemap_get_id(_l);
+    var _t = tilemap_tileset(_m);
+    tileset_name = tileset_get_name(_t);
+  Powyższy kod pobierze nazwę indeksu tile set dla podanej warstwy, zapisując zwróconą wartość string w zmiennej tileset_name.
+   
+   
+   
+  
+    
+      
+        Powrót: Zestawy płytek
+        Następny: tileset_get_texture
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,174 @@
+
+  
+  os_get_info
+  Ta funkcja zwraca plik DS Map zawierającą szczegółowe informacje o systemie operacyjnym, na którym uruchomiona jest gra. Dokładne informacje będą zależały od systemu operacyjnego i urządzenia, dlatego zaleca się przetestowanie tej funkcji na wszystkich platformach, na które chcesz ją skierować, i wyprowadzenie zwróconych wartości za pomocą funkcji takiej jak show_debug_message(). Należy pamiętać, że mapa DS nie jest automatycznie usuwana z pamięci i należy korzystać z funkcji ds_map_destroy() gdy nie jest ona już potrzebna.
+  Poniżej znajdują się szczegóły dotyczące dodatkowych danych, które zostaną udostępnione mapie DS na następujących platformach. Należy zauważyć, że na wszystkich platformach z wyjątkiem HTML5 mapa będzie miała klucz"is64bit", który będzie miał postać true lub false, w zależności od tego, czy program uruchamiający działa w trybie 64-bitowym, czy nie.
+  Windows / UWP
+  
+    W witrynach Windows Desktop i Windows UWP uzyskasz dodatkowe dane z DX11 dzięki następującym klawiszom dostępnym w mapie DS (przydatnym dla witryny extensions):
+    
+      udid: Identyfikator, który jest niepowtarzalny dla urządzenia
+      video_d3d11_device: wskaźnik na urządzenie DX11
+      video_d3d11_context: wskaźnik do kontekstu DX11
+      video_d3d11_spawnchain: wskaźnik do łańcucha wymiany DX11
+      video_adapter_vendorid: string z identyfikatorem sprzedawcy adaptera
+      video_adapter_deviceid: string z identyfikatorem urządzenia adaptera
+      video_adapter_subsysid: string z identyfikatorem podsystemu adaptera
+      video_adapter_revision: string z numerem rewizji karty
+      video_adapter_description: string z opisem karty graficznej
+      video_adapter_dedicatedvideomemory: string z rozmiarem pamięci wideo
+      video_adapter_dedicatedsystemmemory: string z rozmiarem pamięci systemowej (używanej przez adapter DX11)
+      video_adapter_sharedsystemmemory: string z rozmiarem współdzielonej pamięci systemowej
+    
+     
+  
+  macOS
+  
+    Funkcja zwraca pewne ograniczone informacje o OpenGL w systemie macOS:
+    
+      udid: Identyfikator, który jest niepowtarzalny dla urządzenia
+      gl_vendor_string: GL_VENDOR z OpenGL, przykład - "Intel Inc."
+      gl_version_string: GL_VERSION z OpenGL, przykład - "2.1 INTEL-16.2.16"
+      gl_renderer_string: GL_RENDERER z OpenGL, przykład - "Intel(R) Iris(TM) Graphics 6100".
+    
+     
+  
+  Ubuntu
+  
+    Zawiera ona takie same informacje jak na stronie macOS.
+     
+  
+  Android
+  
+    Na platformie Android można uzyskać dodatkowe dane z różnych interfejsów API za pomocą następujących kluczy dostępnych na mapie DS:
+    
+      android_tv: spowoduje to zwrócenie wartości true, jeśli urządzenie zostanie wykryte jako urządzenie telewizyjne Android, lub false w przeciwnym wypadku
+      GL_VERSION: wersja OpenGL podana przez sterownik
+      GL_VENDOR: sprzedawca OpenGL podany przez sterownik
+      GL_RENDERER: renderer OpenGL podany przez sterownik
+      GL_EXTENSIONS: extensions OpenGL, które są dostępne zgodnie z informacjami przekazanymi przez sterownik
+      GL_SHADING_LANGUAGE_VERSION: wersja GLSL, która jest obsługiwana przez ten sterownik OpenGL
+      GL_MAX_TEXTURE_SIZE: maksymalny rozmiar strony texture obsługiwany przez ten sterownik OpenGL
+      SDK_INT: wartość android.os.Build.VERSION.SDK_INT (zob. uwaga poniżej)
+      RELEASE: wartość android.os.Build.VERSION.RELEASE
+      MODEL: wartość android.os.Build.MODEL
+      DEVICE: wartość android.os.Build.DEVICE
+      MANUFACTURER: wartość dla android.os.Build.MANUFACTURER
+      CPU_ABI: wartość android.os.Build.CPU_ABI
+      CPU_ABI2: wartość android.os.Build.CPU_ABI2
+      BOOTLOADER: wartość android.os.Build.BOOTLOADER
+      BOARD: wartość android.os.Build.BOARD
+      VERSION: wartość os.version z metody Android System.getProperty.
+      REGION: wartości user.region z metody Android System.getProperty 
+      VERSION_NAME: wartość versionName tego pakietu - zobacz tutaj, aby uzyskać więcej informacji.
+      PHYSICAL_KEYBOARD: jeśli myślimy, że klawiatura fizyczna jest dostępna, to w przeciwnym razie string "TRUE" "FALSE"
+    
+    UWAGA: Informacje na temat wszelkich zmiennych android.os.Build można znaleźć w dokumentacji Android Developer.
+     
+  
+  iOS i tvOS
+  
+    Oto klucze zwracane na stronach iOS i tvOS (szczegółowe informacje można znaleźć w dokumentacji Apple Developer):
+    
+      name: string według zgłoszenia [[UIDevice currentDevice] name]
+      systemName: string według zgłoszenia [[UIDevice currentDevice] systemName]
+      systemVersion: ciąg znaków podany przez [[UIDevice currentDevice] systemVersion]
+      model: ciąg znaków podany przez [[UIDevice currentDevice] model]
+      localisedModel: ciąg znaków podany przez [[UIDevice currentDevice] localizedModel]
+      uiIdiom: ciąg znaków podany przez [[UIDevice currentDevice] userInterfaceIdiom]
+      platform: hw.machine string zebrane z sysctlbyname
+      hwModel: hw.model string zebrane z sysctlbyname
+      freeDiskSpace: Wolne miejsce na dysku
+      totalDiskSpace: Całkowita przestrzeń dyskowa
+      cpuFrequency: Częstotliwość procesora
+      busFrequency: Częstotliwość magistrali
+      cpuCount: Liczba procesorów
+      totalMemory: Całkowita pamięć urządzenia
+      userMemory: Pamięć użytkownika
+      maxSocketBufferSize: Maksymalny rozmiar gniazda buffer 
+      Dodatkowe klucze zawierające informacje o grafice OpenGL
+         
+    
+  
+  HTML5
+  
+    Zwraca -1.
+  
+  Nintendo Switch
+  
+    Zwraca -1.
+  
+  PlayStation 4
+  
+    Informacje na temat wymienionych tu funkcji można znaleźć w dokumentacji PS4.
+    Funkcja zwraca następujące klawisze na konsoli PlayStation 4:
+    
+      display_safe_area_ratio: Wartość zmiennoprzecinkowa zwrócona przez sceSystemServiceGetDisplaySafeAreaInfo().
+      is_neo_mode: Będzie to 1, jeśli gra działa na konsoli Neo (PS4 Pro), i 0, jeśli działa na zwykłej konsoli PS4.
+      enter_button_assign: Wartość całkowita zwracana przez sceSystemServiceParamGetInt(SCE_SYSTEM_SERVICE_PARAM_ID_ENTER_BUTTON_ASSIGN, &enterassign); wartość 0 oznacza, że przycisk Circle jest używany jako "assign", a 1 oznacza, że zamiast niego używany jest przycisk X.
+    
+     
+  
+  PlayStation 5
+  
+    Funkcja zwraca następujące klawisze na konsoli PlayStation 5:
+    
+      display_safe_area_ratio: Tak samo jak w przypadku PS4 (patrz wyżej).
+      display_resolution: "HD", "4K" lub "nieznany".
+      display_dynamic_range: "HDR", "SDR" lub "nieznany".
+      display_refresh_rate: "120Hz", "60Hz" lub "Nieznany".
+    
+     
+  
+  Xbox One
+  
+    Informacje zwracane na konsoli Xbox One są w większości takie same jak na stronie Windows, jednak klucze video_adapter_* i udid to 0 (z wyjątkiem video_adapter_description, który jest pustym string ""). Nie ma też klucza video_d3d11_swapchain.
+    Platforma ta zwraca również następujące informacje:
+    
+      is_xbox_one_x: Adres: 1, jeśli gra jest uruchamiana na konsoli Xbox One X, oraz 0, jeśli jest uruchamiana na podstawowej konsoli Xbox One.
+    
+     
+  
+  Xbox Seria X/S
+  
+    Informacje zwracane na konsolach Xbox Series X/S są w większości takie same jak na konsolach Xbox One, jednak klawisze video_d3d11_* zostały zastąpione przez video_d3d12_*.
+    Oto kilka kluczy, które ta platforma zwraca oprócz tych wymienionych w sekcji Xbox One:
+    
+      video_d3d12_cmdqueue: Wskazuje na kolejkę poleceń DX12
+      video_d3d12_cmdlist: Wskazuje na listę poleceń DX12
+      video_d3d12_currentrt: Wskazuje na bieżący cel renderowania DX12
+    
+  
+   
+   
+  Składnia:
+  os_get_info()
+   
+  Zwroty:
+  DS Map ID
+   
+  Przykład:
+  if (os_type == os_android)
+    {
+        var _info = os_get_info();
+        
+        if (_info[? "android_tv"])
+        {
+            global.android_tv = true;
+        }
+    }
+  Powyższy kod sprawdza, czy bieżący system operacyjny to Android, pobiera informacje o systemie operacyjnym i odczytuje zwróconą mapę, aby sprawdzić, czy gra działa na telewizorze Android. W takim przypadku ustawia zmienną niestandardową global.android_tv na true.
+   
+   
+  
+    
+      
+        Powrót: System operacyjny i kompilator
+        Następny: os_powersave_enable
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

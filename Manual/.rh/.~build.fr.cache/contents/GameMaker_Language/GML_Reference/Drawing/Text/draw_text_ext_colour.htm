@@ -1,0 +1,94 @@
+
+  
+  draw_text_ext_colour
+  Funkcja ta jest połączeniem funkcji podstawowej draw_text() z funkcjami draw_text_ext() oraz draw_text_colour() umożliwiając definiowanie kolorów gradientu dla tekstu, a także odstępów między wierszami i maksymalnej szerokości wiersza.
+  UWAGA Mieszanie gradientowe nie jest dostępne w przypadku celu HTML5, chyba że włączona jest obsługa WebGL. Można jednak ustawić kolory mieszania, co spowoduje mieszanie font z pierwszym podanym kolorem. Jednak wszystkie mieszania w ten sposób powodują utworzenie duplikatu strony font, która jest następnie przechowywana w witrynie cache i używana w razie potrzeby, co jest dalekie od optymalnego rozwiązania, a wielokrotne zmiany kolorów spowalniają działanie gry. Aby ograniczyć to zjawisko, można ustawić rozmiar strony font cache za pomocą funkcji font_set_cache_size().
+   
+  Składnia:
+  draw_text_ext_colour(x, y, string, sep, w, c1, c2, c3, c4, alpha);
+  
+    
+      
+      
+      
+    
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x
+        Real
+        The x coordinate of the drawn string.
+      
+      
+        y
+        Real
+        The y coordinate of the drawn string.
+      
+      
+        string
+        String
+        The string to draw.
+      
+      
+        sep
+        Real
+        The distance in pixels between lines of text.
+      
+      
+        w
+        Real
+        The maximum width in pixels of the string before a line break.
+      
+      
+        c1
+        Kolor
+        The colour for the top left of the drawn text.
+      
+      
+        c2
+        Kolor
+        The colour for the top right of the drawn text.
+      
+      
+        c3
+        Kolor
+        The colour for the bottom right of the drawn text.
+      
+      
+        c4
+        Kolor
+        The colour for the bottom left of the drawn text.
+      
+      
+        alpha
+        Real
+        The alpha for the text.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_text_ext_colour(200, 200, keyboard_string, 5, 300, c_blue, c_blue, c_navy, c_navy, 1);
+  Powyższy kod będzie rysował tekst wpisywany przez użytkownika na klawiaturze, dzieląc go na nowe linie za każdym razem, gdy długość string dla danej linii przekroczy 300 pikseli. kod zachowa również odstęp 5 pikseli między liniami, jeśli tak się stanie. Każda linia tekstu zostanie pokolorowana przy użyciu niebieskiego gradientu, z jasnoniebieskim kolorem u góry i ciemnoniebieskim u dołu.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekst
+        Następny: draw_text_ext_transformed
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -9,7 +9,7 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains the Get Gamepad Axis action" />
-  <meta name="rh-index-keywords" content="DnD™ Action - Get Gamepad Axis" />
+  <meta name="rh-index-keywords" content="GML Visual Action - Get Gamepad Axis" />
   <meta name="search-keywords" content="Get Gamepad Axis" />
 </head>
 <body>
@@ -17,9 +17,9 @@
   <h1><img> Pobierz Oś gamepada</h1>
   <p>Możesz użyć tej akcji, aby uzyskać wartości różnych osi z danego gamepada. Podajesz indeks gamepada (jest to numer &quot;gniazda&quot;, które zajmuje gamepad) i wybierasz oś do sprawdzenia spośród lewego lub prawego drążka, poziomego lub pionowego.
     lub pionowej. Zwracana wartość będzie zawierała się w przedziale od -1 do 1 dla każdej z dostępnych osi poziomych i pionowych: -1 to lewo, a 1 to prawo dla osi poziomej, a -1 to góra, a 1 to dół dla osi pionowej. Wartość zwrócona zostanie zapisana w
-    zmiennej docelowej podanej przez użytkownika do przyszłego użytku, którą można <span class="notranslate">flag</span> jako zmienną &quot;Temp&quot;, co oznacza, że działanie utworzy nową zmienną tymczasową (lokalną), która przechowa wartość zwracaną, jak pokazano w poniższym przykładzie.</p>
+    zmiennej docelowej dostarczonej przez użytkownika do przyszłego użytku, którą można <span class="notranslate">flag</span> jako zmienną &quot;Temp&quot;, co oznacza, że działanie utworzy nową zmienną tymczasową (lokalną), która będzie przechowywać wartość zwracaną, jak pokazano w poniższym przykładzie.</p>
   <p>Warto zauważyć, że <a href="Set_Gamepad_Axis_Deadzone.htm">ustawienie strefy martw</a> ej dla osi drążka <em>nie</em> będzie miało wpływu na zwracaną wartość, która zawsze będzie zawierać się w przedziale od -1 do 1. Na przykład ustawienie strefy martwej na 0,2 oznacza, że pchanie drążka w prawo zacznie zwracać wartość z przedziału 0 - 1 dopiero po przekroczeniu wartości 0,2.
-    drążka w prawo zacznie zwracać wartość z przedziału 0 - 1 dopiero wtedy, gdy wartość osi <em>raw</em> przekroczy 0,2 - zatem gdy wartość raw wynosi 0,2, wartość zwracana będzie 0, gdy wartość raw wynosi 0,5, wartość zwracana będzie 0,375, a jeśli wartość raw wynosi 0,9, to wartość zwracana będzie 0,9.
+    drążka w prawo zacznie zwracać wartość z przedziału 0 - 1 dopiero wtedy, gdy wartość osi <em>raw</em> przekroczy 0,2 - zatem gdy wartość raw wynosi 0,2, wartość zwracana wyniesie 0, gdy wartość raw wynosi 0,5, wartość zwracana wyniesie 0,375 lub gdy wartość raw
     wynosi 0,9, to wartość zwracana wyniesie 0,875.</p>
   <p> </p>
   <h4>Składnia działania:</h4>

@@ -1,0 +1,52 @@
+
+  
+   Nowy
+  Ta akcja jest używana tylko na stronie podczas tworzenia strony structs przy użyciu funkcji, która została oznaczona jako funkcja konstruktora (zobacz Deklarowanie nowej funkcji, aby uzyskać więcej informacji). Ta akcja
+    przyjmuje metodę funkcyjną poprzednio zdefiniowanej funkcji oraz pewną liczbę argumentów, które możesz dodać w razie potrzeby, korzystając z ikony  po lewej stronie. Argumenty te powinny odpowiadać danym wejściowym wymaganym przez funkcję i zostaną wykorzystane do wypełnienia tworzonej strony struct. Wynik struct zostanie zwrócony do zmiennej docelowej, która może być oznaczona jako tymczasowa zmienna lokalna lub nie.
+    jako tymczasowa zmienna lokalna lub nie.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Script
+        Nazwa funkcji script lub funkcji zdefiniowanej przez użytkownika, która ma zostać wywołana.
+      
+      
+        Argument0 ... Argument3
+        Różne argumenty (wartości), które mają być przekazane do script lub funkcji (nieużywane argumenty można pozostawić puste)
+      
+      
+        Target
+        Nazwa zmiennej, do której mają być kierowane zwracane wartości (może pozostać pusta)
+      
+    
+  
+   
+  Przykład rozszerzony:
+  Powyższy kod bloku akcji prawdopodobnie znalazłby się w zdarzeniu Create instancji i deklaruje
+    nową funkcję konstruktora init_char_struct z czterema argumentami: _str1, _str2, _val1 oraz _val2. Argumenty te są następnie używane do wypełnienia podanych zmiennych w tworzonej przez funkcję witrynie struct.
+    Funkcję można następnie wywołać za pomocą akcji New w dowolnym późniejszym zdarzeniu, na przykład tak:
+  Funkcja zostanie wywołana i zwróci nowy adres struct do tablicy "char", a struct
+    zostanie wypełniony zmiennymi "name", "location", "hp" i "mana", ustawionymi na wartości odpowiadające argumentom funkcji.
+   
+   
+   
+  
+    
+      
+        Powrót: Wspólne działania
+        Następny: Wywołanie funkcji
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

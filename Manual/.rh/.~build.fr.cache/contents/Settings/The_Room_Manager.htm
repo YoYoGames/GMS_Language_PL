@@ -1,0 +1,63 @@
+
+  
+   Room Manager
+  Korzystając z Przeglądarki zasobów, można tworzyć strony rooms i przenosić je między
+    między różnymi grupami folderów, aby zorganizować projekt w sposób, który najbardziej Ci odpowiada. Jednak gry w GameMaker Studio 2 zazwyczaj mają rooms w określonej kolejności, a co najmniej muszą mieć określony pokój startowy (po
+    (po rozpoczęciu gry w tym room możesz użyć kodu lub akcji, aby przejść do dowolnego room w grze).
+  Menedżera room można otworzyć, klikając przycisk "Dodatki"  w górnej części przeglądarki Asset i wybierając go z otwartego menu, można też
+    po prostu kliknąć  ikonę znajdującą się po lewej stronie adresu room w przeglądarce asset:
+  Po otwarciu, w menedżerze Room znajdują się dwie różne karty, jedna do porządkowania pomieszczeń, a druga do dziedziczenia pomieszczeń.
+    Kolejność na stronie room określa kolejność dostępu do strony rooms w przypadku dosłownego przemieszczania się po grze, przy użyciu funkcji room_goto_next() na stronie
+    na końcu każdej strony room, a na samej górze listy room zawsze będzie wyświetlana ikona "domu" , która oznacza, że ta strona room jest wyznaczonym
+    pokój startowy dla gry. Ikona ta będzie również wyświetlana w przeglądarce Asset, abyś mógł wyraźnie zobaczyć, która to sala room, niezależnie od sposobu filtrowania lub konfiguracji strony assets.
+  Uwaga: Identyfikatory w witrynie room assets nie będą w takiej samej kolejności jak na tej liście, dlatego nie należy bezpośrednio podawać wartości liczbowej, aby zmienić adres room na runtime. Zawsze używaj stałej pokojowej dla asset, do której chcesz się odwołać (jest to po prostu jej nazwa), lub pobieraj ją za pomocą funkcji.
+  Kolejność stron rooms można zmienić, klikając stronę  i przeciągając stronę room, którą chcesz przesunąć w górę lub w dół listy. Za pomocą strony  i/lub  /  można zaznaczyć wiele stron rooms, a następnie kliknąć i przeciągnąć je, aby przesunąć je w całości:
+  Karta Dziedziczenie pokoju służy do konfigurowania "dzieci" rooms. Dziecko room to takie, które zostało skopiowane z
+    rodzica" room i ustawiono na inherit wszystkie jego właściwości. Jeśli nie zrobisz nic z tym room, to room będzie rzeczywiście kopią oryginalnego room, ale możesz potem przejść do Edytora pomieszczenia i
+    włączać lub wyłączać dziedziczenie dla określonych elementów, takich jak warstwy lub instancje, a także dodawać nowe warstwy, instancje i właściwości do room.
+  Podobnie jak w przypadku karty Kolejność Room, można kliknąć przycisk  i przeciągnąć go, aby zmienić kolejność rooms, ale należy pamiętać, że wybranie dziecka room i przeniesienie go do innego rodzica spowoduje przerwanie dziedziczenia room z oryginalnym rodzicem, a zamiast tego inherit właściwości nowego room. Należy także pamiętać, że można przekształcić
+    dziecko w "pełny" room bez dziedziczenia, przeciągając je na lewą stronę listy (krawędź listy zostanie podświetlona). W tym momencie stanie się ono po prostu samodzielnym room.
+  Pokoje mogą mieć wiele dzieci, a każde dziecko może być rodzicem i mieć własne dzieci:
+  Mamy tu rodzica room, "rm_Level_1_Day", który ma dwoje dzieci
+    "rm_Level_1_Day_AfterBattle" i "rm_Level_1_Night". Przypisaliśmy także kolejne dziecko room do "rm_Level_1_Night" o nazwie "
+   rm_Level_1_Night_AfterBattle". W ten sposób można ponownie wykorzystać zasoby i projekt poziomu z jednego rodzica room, a następnie zmienić tylko to, co jest wymagane, aby nieco się różnić w dziecku room lub rooms.
+  UWAGA: Więcej informacji na temat dziedziczenia na stronie room można znaleźć tutaj.
+  Wreszcie, menedżer room ma kilka dodatkowych narzędzi ułatwiających nawigację i porządkowanie strony rooms. Na górze znajduje się Pasek wyszukiwania, który umożliwia dodanie szukanego terminu i szybkie przejście do stron rooms, których nazwy zawierają szukany termin.
+    Strona Rooms, w której znajduje się szukane hasło, zostanie podświetlona, a następnie można do niej szybko przejść, używając przycisków góra/dół znajdujących się z boku:
+  W dolnej części strony Room Manager znajdują się również pomocne przyciski, które umożliwiają przesuwanie strony rooms w górę lub w dół listy zamówień room:
+  Obok tych przycisków znajduje się także przycisk Utwórz grupę, który służy do tworzenia folderów grup.
+    Foldery te mogą być używane do lepszej organizacji rooms w grze (kolejnośćroom nadal będzie respektowana). Aby je dodać, możesz kliknąć i przeciągnąć rooms do folderu. Możesz także zaznaczyć wiele stron rooms, klikając i przytrzymując stronę  i/lub  / , a następnie kliknąć przycisk Utwórz grupę, a wszystkie zaznaczone strony rooms zostaną dodane do grupy. Pamiętaj, że zmieni to kolejność rooms w grze, a także, że jeśli później usuniesz folder grupy, wszystkie rooms znajdujące się w tym folderze również zostaną usunięte (domyślnie
+    domyślnie GameMaker ostrzeże Cię o tym).
+  Należy również pamiętać, że można kliknąć prawym przyciskiem myszy dowolną stronę room w Menedżerze Room, aby wyświetlić następujące menu:
+  W tym menu dostępne są następujące opcje:
+  
+    Utwórz pokój dziecięcy: Spowoduje to utworzenie nowej strony room jako dziecka klikniętej strony room, przy czym nowa strona room odziedziczy właściwości strony nadrzędnej room.
+    Edit: Spowoduje to otwarcie edytora pomieszczeń w witrynie room.
+    Edytuj znaczniki: Zostanie otwarty edytor znacz ników umożliwiający dodawanie znaczników do strony room.
+    Zmień nazwę: Umożliwia zmianę nazwy strony room asset (można też powoli kliknąć dwukrotnie stronę  na stronie room, aby zmienić jej nazwę).
+    Duplikuj: Spowoduje to powielenie zaznaczonej strony room, umieszczając nową stronę room pod zaznaczoną stroną room.
+    Favourite (Ulubione):  Spowoduje to dodanie wybranej strony room do sekcji Ulubione w Przeglądarce zasobów.
+    Usuń: Kliknięcie tego przycisku spowoduje usunięcie zaznaczonych stron room (lub rooms). Jeśli zostanie użyte w folderze grupowym, wszystkie strony rooms w obrębie folderu zostaną usunięte wraz z folderem. W przypadku użycia tej funkcji w odniesieniu do folderu nadrzędnego room usunięty zostanie tylko folder nadrzędny,
+      a wszystkie dzieci rooms pozostaną, choć będą teraz niezależne i nie będą już dziećmi rooms.
+    Rozwiń dzieci: Jeśli zostanie wybrany folder grupowy, ta opcja spowoduje rozwinięcie zawartości folderu.
+    Rozwiń wszystkie: Ta opcja spowoduje rozwinięcie wszystkich grup folderów.
+    Zwiń wszystkie: Ta opcja spowoduje zwinięcie wszystkich grup folderów.
+    Rozmieść:  Za pomocą podmenu ułóż można przesuwać stronę rooms w górę lub w dół w menedżerze room, podobnie jak za pomocą przycisków w dolnej części okna menedżera.
+    Otwórz w eksploratorze: Spowoduje to otwarcie eksploratora plików systemu operacyjnego na stronie asset w projekcie gry.
+    Kolor aktywów: Tutaj możesz wybrać kolor dla room (lub rooms), aby ułatwić ich identyfikację w Menedżerze Room. Należy pamiętać, że kolor ten będzie również używany w przeglądarce Asset i zastąpi wszelkie kolory ustawione wcześniej.
+  
+   
+   
+   
+  
+    
+      
+        Wstecz: Ustawienia gry
+        Następny: Dołączone pliki
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

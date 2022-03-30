@@ -1,0 +1,44 @@
+
+  
+  display_set_ui_visibility
+  Ta funkcja służy do pokazywania lub ukrywania interfejsu użytkownika systemu tylko w systemie Android. Funkcja wymaga podania jednej lub więcej flag systemowych w postaci wartości całkowitej. W przypadku używania więcej niż jednej flag, należy je połączyć za pomocą bitowego spójnika "lub", jak pokazano w poniższym przykładzie. Listę flag systemowych Android flags można znaleźć tutaj.
+   
+  Składnia:
+  display_set_ui_visibility(flags);
+  
+    
+      
+        Argument
+        Typ
+        flagi
+      
+      
+        flags
+        Real
+        The Android SYSTEM flags to use (as an integer value).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var flags = 1024|4096;
+    display_set_ui_visibility(flags);
+  Powyższy kod wykorzysta system Android flags "SYSTEM_UI_FLAG_IMMERSIVE_STICKY" i "SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN" do ustawienia widoczności wyświetlacza.
+   
+   
+   
+  
+    
+      
+        Powrót: Aparaty i wyświetlacz
+        Następny: display_set_timing_method
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

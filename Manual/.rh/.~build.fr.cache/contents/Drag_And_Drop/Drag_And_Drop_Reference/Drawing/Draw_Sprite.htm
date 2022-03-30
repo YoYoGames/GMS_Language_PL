@@ -1,0 +1,56 @@
+
+  
+   Rysuj sprite
+  Ta akcja narysuje stronę sprite gdzieś na stronie room. Określasz adres sprite, pozycję (absolutną w obrębie room lub względną względem instancji rysującej) oraz klatkę animacji sprite, jeśli ma ona wiele
+    klatek (zauważ, że klatki obrazu są numerowane od 0 w górę). Jeśli masz animowaną stronę sprite i chcesz, aby rysowała klatki tak, jakby była przypisana do object, to użyj -1 dla indeksu klatki lub wbudowanej zmiennej instancji image_index,
+    Pamiętaj jednak, że jeśli do instancji nie jest przypisana sprite, to nie będzie ona animowana, a jeśli przypisana sprite ma inną liczbę klatek niż ta, która jest rysowana, to sprite będzie rysowana z dodatkowymi klatkami lub pominiętymi.
+  WAŻNE: Ta akcja nie narysuje przekształconej strony sprite, nawet jeśli zmieniono mieszanie lub skalę obrazu. Więcej informacji na ten temat można znaleźć w akcji Rysuj Sprite przekształcony.
+  UWAGA: Ta akcja jest przeznaczona tylko do użycia w różnych zdarzeniach losowania i nie wylosuje niczego, jeśli zostanie użyta w innym miejscu.
+   
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Sprite
+         sprite do narysowania
+      
+      
+        x
+        Pozycja x do rysowania.
+      
+      
+        y
+        Pozycja y, w której ma zostać narysowana
+      
+      
+        Frame Index
+        Indeks ramki, która ma zostać narysowana
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji rysuje "cień" sprite w tej samej pozycji względnej co instancja
+    a następnie rysuje instancję sprite nad nią.
+   
+   
+   
+  
+    
+      
+        Powrót: Rysowanie działań
+        Następny: Rysuj Sprite Przekształcony
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

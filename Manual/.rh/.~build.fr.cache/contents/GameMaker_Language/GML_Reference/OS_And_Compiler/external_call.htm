@@ -1,0 +1,49 @@
+
+  
+  wywołanie zewnętrzne
+  Jeśli utworzono zewnętrzne wywołanie funkcji na stronie dll lub dylib za pomocą external_define()możesz użyć tej funkcji, aby ją wywołać. Podajesz nazwę wcześniej zdefiniowanej funkcji oraz każdy z wymaganych przez nią argumentów (każdy argument musi być odpowiedniego typu, albo rzeczywisty, albo string), a funkcja zwraca wynik zewnętrznego wywołania.
+   
+  Składnia:
+  external_call(id, args[0...15]);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Funkcja zewnętrzna
+        The name of the function that you want to call
+      
+      
+        args[0...10]
+        Wartośćrzeczywista lub łańcuch
+        The different arguments that you want to pass through to the external function
+      
+    
+  
+   
+  Zwroty:
+  Variable (the type of value returned will depend on the defined function)
+   
+  Przykład:
+  my_function = external_define("MyDLL.dll", "MyMin", dll_cdecl, ty_real, 2, ty_real, ty_real);
+    var _a = external_call(my_function, x, y);
+  Powyższy przykładowy kod wywołuje wcześniej zdefiniowaną funkcję zewnętrzną i przechowuje zwróconą wartość w zmiennej lokalnej.
+   
+   
+   
+  
+    
+      
+        Powrót: System operacyjny i kompilator
+        Następny: external_free
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

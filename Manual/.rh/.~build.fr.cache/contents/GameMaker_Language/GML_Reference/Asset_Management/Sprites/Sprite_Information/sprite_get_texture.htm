@@ -1,0 +1,55 @@
+
+  
+  sprite_get_texture
+  Ta funkcja zwraca specjalny wskaźnik na stronę sprite texture. Wartość ta może być następnie wykorzystana w innych funkcjach rysowania, w szczególności w funkcjach prymitywów 2D oraz w funkcjach Shadera. Więcej informacji o zwracanej stronie texture można uzyskać, korzystając z różnych funkcji texture_, które można znaleźć tutaj.
+   
+  Składnia:
+  sprite_get_texture(spr, subimg);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        spr
+        Aktywa Sprite
+        The index of the sprite to use.
+      
+      
+        subimg
+        Real
+        The sub-image of the sprite to use.
+      
+    
+  
+   
+  Zwraca
+  Texture Pointer
+   
+  Przykład:
+  var tex;
+    tex = sprite_get_texture(spr_Wall, 0);
+    draw_primitive_begin_texture(pr_trianglestrip, tex);
+    draw_vertex_texture(0, 0, 0, 0);
+    draw_vertex_texture(480, 0, 1, 0);
+    draw_vertex_texture(480, 640, 1, 1);
+    draw_vertex_texture(0, 640, 0, 1);
+    draw_primitive_end();
+  Powyższy kod narysuje pasek trójkątów o rozmiarze 4 vertex z teksturą texture zapisaną w zmiennej "tex".
+   
+   
+   
+  
+    
+      
+        Powrót: Informacje o Sprite
+        Następny: sprite_get_uvs
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

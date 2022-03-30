@@ -1,0 +1,49 @@
+
+  
+  pokój_przypisany
+  Ta funkcja skopiuje jeden adres room do innego, usuwając wszystkie instancje, tiles itd. z adresu room, do którego jest kopiowana, i zastępując je całkowicie zawartością nowego adresu room. Podajesz indeks do room, który ma zostać skopiowany (zdefiniowany w przeglądarce asset lub zwrócony przez funkcję room_add()), a także indeks źródłowej strony room. Zauważ, że wywołanie tej funkcji na stronie room asset utworzonej w przeglądarce Asset trwale zmieni zawartość pokoju i nawet wywołanie funkcji game_restart() nie przywróci pierwotnego stanu strony room (dopiero zakończenie gry i ponowne jej otwarcie spowoduje, że strona room znajdzie się w pierwotnym stanie).
+   
+  Składnia:
+  room_assign(ind, source);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Pokój Aktywa
+        The index of the room to be copied to.
+      
+      
+        source
+        Pokój Aktywa
+        The index of the room to be copied from.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  global.rm = room_add();
+    room_assign(global.rm, rm_Base);
+  Powyższy kod doda do gry nową stronę room, a następnie skopiuje do niej zawartość strony room zaindeksowanej jako "rm_Base".
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room_instance_add
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,60 @@
+
+  
+  get_integer_async
+  Ta funkcja otwiera okno i wyświetla komunikat oraz miejsce na wprowadzenie wartości przez użytkownika (która na początku będzie zawierać dostarczoną wartość domyślną). Jest to funkcja asynchroniczna i jako taka GameMaker Studio 2 nie blokuje urządzenia, na którym jest uruchamiana, w oczekiwaniu na odpowiedź, lecz kontynuuje normalne wykonywanie zdarzeń. Po wpisaniu przez użytkownika adresu string i naciśnięciu przycisku "OK" uruchamiane jest zdarzenie asynchroniczne Dialog które tylko na czas trwania tego zdarzenia będzie miało mapę DS przechowywaną w zmiennej async_load.
+  Mapa ta będzie zawierać trzy klucze: "id", "status" i "value". "id" to wartość zwrócona przez funkcję w momencie jej wywołania, "status" to albo true, jeśli naciśnięto przycisk "OK", albo false, jeśli wiadomość została anulowana (w stosownych przypadkach, ponieważ nie wszystkie platformy docelowe pozwalają na anulowanie wiadomości). Na koniec "value" zwróci liczbę całkowitą wprowadzoną przez użytkownika jako string (jeśli nie podano żadnej liczby, zwrócona zostanie pusta string "").
+  UWAGA Ta funkcja jest przeznaczona  wyłącznie do debugowania i testowaniai nie powinna być używana w wydanych grach. W tym celu powinieneś stworzyć własny interfejs użytkownika, który będzie odbierał dane od graczy, tak abyś miał pełną kontrolę nad wyglądem i zachowaniem okien dialogowych.
+   
+  Składnia:
+  get_integer_async(string, default);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        string
+        String
+        The message to show in the dialog.
+      
+      
+        default
+        Real
+        The default value.
+      
+    
+  
+   
+  Zwroty:
+  Async Request ID
+   
+  Przykład rozszerzony:
+   Zdarzenie lewego naciśnięcia myszy (na przykład) w witrynie object, w której wyświetlany jest komunikat, zawierałoby następujący kod:
+  msg = get_integer_async("How old are you?", 0);
+  Powyżej zostanie wyświetlony komunikat wymagający od użytkownika wprowadzenia adresu string i naciśnięcia przycisku "OK". Identyfikator funkcji jest przechowywany w zmiennej "msg" i zostanie użyty w asynchronicznym zdarzeniu Dialogs, jak pokazano poniżej:
+  var i_d = ds_map_find_value(async_load, "id");
+    if i_d == msg
+    {
+        if ds_map_find_value(async_load, "status")
+        {
+            global.Age = ds_map_find_value(async_load, "value");
+        }
+    }
+  Powyższy kod sprawdza, czy klucz "id" zwróconej strony DS Map jest zgodny z wartością przechowywaną w zmiennej "msg". Jeśli są one takie same, sprawdza, czy naciśnięto klawisz "OK" (a nie zamknięto/anulowano okno) i jeśli zwróci true, ustawia zmienną globalną na podstawie zwróconej liczby całkowitej.
+   
+   
+   
+  
+    
+      
+        Powrót: Dialog
+        Następny: show_message_async
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

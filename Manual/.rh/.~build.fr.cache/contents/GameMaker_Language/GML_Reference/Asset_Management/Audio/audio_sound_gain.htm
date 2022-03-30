@@ -1,0 +1,60 @@
+
+  
+  audio_sound_gain
+  Za pomocą tej funkcji można włączać i wyłączać dźwięk na określony czas lub natychmiast ustawiać jego wzmocnienie.
+  Czas jest mierzony w milisekundach, a funkcja wymaga podania końcowego poziomu wzmocnienia, jaki dźwięk ma osiągnąć przed upływem tego czasu. Wzmocnienie to może mieć wartość od 0 (cisza) do dowolnej wartości większej od 0, choć normalnie za maksymalną głośność uważa się 1. Można użyć każdej wartości powyżej 1, ale w zależności od używanego dźwięku i platformy, na której jest on kompilowany, może dojść do zniekształceń lub przycięć podczas odtwarzania dźwięku. Należy pamiętać, że skala wzmocnienia jest liniowa i aby natychmiast zmienić wzmocnienie, wystarczy ustawić argument time na 0.
+  Funkcja ta wpłynie na wszystkie instancje dźwięku, które są aktualnie odtwarzane w witrynie room, jeśli indeksem jest zasób dźwiękowy, a głośność końcowa będzie głośnością, przy której będą odtwarzane wszystkie kolejne instancje dźwięku. Jeśli jednak użyłeś indeksu zwróconego przez funkcję taką jak audio_play_sound() będzie to miało wpływ tylko na tę jedną instancję dźwięku.
+   
+  Składnia:
+  audio_sound_gain(index, volume, time);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Sound Asset lub Sound Instance ID
+        The index of the sound to set the gain for.
+      
+      
+        volume
+        Real
+        Value for the music volume.
+      
+      
+        time
+        Real
+        The length for the change in gain in milliseconds.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if val
+    {
+        var snd = audio_play_sound(snd_fountain);
+        audio_sound_gain(snd, 0, 0);
+        audio_sound_gain(snd, 1, 5000);
+    }
+  Powyższy kod sprawdza zmienną i jeśli zwróci true, przypisze indeks dźwięku, który ma zostać odtworzony, do zmiennej lokalnej "snd". Zmienna ta jest następnie używana do zmniejszania głośności tego konkretnego dźwięku do 0 i stopniowego zwiększania do pełnej głośności w ciągu 5 sekund.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_sound_get_gain
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

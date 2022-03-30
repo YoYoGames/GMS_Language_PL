@@ -1,0 +1,53 @@
+
+  
+  highscore_add
+  Za pomocą tej funkcji można dodać nazwę i wynik do wewnętrznej globalnej listy najlepszych wyników. Nie ma potrzeby sprawdzania, czy wartość jest wystarczająco wysoka, aby wprowadzić ją na listę wyników, ponieważ GameMaker Studio 2 zapisze tylko te wartości, które są większe niż dziesiąta zapisana pozycja.
+   
+  Składnia:
+  highscore_add(str, numb);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        str
+        String
+        The string (name) to attribute the score to.
+      
+      
+        numb
+        Real
+        The number (score) to add.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if (lives == 0)
+    {
+        highscore_add(global.Name, score);
+        score = 0;
+        room_goto(rm_MainMenu);
+    }
+  Powyższy kod sprawdzi życia i jeśli są one ustawione na 0, doda aktualny wynik oraz string przechowywany w zmiennej globalnej "Nazwa" do listy najlepszych wyników, a następnie ustawi wynik na 0 i wyśle gracza do strony room zaindeksowanej w "rm_MainMenu".
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne sterowanie grą
+        Następny: highscore_name
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

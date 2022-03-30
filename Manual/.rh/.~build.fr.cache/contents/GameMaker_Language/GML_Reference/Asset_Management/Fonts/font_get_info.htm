@@ -1,0 +1,192 @@
+
+  
+  font_get_info
+  Funkcja ta służy do pobierania informacji dla podanego adresu font. Podajesz indeks font (może to być asset dodany przez Przeglądarkę Aktywów lub font dodany na stronie runtime), a funkcja zwraca strukturę z następującymi zmiennymi:
+  
+    
+      
+      
+      
+    
+    
+      
+        Struktura informacji o czcionce
+      
+      
+        Nazwa zmiennej
+        Typ danych
+        Opis
+      
+      
+        ascenderOffset
+        Real
+        Maksymalne przesunięcie od linii podstawowej do góry strony font (w pikselach)
+      
+      
+        size
+        Real
+        Przybliżony rozmiar strony font (w pikselach)
+      
+      
+        spriteIndex
+        Aktywa Sprite
+        Indeks sprite dla strony font, jeśli została utworzona ze sprite'a, w przeciwnym razie -1
+      
+      
+        texture
+        Wskaźnik
+        -1 jeśli strona font została utworzona z sprite, w przeciwnym razie identyfikator texture czcionki
+      
+      
+        name
+        String
+        Nazwa czcionki
+      
+      
+        bold
+        Boolean
+        true jeśli font jest pogrubiona, w przeciwnym razie false (patrz UWAGA poniżej)
+      
+      
+        italic
+        Boolean
+        true jeśli font jest kursywą, w przeciwnym razie false (patrz UWAGA poniżej)
+      
+      
+        glyphs
+        Struktura glifów czcionki
+        Adres struct zawierający informacje o każdym glifie w witrynie font (więcej informacji podano poniżej).
+      
+    
+  
+  UWAGA Zmienne bold i italic odzwierciedlają jedynie ustawienia użytkownika dla strony font, dlatego mogą nie być dokładne dla strony fonts, która domyślnie jest pogrubiona lub pochylona.
+  Jeśli podany adres font nie istnieje, funkcja zwróci adres undefined.
+  Należy również pamiętać, że zmiana wartości którejkolwiek z tych zmiennych lub zmiennych zawartych w witrynie glyphs struct nie spowoduje zmiany sposobu wyświetlania witryny font, dlatego informacje te należy traktować jako przeznaczone tylko do odczytu.
+  Struktura glifów
+  Zmienna glyphs w zwróconej strukturze struct będzie sama w sobie struct, zawierającym informacje o każdym glifie zawartym w strukturze font. Każda zmienna w tej strukturze będzie nazwą znaku glifu, w której znajdzie się struct zawierający informacje o tym glifie. Można sobie wyobrazić te zagnieżdżone struktury structs w następującym formacie (zaczynając od głównej struct):
+  {
+        glyphs:
+        {
+            A: {},
+            B: {},
+            C: {},
+            // ...other glyphs
+        },
+        // ...other font info
+    }
+  Można użyć nazwy znaku glifu, aby pobrać informacje o nim z witryny struct, tak jak w poniższym kodzie:
+  var _font_info = font_get_info(Font1);
+    
+    var _info_A = _font_info.glyphs[$ "A"]; // $ is a struct accessor
+    
+    show_debug_message(_info_A);
+  
+  Powyższy kod pobiera glif struct dla znaku "A" i wypisuje go do dziennika wyjściowego. Możesz także zastąpić adres string ("A") zmienną przechowującą adres string, co pozwoli Ci uzyskać informacje o dowolnym glifie przez tę zmienną pod adresem runtime.
+  Strona struct zwrócona dla danego glifu będzie zawierała następujące zmienne:
+  UWAGA W przypadku HTML5 glify struct będą puste dla każdego załadowanego pliku fonts (np. *.ttf lub *.otf), ponieważ strona runtime nie będzie zawierała informacji o tych glifach.
+  
+    
+      
+      
+      
+    
+    
+      
+        Struktura glifów czcionki
+      
+      
+        Nazwa zmiennej
+        Typ danych
+        Opis
+      
+      
+        char
+        prawdziwy
+        Jeśli witryna font została utworzona z witryny sprite, będzie to indeks obrazu glifu z witryny sprite, w przeciwnym razie będzie to numer znaku Unicode.
+          
+         Uwaga: Wszystkie zmienne poniżej tej wartości nie będą obecne w struct, jeśli font został utworzony ze sprite'a.
+        
+      
+      
+        x
+        prawdziwy
+        Pozycja X glifu na stronie texture (w tekselach)
+      
+      
+        y
+        prawdziwy
+        Pozycja Y glifu na stronie texture (w tekselach)
+      
+      
+        w
+        prawdziwy
+        Szerokość glifu na stronie texture (w tekselach)
+      
+      
+        h
+        prawdziwy
+        Wysokość glifu na stronie texture (w tekselach)
+      
+      
+        shift
+        prawdziwy
+        Liczba pikseli do przesunięcia w prawo przy przechodzeniu do następnego znaku (może być ujemna dla przesunięcia w lewo)
+      
+      
+        offset
+        prawdziwy
+        Liczba pikseli, o jaką ma być przesunięte renderowanie tego glifu w poziomie (może być dodatnia lub ujemna)
+      
+      
+        kerning
+        tablica
+        Tablica liczb całkowitych zawierających informacje o kerningu w parach (lub grupach po 2). Pierwsza liczba całkowita w parze jest wartością Unicode dla danego znaku, a druga liczba całkowita jest wartością, jaką należy dodać do wartości przesunięcia tego znaku (może być dodatnia lub ujemna), jeśli jest on poprzedzony znakiem tego glifu.
+      
+    
+  
+  UWAGA W przypadku pliku fonts załadowanego pod adresem runtime, wartości x i y dla danego glifu mogą wynosić -1, jeśli nie został on jeszcze wyrenderowany, ponieważ nie będzie miał pozycji na stronie texture używanej do buforowania.
+   
+  Składnia:
+  font_get_info(font);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        font
+        Czcionka Aktywa
+        The font for which information should be retrieved.
+      
+    
+  
+   
+  Zwroty:
+  Font Info Struct (or undefined)
+   
+  Przykład:
+  var _info = font_get_info(my_font);
+    
+    if (_info != undefined && _info.bold)
+    {
+        image_xscale *= 2;
+        image_yscale *= 2;
+    }
+  
+  Ten kod pobiera informacje dla strony font przechowywanej w zmiennej my_font. Jeśli zwróconą wartością nie jestundefined, a podana font jest pogrubiona, skala instancji zostaje podwojona.
+   
+   
+  
+    
+      
+        Powrót: Czcionki
+        Następny: font_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

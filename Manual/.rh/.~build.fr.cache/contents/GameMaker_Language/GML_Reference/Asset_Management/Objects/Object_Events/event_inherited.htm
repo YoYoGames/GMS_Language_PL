@@ -1,0 +1,35 @@
+
+  
+  dziedziczone zdarzenie
+  Ta funkcja wywoła bieżące zdarzenie rodzica object instancji. Normalnie, gdy instancja ma rodzica object, automatycznie inherits wszystkie te same zdarzenia, co rodzic, ale jeśli (na przykład) twój rodzic object ma zdarzenie create i dodasz je do swojego dziecka object, wszystkie instancje dziecka object będą uruchamiać nowe zdarzenie create, które dodałeś, a nie to, które jest w rodzicu object. Jeśli zajdzie potrzeba użycia zarówno zdarzenia rodzica object, jak i zdarzenia dziecka object tego samego typu, należy użyć tej funkcji, ponieważ uruchomi ona zdarzenie rodzica object przed kontynuowaniem reszty kodu lub akcji, które zawiera zdarzenie dziecka.
+   
+  Składnia:
+  event_inherited();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  event_inherited();
+    switch (sprite_index)
+    {
+        case spr_Enemy_1: dmg += 2; break;
+        case spr_Enemy_4: dmg -= 1; break;
+        case spr_Enemy_10: dmg +=10; break;
+    }
+  Powyższy kod wywołuje dziedziczone zdarzenie rodzica (w którym inicjalizujemy zmienną "dmg"), a następnie przechodzi do modyfikacji zmiennej "dmg". Jeśli dla instancji wykonującej ten kod nie zostałby określony rodzic, otrzymalibyśmy błąd "nieznanej zmiennej", ponieważ zmienna dmg nie została zdefiniowana.
+   
+   
+   
+  
+    
+      
+        Powrót: Generowanie zdarzeń Object 
+        Następny: event_perform
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

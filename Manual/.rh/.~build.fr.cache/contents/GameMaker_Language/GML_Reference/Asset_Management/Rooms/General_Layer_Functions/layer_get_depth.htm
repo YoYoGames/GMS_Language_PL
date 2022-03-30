@@ -1,0 +1,49 @@
+
+  
+  layer_get_depth
+  Możesz użyć tej funkcji, aby uzyskać wartość głębokości związaną z daną warstwą. Podajesz identyfikator warstwy (który otrzymujesz podczas tworzenia warstwy za pomocą layer_create()) lub nazwę warstwy (jako string - będzie to miało wpływ na wydajność), a funkcja zwróci głębokość warstwy jako liczbę rzeczywistą. Jeśli więc masz trzy warstwy o głębokości -100, 0, 100, to warstwy będą rysowane w kolejności 100, 0, -100, a więc warstwa "górna" (czyli najbliżej widoku z kamery, a więc rysowana ponad wszystkimi innymi) będzie warstwą o głębokości -100.
+  Na poniższej ilustracji przedstawiono schemat działania głębokości dla warstw:
+  Należy pamiętać, że podanie nieprawidłowej wartości identyfikatora warstwy spowoduje wyświetlenie błędu.
+   
+  Składnia:
+  layer_get_depth(layer_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_id
+        Ciąg lub identyfikator warstwy
+        The unique ID value of the layer to get the depth of (or the layer name as a string)
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if layer_get_depth(global.temp_layer) != -100
+    {
+        layer_destroy(global.temp_layer);
+        global.temp_layer = layer_create(-100);
+    }
+  Powyższy kod sprawdza głębokość identyfikatora warstwy przechowywanego w zmiennej globalnej i jeśli nie jest ona równa -100, niszczy warstwę i tworzy ją ponownie na głębokości -100.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_get_id_at_depth
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,36 @@
+
+  
+  Konfiguracje
+  Ze względu na wymagania związane z tworzeniem aplikacji dla różnych platform oraz konieczność udostępniania jednego produktu i dostosowywania go do potrzeb różnych klientów, urządzeń lub platform, w witrynie GameMaker Studio 2 zawarto konfiguracje, które ułatwiają pracę. Korzystając z tego systemu, można szybko przejść na stronę switch między różnymi ekranami powitalnymi, ikonami i dołączonymi plikami i w dowolnym momencie przetestować lub wyeksportować tylko te, które są odpowiednie dla docelowej platformy lub klienta, a wszystko to z tego samego kodu bazowego.
+  Aby sprostać różnym wymaganiom klientów i platform, można skorzystać z Edytora konfiguracji, dostępnego z menu Dodatki w Przeglądarce zasobów:
+  Wszystkie gry stworzone w GameMaker Studio 2 rozpoczynają się od konfiguracji "domyślnej", która jest wyświetlana w edytorze przy pierwszym otwarciu:
+  Aby skonfigurować swoje ustawienia, zaleca się najpierw przygotować "domyślną" konfigurację, włączając do niej wszystkie konfigurowalne dla projektu assets. Aby to zrobić, wystarczy przejrzeć poniższą listę opcji i ustawić je tak, jak są wymagane domyślnie:
+  
+    Opcje rozszerzeń: Ustaw różne pola "Kopiuj do..." na platformy wymagane dla danej konfiguracji. Wszystkie pliki "Proxy" utworzone w tym miejscu będą miały również powiązaną z konfiguracją platformę "Docelową".
+    Sprite Editor: Ustaw grupę texture, do której ma zostać dodana strona sprites.
+    Edytor zestawów kafelków: Ustaw grupę texture, do której ma zostać dodana strona tilesets.
+    Edytor czcionek: Ustaw grupę texture, do której ma zostać dodana strona fonts.
+    Menedżer grup tekstur: W tym miejscu można ustawić dowolne właściwości dla poszczególnych konfiguracji, w tym grupę nadrzędną, do której należy grupa texture.
+    Menedżer grup dźwiękowych: Dźwięki przypisane do różnych grup audio można konfigurować w tym miejscu....
+    Dołączone pliki: W polu "Kopiuj do..." należy ustawić platformy wymagane dla danej konfiguracji.
+  
+  Po skonfigurowaniu konfiguracji domyślnej można dodać nową konfigurację do Edytora konfiguracji, klikając prawym przyciskiem myszy stronę  w folderze z konfiguracjami i wybierając opcję Dodaj konfigurację lub klikając przycisk"Utwórz" u dołu okna. Nowa konfiguracja zostanie wyświetlona jako "dziecko" konfiguracji domyślnej - wszystkie konfiguracje zdefiniowane przez użytkownika są dziećmi konfiguracji domyślnej - i można jej nadać odpowiednią nazwę.
+  Aby edytować konfigurację, należy dwukrotnie kliknąć na niej  lub użyć prawego przycisku myszy  i wybrać opcję menu "Ustaw konfigurację", co spowoduje zaznaczenie konfiguracji w edytorze, a następnie można ją dostosować do własnych potrzeb. W tym celu wystarczy przejść przez opcje wymienione powyżej i zmienić je na żądane ustawienia dla nowo utworzonej konfiguracji. GameMaker Studio 2 automatycznie zapisze te wartości dla danej konfiguracji, a użytkownik może w każdej chwili zmieniać konfiguracje, korzystając z opcji menu RMB  lub klikając dwukrotnie .
+  Kolejne konfiguracje można dodawać albo jako dzieci konfiguracji domyślnej, albo jako dzieci konfiguracji zdefiniowanych przez użytkownika, w zależności od tego, która konfiguracja została podświetlona w edytorze podczas jej tworzenia. Na poniższym przykładzie widać, że mamy zdefiniowane trzy konfiguracje niestandardowe, z których dwie są dziećmi konfiguracji domyślnej, a kolejna jest dzieckiem konfiguracji zdefiniowanej przez użytkownika:
+  Warto zauważyć, że podczas kompilacji lub testowania projektów można używać dowolnej konfiguracji z dowolną platformą docelową. W tym celu należy wybrać żądaną konfigurację z sekcji Config w Menedżerze celów:
+  Edytor konfiguracji można również otworzyć w dowolnym momencie z poziomu Menedżera celów, klikając przycisk menu w prawym górnym rogu (jak zaznaczono na powyższej ilustracji).
+  Po ustawieniu konfiguracji, która ma być używana w ten sposób, wybrana konfiguracja będzie używana przy każdej kompilacji do celu, czy to w celu testowania, czy utworzenia ostatecznego pakietu asset. Więcej informacji na temat okna Targets (Cele) można znaleźć w rozdziale poświęconym kompilacji.
+   
+   
+  
+    
+      
+        Wstecz: Ustawienia gry
+        Następny: Szczegóły dotyczące biegacza
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,53 @@
+
+  
+  Listy DS
+  Lista DS jest strukturą danych, która przechowuje informacje sekwencyjnie w miarę ich dodawania (podobnie jak tablica). Listy DS są bardzo elastycznymi strukturami danych, które pozwalają na dodawanie wartości na końcu lub wstawianie ich gdzieś w środku listy, a także dają możliwość tasowania kolejności (w celu randomizacji wartości) lub sortowania ich w porządku rosnącym lub malejącym.
+  UWAGA: Zaleca się używanie tablic zamiast list DS, ponieważ mają one podobne właściwości, są łatwiejsze w użyciu i są automatycznie odśmiecane.
+  Podczas uzyskiwania dostępu do struktur danych listy DS należy zawsze starać się używać wartości całkowitych dla pozycji listy. W przeciwnym razie wszystkie indeksy niecałkowite zostaną zaokrąglone przez GameMaker Studio 2. Jeśli nie jest to wymagane, to przed przekazaniem indeksu, który ma być sprawdzony, należy samodzielnie wykonać zaokrąglenie.
+  UWAGA: Podobnie jak wszystkie zasoby dynamiczne, struktury danych zajmują pamięć, dlatego powinny być zawsze niszczone, gdy nie są już potrzebne, aby zapobiec wyciekom pamięci, które spowolnią, a w końcu doprowadzą do awarii gry.
+  Poza wymienionymi poniżej funkcjami można użyć wyrażenia (zwanego accessorem), aby dodać lub zmodyfikować zawartość listy DS. Taki accessor wygląda podobnie jak tablica 1D o następującej składni:
+  list_index[| index]
+  Więcej informacji oraz przykłady można znaleźć na stronie GML Overview page on Accessors.
+  Istnieją następujące funkcje związane z listami DS:
+  
+    ds_list_create
+    ds_list_destroy
+    ds_list_clear
+    ds_list_empty
+    ds_list_size
+    ds_list_add
+    ds_list_set
+    ds_list_delete
+    ds_list_find_index
+    ds_list_find_value
+    ds_list_insert
+    ds_list_replace
+    ds_list_shuffle
+    ds_list_sort
+    ds_list_copy
+    ds_list_read
+    ds_list_write
+  
+   
+  Listy ds mogą być używane do przechowywania map DS i innych list DS, dlatego mamy kilka specjalnych funkcji, które służą do "flagowania" lub "oznaczania" pozycji na liście jako przechowujących te struktury danych. W zasadzie nie jest to wymagane, ale ma tę zaletę, że zaznaczone struktury danych są automatycznie usuwane (niszczone), gdy lista nadrzędna jest niszczona, a także jest wymagane w połączeniu z funkcją json_encode() aby lista i jej dane były prawidłowo zakodowane. Służą do tego funkcje:
+  
+    ds_list_mark_as_list
+    ds_list_mark_as_map
+    ds_list_is_list
+    ds_list_is_map
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Struktury danych
+        Następny: Mapy DS
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

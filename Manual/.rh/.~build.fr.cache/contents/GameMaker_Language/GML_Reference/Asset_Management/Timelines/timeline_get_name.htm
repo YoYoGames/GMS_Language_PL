@@ -1,0 +1,43 @@
+
+  
+  timeline_get_name
+  Funkcja ta może być użyta do uzyskania nazwy linii czasu w postaci string. jeżeli linia czasu została utworzona dynamicznie za pomocą funkcji timeline_add() to zwrócona nazwa będzie miała format
+    format "__newtimelineN", gdzie "N" jest numerem linii czasowej (zaczynając od 0). Należy pamiętać, że jest to tylko adres string i nie można go użyć do bezpośredniego odwołania się do strony timeline - do tego
+    do tego potrzebny jest indeks osi czasu. Można jednak użyć tej strony string, aby uzyskać indeks osi czasu, używając zwróconej strony string wraz z funkcją asset_get_index().
+   
+  Składnia:
+  timeline_get_name(ind);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        ind
+        The index of the time line to check the name of.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var _str = timeline_get_name(timeline_index); show_debug_message("Current timeline = " + _str);
+  Powyższy kod pobiera nazwę aktualnie przypisanej strony timeline i wysyła ją do konsoli.
+   
+   
+   
+  
+    
+      
+        Powrót: Timelines
+        Następny: timeline_add
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

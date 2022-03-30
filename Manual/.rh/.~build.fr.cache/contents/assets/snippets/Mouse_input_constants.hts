@@ -1,0 +1,46 @@
+
+  
+    
+      
+      
+    
+    
+      
+        Mouse Button Constant
+      
+      
+        Constant
+        Description
+      
+      
+        mb_left
+        The left mouse button
+      
+      
+        mb_middle
+        The middle mouse button (this may not be valid for all target platforms)
+      
+      
+        mb_right
+        The right mouse button
+      
+      
+        mb_side1*
+        Mouse side button 1
+      
+      
+        mb_side2*
+        Mouse side button 2
+      
+      
+        mb_any
+        Any of the mouse buttons
+      
+      
+        mb_none
+        No mouse button
+      
+    
+  
+  * NOTE: The mb_side1 and mb_side2 buttons are only for use on Windows, macOS, Ubuntu and HTML5.
+

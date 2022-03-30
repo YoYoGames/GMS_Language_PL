@@ -1,0 +1,46 @@
+
+  
+  warstwa_background_get_alpha
+  Za pomocą tej funkcji można uzyskać wartość alfa elementu tła. Podajesz identyfikator elementu tła (który otrzymujesz podczas tworzenia elementu tła za pomocą layer_background_create() lub po użyciu funkcji layer_background_get_id()), a funkcja zwróci wartość z przedziału od 0 (całkowicie przezroczysty) do 1 (całkowicie nieprzezroczysty).
+   
+  Składnia:
+  layer_background_get_alpha(background_element_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        background_element_id
+        The unique ID value of the background element to get the information from
+     
+    
+  
+   
+  Zwroty:
+   (from 0 to 1)
+   
+  Przykład:
+  var lay_id = layer_get_id("Background_sky");
+    var back_id = layer_background_get_id(lay_id);
+    if layer_background_get_alpha(back_id) < 0.1
+    {
+        layer_background_destroy(back_id);
+    }
+  Powyższy kod pobierze identyfikator warstwy o nazwie "Tło_sky", a następnie użyje go do uzyskania identyfikatora elementu tła na tej warstwie. Ten identyfikator zostanie następnie użyty do sprawdzenia alfa elementu i jeśli będzie on mniejszy niż 0,1, element warstwy zostanie zniszczony.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy tła
+        Następny: layer_background_get_index
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,59 @@
+
+  
+  push_get_next_local_notification
+  Ta funkcja wypełnia przygotowaną wcześniej mapę DS serią par klucz/wartość dla następnego lokalnego powiadomienia push w queue, które ma zostać wyświetlone. Zwraca -1, jeśli nie ma dalszych powiadomień w kolejce, lub wartość rzeczywistą w przeciwnym razie, reprezentującą identyfikator powiadomienia. Identyfikator ten można następnie wykorzystać do anulowania powiadomienia za pomocą funkcji push_cancel_local_notification(). Powinieneś wywołać funkcję push_get_first_local_notification() aby uzyskać pierwsze powiadomienie na stronie queue, a następnie użyć tej funkcji, aby je kontynuować.
+  UWAGA: Ta funkcja jest ograniczona do modułów docelowych iOS i Android.
+  Mapa DS będzie zawierać następujące pary klucz-wartość:
+  
+    " title" -Tytuł powiadomienia (będzie to dostępne tylko na platformie Android, ponieważ iOS nie przechowuje informacji o tytule)
+    "message" - Treść komunikatu
+    "data" - Łańcuch pakietu danych
+  
+   
+  Składnia:
+  push_get_next_local_notification(map);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        map
+        The DS Map Identyfikator do użycia.
+     
+    
+  
+   
+  Zwroty:
+  Push Notification ID or -1
+   
+  Przykład :
+  var map = ds_map_create();
+    var ntf = push_get_first_local_notification(map);
+    while(ntf >= 0)
+    {
+        var data = ds_map_find_value(map, "data");
+        if data == "Daily_Reward"
+        {
+            push_cancel_local_notification(ntf);
+        }
+        ntf = push_get_next_local_notification(map);
+    }
+    ds_map_destroy(map);
+  Powyższy kod tworzy stronę DS Map, a następnie żąda danych dla pierwszego dostępnego powiadomienia w queue. Jeśli takie powiadomienie istnieje, mapa jest wypełniana, a następnie kod sprawdza klucz "data" pod kątem konkretnego string. Jeśli string zostanie znalezione, powiadomienie jest anulowane i przechodzi do sprawdzania kolejnego powiadomienia, aż do sprawdzenia wszystkich w queue.
+   
+   
+   
+  
+    
+      
+        Powrót: Powiadomienia Push
+        Następny: push_cancel_local_notification
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,58 @@
+
+  
+  audio_play_sound
+  Dzięki tej funkcji możesz odtwarzać dowolne zasoby dźwiękowe w swojej grze. Użytkownik podaje indeks dźwięku i przypisuje mu priorytet, który jest następnie wykorzystywany do określenia sposobu postępowania z dźwiękami, gdy liczba odtwarzanych dźwięków przekroczy limit określony przez funkcję audio_channel_num(). Dźwięki o niższym priorytecie będą zatrzymywane na rzecz dźwięków o wyższym priorytecie, a wartość priorytetu może być dowolną liczbą rzeczywistą (rzeczywista wartość jest dowolna i może wynosić od 0 do 1 lub od 0 do 100, ponieważ GameMaker Studio 2 nada im taki sam priorytet). Należy pamiętać, że w przypadku priorytetu im wyższa liczba, tym wyższy priorytet, a więc dźwięk o priorytecie 100 będzie miał pierwszeństwo przed dźwiękiem o priorytecie 1. Ostatni argument służy do odtwarzania dźwięku loop, a ustawienie go na true spowoduje odtwarzanie dźwięku loop aż do zatrzymania, natomiast ustawienie go na false spowoduje odtworzenie dźwięku tylko raz.
+  Funkcja ta zwraca również unikatowy numer indeksu odtwarzanego dźwięku, który można zapisać w zmiennej, aby następnie wstrzymać lub zatrzymać go za pomocą odpowiednich funkcji. Oznacza to, że jeśli w danym momencie odtwarzanych jest wiele instancji tego samego dźwięku, można wybrać tylko jedną z nich do obsługi za pomocą funkcji audio.
+   
+  Składnia:
+  audio_play_sound(index, priority, loop);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Aktywa dźwiękowe
+        The index of the sound to play.
+      
+      
+        priority
+        Real
+        Set the channel priority for the sound.
+      
+      
+        loop
+        Boolean
+        Sets the sound to loop or not.
+      
+    
+  
+   
+  Zwroty:
+  Sound Instance ID
+   
+  Przykład:
+  if health <= 0
+    {
+        lives -= 1;
+        audio_play_sound(snd_PlayerDead, 10, false);
+    }
+  Powyższy kod sprawdza zmienną globalną "health" i jeśli jest ona mniejsza lub równa 0, usuwa 1 ze zmiennej globalnej "lives" i odtwarza dźwięk.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_play_sound_at
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

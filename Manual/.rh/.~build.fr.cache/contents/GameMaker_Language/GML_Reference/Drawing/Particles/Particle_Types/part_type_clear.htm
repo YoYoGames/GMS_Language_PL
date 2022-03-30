@@ -1,0 +1,43 @@
+
+  
+  part_type_clear
+  Za pomocą tej funkcji można "zresetować" cząstkę, przywracając wartości domyślne wszystkim funkcjom związanym z tą cząstką (czas życia, kolor, alfa, orientacja itd.). Należy pamiętać, że funkcja ta nie usuwa z ekranu cząstek widocznych w danej chwili na stronie room. W tym celu należy użyć funkcji part_particles_clear().
+   
+  Składnia:
+  part_type_clear(ind);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Typ cząstki ID
+        The index of the particle type to clear.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  part_type_clear(global.explode_part);
+  Powyższy kod spowoduje przywrócenie wartości domyślnych typu cząstek indeksowanych w zmiennej globalnej "explode_part".
+   
+   
+   
+  
+    
+      
+        Powrót: Typy cząstek
+        Następny: part_type_shape
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

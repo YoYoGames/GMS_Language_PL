@@ -1,0 +1,43 @@
+
+  
+   System cząstek czystych
+  Za pomocą tej akcji można wyczyścić dany system cząsteczek do stanu domyślnego, usuwając wszystkie emitery (nie ma też potrzeby wywoływania akcji Zniszcz emiter cząst eczek, ponieważ zajmuje się tym automatycznie)
+    i usuwa wszystkie cząstki z ekranu. Podajesz unikatową wartość ID systemu, który chcesz wyczyścić, zwróconą podczas tworzenia systemu za pomocą akcji Utwórz system cząsteczek. Należy zachować ostrożność podczas używania
+    ponieważ akcja ta niszczy wszystkie emitery powiązane z systemem cząsteczek - oznacza to, że każda instancja w witrynie room, która używa emitera, może otrzymać błąd, ponieważ emiter ten już nie istnieje, więc upewnij się, że akcja jest wywoływana tylko wtedy, gdy
+    nie zamierzasz tworzyć żadnych nowych cząstek z tego emitera (więcej informacji o emiterach cząstek znajdziesz w temacie Tworzenie emitera cząstek).
+  UWAGA: Ta akcja wyczyści tylko cząstki widoczne na stronie room, ale nie wyczyści właściwości cząstek ani nie usunie ich z pamięci. W tym celu należy użyć akcji Zniszcz typ cząstki.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        System
+        Unikalna wartość identyfikacyjna systemu, który ma zostać zniszczony
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji usunie wszystkie cząsteczki z ekranu
+    jeśli gracz ma 0 lub mniej żyć, a następnie uruchomi ponownie stronę room.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje cząstek
+        Następny: System cząstek stałych z pauzą
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  analiza_zdarzeń
+  Ta funkcja wyśle określony tekst do dostawcy analiz, który został skonfigurowany w Opcjach gry HTML5. Funkcja ta może być użyta do utworzenia własnej analizy, która będzie śledzić coś, co nie mieści się w zakresie wykorzystywanego dostawcy.
+   
+  Składnia:
+  analytics_event(string);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        string
+        A string to send to the provider
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if hs_new
+    {
+        analytics_event("New hiscore of " + string (score));
+    }
+  Powyższy kod sprawdzi zmienną, czy jest to true, a jeśli tak, to zostanie wywołane specjalne zdarzenie analityczne z podaną string.
+   
+   
+   
+  
+    
+      
+        Powrót: Sieć i HTML5
+        Następny: analytics_event_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

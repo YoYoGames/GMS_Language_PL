@@ -1,0 +1,53 @@
+
+  
+  xboxlive_stats_set_stat_int
+  Ta funkcja służy do ustawiania wartości statystyki dla podanego identyfikatora użytkownika. Podajesz identyfikator użytkownika zwrócony przez (na przykład) funkcję xboxlive_get_user()a następnie łańcuch statystyk
+    do ustawienia(jeśli stat string nie istnieje, to zostanie utworzony nowy stat i ustawiony na podaną wartość) oraz wartość (liczba całkowita), na którą ma zostać ustawiony stat. Należy pamiętać, że nazwa statystyki musi być wyłącznie alfanumeryczna, bez symboli i spacji.
+  Podczas ustawiania wartości statystyk wszystkie poprzednie wartości zostaną zastąpione, dlatego do Ciebie należy ustalenie, czy wartość statystyk powinna zostać zaktualizowana, czy nie (np. sprawdzenie, czy wysoki wynik jest rzeczywiście najwyższy) poprzez porównanie aktualnej wartości statystyk z
+    z nową wartością przed jej ustawieniem.
+  Funkcja zwróci -1, jeśli wystąpił błąd lub identyfikator użytkownika jest nieprawidłowy, lub dowolną inną wartość, jeśli funkcja została pomyślnie wywołana.
+   
+  Składnia:
+  xboxlive_stats_set_stat_int(user_id, stat, value);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        user_id
+        The user ID pointer to set the stat for
+     
+      
+        stat
+        The statistic to set (a string)
+     
+      
+        value
+        The value to set the stat to (an integer)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var _val = xboxlive_stats_get_stat(p_user_id, "GamesPlayed"); xboxlive_stats_set_stat_int(p_user_id, "GamesPlayed", ++_val);
+  Powyższy kod pobiera wartość statystyki "GamesPlayed", a następnie ustawia tę statystykę na tę wartość plus 1.
+   
+   
+   
+  
+    
+      
+        Powrót: Statystyki i rankingi
+        Następny: xboxlive_stats_set_stat_string
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,51 @@
+
+  
+  network_connect_raw_async
+  Za pomocą tej funkcji można wysłać żądanie połączenia z adresem server. Funkcja pobiera identyfikator gniazda, przez które ma zostać nawiązane połączenie (zob. network_create_socket()) i wymaga podania adresu IP, z którym chcemy się połączyć
+    się z nim ( string) oraz port, przez który ma się połączyć, a jeśli połączenie nie powiedzie się, zwrócona zostanie wartość mniejsza niż 0. Różnica między tą funkcją a network_connect_async()jest taka, że ta
+    może połączyć się z dowolnym adresem server i nie robi nic z surowymi danymi, co oznacza, że musisz sam zaimplementować protokoły na końcu server. Funkcja ta jest asynchroniczna i generuje zdarzenie Asynchronous Networking typu network_type_non_blocking_connect.
+   
+  Składnia:
+  network_connect_raw_async(socket, url, port);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        socket
+        The id of the socket to use.
+     
+      
+        url
+        The URL or IP to connect to (a string).
+     
+      
+        port
+        The port to connect to.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  client = network_create_socket(network_socket_tcp); network_connect_raw_async(client, "www.macsweeneygames.com", 6510);
+  Powyższy kod utworzy nowe gniazdo TCP, a następnie spróbuje utworzyć przez nie "surowe" połączenie asynchroniczne z podanym adresem URL na porcie 6510.
+   
+   
+   
+  
+    
+      
+        Powrót: Praca w sieci
+        Następny: network_resolve
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

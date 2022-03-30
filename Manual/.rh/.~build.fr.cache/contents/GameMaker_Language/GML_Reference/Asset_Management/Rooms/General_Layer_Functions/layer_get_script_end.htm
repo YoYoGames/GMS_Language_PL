@@ -1,0 +1,46 @@
+
+  
+  warstwa_get_script_end
+  Funkcja zwraca indeks funkcji skryptu przypisanej do uruchamiania na końcu renderowania danej warstwy lub zwraca -1, jeśli nie przypisano żadnej funkcji. Podajesz identyfikator warstwy (który otrzymujesz podczas tworzenia warstwy za pomocą polecenia layer_create()) lub nazwę warstwy (jako string - będzie to miało wpływ na wydajność). Funkcje script można przypisać do warstwy za pomocą layer_script_begin() i layer_script_end().
+   
+  Składnia:
+  layer_get_script_end(layer_id);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_id
+        String lub Identyfikator warstwy
+        The unique ID value of the layer to target (or the layer name as a string)
+      
+    
+  
+   
+  Zwroty:
+  Script Function or -1 (if no function is assigned)
+   
+  Przykład:
+  if layer_get_script_end(layer) == -1
+    {
+        layer_script_end(layer, scr_ResetShaderValues);
+    }
+  Powyższy kod sprawdzi, czy warstwa, na której znajduje się instancja uruchamiająca kod, ma przypisaną funkcję script, a jeśli nie ma, to zostanie ona przypisana.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_get_shader
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

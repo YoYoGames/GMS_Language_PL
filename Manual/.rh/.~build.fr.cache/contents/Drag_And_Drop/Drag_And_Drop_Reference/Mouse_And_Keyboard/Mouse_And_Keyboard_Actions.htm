@@ -1,0 +1,98 @@
+
+  
+  Biblioteka akcji myszy i klawiatury
+  
+  Strona Mysz i klawiatura Biblioteka akcji zawiera akcje wymagane do odpytywania i przetwarzania danych wejściowych z klawiatury lub myszy. Wszystkie dostępne akcje są wymienione poniżej:
+  
+    
+      
+        
+        Jeśli naciśnięto przycisk myszy
+      
+      
+        
+        Jeśli mysz w dół
+      
+      
+        
+        Jeśli mysz zostanie wypuszczona
+      
+      
+        
+        Jeśli naciśnięto przycisk
+      
+      
+        
+        Jeśli przycisk w dół
+      
+      
+        
+        Jeśli klucz został zwolniony
+      
+    
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  Pozostałe opisane tutaj działania odnoszą się do klawiatury wirtualnej. Jeśli w grze na urządzeniu z ekranem dotykowym wymagane jest wprowadzanie tekstu lub cyfr, można użyć akcji klawiatury wirtualnej, aby korzystać z klawiatury systemu operacyjnego urządzenia. Te akcje będą wywoływać lub ukrywać klawiaturę systemu operacyjnego i przyjmować dane wejściowe tak samo, jak klawiatura fizyczna, więc zwykłe akcje klawiatury GameMaker Studio 2 powinny działać z wirtualnymi klawiaturami (na przykład akcja "Jeśli klawisz zwolniony"), a dane wejściowe z wirtualnej klawiatury będą zapisywane w różnych zmiennych klawiatury, takich jak keyboard_string lub keyboard_last_char, itd...).
+  Otwarcie lub zamknięcie wirtualnej klawiatury spowoduje wygenerowanie systemowych zdarzeń asynchronicznych, w których mapa async_load  DS zostanie wypełniona następującymi parami klucz/wartość:
+  
+    "event_type" - typ odebranego zdarzenia systemowego, w przypadku klawiatur wirtualnych będzie to "status klawiatury wirtualnej".
+    "screen_height" - wysokość wirtualnej klawiatury (w pikselach). Wartość ta będzie równa 0, jeśli klawiatura jest niewidoczna.
+    "keyboard_status" - aktualny stan klawiatury, zwracany jako jeden z następujących ciągów znaków:
+      
+        "ukrycie"
+        "hidden"
+        "showing"
+        "widoczna"
+      
+    
+  
+  Dostępne akcje klawiatury wirtualnej to:
+  
+    
+      
+        
+        Pokaż klawiaturę wirtualną
+      
+      
+        
+        Ukryj klawiaturę wirtualną
+      
+      
+        
+        Uzyskaj wysokość klawiatury wirtualnej
+      
+      
+        
+        Jeśli wyświetlana jest klawiatura wirtualna
+      
+    
+  
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  
+    
+      
+        Powrót: Indeks
+        Następny: Akcje gamepada
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

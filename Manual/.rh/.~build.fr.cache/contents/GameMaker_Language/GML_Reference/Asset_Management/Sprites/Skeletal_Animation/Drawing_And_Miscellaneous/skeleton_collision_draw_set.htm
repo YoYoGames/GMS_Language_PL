@@ -1,0 +1,48 @@
+
+  
+  szkielet_kolizji_rysuj_set
+  Za pomocą tej funkcji można włączać (true) lub wyłączać (false) rysowanie danych kolizji dla bieżącej animacji szkieletowej sprite używanej przez instancję. Jeśli ta funkcja jest włączona, wokół instancji sprite będą rysowane jako kontury ramka ograniczająca i dokładna maska kolizji.
+  Ta funkcja działa tylko wtedy, gdy rysowanie szkieletu sprite jest obsługiwane przez object. Aby narysować pole ograniczające kolizji podczas ręcznego rysowania szkieletu sprite, należy użyć draw_skeleton_collision().
+   
+   
+  Składnia:
+  skeleton_collision_draw_set(flag);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        flag
+        Boolean
+        Set to true aby włączyć rysowanie, i false, aby je wyłączyć.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if debug_mode == true
+    {
+        skeleton_collision_draw_set(true);
+    }
+  Powyższy kod sprawdza, czy gra jest uruchomiona w trybie debugowania i jeśli tak, przełącza dane kolizji szkieletowych dla instancji, które mają być wyświetlane.
+   
+   
+   
+  
+    
+      
+        Powrót: Rysunki i inne
+        Następny: draw_skeleton
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

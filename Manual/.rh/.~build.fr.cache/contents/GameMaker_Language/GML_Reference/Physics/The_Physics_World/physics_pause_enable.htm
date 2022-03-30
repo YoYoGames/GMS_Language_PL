@@ -1,0 +1,47 @@
+
+  
+  physics_pause_enable
+  Normalnie, aby symulacja fizyki działała, musi być ciągła i nie może być zatrzymywana i uruchamiana, ani też instancje nie mogą być nagle przenoszone z jednego miejsca na drugie w witrynie room. Zdarzają się jednak sytuacje, w których trzeba wstrzymać symulację, na przykład w przypadku wstrzymania pracy urządzenia, i wtedy należy użyć tej funkcji. Wstrzymuje ona symulację, jeśli adres flag jest ustawiony na true, a dalsze obliczenia fizyczne nie będą wykonywane, dopóki adres flag nie zostanie ponownie ustawiony na false.
+  UWAGA: Jest to szczególnie przydatne, jeśli chcesz wyłączyć wszystkie instancje w witrynie room, ponieważ nawet po wyłączeniu ciało fizyczne będzie nadal obliczane i symulowane w świecie fizyki.
+   
+  Składnia:
+  physics_pause_enable(flag)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        flag
+        This can be set to true aby wstrzymać symulację, lub false, aby ją ponownie rozpocząć.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if os_is_paused()
+    {
+        physics_pause_enable(true);
+        instance_deactivate_all(true);
+        instance_create_layer(x, y, "Controllers", obj_PauseMenu);
+    }
+  Powyższy kod sprawdza, czy system operacyjny został wstrzymany, a jeśli tak, wstrzymuje świat fizyki, dezaktywuje wszystko oprócz siebie, a następnie tworzy instancję menu wstrzymania.
+   
+   
+   
+  
+    
+      
+        Powrót: Świat fizyki
+        Następny: physics_world_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

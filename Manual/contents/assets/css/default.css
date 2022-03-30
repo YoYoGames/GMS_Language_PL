@@ -95,7 +95,11 @@ h2 {
   font-size: 18pt;
   padding-left: 20px;
   padding-top: 10px;
+  margin-top: 2em;
   margin-bottom: 10px;
+}
+h1 + h2 {
+  margin-top: 0px;
 }
 h3 {
   font-family: 'open_sansbold';
@@ -202,7 +206,8 @@ p.code_heading {
   border-bottom-left-radius: 15px;
 }
 p.code,
-p.code_plain {
+p.code_plain,
+pre {
   font-family: menlo, consolas, monospace;
   background: #181818;
   color: #cfcfcf;
@@ -287,6 +292,9 @@ span.inline2 {
   position: relative;
   bottom: 2px;
 }
+td span.inline2 {
+  background: #282828;
+}
 tt {
   font-family: menlo, consolas, monospace;
   font-weight: bold;
@@ -327,7 +335,8 @@ span.note {
   background-color: #2966B6;
 }
 span.optional {
-  background-color: #b79020;
+  background-color: #a77000;
+  color: white;
 }
 span.tip {
   background-color: #118822;
@@ -524,7 +533,7 @@ img.center {
   margin-right: auto;
   position: relative;
 }
-img.center_shadow {
+img.center_shadow, img.left_shadow, img.right_shadow {
   display: block;
   margin-top: 5px;
   max-width: 70%;
@@ -532,7 +541,21 @@ img.center_shadow {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  box-shadow: 8px 8px 8px black;
+  box-shadow: 4px 4px 10px 2px #000;
+}
+img.left_shadow, img.right_shadow {
+  display: block;
+  position: relative;
+  max-width: auto;
+  width: auto;
+  margin-left: 20px;
+  margin-right: 40px;
+}
+img.left_shadow {
+  float: left;
+}
+img.right_shadow {
+  float: right;
 }
 img.icon {
   vertical-align: middle;
@@ -781,16 +804,26 @@ ol.minitoc-list ol {
   list-style: none;
 }
 a.minitoc-list-item {}
+div.seealso {
+  background-color: #444;
+  border-radius: 8px;
+  width: auto;
+  max-width: auto;
+}
 p.seealso-caption {
+  background-color: #444;
   font-weight: bold;
-  font-size: 12pt;
+  font-size: 14pt;
 }
 ol.seealso-list {
-  padding-left: 0;
+  background-color: #444;
+  padding-left: 20px;
   margin-left: 0;
   list-style: none;
 }
-a.seealso-list-item {}
+a.seealso-list-item {
+  padding-left: 20px;
+}
 p.reltopics-caption {
   font-weight: bold;
   font-size: 12pt;

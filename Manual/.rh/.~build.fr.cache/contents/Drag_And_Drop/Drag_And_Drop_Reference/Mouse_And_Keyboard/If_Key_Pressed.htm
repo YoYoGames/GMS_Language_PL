@@ -1,0 +1,49 @@
+
+  
+   Jeśli naciśnięto przycisk
+  Ta akcja sprawdza, czy klawisz klawiatury został naciśnięty po raz pierwszy. Zwraca true w pojedynczym kroku gry (klatce), w którym klawisz jest początkowo naciśnięty, oraz false we wszystkich innych przypadkach. Jeśli włączysz modyfikator not, ta akcja
+    zostanie odwrócona i będzie sprawdzać, czy klawisz nie został naciśnięty, zwracając false w kroku gry (klatce), w którym klawisz został naciśnięty, oraz true we wszystkich pozostałych przypadkach. Jeśli chcesz sprawdzić, czy klawisz jest przytrzymany, a nie tylko
+    a nie tylko początkowe naciśnięcie, należy użyć akcji If Key Down.
+  Należy pamiętać, że aby dodać akcje do bloku "jeśli", należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:
+  Wszelkie działania zrzucone w innym miejscu zostaną wykonane po bloku "if".
+   
+  Składnia działania:
+  
+  Argumenty:
+   
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Key
+        Nazwa klucza do sprawdzenia.
+      
+      
+        Not
+        Negacja sprawdzenia (prawda staje się fałszem i odwrotnie)
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji co krok sprawdza stan klawiatury i jeśli klawisz jest
+    jest przytrzymywany, sprawdza, czy nie nastąpiło początkowe naciśnięcie klawisza. Jeśli sprawdzane jest true początkowe naciśnięcie klawisza, odtwarzany jest dźwięk, a następnie, gdy klawisz jest przytrzymany, kolor mieszania sprite jest zmieniany na czerwony. Jeśli klawisz nie jest trzymany wciśnięty, sprawdzane jest
+    po zwolnieniu klawisza następuje sprawdzenie, czy kolor mieszania został przywrócony do białego.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje myszy i klawiatury
+        Następny: Jeśli klawiatura w dół
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

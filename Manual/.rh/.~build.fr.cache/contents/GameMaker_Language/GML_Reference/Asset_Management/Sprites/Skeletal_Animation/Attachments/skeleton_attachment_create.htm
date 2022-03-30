@@ -1,0 +1,81 @@
+
+  
+  szkielet_załącznika_twórz
+  Podczas tworzenia animacji szkieletowej sprite można przypisać gniazda dołączania i dołączane do nich elementy. Są to po prostu obrazki, które nie są częścią animacji, ale po dołączeniu poruszają się razem z kością, do której są dołączone. Zazwyczaj takie dodatki są przypisywane w programie animacji (Spine), ale dzięki tej funkcji możesz tworzyć własne w czasie rzeczywistym, używając sprite asset ze swojej gry. Funkcja wymaga nadania dodatkowi nazwy (jako string), a następnie ustawienia sprite_index i image_index do użycia, jak również x i y origin (które mogą być inne niż te zdefiniowane przez sprite we właściwościach sprite ). Jeśli załącznik został utworzony pomyślnie, funkcja zwróci 1, a jeśli nie (podano nieprawidłowy indeks sprite lub podstawa sprite nie jest Spine sprite), zwróci -1.
+   
+  Składnia:
+  skeleton_attachment_create(name, sprite, ind, xorigin, yorigin, xscale, yscale, rot);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        name
+        String
+        The name (as a string) of the attachment to create.
+      
+      
+        sprite
+        Aktywa Sprite
+        The sprite_index to get the attachment image from.
+      
+      
+        ind
+        Real
+        The image_index to get the attachment image from.
+      
+      
+        xorigin
+        Real
+        The x origin for the image being used.
+      
+      
+        yorigin
+        Real
+        The y origin for the image being used.
+      
+      
+        xscale
+        Real
+        The horizontal scaling of the image, as a multiplier: 1 = normal scaling, 0.5 is half etc...
+      
+      
+        yscale
+        Real
+        The vertical scaling of the image, as a multiplier: 1 = normal scaling, 0.5 is half etc...
+      
+      
+        rot
+        Real
+        The rotation of the image. 0=normal, 90=turned 90 degrees counter-clockwise etc.
+      
+    
+  
+   
+  Zwroty:
+  Real (1 if successful, -1 if not)
+   
+  Przykład:
+  skeleton_attachment_create("sword", spr_Weapons, 0, 0, 80, 1, 1, 90);
+    skeleton_attachment_create("knife", spr_Weapons, 1, 0, 45, 1, 1, 90);
+    skeleton_attachment_create("crossbow", spr_Weapons, 0, 10, 30, 1, 1, 0);
+    skeleton_attachment_set("slot_leftHand", choose("sword", "knife", "crossbow"));
+  Powyższy kod sprawdzi aktualnie przypisaną nazwę załącznika dla slotu o nazwie "slot_leftHand" i jeśli zwrócona zostanie pusta string, zostanie dołączony nowy sprite.
+   
+   
+   
+  
+    
+      
+        Powrót: Załączniki
+        Następny: skeleton_attachment_create_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

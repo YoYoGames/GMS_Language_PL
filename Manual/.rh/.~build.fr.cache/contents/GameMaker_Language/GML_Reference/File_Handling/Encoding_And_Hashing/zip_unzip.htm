@@ -1,0 +1,50 @@
+
+  
+  zip_unzip
+  Ta funkcja otworzy zapisany plik zip i wypakuje jego zawartość do podanego katalogu. Zwróć uwagę, że jeśli nie podasz pełnego adresu path do katalogu ZIP, to użyty zostanie bieżący katalog główny dysku, a jeśli chcesz umieścić go we względnym path katalogu roboczym pakietu gier, to powinieneś użyć zmiennej working_directory jako część adresu path (względny adres paths z użyciem "." lub "..." nie będzie działał zgodnie z oczekiwaniami, więc należy go unikać). Zwróć też uwagę, że plik zip musi być albo częścią pakietu z grą (tzn. plikiem dołączonym), albo musi zostać pobrany do magazynu za pomocą funkcji http_get_file().
+  Funkcja zwróci wartość określającą liczbę wyodrębnionych plików lub zwróci 0 lub mniej, jeśli wyodrębnianie nie powiodło się.
+   
+  Składnia:
+  zip_unzip(zip_file, target_directory)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        zip_file
+        The zip file to open
+     
+      
+        target_directory
+        The target directory to extract the files to
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var num = zip_unzip("/downloads/level_data.zip", working_directory + "extracted/");
+    if num <= 0
+    {
+        show_debug_message("Extraction Failed!");
+    }
+  Powyższy kod otworzy plik zip zapisany w katalogu "downloads" i wypakuje jego zawartość do katalogu "extracted" (tworząc ten katalog, jeśli jeszcze nie istnieje), a następnie sprawdzi, czy wypakowanie przebiegło poprawnie, wyświetlając komunikat debugowania w przypadku niepowodzenia.
+   
+   
+   
+  
+    
+      
+        Powrót: Kodowanie plików
+        Następny: load_csv
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

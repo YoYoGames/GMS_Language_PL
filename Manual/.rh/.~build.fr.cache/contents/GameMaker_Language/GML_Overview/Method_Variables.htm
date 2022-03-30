@@ -1,0 +1,84 @@
+
+  
+  Zmienne metody
+  Zmienna metody jest zasadniczo zmienną, której przypisano funkcję, "wiążąc" ją z instancją i umożliwiając użycie zmiennej do odwołania się do funkcji - podobnie jak używa się nazwy funkcji runtime do odwołania się do wbudowanej funkcji GML. Używana zmienna może mieć zakres lokalny, instancyjny lub globalny (więcej informacji o zakresie zmiennych można znaleźć tutaj ).
+  Składnia tworzenia zmiennej metody jest następująca:
+  <variablename> = function(<parameter1>, <parameter2>, etc... )
+    {
+        <statement1>;
+        <statement1>;
+        ...
+    }
+  lub .
+  function <variablename>(<parameter1>, <parameter2>, etc... )
+    {
+        <statement1>;
+        <statement1>;
+        ...
+    }
+  Ogólnie rzecz biorąc, pierwszą formę należy jednak stosować do metod, a drugą do definiowania funkcji skryptowych, ponieważ druga forma będzie również przypisywać indeks script do nazwy funkcji, podczas gdy pierwsza forma będzie "prawdziwą" metodą (i będzie wymagać użycia przedrostka global jeśli jest używana do definiowania funkcji skryptowej).
+  UWAGA: Możesz to sprawdzić, używając obu formularzy w projekcie, a następnie wywołując na każdym z nich funkcję runtime typeof(). Jeden z nich zostanie zaklasyfikowany jako "liczba" - ponieważ zwraca identyfikator indeksu script - a drugi jako "metoda".
+  Należy więc pamiętać, że - ogólnie rzecz biorąc - mówiąc o metodach i zmiennych metodowych, zawsze będziemy odwoływać się do funkcji, które nie zostały zdefiniowane za pomocą indeksu script. 
+  Poniżej przedstawiono trzy proste przykłady tworzenia zmiennej metody przy użyciu różnych zakresów:
+  // Local
+    var _debug = function(message)
+    {
+        show_debug_message(message);
+    }
+    
+    // Instance
+    do_maths = function(val1, val2, val3)
+    {
+        return (val1 * val2) - val3;
+    }
+    
+    // Global
+    global.pd = function(_x1, _y1, _x2, _y2);
+    {
+        return point_distance(_x1, _y1, _x2, _y2);
+    }
+  
+  Zauważ, że w powyższym kodzie różne parametry, które są podawane jako dane wejściowe funkcji, mają swoje nazwy i to właśnie tych nazw należy używać w funkcji, aby odnosić się do różnych danych wejściowych. Zwróć też uwagę, że możesz użyć instrukcji return, aby zwrócić wartość z funkcji do wykorzystania w innym miejscu kodu, oraz że funkcja bez zdefiniowanej wartości zwracanej domyślnie zwróci undefined.
+  UWAGA: Podczas gdy zmienna będzie znajdować się w wybranym zakresie, rzeczywista funkcja będzie związana z zakresem, w którym została początkowo zdefiniowana. Na przykład funkcje skryptów mają zasięg globalny i są "niezwiązane" (tzn. nie są powiązane z żadnymi instancjami), ale jeśli masz funkcję script, która tworzy w sobie inną funkcję jako zmienną metody, a następnie wywołujesz tę funkcję script z instancji, funkcja użyta w script będzie związana ze zmienną instancji jako metoda. Ogólnie rzecz biorąc, nie trzeba się nad tym zastanawiać, ale w przypadku bardziej złożonych operacji ze zmiennymi metod warto to wziąć pod uwagę. Dotyczy to również innych konstrukcji, takich jak with - gdy tworzysz zmienną metody wewnątrz instrukcji with, funkcja zostanie związana z instancją, która jest aktualnie w zasięgu.
+  Po utworzeniu zmiennej metody można jej używać tak samo, jak na przykład funkcji runtime lub script:
+  create_vec = function(_x1, _y1, _x2, _y2);
+    {
+        var _array;
+        _array[0] = point_distance(_x1, _y1, _x2, _y2);
+        _array[1] = point_direction(_x1, _y1, _x2, _y2);
+        return _array;
+    }
+    
+    vec = create_vec(x, y, mouse_x, mouse_y);
+  
+  Zmienne utworzone wewnątrz funkcji podlegają tym samym regułom, co zwykłe zmienne, i są przypisane do zakresu zgodnie z użytym słowem kluczowym lub zakresem wywołania funkcji. W powyższym przykładzie używamy var, więc zmienna tablicowa znajduje się w lokalnym zakresie funkcji. Gdybyśmy nie użyli słowa kluczowego, zmienna zostałaby utworzona w zakresie instancji, która wywołała funkcję.
+  Metody, podobnie jak funkcje script, mogą przyjmować opcjonalne argumenty, które mają wartości domyślne, gdy nie zostaną przekazane:
+  create_attachment = function(_attachment, _x = x, _y = y)
+    {
+        return instance_create_layer(_x, _y, layer, _attachment);
+    }
+  Powyższa funkcja przyjmuje trzy argumenty, z których dwa ostatnie są opcjonalne. Jeśli nie zostaną one przekazane w momencie wywołania funkcji, to domyślnie zostaną użyte współrzędne instancji x i y.
+  Należy zauważyć, że jeśli argument nie został przekazany i nie ma wartości domyślnej, będzie równy undefined.
+  Metody mogą również korzystać ze zmiennych statycznych, które zachowują swoje wartości podczas każdego wywołania funkcji. Więcej informacji na ten temat można znaleźć na tej stronie.
+  Poniżej wymieniono kilka funkcji pomocniczych związanych ze zmiennymi metod:
+  
+    is_method
+    method
+    method_get_self
+    method_get_index
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Przegląd GML
+        Następny: Zmienne statyczne
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,90 @@
+
+  
+   Jeśli kształt kolizji
+  Ta akcja służy do sprawdzania, czy w obszarze o określonym kształcie lub wzdłuż linii nie doszło do kolizji z instancją danej strony object. Podajesz kształt (prostokąt, elipsę lub linię), adres object, który ma zostać sprawdzony, a następnie podajesz współrzędne
+    górnego lewego i dolnego prawego rogu używanego kształtu lub, w przypadku linii, pozycji początkowej i końcowej. Mogą to być pozycje bezwzględne w grze room lub pozycje względne w stosunku do instancji wykonującej działanie. Możesz zobaczyć, jak
+    jak to działa, można zobaczyć na poniższym obrazku:
+  Jak widać, wyniki będą zależały od maski kolizji sprawdzanej instancji.
+    co oznacza, że szukana instancja object musi mieć sprite przypisaną do sprite_index, lub sprite przypisaną do mask_index. Jeśli tak nie jest, to nie zostanie wykryta przez te funkcje,
+    niezależnie od tego, czy rysuje stronę sprite czy nie. Warto zauważyć, że każda instancja, która całkowicie mieści się w granicach określonych dla kształtu elipsy lub prostokąta, również zwróci kolizję. Działanie zostanie ocenione na true, jeśli
+    zostanie wykryta kolizja, lub false w przeciwnym razie, choć można również sprawdzić Not flag, aby sprawdzić, czy nie ma kolizji z obszarem o podanym kształcie, a działanie zostanie ocenione jako true tylko wtedy, gdy nie znaleziono kolizji.
+    w przeciwnym razie będzie to false. Możesz także ustawić opcję Wyklucz siebie, aby wykluczyć instancję wywołującą ze sprawdzania kolizji.
+  Następnie można zaznaczyć lub odznaczyć opcję Zwróć listę. Zaznaczenie tej opcji spowoduje, że akcja utworzy i zapełni listę strukturą danych zawierającą wszystkie instancjekolidujące
+    z kształtem i ustawi zmienną Target na identyfikator listy DS. Jeśli nie jest zaznaczone, zmienna Target będzie miała wartość mniejszą od 0 tylko wtedy, gdy nie zostanie wykryta żadna kolizja, lub będzie miała unikatową wartość ID jednej z instancji w kolizji
+    (zauważ, że jeśli w kolizji bierze udział wiele instancji, to nie wiadomo, który identyfikator instancji zostanie zwrócony, jeśli nie używa się listy).
+  Jeśli wybrano opcję zwracania listy, a zmienna Target nie jest ustawiona na Temp, można również wybrać opcję Free Tar get. Jeśli ustawisz ją na true, wówczas lista zawarta w zmiennej docelowej zostanie zniszczona, a
+    a nowa lista będzie tworzona (i zwracana do zmiennej docelowej) przy każdym wywołaniu akcji. W ten sposób można ponownie używać tej samej zmiennej bez obawy o wycieki pamięci, ponieważ jeśli nie zaznaczymy opcji Free Target, to stajemy się odpowiedzialni
+    za zniszczenie listy przed ponownym użyciem zmiennej w akcji. Zauważ, że niezależnie od tego, czy ta opcja jest zaznaczona, czy nie, jeśli akcja została ustawiona na Zwróć listę, to zmienna docelowa zawsze będzie zawierać identyfikator listy,
+    i jako taka będzie musiała zostać zwolniona, gdy instancja zostanie zniszczona lub gdy zakończy się działanie room (możesz do tego celu użyć np. zdarzenia Sprzątanie na przykład wraz z akcją Free Data Structure ).
+    Warto zauważyć, że można ustawić opcję Free Target tak, by używała predefiniowanej zmiennej lub wyrażenia i w ten sposób kontrolować, kiedy struktura danych listy zostanie zwolniona, ustawiając zmienną w innym miejscu (lub mając różne wyniki dla wyrażenia)
+    tak długo, jak będzie ono miało wynik true/false.
+  Na koniec należy podać zmienną docelową, która ma przechowywać wartość zwracaną lub identyfikator listy. Jeśli flag zmienna docelowa, która ma przechowywać wartość zwracaną, jest zmienną Temp (lokalną), to akcja utworzy tę zmienną, aby przechowywać wartość zwracaną tylko do końca zdarzenia.
+    W takim przypadku opcja Free Target nie robi nic, a użytkownik będzie odpowiedzialny za zniszczenie listy DS, jeśli opcja ta została zaznaczona. Jeśli nie podano zmiennej docelowej i zaznaczono opcję Lista zwracana, lista nie zostanie utworzona.
+  WAŻNE! Kolizje zostaną zarejestrowane tylko dla tych instancji, które mają poprawną maskę kolizji, tzn. mają sprite przypisaną do sprite_index, lub sprite przypisaną do mask_index. Jeśli instancje object sprawdzane w tej akcji nie mają maski kolizji, to nie zostaną wykryte, niezależnie od tego, co w danej chwili rysuje instancja.
+    sprawdzane w tej akcji nie mają maski kolizji, to kolizja nie zostanie wykryta, niezależnie od tego, co dana instancja rysuje w danym momencie.
+  Należy pamiętać, że aby dodać akcje do bloku "if", należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:
+  
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Shape
+        Kształt, którego należy użyć
+      
+      
+        Object
+         object, aby sprawdzić, czy nie występują przypadki
+      
+      
+        x1
+        Pozycja x, od której należy rozpocząć pracę
+      
+      
+        y1
+        Pozycja y, od której ma rozpocząć się praca
+      
+      
+        x2
+        Pozycja x, na której ma się zakończyć
+      
+      
+        y2
+        Pozycja y, na której ma się zakończyć
+      
+      
+        Free Target
+        Może być ustawiona na zmienną lub wyrażenie, albo na true/false, aby kontrolować zwalnianie pamięci listy przy ponownym użyciu zmiennej listy
+      
+      
+        Target
+        Zmienna, która ma być docelową wartością zwracaną przez akcję
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdza, czy nie doszło do kolizji z dowolnymi instancjami object "
+   obj_Enemy" w promieniu 100px wokół pozycji instancji wywołującej. Akcja generuje listę wszystkich instancji, które zostały uznane za kolizyjne, i zapisuje jej identyfikator w zmiennej Target. Jeśli działanie zakończy się wynikiem
+    true to lista jest zapętlana i każdej instancji o ID zapisanym na liście zmniejszana jest zmienna "hp" o 1. Następnie lista DS jest zwalniana.
+   
+   
+   
+  
+    
+      
+        Powrót: Działania związane z kolizją
+        Następny: Jeśli punkt zderzenia
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,55 @@
+
+  
+  tile_set_rotate
+  Za pomocą tej funkcji można ustawić podany zestaw danych kafelków, aby obrócić stronę tile o 90 stopni lub nie. Podajesz dane kafelków, które można pobrać za pomocą funkcji tilemap_get()a następnie ustawiasz argument rotate na true, jeśli chcesz, aby tile była obrócona, lub false, jeśli chcesz, aby tile była w domyślnym, nieobróconym stanie. Funkcja zwróci zmodyfikowany zestaw danych kafelków, który można następnie zastosować za pomocą funkcji tilemap_set() funkcji.
+   
+  Składnia:
+  tile_set_rotate(tiledata, rotate)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tiledata
+        Dane o płytkach
+        The tile-data to set
+      
+      
+        rotate
+        Boolean
+        Set to true aby obrócić i false, aby pozostawić bez zmian
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  var lay_id = layer_get_id("Tiles_sky");
+    var map_id = layer_tilemap_get_id(lay_id);
+    var mx = tilemap_get_cell_x_at_pixel(map_id, mouse_x, mouse_y);
+    var my = tilemap_get_cell_y_at_pixel(map_id, mouse_x, mouse_y);
+    var data = tilemap_get(map_id, mx, my);
+    var bool = !tile_get_rotate(data);
+    data = tile_set_rotate(data, bool);
+    tilemap_set(map_id, data, mx, my);
+  Powyższy kod pobiera identyfikator mapy tile z podanej warstwy, a następnie pobiera pozycję komórki x i y dla tile pod myszą. Pozycja ta jest następnie wykorzystywana do uzyskania danych kafelka, które są obracane, a następnie wykorzystywane do ponownego ustawienia adresu tile.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy mapy kafelkowej
+        Następny: layer_tilemap_get_id
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

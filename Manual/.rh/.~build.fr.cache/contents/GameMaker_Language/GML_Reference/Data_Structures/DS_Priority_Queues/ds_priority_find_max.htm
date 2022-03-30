@@ -1,0 +1,44 @@
+
+  
+  ds_priority_find_max
+  Za pomocą tej funkcji można znaleźć wartość zapisaną w priorytecie queue o najwyższym priorytecie, a jeśli więcej niż jedna wartość ma ten sam priorytet, można zwrócić dowolną z nich w dowolnej kolejności. Jednak w przeciwieństwie do ds_priority_delete_max()funkcja ta nie usunie wartości z adresu queue.
+   
+  Składnia:
+  ds_priority_find_max(id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the priority queue to use.
+     
+    
+  
+   
+  Zwroty:
+  Real or String
+   
+  Przykład:
+  if ai_move
+    {
+        script_execute(ds_priority_find_max(ai_priority));
+    }
+  Powyższy kod sprawdza zmienną instancji i jeśli zwróci true, wykona funkcję script o najwyższym priorytecie, indeksowaną w priorytecie queue.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolejki priorytetowe DS
+        Następny: ds_priority_find_min
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

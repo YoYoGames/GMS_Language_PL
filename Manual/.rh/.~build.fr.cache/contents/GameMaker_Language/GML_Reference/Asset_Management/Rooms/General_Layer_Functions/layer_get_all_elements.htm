@@ -1,0 +1,50 @@
+
+  
+  warstwa_get_all_elements
+  Możesz użyć tej funkcji, aby uzyskać identyfikatory elementów podanej warstwy. Podajesz identyfikator warstwy (który otrzymujesz podczas tworzenia warstwy za pomocą layer_create()) lub nazwę warstwy (jako string - będzie to miało wpływ na wydajność), a funkcja zwróci tablicę identyfikatorów, gdzie każdy wpis w tablicy jest unikalnym identyfikatorem elementu na danej warstwie. Na przykład jeśli warstwa jest warstwą Asset, tablica zostanie wypełniona wartościami ID dla każdej warstwy sprite asset, która jest do niej przypisana. Zwróć uwagę, że używanie kodu do pracy z warstwami oznacza, że do tej samej warstwy można przypisać różne typy elementów - na przykład sprite assets i instancje - w którym to przypadku można użyć funkcji layer_get_element_type() aby uzyskać typ elementu, do którego odnosi się identyfikator.
+   
+  Składnia:
+  layer_get_all_elements(layer_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_id
+        String lub Identyfikator warstwy
+        The unique ID value of the layer to get the elements from (or the layer name as a string)
+      
+    
+  
+   
+  Zwroty:
+  Array of Layer Element IDs
+   
+  Przykład:
+  var a = layer_get_all_elements(layer);
+    for (var i = 0; i < array_length(a); i++;)
+    {
+        if layer_get_element_type(a[i]) == layerelementtype_sprite
+        {
+            layer_sprite_destroy(a[i])
+        }
+    }
+  Powyższy kod pobiera identyfikatory wszystkich elementów instancji przypisanych do warstwy instancji, na której uruchomiony jest kod. Następnie kod sprawdza, czy zwrócone elementy mają adres sprite assets i jeśli tak, to są one niszczone.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_get_element_layer
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

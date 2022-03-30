@@ -1,0 +1,42 @@
+
+  
+  tilemap_get_width
+  Za pomocą tej funkcji można uzyskać szerokość (w komórkach) elementu mapy tile. Należy podać identyfikator elementu mapy tile (który otrzymuje się podczas tworzenia elementu mapy tile przy użyciu layer_tilemap_create() lub gdy
+    użyjesz funkcji layer_tilemap_get_id()), a funkcja zwróci szerokość (liczbę komórek szerokości).
+   
+  Składnia:
+  tilemap_get_width(tilemap_element_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        tilemap_element_id
+        The unique ID value of the tile map element to get the width of
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var lay_id = layer_get_id("Tiles_Walls"); var map_id = layer_tilemap_get_id(lay_id); var _w = tilemap_get_width(map_id); var _h = tilemap_get_height(map_id); total_tiles = (_w * _h);
+   tile Powyższy kod wykorzystuje pobrany identyfikator mapy tile do uzyskania szerokości i wysokości mapy tile, a następnie wykorzystuje te wartości do ustawienia zmiennej instancji.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy mapy kafelkowej
+        Następny: tilemap_get_height
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

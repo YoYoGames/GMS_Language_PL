@@ -17,7 +17,7 @@
   <h1>Struktury i konstruktory</h1>
   <p> <strong>Struktura </strong>to zmienna, która przechowuje kolekcję innych zmiennych. Zmienne przechowywane na stronie <span class="notranslate">struct</span> mogą być dowolnego <a href="Data_Types.htm">typu danych</a> wymienionych wcześniej, a zmienne te można odczytywać i zapisywać po wstępnej deklaracji <span class="notranslate">struct</span>. Można również dodawać kolejne zmienne do strony <span class="notranslate">struct</span> po jej zadeklarowaniu.</p>
   <p>Zmienne używane w <span class="notranslate">struct</span> powinny być zgodne ze zwykłym schematem nazewnictwa zmiennych, tzn.: nie mogą zaczynać się od liczby i powinny składać się tylko ze znaków alfanumerycznych i znaku podkreślenia &quot;_&quot;. Należy również pamiętać, że zawartość <span class="notranslate">struct</span> jest <em>niezależna od instancji lub funkcji, która ją utworzyła</em>, i jako taka może - jeśli chcesz - używać wbudowanych nazw zmiennych, takich jak <span class="inline">image_index</span> lub <span class="inline">x</span> i <span class="inline">y</span>.</p>
-  <p>Po początkowym utworzeniu, <span class="notranslate">structs</span> nie ma kosztów ogólnych przetwarzania, choć zajmuje miejsce <i>w</i> pamięci. Składnia strony <span class="notranslate">struct</span> jest następująca:</p>
+  <p>Po początkowym utworzeniu, <span class="notranslate">structs</span> nie ma żadnego narzutu na przetwarzanie danych w czasie swojego istnienia, ale zajmuje miejsce <i>w</i> pamięci. Składnia strony <span class="notranslate">struct</span> jest następująca:</p>
   <p class="code"><i>&lt;variable&gt;</i> =<br />
     {<br />
     <i>    &lt;variable&gt;</i> : <i>&lt;value&gt;</i>,<br />
@@ -142,7 +142,7 @@
         }<br />
     }
   </p>
-  <p>Tworzymy tutaj funkcję o nazwie <span class="inline">Vector2</span> i informujemy <span class="notranslate">GameMaker Studio 2</span>, że jest to funkcja służąca do tworzenia struktur, dodając słowo kluczowe <span class="inline">constructor</span> po jej definicji. Następnie można wywołać tę funkcję konstruktora w następujący sposób:</p>
+  <p>Tworzymy tutaj funkcję o nazwie <span class="inline">Vector2</span> i informujemy program <span data-keyref="GameMaker Name">GameMaker</span>, że jest to funkcja służąca do tworzenia struktur, dodając słowo kluczowe <span class="inline">constructor</span> po jej definicji. Następnie można wywołać tę funkcję konstruktora w następujący sposób:</p>
   <p class="code">v2 = new Vector2(10, 10);</p>
   <p>Zmienna <span class="inline">v2</span> będzie teraz zawierać <span class="notranslate">struct</span> ze zmiennymi <span class="inline">x</span> i <span class="inline">y</span> oraz <a href="Functions/Static_Variables.htm"><span class="notranslate">static</span></a> zmienną <a href="Method_Variables.htm">metodyczną</a> <span class="inline">Add</span>.</p>
   <p>W funkcjach konstruktorów można również używać opcjonalnych argumentów:</p>
@@ -183,7 +183,7 @@
     show_debug_message(_basic_sword.my_damage); // Prints 10
   </p>
   <p>Oznacza to, że obrażenia miecza podstawowego zawsze będą wynosić <span class="inline">10</span>, ponieważ konstruktor przekazuje tę wartość swojemu konstruktorowi nadrzędnemu, niezależnie od tego, jakie są jego własne argumenty.</p>
-  <p>Należy zauważyć, że przypisanie domyślnej wartości do argumentu w konstruktorze potomnym spowoduje zastąpienie domyślnej wartości tego argumentu w konstruktorze rodzica. Zobacz poniższy przykład:</p>
+  <p>Należy zauważyć, że przypisanie domyślnej wartości do argumentu w konstruktorze potomnym spowoduje zastąpienie domyślnej wartości rodzica dla tego argumentu. Zobacz poniższy przykład:</p>
   <p class="code">function Parent(value = 10) constructor<br />
     {<br />
         show_debug_message(value);<br />

@@ -1,0 +1,94 @@
+
+  
+  draw_surface_part_ext
+  Ta funkcja narysuje fragment wybranej powierzchni w podanym położeniu, stosując te same zasady, co funkcja draw_surface_part()z tą różnicą, że teraz możesz skalować fragment, mieszać z nim kolor lub zmieniać jego alfa podczas rysowania go na ekranie (tak samo jak podczas rysowania powierzchni za pomocą funkcji draw_surface_ext()).
+   
+   
+  Składnia:
+  draw_surface_part_ext(id, left, top, w, h, x, y, xscale, yscale, colour, alpha);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator powierzchni
+        The unique ID value of the surface to draw.
+      
+      
+        left
+        Real
+        The left position in the surface of the part to be drawn.
+      
+      
+        top
+        Real
+        The top position in the surface of the part to be drawn.
+      
+      
+        w
+        Real
+        The width of the part to be draw, from left.
+      
+      
+        h
+        Real
+        The height of the part to be drawn, from top.
+      
+      
+        x
+        Real
+        The x position of where to draw the surface.
+      
+      
+        y
+        Real
+        The y position of where to draw the surface.
+      
+      
+        xscale
+        Real
+        The horizontal scaling the part should be drawn with.
+      
+      
+        yscale
+        Real
+        The vertical scaling the part should be drawn with.
+      
+      
+        colour
+        Kolor
+        The colour blending the part should be drawn with.
+      
+      
+        alpha
+        Real
+        The alpha transparency the part should be drawn with.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_surface_part_ext(surf, 8, 8, 32, 32, x, y, 2, 0.5, c_black, 1);
+  Spowoduje to narysowanie obszaru o rozmiarach 32x32 pikseli o wymiarach 8x8 pikseli na powierzchni indeksowanej zmienną "surf". Zostanie on rozciągnięty do podwójnej szerokości, ale do połowy wysokości. Obszar będzie nieprzezroczysty i zostanie zmieszany z czernią (co zmieni go w sylwetkę).
+   
+   
+   
+  
+    
+      
+        Powrót: Powierzchnie
+        Następny: draw_surface_stretched
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

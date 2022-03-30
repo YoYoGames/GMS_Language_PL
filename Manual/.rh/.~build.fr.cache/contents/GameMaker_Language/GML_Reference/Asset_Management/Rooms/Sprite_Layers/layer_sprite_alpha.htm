@@ -1,0 +1,47 @@
+
+  
+  warstwa_sprite_alpha
+  Ta funkcja steruje współczynnikiem alfa (przezroczystością) elementu sprite na warstwie asset. Podajesz identyfikator elementu sprite (który otrzymujesz podczas tworzenia elementu sprite za pomocą polecenia layer_sprite_create() lub gdy użyjesz
+    funkcji layer_sprite_get_id()), a następnie ustawia się wartość alfa, która ma być używana. Wartość alfa może wynosić od 0 (całkowicie przezroczysta) do 1 (całkowicie nieprzezroczysta), przy czym domyślną wartością alfa dla elementu sprite jest 1. Uwaga:
+    Jeśli warstwa, do której został przypisany element sprite, jest niewidoczna lub sam element stał się niewidoczny, przy użyciu tej funkcji nie będzie widać żadnej różnicy, dopóki warstwa lub element nie staną się ponownie widoczne.
+   
+  Składnia:
+  layer_sprite_alpha(sprite_element_id, alpha);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sprite_element_id
+        The unique ID value of the sprite element to change
+     
+      
+        alpha
+        The alpha for sprite sprite, from 0 to 1 (default is 1)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var lay_id = layer_get_id("Asset_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); layer_sprite_alpha(spr_id, random(1));
+  Powyższy kod pobiera wartość ID strony sprite asset o nazwie "Clouds" przypisanej do warstwy "Asset_sky", a następnie ustawia jej alfa na losową wartość z przedziału od 0 do 1.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy Sprite'ów
+        Następny: layer_sprite_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

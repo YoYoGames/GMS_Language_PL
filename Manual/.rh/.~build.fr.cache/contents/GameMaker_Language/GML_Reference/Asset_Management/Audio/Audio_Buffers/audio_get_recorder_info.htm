@@ -1,0 +1,56 @@
+
+  
+  audio_get_recorder_info
+  Ta funkcja zwraca mapę DS z informacjami o podanym indeksie źródła rejestratorów. Możesz dowiedzieć się, ile źródeł rejestratorów jest dostępnych, używając funkcji audio_get_recorder_count()a zwrócona mapa będzie zawierać następujące pary klucz/wartość:
+  
+    "nazwa" - nazwa opisująca urządzenie
+    "indeks" - indeks, który ma być użyty do zapisu
+    "data_format" - format, w jakim będą zwracane dane (obecnie jest to zawsze buffer_s16, ale w przyszłości mogą być obsługiwane inne formaty)
+    "sample_rate" - częstotliwość próbkowania (w Hz) zwracanych danych (obecnie ustawiona na 16000 Hz, ale w przyszłości może się to zmienić)
+    "kanały" - stała audio_mono (w przyszłości mogą zostać wprowadzone kolejne stałe dla stereo i 3D)
+  
+  Zwróć uwagę, że choć funkcja tworzy dla Ciebie mapę DS, nie usuwa jej później, dlatego powinieneś sam niszczyć mapę, gdy nie jest już potrzebna, aby zapobiec wyciekom pamięci.
+  UWAGA Większość platform z wyjątkiem HTML5 obsługuje nagrywanie dźwięku w jakiejś formie, ale nie oznacza to, że wszystkie urządzenia będą na to zezwalać, nawet jeśli platforma to robi, dlatego zawsze należy sprawdzić, czy funkcja audio_get_recorder_count() zwraca wartość większą niż 0, aby sprawdzić, czy urządzenia do nagrywania są dostępne, zanim użyjesz pozostałych funkcji nagrywania.
+   
+  Składnia:
+  audio_get_recorder_info(recorder_index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        recorder_index
+        Real
+        The index of the recorder source to get the information from.
+      
+    
+  
+   
+  Zwroty:
+  DS Map ID
+   
+  Przykład:
+  len = async_load[? "data_len"];
+    audio_buff = buffer_create(len, buffer_fast, 1);
+    buffer_copy(async_load[? "buffer_id"], 0, len, buff, 0);
+    audio_queue_sound(audio_queue, audio_buff, 0, len);
+    audio_play_sound(audio_queue, 10, 0);
+  Powyższy kod zostanie wywołany w zdarzeniu asynchronicznego nagrywania dźwięku i przypisze nagrane dane do strony buffer, która następnie zostanie dodana do pliku audio queue. Następnie jest ono odtwarzane.
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory audio
+        Następny: audio_create_buffer_sound
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

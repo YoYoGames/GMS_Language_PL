@@ -1,0 +1,48 @@
+
+  
+  bufor_get_address
+  Za pomocą tej funkcji można uzyskać wskaźnik do surowego, wyrównanego adresu buffer. Służy ona głównie do używania z extensions, ponieważ można przekazać tę wartość, umożliwiając im dostęp do danych buffer. Należy pamiętać, że jest kilka rzeczy
+    nie można zrobić z adresem buffer, gdy dostęp do niego uzyskuje się z rozszerzenia:
+  
+    Nie można uwolnić pamięci.
+    Nie można zmienić rozmiaru pamięci.
+    Nie można zapisywać poza adres buffer plus rozmiar buffer (można do tego użyć funkcji buffer_get_size() do tego celu), w przeciwnym razie zostanie wyświetlony błąd przekroczenia granic.
+  
+   
+  Składnia:
+  buffer_get_address(buffer);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        buffer
+        The index of the buffer to use.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var b_address = buffer_get_address(buff_model); var b_end_address = b_address + buffer_get_size(buff_model);
+  Powyższy kod pobierze adres pamięci strony buffer zaindeksowanej w zmiennej "buff_model", a następnie pobierze adres pamięci końca strony buffer za pomocą funkcji buffer_get_size(), przechowując obie wartości w zmiennych lokalnych do
+    dalszego użycia.
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_get_size
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,60 @@
+
+  
+  sekwencja_warstw_tworzona
+  Za pomocą tej funkcji można utworzyć instancję warstwy sequence asset na podanej warstwie. Podajesz identyfikator warstwy, który może być string nazwy warstwy - zdefiniowanej w edytorze room - lub unikalnym identyfikatorem warstwy - zwróconym przez funkcję layer_get_id()jak również pozycję X i Y w room, w której ma zostać utworzona sequence, oraz identyfikator sequence, który ma zostać utworzony. Identyfikator sequence jest stałą nazwy zdefiniowaną w przeglądarce Asset dla elementu sequence. Funkcja zwróci unikalny identyfikator elementu sequence, który można następnie wykorzystać we wszystkich dalszych funkcjach warstw dla sequences, lub można go użyć do pobrania instancji sequence struct za pomocą funkcji layer_sequence_get_instance().
+  Warto zauważyć, że jeśli na stronie sequence znajdują się jakieś ścieżki object, ich instancje zostaną utworzone zaraz po utworzeniu samego elementu sequence, niezależnie od tego, gdzie ich klawisze asset znajdują się na Dope Sheet. Kontroler Sequence po prostu przełącza widoczność instancji, aby ją ukryć lub pokazać w zależności od pozycji i czasu trwania klawisza asset ścieżki, a nie tworzy i niszczy ją wielokrotnie. W rezultacie instancje będą uruchamiać swoje zdarzenia Create, gdy zostanie utworzony element sequence, a nie gdy zaczną się klucze ich zasobów.
+   
+  Składnia:
+  layer_sequence_create(layer_id, x, y, sequence_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_id
+        Ciąg lub identyfikator warstwy
+        The unique ID value of the instance layer to target
+      
+      
+        x
+        Real
+        The x position in the room to create the sequence at
+      
+      
+        y
+        Real
+        The y position in the room to create the sequence at
+      
+      
+        sequence_id
+        Sekwencja Aktywa
+        The sequence asset to use, as defined in the Asset Browser
+      
+    
+  
+   
+  Zwroty:
+  Sequence Element ID
+   
+  Przykład:
+  var _s = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground);
+    layer_sequence_pause(_s);
+  Powyższy kod tworzy nową stronę sequence na warstwie "Tło", a następnie ją wstrzymuje.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy sekwencji
+        Następny: layer_sequence_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

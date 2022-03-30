@@ -1,0 +1,47 @@
+
+  
+  urządzenie_mouse_dbclick_enable
+  Tej funkcji można użyć, aby urządzenie wykrywało podwójne stuknięcie przycisku mb_left (lewy przycisk myszy) jako wejście mb_right (prawy przycisk myszy).
+  Domyślnie jest to ustawione na true, co oznacza, że za każdym razem, gdy użytkownik dwukrotnie szybko i kolejno stuknie ekran urządzenia, wartość zwracana jest taka sama, jak po kliknięciu prawym przyciskiem myszy. Gdy ta opcja jest włączona, pierwsze stuknięcie będzie wykrywane jako mb_left, a drugie jako mb_right, dlatego należy się upewnić, że każdy kod, który jest używany, uwzględnia tę opcję.
+   
+  Składnia:
+  device_mouse_dbclick_enable(bool);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        bool
+        Boolean
+        Set double-click detection on (true) lub wyłączone (false).
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if os_type == os_windows || os_type == os_mac
+    {
+        device_mouse_dbclick_enable(false);
+    }
+  Powyższy kod sprawdza, czy urządzenie, na którym uruchomiona jest gra, to komputer Windows PC lub Mac, i jeśli jest to jedno z nich, wyłącza funkcję dwukrotnego stuknięcia.
+   
+   
+   
+  
+    
+      
+        Powrót: Wejście urządzenia
+        Następny: device_mouse_x
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

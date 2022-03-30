@@ -1,0 +1,518 @@
+
+  
+  sprite_get_info
+  Ta funkcja służy do pobierania informacji dla podanej strony sprite. Podajesz indeks sprite (może to być asset dodany przez przeglądarkę zasobów lub sprite dodany na stronie runtime), a funkcja zwraca strukturę z następującymi zmiennymi:
+  
+    
+      
+      
+      
+    
+    
+      
+        Struktura Sprite Info
+      
+      
+        Zmienna
+        Typ
+        Opis
+      
+      
+        szerokość
+        prawdziwy
+        Szerokość sprite'a (w pikselach)
+      
+      
+        wysokość
+        prawdziwy
+        Wysokość sprite'a (w pikselach)
+      
+      
+        xoffset
+        prawdziwy
+        Przesunięcie X sprite'a/pochodzenie (w pikselach)
+      
+      
+        yoffset
+        prawdziwy
+        Przesunięcie/pochodzenie sprite'a w osi Y (w pikselach)
+      
+      
+        przejrzysta strona
+        symbol boolean
+        true jeśli strona sprite jest oznaczona jako przezroczysta, w przeciwnym razie false
+         (Można to określić tylko za pomocą sprite_add() lub podobnych funkcji i będzie to false dla sprites utworzonych w IDE)
+        
+      
+      
+        gładka
+        symbol boolean
+        true jeśli strona sprite jest oznaczona jako gładka, w przeciwnym razie false
+          (Można to określić tylko za pomocą sprite_add() lub podobnych funkcji i będzie to false dla sprites utworzonych w IDE)
+        
+      
+      
+        typ
+        prawdziwy
+        Typ sprite'a:
+          0 - Bitmap (Regular sprites)
+          1 - SWF
+          2 - Kręgosłup
+        
+      
+      
+        bbox_left
+        prawdziwy
+        Położenie lewej krawędzi ramki ograniczającej (w pikselach)
+      
+      
+        bbox_top
+        prawdziwy
+        Położenie górnej krawędzi ramki ograniczającej (w pikselach)
+      
+      
+        bbox_right
+        prawdziwy
+        Położenie prawej krawędzi ramki ograniczającej (w pikselach)
+      
+      
+        bbox_bottom
+        prawdziwy
+        Położenie dolnej krawędzi ramki ograniczającej (w pikselach)
+      
+      
+        nazwa
+        ciąg
+        Nazwa sprite'a
+      
+      
+        liczba_podobrazów
+        prawdziwy
+        Liczba podobrazów (lub klatek) w sprite'ie
+      
+      
+        użyj_maski
+        symbol boolean
+        true jeśli ta strona sprite używa maski kolizji, w przeciwnym razie false
+      
+      
+        num_masek
+        prawdziwy
+        Liczba masek w tej witrynie sprite (większa niż 1, jeśli w witrynie sprite używane są maski dla poszczególnych klatek)
+      
+      
+        nineslice
+        struct
+         Struktura Nine Slice dla tej strony sprite, lub undefined, jeśli nie ma danych o dziewięciu plasterkach
+      
+      
+        wiadomości
+        tablica
+        Tablica komunikatów nadawczych dla tej strony sprite, gdzie każdy komunikat nadawczy to strona struct zawierająca informacje o komunikacie (więcej informacji w części "Ogólne dane Sprite ")
+      
+      
+        ramka_info
+        tablica
+        Tablica ramek dla tej strony sprite, gdzie każda ramka jest stroną struct zawierającą informacje o czasie (więcej informacji w części "Ogólne dane Sprite ")
+      
+    
+  
+  Ta dodatkowa zmienna jest dostępna tylko dla sprite'ów Bitmap (zwykłych):
+  
+    
+      
+      
+      
+    
+    
+      
+        Struktura Sprite Info
+      
+      
+        Zmienna
+        Typ
+        Opis
+      
+      
+        ramki
+        tablica
+        Tablica ramek dla tej strony sprite, gdzie każda ramka jest stroną struct zawierającą informacje o jej teksturze (więcej informacji w części "Bitmap Sprite Data")
+      
+    
+  
+  Te dodatkowe zmienne są dostępne tylko dla sprite'ów Spine:
+  
+    
+      
+      
+      
+    
+    
+      
+        Struktura Sprite Info
+      
+      
+        Zmienna
+        Typ
+        Opis
+      
+      
+        num_atlas
+        prawdziwy
+        Liczba wykorzystanych atlasów textures 
+      
+      
+        atlas_tekstury
+        tablica
+        Tablica identyfikatorów texture używanych w atlasie
+      
+      
+        przed mnożeniem
+        symbol boolean
+        true jeśli ta strona sprite jest oznaczona jako przedmultiplikowana, w przeciwnym razie false
+      
+      
+        animacja_nazwy
+        tablica
+        Tablica zawierająca nazwy wszystkich animacji w tym sprite'ie.
+      
+      
+        skin_names
+        tablica
+        Tablica zawierająca nazwy wszystkich skórek w tym sprite'ie
+      
+      
+        kości
+        tablica
+        Tablica zawierająca adres structs dla każdej kości w tym sprite'ie (więcej informacji w części "Dane kręgosłupa Sprite ").
+      
+      
+        sloty
+        tablica
+        Tablica zawierająca structs dla każdego gniazda w tym sprite'ie (więcej informacji w części "Dane kręgosłupa Sprite ").
+      
+    
+  
+   
+  Funkcja zwróci undefined, jeśli podany adres sprite nie istnieje. Należy również pamiętać, że informacje zwracane w tym miejscu struct należy traktować jako informacje tylko do odczytu, ponieważ modyfikacja którejkolwiek z tych zmiennych nie będzie miała wpływu na sprite.
+  Poniższe sekcje zawierają informacje o tablicach i stronach structs zawartych w zwracanym adresie struct w zależności od typu sprite:
+  Dane ogólne Sprite 
+  
+    Ten rozdział zawiera informacje o zmiennych zawartych w witrynie struct dla wszystkich rodzajów sprite'ów.
+    Zmienna messages jest tablicą, która zawiera informacje o komunikatach nadawczych istniejących w danym serwisie sprite. Każdy komunikat w tej tablicy jest adresem struct zawierającym następujące zmienne:
+    
+      
+        
+          Nazwa zmiennej
+          Typ danych
+          Opis
+        
+        
+          rama
+          prawdziwy
+          Czas nadania komunikatu od początku animacji (w klatkach)
+        
+        
+          wiadomość
+          ciąg
+          Ciąg komunikatu nadawczego
+        
+      
+    
+     
+    Zmienna frame_info jest tablicą, która zawiera informacje o czasie trwania klatek sprite'a. Każda klatka w tej tablicy jest adresem struct zawierającym następujące zmienne:
+    
+      
+        
+          Nazwa zmiennej
+          Typ danych
+          Opis
+        
+        
+          rama
+          prawdziwy
+          Czas rozpoczęcia tej ramki (w ramkach)
+        
+        
+          image_index
+          prawdziwy
+          Indeks obrazu tej ramki
+        
+      
+    
+     
+  
+  Bitmapa Sprite Dane
+  
+    Ta sekcja zawiera informacje na temat zmiennych zawartych w witrynie struct dla Bitmap sprites (sprites, które nie są Spine lub SWF typu sprites).
+    Zmienna frames jest tablicą, która zawiera informacje o textures klatkach sprite'a. Każda ramka w tej tablicy jest adresem struct zawierającym następujące zmienne:
+    
+      
+        
+          Nazwa zmiennej
+          Typ danych
+          Opis
+        
+        
+          x
+          prawdziwy
+          Pozycja X tej ramki na stronie texture (w pikselach)
+        
+        
+          y
+          prawdziwy
+          Położenie Y tej ramki na stronie texture (w pikselach)
+        
+        
+          w
+          prawdziwy
+          Logiczna szerokość ramki (w pikselach) używana wewnętrznie
+        
+        
+          h
+          prawdziwy
+          Logiczna wysokość ramki (w pikselach) używana wewnętrznie
+        
+        
+          tekstura
+          prawdziwy
+          Identyfikator strony texture dla tej ramki
+        
+        
+          oryginalna_szerokość
+          prawdziwy
+          Oryginalna szerokość ramki (w pikselach)
+        
+        
+          original_height
+          prawdziwy
+          Oryginalna wysokość ramki (w pikselach)
+        
+        
+          crop_width
+          prawdziwy
+          Rzeczywista szerokość ramki na stronie texture po wykadrowaniu i przeskalowaniu (ponieważ GMS2 automatycznie przycina pustą przestrzeń wokół obrazu, a także skaluje go w dół, jeśli się nie mieści)
+        
+        
+          crop_height
+          prawdziwy
+          Rzeczywista wysokość ramki na stronie texture po przycięciu i przeskalowaniu
+        
+        
+          x_offset
+          prawdziwy
+          Przesunięcie X od lewej krawędzi oryginalnego obrazu do lewej krawędzi wykadrowanego fragmentu
+        
+        
+          y_offset
+          prawdziwy
+          Przesunięcie Y od górnej krawędzi oryginalnego obrazu do górnej krawędzi wykadrowanego fragmentu
+        
+      
+    
+     
+  
+  Kręgosłup Sprite Dane
+  
+    Ta sekcja zawiera informacje na temat zmiennych zawartych w serwisie struct na stronie Spine sprites.
+    Zmienna bones jest tablicą, która zawiera informacje o wszystkich kościach w podanym adresie Spine sprite. Każda kość w tej tablicy jest adresem struct zawierającym następujące zmienne:
+    
+      
+        
+          Nazwa zmiennej
+          Typ danych
+          Opis
+        
+        
+          rodzic
+          ciąg
+          Nazwa kości nadrzędnej lub undefined, jeśli ta kość nie ma kości nadrzędnej.
+        
+        
+          nazwa
+          ciąg
+          Nazwa tej kości
+        
+        
+          indeks
+          prawdziwy
+          Indeks tej kości
+        
+        
+          długość
+          prawdziwy
+          Długość tej kości
+        
+        
+          x
+          prawdziwy
+          Pozycja X tej kości
+        
+        
+          y
+          prawdziwy
+          Pozycja Y tej kości
+        
+        
+          obrót
+          prawdziwy
+          Obrót tej kości
+        
+        
+          skala_x
+          prawdziwy
+          (Wewnętrzny dla Spine) Wartość skali na X
+        
+        
+          skala_y
+          prawdziwy
+          (Wewnętrzny dla Spine) Wartość skali na Y
+        
+        
+          ścinanie_x
+          prawdziwy
+          (Wewnętrzna na Spine) Wartość ścinania na X
+        
+        
+          ścinanie_y
+          prawdziwy
+          (Wewnętrzna w stosunku do Spine) Wartość ścinania na Y
+        
+        
+          transform_mode
+          prawdziwy
+          (Wewnętrzny dla Spine) Tryb transformacji
+        
+      
+    
+     UWAGA: Więcej informacji na temat zmiennych wewnętrznych Spine można znaleźć w dokumentacji Spine.
+    Zmienna slots jest tablicą, która zawiera informacje o wszystkich slotach w danym Spine sprite. Każde gniazdo w tej tablicy jest adresem struct zawierającym następujące zmienne:
+    
+      
+        
+          Nazwa zmiennej
+          Typ danych
+          Opis
+        
+        
+          nazwa
+          ciąg
+          Nazwa slotu
+        
+        
+          indeks
+          prawdziwy
+          Indeks slotu
+        
+        
+          kość
+          ciąg
+          Nazwa kości slotu, lub "(none)" jeśli nie ma kości dla tego slotu
+        
+        
+          załącznik
+          ciąg
+          Nazwa załącznika
+        
+        
+          czerwony
+          prawdziwy
+          Czerwony składnik koloru slotu (0-1)
+        
+        
+          zielony
+          prawdziwy
+          Zielony składnik koloru slotu (0-1)
+        
+        
+          niebieski
+          prawdziwy
+          Niebieski składnik koloru slotu (0-1)
+        
+        
+          alfa
+          prawdziwy
+          Składowa alfa koloru szczeliny (0-1)
+        
+        
+          blendMode
+          prawdziwy
+          (Wewnętrzny dla Spine) Tryb mieszania dla gniazda.
+        
+        
+          ciemna_czerwona*
+          prawdziwy
+          Czerwony składnik ciemnego koloru szczeliny (0-1)
+        
+        
+          ciemny_zielony*
+          prawdziwy
+          Zielony składnik ciemnego koloru szczeliny (0-1)
+        
+        
+          ciemny_niebieski*
+          prawdziwy
+          Niebieski składnik ciemnego koloru szczeliny (0-1)
+        
+        
+          dark_alpha*
+          ciąg
+          Składowa alfa ciemnego koloru szczeliny (0-1)
+        
+      
+    
+    * UWAGA: Zmienne ciemnego koloru są dostępne tylko wtedy, gdy w gnieździe jest włączona opcja Tint Black.
+     
+  
+   
+   
+  Składnia:
+  sprite_get_info(index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Aktywa Sprite
+        The index of the sprite to get the information for.
+      
+    
+  
+   
+  Zwraca
+  Sprite Info Struct (or undefined)
+   
+  Przykład:
+  var _info = sprite_get_info(sprite_index);
+    
+    if (_info != undefined && _info.type == 0)
+    {
+        var _messages = _info.messages;
+        var _messageCount = array_length(_messages);
+        
+        for (var i = 0; i < _messageCount; i ++)
+        {
+            var _message = _messages[i];
+            show_debug_message("Message at frame " + string(_message.frame) + ": " + _message.message);
+        }
+    }
+  
+  Powyższy kod pobiera informacje struct o instancji sprite, a następnie sprawdza, czy nie jest to undefined i czy jej typ jest 0 (co oznacza, że jest to bitmapa sprite). W takim przypadku pobiera tablicę komunikatów dla tego adresu sprite, a następnie uruchamia polecenie for loop, aby wypisać każdy komunikat (wraz z ramką) do dziennika wyjściowego.
+   
+   
+  
+    
+      
+        Powrót: Informacje o Sprite
+        Następny: sprite_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

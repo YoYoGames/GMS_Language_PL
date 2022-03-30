@@ -1,0 +1,66 @@
+
+  
+  shader_set_uniform_f
+  Za pomocą tej funkcji można ustawić wartość (lub wartości) stałej shader. Wcześniej należy uzyskać "uchwyt" do stałej za pomocą funkcji shader_get_uniform()i musisz wiedzieć, jakiego typu jest to stała, aby przekazać do niej odpowiednią liczbę wartości zmiennoprzecinkowych, np. jeśli masz stałą vec2, musisz przekazać do funkcji dwie wartości.
+  Wyjątkiem od powyższej reguły jest sytuacja, gdy mamy do czynienia z 32-bitowymi wartościami kolorów. Do shader można wprowadzić do ośmiu 32-bitowych wartości kolorów, które zostaną automatycznie przekonwertowane na wartości vec4 o wartościach 0 - 1. Jednak w tym celu należy użyć stałej shader o nazwie in_Colour, dla pojedynczego koloru, lub in_Colour0, in_Colour1, itd... aż do in_Colour7 dla wielu wartości wejściowych. Poniższe przykłady pokazują, jak wyglądałoby to w samej witrynie shader:
+      //Single colour
+        attribute vec2 in_Position;
+        attribute vec4 in_Colour;
+        attribute vec2 in_TextureCoord;
+    
+        //Multiple colours
+        attribute vec2 in_Position;
+        attribute vec4 in_Colour0;
+        attribute vec4 in_Colour1;
+        attribute vec2 in_TextureCoord;
+  
+  Należy również pamiętać, że jeśli chcesz wykonać skompresowane wartości normalne itp. przy użyciu 4-bajtowego formatu kolorów, będziesz musiał również użyć tego samego formatu "in_Colour", jak pokazano powyżej.
+  UWAGA: Wszystkie uniformy muszą być ustawione po wywołaniu funkcji shader_set(), a przed wywołaniem funkcji shader_reset().
+   
+  Składnia:
+  shader_set_uniform_f(handle, value1 [, value2, value3, value4]);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        handle
+        Jednolity uchwyt shadera
+        The handle of the shader constant to set.
+      
+      
+        value1 ... value4
+        Real
+        The floating point value (or values) to set the shader constant to.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  shader_set(shader_Glass);
+    shader_params = shader_get_uniform(shader_glass, "u_vParams");
+    shader_set_uniform_f(shader_params, 0.1, 0.8, 0.25);
+    draw_self();
+    shader_reset();
+  Powyższy kod pobierze uchwyt stałej shader "u_vParams" ( a vec3), a następnie ustawi tę stałą na podane wartości.
+   
+   
+   
+  
+    
+      
+        Powrót: Shadery
+        Następny: shader_set_uniform_f_array
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,95 @@
+
+  
+  os_browser
+  Ta zmienna tylko do odczytu przechowuje jedną z różnych stałych (wymienionych poniżej), które GameMaker Studio 2 wykorzystuje do informowania użytkownika o tym, w jakiej przeglądarce aktualnie uruchomiona jest gra (jeśli w ogóle).
+   
+  Składnia:
+  os_browser
+   
+  Zwroty:
+  Browser Type Constant
+  
+    
+      
+      
+    
+    
+      
+        Typ przeglądarki Stała
+      
+      
+        Stała
+        Opis
+      
+      
+        browser_not_a_browser
+        Gra nie jest odtwarzana w przeglądarce
+      
+      
+        browser_unknown
+        Nieznana przeglądarka
+      
+      
+        browser_ie
+        Internet Explorer
+      
+      
+        browser_ie_mobile
+        Internet Explorer na urządzeniu przenośnym
+      
+      
+        browser_firefox
+        Mozilla Firefox
+      
+      
+        browser_chrome
+        Google Chrome
+      
+      
+        browser_safari
+        Safari
+      
+      
+        browser_safari_mobile
+        Safari na urządzeniu przenośnym
+      
+      
+        browser_opera
+        Opera
+      
+      
+        browser_tizen
+        Przeglądarka urządzeń mobilnych Tizen
+      
+      
+        browser_windows_store
+        Aplikacja dla Windows
+      
+    
+  
+   
+  Przykład:
+  if (os_browser == browser_not_a_browser)
+    {
+        global.Config = 0;
+    }
+    else
+    {
+        global.Config = 1;
+    }
+  Powyższy kod sprawdza, czy gra jest uruchomiona w przeglądarce, a następnie ustawia zmienną globalną na wartość zależną od wyniku sprawdzenia.
+   
+   
+   
+  
+    
+      
+        Powrót: System operacyjny i kompilator
+        Następny: os_device
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

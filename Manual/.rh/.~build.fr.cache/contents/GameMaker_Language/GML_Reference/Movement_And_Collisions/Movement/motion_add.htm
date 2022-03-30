@@ -1,0 +1,48 @@
+
+  
+  ruch_dodaj
+  Ta funkcja zmodyfikuje bieżące wartości direction i speed instancji uruchamiającej kod, dodając nowe wartości do wartości bieżących. Jeśli chcesz po prostu zmienić te wartości, powinieneś użyć funkcji motion_set().
+   
+  Składnia:
+  motion_add(dir, speed);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        dir
+        The added direction.
+     
+      
+        speed
+        The added speed.
+     
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var pdir;
+    pdir = point_direction(other.x, other.y, x, y);
+    motion_add(pdir, other.speed);
+    if speed > 8 speed = 8;
+  powyższy kod zostałby wywołany w zdarzeniu kolizji z inną instancją object. Dodaje on do kierunku ruchu i prędkości instancji wektor oparty na pozycji i prędkości drugiej instancji biorącej udział w kolizji. Następnie ogranicza prędkość, jeśli przekroczy ona 8 (pikseli na krok).
+   
+   
+   
+  
+    
+      
+        Powrót: Ruch
+        Następny: motion_set
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

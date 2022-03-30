@@ -3,6 +3,7 @@
   <content>
     <conditional>
       <path>../expressions/StableManual.expn</path>
+      <name>StableManual</name>
     </conditional>
     <toc>
       <path>../../toc/Default.toc</path>
@@ -13,7 +14,12 @@
       <name>Default</name>
       <path>../../glossary/Default.glo</path>
     </glossary>
-    <brs type="array"></brs>
+    <brs type="array">
+      <brsitem>
+        <path>../browsesequence/MainSequence.brs</path>
+        <name>MainSequence</name>
+      </brsitem>
+    </brs>
     <language>
       <name>de_DE</name>
       <code type="number">1031</code>
@@ -23,7 +29,7 @@
     <includeExpandingText type="boolean">true</includeExpandingText>
     <includeDropdownText type="boolean">true</includeDropdownText>
   </content>
-  <title>GameMaker Studio 2 Manual</title>
+  <title>GameMaker Manual</title>
   <type>html5</type>
   <glosstermEffect type="number">2</glosstermEffect>
   <outputPath>C:/Users/Mark/Documents/RoboHelp/GMS2 Manual/</outputPath>

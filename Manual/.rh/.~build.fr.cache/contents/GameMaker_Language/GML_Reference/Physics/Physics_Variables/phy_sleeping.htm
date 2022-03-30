@@ -1,0 +1,32 @@
+
+  
+  phy_sleeping
+  Ta zmienna tylko do odczytu zwraca, czy instancja jest obecnie "śpiąca" (true) czy nie (false), "śpiąca" instancja to taka, która nie jest aktywnie zaangażowana w żadną fizyczną symulację. GameMaker Studio 2 uśpi objects, aby zaoszczędzić cykle symulacji, gdy instancja jest w stanie spoczynku i nie koliduje z inną instancją
+   
+  Składnia:
+  phy_sleeping;
+   
+  Zwroty:
+   (or undefined if the instance is not physics enabled)
+   
+  Przykład:
+  if phy_sleeping
+    {
+        instance_destroy();
+    }
+  Powyższy kod sprawdza, czy strona object jest aktywnie symulowana, a jeśli nie jest, to jest niszczona.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne fizyki
+        Następny: phy_collision_points
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

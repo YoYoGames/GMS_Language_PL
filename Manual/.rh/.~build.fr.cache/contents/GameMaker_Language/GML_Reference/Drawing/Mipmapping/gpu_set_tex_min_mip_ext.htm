@@ -1,0 +1,53 @@
+
+  
+  gpu_set_tex_min_mip_ext
+  Za pomocą tej funkcji można ustawić minimalny poziom mipmapy, który jest aktualnie używany dla danego próbnika shader. Podajesz wartość indeksu dla próbnika shader (zwróconą przez funkcję shader_get_sampler_index()a następnie podajesz wartość, gdzie 0 oznacza pełną rozdzielczość, 1 - pierwszą mipmapę, 2 - drugą itd...
+   
+  Składnia:
+  gpu_set_tex_min_mip_ext(sampler_index, minmip);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sampler_index
+        The index of the shader sampler to get
+     
+      
+        minmip
+        The minimum mipmap level to use
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background");
+    var _spriteTex = sprite_get_texture(sprite_index, 0);
+    shader_set(shd_Glass);
+    if gpu_get_tex_min_mip_ext(_sampleIndex) != 0
+    {
+        gpu_set_tex_min_mip_ext(_sampleIndex, 0);
+    }
+    texture_set_stage(_sampleIndex , _spriteTex);
+    shader_reset();
+  Powyższy kod ustawia minimalny poziom mapy mipmap na 0 dla danego shader texture samplera, jeśli nie został on jeszcze ustawiony na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Mipmapping
+        Następny: gpu_set_tex_max_mip
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,33 @@
+
+  
+  window_has_focus
+  Za pomocą tej funkcji można sprawdzić stan okna (lub karty) i jeśli straci ono ostrość, funkcja zwróci false, w przeciwnym razie zwróci true. W większości przypadków można po prostu użyć funkcji os_is_paused() ale w niektórych, bardzo specyficznych przypadkach (np. gry w Chrome Apps) funkcja ta nie zadziała, w związku z czym należy użyć tej funkcji.
+  UWAGA: Ta funkcja jest dostępna tylko w systemach HTML5, Windows i MacOS.
+   
+  Składnia:
+  window_has_focus();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if !window_has_focus()
+    {
+        PauseGame();
+    }
+  Powyższy kod sprawdzi, czy okno gry jest skoncentrowane, czy nie, i jeśli funkcja zwróci false, zostanie wywołana kolejna funkcja.
+   
+   
+   
+  
+    
+      
+        Powrót: Okno gry
+        Następny: window_device
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

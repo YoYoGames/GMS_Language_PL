@@ -1,0 +1,48 @@
+
+  
+  część_systemu_zniszczenia
+  Za pomocą tej funkcji można zniszczyć dany system cząsteczek i usunąć go z pamięci. Funkcja ta powinna być wywoływana zawsze wtedy, gdy system nie jest już potrzebny, np. na końcu room lub w zdarzeniu destroy instancji. W przeciwnym razie może się zdarzyć, że cząsteczki będą się pojawiać w późniejszych częściach rooms i nie będzie możliwości ich usunięcia, a także wystąpi wyciek pamięci, który spowoduje awarię gry.
+  UWAGA: Ta funkcja spowoduje również zniszczenie i usunięcie wszystkich emiterów, które mogły zostać utworzone i powiązane z niszczonym systemem.
+   
+  Składnia:
+  part_system_destroy(ind);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Identyfikator systemu cząstek stałych
+        The index of the particle system to destroy.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if (global.player_hp <= 0)
+    {
+        part_system_destroy(p_sys);
+        room_goto_next();
+    }
+  Powyższy kod sprawdza, czy wartość zmiennej globalnej jest mniejsza lub równa zero, a jeśli tak, to niszczy układ cząstek, do którego odwołuje się dana zmienna, a następnie przechodzi do następnej strony room.
+   
+   
+   
+  
+    
+      
+        Powrót: Układy cząstek stałych
+        Następny: part_particles_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

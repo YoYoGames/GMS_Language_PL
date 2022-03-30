@@ -15,11 +15,11 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>font_get_first (przestarzałe)</h1>
-  <p>Podczas definiowania strony <span class="notranslate">font</span> w <span class="notranslate">GameMaker Studio 2</span> można określić zakres znaków, które mają być uwzględnione. Dzieje się tak dlatego, że sam <i>adres</i> <span class="notranslate">font</span> nie jest dołączany do gry (ze względów prawnych).
-    <span class="notranslate">font</span> jest umieszczany na stronie <span class="notranslate">texture</span> i to właśnie z niego będzie korzystać gra (podobnie jak z innych stron graficznych <span class="notranslate">asset</span>). Oznacza to, że powinieneś ograniczyć liczbę znaków do minimum i podawać tylko taki zakres znaków, jakiego
+  <p>Definiując stronę <span class="notranslate">font</span> w programie <span data-keyref="GameMaker Name">GameMaker</span>, można określić zakres znaków, które mają być na niej umieszczone. Dzieje się tak dlatego, że sam <i>adres</i> <span class="notranslate">font</span> nie jest dołączany do gry (ze względów prawnych).
+    <span class="notranslate">font</span> jest umieszczony na stronie <span class="notranslate">texture</span> i to właśnie z niego będzie korzystać gra (podobnie jak z innych stron graficznych <span class="notranslate">asset</span>). Oznacza to, że powinieneś ograniczyć liczbę znaków do minimum i podawać tylko taki zakres znaków, jakiego
     których będzie potrzebować gra, aby zoptymalizować wykorzystanie pamięci <span class="notranslate">texture</span>. Za pomocą tej funkcji można znaleźć znak początkowy (w postaci wartości ASCII), który był używany podczas dodawania do gry <span class="notranslate">font</span> <span class="notranslate">asset</span>.</p>
-  <p class="note"><b><span class="note">UWAGA</span> </b>Ze względu na zmiany w sposobie obsługi adresu <span class="notranslate">fonts</span>, funkcja ta <b>zawsze</b> będzie zwracać 32, ponieważ adres <span class="notranslate">GameMaker Studio 2</span> wymusza stosowanie znaku spacji (32) w adresie <span class="notranslate">font</span> i nie
-    zezwala na stosowanie znaków o kodach niższych niż 32. Nowe funkcje do wykonywania podobnych zadań zostaną dodane w przyszłej aktualizacji.</p>
+  <p class="note"><b><span class="note">UWAGA</span> </b>Ze względu na zmiany w sposobie obsługi strony <span class="notranslate">fonts</span>, funkcja ta <b>zawsze</b> będzie zwracać 32, ponieważ <span data-keyref="GameMaker Name">GameMaker</span> wymusza stosowanie znaku spacji (32) na stronie <span class="notranslate">font</span> i nie pozwala
+    nie dopuszcza również znaków o kodach niższych niż 32. Nowe funkcje do wykonywania podobnych zadań zostaną dodane w przyszłych aktualizacjach.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">font_get_first(ind);</p>

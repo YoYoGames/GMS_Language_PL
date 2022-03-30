@@ -1,0 +1,137 @@
+
+  
+  efekt_tworzenia_poniżej
+  Za pomocą tej funkcji można utworzyć prosty efekt pod wszystkimi instancjami room (w rzeczywistości jest on tworzony na głębokości 100000). Jeśli efekt ma być inny niż ef_rain lub ef_snow, można określić pozycję x/y do utworzenia efektu, a rozmiar może mieć wartość 0, 1 lub 2, gdzie 0 oznacza mały, 1 - średni, a 2 - duży.
+  Warto zauważyć, że te efekty można włączać i wyłączać oraz wstrzymywać ich rysowanie za pomocą funkcji part_system_automatic_draw() oraz part_system_automatic_update() z odpowiednią wartością indeksu systemu cząstek (gdzie 0 oznacza efekty poniżej, a 1 - powyżej).
+  Dostępne są następujące stałe dla różnych rodzajów cząstek:
+  
+    
+      
+        Stała
+        Przykład
+        Opis
+      
+      
+        ef_cloud
+        
+        An effect that creates random cloud particles of varying sizes
+      
+      
+        ef_ellipse
+        
+        An effect that creates expanding ellipses
+      
+      
+        ef_explosion
+        
+        An effect that creates expanding fading explosions
+      
+      
+        ef_firework
+        
+        An effect that creates multiple small particles to generate a firework explosion
+      
+      
+        ef_flare
+        
+        An effect that generates a brilliant point that flares up and fades out
+      
+      
+        ef_rain
+        
+        An effect that generates rain particles coming down from the top of the screen
+      
+      
+        ef_ring
+        
+        An effect that generates expanding and fading circles
+      
+      
+        ef_smoke
+        
+        An effect that generates little puffs of smoke
+      
+      
+        ef_smokeup
+        
+        An effect that creates a smoke plume that rises up the screen
+      
+      
+        ef_snow
+        
+        An effect that generates multiple snow particles falling down the screen
+      
+      
+        ef_spark
+        
+        An effect that generates a small spark
+      
+      
+        ef_star
+        
+        An effect that generates star particles
+      
+    
+  
+   
+  Składnia:
+  effect_create_below(kind, x, y, size, colour);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        kind
+        Typ efektu Stała
+        The kind of effect (use one of the constants listed above).
+      
+      
+        x
+        Real
+        The x positioning of the effect if relevant.
+      
+      
+        y
+        Real
+        The y positioning of the effect if relevant.
+      
+      
+        size
+        Real
+        The size of the effect.
+      
+      
+        colour
+        Kolor
+        The colour of the effect.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if speed > 0
+    {
+        effect_create_below(ef_smoke, x, y, 0, c_gray);
+    }
+  Powyższy kod utworzy mały kłąb szarego dymu za każdym razem, gdy prędkość instancji będzie większa od 0 na współrzędnych x,y instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Cząsteczki
+        Następny: effect_create_above
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

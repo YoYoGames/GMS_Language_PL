@@ -1,0 +1,46 @@
+
+  
+  audio_sound_get_track_position
+  Ta funkcja pobiera pozycję (w sekundach) w pliku dźwiękowym, z której ma być odtwarzany dźwięk. Dźwięk może być tylko pojedynczą instancją dźwięku (indeks dla poszczególnych odtwarzanych dźwięków można przechowywać w zmiennej przy użyciu funkcji audio_play_sound() lub audio_play_sound_at() ).
+   
+  Składnia:
+  audio_sound_get_track_position(index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Identyfikator instancji dźwięku
+        The index of the sound to get the play position of.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if audio_sound_get_track_position(global.Music) != 0
+    {
+        audio_sound_set_track_position(global.Music, 0);
+    }
+  Powyższy kod sprawdza ścieżkę, aby uzyskać jej pozycję początkową, i jeśli nie jest to 0 sekund, ustawia ją na 0 sekund.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_sound_set_listener_mask
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

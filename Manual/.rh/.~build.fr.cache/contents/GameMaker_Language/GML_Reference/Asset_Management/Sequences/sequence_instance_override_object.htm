@@ -1,0 +1,55 @@
+
+  
+  sequence_instance_override_object
+  Za pomocą tej funkcji można nadpisać (zastąpić) wszystkie instancje strony object używane w serwisie sequence inną instancją. Podajesz identyfikator instancji sequence struct (zwrócony podczas tworzenia instancji sequence w room lub przy użyciu jednej z funkcji warstwy room - patrz tutaj) oraz indeks object (zdefiniowany w przeglądarce asset ) dla object, który chcesz zastąpić. Na koniec podajesz indeks object lub identyfikator instancji, który ma być użyty jako object, który ma zastąpić sequence (podanie identyfikatora instancji spowoduje po prostu użycie object, z którego ta instancja została utworzona jako nadrzędnej). Zwróć uwagę, że można to zrobić tylko na instancjach sequence (nie sequence objects) i trzeba to zrobić przed rozpoczęciem odtwarzania sequence, bo inaczej nie zadziała.
+   
+  Składnia:
+  sequence_instance_override_object(sequence_instance_struct, object_id, instance_or_object_id);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        sequence_instance_struct
+        Struktura instancji sekwencji
+        The sequence instance struct to modify.
+      
+      
+        object_id
+        Obiekt Aktywa
+        The object index of the object within the sequence to override.
+      
+      
+        instance_or_object_id
+         Identyfikatorzasobu lub instancjiobiektu 
+        The object index or instance ID to use to override the sequence objects.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var _seq = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground);
+    var _seq_inst = layer_sequence_get_instance(_seq);
+    sequence_instance_override_object(_seq_inst, obj_Trees_Winter, obj_Trees_Summer);
+  Powyższy kod tworzy nową instancję sequence na podanej warstwie, a następnie modyfikuje ją tak, aby wszystkie instancje object "obj_Trees_Winter" zostały zastąpione instancjami object "obj_Trees_Summer".
+   
+   
+   
+  
+    
+      
+        Powrót: Sekwencje
+        Następny: in_sequence
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

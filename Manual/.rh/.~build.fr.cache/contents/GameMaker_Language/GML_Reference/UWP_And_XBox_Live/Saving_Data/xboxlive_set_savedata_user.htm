@@ -1,0 +1,46 @@
+
+  
+  xboxlive_set_savedata_user
+  Ta funkcja określa, że przyszłe operacje na plikach, które działają w obszarze zapisu gry (tzn. wszystkie zapisy i odczyty plików, które nie znajdują się w obszarze pakietu) będą powiązane z podanym wskaźnikiem ID użytkownika. Można ją wywoływać tak często, jak jest to potrzebne, aby przekierować dane zapisu do odpowiedniego użytkownika, lub można użyć stałej pointer_null, aby zapisywać do ogólnego obszaru pamięci maszyny.
+   
+  Składnia:
+  xboxlive_set_savedata_user(user_id);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        user_id
+        Xbox ID użytkownika lub pointer_null
+        The user ID (a pointer) to set for saving, or pointer_null
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if (xboxlive_get_savedata_user() != user_id[0])
+    {
+        xboxlive_set_savedata_user(user_id[0]);
+    }
+  Powyższy kod sprawdza, czy użytkownik jest aktualnie przypisany jako cel zapisu, a jeśli nie jest, to jest przypisywany.
+   
+   
+   
+  
+    
+      
+        Powrót: Zapisywanie danych
+        Następny: xboxlive_get_savedata_user
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

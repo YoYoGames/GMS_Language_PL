@@ -1,0 +1,46 @@
+
+  fx_get_single_layer
+  Ta funkcja zwraca, czy podany filtr/efekt działa w trybie jednowarstwowym (true), czy nie (false). Zobacz fx_set_single_layer() aby uzyskać informacje na temat trybu jednowarstwowego.
+  Określasz adres FX struct (zwrócony przez fx_create() lub layer_get_fx()), a funkcja zwraca wartość logiczną, która mówi, czy tryb Single Layer jest włączony w FX, czy nie.
+   
+  Składnia:
+  fx_get_single_layer(filter_or_effect);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        filter_or_effect
+        The FX struct to read
+     
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  var _fx = layer_get_fx("Distort");
+    
+    if (!fx_get_single_layer(_fx))
+    {
+        fx_set_single_layer(_fx, true);
+    }
+  
+  Powyższy kod pobiera FX struct z warstwy o nazwie "Distort" i sprawdza, czy jest na niej włączony tryb jednowarstwowy. Jeśli nie, to włącza tryb jednowarstwowy dla tego FX.
+   
+   
+  
+    
+      
+        Powrót: Funkcje filtrów i efektów
+        Next: fx_set_parameter
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

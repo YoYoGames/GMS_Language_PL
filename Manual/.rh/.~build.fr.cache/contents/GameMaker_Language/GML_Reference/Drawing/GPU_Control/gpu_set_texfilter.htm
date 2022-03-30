@@ -1,0 +1,50 @@
+
+  
+  gpu_set_texfilter
+  Za pomocą tej funkcji można ustawić filtrowanie texture (interpolacja liniowa) wszystkich obrazów rysowanych na ekranie gry. Gdy ta funkcja jest włączona (true), wszystkie obrazy textures będą wygładzane podczas rysowania (dotyczy to również sprites, ponieważ są one również uważane za textures), co oznacza, że podczas skalowania lub przesuwania, jeśli stosunek pikseli nie jest 1:1, będzie występować "smużenie" w różnych pikselach, co może powodować, że obrazy będą wydawać się rozmyte, w zależności od zastosowanego stylu artystycznego. Jeśli ta opcja jest wyłączona (false), obrazy będą rysowane na podstawie najbliższego piksela podczas skalowania lub przesuwania, co może prowadzić do powstawania "klockowatych" obrazów. Domyślną wartością jest false, można ją również zmienić w Globalnych opcjach gry dla poszczególnych platform docelowych.
+  UWAGA: To ustawienie zastąpi każdą interpolację etapu texture ustawioną dla strony shaders za pomocą funkcji gpu_set_texfilter_ext().
+  UWAGA: W przypadku celu HTML5 ta funkcja będzie działać tylko z włączoną obsługą WebGL.
+   
+  Składnia:
+  gpu_set_texfilter(enable);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        enable
+        Enable or disable texture filtering (true / false)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if gpu_get_texfilter()
+    {
+        gpu_set_texfilter(false);
+    }
+    else
+    {
+        gpu_set_texfilter(true);
+    }
+  Powyższy kod sprawdza, czy filtrowanie texture jest włączone, czy wyłączone, i odpowiednio je przełącza.
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_set_texfilter_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

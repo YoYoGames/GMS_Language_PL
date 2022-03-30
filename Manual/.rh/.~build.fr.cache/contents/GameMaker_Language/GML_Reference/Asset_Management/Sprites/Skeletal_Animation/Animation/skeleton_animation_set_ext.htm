@@ -1,0 +1,56 @@
+
+  
+  szkielet_animacji_set_ext
+  Gdy ustawisz zestaw animacji dla animacji szkieletowej sprite, jest on wewnętrznie przypisany do ścieżki 0. Można jednak przypisać kolejne zestawy do następnych ścieżek (1 i wyżej) i w ten sposób na stronie sprite odtwarzać dwie (lub więcej) animacje jednocześnie. Pamiętaj, że program do animacji sprite powinien to uwzględnić, tak aby animacja "bazowa" na ścieżce 0 miała keyframes tylko dla niektórych kości, a na kolejnych ścieżkach keyframes dla pozostałych. Na przykład, jeśli masz animację "chodzenia", a jej keyframes ma wpływ tylko na nogi sprite, możesz mieć zestaw animacji głowy i animacji ramion, które możesz ustawić odpowiednio w ścieżkach 1 i 2, co pozwoli Ci mieć ruch bazowy i dostosowywać go w czasie rzeczywistym podczas gry.
+   
+  Składnia:
+  skeleton_animation_set_ext(animname, track);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        animname
+        String
+        The name (a string) of the animation set to use.
+      
+      
+        track
+        Real
+        The track for the animation set to use.
+      
+    
+  
+   
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if mouse_check_button(mb_left)
+    {
+        skeleton_animation_set_ext("bodyfight", 1);
+    }
+    else
+    {
+        skeleton_animation_set_ext("bodywalk", 1);
+    }
+  Powyższy kod spowoduje, że po naciśnięciu lewego przycisku myszy zestaw animacji używany przez ścieżkę 1 zostanie zmieniony na zestaw "bodyfight" lub "bodywalk".
+   
+   
+   
+  
+    
+      
+        Powrót: Animacja
+        Następny: skeleton_animation_get_duration
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,72 @@
+
+  
+  Chmura
+  Zdarzenie w chmurze jest wyzwalane przez oddzwonienie z jednej z cloud_*() funkcji,
+    np. cloud_synchronise(). W rzeczywistości generuje ono mapę DS, która jest przeznaczona wyłącznie dla tego zdarzenia i jest przechowywana w
+    specjalnej zmiennej  async_load  (przykłady kodu wyjaśniającego użycie tego zdarzenia można znaleźć w poszczególnych funkcjach).
+    zdarzenia w szczegółach). Ta mapa DS ma następującą strukturę:
+  
+    "status": Przechowuje kod statusu, gdzie wartość ujemna oznacza błąd, którego opis będzie zawarty w "errorString". Wartość 0 (lub dodatnia) oznacza sukces (dokładne wartości znajdują się poniżej).
+      dokładne wartości), a "resultString" będzie zawierał zwrócone dane lub komunikat o powodzeniu.
+    "id": Identyfikator, który został zwrócony przez wywołaną funkcję. Jeśli wystrzelisz serię żądań cloud_, musisz wiedzieć, na które z nich otrzymasz odpowiedź, dlatego użyjesz tej wartości do porównania z wartością
+      z wartością zapisaną podczas wysyłania żądania, aby znaleźć to właściwe.
+    "description": Opis ostatnio przesłanego pliku.
+    "resultString": W tym miejscu znajduje się string, który jest blokiem danych zwróconym z chmury.
+    "errorString": zwraca komunikat Error String dla dowolnego błędu.
+  
+  Dokładne znaczenie zwracanego wpisu w mapie "status" wyjaśniono w poniższej tabeli:
+   
+  
+    
+      
+        Status Wartość
+        errorString / resultString
+        Opis
+      
+      
+        -1
+        errorString = "Nie zalogowano się do <SERVICE>".
+        You have not successfully logged in to the given Cloud Service
+      
+      
+        0
+        resultString = odzyskane dane
+        New game data downloaded from the cloud (following a cloud_synchronise() call)
+      
+      
+        1
+        resultString = "Już zsynchronizowane"
+        No new data since you last called cloud_synchronise
+      
+      
+        2
+        resultString = "ConflictDeferral"
+        A conflict was encountered, but the gamer chose to ignore it
+      
+      
+        3
+        resultString = "GameUploadSuccess"
+        data from cloud_string_save() lub cloud_file_save() został pomyślnie przesłany do chmury
+      
+      
+        -n
+        errorString = Opis błędu
+        Any other negative number means a synchronisation failure
+      
+    
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Zdarzenia asynchroniczne
+        Następny: Dialog
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

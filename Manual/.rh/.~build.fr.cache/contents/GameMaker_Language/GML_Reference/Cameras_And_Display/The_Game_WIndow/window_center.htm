@@ -1,0 +1,33 @@
+
+  
+  okno_środkowe
+  Za pomocą tej funkcji możesz wyśrodkować okno gry na wyświetlaczu, jeśli modułem docelowym jest Windows, Ubuntu (Linux) lub macOS, albo wyśrodkować je w przeglądarce, jeśli modułem docelowym jest HTML5. Ta funkcja nie ma wpływu na żadne inne urządzenia.
+  UWAGA Jeśli w bieżącym kroku zmieniono rozmiar okna gry (na przykład przez przełączenie z trybu pełnoekranowego na okienkowy lub użycie window_set_size()) i chcesz wyśrodkować nowe okno, funkcja ta powinna zostać wywołana co najmniej jeden krok później (na przykład za pomocą polecenia alarm), w przeciwnym razie nie będzie ona działać poprawnie.
+   
+  Składnia:
+  window_center();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if !window_get_fullscreen()
+    {
+        window_center();
+    }
+  Powyższy kod wyśrodkuje okno gry na ekranie, jeśli nie jest ono w trybie pełnoekranowym.
+   
+   
+   
+  
+    
+      
+        Powrót: Okno gry
+        Następny: window_handle
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

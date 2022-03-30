@@ -1,0 +1,60 @@
+
+  
+  prędkość audio_emitera
+  Za pomocą tej funkcji można nadać emiterowi efekty Dopplera i symulować ruch dźwięku na podstawie wektora wyznaczonego z podanych względnych pozycji x, y i z. Jeśli emiter nie będzie się poruszał, zwykle nie ma potrzeby ustawiania tych wartości, ale na przykład jeśli tworzysz przewijaną grę, w której wrogowie przychodzą z prawej strony i przewijają się w lewo, możesz ustawić prędkość (hspeed, 0, 0) w zdarzeniu create wrogów (i zaktualizować emiter każdej instancji w zdarzeniu step, używając funkcji audio_emitter_position()), aby dźwięki emitowane przez wrogie instancje miały prawidłowy doppler, gdy będą mijać instancję gracza (która z kolei będzie używać funkcji audio_listener_position() do ustawienia słuchacza w odpowiedniej pozycji).
+   
+  Składnia:
+  audio_emitter_velocity(emitter, vx, vy, vz);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        emitter
+        Identyfikator emitera dźwięku
+        The index of the emitter to change.
+      
+      
+        vx
+        Real
+        The x vector value (default 0).
+      
+      
+        vy
+        Real
+        The y vector value (default 0).
+      
+      
+        vz
+        Real
+        The z vector value (default 0).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  s_emit = audio_emitter_create();
+    audio_emitter_position(s_emit, room_width, 0, 0);
+    audio_emitter_velocity(s_emit, -5, 0, 0);
+  Powyższy kod tworzy emiter dźwięku i przypisuje jego indeks do zmiennej "s_emit". Emiter ten jest następnie umieszczany w miejscu na stronie room i nadaje mu się prędkość 5 pikseli na krok wzdłuż osi x (emiter będzie prawidłowo dopplerowski w stosunku do słuchacza, tak jakby miał prędkość poziomą 5 pikseli na krok).
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery dźwięku
+        Następny: audio_emitter_falloff
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

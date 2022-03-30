@@ -1,0 +1,47 @@
+
+  
+  mouse_check_button_pressed
+  Ta funkcja zwróci true, jeśli sprawdzany przycisk myszy został naciśnięty, lub false, jeśli nie został naciśnięty. Funkcja ta zostanie wywołana tylko raz dla każdego przycisku myszy, gdy zostanie on naciśnięty po raz pierwszy, a żeby wywołać ją ponownie, przycisk będzie musiał zostać zwolniony i ponownie naciśnięty. Funkcja będzie uważana za wywołaną przez cały czas trwania kroku oraz we wszystkich instancjach, w których występują zdarzenia myszy lub które używają tej samej funkcji.
+  Przycisk myszy, który ma być sprawdzany, jest wybierany z jednej z poniższych stałych:
+   
+  Składnia:
+  mouse_check_button_pressed(numb);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        numb
+        Przycisk myszy Stała
+        Which mouse button constant to check for.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if mouse_check_button_pressed(mb_left)
+    {
+        score += 50;
+    }
+  Powyższy kod sprawdzi, czy został naciśnięty lewy przycisk myszy, a jeśli tak, doda 50 do wyniku.
+   
+   
+   
+  
+    
+      
+        Wstecz: Wejście myszy
+        Następny: mouse_check_button_released
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,61 @@
+
+  
+   Ustawianie wielkości cząstek
+  Ta akcja służy do ustawiania rozmiaru cząstki, który może być statyczny lub zwiększany/zmniejszany w czasie. Należy podać unikatową wartość identyfikacyjną typu, którego rozmiar ma zostać ustawiony (zwróconą podczas tworzenia typu za pomocą akcji Utwórz typ cząsteczki)
+    a następnie podajesz zakres początkowych rozmiarów początkowych, wielkość przyrostu i w końcu "wahania". Rozmiar tworzonej cząstki jest wartością skalarną, gdzie 1 oznacza taki sam rozmiar jak podstawowy obraz cząstki, 0,5 - połowę rozmiaru podstawowego obrazu, a wartość 2 - połowę rozmiaru podstawowego obrazu.
+    bazowego obrazu, a wartość 2 oznacza jego podwojenie. Jeśli rozmiary minimalny i maksymalny nie są takie same, to początkowy rozmiar każdej tworzonej cząstki będzie miał losową wartość pomiędzy nimi.
+  Opcja zwiększania rozmiaru cząstki umożliwia wprowadzenie wartości, która będzie dodawana do podstawowej wartości skalarnej w każdej klatce gry w czasie życia cząstki. Zatem ustawienie tej wartości na przykład na 0,1 spowoduje dodanie 0,1 do wartości skali w każdej klatce gry.
+    Można też użyć wartości ujemnych, aby zmniejszyć skalę obrazu cząstek. Minimalne dopuszczalne zmniejszenie skali to -0,01, a minimalne zwiększenie to 0,01.
+  Na koniec można ustawić opcję "wiggle". Jest to wartość, która będzie generowana losowo w zakresie od 0 do podanej wartości, a następnie dodawana lub odejmowana do rozmiaru w każdym kroku życia cząsteczek, powodując, że rysowany obraz będzie się zmieniał pod względem
+    wielkości. Oczywiście większe wartości są bardziej widoczne niż mniejsze, a wartość ta może być nawet ujemna, przy czym maksymalny zakres wynosi od -20 do 20.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Type
+        Unikalna wartość identyfikacyjna typu cząstki, dla której ma być ustawiona wielkość
+      
+      
+        Min Size
+        Minimalna skala dla typu cząstki (domyślnie 0,1)
+      
+      
+        Max Size
+        Maksymalna skala dla typu cząstki (domyślnie 1)
+      
+      
+        Increase
+        Wartość dodawana do rozmiaru typu cząstki w każdej klatce gry (może być ujemna, minimalnie +/-0.01)
+      
+      
+        Wiggle
+        Maksymalna wartość, która może być losowo dodawana lub odejmowana od wielkości cząstek w każdym kroku (+/-20).
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji utworzy nowy typ cząstki i przypisze jej unikatową wartość
+    ID do zmiennej globalnej. Następnie ustawi wszystkie właściwości typu cząstki.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje cząstek
+        Następny: Ustaw sprajty cząstek
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

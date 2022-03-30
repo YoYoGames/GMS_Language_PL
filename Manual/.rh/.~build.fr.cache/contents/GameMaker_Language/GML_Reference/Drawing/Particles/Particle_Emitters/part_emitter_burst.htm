@@ -1,0 +1,58 @@
+
+  
+  część_emitera_burst
+  Funkcja ta pozwala ustawić emiter tak, aby wybuchał określonym typem cząstek i jest zwykle używana w alarmach i zdarzeniach niszczenia, ponieważ jest to jednorazowy kod, który tworzy określoną liczbę cząstek jednocześnie, zgodnie z rozmieszczeniem, kształtem i położeniem określonym przez funkcję part_emitter_region(). Jeśli cząstki mają się pojawiać co krok, należy użyć funkcji part_emitter_stream() zamiast wywoływać tę funkcję co krok.
+   
+  Składnia:
+  part_emitter_burst(ps, ind, parttype, number);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ps
+        Identyfikator systemu cząstek stałych
+        The particle system that the emitter is in.
+      
+      
+        ind
+        Identyfikator emitera cząstek stałych
+        The index of the emitter to burst from.
+      
+      
+        parttype
+        Typ cząstki ID
+        The index (type) of the particles to be created.
+      
+      
+        number
+        Real
+        The number of particles to create.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  part_emitter_burst(global. Sname, p_emit1, p1, 30 + irandom(30));
+  Powyższy kod spowoduje wybuch losowej liczby cząstek z przedziału od 30 do 60 z wybranego emitera.
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery cząstek
+        Następny: part_emitter_stream
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

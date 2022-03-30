@@ -1,0 +1,49 @@
+
+  
+  file_text_readln
+  Za pomocą tej funkcji można pominąć pozostałą część bieżącej linii z danego otwartego pliku tekstowego i przejść do początku następnej. Funkcja zwraca również pełny wiersz jako string, co ułatwia odczytywanie całych "kawałków" danych w celu ich późniejszego przetworzenia.
+   
+  Składnia:
+  file_text_readln(fileid);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fileid
+        The id of the file to read from.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var file = file_text_open_read(working_directory + "hiscore.txt");
+    for (var i = 0; i < 10; ++i;)
+    {
+        scr[i] = file_text_read_real(file);
+        file_text_readln(file);
+        scr_name[i] = file_text_read_string(file);
+        file_text_readln(file);
+    }
+    file_text_close(file);
+  Powyższy kod otwiera plik do odczytu, a następnie loops przez kolejne wiersze pliku wczytuje na przemian wartość liczby rzeczywistej oraz wartość string do dwóch różnych tablic w celu późniejszego wykorzystania. Po zakończeniu działania loop plik jest zamykany.
+   
+   
+   
+  
+    
+      
+        Powrót: Pliki tekstowe
+        Następny: file_text_write_real
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

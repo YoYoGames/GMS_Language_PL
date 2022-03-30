@@ -1,0 +1,48 @@
+
+  
+  sprite_exists
+  Ta funkcja zwraca, czy w uruchomionym projekcie istnieje strona sprite o podanym indeksie, czy też nie.
+   
+  Składnia:
+  sprite_exists(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the sprite to check.
+     
+    
+  
+   
+  Zwraca
+  
+   
+  Przykład:
+  if sprite_exists(spr_array[0])
+    {
+        sprite_index = spr_array[0];
+    }
+    else
+    {
+        sprite_index = spr_BaseSprite;
+    }
+  Powyższy kod sprawdza tablicę, czy zawiera prawidłowy indeks sprite, i jeśli tak, przypisuje tę tablicę sprite do instancji, ale jeśli nie, przypisuje jej adres sprite z dołączonych zasobów.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja sprite'ami
+        Następny: sprite_add
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

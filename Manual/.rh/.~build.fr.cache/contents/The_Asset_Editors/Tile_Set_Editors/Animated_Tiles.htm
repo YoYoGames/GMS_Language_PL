@@ -1,0 +1,39 @@
+
+  
+  Animowane kafelki
+  Kafelki są zwykle uważane za statyczne komórki w grze room, jednak w witrynie GameMaker Studio 2 można je animować, podobnie jak w przypadku sprite. Dlaczego nie użyć sprites, zapytasz? Cóż, sprites ma pewien narzut na przetwarzanie, ponieważ
+    że są powiązane z ramką ograniczającą i sposobem ich renderowania, ale tiles ma znacznie niższy narzut na przetwarzanie, a więc jest szybszy w renderowaniu. Ma to jednak swoją cenę, ponieważ w przypadku animacji tile set użytkownik jest ograniczony do
+    tworzenia animacji, które muszą mieć długość równą potędze dwójki, czyli 2, 4, 8, 16 itd..., muszą być oczywiście tworzone w obrębie siatki tile i wszystkie muszą animować z taką samą szybkością (w zależności od zestawu płytek). Jednak nawet
+    nawet z tymi ograniczeniami, animowana strona tiles jest potężną funkcją, którą można wykorzystać do ożywienia i dodania kolorów do statycznych środowisk i tła.
+  Aby utworzyć animację tile, należy najpierw utworzyć stronę tile set, na której znajdują się wszystkie wymagane obrazy tiles w jednym obrazie sprite (ale nie w postaci klatek sprite, lecz pojedynczej dużej klatki sprite ze wszystkimi obrazami animacji w niej zawartymi), a następnie w edytorze zestawu k afelków kliknąć przycisk Animacja kafelkowa, aby wywołać edytor animacji:
+  Przykładowy obrazek powyżej to pojedynczy obrazek zawierający wszystkie klatki animacji, ale należy zauważyć, że obrazek ten może
+    zawierać także inne, nieanimowane elementy tiles, ponieważ można użyć pojedynczego, masywnego obrazu tile set, a następnie wybrać z niego te części, które mają być wykorzystane do utworzenia animacji. Na przykład można mieć duży krajobraz tile set z drzewami,
+    ziemią i wodą, a na stronie tile set można umieścić wiele stron tiles, które mają być animowane w celu wywołania falowania wody.
+  Aby utworzyć animację tile, należy najpierw dodać animację do biblioteki animacji, klikając przycisk Dodaj animację , co spowoduje
+    doda do biblioteki pusty pasek animacji i poprosi o wybranie liczby klatek, które mają zostać użyte:
+  Następnie zostanie wyświetlony widok każdej pustej klatki animacji, z wyróżnioną klatką początkową:
+  Jeśli następnie wrócisz do obrazu tile set znajdującego się po lewej stronie edytora, możesz kliknąć  na dowolnym obrazie tile, aby dodać go do animacji, a klatka przejdzie do następnej. Klikanie  na kolejnych tiles spowoduje wypełnienie
+    animację, której podgląd można wyświetlić, klikając przycisk "play" znajdujący się obok klatek:
+  Po wykonaniu tych czynności animacja stanie się częścią biblioteki animacji i po wejściu do edytora sali będziesz mógł ją wybrać i umieścić na stronie room. Zwróć uwagę, że jeśli wybierzesz dowolną klatkę tiles z animacji, aby umieścić ją na stronie room, ta tile będzie animowana od wybranej tile.
+    klatki w room, a wszystkie będą animowane. Jedynym zastrzeżeniem jest to, że prędkość animacji będzie zawsze taka sama, ponieważ jest ona definiowana dla całej strony tile set, a nie dla poszczególnych animacji w bibliotece.
+  Warto zwrócić uwagę na kilka rzeczy dotyczących strony tiles, która jest używana w animacjach:
+  
+    Jeśli dla strony tile określono własną animację (czyli istnieje animacja, w której jest ona ustawiona jako pierwsza tile), zostanie ona użyta.
+    Jeśli animacja tile nie ma własnej animacji, ale jest używana tylko w jednej innej animacji, to animacja ta będzie używana od pierwszej pozycji, w której tile jest obecna w animacji.
+    Jeśli strona tile nie ma własnej animacji i jest używana w wielu innych animacjach, nie będzie w ogóle animowana. Będziesz musiał wyraźnie określić animację, w której będzie ona pierwsza tile.
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Zestawy płytek
+        Następny: Dachówki samochodowe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

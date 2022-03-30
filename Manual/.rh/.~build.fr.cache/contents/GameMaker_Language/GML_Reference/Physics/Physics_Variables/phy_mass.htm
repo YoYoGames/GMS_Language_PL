@@ -1,0 +1,32 @@
+
+  
+  phy_mass
+  Ta zmienna tylko do odczytu zwraca masę instancji w kilogramach. Wartość ta jest obliczana automatycznie na podstawie powierzchni przypisanych elementów wyposażenia i ich wartości gęstości, ale można ją zmienić za pomocą funkcji physics_mass_properties().
+   
+  Składnia:
+  phy_mass;
+   
+  Zwroty:
+   (single precision floating point value, or undefined if the instance is not physics enabled)
+   
+  Przykład:
+  if (phy_mass < other.phy_mass)
+    {
+        instance_destroy();
+    }
+  Powyższy kod pochodzi ze zdarzenia kolizji instancji z inną, porównuje masę każdej instancji i niszczy tę, która ma mniejszą masę.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne fizyki
+        Następny: phy_sleeping
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

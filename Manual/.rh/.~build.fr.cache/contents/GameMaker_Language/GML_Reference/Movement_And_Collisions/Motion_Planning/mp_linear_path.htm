@@ -1,0 +1,61 @@
+
+  
+  mp_linear_path
+  Ta funkcja oblicza linię prostą path z bieżącej pozycji instancji do punktu określonego przez wartości "xgoal" i "ygoal". Używa ona wskazanego rozmiaru kroku, takiego samego jak w funkcji mp_linear_step(). Wskazana strona path musi już istnieć i zostanie nadpisana przez nową stronę path, a funkcja zwróci, czy znaleziono kompletną stronę path (true), czy nie (false). Jeśli zwrócona zostanie wartość false, to path zostanie wygenerowany, ale tylko do miejsca, w którym path został zablokowany.
+  UWAGA: Ta funkcja nie porusza instancją. Ustawia jedynie adres path, a do poruszania się musisz użyć funkcji Path.
+   
+  Składnia:
+  mp_linear_path(path, xgoal, ygoal, stepsize, checkall);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        path
+        The index of the path to be used.
+     
+      
+        xgoal
+        The target x position.
+     
+      
+        ygoal
+        The target y position.
+     
+      
+        stepsize
+        The speed the instance moves in pixels per step.
+     
+      
+        checkall
+        Whether to check for collisions with all instances (true) or just solid ones (false).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if mp_linear_path(path, obj_Player.x, obj_Player.y, 2, 0)
+    {
+        path_start(path, 2, 0, 0);
+    }
+  To powoduje, że object sprawdza, czy istnieje liniowa path od jego bieżącej pozycji do pozycji "obj_Player". Jeśli tak, to uruchamia stronę path.
+   
+   
+   
+  
+    
+      
+        Powrót: Planowanie ruchu
+        Następny: mp_linear_path_object
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

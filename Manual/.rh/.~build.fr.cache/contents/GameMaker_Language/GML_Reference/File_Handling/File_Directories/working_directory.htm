@@ -1,0 +1,38 @@
+
+  
+  katalog_robotniczy
+  Working_directory może zwracać dwie różne wartości, w zależności od tego, do czego jest używana. Jeśli zapisujesz plik na dysku, working_directory wskazuje na obszar pamięci lokalnej zarezerwowany dla Twojej gry na urządzeniu docelowym (w systemie Windows jest to " ", gdzie "gamedir" to katalog z nazwą Twojej gry).
+    (w systemie Windows jest to "%LOCALAPPDATA%/gamedir/", gdzie "gamedir" to katalog z nazwą Twojej gry). Jednak w przypadku odczytu z dysku working_directory może być zarówno lokalnym magazynem, jak i obszarem, w którym przechowywane są dołączone pliki.
+  UWAGA: Zmienna working_directory zwróci adres path wraz z końcowym odwrotnym ukośnikiem.
+  Na przykład, jeśli do gry dołączony jest domyślny plik *.txt i wczytasz go do pamięci za pomocą working_directory, plik ten zostanie pobrany z obszaru, w którym przechowywane są dołączone pliki. Jeśli następnie zdecydujesz się zapisać te
+    do pliku tekstowego za pomocą working_directory, to plik ten zostanie zapisany w pamięci lokalnej platformy docelowej, skąd zostanie odczytany następnym razem, chyba że polecisz GameMaker Studio 2 usunięcie pliku, a wtedy working_directory ponownie wskaże obszar, w którym przechowywane są dołączone pliki.
+  Warto zauważyć, że na ogół nie trzeba tego używać i wystarczy zwykłe wywołanie nazwy pliku (wraz z dodatkowymi informacjami path ), na przykład to:
+  file_text_open_read(working_directory + "my_file.txt");
+  lepiej byłoby zrobić to w ten sposób:
+  file_text_open_read("my_file.txt");
+  OSTRZEŻENIE! Ta funkcja może nie działać zgodnie z oczekiwaniami użytkownika, ponieważ GameMaker Studio 2 jest sandboxed! Więcej informacji na ten temat można znaleźć w rozdziale System plików.
+   
+  Składnia:
+  working_directory
+   
+  Zwroty:
+  
+   
+  Przykład:
+  ini_open(working_directory + "temp_ini.ini");
+  Spowoduje to otwarcie pliku ini z katalogu roboczego gry (utworzenie go, jeśli jeszcze nie istnieje). Może to być lokalny magazyn lub obszar, w którym znajdują się dołączone pliki, w zależności od tego, czy szukany plik istnieje w którymś z tych miejsc.
+   
+   
+   
+  
+    
+      
+        Powrót: Katalogi plików
+        Następny: program_directory
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

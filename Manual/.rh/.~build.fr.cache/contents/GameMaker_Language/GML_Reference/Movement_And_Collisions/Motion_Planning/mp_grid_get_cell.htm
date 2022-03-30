@@ -1,0 +1,60 @@
+
+  
+  mp_grid_get_cell
+  Za pomocą tej funkcji można sprawdzić, czy dana komórka mp_grid została oznaczona jako zajęta, czy nie, podając indeks (utworzonej wcześniej) mp_grid oraz współrzędne x i y komórki do sprawdzenia. Jeśli komórka jest zajęta lub sprawdzana pozycja znajduje się poza granicami siatki, funkcja zwróci -1; w przeciwnym razie zwróci 0.
+   
+  Składnia:
+  mp_grid_get_cell(id, x , y);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator siatki MP
+        Index of the mp_grid that is to be used
+      
+      
+        x1
+        Real
+        The x coordinate of the grid to check.
+      
+      
+        y1
+        Real
+        The y coordinate of the grid to check.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if mp_grid_get_cell(grid, mouse_x div 16, mouse_y div 16) == -1
+    {
+        image_blend = c_red;
+    }
+    else
+    {
+        image_blend = c_lime;
+    }
+  Powyższy kod sprawdzi komórkę mp_grid odpowiadającą pozycji myszy i jeśli jest ona zajęta, ustawi zmienną image_blend na kolor czerwony, a jeśli nie jest zajęta, ustawi ją na kolor zielony.
+   
+   
+   
+  
+    
+      
+        Powrót: Planowanie ruchu
+        Następny: mp_grid_clear_all
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

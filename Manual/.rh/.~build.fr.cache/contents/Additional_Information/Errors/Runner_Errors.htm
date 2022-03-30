@@ -1,0 +1,304 @@
+
+  
+  Błędy biegacza
+  Nawet po sprawdzeniu składni w edytorze kodu, a następnie sprawdzeniu kodu pod kątem błędów przez kompilator, nadal zdarzają się sytuacje, w których coś może pójść nie tak. W większości przypadków spowoduje to wyświetlenie błędu runnera maszyny wirtualnej (zwanego również wyjątkiem runtime), który wygląda tak:
+  Błędy uruchamiania są na ogół poważniejsze niż błędy kompilacji, ponieważ oznaczają, że w kodzie jest coś poważnego, czego nie udało się wykryć ani edytorowi kodu, ani kompilatorowi, dlatego należy zwracać uwagę na wszystkie takie błędy. W przypadku wystąpienia takiego błędu można użyć przycisku Kopiuj w wyskakującym okienku, aby skopiować błąd do schowka, który można następnie wkleić do pliku tekstowego (lub gdziekolwiek indziej) w celu wykorzystania w przyszłości.
+  Struktura tego błędu jest następująca:
+  
+    
+      Wyświetlane jest zdarzenie, w którym wystąpił błąd, a także strona Object (w stosownych przypadkach).
+    
+      Pokazuje rzeczywisty błąd.  Pokazuje więc zakres błędu oraz jego typ. Pierwsza wartość w nawiasie to identyfikator instancji, w której uruchomiono kod - może to być też jedna z wartości specjalnych wymienionych w poniższej tabeli - a druga to wartość wewnętrzna, której YoYo Games używa do identyfikacji błędów i którą można zignorować. W przypadku powyższego rysunku jest to informacja, że zmienna _image nie została ustawiona (tzn. nie istnieje przed uzyskaniem do niej dostępu) na stronie object obj_EA_DEMO_Control.
+    
+      Pokazuje on numer wiersza, w którym występuje błąd, oraz fragment kodu pokazujący jego położenie. Należy pamiętać, że nie zawsze jest to w 100% dokładne, ze względu na sposób kompilacji gry, ale powinno wystarczyć, aby pomóc w znalezieniu dokładnego miejsca wystąpienia problemu.
+  
+  Jak wspomniano powyżej, niektóre komunikaty o błędach będą identyfikować zakres nie za pomocą wartości ID instancji, ale raczej za pomocą wartości ujemnej . Wartości te można wykorzystać do dokładnego określenia natury błędu oraz tego, do czego się odnosi, korzystając z następujących możliwych wartości:
+  
+    
+      
+        Prefiks
+        Zakres
+      
+      
+        -1
+        Self
+      
+      
+        -2
+        Inne
+      
+      
+        -3
+        Wszystkie
+      
+      
+        -4
+        Noone
+      
+      
+        -5
+        Global
+      
+      
+        -6
+        Nie określono.
+      
+      
+        -7
+        Lokalna strona
+      
+    
+  
+   
+  Możliwe błędy występujące w VM runnerze są następujące:
+  
+    
+      
+        Błąd
+        Komunikat
+        Operacja
+        Opis
+      
+      
+        DoSet
+        Nieprawidłowy typ porównania
+        Typy danych
+        Oznacza to, że biegacz próbował porównać dwa niekompatybilne typy danych, np. liczbę rzeczywistą z liczbą string.
+      
+      
+        DoConv
+        Błąd wykonania
+        Typy danych
+        Oznacza to błąd w konwersji jednego typu danych na inny.
+      
+      
+        
+          
+        
+      
+      
+        DoAdd
+        Błąd wykonania
+        Matematyka
+        Coś poszło nie tak podczas używania wyrażenia dodawania (+).
+      
+      
+        DoMul
+        Błąd wykonania
+        Matematyka
+        Coś poszło nie tak podczas używania wyrażenia mnożenia (*).
+      
+      
+        DoSub
+        Błąd wykonania
+        Matematyka
+        Coś poszło nie tak podczas używania wyrażenia odejmowania (-).
+      
+      
+        DoSub
+        Silnik wykonawczy - nie można operować na typie string 
+        Matematyka
+        Próbujesz odejmować zmienne niewłaściwego typu (np. odjąć string od rzeczywistej).
+      
+      
+        DoDiv
+        Błąd wykonania
+        Matematyka
+        Coś poszło nie tak podczas używania wyrażenia dzielenia (/ lub div).
+      
+      
+        DoDiv
+        Silnik wykonawczy - nie można operować na typie string 
+        Matematyka
+        Próbujesz dzielić zmienne niewłaściwego typu (np. dzielić string przez rzeczywistą).
+      
+      
+        DoDiv
+        Podzielić przez zero
+        Matematyka
+        Próbujesz podzielić przez 0 (zauważ, że dzieje się tak tylko przy dzieleniu przez liczby całkowite, dzielenie (niezerowej) liczby rzeczywistej przez 0 da w odpowiedzi nieskończoność, a dzielenie zera przez zero da w odpowiedzi NaN). Można sprawdzić te wartości za pomocą (is_infinity) i (is_nan)
+      
+      
+        DoMod
+        Błąd wykonania
+        Matematyka
+        Coś poszło nie tak podczas używania wyrażenia modulo (mod).
+      
+      
+        DoMod
+        Silnik wykonawczy - nie można operować na typie string 
+        Matematyka
+        Próbujesz użyć funkcji modulo (mod) na zmiennych niewłaściwego typu (na przykład mod a string przez rzeczywistą).
+      
+      
+        
+          
+        
+      
+      
+        DoAnd
+        Błąd wykonania
+        Bitwise
+        Coś poszło nie tak podczas używania wyrażenia bitowego "i" (&).
+      
+      
+        DoAnd
+        Silnik wykonawczy - nie można operować na typie string 
+        Bitwise
+        Próbujesz użyć bitowego "i" (&) na zmiennych niewłaściwego typu (na przykład próbujesz "i" string z liczbą rzeczywistą).
+      
+      
+        DoOr
+        Błąd wykonania
+        Bitwise
+        Coś poszło nie tak podczas używania wyrażenia bitowego "lub" (|).
+      
+      
+        DoOr
+        Silnik wykonawczy - nie można operować na typie string 
+        Bitwise
+        Próbujesz użyć "lub" (|) na zmiennych niewłaściwego typu (na przykład próbujesz "lub" string z real).
+      
+      
+        DoXor
+        Błąd wykonania
+        Bitwise
+        Coś poszło nie tak podczas używania wyrażenia bitowego "xor" (^).
+      
+      
+        DoXor
+        Silnik wykonawczy - nie można operować na typie string 
+        Bitwise
+        Próbujesz użyć funkcji "xor" (^) na zmiennych niewłaściwego typu (na przykład próbujesz "xorować" zmienną string z rzeczywistą).
+      
+      
+        DoShl
+        Błąd wykonania
+        Bitwise
+        Coś poszło nie tak podczas przesuwania bitów w lewo (<<) wartości.
+      
+      
+        DoShl
+        Silnik wykonawczy - nie można operować na typie string 
+        Bitwise
+        Próbujesz przesunąć w lewo (<<) zmienne niewłaściwego typu (na przykład próbujesz przesunąć w lewo zmienną string).
+      
+      
+        DoShr
+        Błąd wykonania
+        Bitwise
+        Coś poszło nie tak podczas przesuwania bitów w prawo (>>) wartości.
+      
+      
+        DoShr
+        Silnik wykonawczy - nie można operować na typie string 
+        Bitwise
+        Próbujesz przesunąć w prawo (>>) zmienne niewłaściwego typu (np. próbujesz przesunąć w prawo zmienną string).
+      
+      
+        
+          
+        
+      
+      
+        DoNeg
+        Błąd wykonania
+        Neguj
+        Próbujesz zamienić zmienną typu na ujemną, gdy ten typ nie pozwala na taką operację.
+      
+      
+        DoNot
+        Błąd wykonania
+        Neguj
+        Próbujesz "nie" typu zmiennej, gdy ten typ nie pozwala na taką operację.
+      
+      
+        
+          
+        
+      
+      
+        Push
+        Błąd wykonania - Indeks zmiennej poza zakresem (var)
+        Stos
+        Zmienna, do której uzyskuje się dostęp, znajduje się poza ustalonym zakresem dla biegacza.
+      
+      
+        Push
+        Zmienna Uzyskaj (var)
+        Stos
+        Podana zmienna nie została zdefiniowana lub jest nieznana.
+      
+      
+        Pop
+        Zmienna Indeks poza zakresem (var)
+        Stos
+        Zmienna, do której uzyskuje się dostęp, znajduje się poza ustalonym zakresem dla biegacza.
+      
+      
+        Pop
+        Zmienna Uzyskaj (var)
+        Stos
+        Podana zmienna nie została zdefiniowana lub jest nieznana.
+      
+      
+        
+          
+        
+      
+      
+        With
+        Nie można użyć wartości globalnej w wyrażeniu with
+        Z
+        Próbowałeś użyć "global" jako zmiennej w oświadczeniu "with", tzn:
+          with (global)
+               {
+               //do something;
+               }
+        
+      
+      
+        With
+        Nie można użyć local w wyrażeniu with
+        Z
+        Próbowałeś użyć "local" jako zmiennej w oświadczeniu "with", tzn:
+          with (local)
+               {
+               //do something;
+               }
+        
+      
+      
+        
+          
+        
+      
+      
+        DoCall
+        Błąd typu silnika wykonawczego
+        Silnik
+        Jest to błąd undefined występujący w maszynie wirtualnej. W takim przypadku należy zgłosić błąd (szczegółowe informacje na ten temat znajdują się w: Menu Pomoc.
+      
+      
+        Stack Overflow
+        -
+        Silnik
+        Przepełnienie stosu występuje wtedy, gdy na stosie wywołań znajduje się zbyt dużo pamięci, a gdy gra próbuje wykorzystać więcej miejsca, niż jest dostępne na stosie wywołań (to znaczy, gdy próbuje uzyskać dostęp do pamięci poza granicami stosu wywołań, co jest zasadniczo przepełnieniem buffer ), mówi się, że stos się przepełnia, co powoduje awarię programu. Uruchom ponownie komputer i program GameMaker: Studio i jeśli błąd będzie się powtarzał, skontaktuj się z pomocą techniczną i/lub zgłoś błąd (jak wyjaśniono powyżej).
+      
+    
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Zgłaszanie błędów
+        Następny: Błędy składni
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

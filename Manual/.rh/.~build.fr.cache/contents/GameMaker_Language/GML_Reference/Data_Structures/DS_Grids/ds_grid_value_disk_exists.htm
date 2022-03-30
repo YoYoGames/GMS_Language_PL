@@ -1,0 +1,61 @@
+
+  
+  ds_grid_value_disk_exists
+  Za pomocą tej funkcji można sprawdzić, czy określona wartość (rzeczywista lub string) jest obecna w okrągłym obszarze danej siatki DS. Jeśli jest ona obecna, funkcja zwróci true, w przeciwnym razie zwróci false.
+   
+  Składnia:
+  ds_grid_value_disk_exists(index, xm, ym, r, val);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the grid.
+     
+      
+        xm
+        The x position of the disk on the grid.
+     
+      
+        ym
+        The y position of the disk on the grid.
+     
+      
+        r
+        The radius of the disk on the grid.
+     
+      
+        val
+        The value to find.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if ds_grid_value_disk_exists(grid, 5, 5, 5, val)
+    {
+        xpos = ds_grid_value_disk_x(grid, 5, 5, 5, val);
+        ypos = ds_grid_value_disk_y(grid, 5, 5, 5, val);
+    }
+  Powyższy kod sprawdza siatkę DS w poszukiwaniu określonej wartości w regionie dysku. Jeśli wartość zostanie znaleziona, zapisuje jej położenie x i y w dwóch zmiennych do późniejszego wykorzystania.
+   
+   
+   
+  
+    
+      
+        Powrót: Siatki DS
+        Następny: ds_grid_value_x
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

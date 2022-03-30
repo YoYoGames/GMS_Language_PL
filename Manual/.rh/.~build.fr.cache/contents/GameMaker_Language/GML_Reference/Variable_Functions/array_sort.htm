@@ -1,0 +1,90 @@
+
+  
+  sortuj_sort
+  Za pomocą tej funkcji można posortować tablicę w kolejności rosnącej lub malejącej, lub też użyć własnej funkcji do określenia kolejności sortowania. Funkcja wymaga podania tablicy do posortowania, a następnie wykonania jednej z poniższych czynności:
+  
+    Stałe true lub false oznaczają porządek sortowania rosnący (true) lub malejący (false).
+    Własna funkcja określająca kolejność sortowania
+  
+  Jeśli do sortowania używana jest funkcja niestandardowa, musi ona przyjmować dwa argumenty, które otrzymają odpowiednio wartości bieżącego elementu i następnego elementu. Funkcja powinna zwracać dowolną z poniższych wartości, aby wpłynąć na kolejność sortowania (gdzie elm1 to bieżący element, a elm2 to następny element):
+  
+    0: jeśli elm1 i elm2 są równe
+    <0 (liczba ujemna): jeśli elm1 jest przed elm2
+    >0 (liczba dodatnia): jeśli elm1 idzie za elm2
+  
+  Jeśli tablica zawiera zestaw strings, to w przypadku domyślnego sortowania rosnącego i malejącego tablice strings zostaną posortowane alfabetycznie, zgodnie z alfabetem angielskim. Wszystkie inne typy danych zostaną posortowane na podstawie wartości liczbowych, których dokładne wartości zależą od typu danych (na przykład tablica buffers zostanie posortowana na podstawie wartości liczbowych ich adresów pamięci).
+  Należy pamiętać, że funkcja ta zmodyfikuje zawartość oryginalnej tablicy, która została dostarczona. Aby utworzyć posortowaną kopię, należy najpierw zduplikować tablicę za pomocą strony array_copy(), a następnie przekazać ją do tej funkcji.
+   
+  Składnia:
+  array_sort(variable, sorttype_or_function);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        variable
+        Tablica
+        The variable that holds the array.
+      
+      
+        sorttype_or_function 
+         Funkcja/metodalogiczna lub skryptowa
+        The sort type (true w przypadku sortowania rosnącego lub false w przypadku sortowania malejącego) lub odwołanie do funkcji, która ma być użyta do sortowania.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var _a = [10, 9, 8, 7, 6, 5];
+    
+    array_sort(_a, function(elm1, elm2)
+    {
+            return elm1 - elm2;
+    });
+  
+  Powyższy kod wykorzystuje własną funkcję sortującą do posortowania tablicy w porządku rosnącym. Funkcja sortująca pobiera dwa elementy tablicy: elm1 oraz elm2 i wykonuje na nich odejmowanie. Jeśli adres elm1 jest większy od adresu elm2, to w wyniku odejmowania otrzymuje się liczbę dodatnią, która przesuwa adres elm1 za adres elm2, co powoduje ułożenie elementów w kolejności rosnącej.
+  Oto rozszerzony przykład:
+  var _xx, _yy, _a;
+    
+    for (var i = 0; i < 10; i++)
+    {
+        _xx = irandom(room_width);
+        _yy = irandom(room_height);
+        _a[i] = instance_create_layer(_xx, _yy, layer, obj_Bullet);
+    }
+    
+    show_debug_message(_a);
+    
+    var _f = function(inst1, inst2)
+    {
+        return inst1.x - inst2.x;
+    }
+    
+    array_sort(_a, _f);
+    show_debug_message(_a);
+  
+  Powyższy kod utworzy tablicę z 10 instancjami umieszczonymi w losowych miejscach na stronie room. Komunikat debugowania będzie wyglądał następująco:
+  [ 100003,100004,100005,100006,100007,100008,100009,100010,100011,100012 ]
+  Następnie kod tworzy metodę używaną w funkcji array_sort(), która zwraca różnicę między każdą z pozycji X instancji w tablicy room. Następnie funkcja array_sort() jest uruchamiana przy użyciu tej metody, sortując instancje według pozycji X od najniższej do najwyższej. Wynik dla tablicy będzie wyglądał następująco:
+  [ 100011,100004,100009,100006,100012,100008,100010,100005,100007,100003 ]
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: array_length
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

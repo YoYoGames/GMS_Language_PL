@@ -1,0 +1,118 @@
+
+  
+  Redaktor Script 
+  W tej części omówiono edytor skryptów (zwany także edytorem tekstowym), w którym wpisuje się cały kod, jaki
+    Twoja gra będzie wymagała do działania. Edytor ten służy do tworzenia własnych stron script assets, a także do kodowania zdarzeń obiektów, dodawania kodu tworzenia pomieszczeń,
+    i wielu innych rzeczy. W związku z tym w tej sekcji opisano po prostu działanie edytora script, a nie sposób tworzenia script assets czy używania Drag and Drop™ do tworzenia scripts. Więcej informacji na ten temat można znaleźć w następnych rozdziałach: 
+  
+    Skrypty GML
+    Skrypty DnD™
+  
+  W edytorze script piszesz swój kod GameMaker Language, który jest wbudowanym językiem programowania używanym przez GameMaker Studio 2 (więcej szczegółów znajdziesz w sekcji GML Reference ).
+    Po bliższym zapoznaniu się z GameMaker Studio 2 i chęci korzystania z niego w pełnym zakresie, warto rozpocząć naukę tego języka, ponieważ znacznie rozszerza on możliwości tworzenia gier.
+  Nazwę script asset można nadać, klikając prawym przyciskiem myszy na  w Przeglądarce zasobów i wybierając Zmień nazwę,
+    ale należy pamiętać, że nazwa script musi być zgodna z zasadami skryptów dla funkcji, a więc może być tylko alfanumeryczna, musi zaczynać się od litery, a jedynym symbolem, jaki może zawierać, jest symbol "_" pod paskiem. W innych miejscach edytora script 
+    nie można zmienić nazwy i będzie on miał nazwę właściwą dla edytowanego elementu, na przykład zdarzenia object.
+  Po otwarciu okna edytora script będzie ono miało następujące opcje i układ:
+  Zakładka Skrypt / Zdarzenia
+  
+    Edytor script otwiera się w oknie z zakładkami na górze, co pozwala na umieszczenie wielu stron scripts lub wydarzeń w jednym oknie (można jednak zmienić to zachowanie w Preferencjach, aby dla każdej strony script lub wydarzenia utworzyć nowe okno). Możesz kliknąć  na zakładce, a następnie przeciągnąć ją, aby zmienić kolejność zakładek, lub - jeśli wolisz - możesz wyciągnąć
+      z bieżącego okna i umieścić ją na stronie workspace, aby utworzyć nowe okno dla tej strony script (lub dodać ją do innego okna). Można także zmaksymalizować edytor script, aby utworzyć nową stronę workspace. Jeśli przeciągniesz kartę script poza okno
+     IDE, zostanie utworzone nowe okno IDE, w którym będzie znajdował się zasób script i będzie można go używać tak samo, jak okna głównego.
+    Zwróć uwagę, że jeśli edytujesz kod ze zdarzenia obiektu w edytorze script i zmaksymalizowałeś edytor script lub masz go w osobnym oknie lub na stronie workspace, to menu edytora  po kliknięciu prawym przyciskiem myszy będzie miało dodatkowe opcje:
+    
+    
+      Przywróć do przestrzeni roboczej: Spowoduje to wyprowadzenie edytora script ze stanu maksymalizacji/przestrzeni roboczej i ponowne powiązanie go z object w workspace.
+      Przejdź do Object: Spowoduje to przejście do strony workspace, na której znajduje się strona object z kodem, i skoncentrowanie się na stronie object.
+      Dodaj /Otwórz zdarzenie: Umożliwia dodanie nowego zdarzenia do strony object, do której należy bieżąca strona script, oraz otwarcie nowej karty kodu w edytorze Script dla dodanego zdarzenia. Jeśli w wybranym wydarzeniu znajduje się już kod, zostanie on
+        zostanie otwarty w nowej karcie.
+    
+    Informacje na temat pozostałych opcji menu , dostępnych po kliknięciu prawym przyciskiem myszy, znajdują się w części Edycja poniżej.
+     
+  
+  Rynna
+  
+     Rynna jest używana do wyświetlania numerów linii kodu, a także do przekazywania pewnych informacji o stanie kodu. Co najważniejsze, jeśli popełnisz literówkę lub niepoprawnie skonstruujesz kod, IDE GameMaker Studio 2 poinformuje Cię o tym, oznaczając linię kodu czerwonym wykrzyknikiem , wskazującym na błąd składni. Możesz najechać kursorem myszy na ten symbol, aby uzyskać krótki opis problemu:
+    Więcej informacji na temat błędów składni (oraz ogólnych błędów występujących podczas testowania lub kompilowania kodu) można znaleźć w następującej sekcji:
+    
+      Zgłaszanie błędów
+    
+    Rynna zaznaczy również każdy wiersz script, w którym dodano punkt przerwania . breakpoint to po prostu miejsce w pliku script, w którym debugger ma wstrzymać wykonywanie gry
+      gry po jego osiągnięciu. Możesz przełączyć stronę breakpoint z dowolnej linii dowolnego zdarzenia script lub object, naciskając przycisk "f9" lub korzystając z menu prawego przycisku myszy . Po dodaniu zdarzenia breakpoint zostanie ono wyświetlone w rynnie w taki sposób:
+    Wreszcie, w rynience będą również wyświetlane wszystkie zakładki. Aby dodać zakładkę do wiersza kodu, wystarczy przytrzymać wciśnięty przycisk  /  +  + Number (od 0 do 9), co pozwoli na powrót do tego wiersza kodu z dowolnego miejsca na stronie IDE za pomocą przycisku  /  + Number (od 0 do 9). Aby usunąć zakładkę, wystarczy wykonać tę samą czynność, co przy jej dodawaniu
+      ponownie w danej linii kodu. Po dodaniu zakładki wyświetli się ona w taki sposób:
+    
+     
+  
+  Wyszukaj/Zamień
+  
+    Podczas pracy w edytorze script można nacisnąć przycisk  /  + "F", aby otworzyć okno wyszukiwania, lub  /  + "H", aby otworzyć okno wyszukiwania i zastępowania:
+    W tym miejscu można przeprowadzić wyszukiwanie lokalne dla wprowadzonego słowa kluczowego, a po wprowadzeniu szukanego terminu można użyć
+      strzałek w prawym górnym rogu okna wyszukiwania, aby przechodzić od jednego znalezionego terminu do następnego na stronie script. Sposób przeprowadzania wyszukiwania można zmienić, przełączając następujące przyciski:
+    
+      
+        
+          
+          Po włączeniu tej opcji funkcja wyszukiwania będzie podświetlać tylko te strings, które pasują do całego wprowadzonego tekstu string. Na przykład przy wyłączonej funkcji wyszukiwanie słowa "random" spowoduje wyświetlenie wszystkich słów, które zawierają to słowo string - np. irandom(),
+            lub randomise() - podczas gdy włączenie tej opcji spowoduje wyświetlenie tylko funkcji random().
+        
+        
+          
+          Gdy ta opcja jest włączona, użytkownik mówi GameMaker Studio 2, aby sprawdzał nie tylko zawartość wyszukanej strony string, ale także obudowę. Na przykład, jeśli masz stronę sprite o nazwie "spr_Dog" i wyszukasz hasło
+            " dog" przy wyłączonym przełączniku, to strona sprite string zostanie podświetlona, ale jeśli przełącznik jest włączony , to nie zostanie, ponieważ "Dog" nie jest już traktowane jako to samo co "dog".
+        
+      
+    
+    Jeśli okno wyszukiwania zostało otwarte za pomocą  /  + "F", funkcja zamień nie będzie widoczna, więc aby ją otworzyć, należy kliknąć przycisk Zamień .
+      go. Po otwarciu okna można wprowadzić tekst string, który zostanie użyty do zastąpienia dowolnego wyszukanego tekstu string, używając następujących przycisków do wykonania akcji:
+    
+      
+        
+          
+          Kliknięcie tego przycisku spowoduje zastąpienie następnego wyszukanego terminu string znalezionego na stronie script podanym zamiennikiem string. Należy pamiętać, że za "następny" termin uważa się następny po aktualnej pozycji kursora, a do różnych terminów można przechodzić za pomocą strzałek
+            znajdujących się w prawym górnym rogu okna wyszukiwania.
+        
+        
+          
+          Kliknięcie tego przycisku spowoduje zastąpienie wszystkich przykładów wyszukiwania string w obrębie strony script przy użyciu podanego polecenia replace string.
+        
+      
+    
+    Uwaga: jeśli chcesz przeprowadzić wyszukiwanie globalne (tzn. przeszukać cały projekt, a nie bieżący adres script lub wydarzenie), możesz nacisnąć  /  +  + "F".
+     
+     
+  
+  Główny edytor kodu
+  
+    Główny edytor kodu to miejsce, w którym napiszesz cały swój kod do utworzenia strony script asset lub wypełnienia zdarzenia object. Samą edycję kodu omówiono w rozdziale Edycja, znajdującym się w dalszej części tej strony.
+     
+  
+  Informacje
+  
+    Pasek informacyjny na dole strony IDE pokazuje numer wiersza, w którym aktualnie się znajdujesz, oraz pozycję w wierszu. Jest to również miejsce, w którym można zobaczyć pomocnik kodu, czyli wiersz tekstu, który pokazuje aktualnie edytowaną funkcję wraz z
+      wraz z wymaganymi przez nią argumentami. W miarę wypełniania funkcji w edytorze argumenty będą podświetlane, aby pokazać, które z nich są aktualnie edytowane.
+    Należy pamiętać, że wszelkie opcjonalne argumenty w funkcjach script będą wyświetlane z nawiasami [] wokół nich. Jeśli użyto komentarzy JSDoc Script  w ramach strony script asset, to informacje
+      informacje, które podałeś, będą również wyświetlane w tym miejscu.
+  
+   
+  Więcej informacji na temat korzystania z witryny script i edytorów kodu można znaleźć na kolejnych stronach:
+  
+    Edytowanie kodu
+    Uwagi JSDoc
+    Wycinki kodu
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Redaktorzy Aktywów
+        Następny: Sekwencje
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

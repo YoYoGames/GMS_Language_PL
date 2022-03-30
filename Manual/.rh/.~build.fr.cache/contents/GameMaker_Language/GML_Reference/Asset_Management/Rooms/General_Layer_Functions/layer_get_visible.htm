@@ -1,0 +1,51 @@
+
+  
+  warstwa_get_visible
+  Za pomocą tej funkcji można sprawdzić, czy dana warstwa jest widoczna, czy nie. Podajemy identyfikator warstwy (który otrzymujemy podczas tworzenia warstwy za pomocą funkcji layer_create()) lub nazwę warstwy (w postaci string - będzie to miało wpływ na wydajność), a funkcja zwróci true, jeśli warstwa jest widoczna, oraz false w przeciwnym wypadku.
+   
+  Składnia:
+  layer_get_visible(layer_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_id
+        Ciąg lub identyfikator warstwy
+        The unique ID value of the layer to target (or the layer name as a string)
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  var lay_id = layer_get_id("Instances");
+    if layer_get_visible(lay_id)
+    {
+        layer_set_visible(lay_id, false);
+    }
+    else
+    {
+        layer_set_visible(lay_id, true);
+    }
+  Powyższy kod pobiera wartość ID dla warstwy o nazwie "Instancje" w edytorze room, a następnie używa tego ID do sprawdzenia, czy warstwa jest widoczna, czy nie, zmieniając jej widoczność w zależności od zwróconej wartości.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_depth
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

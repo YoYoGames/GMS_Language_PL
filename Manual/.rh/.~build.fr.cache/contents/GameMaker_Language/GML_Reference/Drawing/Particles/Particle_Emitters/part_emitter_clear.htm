@@ -1,0 +1,48 @@
+
+  
+  część_emitera_wyczyść
+  Za pomocą tej funkcji można wyczyścić dany emiter z określonego systemu cząsteczek, przywracając jego domyślny stan. Spowoduje to również zatrzymanie wszystkich cząstek, które są przesyłane z emitera w tym czasie, a jeśli chcesz ponownie użyć emitera, będziesz musiał ustawić pozycję w regionie i typ cząstek za pomocą funkcji part_emitter_region() funkcji.
+   
+  Składnia:
+  part_emitter_clear(ps, ind);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ps
+        Identyfikator systemu cząstek stałych
+        The particle system that the emitter is in.
+      
+      
+        ind
+        Identyfikator emitera cząstek stałych
+        The index of the emitter to clear.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  part_emitter_clear(Sname, p_emit1 );
+  Powyższy kod wyczyści emiter cząstek zindeksowany w zmiennej "p_emit1".
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery cząstek
+        Następny: part_emitter_region
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

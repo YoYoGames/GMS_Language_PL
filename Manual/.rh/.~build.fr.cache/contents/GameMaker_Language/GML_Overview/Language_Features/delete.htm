@@ -1,0 +1,32 @@
+
+  
+  usuń
+  Operator delete jest używany do usuwania odniesienia do struktury i ma następującą składnię:
+  delete <variable>;
+  Oznacza to, że wywołujesz operator delete wraz ze zmienną przechowującą struct, a on usunie konkretne odwołanie do struct przechowywane w danej zmiennej (odwołanie to po prostu wartość wskazująca na obszar pamięci
+    w którym przechowywana jest strona struct i jej zawartość). Jeśli ta referencja była ostatnią referencją do struct w Twojej grze, to garbage collector usunie struct z pamięci w
+    w następnej iteracji, zazwyczaj na samym początku następnego kroku.
+  UWAGA: delete można używać tylko wraz ze zmiennymi, a nie z wyrażeniami
+  Domyślnie adres structs, do którego nie ma już żadnych odwołań w kodzie, jest automatycznie usuwany z pamięci w kolejnych krokach, ale dobrą praktyką jest użycie tego operatora do flag, aby śmieciarz usunął je z pamięci na
+    na samym początku kolejnego kroku, dzięki czemu pamięć zostanie zwolniona szybciej i bardziej efektywnie.
+  Poniższy przykład pokazuje tworzenie strony struct - na przykład w zdarzeniu Create Event (Utwórz) instancji:
+  mystruct = {
+         a : 0,     b : 100,     c : "Hello World" }
+  
+  Strona struct będzie następnie używana w zdarzeniach instancji w zwykły sposób, a na koniec zostanie oznaczona jako przeznaczona do usunięcia śmieci w zdarzeniu Clean Up, jak poniżej:
+  delete mystruct;
+   
+   
+   
+  
+    
+      
+        Powrót: Cechy językowe
+        Następny: if / else i operatory warunkowe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

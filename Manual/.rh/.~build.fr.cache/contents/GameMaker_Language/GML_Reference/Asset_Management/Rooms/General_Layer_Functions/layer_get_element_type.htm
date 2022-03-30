@@ -1,0 +1,94 @@
+
+  
+  warstwa_get_element_type
+  Za pomocą tej funkcji można uzyskać typ elementu dla podanego elementu. Podajesz unikalną wartość ID elementu (na przykład zwróconą przez funkcję, która utworzyła element, lub z edytora room ), a funkcja zwróci jedną z poniższych stałych (lub -1, jeśli element nie istnieje lub wartość ID jest błędna):
+  
+    
+      
+      
+    
+    
+      
+        Warstwa Element Typ Stała
+      
+      
+        Stała
+        Opis
+      
+      
+        layerelementtype_background
+        Elementem jest tło.
+      
+      
+        layerelementtype_instance
+        Element jest instancją.
+      
+      
+        layerelementtype_sprite
+        Elementem jest strona sprite asset.
+      
+      
+        layerelementtype_tilemap
+        Elementem jest mapa płytek.
+      
+      
+        layerelementtype_particlesystem
+        Element jest układem cząstek.
+      
+      
+        layerelementtype_tile
+        Element jest starszym tłem tile (dotyczy to tylko projektów, które zostały zaimportowane z poprzednich wersji GameMaker).
+      
+      
+        layerelementtype_sequence
+        Elementem jest strona sequence asset.
+      
+    
+  
+  Należy pamiętać, że funkcja ta jest najbardziej przydatna, gdy do jednej warstwy przypisanych jest wiele różnych typów elementów, a listę wszystkich elementów na danej warstwie można uzyskać za pomocą funkcji layer_get_all_elements().
+   
+  Składnia:
+  layer_get_element_type(element_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer
+        Identyfikator elementu warstwy
+        The unique ID value of the element to get the type of
+      
+    
+  
+   
+  Zwroty:
+  Layer Element Type Constant or -1 (if element does not exist or is invalid)
+   
+  Przykład:
+  var a = layer_get_all_elements(layer);
+    for (var i = 0; i < array_length(a); i++;)
+    {
+        if layer_get_element_type(a[i]) == layerelementtype_sprite
+        {
+            layer_sprite_destroy(a[i])
+        }
+    }
+  Powyższy kod pobiera identyfikatory wszystkich elementów instancji przypisanych do warstwy instancji, na której uruchomiony jest kod. Następnie kod sprawdza, czy zwrócone elementy mają adres sprite assets i jeśli tak, to są one niszczone.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_get_x
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

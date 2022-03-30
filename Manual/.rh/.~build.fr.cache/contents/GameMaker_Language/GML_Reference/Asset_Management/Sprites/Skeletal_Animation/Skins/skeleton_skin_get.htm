@@ -1,0 +1,32 @@
+
+  
+  skeleton_skin_get
+  W przypadku animacji szkieletowej sprites możesz przypisać do animacji osobne textures (zwane "skórkami"), dzięki czemu jedna animacja może być używana do wielu różnych rzeczy. Ta funkcja zwraca nazwę skórki (w postaci string), która jest aktualnie przypisana do animacji szkieletowej sprite używanej przez Twoją instancję. Zwracana nazwa jest tą, którą ustawiłeś podczas tworzenia sprite w swoim programie animacyjnym.
+   
+  Składnia:
+  skeleton_skin_get();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if skeleton_skin_get() == "skin_Enemy1"
+    {
+        skeleton_skin_set(choose("skin_Enemy1", "skin_Enemy2", "skin_Enemy3");
+    }
+  Powyższy kod sprawdziłby aktualnie przypisaną skórkę dla animacji i jeśli jest to "skin_Enemy1", wybrałby i ustawił nową skórkę z jednej z trzech opcji.
+   
+   
+   
+  
+    
+      
+        Powrót: Skóry
+        Następny: skeleton_skin_set
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,49 @@
+
+  
+  draw_set_alpha
+  Za pomocą tej funkcji można ustawić podstawową alfę rysowania w grze. Wartość tę można ustawić w zakresie od 0 do 1, gdzie 0 oznacza pełną przezroczystość, a 1 pełną nieprzezroczystość (wartość domyślna). Wartość ta będzie miała wpływ na wszystkie dalsze rysunki, w tym tła, sprites, fonts,
+    prymitywy i 3D.
+  Zwróć uwagę, że jeśli rysujesz dowolną stronę assets i podajesz argument alfa jako część funkcji (na przykład przy użyciu polecenia draw_sprite_ext()), wówczas ustawiona tutaj wartość alfa zostanie
+    nadrzędna, więc rysowanie sprite przy użyciu draw_sprite_ext() z argumentem alfa równym 1 spowoduje, że sprite będzie całkowicie nieprzezroczysta, niezależnie od wartości alfa ustawionej przy użyciu draw_set_alpha() (tak samo będzie w przypadku użycia draw_self()    i ustawieniu wartości image_alpha instancji). Zauważ też, że gdy instancja jest domyślnie rysowana (tzn. ma sprite, ale nie ma zdarzenia Draw), to zmienna
+    image_alpha zostanie zaciśnięta na alfie ustawionej za pomocą draw_set_alpha(), tak że image_alpha o wartości 1 i alfie draw 0,5 będzie rysować sprite z alfą 0,5, a image_alpha o wartości 0,25 i alfie draw
+    0,5 spowoduje narysowanie strony sprite z alfą 0,25.
+   
+  Składnia:
+  draw_set_alpha(alpha);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        alpha
+        The alpha to set (between 0 and 1)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_set_alpha(0.5); draw_set_colour(c_black);
+     draw_text(x+5, y+5, "LEVEL 1"); draw_set_alpha(1);
+     draw_set_colour(c_white);
+     draw_text(x, y, "LEVEL 1");
+  Powyższy kod narysuje w określonym miejscu tekst z efektem cienia utworzonym przez modyfikację alfa i koloru rysowania.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolor i alfa
+        Następny: draw_set_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

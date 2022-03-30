@@ -1,0 +1,51 @@
+
+  
+  part_system_draw_order
+  Za pomocą tej funkcji można ustawić sposób, w jaki cząstki są rysowane podczas tworzenia na ekranie. Domyślny system używa starego > nowego wyglądu (funkcja jest ustawiona na true), gdzie stare cząstki są rysowane na większej głębokości niż nowsze i dlatego pojawiają się "pod" nowymi cząstkami, ale ustawiając tę funkcję na false można odwrócić tę kolejność i sprawić, że nowe cząstki będą rysowane wyżej, a więc pojawią się "pod" starszymi. Ilustrują to poniższe obrazy, przy czym obraz po lewej stronie ma wartość domyślną true, a obraz po prawej stronie - false:
+   
+  UWAGA: Jeśli cząstki są rysowane w trybie mieszania addytywnego, efekt działania tej funkcji może nie zawsze być oczywisty.
+   
+  Składnia:
+  part_system_draw_order(ind, oldtonew);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Identyfikator systemu cząstek stałych
+        The index of the particle system to change.
+      
+      
+        oldtonew
+        Boolean
+        Whether old particles should be drawn behind newer ones (true) or vice versa (false).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  mysystem = part_system_create();
+    part_system_draw_order(mysystem, true);
+  Spowoduje to utworzenie nowego systemu cząsteczek o indeksie "mysystem", a następnie ustawienie cząsteczek tak, aby nowsze cząsteczki były rysowane na wierzchu starszych.
+   
+   
+   
+  
+    
+      
+        Powrót: Układy cząstek stałych
+        Następny: part_particles_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

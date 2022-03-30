@@ -1,0 +1,46 @@
+
+  
+  keyboard_check
+  Za pomocą tej funkcji można sprawdzić, czy dany klawisz jest przytrzymany, czy nie. W przeciwieństwie do funkcji keyboard_check_pressed() lub keyboard_check_released() które są wywoływane tylko raz, gdy klawisz jest naciśnięty lub zwolniony, ta funkcja jest wywoływana przy każdym kroku, w którym klawisz jest przytrzymany. Funkcja przyjmuje wartość keycode zwróconą przez funkcję ord() (tylko wielkie litery od A-Z lub cyfry od 0-9), lub dowolną stałą vk_* wymienioną na głównej stronie Keyboard Input.
+   
+  Składnia:
+  keyboard_check(key);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        key
+        Stała klucza wirtualnego (vk_*)
+        The key to check the down state of.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if keyboard_check(vk_left)
+    {
+        x -= 5;
+    }
+  Powyższy kod sprawdzi, czy został naciśnięty klawisz strzałki i przesunie instancję o 5 pikseli w lewo za każdym razem, gdy zwróci wartość true.
+   
+   
+   
+  
+    
+      
+        Powrót: Wejście klawiatury
+        Następny: keyboard_check_pressed
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

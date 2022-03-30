@@ -1,0 +1,60 @@
+
+  
+  szkielet_kostki_dane_zestaw
+  Animacja szkieletowa składa się z pewnej liczby "kości", które zostały zdefiniowane i nazwane w programie animacji, a za pomocą tej funkcji można w dowolnym momencie ustawić pewne dane dla nazwanej kości. Należy pamiętać, że dane te odnoszą się do domyślnej pozycji szkieletu, a nie do aktualnej pozycji, która jest rysowana (w tym celu należy użyć funkcji skeleton_bone_state_set()) i muszą być ustawione na podstawie utworzonej wcześniej mapy DS, która powinna mieć następujące klucze i odpowiadające im wartości:
+  
+    "x": Lokalna pozycja x kości względem kości macierzystej.
+    "y": Lokalna pozycja y kości względem kości macierzystej.
+    "angle": Lokalny obrót kości względem kości macierzystej.
+    "xscale": Lokalna skala pozioma kości.
+    "yscale": Lokalna skala pionowa kości.
+    "parent": Nazwa (a string) kości nadrzędnej.
+  
+   
+  Składnia:
+  skeleton_bone_data_set(bone, map);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        bone
+        String
+        The name (as a string) of the bone.
+      
+      
+        map
+        Identyfikator mapy DS
+        The (previously created) DS map that stores the bone data.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var bone_map = ds_map_create();
+    skeleton_bone_data_get("head", bone_map);
+    ds_map_replace(bone_map, "parent", "body");
+    skeleton_bone_data_set("head", bone_map);
+    ds_map_destroy(bone_map);
+  Powyższy kod tworzy mapę DS, a następnie wypełnia ją danymi z kości o nazwie "głowa". Następnie zastępuje klucz kości "rodzic" w mapie nową wartością i ponownie ustawia kość "głowa" z nowym zestawem danych.
+   
+   
+   
+  
+    
+      
+        Grzbiet: kości
+        Następny: skeleton_bone_state_get
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

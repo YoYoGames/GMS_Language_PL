@@ -1,0 +1,53 @@
+
+  
+  kąt_konsekwencji_warstwy
+  Za pomocą tej funkcji można ustawić kąt obrotu dla podanego elementu sequence. Należy podać identyfikator elementu sequence zwrócony przez layer_sequence_create() lub przez jedną z funkcji elementu warstwy wraz z nowym kątem do ustawienia, a element sequence zostanie obrócony wokół swojego początku do nowej pozycji. Kąty w witrynie GameMaker są obliczane od 0º w prawo i obracają się w kierunku przeciwnym do ruchu wskazówek zegara - zatem 90º to góra, 180º to lewo, a 270º to dół - a domyślnym kątem dla witryny sequence jest 0º.
+  Zwróć uwagę, że nie powinieneś zmieniać zmiennych image_xscale \ image_yscale \ image_angle \ x \ y w żadnej z instancji w witrynie sequence, która używa tej funkcji, ponieważ zostaną one nadpisane, gdy tylko witryna sequence zaktualizuje się po wywołaniu funkcji.
+   
+  Składnia:
+  layer_sequence_angle(sequence_element_id, angle)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        sequence_element_id
+        Identyfikator elementu sekwencji
+        The unique ID value of the sequence element to target
+      
+      
+        angle
+        Real
+        The new angle to rotate the sequence element to
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if current_angle < 90
+    {
+        current_angle += 1;
+        layer_sequence_angle(my_seq, current_angle);
+    }
+  Powyższy kod sprawdza wartość przechowywaną w zmiennej current_angle i jeśli jest ona mniejsza niż 90, dodaje do niej wartość, a następnie wykorzystuje ją do ustawienia kąta elementu sequence, do którego odwołuje się zmienna my_seq.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy sekwencji
+        Następny: layer_sequence_xscale
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

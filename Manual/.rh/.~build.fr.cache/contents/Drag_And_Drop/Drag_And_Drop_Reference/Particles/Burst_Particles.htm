@@ -1,0 +1,58 @@
+
+  
+   Cząstki wybuchowe
+  Ta akcja umożliwia wybuch cząstek w dowolnym momencie bez korzystania z emitera. Podajesz unikatową wartość identyfikatora systemu, w którym mają być tworzone cząstki (zwróconą po utworzeniu systemu za pomocą akcji Utwórz system cząstek)
+    oraz unikatowy identyfikator typu cząstki do utworzenia (zwrócony po utworzeniu typu cząstki za pomocą akcji Utwórz typ cząstki), a także pozycję x/y, w której mają zostać utworzone, i liczbę, jaką mają utworzyć.
+    Pozycja może być pozycją bezwzględną w witrynie room lub względną w stosunku do instancji wywołującej akcję, którą można znaleźć na stronie flag.
+  Można wywoływać tę akcję w każdej klatce gry, aby odtworzyć efekt strumienia emitera, lub można ją wywołać raz w zdarzeniu (np. w zdarzeniu Zniszcz), aby po prostu rozerwać cząsteczki.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        System
+        Wartość identyfikatora systemu cząstek stałych, który ma być używany
+      
+      
+        Type
+        Wartość identyfikatora typu cząstki, która ma zostać rozerwana
+      
+      
+        X
+        Położenie x, w którym cząstki zostaną rozerwane
+      
+      
+        Y
+        Ustawiają się tak, aby rozerwać cząstki na
+      
+      
+        Count
+        Liczba cząstek, które mają zostać rozerwane
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdzi, czy instancja zmieniła pozycję
+    od czasu aktualizacji ostatniej klatki gry, a jeśli tak, to wybucha cząsteczkami w nowym miejscu.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje cząstek
+        Następny: Tworzenie emitera cząstek
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,59 @@
+
+  
+  Wektory
+  Tworząc grę o dowolnej złożoności, w pewnym momencie prawdopodobnie będziesz musiał zmierzyć się z wektorami. Używa się ich w fizyce, sztucznej inteligencji, trygonometrii i wielu innych sytuacjach, ale czym jest wektor? Najprościej rzecz ujmując, wektor to wielkość skierowana. Zacznijmy od przyjrzenia się wektorowi jednowymiarowemu - który jest tym samym, co pojedyncza liczba - rysując numerowaną linię ze strzałką zaczynającą się od zera i kończącą na 5. Jest to wektor "a", który jest równy 5, a jeśli narysujemy kolejną strzałkę zaczynającą się od 5 i kończącą na 8, otrzymamy wektor "b", który jest równy 3:
+  Należy sobie uświadomić, że nie ma znaczenia, gdzie wektor ma swój początek, liczy się tylko jego długość i kierunek. Tak więc wektor "b" zaczyna się od 5, ma długość 3 jednostek i jest skierowany w prawo, co czyni go identycznym z wektorem zaczynającym się od 0 i zmierzającym do 3. Teraz możesz również dodać te wektory do siebie, kładąc dwa wektory "a" i "b" końcem do końca, aby otrzymać wektor "c", który jest równy 8. A co z liczbami ujemnymi? Cóż, jeśli na powyższym rysunku wektor skierowany w prawo odpowiada liczbie dodatniej, to wektor skierowany w lewo odpowiadałby liczbie ujemnej, co sprawia, że wektor jednowymiarowy jest niczym innym jak liczbą podpisaną (+/-). Wyjaśnia to zasadniczą koncepcję wektora: liczy się tylko długość i kierunek ("w lewo" lub "w prawo" w tym przypadku), a nie położenie.
+  A co z wektorami dwuwymiarowymi? Cóż, możemy o nich myśleć jako o wektorach składających się nie tylko z "lewej" i "prawej", ale także z "góry" i "dołu":
+  To jeszcze nie są wektory, ponieważ musimy je jeszcze zredukować, używając ich współrzędnych początkowych i końcowych. Patrząc na wektor "a", widzimy, że ma on współrzędną początkową [2,2] i końcową [4,3], a zatem aby otrzymać z niego wektor, musimy go zredukować, odejmując współrzędną końcową od współrzędnej początkowej w następujący sposób:
+  a = [(x2-x1), (y2-y1)] = [(4-2), (3-2)] = [2,1]
+  Podobnie postąpmy teraz z wektorem b:
+  b = [(-1.2 -(-3.2)) ,(2.1 - 1.1)] = [2 ,1]
+  Zauważyłeś coś? Te dwa wektory są takie same! To jeszcze jeden dowód na to, że wektor nie ma położenia, a jedynie kierunek i długość, i że możemy narysować te wektory względem siebie wokół lokalnej osi [0,0]:
+  Oznacza to, że wektor 2D jest definiowany przez dwie wartości - położenie "x" i "y" względem lokalnej osi [0,0]. A co z wektorami 3D? Cóż, mają one do czynienia z dodatkowym wymiarem "głębokości" i byłyby obliczane jako pozycje "x", "y" i "z" wokół lokalnej osi, mniej więcej tak jak poniżej:
+  Dobrym przykładem wektora używanego w witrynie GameMaker Studio 2 jest właściwość fizyki Grawitacja w edytorze room. Grawitacja jest obliczana jako wektor wokół pozycji [0,0]. Jeśli więc zdefiniujesz grawitację jako [x0, y10], grawitacja będzie skierowana w dół z siłą równą 10.
+  Zwykle wektory można wykorzystywać w wielu sytuacjach, ale czasami chcemy ograniczyć ich wartość (np. w przypadku kątów), dlatego też dokonujemy ich normalizacji . Jest to sztuczka matematyczna, która służy do przekształcenia wektora o długości n na wektor o długości 1, co oznacza, że składowe wektora są normalizowane do wartości z przedziału od 0 do 1. Takie wektory są również nazywane wektorami jednostkowymi:
+  Aby obliczyć wektor znormalizowany, musimy najpierw mieć oryginalne składowe wektora, a następnie użyć ich do uzyskania długości wektora. Następnie dzielimy każdą ze składowych wektora przez tę długość, aby otrzymać znormalizowane składowe wektora, które tworzą wektor znormalizowany, w którym suma kwadratów wszystkich współrzędnych jest równa 1. Oto, jak to zrobić:
+  Najpierw bierzemy współrzędne wektora i otrzymujemy jego składowe:
+  vx = (x2 - x1) = (7 - 1) = 6
+    vy = (y2 - y1) = (4 - 1) = 3
+  Następnie wykorzystujemy te wartości do obliczenia długości wektora:
+  len = sqr(vx2 + vy2); // = sqr(36 + 9) = sqr(45) = 6.708203932499369
+  Teraz otrzymujemy dokładną długość wektora "a", więc wykorzystajmy ją do znormalizowania dwóch składowych wektora vx i vy:
+  vx = (vx/len); // = (6 / 6.708203932499369) = 0.8944271909999159
+    vy = (vy/len); // = (3 / 6.708203932499369) = 0.4472135954999579
+  Świetnie! Znormalizowaliśmy składowe wektora! Ale jakie praktyczne zastosowanie ma to w kontekście strony GameMaker Studio 2? Dobrze, podajmy praktyczny przykład...
+  Załóżmy, że mamy grę, w której gracz musi strzelać do przeciwnika i musimy wiedzieć, o ile razy kula object musi się przesunąć wzdłuż osi x i y w każdym kroku, aby w niego trafić:
+  W tym celu należy użyć współrzędnych gracza i wroga, aby uzyskać składowe wektora i jego długość, a następnie znormalizować je, aby uzyskać wartość z przedziału od 0 do 1, którą należy pomnożyć przez prędkość, z jaką pocisk ma się poruszać w każdym kroku. Te dwie ostatnie wartości należy zapisać i dodać do początkowych współrzędnych x i y w każdym kroku. Brzmi skomplikowanie? Nie jest, spójrz (dla uproszczenia wartości zostały zaokrąglone do jednego miejsca po przecinku):
+  px = 100;
+    py = 425;
+    ex = 356;
+    ey = 83;
+    bullet_speed = 5;
+    
+    vx = (ex - px); // = 256
+    vy = (ey - py); // = -342
+    
+    len = sqrt(vx2 + vy2); // = sqrt(65536 + 116964) = 427.2
+    
+    vx = vx / len; // = 0.6
+    vy = vy / len; // = 0.8
+    
+    speed_x = vx * bullet_speed; // = 3
+    speed_y = vy * bullet_speed; // = 4
+  
+  Aby trafić w cel, musimy co krok dodawać 3 do współrzędnej x pocisku i 4 do jego współrzędnej y.
+   
+   
+   
+  
+    
+      
+        Powrót: Informacje dodatkowe
+        Następny: Przewodnik po używaniu buforów
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,46 @@
+
+  
+  view_surface_id
+  Za pomocą tej zmiennej można ustawić zawartość danego okna podglądu, aby rysowała do powierzchni, lub uzyskać bieżący identyfikator powierzchni, jeśli została ona przypisana do okna podglądu. Podczas pracy z powierzchniami często wymagane jest przechwycenie całego widocznego obszaru ekranu na powierzchnię, dlatego też za pomocą tej zmiennej można przypisać ją do portu widoku. Oznacza to, że wszystko, co jest wyświetlane w wybranym widoku, zostanie narysowane na przypisanej powierzchni. Widok nie będzie teraz rysowany na ekranie, co oznacza, że trzeba będzie albo:
+  
+    Włącz nowy widok i rysuj powierzchnię tylko w tym widoku (używając view_current aby sprawdzić, który widok jest rysowany)
+    Narysuj powierzchnię w zdarzeniu Draw GUI lub Post Draw instancji, ponieważ te zdarzenia są niezależne od widoków.
+  
+  Można również odczytać tę zmienną, aby uzyskać indeks powierzchni, która została przypisana do wybranego widoku, lub zwróci ona -1, jeśli nie została przypisana żadna powierzchnia. Zazwyczaj powierzchnia używana w tej funkcji powinna mieć rozmiar samej kamery widoku (nie portu widoku). Poniższy rozszerzony przykład pokazuje podstawową konfigurację przechwytywania widoku i rysowania go w zdarzeniu Draw GUI, a więcej informacji na temat powierzchni można znaleźć w rozdziale Powierzchnie.
+  Należy pamiętać, że port widoku można także ustawić na powierzchni za pomocą funkcji view_set_surface_id().
+   
+   
+  Składnia:
+  view_surface_id[0...7];
+   
+  Zwroty:
+  Surface ID or -1 (if no surface has been assigned)
+   
+  Przykład rozszerzony:
+  W tym rozszerzonym przykładzie utworzymy powierzchnię i przypiszemy ją do portu widoku[0], aby przechwyciła widok z kamery przypisany do tego portu, a następnie narysujemy ją na ekranie w zdarzeniu Draw GUI. Na początek musimy zainicjować naszą zmienną surface w zdarzeniu Create instancji kontrolera:
+  surf = -1;
+  Ustawiliśmy zmienną powierzchniową na -1, ponieważ wszystkie funkcje powierzchniowe powinny być używane w zdarzeniach rysowania, aby zapobiec dziwnym błędom lub zachowaniom undefined. Po wykonaniu tych czynności w głównym zdarzeniu Draw pojawi się to:
+  if !surface_exists(surf)
+    {
+        surf = surface_create(camera_get_view_width(view_camera[0]), camera_get_view_height(view_camera[0]));
+        view_surface_id[0] = surf;
+    }
+  Powierzchnie są zmienne, co oznacza, że w każdej chwili mogą zostać usunięte z pamięci ze względu na zarządzanie pamięcią systemu operacyjnego i inne rzeczy, więc tutaj sprawdzamy, czy nasza powierzchnia istnieje, a jeśli nie, tworzymy ją i przypisujemy do widoku 0. Po wykonaniu tych czynności wszystko, co pojawi się w widoku 0, będzie teraz rysowane na utworzonej przez nas powierzchni. Jeśli w tym momencie nie zrobisz nic więcej, to po uruchomieniu gry zobaczysz pusty ekran, ponieważ wszystkie rysunki są wykonywane na powierzchni, ale sama powierzchnia nie jest nigdzie rysowana. Dlatego teraz musimy narysować powierzchnię na ekranie w zdarzeniu Draw GUI w następujący sposób:
+  if surface_exists(surf)
+    {
+        draw_surface_stretched(surf, 0, 0, display_get_gui_width(), display_get_gui_height());
+    }
+  Ten kod będzie teraz rysował powierzchnię, którą utworzyliśmy z rozciągniętej kamery, tak aby wypełniła całą warstwę GUI.
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: view_get_camera
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

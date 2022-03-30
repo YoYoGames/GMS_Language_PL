@@ -1,0 +1,48 @@
+
+  
+  warstwa_tła_alfa
+  Ta funkcja steruje współczynnikiem alfa (przezroczystością) tła sprite. Podaje się identyfikator elementu tła (który otrzymuje się podczas tworzenia elementu tła za pomocą layer_background_create() lub gdy
+    użyjesz funkcji layer_background_get_id()), a następnie ustawiasz wartość alfa, która ma być używana. Wartość alfa może zawierać się w przedziale od 0 (całkowicie przezroczysta) do 1 (całkowicie nieprzezroczysta), przy czym domyślną wartością alfa dla elementu tła
+    wynosi 1. Należy pamiętać, że jeśli warstwa, do której został przypisany element tła, jest niewidoczna lub sam element stał się niewidoczny, to po zastosowaniu tej funkcji nie będzie widać żadnej różnicy, dopóki warstwa lub element nie staną się ponownie widoczne
+    ponownie.
+   
+  Składnia:
+  layer_background_alpha(background_element_id, alpha);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        background_element_id
+        The unique ID value of the background element to change
+     
+      
+        alpha
+        The alpha for background sprite, from 0 to 1 (default is 1)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var lay_id = layer_get_id("Background_sky"); var back_id = layer_background_get_id(lay_id); layer_background_alpha(back_id, random(1));
+  Powyższy kod pobiera wartość ID tła przypisanego do warstwy "Tło_sky", a następnie ustawia jego alfa na losową wartość z przedziału od 0 do 1.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy tła
+        Następny: layer_background_index
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

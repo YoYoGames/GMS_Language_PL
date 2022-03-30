@@ -1,0 +1,55 @@
+
+  
+   Pobierz stronę Tile Index w serwisie Pixel
+  Ta akcja służy do uzyskiwania indeksu tile na podanej warstwie. Warstwa jest określana na podstawie podanej nazwy warstwy ( string, tak jak nazwa warstwy w edytorze Room ), a następnie podaje się pozycję x i y, aby znaleźć kafelek tile, którego indeks ma zostać pobrany. Kafelek
+    będzie ten, którego dotyczy podana pozycja w room, a indeks zostanie zwrócony do zmiennej docelowej, gdzie 0 oznacza brak tile, a dodatnia liczba całkowita to indeks tile. Pozycję x i y można oznaczyć jako względną w stosunku do
+    pozycji instancji wywołującej, a zmienna docelowa może być oznaczona jako zmienna tymczasowa (lokalna), której można używać do końca zdarzenia.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        
+          Argument
+          Opis
+        
+        
+          Layer
+          Warstwa, na której zostanie ustawiona strona tile 
+        
+        
+          x
+          Pozycja x do sprawdzenia
+        
+        
+          y
+          Pozycja y do sprawdzenia
+        
+        
+          Target
+          Zmienna docelowa do przechowywania indeksu tile 
+        
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdza, czy nie został naciśnięty lewy przycisk myszy
+    i jeśli zostanie wykryty, pobiera indeks komórki tile, w której znajduje się pozycja myszy. Następnie sprawdzany jest indeks tile i jeśli nie wynosi on 0, jest ustawiany na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje na płytkach
+        Next: Ustaw Tile Indeks w komórce
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

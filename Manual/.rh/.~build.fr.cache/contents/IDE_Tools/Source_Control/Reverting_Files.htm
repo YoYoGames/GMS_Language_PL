@@ -1,0 +1,59 @@
+
+  
+  Odwracanie plików
+  W poprzednich rozdziałach dowiedziałeś się, jak utworzyć repozytorium i wysyłać do niego poprawki, ale co się stanie, jeśli popełnisz błąd i będziesz chciał cofnąć się do poprzedniej poprawki? Popełnijmy celowy błąd i zobaczmy, jak sobie z nim poradzić...
+  Najpierw utwórz nowy zasób - w tym przykładzie będzie to zasób Script - i na początku nie zobaczysz żadnej ikony statusu, ponieważ jeśli chodzi o source control, to jeszcze nie istnieje. W zasobie script dodajemy prostą linijkę kodu, np:
+  show_debug_message("Hello World");
+  Jeśli teraz zamkniesz edytor kodu, plik script zostanie zapisany, a w Przeglądarce zasobów pojawi się obok niego ikona zmodyfikowanego pliku . Teraz otwórz okno Zobowiązania , a zobaczysz, że zmiany są czterostopniowe, ponieważ nowe zasoby są automatycznie dodawane:
+  Wprowadzane zmiany będą następujące:
+  
+    plik projektu .yyp 
+    plik widoku
+    sama strona GML script 
+    plik .yy, który się do niego odwołuje
+  
+  Należy wpisać komunikat commit, a następnie kliknąć przycisk Commit , tak jak to opisaliśmy wcześniej. Teraz wracamy do naszej strony script i zmieniamy wiersz kodu na (na przykład):
+  show_debug_message("Hello World, how are you?");
+  Gdy zamkniemy edytor kodu, obok strony script ponownie pojawi się czerwona ikona . Zdaliśmy sobie sprawę, że popełniliśmy błąd w naszym kodzie i chcemy cofnąć się do poprzedniej wersji, aby go naprawić (oczywiście można by po prostu otworzyć stronę script i łatwo go naprawić, ponieważ przykład jest tak prosty, ale w dużych projektach takie podejście zwykle nie jest wykonalne). W tym celu należy cofnąć nasze zmiany.
+  Aby cofnąć zmianę, musimy najpierw ponownie otworzyć okno zatwierdzania, a więc ponownie przechodzimy do sekcji Kontrola źródła > Zatwierdź zmiany. Nasz zmieniony plik zostanie ponownie wystawiony na scenie, gotowy do zatwierdzenia, ale to nie jest to, czego chcemy, więc klikamy przycisk Unstage All, aby usunąć go z obszaru wystawiania.
+  Jeśli teraz klikniemy prawym przyciskiem myszy  na pliku, który zmieniliśmy, pojawi się menu kontekstowe z opcją Przywróć ścieżkę:
+  Po wybraniu tej opcji pliki zostaną przywrócone do poprzedniego stanu.
+  WAŻNE! Podczas przywracania zostanie wyświetlony komunikat z prośbą o ponowne załadowanie lub zapisanie bieżącego projektu, ponieważ mechanizm sprawdzania plików wykrył zmiany na dysku:
+    Musisz kliknąć przycisk Przeładuj, a nie Zapisz, ponieważ zapisanie spowoduje zachowanie tego, co jest w pamięci, a nie ponowne załadowanie odwracanych plików.
+  
+  Jest to świetne rozwiązanie, gdy edytujesz coś i chcesz cofnąć zmiany bez wcześniejszego wykonania commitu, ale co zrobić, gdy już dokonałeś jednej lub więcej zmian i chcesz cofnąć się do poprzedniego commitu? Cóż, edytujmy ponownie nasz script, aby powiedzieć:
+  show_debug_message("This is a bad idea");
+  Teraz zatwierdzamy go tak jak poprzednio, aby uzyskać go pod adresem source control. To był zły pomysł i chcemy go cofnąć, co oznacza, że na początek musimy otworzyć okno Kontrola źródła > Wyświetl historię. W tym oknie zobaczymy listę wszystkich poprzednich commitów, począwszy od początkowego commitu, poprzez commit dla script, a skończywszy na commicie dla script, który został uznany za "zły pomysł":
+  Mamy teraz dwie możliwości. Możemy przywrócić całą rewizję - co spowoduje przywrócenie wszystkich plików, które zostały zmienione, do tych z wybranego commitu - lub możemy wybrać opcję przywrócenia path - co spowoduje przywrócenie pojedynczego pliku. Na początek wybierzmy pierwszą opcję:
+  
+    Kliknij prawym przyciskiem myszy  nasz drugi commit w oknie Commit History (commit "Hello World").
+    Wybierz opcję Revert To This Revision (Przywróć tę wersję), a następnie wybierz opcję ReLoad (Załaduj ponownie ) w komunikacie ostrzegawczym.
+  
+  Na stronie script powinna pojawić się czerwona ikona stanu , a jeśli ją otworzymy, uzyskamy następujący obraz:
+  Następnie możemy wykonać commit projektu i wrócić do punktu wyjścia. Możemy jednak cofnąć to działanie dla pliku i odzyskać nasz "zły pomysł" commit, wykonując następujące czynności:
+  
+    Otwórz okno Commit Changes.
+    Usuń stronę script, na której znajduje się kod "Hello World".
+    Kliknij prawym przyciskiem myszy  i Przywróć ścieżkę.
+  
+  Teraz znów mamy w projekcie błędny plik! Cóż, możemy skorzystać z okazji i przywrócić tylko ten plik path zamiast przywracać wszystko do poprzedniej wersji. W tym celu należy wykonać następujące czynności:
+  
+    Otwórz okno Historia przeglądania.
+    Kliknij na drugi commit (commit "Hello World").
+    Kliknij prawym przyciskiem myszy  na naszej stronie script GML w panelu Pliki i wybierz polecenie Przywróć ścieżkę.
+  
+  Powinniśmy powrócić do naszego kodu "Hello World", a następnie możemy wykonać nowy commit, aby ponownie zaktualizować stronę source control o poprawiony plik.
+   
+   
+  
+    
+      
+        Powrót: Kontrola źródła
+        Następny: Klonowanie repozytorium 
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,75 @@
+
+  
+  typ_części_prędkość
+  Funkcja ta służy do ustawiania prędkości ruchu cząstki podczas jej tworzenia, a także do zwiększania lub zmniejszania prędkości cząstki w czasie jej życia. Wartości minimalnej i maksymalnej prędkości domyślnie wynoszą 1, co oznacza, że cząstka przesunie się o 1 piksel w każdym kroku. Jeśli wartości te są takie same, prędkość początkowa dla wszystkich cząstek będzie taka sama, ale jeśli ustawimy różne wartości, każda cząstka zacznie od losowej prędkości z podanego zakresu. Na przykład jeśli minimalna wartość wynosi 3, a maksymalna 6, wszystkie cząstki będą tworzone z prędkością od trzech do sześciu pikseli na krok.
+  Można także ustawić wartość przyrostu, która sprawi, że cząstka będzie poruszać się szybciej (jeśli jest liczbą dodatnią) lub wolniej (jeśli jest liczbą ujemną) przez cały okres jej życia, przy czym podana wartość będzie dodawana do prędkości cząstki w każdym kroku. Wartość ta może wynosić co najmniej (+/-)0,01.
+  Na koniec można ustawić współczynnik "wiggle". Jest to wartość, która będzie losowo dodawana lub odejmowana do prędkości na każdym etapie życia cząstek. Oczywiście większe wartości są bardziej wyraźne niż mniejsze, a wartość ta może być nawet ujemna, przy czym maksymalny zakres wynosi od -20 do 20.
+   
+  Składnia:
+  part_type_speed(ind, speed_min, speed_max, speed_incr, speed_wiggle);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Typ cząstki ID
+        The index of the particle type to change.
+      
+      
+        speed_min
+        Real
+        The minimum speed the particle can start at.
+      
+      
+        speed_max
+        Real
+        The maximum speed the particle can start at.
+      
+      
+        speed_incr
+        Real
+        How much the particle speed should increase or decrease per step.
+      
+      
+        speed_wiggle
+        Real
+        How much should randomly be added or subtracted from the particle's speed per step.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  part_type_shape(particle2, pt_shape_flare);
+    part_type_size(particle2, 0.01, 0.50, 0.01, 20);
+    part_type_scale(particle2, 0.10, 0.10);
+    part_type_colour3(particle2, 4210816, 4227327, 8240895);
+    part_type_alpha3(particle2, 0.20, 0.80, 0);
+    part_type_speed(particle2, 5, 10, -0.20, 20);
+    part_type_direction(particle2, 0, 359, -1, 20);
+    part_type_gravity(particle2, 0, 270);
+    part_type_orientation(particle2, 0, 359, 0, 20, 1);
+    part_type_blend(particle2, 1);
+    part_type_life(particle2, 1, 20);
+  Powyższy kod ustawi różne wartości cząsteczek, w tym prędkość, która ustawia minimalną prędkość na pięć, a maksymalną na dziesięć, przy czym prędkość spada o wartość -0,2 co krok. Prędkość będzie się również wahać o losową wartość z przedziału od 0 do 20 w każdym kroku.
+   
+   
+   
+  
+    
+      
+        Powrót: Typy cząstek
+        Następny: part_type_direction
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

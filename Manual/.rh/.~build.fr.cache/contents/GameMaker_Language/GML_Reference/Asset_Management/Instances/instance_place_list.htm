@@ -1,0 +1,77 @@
+
+  
+  instancja_place_list
+  Za pomocą tej funkcji można sprawdzić pozycję pod kątem kolizji ze wszystkimi instancjami object, używając maski kolizji instancji, która uruchamia kod sprawdzający. Używając tej funkcji, prosisz GameMaker Studio 2 o przesunięcie instancji na nową pozycję, sprawdzenie kolizji, a następnie cofnięcie się i poinformowanie Cię, czy kolizja została znaleziona, czy nie. Działa to w przypadku kolizji precyzyjnych, ale tylko wtedy, gdy zarówno instancja, jak i instancje sprawdzanej strony object mają zaznaczone maski kolizji precyzyjnych, w przeciwnym razie stosowane są tylko kolizje typu bounding box.
+  Podajesz również listę DS, więc wartości id wszystkich instancji, które kolidują z instancją wywołującą, zostaną dodane na koniec podanej listy. Możesz wyczyścić listę przed wywołaniem tej funkcji, tak by zawierała ona tylko wyniki tego wywołania. Możesz też uporządkować listę według odległości od początku instancji sprawdzającej do początku instancji, które kolidują.
+  Zwróć uwagę, że funkcja akceptuje również specjalne słowo kluczowe allw którym to przypadku zostaną wypisane wszystkie instancje uznane za kolizyjne. Funkcja zwraca liczbę znalezionych instancji lub 0, jeśli nie znaleziono żadnej.
+   
+  Składnia:
+  instance_place_list(x, y, obj, list, ordered);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x
+        Real
+        The x position to check for instances.
+      
+      
+        y
+        Real
+        The y position to check for instances.
+      
+      
+        obj
+         Identyfikatorzasobu lub instancjiobiektu 
+        The object to check for instances of.
+      
+      
+        list
+        Identyfikator listy DS
+        The DS list to use to store the IDs of colliding instances.
+      
+      
+        ordered
+        Boolean
+        Whether the list should be ordered by distance (true) lub nie (false).
+      
+    
+  
+   
+  Zwroty:
+  Real (The number of instances found to be in collision)
+   
+  Przykład:
+  var _list = ds_list_create();
+    var _num = instance_place_list(x, y, obj_Enemy, _list, false);
+    
+    if _num > 0
+    {
+        for (var i = 0; i < _num; ++i;)
+        {
+            instance_destroy(_list[| i]);
+        }
+    }
+    
+    ds_list_destroy(_list);
+  
+  Powyższy kod sprawdzi kolizję ze wszystkimi instancjami znalezionymi na pozycji wywołującej instancję. Zostaną one dodane do listy DS, która następnie zostanie zapętlona w celu zniszczenia każdej z kolidujących instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Instancje
+        Następny: instance_position
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

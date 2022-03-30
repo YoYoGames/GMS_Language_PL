@@ -1,0 +1,417 @@
+
+  
+  zdarzenie_wykonalne
+  Ta funkcja wykona określone zdarzenie, z podanym argumentem, dla instancji uruchamiającej kod. Istnieje wiele opcji, które pozwalają na pełną symulację wszystkich możliwych zdarzeń, ale należy pamiętać, że funkcja ta dosłownie wykonuje cały kod zdarzenia, a gra nie zmodyfikuje niczego, co spowodowałoby, że zdarzenie zostanie wywołane ręcznie. Jeśli na przykład użytkownik wybierze zdarzenie związane z naciśnięciem klawisza, zdarzenie zostanie wywołane, ale odpowiedni klawisz nie zostanie rozpoznany jako naciśnięty.
+  W poniższej tabeli przedstawiono wszystkie stałe zawarte w GameMaker Studio 2, służące do odwoływania się do typów zdarzeń, a także ich wartości liczbowe. Same zdarzenia są zaznaczone pogrubioną czcionką i są tożsame z wartościami zwracanymi przez zmienną event_type (przekazywanej do pierwszego argumentu tej funkcji), natomiast ich wartości liczbowe są zaznaczone kursywą i są takie same jak wartości zwracane przez zmienną event_number (przekazywanych do drugiego argumentu tej funkcji):
+  
+    
+      
+      
+    
+    
+      
+        Typ zdarzenia Stała & Liczba zdarzeń Stała
+      
+      
+        Stała
+        Opis
+      
+      
+        ev_create
+        Utwórz wydarzenie
+      
+      
+        zniszczyć
+        Zniszcz zdarzenie
+      
+      
+        ev_cleanup
+        Impreza porządkowa
+      
+      
+        ev_step
+        Wydarzenie etapowe
+      
+      
+           ---- ev_step_normal
+        Krok
+      
+      
+           ---- ev_step_begin
+        Rozpocznij krok
+      
+      
+           ---- ev_step_end
+        Krok końcowy
+      
+      
+        ev_alarm
+        Zdarzenie alarmowe
+      
+      
+           ---- 0 ... 11
+        Numer odpowiadający któremu z 12 alarmów ma być wyzwalane zdarzenie
+      
+      
+        ev_keyboard, ev_keypress, ev_keyrelease
+        Klawiatura/klawiatury naciśnięte/klawiatury zwolnione
+      
+      
+           ---- dowolny kod klucza
+        na przykład vk_space lub ord("W").
+      
+      
+        ev_mouse
+        Zdarzenie myszy
+      
+      
+           ---- ev_left_button
+        Lewy przycisk przytrzymany na obiekcie
+      
+      
+           ---- ev_right_button
+        Prawy przycisk przytrzymany na obiekcie
+      
+      
+           ---- ev_middle_button
+        Środkowy przycisk (lub kółko do klikania) przytrzymany na obiekcie
+      
+      
+           ---- ev_no_button
+        Brak wciśniętych przycisków
+      
+      
+           ---- ev_left_press
+        Lewy przycisk właśnie naciśnięty na obiekcie
+      
+      
+           ---- ev_right_press
+        Prawy przycisk został naciśnięty na obiekcie
+      
+      
+           ---- ev_middle_press
+        Środkowy przycisk (lub klikalne kółko) właśnie naciśnięty na obiekcie
+      
+      
+           ---- ev_left_release
+        Lewy przycisk właśnie zwolniony na obiekcie
+      
+      
+           ---- ev_right_release
+        Prawy przycisk został zwolniony na obiekcie
+      
+      
+           ---- ev_middle_release
+        Środkowy przycisk został zwolniony na obiekcie
+      
+      
+           ---- ev_mouse_enter
+        Mysz właśnie weszła w obszar ograniczający obiekt
+      
+      
+           ---- ev_mouse_leave
+        Mysz właśnie opuściła ogranicznik obiektu
+      
+      
+           ---- ev_mouse_wheel_up
+        Kółko myszy przewijane w górę
+      
+      
+           ---- ev_mouse_wheel_down
+        Kółko myszy przewijane w dół
+      
+      
+           ---- ev_global_left_button
+        Lewy przycisk przytrzymany w dowolnym miejscu
+      
+      
+           ---- ev_global_right_button
+        Prawy przycisk przytrzymany w dowolnym miejscu
+      
+      
+           ---- ev_global_middle_button
+        Środkowy przycisk (lub kółko do klikania) przytrzymany w dowolnym miejscu
+      
+      
+           ---- ev_global_left_press
+        Lewy przycisk wciśnięty w dowolnym miejscu
+      
+      
+           ---- ev_global_right_press
+        Prawy przycisk wciśnięty w dowolnym miejscu
+      
+      
+           ---- ev_global_middle_press
+        Środkowy przycisk (lub klikalne kółko) po prostu wciśnięty w dowolnym miejscu
+      
+      
+           ---- ev_global_left_release
+        Lewy przycisk został zwolniony w dowolnym miejscu.
+      
+      
+           ---- ev_global_right_release
+        Prawy przycisk został zwolniony w dowolnym miejscu
+      
+      
+           ---- ev_global_middle_release
+        Środkowy przycisk został zwolniony w dowolnym miejscu
+      
+      
+        ew_gestykulacja
+        Zdarzenie gestu (stuknięcie, przeciągnięcie, kliknięcie, uszczypnięcie lub obrót)
+      
+      
+           ---- ev_gesture_tap
+        Dla instancjiwykryto pojedyncze kliknięcie/dotknięcie i zwolnienie
+      
+      
+           ---- ev_gesture_double_tap
+        W jednym przypadkuwykryto dwa szybkie dotknięcia/kliknięcia i zwolnienia
+      
+      
+           ---- ev_gesture_drag_start
+        Wykryto początek gestu przeciągania dla instancji
+      
+      
+           ---- ev_gesture_dragging
+        Dotknięcie/kliknięcie zostało przytrzymane i przesunięte dla jednej instancji
+      
+      
+           ---- ev_gesture_drag_end
+        Wykryto zwolnienie dotknięcia/kliknięcia podczas przeciągania dla instancji
+      
+      
+           ---- ev_gesture_flick
+        Zwolnienie dotknięcia/kliknięcia w wyniku przeciągnięcia spowodowało wystarczający ruch, aby dla instancjizostało wykryte zdarzenie pstryknięcia.
+      
+      
+           ---- ev_gesture_pinch_start
+        Dla instancjizostały wykryte dwa dotknięcia i ruch w linii prostej
+      
+      
+           ---- ev_gesture_pinch_in
+        Ruch między dwoma dotknięciami dla instancji został wykryty jako ruch do wewnątrz
+      
+      
+           ---- ev_gesture_pinch_out
+        Ruch między dwoma dotknięciami dla instancji został wykryty jako ruch na zewnątrz
+      
+      
+           ---- ev_gesture_pinch_end
+        Dla instancjiwykryto zwolnienie jednego (lub obu) dotknięć w celu uszczypnięcia
+      
+      
+           ---- ev_gesture_rotate_start
+        Ruch między dwoma dotknięciami dla instancji został wykryty jako obrót
+      
+      
+           ---- ev_gesture_rotating
+        Ruch między dwoma dotknięciami dla instancji został wykryty jako obrót
+      
+      
+           ---- ev_gesture_rotate_end
+        Dla instancjiwykryto zwolnienie jednego (lub obu) dotknięć w celu wykonania obrotu
+      
+      
+           ---- ev_global_gesture_tap
+        Pojedyncze kliknięcie/dotknięcie i zwolnienie zostało wykryte w dowolnym miejscu w pomieszczeniu
+      
+      
+           ---- ev_global_gesture_double_tap
+        Dwa szybkie dotknięcia/kliknięcia i zwolnienia zostały wykryte w dowolnym miejscu w pomieszczeniu
+      
+      
+           ---- ev_global_gesture_drag_start
+        Początek gestu przeciągania został wykryty w dowolnym miejscu w pomieszczeniu
+      
+      
+           ---- ev_global_gesture_dragging
+        Dotknięcie/kliknięcie zostało przytrzymane i przesunięte w dowolne miejsce w pokoju
+      
+      
+           ---- ev_global_gesture_drag_end
+        W dowolnym miejscu w pomieszczeniu wykryto zwolnienie dotknięcia/kliknięcia w wyniku przeciągnięcia.
+      
+      
+           ---- ev_global_gesture_flick
+        Zwolnienie dotknięcia/kliknięcia przez przeciągnięcie spowodowało ruch wystarczający do wykrycia zdarzenia migotania w dowolnym miejscu w pomieszczeniu.
+      
+      
+           ---- ev_global_gesture_pinch_start
+        Dwa dotknięcia i ruch prostoliniowy zostały wykryte w dowolnym miejscu w pomieszczeniu
+      
+      
+           ---- ev_global_gesture_pinch_in
+        Ruch pomiędzy dwoma dotknięciami w dowolnym miejscu na stronie room został wykryty jako ruch do wewnątrz.
+      
+      
+           ---- ev_global_gesture_pinch_out
+        Ruch pomiędzy dwoma dotknięciami w dowolnym miejscu na stronie room został wykryty jako ruch na zewnątrz.
+      
+      
+           ---- ev_global_gesture_pinch_end
+        W dowolnym miejscu w pomieszczeniu wykryto zwolnienie jednego (lub obu) dotknięć w celu uszczypnięcia
+      
+      
+           ---- ev_global_gesture_rotate_start
+        Ruch pomiędzy dwoma dotknięciami w dowolnym miejscu na stronie room został wykryty jako obrót
+      
+      
+           ---- ev_global_gesture_rotating
+        Ruch pomiędzy dwoma dotknięciami w dowolnym miejscu na stronie room został wykryty jako obrót
+      
+      
+           ---- ev_global_gesture_rotate_end
+        W dowolnym miejscu w pomieszczeniu wykryto zwolnienie jednego (lub obu) dotknięć w celu wykonania obrotu
+      
+      
+        ew_kolizja
+        Zderzenie z obiektem
+      
+      
+           ---- Indeks strony object, którą należy sprawdzić.
+        obj_enemy na przykład.
+      
+      
+        ew_inne
+        Jedno z działań wymienionych w punkcie "Inne".
+      
+      
+           ---- ev_outside
+        Czy instancja znajduje się poza pomieszczeniem
+      
+      
+           ---- ev_boundary
+        Czy instancja przecina granicę
+      
+      
+           ---- ev_outside_view0...7
+        Czy instancja znajduje się poza danym widokiem (0 do 7)
+      
+      
+           ---- ev_boundary_view0...7
+        Czy instancja przecina granicę danego widoku (od 0 do 7)
+      
+      
+           ---- ev_game_start
+        Wywoływane tylko na początku gry
+      
+      
+           ---- ev_game_end
+        Uruchamiane tylko na koniec gry
+      
+      
+           ---- ev_room_start
+        Aktywuje się tylko na początku pomieszczenia
+      
+      
+           ---- ev_room_end
+        Wyzwalane tylko na końcu pomieszczenia
+      
+      
+           ---- ev_animation_end
+        Jeśli animacja obiektu sprite dobiegła końca
+      
+      
+           ---- ev_animation_update
+        Zdarzenie animacji, które jest uruchamiane w każdym kroku na stronie objects, gdzie używane są animacje szkieletowe
+      
+      
+           ---- ev_animation_event
+        Zdarzenie animacji, które jest uruchamiane dla animacji szkieletowych przypisanych w narzędziu do animacji szkieletowych
+      
+      
+           ---- ev_end_of_path
+        Jeśli strona object dotarła do końca strony path, jest ona następująca
+      
+      
+           ---- ev_user0... ev_user15
+        Jedno z 16 dostępnych zdarzeń użytkownika.
+      
+      
+           ---- ev_broadcast_message
+        Zdarzenie komunikatu Broadcast Message używane na stronie sprites i w sekwencjach
+      
+      
+        ev_draw
+        Zdarzenie losowania. UWAGA Tego zdarzenia nie można wymusić poza zdarzeniem losowania, a stałe służą jedynie do identyfikacji zdarzenia, gdy jest ono wykonywane w takich przypadkach.
+      
+      
+           ---- ev_draw_begin
+        Zdarzenie rozpoczynające losowanie.
+      
+      
+           ---- ev_draw_end
+        Zdarzenie kończące losowanie.
+      
+      
+           ---- ev_draw_pre
+        Wydarzenie poprzedzające losowanie.
+      
+      
+           ---- ev_draw_post
+        Wydarzenie po losowaniu.
+      
+      
+           ---- ev_gui
+        Zdarzenie gui dotyczące rysowania.
+      
+      
+           ---- ev_gui_begin
+        Zdarzenie rozpoczęcia rysowania.
+      
+      
+           ---- ev_gui_end
+        Zdarzenie zakończenia rysowania.
+      
+    
+  
+   
+  Składnia:
+  event_perform(type, numb);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        type
+        Typ zdarzenia Stała
+        The type of event to perform (see the table above).
+      
+      
+        numb
+        Real lub Liczba zdarzeń Stała
+        The specific event constant or value, if one is necessary (otherwise, just use 0).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład rozszerzony
+  Aby zrozumieć, jak można korzystać z tej funkcji, należy zapoznać się z poniższymi przykładami:
+  event_perform(ev_keypress, ord("W"));
+  Spowoduje to wykonanie zdarzenia związanego ze sprawdzaniem klawiatury Naciśnięto klawisz "W" (bez faktycznego generowania naciśnięcia klawiatury).
+  event_perform(ev_step, ev_step_begin);
+  Spowoduje to wykonanie zdarzenia Rozpocznij krok (jeśli zostanie wywołane z dowolnego zdarzenia kroku, spowoduje dwukrotne wykonanie kodu zdarzenia Rozpocznij krok).
+  event_perform(ev_create, 0);
+  Spowoduje to wykonanie  zdarzeniaCreate dla  instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Generowanie zdarzeń Object 
+        Next: event_perform_async
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

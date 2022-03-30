@@ -1,0 +1,61 @@
+
+  
+  ds_queue_read
+  Za pomocą tej funkcji można odtworzyć zapisaną kolejkę DS (taką, która została wcześniej zapisana jako string przy użyciu ds_queue_write()). Musisz najpierw utworzyć nową kolejkę DS, do której wczytasz string, a jeśli kolejka DS już istnieje i ma zapisane informacje, to zostaną one wyczyszczone przed odczytem. Funkcja ta ma kluczowe znaczenie przy tworzeniu mechanizmów zapisywania i wczytywania danych w grze.
+  Zwróć uwagę, że jeśli określony plik DS string został napisany w programie GameMaker: Studio 1.2.x runtime (lub starszym), należy podać opcjonalny argument "legacy", ustawiając go na true, ponieważ format string zmienił się po tej wersji.
+   
+  Składnia:
+  ds_queue_read(id, str [, legacy]);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        DS Queue ID
+        The id of the data structure to read into.
+      
+      
+        str
+        String
+        The string to read from.
+      
+      
+        legacy
+        Boolean
+        OPTIONAL Można podać adres true lub false albo całkowicie go pominąć.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  queue = ds_queue_create();
+    ini_open("save.ini");
+    var str = ini_read_string("Queues", "0", "");
+    if (str != "")
+    {
+        ds_queue_read(queue, str);
+    }
+    ini_close();
+  Powyższy kod tworzy plik queue i przechowuje jego indeks w zmiennej "queue". Następnie otwiera plik ini i odczytuje z niego plik string, sprawdzając najpierw, czy plik string nie został zwrócony jako pusty. Ten plik string jest następnie wczytywany do nowo utworzonego pliku DS queue.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolejki DS.
+        Następny: ds_queue_write
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,48 @@
+
+  
+  mp_grid_destroy
+  Możesz użyć tej funkcji, aby zniszczyć wskazaną siatkę mp_grid (zdefiniowaną przez funkcję mp_grid_create()) i zwolnić przydzieloną jej pamięć. Ważne jest, abyś wywoływał tę funkcję zawsze, gdy kończysz pracę z siatką MP, w przeciwnym razie może dojść do wycieku pamięci, co oznacza, że Twoja gra z czasem zwolni i w końcu się zawiesi.
+  UWAGA: Użycie funkcji mp_grid_* na siatce po jej zniszczeniu spowoduje wystąpienie błędu.
+   
+  Składnia:
+  mp_grid_destroy(id);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator siatki MP
+        Index of the mp_grid that is to be destroyed
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if timer = 0
+    {
+        mp_grid_destroy(grid);
+        room_goto(rm_Menu);
+    }
+  Powyższy kod zniszczy mp_grid indeksowaną w zmiennej "grid", jeśli zmienna "timer" będzie równa 0, a następnie przejdzie do kolejnej strony room.
+   
+   
+   
+  
+    
+      
+        Powrót: Planowanie ruchu
+        Następny: mp_grid_path
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

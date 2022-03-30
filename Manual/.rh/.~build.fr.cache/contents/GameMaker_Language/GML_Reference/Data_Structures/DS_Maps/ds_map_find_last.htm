@@ -1,0 +1,51 @@
+
+  
+  ds_map_find_last
+  Ta funkcja zwraca ostatni klucz zapisany w mapie DS. Nie jest to ostatni klucz w kolejności, w jakiej zostały one dodane! Mapy DS nie są przechowywane w postaci liniowej, do tego celu używa się list DS, więc funkcja ta znajduje tylko ostatni klucz zapisany przez komputer. Może to być przydatne, jeśli trzeba wykonać iterację po mapie DS w poszukiwaniu czegoś, ale w miarę możliwości należy tego unikać, ponieważ może to być powolne.
+  Należy pamiętać, że ta funkcja zwróci undefined, jeśli podana mapa DS jest pusta.
+   
+  Składnia:
+  ds_map_find_last(id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the map to use.
+     
+    
+  
+   
+  Zwroty:
+  Variable or undefined
+   
+  Przykład:
+  var size = ds_map_size(inventory);
+    var key = ds_map_find_last(inventory);
+    for (var i = size; i > 0; i--;)
+    {
+        if (key != "gold")
+        {
+            key = ds_map_find_previous(inventory, key);
+        }
+        else break;
+    }
+  Powyższy kod tworzy kilka zmiennych tymczasowych, a następnie pobiera rozmiar mapy DS i znajduje ostatni klucz zapisany przez komputer w mapie. Następnie używa adresu for loop do iteracji wstecz przez mapę DS w poszukiwaniu wartości klucza "gold". Jeśli ją znajdzie, wypisuje loop.
+   
+   
+   
+  
+    
+      
+        Powrót: Mapy DS
+        Następny: ds_map_find_next
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,69 @@
+
+  
+  Typy cząstek
+  Cząstki to efekty graficzne, które można tworzyć za pomocą systemów cząsteczek w grze. Cząstki zdefiniowane za pomocą tych funkcji mogą być używane w każdym tworzonym systemie, a normalną procedurą jest zdefiniowanie wszystkich cząstek raz na początku gry i zapisanie ich wartości indeksów w zmiennych globalnych. Te zmienne globalne mogą być potem używane do wybuchania, emitowania lub tworzenia cząstek w dowolnym momencie gry. Można też tworzyć, używać i niszczyć cząsteczki w miarę potrzeb, jeśli pamięć jest problemem lub jeśli chcemy mieć wiele różnych typów cząsteczek, ale tylko w określonych momentach gry. Niezależnie od tego, co wybierzesz, cząsteczki są bardzo uniwersalnym zasobem!
+  Cząstki muszą być tworzone, a ich indeks musi być przechowywany w zmiennej, aby wszystkie kolejne procedury związane z cząstkami miały do nich prawidłowy dostęp. Do tworzenia, sprawdzania, czyszczenia i niszczenia typów cząstek służą następujące funkcje:
+  
+    part_type_exists
+    part_type_create
+    part_type_destroy
+    part_type_clear
+  
+   
+  Po utworzeniu typu cząstki należy nadać jej kształt. Może to być jeden z 14 wbudowanych kształtów, które mają rozmiar 64x64 pikseli sprites z mieszaniem alfa. Można też użyć własnej strony sprites, która może być animowana, statyczna lub wykorzystywać losowe podobrazy. Poniższe funkcje określają podstawowy kształt wizualny każdej cząstki:
+  
+    part_type_shape
+    part_type_sprite
+  
+   
+  Na poniższej ilustracji przedstawiono 14 wbudowanych typów cząstek, które można wybrać:
+  Po wybraniu adresu sprite dla typu cząstki (kształt domyślny lub własny) można określić jej rozmiar i skalę. Rozmiar można określić jako zakres, a wszystkie cząstki będą tworzone z rozmiarem wybranym z podanego zakresu. Skala jest "bazową" wartością skali osi x i y cząstki przed dodaniem do niej jakichkolwiek zmian rozmiaru, a do sterowania tymi wartościami służą następujące funkcje:
+  
+    part_type_size
+    part_type_scale
+  
+   
+  Cząstki mogą mieć także orientację i ruch. Podobnie jak w przypadku większości funkcji cząstek, prędkość, kierunek i orientacja są określane jako wartości losowe wybierane z określonego zakresu i można je ustawić za pomocą następujących funkcji:
+  
+    part_type_speed
+    part_type_direction
+    part_type_gravity
+    part_type_orientation
+  
+   
+  Po ustaleniu stylu i ruchu cząstek można ustawić ich kolor i wartości alfa, które można ustawić jako wartość bezwzględną przez cały czas życia cząstki lub jako skalę wartości przechodzących stopniowo od jednej do drugiej. Należy pamiętać, że istnieje również specjalna funkcja pozwalająca ustawić mieszanie cząstek i ich otoczenia, które może być normalne lub addytywne i daje fantastyczne efekty - funkcje regulujące kolor, alfa i mieszanie to:
+  
+    part_type_colour_mix
+    part_type_colour_rgb
+    part_type_colour_hsv
+    part_type_colour1
+    part_type_colour2
+    part_type_colour3
+    part_type_alpha1
+    part_type_alpha2
+    part_type_alpha3
+    part_type_blend
+  
+   
+  Cząstki istnieją na ekranie przez określony czas, nazywany ich czasem życia. Czas życia cząstek mierzy się w krokach i (podobnie jak w poprzednich funkcjach) wyraża się go jako zakres wartości, z których cząstka otrzyma określony czas życia. Jest też kilka ciekawych funkcji, których można użyć, aby cząstki generowały inne cząstki, albo co krok, albo gdy "umrą" (tzn. zostaną usunięte z ekranu), ale należy bardzo uważać z tymi funkcjami, ponieważ mogą one szybko utworzyć tysiące cząstek i zawiesić grę! Funkcje, które ustawiają czas życia i krok lub śmierć cząstek, są następujące:
+  
+    part_type_life
+    part_type_step
+    part_type_death
+  
+   
+  Warto zauważyć, że tworzenie cząsteczek za pomocą kodu może być żmudnym i czasochłonnym procesem ze względu na dużą liczbę parametrów, które można zmieniać i dostosowywać. Z tego powodu zaleca się, aby rozejrzeć się za jakimś programem do projektowania cząsteczek (lub stworzyć go samemu!), aby wyeliminować ten żmudny proces.
+   
+   
+  
+    
+      
+        Powrót: Cząsteczki
+        Następny: Emitery cząstek stałych
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,52 @@
+
+  
+  gamepad_button_check_released
+  Ta funkcja zwraca true lub false w zależności od tego, czy dany przycisk gamepada został wykryty jako zwolniony, czy nie. Należy pamiętać, że funkcja ta zostanie wywołana tylko raz dla przycisku w momencie, gdy został on zwolniony. Aby funkcja zadziałała ponownie, przycisk musi być najpierw wciśnięty, a następnie ponownie zwolniony. Jeśli sprawdzasz przycisk analogowy, to sprawdzenie będzie uwzględniało ustawienie pro gu i zwróci true tylko wtedy, gdy surowa wartość wejściowa zejdzie poniżej podanego progu (tę surową wartość można uzyskać za pomocą funkcji gamepad_button_value()).
+   
+  Składnia:
+  gamepad_button_check_released(device, button);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        device
+        Real
+        Which gamepad device "slot" to check.
+      
+      
+        button
+        Przycisk gamepada Stała
+        Which gamepad button constant to check for.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if gamepad_button_check_released(0, gp_select)
+    {
+        audio_play_sound(snd_Button, 0, false);
+        global.Pause = !global.Pause;
+    }
+  Powyższy kod wykryje, czy przycisk "select" na gamepadzie podłączonym do urządzenia "slot" 0 został wciśnięty, czy nie, i przełączy globalną zmienną "Pause".
+   
+   
+   
+  
+    
+      
+        Powrót: Wejście gamepada
+        Następny: gamepad_button_count
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

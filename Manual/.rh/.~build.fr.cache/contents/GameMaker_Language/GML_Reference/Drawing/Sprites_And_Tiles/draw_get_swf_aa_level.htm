@@ -1,0 +1,33 @@
+
+  
+  draw_get_swf_aa_level
+  Za pomocą tej funkcji można uzyskać poziom antyaliasingu (AA) dla wektorów w formacie SWF sprites. Wartość zwracana mieści się w przedziale od 0 do 1 i pokazuje, jak "gładko" będą rysowane krawędzie tych sprites. Poziom AA można ustawić za pomocą funkcji draw_set_swf_aa_level().
+   
+  Składnia:
+  draw_get_swf_aa_level();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if draw_get_swf_aa_level() == 0
+    {
+        draw_enable_swf_aa(true);
+        draw_set_swf_aa_level(0.5);
+    }
+  Powyższy kod sprawdzi wartość AA dla formatu SWF sprites, a jeśli wynosi ona 0, włączy AA i ustawi wartość na 0,5.
+   
+   
+   
+  
+    
+      
+        Powrót: Sprite'y i płytki
+        Następny: draw_tile
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

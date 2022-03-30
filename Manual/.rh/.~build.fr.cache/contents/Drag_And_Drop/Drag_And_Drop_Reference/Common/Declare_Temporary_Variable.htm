@@ -1,0 +1,51 @@
+
+  
+   Zadeklaruj zmienną tymczasową
+  Ta czynność służy do deklarowania i nadawania wartości początkowej zmiennej tymczasowej (zwanej też zmienną lokalną), czyli zmiennej, która istnieje tylko przez czas trwania zdarzenia lub strony script, w której została zadeklarowana. Zmienne tymczasowe
+    są bardzo przydatne do przechowywania wartości, które są potrzebne tylko do pojedynczej operacji, i zapobiegają "zagracaniu" strony objects zmiennymi, które mogą być użyte tylko raz. Są one również bardzo przydatne do rozbijania złożonych operacji lub do
+    ustawiania wartości w innych instancjach, gdy zmieniamy zakres działania. Dzieje się tak dlatego, że zmienne zadeklarowane jako tymczasowe nie są przypisane do żadnej konkretnej instancji, lecz do samego zdarzenia lub strony script, więc jeśli utworzysz zmienną tymczasową
+    a następnie zmienisz zakres akcji za pomocą akcji Zastosuj do..., możesz nadal sprawdzać zmienną tymczasową bez problemów i bez zmiany jej zakresu akcji.
+  Warto zauważyć, że kiedy mówimy o "wartościach", nie mamy na myśli tylko wartości liczbowych, ponieważ zmienną może być string, wskaźnik, identyfikator zasobu lub cokolwiek innego, co funkcja może zwrócić lub wykorzystać, nawet wyrażenie. Więcej informacji na ten temat można znaleźć w rozdziale dotyczącym typów danych.
+  Zwróć uwagę, że wiele akcji ma pole wyboru "Temp", które umożliwia utworzenie nowej tymczasowej zmiennej lokalnej przechowującej wartość zwracaną przez akcję, a dostęp do tej zmiennej można uzyskać w akcji script lub zdarzeniu, tak jak do każdej innej zmiennej
+    w późniejszym czasie. Należy również pamiętać, że tymczasowe zmienne lokalne są przypisane do strony script lub zdarzenia, w którym zostały utworzone, a zatem mogą być używane przez inne instancje w tym samym bloku podczas korzystania z funkcji Apply To.
+  Można również dodać dodatkowe zmienne w tej samej akcji, klikając ikonę plusa  obok akcji i podając kolejną tymczasową zmienną lokalną
+    nazwę i wartość. Bardziej zaawansowane informacje na temat zmiennych można znaleźć w rozdziale Zmienne i zakres zmiennych.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Name
+        Nazwa nowej zmiennej, którą należy przypisać, lub nazwa istniejącej zmiennej, którą należy zmienić.
+      
+      
+        Value
+        Wartość, jaką powinna mieć zmienna.
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji tworzy dwie zmienne tymczasowe, " _dir"
+    i "_spd" i ustawia je na wartości losowe. Następnie używa tych wartości, aby ustawić instancję poruszającą się w losowym kierunku z losową prędkością.
+   
+   
+   
+  
+    
+      
+        Powrót: Wspólne działania
+        Następnie: Ustaw zmienną globalną
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

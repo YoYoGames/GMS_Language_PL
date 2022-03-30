@@ -1,0 +1,35 @@
+
+  
+  gpu_get_alphatestref
+  Za pomocą tej funkcji można znaleźć bieżącą wartość referencji testu alfa (domyślnie jest to 0, ale można użyć funkcji gpu_set_alphatestref() aby ustawić tę wartość na inną niż ta).
+   
+  Składnia:
+  gpu_get_alphatestref();
+   
+  Zwroty:
+   (from 0 - 255)
+   
+  Przykład:
+  if gpu_get_alphatestenable()
+    {
+        if gpu_get_alphatestref() < 254
+        {
+            gpu_set_alphatestref(254);
+        }
+    }
+  Powyższy kod sprawdza, czy testowanie alfa jest włączone, a jeśli tak, to sprawdza bieżącą wartość referencyjną testu alfa i ustawia ją, jeśli jest mniejsza niż 254.
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_get_texfilter
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

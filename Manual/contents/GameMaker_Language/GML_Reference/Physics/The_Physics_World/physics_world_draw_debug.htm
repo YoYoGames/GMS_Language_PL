@@ -16,7 +16,7 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>physics_world_draw_debug</h1>
-  <p>Ta funkcja narysuje reprezentację systemu fizyki świata <span class="notranslate">room</span>, aby pomóc w <span class="notranslate">debugging</span> w przypadku problemów z poprawnym działaniem sceny fizyki. Czasami problem może tkwić w części renderowania gry, np. strona <span class="notranslate">sprite</span> może być narysowana w niewłaściwym położeniu lub obrócona, co sprawia wrażenie nieprawidłowej fizyki, lub też może się zdarzyć, że obliczenia nie są poprawne. Tak czy inaczej, funkcja ta pomoże znaleźć i rozwiązać problem, rysując, co dzieje się w systemie fizyki. Aby to zrobić, należy wskazać, którą część układu ma narysować, a robi się to, przekazując wartość utworzoną z bitów przechowywanych w różnych stałych &quot;flagowych&quot;:</p>
+  <p>Ta funkcja narysuje reprezentację systemu fizyki świata <span class="notranslate">room</span>, aby pomóc w <span class="notranslate">debugging</span>, gdy masz problemy z poprawnym działaniem sceny fizyki. Czasami problem może tkwić w części renderowania gry, np. strona <span class="notranslate">sprite</span> może być narysowana w niewłaściwym położeniu lub obrócona, co sprawia wrażenie nieprawidłowej fizyki, lub też może się zdarzyć, że obliczenia nie są poprawne. Tak czy inaczej, funkcja ta pomoże znaleźć i rozwiązać problem, rysując, co dzieje się w systemie fizyki. Aby to zrobić, należy wskazać, którą część układu ma narysować, a robi się to, przekazując wartość utworzoną z bitów przechowywanych w różnych stałych &quot;flagowych&quot;:</p>
   <table>
     <colgroup>
       <col />
@@ -60,10 +60,10 @@
       </tr>
     </tbody>
   </table>
-  <p>Tak więc, aby narysować dwie dowolne z tych opcji, musimy wykonać <a href="../../../../Additional_Information/Bitwise_Operators.htm">bitowe &quot;lub&quot;</a> (w <span class="notranslate">GameMaker Studio 2</span> jest to reprezentowane przez | ) na dwóch z nich i zapisać zmienną wynikową do wykorzystania przez funkcję. Poniżej znajduje się przykład ustawienia zmiennej, która będzie używana przez funkcję rysującą tylko środki masy i połączenia wszystkich elementów wyposażenia pomieszczenia:</p>
+  <p>Zatem, aby narysować dwie dowolne z tych opcji, musielibyśmy wykonać <a href="../../../../Additional_Information/Bitwise_Operators.htm">bitowe &quot;lub&quot;</a> (w <span data-keyref="GameMaker Name">GameMakerze</span> jest to reprezentowane przez | ) na obu z nich i zapisać zmienną wynikową do wykorzystania przez funkcję. Oto przykład, jak można ustawić zmienną, która będzie używana przez funkcję rysującą tylko środki masy i połączenia wszystkich elementów w pomieszczeniu:</p>
   <p class="code">flag = phy_debug_render_coms | phy_debug_render_shapes;</p>
   <p>W ten sposób uzyskasz coś takiego:</p>
-  <p><img>Jak widać w powyższym kodzie, na ekranie rysowane są tylko kształty i środki masy (a także kolory reprezentujące ich stany - więcej informacji na ten temat można znaleźć w dokumentacji Box 2D dostępnej w Internecie). W ten sam sposób możesz wyświetlić więcej, a nawet wszystkie stałe, które chcesz usunąć... Po prostu &quot;lub&quot; je wszystkie razem! Należy zwrócić uwagę na jeszcze jedną rzecz - ta funkcja powinna być wywoływana <i>tylko</i> w zdarzeniu rysowania instancji, która ma głębokość mniejszą niż ta, którą chcesz debugować, w przeciwnym razie nie będziesz mógł zobaczyć informacji o debugowaniu.</p>
+  <p><img>Jak widać w powyższym kodzie, na ekranie rysowane są tylko kształty i środki masy (a także kolory reprezentujące ich stany - więcej informacji na ten temat można znaleźć w dokumentacji Box 2D dostępnej on-line). W ten sam sposób możesz wyświetlić więcej, a nawet wszystkie stałe, które chcesz usunąć... Po prostu &quot;lub&quot; je wszystkie razem! Należy zwrócić uwagę na jeszcze jedną rzecz - funkcja ta powinna być wywoływana <i>tylko</i> w zdarzeniu rysowania instancji, która ma głębokość mniejszą niż ta, którą chcesz debugować, w przeciwnym razie nie będziesz mógł zobaczyć informacji o debugowaniu.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">physics_world_draw_debug(flag)</p>

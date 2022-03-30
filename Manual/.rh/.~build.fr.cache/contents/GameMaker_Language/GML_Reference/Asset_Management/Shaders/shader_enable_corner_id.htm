@@ -1,0 +1,42 @@
+
+  
+  shader_enable_corner_id
+  Za pomocą tej funkcji można ustawić globalny stan dla wszystkich używanych witryn shaders, w którym po włączeniu shader "kradnie" 2 bity z wejściowych wartości kolorów. Pierwszy z nich pochodzi z dolnego bitu wartości koloru czerwonego, a drugi z dolnego bitu
+    bitu wartości koloru niebieskiego. Wartości te można następnie odzyskać na stronie shader, aby ustalić, z którą stroną vertex mamy do czynienia (tzn. z którym rogiem).
+   
+  Składnia:
+  shader_enable_corner_id(enable);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        enable
+        Enable (true) lub wyłączenie (false) tej funkcji.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  shader_enable_corner_id(true);
+  Powyższy kod umożliwi korzystanie z bitów koloru dla identyfikatora narożnika we wszystkich witrynach shaders.
+   
+   
+   
+  
+    
+      
+        Powrót: Shadery
+        Następny: shader_get_name
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

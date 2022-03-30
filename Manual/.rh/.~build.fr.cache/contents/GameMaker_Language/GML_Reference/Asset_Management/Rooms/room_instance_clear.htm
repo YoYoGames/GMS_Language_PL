@@ -1,0 +1,43 @@
+
+  
+  room_instance_clear
+  Ta funkcja wyczyści stronę room ze wszystkich instancji (dla usuwanych instancji nie będą wywoływane żadne zdarzenia destroy). Zauważ, że wywołanie tej funkcji na stronie room asset utworzonej w przeglądarce Asset trwale wyczyści stronę room z instancji,
+    i nawet wywołanie game_restart() nie przywróci room do pierwotnego stanu (tylko zakończenie gry i ponowne jej otwarcie spowoduje, że room znów będzie w pierwotnym stanie).
+   
+  Składnia:
+  room_instance_clear(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the room to clear all instances in.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  global.rm = room_add(); room_assign(rm_Base, global.rm); room_instance_clear(global.rm);
+  
+  Powyższy kod doda do gry nową stronę room, a następnie skopiuje do niej zawartość strony room indeksowanej jako "rm_Base". Następnie usunie wszystkie instancje z tej nowej strony room.
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room_set_height
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

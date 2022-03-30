@@ -1,0 +1,53 @@
+
+  
+  file_text_write_string
+  Za pomocą tej funkcji można zapisać adres string do uprzednio otwartego pliku tekstowego. Jeśli plik zawiera już informacje, zostaną one usunięte, a adres string zostanie zapisany na początku pliku, chyba że plik został otwarty za pomocą funkcji file_text_open_append(). Można tego uniknąć, używając funkcji file_text_readln() wraz z funkcją file_text_eof() loop do przeglądania zawartości pliku aż do końca, a następnie rozpoczęcie pisania.
+   
+  Składnia:
+  file_text_write_string(fileid, str);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fileid
+        The id of the file to edit.
+     
+      
+        str
+        The string to write to the file.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var file = file_text_open_write(working_directory + "hiscore.txt");
+    for (var i = 0; i < 10; ++i;)
+    {
+        file_text_write_real(file, scr[i]);
+        file_text_writeln(file);
+        file_text_write_string(file, scr_name[i]);
+        file_text_writeln(file);
+    }
+    file_text_close(file);
+  Powyższy kod otwiera plik do zapisu, a następnie loops przez dwie tablice, zapisując każdą wartość tablicy w nowym wierszu pliku. Po zakończeniu działania loop plik jest zamykany.
+   
+   
+   
+  
+    
+      
+        Powrót: Pliki tekstowe
+        Następny: file_text_writeln
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

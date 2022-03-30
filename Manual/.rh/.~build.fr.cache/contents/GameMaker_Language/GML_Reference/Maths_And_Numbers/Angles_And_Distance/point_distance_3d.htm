@@ -1,0 +1,72 @@
+
+  
+  punkt_odległość_3d
+  Funkcja ta pobiera dostarczone składowe wektora i zwraca długość (odległość) wektora. Działa dokładnie w ten sam sposób, co funkcja point_distance() ale dodatkowo uwzględnia wartość z (głębokość), aby można było korzystać z niej w przestrzeni 3D.
+   
+  Składnia:
+  point_distance_3d(x1, y1, z1, x2, y2, z2);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x1
+        The x coordinate of the first component of the vector
+     
+      
+        y1
+        The y coordinate of the first component of the vector
+     
+      
+        z1
+        The z coordinate of the first component of the vector
+     
+      
+        x2
+        The x coordinate of the second component of the vector
+     
+      
+        y2
+        The y coordinate of the second component of the vector
+     
+      
+        z2
+        The z coordinate of the second component of the vector
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var inst, ex, ey, ez;
+    inst = instance_nearest(x, y, enemy);
+    if inst
+    {
+        ex = inst.x;
+        ey = inst.y;
+        ez = inst.z;
+        if point_distance_3d(x, y, z, ex, ey, ez) < 200
+        {
+            instance_create_layer(x, y, "Bullets", obj_Missile)
+        }
+    }
+  Powyższy kod pobierze współrzędne x, y i z najbliższego wroga, a następnie użyje ich do sprawdzenia odległości (długości) wektora utworzonego przez niego i współrzędne gracza. Jeśli wartość ta jest mniejsza niż 200, gracz object utworzy instancję "obj_Missile".
+   
+   
+   
+  
+    
+      
+        Powrót: Kąty i odległości
+        Następny: distance_to_object
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,48 @@
+
+  
+  ścieżka_uzyskaj_prędkość
+  Ta funkcja zwraca współczynnik prędkości dla dowolnej pozycji na path. Pozycja powinna być wartością z przedziału od 0 do 1 (można użyć path_positionjeśli potrzebujesz aktualnej pozycji instancji), gdzie 0 to pozycja początkowa, a 1 to pozycja końcowa. Zwracana wartość będzie współczynnikiem, według którego ustawiana jest rzeczywista pozycja path_speed . Na przykład na stronie path z tylko dwoma punktami, 0 i 1, gdzie współczynnik prędkości w punkcie 0 wynosi 100, a współczynnik prędkości w punkcie 1 wynosi 0, funkcja path_get_speed(path, 0.5) zwróci 50.
+   
+  Składnia:
+  path_get_speed(ind, pos);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Aktywa na ścieżce
+        The index of the path to check.
+      
+      
+        pos
+        Real
+        How far through the path to check. Between 0 (start) and 1 (end), can be decimal.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  speed = path_get_speed(pth_Patrol, 0.5) / 20;
+  Spowoduje to ustawienie prędkości instancji wywołującej na współczynnik prędkości punktu znajdującego się dokładnie w połowie drogi przez podany adres path, podzielony przez 20. Jeśli więc znaleziony współczynnik prędkości jest domyślny i wynosi 100, spowoduje to ustawienie prędkości instancji wywołującej na 5.
+   
+   
+   
+  
+    
+      
+        Powrót: Ścieżki
+        Następny: path_get_x
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

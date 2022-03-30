@@ -1,0 +1,59 @@
+
+  
+  sprite_save_strip
+  Ta funkcja tworzy obraz paskowy ze wszystkich podobrazów w pliku sprite i zapisuje go na dysku pod określoną nazwą. Adres sprite musi być dodany na stronie runtime (nie można zapisać adresu sprites dodanego przez stronę IDE), a plik musi być zapisany z adresem *.png extension.
+  UWAGA: W zależności od wybranej platformy docelowej istnieją ograniczenia co do miejsca, z którego można zapisywać i wczytywać pliki. Więcej informacji można znaleźć w części Obsługa plików.
+   
+  Składnia:
+  sprite_save_strip(ind, filename);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Aktywa Sprite
+        The index of the sprite to save.
+      
+      
+        filename
+        String
+        The filename for the saved sprite strip.
+      
+    
+  
+   
+  Zwraca
+  N/A
+   
+  Przykład:
+  var spr, i;
+    spr = sprite_create_from_surface(0, 0, 32, 32, true, true, 16, 16);
+    
+    for (i = 1; i < 8; i +=1)
+    {
+        sprite_add_from_surface(spr, i, 0, 32, 32, true, true, 16, 16);
+    }
+    
+    sprite_save_strip(spr, "Custom_Player_Sprite.png");
+    sprite_delete(spr);
+  
+  Powyższy kod tworzy stronę sprite z powierzchni indeksowanej w zmiennej "surf", przypisując jej indeks do zmiennej lokalnej "spr_Custom", a następnie używa strony for loop do poruszania się po powierzchni i przechwytywania różnych fragmentów, które są dodawane do strony sprite jako podobrazy. ta nowa strona sprite jest następnie zapisywana jako pasek png przed usunięciem z pamięci.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja sprite'ami
+        Następny: sprite_flush
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

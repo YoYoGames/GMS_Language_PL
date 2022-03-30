@@ -1,0 +1,30 @@
+
+  
+  Zlecenie oceny
+  Podczas programowania gry za pomocą GameMaker Language należy pamiętać, że argumenty wywołania funkcji nie mają zagwarantowanej kolejności wykonywania. Oznacza to, że kolejność wykonywania funkcji umieszczonych w kodzie będzie się zmieniać w zależności od platformy, dlatego należy je kodować w sposób jawny. Wynika to z różnic w optymalizacji pomiędzy różnymi platformami docelowymi, na przykład na platformie docelowej Windows argumenty funkcji mogą być obliczane od prawej do lewej, ale na platformie docelowej HTML5 mogą być obliczane od lewej do prawej. Dlatego, aby uniknąć problemów, nie należy wywoływać wielu funkcji w argumentach pojedynczego wywołania funkcji, ponieważ może to powodować uzależnienie od kolejności obliczania argumentów.
+  Aby zobaczyć przykład tego, co to oznacza, rozważmy poniższy kod zawierający funkcję skryptu "buffer_get_info", która wywołuje kilka funkcji runtime i używa ich jako argumentów:
+  buffer_seek(buff, buffer_seek_start, 0);
+    buffer_get_info(buffer_read(buff, buffer_s8), buffer_read(buff, buffer_s16),buffer_read(buff, buffer_s16));
+  Problem polega na tym, że na niektórych platformach ostatnia funkcja buffer_read() będzie wywoływana jako pierwsza, a więc wszystkie argumenty funkcji script będą nieprawidłowe, ponieważ dane są odczytywane z funkcji buffer w "odwrotnej" kolejności, jak byśmy to postrzegali. Ma to wpływ na wszystkie dalsze wartości funkcji buffer_read(), więc wszystkie argumenty przekazywane do funkcji script będą nieprawidłowe!
+  Aby to obejść, należy jawnie wywoływać funkcje w wymaganej kolejności i przechowywać zwracane wartości w zmiennych, na przykład w ten sposób:
+  var val[0] = buffer_read(buff, buffer_s8);
+    var val[1] = buffer_read(buff, buffer_s16);
+    var val[2] = buffer_read(buff, buffer_s16);
+    buffer_get_info(val[0], val[1], val[2]);
+  Choć metoda ta może wydawać się bardziej czasochłonna, to dzięki niej wszystko jest jasne i nie ma problemów z kolejnością wykonywania obliczeń.
+  Należy również uważać przy stosowaniu wyrażeń, ponieważ kolejność ich obliczania zmienia się w zależności od celu kompilacji. Dlatego używając wyrażeń w swoim kodzie, upewnij się, że używasz nawiasów (), aby odpowiednio kontrolować kolejność operacji. Jest to bardzo ważne, aby zapewnić poprawne działanie gier na wszystkich platformach docelowych, a w przypadku platformy HTML5 jest wręcz niezbędne. Na stronie poświęconej wyrażeniom wyjaśniono to bardziej szczegółowo.
+   
+   
+   
+  
+    
+      
+        Powrót: Przegląd GML
+        Następny: Accessors
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

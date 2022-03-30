@@ -1,0 +1,46 @@
+
+  
+  audio_emitter_get_x
+  Ta funkcja zwraca bieżącą pozycję x podanego emitera dźwięku.
+   
+  Składnia:
+  audio_emitter_get_x(emitter);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        emitter
+        Identyfikator emitera dźwięku
+        The index of the emitter to use.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if audio_emitter_get_x(emitter_player) != x
+    {
+        audio_emitter_position(emitter_player, x, y, 0);
+    }
+  Powyższy kod sprawdza bieżącą pozycję x danego emitera i jeśli nie jest ona równa pozycji x instancji, ustawia ją na pozycję instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery dźwięku
+        Następny: audio_emitter_get_y
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

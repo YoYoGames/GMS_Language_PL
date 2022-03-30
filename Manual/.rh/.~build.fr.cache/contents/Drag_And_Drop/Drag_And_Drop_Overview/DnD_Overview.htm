@@ -1,0 +1,81 @@
+
+  
+  Przegląd funkcji przeciągania i upuszczania
+  Drag and Drop (DnD™) to wizualne narzędzie skryptowe, które może być używane do tworzenia gier bez wpisywania kodu. Nie oznacza to, że nie programujesz kodu, bo tak jest, ale kod jest tworzony i prezentowany w sposób wizualny, przy użyciu "bloków" akcji , a nie tekstu. Akcje to proste wyrażenialubstwierdzenia, które można "łączyć" ze sobą, aby instancja object zrobiła coś po umieszczeniu jej na stronie room. Na przykład, możesz mieć akcję w Zdarzeniu tworzenia, aby poruszyć instancję w losowym kierunku, a inną akcję w Zdarzeniu zd erzenia, aby sprawić, że odbije się od rzeczy, z którymi się zderzy (więcej informacji o różnych dostępnych zdarzeniach i ich działaniu znajdziesz w rozdziale Zdarzenia obiektów).
+  Powyższy obrazek pokazuje typową stronę object otwartą na obszarze roboczym, który ma być edytowany. Ma ono okno "Zdarzenie" i okno "Kod", a w oknie kodu widać, gdzie skonstruowaliśmy nasze DnD™. Przyjrzyjmy się nieco bliżej temu oknu i zobaczmy, jakie opcje są dla nas dostępne:
+  Poniżej znajduje się więcej informacji na temat każdej z przedstawionych sekcji:
+  Karty wydarzeń
+  
+    Po dodaniu zdarzenia do witryny object w oknie kodu jest otwierana nowa karta, na której jest wyświetlana zawartość tego zdarzenia. Można dodawać wiele zdarzeń i mieć otwartych wiele kart jednocześnie, przełączając się między nimi i edytując je
+      i edytować je według własnego uznania. Karty można także zamykać w dowolnym momencie, aby zmniejszyć bałagan (ponowne wybranie zdarzenia na stronie object spowoduje ich ponowne otwarcie), a także można kliknąć przycisk  i przeciągnąć kartę z okna do własnego okna kodu, w którym to przypadku zamknięcie strony object lub okna kodu nie spowoduje zamknięcia nowego okna. Karty można również przeciągać w lewo lub w prawo, aby zmienić ich kolejność.
+     
+  
+  Przegląd działań
+  
+    W miarę dodawania bloków akcji do wydarzenia, będą one wyświetlane w formie skróconej, jako przegląd tego, co się dzieje. Kolejność przeglądania to kolejność, w jakiej będą uruchamiane poszczególne bloki akcji dla danego zdarzenia.
+       Można kliknąć dowolny element na liście, aby widok bloku akcji został powiększony do tej pozycji w celu edycji.
+     
+  
+  Obszar roboczy bloku działań
+  
+    Ten obszar workspace to miejsce, w którym przeciągasz akcje z Przybornika , aby stworzyć swój kod DnD™. Kliknij  na akcji i przeciągnij ją do tego
+      aby dodać ją do listy akcji i edytować. Większość akcji ma różneargumenty (parametry), które można ustawić, a większość z nich przyjmuje również słowa kluczowe,
+     zmienne instancji, a nawet funkcje GML - na przykład można wywołać akcję Ustaw kierunek i użyć funkcji GML random(val) aby
+      ustawić losowy kierunek.
+    
+    W miarę dodawania bloków akcji do kodu będą one wizualnie "łączone w łańcuchy", aby wskazać kolejność, w jakiej będą wykonywane różne akcje, choć sposób tworzenia tego łańcucha będzie zależał od użytego bloku początkowego. Na przykład,
+      blok If Variable będzie miał dwa łańcuchy - jeden do bloków, które mają być wywołane, jeśli sprawdzany warunek jest true, a następnie do następnego bloku po nim
+      po nim. Więcej informacji na temat konstruowania bloków akcji w kodzie można znaleźć w sekcjach, do których prowadzą poniższe odnośniki.
+    W Bloku akcji workspace można nacisnąć i przytrzymać środkowy przycisk myszy , aby przesuwać widok, oraz kółko myszy , aby przewijać listę akcji w górę lub w dół. Jeśli podczas poruszania kółkiem myszy przytrzymasz przycisk , widok będzie przewijany w lewo/prawo, a jeśli przytrzymasz
+      wciśnięty przycisk  /  i poruszanie kółkiem myszy
+      widok zostanie powiększony lub pomniejszony, co pozwoli zobaczyć większą część strony workspace z działaniami. Możesz kliknąć  na dowolnej akcji z listy akcji po lewej stronie, aby
+      z listy akcji po lewej stronie, aby ustawić na niej ostrość, co spowoduje zresetowanie powiększenia i pozycji. Zauważ też, że można zmieniać rozmiar bloków działań, przesuwając mysz w kierunku krawędzi bloku, a następnie - gdy kursor się zmieni - przeciągając w wybranym kierunku.
+    Możesz także kliknąć prawym przyciskiem myszy na stronie  w dowolnym miejscu w DnD™ workspace, aby wywołać Menu RMB, które zostało szczegółowo opisane tutaj.
+     
+  
+  Skrzynka narzędziowa
+  
+     Skrzynka z narzędziami to miejsce, w którym przechowywane są wszystkie akcje DnD™, a w różnych sekcjach znajdują się kolekcje (biblioteki) akcji, które są podobne lub powiązane. Każda kolekcja akcji jest związana z określonym tematem lub wspólnym celem.
+      Wystarczy kliknąć przycisk  i przeciągnąć żądaną akcję z przybornika do bloku akcji workspace, aby dodać ją do bieżącego wydarzenia. Aby ułatwić
+      prostsze - ponieważ akcji jest bardzo dużo - można użyć paska "Szukaj" u góry, aby wyszukać konkretną akcję lub przefiltrować widoczne akcje (na przykład wpisać "rysuj", aby uzyskać wszystkie akcje rysowania), a także można kliknąć
+       i przeciągnąć ikony z dowolnej biblioteki do folderu Ulubione, aby często używane akcje były przechowywane razem. Jest to szczególnie przydatne
+      jeśli są pewne czynności, które będziesz wykonywać wielokrotnie. Folder Ulubione można wyczyścić, klikając małą ikonę "kosz".
+    
+    Pełną listę dostępnych akcji, a także informacje o tym, jakie argumenty przyjmują i jak można je łączyć, można znaleźć w sekcji Odnośnik do Drag And Drop.
+    Za pomocą prawego przycisku myszy  na dowolnym działaniu w przyborniku można otworzyć następujące menu:
+    
+    W tym miejscu dostępne są następujące opcje:
+    
+      Użyj <akcja>: To spowoduje dodanie do bieżącego zdarzenia workspace akcji, która znajdowała się pod myszą w momencie kliknięcia prawego przycisku myszy.
+      Utwórz/  Usuń ulubione: To spowoduje dodanie lub usunięcie działania do biblioteki Ulubione w górnej części przybornika. W tej bibliotece można utworzyć niestandardową grupę działań, z których użytkownik korzysta regularnie, co skraca
+        czasu potrzebnego na szukanie ich w ich rzeczywistych bibliotekach.
+      Wyczyść ulubione: Wybranie tej opcji spowoduje usunięcie wszystkich działań z biblioteki Ulubione.
+      Wyczyść Ostatnio używane: Wybranie tej opcji spowoduje usunięcie wszystkich działań z biblioteki Ostatnio używane.
+      Zwiń wszystkie: Ta opcja spowoduje zwinięcie wszystkich bibliotek DnD™ tak, że widoczne będą tylko tytuły bibliotek, a nie węzły akcji. Każdą bibliotekę można ponownie rozwinąć, klikając na nią.
+    
+     
+  
+   
+  Na następnych stronach omówiono nieco dokładniej sposób konstruowania kodu bloku akcji, a także to, jak ustawić zakres akcji, aby wpływały na różne rzeczy w projekcie, oraz inne ważne szczegóły:
+  
+    Konstruowanie kodu bloku akcji
+    Stosowanie akcji do innych instancji
+    Skrypty bloków akcji
+    Zmiana DnD™ na kod
+    Opcje menu prawego przycisku myszy
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Indeks
+        Następny: Przeciągnij i upuść 
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

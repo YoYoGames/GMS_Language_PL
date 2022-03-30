@@ -15,12 +15,12 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Kod komentowania</h1>
-  <p>Podczas pracy we współpracy z innymi osobami, przy dużych projektach, a nawet dla własnych potrzeb i <span class="notranslate">debugging</span>, pozostawianie komentarzy w kodzie zdarzeń i na stronie <span class="notranslate">scripts</span> jest bardzo ważne. W <span class="notranslate">GameMaker Studio 2</span> masz do dyspozycji różne mechanizmy ułatwiające zostawianie notatek i komentarzy dotyczących fragmentów kodu, a nawet całych bloków kodu, które są widoczne na liście zdarzeń <span class="notranslate">object</span>, którą właśnie edytujesz. W ten sposób można zostawiać notatki dla siebie i kolegów, wyjaśniać szczególnie skomplikowane fragmenty kodu lub po prostu przypominać, co coś robi lub co ma robić w przyszłości.</p>
+  <p>Kiedy pracujesz we współpracy z innymi ludźmi, kiedy masz do czynienia z dużym projektem, a nawet po prostu dla własnego odniesienia i <span class="notranslate">debugging</span>, zostawianie komentarzy w kodzie zdarzeń i <span class="notranslate">scripts</span> jest bardzo ważne. W <span data-keyref="GameMaker Name">GameMakerze</span> masz do dyspozycji różne mechanizmy ułatwiające zostawianie notatek i komentarzy dotyczących fragmentów kodu, a nawet całych bloków kodu, które są widoczne na liście zdarzeń <span class="notranslate">object</span>, którą właśnie edytujesz. W ten sposób możesz zostawiać notatki dla siebie i kolegów, wyjaśniać szczególnie skomplikowany fragment kodu lub po prostu przypominać, co coś robi lub co chcesz, żeby robiło w przyszłości.</p>
   <p>Aby zostawić prosty, jednowierszowy komentarz, należy przede wszystkim użyć adresu <span class="inline"><b><span class="inline">//</span> przed tekstem. Na przykład:</p>
   <p class="code">//initialize variables<br />
     sr = 10;<br />
     hp = 100;</p>
-  <p>Można również zostawiać wielowierszowe komentarze, aby wyrazić uznanie, pominąć cały fragment kodu na stronie <span class="notranslate">debugging</span>, a nawet zostawić uwagi o tym, jak chcesz zmienić kod w przyszłości. Do tego celu można użyć <b><span class="inline">/* ... */</span></b> na przykład tak:</p>
+  <p>Możesz również zostawiać wielowierszowe komentarze, aby wyrazić uznanie, pominąć cały fragment kodu na stronie <span class="notranslate">debugging</span>, a nawet zostawić uwagi dotyczące tego, jak chcesz zmienić kod w przyszłości. Do tego celu można użyć <b><span class="inline">/* ... */</span></b> na przykład tak:</p>
   <p class="code">/*<br />
     Setup GIF Variables to initial values (these can be edited so you don&#39;t need to use the setter functions all the time if you are always using the same values)<br />
     <br />
@@ -33,8 +33,8 @@
     frame_height = 256;<br />
     frame_quality = gifcam_quality_high;
   </p>
-  <p>Oprócz komentarzy można również używać specjalnych znaczników <span class="inline">#region</span> do oznaczania fragmentów kodu do <b>składania</b>, a każdy z tych fragmentów może zawierać komentarz. Działa to w ten sposób, że dodajesz znacznik <span class="inline">#region</span> - wraz z tekstem komentarza - na górze sekcji kodu, a następnie dodajesz odpowiadający mu znacznik <span class="inline">#endregion</span> na dole sekcji i możesz &quot;złożyć&quot; kod, tzn. ukryć go, aby zmniejszyć liczbę linii kodu widocznych w edytorze w danym momencie:</p>
-  <p><img>Rzeczywisty kod wygląda mniej więcej tak:</p>
+  <p>Oprócz komentarzy można również używać specjalnych znaczników <span class="inline">#region</span> do oznaczania fragmentów kodu do <b>składania</b>, a każdy z tych fragmentów może zawierać komentarz. Działa to w ten sposób, że dodajesz znacznik <span class="inline">#region</span> - wraz z tekstem komentarza - na górze sekcji kodu, a następnie dodajesz odpowiadający mu znacznik <span class="inline">#endregion</span> na dole sekcji i wtedy możesz &quot;zwijać&quot; kod, tzn. ukrywać go, aby zmniejszyć liczbę linii kodu widocznych w edytorze w danym momencie:</p>
+  <p><img>Faktyczny kod wygląda mniej więcej tak:</p>
   <p class="code">#region This is an example region<br />
     <br />
     width = sprite_get_width(sprite);<br />

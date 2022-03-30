@@ -1,0 +1,58 @@
+
+  
+  tilemap_get
+  Za pomocą tej funkcji można pobrać dane tile z komórki elementu mapy tile. Podajesz identyfikator elementu mapy tile (który otrzymujesz podczas tworzenia elementu mapy tile przy użyciu layer_tilemap_create() lub po użyciu funkcji layer_tilemap_get_id()), jak również pozycję komórki x i y, a funkcja zwróci "kleksa" danych tile. Dane te są w istocie maską bitową zawierającą indeks tile, booleany przerzucania/obracania/odbijania oraz wszelkie dane maski, które zostały zastosowane (zob. tilemap_set_mask() szczegóły), a wynikowa wartość danych może być następnie użyta w funkcjach tile_* do zmiany właściwości tiles. Zwróć uwagę, że używamy pozycji komórek x/y w oparciu o rozmiar siatki mapy tile, a nie jako pozycji w room, dlatego "cell_x" jest wartością od 0 do szerokości mapy kafelkowej, a "cell_y" jest wartością od 0 do wysokości mapy kafelkowej. Jeśli chcesz uzyskać dane dla strony tile w określonej pozycji na stronie room, musisz użyć funkcji tilemap_get_at_pixel().
+  WAŻNE! Jeśli adresy tiles w mapie tile pozostały niezmienione (tzn. nie zostały obrócone, odwrócone itp.), wartość zwracana danych tile set będzie dokładnie równa indeksowi adresu tile na stronie tile set. Można więc na przykład utworzyć "mapy kolizji" tiles, używając jednego adresu tile o indeksie 1 na stronie tile set, a następnie użyć tej funkcji do sprawdzenia, czy indeks 1 lub 0 (pusty adres tile) jest równy 1 lub 0, aby obliczyć kolizje.
+   
+  Składnia:
+  tilemap_get(tilemap_element_id, cell_x, cell_y);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tilemap_element_id
+        Identyfikator elementu mapy kafelkowej
+        The unique ID value of the tile map element to get the tile-data of
+      
+      
+        x_cell
+        Real
+        The cell along the x-axis to get the tile data from
+      
+      
+        y_cell
+        Real
+        The cell along the y-axis to get the tile data from
+      
+    
+  
+   
+  Zwroty:
+  Tile Data (-1 if there is an error)
+   
+  Przykład:
+  var lay_id = layer_get_id("Tiles_sky");
+    var map_id = layer_tilemap_get_id(lay_id);
+    var data = tilemap_get(map_id, 0, 0);
+    data = tile_set_flip(data, true);
+    tilemap_set(map_id, data, 0, 0);
+  Powyższy kod pobiera identyfikator mapy tile na warstwie "Tiles_Sky", a następnie wykorzystuje go do pobrania danych z tile w komórce (0, 0). Dane z tile są następnie odwracane przed ponownym użyciem ich do ustawienia tile na mapie tile.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy mapy kafelkowej
+        Następny: tilemap_get_at_pixel
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

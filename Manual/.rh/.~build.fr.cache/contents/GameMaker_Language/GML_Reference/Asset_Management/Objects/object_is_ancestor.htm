@@ -1,0 +1,51 @@
+
+  
+  obiekt_jest_przodkiem
+  Tej funkcji można użyć do sprawdzenia adresu object i sprawdzenia, czy jest on przodkiem innego adresu object. Tak więc oba argumenty muszą być indeksami object, a nie identyfikatorami instancji, a pierwszym z nich jest zawsze object, który chcesz sprawdzić, czy jest dzieckiem drugiego argumentu, którym jest zawsze object, który chcesz sprawdzić jako przodka (rodzica).
+   
+  Składnia:
+  object_is_ancestor(obj, par);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        obj
+        Obiekt Aktywa
+        The object that is being checked as the child.
+      
+      
+        par
+        Obiekt Aktywa
+        The object that is being checked as the ancestor (parent).
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if object_is_ancestor(object_index, obj_Enemy)
+    {
+        instance_destroy();
+    }
+  Powyższy kod sprawdza, czy instancja wykonująca kod jest dzieckiem obiektu object "obj_Enemy", a jeśli tak, to jest niszczona.
+   
+   
+   
+  
+    
+      
+        Powrót: Obiekty
+        Następny: object_set_mask
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

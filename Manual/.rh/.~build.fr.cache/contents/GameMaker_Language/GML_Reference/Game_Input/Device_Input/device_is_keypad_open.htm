@@ -1,0 +1,37 @@
+
+  
+  urządzenie_jest_keypadem_otwartym
+  Ta funkcja sprawdza urządzenie pod kątem klawiatury i jeśli jest ona dostępna, zwraca adres true, w przeciwnym razie zwraca adres false. Należy pamiętać, że ta funkcja jest przeznaczona głównie do użytku z urządzeniami Android.
+  Dla użytkowników Sony Xperia Play przygotowano mapę przycisków i klawiszy w witrynie GameMaker Studio 2, dzięki czemu można używać stałych klawiaturowych vk_up, vk_down, vk_left, vk_right dla klawiszy joypada, a Triangle to ord("T"), Square to ord("S"), Circle to vk_alt + vk_backspace, natomiast przycisk Back to po prostu vk_backspace, Cross to vk_space, Select to vk_return, a Start to vk_rshift, spust L to ord("L"), a spust R to ord("R").
+   
+  Składnia:
+  device_is_keypad_open
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if device_is_keypad_open()
+    {
+         global.Setting = 2;
+    }
+    else
+    {
+         global.Setting = 1;
+    }
+  Powyższy kod sprawdza, czy istnieje klawiatura, a następnie zmienia zmienną globalną w zależności od zwróconej wartości.
+   
+   
+   
+  
+    
+      
+        Powrót: Wejście urządzenia
+        Następny: device_get_tilt_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

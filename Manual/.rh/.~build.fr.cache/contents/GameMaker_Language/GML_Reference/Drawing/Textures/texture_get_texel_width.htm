@@ -1,0 +1,45 @@
+
+  
+  tekstura_get_texel_width
+  Teksel, czyli element tekstury, jest podstawową jednostką przestrzeni texture używaną w grafice komputerowej. Textures są reprezentowane przez tablice tekseli, tak jak obrazy są reprezentowane przez tablice pikseli, a ta funkcja zwraca szerokość pojedynczego teksela ze strony texture użytego obrazu asset.
+   
+  Składnia:
+  texture_get_texel_width(tex);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tex
+        Wskaźnik tekstury
+        The texture page asset pointer to use
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  var tex = sprite_get_texture(sprite_index, 0);
+    tex_w = texture_get_texel_width(tex);
+    tex_h = texture_get_texel_height(tex);
+  Powyższy kod pobierze szerokość i wysokość tekstu texture z witryny sprite asset.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekstury
+        Następny: texture_get_texel_height
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

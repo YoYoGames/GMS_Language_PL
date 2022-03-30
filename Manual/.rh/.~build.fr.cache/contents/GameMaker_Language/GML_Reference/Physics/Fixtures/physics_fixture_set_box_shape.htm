@@ -1,0 +1,49 @@
+
+  
+  physics_fixture_set_box_shape
+  Ta funkcja definiuje kształt pudełka dla twojego urządzenia. Pobiera połowę szerokości i wysokości, ponieważ fizyka używa tej wartości znacznie częściej niż całej szerokości/wysokości do określenia takich rzeczy jak kolizje.
+   
+  Składnia:
+  physics_fixture_set_box_shape(fixture, halfWidth, halfHeight)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fixture
+        the index of the fixture
+     
+      
+        halfWidth
+        the half width of the box
+     
+      
+        halfHeight
+        the half height of the box
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  physics_fixture_set_box_shape(fix_Border, room_width/2, 10);
+  Powyższy kod zastosuje kształt pudełka do elementu mocującego indeksowanego w zmiennej "fix_Border" o szerokości room i wysokości 20 pikseli.
+   
+   
+   
+  
+    
+      
+        Powrót: Armatura
+        Następny: physics_fixture_set_circle_shape
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

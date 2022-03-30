@@ -1,0 +1,43 @@
+
+  
+  path_get_kind
+  Ścieżki mogą być gładkie lub proste (gładka path oblicza krzywą path wokół zdefiniowanych punktów, natomiast prosta path biegnie prosto z jednego punktu do drugiego). Tej funkcji
+    można użyć, aby dowiedzieć się, czy dana ścieżka path jest gładka (true) czy nie (false).
+   
+  Składnia:
+  path_get_kind(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the path to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  path_kind = path_get_kind(pth_Patrol);
+  Spowoduje to ustawienie zmiennej "path_kind" na true lub false w zależności od rodzaju path, którego dotyczy podany indeks path.
+   
+   
+   
+  
+    
+      
+        Powrót: Ścieżki
+        Następny: path_get_length
+        
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

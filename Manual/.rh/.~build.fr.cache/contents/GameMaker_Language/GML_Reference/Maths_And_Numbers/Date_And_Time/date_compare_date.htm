@@ -1,0 +1,48 @@
+
+  
+  data_porównania_daty
+  Za pomocą tej funkcji można sprawdzić dwie daty, aby ustalić, która z nich jest wcześniejsza lub późniejsza od drugiej. Funkcja zwraca -1, jeśli data1 jest wcześniejsza, 0, jeśli obie daty są takie same, i 1, jeśli data1 jest późniejsza.
+   
+  Składnia:
+  date_compare_date( date1, date2 );
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        date1
+        Datetime
+        The first date.
+      
+      
+        date2
+        Datetime
+        The date to compare it to.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  d = date_compare_date(date_create_datetime(2011, 9, 15, 11, 4, 0), date_current_datetime());
+  Spowoduje to ustawienie wartości "d" na odpowiednią wartość w zależności od tego, która z dat jest najwcześniejsza, czyli prawdopodobnie 1, ponieważ bieżąca data jest bardziej odległa niż 15 września 2011 roku.
+   
+   
+   
+  
+    
+      
+        Powrót: Data i czas
+        Następny: date_compare_datetime
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

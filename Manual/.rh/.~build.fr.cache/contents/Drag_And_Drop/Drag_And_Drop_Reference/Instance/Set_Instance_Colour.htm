@@ -1,0 +1,42 @@
+
+  
+   Ustaw kolor pierwiastka
+  Ten blok akcji ustawia kolor image_blend do "mieszania" z instancją sprite. Domyślną wartością jest kod heksadecymalny $FFFFFFFF (który reprezentuje kolor biały w formacie ARGB ). Spowoduje to narysowanie sprite bez mieszania i z pełną alfą. Każda inna wartość (w tym wewnętrzne stałe koloru, takie jak c_red, lub c_aqua) spowoduje wymieszanie określonego koloru z oryginalnym kolorem sprite oraz ustawienie składowej dla instancji, ale tylko wtedy, gdy jest ona ustawiona na wartość alfa.
+    image_alpha dla instancji, ale tylko wtedy, gdy zaznaczone jest pole wyboru Użyj al fa. Spowoduje to nadpisanie wszystkich wartości alfa ustawionych wcześniej za pomocą akcji Ustaw alfa instancji.
+  Należy pamiętać, że aby zmiany w tej akcji były widoczne, instancja powinna albo nie mieć zdarzenia draw (a więc GameMaker Studio 2 domyślnie narysuje sprite), albo być narysowana za pomocą akcji Draw Self. Jest
+    Należy również zauważyć, że na platformie HTML5 należy ograniczyć mieszanie (chyba że używa się WebGL), ponieważ każda mieszana strona sprite musi być buforowana osobno, a zatem posiadanie wielu mieszanych stron sprites może negatywnie wpłynąć na wydajność.
+  
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Colour
+        Nowy kolor mieszania, który ma zostać użyty (kliknięcie próbki koloru spowoduje otwarcie okna selektora kolorów).
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji ustawia nową stronę sprite oraz szereg innych
+    właściwości dotyczące sposobu wyświetlania strony sprite, w tym ustawienie koloru mieszanki na różowy.
+   
+   
+   
+  
+    
+      
+        Powrót: Działania instancji
+        Następny: Jeśli instancja istnieje
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

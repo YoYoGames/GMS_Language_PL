@@ -1,0 +1,49 @@
+
+  
+  lista_szkieletowa
+  Za pomocą tej funkcji można wypełnić (utworzoną wcześniej) listę DS wszystkimi nazwami kości używanych w animacji szkieletu sprite. Nazwy te zostaną umieszczone na stronie strings i będzie można ich użyć w innych funkcjach kości animacji szkieletowej dla tych typów sprite.
+   
+  Składnia:
+  skeleton_bone_list(sprite, list);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        sprite
+        Aktywa Sprite
+        The sprite index of the Spine skeletal animation to get the list from.
+      
+      
+        list
+        Identyfikator listy DS
+        The ID of the DS list to populate with the bone names.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  bone_list = ds_list_create();
+    skeleton_bone_list(sprite_index, bone_list);
+  Powyższy kod tworzy listę DS, a następnie wypełnia ją nazwami kości w celu późniejszego wykorzystania.
+   
+   
+   
+  
+    
+      
+        Grzbiet: kości
+        Następny: skeleton_slot_list
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

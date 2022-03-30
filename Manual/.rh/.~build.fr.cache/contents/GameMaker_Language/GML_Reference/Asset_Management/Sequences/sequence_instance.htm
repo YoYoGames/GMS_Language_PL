@@ -1,0 +1,33 @@
+
+  
+  sekwencja_instancji
+  Jest to wbudowana zmienna, która jest częścią zmiennych instancji tworzonych dla każdej instancji object w grze. Jeśli instancja jest kontrolowana przez sequence, ta zmienna będzie zawierać strukturę instancji sekwencji dla Sequence kontrolującego instancję, w przeciwnym razie będzie to undefined. Jest to zmienna tylko do odczytu i nie można jej zmieniać.
+  Należy pamiętać, że ta zmienna stanie się undefined po zakończeniu kontrolowania Sequence, nawet jeśli jej element Sequence nadal istnieje, i otrzyma ponownie wartość struct, jeśli ten element Sequence zostanie odtworzony.
+   
+  Składnia:
+  sequence_instance
+   
+  Zwroty:
+  Sequence Instance Struct
+   
+  Przykład:
+  if (in_sequence)
+    {
+        sequence_instance.speedScale = 2;
+    }
+  Powyższy kod sprawdza zmienną in_sequence i jeśli jest to true (co oznacza, że instancja jest sterowana przez sequence), to zmieni skalę prędkości tej Sequence na 2.
+   
+   
+   
+  
+    
+      
+        Powrót: Sekwencje
+        Następny: sequence_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

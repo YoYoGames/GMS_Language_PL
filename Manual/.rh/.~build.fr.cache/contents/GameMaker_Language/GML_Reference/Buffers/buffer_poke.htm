@@ -1,0 +1,58 @@
+
+  
+  bufor_poke
+  Za pomocą funkcji buffer_write() można zapisywać dane na podanej stronie buffer w bieżącej pozycji "szukania", a każda kolejna porcja danych przesuwa tę pozycję o kolejne bajty. Może się jednak zdarzyć, że będziesz musiał zmienić daną część danych, nie zmieniając aktualnej pozycji wyszukiwania, i właśnie wtedy użyjesz tej funkcji. W tym celu należy podać indeks buffer, a następnie pozycję przesunięcia od początku adresu buffer (w bajtach) w obrębie adresu buffer, do którego ma nastąpić zapis, a także typ danych i wartość, która ma zostać zapisana.
+   
+  Składnia:
+  buffer_poke(buffer, offset, type, value);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        buffer
+        Identyfikator bufora
+        The index of the buffer to use.
+      
+      
+        offset
+        Real
+        The offset position (in bytes) within the buffer to write the given data to.
+      
+      
+        type
+        Typ danych bufora Stała
+        The type of data that is to be written to the buffer (see the list of constants here).
+      
+      
+        value
+        Zmienna
+        The data to add to the buffer, in accordance with the type specified.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  buffer_poke(buff, 3, buffer_u8, colour_get_blue(image_blend));
+  Powyższy kod doda wartość składowej niebieskiej koloru użytego do mieszania obrazów do strony buffer indeksowanej w zmiennej "buff", na trzeciej pozycji w buffer, jako niepodpisaną wartość 8-bitową.
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_save
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

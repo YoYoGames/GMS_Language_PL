@@ -1,0 +1,49 @@
+
+  
+  ds_priority_copy
+  Za pomocą tej funkcji można skopiować zawartość jednego priorytetu queue do innego. Należy pamiętać, że NIE usuwa to zawartości oryginalnego priorytetu queue, ani nie niszczy oryginalnego priorytetu queue. Podczas używania tej funkcji priorytet queue, do którego jest kopiowana zawartość, musi być wcześniej utworzony, a jeśli zawierał jakieś elementy przed kopiowaniem, to zostaną one najpierw usunięte (co oznacza, że informacje te zostaną utracone).
+   
+  Składnia:
+  ds_priority_copy(id, source);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the priority queue to copy to.
+     
+      
+        source
+        The id of the priority queue to copy from.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  with (instance_create_layer(x, y, "Enemies", obj_Enemy))
+    {
+        p_queue = ds_priority_create();
+        ds_priority_copy(p_queue, other.p_queue);
+    }
+  Powyższa funkcja tworzy nową instancję, a następnie w tej instancji tworzy nowy priorytet DS queue i kopiuje zawartość priorytetu queue w instancji, w której uruchomiony jest blok kodu, do nowo utworzonego priorytetu instancji queue.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolejki priorytetowe DS
+        Następny: ds_priority_read
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

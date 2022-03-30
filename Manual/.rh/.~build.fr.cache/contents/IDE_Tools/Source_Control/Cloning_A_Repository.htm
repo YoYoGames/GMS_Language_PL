@@ -1,0 +1,31 @@
+
+  
+  Klonowanie repozytorium
+  Gdy projekt jest przechowywany w zewnętrznym repozytorium, trzeba pamiętać o tym, aby zarówno wypychać swoje zmiany, jak i wyciągać nowe. Powodem tego jest to, że kiedy zatwierdzasz zmiany, przechowujesz je lokalnie, co pozwala Ci pracować z dala od połączenia internetowego i synchronizować się, kiedy jesteś gotowy, a żeby się zsynchronizować, pchasz swoje zmiany do zdalnego repozytorium. Wyciąganie zmian oznacza, że chcesz wyciągnąć do swojego lokalnego repozytorium wszystkie zmiany wprowadzone przez innych użytkowników ze zdalnego repozytorium. Oznacza to jednak, że mogą zdarzyć się sytuacje, w których ludzie będą edytować te same pliki, co z kolei spowoduje konflikt scalania. Należy wiedzieć, jak radzić sobie z takimi konfliktami, więc celowo stworzymy jeden z nich, a następnie pokażemy, jak sobie z nim poradzić.
+  UWAGA: Udostępnianie lokalnego repozytorium projektu (nawet poprzez usługę synchronizacji plików, taką jak Dropbox) nie jest zalecane, ponieważ polecenia są zazwyczaj zapisywane bezpośrednio w nim, a zatem ochrona przed konfliktami jest bardzo ograniczona.
+  Aby wygenerować nasz konflikt, musimy najpierw mieć dwa lokalne repozytoria, jedno dla repozytorium głównego i jedno dla naszej kopii. Aby je utworzyć, musimy sklonować repozytorium, co wykonujemy w następujących krokach:
+  
+    Przejdź do sekcji Kontrola źródła > Sklonuj repozytorium.
+    W polu URL wpisz adres path do projektu, który skonfigurowaliśmy w powyższej instrukcji dotyczącej przywracania plików (domyślnie będzie to <DRIVE>:\Users\<Username>\Documents\GameMakerStudio2\<ProjectName>).
+    Następnie należy ustawić adres path, na który ma zostać sklonowane repozytorium:
+      Po kliknięciu przycisku "Ok" pojawi się następujące ostrzeżenie o próbie sklonowania repozytorium "non-bare":
+      W tym miejscu możemy ponownie kliknąć "Ok".
+    
+    Zostanie nam teraz wyświetlony eksplorator katalogów w celu utworzenia "gołego" repozytorium proxy (jest to repozytorium, które można bezpiecznie przechowywać np. na Dropbox). Przejdź do miejsca, w którym chcemy utworzyć to repozytorium proxy, i wybierz (lub utwórz) folder, który ma zostać użyty.
+  
+  Gdy to zrobimy, GameMaker Studio 2 wypchnie oryginalny projekt do proxy i przeciągnie nowy na stronę path, którą ustawiliśmy w oknie Clone Repository, a następnie automatycznie otworzy przeglądarkę plików, abyśmy mogli otworzyć zapisany projekt. Jeśli przejdziemy teraz do zakładki Kontrola źródła > Wyświetl historię, zobaczymy nasze oryginalne commit'y oraz nowy commit "Push For Clone".
+  Sklonowałeś teraz swoje repozytorium i możesz kontynuować pracę nad lokalną wersją projektu.
+   
+   
+  
+    
+      
+        Powrót: Kontrola źródła
+        Następny: Konflikty
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

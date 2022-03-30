@@ -1,0 +1,45 @@
+
+  
+  ścieżka_odwrotna
+  Za pomocą tej funkcji można odwrócić kolejność numerowania poszczególnych punktów strony path, więc na przykład, jeśli strona path ma 5 punktów, punkt 0 stanie się punktem 4, punkt 1 będzie punktem 3, a punkt 2 nie ulegnie zmianie. Rzeczywiste położenie
+    punktów pozostaje niezmieniona, zmienia się tylko kolejność ich przetwarzania. Ta funkcja zmienia rzeczywisty zasób path , a więc będzie trwale wpływać na sposób, w jaki path jest używany przez wszystkie instancje w grze od momentu użycia funkcji do końca
+    aż do końca gry. Jeśli to nie jest to, czego potrzebujesz, powinieneś użyć funkcji takiej jak path_duplicate(), aby najpierw utworzyć kopię path, a następnie wywołać tę funkcję
+    na zduplikowanej asset (nie zapomnij wywołać path_delete() na asset, gdy nie będzie już potrzebna).
+   
+  Składnia:
+  path_reverse(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the path to change.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  path_reverse(pth_AI);
+  Spowoduje to odwrócenie kolejności przetwarzania wszystkich punktów na danej ścieżce.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja ścieżką
+        Następny: path_rotate
+        
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

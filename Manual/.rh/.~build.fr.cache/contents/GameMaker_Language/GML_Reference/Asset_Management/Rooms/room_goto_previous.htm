@@ -1,0 +1,33 @@
+
+  
+  pokój_gotowy_poprzedni
+  Dzięki tej funkcji możesz sprawić, że Twoja gra przejdzie do poprzedniego pokoju, jaki znajdował się w Room Managerze w momencie kompilacji gry. Jeśli ta strona room nie istnieje, zostanie wyrzucony błąd i gra zostanie zamknięta. Należy pamiętać, że adres room nie zmieni się do końca zdarzenia, w którym funkcja została wywołana, więc każdy kod po wywołaniu tej funkcji będzie nadal wykonywany w tym samym zdarzeniu. Ta funkcja wywoła również zdarzenie " Koniec pokoju ".
+   
+   
+  Składnia:
+  room_goto_previous();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if room_exists(room_previous(room))
+    {
+        room_goto_previous();
+    }
+  Powyższy kod sprawdzi, czy przed bieżącym adresem room znajduje się inny, a jeśli tak, to przejdzie do tego adresu room.
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room_restart
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,69 @@
+
+  
+  physics_fixture_set_edge_shape
+  Ta funkcja definiuje kształt oprzyrządowania "krawędzi". Kształt krawędzi to po prostu linia, która wygeneruje kolizję, gdy inne elementy ją nachodzą. Może być bardzo przydatna do generowania (na przykład) terenu lub do tworzenia granic wokół room. Pozycja krawędzi jest definiowana przy użyciu przestrzeni lokalnej, tj. pozycja x/y instancji jest uważana za (0,0), więc należy to wziąć pod uwagę podczas tworzenia (w poniższym przykładzie kodu, instancja zostałaby umieszczona w (0,0) w room, aby uniknąć komplikacji).
+   
+  Składnia:
+  physics_fixture_set_edge_shape(fixture, local_x1, local_y1, local_x2, local_y2)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fixture
+        the index of the fixture
+     
+      
+        local_x1
+        start x position for the edge
+     
+      
+        local_y1
+        start y position for the edge
+     
+      
+        local_x2
+        end x position for the edge
+     
+      
+        local_y2
+        end y position for the edge
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var xx = 0;
+    var y1 = room_height - 100;
+    var y2 = room_height - 50 - irandom(100);
+    for (var i = 0; i < 10; i++;)
+    {
+        var fix = physics_fixture_create();
+        physics_fixture_set_edge_shape(fix, xx, y1, xx + 50, y2);
+        physics_fixture_bind(fix, id);
+        physics_fixture_delete(fix);
+        xx += 50;
+        y1 = y2;
+        y2 = room_height - 50 - irandom(100);
+    }
+  Powyższy kod utworzy linię opraw "krawędziowych" o różnych wysokościach na długości strony room.
+   
+   
+   
+  
+    
+      
+        Powrót: Armatura
+        Następny: physics_fixture_set_chain_shape
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

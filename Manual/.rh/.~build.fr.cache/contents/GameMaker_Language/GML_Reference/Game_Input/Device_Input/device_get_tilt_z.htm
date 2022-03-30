@@ -1,0 +1,30 @@
+
+  
+  urządzenie_get_tilt_z
+  Ta funkcja zwraca wartość z przedziału od -1 do 1 w zależności od kąta "pochylenia" urządzenia. Rzeczywista korelacja między stopniami pochylenia a zwracaną wartością zależy od urządzenia i systemu operacyjnego, z którego korzysta, ale ogólnie wartość 1 lub
+    -1 jest taka sama jak +/-90°. Na poniższym rysunku pokazano, w jaki sposób każda z dostępnych funkcji jest powiązana z urządzeniem:
+  
+  Składnia:
+  device_get_tilt_z()
+   
+  Zwroty:
+  
+   
+  Przykład:
+  y += sign(device_get_tilt_z());
+  Powyższy kod wykorzystuje wartość pochylenia do przesunięcia gracza wzdłuż osi y.
+   
+   
+   
+  
+    
+      
+        Powrót: Wejście urządzenia
+        Następny: device_mouse_check_button
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>szkielet_animacji_get_frames</title>
-  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../../../../../assets/css/default.css" type="text/css" />
   <script src="../../../../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
@@ -16,28 +16,32 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>szkielet_animacji_get_frames</h1>
-  <p>Za pomocą tej funkcji można uzyskać informację o liczbie klatek, jakie zawiera dana animacja szkieletowa. Podajesz nazwę animacji szkieletowej (w postaci <span class="notranslate">string</span>, zdefiniowaną w programie użytym do wykonania animacji lub zwróconą za pomocą funkcji     <a href="skeleton_animation_get.htm"><span class="inline">skeleton_animation_get</span></a>a funkcja zwraca liczbę klatek, które ma animacja, w postaci liczby całkowitej. Funkcja zwraca 0, jeśli podana animacja nie istnieje.</p>
+  <p>Za pomocą tej funkcji można uzyskać liczbę klatek, jakie ma dana animacja szkieletowa. Podajesz nazwę animacji szkieletowej (w postaci <span class="notranslate">string</span>, zdefiniowanej w programie użytym do stworzenia animacji lub zwróconej za pomocą funkcji <span class="inline"><a href="skeleton_animation_get.htm">skeleton_animation_get()</a></span>), a funkcja zwraca liczbę klatek, które animacja posiada, w postaci liczby całkowitej. Jeśli podana animacja nie istnieje, funkcja zwróci 0.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">skeleton_animation_get_frames(anim_name);</p>
   <table>
     <tbody>
       <tr>
-        <th>Argument</th><th>Typ</th>
+        <th>Argument</th>
+        <th>Typ</th>
         <th>Opis</th>
-     </tr>
+      </tr>
       <tr>
-        <td><span class="notranslate">anim_name</span></td><td><span data-keyref="Type_String"></span></td>
+        <td><span class="notranslate">anim_name</span></td>
+        <td><span data-keyref="Type_String"><a data-rhwidget="HyperlinkPopover" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
         <td><span class="notranslate">The animation name to get the frames of.</span></td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p> </p>
   <h4>Zwroty:</h4>
-  <p class="code"><span data-keyref="Type_Real"></span></p>
+  <p class="code"><span data-keyref="Type_Real"><a data-rhwidget="HyperlinkPopover" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></p>
   <p> </p>
   <h4>Przykład:</h4>
-  <p class="code">var num = skeleton_animation_get_frames(skeleton_animation_get());<br/> image_index = num -1;<br/> image_speed = 0;</p>
+  <p class="code">var num = skeleton_animation_get_frames(skeleton_animation_get());<br />
+    image_index = num -1;<br />
+    image_speed = 0;</p>
   <p>Powyższy kod pobierze liczbę klatek animacji, a następnie ustawi adres <span class="notranslate">sprite</span> na ostatnią klatkę i zatrzyma animację.</p>
   <p> </p>
   <p> </p>
@@ -49,7 +53,7 @@
         <div style="float:right">Następny: <a href="skeleton_animation_get_frame.htm"><span class="notranslate">skeleton_animation_get_frame</span></a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_animation_get_frames

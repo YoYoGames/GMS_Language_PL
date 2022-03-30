@@ -1,0 +1,66 @@
+
+  
+  draw_vertex_texture_colour
+  Ta funkcja określa położenie tekstury vertex dla prymitywu. Ostateczny wygląd prymitywu będzie zależał od typu prymitywu wybranego do rysowania (zobacz draw_primitive_begin() aby uzyskać więcej informacji),
+    kolejności dodawania wierzchołków, położenia punktów początkowych i końcowych, które podano dla próbki texture, oraz ustawionych wartości koloru i alfa. Aby zachować wygląd texture, zmieniając tylko alfa, można zastosować wartość
+    -1 (lub c_white) dla argumentu kolor. Aby zakończyć i narysować prymityw, należy wywołać polecenie draw_primitive_end().
+  UWAGA Aby strona texture mogła się powtarzać, jej rozmiar musi być potęgą dwójki, tzn. 32x32, 128x128 itd.
+   
+  Składnia:
+  draw_vertex_texture_colour(x, y, xtex, ytex, col, alpha)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x
+        The x coordinate of the vertex.
+     
+      
+        y
+        The y coordinate of the vertex.
+     
+      
+        xtex
+        The x coordinate within the texture.
+     
+      
+        ytex
+        The y coordinate within the texture.
+     
+      
+        col
+        The colour to blend with the texture at this vertex (-1 or c_white w przypadku braku mieszania).
+     
+      
+        alpha
+        The alpha to draw this vertex with (0-1).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_set_colour(c_white); var tex = sprite_get_texture(spr_Background, 0); draw_primitive_begin_texture(pr_trianglestrip, tex); draw_vertex_texture_colour(0, 0, 0, 0, c_fuchsia, 1); draw_vertex_texture_colour(640, 0, 1, 0, c_yellow,
+    1); draw_vertex_texture_colour(0, 480, 0, 1, c_aqua, 1); draw_vertex_texture_colour(640, 480, 1, 1, c_lime, 1); draw_primitive_end();
+  
+  Powyższy kod narysuje pasek trójkątów o szerokości 4 vertex (tworzący prostokąt) teksturowany za pomocą texture przechowywanego w zmiennej "tex", a cały texture zostanie użyty do pokrycia ukończonego prymitywu i zostanie zmieszany z czterema różnymi kolorami.
+   
+   
+   
+  
+    
+      
+        Powrót: Prymitywy i Vertex Formaty
+        Następny: vertex_format_begin
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

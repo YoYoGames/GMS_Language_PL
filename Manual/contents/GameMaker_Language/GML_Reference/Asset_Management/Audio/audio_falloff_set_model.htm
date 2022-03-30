@@ -15,7 +15,7 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>audio_falloff_set_model</h1>
-  <p>Aby zapewnić większą wszechstronność silnika dźwiękowego, na stronie <span class="notranslate">GameMaker Studio 2</span> można wybrać model obniżania częstotliwości, który będzie odpowiedni dla danej gry. Model ten będzie używany we <b>wszystkich</b> funkcjach dźwiękowych w grze lub aplikacji, dlatego należy upewnić się, że wybrany model jest właściwy, ponieważ każdy z nich będzie miał wpływ na to, jak słuchacze odbierają dźwięki odtwarzane przez emitery lub za pomocą funkcji <span class="inline"><a href="audio_play_sound_at.htm">audio_play_sound_at()</a></span>.</p>
+  <p>Aby zwiększyć wszechstronność silnika audio, w programie <span data-keyref="GameMaker Name">GameMaker</span> można wybrać model obniżania częstotliwości, który będzie odpowiedni dla danej gry. Model ten będzie używany we <b>wszystkich</b> funkcjach audio w grze lub aplikacji, dlatego należy upewnić się, że wybrany model jest właściwy, ponieważ każdy z nich będzie miał wpływ na to, jak słuchacz odbiera dźwięki odtwarzane przez emitery lub za pomocą funkcji <span class="inline"><a href="audio_play_sound_at.htm">audio_play_sound_at()</a></span>.</p>
   <p>Domyślnym modelem obniżania jakości jest <span class="inline">audio_falloff_none</span>, co oznacza, że nie występuje obniżanie jakości podczas korzystania z emiterów lub pozycjonowanego dźwięku, chyba że zostanie zmieniony model obniżania jakości.</p>
   <h2>Modele odpadania</h2>
   <p>Podczas odtwarzania dźwięku przez stronę <span class="inline"><a href="audio_play_sound_at.htm">audio_play_sound_at()</a></span> lub ustawiania <a href="Audio_Emitters/audio_emitter_falloff.htm">obniżenia poziomu dźwięku dla emitera</a> należy ustawić trzy argumenty, a każdy z nich jest odpowiedni dla konkretnego modelu i wpływa na sposób, w jaki końcowy dźwięk jest słyszany przez gracza, w zależności od odległości słuchacza od źródła. Te trzy argumenty to:</p>
@@ -24,7 +24,7 @@
     <li><b>Maksymalna odległość</b>: określa odległość, w której nie będzie już występować żadne tłumienie dźwięku źródłowego. Może to być punkt, w którym dźwięk przestaje być słyszalny <i>lub</i> punkt, w którym głośność dźwięku nie spada poniżej minimalnego progu określonego przez wybrany model.<b></b></li>
     <li><b>Współczynnik</b> dezadaptacji: Współczynnik zanikania jest stosowany w tłumieniu odległości na podstawie modelu odwrotności odległości i określa ostateczny minimalny próg dla dźwięku z zanikaniem.</li>
   </ul>
-  <p>Modele obniżania rozdzielczości, na które wpływają te argumenty, są reprezentowane w GameMaker Studio 2 przez następujące stałe (w tabeli podano także dokładne obliczenia):</p>
+  <p>Modele falloff, na które wpływają te argumenty, są reprezentowane w <span data-keyref="GameMaker Name">GameMakerze</span> przez następujące stałe (w tabeli podano także dokładne obliczenia):</p>
   <table>
     <colgroup>
       <col />
@@ -36,7 +36,7 @@
       </tr>
       <tr>
         <th>Stała</th>
-        <th>Funkcja</th>
+        <th>Obliczanie wzmocnienia</th>
       </tr>
       <tr>
         <td><span class="notranslate"><span class="inline">audio_falloff_exponent_distance</span></td>
@@ -50,6 +50,13 @@
             gain = (distance / reference_distance) ^ (-falloff_factor)</span></td>
       </tr>
       <tr>
+        <td><span class="notranslate"><span class="inline">audio_falloff_exponent_distance_scaled</span></td>
+        <td><span class="inline"><br />
+            distance = clamp(listener_distance, reference_distance, maximum_distance)<br />
+            <br />
+            gain = ((distance / reference_distance) ^ (-falloff_factor)) * (((maximum_distance - distance) / (maximum_distance - reference_distance)) ^ (distance / maximum_distance))</span></td>
+      </tr>
+      <tr>
         <td><span class="notranslate"><span class="inline">audio_falloff_inverse_distance</span></td>
         <td><span class="inline"><br />
             gain = reference_distance / (reference_distance + falloff_factor * (listener_distance - reference_distance))</span></td>
@@ -59,6 +66,13 @@
         <td><span class="inline"><br />
             distance = clamp(listener_distance, reference_distance, maximum_distance)<br />
             gain = reference_distance / (reference_distance + falloff_factor * (distance - reference_distance))</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate"><span class="inline">audio_falloff_inverse_distance_scaled</span></td>
+        <td><span class="inline"><br />
+            distance = clamp(listener_distance, reference_distance, maximum_distance)<br />
+            <br />
+            gain = (reference_distance / (reference_distance + falloff_factor * (distance - reference_distance))) * (((maximum_distance - distance) / (maximum_distance - reference_distance)) ^ (distance / maximum_distance))</span></td>
       </tr>
       <tr>
         <td><span class="notranslate"><span class="inline">audio_falloff_linear_distance</span></td>
@@ -79,8 +93,8 @@
       </tr>
     </tbody>
   </table>
-  <p><br>
-    Poniższe wykresy są wizualną prezentacją działania powyższych stałych i ich wpływu na odtwarzany dźwięk:</p>
+  <p>Modele &quot;<span class="inline">_scaled</span>&quot; są wyskalowane w taki sposób, że dźwięki są gwarantowane, że całkowicie odpadną w maksymalnej odległości.</p>
+  <p>Poniższe wykresy są wizualną prezentacją działania niektórych z powyższych stałych i ich wpływu na odtwarzany dźwięk:</p>
   <p><img alt="Distance Model Examples" class="center" src="../../../../assets/Images/Scripting_Reference/GML/Reference/Audio/Distance_Models.png" /></p>
   <p> </p>
   <h4>Składnia:</h4>

@@ -1,0 +1,54 @@
+
+  
+  matrix_build_projection_perspective_fov
+  Ta funkcja tworzy macierz rzutu perspektywicznego na podstawie pola widzenia, używając określonych parametrów wymienionych poniżej.
+   
+  Składnia:
+  matrix_build_projection_perspective_fov(fov_y, aspect, znear, zfar);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fov
+        The angle of the field of view.
+     
+      
+        aspect
+        The aspect ratio of the field of view.
+     
+      
+        znear
+        The near clipping plane.
+     
+      
+        zfar
+        The far clipping plane.
+     
+    
+  
+   
+  Zwroty:
+  Matrix Array
+   
+  Przykład:
+  projmat = matrix_build_projection_perspective_fov(60, 320/240, 1.0, 32000.0);
+    camera_set_proj_mat(view_camera[0], projmat);
+  Powyższy kod tworzy macierz rzutowania pola widzenia, która jest następnie przechowywana w zmiennej. Macierz ta jest następnie używana do ustawienia kamery przypisanej do portu widokowego[0].
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje matrycy
+        Następny: matrix_transform_vertex
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

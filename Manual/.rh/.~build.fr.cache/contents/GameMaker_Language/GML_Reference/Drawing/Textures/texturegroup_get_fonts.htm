@@ -1,0 +1,47 @@
+
+  
+  texturegroup_get_fonts
+  Za pomocą tej funkcji można uzyskać indeks font każdego z zasobów fonts przypisanych do stron texture w ramach danej grupy texture. Podajesz identyfikator grupy texture string (zdefiniowany w edytorze grup texture ), a funkcja zwróci tablicę 1D, w której każdy wpis zawiera indeks font dla zasobu font. Jeśli funkcja się nie powiedzie, tzn. zostanie podana nieprawidłowa grupa lub grupa nie ma przypisanego adresu texture, tablica będzie pusta (0 długości).
+   
+  Składnia:
+  texturegroup_get_fonts(tex_id);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tex
+        String
+        The name of the texture group to check (a string)
+      
+    
+  
+   
+  Zwroty:
+  Array
+   
+  Przykład:
+  var _tex_array = texturegroup_get_fonts( "MainMenu");
+    for (var i = 0; i < array_length(_tex_array); ++i;)
+    {
+        show_debug_message("Font " + string(i) + " Index:" + string(tex_array[i]));
+    }
+  Powyższy kod pobierze indeksy font dla grupy texture "MainMenu", a następnie wyświetli te identyfikatory w oknie wyjściowym konsoli.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekstury
+        Następny: texturegroup_get_tilesets
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

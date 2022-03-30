@@ -1,0 +1,53 @@
+
+  
+   Jeśli przycisk Gamepad wciśnięty
+  Za pomocą tej akcji można sprawdzać na gamepadzie, czy dany przycisk jest aktualnie przytrzymywany. Akcja zwróci true w każdym kroku, w którym przycisk jest przytrzymany, lub false w przeciwnym razie, choć jeśli klikniesz modyfikator not 
+    można wtedy sprawdzić, czy przycisk nie jest przytrzymywany, tzn. akcja zwróci true, jeśli żaden przycisk nie jest przytrzymywany, i false, jeśli jest. Jeśli chcesz sprawdzić, czy naciśnięto tylko jeden przycisk, użyj akcji If Gamepad Button Pressed.
+  Jeśli sprawdzany przycisk jest przyciskiem analogowym, nie będzie on uznawany za przytrzymany, dopóki wartość przycisku nie przekroczy progu ustawionego za pomocą akcji Ustaw próg przycisku gamepada.
+  Należy pamiętać, że aby dodać akcje do bloku "jeśli", należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:
+  Te działania zostaną teraz wykonane, jeśli wartość "if" będzie równa true,
+    podczas gdy wszelkie działania upuszczone w innym miejscu zostaną wykonane po bloku "if".
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Gamepad
+        Indeks gamepada.
+      
+      
+        Button
+        Nazwa przycisku, który ma być sprawdzany.
+      
+      
+        Not
+        Negacja sprawdzenia (prawda staje się fałszem i odwrotnie)
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji co krok sprawdza stan przycisków na gamepadzie 0 i jeśli
+    przycisk jest przytrzymywany, sprawdza, czy przycisk został naciśnięty po raz pierwszy. Jeśli sprawdzane jest true początkowe naciśnięcie przycisku, odtwarzany jest dźwięk, a następnie, gdy przycisk jest przytrzymany, prędkość instancji jest ustawiana na 10. Jeśli przycisk nie jest
+    wciśnięty, po zwolnieniu przycisku sprawdzana jest prędkość, aby ponownie ustawić ją na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Czynności gamepada
+        Następny: Jeśli przycisk gamepada zostanie zwolniony
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

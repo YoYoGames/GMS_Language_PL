@@ -1,0 +1,80 @@
+
+  
+  gpu_set_blendmode
+  Gdy w witrynie GameMaker Studio 2 chcemy narysować piksel, mamy do dyspozycji kolor źródłowy (kolor piksela, który chcemy narysować) i kolor docelowy (kolor, który już znajduje się w pikselu, do którego chcemy narysować), dlatego podczas określania nowego koloru piksela kolory źródłowy i docelowy są obliczane zgodnie z wybranym trybem mieszania. Każdy składnik kolorów jest przechowywany jako wartość zmiennoprzecinkowa z zakresu od 0 do 1, a nowy kolor jest obliczany przez pomnożenie każdego składnika koloru źródłowego przez pewien współczynnik oraz przez pomnożenie każdego składnika koloru docelowego przez inny współczynnik, a następnie zsumowanie wyników składnik po składniku.
+  Ta funkcja umożliwia ustawienie trybu mieszania na cztery podstawowe sposoby przy użyciu następujących stałych:
+  
+    
+      
+        Stała
+        Opis
+        Rozszerzony tryb mieszania
+      
+      
+        bm_normal
+        Normalne mieszanie (domyślny tryb mieszania).
+        (bm_src_alpha, bm_inv_src_alpha)
+      
+      
+        bm_add
+        Mieszanie addytywne. Wartości jasności jasnych obszarów są dodawane.
+        (bm_src_alpha, bm_one)
+      
+      
+        bm_subtract
+        Mieszanie subtrakcyjne. Wartości jasności jasnych obszarów są odejmowane.
+        (bm_zero, bm_inv_src_colour)
+      
+      
+        bm_max
+        Mieszanie maksymalne. Podobne do mieszania addytywnego.
+        (bm_src_alpha, bm_inv_src_colour)
+      
+    
+  
+  Jak widać w powyższej tabeli, te cztery tryby mieszania są tak naprawdę kompozycjami rozszerzonych trybów mieszania, które można znaleźć na stronie opisującej gpu_set_blendmode_ext().
+  Aby w pełni wykorzystać możliwości trybów mieszania oraz zrozumieć ich działanie i wpływ na ostateczny obraz rysowany na ekranie, zalecamy zapoznanie się z poniższym przewodnikiem:
+  
+    Przewodnik korzystania z Blendmodes
+  
+   
+  Składnia:
+  gpu_set_blendmode(mode);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        mode
+        Tryb mieszania Stała
+        The blend mode to use (see the table above)
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  gpu_set_blendmode(bm_add);
+    draw_circle_colour(100, 100, 50, c_white, c_black, 0);
+    gpu_set_blendmode(bm_normal);
+  Spowoduje to przekształcenie czerni w przezroczystość, tworząc efekt "poświaty", ponieważ biel jest silna na zewnątrz i stopniowo słabnie od środka okręgu. Tryb mieszania jest resetowany po narysowaniu okręgu, aby zapewnić, że mieszanie addytywne nie zostanie zastosowane również do wszystkich innych elementów znajdujących się za nim.
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_set_blendmode_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

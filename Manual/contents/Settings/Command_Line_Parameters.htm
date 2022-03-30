@@ -1,78 +1,86 @@
-<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Parametry wiersza poleceń</title>
-  <meta name="generator" content="Adobe RoboHelp 2020" />
-  <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
-  <script src="../assets/scripts/main_script.js"></script>
-  <meta name="rh-authors" content="Mark Alexander" />
-  <meta name="topic-comment" content="Page that explains how to use Command Line Parameters when running your game" />
-  <meta name="rh-index-keywords" content="Command Line Parameters" />
-  <meta name="search-keywords" content="command line,AB testing,command line parameters" />
-</head>
-<body>
-  <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>Parametry wiersza poleceń</h1>
-  <p>Podczas tworzenia gier ważne jest, aby przetestować plik wykonywalny, aby upewnić się, że ostateczna kompilacja jest poprawna i nie zawiera nieprzewidzianych błędów lub różnic. Jednak tworzenie pliku wykonywalnego oznacza, że ponieważ nie masz dostępu do konsoli debugowania ani do okna kompilatora, może być trudno wykryć i usunąć ewentualne problemy. Można to jednak naprawić, używając <strong>parametrów wiersza poleceń</strong> do ustawiania pewnych właściwości podczas uruchamiania wersji wykonywalnej gry, co z kolei pozwala na tworzenie plików dziennika wyjściowego i testowanie innych specjalnych sytuacji.</p>
-  <p class="note"><span class="note"><strong>UWAGA</strong></span> Ta funkcja jest dostępna <strong>tylko</strong> w standardowym module docelowym systemu <strong>Windows </strong>.</p>
-  <p>Aby to zadziałało, musisz najpierw utworzyć plik wykonywalny <span class="notranslate">Windows</span> swojej gry i zainstalować go na komputerze testowym. Po wykonaniu tych czynności należy utworzyć <em>skrót </em>do gry na pulpicie. To właśnie tam będziemy dodawać parametry, które mają być przekazywane do <span class="inline">*.exe</span> (aby utworzyć skrót, kliknij prawym przyciskiem myszy <img> plik wykonywalny gry, a następnie wybierz polecenie <em>Wyślij</em> na &gt; <em>Pulpit (utwórz skrót)</em>) .</p>
-  <p>Po utworzeniu skrótu można użyć dowolnego z poniższych parametrów w ścieżce docelowej:</p>
-  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-noaudio</span>: Powoduje wyłączenie wszystkich dźwięków w grze.</p>
-  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-inawindow</span>: Wymusza uruchamianie gry w oknie, nawet jeśli jest ona ustawiona na tryb pełnoekranowy.</p>
-  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-output &lt;<em>filename</em>&gt;</span>: Wysyła dane wyjściowe konsoli do pliku o tej samej nazwie, w tym wszelkie komunikaty debugowania, które znajdują się w bazie kodu.</p>
-  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-debugoutput &lt;<em>filename</em>&gt;</span>: Wysyła dane wyjściowe konsoli do pliku o podanej nazwie, z pominięciem własnych komunikatów debugowania, ale z uwzględnieniem dodatkowych informacji z runnera w celu zgłaszania błędów.</p>
-  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-software</span>: Zmusi grę do użycia oprogramowania <span class="notranslate">Vertex</span> Processing zamiast sprzętu do renderowania grafiki w grze. Jest to szczególnie przydatne w przypadku komputerów, które korzystają z wbudowanego chipsetu Intel GFX lub mają problemy z wyświetlaniem grafiki na starszych komputerach.</p>
-  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-intel</span>: Ta strona <span class="notranslate">switch</span> zawiera poprawkę dla wadliwych sterowników Intela, niezależnie od używanej karty graficznej. To obejście dla tych złych sterowników spowolni działanie gry, dając zauważalny spadek wydajności w grze, więc jeśli nie potrzebujesz tej poprawki, nie używaj jej.</p>
-  <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-vanillaGFX</span>: Użycie tej opcji wyłącza sprawdzanie producenta sterownika i może być bardzo przydatne do testowania gry &quot;w stanie, w jakim się znajduje&quot;.</p>
-  <p>Warto zauważyć, że adres <span class="inline">&lt;<em>filename</em>&gt;</span> w adresach <span class="inline">-output</span> i <span class="inline">-debugoutput</span> może być taki sam, ponieważ plik jest otwierany i zamykany przy każdym zapisie.</p>
-  <p>Powinieneś teraz przejść do miejsca, w którym utworzyłeś skrót do pliku wykonywalnego gry, a następnie kliknąć go prawym przyciskiem myszy i wybrać opcję Właściwości.</p>
-  <p><img>Spowoduje to otwarcie okna podobnego do powyższego. W tym miejscu można dodać do adresu <strong>docelowego</strong> <span class="notranslate">path</span> swój wiersz poleceń. Wystarczy przewinąć do końca podanego adresu <span class="notranslate">path</span>, dodać spację, a następnie parametr <span class="notranslate">string</span>. Tak więc na przykład, aby utworzyć plik wyjściowy pliku debugowania, należałoby wprowadzić coś takiego:</p>
-  <p class="code">D:\Users\Me\GameMaker\CustomLoadBar-Default-1.0.0.0\CustomLoadBar.exe -debugoutput debug.txt</p>
-  <p>Spowoduje to utworzenie pliku o nazwie &quot;<span class="inline">debug.txt</span>&quot; w tej samej lokalizacji co plik wykonywalny (nie w miejscu, w którym znajduje się skrót, lecz tam, gdzie zainstalowana jest gra), zawierającego informacje o debugowaniu i kompilacji Twojej gotowej gry. Kliknij przycisk &quot;OK&quot;, a następnie użyj skrótu do uruchomienia gry, aby wykorzystać te parametry i pomoc z <span class="notranslate">debugging</span>.</p>
-  <p>Więcej informacji na temat debugowania gry można znaleźć w rozdziale instrukcji zatytułowanym <a href="../Introduction/Debugging.htm">Debugowanie</a>.</p>
-  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Testy A/B z wykorzystaniem wiersza poleceń</a></p>
-  <div class="droptext" data-targetname="drop-down">
-    <p class="dropspot">Program uruchamiający <span class="notranslate">YoYo</span> korzysta również ze specjalnego parametru wiersza poleceń:</p>
-    <p class="dropspot" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 5em"><span class="inline">-game &lt;<em>filename</em>&gt;</span>: ładuje podany plik gry<br></p>
-    <p class="dropspot">Dlaczego warto tego używać? Cóż, normalnie byś tego nie zrobił, ale jeśli chcesz mieć więcej niż jedną wersję gry uruchomioną w tym samym czasie, możesz to zrobić za pomocą tej metody, co znacznie ułatwi Ci testy porównawcze A/B. Dzięki tej metodzie możesz przeprowadzać testy focusowe z kimś
-      lub, jako projektant, uzyskać lepsze wyczucie sytuacji, przeprowadzając testy obok siebie.</p>
-    <p class="dropspot">Aby to skonfigurować, trzeba wcześniej wiedzieć kilka rzeczy. Na początek potrzebny będzie adres <span class="notranslate">path</span> do samego programu Runner. Można go znaleźć w folderze <strong>Program Data</strong> systemu operacyjnego <span class="notranslate">Windows</span> (może on być domyślnie ukryty, więc aby go zobaczyć, należy
-      aby go zobaczyć, należy zmienić właściwości przeglądania), w typowym formacie, jak poniżej:<br><br></p>
-    <p class="code">C:\ProgramData\GameMakerStudio2\Cache\runtimes\&lt;runtime_version&gt;\windows\Runner.exe<br /></p>
-    <p class="dropspot">Należy pamiętać, że folder runtime_version będzie zależał od aktualnie zainstalowanego <span class="notranslate">runtimes</span>. Potrzebne będą również pliki <span class="notranslate">path</span> do <span class="inline">&lt;<em>yourgame</em>&gt;.win</span>, ponieważ to właśnie na nie będziemy kierować runnera.
-      Najprostszym sposobem znalezienia tego pliku jest przejście do folderu <strong>Temp </strong>(zazwyczaj znajdującego się pod adresem <span class="inline">%localappdata%\Temp\GameMakerStudio\&lt;game_name&gt;\</span>) i wyszukanie <span class="inline">*.win</span>, ponieważ w ten sposób
-      wyświetli wszystkie dostępne pliki i można po prostu wybrać ten, z którego chcemy pobrać pełny <span class="notranslate">path</span>.</p>
-    <p class="dropspot">Moglibyśmy utworzyć skrót do runnera, tak jak to zrobiliśmy dla pliku wykonywalnego, a następnie zmieniać parametry w razie potrzeby, ale to oznacza konieczność otwierania i edytowania go między testami, co mija się z celem używania tej funkcjonalności do przeprowadzania
-      testowania. Zamiast tego utworzymy kilka małych plików &quot;wsadowych&quot;, które będą to obsługiwać.</p>
-    <p class="dropspot">W tym celu najpierw utwórz nowy dokument tekstowy na pulpicie i otwórz go w Notatniku (lub innym edytorze tekstu). Dodaj następujące elementy:<br><br></p>
-    <p class="code">START C:\ProgramData\GameMakerStudio2\Cache\runtimes\&lt;runtime_version&gt;\windows\Runner.exe -game &lt;LOCAL TEMP PATH&gt;\&lt;GAMENAME&gt;.win<br /></p>
-    <p class="dropspot">Musisz ustawić plik tymczasowy <span class="notranslate">path</span> jako wskazujący na plik <span class="inline">*.win</span>, a następnie zapisać go jako &quot;<span class="inline">GM_Test_1.bat</span>&quot; na pulpicie (pamiętaj, że Notatnik automatycznie zapisze plik jako <span class="inline">*.txt</span>, chyba że wybierzesz opcję &quot;wszystkie pliki&quot; w oknie dialogowym zapisu). Przykładowe polecenie końcowe może wyglądać następująco:<br></p>
-    <p class="code">START C:\ProgramData\GameMakerStudio2\Cache\runtimes\runtime-9.9.1.199\windows\Runner.exe -game D:\Users\Mark\AppData\Local\Temp\GameMakerStudio2\AlphaDog_Reboot\AlphaDog_Reboot.win<br /></p>
-    <p class="dropspot">Teraz utwórz kolejny plik tekstowy i dodaj ten sam wiersz, tylko tym razem wskaż w nim adres <span class="notranslate">path</span> dla drugiej wersji gry, z którą chcesz przeprowadzić testy side-by-side, i zapisz go jako &quot;<span class="inline">GM_Test_2.bat</span>&quot;.
-      Możesz dwukrotnie kliknąć <img>, aby wyświetlić różne wersje gry, a
-      Dzięki temu, że są to pliki wsadowe, możesz je łatwo otworzyć ponownie, aby je edytować i zmienić testowaną grę.</p>
-    <p class="dropspot"><br /></p>
-    <p class="dropspot"></p>
-  </div>
-  <p> </p>
-  <p> </p>
-  <div class="footer">
-    <div class="buttons">
-      <div class="clear">
-        <div style="float:left">Powrót: <a data-xref="{title}" href="Runner_Details/Runner_Details.htm">Biegacz i kompilator</a></div>
-        <div style="float:right">Następny: <a data-xref="{title}" href="../The_Asset_Editors/The_Asset_Editors.htm">Redakcja <span class="notranslate">Asset</span> </a></div>
-      </div>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Parametry wiersza poleceń</title>
+    <meta name="generator" content="Adobe RoboHelp 2020" />
+    <link rel="stylesheet" href="../assets/css/default.css" type="text/css" />
+    <script src="../assets/scripts/main_script.js"></script>
+    <meta name="rh-authors" content="Mark Alexander" />
+    <meta name="topic-comment" content="Page that explains how to use Command Line Parameters when running your game" />
+    <meta name="rh-index-keywords" content="Command Line Parameters" />
+    <meta name="search-keywords" content="command line,AB testing,command line parameters" />
+  </head>
+  <body><!--<div class="body-scroll" style="top: 150px;">-->
+    <h1>Parametry wiersza poleceń</h1>
+    <p>Podczas tworzenia gier ważne jest, aby przetestować plik wykonywalny, aby upewnić się, że ostateczna kompilacja jest poprawna i nie zawiera nieprzewidzianych błędów lub różnic. Jednak tworzenie pliku wykonywalnego oznacza, że ponieważ nie masz dostępu do konsoli debugowania ani do okna kompilatora, może być trudno wykryć i usunąć ewentualne problemy. Można to jednak rozwiązać, używając <strong>parametrów wiersza poleceń</strong> do ustawiania pewnych właściwości podczas uruchamiania wersji wykonywalnej gry, co z kolei pozwala na tworzenie plików dziennika wyjściowego i testowanie innych specjalnych sytuacji.</p>
+    <p class="note"><span class="note"><strong>UWAGA</strong></span> Ta funkcja jest dostępna <strong>tylko</strong> w standardowym module docelowym systemu <strong>Windows </strong>.</p>
+    <p>Aby to zadziałało, musisz najpierw utworzyć plik wykonywalny <span class="notranslate">Windows</span> swojej gry i zainstalować go na komputerze testowym. Po wykonaniu tych czynności należy utworzyć <em>skrót </em>do gry na pulpicie. To właśnie tam będziemy dodawać parametry, które mają być przekazywane do <span class="inline">*.exe</span> (aby utworzyć skrót, kliknij prawym przyciskiem myszy <img> plik wykonywalny gry, a następnie wybierz polecenie <em>Wyślij</em> na &gt; <em>Pulpit (utwórz skrót)</em>) .</p>
+    <p>Po utworzeniu skrótu można użyć dowolnego z poniższych parametrów w ścieżce docelowej:</p>
+    <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-noaudio</span>: Powoduje wyłączenie wszystkich dźwięków w grze.</p>
+    <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-inawindow</span>: Wymusza uruchamianie gry w oknie, nawet jeśli jest ona ustawiona na tryb pełnoekranowy.</p>
+    <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-output &lt;<em>filename</em>&gt;</span>: Wysyła dane wyjściowe konsoli do pliku o tej samej nazwie, w tym wszelkie komunikaty debugowania, które znajdują się w bazie kodu.</p>
+    <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-debugoutput &lt;<em>filename</em>&gt;</span>: Wysyła dane wyjściowe konsoli do pliku o podanej nazwie, z pominięciem własnych komunikatów debugowania, ale z uwzględnieniem dodatkowych informacji z runnera w celu zgłaszania błędów.</p>
+    <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-software</span>: Zmusi grę do użycia oprogramowania <span class="notranslate">Vertex</span> Processing zamiast sprzętu do renderowania grafiki w grze. Jest to szczególnie przydatne w przypadku komputerów, które korzystają z wbudowanego chipsetu Intel GFX lub mają problemy z wyświetlaniem grafiki na starszych komputerach.</p>
+    <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-intel</span>: Ta strona <span class="notranslate">switch</span> zawiera poprawkę dla wadliwych sterowników Intela, niezależnie od używanej karty graficznej. To obejście dla tych złych sterowników spowolni działanie gry, dając zauważalny spadek wydajności w grze, więc jeśli nie potrzebujesz tej poprawki, nie używaj jej.</p>
+    <p style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 3em"><span class="inline">-vanillaGFX</span>: Użycie tej opcji wyłącza sprawdzanie producenta sterownika i może być bardzo przydatne do testowania gry &quot;w stanie, w jakim się znajduje&quot;.</p>
+    <p>Warto zauważyć, że adres <span class="inline">&lt;<em>filename</em>&gt;</span> w adresach <span class="inline">-output</span> i <span class="inline">-debugoutput</span> może być taki sam, ponieważ plik jest otwierany i zamykany przy każdym zapisie.</p>
+    <p>Powinieneś teraz przejść do miejsca, w którym utworzyłeś skrót do pliku wykonywalnego gry, a następnie kliknąć go prawym przyciskiem myszy i wybrać opcję Właściwości.</p>
+    <p><img>Spowoduje to otwarcie okna podobnego do powyższego. W tym miejscu można dodać do adresu <strong>docelowego</strong> <span class="notranslate">path</span> swój wiersz poleceń. Wystarczy przewinąć do końca podanego adresu <span class="notranslate">path</span>, dodać spację, a następnie parametr <span class="notranslate">string</span>. Tak więc na przykład, aby utworzyć plik wyjściowy pliku debugowania, należy wprowadzić coś takiego:</p>
+    <p class="code">D:\Users\Me\GameMaker\CustomLoadBar-Default-1.0.0.0\CustomLoadBar.exe -debugoutput debug.txt</p>
+    <p>Spowoduje to utworzenie pliku o nazwie &quot;<span class="inline">debug.txt</span>&quot; w tej samej lokalizacji co plik wykonywalny (nie w miejscu, w którym znajduje się skrót, lecz tam, gdzie zainstalowana jest gra), zawierającego informacje o debugowaniu i kompilacji Twojej gotowej gry. Kliknij przycisk &quot;OK&quot;, a następnie użyj skrótu do uruchomienia gry, aby wykorzystać te parametry i pomoc z <span class="notranslate">debugging</span>.</p>
+    <p>Więcej informacji na temat debugowania gry można znaleźć w rozdziale instrukcji zatytułowanym <a href="../Introduction/Debugging.htm">Debugowanie</a>.</p>
+    <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Testy A/B z wykorzystaniem wiersza poleceń</a></p>
+    <div class="droptext" data-targetname="drop-down">
+      <p class="dropspot">Program uruchamiający <span class="notranslate">YoYo</span> korzysta również ze specjalnego parametru wiersza poleceń:</p>
+      <p class="dropspot" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 5em"><span class="inline">-game &lt;<em>filename</em>&gt;</span>: ładuje podany plik gry
+        <br>
+      </p>
+      <p class="dropspot">Dlaczego warto tego używać? Normalnie nie, ale jeśli chcesz mieć więcej niż jedną wersję gry uruchomioną w tym samym czasie, możesz to zrobić za pomocą tej metody, dzięki czemu testy porównawcze A/B staną się o wiele łatwiejsze. Dzięki tej metodzie możesz przeprowadzać testy focusowe z kimś innym lub, jako projektant, lepiej wyczuć sytuację, przeprowadzając testy obok siebie.</p>
+      <p class="dropspot">Aby to skonfigurować, trzeba wcześniej wiedzieć kilka rzeczy. Na początek potrzebny będzie adres <span class="notranslate">path</span> do samego programu Runner. Można go znaleźć w folderze <strong>Program Data</strong> systemu operacyjnego <span class="notranslate">Windows</span> (może być domyślnie ukryty, więc aby go zobaczyć, należy zmienić właściwości przeglądania), w typowym formacie, jak poniżej:
+        <br>
+        <br>
+      </p>
+      <p class="code">C:\ProgramData\GameMaker\Cache\runtimes\&lt;runtime_version&gt;\windows\Runner.exe
+        <br/>
+      </p>
+      <p class="dropspot">Należy pamiętać, że folder runtime_version będzie zależał od aktualnie zainstalowanego <span class="notranslate">runtimes</span>. Potrzebne będą również pliki <span class="notranslate">path</span> do <span class="inline">&lt;<em>yourgame</em>&gt;.win</span>, ponieważ to właśnie na nie będziemy kierować runnera. Najprostszym sposobem znalezienia tego pliku jest przejście do folderu <strong>Temp </strong>(zwykle znajdującego się pod adresem <span class="inline">%localappdata%\Temp\GameMakerStudio\&lt;game_name&gt;\</span>) i wyszukanie <span class="inline">*.win</span>, co spowoduje wyświetlenie wszystkich dostępnych plików i wybranie tego, z którego chcemy pobrać pełny plik <span class="notranslate">path</span>.</p>
+      <p class="dropspot">Moglibyśmy utworzyć skrót do runnera, tak jak to zrobiliśmy dla pliku wykonywalnego, i zmieniać parametry w razie potrzeby, ale to oznacza konieczność otwierania i edytowania go między testami, co mija się z celem używania tej funkcji do testowania side-by-side. Zamiast tego utworzymy kilka małych plików &quot;wsadowych&quot;, które będą to obsługiwać.</p>
+      <p class="dropspot">W tym celu najpierw utwórz nowy dokument tekstowy na pulpicie i otwórz go w Notatniku (lub innym edytorze tekstu). Dodaj następujące elementy:
+        <br>
+        <br>
+      </p>
+      <p class="code">START C:\ProgramData\GameMaker\Cache\runtimes\&lt;runtime_version&gt;\windows\Runner.exe -game &lt;LOCAL TEMP PATH&gt;\&lt;GAMENAME&gt;.win
+        <br/>
+      </p>
+      <p class="dropspot">Musisz ustawić plik tymczasowy <span class="notranslate">path</span> jako wskazujący na plik <span class="inline">*.win</span>, a następnie zapisać go jako &quot;<span class="inline">GM_Test_1.bat</span>&quot; na pulpicie (pamiętaj, że Notatnik automatycznie zapisze plik jako <span class="inline">*.txt</span>, chyba że wybierzesz opcję &quot;wszystkie pliki&quot; w oknie dialogowym zapisywania). Przykładowe polecenie końcowe może wyglądać następująco:
+        <br>
+      </p>
+      <p class="code">START C:\ProgramData\GameMaker\Cache\runtimes\runtime-9.9.1.199\windows\Runner.exe -game D:\Users\Mark\AppData\Local\Temp\GameMaker\AlphaDog_Reboot\AlphaDog_Reboot.win
+        <br/>
+      </p>
+      <p class="dropspot">Teraz utwórz kolejny plik tekstowy i dodaj tę samą linię, tylko tym razem wskaż w nim adres <span class="notranslate">path</span> dla drugiej wersji gry, z którą chcesz przeprowadzić testy side-by-side, i zapisz go jako &quot;<span class="inline">GM_Test_2.bat</span>&quot;. Możesz dwukrotnie kliknąć <img>, aby wyświetlić różne wersje gry, a dzięki temu, że są to pliki wsadowe, możesz je łatwo otworzyć ponownie, aby je edytować i zmienić testowaną grę.</p>
+      <p class="dropspot">
+        <br />
+      </p>
+      <p class="dropspot"></p>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
-  </div>
-  <!-- KEYWORDS
+    <p> </p>
+    <p> </p>
+    <div class="footer">
+      <div class="buttons">
+        <div class="clear">
+          <div style="float:left">Powrót: <a data-xref="{title}" href="Runner_Details/Runner_Details.htm">Biegacz i kompilator</a></div>
+          <div style="float:right">Następny: <a data-xref="{title}" href="../The_Asset_Editors/The_Asset_Editors.htm">Redakcja <span class="notranslate">Asset</span> </a></div>
+        </div>
+      </div>
+      <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    </div>
+    <!-- KEYWORDS
 Command Line Pararmeters
 A/B Testing
--->
-  <!-- TAGS
+--><!-- TAGS
 command_line_params
--->
-</body>
+--></body>
 </html>

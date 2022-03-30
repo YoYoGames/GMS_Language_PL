@@ -1,0 +1,50 @@
+
+  
+  urządzenie_mouse_check_button
+  Ta funkcja zwraca true lub false w zależności od tego, czy podany przycisk myszy jest przytrzymany na danym urządzeniu. Jako przycisk myszy można podać jedną ze stałych wymienionych na tej stronie.
+  Funkcji tej można używać w przypadku ekranów dotykowych, a argumentem urządzenia może być liczba od 0 do n, gdzie n to maksymalna liczba "palców", które mogą jednocześnie dotykać ekranu (maksymalna liczba dotknięć, które można
+    może zostać wykryta, zależy w dużej mierze od używanego urządzenia i systemu operacyjnego, na którym działa, ale większość urządzeń powinna wykrywać co najmniej do 4). Należy pamiętać, że witryna mb_right będzie wykrywana tylko w przypadku wykrycia dwukrotnego dotknięcia (zachowanie to można wyłączyć za pomocą
+    funkcji device_mouse_dbclick_enable()).
+   
+  Składnia:
+  device_mouse_check_button(device, button);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        device
+        The device (from 0 - n) that is being checked
+     
+      
+        button
+        The button of the device that is being checked.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if device_mouse_check_button(0, mb_left) && device_mouse_check_button(1, mb_left) {
+         room_goto(rm_Menu); }
+  
+  Powyższy kod sprawdza, czy dwa dotknięcia są przytrzymywane w tym samym czasie, a jeśli tak, to przechodzi do innej strony room.
+   
+   
+   
+  
+    
+      
+        Powrót: Wejście urządzenia
+        Następny: device_mouse_check_button_pressed
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

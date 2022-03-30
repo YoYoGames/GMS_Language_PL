@@ -1,0 +1,57 @@
+
+
+
+
+
+  
+  lerp
+  Za pomocą tej funkcji można znaleźć wartość, która odpowiada pozycji między dwiema innymi wartościami dla danego procentu. Jeśli więc na przykład:
+  lerp(0, 10, 0.5)
+  otrzymasz wartość zwracaną 5, która stanowi 50% wartości wejściowych. Za pomocą tej funkcji można również dokonywać ekstrapolacji, podając dodatnią lub ujemną wartość kwoty interpolacji, dzięki czemu można wykonać coś takiego jak:
+  lerp(0, 10, 2)
+  zwróci wartość 20.
+   
+  Składnia:
+  lerp(a, b, amt)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        a
+        The first value.
+     
+      
+        b
+        The second value.
+     
+      
+        amt
+        The amount to interpolate.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  xx = lerp(x, x + hspeed, room_speed); yy = lerp(y, y + vspeed, room_speed);
+  Powyższy kod wykorzystuje funkcję interpolacji liniowej do przewidywania miejsca, do którego instancja mogłaby się przesunąć po jednej sekundzie gry.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje numeryczne
+        Następny: clamp
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

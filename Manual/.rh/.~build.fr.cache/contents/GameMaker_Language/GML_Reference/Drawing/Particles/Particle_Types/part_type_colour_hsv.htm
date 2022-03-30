@@ -1,0 +1,73 @@
+
+  
+  part_type_colour_hsv
+  Za pomocą tej funkcji można ustawić odcień, nasycenie i zakres wartości dla wszystkich cząstek danego typu. Dla każdego z tych trzech składników należy podać wartość minimalną i maksymalną, a utworzone cząstki będą miały losowy kolor oparty na podanym zakresie parametrów. W ten sposób można tworzyć cząstki o tym samym odcieniu, ale różnym nasyceniu, lub o różnych odcieniach, ale tej samej wartości (jasności) itd. Wszystkie wartości muszą zawierać się w przedziale od 0 do 255.
+   
+  Składnia:
+  part_type_colour_hsv(ind, hmin, hmax, smin, smax, vmin, vmax);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Typ cząstki ID
+        The index of the particle type to change.
+      
+      
+        hmin
+        Real
+        The minimum the final colour's hue component can be.
+      
+      
+        hmax
+        Real
+        The maximum the final colour's hue component can be.
+      
+      
+        smin
+        Real
+        The minimum the final colour's saturation component can be.
+      
+      
+        smax
+        Real
+        The maximum the final colour's saturation component can be.
+      
+      
+        vmin
+        Real
+        The minimum the final colour's value component can be.
+      
+      
+        vmax
+        Real
+        The maximum the final colour's value component can be.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  part_type_hsv(global.Stars, 0, 255, 0, 255, 255, 255 );
+  Powyższy kod powoduje, że każda cząstka emitowana przez cząstkę typu zindeksowanego w zmiennej globalnej "Gwiazdy" ma różne kolory i nasycenie, ale tę samą wartość (jasność).
+   
+   
+   
+  
+    
+      
+        Powrót: Typy cząstek
+        Następny: part_type_colour1
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

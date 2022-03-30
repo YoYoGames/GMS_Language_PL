@@ -1,0 +1,73 @@
+
+  
+  Prymitywy i Vertex Formaty
+  Prymityw to rodzaj rysunku wykonanego przy użyciu punktów do zdefiniowania tego, co jest wyświetlane na ekranie. Prymitywy mogą składać się z pojedynczych punktów, linii lub trójkątów i mogą być kolorowane, mogą mieć mieszanie alfa, a nawet mogą mieć adres texture, co oznacza, że mogą być używane do tworzenia bardzo ciekawych efektów w grach 2D! Można na przykład utworzyć prostokąt przy użyciu wielu prymitywów trójkątnych, a następnie texture go z flag sprite i w zdarzeniu rysowania instancji spowodować, że flag będzie "falować" na wietrze i zniekształcać sprite, którego użyto, po prostu modyfikując punkty tworzące prymityw.
+  OSTRZEŻENIE! Te funkcje nie działają z modułem HTML5, jeśli nie włączono obsługi OpenGL w Opcjach gry.
+  Informacje na temat prymitywów rysunkowych można znaleźć na kolejnych stronach:
+  
+    draw_primitive_begin
+    draw_primitive_begin_texture
+    draw_primitive_end
+    draw_vertex
+    draw_vertex_colour
+    draw_vertex_texture
+    draw_vertex_texture_colour
+  
+   
+  GameMaker Studio 2 umożliwia definiowanie własnych formatów wierzchołków, na podstawie których można tworzyć własne prymitywy. Może to znacznie przyspieszyć operacje wykonywane na stronie shader lub rozszerzyć ich możliwości i stworzyć zaskakujące efekty. Informacje na ten temat można znaleźć w następujących sekcjach:
+  
+    vertex_format_begin
+    vertex_format_add_colour
+    vertex_format_add_position
+    vertex_format_add_position_3d
+    vertex_format_add_texcoord
+    vertex_format_add_normal
+    vertex_format_add_custom
+    vertex_format_end
+    vertex_format_delete
+  
+   
+  Po utworzeniu formatu vertex (patrz rozdział powyżej) można go użyć do zbudowania prymitywów, które chcemy narysować, korzystając z następujących funkcji veretx buffer:
+  
+    vertex_create_buffer
+    vertex_create_buffer_ext
+    vertex_create_buffer_from_buffer
+    vertex_create_buffer_from_buffer_ext
+    vertex_get_buffer_size
+    vertex_get_number
+    vertex_delete_buffer
+    vertex_begin
+    vertex_colour
+    vertex_normal
+    vertex_position
+    vertex_position_3d
+    vertex_argb
+    vertex_texcoord
+    vertex_float1
+    vertex_float2
+    vertex_float3
+    vertex_float4
+    vertex_ubyte4
+    vertex_end
+    vertex_freeze
+    vertex_submit
+  
+  WAŻNE! Prymitywy, które budujesz, powinny być zgodne z formatem ustawionym za pomocą funkcji Format Vertex, więc jeśli zdefiniowałeś format vertex tylko z danymi pozycyjnymi, nie ma sensu budować prymitywu z danymi kolorowymi. Należy zauważyć, że kolejność dodawania właściwości do budowanego obiektu pierwotnego jest określona przez kolejność dodawania tych właściwości podczas tworzenia formatu vertex, więc jeśli zdefiniowano format wektorowy z kolejnością pozycji, koloru i współrzędnych texture, należy dodać te właściwości do budowanego obiektu pierwotnego w tej samej kolejności, w przeciwnym razie wystąpią błędy.
+  Omówienie sposobu tworzenia prymitywów za pomocą funkcji vertex można znaleźć na stronie:
+  
+    Przewodnik po prymitywach i Vertex Budowanie
+  
+   
+   
+  
+    
+      
+        Powrót: Rysunek
+        Następny: Powierzchnie
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

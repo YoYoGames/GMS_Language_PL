@@ -1,0 +1,68 @@
+
+  
+  ds_grid_set
+  Funkcji tej można użyć do ustawienia w danej komórce siatki DS dowolnej wartości, która może być liczbą rzeczywistą lub liczbą string. Ilustruje to poniższy rysunek:
+  
+  Składnia:
+  ds_grid_set(index, x, y, value);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        This index of the grid.
+     
+      
+        x
+        The x position of the cell to set.
+     
+      
+        y
+        The y position of the cell to set.
+     
+      
+        value
+        The value with which to set the cell.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  grid = ds_grid_create(5, 5);
+    var i = 0;
+    var j = 0;
+    
+    repeat (ds_grid_width(grid))
+    {
+        repeat (ds_grid_height(grid))
+        {
+            ds_grid_set(grid, i, j, irandom(9));
+            j += 1;
+        }
+    
+        j = 0;
+        i += 1;
+    }
+  
+  Powyższy kod tworzy siatkę i zapisuje jej indeks w zmiennej "grid". Następnie wypełnia tę siatkę losowymi liczbami całkowitymi z zakresu od 0 do 9.
+   
+   
+   
+  
+    
+      
+        Powrót: Siatki DS
+        Następny: ds_grid_set_disk
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

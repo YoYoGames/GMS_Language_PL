@@ -1,0 +1,53 @@
+
+  
+  część_typu_życia
+  Jest to funkcja, która określa, jak długo każda pojedyncza cząstka wskazanego typu pozostaje na ekranie. Podobnie jak w przypadku innych funkcji cząsteczek, podajesz minimalną i maksymalną wartość (w krokach), a czas życia każdej cząsteczki będzie losową liczbą kroków z podanego zakresu. Aby wszystkie cząstki miały taki sam czas życia, należy ustawić te dwie wartości na takie same.
+   
+  Składnia:
+  part_type_life(ind, life_min, life_max);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Typ cząstki ID
+        The index of the particle type to change.
+      
+      
+        life_min
+        Real
+        The minimum lifespan of the particles.
+      
+      
+        life_max
+        Real
+        The maximum lifespan of the particles.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  part_type_life(part_Flare, room_speed, room_speed * 2);
+  Powyższy kod spowoduje, że wszystkie cząstki utworzone dla typu cząstki indeksowanego w zmiennej "part_Flare" będą miały czas życia od 1 do 2 sekund, zależnie od bieżącej prędkości w pomieszczeniu.
+   
+   
+   
+  
+    
+      
+        Powrót: Typy cząstek
+        Następny: part_type_step
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

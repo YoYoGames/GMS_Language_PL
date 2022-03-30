@@ -1,0 +1,54 @@
+
+  
+   Na stronie
+  Akcja While jest używana do wykonywania czynności loops, które kończą się dopiero po spełnieniu określonego warunku true. Na przykład można użyć zmiennej i ustawić ją na false, a następnie uruchomić akcję While loop i sprawdzić tę zmienną.
+    w pewnym momencie na stronie loop ustawisz zmienną na true i loop zostanie zakończone. Zauważ, że niezależnie od tego, gdzie ustawisz warunek w while loop, wszystkie akcje w loop zostaną wykonane do końca, zanim reszta skryptu
+    zmiana warunku nie spowoduje natychmiastowego przerwania działania loop.
+  Po dodaniu akcji While do kodu należy podać zmienną, która ma być sprawdzana, rodzaj sprawdzania (mniejsza niż, większa niż, równa się itd...) oraz wartość, względem której ma być sprawdzana zmienna (można również flag, aby funkcja While
+    loop aby sprawdzić, czy warunek nie jest prawdziwy). Następnie dodajemy akcje, które mają być wykonane w ramach While loop, podobnie jak w przypadku dodawania akcji do instrukcji "if", tzn. umieszczamy ją z boku akcji, a nie pod nią:
+  Wszystkie akcje dodane do strony zostaną uwzględnione w while i zostaną wykonane, zanim zdarzenie lub skrypt
+    będzie kontynuował działania dodane pod nim (jak pokazano na poniższym przykładzie). Zauważ, że możesz zakończyć każdą stronę loop przedwcześnie, jeśli wywołasz akcję Break.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Variable
+        Zmienna, która ma być użyta w kontroli
+      
+      
+        Is
+        Typ oceny do wykonania (mniejsza niż, większa niż, równa, większa lub równa oraz mniejsza lub równa).
+      
+      
+        Value
+        Wartość, względem której ma być sprawdzana zmienna
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji tworzy tymczasową zmienną lokalną i ustawia ją na false. Zmienna ta jest następnie
+    sprawdzana w akcji While loop i jeśli zwróci ona wartość false, uruchomiona zostanie strona loop. Na stronie loop pobieramy dwie tymczasowe zmienne lokalne dla losowej pozycji x/y na stronie room, a następnie sprawdzamy, czy pozycja ta nie koliduje. Jeśli nie zostanie znaleziona kolizja, zmienna początkowa
+    zmienna początkowa jest ustawiana na true, co kończy działanie loop. Po zakończeniu loop tworzona jest nowa instancja w losowej pozycji, w której nie wykryliśmy kolizji.
+   
+   
+   
+  
+    
+      
+        Powrót: Pętla Działania
+        Następny: Dla
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

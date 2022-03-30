@@ -1,0 +1,67 @@
+
+  
+  display_set_gui_maximise
+  Za pomocą tej funkcji można zmaksymalizować warstwę GUI oraz ustawić jej skalowanie i przesunięcie w stosunku do wymiarów ekranu, a nie domyślnego położenia i wymiarów powierzchni aplikacji. Domyślnie warstwa GUI ma rozdzielczość 1:1 z rozdzielczością powierzchni aplikacji i jest rysowana w pozycji (0,0) tej powierzchni. Jednak nie zawsze jest to pożądane, dlatego za pomocą tej funkcji można ustawić, aby warstwa była rysowana względem bezwzględnej (0,0) pozycji okna wyświetlacza lub gry. To, jakie argumenty podasz tej funkcji, będzie zależało od efektu, jaki chcesz uzyskać na warstwie GUI. Po prostu wywołanie funkcji bez argumentów spowoduje, że warstwa GUI będzie rysowana w pozycji (0,0) ekranu lub okna gry, a szerokość i wysokość będą skalowane tak, aby pasowały do całego obszaru:
+  display_set_gui_maximise();
+  Można jednak ustawić współczynnik skalowania dla warstwy GUI, a szerokość i wysokość zostaną przeskalowane o tę wartość. Pamiętaj, że warstwa GUI jest zawsze dopasowywana do rozmiaru wyświetlacza, okna gry lub powierzchni aplikacji, więc ustawienie tej wartości na wartość inną niż 1 spowoduje przeskalowanie liczby pikseli na szerokość i wysokość. Jeśli Twój ekran ma rozmiar 1024x768, a współczynnik skalowania ustawisz na wartość 0,5, to warstwa GUI będzie o połowę mniejsza niż ekran, co oznacza podwojenie rozmiaru pikseli:
+  display_set_gui_maximise(0.5, 0.5);
+  Ustawienie wartości w ten sposób spowoduje również ustawienie pozycji rysowania na (0,0) okna wyświetlacza lub gry, dlatego można podać wartości przesunięcia, aby "przesunąć" pozycję (0,0):
+  var pos = application_get_position();
+    display_set_gui_maximise(0.5, 0.5, pos[0], pos[1]);
+  Można również zresetować warstwę GUI za pomocą tej funkcji, ustawiając współczynniki skalowania na -1. Spowoduje to ponowne ustawienie warstwy GUI w skali 1:1 i ustawienie pozycji rysowania na (0,0) powierzchni aplikacji, a nie na wyświetlaczu lub oknie.
+  display_set_gui_maximise(-1, -1);
+   
+  Składnia:
+  display_set_gui_maximise(xscale, yscale, xoffset, yoffset);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        xscale
+        Real
+        OPTIONAL Współczynnik skalowania poziomego (użyj -1, aby przywrócić wartość domyślną).
+      
+      
+        yscale
+        Real
+        OPTIONAL Współczynnik skalowania pionowego (użyj -1, aby przywrócić wartość domyślną).
+      
+      
+        xoffset
+        Real
+        OPTIONAL Przesunięcie x dla rysowania.
+      
+      
+        yoffset
+        Real
+        OPTIONAL Pozycja przesunięcia y dla rysunku.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  display_set_gui_size(display_get_width() / 2, display_get_height() / 2);
+    display_set_gui_maximise(2, 2, 0, 0);
+  Powyższy kod zablokuje zdarzenie rysowania GUI na podanej szerokości i wysokości, skalując wszystkie elementy tak, aby pasowały do wyświetlacza, wykorzystując te proporcje.
+   
+   
+   
+  
+    
+      
+        Powrót: Aparaty i wyświetlacz
+        Następny: display_set_ui_visibility
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

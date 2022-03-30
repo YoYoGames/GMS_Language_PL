@@ -1,0 +1,68 @@
+
+  
+  punkt_zmian_ścieżki
+  Za pomocą tej funkcji można zmienić położenie i/lub współczynnik prędkości dowolnego punktu uprzednio zdefiniowanego dla strony path (strona path mogła zostać utworzona w edytorze path lub za pomocą kodu przy użyciu path_add()). Jeśli użyjesz tej funkcji na stronie path z przeglądarki Asset, pamiętaj, że zmieni ona rzeczywisty zasób, a więc na stałe wpłynie na sposób, w jaki strona path jest używana przez wszystkie instancje w grze od momentu użycia funkcji do końca gry. Jeśli to nie jest to, czego potrzebujesz, powinieneś użyć funkcji takiej jak path_duplicate(), aby najpierw utworzyć kopię path, a następnie wywołać tę funkcję na powielonej asset (nie zapomnij wywołać path_delete() na asset, gdy nie będzie już potrzebna).
+   
+  Składnia:
+  path_change_point(index, n, x, y, speed);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Aktywa na ścieżce
+        The index of the path to change a point of.
+      
+      
+        n
+        Real
+        The defining point to change the attributes of.
+      
+      
+        x
+        Real
+        The new x coordinate (relative to the path) of the point.
+      
+      
+        y
+        Real
+        The new y coordinate (relative to the path) of the point.
+      
+      
+        speed
+        Real
+        The new speed factor of the point.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  for (var i = 0; i < path_get_number(path0); ++i;)
+    {
+        var px = path_get_point_x(pth_Patrol, i) + 64 - random(128);
+        var py = path_get_point_y(pth_Patrol, i) + 64 - random(128);
+        path_change_point(pth_Patrol, i, px, py, 100);
+    }
+  Powyższy kod loops przegląda wszystkie punkty w witrynie path indeksowane jako "ścieżka0" i zmienia ich położenie na losowe w obszarze o rozmiarach 128x128 pikseli.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja ścieżką
+        Następny: path_insert_point
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

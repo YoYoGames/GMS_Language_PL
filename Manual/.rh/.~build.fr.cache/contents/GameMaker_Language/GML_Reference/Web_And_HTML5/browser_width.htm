@@ -1,0 +1,49 @@
+
+  
+  przeglądarka_szerokość
+  Ta zmienna przechowuje szerokość (w pikselach) przeglądarki, w której jest uruchamiana gra. Jeśli przeglądarka nie jest obecna, zwracany jest rozmiar okna. Poniższy rysunek ilustruje powiązanie tej zmiennej z pozostałymi funkcjami pozycjonowania dostępnymi za pośrednictwem funkcji okna.
+  
+  Składnia:
+  browser_width
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (browser_height > window_get_height()) || (browser_width > window_get_width())
+    {
+        var xx, yy;
+        if (browser_width > window_get_width())
+        {
+            xx = (browser_width - window_get_width()) / 2;
+        }
+        else
+        {
+            xx = 0;
+        }
+        if (browser_height > window_get_height())
+        {
+            yy = (browser_height - window_get_height()) / 2;
+        }
+        else
+        {
+            yy = 0;
+        }
+        window_set_position(xx, yy);
+    }
+  Powyższy kod sprawdza, czy szerokość i wysokość przeglądarki są większe niż aktualna szerokość i wysokość okna. Jeśli tak, to oblicza nową pozycję okna gry w przeglądarce.
+   
+   
+   
+  
+    
+      
+        Powrót: Sieć i HTML5
+        Następny: browser_input_capture
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

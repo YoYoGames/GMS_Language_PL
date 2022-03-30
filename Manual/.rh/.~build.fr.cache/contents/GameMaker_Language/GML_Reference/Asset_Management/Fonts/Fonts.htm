@@ -1,0 +1,49 @@
+
+  
+  Czcionki
+  Program GameMaker Studio 2 zawiera wiele funkcji, których można użyć do uzyskania informacji o dołączonych plikach font assets, a także kolejny zestaw funkcji, których można użyć do zmiany, dodania lub usunięcia fonts z gry w czasie jej uruchamiania. W szczególności funkcja font_add() może być używana do dodawania niestandardowych fonts, takich jak azjatyckie glify fonts, z pliku *.ttf lub *.otf.
+  Warto zauważyć, że jeśli dodasz do swojej gry stronę font, która nie ma glifów wymaganych przez tekst, który chcesz napisać, to znak Unicode 9647 (▯) jest używany do zastąpienia brakujących glifów podczas renderowania w zdarzeniu losowania. Jeśli więc w witrynie font nie ma na przykład symbolu º, to napisanie 90º spowoduje wyświetlenie 90▯.
+  Do uzyskania informacji o zasobach font można użyć następujących funkcji:
+  
+    font_get_name
+    font_get_fontname
+    font_get_first
+    font_get_last
+    font_get_italic
+    font_get_bold
+    font_get_size
+    font_get_texture
+    font_get_uvs
+    font_get_info
+  
+   
+  Do zmiany i manipulowania stroną fonts podczas gry można użyć następujących funkcji:
+  
+    font_exists
+    font_set_cache_size
+    font_add_enable_aa
+    font_add_get_enable_aa
+    font_add
+    font_add_sprite
+    font_add_sprite_ext
+    font_replace
+    font_replace_sprite
+    font_replace_sprite_ext
+    font_delete
+    font_texture_page_size
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Zarządzanie aktywami
+        Następny: Timelines
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

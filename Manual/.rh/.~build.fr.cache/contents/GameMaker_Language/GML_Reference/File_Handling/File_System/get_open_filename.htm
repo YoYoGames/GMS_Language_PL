@@ -1,0 +1,52 @@
+
+  
+  get_open_filename
+  Ta funkcja otwiera dialog i prosi gracza o podanie nazwy pliku, który ma zostać otwarty przy użyciu podanego filtra. Filtr ma postać "name1|mask1|name2|mask2|... ", gdzie maska może zawierać różne opcje ze średnikiem między nimi, a także można użyć "*", aby oznaczyć dowolny string. Na przykład: "bitmaps|*.bmp;*.wmf", poprosi użytkownika o wybranie nazwy pliku bitmapy z systemu, ale tylko takiego, który ma dwie określone extensions (bmp i png). ta funkcja nie otwiera samego pliku! Zwraca jedynie adres string z pełną nazwą i adresem path pliku. Jeśli użytkownik naciśnie przycisk "Anuluj", zwracany jest pusty adres string "".
+  Ważną rzeczą, na którą należy zwrócić uwagę przy korzystaniu z tej funkcji, jest to, że nadaje ona określone uprawnienia do pliku na czas trwania gry. Tak więc po otrzymaniu pliku path od użytkownika, możesz uzyskać do niego dostęp wielokrotnie bez konieczności pytania. Ponieważ jednak funkcja ta służy do odczytu pliku, przyznane uprawnienia dotyczą tylko odczytu, a zapisywanie nie będzie dozwolone przez system operacyjny. Jeśli zajdzie potrzeba odczytu i zapisu do pliku, można uzyskać uprawnienia za pomocą funkcji get_save_filename().
+  UWAGA: Ta funkcja jest ważna tylko w przypadku tarcz Windows i macOS.
+   
+  Składnia:
+  get_open_filename(filter, fname);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        filter
+        The file type filter and/or name.
+     
+      
+        fname
+        The suggested filename to use.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var file;
+    file = get_open_filename("text file|*.txt", "");
+    if file != ""
+    {
+        file_text_open_read(file);
+    }
+  Powyższy kod poprosi użytkownika o wybranie pliku tekstowego do otwarcia, a następnie sprawdzi zwróconą nazwę pliku i adres path, a jeśli plik istnieje, otworzy go do odczytu.
+   
+   
+   
+  
+    
+      
+        Powrót: System plików
+        Następny: get_open_filename_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

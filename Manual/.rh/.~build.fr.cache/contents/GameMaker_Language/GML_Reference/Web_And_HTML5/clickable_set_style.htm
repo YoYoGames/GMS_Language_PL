@@ -1,0 +1,51 @@
+
+  
+  clickable_set_style
+  Ta funkcja umożliwia ustawienie właściwości stylu CSS dla danego przycisku za pomocą par klucz/wartość w podanym pliku DS Map. Wcześniej należy utworzyć zarówno element przycisku (za pomocą clickable_add()) oraz stronę DS Map i podać jako argumenty zapisane indeksy do każdego z nich.
+   
+  Składnia:
+  clickable_set_style(index, map)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Identyfikator klikalny
+        The index of the clickable icon to style.
+      
+      
+        map
+        Identyfikator mapy DS
+        The index of the DS Map aby ustawić styl na podstawie.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var map = ds_map_create();
+    ds_map_add(map, "opacity", "0.5");
+    clickable_set_style(button, map);
+    ds_map_destroy();
+  Powyższy kod zmieni styl klikalnego przycisku o indeksie zapisanym w zmiennej "button".
+   
+   
+   
+  
+    
+      
+        Powrót: Sieć i HTML5
+        Następny: clickable_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

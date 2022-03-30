@@ -1,0 +1,48 @@
+
+  
+  layer_get_hspeed
+  Możesz użyć tej funkcji, aby pobrać prędkość poziomą (w pikselach na klatkę gry) warstwy znajdującej się w bieżącym zakresie room. Podajesz ID warstwy (które otrzymujesz podczas tworzenia warstwy za pomocą layer_create()) lub nazwę warstwy (jako string - będzie to miało wpływ na wydajność), a funkcja zwraca liczbę rzeczywistą określającą prędkość poziomą, gdzie wartość dodatnia jest skierowana w prawo, a ujemna w lewo. Wartość domyślna to 0 (chyba że ustawiono ją w edytorze room ).
+   
+  Składnia:
+  layer_get_hspeed(layer_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_id
+        Ciąg lub identyfikator warstwy
+        The unique ID value of the layer to get the horizontal speed from
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var lay_id = layer_get_id("Sprites");
+    if layer_get_hspeed(lay_id) != 0 || layer_get_vspeed(lay_id) != 0
+    {
+        layer_hspeed(lay_id, 0);
+        layer_vspeed(lay_id, 0);
+    }
+  Powyższy kod sprawdza prędkość poziomą i pionową podanej warstwy i jeśli obie nie są ustawione na 0, to ustawia je na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_get_vspeed
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

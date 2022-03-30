@@ -1,0 +1,50 @@
+
+  
+  dezaktywuj_warstwę
+  Za pomocą tej funkcji można dezaktywować wszystkie instancje przypisane do określonej warstwy. Musisz podać identyfikator warstwy, który może być albo nazwą warstwy zapisaną w edytorze kodu (jako string), albo rzeczywistą wartością identyfikatora warstwy zwróconą przez funkcję layer_create()i należy pamiętać, że za pomocą tej funkcji można dezaktywować tylko warstwy instancji. Pamiętaj, że jeśli dezaktywowałeś warstwę, której instancje objects zostały oznaczone jako trwałe, musisz ponownie aktywować warstwę za pomocą funkcji instance_activate_layer() przed zmianą room, w przeciwnym razie wszystkie trwałe instancje na tej warstwie nie zostaną przeniesione i zostaną odrzucone. Należy również pamiętać, że dezaktywacja nie jest natychmiastowa i instancja, która została dezaktywowana w ten sposób, nie będzie uważana za nieaktywną do końca zdarzenia, w którym wywołano funkcję.
+  UWAGA: Jeśli dezaktywujesz instancję na początku room (tzn. z kodu tworzenia room lub ze zdarzenia tworzenia instancji w room), wszystkie instancje, które są umieszczone w room z edytora room, będą nadal uruchamiać swoje zdarzenia tworzenia przed dezaktywacją.
+  UWAGA: Wyłączenie instancji, które mają włączoną fizykę, NIE spowoduje, że ich armatura przestanie oddziaływać w ramach symulacji fizyki. W tym celu należy ustawić ich zmienną phy_active na true lub false, gdy będziesz włączać/wyłączać te instancje.
+   
+  Składnia:
+  instance_deactivate_layer(obj);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer
+        Identyfikator warstwy lub ciągznaków
+        The layer name string (or ID value) to be used
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  instance_deactivate_layer("Enemy Layer");
+    var _vx = camera_get_view_x(view_camera[0]);
+    var _vy = camera_get_view_y(view_camera[0]);
+    var _vw = camera_get_view_width(view_camera[0]);
+    var _vh = camera_get_view_height(view_camera[0]);
+    instance_activate_region(_vx - 64, _vy - 64, _vw + 128, _vh + 128, false);
+  Powyższy kod dezaktywuje wszystkie instancje przypisane do warstwy "Enemy_Layer", a następnie aktywuje region w witrynie room.
+   
+   
+   
+  
+    
+      
+        Powrót: Dezaktywacja instancji
+        Następny: instance_activate_all
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

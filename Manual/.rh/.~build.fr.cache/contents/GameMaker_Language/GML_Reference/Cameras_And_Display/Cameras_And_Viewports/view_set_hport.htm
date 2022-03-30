@@ -1,0 +1,48 @@
+
+  
+  view_set_hport
+  Za pomocą tej funkcji można ustawić wysokość podanego portu widoku. Użytkownik podaje indeks portu widoku (od 0 do 7) oraz nową wysokość, która ma zostać użyta.
+   
+  Składnia:
+  view_set_hport(view_port, h)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        view_port
+        The view port to target (0 - 7)
+     
+      
+        h
+        The new height (in pixels)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if view_get_hport(0) != (display_get_height () / 2)
+    {
+        view_set_hport(0, display_get_height() / 2);
+    }
+  Powyższy kod sprawdzi wysokość portu widoku[0] i jeśli nie jest ona równa połowie wysokości wyświetlacza, zostanie ustawiona na tę wartość.
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: view_set_surface_id
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

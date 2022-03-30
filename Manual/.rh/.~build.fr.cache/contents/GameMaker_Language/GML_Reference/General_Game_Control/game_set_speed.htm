@@ -1,0 +1,75 @@
+
+  
+  gra_set_prędkość
+  Ta funkcja służy do ustawiania szybkości gry. Można ją ustawić na jeden z dwóch sposobów - jako liczbę klatek na sekundę (FPS) lub mikrosekund na klatkę gry (MPF) - używając jednej z dwóch poniższych stałych:
+  
+    
+      
+        Stała
+        Opis
+      
+      
+        gamespeed_fps
+        Ustawia szybkość gry przy użyciu liczby klatek na sekundę.
+      
+      
+        gamespeed_microseconds
+        Ustawia szybkość gry przy użyciu mikrosekund na klatkę.
+      
+    
+  
+  Na przykład przy prędkości gry wynoszącej 30 klatek na sekundę na jedną klatkę gry przypada 33333 mikrosekund, co można wyrazić za pomocą tej funkcji jako
+  game_set_speed(30, gamespeed_fps);
+  lub:
+  game_set_speed(33333, gamespeed_microseconds);
+   
+  Składnia:
+  game_set_speed(speed, type);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        speed
+        Real
+        The new game speed (as either FPS or MPF).
+      
+      
+        type
+        Stała prędkości gry
+        The type of method used to set the game speed (see the constants above).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if os_browser == browser_not_a_browser
+    {
+        game_set_speed(60, gamespeed_fps);
+    }
+    else
+    {
+        game_set_speed(30, gamespeed_fps);
+    }
+  Powyższy kod sprawdza, czy gra jest uruchomiona w przeglądarce, i odpowiednio ustawia szybkość gry jako wartość FPS.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne sterowanie grą
+        Następny: highscore_add
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

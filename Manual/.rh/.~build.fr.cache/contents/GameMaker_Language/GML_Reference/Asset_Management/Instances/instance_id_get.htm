@@ -1,0 +1,50 @@
+
+  
+  instance_id_get
+  Za pomocą tej funkcji możesz uzyskać unikalną wartość ID dowolnej instancji z aktualnie aktywnej listy instancji. Podajesz indeks na liście instancji, z którego chcesz pobrać identyfikator, a funkcja zwróci wartość, którą można zapisać w zmiennej.
+   
+  Składnia:
+  instance_id_get(index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Real
+        The index within the instance list from 0 do liczby instancji - 1.
+      
+    
+  
+   
+  Zwroty:
+  Instance ID
+   
+  Przykład:
+  for (var i = 0; i < instance_count; ++i;)
+    {
+        var temp_id = instance_id_get(i);
+        with (temp_id)
+        {
+            speed += 0.1;
+        }
+    }
+   loop Powyższy kod przejdzie przez wszystkie instancje w witrynie room i doda 0,1 do ich prędkości.
+   
+   
+   
+  
+    
+      
+        Powrót: Instancje
+        Następny: instance_id
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

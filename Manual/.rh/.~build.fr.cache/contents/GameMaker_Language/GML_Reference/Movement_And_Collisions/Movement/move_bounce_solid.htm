@@ -1,0 +1,42 @@
+
+  
+  move_bounce_solid
+  Za pomocą tej funkcji możesz nakazać instancji, by odbijała się tylko od tych instancji, które są oznaczone jako bryły na stronie room. Możesz także nakazać jej, by używała precyzyjnego sprawdzania kolizji, jeśli jest włączone, ale pamiętaj, że wymaga to, by wszystkie instancje miały włączone precyzyjne
+    maski i znacznie spowolni grę, jeśli będzie w niej brało udział wiele instancji, ze względu na ilość przetwarzania, które trzeba będzie wykonać. Zazwyczaj powinno się to robić w zdarzeniu kroku instancji, ale można tego użyć selektywnie także w zdarzeniu kolizji.
+   
+  Składnia:
+  move_bounce_solid(adv);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        adv
+        Whether to enable advanced bouncing (true) or not (false).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  move_bounce_solid(false);
+  Umożliwi to nieprecyzyjne odbijanie się od instancji oznaczonych jako "stałe".
+   
+   
+   
+  
+    
+      
+        Powrót: Ruch
+        Następny: move_contact_all
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

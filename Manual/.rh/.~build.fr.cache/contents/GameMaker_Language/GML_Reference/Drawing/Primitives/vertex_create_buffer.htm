@@ -1,0 +1,30 @@
+
+  
+  vertex_create_buffer
+  Za pomocą tej funkcji można utworzyć nową stronę vertex buffer. Jest to specjalny grow buffer utworzony przez GameMaker Studio 2, który jest wstępnie sformatowany do użycia przy tworzeniu prymitywów (na przykład do użycia z shaders). Funkcja zwróci indeks dla buffer, który powinien być używany we wszystkich następnych wywołaniach tej funkcji.
+  Podczas korzystania z vertex buffer utworzonego za pomocą tej funkcji wystarczy wywołać vertex_begin() aby rozpocząć przypisywanie do niego danych vertex w celu rozpoczęcia definiowania własnego prymitywu, który następnie będzie przechowywany w buffer gotowym do przesłania do shader. buffer może być ponownie użyty w razie potrzeby (chyba że użyto funkcji vertex_freeze() ), przy czym każde wywołanie funkcji vertex_begin() wymazuje poprzednie dane buffer gotowe do przyjęcia nowych danych.
+   
+  Składnia:
+  vertex_create_buffer();
+   
+  Zwroty:
+  Vertex Buffer ID
+   
+  Przykład:
+  v_buff = vertex_create_buffer();
+  Powyższy kod utworzy nową stronę vertex buffer i zapisze jej uchwyt w zmiennej "v_buff".
+   
+   
+   
+  
+    
+      
+        Powrót: Prymitywy i Vertex Formaty
+        Następny: vertex_create_buffer_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

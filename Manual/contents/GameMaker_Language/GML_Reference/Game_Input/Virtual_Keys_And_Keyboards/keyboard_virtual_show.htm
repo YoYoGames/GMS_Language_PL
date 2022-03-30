@@ -105,7 +105,7 @@
       </tr>
       <tr>
         <td><span class="inline">kbv_returnkey_search</span></td>
-        <td>Ustawia nazwę klawisza powrotu na &quot;Szukaj&quot; lub w niektórych przypadkach na ogólną ikonę wyszukiwania.</td>
+        <td>Ustawia tytuł klawisza powrotu na &quot;Szukaj&quot; lub w niektórych przypadkach na ogólną ikonę wyszukiwania.</td>
       </tr>
       <tr>
         <td><span class="inline">kbv_returnkey_send</span></td>
@@ -165,7 +165,7 @@
     </tbody>
   </table>
   <p> </p>
-  <p>Ostatnim argumentem jest włączenie/wyłączenie predykcyjnego tekstu, który powinien być ustawiony na <span class="inline">true</span>, aby go dopuścić, oraz <span class="inline">false</span> w przeciwnym razie, ale należy pamiętać, że to, że jest on dopuszczony, nie oznacza, że będzie używany, ponieważ zależy to od preferencji użytkownika urządzenia. W trybie przewidywania tekstu klawiatura wirtualna nie będzie generować normalnych zdarzeń związanych z naciśnięciem klawiszy <span class="notranslate">GameMaker Studio 2</span>. Zamiast tego będą aktualizowane jedynie zmienne dotyczące <i>ostatniego</i> naciśniętego znaku i klawiatury <span class="notranslate">string</span>. Wynika to z niemożności wykrycia, czy zmiana w wewnętrznym polu tekstowym używanym do wykrywania naciśnięć klawiszy została spowodowana faktycznym naciśnięciem klawisza klawiatury wirtualnej, czy sugestią tekstową. W takich przypadkach należy odczytywać dane wejściowe <span class="inline">keyboard_string</span>, a nie surowe dane wejściowe.</p>
+  <p>Ostatni argument to włączenie/wyłączenie predykcyjnego tekstu, który powinien być ustawiony na <span class="inline">true</span>, aby na niego zezwolić, i <span class="inline">false</span> w przeciwnym razie, ale należy pamiętać, że to, że jest on dozwolony, nie oznacza, że będzie używany, ponieważ zależy to od preferencji użytkownika urządzenia. W trybie przewidywania tekstu wirtualna klawiatura nie będzie generować normalnych zdarzeń naciśnięcia klawiszy w programie <span data-keyref="GameMaker Name">GameMaker</span>. Zamiast tego będzie aktualizować jedynie zmienne dotyczące <i>ostatniego</i> naciśniętego znaku oraz klawiatury <span class="notranslate">string</span>. Wynika to z niemożności wykrycia, czy zmiana w wewnętrznym polu tekstowym używanym do wykrywania naciśnięć klawiszy została spowodowana faktycznym naciśnięciem klawisza klawiatury wirtualnej, czy sugestią tekstową. W takich przypadkach należy odczytywać dane wejściowe <span class="inline">keyboard_string</span>, a nie surowe dane wejściowe.</p>
   <p>Należy również zauważyć, że użytkownik otrzyma różne klawiatury o różnych możliwościach w zależności od systemu operacyjnego platformy, z następującymi zastrzeżeniami dotyczącymi stosowania w poszczególnych celach:</p>
   <ul class="colour">
     <li><b>UWP</b>: Implementacja UWP nie obsługuje <span class="inline">return_key_type</span>, <span class="inline">autocapitalization_type</span> ani <span class="inline">predictive_text_enabled</span>. Przekazanie tych parametrów do funkcji nie spowoduje żadnych błędów, po prostu nie będą one miały żadnego wpływu na klawiaturę.</li>

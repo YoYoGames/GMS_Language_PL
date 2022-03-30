@@ -1,0 +1,48 @@
+
+  
+  przenieść_poza_wszystko
+  Za pomocą tej funkcji możesz powiedzieć instancji, by wyszła z kolizji w dowolnym kierunku i o dowolną liczbę pikseli w każdym kroku, przy czym wartość -1 lub 0 dla maxdist to domyślnie 1000px, czyli: GameMaker Studio 2 przesunie instancję o 1000 pikseli w górę, aż wyjdzie z kolizji.
+   
+  Składnia:
+  move_outside_all(dir, maxdist);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        dir
+        The direction to move in.
+     
+      
+        maxdist
+        The maximum distance the object can travel (-1 or 0 a default value of 1000 pixels).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if place_meeting(x, y, all)
+    {
+        move_outside_all(90, 1);
+    }
+  Powyższy kod przesunie instancję o 1 piksel w górę za każdym razem, gdy znajdzie się ona w kolizji z inną instancją.
+   
+   
+   
+  
+    
+      
+        Powrót: Ruch
+        Następny: move_outside_solid
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

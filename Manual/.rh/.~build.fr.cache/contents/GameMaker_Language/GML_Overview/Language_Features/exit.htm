@@ -1,0 +1,38 @@
+
+  
+  wyjście
+  Polecenie exit ma następującą składnię:
+  exit;
+  exit po prostu kończy wykonywanie bieżącej funkcji skryptu, method, lub event. Należy pamiętać, że w zależności od zakresu występują tu pewne różnice w użyciu:
+  
+    Jeśli użyjesz exit w funkcji lub metodzie script, spowoduje to po prostu wyjście z funkcji i powrót do kodu, który wywołał tę funkcję.
+    Jeśli użyjesz exit w bloku kodu wewnątrz zdarzenia obiektu, spowoduje to wyjście z całego zdarzenia, nawet jeśli po wywołaniu exit będą istniały różne oddzielne bloki kodu.
+    Jeśli użyjesz exit w zdarzeniu nadrzędnym i wywołasz to zdarzenie za pomocą event_inherited() w zdarzeniu dziecka object, zakończy się tylko zdarzenie rodzica, a zdarzenie dziecka (które wywołało event_inherited()) będzie kontynuowane.
+  
+  W przypadku użycia w zdarzeniu, exit jest zwykle używany do unikania wykonywania przez instancję dalszego kodu, gdy określony warunek został spełniony (lub nie). Poniższy kod przedstawia przykład użycia tej funkcji, w tym przypadku w zdarzeniu Kolizja, choć można jej użyć w każdym zdarzeniu.
+  if (!visible)
+    {
+        exit;
+    }
+    
+    other.hp -= attack;
+    other.coins -= 4;
+    coins += 4;
+  
+  Powyższy kod sprawdza, czy bieżąca instancja nie jest widoczna, w takim przypadku kończy działanie bloku kodu, w przeciwnym razie przechodzi dalej i wykonuje resztę kodu.
+  UWAGA: Nie kończy ona wykonywania gry. W tym celu należy użyć funkcji game_end().
+   
+   
+   
+  
+    
+      
+        Powrót: Cechy językowe
+        Następny: with
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

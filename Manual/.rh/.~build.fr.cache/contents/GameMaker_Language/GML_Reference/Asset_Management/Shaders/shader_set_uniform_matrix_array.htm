@@ -1,0 +1,53 @@
+
+  
+  shader_set_uniform_matrix_array
+  Za pomocą tej funkcji można ustawić stałą shader jako tablicę wartości macierzy. Wcześniej należy uzyskać "uchwyt" do stałej za pomocą funkcji shader_get_uniform()i uprzednio zainicjalizować tablicę jako tablicę wartości zmiennoprzecinkowych, gdzie każda kolejna grupa 16 zmiennoprzecinkowych jest macierzą 4x4.
+  UWAGA: Wszystkie uniformy muszą być ustawione po wywołaniu funkcji shader_set(), a przed wywołaniem funkcji shader_reset().
+   
+  Składnia:
+  shader_set_uniform_matrix_array(handle, array);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        handle
+        Jednolity uchwyt shadera
+        The handle of the shader constant to set.
+      
+      
+        array
+        Tablica
+        A previously initialised array of floating point values.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  shader_set(shader_Glass);
+    shader_params = shader_get_uniform(shader_tint, "cMatrixArray");
+    shader_set_uniform_matrix_array(shader_params, matrix_array);
+    draw_self();
+    shader_reset();
+  Powyższy kod pobierze uchwyt stałej shader "cMatrixArray", a następnie ustawi tę stałą na podaną tablicę.
+   
+   
+   
+  
+    
+      
+        Powrót: Shadery
+        Następny: shader_reset
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

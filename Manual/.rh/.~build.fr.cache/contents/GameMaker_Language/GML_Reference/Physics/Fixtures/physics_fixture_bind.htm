@@ -1,0 +1,57 @@
+
+  
+  physics_fixture_bind
+  Kiedy już zdefiniowaliśmy nasz uchwyt, musi on zostać powiązany z instancją. Oznacza to, że jego właściwości są przekazywane do wybranej instancji, a nie do samego elementu, tak więc jeden element może być powiązany z wieloma instancjami, jeśli wszystkie mają mieć te same właściwości. Możesz określić indeks object dla celu i wszystkie instancje obecne w room w tym czasie otrzymają właściwości tej armatury (ale nie żadne nowe instancje object utworzone później), lub możesz użyć specjalnych słów kluczowych other i all. Możesz nawet określić rodzica object i wszystkie instancje dzieci z tym rodzicem również otrzymają to wiązanie. Po tym jak uchwyt zostanie powiązany ze wszystkimi instancjami, których potrzebujesz, może zostać usunięty, jeśli nie jest już potrzebny, a instancje z właściwościami tego uchwytu nie zostaną dotknięte i zachowają te właściwości.
+  Mocowanie zostanie związane z instancją ze środkiem masy umieszczonym w punkcie początkowym instancji, a mocowanie wielokątów jest związane na podstawie położenia punktów względem punktu początkowego. Jeśli chcesz, by twój uchwyt był związany z punktem innym niż początek, powinieneś użyć physics_fixture_bind_ext().
+  Funkcja zwróci również unikalną wartość "id" dla powiązanego uchwytu(nie dla samego uchwytu), która może być użyta do usunięcia ("un-bind") właściwości fizyki z instancji przy użyciu funkcji physics_remove_fixture(). Pozwala to na dodawanie i usuwanie właściwości fizycznych z instancji bez niszczenia i ponownego tworzenia objects.
+  UWAGA: Fixtures powinny być usuwane, gdy nie są już potrzebne, ponieważ w przeciwnym razie może dojść do wycieku pamięci, co spowolni, a w końcu spowoduje awarię gry.
+   
+  Składnia:
+  physics_fixture_bind(fixture, target)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        fixture
+        Identyfikator osprzętu fizycznego
+        The fixture that is to be bound
+      
+      
+        target
+        Identyfikator instancji lub Obiekt Asset
+        The target instance that is to receive the fixture (can be an instance id, an object id, other, or all)
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  var fix, inst;
+    fix = physics_fixture_create();
+    physics_fixture_set_circle_shape(fix, 16);
+    physics_fixture_set_density(fix, 1.0);
+    inst = instance_create_layer(x, y, "Instances", genericBodyObject);
+    my_fix = physics_fixture_bind(fix, inst);
+    physics_fixture_delete(fix);
+  Powyższy kod utworzy uchwyt i przypisze jego indeks do zmiennej "fix". Następnie definiuje kształt i gęstość uchwytu przed powiązaniem go z instancją, która została utworzona z indeksem powiązanego uchwytu przechowywanym w zmiennej "my_fix". Na koniec uchwyt jest usuwany, aby zapobiec wyciekom pamięci, ponieważ nie jest już potrzebny.
+   
+   
+   
+  
+    
+      
+        Powrót: Armatura
+        Następny: physics_fixture_bind_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

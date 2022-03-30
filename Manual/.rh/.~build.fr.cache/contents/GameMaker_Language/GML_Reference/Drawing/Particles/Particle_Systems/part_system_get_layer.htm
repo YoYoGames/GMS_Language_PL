@@ -1,0 +1,46 @@
+
+  
+  część_systemu_get_layer
+  Ta funkcja służy do pobierania unikalnej wartości identyfikatora warstwy dla podanego układu cząsteczek. Podajesz wartość identyfikatora układu cząsteczek (zwróconą przez funkcję part_system_create_layer()), a funkcja zwróci wartość ID warstwy.
+   
+  Składnia:
+  part_system_get_layer(ind);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Identyfikator systemu cząstek stałych
+        The particle system ID value to get the layer ID of
+      
+    
+  
+   
+  Zwroty:
+  Layer ID or 0 (if the layer is an internally managed one)
+   
+  Przykład:
+  if (part_system_get_layer(global.p_sys) != "effects_layer")
+    {
+        part_system_layer(global.p_sys, "effects_layer";
+    }
+  Powyższy kod sprawdzi, na jakiej warstwie znajduje się układ cząsteczek, a jeśli nie znajduje się na podanej warstwie, zostanie zmieniony.
+   
+   
+   
+  
+    
+      
+        Powrót: Układy cząstek stałych
+        Następny: part_system_layer
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

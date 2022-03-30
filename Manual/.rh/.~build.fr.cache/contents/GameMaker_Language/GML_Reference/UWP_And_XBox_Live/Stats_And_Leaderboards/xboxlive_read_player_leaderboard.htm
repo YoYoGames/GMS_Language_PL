@@ -1,0 +1,100 @@
+
+  
+  xboxlive_read_player_leaderboard
+  Funkcja zwróci informacje o tablicy liderów dla podanej nazwy użytkownika. Tablica liderów musi być wcześniej utworzona w pulpicie XDP dla Twojej gry, a wywołanie funkcji spowoduje wywołanie zwrotne Social Asynchronous Event, które zawiera async_load zawierającą mapę wypełnioną odpowiednimi parami klucz/wartość. Klucz "id" tej mapy DS jest używany do identyfikacji właściwego wywołania zwrotnego (może być więcej niż jedna funkcja wyzwalająca dla danego zdarzenia asynchronicznego), a IT będzie sparowane ze stałą achievement_leaderboard_info oraz kilkoma innymi parami klucz-wartość. Dokładna zawartość mapy jest przedstawiona poniżej:
+  
+    "id" - w przypadku tej funkcji powinno być achievement_leaderboard_info
+    "leaderboardid" - Unikalny identyfikator tablicy liderów zdefiniowany na pulpicie nawigacyjnym dostawcy.
+    "numentries" - Liczba wpisów w tabeli liderów, które otrzymałeś.
+    "GraczN" - Nazwa gracza, gdzie "N" jest liczbą całkowitą odpowiadającą jego pozycji na liście graczy w tabeli rankingowej.
+    "PlayeridN" - Unikalny identyfikator użytkownika gracza, "N".
+    "RankN" - Ranga gracza "N" w tabeli liderów.
+    "ScoreN" - Wynik gracza "N".
+  
+  
+    Funkcja wymaga podania jednej z poniższych stałych w celu ustawienia właściwości filtra:
+  
+    
+      
+        Stała
+        Opis
+      
+      
+        xboxlive_achievement_filter_all_players
+        Zdobądź wszystkie punkty.
+      
+      
+        xboxlive_achievement_filter_friends_only
+        Pobierz tylko wyniki znajomych, w kolejności rosnącej.
+      
+      
+        xboxlive_achievement_filter_favorites_only
+        Pobierz tylko ulubione wyniki, w porządku rosnącym
+      
+      
+        xboxlive_achievement_filter_friends_alt
+        Pobierz tylko wyniki znajomych w porządku malejącym.
+      
+      
+        xboxlive_achievement_filter_favorites_alt
+        Pobierz tylko ulubione wyniki w porządku malejącym.
+      
+    
+  
+   
+   
+  Składnia:
+  xboxlive_read_player_leaderboard(leaderboard_name, user_name, num_items, friend_filter);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        leaderboard_name
+        String
+        The name of the leaderboard to read, as set up on XDP.
+      
+      
+        user_name
+        Identyfikator użytkownika konsoli Xbox
+        The ID of the user to read from.
+      
+      
+        num_items
+        Real
+        The number of items to retrieve.
+      
+      
+        friend_filter
+        Filtr osiągnięć Xbox Live Stała
+        One of the filter constants (see the description, above).
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  var _user = xboxlive_user_for_pad(0);
+    var _uid = xboxlive_user_id_for_user(_user);
+    xboxlive_read_player_leaderboard("MyLeaderboard", _uid, 10, achievement_filter_all_players);
+  Powyższy kod pobiera identyfikator użytkownika, a następnie wykorzystuje go do pobrania danych wszystkich graczy z pierwszych 10 miejsc w tabeli rankingowej.
+   
+   
+   
+  
+    
+      
+        Powrót: Statystyki i rankingi
+        Następny: xboxlive_fire_event
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

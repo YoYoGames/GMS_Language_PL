@@ -1,0 +1,50 @@
+
+  
+  path_set_kind
+  Za pomocą tej funkcji można określić rodzaj path, jaki ma mieć określony zasób. Może to być zarówno linia prosta path (ustawiona na 0), jak i wygładzona path (ustawiona na 1), w którym to przypadku należy również uwzględnić precyzję path (precyzję
+    można też ustawić za pomocą path_set_precision()). Ta funkcja zmienia rzeczywisty zasób path, a więc będzie trwale wpływać na sposób wykorzystania path przez wszystkie instancje w grze od momentu
+    Jeśli to nie jest to, czego potrzebujesz, to powinieneś użyć funkcji takiej jak path_duplicate(), aby najpierw utworzyć kopię path, a następnie wywołać tę funkcję
+    na zduplikowanej asset (nie zapomnij wywołać path_delete() na asset, gdy nie będzie już potrzebna).
+  
+   
+  Składnia:
+  path_set_kind(index, val);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the path to change.
+     
+      
+        val
+        The kind of the path, 0 for straight or 1 for smooth.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  path_set_kind(pth_Patrol, true);
+  Spowoduje to ustawienie podanej strony path jako "gładkiej" strony path.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja ścieżką
+        Następny: path_set_precision
+        
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

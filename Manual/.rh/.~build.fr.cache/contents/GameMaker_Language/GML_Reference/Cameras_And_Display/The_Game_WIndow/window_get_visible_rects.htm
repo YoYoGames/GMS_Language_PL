@@ -1,0 +1,56 @@
+
+  
+  window_get_visible_rects
+  Za pomocą tej funkcji można znaleźć nakładający się obszar prostokąta zdefiniowanego przez (x1,y1) do (x2,y2) na każdym z dołączonych wyświetlaczy. Funkcja zwróci tablicę z 8 wartościami na każdy wyświetlacz (tzn. jeśli masz dwa wyświetlacze, tablica będzie miała
+    długość 16 indeksów), gdzie wartości [0 ... 3] odpowiadają wartościom overlapx1, overlapy1, overlapx2, overlapy2 - określającym obszar nakładania się na tym wyświetlaczu i będą ustawione na 0,0,0,0, jeśli nie ma nakładania się - a wartości [4 ... 7] odpowiadają wartościom
+    monitorx1, monitor1, monitorx2, monitor2 - współrzędnym wyświetlacza w przestrzeni wirtualnej. Można to wykorzystać do sprawdzenia, czy zapisana pozycja okna będzie widoczna, czy nie (użytkownik mógł odłączyć zewnętrzny monitor lub
+    przesunąć okno poza ekran, co spowodowało, że zapisana pozycja okna nie jest ważna).
+   
+  Składnia:
+  window_get_visible_rects(x1, y1, x2, y2);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x1
+        The left edge of the rectangle to check
+     
+      
+        y1
+        The top edge of the rectangle to check.
+     
+      
+        x2
+        The right edge of the rectangle to check
+     
+      
+        y2
+        The bottom edge of the rectangle to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var wx = window_get_x(); var wy = window_get_y(); var ww = window_get_width(); var wh = window_get_height(); display_data = window_get_visible_rects(wx, wy, wx + ww, wy + wh); display_num = array_length(display_data) / 8;
+  Powyższy kod wygeneruje tablicę 1D przechowywaną w zmiennej display_data zawierającą informacje o wyświetlaczach, a także utworzy zmienną display_num przechowującą liczbę znalezionych aktywnych wyświetlaczy.
+   
+   
+   
+  
+    
+      
+        Powrót: Okno gry
+        Następny: window_mouse_get_x
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

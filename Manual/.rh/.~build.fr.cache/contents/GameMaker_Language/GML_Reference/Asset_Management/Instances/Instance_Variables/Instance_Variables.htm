@@ -1,0 +1,120 @@
+
+  
+  Zmienne instancji
+  Podczas tworzenia nowej strony object pewne zmienne zostaną już zainicjowane wartościami domyślnymi. Zmienne te nazywamy zmiennymi instancji, ponieważ będą one tworzone dla każdej instancji object w grze rooms, a po utworzeniu instancji wartości tych zmiennych są unikalne dla tej instancji i tylko dla niej. Niektóre z tych zmiennych będą często używane, jak x i y, podczas gdy inne są mniej potrzebne, w zależności od tego, co chcesz zrobić, ale ogólnie są bardzo przydatne i jeśli to możliwe, powinieneś raczej korzystać z nich niż tworzyć własne zmienne.
+  Większość zmiennych instancji można ustawiać i odczytywać, co pozwala zmieniać właściwości i zachowanie instancji przez zmianę wartości danej zmiennej - na przykład można uniemożliwić rysowanie instancji, ustawiając zmienną wbudowaną visible na false. Poniżej znajdują się różne zmienne, które są inicjalizowane dla wszystkich instancji wszystkich stron objects w grze.
+  WAŻNE Jeśli instancja znajduje się w pliku sequence to niektóre z tych zmiennych - jak image_xscale / image_yscale / image_angle / x / y - zostaną nadpisane, gdy sequence będzie aktualizować każdy krok po rozpoczęciu odtwarzania.
+   
+  Zmienne ogólne
+  Zmienne te dotyczą ogólnych właściwości instancji:
+  
+    id
+    visible
+    solid
+    persistent
+    depth
+    layer
+    alarm
+  
+   
+  Ruch i pozycja
+  Zmienne te dotyczą położenia i ruchu instancji:
+  
+    direction
+    friction
+    gravity
+    gravity_direction
+    hspeed
+    vspeed
+    speed
+    xstart
+    ystart
+    x
+    y
+    xprevious
+    yprevious
+  
+   
+  Właściwości obiektu
+  Poniższa zmienna przechowuje unikalny identyfikator indeksu object, z którego została utworzona instancja:
+  
+    object_index
+  
+   
+  Właściwości Sprite'a
+  Wszystkie te zmienne są związane z adresem sprite przypisanym do instancji i można ich używać do zmiany tego, co i jak jest rysowane:
+  
+    sprite_index
+    sprite_width
+    sprite_height
+    sprite_xoffset
+    sprite_yoffset
+    image_alpha
+    image_angle
+    image_blend
+    image_index
+    image_number
+    image_speed
+    image_xscale
+    image_yscale
+  
+   
+  Maska i ramka ograniczająca
+  Zmienne te dotyczą maski kolizji:
+  
+    mask_index
+    bbox_bottom
+    bbox_left
+    bbox_right
+    bbox_top
+  
+   
+  Ścieżki
+  Zmienne te są związane z adresem paths i sposobem, w jaki instancja z nim współpracuje, jeśli jest przypisana:
+  
+    path_index
+    path_position
+    path_positionprevious
+    path_speed
+    path_scale
+    path_orientation
+    path_endaction
+  
+   
+  Linie czasowe
+  Te zmienne służą do ustawiania instancji w taki sposób, aby używała osi czasu:
+  
+    timeline_index
+    timeline_running
+    timeline_speed
+    timeline_position
+    timeline_loop
+  
+   
+  Sekwencje
+  Poniższe zmienne przechowują informacje dotyczące strony Sequence, która w danym momencie może sterować instancją:
+  
+    in_sequence
+    sequence_instance
+  
+   
+  Fizyka
+  Istnieje wiele wbudowanych zmiennych, które można wykorzystać w funkcjach fizyki programu GameMaker Studio 2. Aby wszystko było bardziej przejrzyste, można je znaleźć w części podręcznika poświęconej symulacji fizyki:
+  
+    Fizyka
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Instancje
+        Następny: Dezaktywacja instancji
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

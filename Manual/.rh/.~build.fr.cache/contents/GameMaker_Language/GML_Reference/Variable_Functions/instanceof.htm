@@ -1,0 +1,54 @@
+
+  
+  instanceof
+  Tej funkcji można użyć do uzyskania nazwy funkcji, która została użyta do utworzenia strony struct, gdy strona struct została utworzona za pomocą funkcji konstruktora i  new operatora. Podajesz zmienną z referencją struct do sprawdzenia, a funkcja zwróci albo string z nazwą funkcji, albo undefined. Zauważ, że jeśli przekażesz funkcji struct literał (tzn. struct, który został utworzony bez użycia funkcji konstruktora), to zwróci ona po prostu string "struct". Funkcji tej można również użyć do sprawdzenia, czy referencja do struct jest słabe odwołanie czy nie, w takim przypadku funkcja zwróci string "weakref" zamiast nazwy funkcji, która utworzyła tę referencję struct więcej informacji można znaleźć w funkcji weak_ref_create()).
+   
+  Składnia:
+  instanceof(struct_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        struct
+        The struct reference to use.
+     
+    
+  
+   
+  Zwroty:
+  String or undefined
+   
+  Przykład rozszerzony:
+  W tym przykładzie musimy najpierw zdefiniować funkcję, która zostanie użyta jako konstruktor struktury:
+  function init_struct(_a, _b, _c) constructor
+    {
+        a = _a;
+        b = _b;
+        c = _c;
+    }
+  Funkcji tej można następnie użyć wraz z operatorem new do utworzenia strony struct i wypełnienia jej zmiennymi ustawionymi na wartości argumentów użytych w funkcji:
+  mystruct = new init_struct(10, 100, "Hello World");
+  Następnie możemy uzyskać nazwę funkcji konstruktora, która została użyta w ten sposób:
+  var _name = instanceof(mystruct);
+    if is_string(_name)
+    {
+        show_debug_message(_name);
+    }
+  Spowoduje to wydrukowanie w dzienniku wyjścia adresu string "init_struct".
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: array_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

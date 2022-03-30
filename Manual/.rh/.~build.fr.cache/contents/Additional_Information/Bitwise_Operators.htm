@@ -1,0 +1,193 @@
+
+  
+  Operatory bitowe i binarne
+  Na początku ery komputerów binarne i heksadecymalne (szesnastkowe) były sposobem na życie, prawdopodobnie dlatego, że języki wysokiego poziomu (takie jak BASIC) były po prostu zbyt wolne do uruchomienia. Na przykład wykonanie mnożenia 32 x 32 w języku BASIC mogło zająć wiele cykli procesora, ale w języku binarnym jest to pojedyncza operacja wykonywana w jednym cyklu procesora.
+  Obecnie jednak, przy mocy nawet podstawowego komputera PC, nie trzeba się już o to martwić i można robić rzeczy "długą drogą", ponieważ szybkość maszyny i jej bardziej złożona konstrukcja procesora nadrobią wszelkie niedociągnięcia tego podejścia. Jest to oczywiście wspaniała wiadomość, ponieważ oznacza, że nie trzeba już optymalizować każdej linijki kodu, który się pisze, ale jeśli tak jest, to czy w ogóle powinno się dbać o binarność?
+  Odpowiedź brzmi zdecydowanie "tak, powinieneś". Prawdą jest, że nadal można uzyskać pewne przyrosty prędkości - a czasami mogą one być znaczące - ale używanie binarnego i szesnastkowego kodu prowadzi do lepszego zrozumienia sposobu działania procesora, a także może prowadzić do pisania lepszego kodu, lepszego pakowania danych i uproszczenia niektórych zadań. Ta strona wyjaśni nieco, czym jest binarność oraz jak można jej używać podczas tworzenia gier.
+  Przyjrzyjmy się więc najpierw najbardziej podstawowej teorii binarnej - jak powstają liczby. Spójrzmy na tę tabelę:
+  000 = 0
+    001 = 1
+    010 = 2
+    100 = 4
+  Każda 1 lub 0 reprezentuje jeden bit danych, a jak widać, oznacza to, że w systemie binarnym 10 równa się 2! Każdy bit jest 2 razy większy od poprzedniej wartości, przy czym pierwszy bit jest równy 1. Zatem bit 2 = 2, bit 3 = 4, bit 4 = 8 i tak dalej (jak pokazano poniżej w tabeli bajtów ):
+  00000001 = 1
+    00000010 = 2
+    00000100 = 4
+    00001000 = 8
+    00010000 = 16
+    00100000 = 32
+    01000000 = 64
+    10000000 = 128
+  To dobrze, jeśli chcemy, aby liczby były potęgą 2, ale jak tworzyć bardziej złożone liczby? Cóż, pojedyncza liczba binarna może przechowywać tylko 0 lub 1, i to wszystko, więc aby uzyskać bardziej złożone liczby, musimy dodawać bity do siebie. Jeśli na przykład chcemy utworzyć liczbę 6, dodajemy do siebie 4 i 2 w następujący sposób.
+  00000010 = 2
+    00000100 = 4
+    00000110 = 6
+  Dotyczy to wszystkich liczb binarnych oraz sposobu, w jaki komputer tworzy wewnętrznie każdą liczbę. Weźmy jako przykład nieco bardziej skomplikowaną liczbę: 23. Liczba 23 składa się w rzeczywistości z 1+2+4+16 lub 00010111. A co powiesz na znacznie bardziej skomplikowany przykład: 196? Cóż, ta liczba składa się z 128+64+4 lub 11000100. Tak więc w rzeczywistości nie jest ona aż tak skomplikowana!
+  Jeśli jednak zaczniemy używać wartości spoza zakresu bajtu (który może przechowywać liczby z zakresu od 0 do 255), śledzenie ich stanie się nieco trudniejsze. Na przykład 217 361 to 110101000100010001 w systemie binarnym. Albo 1+16+256+etc... Zasady są takie same niezależnie od wyrażanej wartości - każda liczba jest tworzona przez dodanie do siebie wielu bitów.
+  W jaki sposób można wykonywać operacje matematyczne na tych wartościach? Załóżmy, że chcesz zapisać true lub false jako wartość. Zazwyczaj kompilatory używają adresu INT (adres INT jest zwykle definiowany jako podpisana liczba 32-bitowa - podpisana oznacza, że może mieć wartość dodatnią lub ujemną, a niepodpisana, że tylko dodatnią), a następnie przypisują ją do adresu 0 lub 1. Mając tylko dwa stany, wartość true / false jest idealna do przechowywania w bicie, a gdybyśmy to zrobili, moglibyśmy przechowywać 32 bity true / false dla każdego adresu INT, a nie tylko jeden, ponieważ adres INT składa się z 32 bitów.
+  Jak to zrobić? Okazuje się, że całkiem łatwo:
+  flags = flags | 1;
+  Operator "|" jest operatorem bitowym OR, a to oznacza, że powyższa instrukcja ORs 1 do wartości przechowywanej w zmiennej flags. Jeśli pamiętasz z wcześniejszych lekcji, to użycie 1 spowoduje ustawienie pierwszego bitu. Gdybyśmy chcieli ustawić drugi bit, zrobilibyśmy to tak:
+  flags = flags | 2;
+  Na stronie OR znajduje się 2, ponieważ wzór bitowy 00000010 jest równy 2. Co dokładnie robi operator binarny OR? Łączy wszystkie bity w jedną wartość, jak poniżej:
+  010110100 // Value 1
+    110011001 // value 2
+    110111101 // Value 1 OR Value 2
+  Oto tzw. tabela prawdy dla operatora OR:
+  00 | 00 = 00
+    00 | 01 = 01
+    01 | 01 = 01
+    01 | 00 = 01
+  Zatem tam, gdzie jest wartość z dwoma zerami, pozostanie ona zerem. Zaletą używania takich bitów jako stanów true/false jest to, że można ustawić kilka bitów jako "flagi" w jednej operacji, czego nie można zrobić z normalną wartością logiczną. Na przykład, powiedzmy, że bit 1 jest "aktywny" flag, a bit 3 jest "widoczny" flag. Możemy ustawić obie te wartości w ten sposób:
+  flags = flags | 5;
+  Dzieje się tak, ponieważ 5 to 00000101 w systemie binarnym, a zgodnie z powyższą regułą zmienna "flagi" otrzyma oba te bity połączone ze swoimi własnymi. Zatem nawet jeśli bit 1 był już ustawiony, operacja nadal działa, a bit 3 również zostanie ustawiony.
+  A jak wyczyścić stronę flags? W tym miejscu można skorzystać z operacji bitowej "&" AND. Kiedy AND czegoś, bity, które są ustawione w masce, są zachowywane, a bity, które są czyste w masce, są usuwane - w ten sposób:
+  01110010101 // Value 1
+    00110000100 // Value 2
+    00110000100 // Value 1 AND value 2
+  Jak widać, tam, gdzie w każdej wartości jest 1, ta 1 jest zachowywana, a tam, gdzie jest mieszanina 0 i 1, te wartości są resetowane do 0. Oto tabela prawdy dla strony ANDing:
+  00 & 00 = 00
+    01 & 00 = 00
+    00 & 01 = 00
+    01 & 01 = 01
+  Tak więc tylko wtedy, gdy w każdym miejscu znajduje się jakiś fragment, zostanie on zachowany. Oznacza to, że tak jak można ustawić wiele stron flags jednocześnie, można również wyczyścić wiele stron flags jednocześnie. Na przykład, weźmy powyższy przypadek, ale tym razem wyczyśćmy je. Chcemy wyczyścić bity 1 i 3 (co da nam wartość 5), ale pamiętając o powyższej tabeli prawdy, chcemy zachować wszystkie pozostałe bity i wyczyścić bity 1 i 3. W ten sposób powstanie binarna "maska" o wartości 11111111111111111111111111111010 (32 bity). Ta maska zachowuje wszystkie aktualnie ustawione bity, ale czyści dwa bity, które mają być wyczyszczone. Gdybyśmy więc mieli wartość 1000111011 i chcieli wyczyścić bity 1 i 3 za pomocą powyższej maski, otrzymalibyśmy następujący wynik...
+  00000000000000000000001000111011 // Value
+    11111111111111111111111111111010 // Mask
+    00000000000000000000001000111010 // Value AND Mask
+  Jest to świetne rozwiązanie, ale gdybyśmy musieli to robić za każdym razem, gdy chcemy wyczyścić stronę flags, stałoby się to męczące. Potrzebujemy więc sposobu na łatwe przerzucanie bitów (i najlepiej bez kosztów dla procesora). Na szczęście istnieje prosty sposób, aby to zrobić, wykorzystujący operator " ~" NOT.
+  Operator NOT jest dokładnie tym, co mówi - nie tymi bitami. Oto tabela prawdy dla NOT.
+  ~00 = 11
+    ~01 = 10
+    ~10 = 01
+    ~11 = 00
+  Ten operator sprawia, że usuwanie flags jest bardzo proste, a co więcej, jest to zazwyczaj optymalizacja w czasie kompilacji, co oznacza, że jeśli używasz stałej liczby (tzn. nie zmiennej), to kompilator automatycznie odwróci bity za Ciebie. Weźmy na przykład poniższą instrukcję, w której chcemy ponownie wyczyścić bity 1 i 3:
+  a = a & ~5;
+  W rzeczywistości skompiluje się on do postaci "a & 11111111111111111111111111111010". To bardzo upraszcza życie, jeśli chodzi o usuwanie flags.
+  Ostatnim operatorem, któremu chcemy się przyjrzeć, jest "^" EOR (Exclusive OR, czasami nazywany XOR), operator ten odwraca bity ustawione w obu wartościach. Oto tabela prawdy EOR:
+  0 ^ 0 = 0
+    0 ^ 1 = 1
+    1 ^ 0 = 1
+    1 ^ 1 = 0
+  Jest to ciekawe, ale niezwykle użyteczne rozwiązanie. Na przykład, powiedzmy, że chcemy mieć licznik, który po prostu liczy od 0 do 1 i z powrotem do 0 (przełączając się między 0 a 1), możemy dodać jeden i wykonać IF, aby sprawdzić, czy doszedł do 2, a następnie zresetować go z powrotem do 1. Albo... możemy dodać 1, a następnie AND ją z 1 (ponieważ 01+01 = 10, oraz 10 & 01 = 0) lub możemy zrobić tak:
+  a = a ^ 1;
+  Przy pierwszym uruchomieniu jest to 0 ^ 1 = 1, a przy drugim 1 ^ 1 = 0, co powoduje zmianę wartości z 0 na 1.
+  Tak więc - OR (|), AND(&), NOT(~) i EOR(^) pozwalają nam stosunkowo łatwo manipulować bitami, umożliwiając, na najprostszym poziomie, kontrolowanie wielu bitów naraz. Podczas tworzenia gier możemy oczywiście używać tych operacji do innych rzeczy, takich jak maskowanie sprites, wykonywanie operacji na liczbach całkowitych MOD (przy użyciu AND) lub wykonywanie ładnych liczników w pętli.
+  Potrafimy więc wykonywać proste operacje bitowe, ale przyjrzyjmy się bardziej złożonym zagadnieniom, zaczynając od pytania: jak komputer dodaje? Przyjrzyjmy się bardzo prostemu przykładowi: 1+1.
+  00000001
+    00000001
+    00000010
+  Podobnie jak w normalnym dodawaniu, dodajemy liczby do siebie, a następnie przelewamy do następnej kolumny, ale w przeciwieństwie do normalnego dodawania dziesiętnego, możemy przejść tylko od 0 do 1, a nie od 0 do 9. Zatem dodanie liczby 1+1 oznacza przepełnienie do 10. Przyjrzyjmy się więc bardziej złożonemu przykładowi.
+  01011011 = 91
+    00101101 = 45
+    10001000 = 136
+  Oczywiście tutaj jest to trudniej zauważyć, ale przepełnienia pojawiają się stopniowo, aż do momentu, gdy w danej kolumnie nie ma jedynek. Warto zauważyć, że komputery mogą dodawać (lub odejmować, mnożyć lub dzielić) tylko dwie liczby jednocześnie. Weźmy przykład 19 + 19 + 19. Będąc człowiekiem, możemy dodać do siebie wszystkie 9, przenieść 2 i dalej działać! Ale komputery tego nie potrafią - potrafią natomiast zrobić to: (19 + 19) + 19. Dlatego każde obliczenie wykonują w blokach po 2.
+  Obliczenia binarne, które najbardziej interesują nas jako programistów, to mnożenie i dzielenie. Komputery mnożą tylko dwójkami, a żeby wykonać więcej, rozbijają liczbę na części, a następnie dodają wszystkie wyniki do siebie. Przyjrzyjmy się najpierw kilku bardzo prostym przykładom. 4 * 2 = 8. Aby pomnożyć liczbę przez 2 w układzie binarnym, należy przesunąć wszystkie bity w lewo o jeden. Na przykład tak:
+  00000100 * 2 = 00001000 = 8
+  W tym przypadku wszystkie bity przesunęły się w lewo o jeden, co spowodowało przesunięcie z trzeciego bitu na czwarty i zmianę wartości z 4 na 8. A co powiesz na większą liczbę?
+  101 = 01100101 * 2 = 11001010 = 202
+  Ponownie wszystkie bity przesuwają się o jeden, a to mnoży się przez 2. A co z mnożeniem przez 4? To proste, przesuniemy wszystko w lewo o 2, a nie o jeden. A więc co powiesz na 16 lub 128? Wymagałoby to przesunięcia w lewo odpowiednio o 4 bity lub 7 bitów. Jest to niezwykle użyteczne, ponieważ dzięki temu możemy wykonywać proste mnożenia, przesuwając bity. W tym celu używamy operatora przesunięcia w lewo <<. Oto kilka przykładów:
+  00000001 << 1 = 000000010 = 2
+    00000001 << 2 = 000000100 = 4
+    00000001 << 3 = 000001000 = 8
+    00000001 << 4 = 000010000 = 16
+    00000001 << 5 = 000100000 = 32
+    00000001 << 6 = 001000000 = 64
+    00000001 << 7 = 010000000 = 128
+    00000001 << 8 = 100000000 = 256
+  Oprócz tego, że jest to bardzo użyteczne do szybkiego i prostego mnożenia, jest to również bardzo użyteczne do ustawiania konkretnych bitów, bez konieczności ustalania ich wartości. Załóżmy, że chcemy ustawić bit 27, jaka to liczba? (67108864 przy okazji!), więc możemy użyć powyższej składni, aby łatwo ustawić flags w ten sposób:
+  a = a | (1 << 27)
+  Ok... więc właściwie byłby to bit 26, tak jak opisywaliśmy to do tej pory (ponieważ bity zaczynały się od jedynki), ale tak naprawdę... bity zaczynają się od bitu 0 i idą w górę, a nie od bitu 1. Tak więc, choć w liczbie INTEGER są 32 bity, to są to bity z zakresu od 0 do 31, a nie od 1 do 32. Jest to całkiem użyteczne, ponieważ możemy teraz ustawić stałe dla liczb bitowych.
+  Załóżmy więc, że bit 27 to aktywny flag, a bit 0 to eksplodujący flag. Jak możemy ustawić oba?
+  ACTIVE = 27;
+    BOOM = 0;
+    A = A | (1 << ACTIVE) | (1 << BOOM);
+  Może to wyglądać na dużą ilość kodu, ale jeśli liczby te są stałe, kompilator wstępnie skompiluje te operacje w jedną wartość, dzięki czemu otrzymamy taki właśnie kod.
+  A = A | 13421772;
+  Usuwanie tych bitów (jak widzieliśmy powyżej) polega po prostu na użyciu modyfikatora NOT, jak poniżej:
+  A = A & ~((1 << ACTIVE) | (1 << BOOM));
+  Dzięki temu możemy ustawiać i czyścić dowolne bity, a także kompresować struktury danych na ogromną skalę. Kompresja struktur danych to dobra rzecz, ponieważ jeśli używasz mniej pamięci, masz mniej cache misses, a twój kod po prostu działa szybciej. Jakby to ująć, co jest szybsze: kopiowanie 32 MB danych czy 4 MB? Cóż, z całą pewnością 4 jest szybsze. Jeśli więc możesz zmieścić wszystkie swoje flags w jednym dostępie do pamięci, to dobrze!
+  Przyjrzyjmy się teraz, w jaki sposób wykonuje się dzielenie i dlaczego jest ono tak przydatne. Dzielenie wykonuje się przez przesunięcie bitów w prawo za pomocą operatora przesunięcia w prawo >>. Weźmy prostą liczbę - 64 - i podzielmy ją przez 32:
+  64 / 32 = 01000000 >> 5 = 00000010
+  W tym przypadku przesuwamy pojedynczy bit w dół o 5 (tyle właśnie przesunięć potrzeba do uzyskania liczby 32 - patrz wyżej), co daje nam 2. Ale co się stanie, jeśli w tym miejscu są inne bity? Przyjrzyjmy się temu:
+  68 / 32 = 01000100 >> 5 = 00000010
+  No i proszę: .... Jest dokładnie tak samo. Bity, które przesuwamy w dół, są po prostu tracone. Jest to bardzo przydatne, ponieważ przy dzieleniu w dół, jeśli potrzebujemy reszty, istnieje jeszcze prostszy sposób na jej uzyskanie, o czym za chwilę. Ale najpierw posłużmy się praktycznym przykładem. Mam pozycję X i Y i chcę uzyskać komórkę siatki, w której te pozycje się znajdują, przy czym siatka ma rozmiar 32x32. Metoda ta umożliwia przechowywanie danych objects, kolizje, flags - wszelkiego rodzaju rzeczy - i bardzo szybki dostęp do nich. A więc zaczynamy:
+  var X_index = x >> 5;
+    var Y_index = y >> 5;
+    cell_data = mygrid[# X_index,Y_index];
+  Co by było, gdybyśmy chcieli otrzymać resztę? Być może ta reszta jest używana jako pewnego rodzaju zamówienie flag lub coś w tym rodzaju. Niezależnie od powodu, uzyskanie reszty jest tak proste, jak wykonanie polecenia AND:
+  var remainder = x & 31
+    var X_Index = x >> 5;
+  Być może zauważyłeś, że użyliśmy tu wielu wierszy kodu (jak to często bywa), ale to wciąż tylko kilka bardzo szybkich instrukcji. Ale dlaczego 31? Ponieważ bit 5 ma wartość 32, to wszystkie bity poniżej będą miały wartość 31, a to jest maksymalna reszta, więc z taką właśnie resztą wchodzimy na stronę AND (moglibyśmy też użyć (1 << 5) - 1, co dałoby 32 - 1 = 31). Gdybym miał to zrobić, nie rozumiejąc zasad działania binarnego, wyglądałoby to tak:
+  var r = x mod 32;
+    var X_Index = floor(x / 32);
+  Dlaczego więc jest to o wiele gorsze? Otóż, aby podzielić przez 32, musimy wykonać dzielenie zmiennoprzecinkowe - co oczywiście zajmuje czas, ale aby wykonać mod 32, trzeba wykonać jeszcze jedno dzielenie! Gdybyśmy robili to w asemblerze, otrzymalibyśmy obie wartości w jednym dzieleniu, ale w językach wysokiego poziomu nie jest to możliwe (cóż... niezbyt często), więc trzeba wykonać całą pracę dwukrotnie. Jest to bardzo uciążliwe, zwłaszcza jeśli na stronie loop wykonuje się wiele takich obliczeń. Dzielenie liczb całkowitych z wykorzystaniem przesunięcia bitowego, jak pokazano powyżej, naprawdę pomaga w optymalizacji gry.
+  Ponieważ pojęcie to może być dość skomplikowane do zrozumienia, a następnie zastosowania w rzeczywistych sytuacjach programistycznych, poniżej znajduje się seria krótkich przykładów, które można zastosować w dowolnej grze stworzonej przy użyciu GameMaker Studio 2.
+  Wyrównanie płytek
+  
+    Programiści GameMaker Studio 2 często używają funkcji place_free(), a następnie po wykryciu kolizji próbują powoli odsunąć stronę object, zapętlając się wokół pozycji x lub y i kontynuując wykonywanie tej funkcji, albo używając funkcji move_outside_all().
+    Jaki jest więc szybszy sposób na wykonanie tej operacji? Cóż, jeśli użyjemy odpowiedniej potęgi 2 tiles, to mamy bardzo prostą metodę, która jest jednocześnie błyskawiczna. Jeśli poruszamy się w prawo i weszliśmy w blok kolizji, to jak wiemy, wszystko jest wyrównane do 32, więc musimy również wyrównać adres sprite do granicy 32 pikseli - najlepiej tej po lewej stronie - tak aby adres sprite został przesunięty poza obszar kolizji. Jest to naprawdę proste, ponieważ znając zasady, których użyliśmy powyżej do uzyskania reszty, oraz wiedząc, jak uzyskać odwrotność bitów, możemy po prostu wykonać tę czynność:
+    x = x & ~31;
+    Zgadza się, to WSZYSTKO, co jest potrzebne do wyrównania do granicy 32 pikseli. Zmieniając liczbę 31, możemy wyrównać do czegokolwiek chcemy - pod warunkiem, że jest to potęga 2. (Jest to odpowiednik dzielenia przez 32, a następnie mnożenia przez 32, co powoduje usunięcie niższych bitów).
+    Jeśli chcemy wyrównać do prawej, wykonujemy powyższą czynność, ale dodajemy 32, aby przesunąć ją na następną stronę tile. Proste. Wszystko to sprawia, że cały kod kolizji jest znacznie szybszy i pozwala wykorzystać czas procesora tam, gdzie jest on naprawdę potrzebny.
+     
+  
+  Klucze i drzwi
+  
+    Załóżmy, że masz poziom z kilkoma drzwiami i kluczem do każdego z nich. W jaki sposób można łatwo oznaczyć klucz do konkretnych drzwi? Cóż, normalnie wystarczy przypisać identyfikator do klucza i drzwi. A jeśli chcesz, aby jeden klucz otwierał 2 lub 3 drzwi? To proste. Używasz MASKI. Drzwi będą miały przypisany jeden bit w następujący sposób:
+       
+    door_id = 1; // 0001
+    Inne to na przykład:
+       
+    door_id=2; // 0010
+      door_id=4; // 0100
+      door_id=8; // 1000
+      etc...
+    Gdybyśmy chcieli, aby klucz otwierał drzwi 1 i 3, wówczas klucz miałby wartość MASK równą 5 (czyli 101 w systemie binarnym). Jeśli sprawdzimy to na stronie AND i wyjdzie nam "nie zero", to wiemy, że klucz może otworzyć drzwi. Można też mieć klucze, które nic nie otwierają, mając wartość MASK równą 0. Zobacz poniższy kod, aby sprawdzić, jak to działa:
+    if ((key_id & door_id) ! = 0)
+      {
+          opendoor();
+      }
+     
+  
+  Liczniki z pętlą
+  
+    Załóżmy, że chcemy mieć prosty licznik animacji, od 0 do 15 (ponieważ mamy 16 klatek animacji). Normalnie wykonalibyśmy inkrementację, a następnie sprawdzenie if, aby zawinąć liczbę, ale w tym przykładzie użyjmy operatora AND(&):
+    counter = (counter + 1) & 15;
+    Ponieważ 16 jest potęgą 2, możemy zmniejszyć tę liczbę o 1 i użyć jej jako maski, którą następnie możemy wykorzystać do zawijania wartości naszego licznika. Jeśli licznik przesunie się w górę z 15 do 16, to otrzymamy bitowy wzorzec 10000, a jeśli AND to z 15 (bitowy wzorzec 01111), to otrzymamy 00000 (po prostu zero). Oznacza to, że powyższy kod jest przydatny do zawijania wartości w zakresie potęgi 2.
+     
+  
+  Sprawdzenie "Power of 2
+  
+    A gdybyś chciał sprawdzić, czy coś jest potęgą dwójki? Oto mała, zgrabna sztuczka... Funkcja zwróci wynik true, jeśli podana wartość jest potęgą 2:
+    function is_pow2(_val)
+      {
+          return _val & (_val - 1)) == 0;
+      }
+    Jeśli więc mamy liczbę 51 (110011), co to oznacza? Cóż, otrzymamy to... 110011 & 110010 co oczywiście pozostawia nam false, ponieważ po AND pozostało jeszcze wiele bitów. Jeśli mielibyśmy 64 (1000000), to otrzymalibyśmy to... 1000000 & 0111111, co jednak pozostawia nam 0, więc jest to true.
+     
+  
+  Wyrównanie indeksu
+  
+    Oto krótki fragment kodu do wyrównywania do potęgi 2 liczb. (1,2,4,8,16 i tak dalej). Może to być bardzo przydatne podczas alokacji pamięci lub upewniania się, że dane są zapisywane w odpowiednich granicach. W tym przykładzie adres _val1 musi być wyrównany do _val2 bajtów, gdzie _val2 jest potęgą liczby 2. Ta mała funkcja zaokrągla w górę do następnej granicy żądanej liczby.
+    function align_pow2(_val1, _val2)
+      {
+          return _val1 + (_val2 - 1)) & ~(_val2 - 1);
+      }
+     
+     
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Informacje dodatkowe
+        Następny: Tabele typów
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

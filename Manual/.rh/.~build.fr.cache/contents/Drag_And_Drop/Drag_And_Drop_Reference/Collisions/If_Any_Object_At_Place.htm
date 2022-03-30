@@ -1,0 +1,48 @@
+
+  
+   If Any Object At Place
+  Ta akcja służy do sprawdzania, czy istnieje instancja dowolnej strony object umieszczona w pozycji opartej na masce kolizji instancji wywołującej. Podajesz pozycję, która może być pozycją bezwzględną lub pozycją względną względem instancji,
+    a akcja zwróci true, jeśli wystąpi kolizja, lub false, jeśli nie wystąpi. Możesz także zaznaczyć pole "Not" flag, aby sprawdzić, czy w podanej pozycji nie ma kolizji, a akcja zwróci wtedy true, jeśli nie znaleziono kolizji, lub false w przeciwnym wypadku. Kolizje są obliczane na podstawie tego, że maska kolizji wywoływanej instancji pokrywa się z maską kolizji dowolnej instancji znajdującej się na danej pozycji (tak jakby była ona "umieszczana" na tej pozycji).
+  WAŻNE! Kolizje będą rejestrowane tylko dla tych instancji, które mają poprawną maskę kolizji, tzn. mają sprite przypisaną do sprite_index, lub sprite przypisaną do mask_index. Jeśli któraś z instancji w
+    kolizji nie ma maski kolizji, to kolizja nie zostanie wykryta, niezależnie od tego, co dana instancja rysuje w danym momencie.
+  Należy pamiętać, że aby dodać akcje do bloku "if", należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:
+  
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        x
+        Pozycja x do sprawdzenia
+      
+      
+        y
+        Pozycja y do sprawdzenia
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdza, czy w miejscu, w którym znajduje się instancja, nie ma kolizji.
+    i jeśli zostanie znaleziona, miesza instancję z kolorem czerwonym, a w przeciwnym razie pozostawia mieszanie jako normalne (białe).
+   
+   
+   
+  
+    
+      
+        Powrót: Działania związane z kolizją
+        Następny: If Object At Place
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

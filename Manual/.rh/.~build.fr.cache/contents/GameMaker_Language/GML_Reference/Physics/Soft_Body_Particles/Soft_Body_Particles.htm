@@ -1,0 +1,83 @@
+
+  
+  Miękkie cząstki ciała
+  GameMaker Studio 2 korzysta z biblioteki fizyki ciała sztywnego Box2D i jako taka nie pozwala na stosowanie fizyki ciała miękkiego. Jednak program Płynna zabawa extension dodaje do systemu fizyki cząsteczki, które umożliwiają tworzenie symulowanych ciał miękkich przy użyciu fizyki ciała sztywnego. Zasadniczo można utworzyć kształt cząstek, które zachowują spójność i w ten sposób symulują pełne ciało, które ze względu na interakcję cząstek sprawia wrażenie ciała miękkiego. Cząstki fizyki można także wykorzystać do symulowania cieczy i innych systemów fizyki opartych na cząsteczkach.
+  Zanim zaczniesz tworzyć cząstki fizyki, będziesz musiał ustawić dla nich podstawowe właściwości fizyki, tak jak dla elementów stałych w zwykłej fizyce. Należy jednak pamiętać, że ustawienie tych właściwości będzie miało wpływ na wszystkie cząstki utworzone wcześniej, a także na wszystkie nowe cząstki, które zostaną utworzone, więc zwykle używa się tych funkcji tylko na początku gry lub poziomu. Istnieją jednak specjalne funkcje do ustawiania flag cząstek dla poszczególnych cząstek (i grup cząstek), które zmienią ich właściwości, takie jak "odbijanie" czy "lepkość", umożliwiając tworzenie różnych typów cząstek w zakresie tych globalnych ustawień.
+  Do ustawiania i uzyskiwania danych globalnego systemu cząstek stałych dostępne są następujące funkcje:
+  
+    physics_particle_count
+    physics_particle_group_count
+    physics_particle_set_max_count
+    physics_particle_set_radius
+    physics_particle_set_density
+    physics_particle_set_damping
+    physics_particle_set_gravity_scale
+    physics_particle_get_max_count
+    physics_particle_get_radius
+    physics_particle_get_density
+    physics_particle_get_damping
+    physics_particle_get_gravity_scale
+  
+   
+  Dostępne są również następujące funkcje do ustawiania flag dla poszczególnych cząstek (lub grup cząstek), a także do uzyskiwania informacji, takich jak położenie lub kolor, z pojedynczej cząstki lub grupy:
+  
+    physics_particle_set_flags
+    physics_particle_set_category_flags
+    physics_particle_set_group_flags
+    physics_particle_get_group_flags
+    physics_particle_group_get_inertia
+    physics_particle_group_get_centre_x
+    physics_particle_group_get_centre_y
+    physics_particle_group_get_vel_x
+    physics_particle_group_get_vel_y
+    physics_particle_group_get_ang_vel
+    physics_particle_group_get_x
+    physics_particle_group_get_y
+    physics_particle_group_get_angle
+    physics_particle_get_data
+    physics_particle_get_data_particle
+    physics_particle_group_get_data
+  
+   
+  Cząstki można tworzyć na dwa sposoby - pojedynczo lub w grupach. Pojedyncze cząstki będą zachowywać się dokładnie tak, jak określają to ustawienia globalne i strona flags, które zostały ustawione podczas ich tworzenia, ale grupy cząstek mogą zachowywać się inaczej, w zależności od ich flag grupowych. Te flagi grupowe można ustawić na różne wartości, aby nadać grupie różne właściwości, takie jak przenikanie i sztywność.
+  Do tworzenia cząstek stałych dostępne są następujące funkcje:
+  
+    physics_particle_create
+    physics_particle_group_begin
+    physics_particle_group_circle
+    physics_particle_group_box
+    physics_particle_group_polygon
+    physics_particle_group_add_point
+    physics_particle_group_end
+    physics_particle_group_join
+    physics_particle_group_delete
+  
+   
+  Można nie tylko tworzyć cząstki, ale także je usuwać, zarówno pojedynczo, jak i z całego regionu. Do usuwania cząstek z systemu służą następujące funkcje:
+  
+    physics_particle_delete
+    physics_particle_delete_region_circle
+    physics_particle_delete_region_box
+    physics_particle_delete_region_poly
+  
+   
+  Jeśli nie włączyłeś debugowania rysunku za pomocą physics_draw_debug()nie zobaczysz żadnych cząsteczek na ekranie, gdy je tworzysz. Dlatego, aby faktycznie zobaczyć cząsteczki, musisz narysować je na ekranie w zdarzeniu Draw instancji, używając następujących funkcji (zauważ, że możesz je również narysować za pomocą zwykłych funkcji draw_sprite, jeśli pobierzesz dane każdej cząsteczki za pomocą funkcji physics_particle_get_data()):
+  
+    physics_particle_draw
+    physics_particle_draw_ext
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Fizyka
+        Następny: Zmienne fizyki
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

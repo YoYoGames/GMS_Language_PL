@@ -1,0 +1,51 @@
+
+  
+   Ustaw czas życia cząstek
+  Ta akcja ustawia czas życia podanego typu cząstki. Najpierw określasz wartość identyfikatora typu cząstki (jest to wartość zwrócona podczas tworzenia cząstki za pomocą akcji Utwórz typ cząstki), a następnie
+    możesz ustawić minimalny i maksymalny czas życia cząstki w klatkach gry. Na przykład jeśli w grze liczba klatek na sekundę wynosi 60, to ustawienie obu wartości czasu życia na 60 oznacza, że cząstki będą wyświetlane na ekranie przez 1 sekundę, a następnie znikną.
+    znikną. Jeśli użyjesz dwóch różnych wartości, to każda cząstka będzie miała losowy czas życia, mieszczący się w podanych wartościach minimalnej i maksymalnej. Należy pamiętać, że wszystkie wartości powinny być dodatnimi liczbami całkowitymi.
+  WAŻNE! Ustawienie bardzo długiego czasu życia, a następnie emitowanie setek cząstek, może powodować problemy na mniej wydajnych komputerach i urządzeniach przenośnych. Należy uważać przy ustawianiu czasu życia cząsteczek, aby zmaksymalizować efekt wizualny, ale zminimalizować koszty wydajności.
+    i oszczędnie używać cząsteczek o bardzo długim czasie życia.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Type
+        Wartość identyfikacyjna typu globalnego, dla którego ma być ustawiony okres trwałości
+      
+      
+        Min Life
+        Minimalny czas życia cząstki (w klatkach gry)
+      
+      
+        Max Life
+        Maksymalny czas życia cząstki (w klatkach gry)
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji utworzy nowy typ cząstki i przypisze jej unikatową wartość
+    ID do zmiennej globalnej. Następnie ustawi wszystkie właściwości typu cząstki.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje cząstek
+        Następnie: Ustaw prędkość cząstek
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

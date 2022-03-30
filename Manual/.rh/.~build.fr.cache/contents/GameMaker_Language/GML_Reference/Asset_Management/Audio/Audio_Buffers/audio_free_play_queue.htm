@@ -1,0 +1,53 @@
+
+  
+  audio_free_play_queue
+  Ta funkcja służy do zwalniania pamięci związanej z podanym plikiem audio queue. Indeks queue jest wartością zwróconą podczas tworzenia queue za pomocą funkcji audio_create_play_queue()Funkcja ta powinna być wywoływana, gdy adres queue nie jest już potrzebny, aby zapobiec wyciekom pamięci. Zwolnienie adresu queue spowoduje zatrzymanie odtwarzanego dźwięku, a adresu buffer, z którego dźwięk jest przesyłany, nie można usunąć, dopóki adres queue, do którego jest przypisany, nie zostanie zwolniony. Ta funkcja wywoła zdarzenie asynchroniczne odtwarzania dźwięku, a w tym zdarzeniu zostanie utworzona specjalna mapa DS w zmiennej async_load z następującymi parami klucz/wartość:
+  
+    "queue_id" - strona queue, która zakończyła odtwarzanie danych
+    "buffer_id" - strona buffer, z której nie jest już odtwarzany plik
+    "queue_shutdown" - ustawia się na 0 podczas normalnego odtwarzania i na 1 po odebraniu zdarzenia, ponieważ zwolniłeś queue za pomocą tej funkcji. Gdy wartość ta jest ustawiona na 1, nie chcesz queue żadnych dalszych danych.
+  
+   
+  Składnia:
+  audio_free_play_queue(queueIndex);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        queueIndex
+        Audio Queue ID
+        The index of the queue to free.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var q_id = async_load[? "queue_id"];
+    if (q_id == audio_queue)
+    {
+        audio_free_play_queue(audio_queue);
+        buffer_delete(audio_buffer);
+    }
+  Powyższy kod zostanie umieszczony w zdarzeniu asynchronicznego odtwarzania dźwięku i sprawdzi, czy dźwięk, który zakończył odtwarzanie, pochodzi z "audio_queue", a jeśli tak, zwolni adres queue i powiązany z nim adres buffer.
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory audio
+        Następny: audio_queue_sound
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

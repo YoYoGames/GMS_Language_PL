@@ -1,0 +1,44 @@
+
+  
+  numer_instancji
+  Za pomocą tej funkcji można sprawdzić, ile aktywnych instancji podanego adresu object istnieje w adresie room. Podczas sprawdzania za pomocą tej funkcji, jeśli adres object jest rodzicem, to w wartości zwracanej uwzględnione zostaną również wszystkie dzieci objects . Należy również pamiętać, że te instancje, które zostały wyłączone za pomocą funkcji deaktywacji instancji, nie będą uwzględnione w tym sprawdzeniu.
+   
+  Składnia:
+  instance_number(obj);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        obj
+        The object to total the number of instances of.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if instance_number(object_index) < 50
+    {
+        instance_create_layer(random(room_width), random(room_height), "Instances", object_index);
+    }
+  Powyższy kod sprawdzi liczbę instancji utworzonych z tej samej strony object co bieżąca instancja, a następnie, jeśli jest ich mniej niż 50, utworzy kolejną w losowym miejscu na stronie room.
+   
+   
+   
+  
+    
+      
+        Powrót: Instancje
+        Następny: instance_place
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

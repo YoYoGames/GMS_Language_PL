@@ -1,0 +1,48 @@
+
+  
+  view_set_xport
+  Ta funkcja służy do ustawiania pozycji x podanego portu widoku. Podajesz indeks portu widoku (od 0 do 7) oraz nową pozycję, na której ma się on znaleźć.
+   
+  Składnia:
+  view_set_xport(view_port, x)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        view_port
+        The view port to target (0 - 7)
+     
+      
+        x
+        The new x position
+     
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if view_get_xport(0) != (display_get_width() / 2) - (view_wport[0] / 2)
+    {
+        view_set_xport(0, (display_get_width() / 2) - (view_wport[0] / 2));
+    }
+  Powyższy kod sprawdzi pozycję x portu widoku[0] i jeśli nie znajduje się on w wymaganym miejscu, zostanie ustawiony w tej pozycji.
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: view_set_yport
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,34 @@
+
+  
+  schowek_get_text
+  Ta funkcja zwróci string tekstu znajdującego się w schowku. Jeśli w schowku nie ma żadnego tekstu, zwróci pusty string "".
+  UWAGA: Ta funkcja jest ważna tylko w przypadku systemu docelowego Windows.
+   
+  Składnia:
+  clipboard_get_text();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if clipboard_has_text()
+    {
+        str = clipboard_get_text();
+        clipboard_set_text("");
+    }
+  Powyższy kod sprawdza, czy w schowku znajduje się tekst i jeśli go zawiera, to jest on wczytywany jako string do zmiennej "str". Na koniec schowek jest czyszczony przez ustawienie go na pustą stronę string.
+   
+   
+   
+  
+    
+      
+        Powrót: Struny
+        Następny: clipboard_set_text
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

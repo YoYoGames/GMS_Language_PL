@@ -1,0 +1,44 @@
+
+  
+  view_get_yport
+  Za pomocą tej funkcji można pobrać pozycję y podanego portu widoku.
+   
+  Składnia:
+  view_get_yport(view_port)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        view_port
+        The view port to target (0 - 7)
+     
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if view_get_yport(0) != (display_get_height() / 2) - (view_hport[0] / 2)
+    {
+        view_set_yport(0, (display_get_height() / 2) - (view_hport[0] / 2));
+    }
+  Powyższy kod sprawdzi pozycję y portu widoku[0] i jeśli nie znajduje się on w wymaganym miejscu, zostanie ustawiony w tej pozycji.
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: view_get_wport
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

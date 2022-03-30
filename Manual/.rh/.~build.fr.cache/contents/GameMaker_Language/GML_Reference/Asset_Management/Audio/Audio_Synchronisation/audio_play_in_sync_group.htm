@@ -1,0 +1,54 @@
+
+  
+  audio_play_in_sync_group
+  Za pomocą tej funkcji można przypisać dźwięk do wcześniej utworzonej grupy synchronizacji. Indeks grupy to wartość zwrócona podczas tworzenia grupy za pomocą funkcji audio_create_sync_group(), a indeks dźwięku to indeks dowolnego skompresowanego dźwięku (*.ogg lub *.mp3) z przeglądarki Asset. Ta funkcja tylko dodaje dźwięk do grupy, ale go nie odtwarza. Wartość zwracana będzie >= 0, jeśli się powiedzie, i -1, jeśli się nie powiedzie, przy czym wartość pomyślna oznacza kolejność dźwięku w grupie synchronizacji (czyli 0 oznacza pierwszy dodany dźwięk, 1 - drugi itd...).
+  UWAGA: Ta funkcja nie jest dostępna dla platformy docelowej HTML5.
+   
+  Składnia:
+  audio_play_in_sync_group(group_index, sound_index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        group_index
+        ID grupy synchronizacji dźwięku
+        The group index to assign the sound to.
+      
+      
+        sound_index
+        Aktywa dźwiękowe
+        The sound index to be assigned to the group.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  sg = audio_create_sync_group(true);
+    audio_play_in_sync_group(sg, sound1);
+    audio_play_in_sync_group(sg, sound2);
+    audio_play_in_sync_group(sg, sound3);
+    audio_play_in_sync_group(sg, sound4);
+    audio_start_sync_group(sg);
+  Powyższe polecenie tworzy nową grupę synchronizacyjną i przypisuje jej indeks do zmiennej "sg". Następnie do grupy dodawane są cztery dźwięki, przy czym wzmocnienie dla trzech z nich jest ustawione na 0. Na koniec grupa synchronizacyjna jest odtwarzana.
+   
+   
+   
+  
+    
+      
+        Powrót: Synchronizacja dźwięku
+        Następny: audio_start_sync_group
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

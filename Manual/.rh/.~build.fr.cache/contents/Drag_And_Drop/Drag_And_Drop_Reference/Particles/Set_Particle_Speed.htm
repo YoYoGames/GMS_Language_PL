@@ -1,0 +1,56 @@
+
+  
+   Ustaw prędkość cząstek
+  Ta akcja służy do ustawiania prędkości ruchu cząstki, która może być statyczna lub zwiększana/zmniejszana w czasie. Należy podać unikatową wartość identyfikacyjną typu, którego wielkość ma zostać ustawiona (zwróconą podczas tworzenia typu za pomocą akcji Utwórz typ cząstki), a następnie podać zakres początkowych prędkości początkowych, wielkość wzrostu i wreszcie "wahania". Prędkość, z jaką tworzona jest cząstka, jest obliczana jako liczba pikseli na klatkę gry, więc ustawienie minimalnej wartości 2 i maksymalnej wartości 5 spowoduje, że cząstki będą poruszać się z prędkością od 2 do 5 pikseli na klatkę gry.
+  Opcja zwiększania prędkości cząstki umożliwia wprowadzenie wartości, która będzie dodawana do podstawowej wartości prędkości w każdej klatce gry w czasie życia cząstki. Zatem ustawienie tej wartości na przykład na 0,1 spowoduje dodanie 0,1 do prędkości w każdej klatce gry. Zauważ, że można tu również użyć wartości ujemnych, aby spowolnić cząstkę, choć prędkość nigdy nie spadnie poniżej 0. Zauważ, że minimalne dopuszczalne zmniejszenie prędkości wynosi -0,01, a minimalne zwiększenie - 0,01.
+  Na koniec można ustawić opcję "wiggle". Jest to wartość, która będzie generowana losowo w zakresie od 0 do podanej przez użytkownika, a następnie dodawana lub odejmowana do prędkości na każdym etapie życia cząsteczek, powodując wahania prędkości rysowanego obrazu. Oczywiście większe wartości są bardziej widoczne niż mniejsze, a wartość ta może być nawet ujemna, przy czym maksymalny zakres wynosi od -20 do 20.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Type
+        Unikalna wartość identyfikacyjna typu cząstki, dla której ma być ustawiona wielkość
+      
+      
+        Min Speed
+        Minimalna prędkość dla danego typu cząstek (domyślnie 0,1)
+      
+      
+        Max Speed
+        Maksymalna prędkość dla danego typu cząstek (domyślnie 1)
+      
+      
+        Increase
+        Wartość dodawana do prędkości typu cząstki w każdej klatce gry (może być ujemna, minimalna +/-0.01)
+      
+      
+        Wiggle
+        Maksymalna wartość, która może być losowo dodawana lub odejmowana od prędkości cząstek na krok (+/-20).
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji utworzy nowy typ cząstki i przypisze jego unikatową wartość ID do zmiennej globalnej. Następnie ustawi wszystkie właściwości typu cząstki.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje cząstek
+        Następnie: Ustaw kierunek cząstek
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

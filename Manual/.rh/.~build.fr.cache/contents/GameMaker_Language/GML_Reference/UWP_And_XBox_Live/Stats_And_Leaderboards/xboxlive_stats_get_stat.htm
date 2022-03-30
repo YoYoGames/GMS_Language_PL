@@ -1,0 +1,52 @@
+
+  
+  xboxlive_stats_get_stat
+  Ta funkcja służy do pobierania pojedynczej wartości statystyki z menedżera statystyk dla danego użytkownika. Podaje się identyfikator użytkownika zwrócony przez (na przykład) funkcję xboxlive_get_user()a następnie stat string zdefiniowany podczas tworzenia go za pomocą jednej z funkcji xboxlive_stats_set_stat_*. Wartością zwracaną może być string lub real (zależnie od sprawdzanej statystyki) albo stała GML undefined , jeśli stat nie istnieje lub wystąpił błąd.
+   
+  Składnia:
+  xboxlive_stats_get_stat(user_id, stat);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        user_id
+        The user ID pointer to get the stat names of
+     
+      
+        stat
+        The statistic to set (a string)
+     
+    
+  
+   
+  Zwroty:
+  Real, String or undefined
+   
+  Przykład:
+  if (game_over == true)
+    {
+        if (xboxlive_stats_get_stat(p_user_id, "PercentDone") < 100)
+        {
+            var _val = (global.LevelsFinished / global.LevelsTotal) * 100;
+            xboxlive_stats_set_stat_real(p_user_id, "PercentDone", _val);
+        }
+    }
+  Powyższy kod sprawdza zmienną i jeśli jest to true, to sprawdza wartość statystyki "PercentDone". Jeśli wartość ta jest mniejsza niż 100, generowana jest wartość i statystyka ustawiana jest na tę wartość.
+   
+   
+   
+  
+    
+      
+        Powrót: Statystyki i rankingi
+        Następny: xboxlive_stats_get_leaderboard
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

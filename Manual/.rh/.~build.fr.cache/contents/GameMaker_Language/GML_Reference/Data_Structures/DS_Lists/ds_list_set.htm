@@ -1,0 +1,57 @@
+
+  
+  ds_list_set
+  Ta funkcja służy do ustawiania wcześniej dodanej pozycji na liście. Podajesz identyfikator listy (zwrócony podczas tworzenia listy) oraz pozycję na liście, którą chcesz ustawić, a także wartość, którą chcesz ustawić. Zwróć uwagę, że jeśli ustawiana pozycja znajduje się poza granicami listy (np. ustawiasz pozycję listy 20, ale aktualna lista zawiera tylko 10 pozycji), lista zostanie wypełniona do podanej pozycji, a każda pozycja zostanie ustawiona na 0. Ta funkcja działa tak samo, jak użycie akcesora DS list.
+   
+   
+  Składnia:
+  ds_list_set(id, pos, val);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator listy DS
+        The id of the list to add to.
+      
+      
+        pos
+        Zmienna
+        The position within the list to set.
+      
+      
+        [val2, ... max_val]
+        Zmienna
+        The value to set in the list.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  for (var i = 0; i < ds_list_size(list); i++;)
+    {
+        ds_list_set(list, i, -1);
+    }
+  Powyższy kod doda wartość zapisaną w zmiennej "score" do listy zaindeksowanej w zmiennej "sc_list".
+   
+   
+   
+  
+    
+      
+        Powrót: Listy DS
+        Następny: ds_list_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

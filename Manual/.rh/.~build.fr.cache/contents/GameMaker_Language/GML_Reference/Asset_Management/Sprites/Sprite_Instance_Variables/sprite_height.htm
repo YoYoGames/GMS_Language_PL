@@ -1,0 +1,32 @@
+
+  
+  sprite_height
+  Ta zmienna tylko do odczytu zwraca wysokość strony sprite, która została przypisana do instancji. Wysokość ta jest zwracana w pikselach i będzie zależała od wartości image_yscale. Jeśli potrzebujesz nieskalowanej wysokości, powinieneś użyć sprite_get_height().
+   
+  Składnia:
+  sprite_height;
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if sprite_height != sprite_get_height(sprite_index)
+    {
+        image_yscale = 1;
+    }
+  Powyższy kod sprawdza wysokość zasobu sprite przypisanego do instancji uruchamiającej kod z wysokością zasobu sprite i jeśli nie jest ona taka sama, resetuje zasób image_yscale do wartości 1,
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne instancji sprite'a
+        Następny: sprite_xoffset
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

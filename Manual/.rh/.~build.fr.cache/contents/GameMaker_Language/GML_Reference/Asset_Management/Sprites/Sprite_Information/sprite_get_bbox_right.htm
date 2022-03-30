@@ -1,0 +1,42 @@
+
+  
+  sprite_get_bbox_right
+  Funkcja zwraca względne położenie prawej strony ramki sprite. Wartość ta jest podawana jako wartość względna w oparciu o lewy górny róg podstawy sprite asset wynoszący (0,0). Jest to ta sama wartość, którą można znaleźć w edytorze sprite 
+    dla właściwości maski kolizji. Na poniższym rysunku pokazano sposób obliczania tej wartości:
+  
+  Składnia:
+  sprite_get_bbox_right(ind);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        ind
+        The index of the sprite to check.
+     
+    
+  
+   
+  Zwraca
+  
+   
+  Przykład:
+  var ww, hh; ww = sprite_get_bbox_left(sprite_index) - sprite_get_bbox_right(sprite_index); hh = sprite_get_bbox_bottom(sprite_index) - sprite_get_bbox_top(sprite_index);
+  Powyższy kod oblicza szerokość i wysokość maski kolizji na podstawie względnych położeń boków ramki ograniczającej.
+   
+   
+   
+  
+    
+      
+        Powrót: Informacje o Sprite
+        Następny: sprite_get_bbox_top
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

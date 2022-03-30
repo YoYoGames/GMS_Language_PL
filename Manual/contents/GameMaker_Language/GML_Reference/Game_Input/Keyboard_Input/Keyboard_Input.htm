@@ -15,14 +15,14 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Wprowadzanie danych z klawiatury</h1>
-  <p>Podczas pracy z klawiaturą w <span class="notranslate">GameMaker Studio 2</span> użytkownik ma do dyspozycji wiele funkcji, które mogą być używane do rozpoznawania różnych stanów klawiatury, takich jak naciśnięty lub zwolniony. Są też takie, które zapisują wszystkie naciśnięcia klawiszy jako <span class="notranslate">string</span> lub informują, jaki był ostatnio naciśnięty klawisz, a także takie, które pozwalają całkowicie wyczyścić stan klawiatury.</p>
+  <p>Podczas pracy z klawiaturą w <span data-keyref="GameMaker Name">GameMakerze</span> masz do dyspozycji wiele funkcji, które mogą być używane do rozpoznawania różnych stanów klawiatury, takich jak wciśnięty lub zwolniony. Są też takie, które zapisują wszystkie naciśnięcia klawiszy jako <span class="notranslate">string</span> lub informują, jaki był ostatnio naciśnięty klawisz, a także takie, które pozwalają całkowicie wyczyścić stan klawiatury.</p>
   <p class="note"><b><span class="note">UWAGA</span></b> Te funkcje są przeznaczone wyłącznie dla platform Windows/Mac/Ubuntu. Może się okazać, że niektóre wbudowane zmienne i stałe nie są ważne na innych platformach, a wiele funkcji nie będzie działać na telefonach komórkowych.</p>
-  <p>Każdy znak wejściowy z klucza (lub wielu kluczy) jest określany przez jego kod <a href="https://en.wikipedia.org/wiki/UTF-8" target="_blank">UTF8</a>, który jest wartością liczbową. Wartość tę można uzyskać dla dowolnego znaku za pomocą funkcji <a href="../../Strings/ord.htm"><span class="inline">ord()</span></a> ale <span class="notranslate">GameMaker Studio 2</span> zawiera także serię <span class="inline">constants</span> dla najczęściej używanych klawiszy specjalnych klawiatury oraz funkcji specjalnych. Zazwyczaj używa się kombinacji <span class="inline">ord()</span> z funkcjami <span class="inline">keyboard_check*()</span>, czyli coś takiego:</p>
+  <p>Każdy znak wejściowy z klucza (lub wielu kluczy) jest określany przez jego kod <a href="https://en.wikipedia.org/wiki/UTF-8" target="_blank">UTF8</a>, który jest wartością liczbową. Wartość tę można uzyskać dla dowolnego znaku za pomocą funkcji <a href="../../Strings/ord.htm"><span class="inline">ord()</span></a> ale <span data-keyref="GameMaker Name">GameMaker</span> posiada także serię stron <span class="inline">constants</span> dla najczęściej używanych klawiszy specjalnych klawiatury oraz funkcji specjalnych. Zazwyczaj używa się kombinacji <span class="inline">ord()</span> z funkcjami <span class="inline">keyboard_check*()</span>, czyli coś takiego:</p>
   <p class="code">if keyboard_check(ord(&quot;A&quot;))<br />
     {<br />
         hspeed = -5;<br />
     }</p>
-  <p>Tak więc powyższa funkcja sprawdzi, czy jest naciśnięty klawisz &quot;A&quot;, i jeśli tak, ustawi prędkość poziomą strony <span class="notranslate">object</span> na -5. Zauważ, że użycie <span class="inline">ord()</span> w ten sposób będzie działać poprawnie tylko wtedy, gdy dane wejściowe <span class="notranslate">string</span> będą miały długość jednego znaku i będą liczbami od 0 do 9 lub <i>wielkimi</i> literami od A do Z. Funkcja <span class="inline">ord()</span> zwróci pełną wartość UTF8, ale funkcje <span class="inline">keyboard_check*()</span> <i>wykryją tylko A - Z i 0 - 9</i>. Ale co zrobić, jeśli chcesz użyć klawiszy strzałek? Albo jeśli chcesz zmodyfikować działanie za pomocą klawisza &quot;shift&quot;? Cóż, w tym celu <span class="notranslate">GameMaker Studio 2</span> zawiera serię stałych <span class="inline">vk_</span> (<span class="inline">vk_</span> oznacza <i>klawisz wirtualny</i>), których można użyć zamiast <span class="inline">ord()</span>:</p>
+  <p>Tak więc powyższa funkcja sprawdzi, czy jest naciśnięty klawisz &quot;A&quot;, i jeśli tak, ustawi prędkość poziomą strony <span class="notranslate">object</span> na -5. Zauważ, że użycie <span class="inline">ord()</span> w ten sposób będzie działać poprawnie tylko wtedy, gdy dane wejściowe <span class="notranslate">string</span> będą miały długość jednego znaku i będą liczbami od 0 do 9 lub <i>wielkimi</i> literami od A do Z. Funkcja <span class="inline">ord()</span> zwróci pełną wartość UTF8, ale funkcje <span class="inline">keyboard_check*()</span> <i>wykryją tylko A - Z i 0 - 9</i>. Ale co zrobić, jeśli chcesz użyć klawiszy strzałek? Albo jeśli chcesz zmodyfikować działanie za pomocą klawisza &quot;shift&quot;? Cóż, w tym celu <span data-keyref="GameMaker Name">GameMaker</span> posiada serię stałych <span class="inline">vk_</span> (<span class="inline">vk_</span> oznacza <i>wirtualny klawisz</i>), których można użyć zamiast <span class="inline">ord()</span>:</p>
   <table>
     <colgroup>
       <col />
@@ -46,7 +46,7 @@
       </tr>
       <tr>
         <td><span class="notranslate"><span class="inline">vk_left</span></td>
-        <td>kod klucza dla klawisza strzałki w lewo</td>
+        <td>kod klawisza dla klawisza strzałki w lewo</td>
       </tr>
       <tr>
         <td><span class="notranslate"><span class="inline">vk_right</span></td>
@@ -229,7 +229,7 @@
     <li><a href="keyboard_key_release.htm"><span class="notranslate">keyboard_key_release</span></a></li>
   </ul>
   <p> </p>
-  <p>Wreszcie, następujące zmienne są wbudowane w <span class="notranslate">GameMaker Studio 2</span> i można się do nich odwoływać, aby uzyskać informacje o stanie klawiatury i wprowadzanych danych:</p>
+  <p>Poniższe zmienne są wbudowane w <span data-keyref="GameMaker Name">GameMakera</span> i można się do nich odwoływać, aby uzyskać informacje o stanie klawiatury i wprowadzanych danych:</p>
   <p class="note"><b>UWAGA</b>: W przypadku korzystania z klawiatury <a href="../Virtual_Keys_And_Keyboards/Virtual_Keys_And_Keyboards.htm">wirtualnej</a> <i>tylko</i> zmienna <span style="font-size:1px;"><span class="inline">keyboard_string</span></span> zostanie zaktualizowana o dane wprowadzone z klawiatury.</p>
   <ul class="colour">
     <li><a href="keyboard_key.htm"><span class="notranslate">keyboard_key</span></a></li>

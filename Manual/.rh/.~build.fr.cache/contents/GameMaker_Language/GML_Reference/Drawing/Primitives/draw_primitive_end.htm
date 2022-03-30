@@ -1,0 +1,32 @@
+
+  
+  draw_primitive_end
+  Funkcja ta musi zostać wywołana po zakończeniu definiowania punktów prymitywu. Jeśli nie wywołasz tej funkcji, nic nie zostanie narysowane, ponieważ informuje ona GameMaker Studio 2, że skończyłeś i że możesz teraz
+    narysować zdefiniowany prymityw.
+   
+  Składnia:
+  draw_primitive_end()
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_set_colour(c_white); var tex = sprite_get_texture(spr_Background, 0); draw_primitive_begin_texture(pr_trianglestrip, tex); draw_vertex_texture(0, 0, 0, 0); draw_vertex_texture(640, 0, 1, 0); draw_vertex_texture(0, 480,
+    0, 1); draw_vertex_texture(640, 480, 1, 1); draw_primitive_end();
+  
+  Powyższy kod narysuje pasek trójkątów o rozmiarze 4 vertex z teksturą texture zapisaną w zmiennej "tex".
+   
+   
+   
+  
+    
+      
+        Powrót: Prymitywy i Vertex Formaty
+        Następny: draw_vertex
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

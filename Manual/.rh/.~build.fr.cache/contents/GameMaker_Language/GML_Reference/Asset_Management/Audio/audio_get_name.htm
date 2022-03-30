@@ -1,0 +1,43 @@
+
+  
+  audio_get_name
+  Ta funkcja zwraca nazwę danego zasobu audio w postaci string. Wartość "index" może być wartością samego zasobu (widoczną w przeglądarce Asset ) lub unikalną wartością ID, która jest nadawana podczas odtwarzania dźwięku, na przykład za pomocą,
+    audio_play_sound(). Zwróć uwagę, że zwracany adres string nie jest tożsamy z identyfikatorem zasobu i nie może być użyty do uzyskania dostępu do samego zasobu, dlatego powinien być używany tylko do wyświetlania lub sprawdzania błędów.
+   
+  Składnia:
+  audio_get_name(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the sound to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var snd = audio_play_sound(choose(snd_One, snd_Two, snd_Three), 0, false); var name = audio_get_name(snd); show_debug_message("Sound = " + name);
+  Powyższy kod odtwarza losowy dźwięk wybrany z trzech różnych zasobów dźwiękowych, a następnie wyświetla komunikat debugowy z jego nazwą.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_get_type
+        
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,50 @@
+
+  
+  surface_getpixel
+  Za pomocą tej funkcji można uzyskać kolor określonego piksela na powierzchni, korzystając z lokalnych współrzędnych powierzchni, gdzie (0,0) jest lewym górnym rogiem. Funkcja ta nie powinna być używana zbyt często, ponieważ jest bardzo wolna i może spowodować przerwę w grze.
+  UWAGA: Podczas pracy z powierzchniami istnieje możliwość, że w każdej chwili mogą one przestać istnieć, ponieważ są przechowywane w pamięci texture. Należy ZAWSZE sprawdzić, czy powierzchnia istnieje, używając polecenia surface_exists() przed bezpośrednim odwołaniem się do niej.
+   
+  Składnia:
+  surface_getpixel(surface_id, x, y);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        surface_id
+        The ID of the surface.
+     
+      
+        x
+        The x position on the surface from which to get the pixel.
+     
+      
+        y
+        The y position on the surface from which to get the pixel.
+     
+    
+  
+   
+  Zwroty:
+  Colour Constant
+   
+  Przykład:
+  col = surface_getpixel(surf, 56, 78 );
+  Spowoduje to zwrócenie koloru piksela znajdującego się na współrzędnych (56,78) powierzchni indeksowanej zmienną "surf".
+   
+   
+   
+  
+    
+      
+        Powrót: Powierzchnie
+        Następny: surface_getpixel_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

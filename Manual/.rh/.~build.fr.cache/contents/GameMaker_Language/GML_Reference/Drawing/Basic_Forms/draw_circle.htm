@@ -1,0 +1,60 @@
+
+  
+  narysuj_koło
+  Za pomocą tej funkcji można narysować kontur okręgu lub wypełniony okrąg. Dokładność rysowania można określić za pomocą funkcji draw_set_circle_precision().
+  UWAGA: Jeśli chcesz narysować kształt za pomocą strony shader, musisz wiedzieć, że większość stron shaders oczekuje następujących danych wejściowych: vertex, texture, Kolor. Jednak w przypadku korzystania z tej funkcji przekazywane są tylko dane vertex i kolor, a zatem shader może niczego nie narysować (lub narysować coś, ale niepoprawnie). Jeśli konieczne jest rysowanie kształtów w ten sposób, należy dostosować stronę shader do tego celu.
+   
+  Składnia:
+  draw_circle(x, y, r, outline);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x
+        Real
+        The x coordinate of the center of the circle.
+      
+      
+        y
+        Real
+        The y coordinate of the center of the circle.
+      
+      
+        r
+        Real
+        The circle's radius (length from its center to its edge)
+      
+      
+        outline
+        Boolean
+        Whether the circle is drawn filled (false) lub jako kontur o szerokości jednego piksela (true).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_set_colour(c_white);
+    draw_circle(100, 100, 50, true);
+  Spowoduje to narysowanie białego okręgu o szerokości jednego piksela i promieniu 50 pikseli.
+   
+   
+   
+  
+    
+      
+        Powrót: Formularze podstawowe
+        Następny: draw_circle_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

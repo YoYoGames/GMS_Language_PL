@@ -1,0 +1,43 @@
+
+  
+  font_get_name
+  Za pomocą tej funkcji można uzyskać nazwę (w postaci string), która została nadana stronie font, gdy została ona dodana jako asset do przeglądarki GameMaker Studio 2 Asset. Należy pamiętać, że jest to tylko 
+    string i nie można jej użyć do bezpośredniego odwołania do strony font - do tego potrzebny jest indeks czcionki. Można jednak użyć tej strony string, aby uzyskać indeks czcion ki, używając zwróconej strony string wraz z funkcją
+    funkcją asset_get_index().
+   
+  Składnia:
+  font_get_name(ind);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        ind
+        Index of the font to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  fnt_Name = font_get_name(font0);
+  Powyższy kod pobierze nazwę zasobu font w takiej postaci, w jakiej pojawia się ona w przeglądarce Asset i zapisze ją jako string w zmiennej "fnt_Name".
+   
+   
+   
+  
+    
+      
+        Powrót: Czcionki
+        Następny: font_get_fontname
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

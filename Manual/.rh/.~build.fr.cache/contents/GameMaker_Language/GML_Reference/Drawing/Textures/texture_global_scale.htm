@@ -1,0 +1,51 @@
+
+  
+  tekstura_globalna_skala
+  Ta funkcja umożliwia sterowanie skalowaniem stron texture podczas ładowania z pliku WAD, który jest częścią końcowego pliku wykonywalnego gry. Wartość wejściowa musi być potęgą dwójki i będzie działać tak, że:
+  
+    Aby ustawić strony texture jako 1:1, użyj texture_global_scale(1)
+    Do połowy strony textures przez cały czas używaj texture_global_scale(2)
+    Do ich ćwiartowania należy używać strony texture_global_scale(4), itp.
+  
+  W ten sposób można lepiej kontrolować wykorzystanie pamięci strony texture na platformach z problemami z małą ilością pamięci. Zauważ, że strony textures są tworzone na żądanie z WAD, więc możesz wywołać tę funkcję na początku gry, aby załadować wszystkie textures przeskalowane, albo
+    możesz wywołać ją w określonym czasie, aby załadować określone strony textures, w którym to przypadku prawdopodobnie będziesz chciał wywołać draw_texture_flush() przed wywołaniem tej funkcji, a następnie użyć funkcji pre-fetch do wczytania odpowiednich
+    texture strony do pamięci.
+   
+  Składnia:
+  texture_global_scale(pow2integer);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        pow2integer
+        The scale factor to use (1, no scale, 2, half scale, 4, quarter scale, etc...)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_texture_flush(); texture_global_scale(2);
+     sprite_prefetch(spr_Trees);
+  
+  Powyższy kod wypłucze z pamięci wszystkie strony textures, następnie ustawi skalowanie strony texture na 2 (dzięki czemu strony texture będą miały połowę rozmiaru), a na koniec pobierze wstępnie stronę texture, w której znajduje się strona sprite "spr_Trees".
+   
+   
+   
+  
+    
+      
+        Powrót: Tekstury
+        Następny: draw_texture_flush
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

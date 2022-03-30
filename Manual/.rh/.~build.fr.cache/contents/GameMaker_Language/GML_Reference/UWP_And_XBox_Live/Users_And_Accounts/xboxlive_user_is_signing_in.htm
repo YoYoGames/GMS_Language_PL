@@ -1,0 +1,39 @@
+
+  
+  xboxlive_user_is_signing_in
+  Funkcja sprawdza, czy użytkownik jest w trakcie logowania, i zwraca true, jeśli tak jest, oraz false w przeciwnym wypadku.
+   
+  Składnia:
+  xboxlive_user_is_signing_in();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if !xboxlive_user_is_signed_in()
+    {
+        if !xboxlive_user_is_signing_in()
+        {
+            xboxlive_show_account_picker();
+        }
+    }
+    else
+    {
+        global.GamerTag = xboxlive_gamertag_for_user();
+    }
+  Powyższy kod sprawdza, czy użytkownik jest zalogowany do usługi XBox Live. Jeśli jest zalogowany, kod pobiera gamertag użytkownika i zapisuje go w zmiennej globalnej do wykorzystania w przyszłości. Jeśli użytkownik nie jest zalogowany, kod sprawdza, czy jest w trakcie logowania - w takim przypadku nic więcej się nie dzieje, a jeśli nie jest, otwiera okno wyboru konta, zachęcając do zalogowania się.
+   
+   
+   
+  
+    
+      
+        Wstecz: Użytkownicy i konta
+        Następny: xboxlive_gamertag_for_user
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,84 @@
+
+  Sprite'y bez mapy bitowej
+  GameMaker Studio 2 obsługuje nie-bitmapy sprites w postaci plików wektorowych SWF lub plików Spine Skeletal Animation. Oba te formaty mają swoje wady i zalety, a w dwóch poniższych sekcjach wyjaśniono, jak importować je do edytora sprite 'ów, a także podano nieco informacji o sposobie ich rysowania.
+   
+  Animacja szkieletowa Sprites (Spine)
+  Strona sprite wykonana z wykorzystaniem animacji szkieletowej to taka, w której utworzono podstawowy "szkielet" i animuje się go, używając klatek kluczowych do poruszania częściami składowymi szkieletu w czasie. Ten szkielet jest następnie pokrywany skórką z atlasu tekstur, a wynikowa animacja jest eksportowana do jednego z wielu typów plików. Program GameMaker Studio 2 umożliwia importowanie tego typu plików sprite, o ile zostały wyeksportowane jako pliki w formacie *.json i mają prawidłowo powiązany plik atlasu ("plik atlasu").
+    texture (*.atlas) i plik obrazu (jako *.png) w tym samym katalogu.
+  Obecnie program GameMaker Studio 2 może importować jedynie obrazy wektorowe z plików w formacie JSON utworzonych przez program Spine,
+    jednak sposób importowania ich do programu jest niemal identyczny jak w przypadku dodawania zwykłego obrazu bitmapowego. Aby dodać animację szkieletową, należy utworzyć nową stronę sprite, co spowoduje wyświetlenie standardowego okna dialogowego Load Sprite, tyle że
+    tylko w tym przypadku należy upewnić się, że w dolnym filtrze plików wybrano *.json:
+  
+  Po naciśnięciu przycisku "wczytaj" animacja szkieletowa zostanie dodana do przeglądarki zasobów jako plik sprite, a w miarę przetwarzania pliku będzie wyświetlany pasek postępu. Należy pamiętać, że w zależności od złożoności
+    pliku, może to potrwać chwilę lub dwie. Po zakończeniu przetwarzania nastąpi powrót do okna dialogowego właściwości sprite, które będzie teraz wyglądać następująco:
+  Po zaimportowaniu animacji można ustawić właściwości kolizji, ale należy pamiętać, że w tym przypadku można używać tylko
+    precyzyjnych kolizji lub kolizji typu bounding box oraz że dane kolizji dla animacji szkieletowej są pobierane z dostarczonych danych. GameMaker Studio 2 nie generuje żadnej maski kolizji, jeśli brakuje danych w importowanym pliku, co oznacza, że
+    po prostu nie uzyskasz działających kolizji, jeśli maski nie są poprawnie ustawione w programie używanym do tworzenia importowanego obrazu.
+  UWAGA: Ze względu na złożoność animacji szkieletowych obraz podglądu wyświetlany w edytorze sprite nie ma na celu dokładnego odwzorowania animacji, ale raczej przedstawienie prostego obrazu przedstawiającego animację do wizualizacji
+    w edytorze room.
+  W przeciwieństwie do bitmapy sprites, zaimportowanej animacji szkieletowej sprite nie można w żaden sposób modyfikować w edytorze, ale w witrynie GameMaker Language (GML) dostępnych jest wiele funkcji, które można wykorzystać do zmiany skórek, ustawiania właściwości i sterowania innymi aspektami animacji,
+    i kontrolować inne aspekty animacji. Nie można także ustawić żadnych opcji texture dla sprite, ponieważ GameMaker będzie korzystać z dostarczonego atlasu texture, który został utworzony przez program generujący sprite.
+  Podczas importowania animacji szkieletowej sprites należy pamiętać o kilku rzeczach, z których najważniejszą jest to, że niektóre funkcje rysowania sprite i zarządzania sprite nie są obsługiwane z powodów technicznych, a zwłaszcza te
+    funkcje rysowania, które rysują tylko część sprite, lub które w jakiś sposób "przekrzywiają" pozycję (zobacz poszczególne draw_sprite_*() funkcje
+    aby uzyskać szczegółowe informacje na ten temat). Jednak podstawowe funkcje rysowania sprite są w pełni obsługiwane, podobnie jak wbudowane zmienne sprite. Oprócz tych funkcji i zmiennych można także ustawiać i zmieniać właściwości animacji, używając specjalnych funkcji skeleton_*, których lista i objaśnienia znajdują się w rozdziale dotyczącym Animacji szkieletowych.
+   
+   
+  Wektor Sprites (SWF)
+  Zasadniczo wszystkie strony sprites w GameMaker używają map bitowych, które - choć elastyczne pod względem zawartości - nakładają ograniczenia zarówno na rozmiar, jak i liczbę klatek możliwych do uzyskania w witrynie sprite, zanim zużycie pamięci stanie się zbyt duże. Wektorowe strony sprites obchodzą te ograniczenia
+    zamiast siatki pikseli, która może stać się klockowata lub rozmyta podczas skalowania, są one rysowane jako trójkąty przy użyciu matematyki wektorowej, które można skalować w górę (lub w dół) bez utraty definicji, jak pokazano na poniższym rysunku
+    na poniższym obrazie:
+  Aby ułatwić wizualizację tego procesu, na poniższym obrazku przedstawiono ten sam wektor Strażak sprite, ale teraz widać wielokąty, które
+    są używane do tworzenia obrazu w programie GameMaker Studio 2:
+  Jednak w przypadku programowania gier nic nie jest za darmo, a wadą wektorowej strony sprites jest to, że jej narysowanie wymaga większego obciążenia procesora
+    sprites , a ta różnica w szybkości działania rośnie wraz ze wzrostem złożoności importowanej animacji. Ponadto, w przeciwieństwie do map bitowych sprites, ich złożoność wizualna ma wpływ na wykorzystanie pamięci. Biorąc to pod uwagę, umożliwiają one
+    umożliwia dodawanie dużych animacji graficznych w sposób, który byłby niemożliwy przy użyciu tradycyjnej mapy bitowej sprites.
+  Z drugiej strony równania wydajności, ponieważ strona wektorowa sprites rysuje tylko te piksele, które są absolutnie niezbędne (w przeciwieństwie do strony bitmapowej sprites, która "rysuje" także pustą przestrzeń wokół obrazu), może być ona tańsza z punktu widzenia procesora graficznego. Ponadto, ogólnie rzecz biorąc
+    wektorowe sprites są znacznie mniejsze niż ich odpowiedniki bitmapowe - w powyższym przykładzie strażaka rozmiary różnych typów sprite są następujące:
+  Bitmap at 70x68 = 4x70x68 bytes x 12 frames = 223k Vector = 54k
+  Jeśli rozdzielczość sprite'a zostanie zwiększona czterokrotnie:
+  Bitmap at 280x272 = 4x280x272 bytes x 12 frames = 3570k Vector = 54k
+  Jak więc widać, dzięki zastosowaniu wektora sprites można potencjalnie zaoszczędzić sporo pamięci, a w przyszłości można jeszcze zaoszczędzić sporo miejsca.
+  Obecnie program GameMaker Studio 2 ma ograniczoną obsługę plików wektorowych sprites. i może importować obrazy wektorowe tylko z plików w formacie SWF. Sposób importowania ich do programu jest niemal identyczny jak w przypadku dodawania zwykłego
+    bitmapy. Aby dodać obraz wektorowy sprite, utwórz nową stronę sprite, co spowoduje wyświetlenie standardowego okna dialogowego Wczytaj Sprite, ale upewnij się, że w dolnym filtrze plików wybrano plik *.swf.
+  Naciśnięcie przycisku "załaduj" spowoduje dodanie obrazu wektorowego lub animacji do Przeglądarki zasobów,
+    a podczas przetwarzania pliku wyświetlany jest pasek postępu. Należy pamiętać, że w zależności od złożoności pliku może to trochę potrwać (do minuty w przypadku bardziej skomplikowanych animacji). Po zakończeniu przetwarzania nastąpi powrót do okna dialogowego właściwości sprite.
+    które teraz będzie wyglądało tak:
+  Edytor sprite nie uległ większym zmianom, ale teraz przycisk Edytuj obraz został wyszarzony i nie można go
+    nie można go kliknąć, ponieważ w tym rodzaju sprite nie ma żadnych bitmap do edycji. Po drugie, wszystkie opcje texture również zostały wyszarzone. SWF sprites są oparte na matematyce i jako takie nie mają zwykle textures z nimi powiązanych, więc żadna z
+    z dostępnych opcji nie ma zastosowania w przypadku tego rodzaju sprite.
+  UWAGA: Wygląd obrazu w wybranym edytorze podglądu nie będzie identyczny z wyglądem w grze ani w oknie podglądu w edytorze sprite. Obrazek wektorowy zostanie zaimportowany w rozmiarze, w jakim został utworzony,
+    co niekoniecznie odpowiada rozmiarowi wyświetlanemu w podglądzie (przeglądarki zazwyczaj skalują obraz, aby go dopasować).
+  Jednym z dodatków do Edytora Sprite jest możliwość ustawienia jakości wektora sprite podczas rysowania za pomocą suwaka Precyzja SWF znajdującego się u góry. Spowoduje to po prostu zmniejszenie lub zwiększenie liczby trójkątów użytych do wygenerowania sprite'a
+    - wartość około 50% jest wystarczająca dla większości gier - należy jednak poeksperymentować z tą wartością, jeśli używasz ekstremalnego skalowania lub masz problemy z wydajnością.
+  Podczas importowania wektorów sprites należy pamiętać o kilku rzeczach, z których najważniejszą jest to, że niektóre funkcje rysowania sprite i zarządzania sprite nie są obsługiwane z powodów technicznych, w szczególności funkcje rysowania
+    które rysują tylko część sprite, lub które w jakiś sposób "przekrzywiają" położenie (zobacz poszczególne draw_sprite_*() funkcje
+    aby uzyskać szczegółowe informacje na ten temat). Jednak podstawowe funkcje rysowania sprite są w pełni obsługiwane, podobnie jak wbudowane zmienne sprite. Można również ustawić różne wartości antyaliasingu(AA)
+    dla rysowanego pliku SWF sprites za pomocą funkcji draw_enable_swf_aa(), draw_get_swf_aa_level() lub draw_set_swf_aa_level().
+  Należy również pamiętać o następujących kwestiach:
+  
+    Podczas importowania pliku *.SWF nie jest obsługiwany skrypt Actionscript, więc jeśli SWF zależy od niego, to prawdopodobnie nie będzie działał poprawnie. Podobnie wszelkie osadzone klipy filmowe, które mają własną oś czasu
+      będą miały wyświetlaną tylko pierwszą klatkę w całej animacji - cała animacja musi się odbywać na głównej stronie timeline.
+    Jeśli plik wektorowy zawiera szczególnie drobne szczegóły, może się zdarzyć, że w wynikowym pliku sprites pojawią się dziury lub dziwne trójkąty. Dzieje się tak dlatego, że w małych skalach geometria może się czasami zlewać, tworząc kształty, które po prostu nie
+      dobrze triangulować. W takim przypadku masz dwie możliwości - możesz przeskalować zawartość pliku wektorowego, co da importerowi więcej room do zabawy, lub możesz spróbować zmniejszyć poziom szczegółowości łamanej strony object.
+    GameMaker Studio 2 używa rozmiaru sceny w SWF jako granic wynikowej strony sprite. Jednak jeśli cokolwiek znajduje się na scenie poza tymi granicami, nadal jest rysowane. Oznacza to, że należy unikać umieszczania czegokolwiek poza
+      poza granicami sceny, jeśli nie chcesz, aby były one wyświetlane, lub użyć warstwy maski, aby ograniczyć rysowanie do tego obszaru.
+    Rozmiar sceny ma również wpływ na rozmiar generowanych masek kolizji, dlatego jeśli masz duży rozmiar sceny i wiele klatek animacji, możesz potencjalnie zużyć dużo pamięci. Dlatego precyzyjnych masek kolizji należy używać tylko wtedy, gdy
+      naprawdę tego potrzebujesz.
+    Ponieważ plik SWF jest tworzony z wielu warstw, z których niektóre potencjalnie zachodzą na siebie, alfa nie działa tak, jak w przypadku mapy bitowej sprites - nakładające się obszary nie będą wyglądały na tak samo przezroczyste, jak inne części strony sprite, ponieważ piksele są tam
+      są rysowane wiele razy.
+    Wypełnienia bitmapowe są obsługiwane, ale jeśli w pliku SWF używasz wypełnień bitmapowych w postaci kafelków, musisz upewnić się, że bitmapa ma rozmiar potęgi drugiej, w przeciwnym razie nie będzie prawidłowo tile. Obsługiwane jest również renderowanie tekstu, ale należy
+      osadzić stronę font w pliku SWF, aby pojawiła się ona w wynikowym pliku sprite. Ponadto obecnie obsługiwany jest tylko tekst jednoliniowy wyrównany do lewej strony.
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Grupy tekstur
+        Następny: Strony tekstur
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+

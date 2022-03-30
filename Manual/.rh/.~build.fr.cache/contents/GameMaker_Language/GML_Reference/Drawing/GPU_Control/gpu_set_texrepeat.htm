@@ -1,0 +1,50 @@
+
+  
+  gpu_set_texrepeat
+  Ta funkcja może być użyta do wskazania GameMaker Studio 2, czy textures ma się powtarzać (true) czy nie (false), gdy jest używana dla modeli i prymitywów. Normalnie szerokości i wysokości texture mieszczą się w zakresie 0 - 1, ale jeśli podasz wartość większą niż 1, domyślnie reszta nie zostanie narysowana (cały texture zostanie narysowany z "pustym" fragmentem odpowiadającym procentowi powyżej 1, który został użyty. Zatem wartość 2 dla szerokości lub wysokości strony texture spowoduje, że strona texture zostanie narysowana w połowie miejsca, a druga połowa pozostanie pusta). Jednak użycie tej funkcji do ustawienia powtarzania na wartość true powoduje automatyczne powtarzanie texture we wszystkich modelach i elementach podstawowych. Prawdopodobnym zastosowaniem tych funkcji jest powtarzanie strony texture w 3D, ale aby to działało i nie ciągnęło obrazów z reszty strony texture, używana strona sprite musi być oznaczona jako "Oddzielna strona Texture " w edytorze Sprite.
+  UWAGA: strony Sprites i tła są zawsze rysowane bez powtórzeń, więc po narysowaniu strony sprite lub tła wartość ta jest resetowana do false. To domyślne zachowanie nie będzie miało wpływu na ustawienia sceny texture (tzn. wywołanie funkcji będzie miało wpływ, ale wewnętrzne ustawienie na false nie).
+  UWAGA: To ustawienie zastąpi wszelkie powtórzenia etapu texture ustawione dla shaders podczas korzystania z funkcji gpu_set_texrepeat_ext().
+   
+  Składnia:
+  gpu_set_texrepeat(enable);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        enable
+        Enable or disable texture filtering (true / false)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if gpu_get_texrepeat()
+    {
+        gpu_set_texrepeat(false);
+    }
+    else
+    {
+        gpu_set_texrepeat(true);
+    }
+  Powyższy kod sprawdza, czy funkcja powtarzania texture jest włączona czy wyłączona, i odpowiednio ją przełącza.
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_set_texrepeat_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

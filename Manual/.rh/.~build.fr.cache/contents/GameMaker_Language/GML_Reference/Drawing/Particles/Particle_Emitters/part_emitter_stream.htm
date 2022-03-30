@@ -1,0 +1,58 @@
+
+  
+  część_nadajnika_strumienia
+  Funkcja ta pozwala ustawić emiter tak, aby emitował określony typ cząstek i jest zwykle używana w zdarzeniu tworzenia, ponieważ jest to jednorazowy kod, który ustawia emiter tak, aby generował określoną liczbę cząstek w każdym kolejnym kroku gry. Cząstki są emitowane zgodnie z rozmieszczeniem, kształtem i położeniem określonym przez funkcję part_emitter_region(). Możesz ustawić liczbę cząsteczek na zero i ponownie wywołać tę funkcję, aby "wyłączyć" strumieniowanie cząsteczek. Funkcja akceptuje również liczby ujemne, w którym to przypadku emiter będzie wytwarzał cząsteczki na zasadzie losowej. Na przykład, jeśli liczba cząsteczek jest ustawiona na -5, istnieje szansa 1:5, że w każdym kroku zostanie wyprodukowana cząsteczka. Jeśli chcesz, aby cząstki pojawiały się wszystkie naraz, a nie co krok, powinieneś użyć funkcji part_emitter_burst().
+   
+  Składnia:
+  part_emitter_stream(ps, ind, parttype, number);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ps
+        Identyfikator systemu cząstek stałych
+        The particle system that the emitter is in.
+      
+      
+        ind
+        Identyfikator emitera cząstek stałych
+        The index of the emitter to burst from.
+      
+      
+        parttype
+        Typ cząstki ID
+        The index (type) of the particles to be created.
+      
+      
+        number
+        Real
+        The number of particles to create per step.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  part_emitter_stream(global. Sname, p_emit1, p1, 1);
+  Powyższy kod będzie przesyłał 1 cząstkę w każdym kroku gry, dopóki emiter nie zostanie zniszczony lub strumień nie zostanie ustawiony na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery cząstek
+        Następny: part_emitter_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

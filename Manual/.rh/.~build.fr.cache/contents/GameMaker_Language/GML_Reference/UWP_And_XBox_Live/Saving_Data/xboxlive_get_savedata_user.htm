@@ -1,0 +1,32 @@
+
+  
+  xboxlive_get_savedata_user
+  Ta funkcja zwraca wskaźnik ID użytkownika aktualnie powiązany z zapisem pliku (lub stałą pointer_null, jeżeli żaden identyfikator użytkownika nie jest aktualnie używany). Zobacz xboxlive_set_savedata_user() aby uzyskać więcej informacji.
+   
+  Składnia:
+  xboxlive_get_savedata_user();
+   
+  Zwroty:
+  Xbox User ID or pointer_null
+   
+  Przykład:
+  if (xboxlive_get_savedata_user() != user_id[0])
+    {
+        xboxlive_set_savedata_user(user_id[0]);
+    }
+  Powyższy kod sprawdza, czy użytkownik jest aktualnie przypisany jako cel zapisu, a jeśli nie jest, to jest przypisywany.
+   
+   
+   
+  
+    
+      
+        Powrót: Zapisywanie danych
+        Następny: xboxlive_get_file_error
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

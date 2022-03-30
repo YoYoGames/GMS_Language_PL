@@ -1,0 +1,54 @@
+
+  
+  room_set_camera
+  Za pomocą tej funkcji można przypisać kamerę do określonej rzutni w witrynie room innej niż bieżąca. Podajesz indeks room, indeks widoku (od 0 do 7), a następnie indeks kamery, która ma zostać użyta.
+   
+  Składnia:
+  room_set_camera(rm, vind, camera);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        rm
+        Pokój Aktywa
+        The index of the room to set the view camera of
+      
+      
+        vind
+        Real
+        The index of the view port to assign the camera to
+      
+      
+        camera
+        Identyfikator kamery
+        The index of the camera to assign
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  global.myroom = room_add();
+    room_set_camera(global.myroom, 0, global.MainCam);
+  Powyższy kod przypisuje kamerę w nowo utworzonej witrynie room do portu podglądu [0].
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room_get_camera
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,51 @@
+
+  
+  Słuchacze audio
+  Podczas pracy ze złożonymi sytuacjami dźwiękowymi przydatne może być określenie, w którym miejscu środowiska dźwiękowego powinien znajdować się słuchacz. Jednak w przypadku korzystania z emiterów do generowania realistycznego dźwięku w przestrzeni dźwiękowej 3D ważne jest, aby słuchacz był odpowiednio zmieniany i przesuwany, w przeciwnym razie dźwięk będzie znajdował się w niewłaściwym miejscu dla osoby grającej w grę.
+    
+    GameMaker Studio 2 udostępnia następujące funkcje słuchacza:
+  
+  
+    audio_listener_position
+    audio_listener_velocity
+    audio_listener_orientation
+    audio_listener_get_data
+    audio_listener_set_position
+    audio_listener_set_velocity
+    audio_listener_set_orientation
+  
+   
+  Niektóre platformy docelowe mogą obsługiwać więcej niż jednego słuchacza, przy czym każdy z nich odpowiada innemu urządzeniu wyjściowemu, np. platforma docelowa może obsługiwać dwóch słuchaczy, jednego dla słuchawek i jednego dla monitora. Dlatego GameMaker Studio 2 udostępnia szereg dodatkowych funkcji, dzięki którym można znaleźć dostępne odsłuchy oraz ustawić je dla odtwarzanych dźwięków:
+  
+    audio_get_listener_count
+    audio_get_listener_info
+    audio_get_listener_mask
+    audio_set_listener_mask
+  
+   
+  Dostępne są również funkcje pobierania i ustawiania danych maski dla poszczególnych dźwięków:
+  
+    audio_sound_get_listener_mask
+    audio_sound_set_listener_mask
+  
+   
+  A także do pobierania i ustawiania danych masek emiterów:
+  
+    audio_emitter_get_listener_mask
+    audio_emitter_set_listener_mask
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: Grupy audio
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

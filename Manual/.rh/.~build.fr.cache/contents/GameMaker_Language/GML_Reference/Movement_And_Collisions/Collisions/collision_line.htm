@@ -1,0 +1,78 @@
+
+  
+  kolizja_linia
+  Collision_line sprawdza wzdłuż prostej od punktu x1,y1 do punktu x2,y2, czy nie występuje kolizja z dowolną instancją object określoną przez argument "obj". To sprawdzenie może być dokładne lub nie, ale aby można było włączyć dokładne kolizje, sprawdzana instancja lub object musi mieć również włączone dokładne kolizje dla swojej sprite. Jeśli nie, domyślne sprawdzenie jest oparte na polach ograniczających. Poniższy rysunek ilustruje, jak to działa:
+  Pamiętaj, że aby kolizje precyzyjne zostały uwzględnione, zarówno na stronie object sprite, jak i w funkcji kolizji musi być zaznaczona opcja precyzyjne. Należy również zauważyć, że wartością zwracaną funkcji może być identyfikator dowolnej instancji uznanej za kolizyjną wzdłuż linii, więc jeśli trzy instancje zachodzą na zdefiniowaną linię, to wartością zwracaną funkcji może być dowolny identyfikator z tych instancji.
+  Zauważ, że zamiast indeksu object można podać instancję id aby sprawdzić konkretną instancję, lub słowa kluczowe instancji all, lub other (w zależności od zdarzenia i bieżącego zakresu kodu).
+   
+  Składnia:
+  collision_line(x1, y1, x2, y2, obj, prec, notme);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x1
+        Real
+        The x coordinate of the start of the line.
+      
+      
+        y1
+        Real
+        The y coordinate of the start of the line.
+      
+      
+        x2
+        Real
+        The x coordinate of the end of the line.
+      
+      
+        y2
+        Real
+        The y coordinate of the end of the line.
+      
+      
+        obj
+         Identyfikatorzasobu lub instancjiobiektu 
+        The object to check for instance collisions.
+      
+      
+        prec
+        Boolean
+        Whether the check is based on precise collisions (trueco jest wolniejsze) lub ogólnie jego ramki (false, szybciej).
+      
+      
+        notme
+        Boolean
+        Whether the calling instance, if relevant, should be excluded (true) lub nie (false).
+      
+    
+  
+   
+  Zwroty:
+  Instance ID or noone
+   
+  Przykład:
+  with (obj_Enemy)
+    {
+        if collision_line(100, 400, 100, 600, id, false, false) instance_destroy();
+    }
+  Ten kod powoduje, że wszystkie instancje "obj_Enemy" sprawdzają wzdłuż linii od 100x, 400y do 100x, 600y, czy nie kolidują ze sobą, a jeśli tak, to są niszczone.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolizje
+        Następny: collision_line_list
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

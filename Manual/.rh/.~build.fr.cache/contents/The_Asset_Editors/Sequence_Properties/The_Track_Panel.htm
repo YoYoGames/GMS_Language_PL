@@ -1,0 +1,201 @@
+
+  
+  Panel torów
+  Działanie strony sequences jest regulowane przez stronę assets i parametry dodane do panelu ścieżek. Ścieżkę można dodać do edytora przez:
+  
+    przeciąganie strony asset na sequence Canvas
+    przeciąganie strony asset do samego panelu ścieżek
+    klikając przycisk "Dodaj aktywa"  w dolnej części panelu ścieżek.
+  
+  Ta ostatnia metoda spowoduje otwarcie eksploratora Asset, w którym można wybrać stronę asset do dodania.
+  Niezależnie od wybranej metody, dla asset zostanie utworzona nowa ścieżka aktywów. Ścieżka ta jest główną ścieżką dla asset w sequence, a dla asset w Dope Sheet zostanie utworzona odpowiednia ścieżka kluczowa aktywów w pozycji głowicy odtwarzania:
+   Asset Zwróć uwagę, że kolor ścieżki kluczowej w Dope Sheet można ustawić w panelu ścieżek, klikając kolorowy pasek na jej końcu. Spowoduje to otwarcie palety kolorów, w której można wybrać kolor, jaki ma być używany dla ścieżek kluczowych na stronie Dope Sheet.
+  Do każdej strony asset w edytorze ścieżek można także dodać zestaw ścieżek parametrów. Ścieżki te sterują różnymi właściwościami (parametrami), które można zmieniać w danej ścieżce w czasie. Różne dostępne parametry zostały szczegółowo omówione w sekcji "Dodawanie ścieżek parametrów" w dalszej części tej strony, ale aby dać Ci pogląd na to, co jest dostępne, poniżej znajduje się krótka lista:
+  
+    Wszystkie aktywa: Pozycja i obrót.
+    Dźwięki: Wysokość dźwięku i głośność.
+    Sekwencje: Pochodzenie i skala.
+    Sprite'y i obiekty: Origin, Scale, Image Index, Image Speed i Colour Multiply.
+    Tekst: Origin, Scale, Colour Multiply, Character Spacing, Frame Size, Line Spacing i Paragraph Spacing.
+  
+  Aby dodać ścieżkę parametrów w edytorze, można włączyć opcję "Automatically Record Changes" (Automatycznie nagrywaj zmiany)  w panelu ścieżek, co spowoduje dodanie klawiszy parametrów dla wszystkich zmian wprowadzonych na stronie asset w oknie Canvas w bieżącej pozycji głowicy odtwarzania, jak pokazano tutaj:
+  Można też kliknąć przycisk "Dodaj ścieżkę parametru" , co spowoduje otwarcie menu z różnymi dostępnymi opcjami:
+  Wybranie dowolnej opcji z tego menu lub nagrywanie bezpośrednio z IDE spowoduje utworzenie jednej lub więcej ścieżek parametrów pod główną ścieżką asset, a także dodanie klucza parametrów do Dope Sheet, którego kolor jest taki sam jak kolor głównej ścieżki asset:
+  Po dodaniu ścieżki parametrów do głównej ścieżki asset, na stronie dope sheet pojawi się kolorowy pasek pokazujący długość ścieżki asset w ramkach, a w miejscach, w których ma nastąpić zmiana parametru, zostaną dodane klawisze parametrów ( keyframes). Klawisze te są widoczne na powyższym rysunku jako proste "kropki" na ramce. Gdy ścieżka ma takie klucze parametrów, parametr, do którego się odnoszą, będzie domyślnie interpolowany (przy użyciu interpolacji liniowej) między każdym z pokazanych punktów. Na przykład, jeśli parametr obrotu jest ustawiony na 90° w klatce 0, to w klatce 30 będzie to 180°, a w klatce 15 - 135°. Zmianę wartości w czasie można zobaczyć, wybierając ścieżkę parametru, a następnie "szorując" głowicę odtwarzania w oknie dialogowym:
+  
+  Należy pamiętać, że dla wszystkich ścieżek parametrów można wyłączyć domyślną interpolację liniową między różnymi klawiszami, korzystając z menu prawego przycisku myszy  na ścieżce parametrów, co oznacza, że przejścia między wartościami parametrów będą następować natychmiast w danej klatce, a nie stopniowo w czasie:
+  Oprócz możliwości wyboru typu przejścia dla ścieżek parametrów, menu RMB oferuje również następujące opcje:
+  
+    Wytnij, Kopiuj i Wklej: Te opcje umożliwiają wycinanie/kopiowanie/wklejanie strony asset lub ścieżek parametrów.
+    Powielanie ścieżek: Spowoduje to utworzenie duplikatu aktualnie zaznaczonej ścieżki (ścieżek). Jeśli jest to ścieżka asset, zostaną również zduplikowane powiązane z nią ścieżki paramterów.
+    Usuń ścieżkę(i): Powoduje usunięcie wybranej ścieżki lub ścieżek. W przypadku usunięcia ścieżki asset usunięte zostaną również powiązane z nią ścieżki parametrów, jednak ścieżki parametrów można usuwać pojedynczo.
+    Grupa: Użycie tej opcji w pustym miejscu w panelu ścieżek spowoduje utworzenie folderu grupowego, który można wykorzystać do uporządkowania strony assets. Możesz dodać stronę asset do grupy, po prostu klikając na nią i przeciągając ją do folderu. Jeśli zaznaczyłeś już utwór lub utwory, użycie tej opcji nie tylko utworzy folder grupowy, ale także doda do niego utwór lub utwory.
+    Zmień nazwę: Za pomocą tej opcji można zmienić nazwę dowolnego folderu ścieżek lub grupy asset.
+  
+  Ważną cechą ścieżek asset i ścieżek parametrów jest możliwość nadrzędnego traktowania ścieżek i grup. Jeśli przeciągniesz ścieżkę asset na inną ścieżkę w panelu ścieżek, pierwsza asset stanie się dzieckiem ścieżki asset, na którą została przeciągnięta, a ta z kolei stanie się ścieżką nadrzędną. Wszystkie ścieżki parametrów przypisane do ścieżki nadrzędnej asset zostaną automatycznie zastosowane do ścieżek podrzędnych asset, dzięki czemu można utworzyć wiele ścieżek sprites (na przykład), które będą poruszać się po jednej ścieżce asset:To samo można zrobić za pomocą grup. Możesz utworzyć folder grupy, klikając przycisk w dolnej części panelu ścieżek, a następnie przeciągnąć i upuścić ścieżki asset, które mają być zgrupowane w folderze grupy. Te assets nadal zachowają swoje własne ścieżki parametrów, ale można nadać grupie dodatkowe ścieżki parametrów, a na wszystkie assets w grupie będą miały wpływ te ścieżki parametrów, jak również ich własne, indywidualne ścieżki parametrów.
+  Podczas pracy z panelem ścieżek można również używać zwykłych skrótów klawiaturowych, tj.:  /  i lewy przycisk myszy , aby wybrać jedną lub więcej ścieżek w dowolnej kolejności,  i lewy przycisk myszy , aby wybrać kolejne ścieżki, a także wycinać, kopiować i wklejać je za pomocą kombinacji klawiszy  /  +"X",  /  + "C" i  /  + "V".
+  To są podstawy korzystania z edytora ścieżek, ale poniżej omówimy bardziej szczegółowo, do czego służą poszczególne sekcje i jak z nich korzystać:
+   
+  Orientacja na zmiany
+  
+    Przycisk zmiany orientacji  służy do zmiany sposobu wyświetlania różnych sekcji w Edytorze Sequence. Domyślnie widok Cnavas View znajduje się u góry, a Edytor trasy i Dopesheet u dołu, ale można to zmienić, klikając przycisk w celu przełączenia się między różnymi układami lub klikając przycisk Opcje , aby otworzyć menu i wybrać żądany układ. Dostępne są następujące układy:
+    
+      
+        
+          
+          Okno dzielone
+          
+            Dzięki tej opcji edytor Sequence zostanie podzielony na dwa osobne okna, gdzie w głównym oknie IDE będzie wyświetlany widok Canvas w pełnym pulpicie, a w nowym oknie będzie wyświetlany edytor Dope Sheet i ścieżek. Ponowne kliknięcie przycisku spowoduje ponowną zmianę układu i usunięcie dodatkowego okna.
+          
+        
+        
+          
+          Zatrzaskiwana góra
+          
+            Ta opcja powoduje zatrzymanie edytora tras i strony Dopesheet w górnej części strony IDE.
+          
+        
+        
+          
+          Snap Right
+          
+            Ta opcja powoduje przesunięcie edytora ścieżek i strony Dopesheet na prawo od strony IDE.
+          
+        
+        
+          
+          Zatrzaskiwany spód
+          
+            Ta opcja powoduje, że edytor tras i witryna Dopesheet są przypinane do dolnej części strony IDE (jest to widok domyślny).
+          
+        
+        
+          
+          Zatrzaśnij z lewej
+          
+            Ta opcja powoduje przesunięcie edytora ścieżek i strony Dopesheet na lewo od strony IDE.
+          
+        
+      
+    
+    W każdej chwili można także zresetować układ edytora Sequence, klikając opcję Resetuj . Spowoduje to przywrócenie domyślnego stanu edytora i ponowne otwarcie wszystkich zamkniętych sekcji.
+     
+  
+  Wyszukiwanie wg trasy
+  
+    To pole wyszukiwania umożliwia szybkie przeszukiwanie różnych ścieżek na stronie sequence w celu znalezienia tej, którą chcesz edytować. Wpisanie dowolnego tekstu w tym polu spowoduje wyświetlenie informacji o liczbie znalezionych ścieżek asset zawierających dany adres string, a także podświetli strzałki znajdujące się z boku pola wyszukiwania. Kliknięcie tych strzałek spowoduje przejście do pierwszej i kolejnej strony assets, która spełnia kryteria wyszukiwania.
+     
+  
+  Ścieżki aktywów
+  
+    Każda strona asset dodawana do strony sequence otrzymuje własną ścieżkę, która jest tutaj wymieniona. Jeśli ścieżka asset ma ustawione jakieś parametry, będą one również widoczne pod spodem jako ścieżki parametrów. Ścieżki parametrów można rozszerzać i zmniejszać, klikając  na ikonę strzałki po lewej stronie nazwy ścieżki. Nazwę ścieżki można edytować, klikając powoli dwukrotnie  na ścieżce, a następnie nadając jej wybraną przez siebie nazwę. Pamiętaj, że nie ma żadnych ograniczeń co do nadawanych nazw i możesz używać spacji, znaków innych niż alfanumeryczne oraz rozpoczynać nazwy od cyfr, jeśli chcesz.
+    Różne rodzaje dostępnych ścieżek parametrów wyjaśniono bardziej szczegółowo w rozdziale "Dodawanie ścieżek parametrów" w dalszej części tej strony.
+     
+  
+  Kluczowe elementy sterujące
+  
+    Po dodaniu ścieżki parametrów można dodawać i usuwać klucze parametrów do poszczególnych ramek, aby ustawić wartość dla danego parametru. Można to zrobić za pomocą przycisku "Record Key"  lub " Delete Key" (patrz rozdział " Sterowanie kluczami ścieżek", aby uzyskać informacje), lub można to zrobić za pomocą przycisku " Record Key" lub "Delete Key" (patrz rozdział " Sterowanie kluczami ścieżek", aby uzyskać informacje).  (więcej informacji na ten temat znajduje się w rozdziale "Sterowanie kluczami ścieżek"), lub można to zrobić za pomocą przycisków sterujących na samym parametrze. Aby użyć tych elementów sterujących, musisz ustawić głowicę odtwarzania w Dope Sheet na ramce, którą chcesz edytować, a następnie możesz kliknąć okrągłą ikonę "klucza" po lewej stronie ścieżki parametru. Jeśli do ramki nie jest przypisany żaden klucz, kółko będzie "puste", a kliknięcie go spowoduje dodanie nowego klucza i umożliwi edycję wartości parametru. Jeśli ramka ma już przypisany klucz, kółko będzie "wypełnione", a kliknięcie go spowoduje usunięcie klucza z ramki:
+    Na powyższym obrazie można także zauważyć, że za pomocą przycisków strzałek znajdujących się po obu stronach znacznika klucza parametru można szybko przeskakiwać między kluczowymi klatkami w witrynie dope sheet, bez konieczności ręcznego ustawiania głowicy odtwarzania.
+     
+  
+  Wartości parametrów
+  
+    Po dodaniu ścieżki parametrów można edytować wartości niektórych z nich, po prostu ustawiając głowicę odtwarzania na stronie Dope Sheet na klatkę z kluczem, który ma zostać zmieniony, a następnie używając różnych widżetów canvas do edycji pozycji, obrotu, skali lub pochodzenia strony asset. Zmiany te zostaną odzwierciedlone w wartości klucza dla tej klatki. Jednak nie wszystkie parametry można edytować w ten sposób lub może to być niewystarczająco precyzyjne. W takich przypadkach można edytować wartość parametru bezpośrednio, klikając go na ścieżce i ustawiając na wartość wymaganą dla danego typu parametru.
+    Należy pamiętać, że niektóre ścieżki parametrów mogą mieć ikonę "link"  obok ich wartości, co oznacza, że można je ze sobą łączyć. W tym celu należy kliknąć ikonę, aby włączyć/wyłączyć łączenie, a gdy jest ono włączone, edycja jednej wartości spowoduje również ustawienie drugiej.
+     
+  
+  Wydarzenia
+  
+    Podobnie jak w przypadku zwykłej strony objects, strona sequences może mieć zdarzenia, które uruchamiają przypisany do nich kod. Kod jest przypisany w postaci funkcji skryptowej, która nie przyjmuje żadnych argumentów i jest wywoływana w momencie wystąpienia zdarzenia.
+    Zdarzenia dodaje się, klikając przycisk Dodaj zdarzenie , co spowoduje otwarcie następującego okna:
+    
+    Wymienione tu wydarzenia są następujące:
+    
+      Utwórz -  to zdarzenie ma miejsce, gdy po raz pierwszy tworzona jest instancja sequence i jest pierwszą rzeczą, która dzieje się w sequence umieszczonym w room poprzez edytor room po wprowadzeniu room.
+      Zniszcz-  to zdarzenie jest wykonywane, gdy instancja strony sequence zostanie zniszczona, i zostanie uruchomione przed zdarzeniem Wyczyść (patrz poniżej).
+      Sprzątanie - to zdarzenie zostanie wywołane po każdym zdarzeniu, które usuwa instancję sequence z room. Tak więc, zostanie wywołane, gdy sequence zostanie zniszczone, gdy room się skończy, lub gdy gra się zakończy, i jest zaprojektowane do wykonania dowolnego zadania, które chcesz wykonać raz, gdy instancja sequence zostanie usunięta z gry z dowolnego powodu. Jeśli zniszczyłeś instancję sequence za pomocą, na przykład, funkcji layer_sequence_destroy(), to zdarzenie to zostanie wywołane po zdarzeniu Destroy (zobacz powyżej).
+      Begin Step / Step /  End Step - Zdarzenie Step to zdarzenie, które jest sprawdzane w każdym kroku (klatce) gry, gdy istnieje instancja sequence. Składa się ono z trzech części: begin, step i end. Do większości rzeczy wystarczy standardowe zdarzenie kroku, ale czasami chcesz mieć większą kontrolę nad tym, jaki kod jest uruchamiany i w jakim czasie, więc do tego celu służą zdarzenia kroku Begin i End, które będą zawsze wywoływane w tej samej kolejności w każdym kroku (klatce) gry. Ważne! Jeśli gra sequence zostanie wstrzymana, zdarzenia te nie zostaną wywołane, a po wznowieniu gry zostaną wywołane w następnej klatce po ponownym rozpoczęciu gry sequence . Zwróć też uwagę, że na kolejność zdarzeń nie ma wpływu kierunek głowicy odtwarzającej i nawet jeśli sequence jest odtwarzana do tyłu, zdarzenia nadal będą uruchamiane jako Początek, Krok i Koniec.
+      Zdarzenie asynchroniczne: Jest to odpowiednik zdarzenia systemowego object Asynchronous System Event. Ważne! Jeśli witryna sequence jest wstrzymana, to zdarzenie to nie zostanie wywołane.
+    
+    Do każdego zdarzenia można przypisać jedną funkcję, która będzie wywoływana w momencie wyzwolenia zdarzenia. Funkcję można przypisać za pomocą pola wprowadzania danych dla danego zdarzenia, a kliknięcie przycisku strzałki spowoduje otwarcie edytora script, w którym można edytować funkcję. Możesz też kliknąć przycisk Utwórz nowy na dole strony, aby utworzyć nowy zasób script z już zdefiniowanymi i gotowymi do wypełnienia funkcjami "wzorcowymi". Zauważ, że możesz zmienić nazwy funkcji na dowolne i nie musisz używać nazw predefiniowanych, a także możesz usunąć wszystkie definicje funkcji, które nie są Ci potrzebne. Należy pamiętać, że funkcje używane w serwisie sequence nie mogą przyjmować żadnych argumentów.
+    Zdarzenia sekwencji można także dodawać i edytować za pomocą kodu. Więcej informacji na ten temat można znaleźć tutaj.
+     
+  
+  Sterowanie klatkami kluczowymi
+  
+    Przyciski sterujące na stronie keyframe to jeden ze sposobów dodawania, usuwania lub edytowania określonych przycisków na stronie dope sheet. Przyciski są następujące:
+    
+       - Jest to przycisk "Podziel wybrane klawisze". Po zaznaczeniu jednego lub kilku klawiszy parametrów w oknie dope sheet, można kliknąć ten przycisk, a zostaną one podzielone na dwa oddzielne klawisze w pozycji głowicy odtwarzania timeline:
+        
+      
+       - Jest to przycisk "Usuń wybrane klawisze". Po zaznaczeniu jednego lub kilku klawiszy parametrów na stronie dope sheet można kliknąć ten przycisk, co spowoduje ich usunięcie:
+        
+      
+       - Jest to przycisk "Nagraj nowy klucz". Po wybraniu klucza asset na stronie dope sheet i naciśnięciu tego przycisku, nowe klucze parametrów zostaną dodane do ścieżki asset jako ścieżki parametrów, a klucze parametrów zostaną dodane jako punkty na stronie dope sheet timeline w pozycji głowicy odtwarzania:
+        
+      
+       - Jest to przycisk "Automatycznie zapisuj zmiany". Gdy ten przycisk jest włączony, wszelkie zmiany dokonane w asset w canvasie zostaną automatycznie zapisane i odpowiednie ścieżki parametrów oraz klawisze parametrów zostaną dodane w pozycji głowicy odtwarzania w dope sheet. Na przykład, jeśli przesuniesz głowicę odtwarzania z klatki 0 do klatki 10, a następnie w canvasie przesuniesz asset o 100 pikseli w prawo, zostanie dodana ścieżka parametrów dla pozycji, a klawisze parametrów zostaną dodane w klatce 0 (pozycja początkowa) i w klatce 10 (pozycja głowicy odtwarzania), a po naciśnięciu "Play" na sequence, asset przesunie się o 100px w prawo w ciągu dziesięciu klatek.
+        
+      
+    
+  
+  Przełączniki Widoczny / Blokada
+  
+    Zarówno ścieżki asset, jak i ścieżki parametrów mają przycisk do przełączania widoczności ścieżki  oraz do blokowania ścieżki . Jeśli wyłączysz widoczność ścieżki, nie będzie ona widoczna, gdy sequence zostanie uruchomiona w room, nie będzie też widoczna w kanwie sequence podczas testowania, a przełączenie widoczności ścieżki asset spowoduje przełączenie widoczności jej ścieżek parametrów. Zablokowanie ścieżki oznacza po prostu, że nie będzie można jej w żaden sposób edytować. Zauważ, że ścieżki, które są niewidoczne, będą na stronie dope sheet rysowane w sposób niewyraźny, natomiast ścieżki, które są zablokowane, będą rysowane z nakładką, dzięki czemu od razu widać, w jakim stanie są poszczególne ścieżki:
+     
+  
+  Ścieżka Kolor
+  
+    Każdej utworzonej ścieżce asset zostanie przypisany przez IDE losowy kolor, aby ułatwić jej identyfikację na stronie Dope Sheet. Kolor ten można zmienić w dowolnym momencie, klikając pasek koloru ścieżki, a następnie wybierając żądany kolor z otwartego okna selektora kolorów. Kolor wybrany dla ścieżki asset zostanie automatycznie zastosowany do wszystkich powiązanych ścieżek parametrów, jednak w razie potrzeby można edytować kolor każdej ścieżki parametrów osobno, aby był inny. Należy pamiętać, że ponowna zmiana koloru ścieżki asset spowoduje zastąpienie wszelkich zmian dokonanych na ścieżkach parametrów.
+     
+  
+  Dodawanie ścieżek parametrów
+  
+    Za pomocą przycisku Add Parameter  można dodać pojedynczą ścieżkę parametrów do wybranej ścieżki asset. Jak wspomniano wcześniej na tej stronie, ścieżki parametrów mogą być różnych typów, w zależności od asset, z którym są związane. Poniżej znajduje się lista wszystkich dostępnych ścieżek parametrów i tego, do czego się odnoszą, a także adresów assets, do których można je zastosować:
+    
+      Pozycja: Ta ścieżka parametru może być dodana do każdego z czterech typów sequence asset (sprite'ów, obiektów, dźwięków lub sekwencji) i służy do ustawiania pozycji przestrzennej w obrębie strony sequence dla danej strony asset. Przyjmuje ona wartości X i Y.
+      Obrót: Podobnie jak parametr pozycji, parametr obrotu jest dostępny dla wszystkich sekwencji assets i można go użyć do ustawienia obrotu w stopniach dla asset. Należy pamiętać, że GameMaker Studio 2 oblicza obrót w kierunku przeciwnym do ruchu wskazówek zegara, zaczynając od 0° po prawej stronie, więc 90° to góra, 180° to lewo, a 270° to dół.
+      Pochodzenie: Parametr origin jest dostępny dla zasobów sprite'ów, obiektów i sekwencji i może być użyty do ustawienia pozycji X i Y początku asset. Zmiana origin wpłynie na sposób pozycjonowania, obracania i skalowania asset.
+      Skala: Parametr skali jest dostępny dla zasobów sprite'ów, obiektów oraz sekwencji i służy do ustawiania skali poziomej i pionowej asset. Ma on wpływ na sposób renderowania asset w IDE oraz na runtime i jest obliczany jako wartość skalarna, gdzie 100% to domyślny rozmiar asset, 50% to połowa rozmiaru, a 200% to dwukrotność rozmiaru. Należy pamiętać, że istnieje możliwość powiązania wartości skali poziomej i pionowej poprzez kliknięcie przycisku "Połącz" . Oznacza to, że zmiana jednej wartości spowoduje automatyczną zmianę drugiej.
+      Indeks obrazu i Prędkość obrazu: Parametry te są dostępne tylko dla zasobów sprite 'ów i obiektów i mogą być używane do zmiany bieżącej klatki animacji (więcej informacji na ten temat można znaleźć na stronie image_index Więcej informacji na ten temat można znaleźć na stronie poświęconej animacji) oraz aktualnej prędkości animacji, która jest ustawiana za pomocą FPS i działa tak samo, jak wartość ustawiona dla sprite w edytorze sprite.
+      Mnożenie kolorów: Ten parametr jest dostępny tylko dla zasobów sprite 'ów i obiektów i może być użyty do zmiany aktualnego koloru mieszanki dla rysowanej strony sprite. Jest to odpowiednik ustawienia wartości image_blend i wszystkie ustawione tu kolory zostaną "pomnożone" (tzn. zmieszane) z kolorem strony sprite, a wartość biała (#ffffff) oznacza, że nie należy mieszać kolorów. Należy pamiętać, że podczas pracy z tym typem ścieżki można ustawić kolor, wpisując ręcznie wartość heksadecymalną, lub kliknąć próbkę koloru, aby otworzyć narzędzie do wybierania kolorów GameMaker Studio 2. Należy pamiętać, że kolory są podawane w formacie ARGB, więc przy użyciu tego typu ścieżki parametrów można ustawić wartość alfa (narzędzie do wybierania kolorów umożliwia także ustawienie wartości alfa). Byłoby to równoznaczne z ustawieniem wartości image_alpha dla sprite'a.
+      Głośność: Parametr głośności ma zastosowanie tylko do ścieżek zasobów dźwiękowych i można go użyć do ustawienia wzmocnienia dźwięku (rzeczywiste wzmocnienie dźwięku asset nie zostanie zmienione, ponieważ jest to emiter, który jest używany dla ścieżki asset w sequences). Wartość głośności jest obliczana procentowo, gdzie 0% oznacza brak głośności, a 100% - pełną głośność.
+      Wysokość dźwięku: Parametr wysokości dźwięku dotyczy tylko ścieżek zasobów dźwiękowych i można go użyć do ustawienia wysokości dźwięku (podobnie jak w przypadku głośności, rzeczywiste wzmocnienie dźwięku asset nie zostanie zmienione, ponieważ jest to emiter, który jest używany dla ścieżki asset w sequences). Wartość wysokości dźwięku jest obliczana procentowo - 100% to "naturalna" wysokość dźwięku, a wartość mniejsza niż 100% powoduje jej obniżenie, a większa niż 100% - podwyższenie.
+      Falowanie: Parametr falowania dotyczy tylko ścieżek zasobów dźwiękowych i obecnie nie jest zaimplementowany.
+      Istnieją pewne dodatkowe parametry dostępne tylko dla ścieżek tekstowych. Informacje na ich temat można znaleźć w części Tekst w sekwencjach.
+    
+     
+  
+  Śledzenie działań
+  
+    Przyciski znajdujące się w dolnej części edytora ścieżek odpowiadają różnym akcjom ścieżki i mogą być używane w następujących celach:
+    
+       - Ten przycisk otworzy Eksplorator Asset, w którym można wybrać stronę asset do użycia jako nową ścieżkę. Po wybraniu zostanie utworzona ścieżka asset, a klatki zostaną dodane do strony Dope Sheet w bieżącej pozycji głowicy odtwarzania.
+       - Po zaznaczeniu jednej lub kilku ścieżek asset w edytorze ścieżek, kliknięcie tego przycisku spowoduje ich powielenie (wraz z wszelkimi ścieżkami parametrów, które mogą zawierać).
+       - Kliknięcie tego przycisku spowoduje utworzenie specjalnej grupy masek przycinania, w której można podać adres sprites, który ma być użyty jako maska, oraz adres sprites, który ma być maskowany. Więcej informacji można znaleźć tutaj.
+       - Kliknięcie tego przycisku spowoduje dodanie do edytora ścieżek nowego folderu grupy, który można wykorzystać do lepszej organizacji ścieżek. Ścieżkę można dodać do grupy, przeciągając ją do folderu grupowego, a następnie usunąć, przeciągając ją z folderu. Należy pamiętać, że każdej stronie asset dodanej do folderu grupowego zostanie automatycznie przypisany kolor folderu, choć w razie potrzeby można edytować kolor ścieżki dla poszczególnych ścieżek, aby był inny.
+       - Jak można się spodziewać, kliknięcie tego przycisku spowoduje usunięcie zaznaczonej ścieżki (ścieżek). Jeśli jest to ścieżka asset, wówczas wszystkie ścieżki parametrów, które zawiera, również zostaną usunięte, choć można użyć tej funkcji na wybranych ścieżkach parametrów, aby usunąć je same, bez usuwania ścieżek asset, z którymi są powiązane. Jeśli użyjesz tej funkcji na pustym folderze grupy, folder zostanie usunięty, ale jeśli w folderze znajdują się jakieś ścieżki, pojawi się ostrzeżenie, ponieważ usunięcie folderu spowoduje usunięcie wszystkich ścieżek znajdujących się w nim.
+    
+     
+  
+   
+  Pierwsza z nich dotyczy używania krzywej animacji assets do generowania ścieżek parametrów, a druga przedstawia sposób tworzenia masek przycinających:
+  
+    Używanie krzywych animacji
+    Maski przycinania
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Sekwencje
+        Następny: Tekst w sekwencjach
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

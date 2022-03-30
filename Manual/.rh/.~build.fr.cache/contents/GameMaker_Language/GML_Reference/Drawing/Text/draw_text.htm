@@ -1,0 +1,50 @@
+
+  
+  rysować_tekst
+  Za pomocą tej funkcji można narysować dowolną stronę string w dowolnym miejscu na stronie room (do rysowania liczb rzeczywistych należy użyć funkcji string() aby zamienić je na tekst). Do łączenia stron strings można użyć + (patrz przykład poniżej), a także można użyć \n w obrębie strony string, aby dodać przerwę między wierszami, tak aby była ona rysowana w wielu wierszach (informacje o tym, jak prawidłowo sformatować stronę string i jakich znaków escape można użyć, można znaleźć tutaj). Kolor tekstu i alfa są zależne od bieżących wartości podstawowych alfa i koloru, ustawionych za pomocą draw_set_alpha() oraz . draw_set_colour().
+  UWAGA: Na rzeczywiste położenie tekstu mają wpływ wartości wyrównania określone przez draw_set_halign() oraz draw_set_valign().
+   
+  Składnia:
+  draw_text(x, y, string);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x
+        The x coordinate of the drawn string.
+     
+      
+        y
+        The y coordinate of the drawn string.
+     
+      
+        string
+        The string to draw.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_text(x, y, "Hello, " + global.Name + "!\nI hope you are well!");
+  Powyższy kod w pozycji x/y instancji narysuje stronę string, która wykorzysta stronę string zapisaną w zmiennej globalnej "Nazwa" i podzieli ją na dwie linie.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekst
+        Następny: draw_text_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

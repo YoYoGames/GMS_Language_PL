@@ -1,0 +1,34 @@
+
+  
+  fps_real
+  W witrynie GameMaker Studio 2 istnieją dwa główne sposoby określania szybkości działania gry. Są to: game speed (określoną w Opcjach gry) oraz fps (klatki na sekundę). Wartości te są często mylone, ale zasadniczo jedna z nich to liczba kroków gry, które GameMaker Studio 2 ma wykonać w ciągu sekundy (prędkość gry), a druga to liczba kroków procesora, które GameMaker Studio 2 faktycznie wykonuje w ciągu sekundy (rzeczywista liczba klatek na sekundę). Wartość ta jest zwykle znacznie wyższa niż prędkość gry, ale spada, gdy gra staje się bardziej złożona i zużywa więcej mocy obliczeniowej, aby utrzymać ustawioną prędkość room.
+  Ta zmienna tylko do odczytu zwraca bieżącą liczbę klatek na sekundę jako wartość całkowitą. Należy pamiętać, że funkcja będzie aktualizowana tylko raz na każdy krok gry, więc może się wydawać, że "skacze" z jednej wartości na drugą, ale jest to całkiem normalne.
+  UWAGA: W przypadku celu HTML5 zmienna ta będzie zwracać wielokrotność częstotliwości odświeżania monitora, ponieważ strona GameMaker Studio 2 musi polegać na przeglądarce w zakresie synchronizacji i wysyłania danych.
+   
+  Składnia:
+  fps_real
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if debug_mode
+    {
+        draw_text(32, 32, "FPS = " + string(fps_real));
+    }
+  Powyższy kod sprawdzi, czy gra jest w trybie debugowania, a jeśli tak, wyświetli na ekranie bieżącą liczbę klatek na sekundę.
+   
+   
+   
+  
+    
+      
+        Powrót: Debugowanie
+        Następny: debug_mode
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

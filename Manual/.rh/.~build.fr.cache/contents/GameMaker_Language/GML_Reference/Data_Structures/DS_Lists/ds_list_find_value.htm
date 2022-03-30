@@ -1,0 +1,48 @@
+
+  
+  ds_list_find_value
+  Za pomocą tej funkcji można sprawdzić podaną pozycję na liście, a następnie zwrócona zostanie wartość przechowywana na tej pozycji na liście. Zwróć uwagę, że jeśli podasz pozycję, która nie mieści się w podanym rozmiarze listy (np.: pozycja 11 na liście 10 wartości), funkcja może zwrócić undefined lub 0. Dzieje się tak, ponieważ podczas tworzenia listy kilka pierwszych pozycji na liście jest wewnętrznie ustawionych na 0, aby zminimalizować problemy z wydajnością podczas początkowego dodawania pozycji do listy (chociaż funkcja ds_list_size() nadal będzie zwracać 0 na nowo utworzonej liście). Jeśli chcesz się upewnić, że lista jest "naprawdę" pusta w momencie tworzenia, powinieneś wywołać funkcję ds_list_clear() po utworzeniu listy, co będzie oznaczało, że wszelkie wartości zwracane dla niezapełnionych slotów listy będą miały postać undefined, co można następnie konsekwentnie sprawdzać za pomocą funkcji is_undefined() function.
+   
+  Składnia:
+  ds_list_find_value(id, pos);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator listy DS
+        The id of the list to use.
+      
+      
+        pos
+        Real
+        The position to look at, where 0 corresponds to the very beginning of the list and the final position is ds_list_size(id)-1.
+      
+    
+  
+   
+  Zwroty:
+  Variable or undefined
+   
+  Przykład:
+  val = ds_list_find_value(list, ds_list_size(list) - 1);
+  Powyższy kod sprawdza listę zaindeksowaną w zmiennej "list" na ostatniej pozycji listy i zapisuje zwróconą wartość w zmiennej "val".
+   
+   
+   
+  
+    
+      
+        Powrót: Listy DS
+        Następny: ds_list_insert
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

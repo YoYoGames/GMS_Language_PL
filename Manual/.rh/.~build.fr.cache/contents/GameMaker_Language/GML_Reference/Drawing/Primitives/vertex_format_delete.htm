@@ -1,0 +1,43 @@
+
+  
+  vertex_format_delete
+  Funkcję tę należy wywołać po zakończeniu korzystania z utworzonych formatów wektorowych. Użytkownik podaje wartość ID formatu (zwróconą przez funkcję vector_format_end()), a ta funkcja zwolni związaną z nim pamięć. Uwaga: jeżeli po wywołaniu tej funkcji spróbujesz ponownie użyć tego formatu, otrzymasz błąd.
+   
+  Składnia:
+  vertex_format_delete(formatID);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        formatID
+        Identyfikator formatu wierzchołka
+        The vertex format to delete
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  vertex_format_delete(myFormat);
+  Powyższy kod spowoduje usunięcie z pamięci formatu vertex utworzonego w zmiennej "myFormat".
+   
+   
+   
+  
+    
+      
+        Powrót: Prymitywy i Vertex Formaty
+        Następny: vertex_create_buffer
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,46 @@
+
+  
+   Bufor zapisu
+  Tej akcji można użyć do zapisania danych na stronie buffer. Należy podać unikatowy identyfikator buffer, do którego ma zostać zapisany (zwrócony przez akcję Create Buffer), a następnie wartość do zapisania, która może być rzeczywista lub string, ale należy pamiętać, że
+   wszystkie wartości są przechowywane jako łańcuchy, więc podczas odczytu z buffer (za pomocą akcji Read Buffer) może być konieczne użycie jednej z akcji Data Type Actions w celu przekonwertowania wartości z łańcucha
+    z powrotem na oryginalną wartość. Należy także pamiętać, że strony buffers są odczytywane i zapisywane sekwencyjnie, a więc zapis na stronie buffer spowoduje przesunięcie pozycji "szukania" o jeden, co oznacza, że aby zapisać różne dane, wystarczy wywołać tę akcję
+    tyle razy, ile jest to wymagane.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Buffer
+        Indeks buffer (przechowywany w zmiennej)
+      
+      
+        Value
+        Wartość, która ma być dodana do bufora
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji tworzy zmienną globalną, a następnie buffer, przypisując do niej unikalny
+    buffer ID do zmiennej. Na stronie buffer zapisywane są następnie dwie porcje danych.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje buforowe
+        Następny: Bufor poszukiwań
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

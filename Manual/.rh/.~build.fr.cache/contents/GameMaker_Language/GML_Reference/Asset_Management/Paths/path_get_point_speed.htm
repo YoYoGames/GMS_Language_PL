@@ -1,0 +1,53 @@
+
+  
+  ścieżka_get_punkt_prędkość
+  Za pomocą tej funkcji można uzyskać prędkość punktu (zdefiniowaną w Edytorze ścieżek lub po dynamicznym dodaniu punktu path za pomocą polecenia path_add_point()) wyrażoną w procentach. Jeśli więc w edytorze path punkt path jest ustawiony na 50, to po użyciu ta funkcja zwróci wartość 50.
+   
+  Składnia:
+  path_get_point_speed(index, n);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Aktywa na ścieżce
+        The index of the path to check.
+      
+      
+        n
+        Real
+        The point number to check.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if (path_get_point_speed(pth_Patrol, 0) != 100)
+    {
+        var _px = path_get_point_x(pth_Patrol, 0);
+        var _py = path_get_point_x(pth_Patrol, 0);
+        path_change_point(pth_Patrol, 0, _px, _py, 100);
+    }
+   path Powyższy kod sprawdza w punkcie "0" strony path indeksowanej przez "pth_Patrol", czy prędkość nie jest równa 100. Jeśli nie, to ustawia prędkość tego punktu na 100.
+   
+   
+   
+  
+    
+      
+        Powrót: Ścieżki
+        Następny: path_get_point_x
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

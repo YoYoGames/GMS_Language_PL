@@ -1,0 +1,43 @@
+
+  
+  warstwa_get_element_layer
+  Za pomocą tej funkcji można uzyskać identyfikator warstwy, na której znajduje się dany element. Podajesz unikalną wartość identyfikatora elementu (na przykład zwróconą przez funkcję, która utworzyła element, lub przez edytor room ), a funkcja zwróci unikalny identyfikator warstwy, na której znajduje się dany element. Jeśli podany identyfikator elementu nie jest prawidłowy, funkcja zwróci -1.
+   
+  Składnia:
+  layer_get_element_layer(element_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        element_id
+        Identyfikator elementu warstwy
+        The unique ID value of the element to get the layer of
+      
+    
+  
+   
+  Zwroty:
+  Layer ID or -1 (if the element is invalid)
+   
+  Przykład:
+  element = layer_get_element_layer(asset_1);
+  Powyższy kod pobiera identyfikator warstwy dla elementu o identyfikatorze zapisanym w zmiennej "asset_1" i zapisuje go w zmiennej.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_get_element_type
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

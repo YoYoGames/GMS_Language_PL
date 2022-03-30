@@ -1,0 +1,33 @@
+
+  
+  uwp_is_suspending
+  Ta funkcja zwróci true dla pojedynczej ramki (i false w przeciwnym razie) w sposób podobny do os_is_paused(). Gra ma wtedy jedną sekundę na zapisanie stanu gry, zanim zostanie potencjalnie przerwana przez system. Gdy gra zakończy zapisywanie danych, powinna wywołać funkcję uwp_suspend() w celu czystego zawieszenia gry. Gra powinna też prawdopodobnie przejść w stan pauzy, aby w przypadku wznowienia jej przez system (jeśli nie została całkowicie zakończona) gracz nie został od razu wrzucony z powrotem w sytuację gry.
+   
+  Składnia:
+  uwp_is_suspending();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if uwp_is_suspending()
+    {
+        scr_Save_Game_Data();
+        uwp_suspend();
+    }
+  Powyższy kod sprawdza, czy aplikacja się zawiesza, a jeśli tak, to wywołuje stronę script w celu zapisania danych gry przed jej zawieszeniem.
+   
+   
+   
+  
+    
+      
+        Powrót: UWP i XBox Live
+        Następny: uwp_is_constrained
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

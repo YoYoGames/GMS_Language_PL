@@ -1,0 +1,42 @@
+
+  
+  ds_map_secure_load
+  Ta funkcja wczytuje wcześniej zapisaną mapę DS z podanego pliku. Plik ten musi być wcześniej utworzony przy użyciu funkcji ds_map_secure_save() a po wczytaniu funkcja zwróci indeks mapy DS utworzonej na podstawie wczytanych danych. Ten indeks mapy DS powinien być przechowywany w zmiennej i używany we wszystkich kolejnych wywołaniach funkcji dotyczących tej mapy. Należy pamiętać, że jeśli wczytywana mapa DS została zapisana z tablicą jako jedną z kluczowych wartości, to przy wczytywaniu tablica ta zostanie przekształcona w listę DS.
+  WAŻNE! Jedną z cech bezpiecznie zapisanego pliku jest to, że jest on zablokowany dla urządzenia, na którym został utworzony, dlatego nie można wczytać pliku zapisanego na jednym urządzeniu do projektu działającego na innym urządzeniu.
+   
+  Składnia:
+  ds_map_secure_load(filename);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        filename
+        The name of the file to load the map data from.
+     
+    
+  
+   
+  Zwroty:
+  DS Map ID
+   
+  Przykład:
+  p_map = ds_map_secure_load("p_data.dat");
+  Powyższy kod wczyta bezpiecznie zapisaną mapę DS i zapisze jej wartość indeksu w zmiennej w celu późniejszego użycia.
+   
+   
+   
+  
+    
+      
+        Powrót: Mapy DS
+        Następny: ds_map_secure_load_buffer
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

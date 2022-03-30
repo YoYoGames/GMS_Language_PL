@@ -1,0 +1,46 @@
+
+  
+  is_string
+  Ta funkcja zwraca, czy dana zmienna jest liczbą string czy nie. W niektórych przypadkach chcemy sprawdzić, czy zmienna w GameMaker Studio 2 ma postać string, a nie rzeczywistą, i właśnie wtedy używamy tej funkcji. Nie zwraca ona wartości string, ale raczej true lub false, więc wartość na przykład "fish" dla n zwróci true, ale wartość 200 dla n zwróci false.
+   
+  Składnia:
+  is_string(n);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        n
+        Zmienna
+        The argument to check.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if is_string(val)
+    {
+        name = "Player: " + val;
+    }
+  Powyższy kod sprawdza, czy zmienna "val" zawiera string, a jeśli tak, to dodaje ją do kolejnej string, która jest następnie przypisywana do zmiennej "name".
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: is_real
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

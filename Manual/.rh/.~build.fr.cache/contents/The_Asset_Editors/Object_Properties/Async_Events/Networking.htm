@@ -1,0 +1,72 @@
+
+  
+  Tworzenie sieci
+  
+  Zdarzenie sieciowe jest wywoływane przez każdy przychodzący ruch sieciowy i jest powiązane z funkcjami sieciowymi. To zdarzenie generuje specjalną mapę DS Map, która jest przeznaczona wyłącznie dla tego zdarzenia i jest przechowywana w specjalnej zmiennej async_load. Ta mapa DS będzie zawierać różne informacje w zależności od typu zdarzenia sieciowego, które ją wygenerowało.
+  Wspólne spotkania networkingowe
+  Poniższe klucze są wspólne dla wszystkich odbieranych funkcji sieciowych i zawsze będą obecne na mapie async_load:
+  
+    "type": Jako wartość zwrotną będzie miała jedną ze stałych wymienionych w poniższej tabeli i określa typ zdarzenia sieciowego.
+    "id": Identyfikator gniazda (liczba rzeczywista, zwrócona przez funkcję network_create_server lub network_create_socket), które odbiera zdarzenie. W większości przypadków zwracany identyfikator gniazda jest identyfikatorem gniazda TCP lub UDP, które wywołało zdarzenie, jednak jeśli zdarzenie zostało wywołane w witrynie server i jest to zdarzenie związane z danymi (patrz poniżej), wówczas identyfikator gniazda jest identyfikatorem klienta, który wysłał dane.
+    "ip": Adres IP gniazda (w postaci string).
+    "port": Port powiązany z adresem IP (przydatny podczas pracy z protokołem UDP).
+  
+  Możliwymi wartościami zwracanymi przez klucz "type" mogą być dowolne z czterech stałych wymienionych poniżej:
+  
+    
+      
+        Stała
+        Opis
+      
+      
+        network_type_connect
+        Zdarzenie zostało wywołane przez połączenie.
+      
+      
+        network_type_disconnect
+        Zdarzenie zostało wywołane przez rozłączenie.
+      
+      
+        network_type_data
+        Zdarzenie zostało wywołane przez napływające dane.
+      
+      
+        network_type_non_blocking_connect
+        Zdarzenie zostało wywołane przez połączenie skonfigurowane jako nieblokujące (można do tego celu użyć funkcji network_set_config() w tym celu lub połączyć się, używając network_connect_async() lub network_connect_async_raw()).
+      
+    
+  
+   
+  Podłączanie / odłączanie
+  W przypadku zdarzenia typu network_type_connect lub network_type_disconnect, mapa async_load będzie miała następujący dodatkowy klucz:
+  
+    "socket": Ten klucz będzie przechowywał identyfikator gniazda łączącego/rozłączającego.
+  
+  Jeśli zdarzenie jest typu network_type_non_blocking_connect, to dodatkowo pojawi się następujący klucz:
+  
+    "succeeded": Ten klucz będzie miał wartość 0 lub 1, gdzie 0 oznacza, że połączenie zakończyło się czasem, a 1 oznacza, że się udało i gniazdo jest gotowe do użycia.
+  
+  Warto zauważyć, że zdarzenie Networking Event nie jest wyzwalane u klientów, gdy server się rozłącza, a żadne ze zdarzeń network_type_* nie zostanie wyzwolone u klientów, gdy server, z którym są połączeni, się rozłączy, nawet jeśli połączenie jest oparte na protokole TCP.
+  Odbieranie danych
+  Po wystąpieniu zdarzenia typu network_type_data, które oznacza, że sieć odebrała dane, utworzona mapa będzie miała następujące klucze:
+  
+    "bufor": Jest to unikalny "identyfikator bufora", który jest generowany przez zdarzenie. Identyfikator jest tworzony w zmiennej typu "grow" buffer, wyrównanej bajtami do 1, która powinna być przechowywana w zmiennej i używana do wszystkich dalszych wywołań funkcji na stronie buffer w tym zdarzeniu. Podobnie jak mapa async_load, utworzona mapa buffer jest automatycznie usuwana z pamięci po zakończeniu tego zdarzenia. Więcej informacji na temat strony buffers można znaleźć w punkcie Odnośnik - Bufory.
+    "size": Jest to rozmiar (w bajtach) odbieranych danych buffer.
+    "message_type": (tylko WebSockets) - Będzie to network_send_binary, jeśli otrzymana wiadomość była w formie binarnej, lub network_send_text, jeśli była otrzymana w formie tekstowej.
+  
+  UWAGA Utworzona strona buffer jest ważna tylko w tych wydarzeniach i zostanie automatycznie zwolniona po zakończeniu wydarzenia.
+   
+   
+   
+  
+    
+      
+        Powrót: Zdarzenia asynchroniczne
+        Następny: Powiadomienia Push
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

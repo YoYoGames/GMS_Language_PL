@@ -1,0 +1,89 @@
+
+  
+  Okno wyjściowe
+  
+  Po pierwszym otwarciu projektu w witrynie GameMaker Studio 2 u dołu ekranu zostanie zadokowane Okno wyjściowe . To zadokowane okno zawiera różne karty, na których wyświetlane są różne informacje wyjściowe dla
+    projektu, w zależności od określonych okoliczności. Okno dokowane można zamknąć, klikając przycisk znajdujący się w dolnej części IDE. Można również kliknąć przycisk  i przeciągnąć dowolną kartę w oknie dokowanym do innego okna dokowanego, aby zmienić jej położenie, lub kliknąć przycisk  na pasku zawartości okna dokowanego i przeciągnąć ją
+    na stronę workspace, aby utworzyć samodzielne okno:
+  Można także kliknąć przycisk  i przeciągnąć
+    zadokowane wyjście na inne wyjście, aby utworzyć okno wyjściowe z widokiem podzielonym, jak pokazano na poniższym przykładzie, gdzie dwa wyjścia błędów zostały umieszczone na tej samej karcie (można powoli kliknąć  na karcie, aby zmienić jej nazwę):
+  W każdej chwili można przywrócić domyślny stan strony IDE, wybierając opcję Resetuj układ w oknie Układy, a także
+    można ponownie otworzyć każdą zamkniętą kartę z menu Okno. Można również zmienić sposób wyświetlania zawartości każdego z okien wyjściowych, edytując Preferencje okien wyjściowych.
+  Domyślne zadokowane karty zostały wyjaśnione poniżej:
+  Wyjście
+  
+    W ogólnym oknie Dane wyjściowe wyświetlane są wszystkie dane wyjściowe kompilatora, a także komunikaty dodane do gry za pomocą
+      funkcji show_debug_message() Funkcja. Większość początkowych informacji to po prostu informacje o tym, jak gra jest budowana.
+      i jako takie mogą zostać zignorowane. Jeśli jednak wystąpi problem z budową projektu na platformę docelową, może to być pomocne w znalezieniu przyczyny, a także dostarczyć informacji dla pomocy technicznej, jeśli się z nią skontaktujesz. Należy pamiętać, że można zmienić
+      ilość informacji wyświetlanych w tym miejscu w sekcji Kompilacja w Preferencjach.
+     
+  
+  Wyniki wyszukiwania
+  
+    Okno Search And Replace (Szukaj i zamień ) można otworzyć, używając skrótu klawiaturowego  /  +  + " F",
+      lub przejść do menu Edycja. Po wprowadzeniu wyszukiwanych haseł wyniki zostaną wyświetlone w tym oknie w formacie:
+    [object] - [event] - [Line Number]: [search string]
+    Jeśli wyszukiwane hasło zostanie znalezione w witrynie script, będzie to po prostu:
+    [script] - [Line Number]: [search string]
+    Następnie można dwukrotnie kliknąć stronę  na dowolnym zwróconym wpisie, aby otworzyć daną stronę asset w odpowiednim miejscu do edycji.
+     
+  
+  Kontrola źródła
+  
+    W tym oknie zostaną wyświetlone wszystkie dane wyjściowe dla Twojego pluginu SCM. Więcej informacji na temat
+      konfigurowaniu Source Control tutaj.
+     
+  
+  Punkty przerwania
+  
+    Punkty przerwania to miejsca w kodzie gry lub DnD™, w których poleciłeś GameMaker Studio 2 wstrzymać działanie projektu w trybie
+     Debug Mode. Możesz dodać punkt breakpoint w dowolnym miejscu w grze loop, używając klawisza " F9", a gdy to zrobisz, pojawi się on w tej zakładce wyjściowej. Można je włączać i wyłączać (nie usuwając ich)
+      klikając pole wyboru po lewej stronie, a jeśli użyjesz prawego przycisku myszy  na jednym z nich, pojawi się małe menu, które pozwoli Ci usunąć breakpoint lub otworzyć okno kodu/DnD™
+      w którym znajduje się breakpoint.
+     
+  
+  Błędy składni
+  
+    Błędy składni to te błędy w kodzie, które zostały wykryte przez program sprawdzający składnię GameMaker Studio 2.
+      wychwycił. Istnieje wiele powodów, dla których może pojawić się błąd składni - np. wstawienie ";" w kodzie, gdy oczekiwane jest ":" - i należy je naprawić przed próbą przetestowania lub skompilowania gry. Każdy wpis błędu składni w
+      w oknie wyjściowym można kliknąć dwukrotnie lewym przyciskiem myszy , aby otworzyć okno w miejscu oznaczonym flagą, co umożliwi rozwiązanie problemu.
+    Błędy składni będą aktualizowane w miarę pisania kodu (między wpisaniem tekstu a pojawieniem się błędów w tym oknie nastąpi krótka przerwa, aby zapobiec zgłaszaniu błędów niedokończonego kodu) i będą miały następujący format:
+    [object] - [event] - [Line Number] - [Position In Line]: [error string]
+    Lub, jeśli błąd znajduje się na stronie script, zostanie on usunięty:
+    [script] - [Line Number] - [Position in line]: [error string]
+    Należy pamiętać, że błędy składni zazwyczaj uniemożliwiają kompilację gry, jednak istnieją błędy, które zostaną zasygnalizowane, a które nie uniemożliwiają kompilacji, ale które mimo to powinny zostać usunięte. Błędy te to:
+    
+      dla zadeklarowanych zmiennych, które nie są nigdzie używane
+      dla zmiennych używanych gdzieś, które nie zostały jeszcze zadeklarowane
+    
+    Na ogół oba te przypadki sugerują literówkę w nazwie zmiennej lub inny łatwy do popełnienia błąd, dlatego są sygnalizowane, aby je poprawić.
+      ale może to być również zamierzone, ponieważ użytkownik zadeklarował zmienną do przyszłego użytku, ale nie zdążył jej jeszcze użyć. Dlatego właśnie te błędy nadal pozwalają na skompilowanie gry. Pełna lista możliwych komunikatów o błędach składni znajduje się tutaj.
+     
+  
+  Błędy kompilacji
+  
+    Błąd kompilatora występuje wtedy, gdy gra napotka jakiś błąd, którego nie był w stanie wykryć system sprawdzania składni, lub gdy
+      błąd jest związany z ustawieniami opcji kompilacji. W takim przypadku gra wyświetli komunikat o błędzie kompilatora i przestanie działać. Błędy kompilatora zostaną wyświetlone także w oknie General Output, ale będą także wymienione osobno tutaj
+      (ponieważ mogą się one "zgubić" w pozostałych ogólnych danych wyjściowych).
+    Wszystkie komunikaty o błędach kompilatora będą miały ten sam format:
+    [object] - [event] - [Line Number]: [error string]
+    Jeśli błąd zostanie znaleziony w witrynie script, będzie to po prostu informacja:
+    [script] - [Line Number]: [error string]
+    Następnie można dwukrotnie kliknąć stronę  w dowolnym wpisie błędu kompilatora, aby otworzyć daną stronę asset w miejscu oznaczonym jako powodujące błąd. Pełna lista
+      możliwych komunikatów o błędach można znaleźć tutaj.
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Wprowadzenie do GameMaker Studio 2
+        Następny: Rynek
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

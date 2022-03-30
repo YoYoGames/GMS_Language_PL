@@ -1,0 +1,63 @@
+
+  
+  ścieżka_działania
+  Tej zmiennej można użyć do uzyskania lub zmiany reakcji instancji, gdy osiągnie ona koniec bieżącego path. Normalnie ustawiasz ją po uruchomieniu path za pomocą path_start() ale możesz chcieć zmienić to zachowanie w zależności od dowolnej liczby zdarzeń w Twojej grze. Dostępne wartości są wyrażone za pomocą następujących stałych:
+  
+    
+      
+      
+    
+    
+      
+        Ścieżka Zakończ Działanie Stała
+      
+      
+        Stała
+        Opis
+      
+      
+        path_action_stop
+        Zatrzymaj ścieżkę
+      
+      
+        path_action_restart
+        Kontynuuj z pozycji startowej, przeskakując na start, jeśli path nie jest zamknięta.
+      
+      
+        path_action_continue
+        Uruchom ponownie stronę path z bieżącej pozycji
+      
+      
+        path_action_reverse
+        Odwrócenie prędkości strony path (uruchomienie strony path w trybie odwrotnym)
+      
+    
+  
+   
+  Składnia:
+  path_endaction;
+   
+  Zwroty:
+  Path End Action Constant
+   
+  Przykład:
+  if (path_endaction == path_action_stop)
+    {
+        path_endaction = path_action_reverse;
+    }
+  Powyższy kod sprawdzi akcję końcową path i jeśli jest ona ustawiona na stop, to akcja końcowa zostanie zmieniona na wsteczną.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne ścieżki
+        Następny: path_start
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

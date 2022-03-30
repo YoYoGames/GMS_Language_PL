@@ -1,0 +1,50 @@
+
+  
+  camera_set_view_pos
+  Za pomocą tej funkcji można aktualizować pozycję obrazu z kamery w witrynie room. Podaje się unikatową wartość identyfikatora kamery (zwracaną przez różne funkcje camera_create() ), a następnie pozycje x i y
+    na które ma być ustawiona kamera.
+   
+  Składnia:
+  camera_set_view_pos(camera_id, x, y)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        camera_id
+        The unique camera ID value returned when you created the camera.
+     
+      
+        x
+        The x position to place the view at (in the room)
+     
+      
+        y
+        The y position to place the view at (in the room)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  camera_set_view_pos(view_camera[0], x - (view_wport[0] / 2), y - (view_hport[0] / 2));
+  Powyższy kod ustawi pozycję kamery widoku dla kamery przypisanej do portu widoku[0].
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: camera_set_view_size
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

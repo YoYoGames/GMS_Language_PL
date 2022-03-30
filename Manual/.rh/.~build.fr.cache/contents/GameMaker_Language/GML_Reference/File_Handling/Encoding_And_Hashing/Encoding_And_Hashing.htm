@@ -1,0 +1,46 @@
+
+  
+  Kodowanie i haszowanie
+  W przypadku plików zewnętrznych zawsze istnieje możliwość, że użytkownik końcowy może otworzyć i zmienić zawarte w nich informacje, a tym samym zmienić grę. Może to skutkować na przykład uszkodzeniem elementów gry lub sfałszowaniem wyników online, dlatego GameMaker Studio 2 udostępnia podstawowe funkcje kodowania, a także funkcje sprawdzania hashowania na stronie strings i w plikach, aby upewnić się, że zachowały one swoją integralność przed użyciem. Dostępne są również funkcje do kodowania i dekodowania formatu JSON strings.
+  UWAGA Kodowanie NIE jest szyfrowaniem! Kodowanie base64 sprawia, że plik jest nieczytelny gołym okiem, a jego odszyfrowanie wymaga wysiłku ze strony użytkownika, ale nie jest zabezpieczone przed włamaniem. Zaleca się łączenie tych funkcji z własnym szyfrowaniem (w Internecie dostępnych jest wiele form szyfrowania i funkcji script dla GameMaker ).
+  
+    json_encode
+    json_decode
+    json_stringify
+    json_parse
+    base64_encode
+    base64_decode
+    md5_string_utf8
+    md5_string_unicode
+    md5_file
+    sha1_string_utf8
+    sha1_string_unicode
+    sha1_file
+    zip_unzip
+    load_csv
+  
+   
+  Warto zauważyć, że istnieje również szereg funkcji związanych z kodowaniem i haszowaniem buforów, które można znaleźć w poniższych odnośnikach:
+  
+    buffer_md5
+    buffer_sha1
+    buffer_crc32
+    buffer_base64_encode
+    buffer_base64_decode
+    buffer_base64_decode_ext
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Obsługa plików
+        Następny: System plików
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

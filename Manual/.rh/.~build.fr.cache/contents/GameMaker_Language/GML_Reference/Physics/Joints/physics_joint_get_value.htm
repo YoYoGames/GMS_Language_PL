@@ -1,0 +1,59 @@
+
+  
+  physics_joint_get_value
+  Używając szeregu predefiniowanych stałych, można poprosić GameMaker Studio 2 o podanie wielu informacji o stanie danego przegubu. Jest to bardzo użyteczne, ponieważ daje możliwość usuwania przegubów lub zmiany zachowania instancji, w zależności od tego, czego w danej chwili potrzebujemy. Istnieje wiele stałych, które można wykorzystać w tej funkcji, a które można znaleźć tutaj: Physics Joint Constants, ale należy pamiętać, że podczas ich wywoływania wykonywane są skomplikowane obliczenia, więc należy ich używać ostrożnie i tylko w razie potrzeby, a także pamiętać, że wiele z nich jest unikalnych dla konkretnego typu przegubu.
+  Jeśli właściwość nie istnieje (na przykład w przypadku sprawdzania przegubu koła pasowego pod kątem przesunięcia pryzmatycznego), wartością zwracaną będzie 0.
+   
+  Składnia:
+  physics_joint_get_value(joint, value)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        joint
+        Fizyka Wspólny identyfikator
+        The index of the joint that you wish to test
+      
+      
+        value
+        Fizyka Stała wspólna
+        The constant for the joint property that you wish to test
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if shipJoint
+    {
+        var reactionForceX = physics_joint_get_value(shipJoint, phy_joint_reaction_force_x);
+        var reactionForceY = physics_joint_get_value(shipJoint, phy_joint_reaction_force_y);
+        var reactionForce = point_distance(0, 0, reactionForceX, reactionForceY);
+        if reactionForce > 2
+        {
+            physics_joint_delete(shipJoint);
+            shipJoint = -1;
+        }
+    }
+  Powyższy kod sprawdza, czy zmienna "shipJoint" zawiera indeks przegubu, a jeśli tak, oblicza siłę przyłożoną do tego przegubu, korzystając z dwóch stałych. Na koniec, jeśli całkowita siła jest większa niż 2, przegub zostaje usunięty.
+   
+   
+   
+  
+    
+      
+        Plecy: Stawy
+        Następny: physics_joint_set_value
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,48 @@
+
+  
+  physics_particle_get_group_flags
+  Za pomocą tej funkcji można wyszukać grupę flags dla grupy cząstek. Wartość group jest tą, która została zwrócona podczas tworzenia grupy cząstek za pomocą funkcji physics_particle_group_end()a funkcja zwróci wartość, która jest połączoną wartością aktualnie ustawionej grupy flags.
+   
+  Składnia:
+  physics_particle_get_group_flags(group)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        group
+        Identyfikator grupy cząstek fizycznych
+        The particle group to get.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  var flags = physics_particle_get_group_flags(group, flags);
+    if flags != (phy_particle_group_flag_solid | phy_particle_group_flag_rigid)
+    {
+        flags = phy_particle_group_flag_solid | phy_particle_group_flag_rigid;
+        physics_particle_set_group_flags(group, flags);
+    }
+  Powyższy kod utworzy zmienną przechowującą wartość flags, a następnie użyje jej do sprawdzenia flags grupy indeksowanej w zmiennej "grupa". Jeśli nie są one takie same, grupa zostanie utworzona przy użyciu tych flags.
+   
+   
+   
+  
+    
+      
+        Powrót: Miękkie cząstki ciała
+        Następny: physics_particle_group_get_inertia
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

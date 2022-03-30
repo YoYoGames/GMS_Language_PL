@@ -1,0 +1,75 @@
+
+  
+  część_typ_kierunek
+  Funkcja ta służy do określania kierunku cząstki podczas jej tworzenia, a także może być używana do zwiększania lub zmniejszania kierunku cząstki w czasie jej życia. Minimalne i maksymalne wartości kierunku domyślnie wynoszą 0, co oznacza, że cząstka będzie poruszać się w prawo bez żadnych zmian, ale wartości te można zmienić, aby ograniczyć kierunek ruchu zgodnie ze standardowymi kierunkami GameMaker Studio 2: 0 - w prawo, 90 - w górę, 180 - w lewo i 270 - w dół. Jeśli ustawisz je na tę samą wartość, cząstki będą poruszać się tylko w jednym kierunku.
+  Można także ustawić wartość przyrostu, która będzie dodawać (jeśli jest liczbą dodatnią) lub odejmować (jeśli jest liczbą ujemną) pewną liczbę stopni do kierunku w czasie jego trwania. Wartość ta może wynosić co najmniej (+/-) 0,01.
+  Na koniec można ustawić współczynnik "wiggle". Jest to wartość, która będzie losowo dodawana lub odejmowana do kierunku na każdym etapie życia cząstek. Oczywiście większe wartości są bardziej wyraźne niż mniejsze, a wartość ta może być nawet ujemna, przy czym maksymalny zakres wynosi od -20 do 20.
+   
+  Składnia:
+  part_type_direction(ind, dir_min, dir_max, dir_incr, dir_wiggle);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Typ cząstki ID
+        The index of the particle type to change.
+      
+      
+        dir_min
+        Real
+        The minimum direction the particle can start at.
+      
+      
+        dir_max
+        Real
+        The maximum direction the particle can start at.
+      
+      
+        dir_incr
+        Real
+        How much the particle direction should increase or decrease per step.
+      
+      
+        dir_wiggle
+        Real
+        How much should randomly be added or subtracted from the particle's direction per step.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  part_type_shape(particle1, pt_shape_pixel);
+    part_type_size(particle1, 0.19, 0.79, 0.01, 0);
+    part_type_scale(particle1, 5, 5);
+    part_type_colour3(particle1, 32768, 8454016, 8454016);
+    part_type_alpha3(particle1, 0, 0.80, 0);
+    part_type_speed(particle1, 8, 10, -0.50, 1);
+    part_type_direction(particle1, 0, 359, 1, 20);
+    part_type_gravity(particle1, 0, 270);
+    part_type_orientation(particle1, 0, 359, 0, 0, 1);
+    part_type_blend(particle1, 1);
+    part_type_life(particle1, 10, 50);
+  Powyższy kod ustawi różne wartości cząsteczek, w tym kierunek, który będzie miał losową wartość w zakresie od 0 do 359 stopni. Będzie on również wzrastał o 1 stopień w każdym kroku oraz będzie miał losową wartość dodawaną do niego w zakresie od 0 do 20 w każdym kroku.
+   
+   
+   
+  
+    
+      
+        Powrót: Typy cząstek
+        Następny: part_type_gravity
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

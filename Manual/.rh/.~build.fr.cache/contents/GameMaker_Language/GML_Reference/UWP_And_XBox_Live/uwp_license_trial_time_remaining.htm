@@ -1,0 +1,39 @@
+
+  
+  uwp_licencja_trial_time_remaining
+  Ta funkcja zwraca przybliżoną liczbę sekund, które pozostaną do zakończenia próby czasowej. Wartość zwracana przez tę funkcję jest bez znaczenia, jeśli próba nie jest oparta na czasie lub jeśli gra nie działa w trybie próbnym.
+   
+  Składnia:
+  uwp_license_trial_time_remaining();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if uwp_license_trial_version()
+    {
+        var secs = uwp_license_trial_time_remaining() mod 60;
+        var mins = uwp_license_trial_time_remaining() div 60;
+        var hours = mins div 60;
+        if secs < 10 secs = "0" + string(secs) else secs = string(secs);
+        if mins > 60 mins -= (hours * 60);
+        if mins < 10 mins = "0" + string(mins) else mins = string(mins);
+        if hours > 9 hours = "9" else hours = string(hours);
+        time_string = hours + ":" + mins + ":" + secs;
+    }
+  Powyższy kod sprawdza, czy gra jest uruchamiana z licencją próbną, a jeśli tak, to tworzy stronę string z czasem do wygaśnięcia licencji.
+   
+   
+   
+  
+    
+      
+        Powrót: UWP i XBox Live
+        Następny: uwp_check_privilege
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

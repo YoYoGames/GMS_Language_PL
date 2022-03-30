@@ -1,0 +1,32 @@
+
+  
+  path_index
+  Wszystkie zasoby w GameMaker Studio 2 mają unikalny numer identyfikacyjny, a path_index jest zmienną tylko do odczytu, która przechowuje wartość indeksu dla danego path asset, który został przypisany do instancji za pomocą funkcji path_start(). Jeśli instancja nie ma przypisanego adresu path, zmienna zostanie ustawiona na -1.
+   
+  Składnia:
+  path_index;
+   
+  Zwroty:
+  Path Asset
+   
+  Przykład:
+  if (path_index == -1)
+    {
+        path_start(pth_enemy3, 4, path_action_reverse, 0);
+    }
+  Powyższy kod sprawdza, czy do instancji został przypisany adres path, a jeśli nie, uruchamia nowy adres path (przypisując go jednocześnie do adresu path_index ).
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne ścieżki
+        Następny: path_position
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

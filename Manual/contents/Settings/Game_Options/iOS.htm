@@ -33,11 +33,11 @@
   </ul>
   <p>Następnie wypełnij pola <strong>Product Information (Informacje</strong> o <strong>produkcie</strong> ) dotyczące Twojej gry, w tym <strong>Display Name (Nazwa wyświetlana</strong>), <strong>Bundle ID</strong> (Identyfikator pakietu) i <strong>Version</strong> info ( <strong>Wersja</strong> ). Zwróć uwagę, że Bundle ID musi być w poprawnym
     odwróconym formacie URL, aby końcowy build gry działał poprawnie, EG: <span class="inline">com.[Company].[GameName]</span>. W tym miejscu możesz także podać <strong>identyfikator zespołu</strong>, którego chcesz użyć do podpisania ostatecznej wersji aplikacji, którą
-    <span class="notranslate">GameMaker Studio 2</span> tworzy dla Ciebie. Ustawienie go tutaj spowoduje zastąpienie identyfikatora zespołu, który został podany w <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/iOS.htm">Preferencjach iOS</a>.</p>
+   <span data-keyref="GameMaker Name">GameMaker</span> tworzy dla Ciebie. Ustawienie go tutaj spowoduje zastąpienie identyfikatora zespołu, który podałeś w <a href="../../Setting_Up_And_Version_Information/Platform_Preferences/iOS.htm">Preferencjach iOS</a>.</p>
   <p>Następnie można zaznaczyć lub usunąć zaznaczenie opcji <strong>Odroczenie wyjścia wskaźnika domowego</strong>. Jeśli ta opcja jest zaznaczona, pasek domowy będzie zawsze wyświetlany przy niskiej alfie, a pierwsze przeciągnięcie spowoduje wybudzenie paska, a drugie przeniesie Cię do domu. Jeśli opcja
     nie jest zaznaczona, pasek nie jest wyświetlany w grze, ale pierwsze przeciągnięcie po krawędzi spowoduje powrót do domu. Domyślnie opcja jest odznaczona.</p>
-  <p>Wreszcie, masz możliwość wygenerowania pliku <strong>Podfile</strong> i <strong>Podfile.lock</strong>. Te pliki są wymagane, jeśli dodajesz <span class="notranslate">CocoaPods</span> do <a href="../../The_Asset_Editors/Extension_Creation/iOS_Extensions.htm">rozszerzenia iOS</a> za pomocą <a href="../../The_Asset_Editors/Extensions.htm">Edytora rozszerzeń</a>. Pliki te zawierają określone makra wymagane przez <span class="notranslate">GameMaker Studio 2</span>, aby skonfigurować wszystkie wymienione <span class="notranslate">CocaoPods</span> podczas budowania gry. Kliknięcie przycisków spowoduje utworzenie plików z
-    makrami, a także otworzy eksplorator plików w miejscu, gdzie znajdują się pliki, jeśli chcesz je ręcznie edytować. Dostępny jest również przycisk, który przeniesie Cię do następującego przewodnika:</p>
+  <p>Wreszcie, masz możliwość wygenerowania pliku <strong>Podfile</strong> i <strong>Podfile.lock</strong>. Pliki te są wymagane, jeśli dodajesz <span class="notranslate">CocoaPods</span> do <a href="../../The_Asset_Editors/Extension_Creation/iOS_Extensions.htm">rozszerzenia iOS</a> za pomocą <a href="../../The_Asset_Editors/Extensions.htm">Edytora rozsz</a> <a href="../../The_Asset_Editors/Extension_Creation/iOS_Extensions.htm">erzeń</a>. Pliki zawierają określone makra wymagane przez program <span data-keyref="GameMaker Name">GameMaker</span>, aby skonfigurować wszystkie wymienione <span class="notranslate">CocaoPods</span> podczas budowania gry. Kliknięcie przycisków spowoduje utworzenie plików z
+    z wygenerowanymi makrami, a także otworzy eksplorator plików w miejscu, gdzie znajdują się pliki, jeśli chcesz je ręcznie edytować. Dostępny jest również przycisk, który przeniesie Cię do następującego przewodnika:</p>
   <ul class="colour">
     <li><a href="https://help.yoyogames.com/hc/en-us/articles/360008958858">iOS i tvOS: Używanie Cocoa Pods</a></li>
   </ul>
@@ -59,27 +59,27 @@
   <h2>Ikony</h2>
   <p><img>W tej sekcji można dodawać różne ikony wymagane przez różne urządzenia iPhone i iPad oraz różne części App Store.
     <span class="notranslate">iOS</span> App Store. Ikony te powinny być zapisane jako obrazy 24bit <span class="inline">*.png</span> o rozmiarze określonym dla każdej z nich.</p>
-  <p>Warto zauważyć, że <span class="notranslate">GameMaker Studio 2</span> posiada narzędzie <a href="../../IDE_Tools/Project_Image_Generator.htm">Project Image Generator</a>, za pomocą którego można automatycznie tworzyć wszystkie obrazy wymagane dla różnych platform docelowych, na które kompilowana jest gra.
+  <p>Warto zauważyć, że <span data-keyref="GameMaker Name">GameMaker</span> posiada narzędzie <a href="../../IDE_Tools/Project_Image_Generator.htm">Project Image Generator</a>, które może być używane do automatycznego tworzenia wszystkich obrazów wymaganych dla różnych platform docelowych, na które kompilowana jest gra.
     na które kompilowana jest gra. Jeśli korzystasz z tego narzędzia, powinieneś zweryfikować utworzone obrazy, aby upewnić się, że spełniają one Twoje wymagania. Narzędzie wygeneruje zarówno ikony, jak i obrazy (patrz sekcja poniżej).</p>
   <p class="note"><span class="note">UWAGA</span> Podczas importowania starszego projektu może zostać wyświetlone następujące ostrzeżenie:<img>Pojawia się ono, ponieważ aktualna wersja docelowa <span class="notranslate">iOS</span> zmieniła format wymaganych ikon od czasu poprzedniego wczytania projektu.
-    zmieniła format wymaganych ikon od czasu poprzedniego wczytania projektu. Będziesz musiał ponownie utworzyć wszystkie ikony, ponieważ zostały one zastąpione ogólnymi ikonami <span class="notranslate">GameMaker Studio 2</span> (możesz użyć wspomnianego wyżej narzędzia
-    Generator obrazów projektu, aby szybko to zrobić).</p>
+    zmieniła format wymaganych ikon od czasu poprzedniego wczytania projektu. Będziesz musiał ponownie utworzyć wszystkie ikony, ponieważ zostały one zastąpione ogólnymi ikonami <span data-keyref="GameMaker Name">GameMakera</span> (możesz użyć wspomnianego wyżej narzędzia
+    Generator Obrazu Projektu, aby szybko to zrobić).</p>
   <p> </p>
   <h2>Zdjęcia</h2>
   <p><img>W tej sekcji można dodać osobne grafiki jako Ekrany <strong>startowe</strong> (obraz, który będzie wyświetlany przez krótki czas podczas ładowania
-    dla każdej orientacji urządzenia, a także <strong>kolor ob</strong> ramowania, który będzie używany jako tło dla ekranów startowych, które nie są ustawione na wypełnianie całego ekranu. Te obrazy muszą być zapisane jako pojedyncze obrazy 24bit
+    dla każdej orientacji urządzenia, a także <strong>kolor ob</strong> ramowania, który będzie używany jako tło dla ekranów startowych, które nie są ustawione na wypełnianie całego ekranu. Obrazy te muszą być zapisane jako pojedyncze obrazy 24bit
     <span class="inline">*.png</span> 24bit, bez przezroczystości i w odpowiednim rozmiarze. Należy pamiętać, że <em>nie</em> jest to uważane za splash screen, a firma Apple ma dość ścisłe wytyczne dotyczące sposobu konfigurowania i używania tego typu obrazów. Więcej informacji można znaleźć na stronie dla programistów poświęconej wytycznym dotyczącym <a href="https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/launch-screen/">interfejsu</a> użytkownika.</p>
   <p>Można także określić sposób wyświetlania ekranu startowego, korzystając z następujących opcji:</p>
   <ul class="colour">
-    <li><strong>Zachowaj</strong> proporcje: Ta opcja pozwala zachować proporcje obrazu w stosunku do ekranu urządzenia, dodając &quot;wyściełanie&quot; wokół krawędzi tam, gdzie jest to wymagane.</li>
-    <li><strong>Kadruj, aby dopasować</strong>: Spowoduje to zachowanie obrazu w proporcji 1:1 z ekranem urządzenia i przycięcie (lub wyściełanie) krawędzi w razie potrzeby.</li>
+    <li><strong>Zachowaj</strong> proporcje: Ta opcja pozwoli zachować proporcje obrazu w stosunku do ekranu urządzenia, dodając &quot;wyściełanie&quot; wokół krawędzi tam, gdzie jest to wymagane.</li>
+    <li><strong>Kadruj, aby dopasować</strong>: Dzięki temu obraz zostanie dopasowany do ekranu urządzenia w proporcji 1:1, a krawędzie zostaną przycięte (lub wyścielone) w razie potrzeby.</li>
     <li><strong>Rozciągnij</strong>: Spowoduje to rozciągnięcie obrazu tak, aby wypełnił ekran urządzenia (może to spowodować zniekształcenie wyświetlanego obrazu).</li>
   </ul>
   <p> </p>
   <h2>Społeczny</h2>
   <p><img>Ta sekcja służy do włączania różnych funkcji <strong>społecznościowych </strong>w grze <span class="notranslate">iOS</span>. Można wybrać następujące opcje:</p>
   <ul class="colour">
-    <li><strong>Facebook</strong>: Jeśli potrzebujesz funkcji Facebooka, musisz zaznaczyć to pole wyboru, a następnie podać <strong>identyfikator aplikacji Facebo</strong> oka i <strong>nazwę aplikacji</strong> Facebooka. Należy pamiętać, że dostęp do wszystkich funkcji Facebooka jest możliwy za pośrednictwem strony internetowej
+    <li><strong>Facebook</strong>: Jeśli wymagane są funkcje Facebooka, należy zaznaczyć to pole wyboru, a następnie podać <strong>identyfikator aplikacji Facebo</strong> oka i <strong>nazwę aplikacji</strong> Facebooka. Należy pamiętać, że dostęp do wszystkich funkcji Facebooka jest możliwy za pośrednictwem strony internetowej
      <span class="notranslate">extension</span> i po pierwszym zaznaczeniu pola wyboru Użyj Facebooka pojawi się monit o pobranie i zainstalowanie aplikacji Facebook <span class="notranslate">extension</span> z <a href="../../Introduction/The_Marketplace.htm">Marketplace</a>.</li>
     <li><strong>Włącz Powiadomienia Push</strong>: Aby Twoja gra mogła korzystać z powiadomień push, muszą one być najpierw włączone w tym miejscu, w przeciwnym razie nie będą działać.</li>
     <li><strong>Włącz opcję Zaloguj się z Apple</strong>: Ta opcja służy do korzystania z <strong>rozszerzenia Apple Sign In Extension</strong> na stronie <span class="notranslate">iOS</span>. Tę stronę <span class="notranslate">extension</span> można pobrać z <a href="https://marketplace.yoyogames.com/publishers/23/yoyo-games">YoYo Games Marketplace</a>,

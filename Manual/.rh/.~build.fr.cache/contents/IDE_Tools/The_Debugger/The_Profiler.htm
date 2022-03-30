@@ -1,0 +1,58 @@
+
+  
+  Profiler
+  Strona Debugger umożliwia przeglądanie kodu i znajdowanie wszelkich problemów z bazą kodu, ale czasami trzeba sprawdzić subtelniejsze szczegóły, aby prawidłowo zoptymalizować grę. Opcja Profil pomaga w tym, dając przegląd wydajności, pokazując czas potrzebny na wywołanie funkcji, scripts, a nawet czas potrzebny na wykonanie określonego zdarzenia.
+  Oprócz okna głównego, w którym wyświetlane są różne zdarzenia, strony scripts i wywoływane funkcje, dostępne są również następujące opcje korzystania z Profiler:
+  Włączanie / Wyłączanie
+  
+    Ten przycisk służy do włączania i wyłączania profilera. Po włączeniu profiler zostanie uruchomiony i w oknie głównym pojawią się zdarzenia, strony scripts i funkcje wraz z różnymi wartościami danych dla każdej z nich. Sposób wyświetlania tych danych
+      zależy od opcji Wyświetlanie czasu i Tryb widoku (obie opcje są szczegółowo opisane poniżej).
+    
+  
+  Wyświetlanie czasu
+  
+    To pole wyboru umożliwia wybór między średnim czasem a czasem bezwzględnym dla profilera na stronie switch. Jeśli nie jest zaznaczone, wartości wyświetlane w oknie głównym będą całkowitą liczbą wywołań funkcji
+      funkcji, script lub zdarzenia oraz całkowity czas (czasy podawane są w mikrosekundach) w czasie trwania profilu. Jeśli jednak włączysz tę funkcję, w kolumnach tych będzie wyświetlany średni czas trwania każdego kroku dla każdej funkcji,
+      script lub zdarzenia oraz średnią liczbę wywołań.
+    
+  
+  Tryb przeglądania
+  
+    To menu umożliwia wybór trybu widoku, który może być z góry na dół lub z dołu do góry.
+    Wybranie trybu Widok od góry do dołu spowoduje wyświetlenie profilu od góry do dołu (mniej więcej tak samo jak hierarchia stosu wywołań), a więc zostanie pokazane zdarzenie, następnie script, a potem wszystkie użyte funkcje. Zauważ, że możesz dwukrotnie kliknąć  na dowolnym wpisie, aby otworzyć go w oknie debugowania Source , jeśli je posiadasz.
+      masz takie okno. Jeśli obok nazwy widoczna jest ikona , oznacza to, że w danej sekcji znajdują się kolejne script lub wywołania funkcji.
+      Klikając ikonę , rozwiniesz drzewo, aby je wyświetlić.
+    Wybór trybu widoku Bottom Up spowoduje wyświetlenie wszystkiego od dołu do góry, dzięki czemu można zobaczyć wszystkie funkcje i wywołania script z osobna. Podczas korzystania z tego trybu widoku kliknięcie na stronie  spowoduje rozwinięcie funkcji lub strony script, aby pokazać, co tak naprawdę ją wywołano.
+    
+  
+  Wyświetl cel
+  
+    Funkcja View Target umożliwia wybór między wyświetlaniem projektu GML (dane zdarzeń i kodu), procesów silnika działającego w tle lub obu tych elementów. Jeśli wybierzesz "GML", zobaczysz zdarzenia, funkcje i scripts wywoływane w każdym kroku.
+      natomiast w widoku "Silnik" zostaną wyświetlone tylko wywołania silnika wymagane przez projekt, co pozwoli Ci dostrzec wszelkie wąskie gardła w sposobie obsługi projektu. Jeśli wybierzesz opcję "Oba", wyświetlone zostaną oba zestawy danych.
+      Należy jednak pamiętać, że w połączeniu z widokiem "Bottom Up" różne script i wywołania funkcji będą zagnieżdżone w wywołaniach silnika i aby je zobaczyć, trzeba będzie kliknąć przycisk , aby je rozwinąć.
+    
+  
+  
+    Dane profilu są wyświetlane w czterech kolumnach, a kliknięcie dowolnej z nich powoduje posortowanie danych zgodnie z kryterium kolumny.
+  
+  
+    Nazwa: Jest to nazwa wywoływanego zdarzenia, script lub funkcji, obok której może znajdować się  oznaczający kolejne wywołania (w zależności od wybranego trybu widoku ). Możesz dwukrotnie kliknąć  na dowolnej nazwie, aby otworzyć blok kodu lub script w oknie Źródło. Kliknięcie górnej części tej kolumny spowoduje posortowanie nazw w kolejności alfabetycznej.
+    Czas: W tym miejscu wyświetlany jest całkowity czas, jaki funkcja (lub script albo zdarzenie) zajęła podczas profilowania, lub średni czas, jaki zajęło wywołanie każdego kroku (w zależności od wybranej opcji Wyświetlanie czasu), wyświetlany w mikrosekundach.
+    Wywołania: W tym miejscu można wyświetlić całkowitą liczbę wywołań danego zdarzenia, funkcji lub strony script albo średnią liczbę wywołań w pojedynczym kroku (ponownie, w zależności od wybranej opcji Wyświetlanie czasu ).
+    Krok%: Wartość wyświetlana w tym miejscu to ogólny procent pojedynczego kroku wykonanego przez połączenie.
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Debugger
+        Następny: Zegarki
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

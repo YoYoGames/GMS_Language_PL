@@ -1,0 +1,44 @@
+
+  
+  bufor_usuń
+  Za pomocą tej funkcji można usunąć z pamięci stronę buffer utworzoną wcześniej za pomocą funkcji buffer_create() z pamięci, uwalniając zasoby użyte do jej utworzenia i usuwając wszelkie dane, które może ona obecnie zawierać.
+  UWAGA: Ważne jest, aby zawsze usuwać dynamicznie tworzone zasoby z pamięci, gdy nie są już potrzebne, aby zapobiec wyciekom pamięci.
+  WAŻNE! Kiedy tworzysz buffer, wartość indeksu używana do jego identyfikacji jest wartością całkowitą zaczynającą się od 0. Indeksy te są ponownie używane przez GameMaker, więc zniszczona wartość indeksu buffer może być później używana przez nowo utworzoną,
+    Dlatego zalecamy, aby po zniszczeniu buffer ustawić każdą zmienną, która przechowuje indeks bufora, na -1.
+   
+  Składnia:
+  buffer_delete(buffer)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        buffer
+        The index of the buffer to delete.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  buffer_delete(player_buffer); player_buffer = -1;
+  Powyższy kod usunie utworzony wcześniej plik buffer o identyfikatorze zapisanym w zmiennej "player_buffer", a następnie ustawi tę zmienną na -1.
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_read
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

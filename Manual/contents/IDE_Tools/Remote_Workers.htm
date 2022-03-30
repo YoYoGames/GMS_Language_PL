@@ -14,24 +14,24 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Pracownicy zdalni</h1>
-  <p>Podczas kompilacji gry zwykle używa się lokalnego pracownika, czyli komputera, na którym zainstalowano witrynę <span class="notranslate">GameMaker Studio 2</span>. Jednak w pewnych okolicznościach może zajść potrzeba użycia innego komputera do budowania projektów. Na przykład,
-    Jeśli pracujesz na komputerze Mac i chcesz zbudować projekt <span class="notranslate">Windows</span>, skonfiguruj robotnika <strong>zdalnego</strong>, a następnie zleć budowę projektu na komputerze <span class="notranslate">Windows</span>. Zasadniczo, gdy używasz zdalnego pracownika, <span class="notranslate">GameMaker Studio 2</span> wyśle wszystkie
-    wymagane pliki z komputera (lokalnego), na którym jest uruchomiony, do komputera zdalnego pracownika, a następnie użyje tego komputera do zbudowania ostatecznego pliku wykonywalnego projektu (zapisując go na komputerze zdalnym lub zwracając na komputer lokalny).
+  <p>Podczas kompilacji gry zwykle korzystasz z lokalnego pracownika, czyli komputera, na którym zainstalowano program <span data-keyref="GameMaker Name">GameMaker</span>. Jednak w pewnych okolicznościach możesz potrzebować innego komputera do tworzenia projektów. Na przykład,
+    jeśli pracujesz na komputerze Mac i chcesz zbudować projekt <span class="notranslate">Windows</span>, możesz skonfigurować <strong>Zdalnego</strong> pracownika i zlecić budowanie projektu komputerowi <span class="notranslate">Windows</span>. Zasadniczo, gdy używasz zdalnego pracownika, <span data-keyref="GameMaker Name">GameMaker</span> wysyła wszystkie
+    wszystkie wymagane pliki z komputera (lokalnego), na którym jest uruchomiony, do komputera zdalnego pracownika, a następnie użyje tego komputera do zbudowania ostatecznego pliku wykonywalnego projektu (zapisując go na komputerze zdalnym lub zwracając do komputera lokalnego).
     Zanim jednak będzie można skorzystać z tej funkcji, trzeba będzie zainstalować pewne narzędzia na maszynie budującej i przeprowadzić pewne konfiguracje, które wyjaśnimy poniżej.</p>
   <p class="note"><strong>WAŻNE!</strong> Pracownika zdalnego można skonfigurować przy użyciu lokalnego komputera <span class="notranslate">Windows</span> PC i zdalnego <span class="notranslate">Windows</span> PC lub między lokalnym komputerem Mac PC i zdalnym <span class="notranslate">Windows</span> PC, ale obecnie nie można skonfigurować lokalnego komputera <span class="notranslate">Windows</span> (lub Mac) i zdalnego komputera Mac PC, tzn. nie można
     mieć zdalnego pracownika Maca, tylko <span class="notranslate">Windows</span>.</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Konfiguracja początkowa</a></p>
   <div class="droptext" data-targetname="drop-down">
-    <p class="dropspot">Aby skonfigurować zdalnego pracownika, należy najpierw zainstalować na komputerze, który ma być używany, <strong>aplikację narzędzia do budowania</strong> Remote Worker. Narzędzie to można znaleźć w <a href="../IDE_Navigation/Menus/The_Build_Menu.htm">menu Build</a> w witrynie <span class="notranslate">GameMaker Studio 2</span> na komputerze lokalnym i wybierając opcję &quot;<strong>Show Remote Worker Installer</strong>&quot; (<strong>Pokaż instalator Remote</strong> Worker):</p>
+    <p class="dropspot">Aby skonfigurować zdalnego pracownika, musisz najpierw zainstalować <strong>aplikację</strong> Remote Worker <strong>build tool</strong> na komputerze, który ma być używany. Narzędzie to można znaleźć w <a href="../IDE_Navigation/Menus/The_Build_Menu.htm">menu bud</a> owania w programie <span data-keyref="GameMaker Name">GameMaker</span> na komputerze lokalnym i wybierając opcję &quot;<strong>Show Remote Worker Installer</strong>&quot; (<strong>Pokaż instalator Remote Work</strong>er):</p>
     <p class="dropspot"><img>Alternatywnie można kliknąć ikonę &quot;oka&quot; w <a href="../Introduction/Compiling.htm">Menedżerze celów</a> i pobrać
       instalator Remote Worker w ten sposób:</p>
     <p class="dropspot">
-      <img> Instalator będzie nosił nazwę &quot;<span class="inline">GameMakerStudio-Remote-Installer-X.X.X.XXX.exe</span>&quot;.
-      i należy go skopiować na komputer, który ma być używany jako zdalny pracownik (na zdalnym pracowniku nie musi być zainstalowany program <span class="notranslate">GameMaker Studio 2</span>, wystarczy ten program).<br></p>
+      <img> Instalator będzie się nazywał coś w rodzaju &quot;<span class="inline">GameMakerStudio-Remote-Installer-X.X.X.XXX.exe</span>&quot;.
+      i musisz go skopiować na komputer, który ma być użyty jako zdalny pracownik (nie musisz mieć zainstalowanego <span data-keyref="GameMaker Name">GameMakera</span> na zdalnym pracowniku, wystarczy ten program).<br></p>
     <p class="dropspot">Po skopiowaniu go na komputer instalacyjny należy zainstalować go zgodnie z instrukcjami wyświetlanymi na ekranie. Po zakończeniu instalacji system operacyjny może poprosić o dostęp do sieci przez zaporę sieciową. Po udzieleniu dostępu instalator otworzy
       Należy zanotować <strong>adres IP</strong> i <strong>numer portu</strong> widoczne na tej stronie, ponieważ będą one potrzebne w następnym kroku.<br></p>
-    <p class="dropspot"><img>Musisz teraz wrócić do komputera, na którym masz zainstalowane GameMaker Studio
-      2 i kliknąć przycisk Target Manager <img>, aby otworzyć okno Target Manager,
+    <p class="dropspot"><img>Musisz teraz wrócić do komputera, na którym masz zainstalowany program <span data-keyref="GameMaker Name">GameMaker</span>
+      2 i kliknąć przycisk Target Manager (Menedżer Celów) <img>, aby otworzyć okno Menedżera Celów,
       a następnie przejdź do sekcji Worker i kliknij przycisk Add Worker (Dodaj pracownika) <img>. Spowoduje to otwarcie
       następujące okno:<br></p>
     <p class="dropspot"><img>W tym miejscu należy nadać zdalnemu robotowi nazwę (będzie ona wyświetlana na liście robotów w Menedżerze celów).
@@ -70,17 +70,17 @@
   <div class="droptext" data-targetname="drop-down3">
     <p class="dropspot">Po skonfigurowaniu programu Remote Worker i wprowadzeniu ustawień kompilacji lokalnej (patrz rozdział powyżej) można zacząć używać go do kompilacji gier. W tym celu należy po prostu wybrać Zdalnego robota z listy Menedżera celów
       wybierz platformę, na którą chcesz testować/kompilować, a także inne opcje (takie jak typ kompilacji czy konfiguracja), a następnie naciśnij przycisk Odtwórz <img> lub Utwórz plik wykonywalny <img>.</p>
-    <div class="dropspotnote"><strong>UWAGA</strong>: Platformy dostępne w Menedżerze celów będą się zmieniać w zależności od możliwości komputera Pracownika zdalnego i nie wszystkie platformy będą dostępne. Należy również pamiętać, że nie ma celu &quot;Test&quot; dla Pracowników Zdalnych.</div>
+    <div class="dropspotnote"><strong>UWAGA</strong>: Platformy dostępne w Menedżerze celów będą się zmieniać w zależności od możliwości komputera Pracownika zdalnego i nie wszystkie platformy będą dostępne. Należy również pamiętać, że nie istnieje cel &quot;Test&quot; dla Pracowników Zdalnych.</div>
     <p class="dropspot">Jeśli po prostu odtwarzasz projekt, wówczas maszyna Remote Worker skompiluje go i uruchomi, ale jeśli tworzysz plik wykonywalny, wówczas Remote Worker skompiluje projekt, a następnie zwróci plik <span class="inline">*.zip</span> do
       lokalnego komputera w celu zapisania.</p>
-    <p class="dropspot">Należy zauważyć, że ani przycisk Debuguj <img>, ani przycisk Wyczyść <img> nie będą dostępne podczas korzystania ze Zdalnego robotnika. Należy również pamiętać, że obecnie można wykonać tylko jedną kompilację zdalną w tym samym czasie.</p>
+    <p class="dropspot">Należy zauważyć, że ani przycisk Debuguj <img>, ani przycisk Wyczyść <img> nie będą dostępne podczas korzystania z robotnika zdalnego. Należy również pamiętać, że obecnie można wykonać tylko jedną kompilację zdalną w tym samym czasie.</p>
     <p class="dropspot"></p>
   </div>
   <p><br> Po zainstalowaniu i uruchomieniu programu Remote Worker na zdalnym komputerze na pasku zadań pojawi się ikona, którą można kliknąć prawym przyciskiem myszy, aby wyświetlić następujące opcje:</p>
   <p><img alt="Target Manager Remote Worker Installer" src="../assets/Images/IDE Tools/RemoteWorker_TargetEye.png" class="center"/></p>
   <ul class="colour">
     <li><strong>Otwórz</strong>: Otwórz aplikację Remote Worker w domyślnej przeglądarce.</li>
-    <li><strong>Pokaż dziennik</strong>: Otwórz w przeglądarce plik dziennika pracy zdalnej.</li>
+    <li><strong>Pokaż dziennik</strong>: Otwórz plik dziennika pracy zdalnej w przeglądarce internetowej.</li>
     <li><strong>Ustawienia sieciowe</strong>: W tym miejscu możesz filtrować, które maszyny mają mieć możliwość wysyłania kompilacji do maszyny Pracownika Zdalnego. Każdy filtr może być filtrem w <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">stylu CIDR</a> lub nazwą hosta maszyny, która ma być dopuszczona. Należy pamiętać, że jeśli chcesz, aby wiele maszyn łączyło się z jednym pracownikiem zdalnym, lub jeśli mieszasz typy połączeń (np. przewodowe i bezprzewodowe), to może być konieczna edycja dozwolonego zakresu IP.</li>
     <li><strong>Edytuj</strong> ustawienia: Otwórz menu ustawień Remote Worker (wyjaśnione w części Ustawienia powyżej).</li>
     <li><strong>Zakończ</strong>: Zakończenie pracy z aplikacją Remote Worker. Oznacza to, że nie będzie można połączyć się (ani skompilować) z aplikacją z lokalnego komputera do momentu ponownego uruchomienia aplikacji Remote Worker.</li>

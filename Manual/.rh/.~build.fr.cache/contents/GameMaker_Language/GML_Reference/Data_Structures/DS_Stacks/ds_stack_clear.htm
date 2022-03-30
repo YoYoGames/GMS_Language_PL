@@ -1,0 +1,46 @@
+
+  
+  ds_stack_clear
+  Za pomocą tej funkcji możesz wyczyścić wszystkie dane z podanej struktury danych stosu. NIE niszczy to struktury danych (do tego celu należy użyć funkcji ds_stack_destroy()), a jedynie usuwa z niej wszystkie dane i zwraca pusty stos.
+   
+  Składnia:
+  ds_stack_clear(id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the data structure to clear.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (ai_count = 15 && !ds_stack_empty(AI_stack))
+    {
+        ds_stack_clear(AI_stack);
+        alarm[0] = room_speed;
+        ai_count = 0;
+    }
+  Powyższy kod sprawdza zmienną, czy osiągnęła ona określoną wartość, a jeśli tak, to czyści stos DS indeksowany zmienną "AI_stack", włącza alarm i resetuje zmienną do 0.
+   
+   
+   
+  
+    
+      
+        Powrót: ds_stack_create
+        Następny: ds_stack_empty
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

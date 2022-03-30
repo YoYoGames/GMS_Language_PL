@@ -1,0 +1,48 @@
+
+  
+  urządzenie_mouse_check_button_released
+  Ta funkcja zwraca true lub false w zależności od tego, czy określony przez użytkownika dotyk urządzenia został zwolniony, czy nie. Argument urządzenie odnosi się do numeru dotknięcia urządzenia, który może wynosić od 0 do n. Należy pamiętać, że maksymalna liczba dotknięć, które można wykryć, zależy w dużym stopniu od używanego urządzenia i systemu operacyjnego (większość urządzeń obsługuje co najmniej 4 jednoczesne dotknięcia). Ta funkcja jest wywoływana tylko raz przez faktyczne zwolnienie przycisku, a do sprawdzenia przycisków myszy można użyć stałych wymienionych na tej stronie. Należy pamiętać, że strona mb_right zostanie wykryta tylko wtedy, gdy zostanie wykryte podwójne dotknięcie i przytrzymane drugie dotknięcie przed zwolnieniem (to zachowanie można wyłączyć za pomocą funkcji device_mouse_dbclick_enable()).
+   
+  Składnia:
+  device_mouse_check_button_released(device, button);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        device
+        The device (from 0 - n) that is being checked.
+     
+      
+        button
+        The button of the device that is being checked.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if device_mouse_check_button_released(0, mb_left)
+    {
+        press = false;
+    }
+  Powyższy kod sprawdza, czy urządzenie zostało naciśnięte, i ustawia zmienną na wartość false, jeśli tak się stało.
+   
+   
+   
+  
+    
+      
+        Powrót: Wejście urządzenia
+        Następny: device_mouse_dbclick_enable
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

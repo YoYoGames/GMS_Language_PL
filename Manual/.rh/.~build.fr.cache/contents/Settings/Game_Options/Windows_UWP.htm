@@ -1,0 +1,120 @@
+
+  
+  Opcje gier UWP w systemie Windows
+  W tej sekcji opisano różne dostępne opcje, które pozwalają kontrolować sposób kompilowania projektów gier UWP (Universal Windows Platform). Poszczególne sekcje to:
+   
+  Ogólne
+  W sekcji Ogólne w opcjach UWP można ustawić Informacje o produkcie:
+  
+    Nazwa wyświetlana: Określa przyjazną nazwę aplikacji, która będzie wyświetlana użytkownikom (adres string można zlokalizować).
+    Nazwa pakietu: Jest to nazwa utworzonego pakietu, która powinna być zgodna z nazwą użytą dla klucza programisty, który został utworzony dla gry (patrz rozdział Pakowanie, poniżej).
+    Nazwa wyświetlana pakietu: Jest to "krótka nazwa" pakietu i najlepiej, aby była taka sama jak Nazwa wyświetlana.
+    Nazwa wyświetlana wydawcy: Jest to nazwa firmy lub osoby, która ma być kojarzona jako wydawca gier.
+    Wersja: Numer wersji gry.
+  
+  Po skonfigurowaniu tej opcji można wybrać różne orientacje , w których gra może być uruchamiana, aby zapewnić jak najlepsze wrażenia. Dostępne opcje to:
+  
+    Krajobraz
+    Portret
+    Przerzucanie krajobrazu
+    Odwrócona w pionie
+  
+  Domyślnie wszystkie zostaną wybrane i należy usunąć zaznaczenie tych, które nie są potrzebne.
+  Po ustawieniu opcji orientacji możesz następnie zasygnalizować różne uprawnienia , których będzie potrzebować Twoja aplikacja UWP, korzystając z następujących opcji:
+  
+    Włącz uprawnienia do korzystania z Internetu: Flags gra ma dostęp do Internetu. Domyślnie opcja ta jest wyłączona.
+    Enable Microphone Permission: Flags gra ma dostęp do mikrofonu urządzenia. Domyślnie opcja ta jest wyłączona.
+    Włącz piaskownicę IAP: Flags, aby gra korzystała z piaskownicy zakupów w aplikacji. Domyślnie opcja ta jest wyłączona.
+  
+   
+  Rodziny urządzeń
+  W tym miejscu można wybrać rodziny urządzeń, do których ma być skierowany eksport Windows UWP podczas tworzenia pliku wykonywalnego. Na stronie
+    domyślnie zaznaczona jest opcja "Obsługuj rodziny urządzeń uniwersalnych", co oznacza, że aplikacja będzie kierowana na wszystkie urządzenia i rodziny. Aby ograniczyć aplikację do obsługi tylko określonych rodzin urządzeń, należy usunąć zaznaczenie opcji Uniwersalna i
+    zaznaczyć odpowiednie rodziny urządzeń. Możliwe jest także wspieranie rodziny urządzeń Uniwersalny, ale ograniczenie obsługi innych rodzin urządzeń tylko do określonych wersji platformy - w takim przypadku należy zaznaczyć rodzinę urządzeń Uniwersalny, ale także
+    zaznaczyć inną rodzinę urządzeń, dla której ma być obsługiwana inna wersja platformy, a następnie w odpowiednich polach tekstowych wprowadzić szczegóły dotyczące wersji tej rodziny. Informacje o sposobie działania tej logiki można znaleźć na tej stronie oraz na następującej stronie pomocy technicznej firmy Microsoft:
+  
+    Rodzina urządzeń docelowych: Przykłady
+  
+  Ogólnie rzecz biorąc, nie chcesz zmieniać wersji docelowej i minimalnej platformy i powinieneś pozostawić je w wartościach domyślnych, ale jeśli masz problemy z budową - a konkretnie, jeśli nie możesz zainstalować domyślnie ustawionego pakietu Windows SDK - to musisz
+    należy zmienić je na takie, jakie zostały zainstalowane. Jeśli nie jesteś pewien, jakie wartości ustawić, utwórz nowy projekt UWP w Visual Studio i sprawdź, jakie wartości są w nim ustawione.
+  Więcej informacji na temat Rodzin urządzeń można znaleźć w następującym dokumencie firmy Microsoft:
+  
+    Przegląd rodzin urządzeń
+  
+   
+  Grafika
+  Opcje grafiki to te, które należy skonfigurować, aby określić, w jaki sposób gra będzie wykorzystywać kartę graficzną docelowego urządzenia UWP. Na stronie
+    można modyfikować następujące opcje:
+  
+    Interpoluj kolory między pikselami: Włącza interpolację liniową, która zasadniczo "wygładza" piksele. W przypadku wyraźnej grafiki pikselowej należy wyłączyć tę opcję.
+      wyłączona, ale jeśli chcesz uzyskać ładne mieszanki alfa i grafikę o wygładzonych krawędziach, lepiej pozostawić ją włączoną.
+    Wyświetlaj kursor: Gdy ta opcja jest włączona, w grze będzie wyświetlany domyślny kursor systemu operacyjnego. Jeśli ta opcja jest wyłączona, to gdy mysz znajduje się nad oknem gry, kursor nie będzie widoczny, chyba że został utworzony jako część
+      w projekcie gry (opcja ta jest domyślnie włączona).
+    Start Fullscreen: Jeśli ta opcja jest zaznaczona, gra będzie uruchamiana w trybie pełnoekranowym, w przeciwnym razie będzie uruchamiana w trybie okienkowym. Domyślnie opcja ta jest wyłączona.
+    Zezwalaj na przełączanie peł switch noekranowe: Po zaznaczeniu tej opcji użytkownik może przechodzić z trybu pełnoekranowego do okienkowego i z powrotem za pomocą standardowych skrótów systemu operacyjnego Ubuntu. Domyślnie opcja ta jest wyłączona.
+    Skalowanie: W tym miejscu można wybrać opcję zachowania proporcji obrazu (tak więc obraz room o proporcjach 4:3 będzie "letter boxed" na ekranie 16:9) lub pełnego skalowania (rozciągnięcie obrazu tak, aby zmieścił się na całym ekranie).
+      
+      OSTRZEŻENIE! Wyłączenie powierzchni aplikacji spowoduje wyłączenie wszystkich opcji skalowania ustawionych w opcjach gry na stronie Windows do momentu ponownego włączenia. Więcej informacji można znaleźć w części Powierzchnia aplikacji.
+  
+  Na koniec jest jeszcze opcja ustawienia rozmiaru strony tekstury. Domyślnym (i najbardziej kompatybilnym) rozmiarem jest 2048x2048, ale można wybrać dowolny rozmiar z zakresu od 256x256 do 8192x8192. Na stronie
+    znajduje się również przycisk oznaczony Podgląd który wygeneruje strony texture dla tej platformy, a następnie otworzy okno, w którym będzie można zobaczyć, jak wyglądają. Może to być bardzo przydatne, jeśli chcesz zobaczyć, jak wyglądają strony texture 
+    i uniknąć sytuacji, w której strony texture byłyby większe (lub mniejsze) niż to konieczne. Więcej informacji na temat stron texture można znaleźć tutaj.
+  UWAGA: Należy pamiętać, że im większy rozmiar strony texture, tym mniejsza kompatybilność gry z komputerami o niższej specyfikacji.
+   
+  Zdjęcia
+  W pierwszej części sekcji Obrazy masz możliwość ustawienia różnych kafelków , które będą używane przez Twoją grę na różnych
+    urządzeniach, na których może działać UWP. Możesz ustawić następujące elementy (wszystkie powinny być plikami w formacie *.png ):
+  
+     Mały obrazek na kafelku to obrazek logo, który jest wyświetlany obok nazwy aplikacji na pasku wyszukiwania i w innych miejscach interfejsu użytkownika. Powinien mieć rozmiar 44 x 44 piksele.
+    Obraz średniej płytki powinien mieć rozmiar 71x71 pikseli.
+    Kolejny obrazek tile to logo sklepu tile . Jego rozmiar powinien wynosić 50 x 50 pikseli.
+    Kafelek z szerokim obrazem to ten, który pojawia się, gdy witryna tile ma szerokiformat i powinien mieć wymiary 310 x 150 pikseli. Jeśli ten obrazek nie zostanie dostarczony, witryna tile może być wyświetlana tylko w formacie kwadratowym i nie może przyjmować powiadomień
+      opartych na szerokich typach szablonów. Ponieważ użytkownik może decydować o formacie strony tile, zaleca się dołączenie szerokiego obrazu tile. Należy również pamiętać, że jeśli podano szeroki obrazek tile, strona tile może początkowo wyświetlać się w szerokim formacie.
+     Duży kafelek obrazu ma format dużego obrazu na żywo tile i powinien mieć rozmiar 310 x 310 pikseli. Należy pamiętać, że będzie on używany tylko w stacjonarnym systemie operacyjnym.
+  
+  Kolejna sekcja służy do definiowania logo gry. Jest to zasadniczo ikona, której Twoja gra będzie używać w ekosystemie UWP. Warto zauważyć, że te obrazy mogą być przezroczystymi plikami .png.
+    W takim przypadku będą one rysowane na tle koloru tła określonego w tej sekcji. Ten kolor tła jest także stosowany do koloru przycisków w oknach dialogowych należących do aplikacji oraz na stronie Opis aplikacji w Sklepie na urządzeniach.
+  Po skonfigurowaniu logo możesz ustawić ekran pow italny gry. Jest to ekran, który będzie wyświetlany po
+    Nie może on być większy niż 620 x 300 pikseli i podobnie jak logo może być przezroczystym plikiem .png, w którym to przypadku zostanie użyty wybrany przez Ciebie kolor tła.
+  Warto zauważyć, że GameMaker Studio 2 posiada narzędzie Project Image Generator, za pomocą którego można automatycznie tworzyć wszystkie obrazy wymagane dla różnych platform docelowych, na które kompilowana jest gra.
+    na które kompilowana jest gra. Jeśli korzystasz z tego narzędzia, powinieneś zweryfikować utworzone obrazy, aby upewnić się, że spełniają one Twoje wymagania.
+   
+  Opakowania
+  GameMaker Studio 2 dostarcza domyślny klucz programisty do tworzenia aplikacji Windows UWP, ale zalecane jest wygenerowanie
+    swój własny i wskazać go tutaj. Aby to zrobić, utwórz pusty projekt w Visual Studio, a następnie przechowuj gdzieś w bezpiecznym miejscu kopię automatycznie wygenerowanego pliku *.pfx, który zostanie dołączony do pustego projektu (jest to
+    klucz programisty). Następnie należy umieścić tutaj łącze do tego pliku *.pfx.
+  Po połączeniu się z plikiem należy kliknąć odpowiedni przycisk Instaluj , a następnie postępować zgodnie z instrukcjami w wierszu poleceń, który zostanie otwarty. Jeśli tego nie zrobisz, to użycie przycisków Uruchom/Debug (lub naciśnięcie klawisza F5) nie powiedzie się i
+    a Twoja gra nie będzie mogła zostać przetestowana na platformie UWP (jeśli jednak użyjesz opcji Utwórz plik wykonywalny, proces instalacji certyfikatu zostanie uruchomiony automatycznie, jeśli strona *.pfx nie została jeszcze zarejestrowana).
+  UWAGA: Aby wgrać swoją aplikację do sklepu, musisz uzyskać prawidłowy plik *.pfx dla swojego tytułu. Można to zrobić poprzez powiązanie aplikacji z Windows Store w Visual
+    Studio, co spowoduje, że Visual Studio wygeneruje nowy plik * .pfx specjalnie dla tej aplikacji. Warto również zauważyć, że każdą aplikację można powiązać ze sklepem Windows w witrynie Visual Studio,
+    Oznacza to, że można powiązać pusty projekt z aplikacją Sklepu Windows i po prostu skopiować wygenerowany plik *.pfx do bezpiecznej lokalizacji, której można następnie użyć w Opcjach gier UWP. Możesz znaleźć instrukcje
+    jak to zrobić, można znaleźć w Bazie wiedzy YoYo Games.
+  W tej sekcji należy również podać nazwę wydawcy, która została użyta do wygenerowania certyfikatu podpisu. Dane wejściowe powinny być zawsze poprzedzone znakiem "CN=", np.: CN=YoYoGames.
+   
+  Xbox Live
+  Sekcja Xbox Live w opcjach gry UWP to miejsce, w którym możesz aktywować swój projekt UWP do użytku na konsoli Xbox One. Aktywowanie projektu
+    na konsolę Xbox pozwala na wykonywanie następujących czynności, gdy projekt jest uruchamiany na konsoli Xbox One:
+  
+    Zaloguj się do Xbox Live z poziomu aplikacji
+    Wykorzystanie tożsamości użytkownika Xbox Live w jakiś sposób w projekcie (np. pokazanie gamertagu lub zdjęcia gracza)
+  
+  Zanim jednak będziesz mógł wykonać te czynności, musisz się upewnić, że kliknąłeś pole wyboru Włącz Xbox Live, a jeśli jesteś uczestnikiem programu Microsoft Creators Program, powinieneś również zaznaczyć opcję Creators Program App. Jeśli należysz do Programu Twórców, musisz dodać ID tytułu i ID konfiguracji usługi (więcej informacji na ten temat można uzyskać
+    można uzyskać od firmy Microsoft).
+  Należy pamiętać, że obecnie, aby przetestować funkcjonalność Xbox Live w projekcie, należy użyć opcji Utwórz plik wykonywalny, a nie Uruchom, ponieważ wyjście UWP Xbox musi używać certyfikatu podpisującego Sklepu Windows, który podasz w ramach Pakowania
+    (patrz wyżej), a nie tymczasowego dostarczonego z GameMaker Studio 2, który zostanie użyty po uruchomieniu.
+  Po włączeniu usługi XBox Live możesz korzystać z funkcji XBox Live w swoim projekcie, ale pamiętaj, że do korzystania z najbardziej podstawowych funkcji wymagane jest uczestnictwo w Programie Twórców, a do korzystania z zaawansowanych funkcji wymagane jest konto ID@XBox.
+   
+   
+   
+  
+    
+      
+        Wstecz: Opcje gry
+        Następny: HTML5
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

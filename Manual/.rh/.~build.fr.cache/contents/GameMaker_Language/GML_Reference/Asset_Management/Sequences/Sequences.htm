@@ -1,0 +1,132 @@
+
+  
+  Sekwencje
+  Sekwencje są zwykle tworzone w witrynie IDE za pomocą edytora sekwencji, ale można je także tworzyć i edytować za pomocą kodu. Jednak przed zapoznaniem się z dostępnymi funkcjami należy zrozumieć sposób definiowania adresu sequences w witrynie GameMaker oraz różne terminy, które będą używane.
+  Na początek, na najwyższym poziomie, znajduje się element sekwencji. Jest to element, który umieszcza się na warstwie w witrynie room, za pomocą edytora Room lub w kodzie przy użyciu odpowiednich funkcji warstwy. Element warstwy nie ma żadnych rzeczywistych właściwości poza wartością identyfikatora elementu, ale ten identyfikator jest wymagany do korzystania z wyżej wymienionych funkcji warstwy w celu zmiany odtwarzania sequence lub uzyskania dostępu do danych sequence.
+  Następnie mamy obiekty sekwencji i instancje sekwencji, podobnie jak w przypadku obiektów ogólnych objects i instancji. Obiekt sequence to zasób podstawowy, który został utworzony w przeglądarce zasobów lub przy użyciu funkcji sequence_create()a instancja sequence to "kopia" tego sequence object, która została umieszczona w room jako element na warstwie. Pomyśl o sequence objects jak o projekcie, a o instancjach sequence jak o tworzeniu na podstawie tego projektu. Sequence objects i instancje są strukturami i - w przeciwieństwie do zwykłego objects - instancję sequence object struct można edytować pod adresem runtime, co wpłynie na wszystkie kolejne instancje tego sequence, gdy utworzysz je jako elementy (a wszelkie edycje wykonane na sequence object nie zostaną zresetowane przez ponowne uruchomienie gry lub room za pomocą funkcji room_restart() lub game_restart() ). Instancja sequence struct zawiera kilka parametrów do sterowania odtwarzaniem i innymi rzeczami (wyjaśniono to bardziej szczegółowo poniżej), a także dane sekwencji struct.
+  Wreszcie, jak już wspomniano, dostępne są dane sekwencji, czyli kolejny adres struct. Ten adres struct zawiera wszystkie dane dotyczące sequence. Zawiera on ścieżki, właściwości tych ścieżek, prędkość odtwarzania i wiele innych informacji. Dokładny opis zawartości strony structs znajduje się poniżej, ale zasadniczo składa się ona ze ścieżki zasobów structs oraz ścieżki parametrów structs, które wykorzystują dane klatek kluczowych do wykonywania akcji podczas odtwarzania strony sequence.
+  Z elementami sekwencji mamy do czynienia za pomocą funkcji warstwy room, natomiast dla sequence objects, instancji i danych mamy następujące funkcje:
+   
+  
+    sequence_exists
+    sequence_create
+    sequence_destroy
+    sequence_get
+    sequence_track_new
+    sequence_keyframe_new
+    sequence_keyframedata_new
+    sequence_get_objects
+    sequence_instance_override_object
+  
+   
+  Z instancjami jest także związana wbudowana zmienna, której można użyć do określenia, czy dana instancja została użyta w witrynie sequence, czy nie:
+   
+  
+    in_sequence
+  
+  WAŻNE! Jeśli na stronie sequence znajdują się jakieś instancje, nie powinny one zmieniać swoich zmiennych image_xscale / image_yscale / image_angle / x / y, ponieważ zostaną one nadpisane, gdy strona sequence będzie aktualizować każdy krok po rozpoczęciu odtwarzania.
+   
+  Przed użyciem tych funkcji do tworzenia lub edycji sequences, zalecamy zapoznanie się ze szczegółowymi opisami właściwości struct podanymi poniżej. Ogólny zarys tworzenia nowej strony sequence wygląda następująco:
+  
+    Utwórz nową stronę sequence object za pomocą funkcji sequence_create() i zapisz indeks sequence object w zmiennej. Indeks ten umożliwia dostęp do strony sequence object struct .
+  
+  myseq = sequence_create();
+  
+    Ustaw wartości najwyższego poziomu w serwisie sequence object, takie jak długość, tryb odtwarzania, szybkość odtwarzania itd. Na przykład:
+  
+  myseq.length = 120;
+    myseq.loopmode = seqplay_pingpong
+  
+    Przed dodaniem ścieżek do sequence object należy je utworzyć, dlatego teraz należy utworzyć tablicę ścieżek zasobów, które zostały zdefiniowane za pomocą funkcji sequence_track_new(). Zauważ, że w kodzie nie ma różnicy między ścieżkami asset a ścieżkami parametrów - wszystkie są po prostu ścieżkami, a ich zachowanie zależy od rodzaju utworzonej ścieżki i od tego, czy są przypisane jako podścieżki do ścieżki nadrzędnej, czy nie. Tak więc można utworzyć ścieżkę dla asset, a następnie przypisać do niej podścieżki dla różnych parametrów i te podścieżki będą działać jako ścieżki parametrów dla asset. Poniższy przykład tworzy pojedynczą ścieżkę grafiki asset, która zostanie później dodana do sequence:
+  
+  var mytracks = array_create(1);
+    mytracks[0] = sequence_track_new(seqtracktype_graphic);
+  
+    Każda ścieżka asset musi zawierać pewne dane, które powiedzą stronie sequence, jak będzie wyglądać, jakie będzie jej położenie itd. i są one dodawane w postaci klatek kluczowych. Na najwyższym poziomie dla ścieżki asset można ustawić keyframes dla różnych rzeczy (wymienionych w sekcji Ścieżka Struct poniżej), ale należy pamiętać, że ponieważ są to ścieżki asset keyframes , nie będą one interpolowane i po prostu zmienią wartość, do której się odnoszą, po osiągnięciu danej klatki. Każda strona keyframe to strona struct, która jest dodawana do tablicy, a następnie ta tablica jest przypisywana do ścieżki asset. Aby utworzyć stronę keyframe struct, należy wywołać funkcję sequence_keyframe_new() a aby wypełnić stronę keyframe wymaganymi danymi, użyjemy funkcji sequence_keyframedata_new():
+  
+  // Create a new keyframe struct for a graphics asset track and add it to an array (as you can have multiple keys in a frame)
+    var graphickeys = array_create(1);
+    graphickeys[0] = sequence_keyframe_new(seqtracktype_graphic);
+    // Set the graphics keyframe top level data for the keyframe position and length, etc...
+    graphickeys[0].frame = 0;
+    graphickeys[0].length = 1;
+    graphickeys[0].stretch = true;
+    graphickeys[0].disabled = false;
+    // Create the channel data that will go into this keyframe (again an array, as each key can have multiple channels of keyframe data)
+    var graphickeydata = array_create(1);
+    graphickeydata[0] = sequence_keyframedata_new(seqtracktype_graphic);
+    graphickeydata[0].spriteIndex = spr_Platform;
+    graphickeydata[0].channel = 0;
+    // Add the keyframe data channels to the graphics track keyframe
+    graphickeys[0].channels = graphickeydata;
+    // Add the definied keyframes to the track
+    mytracks[0].name = "TestGraphicTrack";
+    mytracks[0].keyframes = graphickeys;
+  
+    Teraz musimy utworzyć ścieżkę parametrów, którą przypiszemy jako podścieżkę do ścieżki grafiki, którą właśnie utworzyliśmy. Należy to zrobić w podobny sposób, jak pokazano powyżej, z tą różnicą, że teraz musimy nadać ścieżce nazwę, która wskaże jej przeznaczenie, w tym przypadku "pozycja", ponieważ będziemy używać tej ścieżki do przesuwania ścieżki graficznej w czasie trwania klatek animacji sequence:
+  
+  // Create a new parameter track struct for the position of the graphic
+    var paramtracks = array_create(1);
+    paramtracks[0] = sequence_track_new(seqtracktype_real);
+    paramtracks[0].name = "position";
+    paramtracks[0].interpolation = true;
+    // Create the keyframe struct to hold the parameter channel data and set the frame position for the keyframe
+    var paramkeys = array_create(2);
+    paramkeys[0] = sequence_keyframe_new(seqtracktype_real);
+    paramkeys[0].frame = 0;
+    paramkeys[1] = sequence_keyframe_new(seqtracktype_real);
+    paramkeys[1].frame = 120;
+    // Create the keyframe data structs
+    var paramkeydata1 = array_create(2);
+    paramkeydata1[0] = sequence_keyframedata_new(seqtracktype_real);
+    paramkeydata1[0].channel = 0; // Channel 0 for a position track is the X position
+    paramkeydata1[0].value = 0;
+    paramkeydata1[1] = sequence_keyframedata_new(seqtracktype_real);
+    paramkeydata1[1].channel = 1; // Channel 1 for a position track is the Y position
+    paramkeydata1[1].value = 0;
+    var paramkeydata2 = array_create(2);
+    paramkeydata2[0] = sequence_keyframedata_new(seqtracktype_real);
+    paramkeydata2[0].channel = 0;
+    paramkeydata2[0].value = room_width;
+    paramkeydata2[1] = sequence_keyframedata_new(seqtracktype_real);
+    paramkeydata2[1].channel = 1;
+    paramkeydata2[1].value = room_height;
+    // Assign the keyframe data structs to the channels for each key
+    paramkeys[0].channels = paramkeydata1;
+    paramkeys[1].channels = paramkeydata2;
+    // Assign the keys to the parameter track
+    paramtracks[0].keyframes = paramkeys;
+  
+    Po wykonaniu tych czynności należy przypisać ścieżkę parametrów jako podścieżkę do naszej głównej ścieżki grafiki asset, którą utworzyliśmy na początku, a następnie przypisać te ścieżki do strony sequence, której instancję możemy następnie utworzyć w pomieszczeniu:
+  
+  mytracks[0].tracks = paramtracks;
+    myseq.tracks = mytracks;
+    layer_sequence_create("Assets_1", 0, 0, myseq);
+  Powyższe instrukcje tworzą bardzo prostą stronę sequence object, która rysuje stronę sprite na pozycji (0, 0) sekwencji, a następnie przesuwa ją do prawego dolnego rogu i z powrotem w ramach strony loop. Jak już wspomniano, istnieje wiele miejsc, w których trzeba uzyskać dostęp do różnych stron structs, aby przekazać lub uzyskać dane na temat strony sequence, a w poniższych sekcjach wymieniono wszystkie różne właściwości, które zawierają te strony structs:
+  
+     Sequence Object Struktura
+    Struktura instancji Sequence 
+    Struktura toru
+     Keyframe Struktura
+    Struktura danych Keyframe 
+  
+   
+  Ponadto do strony sequences można dodawać kod, który może być wyzwalany jako zdarzenie w danej chwili lub jako wiadomość rozgłoszeniowa. Dokładne wyjaśnienie tego zagadnienia znajduje się na następnej stronie:
+  
+    Wydarzenia, momenty i komunikaty nadawane
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Zarządzanie aktywami
+        Następny: Czcionki
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,36 @@
+
+  
+  font_texture_page_size
+  Tej wbudowanej zmiennej można użyć do uzyskania lub ustawienia rozmiaru strony texture przy użyciu funkcji font_add(). Po dodaniu strony font za pomocą tej funkcji, strona GameMaker Studio 2 utworzy stronę texture cache z wymaganymi glifami o rozmiarze określonym przez tę zmienną. Proces ten przebiega następująco:
+  
+    Każdy użyty znak jest zapisywany w pamięci podręcznej font na stronie texture.
+    Gdy strona texture jest pełna (ponieważ używasz dużych znaków lub wielu różnych znaków), GameMaker Studio 2 usunie znaki z cache i zastąpi je nowymi, których potrzebujesz
+    GameMaker Studio 2 stara się, aby strona texture nie była zbyt duża, ponieważ nie wszystkie urządzenia radzą sobie z dużymi textures, a także stara się, aby strona texture nie była zbyt mała, ponieważ usuwanie i ponowne dodawanie znaków do strony texture zabiera czas procesora i powoduje, że gra działa wolniej.
+  
+  Jeśli uważasz, że potrzebujesz większego lub mniejszego rozmiaru strony texture niż domyślne 1024px, które są używane przez GameMaker Studio 2, możesz ustawić wartość za pomocą tej wbudowanej zmiennej. Jeśli nie używasz funkcji font_add(), to ustawienie tej zmiennej nie będzie miało wpływu na wydajność gry, ponieważ strony fonts dodane w IDE są buforowane na zwykłych stronach texture (co można kontrolować w Edytorze czcionek i Opcjach gry dla platformy docelowej).
+   
+  Składnia:
+  font_texture_page_size;
+   
+  Zwroty:
+  Real (maximum width/height in pixels)
+   
+  Przykład:
+  font_texture_page_size = 512;
+    newfont = font_add("Arial", 24, true, true, 32, 128);
+  Powyższy kod ustawia stronę font cache texture na maksymalny rozmiar 512px, a następnie dodaje do gry nową stronę font.
+   
+   
+   
+  
+    
+      
+        Powrót: Czcionki
+        Następny: font_get_name
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

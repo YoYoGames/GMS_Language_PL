@@ -1,0 +1,79 @@
+
+  
+  gpu_get_zfunc
+  Za pomocą tej funkcji można uzyskać informacje o trybie porównywania z. Zwracaną wartością będzie jedna z poniższych stałych (wartością domyślną jest cmpfunc_lessequal):
+  
+    
+      
+      
+    
+    
+      
+        Funkcja porównania Stała
+      
+      
+        Stała
+        Opis
+      
+      
+        cmpfunc_never
+        Nigdy
+      
+      
+        cmpfunc_less
+        Mniej
+      
+      
+        cmpfunc_equal
+        Equal
+      
+      
+        cmpfunc_lessequal
+        Mniej lub więcej
+      
+      
+        cmpfunc_greater
+        Większa
+      
+      
+        cmpfunc_notequal
+        Nie równa się
+      
+      
+        cmpfunc_greaterequal
+        Większy lub równy
+      
+      
+        cmpfunc_always
+        Zawsze
+      
+    
+  
+   
+  Składnia:
+  gpu_get_zfunc();
+   
+  Zwroty:
+  Comparison Function Constant (see table above)
+   
+  Przykład:
+  if gpu_get_zfunc() != cmpfunc_greater
+    {
+        gpu_set_zfunc(cmpfunc_greater);
+    }
+  Powyższy kod sprawdza, czy metoda z-testowania jest ustawiona na cmpfunc_greater, a jeśli nie, to jest ustawiana na tę stałą.
+   
+   
+   
+  
+    
+      
+        Powrót: Sterowanie procesorem graficznym
+        Następny: gpu_get_zwriteenable
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

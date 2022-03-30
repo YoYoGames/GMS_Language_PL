@@ -1,0 +1,46 @@
+
+  
+  ptr
+  Ta funkcja spróbuje przekonwertować podaną wartość na typ danych wskaźnika, gdzie wartość musi być albo real, albo string, albo int64, albo int32, albo ptr. Każda inna wartość spowoduje awarię gry z komunikatem o błędzie.
+   
+  Składnia:
+  ptr(n);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        n
+        Real, String lub Pointer
+        The value to convert.
+      
+    
+  
+   
+  Zwroty:
+  Pointer
+   
+  Przykład:
+  if !is_ptr(val)
+    {
+        val = ptr(application_surface);
+    }
+  Powyższy kod sprawdza, czy zmienna "val" zawiera wskaźnik, a jeśli nie, to przypisywany jest do niej wskaźnik.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: int64
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

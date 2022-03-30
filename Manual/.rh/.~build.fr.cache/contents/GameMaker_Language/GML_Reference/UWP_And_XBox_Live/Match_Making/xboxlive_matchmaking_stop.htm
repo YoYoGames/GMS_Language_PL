@@ -1,0 +1,44 @@
+
+  
+  xboxlive_matchmaking_stop
+  Ta funkcja może być użyta do zakończenia sesji kojarzenia dla danego użytkownika.
+   
+  Składnia:
+  xboxlive_matchmaking_stop(user_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        user_id
+        The user ID pointer to use
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if !xboxlive_user_is_signed_in(user_id[0])
+    {
+        xboxlive_matchmaking_stop(user_id[0]);
+    }
+  Powyższy kod zakończy sesję kojarzenia dla podanego użytkownika.
+   
+   
+   
+  
+    
+      
+        Powrót: Dopasowywanie
+        Następny: xboxlive_matchmaking_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

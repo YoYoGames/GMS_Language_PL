@@ -1,0 +1,66 @@
+
+  
+  Opcje menu prawego przycisku myszy
+  Podczas pracy nad kodem DnD™ możesz kliknąć prawym przyciskiem myszy  na akcji, na stronie workspace, lub na tekście na liście skróconej po lewej stronie
+    aby otworzyć menu Prawy przycisk myszy:
+  W tym menu dostępne są następujące opcje:
+  
+    Wytnij /  Kopiuj /  Wklej: Umożliwia wycięcie, skopiowanie lub wklejenie dowolnej akcji zaznaczonej na stronie workspace. Zwróć uwagę, że możesz użyć  +  poza akcjami i przeciągnąć je lub użyć  /  +  na poszczególnych akcjach,
+      aby zaznaczyć więcej niż jedną akcję i zastosować polecenie do nich wszystkich.
+    Komentarz /  Usuńkomentarz : Ta opcja pozwala na dodawanie i usuwanie komentarzy do bloków kodu DnD™. Po wybraniu opcji Komentarz, po prawej stronie wybranego bloku DnD™ otworzy się edytor tekstu, w którym można
+      dodać dowolny tekst, czy to przypomnienie o konieczności zmiany czegoś, czy też pomocny komentarz do samouczka, a nawet instrukcje dla kolegów z drużyny:
+      Po dodaniu komentarza można go kliknąć i przeciągnąć, aby ustawić go w pionie i poziomie - choć
+      a zwinięcie węzła DnD™ spowoduje również zwinięcie komentarza i wyświetlenie podsumowania jego zawartości (w tym przypadku nie będzie można zmienić jego położenia). Jeśli komentarz nie jest już potrzebny, można albo usunąć cały
+      tekst w komentarzu lub użyć opcji Usuń komentarz z menu. Zauważ, że gdy kopiujesz węzeł, komentarz zostanie skopiowany razem z nim, a jeśli przekonwertujesz węzeł z DnD™ na GML, komentarz zostanie zachowany
+      i zostanie dodany do utworzonej strony GML, jak pokazano na poniższym rysunku:
+      Jak wspomniano powyżej, komentarz może być zastosowany tylko do jednego węzła, ale można go rozszerzyć tak, aby obejmował wiele
+      węzłów, dodając w tym celu podział na linie - może to jednak wymagać zmiany położenia komentarza, aby nie nakładał się na kolejne węzły:
+      Po dodaniu komentarza można wybrać opcję "Komentarz"
+      ponownie z menu RMB lub kliknąć dwukrotnie na komentarz , aby umożliwić jego edycję.
+    Wyłącz /  Włącz: Za pomocą tych poleceń można wyłączyć lub włączyć wybraną akcję (lub akcje). Gdy akcja jest wyłączona, jest nadal widoczna na stronie workspace, ale nie będzie uruchamiana podczas kompilacji gry. W ten sposób
+      W ten sposób można dodawać/usuwać akcje do testowania i na stronie debugging. Na poniższym rysunku pokazano kod DnD™ z wyłączonymi akcjami:
+      Widać, że akcje "If Score" i "Go To Next Room" zostały wyłączone - tzn.
+      Zostały one wyszarzone, a więc będą pomijane podczas testowania lub kompilacji gry.
+    Przełącz punkt przerwania: To polecenie włączy lub wyłączy breakpoint dla wybranej akcji. breakpoint to po prostu punkt w kodzie DnD™, w którym debugger powinien się zatrzymać, gdy gra
+      jest uruchamiana w trybie Debug. Akcja, do której przypisano adres breakpoint, zostanie podświetlona, jak pokazano na poniższym obrazku (akcja "Jeśli zdrowie" została ustawiona jako breakpoint):
+      
+    Usuń wszystkie punkty przerwania: Za pomocą tego polecenia można usunąć wszystkie breakpoints z kodu DnD™.
+    Zwiń wszystko / Rozwiń wszystko: Akcje DnD™ mogą być zwinięte lub rozwinięte, przy czym zwinięta akcja pokaże po prostu nazwę akcji, ale bez żadnych wewnętrznych wartości, co zmaksymalizuje dostępną przestrzeń dla  .
+      na stronie workspace. Na przykład:
+      Jak widać, akcje zajmują znacznie mniej miejsca, a ich działanie można poznać po krótkim
+      opisie po prawej stronie. Można wybrać opcję "Rozwiń wszystko", aby cofnąć to dla każdego węzła w witrynie workspace.
+    Resetuj układ: Spowoduje to zresetowanie strony DnD™ workspace, ustawienie poziomu powiększenia na 100%, skupienie się na aktualnie wybranej akcji oraz rozwinięcie wszystkich (i wszystkich) zwiniętych akcji.
+    Podgląd na żywo: Po wybraniu tej opcji włączysz lub wyłączysz okno podglądu kodu DnD™ do GML (GameMaker Language). Jest to wyjaśnione bardziej szczegółowo na stronie Zmiana DnD™ na kod.
+    Konwertuj do GML: To spowoduje konwersję wszystkich twoich akcji w bieżącym wydarzeniu do kodu GML (GameMaker Language). Uważaj, ponieważ nie możesz przekonwertować GML z powrotem na akcje DnD™, z których została stworzona. Możesz przekonwertować
+      zdarzenie z powrotem na zdarzenie DnD™ z kodu, ale każdy kod zostanie po prostu zawinięty w akcję Wykonaj kod. Więcej szczegółów na ten temat znajduje się na stronie Zmiana DnD™ na kod.
+    Okno: Ta sekcja otwiera następujące podmenu:
+      Dostępne tu pozycje menu to:
+      
+        Idź do obiektu: Spowoduje to przesunięcie strony workspace do strony object, która wywołuje zdarzenie.
+        Open Inherited Event (Otwórz odziedziczone zdarzenie): Ta opcja jest dostępna tylko wtedy, gdy edytowana strona object jest dzieckiem rodzica object. Spowoduje ona otwarcie edytowanego zdarzenia rodzica object i przesunie stronę workspace do tego zdarzenia.
+        Single Pane /  2 Columns / 3 Columns: Za pomocą tych opcji można podzielić bieżącą stronę workspace na 1, 2 lub 3 różne "szyby". Każdy panel to osobna strona workspace, na którą można przeciągać skrypty
+          lub zdarzeń, dzięki czemu można edytować i porównywać 2 lub więcej bloków kodu DnD™ jednocześnie. Na poniższym obrazku widać dwa scripts w jednym oknie, pokazane w ich własnych okienkach workspace:
+          
+      
+    
+  
+  Poniższe dwie opcje są dostępne tylko wtedy, gdy menu RMB jest otwarte na węźle DnD™:
+  
+    Obrót: Po wybraniu tej opcji na dowolnym węźle strona workspace przesunie się tak, aby objąć ten węzeł do środka.
+    Pokaż pomoc... : Wybranie tej opcji spowoduje otwarcie podręcznika w nowym oknie workspace na stronie odpowiadającej zaznaczonemu węzłowi. Ten sam efekt można także osiągnąć, używając adresu  na węźle.
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Indeks
+        Następny: Konstruowanie kodu bloku akcji
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

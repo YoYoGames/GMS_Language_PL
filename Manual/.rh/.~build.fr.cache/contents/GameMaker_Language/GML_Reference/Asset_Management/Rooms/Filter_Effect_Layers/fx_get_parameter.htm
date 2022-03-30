@@ -1,0 +1,48 @@
+
+  
+  fx_get_parameter
+  Funkcja ta służy do pobierania wartości parametru z FX Struct. Podaje się adres FX struct do odczytu (zwrócony przez fx_create() lub layer_get_fx()) i nazwę parametru jako string, a funkcja zwraca jego bieżącą wartość. Może to być wartość rzeczywista lub tablica, jeśli parametr jest wektorem (czyli grupą wartości, np. vec4 przechowującą kolor RGBA).
+  Należy pamiętać, że nazwy parametrów danego efektu odpowiadają nazwom używanym wewnętrznie przez jego witrynę shader, dlatego zawsze będą miały przedrostek "g_". Ze względu na to, że nazwy parametrów nie są ustandaryzowane, znajomość nazw parametrów filtrów/efektów może nie być intuicyjna, dlatego można użyć funkcji fx_get_parameter_names() aby poznać nazwy wszystkich parametrów, które mają zastosowanie dla danego filtra/efektu.
+   
+  Składnia:
+  fx_get_parameter(filter_or_effect, parameter_name);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        filter_or_effect
+        The FX struct to get the parameter from
+     
+      
+        parameter_name
+        The name of the parameter to get the value of (as a string)
+     
+    
+  
+   
+  Zwroty:
+  Real or Array
+   
+  Przykład:
+  var _fx_struct = layer_get_fx("TintEffect");
+    var _tint_colour = fx_get_parameter(_fx_struct, "g_TintCol");
+    show_debug_message("The currently active tint colour is: " + string(_tint_colour));
+  Powyższy kod pobiera adres FX struct z warstwy, która z założenia ma zastosowany filtr "Zabarwienie", i pobiera wartość parametru "g_TintCol", który zwraca tablicę zawierającą 4 wartości koloru zabarwienia (czerwony, zielony, niebieski i alfa). Następnie wypisuje tę wartość do dziennika wyjściowego.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje filtrów i efektów
+        Next: fx_get_parameters
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

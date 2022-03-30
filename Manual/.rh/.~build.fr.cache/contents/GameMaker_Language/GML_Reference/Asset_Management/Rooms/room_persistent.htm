@@ -1,0 +1,33 @@
+
+  
+  pomieszczenie_stałe
+  Tej zmiennej można użyć do uzyskania i ustawienia trwałego adresu flag dla bieżącego adresu room. Jeśli jest ustawiona na true, to room jest uważana za trwałą, w którym to przypadku za każdym razem, gdy opuścisz room i wrócisz ponownie, stan instancji w obrębie tej room zostanie zachowany. Jeśli jednak jest oznaczona jako false, to za każdym razem, gdy wrócisz do room, zostanie zresetowana do stanu początkowego. Należy pamiętać, że persistent room zużywa znacznie więcej pamięci niż zwykły room i nie zaleca się umieszczania ich w grze zbyt wielu.
+   
+  Składnia:
+  room_persistent;
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if lives < 1
+    {
+        room_persistent = false;
+        room_goto(rm_start);
+    }
+  Powyższy kod sprawdza zmienną "lives" i jeśli jest ona mniejsza niż 1, ustawia trwałość room na false, a następnie zmienia rooms.
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room_get_name
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

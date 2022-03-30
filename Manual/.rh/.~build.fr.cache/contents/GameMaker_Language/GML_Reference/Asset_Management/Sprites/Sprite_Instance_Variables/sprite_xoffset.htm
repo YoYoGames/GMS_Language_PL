@@ -1,0 +1,33 @@
+
+  
+  sprite_xoffset
+  Ta zmienna tylko do odczytu zwraca lokalny xoffset (składową x punktu początkowego zdefiniowaną w edytorze sprite ) strony sprite, która została przypisana do instancji. Wartość xoffset jest zwracana w pikselach i zależy od wartości image_xscaleTak więc (na przykład) jeśli dla kwadratowej strony sprite o wymiarach 32x32 początek x jest zdefiniowany na 16, to po przeskalowaniu tej strony sprite o 2 zmienna ta zwróci 32. Jeśli potrzebujesz nieskalowanego xoffset, powinieneś użyć sprite_get_xoffset().
+  
+   
+  Składnia:
+  sprite_xoffset;
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if x - sprite_xoffset < 0
+    {
+        x = sprite_xoffset;
+    }
+  Powyższy kod sprawdza, czy lewa krawędź sprite instancji znajduje się poza room, a jeśli tak, to przesuwa instancję tak, aby widoczna była cała sprite.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne instancji sprite'a
+        Następny: sprite_yoffset
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

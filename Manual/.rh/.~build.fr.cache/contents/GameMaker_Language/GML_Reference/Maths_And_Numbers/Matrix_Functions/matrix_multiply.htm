@@ -1,0 +1,48 @@
+
+  
+  macierz_wielokrotna
+  Za pomocą tej funkcji można pomnożyć dwie tablice macierzy, aby utworzyć nową macierz przekształcenia. Funkcja zwraca indeks nowej macierzy, który powinien być przechowywany w zmiennej do przyszłego użytku.
+  UWAGA: W tej funkcji nie można użyć stałej macierzy jako argumentu, więc jeśli chcesz pomnożyć (na przykład) macierz widoku przez własną macierz, musisz najpierw wywołać funkcję matrix_get() i przypisać wartości macierzy widoku do zmiennej tablicowej, następnie pomnożyć ją przez własną macierz, a następnie ustawić wybraną macierz (widok, rzutowanie lub świat).
+   
+  Składnia:
+  matrix_multiply(matrix1, matrix2);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        matrix1
+        The first matrix index to use.
+     
+      
+        matrix2
+        The second matrix index to use.
+     
+    
+  
+   
+  Zwroty:
+  Matrix Array
+   
+  Przykład:
+  var v_matrix = matrix_get(matrix_view);
+    var new_matrix = matrix_multiply(v_matrix, my_matrix);
+    matrix_set(matrix_view, new_matrix);
+  Powyższy kod pobierze bieżącą macierz widoku, następnie pomnoży ją przez macierz niestandardową, a następnie użyje wynikowego indeksu macierzy do ponownego ustawienia macierzy widoku.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje matrycy
+        Następny: matrix_build_identity
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

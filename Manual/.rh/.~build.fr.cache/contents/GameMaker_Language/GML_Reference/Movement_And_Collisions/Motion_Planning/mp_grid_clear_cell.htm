@@ -1,0 +1,57 @@
+
+  
+  mp_grid_clear_cell
+  Tej funkcji można użyć do wyczyszczenia określonej "komórki" w siatce MP. Komórki nie są obliczane jako współrzędne room, ale raczej jako współrzędne siatki, gdzie (0,0) jest górnym lewym rogiem siatki. Oznacza to, że aby wyczyścić komórkę w określonym miejscu na stronie room, musimy zmienić współrzędne x i y na współrzędne komórki, dzieląc je przez rozdzielczość siatki MP. Poniższy przykład kodu pokazuje, jak to działa.
+   
+  Składnia:
+  mp_grid_clear_cell(id, h, v);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator siatki MP
+        Index of the mp_grid that is to be used
+      
+      
+        h
+        Real
+        Horizontal position of the cell to clear
+      
+      
+        v
+        Real
+        vertical position of the cell to clear
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  with (obj_Box)
+    {
+        mp_grid_clear_cell(grid, floor(x / 32), floor(y /32));
+        instance_destroy();
+    }
+  Powyższy kod spowoduje, że wszystkie "obj_Box" zniszczą się i oznaczą komórki, które zajmowały w mp_grid indeksowanej zmienną "grid", jako wolne. W tym przykładzie znajdujemy odpowiednią komórkę, biorąc współrzędne x/y strony object i dzieląc je przez rozdzielczość siatki (używając floor, aby zachować wartości jako liczby całkowite).
+   
+   
+   
+  
+    
+      
+        Powrót: Planowanie ruchu
+        Następny: mp_grid_clear_rectangle
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

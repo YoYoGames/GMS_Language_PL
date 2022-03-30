@@ -1,0 +1,46 @@
+
+  
+  physics_set_density
+  Kiedy wiążesz uchwyt z instancją używając physics_fixture_bind() zwraca to "id" dla powiązanego elementu. Możesz użyć tego id do ustawienia wartości gęstości powiązanego elementu, a nie 
+    "bazowego", w dowolnym momencie używając tej funkcji.
+   
+  Składnia:
+  physics_set_density(fixture, density)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fixture
+        the id of the bound fixture
+     
+      
+        density
+        the new density value to apply
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var density = physics_get_density(fix_id); physics_set_density(fix_id, density - 0.1);
+  Powyższy kod pobiera wartość gęstości prądu dla powiązanych właściwości fizycznych instancji, a następnie ustawia je na inną wartość.
+   
+   
+   
+  
+    
+      
+        Powrót: Armatura
+        Następny: physics_set_restitution
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

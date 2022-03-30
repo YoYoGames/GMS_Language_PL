@@ -1,0 +1,63 @@
+
+  
+  bufor_kopiujący_z_werteksu
+  Za pomocą tej funkcji można skopiować część (lub wszystkie) danych vertex zapisanych w jednej witrynie vertex buffer do utworzonej wcześniej regularnej witryny buffer. Podczas kopiowania danych z vertex buffer do zwykłego buffer za pomocą tej funkcji oba adresy buffers muszą być wcześniej utworzone (za pomocą przycisków vertex_create_buffer() i buffer_create() na przykład). Można określić zakres danych vertex, które mają zostać skopiowane do buffer, gdzie początek vertex może mieć dowolną wartość od 0 do liczby wierzchołków -1, a następnie można podać liczbę wierzchołków od tego punktu do skopiowania. Możesz użyć funkcji vertex_get_number() na stronie vertex buffer, aby uzyskać całkowitą liczbę przechowywanych wierzchołków. Na koniec podajesz indeks buffer, do którego mają zostać skopiowane dane vertex, oraz offset danych określający pozycję, do której mają zostać skopiowane dane vertex w docelowym adresie buffer.
+   
+  Składnia:
+  buffer_copy_from_vertex_buffer(vertex_buffer, start_vertex, num_vertices, dest_buffer, dest_offset);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        vertex_buffer
+        Vertex Buffer ID
+        The index of the vertex buffer to copy from.
+      
+      
+        start_vertex
+        Real
+        The starting vertex.
+      
+      
+        num_vertices
+        Real
+        The total number of vertices to use.
+      
+      
+        dest_buffer
+        Identyfikator bufora
+        The index of the buffer to copy to.
+      
+      
+        dest_offset
+        Real
+        The offset position to copy the data to (in bytes).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var v_num = vertex_get_number(model_buff); buffer_copy_from_vertex_buffer(model_buffer, 0, v_num - 1, player_buffer, 0);
+  Powyższy kod skopiuje dane vertex zapisane w pliku vertex buffer zaindeksowanym w zmiennej "model_buffer", a następnie wklei je do pliku buffer zaindeksowanego w zmiennej "player_buffer".
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_get_type
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

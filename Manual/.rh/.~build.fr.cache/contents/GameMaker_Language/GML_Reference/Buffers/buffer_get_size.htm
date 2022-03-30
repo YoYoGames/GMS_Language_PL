@@ -1,0 +1,44 @@
+
+  
+  bufor_get_size
+  Za pomocą tej funkcji można uzyskać rozmiar podanego adresu buffer w bajtach.
+   
+  Składnia:
+  buffer_get_size(buffer);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        buffer
+        Identyfikator bufora
+        The index of the buffer to get the size of.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  var _size = buffer_get_size(player_data);
+    var _temp = buffer_create(_size, buffer_fixed, 0);
+  Powyższy kod utworzy nową stronę buffer i zapisze jej indeks w zmiennej lokalnej "_temp", przy czym rozmiar tej nowej strony buffer będzie taki sam, jak rozmiar strony buffer zaindeksowanej w zmiennej "player_data".
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_get_surface
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

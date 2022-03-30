@@ -1,0 +1,32 @@
+
+  
+  physics_particle_get_density
+  Dzięki tej funkcji można dowiedzieć się, jaka jest gęstość prądu dla cząstek w symulacji fizycznej (wartość tę można ustawić za pomocą polecenia physics_particle_set_density()).
+   
+  Składnia:
+  physics_particle_get_damping()
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (physics_particle_get_density() < 1)
+    {
+        physics_particle_set_density(physics_particle_get_density() + 0.01);
+    }
+  Powyższy kod sprawdzi aktualną wartość gęstości dla wszystkich cząstek w układzie i jeśli jest ona mniejsza od 1, doda do niej 0,01.
+   
+   
+   
+  
+    
+      
+        Powrót: Miękkie cząstki ciała
+        Następny: physics_particle_get_damping
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

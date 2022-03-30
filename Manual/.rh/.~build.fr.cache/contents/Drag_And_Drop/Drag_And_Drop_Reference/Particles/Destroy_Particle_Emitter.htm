@@ -1,0 +1,46 @@
+
+  
+   Zniszcz emiter cząstek
+  Ta akcja "zniszczy" podany emiter cząstek, tzn. zwolni pamięć używaną przez emiter cząstek. Podajesz identyfikator systemu cząsteczek, do którego należy emiter (zwrócony przez akcję Utwórz system cząsteczek)
+    a następnie faktyczny identyfikator emitera (zwrócony przez akcję Utwórz emiter cząstek). Tę akcję należy wywołać za każdym razem, gdy emiter cząstek nie jest już potrzebny w grze lub gdy chcesz ponownie utworzyć
+    emiter cząsteczek (na przykład tuż przed wywołaniem ponownego uruchomienia gry). Uwaga: jeśli system cząsteczek, do którego emiter został przypisany, nie został oznaczony jako trwały, nie trzeba wywoływać tej akcji,
+    ponieważ emiter zostanie automatycznie wyczyszczony na stronie room wraz z systemem cząsteczek.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        System
+        Wartość identyfikatora systemu, w którym znajduje się emiter
+      
+      
+        Emitter
+        Wartość ID emitera, który ma zostać zniszczony
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji sprawdzi zmienną instancji i
+    jeśli jest ona większa niż 100, zniszczy emiter przypisany do instancji, a następnie przejdzie do następnej strony room.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje cząstek
+        Następny: Emituj cząstki
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

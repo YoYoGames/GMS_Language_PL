@@ -1,0 +1,90 @@
+
+  
+  camera_create_view
+  Ta funkcja utworzy nową kamerę, a następnie ustawi jej widok na stronie room, po czym zwróci unikatową wartość ID, która umożliwi identyfikację kamery w przyszłych wywołaniach funkcji. Kamera zostanie utworzona z wykorzystaniem wartości ustawionych w tej funkcji dla pozycji, rozmiaru i innych szczegółów, które odpowiadają wartościom ustawionym w edytorze Room (zobacz tutaj). Należy pamiętać, że funkcja ta może przyjmować różną liczbę argumentów, przy czym obowiązkowe są tylko argumenty x/y position oraz width/height. W przypadku niepodanych argumentów zostaną użyte argumenty domyślne.
+  Należy pamiętać, że kamery, jak wszystkie zasoby dynamiczne, zajmują pamięć w momencie utworzenia. Oznacza to, że należy uważać, aby nie tworzyć kamer niepotrzebnie i niszczyć te, które nie są potrzebne, wywołując funkcję camera_destroy(). Oznacza to także, że kamery będą trwały od room do room, jeśli zostaną przypisane do zmiennej global (będą trwały także, gdy zostaną przypisane do zmiennych instancji lub zmiennych lokalnych, ale nie można uzyskać do nich dostępu po zmianie room, stąd wyciek pamięci), więc można na przykład utworzyć nową kamerę, przypisać ją do zmiennej globalnej, a następnie na początku każdego room użyć funkcji camera_set_* do ustawienia właściwości przed przypisaniem jej do portu widoku.
+   
+  Składnia:
+  camera_create_view(room_x, room_y, width, height, [angle, object, x_speed, y_speed, x_border, y_border])
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        room_x
+        Real
+        The x position (within the room) of the left side of the area the camera view captures.
+      
+      
+        room_y
+        Real
+        The y position (within the room) of the top of the area the camera view captures.
+      
+      
+        width
+        Real
+        The width of the area the view captures.
+      
+      
+        height
+        Real
+        The height of the area the view captures.
+      
+      
+        angle
+        Real
+        OPTIONAL Kąt, który ma być ustawiony dla widoku z kamery (od 0° do 360°, domyślnie 0).
+      
+      
+        object
+         Identyfikatorzasobu lub instancjiobiektu 
+        OPTIONAL Identyfikator obiektu (lub identyfikator instancji) dla widoku z kamery, który ma być śledzony (domyślnie -1, brak object).
+      
+      
+        x_speed
+        Real
+        OPTIONAL Maksymalna prędkość pozioma, z jaką może poruszać się widok (wartość domyślna -1 oznacza "natychmiastowe" podążanie za obrazem).
+      
+      
+        y_speed
+        Real
+        OPTIONAL Maksymalna prędkość pionowa, z jaką może poruszać się widok (wartość domyślna -1 oznacza natychmiastowe podążanie za widokiem).
+      
+      
+        x_border
+        Real
+        OPTIONAL Minimalna przestrzeń w poziomie między krawędzią obszaru widoku a instancją, za którą ma podążać (zanim widok zacznie się przesuwać i jeśli jest ustawiony na podążanie za instancją, domyślnie 0).
+      
+      
+        y_border
+        Real
+        OPTIONAL Minimalna przestrzeń w pionie między krawędzią obszaru widoku a instancją, za którą ma podążać (zanim widok zacznie się przesuwać i jeśli jest ustawiony na podążanie za instancją, domyślnie 0).
+      
+    
+  
+   
+  Zwroty:
+  Camera ID
+   
+  Przykład:
+  camera_destroy(view_camera[0]);
+    view_camera[0] = camera_create_view(0, 0, 640, 480, 0, obj_Player, 5, 5, -1, -1);
+  Powyższy kod usuwa bieżącą kamerę przypisaną do rzutni[0], a następnie tworzy nową kamerę, definiuje jej właściwości widoku i przypisuje ją do rzutni[0].
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: camera_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,36 @@
+
+  
+  id
+  Ta zmienna tylko do odczytu przechowuje unikalny numer identyfikacyjny instancji. Każda instancja, którą utworzysz - czy to za pomocą kodu, czy przez dodanie jej do room w edytorze Room - otrzymuje numer, który jest używany wewnętrznie do identyfikacji tej instancji, a zmienna id jest tym, czego możesz użyć, by się do niej odwołać. Numer id jest także zwracany (i może być przechowywany w zmiennej) podczas tworzenia instancji za pomocą instance_create_layer() lub instance_create_depth(), a także innych funkcji instancji.
+  UWAGA Wartość tej zmiennej nie jest tożsama z identyfikatorem nadawanym instancji w edytorze room, a także nie jest tożsama z tablicą instance_id która zawiera identyfikatory wszystkich aktualnie aktywnych instancji.
+   
+  Składnia:
+  id;
+   
+  Zwroty:
+  Instance ID
+   
+  Przykład:
+  for(var i = 0; i < instance_count; i++;)
+    {
+        if instance_id[i] != id
+        {
+            instance_id[i].scr += 5;
+        }
+    }
+  Powyższy kod dodaje 5 do zmiennej "scr" dla każdej aktywnej instancji w witrynie room oprócz tej, która wykonuje ten kod. Dokonuje tego, przechodząc przez WSZYSTKIE aktywne instancje (używając tablicy "instance_id" do zwrócenia identyfikatora każdej aktywnej instancji) i porównując je z wbudowaną zmienną "id", która jest identyfikatorem oryginalnej instancji wykonującej kod.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne instancji
+        Następny: visible
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

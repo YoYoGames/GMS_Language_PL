@@ -1,0 +1,47 @@
+
+  
+  ds_grid_destroy
+  Ta funkcja usunie podaną strukturę danych siatki z pamięci, zwalniając zasoby, z których korzystała, i usuwając wszystkie wartości, które zawierała. Funkcja ta powinna być zawsze używana po zakończeniu korzystania z siatki DS, aby zapobiec wyciekom pamięci, które mogą spowolnić i zawiesić grę.
+  WAŻNE! Gdy tworzysz strukturę danych, wartość indeksu identyfikująca ją jest liczbą całkowitą zaczynającą się od 0. Oznacza to, że struktury danych różnych typów mogą mieć tę samą wartość indeksu, więc jeśli masz wątpliwości, powinieneś użyć funkcji ds_exists() przed uzyskaniem do nich dostępu. Należy również pamiętać, że indeksy są używane ponownie, więc wartość indeksu zniszczonej struktury danych może zostać użyta przez nowo utworzoną strukturę. Dlatego zalecamy, aby po zniszczeniu zawsze ustawiać zmienną, która przechowywała indeks DS, na -1.
+   
+  Składnia:
+  ds_grid_destroy(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        This index of the grid to destroy.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (lives == 0)
+    {
+        ds_grid_destroy(Wall_Grid);
+        Wall_Grid = -1;
+        room_goto(rm_Menu);
+    }
+  Powyższy kod sprawdza wartość wbudowanej zmiennej globalnej "lives" i jeśli wynosi ona 0, niszczy siatkę DS zaindeksowaną w zmiennej "Wall_Grid", a następnie zmienia adres rooms.
+   
+   
+   
+  
+    
+      
+        Powrót: Siatki DS
+        Następny: ds_grid_width
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,60 @@
+
+  
+  instancja_place
+  Za pomocą tej funkcji można sprawdzić pozycję pod kątem kolizji z inną instancją lub wszystkimi instancjami object, używając maski kolizji instancji, która uruchamia kod sprawdzający. Używając tej funkcji, prosisz GameMaker Studio 2 o przesunięcie instancji do nowej pozycji, sprawdzenie kolizji, cofnięcie się i poinformowanie Cię, czy kolizja została znaleziona, czy nie.
+  Działa to w przypadku kolizji precyzyjnych, ale tylko wtedy, gdy zarówno instancja, jak i sprawdzana witryna object mają zaznaczone maski kolizji precyzyjnych, w przeciwnym razie stosowane są tylko kolizje typu bounding box.
+  Ta funkcja zwróci unikalną instancję id kolidującej strony object, ale jeśli nie jest to potrzebne, nieco szybciej jest użyć funkcji place_meeting(). Funkcja ta akceptuje również specjalne słowa kluczowe all i other i zwraca słowo kluczowe noone, jeśli nie wystąpi kolizja, lub unikatową wartość identyfikatora znalezionej instancji, jeśli kolizja wystąpi.
+   
+  Składnia:
+  instance_place(x, y, obj);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x
+        Real
+        The x position to check for instances.
+      
+      
+        y
+        Real
+        The y position to check for instances.
+      
+      
+        obj
+         Identyfikatorzasobu lub instancjiobiektu 
+        The object to check for instances of.
+      
+    
+  
+   
+  Zwroty:
+  Instance ID or noone
+   
+  Przykład:
+  var _inst = instance_place(x, y, obj_Enemy);
+    if _inst != noone
+    {
+        hp -= _inst.dmg;
+        instance_destroy(_inst);
+    }
+  Powyższy kod sprawdzi, czy doszło do kolizji z instancjami "obj_Enemy" i jeśli tak, zmniejszy zmienną "hp" o wartość zapisaną w zmiennej "dmg" kolidującej instancji, a następnie zniszczy kolidującą instancję.
+   
+   
+   
+  
+    
+      
+        Powrót: Instancje
+        Następny: instance_place_list
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

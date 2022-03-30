@@ -1,0 +1,98 @@
+
+  
+  draw_healthbar
+  Za pomocą tej funkcji można narysować kolorowy pasek pokazujący stałą wartość. Mimo że w funkcji użyto słowa "pasek zdrowia", można go użyć do wyświetlania czegokolwiek, o ile wyświetlana wartość jest wartością procentową z przedziału od 0 do 100 (wartość procentową dowolnej wartości można obliczyć za pomocą wzoru (WARTOŚĆ_BIEŻĄCA / MAKSYMALNA_wartość) * 100), więc na przykład można go użyć do wyświetlania mocy, zdrowia, many, czasu lub czegokolwiek innego, do czego przydałby się pasek.
+  Można ustawić różne rzeczy, które zmieniają wizualny aspekt paska, co zilustrowano na poniższym rysunku (zauważ, że użyto tu kolorów c_green dla wartości maksymalnej i c_red dla wartości minimalnej, ale można użyć dowolnych kolorów):
+  
+  UWAGA: Jeśli chcesz narysować kształt za pomocą strony shader, musisz wiedzieć, że większość stron shaders oczekuje następujących danych wejściowych: vertex, texture, Kolor. Jednak w przypadku korzystania z tej funkcji przekazywane są tylko dane vertex i kolor, a zatem shader może niczego nie narysować (lub narysować coś, ale niepoprawnie). Jeśli konieczne jest rysowanie kształtów w ten sposób, należy dostosować stronę shader do tego celu.
+   
+  Składnia:
+  draw_healthbar(x1, y1, x2, y2, amount, backcol, mincol, maxcol, direction, showback, showborder);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x1
+        Real
+        The x coordinate of the left of the healthbar
+      
+      
+        y1
+        Real
+        The y coordinate of the top of the healthbar
+      
+      
+        x2
+        Real
+        The x coordinate of the right of the healthbar
+      
+      
+        y2
+        Real
+        The y coordinate of the bottom of the healthbar
+      
+      
+        amount
+        Real
+        The variable which defines total health (between 0 and 100)
+      
+      
+        backcol
+        Kolor
+        The colour of the background for the bar
+      
+      
+        mincol
+        Kolor
+        The colour of the bar when at no health (0)
+      
+      
+        maxcol
+        Kolor
+        The colour of the bar when at full health (100)
+      
+      
+        direction
+        Real
+        Where the bar is "anchored" (0 = left, 1 = right, 2 = top, 3 = bottom)
+      
+      
+        showback
+        Boolean
+        Whether the bar's background is drawn (true) lub nie (false). Jeśli false, argument backcol jest pomijany.
+      
+      
+        showborder
+        Boolean
+        Whether the bar's elements have a 1px wide black border (true) lub nie (false).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var pc;
+    pc = (hp / max_hp) * 100;
+    draw_healthbar(100, 100, 500, 200, pc, c_black, c_red, c_lime, 0, true, true)
+  Powyższy kod wykorzystuje wartość procentową uzyskaną ze zmiennych "hp" i "hp_max" do narysowania standardowego czerwono-zielonego paska zdrowia.
+   
+   
+   
+  
+    
+      
+        Powrót: Formularze podstawowe
+        Następny: draw_path
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

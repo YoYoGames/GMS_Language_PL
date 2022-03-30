@@ -15,7 +15,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Debugger</h1>
   <p> <strong>Debugger </strong>to potężne narzędzie do sprawdzania gry, szczególnie przydatne do wyszukiwania błędów i usterek w kodzie, sprawdzania, czy <span class="notranslate">scripts</span> jest uruchamiany wtedy, kiedy powinien, czy zmienne i tablice zawierają wartości
-    wartości, których oczekujesz itd... Program <span class="notranslate">Debugger</span> można uruchomić, uruchamiając grę w <span class="notranslate">GameMaker Studio 2</span> <a class="glossterm" data-glossterm="IDE" href="The_Debugger/The_Profiler.htm#">IDE</a> za pomocą przycisku Debug <img> w górnej części strony <span class="notranslate">IDE</span>, lub przechodząc do <a href="../IDE_Navigation/Menus/The_Build_Menu.htm">menu Build</a> i wybierając opcję &quot;<em>Debug</em>&quot;.</p>
+    wartości, których oczekujesz itd... Możesz uruchomić <span class="notranslate">Debugger</span>, uruchamiając grę z <span data-keyref="GameMaker Name">GameMaker</span> <a class="glossterm" data-glossterm="IDE" href="The_Debugger/The_Profiler.htm#">IDE</a> za pomocą przycisku Debug <img> w górnej części strony <span class="notranslate">IDE</span>, lub przechodząc do <a href="../IDE_Navigation/Menus/The_Build_Menu.htm">menu Build</a> i wybierając opcję &quot;<em>Debug</em>&quot;.</p>
   <p class="note"><strong>UWAGA</strong>: W witrynie <span class="notranslate">Windows</span> Firewall (lub innym uruchomionym programie typu firewall) może pojawić się monit o utworzenie wyjątku bezpieczeństwa dla tego modułu. <strong>Musisz to zrobić, w przeciwnym razie moduł nie będzie działał poprawnie</strong>. Wynika to ze sposobu
     działania <span class="notranslate">Debugger</span> i jest niezbędne dla platform mobilnych <span class="notranslate">debugging</span>.</p>
   <p>Po uruchomieniu gry w trybie debugowania na stronie <span class="notranslate">IDE</span> zostaną wyświetlone różne narzędzia dostępne dla debuggera:</p>
@@ -24,11 +24,11 @@
   <p><img>Poniżej wyjaśniamy, do czego służą poszczególne części strony <span class="notranslate">debugger</span>:</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Widok wykresu</a></p>
   <div class="droptext" data-targetname="drop-down">
-    <p class="dropspot">W widoku Wykres wyświetlane jest graficzne przedstawienie wykorzystania pamięci przez projekt oraz jego framerate w czasie:</p>
+    <p class="dropspot">W widoku Wykres wyświetlany jest graficzny obraz wykorzystania pamięci przez projekt oraz jego framerate w czasie:</p>
     <p class="dropspot"><img>Wykres przedstawia bieżące i średnie użycie pamięci oraz bieżące i średnie FPS w czasie. Wykres można powiększać i pomniejszać za pomocą przycisków <img> / <img> oraz kółka myszy <img>, a umieszczenie kursora myszy nad dowolnym elementem wykresu spowoduje wyświetlenie wartości tego elementu w wybranym punkcie.</p>
-    <p class="dropspot">W widoku Wykres są także wyświetlane pewne zdarzenia debugowania w postaci punktów na całej długości wykresu. Zdarzenia te są generowane automatycznie przez witrynę <span class="notranslate">GameMaker Studio 2</span> w określonych momentach gry, aby pokazać konkretne ważne zdarzenia.
+    <p class="dropspot">W widoku Graph wyświetlane są także pewne zdarzenia debugowania w postaci punktów na całej długości wykresu. Zdarzenia te są generowane automatycznie przez program <span data-keyref="GameMaker Name">GameMaker</span> w pewnych momentach gry, aby pokazać konkretne ważne zdarzenia, ale możesz też
       dodawać własne elementy wykresu za pomocą funkcji <a href="../GameMaker_Language/GML_Reference/Debugging/show_debug_message.htm"><span class="inline">show_debug_message()</span></a> oraz . <a href="../GameMaker_Language/GML_Reference/Debugging/debug_event.htm"><span class="inline">debug_event()</span></a>.
-      Zdarzenia systemowe będą oznaczane innym kolorem niż zdarzenia wywoływane przez kod:</p>
+      Zdarzenia systemowe będą oznaczone innym kolorem niż te, które są wywoływane przez kod:</p>
     <p class="dropspot"><img>Po uruchomieniu gry w trybie debugowania i kliknięciu myszą na te zdarzenia zostanie wyświetlona lista wszystkich zdarzeń, które zostały wywołane w danym momencie gry,
       Masz możliwość wyciągnięcia listy do osobnego okna, aby ją poprawić, klikając tekst &quot;<strong>Kliknij, aby otworzyć w nowym oknie</strong>&quot;:</p>
     <p class="dropspot"><img alt="Debug Icon" class="icon" src="../assets/Images/Icons/Icon_Debug.png"/></p>
@@ -36,21 +36,21 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Widok zasobów</a></p>
   <div class="droptext" data-targetname="drop-down1">
-    <p class="dropspot">Widok Zasobów pokazuje listę wszystkich zasobów używanych w projekcie, które mogą zawierać kod lub akcje DnD™. Ta sekcja działa podobnie jak <a href="../Introduction/The_Asset_Browser.htm">Przeglądarka</a> zasobów i możesz rozwijać znajdujące się w niej elementy, aby wyświetlić więcej informacji.
-      w niej, aby wyświetlić więcej informacji, na przykład różne zdarzenia dla konkretnej strony <span class="notranslate">object</span>. Możesz następnie dwukrotnie kliknąć <img> na dowolnym z zasobów, aby otworzyć
+    <p class="dropspot">Widok Zasoby pokazuje listę wszystkich zasobów używanych w projekcie, które mogą zawierać kod lub akcje wizualne <span class="notranslate">GML</span>. Ta sekcja działa podobnie jak <a href="../Introduction/The_Asset_Browser.htm">Przeglądarka</a> zasobów i można rozwinąć elementy
+      w celu wyświetlenia większej ilości informacji, na przykład różnych zdarzeń dla danego zasobu <span class="notranslate">object</span>. Następnie można dwukrotnie kliknąć <img> na dowolnym z zasobów, aby otworzyć
       aby otworzyć jego kod w oknie <strong>Widok</strong> kodu, gdzie można sprawdzić wartości oraz dodać lub usunąć <strong>punkty przerwania</strong>.</p>
     <p class="dropspot"> </p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Stos wywołań</a></p>
   <div class="droptext" data-targetname="drop-down2">
     <p class="dropspot">W tym oknie zostanie wyświetlony bieżący stos wywołań zdarzeń oraz numer wiersza wykonywanego kodu. Stos wywołań to w zasadzie struktura danych typu &quot;ostatnie weszło - pierwsze wyszło&quot;, która pokazuje kolejność wykonywania całego kodu gry
-      zarówno z runnera <span class="notranslate">GameMaker Studio 2</span> - ponieważ <span class="notranslate">debugging</span> jest wykonywany przy użyciu <a class="glossterm" data-glossterm="Maszyna wirtualna (VM)" href="#">maszyny wirtualnej (VM)</a> - jak i z kodu napisanego przez użytkownika. Strona <span class="notranslate">debugger</span> będzie musiała
+      zarówno z programu uruchamiającego <span data-keyref="GameMaker Name">GameMaker</span> - ponieważ <span class="notranslate">debugging</span> jest wykonywany przy użyciu <a class="glossterm" data-glossterm="Maszyna wirtualna (VM)" href="#">maszyny wirtualnej (VM)</a> - jak i z kodu napisanego przez użytkownika. Strona <span class="notranslate">debugger</span> będzie musiała
       zostać <em>wstrzymany </em>, zanim zostaną wyświetlone jakiekolwiek informacje.</p>
     <p class="dropspot"> </p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Pasek narzędzi</a></p>
   <div class="droptext" data-targetname="drop-down3">
-    <p class="dropspot">Na pasku narzędzi znajdują się elementy sterujące <span class="notranslate">debugger</span> oraz podstawowe informacje, takie jak użycie pamięci, bieżące (rzeczywiste) FPS dla gry oraz wskaźnik pokazujący, czy strona <span class="notranslate">debugger</span> jest aktualnie podłączona, czy nie (wskaźnik będzie miał kolor zielony, jeśli jest podłączona
+    <p class="dropspot">Na pasku narzędzi znajdują się elementy sterujące <span class="notranslate">debugger</span> oraz podstawowe informacje, takie jak użycie pamięci, bieżące (rzeczywiste) FPS dla gry oraz wskaźnik pokazujący, czy strona <span class="notranslate">debugger</span> jest aktualnie podłączona, czy nie (wskaźnik będzie zielony, jeśli jest podłączona
       z działającą instancją Twojego projektu, a w przeciwnym razie będzie czerwony). Dostępne elementy sterujące to:</p>
     <table class="icons" style="margin-left: 32auto">
       <tbody>
@@ -100,7 +100,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Widok kodu</a></p>
   <div class="droptext" data-targetname="drop-down4">
-    <p class="dropspot">Widok kodu to miejsce, w którym można zobaczyć i przejrzeć różne <span class="notranslate">scripts</span> lub kod zdarzeń z naszego projektu w trakcie jego działania. Domyślnie jest on pusty, ale możesz dwukrotnie kliknąć <img> na dowolną stronę <span class="notranslate">asset</span> z <strong>Widoku zasobów </strong>, aby ją otworzyć. Możesz także otworzyć wiele różnych zdarzeń lub <span class="notranslate">scripts</span>, a zostaną one dodane do widoku kodu <span class="notranslate">workspace</span> w postaci zakładek na górze.</p>
+    <p class="dropspot">Widok kodu to miejsce, w którym możemy zobaczyć i przejrzeć różne <span class="notranslate">scripts</span> lub kod zdarzeń z naszego projektu w trakcie jego działania. Domyślnie jest on pusty, ale możesz dwukrotnie kliknąć <img> na dowolną stronę <span class="notranslate">asset</span> z <strong>Widoku zasobów </strong>, aby ją otworzyć. Możesz także otworzyć wiele różnych zdarzeń lub <span class="notranslate">scripts</span>, a zostaną one dodane do widoku kodu <span class="notranslate">workspace</span> w postaci zakładek na górze.</p>
     <p class="dropspot">Gdy dowolne okno kodu jest otwarte w Widoku kodu, możesz kliknąć lewym przyciskiem myszy <img> w rynnie (tam, gdzie znajdują się numery wierszy), aby dodać lub usunąć <strong>punkty przerwania </strong>(zob.
       dalej na tej stronie, aby uzyskać informacje na temat <span class="notranslate">breakpoints</span>).</p>
     <p class="dropspot">Można również użyć prawego przycisku myszy <img>, aby otworzyć <strong>menu kontekstowe</strong>, które umożliwia również dodawanie i usuwanie <span class="notranslate">breakpoints</span> oraz kopiowanie dowolnego
@@ -122,9 +122,9 @@
   <p>Kolejną ważną częścią strony <span class="notranslate">debugging</span> jest użycie <strong>punktów przerwania (Breakpoints</strong>). <span class="notranslate">breakpoint</span> to miejsce w kodzie projektu, które chcesz, aby zostało zatrzymane, abyś mógł zobaczyć, co się dzieje. Po uruchomieniu <span class="notranslate">Debugger</span> możesz dodawać i usuwać punkty przerwania
     w dowolnym momencie i w dowolnym kodzie lub bloku <span class="notranslate">script</span>, klikając lewym przyciskiem myszy <img> w rynnie (tam, gdzie znajdują się numery wierszy), lub używając prawego przycisku myszy <strong><img></strong> aby
     otworzyć <strong>menu kontekstowe</strong>, które również umożliwia dodawanie i usuwanie punktów przerwania:</p>
-  <p><img>Punkty przerwania można także ustawiać z poziomu strony <span class="notranslate">GameMaker Studio 2</span> <span class="notranslate">IDE</span>. Podczas pisania projektu można je w każdej chwili dodać lub usunąć za pomocą
+  <p><img>Punkty przerwania można także ustawiać w programie <span data-keyref="GameMaker Name">GameMaker</span> <span class="notranslate">IDE</span>. Podczas pisania projektu można je w każdej chwili dodać lub usunąć za pomocą
     <span class="inline">f9</span> (lub używając prawego przycisku myszy <img> i wybierając opcję &quot;<strong>toggle</strong> breakpoint&quot;), albo na akcji w oknie <span class="notranslate">object</span> 
-      (dla użytkowników DnD™), albo na linii w oknie edytora kodu. Teraz, gdy uruchomisz grę w trybie debugowania, zostanie ona zatrzymana w zdefiniowanym przez Ciebie punkcie (lub punktach).</p>
+      (dla użytkowników <span class="notranslate">GML</span> Visual) lub na wierszu w oknie edytora kodu. Teraz, gdy uruchomisz grę w trybie debugowania, zostanie ona zatrzymana w zdefiniowanym przez Ciebie punkcie (lub punktach).</p>
   <p>Punkty przerwania ustawione na stronie <span class="notranslate">IDE</span> są zapisywane razem z projektem i pozostają w różnych uruchomieniach aż do ich ponownego usunięcia, jednak jeśli dodasz do kodu w <span class="notranslate">breakpoint</span> punkt <span class="notranslate">Debugger</span>, zostanie on utracony po zamknięciu modułu lub rozpoczęciu nowego uruchomienia testowego.
     Należy pamiętać, że wszystkie <span class="notranslate">breakpoints</span> pojawią się w <a href="../Introduction/The_Output_Window.htm">oknie wyjściowym</a>, gdzie można je włączyć lub wyłączyć, a nawet usunąć.</p>
   <p> </p>

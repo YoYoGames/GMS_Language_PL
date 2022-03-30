@@ -1,0 +1,65 @@
+
+  
+  draw_ellipse
+  Za pomocą tej funkcji można narysować kontur elipsy lub wypełnioną elipsę, definiując prostokątny obszar, do którego następnie zostanie dopasowana elipsa. Dokładność rysowania można określić za pomocą funkcji draw_set_circle_precision().
+  UWAGA: Jeśli chcesz narysować kształt za pomocą strony shader, musisz wiedzieć, że większość stron shaders oczekuje następujących danych wejściowych: vertex, texture, Kolor. Jednak w przypadku korzystania z tej funkcji przekazywane są tylko dane vertex i kolor, a zatem shader może niczego nie narysować (lub narysować coś, ale niepoprawnie). Jeśli konieczne jest rysowanie kształtów w ten sposób, należy dostosować stronę shader do tego celu.
+   
+  Składnia:
+  draw_ellipse(x1, y1, x2, y2, outline);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x1
+        Real
+        The x coordinate of the left of the ellipse.
+      
+      
+        y1
+        Real
+        The y coordinate of the top of the ellipse.
+      
+      
+        x2
+        Real
+        The x coordinate of the right of the ellipse.
+      
+      
+        y2
+        Real
+        The y coordinate of the bottom of the ellipse.
+      
+      
+        outline
+        Boolean
+        Whether the ellipse is drawn filled (false) or as a one pixel wide outline (true).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_set_colour(c_white);
+    draw_ellipse(100, 100, 300, 200, false);
+  Spowoduje to narysowanie wypełnionej elipsy w zdefiniowanym obszarze prostokątnym.
+   
+   
+   
+  
+    
+      
+        Powrót: Formularze podstawowe
+        Następny: draw_ellipse_colour
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,33 @@
+
+  
+  pokój_gotowy
+  Dzięki tej funkcji możesz sprawić, że Twoja gra będzie przechodzić do następnej sali, która znajduje się na liście Room Manager w momencie kompilacji gry. Jeśli ta strona room nie istnieje, zostanie wyrzucony błąd i gra zostanie zamknięta. Zwróć uwagę, że adres room nie zmieni się do końca zdarzenia, w którym wywołano tę funkcję, więc każdy kod po jej wywołaniu będzie nadal wykonywany w tym samym zdarzeniu.
+   
+   
+  Składnia:
+  room_goto_next();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if room_exists(room_next(room))
+    {
+        room_goto_next();
+    }
+  Powyższy kod sprawdzi, czy po bieżącej stronie room znajduje się kolejna strona, a jeśli tak, to przejdzie na tę stronę room.
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room_goto_previous
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

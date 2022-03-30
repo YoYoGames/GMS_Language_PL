@@ -1,0 +1,131 @@
+
+  
+  Debugger
+   Debugger to potężne narzędzie do sprawdzania gry, szczególnie przydatne do wyszukiwania błędów i usterek w kodzie, sprawdzania, czy scripts jest uruchamiany wtedy, kiedy powinien, czy zmienne i tablice zawierają wartości
+    wartości, których oczekujesz itd... Program Debugger można uruchomić, uruchamiając grę w GameMaker Studio 2 IDE za pomocą przycisku Debug  w górnej części strony IDE, lub przechodząc do menu Build i wybierając opcję "Debug".
+  UWAGA: W witrynie Windows Firewall (lub innym uruchomionym programie typu firewall) może pojawić się monit o utworzenie wyjątku bezpieczeństwa dla tego modułu. Musisz to zrobić, w przeciwnym razie moduł nie będzie działał poprawnie. Wynika to ze sposobu
+    działania Debugger i jest niezbędne dla platform mobilnych debugging.
+  Po uruchomieniu gry w trybie debugowania na stronie IDE zostaną wyświetlone różne narzędzia dostępne dla debuggera:
+  Na powyższym rysunku przedstawiono domyślny układ strony debugger, ale podobnie jak w przypadku innych aspektów strony IDE można go dostosować do własnych potrzeb, zamykając
+    okna, które nie są potrzebne, lub zmieniać rozmiary dokumentów i okien, które są potrzebne. W każdej chwili można zresetować układ strony debugger - lub ponownie otworzyć zamknięte okna - za pomocą menu kontekstowego Debugger w górnej części IDE:
+  Poniżej wyjaśniamy, do czego służą poszczególne części strony debugger:
+  Widok wykresu
+  
+    W widoku Wykres wyświetlane jest graficzne przedstawienie wykorzystania pamięci przez projekt oraz jego framerate w czasie:
+    Wykres przedstawia bieżące i średnie użycie pamięci oraz bieżące i średnie FPS w czasie. Wykres można powiększać i pomniejszać za pomocą przycisków  /  oraz kółka myszy , a umieszczenie kursora myszy nad dowolnym elementem wykresu spowoduje wyświetlenie wartości tego elementu w wybranym punkcie.
+    W widoku Wykres są także wyświetlane pewne zdarzenia debugowania w postaci punktów na całej długości wykresu. Zdarzenia te są generowane automatycznie przez witrynę GameMaker Studio 2 w określonych momentach gry, aby pokazać konkretne ważne zdarzenia.
+      dodawać własne elementy wykresu za pomocą funkcji show_debug_message() oraz . debug_event().
+      Zdarzenia systemowe będą oznaczane innym kolorem niż zdarzenia wywoływane przez kod:
+    Po uruchomieniu gry w trybie debugowania i kliknięciu myszą na te zdarzenia zostanie wyświetlona lista wszystkich zdarzeń, które zostały wywołane w danym momencie gry,
+      Masz możliwość wyciągnięcia listy do osobnego okna, aby ją poprawić, klikając tekst "Kliknij, aby otworzyć w nowym oknie":
+    
+     
+  
+  Widok zasobów
+  
+    Widok Zasobów pokazuje listę wszystkich zasobów używanych w projekcie, które mogą zawierać kod lub akcje DnD™. Ta sekcja działa podobnie jak Przeglądarka zasobów i możesz rozwijać znajdujące się w niej elementy, aby wyświetlić więcej informacji.
+      w niej, aby wyświetlić więcej informacji, na przykład różne zdarzenia dla konkretnej strony object. Możesz następnie dwukrotnie kliknąć  na dowolnym z zasobów, aby otworzyć
+      aby otworzyć jego kod w oknie Widok kodu, gdzie można sprawdzić wartości oraz dodać lub usunąć punkty przerwania.
+     
+  
+  Stos wywołań
+  
+    W tym oknie zostanie wyświetlony bieżący stos wywołań zdarzeń oraz numer wiersza wykonywanego kodu. Stos wywołań to w zasadzie struktura danych typu "ostatnie weszło - pierwsze wyszło", która pokazuje kolejność wykonywania całego kodu gry
+      zarówno z runnera GameMaker Studio 2 - ponieważ debugging jest wykonywany przy użyciu maszyny wirtualnej (VM) - jak i z kodu napisanego przez użytkownika. Strona debugger będzie musiała
+      zostać wstrzymany , zanim zostaną wyświetlone jakiekolwiek informacje.
+     
+  
+  Pasek narzędzi
+  
+    Na pasku narzędzi znajdują się elementy sterujące debugger oraz podstawowe informacje, takie jak użycie pamięci, bieżące (rzeczywiste) FPS dla gry oraz wskaźnik pokazujący, czy strona debugger jest aktualnie podłączona, czy nie (wskaźnik będzie miał kolor zielony, jeśli jest podłączona
+      z działającą instancją Twojego projektu, a w przeciwnym razie będzie czerwony). Dostępne elementy sterujące to:
+    
+      
+        
+          
+          Uruchamia grę ponownie po jej wstrzymaniu (skrót klawiaturowy "f5").
+        
+        
+          
+          Spowoduje to wstrzymanie (przerwanie) gry.
+        
+        
+          
+          Ponownie uruchamia grę.
+        
+        
+          
+          Zatrzymuje grę.
+        
+        
+          
+          Wejdź do bloku kodu lub na stronę script (skrót klawiaturowy "f11").
+        
+        
+          
+          Wejdź na blok kodu lub na stronę script (skrót klawiaturowy "f10").
+        
+        
+          
+          Wyjdź z bloku kodu lub script (skrót klawiaturowy  + "f11").
+        
+        
+          
+          Włączanie lub wyłączanie aktualizacji informacji o debugowaniu w czasie rzeczywistym (domyślnie opcja ta jest wyłączona).
+        
+      
+    
+    Pierwsze trzy przyciski służą do sterowania grą, umożliwiając jej rozpoczęcie, wstrzymanie, ponowne uruchom ienie lub zatrzymanie w dowolnym momencie. Gdy gra jest wstrzymana (przez kliknięcie przycisku Pauza
+      lub z punktu przerwania) można użyć trzech przycisków kroków do przechodzenia przez kod.
+    Kiedy mówimy o "przechodzeniu" przez kod, mamy na myśli to, że możesz powiedzieć swojej grze, aby uruchomiła bieżącą linię kodu, a następnie "przeszła" do następnej, co pozwala na przejście przez całą grę po jednej linii kodu na raz
+      jeśli chcesz. Normalnie używałbyś do tego celu przycisku Step In, ale masz też przycisk do przechodzenia nad kodem i do wychodzenia z kodu. Przechodzenie nad kodem jest przydatne, gdy
+     scripts Kliknięcie tego przycisku powoduje uruchomienie całej strony script lub bloku kodu jako pojedynczego kroku i zatrzymanie się w następnej linii, podczas gdy wyjście z kodu powoduje wyjście z adresu script (kod zostanie uruchomiony, ale wszystkie naraz) i zatrzymanie się w następnym kroku, gdy zakres zostanie zmieniony.
+      następnym kroku, gdy zmieni się zakres.
+    Ostatnia ikona aktualizacji w czasie rzeczywistym pozwala na aktualizowanie danych w oknie debugowania w czasie rzeczywistym, dzięki czemu można zobaczyć, jak zmieniają się zmienne lub jak tworzone i niszczone są instancje. Należy pamiętać, że może to wpłynąć na wydajność gry
+      a także, że nie wszystkie informacje są dostępne w czasie rzeczywistym. Na przykład obserwacja stanu renderowania (zobacz rozdział Obserwacje) nie może być wyświetlana w czasie rzeczywistym.
+     
+  
+  Widok kodu
+  
+    Widok kodu to miejsce, w którym można zobaczyć i przejrzeć różne scripts lub kod zdarzeń z naszego projektu w trakcie jego działania. Domyślnie jest on pusty, ale możesz dwukrotnie kliknąć  na dowolną stronę asset z Widoku zasobów , aby ją otworzyć. Możesz także otworzyć wiele różnych zdarzeń lub scripts, a zostaną one dodane do widoku kodu workspace w postaci zakładek na górze.
+    Gdy dowolne okno kodu jest otwarte w Widoku kodu, możesz kliknąć lewym przyciskiem myszy  w rynnie (tam, gdzie znajdują się numery wierszy), aby dodać lub usunąć punkty przerwania (zob.
+      dalej na tej stronie, aby uzyskać informacje na temat breakpoints).
+    Można również użyć prawego przycisku myszy , aby otworzyć menu kontekstowe, które umożliwia również dodawanie i usuwanie breakpoints oraz kopiowanie dowolnego
+      wybranego kodu do schowka.
+     
+  
+  Zegarki
+  
+    Ta sekcja jest poświęcona "obserwowaniu" różnych aspektów gry, aby umożliwić bardziej dogłębne i szczegółowe debugging. Więcej informacji na ten temat znajduje się na następnej stronie:
+    
+      Zegarki
+    
+  
+   Należy pamiętać, że w czasie gry domyślnie nie aktualizuje ona okien debugowania o wartości zmiennych i inne szczegóły, dlatego najpierw należy użyć przycisku Pauza  w witrynie Debugger, aby wstrzymać grę, zanim będą dostępne dane lokalne, globalne i inne, lub włączyć aktualizację w czasie rzeczywistym za pomocą ikon na górze witryny . .
+    Jedynym wyjątkiem od tej reguły jest widok Profil , który aktualizuje się w czasie rzeczywistym, jeśli jest włączony niezależnie od czasu rzeczywistego switch, ponieważ ma własny przycisk włączania/wyłączania. Pełne informacje na temat tego widoku można znaleźć na następującej stronie:
+  
+    Profiler
+  
+  Kolejną ważną częścią strony debugging jest użycie punktów przerwania (Breakpoints). breakpoint to miejsce w kodzie projektu, które chcesz, aby zostało zatrzymane, abyś mógł zobaczyć, co się dzieje. Po uruchomieniu Debugger możesz dodawać i usuwać punkty przerwania
+    w dowolnym momencie i w dowolnym kodzie lub bloku script, klikając lewym przyciskiem myszy  w rynnie (tam, gdzie znajdują się numery wierszy), lub używając prawego przycisku myszy  aby
+    otworzyć menu kontekstowe, które również umożliwia dodawanie i usuwanie punktów przerwania:
+  Punkty przerwania można także ustawiać z poziomu strony GameMaker Studio 2 IDE. Podczas pisania projektu można je w każdej chwili dodać lub usunąć za pomocą
+    f9 (lub używając prawego przycisku myszy  i wybierając opcję "toggle breakpoint"), albo na akcji w oknie object 
+      (dla użytkowników DnD™), albo na linii w oknie edytora kodu. Teraz, gdy uruchomisz grę w trybie debugowania, zostanie ona zatrzymana w zdefiniowanym przez Ciebie punkcie (lub punktach).
+  Punkty przerwania ustawione na stronie IDE są zapisywane razem z projektem i pozostają w różnych uruchomieniach aż do ich ponownego usunięcia, jednak jeśli dodasz do kodu w breakpoint punkt Debugger, zostanie on utracony po zamknięciu modułu lub rozpoczęciu nowego uruchomienia testowego.
+    Należy pamiętać, że wszystkie breakpoints pojawią się w oknie wyjściowym, gdzie można je włączyć lub wyłączyć, a nawet usunąć.
+   
+   
+   
+  
+    
+      
+        Powrót: Dodatkowe narzędzia IDE 
+        Następny: Serwer Micro Web
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  ds_grid_shuffle
+  Tej funkcji można użyć do randomizacji pozycji wszystkich wartości we wszystkich komórkach siatki.
+  UWAGA Ta funkcja powoduje tasowanie komórek siatki na tych samych pozycjach za każdym razem, gdy gra jest uruchamiana od nowa, ponieważ GameMaker Studio 2 generuje za każdym razem to samo początkowe losowe ziarno, dzięki czemu kod debugging staje się o wiele łatwiejszy do wykonania. Aby uniknąć
+    tego zachowania użyj polecenia randomise() na początku gry. Dotyczy to tylko testowania i debugging gry, ponieważ końcowy plik wykonywalny
+    nie będzie wykazywał tego zachowania i będzie losowy przy każdej rozgrywce.
+   
+  Składnia:
+  ds_grid_shuffle(index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the grid to shuffle.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  ds_grid_shuffle(grid)
+  Spowoduje to pobranie wszystkich wartości w siatce DS zindeksowanych w zmiennej "siatka" i przetasowanie ich w celu uzyskania innej kolejności.
+   
+   
+   
+  
+    
+      
+        Powrót: Siatki DS
+        Następny: ds_grid_sort
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

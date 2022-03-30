@@ -1,0 +1,50 @@
+
+  
+  window_set_size
+  Za pomocą tej funkcji można zmienić rozmiar okna gry. Na platformach stacjonarnych jest to zwykle obszar klienta okna, z wyłączeniem paska tytułu i obramowania:
+  Jeśli użyjesz tej funkcji do zmiany rozmiaru okna gry, zawartość okna zostanie przeskalowana tak, aby pasowała do płótna tła w stosunku 1:1, co sprawi, że obraz będzie ostry i wyraźny (choć przeskalowany, jeśli okno ma inny rozmiar niż room lub rozmiar widoku). Na przykład jeśli masz okno o wymiarach 200 x 150 pikseli, a gracz rozciąga je, przeciągając granice, ostateczny rozmiar okna może wynosić 400 x 300 pikseli, ale rysunek nadal będzie miał wymiary 200 x 150, co spowoduje, że obraz będzie rozmazany, ponieważ stosunek pikseli wynosi 1:2. Jeśli jednak użyjesz tej funkcji do zmiany rozmiaru okna, proporcje 1:1 zostaną zachowane, mimo że obraz zostanie przeskalowany, aby dopasować go do nowego rozmiaru okna.
+   
+  Składnia:
+  window_set_size( w, h );
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        w
+        The new width of the window.
+     
+      
+        h
+        The new height of the window.
+     
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if mouse_check_button_pressed(mb_left)
+    {
+        global.scale += 1;
+        window_set_size(200 * global.scale, 150 * global.scale);
+    }
+  Powyższy kod zmieni rozmiar okna na podstawie wartości zmiennej "global.scale", gdy zostanie naciśnięty przycisk myszy.
+   
+   
+   
+  
+    
+      
+        Powrót: Okno gry
+        Następny: window_set_rectangle
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

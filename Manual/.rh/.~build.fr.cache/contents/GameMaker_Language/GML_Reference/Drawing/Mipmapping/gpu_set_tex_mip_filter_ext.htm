@@ -1,0 +1,78 @@
+
+  
+  gpu_set_tex_mip_filter_ext
+  Za pomocą tej funkcji można ustawić tryb filtru mip dla danego próbnika shader. Podajesz wartość indeksu próbnika shader (zwróconą przez funkcję shader_get_sampler_index(), a następnie jedną z poniższych stałych wartości trybu.
+   
+  
+    
+      
+        Stała
+        Opis
+      
+      
+        tf_point
+        Oznacza to, że mieszanie między poziomami mipmapy jest wyłączone, co może powodować widoczne przejścia między stronami texture, ale zapewnia najlepszą wydajność.
+      
+      
+        tf_linear
+        Oznacza to, że włączone jest mieszanie między poziomami mipmapy (znane również jako filtrowanie trójliniowe), co wygładza przejścia między stronami texture, ale powoduje niewielki spadek wydajności.
+      
+      
+        tf_anisotropic
+        Oznacza to, że włączone jest filtrowanie anizotropowe, które znacznie poprawia jakość przejścia na stronie texture i może zmniejszyć rozmycie widoczne w przypadku innych trybów filtrowania, ale ma największy wpływ na wydajność.
+      
+    
+  
+   
+  Składnia:
+  gpu_set_tex_mip_filter_ext(sampler_index, filter);
+   
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        sampler_index
+        Uchwyt do próbnika cieni
+        The index of the shader sampler to get.
+      
+      
+        filter
+        Filtr Mipmappingu Stała
+        The mip filter mode to use (a constant, default: tf_point).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background");
+    var _spriteTex = sprite_get_texture(sprite_index, 0);
+    shader_set(shd_Glass);
+    if gpu_get_tex_mip_filter_ext(_sampleIndex) != tf_point
+    {
+        gpu_set_tex_mip_filter_ext(_sampleIndex, tf_point);
+    }
+    texture_set_stage(_sampleIndex, _spriteTex);
+    shader_reset();
+  Powyższy kod ustawia tryb filtru mip na tf_point (wyłączenie mapowania mip) dla podanego próbnika shader texture, jeśli nie został on jeszcze ustawiony.
+   
+   
+   
+  
+    
+      
+        Powrót: Mipmapping
+        Następny: gpu_set_tex_mip_bias
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

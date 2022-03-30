@@ -1,0 +1,46 @@
+
+  
+  bufor_zapisu
+  Za pomocą tej funkcji można zapisać zawartość strony buffer do pliku, który można ponownie wczytać do pamięci za pomocą funkcji buffer_load() funkcji.
+  UWAGA: W przypadku HTML5 zawartość strony buffer zostanie zapisana w postaci zakodowanej base64 na stronie strings przy użyciu tej funkcji.
+   
+  Składnia:
+  buffer_save(buffer, filename);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        buffer
+        The index of the buffer to save.
+     
+      
+        filename
+        The name of the file to save as.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  buffer_save(buff, "Player_Save.sav");
+  Zapisuje do pliku bieżącą zawartość strony buffer o identyfikatorze zapisanym w zmiennej "buff".
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_save_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

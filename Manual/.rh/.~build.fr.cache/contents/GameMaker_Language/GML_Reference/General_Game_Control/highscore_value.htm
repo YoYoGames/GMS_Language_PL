@@ -1,0 +1,46 @@
+
+  
+  highscore_value
+  Za pomocą tej funkcji można pobrać wartość punktową, która została zapisana na liście najlepszych wyników w podanej pozycji. Jeśli nie wprowadzono żadnego wyniku, funkcja zwraca 0.
+   
+  Składnia:
+  highscore_value(place);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        place
+        The place on the table (1-10).
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var i = 9;
+    repeat(10)
+    {
+        scr[i] = highscore_value(i + 1);
+        i -= 1;
+    }
+  Powyższy kod loop przejrzy listę najlepszych wyników i zapisze wszystkie wyniki w tablicy.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne sterowanie grą
+        Następny: highscore_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

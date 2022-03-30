@@ -1,0 +1,47 @@
+
+  
+  file_text_close
+  Po zakończeniu pracy z danym plikiem (czy to odczytu z niego, czy zapisu do niego) należy go ponownie zamknąć, w przeciwnym razie istnieje ryzyko utraty zawartych w nim informacji. Zapobiega to również wyciekom pamięci i zapewnia, że nigdy nie przekroczysz limitu plików, mając otwartych więcej niż 32 pliki.
+   
+  Składnia:
+  file_text_close(fileid);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fileid
+        The id of the file to close.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var file = file_text_open_write(working_directory + "Game_Data.txt");
+    while (!file_text_eof(file))
+    {
+        file_text_readln(file);
+    }
+    file_text_write_string(file, level_data);
+    file_text_close(file);
+  Powyższy kod otwiera plik do zapisu, a następnie loops przez wiersze tekstu już zapisane w pliku, aż dojdzie do końca. W tym momencie wpisuje adres string, a następnie ponownie zamyka plik.
+   
+   
+   
+  
+    
+      
+        Powrót: Pliki tekstowe
+        Następny: file_text_open_read
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

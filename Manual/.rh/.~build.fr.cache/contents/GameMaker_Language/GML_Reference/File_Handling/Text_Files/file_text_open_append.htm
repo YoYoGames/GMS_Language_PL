@@ -1,0 +1,43 @@
+
+  
+  file_text_open_append
+  Funkcja ta otwiera do zapisu plik tekstowy o podanej nazwie (jeśli plik nie istnieje, zostanie utworzony), zwracając unikalny identyfikator pliku, który należy zapisać w zmiennej, gdyż będzie on używany do wszystkich dalszych działań związanych z tym plikiem. Pozycja w pliku, do którego ma zostać zapisany plik, jest ustawiana na ostatnią linię tekstu zawartego w pliku. Należy pamiętać, że jeżeli plik nie może zostać utworzony (np. z powodu nielegalnej nazwy), funkcja zwróci -1.
+  UWAGA: W danym momencie można mieć otwarte maksymalnie 32 pliki. Należy również zawsze zamykać pliki po zakończeniu pracy, ponieważ powoduje to zapisanie informacji i zwolnienie pamięci związanej z plikiem.
+  OSTRZEŻENIE! Ta funkcja może nie działać zgodnie z oczekiwaniami użytkownika, ponieważ GameMaker Studio 2 jest sandboxed! Więcej informacji na ten temat można znaleźć w rozdziale System plików.
+   
+  Składnia:
+  file_text_open_append(fname);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fname
+        The name of the file to append to.
+     
+    
+  
+   
+  Zwroty:
+  File ID or -1
+   
+  Przykład:
+  file = file_text_open_append(working_directory + "save.txt");
+  Spowoduje to otwarcie pliku "save.txt" z tego samego katalogu co gra i zapisanie jego identyfikatora w zmiennej "file".
+   
+   
+   
+  
+    
+      
+        Powrót: Pliki tekstowe
+        Następny: file_text_open_from_string
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

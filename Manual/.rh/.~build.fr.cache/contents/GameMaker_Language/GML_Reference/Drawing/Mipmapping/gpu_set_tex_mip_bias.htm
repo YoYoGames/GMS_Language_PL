@@ -1,0 +1,44 @@
+
+  
+  gpu_set_tex_mip_bias
+  Za pomocą tej funkcji można ustawić wartość skośności mipmapy, gdzie wartość 0 oznacza brak skośności, 1 oznacza pierwszą mipmapę, 2 oznacza drugą mipmapę itd. Ta wartość kontroluje szybkość, z jaką mapa mip jest zamieniana, i generalnie powoduje, że renderowana strona textures staje się tym bardziej rozmyta, im wyższa jest ta wartość i im większa jest "odległość", z jakiej jest oglądana. Zauważ, że funkcja ta może przyjmować wartości ujemne, w którym to przypadku obraz na stronie textures będzie ostrzejszy na większej odległości, im niższa wartość.
+   
+  Składnia:
+  gpu_set_tex_mip_bias(bias);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        bias
+        The mipmap bias value to use (default: 0)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if gpu_get_tex_mip_bias() != 0
+    {
+        gpu_set_tex_mip_bias(0);
+    }
+  Powyższy kod sprawdzi bieżącą skośność mapy mipmap i jeśli nie jest ona równa 0, zostanie ustawiona na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Mipmapping
+        Następny: gpu_set_tex_mip_bias_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

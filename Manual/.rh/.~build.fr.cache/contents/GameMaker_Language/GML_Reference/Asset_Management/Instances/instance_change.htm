@@ -1,0 +1,54 @@
+
+  
+  instancja_zmiana
+  Możesz użyć tej funkcji, aby zmienić jedną instancję object w inną instancję innej object, a przy tym zdecydować, czy wykonać zdarzenia Zniszcz i Wyczyść dla początkowych instancji oraz zdarzenie Utwórz dla nowych instancji. W ten sposób możesz zmienić (na przykład) bombę w eksplozję - w tym przypadku argument "perf" byłby prawdopodobnie prawdziwy, ponieważ chciałbyś, aby bomba wykonała swoje zdarzenia Zniszcz i Oczyść, a eksplozja swoje zdarzenie Utwórz - lub możesz zmienić postać gracza w inną postać - w tym przypadku argument "perf" byłby prawdopodobnie fałszywy, ponieważ nie chcesz, aby instancje wykonały swoje zdarzenia Utwórz i Zniszcz/Oczyść.
+  Warto zauważyć, że zmiana instancji oznacza, że nie powinieneś wykonywać żadnych dalszych działań z tą instancją aż do następnego kroku, a w szczególności próbować uzyskać dostęp do zmiennych itp. Zasadniczo zmieniasz instancję, ale nie jest ona faktycznie dostępna do końca bieżącego kroku, więc bezpośredni dostęp do zmiennych w niej zawartych (na przykład wywołanie obj_Changed.x) nie zadziała.
+  OSTRZEŻENIE! Gdy zmieniasz instancję z włączoną fizyką, właściwości fizyczne nie zostaną przeniesione do nowej instancji, w którą się zmieniają. Dlatego powinieneś mieć kod, który "przeniesie" stan fizyki bieżącej instancji do nowej instancji, albo zdefiniować właściwości fizyczne nowej instancji w zdarzeniu Create Event lub w edytorze object. Z tego powodu zaleca się, by nie używać tej funkcji z instancjami z włączoną fizyką, lecz raczej korzystać z kombinacji instance_destroy() i instance_create_layer().
+   
+  Składnia:
+  instance_change(obj, perf);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        obj
+        Obiekt Aktywa
+        The new object the calling object will change into.
+      
+      
+        perf
+        Boolean
+        Whether to perform that new object's Create and Destroy events (true) or not (false).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if keyboard_check(vk_enter)
+    {
+        instance_change(obj_Player_Swimming, false);
+        exit;
+    }
+  Powyższy kod zmieni instancję wywołującą w instancję "obj_Player_Swimming" bez wykonywania zdarzenia destroy oryginalnej instancji ani zdarzenia create nowej instancji, gdy użytkownik naciśnie klawisz "Enter", kończąc blok kodu po zakończeniu.
+   
+   
+   
+  
+    
+      
+        Powrót: Instancje
+        Następny: instance_copy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

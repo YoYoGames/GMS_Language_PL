@@ -1,0 +1,70 @@
+
+  
+  bufor_zapisowy_async
+  Za pomocą tej funkcji można zapisać część zawartości strony buffer do pliku, gotowego do ponownego wczytania do pamięci przy użyciu funkcji buffer_load() (lub dowolnej innej funkcji służącej do ładowania buffers). Offset" określa pozycję początkową w buffer do zapisania (w bajtach), a "rozmiar" to rozmiar obszaru buffer, który ma zostać zapisany od tego offsetu (również w bajtach). Ta funkcja działa asynchronicznie, więc gra będzie działać podczas zapisywania, a wszystkie pliki zapisane za jej pomocą zostaną umieszczone w folderze "default". Folder ten nie musi być uwzględniany w nazwie pliku, ponieważ jest on dodawany automatycznie przez GameMaker. Na przykład plik o nazwie path "Data\Player_Save.sav" zostanie w rzeczywistości zapisany w folderze "default\Data\Player_Save.sav". Jeśli jednak następnie wczytasz plik za pomocą funkcji buffer_load_async()nie trzeba też podawać "domyślnej" części adresu path (ale każda inna funkcja pliku będzie jej wymagać, z wyjątkiem konsol Xbox One, PS4 i Nintendo Switch).
+  UWAGA: W HTML5 "default/" nie jest dodawane automatycznie i może być konieczne uwzględnienie tego w kodzie.
+  Funkcja zwróci unikalną wartość identyfikatora i wywoła zdarzenie asynchronicznego zapisu/ładowania, w którym można użyć zwróconego identyfikatora do sprawdzenia wartości identyfikatora async_load, jak pokazano w poniższym przykładzie rozszerzonym. Mapa async_load mapa w zdarzeniu będzie zawierać następujące dwie pary klucz/wartość:
+  
+    "id": identyfikator funkcji asynchronicznej zwrócony przez funkcję zapisu.
+    "status": zwraca true, jeśli dane zostały zapisane/wczytane poprawnie, a false w przeciwnym wypadku.
+  
+  Zauważ, że można zapisać wiele stron buffers w jednej, wywołując tę funkcję wielokrotnie pomiędzy wywołaniami funkcji buffer_async_group_begin() i buffer_async_group_end() (więcej informacji na ten temat można znaleźć w tych funkcjach).
+  UWAGA: W przypadku HTML5 zwrócone wyniki są zapisywane w postaci zakodowanej w base64 na stronie strings podczas zapisywania do pliku.
+   
+  Składnia:
+  buffer_save_async(buffer, filename, offset, size);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        buffer
+        The index of the buffer to save.
+     
+      
+        filename
+        The name of the file to save as.
+     
+      
+        offset
+        The offset within the buffer to save from (in bytes).
+     
+      
+        size
+        The size of the buffer area to save (in bytes).
+     
+    
+  
+   
+  Zwroty:
+  Async Request ID
+   
+  Przykład rozszerzony:
+  Funkcję buffer_save_async() można wywołać z dowolnego zdarzenia, a ponieważ jest to funkcja asynchroniczna, wywołanie zwrotne może być niemal natychmiastowe lub może trwać kilka sekund. Wywołanie funkcji jest proste i wygląda mniej więcej tak:
+  saveid = buffer_save_async(buff, "Player_Save.sav", 0, 16384);
+  Powyższy kod zapisuje zawartość strony buffer "buff" do podanego pliku zapisu, przechowując identyfikator wywołania funkcji w zmiennej "saveid". Po zakończeniu zapisu zostanie wywołane zdarzenie asynchroniczne Save/Load i będzie można odczytać mapę async_load w celu znalezienia właściwego identyfikatora funkcji, jak poniżej:
+  if ds_map_find_value(async_load, "id") == saveid
+    {
+        if ds_map_find_value(async_load, "status") == false
+        {
+            show_debug_message("Save failed!");
+        }
+    }
+  Powyższy kod najpierw sprawdzi identyfikator utworzonej mapy DS, a następnie sprawdzi stan wywołania zwrotnego, publikując komunikat debugowania, jeśli wystąpiły jakieś problemy.
+   
+   
+   
+  
+    
+      
+        Powrót: Bufory
+        Następny: buffer_load
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

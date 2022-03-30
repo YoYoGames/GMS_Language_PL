@@ -1,0 +1,55 @@
+
+  
+  array_length
+  Za pomocą tej funkcji można uzyskać długość (liczbę wpisów) wymiaru tablicy. W tym celu należy podać wartość indeksu tablicy, a funkcja zwróci liczbę całkowitą reprezentującą liczbę wpisów, które zawiera tablica. Funkcji tej można również używać w przypadku tablic wielowymiarowych, o ile przy podawaniu indeksu tablicy zostanie określone, którego wymiaru ma dotyczyć długość, zgodnie z poniższym wzorem:
+  // Returns the first dimension of the array
+    val = array_length(my_array);
+    
+    // Returns the second dimension of the array
+    val = array_length(my_array[0]);
+    
+    // Returns the third dimension of the array
+    val = array_length(my_array[0][0]);
+    
+    // etc...
+  
+   
+  Składnia:
+  array_length(array_index);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        array_index
+        The index of the array to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  for (var i = 0; i < array_length(a); ++i)
+    {
+        a[i] = -1;
+    }
+  Powyższy kod przejdzie przez tablicę loop i ustawi każdy wpis na -1.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: array_resize
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -15,22 +15,31 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Opera GX Opcje gry</h1>
-  <p>W tej sekcji opisano różne dostępne opcje, które pozwalają kontrolować sposób kompilacji projektów gier Opera GX. Poszczególne sekcje to:</p>
+  <p>Opcje gry Opera GX umożliwiają modyfikowanie właściwości gry GXC. Dostępne są następujące sekcje:</p>
   <h2>Ogólne</h2>
-  <p><img>W tej części znajdują się pola do wypełnienia następujących informacji o grze:</p>
+  <p><img>W tej sekcji dostępne są następujące opcje:</p>
   <ul class="colour">
-    <li><strong>Nazwa</strong> gry: Tutaj możesz podać nazwę swojej gry na GXC.</li>
-    <li><strong>Wersja</strong>: Bieżący numer wersji gry.</li>
+    <li><strong>GXC GUID</strong>: Jest to identyfikator (ID), który łączy Twój projekt <span class="notranslate">GameMaker</span> z grą na GXC. Gdy ten identyfikator jest pusty, gra jest przesyłana do GXC jako nowa gra. Jeśli zawiera prawidłowy identyfikator GUID, gra GXC powiązana z tym identyfikatorem jest aktualizowana przy każdym nowym przesyłaniu.</li>
+    <li><strong>Nazwa gry</strong>: Jest to nazwa (tytuł) Twojej gry na GXC. Możesz zmienić to pole tylko przed wysłaniem gry na GXC (gdy pole GUID jest puste). Po pierwszym załadowaniu gry możesz zmienić jej nazwę tylko na GXC.</li>
+    <li><strong>Wersja</strong>: Jest to wersja gry, która została ostatnio załadowana. Możesz zmienić to pole tylko przed wysłaniem gry do GXC.</li>
+    <li><strong>Następna wersja:</strong> Jest to numer wersji, która zostanie użyta do następnego załadowania gry na GXC. Możesz go zmienić dopiero po wysłaniu gry na GXC. Nie musisz zmieniać tej wartości ręcznie przy każdym wysyłaniu gry, ponieważ <span class="notranslate">GameMaker</span> automatycznie zwiększy ostatnią cyfrę numeru wersji.</li>
+    <li><strong>Zaloguj się i zsynchronizuj</strong>: Kliknij ten przycisk, aby pobrać informacje z gry GXC powiązanej z podanym identyfikatorem GUID. Jeśli identyfikator GUID jest nieprawidłowy, nie można przeprowadzić synchronizacji.</li>
+    <li><strong>Nazwa zespołu</strong>: Jest ona automatycznie pobierana z GXC podczas synchronizacji projektu. W tym miejscu nie można jej zmienić.</li>
+    <li><strong>Edytuj grę w Operze</strong>: To otwiera GXC DevCloud i przenosi Cię na stronę &quot;Szczegóły gry&quot;. Kliknięcie na tę stronę jest możliwe tylko wtedy, gdy projekt jest zsynchronizowany.</li>
+    <li><strong>Wewnętrzny URL udostępniania</strong>: Otwiera prywatną wersję Twojej gry, tylko jeśli została ona włączona w GXC DevCloud.</li>
+    <li><strong>Public Share URL</strong>: Otwiera publiczną wersję Twojej gry, tylko jeśli została ona włączona w GXC DevCloud.<br>
+      <br>
+      Oba te adresy URL mogą być udostępnione innym, aby umożliwić im grę w Twoją grę.
+    </li>
   </ul>
   <h2>Grafika</h2>
   <p><img>W tym miejscu możesz zmienić następujące szczegóły dotyczące sposobu wyświetlania Twojej gry:</p>
   <ul class="colour">
-    <li><strong>Wyświetl kurs</strong>or: Określa, czy kursor myszy ma być widoczny podczas uruchamiania gry. Przydatne w grach, które nie wymagają obsługi myszy lub używają <a href="../../GameMaker_Language/GML_Reference/General_Game_Control/cursor_sprite.htm">niestandardowego obrazka myszy</a>.</li>
+    <li><strong>Wyświetl kurs</strong>or: Określa, czy kursor myszy jest widoczny podczas uruchamiania gry. Przydatne w grach, które nie wymagają obsługi myszy lub używają <a href="../../GameMaker_Language/GML_Reference/General_Game_Control/cursor_sprite.htm">niestandardowego obrazka myszy</a>.</li>
     <li><strong>Interpoluj kolory między pikselami</strong>: Włącza <a class="glossterm" data-glossterm="interpolacja liniowa">interpolację liniową</a>, która zasadniczo &quot;wygładza&quot; piksele. W przypadku wyraźnej grafiki pikselowej powinno być wyłączone, ale jeśli chcesz uzyskać ładne mieszanki alfa i grafikę o wygładzonych krawędziach, lepiej pozostawić to włączone. Domyślnie opcja ta jest włączona.</li>
     <li><strong>Skalowanie</strong>: Grę można skonfigurować tak, aby automatycznie skalowała rysowany obszar, <strong>zachowując proporcje </strong>obrazu w przeglądarce, lub aby działała w <strong>pełnej skali</strong>. Opcja pełnego skalowania nie spowoduje wyświetlenia gry na pełnym ekranie w przeglądarce, ale raczej rozciągnie rysowane elementy, aby dopasować je do rozmiaru płótna, określonego przez pierwszą stronę <span class="notranslate">room</span> gry. Domyślnie jest ustawiona na zachowanie proporcji obrazu.</li>
   </ul>
   <p>Na koniec jest jeszcze opcja ustawienia rozmiaru <a class="glossterm" data-glossterm="strona tekstury" href="macOS.htm#">strony tekstury</a>. Domyślnym (i najbardziej kompatybilnym) rozmiarem jest 2048x2048, ale można wybrać dowolny rozmiar z zakresu od 256x256 do 8192x8192. Dostępny jest także przycisk oznaczony <strong><strong>Podgląd </strong></strong>który wygeneruje strony <span class="notranslate">texture</span> dla tej platformy, a następnie otworzy okno, w którym będzie można zobaczyć, jak wyglądają. Może to być bardzo przydatne, jeśli chcesz zobaczyć, jaką strukturę mają strony <span class="notranslate">texture</span> i uniknąć sytuacji, w której strony <span class="notranslate">texture</span> byłyby większe (lub mniejsze) niż to konieczne. Więcej informacji na temat stron <span class="notranslate">texture</span> można znaleźć <a href="../Texture_Information/Texture_Pages.htm">tutaj</a>.</p>
-  <p class="note"><span class="note"><strong>UWAGA</strong></span> Pamiętaj, że im większy jest rozmiar strony <span class="notranslate">texture</span>, tym mniejsza jest kompatybilność gry z różnymi przeglądarkami i urządzeniami.</p>
   <p> </p>
   <p> </p>
   <p> </p>

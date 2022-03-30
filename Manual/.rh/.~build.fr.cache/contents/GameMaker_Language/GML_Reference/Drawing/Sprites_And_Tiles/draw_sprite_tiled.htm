@@ -1,0 +1,55 @@
+
+  
+  draw_sprite_tiled
+  Ta funkcja pobiera adres sprite, a następnie wielokrotnie tile w całym widoku (lub room, jeśli nie zdefiniowano widoku), zaczynając od współrzędnych podanych w funkcji. Kafelkowanie jest oparte na szerokości i wysokości strony sprite, określonych przez
+   zmiennych sprite instancji uruchamiającej kod. Funkcja ta jest przeznaczona tylko dla rzutów 2D (ortograficznych) i nie będzie działać poprawnie, jeśli użyty zostanie rzut z kamery 3D
+    w przypadku użycia rzutu z kamery 3D.
+   
+  Składnia:
+  draw_sprite_tiled(sprite, subimg, x, y);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sprite
+        The index of the sprite to draw.
+     
+      
+        subimg
+        The subimg (frame) of the sprite to draw (image_index or -1 correlate to the current frame of animation in the object).
+     
+      
+        x
+        The x coordinate of where to draw the sprite.
+     
+      
+        y
+        The y coordinate of where to draw the sprite.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  draw_sprite_tiled(sprite_index, image_index, x, y);
+  Spowoduje to narysowanie przypisanego do instancji sprite (sprite_index) i jej bieżącej klatki animacji (image_index) w jej własnym położeniu x i y oraz w kafelkach poziomo i pionowo na całym widoku.
+   
+   
+   
+  
+    
+      
+        Powrót: Sprite'y i płytki
+        Następny: draw_sprite_tiled_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

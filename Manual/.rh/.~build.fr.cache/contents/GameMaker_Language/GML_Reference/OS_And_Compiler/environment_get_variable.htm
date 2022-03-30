@@ -1,0 +1,44 @@
+
+  
+  środowisko_get_zmienna
+  Ta funkcja zwraca wartość (a string) zmiennej środowiskowej o podanej nazwie (również a string). Dostępne zmienne środowiskowe można uzyskać na stronach macOS i Ubuntu (Linux), wpisując "env" w aplikacji terminalowej.
+    informacje o zmiennych środowiskowych Windows, jeśli korzystasz z wiersza poleceń, wpisz "echo %PATH%", a używając PowerShell - "ls env". Zwróć uwagę, że zarówno na stronie macOS, jak i Ubuntu (Linux) zmienna środowiskowa "HOME"
+    zmienna środowiskowa zwróci "~/" path, która mapuje do "/Users/<username>" na macOS i "/home/<username>" na Ubuntu (Linux).
+  UWAGA: Ta funkcja jest dostępna tylko dla stron Windows, macOS i Ubuntu (Linux).
+   
+  Składnia:
+  environment_get_variable(name);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        name
+        The name (a string) of the environment variable to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  e_str = environment_get_variable("APPDATA");
+  Powyższy kod zwróci pełną nazwę path dla zmiennej środowiskowej "%appdata%", która normalnie jest "C:\Users\{username}\AppData\Roaming".
+   
+   
+   
+  
+    
+      
+        Powrót: System operacyjny i kompilator
+        Następny: external_define
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

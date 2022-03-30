@@ -1,0 +1,59 @@
+
+  
+   Ustaw cząstki wtórne
+  Ta akcja umożliwia użycie drugiego typu cząstki wraz z cząstką główną. Podajesz wartość identyfikatora typu cząstki pierwotnej (powinna ona być taka sama jak wartość użyta podczas tworzenia cząstki za pomocą akcji " Utwórz typ cząstki"), a następnie możesz zdecydować, czy cząstka ma emitować cząstkę wtórną w każdej klatce gry, w której istnieje, i/lub pod koniec życia cząstki pierwotnej. Musisz podać inną wartość ID cząstki dla "Wtórnej", a następnie liczbę
+    która ma być utworzona w polu "Liczba".
+  Jeśli wybrano zdarzenie "Na krok", to w każdej klatce gry, w której cząstka pierwotna znajduje się na ekranie, będzie ona emitować określoną liczbę cząstek wtórnych - na przykład można mieć rakietę z cząstkami "płomienia", a każda cząstka płomienia
+    emituje wtórną cząstkę "dymu". Jeśli zdarzenie jest ustawione na "Przy śmierci", to cząstki wtórne będą emitowane tylko wtedy, gdy cząstka typu podstawowego osiągnie koniec swojego życia - na przykład można
+    mieć cząstkę "eksplozji", która pod koniec swojego życia emituje cząstkę "kurzu".
+  Należy pamiętać, że nie można używać tego samego identyfikatora typu cząstki dla cząstki głównej, co dla cząstek drugorzędnych, a także, że przy korzystaniu z tej akcji można bardzo szybko napotkać problemy z wydajnością, ponieważ łatwo jest w ten sposób tworzyć tysiące
+    cząstek w ten sposób - należy więc ograniczyć czas życia i liczbę cząstek tworzonych zarówno przez typ główny, jak i drugorzędny. Należy również pamiętać, że cząstkę wtórną można przypisać do dowolnego typu cząstki, dzięki czemu można tworzyć
+    "łańcuchy cząstek", w których jedna cząstka tworzy co krok inną, a następnie ta cząstka tworzy kolejną, gdy kończy się jej czas życia itd. Należy jednak uważać, by przy takim łączeniu cząstek nie
+    że nie ucierpi na tym wydajność. Można również wywołać tę akcję dwukrotnie dla jednego typu cząstki i sprawić, że będzie ona strumieniować się przy każdym kroku, a także pękać przy śmierci.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Type ID
+        Wartość identyfikatora typu cząstki, której ma zostać nadana cząstka drugorzędna
+      
+      
+        Event
+        Kiedy ma być tworzona cząstka wtórna - "Per Step" lub "On Death".
+      
+      
+        Secondary
+        Wartość identyfikatora typu cząstki, która ma być emitowana w wybranym zdarzeniu dodatkowym.
+      
+      
+        Count
+        Liczba cząstek wtórnych, które mają zostać utworzone w wybranym zdarzeniu wtórnym
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji przypisze dwie cząstki wtórne do
+    cząstce o identyfikatorze zapisanym w zmiennej "p_fire".
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje cząstek
+        Następny: Cząstki wybuchowe
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

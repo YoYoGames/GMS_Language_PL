@@ -1,0 +1,47 @@
+
+  
+  sekwencja_warstwowa_pauza
+  Za pomocą tej funkcji można wstrzymać odtwarzanie podanej strony sequence. Należy podać identyfikator elementu sequence zwrócony przez layer_sequence_create() lub przez jedną z funkcji elementów warstwy, a funkcja wstrzyma odtwarzanie sequence do czasu ponownego rozpoczęcia odtwarzania za pomocą funkcji layer_sequence_play().
+   
+  Składnia:
+  layer_sequence_pause(sequence_element_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        sequence_element_id
+        Identyfikator elementu sekwencji
+        The unique ID value of the sequence element to target
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var _seq = layer_sequence_create("Background", 0, 0, seq_AnimatedBackground);
+    if global.Pause
+    {
+        layer_sequence_pause(_seq);
+    }
+  Powyższy kod tworzy nową stronę sequence i zapisuje jej identyfikator w zmiennej lokalnej. Następnie sprawdza, czy gra jest wstrzymana, i jeśli tak, wstrzymuje odtwarzanie pliku sequence.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy sekwencyjne
+        Następny: layer_sequence_play
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

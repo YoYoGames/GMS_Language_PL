@@ -1,0 +1,46 @@
+
+  
+  warstwa_sekwencji_zyskaj_x
+  Za pomocą tej funkcji podajesz identyfikator elementu sequence - zwrócony przez layer_sequence_create() lub przez jedną z funkcji elementów warstwy - a funkcja zwróci bieżącą pozycję X w grze room dla elementu sequence.
+   
+  Składnia:
+  layer_sequence_get_x(sequence_element_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        sequence_element_id
+        Identyfikator elementu sekwencji
+        The unique ID value of the sequence element to target
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if layer_sequence_get_x(title_sequence) != room_width / 2
+    {
+        layer_sequence_x(title_sequence, room_width / 2);
+    }
+  Powyższy kod sprawdza pozycję X identyfikatora elementu sequence zapisanego w zmiennej "title_sequence" i jeśli nie jest ona ustawiona na połowę szerokości strony room, ustawia ją na tę wartość.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy sekwencji
+        Następny: layer_sequence_get_y
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

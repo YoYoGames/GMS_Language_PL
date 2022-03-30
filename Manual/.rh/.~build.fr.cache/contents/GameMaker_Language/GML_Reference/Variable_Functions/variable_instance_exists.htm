@@ -1,0 +1,56 @@
+
+  
+  zmienna_instancja_istnieje
+  Za pomocą tej funkcji można sprawdzić, czy zmienna zakresu instancji istnieje, czy nie. W tym celu należy podać unikalną wartość ID instancji (można ją znaleźć we właściwościach instancji w edytorze room lub jest ona zwracana po wywołaniu funkcji instance_create_layer()) oraz nazwę zmiennej do sprawdzenia w postaci łańc ucha znaków (patrz przykładowy kod poniżej). Funkcja zwróci true, jeśli dla instancji istnieje zmienna o podanej nazwie, a false w przeciwnym przypadku.
+   
+  Składnia:
+  variable_instance_exists(instance_id, name);
+  
+    
+      
+      
+      
+    
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        instance_id
+        Identyfikator instancji
+        The unique ID value of the instance to check
+      
+      
+        name
+        String
+        The name of the variable to check for
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if !variable_instance_exists(id, "shields"))
+    {
+        shields = 0;
+    }
+  Powyższy kod sprawdzi, czy zmienna o nazwie "shields" istnieje w instancji uruchamiającej kod, a jeśli nie, to zostanie utworzona i zainicjalizowana na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: variable_instance_get_names
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,41 @@
+
+  
+  tilemap_get_y
+  Za pomocą tej funkcji można pobrać pozycję y (w obrębie room) elementu mapy tile. Podajesz identyfikator elementu mapy tile (który otrzymujesz podczas tworzenia elementu mapy tile przy użyciu layer_tilemap_create()    lub po użyciu funkcji layer_tilemap_get_id()), a funkcja zwróci pozycję w osi y.
+   
+  Składnia:
+  tilemap_get_y(tilemap_element_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        tilemap_element_id
+        The unique ID value of the tile map element to get the y position of
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var lay_id = layer_get_id("Tiles_Walls"); var map_id = layer_tilemap_get_id(lay_id); var _x = tilemap_get_x(map_id); var _y = tilemap_get_y(map_id); tilemap_x(map_id, _x + 10); tilemap_y(map_id, _y + 10);
+   tile Powyższy kod wykorzystuje pobrany identyfikator mapy tile do uzyskania pozycji x i y mapy tile, a następnie wykorzystuje te wartości do jej przesunięcia.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy mapy kafelkowej
+        Następny: tilemap_get
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

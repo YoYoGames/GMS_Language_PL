@@ -1,0 +1,51 @@
+
+  
+  miejsce_wolne
+  Możesz użyć tej funkcji do sprawdzenia, czy wywołana instancja zderzy się z jakąkolwiek instancją oznaczoną w grze jako stała. Należy zauważyć, że aby to zadziałało, instancja uruchamiająca ten kod musi mieć ważną maskę kolizji (albo dla samej strony sprite, albo przez funkcję mask_index) i będzie ona rejestrować kolizje tylko z tymi instancjami oznaczonymi jako stałe, które również mają ważną maskę.
+  Sama funkcja działa zasadniczo w ten sposób, że pobiera instancję i sprawdza jej kolizje z tylko solidnie oznaczonymi instancjami, gdy są one umieszczone w pozycji określonej przez argumenty x/y. Sprawdzanie kolizji może być albo dokładne, albo oparte na polu ograniczającym instancji, w zależności od tego, jaki rodzaj maski kolizji został wybrany.
+  Należy pamiętać, że podane współrzędne x/y zostaną spolszczone do najbliższej liczby całkowitej przed wykonaniem sprawdzenia.
+   
+  Składnia:
+  place_free(x, y);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        x
+        The x position to check.
+     
+      
+        y
+        The y position to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if place_free(mouse_x, mouse_y)
+    {
+        x = mouse_x;
+        y = mouse_y;
+    }
+  Powyższy kod sprawdzi kolizję z dowolną instancją oznaczoną flagą stałą, jeśli instancja wywołująca zostanie umieszczona w tej samej pozycji co mysz. Jeśli kolizja nie zostanie wykryta, to współrzędne x/y instancji zostaną ustawione na współrzędne myszy.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolizje
+        Następny: place_meeting
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

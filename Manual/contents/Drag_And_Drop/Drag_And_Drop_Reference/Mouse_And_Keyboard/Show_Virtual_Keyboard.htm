@@ -9,7 +9,7 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains the Show Virtual Keyboard action" />
-  <meta name="rh-index-keywords" content="DnD™ Action - Show Virtual Keyboard" />
+  <meta name="rh-index-keywords" content="GML Visual Action - Show Virtual Keyboard" />
   <meta name="search-keywords" content="Show Virtual Keyboard" />
 </head>
 <body>
@@ -17,7 +17,7 @@
   <h1><img> Pokaż klawiaturę wirtualną</h1>
   <p>Tej akcji można użyć do wyświetlenia wirtualnej klawiatury na urządzeniu, na którym uruchomiona jest gra. Po wywołaniu tej akcji zostaniesz poproszony o podanie jednej z poniższych stałych dla każdego z trzech pierwszych argumentów:</p>
   <ul class="colour">
-    <li><b>Typ</b> klawiatury: Ta stała jest używana do określania zestawu klawiszy, który będzie dostępny na klawiaturze wirtualnej. Dostępne typy klawiatury to:
+    <li><b>Typ</b> klawiatury: Ta stała jest używana do określania zestawu klawiszy, który będzie dostępny na klawiaturze wirtualnej. Dostępne są następujące typy klawiatury:
       <table>
         <tbody>
           <tr>
@@ -92,7 +92,7 @@
           </tr>
           <tr>
             <td><span class="inline">kbv_returnkey_send</span></td>
-            <td>Ustawia nazwę klawisza powrotu na &quot;Wyślij&quot;.</td>
+            <td>Ustawia tytuł klawisza powrotu na &quot;Wyślij&quot;.</td>
           </tr>
           <tr>
             <td><span class="inline">kbv_returnkey_yahoo</span></td>
@@ -104,7 +104,7 @@
           </tr>
           <tr>
             <td><span class="inline">kbv_returnkey_continue</span></td>
-            <td>Ustawia tytuł klawisza powrotu na &quot;Kontynuuj&quot;.</td>
+            <td>Ustawia nazwę klawisza powrotu na &quot;Kontynuuj&quot;.</td>
           </tr>
           <tr>
             <td><span class="inline">kbv_returnkey_emergency</span></td>
@@ -141,8 +141,8 @@
     </li>
   </ul>
   <p>Ostatni argument to włączenie/wyłączenie predykcyjnego tekstu, który powinien być ustawiony na <span class="inline">true</span>, aby go dopuścić, oraz <span class="inline">false</span> w przeciwnym razie, ale należy pamiętać, że sam fakt, że jest on dopuszczony, nie oznacza, że będzie używany, ponieważ zależy to od preferencji
-    użytkownika urządzenia. W trybie przewidywania tekstu klawiatura wirtualna nie będzie generować normalnych zdarzeń naciśnięcia klawiszy <span class="notranslate">GameMaker Studio 2</span>. Zamiast tego będzie aktualizować tylko zmienne dotyczące <i>ostatniego</i> naciśniętego znaku i klawiatury <span class="notranslate">string</span>. Wynika to z
-    niemożnością wykrycia, czy zmiana w wewnętrznym polu tekstowym używanym do wykrywania naciśnięć klawiszy została spowodowana przez rzeczywisty klawisz klawiatury wirtualnej, czy przez sugestię tekstową. W takich przypadkach należy odczytywać dane wejściowe <span class="inline">keyboard_string</span>, a nie
+    użytkownika urządzenia. W trybie przewidywania tekstu wirtualna klawiatura nie będzie generować normalnych zdarzeń związanych z naciskaniem klawiszy w programie <span data-keyref="GameMaker Name">GameMaker</span>. Zamiast tego będzie aktualizować jedynie zmienne dotyczące <i>ostatniego</i> naciśniętego znaku oraz klawiatury <span class="notranslate">string</span>. Wynika to z
+    niemożnością wykrycia, czy zmiana w wewnętrznym polu tekstowym używanym do wykrywania naciśnięć klawiszy została spowodowana przez rzeczywisty klawisz klawiatury wirtualnej, czy też przez sugestię tekstową. W takich przypadkach należy odczytywać dane wejściowe <span class="inline">keyboard_string</span>, a nie
     a nie odczytywać surowe dane wejściowe.</p>
   <p>Należy również zauważyć, że użytkownik otrzyma różne klawiatury o różnych możliwościach w zależności od systemu operacyjnego platformy, z następującymi zastrzeżeniami dotyczącymi stosowania w poszczególnych celach:</p>
   <ul class="colour">

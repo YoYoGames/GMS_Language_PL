@@ -1,0 +1,44 @@
+
+  
+  game_load_buffer
+  Za pomocą tej funkcji można wczytać stan gry, który został wcześniej zapisany. Gra jest ładowana z utworzonego wcześniej bufora"grow" buffer (patrz Bufory), a na stronie buffer musi być zapisany stan gry za pomocą game_save_buffer() function.
+   
+  Składnia:
+  game_load_buffer(buffer);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        buffer
+        The buffer id to load from.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if keyboard_check_pressed(ord("L"))
+    {
+        if global.Checkpoint game_load_buffer(save_buff);
+    }
+  Powyższy kod wczyta zapisany wcześniej stan gry ze strony buffer indeksowanej w zmiennej "save_buff", tylko jeśli zmienna globalna ma wartość true, gdy gracz naciśnie klawisz "L".
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne sterowanie grą
+        Następny: game_save
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

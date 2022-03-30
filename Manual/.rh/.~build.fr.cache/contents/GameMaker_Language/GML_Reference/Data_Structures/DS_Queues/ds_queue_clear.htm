@@ -1,0 +1,46 @@
+
+  
+  ds_queue_clear
+  Za pomocą tej funkcji można wyczyścić wszystkie dane z podanej struktury danych queue. NIE niszczy to struktury danych (do tego celu należy użyć funkcji ds_queue_destroy()), a jedynie usuwa z niej wszystkie dane i zwraca pustą stronę queue.
+   
+  Składnia:
+  ds_queue_clear(id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        id
+        The id of the data structure to clear.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (count = 15) && (!ds_queue_empty(command_queue))
+    {
+        ds_queue_clear(command_queue);
+        alarm[0] = room_speed;
+        ai_count = 0;
+    }
+  Powyższy kod sprawdza zmienną, czy osiągnęła określoną wartość, a jeśli tak, to czyści kolejkę DS zaindeksowaną w zmiennej "command_queue", ustawia alarm i resetuje zmienną do 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolejki DS.
+        Następny: ds_queue_empty
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

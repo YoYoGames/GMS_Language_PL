@@ -1,0 +1,45 @@
+
+  
+  virtual_key_delete
+  Jeśli Twoja gra ma różne rooms lub instancje do sterowania menu, grą i innymi rzeczami, to prawdopodobnie w pewnym momencie będziesz musiał zmienić położenie i mapy klawiszy wirtualnych. W tym celu możesz użyć tej funkcji, aby usunąć stare klawisze przed utworzeniem nowych (jeśli to konieczne). Funkcja wymaga podania identyfikatora klucza wirtualnego, który ma zostać usunięty - zwróconego przez virtual_key_add().
+  Należy pamiętać, że wszystkie klucze wirtualne zostaną automatycznie usunięte ze strony room po zmianie adresu room, więc ta funkcja jest konieczna tylko wtedy, gdy chcesz ręcznie usunąć klucze przed zakończeniem działania strony room.
+   
+  Składnia
+  virtual_key_delete(index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Identyfikator klucza wirtualnego
+        The index of the virtual key to delete.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  virtual_key_delete(global.Left);
+  Powyższy kod usuwa klucz wirtualny zaindeksowany w zmiennej globalnej "global.Left".
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Klawisze i klawiatury wirtualne
+        Następny: keyboard_virtual_show
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

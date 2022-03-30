@@ -9,7 +9,7 @@
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
   <meta name="topic-comment" content="Page that explains the Create Particle Type action" />
-  <meta name="rh-index-keywords" content="DnD™ Action - Create Particle Type" />
+  <meta name="rh-index-keywords" content="GML Visual Action - Create Particle Type" />
   <meta name="search-keywords" content="Create Particle Type" />
 </head>
 <body>
@@ -20,11 +20,11 @@
     Typ cząsteczki będzie nadal istniał, ale nie będziesz miał do niego dostępu, więc należy zachować ostrożność podczas korzystania z tej funkcji (generalnie typy cząsteczek nigdy nie muszą być przechowywane w tymczasowej zmiennej lokalnej, ale w przypadku niektórych rzeczy, takich jak przyciąganie cząsteczek do powierzchni,
     może to być konieczne).</p>
   <p class="note"><b>UWAGA</b>: Raz utworzony typ cząstki pozostaje w pamięci systemu przez cały czas trwania gry, więc jeśli w którymś momencie trzeba będzie go ponownie utworzyć (na przykład po wywołaniu akcji <a href="../Game/Restart_Game.htm">Uruchom ponownie</a> grę),
-   <b>musisz zniszczyć bieżący typ cząstki</b>, w przeciwnym razie nastąpi wyciek pamięci. Dzieje się tak, gdy zasób jest dodawany do pamięci, a następnie &quot;usuwany&quot;, co oznacza, że <span class="notranslate">GameMaker Studio 2</span> nie ma już możliwości interakcji z tym zasobem.
-    więcej. Prowadzi to do zapchania pamięci przez niedostępne zasoby, co z kolei może powodować problemy w grze. Aby zniszczyć typ cząsteczki, gdy nie jest już potrzebny, użyj akcji <a href="Destroy_Particle_Type.htm">Zniszcz typ cząst</a>eczki.</p>
+   <b>musisz zniszczyć bieżący typ cząstki</b>, w przeciwnym razie nastąpi wyciek pamięci. Dzieje się tak, gdy zasób jest dodawany do pamięci, a następnie &quot;odwoływany&quot;, co oznacza, że <span data-keyref="GameMaker Name">GameMaker</span> nie ma już możliwości interakcji z tym zasobem.
+    więcej. Prowadzi to do zapchania pamięci przez niedostępne zasoby, co z kolei może powodować problemy w grze. Aby zniszczyć typ cząsteczki, gdy nie jest już potrzebny, użyj akcji <a href="Destroy_Particle_Type.htm">Zniszcz typ</a> cząsteczki.</p>
   <p>Można także ustawić tryb <b>mieszania</b>, który będzie używany dla cząstek. Domyślnie będą one rysowane w &quot;normalnym&quot; trybie mieszania, więc kolory nie będą modyfikowane przez to, co zostało narysowane pod cząstką, jednak gdy opcja &quot;Mieszanie&quot; jest włączona, cząstki będą rysowane z użyciem mieszania addytywnego.
     zostanie włączona, cząstki będą rysowane z użyciem mieszania <i>addytywnego</i>, co oznacza, że kolory będą się zmieniać w zależności od tego, co zostało narysowane pod cząstką. Mieszanie addytywne daje bardzo jasne i &quot;świecące&quot; efekty i jest
-    Idealnie nadaje się do wybuchów, laserów, ognia itp., natomiast mieszanie normalne jest lepsze do takich efektów, jak deszcz, dym i gruz. Na poniższym rysunku pokazano ten sam efekt przy wyłączonym (po lewej) i włączonym (po prawej) mieszaniu addytywnym:</p>
+    Idealnie nadaje się do eksplozji, laserów, ognia itp., podczas gdy normalne mieszanie jest lepsze do takich efektów, jak deszcz, dym i gruz. Na poniższym rysunku pokazano ten sam efekt przy wyłączonym (po lewej) i włączonym (po prawej) mieszaniu addytywnym:</p>
   <p><img alt="Create Particle Type Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Particles/i_Particles_Create_Particle_Type.png" /></p>
   <p> </p>
   <h4>Składnia działania:</h4>

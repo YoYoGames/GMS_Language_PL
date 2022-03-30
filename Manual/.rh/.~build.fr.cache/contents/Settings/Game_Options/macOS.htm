@@ -1,0 +1,54 @@
+
+  
+  Opcje gry w systemie macOS
+  W tej sekcji opisano różne dostępne opcje, które pozwalają kontrolować sposób kompilowania projektów gier macOS. Poszczególne sekcje to:
+  Ogólne
+  W sekcji Informacje o produkcie najpierw wpisz nazwę wyświetlaną gry, a następnie numer wersji, identyfikator aplikacji, plik wyjściowy aplikacji i informacje o prawach autorskich. Plik wyjściowy aplikacji to lokalizacja, do której trafiają pliki instalacyjne gry na komputerze Mac. Po utworzeniu pliku .app.zip plik ten może trafić gdziekolwiek (lokalizacja określona w dialogu zapisu nie jest jedyną kopią pliku .app.zip), ale plik .pkg i inne pliki pozostają w tym folderze, umożliwiając testowanie lokalnych instalacji za pomocą Terminala, tak aby symulować zakup w Mac Store itd.
+  W tym miejscu należy również podać identyfikator zespołu, który ma być używany do podpisywania końcowej aplikacji tworzonej przez GameMaker Studio 2. Ustawienie go w tym miejscu spowoduje zastąpienie identyfikatora zespołu podanego w Preferencjach systemu macOS. Po podaniu identyfikatora zespołu można również podać identyfikator podpisywania, który jest wymagany przez firmę Apple dla wszystkich aplikacji spoza sklepu Appstore (np. gier Steam ).
+  Kolejną opcją jest włączenie funkcji Steam w swojej grze. Jeśli włączysz tę opcję, upewnij się, że masz zainstalowany pakiet Steamworks SDK (zobacz tutaj) i że dodałeś identyfikator aplikacji Steam w opcjach ogólnych gry.
+  Na koniec masz możliwość wyłączenia piaskownicy systemu plików. Zaznaczenie tej opcji spowoduje wyłączenie piaskownicy GameMaker Studio 2 dla zapisywania i wczytywania plików, umożliwiając dostęp do plików z dowolnego miejsca w systemie, na którym uruchomiona jest gra. Opcja ta jest domyślnie odznaczona, ponieważ zalecamy zachowanie piaskownicy GameMaker Studio 2 dla plików na wszystkich systemach, a po jej zaznaczeniu niektóre obszary zapisu/wczytywania mogą być nadal niedostępne, w zależności od uprawnień na poziomie systemu operacyjnego. Więcej informacji na temat piaskownicy można znaleźć na stronach poświęconych systemowi plików GameMaker Studio 2.
+  Grafika
+  Opcje grafiki to opcje, które należy skonfigurować w celu określenia sposobu, w jaki gra będzie wykorzystywać kartę graficzną docelowego komputera Mac. Dostępne są następujące opcje, które można modyfikować:
+  
+    Zezwalaj na wyświetlanie menu i docka w trybie pełnoekranowym: Jeśli ta opcja jest zaznaczona, menu systemu operacyjnego i dok będą wyświetlane, jeśli gra działa w trybie pełnoekranowym. Domyślnie opcja ta jest wyłączona.
+    Wyświetlaj kursor: Po zaznaczeniu tej opcji będzie wyświetlany zwykły kursor macOS. Usunięcie zaznaczenia spowoduje, że kursor nie będzie wyświetlany, chyba że został utworzony w kodzie gry. Domyślnie opcja ta jest wyłączona.
+    Start Fullscreen: Jeśli ta opcja jest zaznaczona, gra będzie uruchamiana w trybie pełnoekranowym, w przeciwnym razie będzie uruchamiana w trybie okienkowym. Domyślnie opcja ta jest wyłączona.
+    Zezwalaj na przełączanie pełnoekranowe: Po zaznaczeniu tej opcji użytkownik może switch przechodzić z trybu pełnoekranowego do okienkowego i z powrotem, korzystając ze standardowych skrótów macOS. Domyślnie opcja ta jest wyłączona.
+    Interpoluj kolory między pikselami: Włącza interpolację liniową, która zasadniczo "wygładza" piksele. W przypadku wyraźnej grafiki pikselowej powinno być wyłączone, ale jeśli chcesz uzyskać ładne mieszanki alfa i grafikę o wygładzonych krawędziach, lepiej pozostawić to włączone. Domyślnie opcja ta jest wyłączona.
+    Użyj synchronizacji, aby uniknąć rozrywania: Ta opcja włącza lub wyłącza synchronizację w trybie v-sync. Należy pamiętać, że jeśli w grze room prędkość wynosi 120, a gracz ma monitor z częstotliwością odświeżania 60, włączenie tej opcji spowoduje zablokowanie prędkości gry również na 60. Opcja ta jest domyślnie wyłączona.
+    Zezwalaj na zmianę rozmiaru okna: Zaznaczenie tej opcji pozwala użytkownikowi na zmianę rozmiaru okna gry (aby to działało, opcja Okno bez obramowania musi być wyłączona). Opcja ta jest domyślnie wyłączona.
+    Włącz Retinę: Zaznaczenie tej opcji spowoduje, że po uruchomieniu gry na monitorze z obsługą siatkówki tylna strona buffer będzie miała wyższą (rzeczywistą) rozdzielczość, natomiast odznaczenie tej opcji spowoduje, że tylna strona buffer będzie miała rozdzielczość pozorną (niższą). Oznacza to, że początkowe okno gry będzie miało dwukrotnie większą szerokość i wysokość niż pomieszczenie/widok, w którym znajduje się pierwsza strona room. Jednak NIE powoduje to odpowiedniego przeskalowania powierzchni aplikacji, dlatego jeśli chcesz, aby Twoja gra w pełni wykorzystywała możliwości wyświetlacza siatkówki, powinieneś ustawić powierzchnię aplikacji na taką samą jak rozmiar okna (zauważ, że spowoduje to podwojenie liczby pikseli na szerokości i wysokości, więc włącz tę funkcję i przeskaluj powierzchnię aplikacji tylko wtedy, gdy Twoja gra skorzysta ze zwiększonej rozdzielczości).
+      
+      Ta opcja jest domyślnie wyłączona, a jej włączenie nie spowoduje żadnej różnicy podczas uruchamiania lub debugowania gry za pomocą maszyny wirtualnej, ponieważ w tym przypadku runner jest już wstępnie zbudowany. Będzie to działać tylko wtedy, gdy budujesz plik wykonywalny za pomocą VM lub używasz YYC do testowania lub budowania gry, ponieważ spowoduje to przebudowanie runnera z opcjami gry dostosowanymi do Twoich potrzeb.
+    
+    Skalowanie: W tym miejscu można wybrać opcję zachowania proporcji obrazu (więc obraz room o proporcjach 4:3 będzie "letter boxed" na ekranie 16:9) lub pełnego skalowania (rozciągnięcie obrazu tak, aby zmieścił się na całym ekranie).
+      
+      OSTRZEŻENIE! Wyłączenie powierzchni aplikacji spowoduje wyłączenie wszystkich opcji skalowania ustawionych w opcjach gry na stronie Windows do momentu ponownego włączenia. Więcej informacji można znaleźć w części Powierzchnia aplikacji.
+    
+  
+  Na koniec jest jeszcze opcja ustawienia rozmiaru strony tekstury. Domyślnym (i najbardziej kompatybilnym) rozmiarem jest 2048x2048, ale można wybrać dowolny rozmiar z zakresu od 256x256 do 8192x8192. Dostępny jest także przycisk oznaczony Podgląd który wygeneruje strony texture dla tej platformy, a następnie otworzy okno, w którym będzie można zobaczyć, jak wyglądają. Może to być bardzo przydatne, jeśli chcesz zobaczyć, jaką strukturę mają strony texture i uniknąć sytuacji, w której strony texture byłyby większe (lub mniejsze) niż to konieczne. Więcej informacji na temat stron texture można znaleźć tutaj.
+  UWAGA: Należy pamiętać, że im większy rozmiar strony texture, tym mniejsza kompatybilność gry z komputerami o niższej specyfikacji.
+  Zdjęcia
+  W sekcji obrazów znajdują się obrazy, których wymaga Twoja gra. W przypadku komputerów Mac należy dostarczyć plik ikony (w formacie .png i rozdzielczości 1024x1024px) oraz ekran powitalny (w formacie .png, .bmp, .jpg lub .gif ). Ekran powitalny będzie wyświetlany podczas ładowania gry.
+  W przypadku pakietów DMG można dostarczyć obraz tła instalatora, który będzie wyświetlany jako tło instalatora DMG.
+  Warto zauważyć, że na stronie GameMaker Studio 2 znajduje się narzędzie Generator obrazów projektu, które może być używane do automatycznego tworzenia wszystkich obrazów wymaganych dla różnych platform docelowych, na które kompilowana jest gra. Jeśli korzystasz z tego narzędzia, powinieneś zweryfikować utworzone obrazy, aby upewnić się, że spełniają one Twoje wymagania.
+  Opakowania
+  Jeśli chcesz, aby gotowa gra była gotowa do App Store, musisz zaznaczyć opcję Build for Mac App Store, ale pamiętaj, że będzie ona działać tylko wtedy, gdy jesteś zarejestrowanym deweloperem i masz niezbędne certyfikaty. Poniżej znajdują się Uprawnienia aplikacji, które powinieneś zaznaczać tylko wtedy, gdy są prawdziwe, ponieważ Apple może odrzucić Twoją aplikację, jeśli są zaznaczone, a nie są potrzebne, lub odwrotnie. Te opcje po prostu zezwalają Twojej grze na korzystanie z funkcji http_ i url_. Warto zauważyć, że jeśli chcesz obsługiwać GamePady w swojej grze, opcja tworzenia pakietu gotowego do App Store powinna być wyłączona.
+  Na koniec należy wybrać kategorię aplikacji (więcej informacji na ten temat można znaleźć tutaj).
+  Społeczny
+  Ta opcja jest przeznaczona do używania rozszerzenia Apple Sign In Extension na komputerach Mac. Rozszerzenie extension można pobrać z YoYo Games Marketplace, a sama strona extension zawiera pełne instrukcje dotyczące jego używania. Jeśli nie używasz tej strony extension, nie powinieneś zaznaczać tej opcji.
+   
+   
+   
+  
+    
+      
+        Wstecz: Opcje gry
+        Następny: Ubuntu
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

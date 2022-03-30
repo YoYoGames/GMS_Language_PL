@@ -1,0 +1,53 @@
+
+  
+  audio_get_master_gain
+  Za pomocą tej funkcji można uzyskać wartość bezwzględną globalnej głośności wszystkich dźwięków i muzyki dla określonego słuchacza. Domyślnym indeksem słuchacza jest 0, ale można użyć funkcji audio_get_listener_info() aby uzyskać różne indeksy dostępne dla platformy docelowej. Zwracana wartość wzmocnienia jest oparta na skali liniowej od 0 (cisza) do 1 (pełna głośność). Należy pamiętać, że na niektórych platformach wzmocnienie może być większe niż 1, chociaż wartość 1 jest uważana za "pełną głośność", a większa wartość może powodować przycinanie dźwięku.
+   
+  Składnia:
+  audio_get_master_gain(listenerIndex);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        listenerIndex
+         Identyfikator słuchaczarzeczywistego lub dźwiękowego
+        The index of the listener to get the gain of.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  var num = audio_get_listener_count();
+    for(var i = 0; i < num; ++i;)
+    {
+        var info = audio_get_listener_info(i);
+        var ind = info[? "index"];
+        if audio_get_master_gain(ind) != 1
+        {
+            audio_set_master_gain(info[? "index"], 1);
+        }
+        ds_map_destroy(info);
+    }
+  Powyższy kod loops przegląda dostępne listy słuchaczy, sprawdzając, czy ich wzmocnienie wynosi 1, a jeśli nie, ustawia je na 1 dla każdego z nich.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_channel_num
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

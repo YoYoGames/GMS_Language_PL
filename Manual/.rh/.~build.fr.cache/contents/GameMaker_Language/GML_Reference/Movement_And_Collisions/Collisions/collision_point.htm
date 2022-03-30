@@ -1,0 +1,68 @@
+
+  
+  punkt_kolizji
+  Collision_point sprawdza punkt określony argumentami x1,y1 pod kątem kolizji z dowolną instancją object określoną argumentem "obj". To sprawdzenie może być precyzyjne lub nie, ale aby precyzyjne kolizje były włączone, sprawdzana instancja lub object musi mieć również włączone precyzyjne kolizje dla swojej sprite. Jeśli nie, domyślne sprawdzenie jest oparte na polach ograniczających. Poniższy rysunek ilustruje, jak to działa:
+  Pamiętaj, że aby kolizje precyzyjne zostały uwzględnione, zarówno na stronie object sprite, jak i w funkcji kolizji musi być zaznaczona opcja precyzyjne. Należy również zauważyć, że wartością zwracaną przez funkcję może być identyfikator dowolnej instancji uznanej za kolizyjną, więc jeśli trzy instancje nakładają się na siebie w tym punkcie, wartością zwracaną przez funkcję może być dowolny identyfikator z tych instancji.
+  Zauważ, że zamiast indeksu object można podać instancję id aby sprawdzić konkretną instancję, lub słowa kluczowe instancji all, lub other (w zależności od zdarzenia i bieżącego zakresu kodu).
+   
+  Składnia:
+  collision_point(x, y, obj, prec, notme);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x
+        Real
+        The x coordinate of the point to check.
+      
+      
+        y
+        Real
+        The y coordinate of the point to check.
+      
+      
+        obj
+         Identyfikatorzasobu lub instancjiobiektu 
+        The object to check for instance collisions.
+      
+      
+        prec
+        Boolean
+        Whether the check is based on precise collisions (trueco jest wolniejsze) lub ogólnie jego ramki (false, szybciej).
+      
+      
+        notme
+        Boolean
+        Whether the calling instance, if relevant, should be excluded (true) lub nie (false).
+      
+    
+  
+   
+  Zwroty:
+  Instance ID or noone
+   
+  Przykład:
+  if collision_point(x, y, obj_Cursor, false, true)
+    {
+        score += 10S;
+    }
+  Tutaj sprawdzamy, czy punkt znajduje się na pozycji object, która ma kod dla object "obj_Cursor". Jeśli taki punkt istnieje, dodajemy 10 do zmiennej score.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolizje
+        Następny: collision_point_list
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

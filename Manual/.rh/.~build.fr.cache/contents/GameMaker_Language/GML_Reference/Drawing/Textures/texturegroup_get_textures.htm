@@ -1,0 +1,50 @@
+
+  
+  texturegroup_get_textures
+  Za pomocą tej funkcji można uzyskać identyfikatory stron tekstury poszczególnych stron tworzących grupę texture. Podajesz identyfikator grupy texture string (zdefiniowany w Edytorze grup Texture ), a funkcja zwróci tablicę 1D, gdzie każdy wpis w tablicy to pojedynczy identyfikator strony texture. Jeśli funkcja się nie powiedzie, tzn. zostanie podana nieprawidłowa grupa lub grupa nie ma przypisanego adresu texture, tablica będzie pusta (o długości 0).
+   
+  Składnia:
+  texturegroup_get_textures(tex_id);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tex_id
+        String
+        The name of the texture group to check (a string)
+      
+    
+  
+   
+  Zwroty:
+  Array
+   
+  Przykład:
+  var _tex_array = texturegroup_get_textures( "MainMenu");
+    for (var i = 0; i < array_length(_tex_array); ++i;)
+    {
+        if texture_is_ready(_tex_array[i])
+        {
+            texture_prefetch(_tex_array[i]);
+        }
+    }
+  Powyższy kod pobierze identyfikatory stron texture dla grupy texture "MainMenu", następnie sprawdzi, czy są one rozpakowane, a jeśli tak, to zostaną umieszczone w pamięci VRAM.
+   
+   
+   
+  
+    
+      
+        Powrót: Tekstury
+        Następny: texturegroup_get_sprites
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

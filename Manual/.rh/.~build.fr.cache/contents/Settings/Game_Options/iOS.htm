@@ -1,0 +1,89 @@
+
+  
+  Opcje gier w systemie iOS
+  W tej sekcji opisano różne dostępne opcje, które pozwalają kontrolować sposób kompilowania projektów gier iOS. Poszczególne sekcje to:
+   
+  Ogólne
+  Pierwsza część sekcji Ogólne zawiera Ustawienia budowania gry. Na początek należy ustawić orientacje , na których
+    na których gra może być uruchamiana, aby zapewnić jak najlepsze wrażenia użytkownikom. Dostępne opcje to:
+  
+    Portret
+    Portret odwrócony
+    Krajobraz
+    Krajobraz odwrócony
+  
+  Następnie można przejść do sekcji Obsługa urządzenia, w której dostępne są następujące opcje umożliwiające określenie typu urządzenia docelowego:
+  
+    iPhone lub iPod Touch: iPhone 6 i nowsze lub urządzenia iPod Touch
+    iPad: urządzenia iPad
+    Oba: zarówno iPhone/iPod, jak i iPad
+  
+  Następnie wypełnij pola Product Information (Informacje o produkcie ) dotyczące Twojej gry, w tym Display Name (Nazwa wyświetlana), Bundle ID (Identyfikator pakietu) i Version info ( Wersja ). Zwróć uwagę, że Bundle ID musi być w poprawnym
+    odwróconym formacie URL, aby końcowy build gry działał poprawnie, EG: com.[Company].[GameName]. W tym miejscu możesz także podać identyfikator zespołu, którego chcesz użyć do podpisania ostatecznej wersji aplikacji, którą
+    GameMaker Studio 2 tworzy dla Ciebie. Ustawienie go tutaj spowoduje zastąpienie identyfikatora zespołu, który został podany w Preferencjach iOS.
+  Następnie można zaznaczyć lub usunąć zaznaczenie opcji Odroczenie wyjścia wskaźnika domowego. Jeśli ta opcja jest zaznaczona, pasek domowy będzie zawsze wyświetlany przy niskiej alfie, a pierwsze przeciągnięcie spowoduje wybudzenie paska, a drugie przeniesie Cię do domu. Jeśli opcja
+    nie jest zaznaczona, pasek nie jest wyświetlany w grze, ale pierwsze przeciągnięcie po krawędzi spowoduje powrót do domu. Domyślnie opcja jest odznaczona.
+  Wreszcie, masz możliwość wygenerowania pliku Podfile i Podfile.lock. Te pliki są wymagane, jeśli dodajesz CocoaPods do rozszerzenia iOS za pomocą Edytora rozszerzeń. Pliki te zawierają określone makra wymagane przez GameMaker Studio 2, aby skonfigurować wszystkie wymienione CocaoPods podczas budowania gry. Kliknięcie przycisków spowoduje utworzenie plików z
+    makrami, a także otworzy eksplorator plików w miejscu, gdzie znajdują się pliki, jeśli chcesz je ręcznie edytować. Dostępny jest również przycisk, który przeniesie Cię do następującego przewodnika:
+  
+    iOS i tvOS: Używanie Cocoa Pods
+  
+   
+  Grafika
+  W tym miejscu można zmienić następujące szczegóły dotyczące sposobu wyświetlania gry:
+  
+    Interpoluj kolory między pikselami: Włącza interpolację liniową, która zasadniczo "wygładza" piksele. W przypadku wyraźnej grafiki pikselowej należy wyłączyć tę opcję.
+      wyłączona, ale jeśli chcesz uzyskać ładne mieszanki alfa i grafikę o wygładzonych krawędziach, lepiej pozostawić ją włączoną. Domyślnie opcja ta jest wyłączona.
+    Połowa tekstur iPada 1: iPad 1 ma o wiele mniej pamięci texture niż nowsze urządzenia, dlatego można włączyć tę opcję, aby zmniejszyć rozmiar strony textures o połowę, jeśli chcesz korzystać z tego urządzenia lub uzyskać maksymalną kompatybilność.
+    Skalowanie: W tym miejscu możesz wybrać, czy rysowany obraz ma być skalowany z zachowaniem proporcji ekranu urządzenia - dodając "wypełnienie" wokół krawędzi, aby dopasować go do ekranu - czy też może zostać rozciągnięty, aby dopasować go do ekranu urządzenia.
+      ekranu urządzenia.
+  
+  Istnieje również możliwość ustawienia rozmiaru strony tekstury. Domyślnym (i najbardziej kompatybilnym) rozmiarem jest 2048x2048, ale można wybrać dowolny rozmiar z zakresu od 256x256 do 8192x8192. Na stronie
+    znajduje się również przycisk Podgląd , który wygeneruje strony texture dla tej platformy, a następnie otworzy okno, w którym będzie można zobaczyć, jak wyglądają. Może to być bardzo przydatne, jeśli chcesz zobaczyć, jaką strukturę mają strony texture i
+    uniknąć sytuacji, w której strony texture byłyby większe (lub mniejsze), niż to konieczne. Więcej informacji na temat stron texture można znaleźć tutaj.
+  UWAGA: Pamiętaj, że im większy rozmiar strony texture, tym mniejsza kompatybilność gry z różnymi przeglądarkami i urządzeniami.
+   
+  Ikony
+  W tej sekcji można dodawać różne ikony wymagane przez różne urządzenia iPhone i iPad oraz różne części App Store.
+    iOS App Store. Ikony te powinny być zapisane jako obrazy 24bit *.png o rozmiarze określonym dla każdej z nich.
+  Warto zauważyć, że GameMaker Studio 2 posiada narzędzie Project Image Generator, za pomocą którego można automatycznie tworzyć wszystkie obrazy wymagane dla różnych platform docelowych, na które kompilowana jest gra.
+    na które kompilowana jest gra. Jeśli korzystasz z tego narzędzia, powinieneś zweryfikować utworzone obrazy, aby upewnić się, że spełniają one Twoje wymagania. Narzędzie wygeneruje zarówno ikony, jak i obrazy (patrz sekcja poniżej).
+  UWAGA Podczas importowania starszego projektu może zostać wyświetlone następujące ostrzeżenie:Pojawia się ono, ponieważ aktualna wersja docelowa iOS zmieniła format wymaganych ikon od czasu poprzedniego wczytania projektu.
+    zmieniła format wymaganych ikon od czasu poprzedniego wczytania projektu. Będziesz musiał ponownie utworzyć wszystkie ikony, ponieważ zostały one zastąpione ogólnymi ikonami GameMaker Studio 2 (możesz użyć wspomnianego wyżej narzędzia
+    Generator obrazów projektu, aby szybko to zrobić).
+   
+  Zdjęcia
+  W tej sekcji można dodać osobne grafiki jako Ekrany startowe (obraz, który będzie wyświetlany przez krótki czas podczas ładowania
+    dla każdej orientacji urządzenia, a także kolor ob ramowania, który będzie używany jako tło dla ekranów startowych, które nie są ustawione na wypełnianie całego ekranu. Te obrazy muszą być zapisane jako pojedyncze obrazy 24bit
+    *.png 24bit, bez przezroczystości i w odpowiednim rozmiarze. Należy pamiętać, że nie jest to uważane za splash screen, a firma Apple ma dość ścisłe wytyczne dotyczące sposobu konfigurowania i używania tego typu obrazów. Więcej informacji można znaleźć na stronie dla programistów poświęconej wytycznym dotyczącym interfejsu użytkownika.
+  Można także określić sposób wyświetlania ekranu startowego, korzystając z następujących opcji:
+  
+    Zachowaj proporcje: Ta opcja pozwala zachować proporcje obrazu w stosunku do ekranu urządzenia, dodając "wyściełanie" wokół krawędzi tam, gdzie jest to wymagane.
+    Kadruj, aby dopasować: Spowoduje to zachowanie obrazu w proporcji 1:1 z ekranem urządzenia i przycięcie (lub wyściełanie) krawędzi w razie potrzeby.
+    Rozciągnij: Spowoduje to rozciągnięcie obrazu tak, aby wypełnił ekran urządzenia (może to spowodować zniekształcenie wyświetlanego obrazu).
+  
+   
+  Społeczny
+  Ta sekcja służy do włączania różnych funkcji społecznościowych w grze iOS. Można wybrać następujące opcje:
+  
+    Facebook: Jeśli potrzebujesz funkcji Facebooka, musisz zaznaczyć to pole wyboru, a następnie podać identyfikator aplikacji Facebo oka i nazwę aplikacji Facebooka. Należy pamiętać, że dostęp do wszystkich funkcji Facebooka jest możliwy za pośrednictwem strony internetowej
+     extension i po pierwszym zaznaczeniu pola wyboru Użyj Facebooka pojawi się monit o pobranie i zainstalowanie aplikacji Facebook extension z Marketplace.
+    Włącz Powiadomienia Push: Aby Twoja gra mogła korzystać z powiadomień push, muszą one być najpierw włączone w tym miejscu, w przeciwnym razie nie będą działać.
+    Włącz opcję Zaloguj się z Apple: Ta opcja służy do korzystania z rozszerzenia Apple Sign In Extension na stronie iOS. Tę stronę extension można pobrać z YoYo Games Marketplace,
+      a sama strona extension zawiera pełną instrukcję obsługi. Jeśli nie używasz tej strony extension, nie powinieneś zaznaczać tej opcji.
+  
+   
+   
+   
+  
+    
+      
+        Wstecz: Opcje gry
+        Dalej: tvOS
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+   Sprawa
+  Ta czynność spowoduje utworzenie nowej sprawy w ramach Przełącznika. Użytkownik podaje wartość dla przypadku, która zostanie porównana z wartością wejściową dla strony Switch, a jeśli się zgadzają, zostaną wykonane akcje dodane w ramach tego przypadku.
+    Akcje dodawane do Przypadku, które mają być wykonywane tylko w tym Przypadku, powinny zostać usunięte z boku akcji, podobnie jak w przypadku dodawania akcji do instrukcji "jeśli":
+  Należy pamiętać, że wartość Case musi być stałą, która może być dowolnego typu (real, string, itd...),
+    pod warunkiem, że podczas kompilacji oblicza się ją jako pojedynczą wartość - nie można więc używać wyrażeń zależnych od zmiennych. Należy również pamiętać, że Case nie może być używany poza adresem Switch, a próba jego użycia spowoduje wystąpienie błędu.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        
+          Argument
+          Opis
+        
+        
+          Constant
+          Wartość stała, która ma być porównywana z wartością wejściową Switch 
+        
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji pobiera wartość zapisaną w zmiennej, a następnie porównuje ją z
+    różnymi możliwymi przypadkami. Jeśli któryś z przypadków jest taki sam jak wartość, zostanie wykonana akcja w ramach tego przypadku, w przeciwnym razie zostanie rozpatrzony następny przypadek. Po uruchomieniu strony switch ustawiany jest alarm o wartości 30.
+   
+   
+   
+  
+    
+      
+        Powrót: Przełączanie działań
+        Następny: Domyślna strona
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

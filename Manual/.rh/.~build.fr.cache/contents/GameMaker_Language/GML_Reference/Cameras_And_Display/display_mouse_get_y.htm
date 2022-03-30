@@ -1,0 +1,30 @@
+
+  
+  display_mouse_get_y
+  Ta funkcja zwraca pozycję myszy y na ekranie. Należy zauważyć, że ta funkcja działa poprawnie tylko wtedy, gdy jest używana na stronie docelowej Windows. Można jej również użyć w HTML5, ale zwróci ona wartość tylko względem punktu 0,0
+    płótna i nie zwróci żadnej wartości, gdy mysz znajduje się poza płótnem. W przypadku innych urządzeń zwróci wartość 0, dlatego należy użyć opcji device_mouse_raw_x()    oraz device_mouse_raw_y() zamiast nich.
+   
+  Składnia:
+  display_mouse_get_y();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  my_y = display_mouse_get_y();
+  Spowoduje to ustawienie my_y na współrzędną y myszy względem wyświetlacza.
+   
+   
+   
+  
+    
+      
+        Powrót: Aparaty i wyświetlacz
+        Następny: display_mouse_set
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

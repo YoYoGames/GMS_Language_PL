@@ -15,8 +15,8 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Operatory bitowe i binarne</h1>
-  <p>Na początku ery komputerów <strong>binarne</strong> i <strong>heksadecymalne</strong> (szesnastkowe) były sposobem na życie, prawdopodobnie dlatego, że języki wysokiego poziomu (takie jak BASIC) były po prostu zbyt wolne do uruchomienia. Na przykład wykonanie mnożenia 32 x 32 w języku BASIC mogło zająć wiele cykli procesora, ale w języku binarnym jest to pojedyncza operacja wykonywana w jednym cyklu procesora.</p>
-  <p>Obecnie jednak, przy mocy nawet podstawowego komputera PC, nie trzeba się już o to martwić i można robić rzeczy &quot;długą drogą&quot;, ponieważ szybkość maszyny i jej bardziej złożona konstrukcja procesora nadrobią wszelkie niedociągnięcia tego podejścia. Jest to oczywiście wspaniała wiadomość, ponieważ oznacza, że nie trzeba już optymalizować każdej linijki kodu, który się pisze, ale jeśli tak jest, to czy w ogóle powinno się dbać o binarność?</p>
+  <p>Na początku ery komputerów <strong>binarne</strong> i <strong>heksadecymalne</strong> (szesnastkowe) były sposobem na życie, prawdopodobnie dlatego, że języki wysokiego poziomu (takie jak BASIC) były po prostu zbyt wolne do uruchomienia. Na przykład pomnożenie liczby 32 x 32 w języku BASIC mogło zająć wiele cykli procesora, natomiast w języku binarnym jest to pojedyncza operacja wykonywana w jednym cyklu procesora.</p>
+  <p>W dzisiejszych czasach, przy mocy nawet podstawowego komputera PC, nie trzeba się już o to martwić i można robić rzeczy &quot;długą drogą&quot;, ponieważ szybkość maszyny i bardziej złożona konstrukcja procesora nadrobią wszelkie niedociągnięcia takiego podejścia. Jest to oczywiście wspaniała wiadomość, ponieważ oznacza, że nie trzeba już optymalizować każdej linijki kodu, który się pisze, ale jeśli tak jest, to czy w ogóle powinno się dbać o binarność?</p>
   <p>Odpowiedź brzmi zdecydowanie &quot;tak, powinieneś&quot;. Prawdą jest, że nadal można uzyskać pewne przyrosty prędkości - a czasami mogą one być znaczące - ale używanie binarnego i szesnastkowego kodu prowadzi do lepszego zrozumienia sposobu działania procesora, a także może prowadzić do pisania lepszego kodu, lepszego pakowania danych i uproszczenia niektórych zadań. Ta strona wyjaśni nieco, czym jest binarność oraz jak można jej używać podczas tworzenia gier.</p>
   <p>Przyjrzyjmy się więc najpierw najbardziej podstawowej teorii binarnej - jak powstają liczby. Spójrzmy na tę tabelę:</p>
   <p class="code">000 = 0<br />
@@ -32,7 +32,7 @@
     00100000 = 32<br />
     01000000 = 64<br />
     10000000 = 128</p>
-  <p>To dobrze, jeśli chcemy, aby liczby były potęgą 2, ale jak tworzyć bardziej złożone liczby? Cóż, pojedyncza liczba binarna może przechowywać tylko 0 lub 1, i to wszystko, więc aby uzyskać bardziej złożone liczby, musimy dodawać bity do siebie. Jeśli na przykład chcemy utworzyć liczbę 6, dodajemy do siebie 4 i 2 w następujący sposób.</p>
+  <p>To dobrze, jeśli chcemy, aby liczby były potęgą dwójki, ale jak tworzyć bardziej złożone liczby? Cóż, pojedyncza liczba binarna może przechowywać tylko 0 lub 1, i to wszystko, więc aby uzyskać bardziej złożone liczby, musimy dodawać bity do siebie. Jeśli na przykład chcemy utworzyć liczbę 6, dodajemy do siebie 4 i 2 w następujący sposób.</p>
   <p class="code">00000010 = 2<br />
     00000100 = 4<br />
     00000110 = 6</p>
@@ -43,7 +43,7 @@
   <p class="code">flags = flags | 1;</p>
   <p>Operator &quot;<span class="inline">|</span>&quot; jest operatorem bitowym <span class="inline">OR</span>, a to oznacza, że powyższa instrukcja <span class="inline">ORs</span> 1 do wartości przechowywanej w zmiennej <span class="inline">flags</span>. Jeśli pamiętasz z wcześniejszych lekcji, to użycie 1 spowoduje ustawienie pierwszego bitu. Gdybyśmy chcieli ustawić drugi bit, zrobilibyśmy to tak:</p>
   <p class="code">flags = flags | 2;</p>
-  <p>Na stronie <span class="inline">OR</span> znajduje się 2, ponieważ wzór bitowy <span class="inline">00000010</span> jest równy 2. Co dokładnie robi operator binarny <span class="inline">OR</span>? Łączy wszystkie bity w jedną wartość, jak poniżej:</p>
+  <p>Na stronie <span class="inline">OR</span> znajduje się 2, ponieważ wzór bitowy <span class="inline">00000010</span> jest równy 2. Co dokładnie robi operator binarny <span class="inline">OR</span>? Łączy wszystkie bity w jedną wartość, na przykład tak:</p>
   <p class="code">010110100 // Value 1<br />
     110011001 // value 2<br />
     110111101 // Value 1 OR Value 2</p>
@@ -64,11 +64,11 @@
     01 &amp; 00 = 00<br />
     00 &amp; 01 = 00<br />
     01 &amp; 01 = 01</p>
-  <p>Tak więc tylko wtedy, gdy w każdym miejscu znajduje się jakiś fragment, zostanie on zachowany. Oznacza to, że tak jak można ustawić wiele stron <span class="notranslate">flags</span> jednocześnie, można również wyczyścić wiele stron <span class="notranslate">flags</span> jednocześnie. Na przykład, weźmy powyższy przypadek, ale tym razem wyczyśćmy je. Chcemy wyczyścić bity 1 i 3 (co da nam wartość 5), ale pamiętając o powyższej tabeli prawdy, chcemy zachować wszystkie pozostałe bity i wyczyścić bity 1 i 3. W ten sposób powstanie binarna &quot;maska&quot; o wartości 11111111111111111111111111111010 (32 bity). Ta maska zachowuje wszystkie aktualnie ustawione bity, ale czyści dwa bity, które mają być wyczyszczone. Gdybyśmy więc mieli wartość 1000111011 i chcieli wyczyścić bity 1 i 3 za pomocą powyższej maski, otrzymalibyśmy następujący wynik...</p>
+  <p>Tak więc tylko wtedy, gdy w każdym miejscu znajduje się jakiś fragment, zostanie on zachowany. Oznacza to, że tak samo jak można ustawić wiele stron <span class="notranslate">flags</span> jednocześnie, można również wyczyścić wiele stron <span class="notranslate">flags</span> jednocześnie. Na przykład, weźmy powyższy przypadek, ale tym razem wyczyśćmy je. Chcemy wyczyścić bity 1 i 3 (co da nam wartość 5), ale pamiętając o powyższej tabeli prawdy, chcemy zachować wszystkie pozostałe bity i wyczyścić bity 1 i 3. W ten sposób powstanie binarna &quot;maska&quot; o wartości 11111111111111111111111111111010 (32 bity). Ta maska zachowuje wszystkie aktualnie ustawione bity, ale czyści dwa bity, które mają być wyczyszczone. Gdybyśmy więc mieli wartość 1000111011 i chcieli wyczyścić bity 1 i 3 za pomocą powyższej maski, otrzymalibyśmy następujący wynik...</p>
   <p class="code">00000000000000000000001000111011 // Value<br />
     11111111111111111111111111111010 // Mask<br />
     00000000000000000000001000111010 // Value AND Mask</p>
-  <p>Jest to świetne rozwiązanie, ale gdybyśmy musieli to robić za każdym razem, gdy chcemy wyczyścić stronę <span class="notranslate">flags</span>, stałoby się to męczące. Potrzebujemy więc sposobu na łatwe przerzucanie bitów (i najlepiej bez kosztów dla procesora). Na szczęście istnieje prosty sposób, aby to zrobić, wykorzystujący operator &quot; <span class="inline">~</span>&quot; <span class="inline">NOT</span>.</p>
+  <p>Jest to świetne rozwiązanie, ale gdybyśmy musieli to robić za każdym razem, gdy chcemy wyczyścić stronę <span class="notranslate">flags</span>, stałoby się to męczące. Potrzebujemy sposobu na łatwe przerzucanie bitów (i najlepiej bez kosztów dla procesora). Na szczęście istnieje prosty sposób, aby to zrobić, wykorzystujący operator &quot; <span class="inline">~</span>&quot; <span class="inline">NOT</span>.</p>
   <p>Operator <span class="inline">NOT</span> jest dokładnie tym, co mówi - <em>nie</em> tymi bitami. Oto tabela prawdy dla <span class="inline">NOT</span>.</p>
   <p class="code">~00 = 11<br />
     ~01 = 10<br />
@@ -82,7 +82,7 @@
     0 ^ 1 = 1<br />
     1 ^ 0 = 1<br />
     1 ^ 1 = 0</p>
-  <p>Jest to ciekawe, ale niezwykle użyteczne rozwiązanie. Na przykład, powiedzmy, że chcemy mieć licznik, który po prostu liczy od 0 do 1 i z powrotem do 0 (przełączając się między 0 a 1), możemy dodać jeden i wykonać <span class="inline">IF</span>, aby sprawdzić, czy doszedł do 2, a następnie zresetować go z powrotem do 1. Albo... możemy dodać 1, a następnie <span class="inline">AND</span> ją z 1 (ponieważ <span class="inline">01+01 = 10</span>, oraz <span class="inline">10 &amp; 01 = 0</span>) lub możemy zrobić tak:</p>
+  <p>Jest to bardzo ciekawe, ale niezwykle użyteczne rozwiązanie. Na przykład, powiedzmy, że chcemy mieć licznik, który po prostu liczy od 0 do 1 i z powrotem do 0 (przełączając się między 0 a 1), możemy dodać jeden i wykonać <span class="inline">IF</span>, aby sprawdzić, czy doszedł do 2, a następnie zresetować go z powrotem do 1. Albo... możemy dodać 1, a następnie <span class="inline">AND</span> ją z 1 (ponieważ <span class="inline">01+01 = 10</span>, oraz <span class="inline">10 &amp; 01 = 0</span>) lub możemy zrobić tak:</p>
   <p class="code">a = a ^ 1;</p>
   <p>Przy pierwszym uruchomieniu jest to <span class="inline">0 ^ 1 = 1</span>, a przy drugim <span class="inline">1 ^ 1 = 0</span>, co powoduje zmianę wartości z 0 na 1.</p>
   <p>Tak więc - <span class="inline">OR</span> (<span class="inline">|</span>), <span class="inline">AND</span>(<span class="inline">&amp;</span>), <span class="inline">NOT</span>(<span class="inline">~</span>) i <span class="inline">EOR</span>(<span class="inline">^</span>) pozwalają nam stosunkowo łatwo manipulować bitami, umożliwiając, na najprostszym poziomie, kontrolowanie wielu bitów naraz. Podczas tworzenia gier możemy oczywiście używać tych operacji do innych rzeczy, takich jak maskowanie <span class="notranslate">sprites</span>, wykonywanie operacji na liczbach całkowitych <span class="inline">MOD</span> (przy użyciu <span class="inline">AND</span>) lub wykonywanie ładnych liczników w pętli.</p>
@@ -108,9 +108,9 @@
     00000001 &lt;&lt; 6 = 001000000 = 64<br />
     00000001 &lt;&lt; 7 = 010000000 = 128<br />
     00000001 &lt;&lt; 8 = 100000000 = 256</p>
-  <p>Oprócz tego, że jest to bardzo użyteczne do szybkiego i prostego mnożenia, jest to również bardzo użyteczne do ustawiania konkretnych bitów, bez konieczności ustalania ich wartości. Załóżmy, że chcemy ustawić bit 27, jaka to liczba? (67108864 przy okazji!), więc możemy użyć powyższej składni, aby łatwo ustawić <span class="notranslate">flags</span> w ten sposób:</p>
+  <p>Oprócz tego, że jest to bardzo użyteczne do szybkiego i prostego mnożenia, jest to również bardzo użyteczne do ustawiania konkretnych bitów, bez konieczności ustalania ich wartości. Załóżmy, że chcemy ustawić bit 27, co to za liczba? (67108864 przy okazji!), więc możemy użyć powyższej składni, aby łatwo ustawić <span class="notranslate">flags</span> w ten sposób:</p>
   <p class="code">a = a | (1 &lt;&lt; 27)</p>
-  <p>Ok... więc właściwie byłby to bit 26, tak jak opisywaliśmy to do tej pory (ponieważ bity zaczynały się od jedynki), ale tak naprawdę... bity zaczynają się od bitu 0 i idą w górę, a nie od bitu 1. Tak więc, choć w liczbie INTEGER są 32 bity, to są to bity z zakresu od 0 do 31, a nie od 1 do 32. Jest to całkiem użyteczne, ponieważ możemy teraz ustawić stałe dla liczb bitowych.</p>
+  <p>Ok... więc właściwie byłby to bit 26, tak jak opisywaliśmy to do tej pory (ponieważ bity zaczynały się od jedynki), ale tak naprawdę... bity zaczynają się od bitu 0 i idą w górę, a nie od bitu 1. Tak więc, choć w liczbie INTEGER są 32 bity, to są to bity z zakresu od 0 do 31, a nie od 1 do 32. Jest to całkiem przydatne, ponieważ możemy teraz ustawić stałe dla liczb bitowych.</p>
   <p>Załóżmy więc, że bit 27 to aktywny <span class="notranslate">flag</span>, a bit 0 to eksplodujący <span class="notranslate">flag</span>. Jak możemy ustawić oba?</p>
   <p class="code">ACTIVE = 27;<br />
     BOOM = 0;<br />
@@ -124,7 +124,7 @@
   <p class="code">64 / 32 = 01000000 &gt;&gt; 5 = 00000010</p>
   <p>W tym przypadku przesuwamy pojedynczy bit w dół o 5 (tyle właśnie przesunięć potrzeba do uzyskania liczby 32 - patrz wyżej), co daje nam 2. Ale co się stanie, jeśli w tym miejscu są inne bity? Przyjrzyjmy się temu:</p>
   <p class="code">68 / 32 = 01000100 &gt;&gt; 5 = 00000010</p>
-  <p>No i proszę: .... Jest dokładnie tak samo. Bity, które przesuwamy w dół, są po prostu tracone. Jest to bardzo przydatne, ponieważ przy dzieleniu w dół, jeśli potrzebujemy reszty, istnieje jeszcze prostszy sposób na jej uzyskanie, o czym za chwilę. Ale najpierw posłużmy się praktycznym przykładem. Mam pozycję X i Y i chcę uzyskać komórkę siatki, w której te pozycje się znajdują, przy czym siatka ma rozmiar 32x32. Metoda ta umożliwia przechowywanie danych <span class="notranslate">objects</span>, kolizje, <span class="notranslate">flags</span> - wszelkiego rodzaju rzeczy - i bardzo szybki dostęp do nich. A więc zaczynamy:</p>
+  <p>No i proszę: .... Jest dokładnie tak samo. Bity, które przesuwamy w dół, są po prostu tracone. Jest to bardzo przydatne, ponieważ przy dzieleniu w dół, jeśli potrzebujemy reszty, istnieje jeszcze prostszy sposób na jej uzyskanie, o czym za chwilę. Ale najpierw posłużmy się praktycznym przykładem. Mam pozycję X i Y i chcę uzyskać komórkę siatki, w której się ona znajduje, przy czym siatka ma rozmiar 32x32. Metoda ta umożliwia przechowywanie danych <span class="notranslate">objects</span>, kolizje, <span class="notranslate">flags</span> - wszelkiego rodzaju rzeczy - i bardzo szybki dostęp do nich. A więc zaczynamy:</p>
   <p class="code">var X_index = x &gt;&gt; 5;<br />
     var Y_index = y &gt;&gt; 5;<br />
     cell_data = mygrid[# X_index,Y_index];</p>
@@ -135,10 +135,10 @@
   <p class="code">var r = x mod 32;<br />
     var X_Index = floor(x / 32);</p>
   <p>Dlaczego więc jest to o wiele gorsze? Otóż, aby podzielić przez 32, musimy wykonać dzielenie zmiennoprzecinkowe - co oczywiście zajmuje czas, ale aby wykonać <span class="inline">mod 32</span>, trzeba wykonać jeszcze jedno dzielenie! Gdybyśmy robili to w asemblerze, otrzymalibyśmy obie wartości w jednym dzieleniu, ale w językach wysokiego poziomu nie jest to możliwe (cóż... niezbyt często), więc trzeba wykonać całą pracę dwukrotnie. Jest to bardzo uciążliwe, zwłaszcza jeśli na stronie <span class="notranslate">loop</span> wykonuje się wiele takich obliczeń. Dzielenie liczb całkowitych z wykorzystaniem przesunięcia bitowego, jak pokazano powyżej, naprawdę pomaga w optymalizacji gry.</p>
-  <p>Ponieważ pojęcie to może być dość skomplikowane do zrozumienia, a następnie zastosowania w rzeczywistych sytuacjach programistycznych, poniżej znajduje się seria krótkich przykładów, które można zastosować w dowolnej grze stworzonej przy użyciu <span class="notranslate">GameMaker Studio 2</span>.</p>
+  <p>Ponieważ pojęcie to może być dość skomplikowane do zrozumienia, a następnie zastosowania w rzeczywistych sytuacjach programistycznych, poniżej znajdziesz serię krótkich przykładów, które można zastosować w dowolnej grze stworzonej za pomocą <span data-keyref="GameMaker Name">GameMakera</span>.</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Wyrównanie płytek</a></p>
   <div class="droptext" data-targetname="drop-down">
-    <p class="dropspot">Programiści GameMaker Studio 2 często używają funkcji <span class="inline">place_free()</span>, a następnie po wykryciu kolizji próbują powoli odsunąć stronę <span class="notranslate">object</span>, zapętlając się wokół pozycji <span class="inline">x</span> lub <span class="inline">y</span> i kontynuując wykonywanie tej funkcji, albo używając funkcji <span class="inline">move_outside_all()</span>.</p>
+    <p class="dropspot">Programiści<span data-keyref="GameMaker Name">GameMakera</span> często używają funkcji <span class="inline">place_free()</span>, a następnie po wykryciu kolizji próbują powoli przesunąć stronę <span class="notranslate">object</span> na zewnątrz, wykonując pętlę wokół pozycji <span class="inline">x</span> lub <span class="inline">y</span>, kontynuując wykonywanie tej funkcji, albo używając funkcji <span class="inline">move_outside_all()</span>.</p>
     <p class="dropspot">Jaki jest więc szybszy sposób na wykonanie tej operacji? Cóż, jeśli użyjemy odpowiedniej potęgi 2 <span class="notranslate">tiles</span>, to mamy bardzo prostą metodę, która jest jednocześnie błyskawiczna. Jeśli poruszamy się w prawo i weszliśmy w blok kolizji, to jak wiemy, wszystko jest wyrównane do 32, więc musimy również wyrównać adres <span class="notranslate">sprite</span> do granicy 32 pikseli - najlepiej tej po lewej stronie - tak aby adres <span class="notranslate">sprite</span> został przesunięty poza obszar kolizji. Jest to naprawdę proste, ponieważ znając zasady, których użyliśmy powyżej do uzyskania reszty, oraz wiedząc, jak uzyskać odwrotność bitów, możemy po prostu wykonać tę czynność:</p>
     <p class="code">x = x &amp; ~31;</p>
     <p class="dropspot">Zgadza się, to WSZYSTKO, co jest potrzebne do wyrównania do granicy 32 pikseli. Zmieniając liczbę 31, możemy wyrównać do czegokolwiek chcemy - pod warunkiem, że jest to potęga 2. (Jest to odpowiednik dzielenia przez 32, a następnie mnożenia przez 32, co powoduje usunięcie niższych bitów).</p>

@@ -1,0 +1,80 @@
+
+  
+  punkt_w_trójkącie
+  Używając tej funkcji, określasz obszar trójkąta, a funkcja GameMaker Studio 2 sprawdzi, czy podany punkt mieści się w jego granicach, czy nie. Jeśli punkt mieści się w zdefiniowanym trójkącie, funkcja zwraca true, w przeciwnym razie funkcja zwraca false.
+   
+  Składnia:
+  point_in_triangle(px, py, x1, y1, x2, y2, x3, y3);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        px
+        The x coordinate of the point to check.
+     
+      
+        py
+        The y coordinate of the point to check.
+     
+      
+        x1
+        The x coordinate of the first corner of the triangle to check.
+     
+      
+        y1
+        The y coordinate of the first corner of the triangle to check.
+     
+      
+        x2
+        The x coordinate of the second corner of the triangle to check.
+     
+      
+        y2
+        The y coordinate of the second corner of the triangle to check.
+     
+      
+        x3
+        The x coordinate of the third corner of the triangle to check.
+     
+      
+        y3
+        The y coordinate of the third corner of the triangle to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var inst = instance_nearest(x, y, obj_Player);
+    if instance_exists(inst)
+    {
+        var x1 = x + lengthdir_x(100, image_angle - 45);
+        var y1 = y + lengthdir_y(100, image_angle - 45);
+        var x2 = x + lengthdir_x(100, image_angle + 45);
+        var y2 = y + lengthdir_y(100, image_angle + 45);
+        if point_in_triangle(inst.x, inst.y, x, y, x1, y1, x2, y2)
+        {
+            can_see = true;
+        }
+    }
+  Powyższy kod używa funkcji point_in_triangle jako "stożka widzenia" do sprawdzenia instancji "obj_player", ustawiając zmienną na true, jeśli pozycja objects x/y mieści się w zdefiniowanym trójkącie.
+   
+   
+   
+  
+    
+      
+        Powrót: Kolizje
+        Następny: point_in_circle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

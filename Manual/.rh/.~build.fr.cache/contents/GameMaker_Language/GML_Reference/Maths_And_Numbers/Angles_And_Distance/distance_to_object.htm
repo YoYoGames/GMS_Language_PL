@@ -1,0 +1,46 @@
+
+  
+  odległość_do_obiektu
+  Ta funkcja oblicza odległość od krawędzi ramki ograniczającej instancji wywołującej do najbliższej krawędzi najbliższej instancji o podanym adresie object. Adres object może być indeksem object lub identyfikatorem konkretnej instancji, jak również słowo kluczowe a odległość jest zwracana w pikselach. Zwróć uwagę, że jeśli na stronie objects nie ma sprite lub nie zdefiniowano maski, wyniki będą nieprawidłowe.
+   
+  Składnia:
+  distance_to_object(obj);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        obj
+         Identyfikatorzasobu lub instancjiobiektu 
+        The object to check for.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if (distance_to_object(obj_Player) < range)
+    {
+        canshoot = true;
+    }
+  Powyższy kod sprawdza odległość do gracza object i jeśli jest ona mniejsza niż wartość zapisana w zmiennej "range", zmienna "canshoot" jest ustawiana na true.
+   
+   
+   
+  
+    
+      
+        Powrót: Kąty i odległości
+        Następny: distance_to_point
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

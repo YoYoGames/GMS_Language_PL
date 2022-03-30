@@ -1,0 +1,30 @@
+
+  
+  ds_queue_create
+  Funkcja ta utworzy nową strukturę danych queue i zwróci wartość indeksu. Wartość ta powinna być przechowywana w zmiennej i używana we wszystkich dalszych wywołaniach funkcji związanych z queue.
+  WAŻNE! Gdy tworzysz strukturę danych, wartość indeksu identyfikująca ją jest liczbą całkowitą zaczynającą się od 0. Oznacza to, że struktury danych różnych typów mogą mieć tę samą wartość indeksu, więc jeśli masz wątpliwości, powinieneś użyć funkcji ds_exists() przed uzyskaniem do nich dostępu. Należy również pamiętać, że indeksy są używane ponownie, więc wartość indeksu zniszczonej struktury danych może zostać użyta przez nowo utworzoną strukturę.
+   
+  Składnia:
+  ds_queue_create();
+   
+  Zwroty:
+  DS Queue ID
+   
+  Przykład:
+  queue = ds_queue_create();
+  Spowoduje to utworzenie nowej strony queue i przypisanie jej indeksu id do zmiennej instancji "queue".
+   
+   
+   
+  
+    
+      
+        Powrót: Kolejki DS.
+        Następny: ds_queue_destroy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

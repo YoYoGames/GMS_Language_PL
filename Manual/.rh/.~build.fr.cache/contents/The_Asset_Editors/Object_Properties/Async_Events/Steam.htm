@@ -1,0 +1,109 @@
+
+  
+  Para wodna
+  To zdarzenie może być wywołanetylko przez wywołania zwrotnez niektórych funkcji rozszerzenia Steam i zwróci mapę DS Map przechowywaną w zmiennej async_loadzawierającą różne pary klucz/wartość, w zależności od wywołania zwrotnego funkcji, która wywołała zdarzenie. Mapa zawsze będzie zawierała klucz "event_type", który można odczytać w celu określenia typu funkcji, która wywołała zdarzenie, i odpowiednio zmienić wymagany kod.
+  Podczas wywoływania dowolnej funkcji, która wywołuje to zdarzenie, wygeneruje ona unikalną wartość ID async, którą należy zapisać w zmiennej i sprawdzić, ponieważ mapa async_load zawsze będzie zawierać klucz ID, który można następnie przetworzyć i upewnić się, że reagujemy na właściwe zdarzenie. W rzeczywistości mapa zawsze będzie zawierać następujące klucze, niezależnie od funkcji Steam użytej do wygenerowania odpowiedzi async:
+  
+    "id" - Identyfikator async zwrócony przez funkcję, która wywołała zdarzenie
+    "result" - Wynik operacji (wartość rzeczywista). Będzie to albo stała GML ugc_result_success , albo jakaś inna liczba rzeczywista. Powinieneś sprawdzić, czy ta stała jest prawidłowa, aby upewnić się, że wywołanie zakończyło się sukcesem, a jeśli zwrócona zostanie inna wartość, to coś nie zadziałało prawidłowo. Pozostałe możliwe wartości zwracane są wyświetlane jako wynik wartości Steam "EResult", a w nagłówkach SDK powinieneś zobaczyć steamclientpublic.h dla wszystkich możliwych wartości.
+    "event_type" - Adres string określający rodzaj zdarzenia (szczegóły poniżej)
+  
+   
+  Przesyłanie danych
+  W przypadku korzystania z funkcji Steam do przesyłania tablicy liderów ( steam_upload_score() lub steam_upload_score_buffer()) zwrócona mapa DS będzie zawierać następujące pary klucz/wartość:
+  
+    "event_type" - ten klucz będzie przechowywał wartość "leaderboard_upload".
+    "post_id" - Ten klucz powinien odpowiadać wartości ID zwróconej przez funkcję wywołującą przesyłanie.
+    "lb_name" - Ten klucz przechowuje nazwę tablicy liderów, która została umieszczona na stronie
+    "success" - wartość 1, jeśli wysłanie postu się powiodło, 0, jeśli się nie powiodło
+    "updated" - Wartość 1, jeśli wynik na tablicy liderów został zaktualizowany (tj. nowy wynik był lepszy) lub 0 w przeciwnym przypadku
+    "score" - Ten przycisk przechowuje wynik, który został wysłany
+  
+  Przykłady takich działań można zobaczyć na stronach poświęconych funkcjom przesyłania partytur.
+   
+  Pobieranie tablic rankingowych
+  W przypadku korzystania z funkcji Steam do pobierania tablicy liderów (steam_download_scores(), steam_download_scores_around_user() lub steam_download_friends_scores()) zwrócona mapa DS będzie zawierać następujące pary klucz/wartość:
+  
+    "event_type" - ten klucz będzie przechowywał wartość "leaderboard_download".
+    "id" - Ten klucz powinien odpowiadać wartości ID zwróconej przez funkcję wywołującą pobieranie.
+    "status" - Status wywołania zwrotnego, gdzie -1 oznacza niepowodzenie lub brak wyników, a 0 oznacza sukces.
+    "lb_name" - Ten klucz przechowuje nazwę tablicy liderów, która została umieszczona na stronie
+    "numEntries" - Liczba "wierszy" danych tablicy liderów, które są zwracane.
+    "entries" - JSON object string zawierający inną mapę DS, która będzie zawierać albo klucz "default" (oznaczający, że nie ma w niej żadnych wyników), albo klucz " entries", którego wartość można następnie uzyskać. Wartość zwracana dla "entries" będzie listą DS zawierającą wszystkie rangi z tabeli liderów, gdzie każdy wpis na liście będzie odwoływał się do innej mapy DS, która będzie zawierała klucze "name", "score" i " rank", a także może zawierać klucz "data" w zależności od funkcji użytej do przesłania.
+  
+  Pokażemy na przykładzie, jak działa pobieranie danych o wynikach, żądając pierwszej dziesiątki rankingu dla danego leaderboard i przetwarzając jego wyniki w zdarzeniu async Steam (przykłady przesyłania danych znajdują się na stronach poświęconych odpowiednim funkcjom). Na początek musimy zażądać danych o wynikach za pomocą następującego kodu:
+  score_get = steam_download_scores("Game Scores", 1, 10);
+  Spowoduje to wysłanie zapytania do witryny Steam Server o wyniki z tablicy wyników gry, zapisując identyfikator asynchroniczny tego zapytania w zmiennej "score_get". Zostanie to następnie obsłużone w zdarzeniu asynchronicznym Steam w następujący sposób:
+  var async_id = ds_map_find_value(async_load, "id");
+    if async_id == score_get
+       {
+       var entries = ds_map_find_value(async_load, "entries");
+       var map = json_decode(entries);
+       if ds_map_exists(map, "default")
+        {
+          ds_map_destroy(map);
+          exit;
+          }
+       else
+          {
+          var list = ds_map_find_value(map, "entries");
+          var len = ds_list_size(list);
+          var entry;
+          for(var i = 0; i < len; i++;)
+             {
+             entry = ds_list_find_value(list, i );
+             steam_name[i] = ds_map_find_value(entry, "name");
+             steam_score[i] = ds_map_find_value(entry, "score");
+       steam_rank[i] = ds_map_find_value(entry, "rank");
+             if (ds_map_exists(entry, "data"))
+                {
+                var data = ds_map_find_value(entry, "data");
+                var buffId = buffer_base64_decode(data);
+              var message = buffer_read(buffId, buffer_string);
+                show_debug_message( " -- attached message: " + string(message));
+                buffer_delete(buffId);
+                }
+             ds_map_destroy(entry);
+           }
+          ds_list_destroy(list)
+          }
+       ds_map_destroy(map)
+       }
+  Najpierw sprawdzamy klucz "id" w specjalnej mapie async_load. Jeśli wartość ta jest taka sama jak wartość oryginalnej funkcji wywołania zwrotnego (przechowywana w zmiennej "score_get"), kontynuujemy przetwarzanie danych. Pierwszą czynnością jest przetworzenie mapy async_load DS Map w poszukiwaniu klucza "entries", który będzie zawierał plik JSON object zawierający dane tablicy rankingowej. Ten JSON object jest następnie dekodowany (zob. json_decode()) jako kolejna mapa DS Map, a identyfikator tej nowej mapy jest zapisywany w zmiennej "map".
+  Mapa ta jest sprawdzana pod kątem klucza "default" i jeśli zostanie on znaleziony, mapa jest niszczona, a zdarzenie zostaje zakończone. Jeśli nie znaleziono klucza "default", kod przetwarza mapę, aby wyodrębnić niezbędne informacje o tabeli liderów, najpierw wyodrębniając listę DS z klucza "entries" mapy DS, a następnie przechodząc przez każdy wpis listy, aby uzyskać kolejną mapę DS z wartościami name, score i rank każdego wpisu. Wartości te są przechowywane w tablicach, a następnie sprawdzamy, czy istnieje dodatkowy klucz "data". Jeśli tak (tzn. wynik został przesłany z dodatkowym pakietem danych), to również go przetwarzamy i wysyłamy do konsoli kompilatora na adres debugging, po czym niszczymy adres buffer i kontynuujemy niszczenie mapy. Należy pamiętać, że jeśli dołączony jest klucz " data", musi on zostać zdekodowany za pomocą funkcji buffer_base64_decode() zanim będzie można go poprawnie odczytać.
+  Po zakończeniu działania strony loop lista wpisów zostaje zniszczona, podobnie jak mapa, z której została pobrana. Nie ma potrzeby niszczenia async_load DS Map, ponieważ zajmuje się tym GameMaker Studio 2.
+   
+  Pobieranie UGC (treści tworzonych przez użytkowników)
+  W przypadku korzystania z funkcji Steam do pobierania treści generowanych przez użytkownika (UGC), wiele z nich wywoła to zdarzenie. Każda funkcja wygeneruje jednak mapę async_load DS Map z różnymi parami klucz/wartość (choć zawsze będą one zawierać ogólne klucze "id", "result" i "event_type"), dlatego szczegółowe informacje i przykłady można znaleźć na stronie właściwej dla używanej funkcji.
+   
+  Wyjątkowe wydarzenia UGC
+  Zdarzenie Steam Async może zostać wywołane także wtedy, gdy użytkownik zapisze się na element poza grą - na przykład przejdzie do przeglądarki i zapisze się na nowy element, a następnie powróci do gry. W takich przypadkach mapa async_load będzie zawierać tylko następujące informacje (i żadnych wartości domyślnych wymienionych na górze tej strony):
+  
+    "event_type" - Ten przycisk będzie utrzymywał stałą ugc_item_installed.
+    "published_file_id" - identyfikator nowo zainstalowanego elementu UGC (możesz użyć funkcji steam_ugc_get_item_install_info(), aby uzyskać adres path do zainstalowanego elementu)
+  
+  Zdarzenie Steam Async może również zostać wywołane, gdy element warsztatu zostanie zapisany - albo z poziomu aplikacji, albo zewnętrznie z przeglądarki warsztatu - i w takich przypadkach mapa async_load będzie zawierać następujące pary klucz/wartość:
+  
+    "event_type" - Ten przycisk będzie utrzymywał stałą ugc_item_subscribed.
+    "published_file_id" : Klucz ten zawiera identyfikator opublikowanego pliku nowo subskrybowanej pozycji
+  
+  Zdarzenie zostanie wywołane, jeśli dowolny element zostanie usunięty z listy subskrybentów, a mapa DS będzie zawierać następujące informacje:
+  
+    "event_type" - Ten przycisk będzie utrzymywał stałą ugc_item_unsubscribed.
+    "published_file_id" : Klucz ten zawiera identyfikator opublikowanego pliku dla pozycji bez subskrypcji
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Zdarzenia asynchroniczne
+        Następny: System
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

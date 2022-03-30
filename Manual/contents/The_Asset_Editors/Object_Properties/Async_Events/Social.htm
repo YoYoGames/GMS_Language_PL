@@ -16,7 +16,8 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Społeczny</h1>
   <p><img>To zdarzenie może być <a class="glossterm" data-glossterm="callback" href="#">wywołane</a>tylko przez <a class="glossterm" data-glossterm="callback" href="#">wywołania zwrotne</a>z różnych określonych <strong>Funkcji</strong> <strong>społecznościowych</strong> i <strong>Funkcji Xbox Live UWP</strong> i zwróci <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">mapę DS Map</a> przechowywaną w zmiennej <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"><span class="inline">async_load</span></a>zawierającą różne pary klucz/wartość, w zależności od wywołania zwrotnego funkcji, która wywołała zdarzenie.</p>
-  <p>Mapa DS będzie zawierała kilka kluczy, z których najważniejszy jest klucz &quot;<span class="inline">id</span>&quot;. Zwraca on stałą, którą można następnie sprawdzić w kodzie, aby określić, które z wielu wywołań zwrotnych otrzymało dane zdarzenie. Po przetworzeniu tego klucza i porównaniu zwróconej wartości z dostępnymi stałymi, można kontynuować wydobywanie pozostałych informacji z mapy.</p>
+  <p>To zdarzenie może być również wywołane przez <a href="../../../GameMaker_Language/GML_Reference/Drawing/Videos/Videos.htm">Odtwarzanie wideo</a>.</p>
+  <p>Mapa DS będzie zawierać kilka kluczy, z których najważniejszy jest klucz &quot;<span class="inline">id</span>&quot;. Zwraca on stałą, którą można następnie sprawdzić w kodzie, aby określić, które z wielu wywołań zwrotnych otrzymało dane zdarzenie. Po przetworzeniu tego klucza i porównaniu zwróconej wartości z dostępnymi stałymi, można kontynuować wydobywanie pozostałych informacji z mapy.</p>
   <p>Na stronach poświęconych funkcjom <a>Osiągnięć i Tablic Liderów</a> w sekcji Odnośnik znajdują się szczegółowe informacje na temat funkcji i wywołań zwrotnych oraz stałych używanych do wywołania tego zdarzenia, ale istnieją również pewne okoliczności, w których zostanie ono wywołane bez wywołania funkcji z uruchomionej gry:</p>
   <ul class="dropspotlist">
     <li class="dropspot">gdy gra jest uruchamiana z pulpitu systemu operacyjnego</li>
@@ -24,7 +25,7 @@
     <li class="dropspot">gdy inny gracz wykona zadanie</li>
     <li class="dropspot">gdy gra jest uruchamiana z pulpitu systemu operacyjnego przez wybranie wyzwania</li>
   </ul>
-  <p>Każde z powyższych wywołań zwrotnych wywoła zdarzenie społecznościowe i zostanie wygenerowana mapa <span class="inline">async_load</span> z następującymi szczegółami (należy zauważyć, że istnieje inna wartość klucza &quot;<span class="inline">id</span>&quot; określająca każdy z różnych powodów wywołania zdarzenia, ale cała pozostała zawartość mapy jest taka sama):</p>
+  <p>Każde z powyższych wywołań zwrotnych spowoduje uruchomienie zdarzenia społecznego i wygenerowanie mapy <span class="inline">async_load</span> z następującymi szczegółami (należy zauważyć, że istnieje inna wartość klucza &quot;<span class="inline">id</span>&quot; określająca każdy z różnych powodów, dla których wywołano zdarzenie, ale cała pozostała zawartość mapy jest taka sama):</p>
   <ul class="dropspotlist">
     <li class="dropspot">&quot;<span class="inline">id</span>&quot; - Wartość tego klucza będzie zależała od typu wywołania zwrotnego wywołującego zdarzenie (najczęściej używanego przez <span class="notranslate">extensions</span>).</li>
     <li class="dropspot">&quot;<span class="inline">playerid</span>&quot; - Identyfikator gracza w wyzwaniu.</li>

@@ -1,0 +1,44 @@
+
+  
+  zastosuj kamerę
+  Ta funkcja zastosuje podane ustawienia kamery do bieżącego widoku kamery, który jest natychmiast renderowany. Chociaż możesz ustawić dowolny widok kamery za pomocą odpowiednich funkcji camera_set_*, nowe ustawienia nie zostaną użyte do renderowania aż do następnej klatki gry, ale dzięki tej funkcji możesz dokonać tych zmian natychmiast. Jeśli używasz wielu widoków, funkcja ta powinna być użyta w zdarzeniu Draw i możesz użyć zmiennej view_current aby selektywnie zastosować daną kamerę tylko do widoku kamery, który jest aktualnie renderowany. Zwróć uwagę, że NIE zmienia to wartości identyfikatora kamery, tylko ustawienia dla tej kamery i że jeśli użyjesz tej funkcji na kamerze domyślnej (tzn. wewnętrznej kamerze, której używa GameMaker Studio 2, gdy nie są aktywne żadne kamery widoku), zmiany zostaną nadpisane w następnej klatce gry przez wewnętrzne ustawienia rysowania room.
+   
+  Składnia:
+  camera_apply(camera_id)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        camera_id
+        The unique camera ID value returned when you created the camera.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if view_current == 0
+    {
+        camera_apply(cutscene_cam);
+    }
+  Powyższy kod (w zdarzeniu Draw) sprawdza, który widok z kamery jest aktualnie renderowany i jeśli jest to widok z kamery[0], to stosowane są do niego ustawienia kamery, do której odwołuje się zmienna "cutscene_cam".
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: camera_set_view_mat
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

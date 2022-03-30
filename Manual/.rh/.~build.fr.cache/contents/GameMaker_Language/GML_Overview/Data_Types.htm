@@ -1,0 +1,145 @@
+
+  
+  Typy danych
+  W poprzednim rozdziale omówiliśmy zmienne i zasady ich skalowania, ale niewiele zostało powiedziane na temat różnych typów danych, które mogą być przechowywane przez zmienne. Dlatego w tej części wyjaśniono różne typy danych i wyjaśniono, do czego można ich używać.
+  Zanim przejdziemy dalej, wyjaśnijmy pokrótce, co rozumiemy pod pojęciem "typy danych". Kiedy tworzymy zmienną, może ona służyć do przechowywania informacji, a kiedy wywołujemy funkcję, może ona również przechowywać zwracane informacje. Informacje te mogą mieć różne "smaki" - na przykład mogą być liczbami rzeczywistymi lub ciągami znaków. Te różne rodzaje używanych wartości nazywamy typami danych, a w przypadku korzystania z witryny GameMaker Language mogą to być dowolne z poniższych elementów:
+   
+  Liczby rzeczywiste
+  
+    Liczby rzeczywiste to dowolne wartości, które nie są string ani żadnym z innych możliwych typów danych. Tak więc 124, 45639.566546456, 0, -45.5 itd. są przykładami liczb rzeczywistych. Wszystkie liczby rzeczywiste są zapisywane jako wartości zmiennoprzecinkowe podwójnej precyzji lub liczby całkowite
+      (32-bitowe liczby całkowite - int32 - lub 64-bitowe liczby całkowite - int64), a kompilator optymalizuje je tam, gdzie jest to możliwe (na przykład wartość 0.0 zostanie zoptymalizowana do wartości całkowitej 0). Gdy mamy do czynienia
+      z dowolną wartością, która nie jest liczbą całkowitą, mogą wystąpić niewielkie błędy zaokrąglenia, wynikające z natury matematyki zmiennoprzecinkowej. Więcej informacji na temat tej i innych funkcji związanych z liczbami można znaleźć w dokumencie: GML Reference - Number Functions.
+    UWAGA W celu HTML5 wszystkie liczby rzeczywiste są podwojone.
+    Zwróć uwagę, że chociaż wszystkie zmienne w GameMaker Studio 2 są przechowywane jako liczby zmiennoprzecinkowe lub całkowite podwójnej precyzji, możesz używać innych formatów podczas pracy z extensions. Można je przekazać do GameMaker Studio 2 z rozszerzenia
+      a następnie sprawdzić je za pomocą odpowiedniej funkcji is_*(), których listę można znaleźć tutaj.
+     
+  
+  Boolean
+  
+    Boolean to po prostu wartość, która może być albo true, albo false. Zauważ, że obecnie GameMaker Studio 2 interpretuje liczbę rzeczywistą równą lub mniejszą od 0,5 jako wartość false, a każdą liczbę rzeczywistą większą od 0,5 jako true.
+     Nie oznacza to jednak, że powinieneś sprawdzać, czy 1 i 0 (lub jakakolwiek inna liczba rzeczywista) to prawda czy fałsz, ponieważ masz do dyspozycji stałe true i false, które zawsze powinny być używane w Twoim kodzie, aby
+      aby zapobiec problemom, jeśli w przyszłej aktualizacji zostaną dodane prawdziwe typy danych boolean.
+    Za pomocą poniższej funkcji można przekształcić dowolną liczbę rzeczywistą na wartość typu boolean w sposób niejawny:
+    
+      bool
+    
+     
+  
+  Struny
+  
+    Strona string to po prostu dowolny tekst, który został ujęty w cudzysłów "...". Na stronie strings można wykonywać pewne operacje, takie jak dodawanie dwóch strings w celu utworzenia dłuższego string (konkatenacja), a także zmieniać właściwości string i wyodrębniać z niego liczby rzeczywiste. Więcej informacji na temat strings i funkcji string można znaleźć w: GML Reference - Strings.
+     
+  
+  Tablice
+  
+    Tablica to specjalny typ danych, który może służyć do przechowywania wielu wartości. Tablicę przypisuje się do zmiennej, a następnie "wypełnia" różne indeksy tablicy wartościami. Taką tablicę można następnie przekazywać do scripts i funkcji na zasadzie "pass-by-reference", jednak w przypadku modyfikacji przekazanej tablicy, stanie się ona kopią oryginalnej tablicy, a więc będzie musiała zostać zwrócona z powrotem do oryginalnej zmiennej, aby tablica została zaktualizowana. Więcej informacji o tablicach można znaleźć w: GML Overview - Arrays.
+     
+  
+  Struktury
+  
+     struct (czasami nazywany "obiektem lekkim") to surowa struktura danych, która działa jako kontener dla zmiennych wszystkich typów danych. Na stronie struct przypisuje się zmienną, a na stronie struct można zdefiniować kolejne zmienne, z których można odczytywać lub do których można zapisywać dane, zależnie od potrzeb. Więcej szczegółowych informacji na temat structs można znaleźć w rozdziale Przegląd GML - Struktury.
+     
+  
+  Zmienne metody
+  
+    Zmienna metodyczna to zmienna, której przypisano funkcję i można jej używać dokładnie tak samo, jak funkcji GML runtime. Więcej szczegółowych informacji można znaleźć w rozdziale Zmienne metody.
+     
+  
+  Wartości szesnastkowe
+  
+    GameMaker Studio 2 akceptuje literały szesnastkowe jako prawidłowe wartości. Wartości szesnastkowe są szczególnie popularne podczas pracy z kolorami, ale można ich używać wszędzie tam, gdzie wymagana jest dodatnia wartość całkowita. Wartości szesnastkowe można sformatować na dwa poniższe sposoby, gdzie abcd to rzeczywista wartość szesnastkowa:
+    $abcd
+      0xabcd
+    
+    Na przykład następujące wartości dziesiętne można wyrazić w postaci szesnastkowej, jak pokazano na rysunku:
+    11406 -> $2c8e, 0x2c8e
+      16777215 -> $ffffff, 0xffffff
+    
+    
+    Wartość szesnastkowa może również zaczynać się od symbolu haszującego/ funtowego(#), jednak zapisana w ten sposób jej wartość nie będzie równa podobnej wartości szesnastkowej zapisanej przy użyciu wcześniej przedstawionego formatu($ lub 0x). Wynika to ze sposobu interpretacji kolorów w GML, który wymagał zmiany formatu wartości hash/pound hex, aby kolory CSS mogły być zapisywane w formacie #RRGGBB. Więcej informacji można znaleźć w artykule Kolory heksadecymalne.
+    Na przykład dwa poniższe elementy nie są równe:
+    $2c8edd != #2c8edd
+    Aby odnosiły się one do tej samej wartości dziesiętnej, należałoby zamienić miejscami dwa pierwsze i dwa ostatnie znaki:
+    $2c8edd == #dd8e2c
+     
+  
+  Wskaźnik
+  
+    Wskaźnik to typ danych, który "wskazuje" na lokalizację w pamięci. Na wskaźniku nie można wykonywać operacji i jest on używany tylko w niektórych, bardzo specyficznych funkcjach, takich jak pobieranie adresu texture lub buffer z pamięci dla innej funkcji. Przykłady funkcji, które zwracają wskaźnik, można znaleźć na stronach buffer_get_address() lub sprite_get_texture().
+    Istnieje również funkcja sprawdzająca, czy wartość jest wskaźnikiem (patrz "Sprawdzanie typów danych", poniżej) oraz funkcja konwertująca wartość na wskaźnik:
+    
+      ptr
+    
+    Podczas używania wskaźników można również używać (i otrzymywać zwroty) następujących stałych wbudowanych:
+    
+      
+        
+          Stała
+          Opis
+        
+        
+          pointer_null
+          Ta stała wskazuje, że wskaźnik nie wskazuje na nic znaczącego (tak samo jak NULL w C++ lub null w C#). Ta wartość jest falsy.
+        
+        
+          pointer_invalid
+          Ta stała oznacza po prostu, że wartość nie jest prawidłowym wskaźnikiem
+        
+      
+    
+     
+  
+  Enum
+  
+    Enum to "wyliczarka", która zasadniczo umożliwia utworzenie własnego ograniczonego typu danych z listą stałych wartości. Enumy są szczegółowo omówione na stronie poświęconej stałym.
+     
+  
+  Niezdefiniowane
+  
+    Wartość undefined (zwana też wartością "null") to taka, w której wyrażenie nie ma poprawnej wartości, choć jest poprawne składniowo, a więc musi coś zwrócić. Na przykład, powiedzmy, że mamy mapę DS i używamy funkcji ds_map_find_value(). Co się stanie, gdy mapa nie będzie miała poszukiwanej wartości? Cóż, skoro funkcja jest poprawnie sformatowana, a problem polega na tym, że taka wartość nie istnieje, to zwróci ona stałą undefined, którą można sprawdzić tak samo, jak true lub jakąkolwiek inną wartość.
+    var _value = ds_map_find_value(my_map, "key");if (is_undefined(value)) {    show_debug_message("The key does not exist!");}
+     
+  
+  NaN
+  
+    NaN oznacza "nie jest liczbą" i jest stałą, która może być zwrócona, gdy kompilator nie może oszacować wyniku operacji jako liczby. Na przykład 0/0 nie może być zdefiniowane jako liczba rzeczywista i dlatego jest reprezentowane przez NaN, a pierwiastek kwadratowy z liczby ujemnej - która jest uważana za liczbę urojoną - nie może być reprezentowany jako liczba rzeczywista i dlatego jest reprezentowany przez NaN.
+    Zauważ, że ponieważ NaN nie jest liczbą, nie można jej porównywać z samą sobą, więc porównanie takie jak NaN == NaN zwróci false. To samo dotyczy porównania tablicowego, takiego jak to:
+    show_debug_message(array_equals([NaN], [NaN]));
+      
+      // Output: 0 (false)
+    
+     
+  
+  Infinity
+  
+    Stała infinity odnosi się do liczby, która jest uważana za nieskończoną, np. wynik dzielenia dowolnej wartości zmiennoprzecinkowej przez zero, np. 1.0/0.
+    Zauważ, że stała infinity jest równa sobie, więc infinity == infinity zwróci true.
+  
+  Zmienna
+  
+    Typ danych "zmienna" można znaleźć na wielu stronach podręcznika, np. w argumentach lub jako wartość zwracana. Wskazuje on, że akceptowany jest dowolny typ wartości lub może zostać zwrócony. Nazywa się go "zmiennym", ponieważ typ danych może być różny i nie jest związany z rzeczywistymi zmiennymi danych.
+  
+   
+  Typ danych dowolnej zmiennej można sprawdzić za pomocą funkcji wymienionych na następnej stronie:
+  
+    Funkcje zmienne
+  
+  Można tu również znaleźć tablice typów arytmetycznych, które przedstawiają wyniki różnych operacji wykonywanych przy użyciu mieszanych zmiennych typów danych:
+  
+    Tabele typu
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Przegląd GML
+        Następny: if / else i operatory warunkowe
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,61 @@
+
+  
+  physics_particle_draw
+  Ta funkcja narysuje stronę sprite w miejscu wszystkich cząstek, które mają tę samą, zdefiniowaną przez użytkownika wartość kategorii i które mają stronę flags pokrywającą się z wartością maski. Wartość maski definiuje się w taki sam sposób, w jaki definiuje się flags podczas tworzenia cząstki (patrz funkcja physics_particle_create() na przykład), tzn. używając bitu  lub "|", aby zamaskować odpowiednie bity dla każdej strony flag.
+  UWAGA: Ta funkcja narysuje wszystkie cząstki w symulacji fizycznej z adresem flags, który pokrywa się z adresem maski, niezależnie od tego, czy są to pojedyncze cząstki, czy grupy, jeśli kategoria użytkownika jest taka sama.
+  Narysowana cząstka będzie używać koloru i wartości alfa ustawionych podczas jej tworzenia oraz będzie się obracać z momentem pędu cząstki. Jeśli jednak chcesz przeskalować stronę sprite lub zmienić jakiekolwiek inne właściwości narysowanej cząstki, powinieneś użyć funkcji physics_particle_draw_ext().
+   
+  Składnia:
+  physics_particle_draw(typemask, category, sprite, subimg)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        typemask
+        Fizyka Cząstka Flag Stała(y)
+        The mask to compare the particles flags with.
+      
+      
+        category
+        Real
+        The user defined category to draw (use 0 to draw all categories).
+      
+      
+        sprite
+        Aktywa Sprite
+        The sprite to use for each particle.
+      
+      
+        subimg
+        Real
+        The image_index sprite'a, który ma zostać narysowany.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;
+    physics_particle_draw(flags, 2, sprBlob, 0);
+  Powyższy kod narysuje stronę sprite dla wszystkich cząstek ze zdefiniowanej przez użytkownika kategorii "2", które mają taką samą flags jak podana maska.
+   
+   
+   
+  
+    
+      
+        Powrót: Miękkie cząstki ciała
+        Następny: physics_particle_draw_ext
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -21,7 +21,7 @@
   <p>W wyrażeniach można stosować następujące operatory:</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Przypisanie (=)</a></p>
   <div class="droptext" data-targetname="drop-down2">
-    <p class="dropspot"><span class="inline2"><b>=</b></span> służy do przypisywania wartości do zmiennej. Zauważ, że można go <i>także</i> użyć do porównywania zmiennych w <span class="notranslate">GameMaker Studio 2</span> i możesz to zobaczyć w przykładach i kodach innych osób. Jest to jednak pozostałość po starych wersjach <i>GameMakera</i> i powinieneś używać operatorów <b>==</b> do porównywania i <b>=</b> do przypisywania, jak pokazano w tych przykładach:</p>
+    <p class="dropspot"><span class="inline2"><b>=</b></span> służy do przypisywania wartości do zmiennej. Zauważ, że można go <i>także</i> użyć do porównywania zmiennych w <span data-keyref="GameMaker Name">GameMakerze</span> i możesz to zobaczyć w przykładach i kodach innych osób. Jest to jednak pozostałość po starych wersjach <i>GameMakera</i> i powinieneś używać operatorów <b>==</b> do porównywania i <b>=</b> do przypisywania, jak pokazano w poniższych przykładach:</p>
     <p class="code">a = 12;<br />
       speed = 5;<br />
       val = (old_val + 5);</p>
@@ -71,10 +71,10 @@
     <p class="dropspot"><b><span class="inline2">+</span>, <span class="inline2">-</span>, <span class="inline2">*</span>, <span class="inline2">/</span></b> oznaczają odpowiednio dodawanie, odejmowanie, mnożenie i dzielenie. Przykłady użycia:</p>
     <p class="code">c = a * b;<br />
       str = a + &quot;world&quot;;</p>
-    <p class="note"><span class="note"><b>UWAGA</b></span> Liczby zmiennoprzecinkowe nie zatrzymują się na dzieleniu przez zero, ponieważ w odpowiedzi otrzymają nieskończoność. Jeśli A i B są liczbami całkowitymi (int32 lub int64), to dzielenie zostanie wykonane jako dzielenie przez liczby całkowite (zostanie sprawdzone dzielenie przez 0 i zostanie usunięty błąd). W przeciwnym razie zostanie wykonane dzielenie zmiennoprzecinkowe (bez sprawdzania dzielenia przez 0).</p>
+    <p class="note"><span class="note"><b>UWAGA</b></span> Liczby zmiennoprzecinkowe nie zatrzymują się na dzieleniu przez zero, ponieważ w odpowiedzi otrzymają nieskończoność. Jeśli A i B są liczbami całkowitymi (int32 lub int64), to dzielenie zostanie wykonane jako dzielenie liczb całkowitych (zostanie sprawdzone dzielenie przez 0 i zostanie usunięty błąd). W przeciwnym razie zostanie wykonane dzielenie zmiennoprzecinkowe (bez sprawdzania dzielenia przez 0).</p>
     <p class="dropspot"> </p>
   </div>
-  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Zwiększanie/ zmniejszanie (++, --)</a></p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Zwiększanie/zmniejszanie (++, --)</a></p>
   <div class="droptext" data-targetname="drop-down7">
     <p class="dropspot"><span class="inline2"><strong>++</strong></span>, <span class="inline2"><strong>--</strong></span> służą do dodawania lub odejmowania jednego<span class="inline2">(1</span>) od wartości. Warto zauważyć, że umieszczenie tego przed lub po wartości, do której ma być dodane lub od której ma być odjęte, daje nieco inne wyniki. Na przykład:</p>
     <ul class="dropspotlist">
@@ -133,7 +133,7 @@
     <br />
     if my_var == your_var then <strong>++</strong>their_var;
   </p>
-  <p>Patrząc na kod, można stwierdzić, że jedno z tych rozwiązań jest nieco głupie, ale to dlatego, że my wiemy, co chcemy osiągnąć i co ma się wydarzyć, ale kompilator tego nie wie. Widzi on jedynie dwie zmienne z operatorem ++ między nimi, więc musi wybrać, do której z nich go zastosować. Dlatego <strong>zawsze</strong> należy <strong>wyraźnie nawiasować wyrażenia, operacje i instrukcje</strong>. Poprawna wersja powyższego kodu powinna wyglądać następująco:</p>
+  <p>Patrząc na kod, można stwierdzić, że jedno z tych rozwiązań jest trochę głupie, ale to dlatego, że my wiemy, co chcemy osiągnąć i co ma się wydarzyć, ale kompilator nie. Widzi on jedynie dwie zmienne z operatorem ++ między nimi, więc musi wybrać, do której z nich go zastosować. Dlatego <strong>zawsze</strong> należy <strong>wyraźnie nawiasować wyrażenia, operacje i instrukcje</strong>. Poprawna wersja powyższego kodu powinna wyglądać następująco:</p>
   <p class="code">if (my_var == your_var)<br />
     {<br />
         ++their_var;<br />

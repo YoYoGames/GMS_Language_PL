@@ -1,0 +1,49 @@
+
+  
+  warstwa_sekwencji_y
+  Za pomocą tej funkcji można ustawić położenie wzdłuż osi Y (pionowej) strony room dla danego elementu sequence. Należy podać identyfikator elementu sequence zwrócony przez layer_sequence_create() lub przez jedną z funkcji elementu warstwy wraz z pozycją Y do ustawienia, a element sequence zostanie przesunięty na nową pozycję.
+   
+  Składnia:
+  layer_sequence_y(sequence_element_id, pos_y)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sequence_element_id
+        The unique ID value of the sequence element to target
+     
+      
+        pos_y
+        The Y position to move the sequence element to
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if layer_sequence_exists(my_seq)
+    {
+        layer_sequence_x(my_seq, x);
+        layer_sequence_y(my_seq, y);
+    }
+  Powyższy kod sprawdza, czy element sequence, do którego odwołuje się zmienna "my_seq", istnieje, a jeśli tak, to ustawia jego pozycję x/y na taką, jaką ma instancja wykonująca kod.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy sekwencji
+        Następny: layer_sequence_angle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

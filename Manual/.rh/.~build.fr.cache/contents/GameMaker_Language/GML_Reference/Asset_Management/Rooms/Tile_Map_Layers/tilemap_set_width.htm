@@ -1,0 +1,53 @@
+
+  
+  tilemap_set_width
+  Za pomocą tej funkcji można zmienić rozmiar elementu mapy tile. Podajesz identyfikator elementu mapy tile (który otrzymujesz podczas tworzenia elementu mapy tile przy użyciu layer_tilemap_create() lub po użyciu funkcji layer_tilemap_get_id()), oraz nową szerokość mapy tile w komórkach tile.
+   
+  Składnia:
+  tilemap_set_width(tilemap_element_id, width)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tilemap_element_id
+        Identyfikator elementu mapy kafelkowej
+        The unique ID value of the tile map element to set the width of
+      
+      
+        width
+        Real
+        The width value (in "cells")
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var lay_id = layer_get_id("Tiles_Walls");
+    var map_id = layer_tilemap_get_id(lay_id);
+    if tilemap_get_width(map_id) != room_width div 16
+    {
+        tilemap_set_width(map_id, room_width div 16);
+    }
+  Powyższy kod sprawdza szerokość określonej mapy tile i jeśli nie jest ona odpowiedniej wielkości, ustawiana jest jej szerokość.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy mapy kafelkowej
+        Następny: tilemap_set_height
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,52 @@
+
+  
+  string_pos_ext
+  Ta funkcja zwraca pozycję znaku w podłańcuchu w string, przeszukując stronę string od pozycji podanej jako początkowa. Funkcja zwróci 0, jeśli szukany element string nie zostanie znaleziony, lub pozycję pierwszego znaku szukanego elementu string, jeśli zostanie znaleziony. Należy pamiętać, że w przypadku starszej wersji strings są indeksowane od 1, więc 1 jest pierwszą pozycją w string, a nie 0, jak można by się spodziewać.
+   
+  Składnia:
+  string_pos_ext(substr, str, start_pos);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        substr
+        The substring to look for in the string.
+     
+      
+        str
+        The string.
+     
+      
+        start_pos
+        The starting position to search from.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (string_pos_ext(",", text, 20) != 0)
+    {
+        string_insert(name, text, string_pos_ext(",", text, 20));
+    }
+  Powyższy kod przeszukuje stronę string zapisaną w zmiennej "text" w poszukiwaniu przecinka po 20. znaku, a jeśli go znajdzie, wstawia w tym miejscu podłańcuch "name".
+   
+   
+   
+  
+    
+      
+        Powrót: Struny
+        Następny: string_last_pos
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

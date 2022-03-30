@@ -1,0 +1,56 @@
+
+  
+  Ogólne sterowanie grą
+  Te wszystkie funkcje i zmienne są związane z funkcjami gry, takimi jak ładowanie/zapisywanie, ponowne uruchamianie itd.
+  Następujące zmienne wbudowane o zasięgu globalnym są przydatne na stronie debugging - można ich użyć na przykład jako danych wyjściowych do pliku dziennika w przypadku wystąpienia problemów - a także do wyświetlania użytkownikowi bieżącego identyfikatora kompilacji itp:
+  
+    game_id
+    game_save_id
+    game_display_name
+    game_project_name
+  
+   
+  Poniższe funkcje służą do ogólnego sterowania grą:
+  
+    game_end
+    game_restart
+    game_load
+    game_load_buffer
+    game_save
+    game_save_buffer
+    game_get_speed
+    game_set_speed
+  
+   
+  Aby ułatwić tworzenie i utrzymywanie wysokich wyników w grach, GameMaker Studio 2 tworzy globalną tablicę wysokich wyników z 10 miejscami, do których można mieć dostęp, dodawać je i zmieniać, aby tworzyć własne listy wysokich wyników bez większego zamieszania. Ta funkcjonalność jest lokalna dla gry i działa na wszystkich platformach, więc można łatwo przechowywać i utrzymywać podstawową tablicę wysokich wyników, używając tych funkcji wraz z funkcjami obsługi plików.
+  Istnieją następujące funkcje związane z wewnętrzną listą najlepszych wyników.
+  
+    highscore_add
+    highscore_name
+    highscore_value
+    highscore_clear
+  
+   
+  GameMaker Studio 2 zawiera również funkcję rysowania wyników na ekranie w formie listy, jednak jest ona bardzo prosta i zaleca się, abyś używał jej raczej na stronie debugging, ponieważ stworzenie własnej tabeli wyników jest proste i daje znacznie większą kontrolę nad sposobem wyświetlania wyników:
+  
+    draw_highscore
+  
+   
+  Na koniec mamy funkcję, która pozwala przypisać kursorowi myszy adres sprite:
+  
+    cursor_sprite
+  
+   
+   
+  
+    
+      
+        Powrót: Odniesienie do GML
+        Następny: Ruch i zderzenia
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

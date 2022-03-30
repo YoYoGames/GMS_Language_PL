@@ -1,0 +1,46 @@
+
+  
+  audio_emitter_get_vx
+  Ta funkcja zwraca aktualną prędkość wzdłuż osi x dla podanego emitera dźwięku.
+   
+  Składnia:
+  audio_emitter_get_vx(emitter);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        emitter
+        Identyfikator emitera dźwięku
+        The index of the emitter to use.
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if audio_emitter_get_vx(emitter_player) != 0
+    {
+        audio_emitter_velocity(emitter_player, 0, 0, 0);
+    }
+  Powyższy kod sprawdza aktualną prędkość x danego emitera i jeśli nie jest ona równa 0, ustawia ją na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery dźwięku
+        Następny: audio_emitter_get_vy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

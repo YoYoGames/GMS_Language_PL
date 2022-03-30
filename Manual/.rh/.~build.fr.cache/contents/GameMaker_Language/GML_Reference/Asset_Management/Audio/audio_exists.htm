@@ -1,0 +1,46 @@
+
+  
+  audio_istnieje
+  Ta funkcja zwraca, czy dźwięk istnieje (true), czy nie (false). Zwróć uwagę, że jeśli szukany indeks nie został wcześniej zainicjalizowany, funkcja ta spowoduje błąd, ponieważ szuka nieistniejących indeksów asset. Dźwięk do sprawdzenia może być pojedynczą instancją dźwięku (indeks dla poszczególnych odtwarzanych dźwięków można przechowywać w zmiennej przy użyciu metody audio_play_sound() lub audio_play_sound_at() ) lub dźwiękiem asset.
+   
+  Składnia:
+  audio_exists(index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+        Aktywa
+        The index of the sound to check the existence of.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if audio_exists(global.Music)
+    {
+        audio_play_sound(global.Music, 0, true);
+    }
+  Powyższy kod sprawdza, czy istnieje dźwięk. Jeśli tak, jest on ustawiany do odtwarzania na stronie loop.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_get_name
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

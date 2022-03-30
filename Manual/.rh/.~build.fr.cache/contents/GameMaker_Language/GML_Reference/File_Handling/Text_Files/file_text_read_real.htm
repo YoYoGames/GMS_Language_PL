@@ -1,0 +1,49 @@
+
+  
+  file_text_read_real
+  Za pomocą tej funkcji można odczytać wartość liczby rzeczywistej z pliku tekstowego, a funkcja zwraca tę wartość, którą można wykorzystać lub zapisać w zmiennej.
+   
+  Składnia:
+  file_text_read_real(fileid);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fileid
+        The id of the file to read from.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var file = file_text_open_read(working_directory + "hiscore.txt");
+    for (var i = 0; i < 10; ++i;)
+    {
+        scr[i] = file_text_read_real(file);
+        file_text_readln(file);
+        scr_name[i] = file_text_read_string(file);
+        file_text_readln(file);
+    }
+    file_text_close(file);
+  Powyższy kod otwiera plik do odczytu, a następnie loops przez kolejne wiersze pliku wczytuje na przemian wartość liczby rzeczywistej oraz wartość string do dwóch różnych tablic w celu późniejszego wykorzystania. Po zakończeniu działania loop plik jest zamykany.
+   
+   
+   
+  
+    
+      
+        Powrót: Pliki tekstowe
+        Następny: file_text_read_string
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,75 @@
+
+  
+  Sterowanie procesorem graficznym
+  Podczas rysowania elementów w witrynie room często zachodzi potrzeba bardziej szczegółowego sterowania sposobem rysowania. Może to być brak mieszania alfa, kadrowanie, włączanie lub wyłączanie interpolacji na stronie switch texture. Wszystko to jest możliwe - i wiele więcej! - za pomocą wymienionych poniżej funkcji sterownika GPU. Należy pamiętać, że większość z tych funkcji ma zasięg globalny i po ich ustawieniu lub zmianie będzie wpływać na sposób, w jaki od tej pory będą rysowane wszystkie elementy.
+  Do uzyskania wartości różnych właściwości układu GPU można użyć następujących funkcji:
+  
+    gpu_get_blendenable
+    gpu_get_ztestenable
+    gpu_get_zfunc
+    gpu_get_zwriteenable
+    gpu_get_fog
+    gpu_get_cullmode
+    gpu_get_blendmode
+    gpu_get_blendmode_ext
+    gpu_get_blendmode_ext_sepalpha
+    gpu_get_blendmode_src
+    gpu_get_blendmode_dest
+    gpu_get_blendmode_srcalpha
+    gpu_get_blendmode_destalpha
+    gpu_get_colourwriteenable
+    gpu_get_alphatestenable
+    gpu_get_alphatestref
+    gpu_get_texfilter
+    gpu_get_texfilter_ext
+    gpu_get_texrepeat
+    gpu_get_texrepeat_ext
+  
+   
+  Do ustawiania wartości różnych właściwości układu GPU można użyć następujących funkcji:
+  
+    gpu_set_blendenable
+    gpu_set_ztestenable
+    gpu_set_zfunc
+    gpu_set_zwriteenable
+    gpu_set_fog
+    gpu_set_cullmode
+    gpu_set_blendmode
+    gpu_set_blendmode_ext
+    gpu_set_blendmode_ext_sepalpha
+    gpu_set_colourwriteenable
+    gpu_set_alphatestenable
+    gpu_set_alphatestref
+    gpu_set_texfilter
+    gpu_set_texfilter_ext
+    gpu_set_texrepeat
+    gpu_set_texrepeat_ext
+  
+   
+  Należy pamiętać, że przed skorzystaniem z funkcji trybu mieszania należy zrozumieć, jak one działają, aby uzyskać prawidłowe wyniki podczas ich stosowania. W tym celu stworzyliśmy poniższy przewodnik:
+  
+    Przewodnik korzystania z Blendmodes
+  
+   
+  Do manipulowania stosem GPU można użyć następujących funkcji:
+  
+    gpu_push_state
+    gpu_pop_state
+    gpu_get_state
+    gpu_set_state
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Rysunek
+        Następny: Mipmapping
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

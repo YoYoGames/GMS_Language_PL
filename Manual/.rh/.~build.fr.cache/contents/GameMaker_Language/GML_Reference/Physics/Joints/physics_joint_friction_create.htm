@@ -1,0 +1,81 @@
+
+  
+  physics_joint_friction_create
+  Przegub cierny różni się nieco od wszystkich innych przegubów w symulacji fizyki tym, że utworzone połączenie nie ogranicza położenia ani ruchu instancji, lecz jej prędkość i obrót. Działa to w ten sposób, że bierze się maksymalne wartości wejściowe siły i momentu obrotowego i stosuje je do drugiego uchwytu, aby sprowadzić prędkość i moment pędu do takich samych wartości jak w pierwszym przypadku. Jeśli więc mamy instancję nieruchomą i instancję ruchomą, a następnie połączymy je za pomocą przegubu ciernego, to instancja ruchoma będzie stopniowo zwalniać, aż do momentu, gdy również będzie nieruchoma. Jeśli obie instancje były ruchome, to druga instancja będzie miała zmodyfikowaną prędkość ruchu, tak by odpowiadała prędkości pierwszej instancji.
+  Podobnie jak w przypadku większości innych przegubów, podajesz instancje, które mają zostać połączone, a także pozycję, w której przegub ma zostać utworzony w obrębie strony room. Następnie podajesz maksymalną siłę i maksymalny moment obrotowy (tarcie kierunkowe i obrotowe), a jeśli ustawisz wartość "col" na true, to dwie instancje mogą oddziaływać na siebie i zderzać się ze sobą, ale tylko wtedy, gdy wystąpią zdarzenia kolizji, natomiast jeśli ustawisz tę wartość na false, to nie będą się one zderzać bez względu na wszystko.
+   
+  Składnia:
+  physics_joint_friction_create(inst1, inst2, anchor_x, anchor_y, max_force, max_torque, col)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        inst1
+        Identyfikator instancji
+        The first instance to connect with the joint
+      
+      
+        inst2
+        Identyfikator instancji
+        The second instance to connect with the joint
+      
+      
+        anchor_x
+        Real
+        The x coordinate for the joint, within the game world
+      
+      
+        anchor_y
+        Real
+        The y coordinate for the joint, within the game world
+      
+      
+        max_force
+        Real
+        The maximum frictional force that will be applied
+      
+      
+        max_torque
+        Real
+        The maximum rotational force that will be applied
+      
+      
+        col
+        Boolean
+        Whether the two instances can collide (true) or not (false)
+      
+    
+  
+   
+  Zwroty:
+  Physics Joint ID
+   
+  Przykład:
+  var mainFixture, o_id;
+    mainFixture = physics_fixture_create();
+    physics_fixture_set_circle_shape(mainFixture, sprite_get_width(sprite_index) / 2);
+    o_id = instance_create_layer(x+300, y, "Instances", obj_Rudder);
+    physics_fixture_bind(mainFixture, id);
+    physics_fixture_bind(mainFixture, o_id);
+    physics_joint_friction_create(id, o_id, x, y, 10, 0.3, true);
+    physics_fixture_delete(mainFixture);
+  Powyższy kod utworzy uchwyt, a następnie powiąże go z dwiema instancjami, po czym połączy je za pomocą złącza ciernego.
+   
+   
+   
+  
+    
+      
+        Plecy: Stawy
+        Następny: physics_joint_delete
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

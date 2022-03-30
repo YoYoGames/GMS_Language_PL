@@ -1,0 +1,50 @@
+
+  
+  ds_grid_resize
+  Za pomocą tej funkcji można zmienić rozmiar podanej siatki DS, tak aby miała inną szerokość i/lub wysokość. Jeśli rozmiar siatki jest większy niż bieżąca siatka, to nowe komórki będą miały wartość bazową 0, a jeśli rozmiar jest mniejszy, to wartości przechowywane w komórkach, które
+    nie mieszczą się już w nowym rozmiarze, zostaną utracone. Wszystkie pozostałe komórki pozostaną nietknięte.
+   
+  Składnia:
+  ds_grid_resize(index, w, h);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        This index of the grid to resize.
+     
+      
+        w
+        The new width of the grid.
+     
+      
+        h
+        The new height of the grid.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  ds_grid_resize(global.Grid, room_width / 32, room_height / 32); ds_grid_clear(global.Grid, -1)
+  Powyższy kod zmieni rozmiar siatki DS indeksowanej w zmiennej globalnej "Siatka", a następnie wyczyści ją tak, aby każda komórka miała wartość -1.
+   
+   
+   
+  
+    
+      
+        Powrót: Siatki DS
+        Następny: ds_grid_clear
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,34 @@
+
+  
+  uporczywa
+  Tę zmienną można odczytać, by dowiedzieć się, czy instancja jest oznaczona jako persistent czy nie, albo użyć jej do ustawienia trwałości instancji na true (persistent) lub false (not persistent). Instancja persystentna to taka, która będzie "przenoszona" z room na room, co oznacza (na przykład), że wystarczy ją utworzyć tylko raz na początku gry i będzie obecna we wszystkich kolejnych rooms. Należy uważać z persystencją, ponieważ łatwo jest stracić kontrolę nad trwałymi instancjami, co może prowadzić do problemów na późniejszym etapie rozwoju gry.
+  Gdy utworzysz instancję z włączoną persystencją w room, zmienna ta zostanie ustawiona na true i zostanie jej przypisana warstwa lub głębokość (w zależności od tego, jakiej funkcji użyłeś do utworzenia instancji object). Gdy zmienisz stronę room i jeśli następująca po niej strona room nie będzie miała warstwy o takiej samej nazwie lub głębokości jak ta, która została przypisana, to dla instancji zostanie utworzona nowa warstwa, która będzie trwała przez stronę rooms. Jeśli podczas tworzenia instancji nadałeś jej nazwę, to nowa warstwa również będzie miała taką samą nazwę jak warstwa oryginalna, a jeśli przypisałeś jej głębokość, to nowa warstwa będzie miała nazwę "_layer_XXX", gdzie "XXX" to wartość heksadecymalna służąca do nadania warstwie unikalnej nazwy. Warstwy te zostaną usunięte z room na Room End. Kolejną rzeczą, o której należy pamiętać w kontekście warstw i instancji persystentnych, jest to, że jeśli podczas tworzenia instancji przypisałeś jej warstwę o tej samej nazwie, a w następnej części rooms znajduje się inna warstwa o tej samej nazwie, to instancja persystentna zostanie przypisana do warstwy o tej samej nazwie, niezależnie od głębokości warstwy. Wreszcie, jeśli instancja uporczywa zostanie przeniesiona na stronę room z warstwą na tej samej głębokości, na której została utworzona, nie zostanie przypisana do tej warstwy, ale zamiast tego zostanie utworzona nowa warstwa na tej samej głębokości (zgodnie z konwencją nazewnictwa wyjaśnioną wcześniej).
+  Trwały adres object będzie nadal wywoływał zdarzenia rozpoczęcia i zakończenia gry, rozpoczęcia i zakończenia pomieszczenia, jednak jeśli ponownie uruchomisz grę (np. za pomocą funkcji game_restart() ), wszystkie trwałe adresy objects zostaną usunięte i będą istnieć tylko wtedy, gdy zostaną ponownie utworzone przez grę. Pamiętaj też, że jeśli dezaktywujesz trwałą stronę object, nie będzie ona już przechodzić z jednej strony room do drugiej, chyba że zostanie ponownie aktywowana przed wywołaniem zdarzenia Room End.
+   
+  Składnia:
+  persistent;
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if !persistent
+    {
+        persistent = true;
+    }
+  Powyższy kod sprawdzi instancję, czy persystencja jest oznaczona jako false i jeśli instancja NIE jest persystentna, to persystencja flag jest ustawiona na true.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne instancji
+        Następny: depth
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

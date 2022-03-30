@@ -1,0 +1,62 @@
+
+  
+  draw_sprite_stretched_ext
+  Ta funkcja wykonuje dokładnie to samo, co funkcja draw_sprite_stretched() z dodatkową możliwością ustawienia mieszania kolorów i wartości alfa dla strony sprite podczas jej rysowania (podobnie jak w przypadku funkcji draw_sprite_ext()).
+  UWAGA Podczas rysowania za pomocą tej funkcji przesunięcie x i przesunięcie y (lub początki) strony sprite są ignorowane, a strona sprite jest rysowana z lewym górnym rogiem w określonym położeniu x/y na stronie room.
+  UWAGA Mieszanie kolorów jest zalecane w przypadku celu HTML5 tylko wtedy, gdy włączona jest obsługa WebGL. Jeśli jednak nie jest ona włączona, można ustawić kolor mieszania, który będzie mieszał stronę sprite w normalny sposób. Jednak wszystkie mieszania w ten sposób tworzą duplikat sprite, który jest następnie przechowywany w cache i używany w razie potrzeby. Jest to rozwiązanie dalekie od optymalnego, a wielokrotna zmiana kolorów spowolni działanie gry, chyba że zostanie włączona obsługa WebGL. Jeśli nie chcesz korzystać z WebGL, możesz ustawić rozmiar strony font cache, aby ograniczyć to zjawisko w razie potrzeby, używając funkcji sprite_set_cache_sizee().
+   
+  Składnia:
+  draw_sprite_stretched_ext(sprite, subimg, x, y, w, h, colour, alpha);
+  
+    
+      
+        ArgumentTyp        Opis
+     
+      
+        sprite        The index of the sprite to draw.
+     
+      
+        subimg        The subimg (frame) of the sprite to draw (image_index or -1 correlate to the current frame of animation in the object).
+     
+      
+        x        The x coordinate of where to draw the sprite.
+     
+      
+        y        The y coordinate of where to draw the sprite.
+     
+      
+        w        The width of the area the stretched sprite will occupy.
+     
+      
+        h        The height of the area the stretched sprite will occupy.
+     
+      
+        colour        The colour with which to blend the sprite. c_white is to display it normally.
+     
+      
+        alpha        The alpha of the sprite (from 0 to 1 where 0 is transparent and 1 opaque).
+     
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  draw_sprite_stretched_ext(sprite_index, image_index, x, y, sprite_width, sprite_height / 2, c_white, 0.5);
+  Spowoduje to narysowanie instancji przypisanych do sprite i jej podobrazu z lewym narożnikiem w pozycji x /y instancji. Jego szerokość jest ustawiona na taką samą jak sprite, a wysokość jest równa wysokości sprite podzielonej przez dwa. Obraz ten będzie również normalnie mieszany, ale będzie miał częściowo przezroczystą wartość alfa.
+   
+   
+   
+  
+    
+      
+        Powrót: Sprite'y i płytki
+        Następny: draw_sprite_pos
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

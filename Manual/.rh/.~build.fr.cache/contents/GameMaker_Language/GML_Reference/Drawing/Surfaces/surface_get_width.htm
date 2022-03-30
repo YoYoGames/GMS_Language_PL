@@ -1,0 +1,42 @@
+
+  
+  surface_get_width
+  Ta funkcja zwraca po prostu szerokość indeksowanej powierzchni w pikselach. Należy zauważyć, że jeśli wywołasz tę funkcję, aby sprawdzić stronę application_surface bezpośrednio po zmianie jej rozmiaru za pomocą polecenia surface_resize()    to nie zwróci ona nowej wartości, ponieważ zmiana wymaga odczekania kroku lub dwóch, aby została w pełni przetworzona. Po odczekaniu jednego kroku powinna ona poprawnie zwrócić nowy rozmiar.
+  UWAGA: Podczas pracy z powierzchniami istnieje możliwość, że w każdej chwili mogą one przestać istnieć, ponieważ są przechowywane w pamięci texture. Należy ZAWSZE sprawdzić, czy powierzchnia istnieje, używając polecenia surface_exists()    przed bezpośrednim odwołaniem się do niej.
+   
+  Składnia:
+  surface_get_width(surface_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        surface_id
+        The ID of the surface to get the width of.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  sw = surface_get_width(surf);
+  Powyższy kod zapisze szerokość powierzchni indeksowanej w zmiennej "surf" w zmiennej "sw".
+   
+   
+   
+  
+    
+      
+        Powrót: Powierzchnie
+        Następny: surface_get_texture
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

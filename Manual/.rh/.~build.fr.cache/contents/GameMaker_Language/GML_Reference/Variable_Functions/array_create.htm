@@ -1,0 +1,48 @@
+
+  
+  array_create
+  Za pomocą tej funkcji można utworzyć tablicę 1D o zadanym rozmiarze. Funkcja podaje długość tablicy do utworzenia, a następnie zwraca "uchwyt" do tablicy, który można przypisać do zmiennej. Tablice utworzone w ten sposób będą miały każdy wpis zainicjowany na 0, chyba że podamy (opcjonalną) wartość inicjalizacyjną. Jeśli podamy dodatkową wartość inicjalizującą tablicę, to wszystkie indeksy w nowej tablicy zostaną ustawione na tę wartość zamiast na 0, ale należy pamiętać, że w tym przypadku funkcja będzie miała większy narzut wydajności.
+   
+  Składnia:
+  array_create(size, [value]);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        size
+        Real
+        The size of the array to create.
+      
+      
+        value
+        Zmienna
+        OPTIONAL Wartość, której należy użyć do zainicjowania wszystkich indeksów tablicy.
+      
+    
+  
+   
+  Zwroty:
+  Array
+   
+  Przykład:
+  instance_array = array_create(100, noone);
+  Powyższy kod utworzy nową tablicę składającą się ze 100 wpisów, z których każdy będzie miał wartość słowa kluczowego noone, a następnie przypisze ją do zmiennej "instance_array".
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: array_copy
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,53 @@
+
+  
+  gpu_set_tex_mip_bias_ext
+  Za pomocą tej funkcji można ustawić wartość mipmap bias dla danego próbnika shader. Podajesz wartość indeksu próbnika shader (zwróconą przez funkcję shader_get_sampler_index()a następnie wartość bias, gdzie 0 oznacza brak bias, 1 oznacza pierwszą mipmapę, 2 oznacza drugą mipmapę itd. Ta wartość kontroluje szybkość, z jaką mapa mip jest zamieniana, i generalnie powoduje, że obraz na stronie shader textures jest tym bardziej rozmyty, im wyższa jest ta wartość i im większa jest "odległość" oglądania. Należy pamiętać, że funkcja ta może przyjmować także wartości ujemne, w którym to przypadku obraz shader textures będzie ostrzejszy na większej odległości, im niższa będzie wartość.
+   
+  Składnia:
+  gpu_set_tex_mip_bias_ext(sampler_index, bias);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sampler_index
+        The index of the shader sampler to get
+     
+      
+        bias
+        The mipmap bias value to use (default: 0)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var _sampleIndex = shader_get_sampler_index(shd_Glass, "s_Background");
+    var _spriteTex = sprite_get_texture(sprite_index, 0);
+    shader_set(shd_Glass);
+    if gpu_get_tex_mip_bias_ext(_sampleIndex) != 0
+    {
+        gpu_set_tex_mip_bias_ext(_sampleIndex, 0);
+    }
+    texture_set_stage(_sampleIndex , _spriteTex);
+    shader_reset();
+  Powyższy kod ustawia współczynnik skośności filtra mip na 0 dla podanego próbnika shader texture, jeśli nie został on jeszcze ustawiony na 0.
+   
+   
+   
+  
+    
+      
+        Powrót: Mipmapping
+        Następny: gpu_set_tex_min_mip
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,49 @@
+
+  
+  warstwa_sprite_blend
+  Ta funkcja steruje mieszaniem (lub "zabarwianiem") strony sprite sprite. Domyślną wartością jest -1 (reprezentująca stałą c_white, której również można użyć). Każda inna wartość (w tym wewnętrzne stałe kolorów, takie jak c_red,
+    lub c_aqua) spowoduje wymieszanie określonego koloru z oryginalnym sprite. Podaje się identyfikator elementu sprite (który otrzymuje się podczas tworzenia elementu sprite przy użyciu layer_sprite_create() lub po użyciu
+    funkcji layer_sprite_get_id()), a następnie określasz kolor mieszania, który ma zostać użyty. Poniżej można zobaczyć przykład elementu sprite, który został zmieszany z różnymi kolorami:
+  Należy pamiętać, że na platformie HTML5 należy ograniczyć mieszanie (chyba że używa się WebGL),
+    ponieważ każda mieszana strona sprite musi być buforowana osobno, a duża liczba mieszanych stron sprites może negatywnie wpłynąć na wydajność (rozmiar strony cache można także ustawić za pomocą funkcji sprite_set_cache_size()).
+   
+  Składnia:
+  layer_sprite_blend(sprite_element_id, blend);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        sprite_element_id
+        The unique ID value of the sprite element to change
+     
+      
+        blend
+        The colour to blend with the sprite sprite (default is c_white)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var lay_id = layer_get_id("Asset_sky"); var spr_id = layer_sprite_get_id(lay_id, "Clouds"); layer_sprite_blend(spr_id, c_gray);
+  Powyższy kod pobiera wartość ID strony sprite o nazwie "Clouds" przypisanej do warstwy "Asset_sky", a następnie zabarwia ją na odpowiedni kolor.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy Sprite'ów
+        Następny: layer_sprite_alpha
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

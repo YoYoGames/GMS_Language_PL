@@ -1,0 +1,45 @@
+
+  
+  draw_enable_swf_aa
+  Za pomocą tej funkcji można włączyć lub wyłączyć antyaliasing (AA) dla plików wektorowych w formacie SWF sprites. AA po prostu wygładza krawędzie obrazów wektorowych, aby nadać im ładniejszy wygląd. Ilość zastosowanego AA zależy od wartości ustawionej za pomocą funkcji draw_set_swf_aa_level(). Domyślnie funkcja ta jest wyłączona.
+   
+  Składnia:
+  draw_enable_swf_aa(enable);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        enable
+        Enable (true) lub wyłączyć (false) AA dla wszystkich SWF sprites.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if draw_get_swf_aa_level() == 0
+    {
+        draw_enable_swf_aa(true);
+        draw_set_swf_aa_level(0.5);
+    }
+  Powyższy kod sprawdzi wartość AA dla formatu SWF sprites, a jeśli wynosi ona 0, włączy AA i ustawi wartość na 0,5.
+   
+   
+   
+  
+    
+      
+        Powrót: Sprite'y i płytki
+        Następny: draw_set_swf_aa_level
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

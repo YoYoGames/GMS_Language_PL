@@ -1,0 +1,49 @@
+
+  
+  physics_particle_group_box
+  Ta funkcja ustawia kształt tworzonej grupy cząstek. Najpierw musisz rozpocząć definiowanie grupy za pomocą funkcji physics_particle_group_begin()a następnie użyć tej funkcji do określenia przybliżonej połowy szerokości i połowy wysokości grupy w pikselach - przybliżonej, ponieważ dokładna szerokość i wysokość będzie zależała od rozmiaru cząstek bazowych, zdefiniowanych przez funkcję physics_particle_set_radius() ponieważ symulacja fizyki próbuje "zmieścić" jak najwięcej cząstek w zdefiniowanym kształcie. Na koniec należy wywołać funkcję physics_particle_group_end() aby utworzyć grupę cząstek w witrynie room.
+   
+  Składnia:
+  physics_particle_group_box(halfWidth, halfHeight)
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        halfWidth
+        The half width of the box.
+     
+      
+        halfHeight
+        The half height of the box.
+     
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var flags = phy_particle_flag_water | phy_particle_flag_viscous | phy_particle_flag_tensile;
+    var groupflags = phy_particle_group_flag_solid;
+    physics_particle_group_begin(flags, groupflags, mouse_x, mouse_y, 0, 0, 0, 0, c_white, 1, 1, 2);
+    physics_particle_group_box(100, 100);
+    mLastGroup = physics_particle_group_end();
+  Powyższy kod przechowuje w zmiennych adres flags dla typu cząstki oraz właściwości grupy cząstek, a następnie wykorzystuje je do utworzenia prostokątnej grupy cząstek o boku 200px w miejscu, w którym znajduje się mysz.
+   
+   
+   
+  
+    
+      
+        Powrót: Miękkie cząstki ciała
+        Następny: physics_particle_group_polygon
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

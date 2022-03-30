@@ -1,0 +1,79 @@
+
+  
+  audio_listener_set_orientation
+  Za pomocą tej funkcji można zmienić orientację danego słuchacza w trójwymiarowej przestrzeni dźwiękowej. Domyślnym indeksem słuchacza jest 0, ale można użyć funkcji audio_get_listener_info() aby uzyskać różne indeksy dostępne dla platformy docelowej.
+  Wektor patrzenia i wektor wznoszenia są oparte na wartościach, które są rozwiązywane z podanych względnych pozycji x, y i z, i domyślnie wynoszą (0, 0, -1) dla wektora patrzenia oraz (0, 1, 0) dla wektora wznoszenia, jak pokazano na poniższej ilustracji:
+  
+  Zmiana orientacji słuchacza za pomocą tej funkcji zmieni sposób, w jaki dźwięki tworzone przez emitery dźwięku wokół strony room są odbierane przez gracza w grze. W poniższym przykładzie dźwięki tworzone przez emiter, gdy słuchacz znajduje się w domyślnej pozycji, będą wydawały się dochodzić z dołu i z prawej strony słuchacza, ale po zmianie pozycji i orientacji słuchacza będą odbierane jako dochodzące z góry i z prawej strony.
+  
+   
+  Składnia:
+  audio_listener_set_orientation(index, lookat_x, lookat_y, lookat_z, up_x, up_y, up_z);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        index
+         Identyfikator słuchaczarzeczywistego lub dźwiękowego
+        The listener to set the orientation of.
+      
+      
+        lookat_x
+        Real
+        The x look vector (default 0).
+      
+      
+        lookat_y
+        Real
+        The y look vector (default 0).
+      
+      
+        lookat_z
+        Real
+        The z look vector (default -1).
+      
+      
+        up_x
+        Real
+        The x up vector (default 0).
+      
+      
+        up_y
+        Real
+        The y up vector (default 1).
+      
+      
+        up_z
+        Real
+        The z up vector (default 0).
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var _m = camera_get_view_mat(view_camera[0]);
+    audio_listener_set_position(global.Player_Listener, _m[0], _m[1], _m[2]);
+    audio_listener_set_orientation(info[? "index"], _m[3], _m[4], _m[5], _m[6], _m[7], _m[8]);
+  Powyższy kod pobiera macierz widoku dla widoku z kamery [0], a następnie używa jej do ustawienia pozycji i orientacji słuchacza audio o identyfikatorze zapisanym w zmiennej globalnej "Player_Listener".
+   
+   
+   
+  
+    
+      
+        Powrót: Słuchacze audio
+        Następny: audio_get_listener_count
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

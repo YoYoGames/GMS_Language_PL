@@ -1,0 +1,97 @@
+
+  
+  os_device
+  Ta zmienna tylko do odczytu przechowuje jedną z różnych stałych wartości wymienionych poniżej, informujących o tym, na jakim urządzeniu aktualnie uruchomiona jest gra. Uwaga: ta zmienna jest wycofywana na rzecz funkcji os_get_info() która zwraca dokładniejsze informacje o urządzeniu, na którym uruchomiona jest gra.
+   
+  Składnia:
+  os_device
+   
+  Zwroty:
+  Device Type Constant
+  
+    
+      
+      
+    
+    
+      
+        Typ urządzenia Stała
+      
+      
+        Stała
+        Opis
+      
+      
+        device_ios_ipad
+        iPad
+      
+      
+        device_ios_ipad_retina
+        Nowszy iPad z wyświetlaczem Retina o wymiarach 2048 x 1536
+      
+      
+        device_ios_iphone6
+        iPhone6 z wyświetlaczem o rozmiarze 1334 x 750
+      
+      
+        device_ios_iphone6plus
+        Większy iPhone 6 z wyświetlaczem 1920 x 1080
+      
+      
+        device_ios_iphone5
+        iPhone5 z wyświetlaczem o rozmiarze 640 x 1136)
+      
+      
+        device_ios_iphone
+        Starszy telefon iPhone/iPod Touch (ekran 480 x 320) lub Android.
+      
+      
+        device_ios_iphone_retina
+        Nowszy iPhone/iPod Touch z wyświetlaczem Retina o rozdzielczości 960 x 640
+      
+      
+        device_emulator
+        Urządzenie jest w rzeczywistości emulatorem (Windows Phone lub Android).
+      
+      
+        device_tablet
+        Tablet z systemem Android
+      
+      
+        device_ios_unknown
+        Nieznany lub nie iOS
+      
+    
+  
+   
+  Przykład:
+  if (os_browser = browser_not_a_browser)
+    {
+        switch (os_device)
+        {
+            case device_ios_ipad: global.Config = 2; break;
+            case device_ios_iphone: global.Config = 3; break;
+            case device_ios_iphone_retina: global.Config = 4; break;
+            case device_ios_unknown: global.Config = 5; break;
+        }
+    }
+    else
+    {
+        global.Config = 1;
+    }
+  Powyższy kod sprawdza, czy gra jest uruchomiona w przeglądarce, a następnie ustawia zmienną globalną na wartość zależną od wyniku sprawdzenia.
+   
+   
+   
+  
+    
+      
+        Powrót: System operacyjny i kompilator
+        Następny: os_type
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

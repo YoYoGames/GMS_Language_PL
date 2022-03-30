@@ -1,0 +1,45 @@
+
+  
+  layer_background_get_id
+  Za pomocą tej funkcji można pobrać unikatową wartość ID elementu tła na warstwie. Podajesz identyfikator warstwy (który otrzymujesz, gdy używasz nazwy warstwy wraz z layer_get_id()), a funkcja zwróci wartość ID związaną z elementem tła na tej warstwie. Zwróć uwagę, że funkcja ta jest przeznaczona specjalnie do stosowania z tłami dodanymi w witrynie IDE, ponieważ jeśli dodasz tło do warstwy za pomocą kodu przy użyciu funkcji layer_background_create()to funkcja zwróci unikalny identyfikator dodanego elementu tła.
+   
+  Składnia:
+  layer_background_get_id(layer_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_id
+        Ciąg lub identyfikator warstwy
+        The unique ID value of the layer to target
+      
+    
+  
+   
+  Zwroty:
+  Background Element ID
+   
+  Przykład:
+  var lay_id = layer_get_id("Background_trees");
+    var back_id = layer_background_get_id(lay_id);
+    layer_background_sprite(back_id, bck_Trees_Winter);
+  Powyższy kod pobierze identyfikator warstwy o nazwie "Tło_drzewa", a następnie użyje go do uzyskania identyfikatora elementu tła na tej warstwie. Identyfikator ten zostanie następnie użyty do zmiany elementu sprite.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy tła
+        Następny: layer_background_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,62 @@
+
+  
+  ds_grid_set_region
+  Za pomocą tej funkcji można ustawić prostokątny obszar danej siatki na określoną wartość (może to być wartość rzeczywista lub string), jak pokazano na poniższym rysunku:
+  
+   
+  Składnia:
+  ds_grid_set_region(index, x1, y1, x2, y2, val);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        index
+        The index of the grid.
+     
+      
+        x1
+        The x position of the left of the region in the grid.
+     
+      
+        y1
+        The y position of the top of the region in the grid.
+     
+      
+        x2
+        The x position of the right of the region in the grid.
+     
+      
+        y2
+        The y position of the bottom of the region in the grid.
+     
+      
+        val
+        The value to set the region cells to.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  ds_grid_set_region(grid, 5, 5, 10, 10, 99)
+  Spowoduje to ustawienie wszystkich komórek w obszarze siatki indeksowanym zmienną "siatka" od (5,5) do (10,10) na 99.
+   
+   
+   
+  
+    
+      
+        Powrót: Siatki DS
+        Następny: ds_grid_shuffle
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

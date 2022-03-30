@@ -1,0 +1,77 @@
+
+  
+  json_stringify
+  Za pomocą tej funkcji można konwertować pojedyncze lub zagnieżdżone structs i tablice na poprawny JSON string. Podajesz wartość początkową, której chcesz użyć (indeks tablicy lub referencję do struct ), a następnie funkcja "stringifikuje" ją, konwertując na łańcuch JSON (konwertując tablice GameMaker na tablice JSON, a GameMaker structs na JSON objects).
+  Podczas korzystania z tej funkcji należy pamiętać o kilku ważnych rzeczach:
+  
+    Funkcja nie  konwertuje map DS, list ani żadnych innych struktur danych na JSON, a jedynie przechowuje wewnętrzną wartość indeksu dla struktury (co jest mało użyteczne, ponieważ indeks będzie się zmieniał między kolejnymi uruchomieniami gry), dlatego nie należy próbować przekształcać na postać łańcuchową żadnych wartości, które mogą zawierać odniesienia do struktur danych (do tego celu służy funkcja json_encode()).
+    Funkcja przekształci prawie każdą wartość w "poprawny" JSON string, jednak rzeczywiste wartości zawarte w string mogą nie być dokładnie takie, jakich oczekujesz, ze względu na sposób działania standardu JSON:
+      
+      "JSON jest agnostyczny w kwestii liczb. W każdym języku programowania może występować wiele typów liczb o różnych pojemnościach i dopełnieniach, stałych lub zmiennopozycyjnych, binarnych lub dziesiętnych. Może to utrudniać wymianę danych między różnymi językami programowania. JSON oferuje natomiast tylko taką reprezentację liczb, jakiej używa człowiek: sequence cyfr. Wszystkie języki programowania wiedzą, jak korzystać z sequences cyfr, nawet jeśli nie zgadzają się co do ich wewnętrznej reprezentacji."
+      
+      Więcej informacji można znaleźć w dokumencie ECMA JSON Standard.
+    
+    Jeśli wśród wartości do konwersji na JSON znajduje się int64, program zapisze ją jako int, jeśli mieści się w prawidłowym zakresie dla int32, jako double, jeśli może to zrobić bez utraty precyzji, lub (jeśli żaden z tych przypadków nie ma zastosowania) jako łańcuch z identyfikatorem "@i64@" przed nim i "$i64$" po nim. Po ponownym parsowaniu JSON-a GameMaker Studio 2 wyłapie te identyfikatory i ponownie przekształci wartość na int64. Oznacza to, że jeśli JSON jest przeznaczony dla server lub innego obiektu docelowego spoza GameMakera, wartości te nie będą odpowiednie i dlatego należy ich unikać.
+    Jeśli wśród wartości, które mają zostać przekonwertowane na JSON, znajdą się infinity, -infinity lub NaN, zostaną one zakodowane jako strings, ponieważ wartości te nie są częścią standardu JSON, a podczas przetwarzania wynikowego JSON nie zostaną one przekonwertowane z powrotem na ich wartości runtime i pozostaną jako strings. Zwróć uwagę, że NaN zostanie zamienione na "nan" (małe litery) podczas przetwarzania łańcuchowego.
+    Należy zachować ostrożność podczas zapisywania zwróconego ciągu JSON do pliku ini, ponieważ specyfikacja ini może powodować problemy podczas używania cudzysłowów i znaków escape. Więcej informacji na ten temat można znaleźć w funkcji ini_write_string() aby uzyskać więcej informacji.
+  
+   
+   
+   
+  Składnia:
+  json_stringify(val)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        val
+        Struktura lub tablica
+        The reference value for a struct or array to convert into a JSON string
+      
+    
+  
+   
+  Zwroty:
+  String
+   
+  Przykład:
+  var _contents =
+    {
+        version : "1.0.0",
+        data:
+        {
+            coins : 4,
+            mana : 15,
+            playername : "Gurpreet",
+            items :
+            [
+                ITEM.SWORD,
+                ITEM.BOW,
+                ITEM.GUITAR
+            ]
+        }
+    };
+    
+    var _json_string = json_stringify(_contents);
+  
+  Powyższy kod skonwertuje plik _contents struct na plik JSON string i zapisze plik string w zmiennej. Zwrócona strona string będzie wyglądać następująco:
+  { "data": { "items": [ 0.0, 1.0, 2.0 ], "coins": 4.0, "mana": 15.0, "playername": "Gurpreet" }, "version": "1.0.0" }
+   
+   
+   
+  
+    
+      
+        Powrót: Kodowanie plików
+        Następny: json_parse
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

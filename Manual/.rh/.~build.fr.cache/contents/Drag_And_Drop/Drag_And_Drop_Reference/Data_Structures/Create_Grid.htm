@@ -1,0 +1,47 @@
+
+  
+   Utwórz siatkę
+  Ta akcja utworzy nową strukturę danych siatki i zwróci wartość indeksu, aby można było później uzyskać dostęp do siatki za pomocą innych akcji związanych ze strukturą danych. Indeks siatki zostanie zwrócony do podanej zmiennej docelowej, która może zostać
+    utworzonej wcześniej za pomocą polecenia Przypisz zmienną lub Deklaruj zmienną tymczasową, albo można flag zaznaczyć pole wyboru "Temp", aby nadać nazwę i utworzyć tymczasową zmienną lokalną
+    w celu przechowywania wartości do końca działania strony script lub zdarzenia. Zauważ, że w przeciwieństwie do innych struktur danych siatki nie są tworzone "puste", a każda komórka nowo utworzonej siatki będzie miała wartość 0. Od Ciebie zależy, czy zmienisz dane komórek
+    lub samodzielnie wyczyścić siatkę na inną wartość za pomocą akcji Wyczyść siatkę. Należy pamiętać, że można utworzyć dodatkowe siatki DS, klikając ikonę plusa 
+    obok akcji i wybierając kolejną zmienną, która będzie przechowywać identyfikator siatki, oraz ponownie podając wartości szerokości i wysokości.
+  WAŻNE! Tworzenie dowolnej struktury danych zużywa pamięć na platformie docelowej, dlatego wszystkie struktury danych powinny być usuwane, gdy nie są już potrzebne, za pomocą akcji Uwolnij strukturę danych.
+    w przeciwnym razie dojdzie do wycieku pamięci, który może pogorszyć wydajność gry lub nawet spowodować jej awarię. Jest to szczególnie istotne w przypadku używania tymczasowych zmiennych lokalnych do przechowywania indeksów struktur danych, ponieważ zmienne te są usuwane po zakończeniu kodu lub zdarzenia, ale
+    nie oznacza to, że struktura danych również zostaje usunięta! Struktura danych nadal będzie istnieć, tylko nie będzie można się do niej odwołać, więc albo użyj zmiennej instancji i zwolnij strukturę w późniejszym czasie, albo zwolnij strukturę przed końcem
+    przed końcem zdarzenia lub funkcji, jeśli jej indeks jest przechowywany w zmiennej tymczasowej.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Target
+        Zmienna docelowa, w której ma być zapisany indeks siatki
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji tworzy dwie zmienne tymczasowe, które przechowują liczbę komórek 32px
+    wzdłuż szerokości i wysokości strony room, a następnie tworzy nową zmienną globalną o zasięgu globalnym, która przechowuje indeks nowo utworzonej struktury danych siatki. Następnie siatka jest czyszczona za pomocą słowa kluczowego noone.
+   
+   
+   
+  
+    
+      
+        Powrót: Działania związane ze strukturami danych
+        Następny: Tworzenie stosu
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

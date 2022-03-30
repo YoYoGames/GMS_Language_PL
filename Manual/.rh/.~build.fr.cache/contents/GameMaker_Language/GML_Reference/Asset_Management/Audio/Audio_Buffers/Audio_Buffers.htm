@@ -1,0 +1,45 @@
+
+  
+  Bufory audio
+  Do ładowania, zapisywania i manipulowania plikami dźwiękowymi w grach można używać buforów audio. Strona buffers jest tworzona wcześniej za pomocą odpowiednich funkcji bu fora, a następnie za pomocą poniższych funkcji można utworzyć dźwięk, który będzie używany w projekcie:
+  
+    audio_create_buffer_sound
+    audio_free_buffer_sound
+  
+   
+  Należy pamiętać, że po utworzeniu dźwięku na podstawie adresu audio buffernie tworzy się nowego dźwięku w pamięci, lecz wskazuje miejsce w witrynie buffer, w którym dźwięk jest zapisany. Nie należy zmieniać adresu buffer po skojarzeniu z nim dźwięku, gdyż może to przynieść nieoczekiwane rezultaty. Nie można też usuwać adresu buffer, gdy jest z nim skojarzony dźwięk. Zamiast tego należy najpierw zwolnić dźwięk (lub dźwięki), a następnie usunąć buffer. Po utworzeniu nowego zasobu audio z buffer można użyć jego wartości indeksu w dowolnej zwykłej funkcji audio, aby go odtworzyć, zmienić jego wzmocnienie lub wysokość, wstrzymać odtwarzanie itd. Należy pamiętać, że strona buffer użyta do załadowania dźwięku może obsługiwać tylko dźwięki PCM, więc formaty takie jak OGG nie będą obsługiwane.
+  Inną cechą buforowanego dźwięku jest możliwość użycia strony buffer do utworzenia strony queue z dźwiękiem, który można następnie przesłać do urządzenia, na którym uruchomiono projekt. Strona audio queue wykorzystuje zwykłą stronę buffer, którą wcześniej wypełniono danymi audio, i umożliwia "wskazywanie" jej fragmentów oraz mówienie stronie GameMaker Studio 2, aby przesyłała dźwięk w określonej kolejności z tej strony buffer. Dostępne funkcje dla strony audio queues to:
+  
+    audio_create_play_queue
+    audio_free_play_queue
+    audio_queue_sound
+  
+   
+  Po utworzeniu adresu queue można użyć zwróconego indeksu queue tak samo, jak indeksu dźwiękowego zwykłego dźwięku, aby go odtworzyć, wstrzymać, ponownie uruchomić lub zmienić jego wzmocnienie i wysokość. Jedyną rzeczą, której nie można zrobić, jest określenie długości ścieżki lub pozycji ścieżki, ale poza tym z pliku audio queue można korzystać tak samo jak z każdego innego dźwięku. Należy także zauważyć, że niektóre funkcje audio queue będą także wyzwalać zdarzenie asynchroniczne odtwarzania dźwięku.
+  Strona Audio buffers umożliwia także nagrywanie dźwięku z dowolnego dostępnego źródła (np. mikrofonów lub systemu operacyjnego), który można następnie kolejkować i przesyłać strumieniowo przy użyciu powyższych funkcji. Nagrywanie dźwięku spowoduje wywołanie zdarzenia asynchronicznego nagrywania dźwięku, które będzie zawierać określone informacje o tym, co jest nagrywane.
+    
+    W przypadku nagrywania dźwięku dostępne są następujące funkcje:
+  
+  
+    audio_start_recording
+    audio_stop_recording
+    audio_get_recorder_count
+    audio_get_recorder_info
+  
+   
+  UWAGA Większość platform z wyjątkiem HTML5 obsługuje nagrywanie dźwięku w jakiejś formie, ale nie oznacza to, że wszystkie urządzenia będą na to zezwalać, nawet jeśli platforma to robi, dlatego zawsze należy sprawdzić, czy funkcja audio_get_recorder_count() zwraca wartość większą niż 0, aby sprawdzić, czy urządzenia do nagrywania są dostępne, zanim użyjesz pozostałych funkcji nagrywania.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: Synchronizacja dźwięku
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -15,7 +15,7 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Audio</h1>
-  <p>GameMaker Studio 2 posiada kompletny silnik dźwiękowy oparty na formatach dźwiękowych <span class="inline">*.ogg</span>, <span class="inline">*.mp3</span> oraz <span class="inline">*.wav</span>. Dźwięki tych typów dodane do strony <span class="notranslate">IDE</span> można wykorzystać w grze, korzystając z podstawowych funkcji audio przedstawionych poniżej. Aby uzyskać bardziej złożone efekty dźwiękowe lub odtworzyć pojedynczy utwór muzyczny, można skorzystać z zaawansowanych funkcji audio, które umożliwiają modyfikowanie sposobu odtwarzania dźwięku. Dostępne są także bardziej wyspecjalizowane funkcje do strumieniowego przesyłania dźwięku, pozycjonowania dźwięku (w celu uzyskania dźwięku 3D) oraz grupowania dźwięku.</p>
+  <p>Program<span data-keyref="GameMaker Name">GameMaker</span> posiada kompletny silnik dźwiękowy oparty na formatach dźwiękowych <span class="inline">*.ogg</span>, <span class="inline">*.mp3</span> oraz <span class="inline">*.wav</span>. Dźwięki tych typów dodane do strony <span class="notranslate">IDE</span> można wykorzystać w grze za pomocą podstawowych funkcji audio przedstawionych poniżej. Aby uzyskać bardziej złożone efekty dźwiękowe lub odtworzyć pojedynczy utwór muzyczny, można skorzystać z zaawansowanych funkcji audio, które umożliwiają modyfikowanie sposobu odtwarzania dźwięku. Dostępne są także bardziej wyspecjalizowane funkcje do strumieniowego przesyłania dźwięku, pozycjonowania dźwięku (w celu uzyskania dźwięku 3D) oraz grupowania dźwięku.</p>
   <p class="note"><b>WAŻNE!</b> Używając dźwięku w celu HTML5, należy pamiętać, że nie wszystkie przeglądarki obsługują Web Audio i w związku z tym po uruchomieniu mogą nie odtwarzać dźwięku w projekcie. Ogólne pojęcie o obsłudze Web Audio można uzyskać, korzystając z poniższego odnośnika: <a href="https://caniuse.com/#search=WebAudio" target="_blank">Czy mogę używać Web Audio?</a></p>
   <p>Poniższe funkcje służą do obsługi dźwięku w najprostszy możliwy sposób, bez użycia emiterów, pozwalając użytkownikowi na łatwe generowanie dźwięków i odtwarzanie muzyki, ponieważ dźwięki są zawsze generowane w <i>pozycji słuchacza</i> (więcej informacji o <i>słuchaczu</i> można znaleźć w rozdziale poniżej), a więc na ogół nie mają na nie wpływu żadne zmiany w <i>pozycji</i> <i>słuchacza</i>:</p>
   <ul class="colour">
@@ -36,7 +36,7 @@
     <li><a href="audio_destroy_stream.htm"><span class="notranslate">audio_destroy_stream</span></a></li>
   </ul>
   <p> </p>
-  <p>Poniższe funkcje mają na celu zapewnienie większej kontroli nad tym, jak działa silnik audio i jak dźwięki odtwarzane przez niego będą &quot;słyszane&quot; przez słuchacza. W związku z tym zaleca się, abyś przed użyciem którejkolwiek z poniższych funkcji posiadał dobrą praktyczną wiedzę na temat działania pozostałych elementów silnika dźwiękowego GameMaker Studio 2:</p>
+  <p>Poniższe funkcje mają na celu zapewnienie większej kontroli nad tym, jak działa silnik audio i jak dźwięki przez niego odtwarzane będą &quot;słyszane&quot; przez słuchacza. W związku z tym zaleca się, abyś przed użyciem którejkolwiek z poniższych funkcji posiadał dobrą wiedzę na temat działania pozostałych elementów silnika dźwiękowego <span data-keyref="GameMaker Name">GameMakera</span>:</p>
   <ul class="colour">
     <li><a href="audio_sound_set_track_position.htm"><span class="notranslate">audio_sound_set_track_position</span></a></li>
     <li><a href="audio_sound_get_track_position.htm"><span class="notranslate">audio_sound_get_track_position</span></a></li>
@@ -67,7 +67,7 @@
   <p> </p>
   <h2>Dźwięk sieciowy</h2>
   <p>Podczas tworzenia gier na platformę docelową HTML5 silnik audio wymaga obsługi <b>Web Audio</b>, a to z kolei oznacza, że czasami dźwięk nie będzie odtwarzany w oczekiwany sposób. Dzieje się tak, ponieważ kontekst Web Audio może nie być uruchomiony lub może przestać działać podczas gry. Przyczyny takiego stanu rzeczy są bardzo różne w różnych przeglądarkach, a nawet w różnych wersjach tej samej przeglądarki, dlatego wykrywanie zmiany stanu kontekstu Web Audio jest bardzo ważne, np. w celu wykrycia zmiany kontekstu i wstrzymania/uruchomienia zapętlonego dźwięku, np. muzyki w tle.</p>
-  <p>Aby pomóc w rozwiązaniu tego problemu, w witrynie <span class="notranslate">GameMaker Studio 2</span> dostępne są dwa różne sposoby wykrywania zmiany stanu kontekstu Web Audio: za pomocą poniższej funkcji:</p>
+  <p>Aby pomóc w rozwiązaniu tego problemu, <span data-keyref="GameMaker Name">program GameMaker</span> ma dwa różne sposoby wykrywania zmiany stanu kontekstu Web Audio - można to zrobić za pomocą następującej funkcji:</p>
   <ul class="colour">
     <li><a href="audio_system_is_available.htm"><span class="notranslate">audio_system_is_available</span></a></li>
   </ul>

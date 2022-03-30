@@ -1,0 +1,54 @@
+
+  
+  cloud_string_save
+  Ta funkcja powoduje zapisanie adresu string w wybranej usłudze w chmurze w celu przechowywania. Funkcja zwróci unikalną wartość id, która powinna być użyta w odpowiednim zdarzeniu asynchronicznym do identyfikacji mapy DS, która jest zwracana jako "wywołanie zwrotne" z usługi w chmurze. Strona string powinna zawierać wszystkie informacje potrzebne do zapisania w grze, ponieważ w chmurze można zapisać tylko jeden "płatek danych", a ponowne uruchomienie tej funkcji spowoduje nadpisanie wszystkich wcześniej zapisanych wartości (podobnie jak użycie funkcji cloud_file_save() ). Opis powinien być krótką informacją string opisującą zapis, np.: "Level2, Stage2".
+  Więcej informacji na temat zwracanych danych asynchronicznych można znaleźć w funkcji cloud_synchronise().
+   
+  Składnia:
+  cloud_string_save(string, description);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        string
+        The data string to be uploaded.
+     
+      
+        description
+        A brief description of the data being stored.
+     
+    
+  
+   
+  Zwroty:
+  Async Request ID
+   
+  Przykład:
+  var t_str = "";
+    for (var i = 0; i < 10; i++;)
+    {
+        t_str += string(global.Highscore[i]) + "|"
+    }
+    save_check = cloud_string_save(t_str, "Current Highscores");
+    var file = file_text_open_write("Highscores.txt");
+    file_text_write_string(file, t_str);
+    file_text_close(file);
+  Powyższy kod tworzy stronę string z wartości przechowywanych w globalnej tablicy "Highscores", a następnie zapisuje tę stronę string w usłudze chmurowej w celu przechowywania, a także zapisuje ją w pliku w celu przechowywania lokalnego.
+   
+   
+   
+  
+    
+      
+        Powrót: Zapisywanie w chmurze
+        Następny: cloud_file_save
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

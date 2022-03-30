@@ -1,0 +1,50 @@
+
+  
+  warstwa_tła_skala
+  Za pomocą tej funkcji można ustawić skalę wzdłuż osi y elementu tła. Podajesz identyfikator elementu tła (który otrzymujesz podczas tworzenia elementu tła za pomocą layer_background_create() lub po użyciu funkcji layer_background_get_id()), a następnie ustawia wartość skali. Podana wartość skali to mnożnik, który jest używany do zmiany sposobu wyświetlania elementu tła, gdzie wartość 0,5 powoduje wyświetlenie elementu w połowie skali, a wartość 2 - w podwójnej skali. Należy pamiętać, że wartości ujemne są ważne i spowodują "odwrócenie" elementu wokół pozycji (0,0), więc skala x równa -1 spowoduje wyświetlenie odwróconego obrazu.
+   
+  Składnia:
+  layer_background_yscale(background_element_id, yscale);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        background_element_id
+        Identyfikator elementu tła
+        The unique ID value of the background element to change
+      
+      
+        yscale
+        Real
+        The speed multiplier/value to use for the element
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var lay_id = layer_get_id("Background_water");
+    var back_id = layer_background_get_id(lay_id);
+    layer_background_yscale(back_id, -1);
+  Powyższy kod pobierze identyfikator warstwy o nazwie "Tło_wody", a następnie użyje go do pobrania identyfikatora elementu tła znajdującego się na tej warstwie. Identyfikator ten zostanie następnie użyty do zmiany skali yscale elementu.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy tła
+        Następny: layer_background_get_visible
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

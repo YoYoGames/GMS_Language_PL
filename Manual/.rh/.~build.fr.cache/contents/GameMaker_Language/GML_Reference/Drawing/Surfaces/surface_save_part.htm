@@ -1,0 +1,64 @@
+
+  
+  powierzchnia_zapisu_części
+  Ta funkcja zapisuje na dysku fragment powierzchni o podanej nazwie pliku. Powierzchnia musi być zapisana jako plik w formacie *.png, a położenie (x,y) musi być podane jako współrzędne lokalne powierzchni, przy czym należy pamiętać, że lewy górny róg powierzchni jest zawsze (0,0).
+   
+  Składnia:
+  surface_save_part(surface_id, fname, x, y, width, height);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        surface_id
+        The ID of the surface to set as the drawing target.
+     
+      
+        fname
+        The name of the saved image file.
+     
+      
+        x
+        The starting x position within the surface.
+     
+      
+        y
+        The starting y position within the surface.
+     
+      
+        width
+        The width of the part to save.
+     
+      
+        height
+        The height of the part to save.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if keyboard_check_pressed(ord("S")
+    {
+        surface_save_part(surf, "test.png", 0, 0, 100, 100);
+    }
+  Powyższy kod sprawdzi, czy użytkownik naciśnie klawisz "S" na klawiaturze i jeśli tak się stanie, zapisze na dysku część powierzchni indeksowanej zmienną "surf".
+   
+   
+   
+  
+    
+      
+        Powrót: Powierzchnie
+        Następny: draw_surface
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,45 @@
+
+  
+  xboxlive_gamedisplayname_for_user
+  Za pomocą tej funkcji można pobrać nazwę wyświetlaną - w postaci string - z podanego wskaźnika ID użytkownika. Zwróć uwagę, że jeśli użytkownik jest lokalny, to zwracana wartość to po prostu string jego nazwy wyświetlanej, ale jeśli jest to użytkownik zdalny, to string będzie jego gamertagiem, którego można użyć na przykład do wyciszenia/wyłączenia wyciszenia na czacie głosowym.
+   
+  Składnia:
+  xboxlive_gamedisplayname_for_user(user_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        user_id
+        The ID pointer of the user to check.
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  for(var i = 0; i < xboxlive_get_user_count(); ++i;)
+    {
+        user_id[i] = xboxlive_get_user(i);
+        user_name[i] = xboxlive_gamedisplayname_for_user(user_id[i]);
+    }
+  Powyższy kod pobiera wskaźnik ID użytkownika dla każdego dostępnego konta użytkownika, a następnie zapisuje ten wskaźnik wraz z nazwą użytkownika w dwóch tablicach.
+   
+   
+   
+  
+    
+      
+        Wstecz: Użytkownicy i konta
+        Następny: xboxlive_user_for_pad
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

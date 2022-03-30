@@ -1,0 +1,47 @@
+
+  
+  timeline_clear
+  Za pomocą tej funkcji można wyczyścić określoną linię czasową z "momentów", usuwając wszystkie kody i działania dla tej linii czasowej i pozostawiając ją pustą.
+   
+  Składnia:
+  timeline_clear(ind);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ind
+        Oś czasu Aktywa
+        The index of the timeline to clear.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if timeline_position > 200
+    {
+        timeline_clear(global.tl);
+        timeline_index = -1;
+    }
+  Powyższy kod spowoduje wyczyszczenie określonej linii czasu indeksowanej zmienną "global.tl" ze wszystkich momentów, w których minął określony moment.
+   
+   
+   
+  
+    
+      
+        Powrót: Timelines
+        Następny: timeline_size
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

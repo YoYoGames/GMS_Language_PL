@@ -1,0 +1,45 @@
+
+  
+   Bufor odczytu
+  Tej akcji można użyć do odczytu danych z wcześniej utworzonej strony buffer. Użytkownik podaje unikatową wartość identyfikatora buffer (zwróconą przez akcję Utwórz bufor) i podaje zmienną, w której ma być przechowywana zwrócona wartość. Jeśli flag zmienna
+    jako tymczasowa zmienna lokalna, zostanie ona utworzona dla Ciebie i usunięta po zakończeniu zdarzenia lub akcji script. Wszystkie dane są zwracane w postaci łańcucha znaków, więc jeśli przechowujesz jakieś liczby rzeczywiste, będziesz musiał użyć jednej z akcji typu danych, aby przekonwertować je z string na wartość. Należy także pamiętać, że adresy buffers są odczytywane i zapisywane sekwencyjnie, a zatem odczyt z adresu buffer spowoduje przesunięcie pozycji "szukania" do następnego wpisu, co oznacza, że aby odczytać różne fragmenty danych
+    wystarczy wywołać tę czynność tyle razy, ile jest to wymagane, i zapisać każdą zwróconą porcję danych do zmiennej.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Buffer
+        Indeks buffer (przechowywany w zmiennej)
+      
+      
+        Target
+        Zmienna docelowa, w której będą przechowywane zwrócone dane
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji ustawia pozycję odczytu/zapisu buffer na początek buffer, a następnie
+    a następnie odczytuje z powrotem dwie porcje danych, zapisując je (tak jak strings) w tymczasowych zmiennych lokalnych. Zmienne te są następnie używane do rysowania danych na ekranie.
+   
+   
+   
+  
+    
+      
+        Powrót: Akcje buforowe
+        Następny: Bufor zapisu
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

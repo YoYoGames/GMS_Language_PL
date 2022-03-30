@@ -40,7 +40,7 @@
       </tr>
       <tr>
         <td><span class="notranslate"><span class="inline">network_config_use_non_blocking_socket</span></td>
-        <td>Powiedz <span class="notranslate">GameMaker Studio 2</span>, aby nie blokował połączenia.</td>
+        <td>Powiedz <span data-keyref="GameMaker Name">programowi GameMaker</span>, aby nie blokował połączeń.</td>
         <td><span class="notranslate">0 = block, 1 = don&#39;t block</span></td>
       </tr>
       <tr>
@@ -61,9 +61,9 @@
     </tbody>
   </table>
   <p><br>
-    Pierwsza opcja (<span class="inline">network_config_connect_timeout</span>) po prostu ustawia limit czasu na połączenie z <span class="notranslate">server</span>, ale nie zmienia zachowania połączenia poza czasem, jaki trzeba odczekać. Zaleca się, aby nie ustawiać go zbyt nisko i utrzymywać na poziomie około 1000 dla gry tylko w sieci LAN lub 4000 dla Internetu, w przeciwnym razie gra może nie łączyć się losowo. Jeśli chcesz ustawić limit czasu dla wysyłania/odbierania pakietów, użyj funkcji <a href="network_set_timeout.htm"><span class="inline">network_set_timeout()</span></a>.</p>
-  <p>Druga opcja (<span class="inline">network_config_use_non_blocking_socket</span>) oznacza, że wszystkie funkcje <span class="inline">network_connect_*</span> (nieasynchroniczne) natychmiast zwrócą adres <span class="inline">socket_id</span>, <i>ale nie będzie można wysyłać ani odbierać na tym gnieździe, dopóki nie zostanie odebrane zdarzenie sieciowe asynchroniczne</i>. Wywołane zdarzenie będzie miało klucz &quot;type&quot; ustawiony na <span class="inline">network_type_non_blocking_connect</span> (więcej szczegółów można znaleźć na stronie poświęconej <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">asynchronicznemu zdarzeniu sieciowemu</a>). Jest to ustawienie <b>globalne</b>, ponieważ <span class="notranslate">GameMaker Studio 2</span> nie obsługuje połączenia blokowania i nieblokowania w jednej aplikacji.</p>
-  <p>Trzecia i czwarta opcja (<span class="inline">network_config_enable_reliable_udp</span>, <span class="inline">network_config_disable_reliable_udp</span>) służą do włączania lub wyłączania niezawodnego protokołu UDP <span class="notranslate">GameMaker Studio 2</span> i jako takie powinny <b>być używane tylko z połączeniami UDP</b>. Termin &quot;niezawodny&quot; w tym przypadku oznacza, że po włączeniu go na <i>obu</i> końcach połączenia witryna <span class="notranslate">GameMaker Studio 2</span> będzie próbowała sprawdzić, czy pakiety dotarły prawidłowo, i ponownie wysłać te, które nie dotarły (uwaga: nie gwarantujemy, że pakiety dotrą w kolejności transmisji). W przypadku korzystania z niezawodnego typu gniazda, do wszystkich pakietów udp dodawany jest 12-bajtowy nagłówek, który zawiera informacje potrzebne <span class="notranslate">GameMaker Studio 2</span> do sprawdzenia pakietu pod kątem błędów i ponownego wysłania brakujących pakietów. Przy korzystaniu z tej opcji warto zwrócić uwagę na następujące kwestie:</p>
+    Pierwsza opcja (<span class="inline">network_config_connect_timeout</span>) po prostu ustawia limit czasu na nawiązanie połączenia z <span class="notranslate">server</span>, ale nie zmienia zachowania połączenia poza czasem, jaki trzeba odczekać. Zaleca się, aby nie ustawiać go zbyt nisko i utrzymywać na poziomie około 1000 dla gry tylko w sieci LAN lub 4000 dla Internetu, w przeciwnym razie gra może nie łączyć się losowo. Jeśli chcesz ustawić limit czasu dla wysyłania/odbierania pakietów, użyj funkcji <a href="network_set_timeout.htm"><span class="inline">network_set_timeout()</span></a>.</p>
+  <p>Druga opcja (<span class="inline">network_config_use_non_blocking_socket</span>) oznacza, że wszystkie funkcje <span class="inline">network_connect_*</span> (nieasynchroniczne) natychmiast zwrócą adres <span class="inline">socket_id</span>, <i>ale nie będzie można wysyłać ani odbierać na tym gnieździe, dopóki nie zostanie odebrane zdarzenie sieciowe asynchroniczne</i>. Wywołane zdarzenie będzie miało klucz &quot;type&quot; ustawiony na <span class="inline">network_type_non_blocking_connect</span> (więcej szczegółów znajdziesz na stronie poświęconej <a href="../../../The_Asset_Editors/Object_Properties/Async_Events/Networking.htm">asynchronicznemu zdarzeniu sieciowemu</a>). Jest to ustawienie <b>globalne</b>, ponieważ <span data-keyref="GameMaker Name">GameMaker</span> nie obsługuje mieszanki blokowania i nieblokowania w jednej aplikacji.</p>
+  <p>Trzecia i czwarta opcja (<span class="inline">network_config_enable_reliable_udp</span>, <span class="inline">network_config_disable_reliable_udp</span>) służą do włączania lub wyłączania niezawodnego protokołu UDP <span data-keyref="GameMaker Name">GameMakera</span> i jako takie powinny <b>być używane tylko w połączeniach UDP</b>. W tym przypadku &quot;niezawodny&quot; oznacza, że po włączeniu tej opcji na <i>obu</i> końcach połączenia, <span data-keyref="GameMaker Name">GameMaker</span> będzie próbował sprawdzić, czy pakiety dotarły prawidłowo i ponownie wysłać te, które nie dotarły (uwaga, nie gwarantujemy, że pakiety dotrą w kolejności transmisji). Gdy używasz niezawodnego typu gniazda, do wszystkich pakietów udp dodawany jest 12-bajtowy nagłówek, który zawiera informacje potrzebne <span data-keyref="GameMaker Name">GameMakerowi</span> do sprawdzenia pakietów pod kątem błędów i ponownego wysłania brakujących pakietów. Przy korzystaniu z tej opcji warto zwrócić uwagę na następujące kwestie:</p>
   <ul class="colour">
     <li>Protokół ten należy włączyć/wyłączyć po obu stronach przed wysłaniem danych, a wszelkie dane wysłane lub odebrane przed włączeniem/wyłączeniem tej opcji nie zostaną naruszone.</li>
     <li>Można wielokrotnie włączać lub wyłączać protokół dla dowolnego identyfikatora gniazda, o ile jest to odpowiednio zarządzane zarówno po stronie <span class="notranslate">server</span>, jak i po stronie klienta</li>
@@ -99,14 +99,14 @@
   <h4>Przykład:</h4>
   <p class="code">network_set_config(network_config_connect_timeout, 1000);<br />
     network_set_config(network_config_use_non_blocking_socket, 1);</p>
-  <p>Powyższy kod ustawi limit czasu dla połączenia sieciowego na 1000 ms i powie <span class="notranslate">GameMaker Studio 2</span>, aby nie blokować połączenia.</p>
+  <p>Powyższy kod ustawi timeout dla połączenia sieciowego na 1000ms i powie <span data-keyref="GameMaker Name">GameMakerowi</span>, aby nie blokował połączenia.</p>
   <p> </p>
   <p> </p>
   <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Powrót: <a href="Networking.htm">Praca w sieci</a></div>
+        <div style="float:left">Powrót: <a href="Networking.htm">Tworzenie sieci</a></div>
         <div style="float:right">Następny: <a href="network_set_timeout.htm"><span class="notranslate">network_set_timeout</span></a></div>
       </div>
     </div>

@@ -1,0 +1,63 @@
+
+  
+  mp_potential_step_object
+  Funkcja ta pozwala instancji wykonać krok w kierunku określonej pozycji zdefiniowanej przez xgoal/ygoal, starając się jednocześnie omijać przeszkody. Gdy instancja natknie się na instancję object określoną przez argument "obj", zmieni kierunek ruchu, by spróbować ominąć tę instancję i poruszać się wokół niej. Nie ma gwarancji, że to podejście zadziała, ale w większości łatwych przypadków skutecznie przesunie instancję w kierunku celu. Funkcja zwraca, czy cel został osiągnięty, czy nie.
+   
+  Składnia:
+  mp_potential_step_object(xgoal, ygoal, stepsize, obj)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        xgoal
+        Real
+        The target x position.
+      
+      
+        ygoal
+        Real
+        The target y position.
+      
+      
+        stepsize
+        Real
+        The speed the instance moves in pixels per step.
+      
+      
+        obj
+         Identyfikatorzasobu lub instancjiobiektu 
+        The object that is to block the path of the instance running the function. Can be an object index, an instance id or the special keyword ,all.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if instance_exists(obj_Enemy)
+    {
+        var inst;
+        inst = instance_nearest(x, y, obj_Enemy);
+        mp_potential_step_object(inst.x, inst.y, 5, obj_Wall);
+    }
+  Powyższy kod najpierw sprawdza, czy na stronie room znajdują się jakieś instancje "obj_Enemy". Jeśli tak, to znajduje najbliższą z nich i zapisuje jej identyfikator w zmiennej. Zmienna ta jest następnie używana do poinformowania strony mp_potential_step_object, aby przesunęła instancję z kodem w kierunku pozycji x/y znalezionej strony object z prędkością 5 pikseli na krok, omijając tylko instancje "obj_Wall" strony object.
+   
+   
+   
+  
+    
+      
+        Powrót: Planowanie ruchu
+        Następny: mp_potential_path
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

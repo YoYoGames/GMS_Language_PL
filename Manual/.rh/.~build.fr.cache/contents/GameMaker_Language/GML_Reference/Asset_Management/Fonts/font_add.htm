@@ -1,0 +1,74 @@
+
+  
+  font_add
+  Za pomocą tej funkcji można dodać do gry stronę font z pliku font znajdującego się w folderze Included Files. Możesz zdefiniować rozmiar font (w punktach), a także określić, czy font ma być pogrubiony czy kursywą, oraz zakres znaków, które mają być uwzględnione. Funkcja zwraca wartość indeksu, którą należy zapisać w zmiennej, ponieważ będzie ona potrzebna we wszystkich kolejnych kodach odwołujących się do tej strony font, lub zwróci -1, jeśli funkcja z jakiegoś powodu się nie powiedzie.
+  Należy pamiętać, że plik font musi być albo plikiem *.ttf, albo *.otf, co może być również przydatne przy dodawaniu niestandardowych plików fonts, takich jak azjatyckie lub arabskie fonts.
+  UWAGA!!! Jeśli umieścisz taki plik font w załączonych plikach, musi on posiadać licencję na dystrybucję z grą.
+  W przypadku modułu docelowego HTML5 tej funkcji można używać tylko do dodawania czcionek internetowych i będzie ona działać tylko wtedy, gdy nie jest włączone WebGL - jeśli WebGL jest włączone, należy użyć ogólnego zasobu font (tj.: używając draw_set_font() wraz z adresem font z przeglądarki Asset ) lub bitmapy fonts (zob. font_add_sprite()).
+  WAŻNE! W przypadku stosowania języka HTML5 kursywa i pogrubienie tekstu są obsługiwane tylko wtedy, gdy na stronie font asset lub stronie font znajdują się te znaki. Nie zostaną one zsyntetyzowane z podstawowej strony font.
+  Podczas ładowania strony font z pliku rozmiar strony font jest podawany w pikselach, a pierwsza i ostatnia wartość są ignorowane, co oznacza, że wszystkie glify w font zostaną dodane. Fonts dodane w ten sposób są przypisane do własnej strony texture, więc należy zachować ostrożność podczas korzystania z tej funkcji, ponieważ spowoduje ona zwiększenie liczby podmian texture podczas rysowania. Warto także zauważyć, że strona fonts może wydawać się nieco większa podczas rysowania, ponieważ glify mogą mieć części rysowane poza ramką zdefiniowaną dla strony font. Należy także pamiętać, że istnieje ograniczenie liczby glifów, które mogą być renderowane w pojedynczej ramce dla danej strony font, do około 200.
+  Domyślnie strona fonts ma włączony antyaliasing. Stan AA można jednak sprawdzić w dowolnym momencie za pomocą funkcji font_add_get_enable_aa() oraz włączyć/wyłączyć AA za pomocą funkcji font_add_enable_aa().
+  UWAGA Po załadowaniu strony font do GameMaker Studio 2 należy pamiętać o jej ponownym usunięciu (za pomocą font_delete()), gdy nie jest już potrzebna, w przeciwnym razie istnieje ryzyko wycieku pamięci, który spowolni, a w końcu doprowadzi do awarii gry.
+   
+  Składnia:
+  font_add(name, size, bold, italic, first, last);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        name
+        String
+        The path of the font file in the Included Files (*.ttf lub *.otf).
+      
+      
+        size
+        Real
+        The size of the font - points for Web Fonts, pixels for file fonts.
+      
+      
+        bold
+        Boolean
+        Whether the font is bold (true) lub nie (false).
+      
+      
+        italic
+        Boolean
+        Whether the font is italic (true) lub nie (false).
+      
+      
+        first
+        Real
+        The first character to include (if you're unsure, go for 32).
+      
+      
+        last
+        Real
+        The last character to include (if you're unsure, go for 128).
+      
+    
+  
+   
+  Zwroty:
+  Font Asset
+   
+  Przykład:
+  new_font = font_add("gamefont.ttf", 24, true, true, 32, 128);
+  Spowoduje to wczytanie pliku "gamefont.ttf" znajdującego się w folderze Included Files gry w rozmiarze 24pt. Czcionka font będzie pogrubiona i kursywna, a zakres czcionek będzie obejmował duże i małe litery, cyfry oraz wszystkie powszechnie używane znaki interpunkcyjne. Po załadowaniu pliku font jego identyfikator zostanie zapisany w zmiennej new_font.
+   
+   
+  
+    
+      
+        Powrót: Czcionki
+        Następny: font_add_sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

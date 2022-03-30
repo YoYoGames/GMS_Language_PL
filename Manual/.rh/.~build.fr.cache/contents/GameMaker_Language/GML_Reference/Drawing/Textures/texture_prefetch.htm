@@ -1,0 +1,47 @@
+
+  
+  texture_prefetch
+  Za pomocą tej funkcji można "wstępnie pobrać" stronę texture lub grupę stron texture, tzn. załadować je do pamięci VRAM w razie potrzeby. Można podać unikalny identyfikator strony tekstury (zwracany przez funkcje texturegroup_* ), aby wstępnie pobrać pojedynczą stronę, lub nazwę grupy tekst ur (zdefiniowaną w Edytorze grup tekst ur), aby wstępnie pobrać wszystkie strony texture w tej grupie.
+   
+  Składnia:
+  texture_prefetch(tex_id);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        tex_id
+        Wskaźnik tekstury lub ciągznaków
+        The texture page pointer or a texture group name (a string)
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var _tex_array = texturegroup_get_textures( "MainMenu");
+    for (var i = 0; i < array_length(_tex_array); ++i;)
+    {
+        texture_prefetch(_tex_array[i]);
+    }
+  Powyższy kod spowoduje wstępne pobranie wszystkich stron texture z grupy texture "MainMenu".
+   
+   
+   
+  
+    
+      
+        Powrót: Tekstury
+        Następny: texture_flush
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

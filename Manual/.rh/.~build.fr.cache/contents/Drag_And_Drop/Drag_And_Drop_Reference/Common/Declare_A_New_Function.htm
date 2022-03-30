@@ -1,0 +1,65 @@
+
+  
+   Deklarowanie nowej funkcji
+  Ta akcja może być użyta do utworzenia nowej funkcji zdefiniowanej przez użytkownika, którą można później wywołać w dowolnym miejscu kodu. Funkcja zdefiniowana przez użytkownika to taka, którą definiuje się w celu wykonania zadania, które nie jest objęte wbudowanymi akcjami DnD™ lub funkcjami runnera GML. Może ona mieć zasięg globalny, instancyjny lub lokalny (więcej informacji o zasięgu znajdziesz tutaj ); można jej również używać jako konstruktora do tworzenia struktur. Aby dowiedzieć się więcej na temat używania tej akcji do tworzenia funkcji globalnych, zobacz rozdział Tworzenie funkcji akcji.
+  Aby użyć tej akcji, należy dodać ją do zdarzenia lub skryptu i nadać nowej funkcji nazwę. Następnie należy podać wymagane argumenty/parametry, które funkcja będzie przyjmować, oraz wartości domyślne dla argumentów opcjonalnych.
+  Jeśli funkcja ma być użyta jako konstruktor (który jest używany do tworzenia struct), musisz zaznaczyć opcję Konstruktor , a następnie użyć akcji Nowy, aby utworzyć struct na podstawie funkcji. Możesz także flag określić funkcję jako statyczną, co oznacza, że zostanie ona zdefiniowana tylko raz, bez względu na to, ile razy zostanie wykonana ta akcja. Jeśli funkcja ma być użyta tylko lokalnie w tym samym zdarzeniu i nigdzie indziej, można włączyć opcję Temp .
+  Po zdefiniowaniu nazwy i parametrów można dołączyć akcje, które mają być uruchamiane po wywołaniu funkcji w kodzie, upuszczając je z boku akcji, jak pokazano na poniższym rysunku:
+  Przykłady użycia tej akcji zarówno jako zwykłej funkcji, jak i jako funkcji konstruktora można zobaczyć w sekcji "Przykłady rozszerzone" poniżej.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Name
+        Nazwa nowej funkcji.
+      
+      
+        Argument [+]
+        Różne argumenty, które mogą być przekazane do funkcji, oraz ich wartości domyślne, jeśli są opcjonalne.
+      
+      
+        Constructor
+        Czy ta funkcja jest konstruktorem.
+      
+      
+        Static
+        Czy ta funkcja jest statyczna.
+      
+      
+        Temp
+        Czy funkcja jest tymczasowa (co oznacza, że jest używana tylko w ramach bieżącego zdarzenia).
+      
+    
+  
+   
+  Przykłady rozszerzone
+  Przykład rozszerzony 1
+  Powyższy blok akcji zostanie umieszczony w zdarzeniu Create Event instancji lub script i deklaruje nową funkcję o nazwie set_vec z trzema argumentami: _x, _y i spd. Argumenty te są następnie używane w akcjach zawartych w funkcji do ustawiania kierunku i prędkości instancji, co dzieje się po wywołaniu funkcji. Później wywołasz tę funkcję za pomocą akcji Function Call w kolejnych zdarzeniach, tak jak poniżej:
+  Na powyższym rysunku wywołana jest funkcja set_vec, która zmienia kierunek instancji na wskazujący na pozycję X/Y myszy i ustawia prędkość na 5.
+   
+  Przykład rozszerzony 2
+  Powyższy blok akcji zostanie umieszczony w zdarzeniu Create Event instancji lub script i deklaruje nową funkcję konstruktora o nazwie init_char_struct z czterema argumentami: _name, _location, _hp i _mana, przy czym dwa ostatnie są opcjonalne z domyślną wartością 100 (oznacza to, że jeśli te argumenty nie zostaną określone podczas wywoływania funkcji, zamiast nich zostaną użyte ich wartości domyślne). Argumenty te są następnie używane do tworzenia pewnych zmiennych w ramach tworzonej przez funkcję strony struct.
+  Funkcję tę można później wywołać za pomocą akcji Nowy w celu utworzenia strony struct, jak poniżej:
+  Funkcja zostanie wywołana i zwróci nową stronę struct, która zostanie zapisana w tablicy char, a strona struct zostanie wypełniona zmiennymi name, location, hp i mana, ustawionymi na wartości, które zostały przekazane w odpowiednich argumentach w wywołaniu funkcji.
+   
+   
+   
+  
+    
+      
+        Powrót: Wspólne działania
+        Następnie: Przypisz zmienną
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

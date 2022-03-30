@@ -21,16 +21,16 @@
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Liczby rzeczywiste</a></p>
   <div class="droptext" data-targetname="drop-down1">
     <p class="dropspot">Liczby rzeczywiste to dowolne wartości, które nie są <span class="notranslate">string</span> ani żadnym z innych możliwych typów danych. Tak więc 124, 45639.566546456, 0, -45.5 itd. są przykładami liczb rzeczywistych. Wszystkie liczby rzeczywiste są zapisywane jako wartości zmiennoprzecinkowe podwójnej precyzji lub liczby całkowite
-      (32-bitowe liczby całkowite - <span class="inline">int32</span> - lub 64-bitowe liczby całkowite - <span class="inline">int64</span>), a kompilator optymalizuje je tam, gdzie jest to możliwe (na przykład wartość 0.0 zostanie zoptymalizowana do wartości całkowitej 0). Gdy mamy do czynienia
+      (albo 32-bitowe liczby całkowite - <span class="inline">int32</span> - albo 64-bitowe liczby całkowite - <span class="inline">int64</span>), a kompilator optymalizuje je tam, gdzie jest to możliwe (na przykład wartość 0.0 zostanie zoptymalizowana do wartości całkowitej 0). Gdy mamy do czynienia
       z dowolną wartością, która nie jest liczbą całkowitą, mogą wystąpić niewielkie błędy zaokrąglenia, wynikające z natury matematyki zmiennoprzecinkowej. Więcej informacji na temat tej i innych funkcji związanych z liczbami można znaleźć w dokumencie: <a href="../GML_Reference/Maths_And_Numbers/Number_Functions/Number_Functions.htm">GML Reference - Number Functions</a>.</p>
     <p class="note"><span class="note">UWAGA</span> W celu <b>HTML5</b> wszystkie liczby rzeczywiste są podwojone.</p>
-    <p class="dropspot">Zwróć uwagę, że chociaż wszystkie zmienne w GameMaker Studio 2 są przechowywane jako liczby zmiennoprzecinkowe lub całkowite podwójnej precyzji, możesz używać innych formatów podczas pracy z <span class="notranslate">extensions</span>. Można je przekazać do <span class="notranslate">GameMaker Studio 2</span> z rozszerzenia
+    <p class="dropspot">Zauważ, że chociaż wszystkie zmienne w <span data-keyref="GameMaker Name">GameMakerze</span> są zapisywane jako liczby zmiennoprzecinkowe lub całkowite podwójnej precyzji, to w przypadku <span class="notranslate">extensions</span> możesz używać innych formatów. Można je przekazać do <span data-keyref="GameMaker Name">GameMakera</span> z rozszerzenia
       a następnie sprawdzić je za pomocą odpowiedniej funkcji <span class="inline">is_*()</span>, których listę można znaleźć <a href="../GML_Reference/Variable_Functions/Variable_Functions.htm">tutaj</a>.</p>
     <p> </p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Boolean</a></p>
   <div class="droptext" data-targetname="drop-down6">
-    <p class="dropspot">Boolean to po prostu wartość, która może być albo <span class="inline">true</span>, albo <span class="inline">false</span>. Zauważ, że obecnie GameMaker Studio 2 interpretuje liczbę rzeczywistą równą lub mniejszą od 0,5 jako wartość <span class="inline">false</span>, a każdą liczbę rzeczywistą większą od 0,5 jako <span class="inline">true</span>.
+    <p class="dropspot">Boolean to po prostu wartość, która może być albo <span class="inline">true</span> albo <span class="inline">false</span>. Zauważ, że obecnie <span data-keyref="GameMaker Name">GameMaker</span> interpretuje liczbę rzeczywistą równą lub mniejszą od 0,5 jako wartość <span class="inline">false</span>, a każdą liczbę rzeczywistą większą od 0,5 jako <span class="inline">true</span>.
      <i>Nie</i> oznacza to jednak, że powinieneś sprawdzać, czy 1 i 0 (lub jakakolwiek inna liczba rzeczywista) to prawda czy fałsz, ponieważ masz do dyspozycji <b>stałe</b> <span class="inline">true</span> i <span class="inline">false</span>, które zawsze powinny być używane w Twoim kodzie, aby
       aby zapobiec problemom, jeśli w przyszłej aktualizacji zostaną dodane prawdziwe typy danych boolean.</p>
     <p class="dropspot">Za pomocą poniższej funkcji można przekształcić dowolną liczbę rzeczywistą na wartość typu boolean w sposób niejawny:</p>
@@ -41,7 +41,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Struny</a></p>
   <div class="droptext" data-targetname="drop-down">
-    <p class="dropspot"><label for="one">Strona <span class="notranslate">string</span> to po prostu dowolny tekst, który został ujęty w cudzysłów &quot;...&quot;. Na stronie <span class="notranslate">strings</span> można wykonywać pewne operacje, takie jak dodawanie dwóch <span class="notranslate">strings</span> w celu utworzenia dłuższego <span class="notranslate">string</span> (konkatenacja), a także zmieniać właściwości <span class="notranslate">string</span> i wyodrębniać z niego liczby rzeczywiste. Więcej informacji na temat <span class="notranslate">strings</span> i funkcji <span class="notranslate">string</span> można znaleźć w: <a href="../GML_Reference/Strings/Strings.htm">GML Reference - Strings</a>.</label></p>
+    <p class="dropspot"><label for="one">Adres <span class="notranslate">string</span> to po prostu dowolny tekst, który został ujęty w cudzysłów &quot;...&quot;. Na stronie <span class="notranslate">strings</span> można wykonywać pewne operacje, takie jak dodawanie dwóch <span class="notranslate">strings</span> w celu utworzenia dłuższego <span class="notranslate">string</span> (konkatenacja), a także zmieniać właściwości <span class="notranslate">string</span> i wyodrębniać z niego liczby rzeczywiste. Więcej informacji na temat <span class="notranslate">strings</span> i funkcji <span class="notranslate">string</span> można znaleźć w: <a href="../GML_Reference/Strings/Strings.htm">GML Reference - Strings</a>.</label></p>
     <p class="dropspot"> </p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Tablice</a></p>
@@ -61,7 +61,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Wartości szesnastkowe</a></p>
   <div class="droptext" data-targetname="drop-down5">
-    <p class="dropspot">GameMaker Studio 2 akceptuje <b>literały szesnastkowe</b> jako prawidłowe wartości. Wartości szesnastkowe są szczególnie popularne podczas pracy z kolorami, ale można ich używać wszędzie tam, gdzie wymagana jest dodatnia wartość całkowita. Wartości szesnastkowe można sformatować na dwa poniższe sposoby, gdzie <span class="inline"><em>abcd</em></span> to rzeczywista wartość szesnastkowa:</p>
+    <p class="dropspot"><span data-keyref="GameMaker Name">GameMaker</span> akceptuje <b>literały szesnastkowe</b> jako prawidłowe wartości. Wartości szesnastkowe są szczególnie popularne przy pracy z kolorami, ale mogą być używane wszędzie tam, gdzie wymagana jest dodatnia wartość całkowita. Wartości szesnastkowe można sformatować na dwa poniższe sposoby, gdzie <span class="inline"><em>abcd</em></span> jest rzeczywistą wartością szesnastkową:</p>
     <p class="code"><span style="background-color: transparent;"><strong>$</strong><em>abcd</em></span><br />
       <strong>0x</strong><em>abcd</em>
     </p>
@@ -126,7 +126,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">Infinity</a></p>
   <div class="droptext" data-targetname="drop-down11">
-    <p class="dropspot">Stała <span class="inline">infinity</span> odnosi się do liczby, która jest uważana za nieskończoną, np. wynik dzielenia dowolnej wartości zmiennoprzecinkowej przez zero, np. 1.0/0.</p>
+    <p class="dropspot">Stała <span class="inline">infinity</span> odnosi się do liczby, którą uważa się za nieskończoną, np. wynik dzielenia dowolnej wartości zmiennoprzecinkowej przez zero, np. 1.0/0.</p>
     <p class="dropspot">Zauważ, że stała <span class="inline">infinity</span> jest równa sobie, więc <span class="inline">infinity == infinity</span> zwróci <span class="inline">true</span>.</p>
   </div>
   <p id="variable"><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down12" href="#">Zmienna</a></p>

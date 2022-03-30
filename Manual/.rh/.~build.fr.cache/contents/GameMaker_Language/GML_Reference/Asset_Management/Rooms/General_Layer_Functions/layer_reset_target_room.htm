@@ -1,0 +1,35 @@
+
+  
+  warstwa_resetuj_pomieszczenie_celowe
+  Ta funkcja służy do resetowania docelowej warstwy do bieżącego adresu room. Zobacz funkcję layer_set_target_room() aby uzyskać więcej informacji.
+   
+  Składnia:
+  layer_reset_target_room()
+   
+  Zwroty:
+  
+   
+  Przykład:
+  layer_set_target_room(rm_Game);
+    var l = layer_get_id("SpriteAssets");
+    repeat(50)
+    {
+        layer_sprite_create(l, irandom(1000), irandom(1000), spr_Trees);
+    }
+    layer_reset_target_room();
+  Powyższy kod ustawia warstwę docelową room na room "rm_Game", a następnie pobiera identyfikator warstwy o nazwie "SpriteAssets" w tym serwisie room. Ten identyfikator warstwy jest następnie używany do dodania 50 losowych sprite assets do warstwy, zanim cel warstwy zostanie zresetowany do bieżącego room.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

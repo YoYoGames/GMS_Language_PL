@@ -23,7 +23,7 @@
 <keydef keys="GameMaker Name">
 <topicmeta>
 <keywords>
-<keyword>GameMaker Studio 2</keyword></keywords></topicmeta></keydef>
+<keyword>GameMaker</keyword></keywords></topicmeta></keydef>
 <keydef keys="Nine Slicing">
 <topicmeta>
 <keywords>
@@ -775,4 +775,20 @@
 <keydef keys="Type_Void">
 <topicmeta>
 <keywords>
-<keyword>N/A</keyword></keywords></topicmeta></keydef></map>
+<keyword>N/A</keyword></keywords></topicmeta></keydef>
+<keydef keys="GML_Code">
+<topicmeta>
+<keywords>
+<keyword>GML Code</keyword></keywords></topicmeta></keydef>
+<keydef keys="GML_Visual">
+<topicmeta>
+<keywords>
+<keyword>GML Visual</keyword></keywords></topicmeta></keydef>
+<keydef keys="Type_Constant_Video_Status">
+<topicmeta>
+<keywords>
+<keyword>Video Status Constant</keyword></keywords></topicmeta></keydef>
+<keydef keys="Type_Constant_Video_Format">
+<topicmeta>
+<keywords>
+<keyword>Video Format Constant</keyword></keywords></topicmeta></keydef></map>

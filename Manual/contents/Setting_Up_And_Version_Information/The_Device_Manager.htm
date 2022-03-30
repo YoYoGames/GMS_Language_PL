@@ -15,7 +15,7 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>Menedżer urządzeń</h1>
+  <h1 id="h">Menedżer urządzeń</h1>
   <p>Dostęp do <strong>Menedżera urządzeń</strong> uzyskuje się, klikając <img> na przycisk z ołówkiem <img> na <a href="../Introduction/Compiling.htm">Liście celów</a>:</p>
   <p><img>Kliknięcie tego przycisku spowoduje otwarcie <strong>Menedżera</strong> urządzeń, w którym można skonfigurować różne urządzenia dla platform docelowych, na których chcemy kompilować i testować (należy pamiętać, że dostępne platformy zależą od posiadanej <a href="GMS2_Version_Information.htm">licencji</a> i nie wszystkie mogą być widoczne). Poniżej znajdują się szczegóły dotyczące konfigurowania urządzeń dla każdej z platform docelowych:</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Android</a></p>
@@ -23,11 +23,11 @@
     <p class="dropspot">
      <img>W tym miejscu można kliknąć przycisk
      <em>Dodaj</em> nowe urządzenie, aby ręcznie dodać do listy nowe urządzenie <span class="notranslate">Android</span>, lub kliknąć przycisk
-     <em>Detect Device (Wykryj</em> urządzenie), aby strona <span class="notranslate">GameMaker Studio 2</span> automatycznie wykrywała wszystkie urządzenia podłączone za pomocą połączenia przewodowego. Można także skonfigurować
+     <em>Wykryj</em> urządzenie, aby <span data-keyref="GameMaker Name">GameMaker</span> automatycznie wykrył wszystkie urządzenia podłączone za pomocą połączenia przewodowego. Możesz także skonfigurować
      <strong>Android Virtual Device</strong>, klikając przycisk oznaczony
-     <em>Uruchom AVD</em>. Spowoduje to otwarcie menedżera urządzeń wirtualnych <span class="notranslate">Android</span>, w którym można utworzyć nowe urządzenie AVD (zob.
-     <a href="https://developer.android.com/studio/run/managing-avds.html">tutaj</a>, aby uzyskać więcej informacji). Po utworzeniu urządzenia należy je uruchomić z menedżera AVD, a następnie w witrynie <span class="notranslate">GameMaker Studio 2</span> kliknąć przycisk
-     <em>Detect Device (Wykryj urządzenie</em> ), a urządzenie powinno zostać automatycznie dodane do listy urządzeń:
+     <em>Run AVD</em>. Spowoduje to otwarcie menedżera urządzeń wirtualnych <span class="notranslate">Android</span>, w którym można utworzyć nowe urządzenie AVD (zob.
+     <a href="https://developer.android.com/studio/run/managing-avds.html">tutaj</a>, aby uzyskać więcej informacji). Po utworzeniu urządzenia należy je uruchomić z menedżera AVD, a następnie w programie <span data-keyref="GameMaker Name">GameMaker</span> kliknąć przycisk
+     <em>Detect Device</em>, a urządzenie powinno zostać automatycznie dodane do listy urządzeń:
       <br>
     </p>
     <p class="dropspot">
@@ -46,7 +46,7 @@
      <img>Menedżer urządzeń HTML5 służy do dodawania różnych przeglądarek do listy urządzeń, aby można było na nie kierować podczas uruchamiania. Na początek należy
       kliknąć przycisk
      <em>Wykryj przeglądarki</em>, co powinno spowodować utworzenie urządzeń dla każdej z przeglądarek zainstalowanych na komputerze. Jeśli danej przeglądarki nie ma na liście, można również kliknąć przycisk
-     <em>Dodaj nową</em> przeglądarkę, a następnie nadać urządzeniu nazwę i skierować stronę <span class="notranslate">GameMaker Studio 2</span> na adres <span class="notranslate">path</span>, gdzie znajduje się plik wykonywalny przeglądarki.
+     <em>Dodaj nową przegląd</em> arkę, a następnie nadaj urządzeniu nazwę i wskaż programowi <span data-keyref="GameMaker Name">GameMaker</span> adres <span class="notranslate">path</span>, gdzie znajduje się plik wykonywalny przeglądarki.
     </p>
     <p class="dropspot">Dodatkowe dostępne pola można skonfigurować tak, aby ułatwić kontrolowanie sposobu uruchamiania projektów przez przeglądarkę:</p>
     <ul class="dropspotlist">
@@ -74,7 +74,7 @@
        <a data-glossterm="numer portu" class="glossterm" href="#">numer portu</a> dla witryny <span class="notranslate">server</span> (domyślnie 51264).
       </li>
       <li class="dropspot">
-       <strong>Allowed Web <span class="notranslate">Server</span> IPs / CIDR IP Ranges</strong>: W razie potrzeby ustaw dozwolone adresy internetowe <span class="notranslate">server</span>, nazwy hostów i zakresy adresów IP CIDR.
+       <strong>Allowed Web <span class="notranslate">Server</span> IPs / CIDR IP Ranges</strong>: W zależności od potrzeb ustaw dozwolone adresy internetowe <span class="notranslate">server</span>, nazwy hostów i zakresy adresów IP CIDR.
       </li>
     </ul>
     <p class="dropspot"> </p>
@@ -83,8 +83,8 @@
   <div class="droptext" data-targetname="drop-down2">
     <p class="dropspot">
      <img>Przed skonfigurowaniem urządzeń <span class="notranslate">iOS</span> należy skonfigurować
-      skonfigurować urządzenie Mac i przetestować jego połączenie (szczegółowe informacje znajdują się poniżej). Po wykonaniu tych czynności z menu rozwijanego w górnej części okna można wybrać komputer Mac, który ma być docelowy, a następnie kliknąć przycisk
-     <em>Detect Device (Wykryj urządzenie</em> ), aby witryna <span class="notranslate">GameMaker Studio 2</span> automatycznie znalazła wszystkie podłączone urządzenia <span class="notranslate">iOS</span>, w tym symulatory. Po podłączeniu szczegóły urządzenia zostaną wyświetlone na liście w tym oknie, a nazwę urządzenia można edytować, aby była
+      skonfigurować urządzenie Mac i przetestować jego połączenie (szczegółowe informacje znajdują się poniżej). Po wykonaniu tych czynności możesz wybrać docelowy komputer Mac z menu rozwijanego w górnej części okna, a następnie kliknąć przycisk
+     <em>Detect Device (Wykryj urządzenie</em> ), aby program <span data-keyref="GameMaker Name">GameMaker</span> automatycznie wyszukał wszystkie podłączone urządzenia <span class="notranslate">iOS</span>, w tym symulatory. Po podłączeniu szczegóły urządzenia zostaną wyświetlone na liście w tym oknie, a Ty możesz edytować nazwę urządzenia, aby była bardziej
       nazwę urządzenia, aby była bardziej przyjazna dla użytkownika (zmiana ta ma wpływ tylko na sposób prezentacji urządzenia w Menedżerze celów i nic poza tym).
     </p>
     <p class="dropspot">
@@ -95,8 +95,8 @@
   <div class="droptext" data-targetname="drop-down3">
     <p class="dropspot">
      <img>Przed skonfigurowaniem urządzeń <span class="notranslate">tvOS</span> należy
-      skonfigurować urządzenie Mac i przetestować jego połączenie (szczegółowe informacje znajdują się poniżej). Po wykonaniu tych czynności z menu rozwijanego w górnej części okna można wybrać komputer Mac, który ma być docelowy, a następnie kliknąć przycisk
-     <em>Detect Device (Wykryj urządzenie</em> ), aby witryna <span class="notranslate">GameMaker Studio 2</span> automatycznie znalazła wszystkie podłączone urządzenia <span class="notranslate">tvOS</span>, w tym symulatory. Po podłączeniu szczegóły urządzenia zostaną wyświetlone na liście w tym oknie, a nazwę urządzenia można edytować, aby była
+      skonfigurować urządzenie Mac i przetestować jego połączenie (szczegółowe informacje znajdują się poniżej). Po wykonaniu tych czynności możesz wybrać docelowy komputer Mac z menu rozwijanego w górnej części okna, a następnie kliknąć przycisk
+     <em>Detect Device (Wykryj urządzenie</em> ), aby program <span data-keyref="GameMaker Name">GameMaker</span> automatycznie wyszukał wszystkie podłączone urządzenia <span class="notranslate">tvOS</span>, w tym symulatory. Po podłączeniu szczegóły urządzenia zostaną wyświetlone na liście w tym oknie, a Ty możesz edytować nazwę urządzenia, aby była bardziej
       nazwę urządzenia, aby była bardziej przyjazna dla użytkownika (zmiana ta ma wpływ tylko na sposób prezentacji urządzenia w Menedżerze celów i nic poza tym).
     </p>
     <p class="dropspot">
@@ -116,10 +116,10 @@
      <strong>nazwę hosta</strong> (lub adres IP) komputera Mac. Następnie należy podać
      <strong>nazwę użytkownika </strong>, z którym chcesz się połączyć, oraz
      <strong>hasło </strong>, którego używał. Jeśli chcesz, możesz także zmienić
-     <strong>Install Folder</strong> na komputerze Mac na dowolny <strong>folder</strong>, w którym <span class="notranslate">GameMaker Studio 2</span> będzie przechowywać pliki kompilacji projektów.
+     <strong>Install Folder</strong> na komputerze Mac na dowolny <strong>folder</strong>, w którym <span data-keyref="GameMaker Name">GameMaker</span> będzie przechowywał pliki budowania Twoich projektów.
     </p>
     <p class="dropspot">Po wykonaniu wszystkich czynności możesz kliknąć przycisk
-     <em>Testuj połączenie</em>, aby upewnić się, że witryna <span class="notranslate">GameMaker Studio 2</span> może komunikować się z komputerem Mac.
+     <em>Testuj połączenie</em>, aby upewnić się, że <span data-keyref="GameMaker Name">GameMaker</span> może komunikować się z komputerem Mac.
     </p>
     <p class="note">
      <strong>UWAGA</strong>: Jeśli tworzysz oprogramowanie dla <span class="notranslate">iOS</span>, musisz najpierw wykonać tę czynność i ustanowić działające połączenie z komputerem Mac, którego chcesz używać do tworzenia oprogramowania.
@@ -141,23 +141,23 @@
       co spowoduje dodanie urządzenia i utworzenie kilku pustych pól, które należy wypełnić, aby umożliwić połączenie.</p>
     <p class="dropspot">Najpierw należy nadać <strong>nazwę </strong>urządzeniu, aby można je było zidentyfikować na liście celów, a następnie podać <strong>nazwę hosta</strong> (lub adres IP) maszyny <span class="notranslate">Ubuntu</span> (lub VM). Następnie należy podać <strong>nazwę użytkownika </strong>, którego
       z którym chcesz się połączyć, oraz <strong>hasło </strong>, którego używał. Musisz także podać <strong>folder instalacyjny </strong>na komputerze <span class="notranslate">Ubuntu</span>, który ma być używany do instalowania projektów. Po wykonaniu wszystkich czynności możesz kliknąć
-     <em>Testuj połączenie</em>, aby upewnić się, że <span class="notranslate">GameMaker Studio 2</span> może komunikować się z komputerem <span class="notranslate">Ubuntu</span>.</p>
+     <em>Test Connection</em>, aby upewnić się, że <span data-keyref="GameMaker Name">GameMaker</span> może komunikować się z komputerem <span class="notranslate">Ubuntu</span>.</p>
     <p class="dropspot">Należy pamiętać, że ostateczny plik wykonywalny utworzony przez program GameMaker <strong>będzie zależał od architektury urządzenia, na które jest przeznaczony, czyli od architektury</strong> <strong>x64</strong> lub <strong>ARM</strong>. Na przykład, jeśli podłączysz Raspberry Pi 3 lub 4,
       utworzony plik wykonywalny będzie 32-bitowym plikiem wykonywalnym <span class="notranslate">ARM</span>, a jeśli podłączysz komputer <span class="notranslate">Linux</span>, będzie to 64-bitowy plik wykonywalny x64.</p>
     <p class="dropspot"> </p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Windows UWP</a></p>
   <div class="droptext" data-targetname="drop-down9">
-    <p class="dropspot">Zanim będzie można dodać urządzenie do celu <span class="notranslate">Windows 10</span> UWP, należy włączyć <strong>tryb programisty</strong> i skonfigurować <strong>portal</strong> urządzeń na urządzeniu. Jeśli tego nie zrobisz, <span class="notranslate">GameMaker Studio 2</span> nie będzie w stanie komunikować się
-      z urządzeniem ani prawidłowo tworzyć aplikacji UWP.</p>
+    <p class="dropspot">Zanim będziesz mógł dodać urządzenie do celu <span class="notranslate">Windows 10</span> UWP, musisz włączyć <strong>Tryb Programisty</strong> i skonfigurować <strong>Portal Urządzeń</strong> na urządzeniu. Jeśli tego nie zrobisz, <span data-keyref="GameMaker Name">GameMaker</span> nie będzie w stanie komunikować się
+      z urządzeniem ani poprawnie tworzyć aplikacji UWP.</p>
     <p class="dropspot">Najprostszym sposobem włączenia trybu deweloperskiego jest wpisanie słowa &quot; <em>Tryb deweloperski</em>&quot; w wyszukiwarce <span class="notranslate">Windows</span>, a następnie kliknięcie pozycji &quot; <em>Ustawienia</em>&quot;, która się pojawi. Spowoduje to otwarcie następującego okna:</p>
     <p class="dropspot"><img>Należy wybrać opcję <strong>Developer Mode</strong> (co może wymagać pobrania i zainstalowania przez <span class="notranslate">Windows</span> 
-      zainstalowania kilku dodatkowych pakietów), a następnie wybrać znajdującą się pod nią opcję <strong>Enable Device Portal (Włącz portal</strong> urządzenia). Portal urządzenia jest tym, co pozwoli <span class="notranslate">GameMaker Studio 2</span> komunikować się z komputerem <span class="notranslate">Windows 10</span>, a po jego włączeniu wymagane będzie
+      zainstalowania kilku dodatkowych pakietów), a następnie wybrać znajdującą się pod nią opcję <strong>Enable Device Portal (Włącz portal</strong> urządzenia). Portal urządzenia jest tym, co pozwoli programowi <span data-keyref="GameMaker Name">GameMaker</span> komunikować się z komputerem <span class="notranslate">Windows 10</span>, a po jego włączeniu będziesz musiał
       podać <em>nazwę użytkownika</em> i <em>hasło</em>:</p>
     <p class="dropspot"><img>Należy pamiętać, że nazwa użytkownika i hasło powinny być unikatowe dla portalu i nie mogą być tożsame z tymi, które są używane na koncie Microsoft
-      lub innych danych uwierzytelniających <span class="notranslate">Windows</span>. Po wprowadzeniu tych informacji kliknij przycisk z napisem <em>Zastosuj </em>, a następnie zamknij menedżera ustawień i wróć do strony <span class="notranslate">GameMaker Studio 2</span>.</p>
+      lub innych danych uwierzytelniających <span class="notranslate">Windows</span>. Po wprowadzeniu tych informacji kliknij przycisk z napisem <em>Apply </em>, a następnie zamknij menedżera ustawień i wróć do <span data-keyref="GameMaker Name">GameMakera</span>.</p>
     <p class="dropspot">Więcej informacji na temat portalu urządzeń można znaleźć w tym artykule firmy Microsoft: <a href="https://docs.microsoft.com/en-us/windows/uwp/debug-test-perf/device-portal-desktop">Device Portal for Desktop</a>.</p>
-    <p class="dropspot">Teraz można otworzyć <strong>Menedżera</strong> urządzeń w witrynie <span class="notranslate">GameMaker Studio 2</span> i skonfigurować urządzenie (lub urządzenia) do użytku:</p>
+    <p class="dropspot">Możesz teraz otworzyć <strong>Menedżera urządzeń</strong> w programie <span data-keyref="GameMaker Name">GameMaker</span> i skonfigurować urządzenie (lub urządzenia) do użytku:</p>
     <p class="dropspot"><img>Aby dodać do menedżera urządzenie zgodne ze standardem <span class="notranslate">Windows 10</span> UWP, należy najpierw kliknąć przycisk <em>Dodaj nowe</em> urządzenie, który
       co spowoduje dodanie urządzenia i utworzenie kilku pustych pól, które trzeba będzie wypełnić, aby umożliwić połączenie.</p>
     <p class="dropspot">Najpierw należy nadać urządzeniu <strong>nazwę </strong>, aby można je było zidentyfikować na liście celów, a następnie podać <strong>hosta - </strong> jest to adres IP urządzenia <span class="notranslate">Windows 10</span> w sieci, które ma być hostem gry, z <strong>przyrostkiem</strong> &quot; <span class="inline">:50443</span>&quot; w celu ustawienia numeru portu. Następnie dodaj <strong>nazwę użytkownika</strong> i <strong>hasło </strong>, które zostały skonfigurowane w portalu urządzeń (jak wspomniano wcześniej). Kod PIN można pozostawić pusty, ponieważ
@@ -167,7 +167,7 @@
   </div>
   <p> </p>
   <p>W dolnej części wszystkich okien urządzeń znajduje się opcja <strong>Wyczyść</strong> urządzenia, której kliknięcie spowoduje usunięcie z listy wszystkich podłączonych urządzeń.</p>
-  <p>Po skonfigurowaniu urządzeń można połączyć się z dowolnym z nich, korzystając z opcji Celu w górnej części strony <span class="notranslate">GameMaker Studio 2</span> <span class="notranslate">IDE</span>. Testowanie/budowanie gry spowoduje przesłanie projektu do tego urządzenia:</p>
+  <p>Po skonfigurowaniu urządzeń możesz połączyć się z dowolnym z nich, korzystając z opcji Target <span data-keyref="GameMaker Name">(</span> Cel) w górnej części strony <span class="notranslate">IDE</span>, a testowanie/budowanie gry spowoduje przesłanie projektu do tego urządzenia:</p>
   <p><img alt="Icon LMB" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" /></p>
   <p> </p>
   <p> </p>

@@ -1,0 +1,36 @@
+
+  
+  phy_active
+  Ta zmienna kontroluje, czy instancja jest obecnie "aktywna" czy nie. Ustawienie jej na false sprawi, że instancja nie będzie brała udziału w świecie fizyki, a ustawienie na true sprawi, że znów będzie brała w nim udział. Należy pamiętać, że nie jest to tożsame z dezaktywacją instancji, ponieważ jest ona nadal widoczna na ekranie i może być zmieniana za pomocą kodu, a ta funkcja po prostu uniemożliwia jej udział w symulacji fizyki.
+   
+  Składnia:
+  phy_active;
+   
+  Zwroty:
+   (or undefined if the instance is not physics enabled)
+   
+  Przykład:
+  if keyboard_check_pressed(ord"P")
+    {
+        global.Pause = !global.Pause
+        with (obj_Parent)
+        {
+            phy_active = !global.Pause;
+        }
+    }
+  Powyższy kod wykryje naciśnięcie klawisza z literą "P", a następnie przełączy zmienną globalną "Pause" z true na false i z powrotem. Ta zmienna jest następnie używana do ustawiania, czy fizyka jest aktywna, czy nie w instancjach dzieci object, indeksowanych w zmiennej "obj_Parent".
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne fizyki
+        Następny: phy_angular_velocity
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

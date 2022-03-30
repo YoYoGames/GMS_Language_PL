@@ -1,0 +1,35 @@
+
+  
+  uwp_is_constrained
+  Ta funkcja zwróci true, jeśli gra działa w trybie ograniczonych zasobów, lub false, jeśli działa normalnie. Tryb ograniczonych zasobów może zostać uruchomiony, gdy gra nie ma fokusa, a w tym trybie gra ma ograniczone zasoby GPU. Reakcją na taki stan rzeczy powinno być wstrzymanie gry (ponieważ użytkownik nie ma już nad nią kontroli). Dobrym pomysłem może być także wyłączenie wszelkich szczególnie obciążających efektów, jeśli w tym trybie obserwowane jest spowolnienie. Zwróć uwagę, że w przeciwieństwie do funkcji uwp_is_suspending() ta funkcja będzie zwracać true bez przerwy, dopóki gra jest w trybie z ograniczeniami (a nie tylko raz, gdy pojawi się po raz pierwszy).
+   
+  Składnia:
+  uwp_is_constrained();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if xboxliveis_constrained()
+    {
+        if !instance_exists(obj_PauseMenu)
+        {
+            instance_create(0,0,obj_PauseMenu);
+        }
+    }
+  Powyższy kod sprawdza, czy aplikacja jest ograniczona, i jeśli tak, tworzy instancję strony object (używanej do wstrzymywania gry).
+   
+   
+   
+  
+    
+      
+        Powrót: UWP i XBox Live
+        Następny: uwp_was_terminated
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

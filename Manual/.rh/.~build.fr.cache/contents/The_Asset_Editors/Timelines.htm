@@ -1,0 +1,75 @@
+
+  
+  Redaktor Timeline 
+  W większości gier użytkownik chce, aby pewne rzeczy działy się w określonym czasie. Można to osiągnąć za pomocą zdarzeń alarmowych, ale
+    ale gdy sprawy stają się zbyt skomplikowane, takie rozwiązanie przestaje działać, zwłaszcza że liczba alarmów jest ograniczona do dwunastu. Dlatego właśnie mamy do dyspozycji zasób osi czasu . Na stronie timeline określasz, które akcje muszą się wydarzyć w określonych momentach w czasie gry.
+    Do tego celu można wykorzystać wszystkie akcje, które są dostępne na stronie object w różnych zdarzeniach lub kodach. Po utworzeniu linii czasowej możesz przypisać ją do object, a instancja tej object wykona akcje
+    działania we wskazanych momentach czasu, gdy zostanie umieszczona lub utworzona w room.
+  Na przykład, załóżmy, że chcesz stworzyć strażnika, który powinien poruszać się 20 kroków czasowych w lewo, potem 10 w górę, następnie 20 w prawo, potem 10 w dół, a na końcu zatrzymać się. Aby to osiągnąć, możesz utworzyć stronę timeline, na której zaczniesz od ustawienia
+    ruchu w lewo. Następnie utworzysz moment 20 ("moment" to inaczej "krok gry" lub "klatka gry") i ustawisz ruch w górę, w momencie 30 - ruch w prawo, w momencie 50 - ruch w dół
+    i wreszcie w momencie 60 zatrzymasz ruch. Gdy to zrobisz, możesz przypisać tę instancję timeline do strażnika object, a instancja strażnika będzie robić dokładnie to, co zaplanowałeś, gdy zostanie umieszczona na stronie room. Możesz nawet ustawić alarm na linii czasu, tak aby
+    aby powtarzał się on po określonym czasie i w ten sposób Twój strażnik mógł patrolować dany obszar. Możesz także użyć linii czasu do kontrolowania gry bardziej globalnie, na przykład tworząc niewidzialny kontroler object, następnie linię czasu, która w określonych momentach tworzy
+    Następnie przypisz ją do kontrolera object i umieść jej instancję na stronie room. W ten prosty sposób można uzyskać czasowe tarło wrogów w grze typu space shoorter lub podobnej.
+  Aby utworzyć linię czasu, kliknij prawym przyciskiem myszy na stronie  w Przeglądarce aktywów i wybierz opcję "Utwórz linię czasu". Spowoduje to otwarcie okna przedstawionego na zdjęciu
+    na górze tej strony z następującymi sekcjami:
+   
+  Nazwa
+  
+    Tutaj nadajesz swojemu zasobowi timeline nazwę. Musi ona zawierać tylko znaki alfanumeryczne lub znak "_" pod paskiem i nie może zaczynać się od liczby, ponieważ będzie używana do odwoływania się do Twojego timeline za pomocą kodu. Nazwa ta będzie
+      będzie także unikalnym identyfikatorem timeline, który może być używany w akcjach DnD™ lub funkcjach kodu do identyfikacji timeline.
+    
+  
+  Moment
+  
+    W tym miejscu można ustawić wartość momentu . Wartość momentu jest obliczana jako liczba kroków gry po uruchomieniu strony timeline. Jeśli więc na stronie timeline znajdują się momenty w pozycjach 0 i 60, moment 0 zostanie wyzwolony po uruchomieniu osi czasu
+      a moment 60 nastąpi 60 kroków później. Jeśli prędkość strony room jest również ustawiona na 60, moment 60 wystąpi sekundę po uruchomieniu strony timeline. Możesz dwukrotnie kliknąć  na wartości momentu lub użyć menu prawego przycisku  i wybrać
+      "
+     zmień" (patrz część dotycząca menu przycisków poniżej), aby ją zmienić. Aby dodać nowy moment, wystarczy kliknąć przycisk Dodaj znajdujący się w dolnej części edytora. Dodanie nowego momentu spowoduje otwarcie edytora kodu (lub edytora akcji), w którym można dodać funkcje lub elementy DnD™, które mają być wywoływane w danym momencie.
+    
+  
+  Moment Nazwa
+  
+    Aby pomóc Ci zrozumieć, co robi Twój timeline, możesz nadać mu nazwę, która pozwoli Ci go zidentyfikować. Jest to tylko nazwa string i nie będzie ona używana w kodzie gry ani w żadnym innym miejscu, ponieważ służy wyłącznie do organizacji i zrozumienia, co robi .
+      co robi Twoja strona timeline. Aby dodać nazwę/opis do swojego momentu, należy użyć formatu /// @description w pierwszym wierszu bloku kodu, na przykład:
+    
+    /// @description Hello World
+    Wyglądałoby to następująco:
+    
+      
+    
+  
+   
+  Edytor timeline pozwala na wybranie za pomocą przycisków  +  
+    wszystkie momenty między pierwszym kliknięciem  a drugim kliknięciem , lub można użyć  /  +  do klikania pojedynczych momentów, aby wybrać je niezależnie. Timeline momenty można edytować za pomocą menu prawego przycisku myszy  na jednym z wybranych elementów:
+  
+  
+    Dodaj: Ta opcja umożliwia dodanie nowego momentu do strony timeline. Zostanie on dodany bezpośrednio po ostatnim momencie, więc jeśli ostatnim momentem w witrynie timeline jest 120, kolejnym dodanym momentem będzie 121. Pozycję momentu można zmienić
+      klikając dwukrotnie stronę  na wartości momentu w edytorze lub klikając prawym przyciskiem myszy stronę  i wybierając opcję "Zmień".
+    Edycja: Otwiera bieżący moment timeline do edycji.
+    Change Moment (Zmień moment): Zmiana wartości dla wybranego momentu timeline. To jest to samo, co powolne dwukrotne kliknięcie  na wartości timeline 
+      w oknie edytora.
+    Zmieńopis: Zmiana nazwy opisowej dla wybranego momentu timeline. To jest to samo, co powolne dwukrotne kliknięcie  na opisie w oknie edytora.
+      timeline opis w oknie edytora.
+    Duplikuj: Powoduje powielenie wszystkich wybranych momentów timeline i dodanie ich kolejno do końca bieżącej strony timeline.
+    Łączenie: W przypadku wybrania dwóch lub więcej chwil z witryny timeline można wybrać opcję ich połączenia. Spowoduje to utworzenie pojedynczego momentu timeline w miejscu pierwszego wybranego momentu z jednoczesnym wykonaniem wszystkich kodów i działań.
+    Usuń: Spowoduje to usunięcie wybranego momentu (lub momentów) z witryny timeline.
+    Wytnij /  Kopiuj /  Wklej: Te opcje umożliwiają wycinanie, kopiowanie i wklejanie jednego lub kilku momentów na stronie timeline. Można tu również używać standardowych skrótów klawiaturowych:  /  + "X",  /  + "C" oraz  /  + "V".
+    Wybierz wszystko: Za pomocą tej opcji można wybrać wszystkie momenty w witrynie timeline. Wybrane momenty można następnie usuwać, łączyć, powielać, wycinać lub kopiować.
+    Konwertuj na Drag and Drop / Kod: Momenty osi czasu zostaną utworzone przy użyciu metody wybranej podczas tworzenia projektu - albo przy użyciu kodu, albo przy użyciu akcji Drag and Drop™. Dzięki tej opcji można konwertować z jednej na drugą, niezależnie od
+      typu projektu.
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Redaktorzy Aktywów
+        Następny: Edytor obrazów
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

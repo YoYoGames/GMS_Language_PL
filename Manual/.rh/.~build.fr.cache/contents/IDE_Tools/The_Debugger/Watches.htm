@@ -1,0 +1,106 @@
+
+  
+  Zegarki
+  Cała idea serwisu Debugger polega na umożliwieniu "oglądania" każdego szczegółu gry. Służą do tego "okna obserwacji", które domyślnie są otwarte w oknie Wyjście zadokowanym na dole strony .
+   IDE Niektóre z nich mogą być aktualizowane w czasie rzeczywistym (po włączeniu funkcji czasu rzeczywistego debugging  na pasku narzędzi Debugger ), podczas gdy inne wymagają wstrzymania gry na stronie debugger.
+  Gdy obserwujesz zmienne w dowolnym oknie, może to być jeden z wielu typów danych. Jednak ze względu na sposób, w jaki GameMaker Studio 2 przechowuje pewne dane, Debugger nie zawsze wie dokładnie, co przechowuje dana
+    co przechowuje zmienna. Dzieje się tak dlatego, że wewnętrzne wartości ID struktur danych lub instancji są liczbami całkowitymi , więc Debugger nie zawsze wie, czy wartość całkowita przechowywana w zmiennej dotyczy struktury danych lub instancji, czy też jest to
+    po prostu wartością całkowitą. Z tego powodu można kliknąć prawym przyciskiem myszy  na dowolnej wartości zmiennej i wyświetlić okno z listą dostępnych typów danych
+    którymi może być ta zmienna:
+  Łańcuchy i tablice nie pozwalają na taką opcję, a warto zauważyć, że nawet jeśli struktura danych jest przechowywana w zmiennej instancji, to jej numer ID
+    jest globalny, więc jeśli masz cztery instancje i każda z nich tworzy listę ds_list (na przykład), to każda lista będzie miała identyfikator od 0 do 3, a nie wszystkie będą miały wartość 0.
+  Po wybraniu typu danych zmienna wyświetli wpisy w strukturze - wystarczy kliknąć mały przycisk  obok jej nazwy. Spowoduje to rozwinięcie zawartości struktury.
+    Możesz także zmienić niektóre wartości wyświetlanych zmiennych, klikając dwukrotnie  na wartość i nadając jej nową wartość.
+  UWAGA: w ten sposób nie można ponownie przypisać tablic lub struktur danych, ale można zmienić niektóre ich zawartości (nie można zmienić wartości "klucza" w mapach ani wartości priorytetu w przypadku priorytetu queues).
+  Poniżej znajduje się lista różnych okienek zegarka wraz z wyjaśnieniem, do czego służą i jak ich używać:
+  Mieszkańcy
+  
+    W oknie Locals wyświetlane są właściwości bieżącego kroku, w tym nazwa bieżącego zdarzenia (lub script), które jest
+      (lub script ), offset w kodzie maszyny wirtualnej dla bieżącego (skrót "PC" oznacza "licznik programu"), instancję "self" wykonującą
+      bloku kodu, oraz "inną" instancję w zdarzeniu. Ta ostatnia część jest ważna tylko wtedy, gdy zdarzenie jest kolizyjne lub w kodzie użyto "with". Jeśli instancja jest w kolizji,
+      "other" pokaże drugą instancję (i jej zmienne) w kolizji, ale jeśli jest to with, to instancja "Self" staje się tą, która uruchamia kod, a "Other" jest instancją, która faktycznie zawiera .
+     with W pozostałych przypadkach "other" będzie po prostu pokazywać te same dane, co "Self".
+    Zauważ, że instancje "Self" i "Other" można rozwinąć, klikając na stronie , aby zobaczyć listę
+      listę wszystkich zmiennych lokalnych i zmiennych instancji, które są aktualnie zadeklarowane dla analizowanego bloku kodu. Jeśli klikniesz prawym przyciskiem myszy na wartości , możesz ustawić jej typ , aby zobaczyć szczegóły struktur danych.
+    
+  
+  Globale
+  
+    W oknie Globals zostanie wyświetlona lista
+      wszystkich aktualnie zadeklarowanych zmiennych globalnych i ich wartości. Jeśli klikniesz prawym przyciskiem myszy  na wartości, możesz ustawić jej typ , aby zobaczyć szczegóły struktur danych.
+    
+  
+  Zegarki
+  
+    To okno służy do dodawania określonej zmiennej, którą
+      którą chcemy śledzić. Może to być zmienna globalna lub zmienna zakresu instancji , zmienna wbudowana, a nawet tablica lub struktura danych. Jeśli kod instancji, który jest
+      Jeśli w kodzie instancji znajduje się obserwowana zmienna, zostanie ona wyświetlona w tym miejscu, co oznacza, że można łatwo śledzić jej wartość bez konieczności szukania jej w oknach Locals i Globals . Po kliknięciu prawym przyciskiem myszy na wartości  można ustawić jej typ, usunąć ją lub usunąć wszystkie obserwacje z okna. 
+    
+  
+  Instance
+  
+    Jak sama nazwa wskazuje, okno to pokaże wszystkie zmienne instancji ,
+      zmienne lokalne dla zdarzenia instancji, zmienne wbudowane oraz struktury związane z instancją aktualnie przeglądaną w oknie Source (jeśli instancja jest przywoływana przy użyciu
+      słowa kluczowego "other" lub instrukcji with , to w tym oknie zostaną pokazane właściwości tej instancji). Jeśli klikniesz prawym przyciskiem myszy  na wartości, możesz ustawić jej typ, usunąć ją lub wyczyścić wszystkie zegarki z okna. 
+    
+  
+  Wszystkie instancje
+  
+    Jeśli chcesz zobaczyć wszystkie instancje, które
+      znajdują się obecnie w witrynie room, możesz wybrać to okno i wyświetlić ich listę. Możesz także zobaczyć stan wszystkich wbudowanych zmiennych, zmiennych instancji lub struktur , które posiadają, a także możesz prawym przyciskiem myszy
+      kliknąć prawym przyciskiem myszy  na wartość, aby ustawić jej typ.
+    
+  
+  Wybrana instancja
+  
+    To okno jest używane, gdy
+      wybierasz instancję z gry. Można to zrobić, po prostu zatrzymując grę, a następnie klikając dowolną widoczną instancję w oknie gry. Informacje o instancji znajdującej się pod kursorem myszy zostaną wyświetlone w oknie Selected
+      gdzie możesz zobaczyć jej wbudowane zmienne, zmienne instancji oraz structs, tak samo jak w oknie Instances.
+    
+  
+  Stany renderowania
+  
+    Ten zegarek pokazuje wszystkie dostępne informacje
+      na temat stanu bieżącej klatki, która jest renderowana, takie jak alfa rysowania czy kolor wypełnienia. Informacje te nie mogą być aktualizowane w czasie rzeczywistym, więc aby je uzyskać, należy wstrzymać grę.
+      szczegóły.
+    
+    
+  
+  Powierzchnie / Tekstury
+  
+    Dzięki temu można zobaczyć
+      co dokładnie jest rysowane na dowolnych powierzchniach w grze (w tym na powierzchni aplikacji), a także zobaczyćstrony tekstur, które są zapisane w pamięci. Z menu w dolnej części ekranu można wybrać stronę textures lub powierzchnie, a następnie najechać myszą na identyfikator strony texture lub powierzchni, aby wyświetlić je w wyskakującym okienku:
+    Należy pamiętać, że aby zaktualizować te dane, strona debugger musi zostać wstrzymana .
+    
+  
+  Profil
+  
+    W tym oknie można zobaczyć aktualny profil systemowy testowanej gry i sprawdzić wszystkie elementy gry, od całych zdarzeń do pojedynczych wywołań funkcji, aby sprawdzić ich działanie i wykryć
+      Można tu sprawdzić wszystkie elementy gry, od całych zdarzeń po pojedyncze wywołania funkcji, aby sprawdzić ich wydajność i wykryć ewentualne problemy lub wąskie gardła. Więcej informacji na temat profilowania można znaleźć na następującej stronie: 
+    
+      Profiler
+    
+    
+  
+  Bufor
+  
+    Jeśli w grze została zainicjowana strona buffers, to w tym oknie zostaną wyświetlone dane bufora. Możesz wybrać dowolny utworzony buffer, ustawiając wartość Buffer ID, która zaczyna się od 0 dla pierwszego buffer utworzonego
+      w grze, a następnie zwiększać o 1 dla każdego kolejnego bufora:
+    Po kliknięciu prawym przyciskiem myszy adresu  w oknie danych lub kliknięciu przycisku Wyświetlanie danych można wybrać sposób wyświetlania danych, ustawiając wyrównanie i typ, a także sposób
+      Można także określić sposób rozmieszczenia danych w polu Wybór kolumny. W tym miejscu znajduje się okno rozwijane, w którym można wybrać z domyślnej listy układów.
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Debugger
+        Następny: Profiler
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

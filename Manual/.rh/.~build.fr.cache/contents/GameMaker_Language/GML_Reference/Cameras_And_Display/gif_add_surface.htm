@@ -1,0 +1,86 @@
+
+  
+  gif_add_surface
+  Za pomocą tej funkcji można zapisać ramkę z powierzchni do pliku GIF. Należy podać identyfikator pliku GIF (zwracany przez funkcję gif_open()) i identyfikator powierzchni (zwracany przez funkcję surface_create()), a także czas opóźnienia między klatkami. Czas opóźnienia jest obliczany w 1/100 sekundy, ale należy pamiętać, że po utworzeniu pliku GIF, jeśli jest on używany np. do celów promocyjnych, różne przeglądarki mogą nieco inaczej interpretować opóźnienie klatek - więcej szczegółów znajdziesz tutaj. Możesz (opcjonalnie) podać wartości przesunięcia X i Y dla powierzchni używanej do dodania do GIF-a. W takim przypadku część rysowana do GIF-a będzie zaczynać się od przesunięcia, a nie od domyślnej pozycji (0,0), co pozwoli Ci wybrać tylko fragment powierzchni do dodania. Można również podać wartość kwantyzacji, która jest liczbą całkowitą z zakresu od 0 do 3, gdzie 0 oznacza pełną kwantyzację, a 3 - zerową kwantyzację (niższe wartości spowodują późniejszy spadek jakości, ale utworzą mniejszego GIF-a). Należy zauważyć, że nie ma dużej różnicy między domyślną jakością 2 a najwyższą 3, a użycie 3 znacznie spowolni tworzenie GIF-a, więc należy zachować ostrożność przy używaniu maksymalnej wartości.
+  Zauważ, że nie ma wbudowanych ograniczeń co do liczby klatek ani rozmiaru tych klatek w GIF-ie, ale jeśli użyjesz zbyt dużo pamięci, funkcja zawiedzie i zwróci -1, w przeciwnym razie zwróci 0.
+   
+  Składnia:
+  gif_add_surface(gif_index, surface, delay_time, [xoffset], [yoffset]);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        gif_index
+        IDENTYFIKATOR GIF
+        The ID of gif to add the surface data to
+      
+      
+        surface
+        Identyfikacja powierzchni
+        The ID of the surface to use as the added frame
+      
+      
+        delay_time
+        Real
+        The delay time for the frame (in 100ths of a second)
+      
+      
+        [xoffset]
+        Real
+        OPTIONAL Przesunięcie wzdłuż osi X powierzchni do dodania od
+      
+      
+        [yoffset]
+        Real
+        OPTIONAL Przesunięcie wzdłuż osi Y powierzchni do dodania od
+      
+      
+        [quantization]
+        Real
+        OPTIONAL Wielkość kwantyzacji od 0 do 3 (0 najniższa jakość, 3 najwyższa jakość, domyślnie 2)
+      
+    
+  
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if save_gif == true
+    {
+        if count == 0
+        {
+            gif_image = gif_open(room_width, room_height);
+        }
+        else if count < 30
+        {
+            gif_add_surface(gif_image, application_surface, 6/100);
+        }
+        else
+        {
+            gif_save(gif_image, "GameCapture.gif");
+            count = 0;
+            save_gif = false;
+        }
+        count++;
+    }
+  Powyższy kod utworzy plik obrazu GIF zawierający 30 klatek pobranych z powierzchni aplikacji, a następnie zapisze go.
+   
+   
+   
+  
+    
+      
+        Powrót: Aparaty i wyświetlacz
+        Następny: gif_save
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

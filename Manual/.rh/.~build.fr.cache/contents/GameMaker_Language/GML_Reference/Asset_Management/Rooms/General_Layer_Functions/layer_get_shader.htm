@@ -1,0 +1,46 @@
+
+  
+  warstwa_get_shader
+  Za pomocą tej funkcji można sprawdzić, czy podana warstwa ma przypisany adres shader. Podajemy ID warstwy (które otrzymujemy podczas tworzenia warstwy za pomocą layer_create()) lub nazwę warstwy (jako string - będzie to miało wpływ na wydajność), a funkcja zwróci albo indeks shader przypisanej warstwy shader, albo -1, jeśli nie ma przypisanej warstwy shader.
+   
+  Składnia:
+  layer_get_shader(layer_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        layer_id
+        Ciąg lub identyfikator warstwy
+        The unique ID value of the layer to target (or the layer name as a string)
+      
+    
+  
+   
+  Zwroty:
+  Shader Asset or -1 (if no shader is assigned)
+   
+  Przykład:
+  if layer_get_shader(layer) == -1
+    {
+        layer_shader(layer, shd_Sepia);
+    }
+  Powyższy kod sprawdzi, czy warstwa, na której znajduje się instancja uruchamiająca kod, ma przypisany adres shader, a jeśli nie ma, zostanie mu on przypisany.
+   
+   
+   
+  
+    
+      
+        Powrót: Ogólne funkcje warstwy
+        Następny: layer_set_target_room
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

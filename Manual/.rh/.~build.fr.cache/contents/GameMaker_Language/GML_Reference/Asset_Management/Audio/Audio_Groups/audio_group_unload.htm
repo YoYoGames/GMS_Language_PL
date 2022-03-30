@@ -1,0 +1,46 @@
+
+  
+  audio_group_unload
+  Ta funkcja wyładuje do pamięci wszystkie dźwięki, które są oznaczone jako należące do podanej grupy dźwiękowej. Funkcja zwróci true, jeśli rozładowywanie zostało zainicjowane, i false, jeśli identyfikator grupy jest nieprawidłowy lub została ona już oznaczona jako przeznaczona do rozładowania. Należy pamiętać, że dźwięk odtwarzany w momencie wywołania tej funkcji zostanie zatrzymany.
+   
+  Składnia:
+  audio_group_unload(groupID);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        groupID
+        Identyfikator grupy audio
+        The index of the audio group to unload (as defined in the Audio Groups Window)
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if audio_group_is_loaded(audiogroup_level1)
+    {
+        audio_group_unload(audiogroup_level1);
+    }
+  Powyższy kod sprawdza, czy grupa audio została już załadowana, a jeśli tak, to ją rozładowuje.
+   
+   
+   
+  
+    
+      
+        Powrót: Grupy audio
+        Następny: audio_group_is_loaded
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

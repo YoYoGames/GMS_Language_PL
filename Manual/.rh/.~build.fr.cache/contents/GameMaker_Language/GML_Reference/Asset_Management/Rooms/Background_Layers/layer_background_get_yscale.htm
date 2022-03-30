@@ -1,0 +1,46 @@
+
+  
+  warstwa_tła_zyskaj_skalę
+  Za pomocą tej funkcji można uzyskać bieżącą wartość mnożnika skali elementu tła. Podajesz identyfikator elementu tła (który otrzymujesz podczas tworzenia elementu tła za pomocą layer_background_create() lub po użyciu funkcji layer_background_get_id()), a funkcja zwróci wartość rzeczywistą reprezentującą mnożnik skali używany do rysowania strony sprite. Domyślną wartością jest 1.
+   
+  Składnia:
+  layer_background_get_yscale(background_element_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        background_element_id
+        The unique ID value of the background element to get the information from
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var lay_id = layer_get_id("Background_sky");
+    var back_id = layer_background_get_id(lay_id);
+    if layer_background_get_yscale(back_id) != -1
+    {
+        layer_background_yscale(back_id, -1);
+    }
+  Powyższy kod pobierze identyfikator warstwy o nazwie "Tło_sky", a następnie użyje go do uzyskania identyfikatora elementu tła na tej warstwie. Ten identyfikator zostanie następnie użyty do sprawdzenia skali y dla tego elementu i jeśli nie wynosi ona -1, zostanie ustawiona na -1.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy tła
+        Następny: layer_background_get_id
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

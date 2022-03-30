@@ -1,0 +1,51 @@
+
+  
+  część_emitenta_istnieje
+  Za pomocą tej funkcji możesz sprawdzić, czy emiter cząstek o podanym indeksie istnieje w danym systemie, czy nie. Należy pamiętać, że jeśli sprawdzana zmienna jest niezainicjalizowaną zmienną (do której emiter cząstek miałby przypisany swój indeks), to funkcja wyrzuci błąd.
+   
+  Składnia:
+  part_emitter_exists(ps, ind);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        ps
+        Identyfikator systemu cząstek stałych
+        The particle system to check for an emitter.
+      
+      
+        ind
+        Identyfikator emitera cząstek stałych
+        The index of the emitter to search for.
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if part_emitter_exists(sname, p_emit1)
+    {
+        part_emitter_burst(sname, p_emit1, part_1, 30);
+    }
+  Powyższy kod sprawdzi, czy istnieje emiter zaindeksowany w zmiennej "permit" i jeśli tak, to wybije z niego 30 cząstek.
+   
+   
+   
+  
+    
+      
+        Powrót: Emitery cząstek stałych
+        Następny: part_emitter_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

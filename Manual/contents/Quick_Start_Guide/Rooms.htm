@@ -15,16 +15,16 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Pokoje</h1>
-  <p>Wszystkie gry tworzone w <span class="notranslate">GameMaker Studio 2</span> wymagają do działania co najmniej jednego <span class="notranslate">room</span> (ale mogą mieć wiele, wiele więcej), a <span class="notranslate">room</span> to po prostu przestrzeń, w której umieszcza się instancje <span class="notranslate">objects</span> tworzące grę, a także <span class="notranslate">tiles</span> i wszelkie inne zasoby graficzne.
-    Gdy po raz pierwszy utworzysz stronę <span class="notranslate">room</span> w <a href="../Introduction/The_Asset_Browser.htm">Przeglądarce</a> zasobów, pojawi się nowa zakładka <a href="../The_Asset_Editors/Rooms.htm"><strong>Edytor pokoju</strong></a> <span class="notranslate">workspace</span> za pomocą którego możesz edytować jego właściwości,
+  <p>Wszystkie gry tworzone w <span data-keyref="GameMaker Name">GameMakerze</span> wymagają do działania co najmniej jednej strony <span class="notranslate">room</span> (ale mogą mieć wiele, wiele więcej), a strona <span class="notranslate">room</span> to po prostu miejsce, w którym umieszcza się instancje stron <span class="notranslate">objects</span> tworzących grę, a także <span class="notranslate">tiles</span> i inne zasoby graficzne.
+    Gdy po raz pierwszy utworzysz stronę <span class="notranslate">room</span> w <a href="../Introduction/The_Asset_Browser.htm">Przeglądarce</a> zasobów, pojawi się nowa strona <a href="../The_Asset_Editors/Rooms.htm"><strong>Edytor pomieszczeń</strong></a> <span class="notranslate">workspace</span> za pomocą którego możesz edytować jego właściwości,
     na przykład tak:</p>
   <p><img alt="The Room Editor" class="center" src="../assets/Images/QS_Guide/QS_RoomEditor.png"/></p>
   <p>Domyślnie narzędzia <span class="notranslate">room</span> są umieszczone po lewej stronie, z trzema głównymi sekcjami:</p>
   <ul class="colour">
     <li><strong>Edytor warstw</strong>: Wszystko w witrynie <span class="notranslate">room</span> jest umieszczane na <em>warstwach</em>, a do wyboru są różne typy warstw (więcej na ten temat później). Warstwy są uporządkowane według <em>głębokości </em>i to właśnie ta głębokość określa kolejność, w jakiej
-      Głębokość określa kolejność, w jakiej zawartość warstwy będzie wyświetlana na ekranie podczas gry. Głębokość jest uporządkowana od największej do najmniejszej, czyli im mniejsza głębokość, tym bliżej &quot;kamery&quot;, a im większa głębokość, tym dalej. Na przykład warstwa o głębokości
-      o głębokości -300 będzie renderowana nad warstwą o głębokości -100, a warstwa o głębokości 1000 będzie renderowana pod wszystkim, co ma głębokość mniejszą od tej wartości. Zauważ, że domyślnie na stronie <span class="notranslate">GameMaker Studio 2</span> głębokość warstw jest uporządkowana zgodnie z pozycją
-      Możesz przeciągać warstwy za pomocą myszy, aby zmienić ich kolejność, a <span class="notranslate">GameMaker Studio 2</span> zmieni kolejność głębokości.</li>
+      Głębokość określa kolejność, w jakiej zawartość warstwy będzie wyświetlana na ekranie podczas gry. Głębokość jest uporządkowana od największej do najmniejszej, a więc im mniejsza głębokość, tym bliżej &quot;kamery&quot;, a im większa głębokość, tym dalej od niej. Na przykład warstwa o głębokości
+      o głębokości -300 będzie renderowana nad warstwą o głębokości -100, a warstwa o głębokości 1000 będzie renderowana pod wszystkim, co ma głębokość mniejszą od tej wartości. Zauważ, że domyślnie <span data-keyref="GameMaker Name">GameMaker</span> porządkuje głębokość warstw zgodnie z pozycją
+      Możesz przeciągać warstwy myszą, aby zmienić ich kolejność, a <span data-keyref="GameMaker Name">GameMaker</span> zmieni kolejność głębokości, aby je dopasować.</li>
     <li><strong>Właściwości warstwy</strong>: Każda warstwa dodana do witryny <span class="notranslate">room</span> będzie miała swoje właściwości, które zmieniają się w zależności od typu warstwy. W tym oknie można zmieniać te właściwości i edytować sposób, w jaki warstwa będzie
      <a class="glossterm" data-glossterm="renderowane" href="#">renderowana</a>.</li>
     <li><strong>Właściwości pomieszczenia</strong>: <span class="notranslate">Rooms</span> ma też wiele właściwości, które można tutaj ustawić. Można tu ustawić takie rzeczy, jak rozmiar strony <span class="notranslate">room</span>, aktywne porty widoku kamery i wiele innych.</li>
@@ -36,13 +36,13 @@
         <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Background.png"/></td>
         <td class="icons"><strong>Warstwa tła</strong></td>
         <td class="text">Warstwa tła to warstwa, która może być wypełniona <em>pojedynczym </em>kolorem lub obrazem. Można ją przesuwać i pozycjonować w obrębie strony <span class="notranslate">room</span>, a także utworzyć wiele warstw tła. Zazwyczaj, jak sama nazwa wskazuje, używa się jej do,
-         <span class="notranslate">room</span> Domyślnie nowa strona <span class="notranslate">room</span> będzie zawsze zawierała warstwę tła, ale jeśli nie jest ona potrzebna, można ją usunąć.</td>
+         <span class="notranslate">room</span> Domyślnie nowa strona <span class="notranslate">room</span> będzie zawsze zawierać warstwę tła, ale jeśli nie jest ona potrzebna, można ją usunąć.</td>
       </tr>
       <tr>
         <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Instances.png"/></td>
         <td class="icons"><strong>Warstwa instancji</strong></td>
         <td class="text">Na warstwie instancji umieszcza się wszystkie instancje <span class="notranslate">objects</span>, które są potrzebne w grze. Aby dodać instancję do warstwy, po prostu kliknij <img> na <span class="notranslate">object</span> w przeglądarce, a następnie przeciągnij ją do edytora  .
-          <span class="notranslate">asset</span> w przeglądarce, a następnie przeciągnij ją do edytora <span class="notranslate">room</span> <span class="notranslate">workspace</span> . Po zwolnieniu przycisku myszy instancja tej warstwy <span class="notranslate">object</span> zostanie dodana do warstwy <span class="notranslate">room</span>. Domyślnie nowa warstwa <span class="notranslate">room</span> zawsze będzie zawierać instancję warstwy, ale możesz ją usunąć.
+          <span class="notranslate">asset</span> w przeglądarce, a następnie przeciągnij ją do edytora <span class="notranslate">room</span> <span class="notranslate">workspace</span> . Po zwolnieniu przycisku myszy instancja tej warstwy <span class="notranslate">object</span> zostanie dodana do <span class="notranslate">room</span>. Domyślnie nowa strona <span class="notranslate">room</span> zawsze będzie zawierać warstwę instancji, ale możesz ją usunąć
           jeśli nie jest ona potrzebna.</td>
       </tr>
       <tr>
@@ -53,7 +53,7 @@
       <tr>
         <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Tilemap.png"/></td>
         <td class="icons"><strong>Warstwa ścieżki</strong></td>
-        <td class="text"><span>Warstwa <span class="notranslate">path</span> jest jedyną warstwą, która nie jest renderowana podczas uruchamiania gry. Warstwa ta jest raczej warstwą ułatwiającą tworzenie lub edytowanie zasobów <strong>ścieżki </strong>, ponieważ umożliwia dodawanie lub edytowanie <span class="notranslate">paths</span> w obrębie rzeczywistej przestrzeni <span class="notranslate">room</span>.</span></td>
+        <td class="text"><span>Warstwa <span class="notranslate">path</span> jest jedyną warstwą, która nie jest renderowana podczas uruchamiania gry. Ta warstwa jest raczej warstwą ułatwiającą tworzenie lub edytowanie zasobów <strong>ścieżki </strong>, ponieważ umożliwia dodawanie lub edytowanie <span class="notranslate">paths</span> w obrębie rzeczywistej przestrzeni <span class="notranslate">room</span>.</span></td>
       </tr>
       <tr>
         <td class="icons"><img src="../assets/Images/Icons/Icon_Layer_Path.png"/></td>
@@ -75,15 +75,15 @@
   <p>Jeśli chcesz umieścić wiele instancji w <span class="notranslate">room</span>, możesz wybrać <span class="notranslate">object</span> z drzewa zasobów, a następnie nacisnąć i przytrzymać <img>, aby wyświetlić podgląd zasobu,
     a jeśli dodatkowo klikniesz lewym przyciskiem myszy <img>, możesz &quot;namalować&quot; go na warstwie <span class="notranslate">room</span>.</p>
   <p><img alt="LMB Icon" class="icon" src="../assets/Images/Icons/Icon_LMB.png"/></p>
-  <p>Należy pamiętać, że strony <span class="notranslate">assets</span> otrzymują pozycję podczas dodawania ich do edytora <span class="notranslate">room</span> na podstawie położenia ich osi X i Y względem <strong>początku</strong> strony <span class="notranslate">room</span>. Początek <span class="notranslate">room</span> to pozycja (0, 0), która w <span class="notranslate">GameMaker Studio 2</span> jest górnym letnim rogiem,
-    w prawo to +X, a w dół to +Y, np:</p>
+  <p>Zwróć uwagę, że <span class="notranslate">assets</span> otrzymują pozycję, gdy są dodawane do edytora <span class="notranslate">room</span>, na podstawie położenia ich osi X i Y względem <strong>początku</strong> <span class="notranslate">room</span>. Początek <span class="notranslate">room</span> to pozycja (0, 0), która w <span data-keyref="GameMaker Name">GameMakerze</span> jest górnym lewym rogiem,
+    a w prawo to +X, a w dół to +Y, np:</p>
   <p><img>W powyższym przykładzie instancja jest umieszczona na środku strony <span class="notranslate">room</span> w pozycji (X:512, Y:384). Możliwe jest także wyjście poza granice
     <span class="notranslate">room</span> i mieć pozycje większe niż długości osi <span class="notranslate">room</span> lub mniejsze niż początek <span class="notranslate">room</span> - w takim przypadku współrzędne X/Y będą miały wartości ujemne.</p>
   <p>Więcej szczegółowych informacji na temat edytora <span class="notranslate">Room</span> można znaleźć w następującej części podręcznika:</p>
   <ul class="colour">
     <li><a href="../The_Asset_Editors/Rooms.htm">Redakcja: The <span class="notranslate">Room</span> Editor</a></li>
   </ul>
-  <p>Na tym kończymy omawianie edytora <span class="notranslate">Room</span> w tym podręczniku szybkiego startu. Powinieneś już wiedzieć wystarczająco dużo, aby rozpocząć tworzenie stron <span class="notranslate">sprites</span> i <span class="notranslate">objects</span> oraz projektowanie dla nich strony <span class="notranslate">rooms</span>. W następnych częściach tego podręcznika omówimy niektóre podstawy programowania
+  <p>Na tym kończymy omawianie edytora <span class="notranslate">Room</span> w tym podręczniku szybkiego startu. Powinieneś już wiedzieć wystarczająco dużo, aby rozpocząć tworzenie stron <span class="notranslate">sprites</span> i <span class="notranslate">objects</span> oraz projektowanie dla nich strony <span class="notranslate">rooms</span>. W następnych częściach tego podręcznika omówione zostaną niektóre podstawy programowania
     podstawy programowania, które pomogą Ci w pracy, poczynając od <strong>rysowania </strong>elementów na ekranie.</p>
   <p> </p>
   <p> </p>

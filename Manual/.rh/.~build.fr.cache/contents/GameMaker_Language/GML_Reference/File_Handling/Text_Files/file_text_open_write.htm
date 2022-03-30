@@ -1,0 +1,46 @@
+
+  
+  file_text_open_write
+  Ta funkcja otwiera plik tekstowy o podanej nazwie tylko do zapisu (jeśli plik nie istnieje, zostanie utworzony), zwracając unikalny identyfikator pliku, który należy zapisać w zmiennej, gdyż będzie on używany do wszystkich dalszych działań związanych z tym plikiem. Zwróć uwagę, że jeżeli plik nie może zostać utworzony (np. z powodu nielegalnej nazwy), funkcja zwróci -1.
+  UWAGA: W danym momencie można mieć otwarte maksymalnie 32 pliki. Należy również zawsze zamykać pliki po zakończeniu pracy, ponieważ powoduje to zapisanie informacji i zwolnienie pamięci związanej z plikiem.
+  OSTRZEŻENIE! Ta funkcja może nie działać zgodnie z oczekiwaniami użytkownika, ponieważ GameMaker Studio 2 jest sandboxed! Więcej informacji na ten temat można znaleźć w rozdziale System plików.
+   
+  Składnia:
+  file_text_open_write(fname);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        fname
+        The name of the file to write to.
+     
+    
+  
+   
+  Zwroty:
+  File ID or -1
+   
+  Przykład:
+  var file;
+    file = file_text_open_write(working_directory + "level.txt");
+    file_text_write_string(file, level_data);
+    file_text_close(file);
+  Powyższy kod otworzy plik "level.txt" do zapisu, a następnie zapisze adres string zapisany w zmiennej "level_data", po czym zamknie plik.
+   
+   
+   
+  
+    
+      
+        Powrót: Pliki tekstowe
+        Następny: file_text_open_append
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,110 @@
+
+  
+  audio_falloff_set_model
+  Aby zapewnić większą wszechstronność silnika dźwiękowego, na stronie GameMaker Studio 2 można wybrać model obniżania częstotliwości, który będzie odpowiedni dla danej gry. Model ten będzie używany we wszystkich funkcjach dźwiękowych w grze lub aplikacji, dlatego należy upewnić się, że wybrany model jest właściwy, ponieważ każdy z nich będzie miał wpływ na to, jak słuchacze odbierają dźwięki odtwarzane przez emitery lub za pomocą funkcji audio_play_sound_at().
+  Domyślnym modelem obniżania jakości jest audio_falloff_none, co oznacza, że nie występuje obniżanie jakości podczas korzystania z emiterów lub pozycjonowanego dźwięku, chyba że zostanie zmieniony model obniżania jakości.
+  Modele odpadania
+  Podczas odtwarzania dźwięku przez stronę audio_play_sound_at() lub ustawiania obniżenia poziomu dźwięku dla emitera należy ustawić trzy argumenty, a każdy z nich jest odpowiedni dla konkretnego modelu i wpływa na sposób, w jaki końcowy dźwięk jest słyszany przez gracza, w zależności od odległości słuchacza od źródła. Te trzy argumenty to:
+  
+    Odległość odniesienia: jest to odległość od słuchacza, przy której głośność odtwarzanego dźwięku normalnie spadłaby o połowę, zanim wpłynąłby na nią współczynnik tłumienia lub określona odległość maksymalna.
+    Maksymalna odległość: określa odległość, w której nie będzie już występować żadne tłumienie dźwięku źródłowego. Może to być punkt, w którym dźwięk przestaje być słyszalny lub punkt, w którym głośność dźwięku nie spada poniżej minimalnego progu określonego przez wybrany model.
+    Współczynnik dezadaptacji: Współczynnik zanikania jest stosowany w tłumieniu odległości na podstawie modelu odwrotności odległości i określa ostateczny minimalny próg dla dźwięku z zanikaniem.
+  
+  Modele obniżania rozdzielczości, na które wpływają te argumenty, są reprezentowane w GameMaker Studio 2 przez następujące stałe (w tabeli podano także dokładne obliczenia):
+  
+    
+      
+      
+    
+    
+      
+        Stała tłumienia dźwięku
+      
+      
+        Stała
+        Funkcja
+      
+      
+        audio_falloff_exponent_distance
+        
+            gain = (listener_distance / reference_distance) ^ (-falloff_factor)
+      
+      
+        audio_falloff_exponent_distance_clamped
+        
+            distance = clamp(listener_distance, reference_distance, maximum_distance)
+            gain = (distance / reference_distance) ^ (-falloff_factor)
+      
+      
+        audio_falloff_inverse_distance
+        
+            gain = reference_distance / (reference_distance + falloff_factor * (listener_distance - reference_distance))
+      
+      
+        audio_falloff_inverse_distance_clamped
+        
+            distance = clamp(listener_distance, reference_distance, maximum_distance)
+            gain = reference_distance / (reference_distance + falloff_factor * (distance - reference_distance))
+      
+      
+        audio_falloff_linear_distance
+        
+            distance = min(distance, maximum_distance)
+            gain = (1 - falloff_factor * (distance - reference_distance) / (maximum_distance - reference_distance))
+      
+      
+        audio_falloff_linear_distance_clamped
+        
+            distance = clamp(listener_distance, reference_distance, maximum_distance)
+            gain = (1 - falloff_factor * (distance - reference_distance) / (maximum_distance - reference_distance))
+      
+      
+        audio_falloff_none
+        
+            gain = 1
+      
+    
+  
+  
+    Poniższe wykresy są wizualną prezentacją działania powyższych stałych i ich wpływu na odtwarzany dźwięk:
+  
+   
+  Składnia:
+  audio_falloff_set_model(model);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        model
+        Stała tłumienia dźwięku
+        The constant used to set the falloff model.
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  audio_falloff_set_model(audio_falloff_exponent_distance_clamped);
+    audio_play_sound_at(snd_Waterfall, x, y, 0, 100, 300, 1, true, 1);
+  Powyższy kod ustawia model opadania, a następnie odtwarza dźwięk zaindeksowany w zmiennej "snd_Waterfall", który zostanie zapętlony w pozycji room, z wartością odniesienia opadania 100, odległością opadania 300, współczynnikiem opadania 1 i niskim priorytetem.
+   
+   
+   
+  
+    
+      
+        Powrót: Audio
+        Następny: audio_sound_gain
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

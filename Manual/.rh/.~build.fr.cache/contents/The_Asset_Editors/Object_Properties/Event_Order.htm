@@ -1,0 +1,50 @@
+
+  
+  Kolejność zdarzeń
+  Rozważając Zdarzenia w GameMaker Studio 2, należy zauważyć, że nie można jednoznacznie określić dokładnej kolejności występowania WSZYSTKICH zdarzeń w każdym kroku, ponieważ zależy to od wewnętrznego działania GameMaker Studio
+    2, a to może ulec zmianie w miarę rozwoju oprogramowania. Istnieją jednak pewne zdarzenia, które zawsze będą przebiegać w tej samej kolejności.
+  Pierwszy zestaw zdarzeń, które zawsze będą przebiegać w ten sam sposób, to te, które występują po pierwszym wejściu na stronę room. Kolejność, w jakiej będą się uruchamiać poszczególne zdarzenia, jest następująca:
+  
+    Zmienneobiektu / zmienne instancji są inicjalizowane (są to zmienne, które można zdefiniować w IDE edytora obiektów lub edytora pomieszczeń).
+     object Jeśli masz object z dołączonymi zmiennymi, to zostaną one utworzone przed wszystkim innym, a następnie wszystkie instancje, które mają dołączone zmienne, zostaną zdefiniowane po nich.
+      edytor.
+    Create Event, a następnie kod tworzenia instancji dla każdej instancji - tak więc podczas tworzenia każdej instancji zostanie uruchomione najpierw zdarzenie Create, a następnie kod tworzenia instancji
+      zanim przejdzie do kolejnej tworzonej instancji
+    Zdarzenie rozpoczęcia gry - to zdarzenie jest wywoływane raz w pierwszym room gry dla wszystkich instancji umieszczonych na stronie room w edytorze room (pamiętaj, że wywołanie funkcji game_restart() spowoduje ponowne wywołanie tego zdarzenia).
+    Kod tworzenia pokoju - jest to jednorazowy kod wpisywany w edytorze Room przy pierwszym wejściu na stronę room.
+    Zdarzenie startu pokoju dla wszystkich instancji - jedno z kategorii "inne" zdarzeń, które zostanie wywołane dla wszystkich instancji, zarówno trwałych, jak i nietrwałych
+  
+  Warto również zauważyć, że w samym edytorze room można również ustawić kolejność tworzenia poszczególnych instancji, przesuwając je w górę lub w dół listy w oknie Właściwości warstwy instancji.
+  Poza tymi konkretnymi zdarzeniami, jedyną znaną kolejnością, która zawsze będzie występować w ten sam sposób, bez względu na wszystko, są zdarzenia związane z trzema krokami i różnymi zdarzeniami związanymi z losowaniem . Będą one zawsze spójne, więc jeśli
+    jeśli masz kod, który wymaga określonego czasu podczas każdego kroku gry, powinieneś go użyć:
+  
+    Rozpocznij krok Zdarzenie
+    Zdarzenie Step (zwróć uwagę, że zdarzenie step jest wykonywane tuż przed umieszczeniem instancji na ich nowych pozycjach)
+    Krok końcowy Zdarzenie
+  
+  Wszystkie zdarzenia związane z rysowaniem są również zawsze obsługiwane w takiej samej kolejności (z wyjątkiem zdarzenia Zmiana rozmiaru okna , które jest wywoływane w inny sposób):
+  
+    Impreza przed losowaniem
+    Zdarzenie Początek rysowania
+    Rysunek Impreza
+    Rysuj Zdarzenie końcowe
+    Impreza po losowaniu
+    Zdarzenie Początek rysowania GUI
+    Zdarzenie Rysuj GUI
+    Rysuj GUI Zdarzenie końcowe
+  
+   
+   
+   
+  
+    
+      
+        Powrót: Zdarzenia dotyczące obiektów
+        Następny: Inne wydarzenia
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  obiekt_get_mask
+  Ta funkcja powie, czy sprawdzany adres object ma indeks maski, czy nie, a jeśli tak, to zwróci indeks tej maski (czyli sprite asset) lub -1, jeśli nie ma. Należy pamiętać, że nie jest to funkcja instancji! Możesz mieć instancję object bez maski, podczas gdy instancja tej samej object może ją mieć i odwrotnie, a nawet mogą mieć różne maski. Indeks maski dla poszczególnych instancji można ustawić za pomocą zmiennej mask_index zmiennej instance.
+   
+  Składnia:
+  object_get_mask(obj);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        obj
+        The index of the object to check
+     
+    
+  
+   
+  Zwroty:
+  Sprite Asset
+   
+  Przykład:
+  if (mask_index != object_get_mask(object_index))
+    {
+        mask_index = object_get_mask(object_index);
+    }
+  Powyższy przykład sprawdzi, czy indeks maski instancji jest zgodny z maską indeksu obiektu_indeksu instancji. Jeśli nie są one takie same, to instancji zostanie przypisana taka sama maska jak ta, którą ma indeks object.
+   
+   
+   
+  
+    
+      
+        Powrót: Obiekty
+        Następny: object_get_parent
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Komentarze skryptu JSDoc</title>
-  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <script src="../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
@@ -16,8 +15,8 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>JSDoc <span class="notranslate">Script</span> Uwagi</h1>
   <p>Jeśli chcesz, aby Twoje funkcje były wyposażone w funkcję uzupełniania kodu i pokazywały wymagane argumenty w określony sposób w edytorze kodu, musisz dodać komentarze w <a href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html">stylu JSDoc</a>. Komentarze te służą do informowania funkcji autouzupełniania o tym, w jaki sposób funkcja powinna być używana i wypełniana w <a href="../Scripts.htm">edytorze skryptów</a>.</p>
-  <p>Typowy nagłówek funkcji powinien zawierać nazwę funkcji, jej opis, a następnie listę różnych argumentów (parametrów), które przyjmuje funkcja. Należy pamiętać, aby każdy wiersz zaczynać od potrójnego odwrotnego ukośnika &quot;
-   <span class="inline">///</span>&quot;, ponieważ to informuje <span class="notranslate">GameMaker Studio 2</span>, że komentarz powinien być przetwarzany w stylu JSDoc. Samym komentarzom należy nadać identyfikator (poprzedzony znakiem &quot;<span class="inline">@</span>&quot;) i treść, a dostępne są następujące identyfikatory
+  <p>Typowy nagłówek funkcji powinien zawierać nazwę funkcji, jej opis, a następnie listę różnych argumentów (parametrów), które przyjmuje funkcja. Należy pamiętać, aby każdą linię zaczynać od potrójnego odwrotnego ukośnika &quot;
+   <span class="inline">///</span>&quot;, ponieważ to mówi <span data-keyref="GameMaker Name">GameMakerowi</span>, że komentarz jest w stylu JSDoc. Samemu komentarzowi należy nadać identyfikator (poprzedzony znakiem &quot;<span class="inline">@</span>&quot;) i treść, a dostępne są następujące identyfikatory
     identyfikatory są następujące:</p>
   <p> </p>
   <table>
@@ -42,7 +41,7 @@
     </tbody>
   </table>
   <p> </p>
-  <p>Aby zorientować się, jak to działa podczas pisania własnych funkcji, posłużmy się podstawowym przykładem:</p>
+  <p>Aby wyobrazić sobie, jak to działa podczas pisania własnych funkcji, posłużmy się podstawowym przykładem:</p>
   <p class="code">function is_same_object(_id, _obj)<br/> {
     <br/>     if (_id.object_index == _obj)<br/>     {<br/>         return true;<br/>     }<br/>     else return false;<br/> }
   </p>
@@ -58,8 +57,8 @@
     <br/>     if (_id.object_index == _obj)<br/>     {<br/>         return true;<br/>     }<br/>     else return false;<br/> }
   </p>
   <p>Teraz, gdy wywołasz tę funkcję w dowolnym miejscu projektu, zobaczysz nowe nazwy argumentów, które zostały wpisane w komentarzach JSDoc:</p>
-  <p><img alt="JSDoc Example" class="center" height="652" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Example.png" width="672" /></p>
-  <p>Na powyższym obrazku górna część przedstawia funkcję w autouzupełnianiu, a dolna - działanie pomocnika argumentów znajdującego się na dole. Zwróć uwagę, że zarówno opcjonalna część &quot;type&quot;, jak i obowiązkowa &quot;description&quot; w <span class="inline">@param</span> nie są domyślnie wyświetlane w <span class="notranslate">IDE</span> code complete i aby je zobaczyć, musisz aktywować opcje w <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Language_Preferences.htm">Preferencjach GML</a>.</p>
+  <p><img alt="JSDoc Example" class="center" height="652" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Example.png" width="672"/></p>
+  <p>Na powyższym obrazku górna część przedstawia funkcję w autouzupełnianiu, a dolna - działanie pomocnika argumentów znajdującego się na dole. Zwróć uwagę, że zarówno opcjonalna część &quot;type&quot;, jak i obowiązkowa &quot;description&quot; w <span class="inline">@param</span> nie są domyślnie wyświetlane w <span class="notranslate">IDE</span> code complete i aby je zobaczyć, musisz aktywować opcje w <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/GML_Code_Preferences.htm">Preferencjach GML</a>.</p>
   <p>Możesz zawinąć nazwę argumentu w nawiasy <span class="inline">[]</span>, aby zaznaczyć, że jest on opcjonalny. Wówczas edytor kodu będzie oczekiwał dowolnej liczby argumentów pomiędzy minimalną wymaganą liczbą argumentów a całkowitą liczbą argumentów. Na przykład, patrz poniższy przykład
     funkcja:</p>
   <p class="code">/// @function    animate_position(end_x, end_y, start_x, start_y)<br/> /// @desc        Animates the instance to ending point, from optional starting point<br/> /// @arg end_x<br/> /// @arg end_y<br/> /// @arg [start_x]<br/> /// @arg [start_y]<br/>
@@ -67,10 +66,10 @@
     <br/>     // Function code<br/> }
   </p>
   <p>Argumenty <span class="inline">start_x</span> i <span class="inline">start_y</span> są oznaczone jako opcjonalne, co oznacza, że edytor kodu będzie teraz oczekiwał od 2 do 4 argumentów, jak widać w komunikacie ostrzegawczym:</p>
-  <p><img class="center" height="150" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Optional.png" width="537" /></p>
-  <p class="note"><strong>UWAGA</strong>: Takie samo zachowanie uzyskasz, jeśli w deklaracji funkcji użyjesz opcjonalnych argumentów. Więcej informacji na ten temat można znaleźć w części <a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">Funkcje skryptu</a>.</p>
+  <p><img class="center" height="150" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Optional.png" width="537"/></p>
+  <p class="note"><strong>UWAGA</strong>: Takie samo zachowanie uzyskasz, jeśli w deklaracji funkcji użyjesz opcjonalnych argumentów. Więcej informacji na ten temat można znaleźć w rozdziale <a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">Funkcje skryptu</a>.</p>
   <p>Ponieważ strona <span class="notranslate">scripts</span> może zawierać wiele funkcji, można dodać komentarze JSDoc dla każdej z nich przed jej deklaracją:</p>
-  <p><img alt="Multiple Functions With JSDoc Comments Example" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_MultipleFunctions.png" /></p>
+  <p><img alt="Multiple Functions With JSDoc Comments Example" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_MultipleFunctions.png"/></p>
   <p> </p>
   <p> </p>
   <div class="footer">
@@ -88,5 +87,5 @@ JSDoc <span class="notranslate">Script</span> Comments
   <!-- TAGS
 jsdoc_comments
 -->
-</body>
-</html>
+
+</body></html>

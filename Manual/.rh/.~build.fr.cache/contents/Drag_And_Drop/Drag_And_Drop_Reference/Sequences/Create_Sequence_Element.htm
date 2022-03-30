@@ -1,0 +1,54 @@
+
+  
+   Utwórz sekwencję
+  Za pomocą tej akcji można utworzyć element sequence dowolnej strony sequence z przeglądarki Asset. Podajesz nazwę elementu sequence oraz pozycję x/y w obrębie strony room, na której ma zostać utworzony, a także warstwę, na której ma zostać utworzony (warstwa ta musi być warstwą zasobów). Możesz zaznaczyć opcję "relative" flags, aby umieścić stronę sequence względem instancji uruchamiającej bloki kodu akcji. Za każdym razem, gdy tworzysz w ten sposób sequence w grze, otrzymuje on unikalną wartość ID elementu, za pomocą której możesz identyfikować sequence w dalszych akcjach, dlatego ta akcja pozwala zdefiniować zmienną "cel", która przechowuje tę wartość ID (jak pokazano w poniższym przykładzie). Należy zauważyć, że cel może być oznaczony jako zmienna tymczasowa (lokalna), która zostanie utworzona dla danej akcji i będzie mogła być używana we wszystkich kolejnych akcjach dla zdarzenia, którego dotyczy akcja.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Sequence
+        Nazwa strony sequence, na której ma zostać utworzony element.
+      
+      
+        x
+        Pozycja x na stronie room do utworzenia strony sequence (może być względna w stosunku do instancji wywołującej).
+      
+      
+        y
+        Pozycja y na stronie room do utworzenia strony sequence (może być względna w stosunku do instancji wywołującej).
+      
+      
+        layer
+        Nazwa (a string) warstwy asset, na której ma zostać utworzona warstwa sequence.
+      
+      
+        Target
+        Zmienna, której ma dotyczyć zwracana wartość.
+      
+    
+  
+   
+  Przykład:
+  Powyższy kod bloku akcji tworzy nową stronę sequence i zapisuje jej unikatową wartość ID elementu w zmiennej. Ta zmienna jest następnie używana do wstrzymania strony sequence za pomocą akcji Wstrzymaj sekwencję.
+   
+   
+   
+  
+    
+      
+        Powrót: Sekwencja działań
+        Następny: Zniszcz Sequence Element
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

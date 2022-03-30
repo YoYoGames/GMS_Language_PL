@@ -1,0 +1,62 @@
+
+  
+  warstwa_sekwencji_odtwarzania
+  Za pomocą tej funkcji można rozpocząć odtwarzanie podanej strony sequence. Użytkownik podaje identyfikator elementu sequence zwrócony przez layer_sequence_create() lub przez jedną z funkcji elementów warstwy, a funkcja odtworzy stronę sequence, którą można następnie wstrzymać w razie potrzeby za pomocą funkcji layer_sequence_pause().
+  WAŻNE! Jeśli na stronie sequence znajdują się jakieś instancje, nie powinny one zmieniać swoich zmiennych image_xscale / image_yscale / image_angle / x / y, ponieważ zostaną one nadpisane, gdy strona sequence będzie aktualizować każdy krok po rozpoczęciu odtwarzania.
+   
+  Składnia:
+  layer_sequence_play(sequence_element_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        sequence_element_id
+        Identyfikator elementu sekwencji
+        The unique ID value of the sequence element to target
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if keyboard_check_pressed(ord("P"))
+    {
+        global.Pause = !global.Pause;
+        var a = layer_get_all_elements(layer);
+        for (var i = 0; i < array_length(a); i++;)
+        {
+            if layer_get_element_type(a[i]) == layerelementtype_sequence
+            {
+                if global.Pause
+                {
+                    layer_sequence_pause(a[i]);
+                }
+                else
+                {
+                    layer_sequence_play(a[i]);
+                }
+            }
+        }
+    }
+  Powyższy kod sprawdza, czy po naciśnięciu klawisza gra została wstrzymana, czy nie. Jeśli gra jest wstrzymana, to loops przegląda wszystkie elementy sequence na bieżącej warstwie (warstwie instancji wywołującej) i wstrzymuje ich odtwarzanie, a jeśli gra nie jest wstrzymana, to loop ponownie rozpoczyna ich odtwarzanie.
+   
+   
+   
+  
+    
+      
+        Powrót: Warstwy sekwencji
+        Następny: layer_sequence_speedscale
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

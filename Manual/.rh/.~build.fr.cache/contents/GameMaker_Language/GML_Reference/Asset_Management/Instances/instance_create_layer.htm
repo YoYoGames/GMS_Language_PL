@@ -1,0 +1,65 @@
+
+  
+  utwórz instancję_warstwę
+  Za pomocą tej funkcji można utworzyć nową instancję określonej strony object w dowolnym punkcie strony room i na określonej warstwie. Warstwę można określić za pomocą wartości ID warstwy (zwracanej przez funkcję layer_create()) lub za pomocą nazwy warstwy (w postaci string, na przykład "instance_layer") zdefiniowanej w edytorze pomieszczeń.
+  Funkcja ta zwraca wartość id nowej instancji, którą można następnie zapisać w zmiennej lub użyć do uzyskania dostępu do tej instancji. Zauważ, że funkcja ta wywoła również zdarzenie Create dla tworzonej instancji przed kontynuowaniem kodu lub akcji dla zdarzenia, które wywołało funkcję.
+  WAŻNE Minimalna i maksymalna głębokość warstwy wynosi od -16000 do 16000. Wszystko, co zostanie umieszczone na warstwie spoza tego zakresu, nie zostanie narysowane, choć wszystkie zdarzenia będą przebiegać normalnie.
+   
+  Składnia:
+  instance_create_layer(x, y, layer_id, obj);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        x
+        Real
+        The x position the object will be created at
+      
+      
+        y
+        Real
+        The y position the object will be created at
+      
+      
+        layer_id
+        Identyfikator warstwy lub ciągznaków
+        The layer ID (or name) to assign the created instance to
+      
+      
+        obj
+        Obiekt Aktywa
+        The object index of the object to create an instance of
+      
+    
+  
+   
+  Zwroty:
+  Instance ID
+   
+  Przykład:
+  var inst = instance_create_layer(x, y, "instance_layer", obj_Bullet);
+    with (inst)
+    {
+        speed = other.shoot_speed;
+        direction = other.image_angle;
+    }
+  Powyższy kod tworzy nową instancję object "obj_Bullet" i zapisuje identyfikator instancji w zmiennej. Ta zmienna jest następnie używana do przypisywania speed i direction do nowej instancji.
+   
+   
+   
+  
+    
+      
+        Powrót: Instancje
+        Następny: instance_create_depth
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

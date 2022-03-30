@@ -1,0 +1,31 @@
+
+  
+  temp_katalog
+  Można tego użyć, aby zwrócić katalog tymczasowy tworzony dla gry przy każdym jej uruchomieniu (root nie zawiera końcowej litery "\"). Katalog ten będzie zawierał pliki i będzie można do niego wchodzić podczas działania gry, ale zostanie usunięty (wraz z
+    wraz z wszystkimi zawartymi w nim plikami) po zamknięciu gry.
+  OSTRZEŻENIE! Ta funkcja może nie działać zgodnie z oczekiwaniami użytkownika, ponieważ GameMaker Studio 2 jest sandboxed! Więcej informacji na ten temat można znaleźć w rozdziale System plików.
+   
+  Składnia:
+  temp_directory
+   
+  Zwroty:
+  
+   
+  Przykład:
+  ini_open(temp_directory + "\temp_ini.ini");
+  Spowoduje to otwarcie pliku ini w katalogu tymczasowym gry (utworzenie go, jeśli jeszcze nie istnieje).
+   
+   
+   
+  
+    
+      
+        Powrót: Katalogi plików
+        Następny: working_directory
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

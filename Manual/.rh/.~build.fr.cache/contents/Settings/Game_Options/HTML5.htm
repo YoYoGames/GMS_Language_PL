@@ -1,0 +1,65 @@
+
+  
+  Opcje gier HTML5
+  W tej sekcji opisano różne dostępne opcje, które pozwalają kontrolować sposób kompilacji projektów gier HTML5. Poszczególne sekcje to:
+   
+  Ogólne
+  W tej części znajdują się pola do wypełnienia następujących informacji o grze:
+  
+    Tytuł przeglądarki: W tym miejscu możesz podać tekst, który będzie używany na pasku tytułowym karty gry w przeglądarce.
+    Wersja: Numer wersji gry.
+    Nazwafolderu: Nazwa folderu, w którym będą przechowywane pliki gry HTML5 (domyślnie jest to "html5game").
+    Nazwa wyjściowa: Jest to nazwa wyjściowego pliku HTML, którą można zmienić na inną niż domyślna "index.html".
+  
+   
+  Poniżej pól informacji o grze dostępne są również następujące opcje:
+  
+    Debug wyjścia do konsoli: Spowoduje to wysłanie wszystkich danych wyjściowych debugowania do konsoli JS przeglądarki. Domyślnie opcja ta jest wyłączona.
+    Wyświetl kursor: Powoduje wyłączenie kursora myszy, gdy znajduje się on nad płótnem gry. Domyślnie opcja ta jest włączona.
+    Wyświetl alert "Uruchomiono poza serwerem": Jeśli testujesz grę lokalnie (tzn. klikasz na plik indeksu ze swojego komputera, a nie z server - niezalecane), to zazwyczaj pojawia się ostrzeżenie informujące, że ze względu na zabezpieczenia przeglądarki dla plików lokalnych nie wszystko będzie działać tak, jak można się tego spodziewać. Ostrzeżenie to można wyłączyć, usuwając zaznaczenie tej opcji. Domyślnie jest ona włączona.
+  
+  Poniżej ustawień ogólnych znajdują się opcje zaawansowane , do których należą:
+  
+    Dołączony plik jako index.html: Służy do dodawania niestandardowego pliku "index.html", który ma być używany zamiast predefiniowanego pliku generowanego domyślnie przez stronę GameMaker Studio 2. Może to być bardzo przydatne, jeśli masz zaimplementowany projekt strony internetowej lub chcesz włączyć pewne funkcje do wszystkich swoich kompilacji HTML5. Plik, który ma być użyty, musi być dołączony do projektu gry jako plik dołączony (Included File ).
+    Rozszerzenie paska ładowania: Spowoduje to zmianę domyślnego paska ładowania na taki, który został dodany do projektu GameMaker Studio 2 jako rozszerzenie.
+    Prepend output .js: Tutaj możesz dodać do wyjścia *.js dowolny dodatkowy JavaScript niezbędny w Twojej grze. Na przykład aplikacja Chrome Store może wymagać dodania window.localStorage = undefined; do wyjściowego pliku JS, w związku z czym należy użyć tej opcji.
+  
+   
+  Analityka
+  Ta sekcja umożliwia dodanie do gry funkcji analitycznych, pozwalających na korzystanie z produktów innych firm w celu śledzenia gry, jej sprzedaży lub odtworzeń. Możesz określić, czy do śledzenia gry chcesz używać Flurry Anal ytics czy Google Analytics. Ze względu na charakter tych funkcji, w danym momencie może być aktywna tylko jedna z nich. Po zaznaczeniu opcji Włącz Fl urry Analytics lub Włącz Google Anal ytics powinieneś również dodać w odpowiednim polu unikalny identyfikator, który został Ci przydzielony.
+  Informacje na temat funkcji, które można wykorzystać do wysyłania danych analitycznych, można znaleźć tutaj.
+   
+  Grafika
+  W tym miejscu możesz zmienić następujące szczegóły dotyczące sposobu wyświetlania Twojej gry (pamiętaj, że nie wszystkie przeglądarki będą wyświetlać Twoją grę w ten sam sposób, dlatego przetestuj te opcje na jak największej liczbie przeglądarek, aby upewnić się, że przyniosą one pożądany efekt):
+  
+    Zezwalaj na przełączanie do trybu pełnoekranowego: Zaznaczenie tej opcji pozwoli użytkownikowi na przełączanie gry z trybu okienkowego do pełnoekranowego za pomocą  /  + "F" na komputerach Mac oraz F10 na Windows. Opcja ta jest domyślnie włączona.
+    Interpoluj kolory między pikselami: Włącza interpolację liniową, która zasadniczo "wygładza" piksele. W przypadku wyraźnej grafiki pikselowej powinno być wyłączone, ale jeśli chcesz uzyskać ładne mieszanki alfa i grafikę o wygładzonych krawędziach, lepiej pozostawić to włączone. Domyślnie opcja ta jest włączona.
+    Wyśrodkuj grę w przeglądarce: Zaznaczenie tej opcji spowoduje automatyczne wyśrodkowanie ekranu gry w przeglądarce, w której uruchomiona jest gra. Domyślnie opcja ta jest wyłączona.
+    Użyj wbudowanych cząsteczek: Ta opcja spowoduje wyeksportowanie wraz z grą strony sprites wymaganej dla wbudowanego systemu cząsteczek. Te strony sprites są przechowywane na indywidualnych stronach texture, co oznacza, że nie są one najbardziej wydajną metodą generowania cząsteczek dla tej platformy, dlatego zaleca się (chyba że używasz WebGL) odznaczenie tej opcji i użycie własnych cząsteczek sprites, które będą przechowywane na głównych stronach texture razem dla twojej gry. Opcja ta jest domyślnie włączona.
+    Użyj wbudowanej czcionki: GameMaker Studio 2 Ta opcja spowoduje wyeksportowanie wbudowanej czcionki font wraz z pozostałymi plikami gry. Zwiększa to nieznacznie rozmiar stron texture i wymaga niewielkiej ilości dodatkowej pamięci, więc jeśli Twoja gra nie używa wbudowanej czcionki Arial font, ta opcja powinna być wyłączona. Domyślnie jest ona włączona.
+    WebGL: Wybierz, czy obsługa WebGL ma być wyłączona na stronie switch, opcjonalna (autowykrywanie), czy wymagana dla Twojej gry. Należy zauważyć, że aby przetestować wydajność w każdych warunkach, powinieneś mieć tę opcję wyłączoną, a następnie ustawić ją na automatyczne wykrywanie podczas publikowania. Wprowadzenie tego wymogu może znacznie zmniejszyć kompatybilność Twojej gry z różnymi typami przeglądarek. Domyślnie opcja ta jest ustawiona na automatyczne wykrywanie.
+    Skalowanie: Grę można skonfigurować tak, aby automatycznie skalowała rysowany obszar, zachowując proporcje obrazu w przeglądarce, lub aby działała w pełnej skali. Opcja pełnego skalowania nie spowoduje wyświetlenia gry na pełnym ekranie w przeglądarce, ale raczej rozciągnie rysowane elementy, aby dopasować je do rozmiaru płótna, określonego przez pierwszą stronę room gry. Domyślnie jest ustawiona na zachowanie proporcji obrazu.
+  
+  Na koniec jest jeszcze opcja ustawienia rozmiaru strony tekstury. Domyślnym (i najbardziej kompatybilnym) rozmiarem jest 2048x2048, ale można wybrać dowolny rozmiar z zakresu od 256x256 do 8192x8192. Dostępny jest także przycisk oznaczony Podgląd który wygeneruje strony texture dla tej platformy, a następnie otworzy okno, w którym będzie można zobaczyć, jak wyglądają. Może to być bardzo przydatne, jeśli chcesz zobaczyć, jaką strukturę mają strony texture i uniknąć sytuacji, w której strony texture byłyby większe (lub mniejsze) niż to konieczne. Więcej informacji na temat stron texture można znaleźć tutaj.
+  UWAGA: Pamiętaj, że im większy rozmiar strony texture, tym mniejsza kompatybilność gry z różnymi przeglądarkami i urządzeniami.
+   
+  Zdjęcia
+  W tej sekcji można zdefiniować Favicon i Splash Screen. Ikona powinna być zapisana jako plik *.ico i może mieć rozmiar 16x16, 32x32, 48x48 lub 64x64 pikseli oraz głębię kolorów 8-bitową, 24-bitową lub 32-bitową. Ekran powitalny powinien mieć rozmiar płótna, na którym będzie umieszczona gra, i będzie zastępował paski ładowania, jeśli zaznaczysz opcję Użyj ekranu powitalnego (tzn. możesz mieć pasek ładowania LUB ekran powitalny, ale nie oba). Mniejsze lub większe obrazy są dozwolone, ale będą skalowane, aby pasowały. Ekran powitalny powinien być obrazem *.png.
+  Warto zauważyć, że na stronie GameMaker Studio 2 znajduje się narzędzie Generator obrazów projektu, które może być używane do automatycznego tworzenia wszystkich obrazów wymaganych dla różnych platform docelowych, na które kompilowana jest gra. Jeśli korzystasz z tego narzędzia, powinieneś zweryfikować utworzone obrazy, aby upewnić się, że spełniają one Twoje wymagania.
+   
+  Społeczny
+  Karta społecznościowa służy do konfigurowania komunikacji z Facebookiem w grze. Jeśli chcesz korzystać z funkcji Facebooka, musisz kliknąć pole wyboru "Użyj Facebooka", a następnie podać identyfikator aplikacji Facebook i nazwę wyświetlania aplikacji Facebook. Pamiętaj, że wszystkie funkcje Facebooka są dostępne za pośrednictwem strony extension, a po pierwszym zaznaczeniu pola wyboru Użyj Facebooka zostaniesz poproszony o pobranie i zainstalowanie aplikacji Facebook extension z Marketplace (przed pobraniem aplikacji może być konieczne zalogowanie się na swoje konto YoYo ).
+   
+   
+  
+    
+      
+        Wstecz: Opcje gry
+        Następny: Amazon Fire
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

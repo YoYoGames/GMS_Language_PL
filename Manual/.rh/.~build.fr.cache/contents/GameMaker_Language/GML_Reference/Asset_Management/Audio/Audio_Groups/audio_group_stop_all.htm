@@ -1,0 +1,46 @@
+
+  
+  audio_group_stop_all
+  Ta funkcja zatrzymuje wszystkie aktualnie odtwarzane dźwięki z podanej grupy audio.
+   
+  Składnia:
+  audio_group_stop_all(groupID);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        groupID
+        Identyfikator grupy audio
+        The index of the audio group to stop (as defined in the Audio Groups Window)
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if keyboard_check_pressed(vk_space)
+    {
+        audio_group_stop_all(audiogroup_level1);
+    }
+  Powyższy kod sprawdza, czy jest wciśnięty klawisz "spacja", a następnie zatrzymuje odtwarzanie wszystkich plików audio z danej grupy.
+   
+   
+   
+  
+    
+      
+        Powrót: Grupy audio
+        Następny: audio_group_set_gain
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,44 @@
+
+  
+  zmienna_globalna_istnieje
+  Za pomocą tej funkcji można sprawdzić, czy zmienna o zasięgu globalnym istnieje, czy nie. Podajesz nazwę zmiennej globalnej, którą chcesz sprawdzić jako łańcuch znaków (patrz przykładowy kod poniżej), a funkcja zwróci true, jeśli zmienna globalna o podanej nazwie istnieje, lub false w przeciwnym wypadku.
+   
+  Składnia:
+  variable_global_exists(name);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        name
+        The name of the global variable to check for (as a string)
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if !variable_global_exists("enemy_num"))
+    {
+        global.enemy_num = instance_number(obj_Enemey_Parent);
+    }
+  Powyższy kod sprawdzi, czy zmienna globalna o nazwie "enemy_num" istnieje, a jeśli nie, zostanie utworzona i nadana jej wartość.
+   
+   
+   
+  
+    
+      
+        Powrót: Funkcje zmienne
+        Następny: variable_global_get
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

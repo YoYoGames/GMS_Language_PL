@@ -1,0 +1,61 @@
+
+  
+  room_get_viewport
+  Za pomocą tej funkcji można uzyskać szczegółowe informacje na temat portu widokowego w witrynie room innej niż bieżąca. Podaj identyfikator room i indeks portu widokowego, który chcesz pobrać (od 0 do 7), a funkcja zwróci tablicę o pięciu indeksach, gdzie:
+  
+    [0] = visible (Boolean: true / false)
+    [1] = położenie x (rzeczywiste)
+    [2] = pozycja y (rzeczywista)
+    [3] = szerokość (rzeczywista)
+    [4] = wysokość (rzeczywista)
+  
+   
+  Składnia:
+  room_get_viewport(rm, vind);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        rm
+        Pokój Aktywa
+        The index of the room to get viewport data from
+      
+      
+        vind
+        Real
+        The index of the view port to get
+      
+    
+  
+   
+  Zwroty:
+  Array (5 elements: visible, x, y, width, height)
+   
+  Przykład:
+  v_vals = room_get_viewport(rm_Game, 0);
+    
+    if v_vals[0] == false
+    {
+        room_set_view(rm_Game, true, v_vals[1], v_vals[2], v_vals[3], v_vals[4]);
+    }
+  
+  Powyższy kod pobiera dane portu widoku dla podanej strony room, a następnie sprawdza, czy port jest oznaczony jako widoczny. Jeśli nie jest, dane portu widoku są ustawiane tak, aby był on widoczny.
+   
+   
+   
+  
+    
+      
+        Powrót: Pokoje
+        Następny: room_set_camera
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

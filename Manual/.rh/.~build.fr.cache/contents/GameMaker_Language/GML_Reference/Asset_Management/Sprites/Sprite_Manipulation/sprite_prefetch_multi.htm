@@ -1,0 +1,48 @@
+
+  
+  sprite_prefetch_multi
+  Ta funkcja służy do wstępnego pobierania (umieszczania w pamięci texture ) pewnej liczby stron texture, które zawierają podany adres sprites. Podajesz tablicę wypełnioną indeksami sprite (zdefiniowanymi podczas tworzenia sprite asset), a strony texture, na których się one znajdują, zostaną załadowane do pamięci. Zwróć uwagę, że funkcja zwróci -1, jeśli prefetch nie jest obsługiwany dla wybranego zasobu lub platformą docelową jest HTML5, albo zwróci 0, jeśli wszystko działa poprawnie.
+  UWAGA: W przypadku większości urządzeń występuje spadek wydajności, ponieważ strona texture jest ładowana do pamięci texture. sprite_prefetch_multi() na wszystkie wymagane elementy graficzne na początku poziomu, aby uniknąć spowolnień.
+   
+  Składnia:
+  sprite_prefetch_multi
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        array
+        Tablica zasobów sprajtów
+        Array with the sprite indices to fetch
+      
+    
+  
+   
+  Zwroty:
+  Real (-1 or 0)
+   
+  Przykład:
+  spr_a[0] = spr_Player_Aura1;
+    spr_a[1] = spr_Player_Aura2;
+    spr_a[2] = spr_Player_Aura3;
+    spr_a[3] = spr_Player_Aura4;
+    sprite_prefetch_multi(spr_a);
+  Powyższy kod tworzy tablicę, w której każdy element zawiera indeks sprite. Tablica ta jest następnie używana do umieszczania w pamięci adresu sprite textures.
+   
+   
+   
+  
+    
+      
+        Powrót: Manipulacja sprite'ami
+        Następny: sprite_index
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

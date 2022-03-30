@@ -1,0 +1,33 @@
+
+  
+  oś czasu_położenie
+  Ta zmienna przechowuje bieżącą pozycję (moment), w którym znajduje się linia czasu. Wartość tę można zmienić, aby pominąć fragmenty linii czasu, powtórzyć je lub rozpocząć linię czasu od początku.
+   
+  Składnia:
+  timeline_position;
+   
+  Zwroty:
+   (single precision floating point value)
+   
+  Przykład:
+  if !timeline_running
+    {
+        timeline_position = 0;
+        timeline_running = true;
+    }
+  Powyższy kod sprawdzi, czy dana instancja ma uruchomioną linię czasową, a jeśli nie, to zresetuje przypisaną linię czasową, tak aby rozpoczęła się w pierwszym momencie, a następnie ją uruchomi.
+   
+   
+   
+  
+    
+      
+        Powrót: Timelines
+        Następny: timeline_loop
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

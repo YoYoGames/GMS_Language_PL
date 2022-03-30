@@ -1,0 +1,49 @@
+
+  
+  sprite_get_tpe
+  Ta funkcja zwróci specjalną wartość, która odnosi się do pozycji danego obrazu sprite i podobrazu na stronie texture używanej przez Twoją grę. W ten sposób możesz przekazać wartość do extensions do wykorzystania poza skompilowaną grą, skutecznie omijając funkcje rysowania GameMaker Studio 2 i pozwalając na użycie sprite w treści DOM, która może być rysowana w dowolnym miejscu okna zawierającego okno gry. Ta funkcja jest szczególnie przydatna dla osób, które chcą tworzyć przyciski i inne interaktywne media poza elementem GameMaker Studio 2 canvas na stronie głównej za pomocą funkcji clickable_add().
+  UWAGA: Ta funkcja jest dostępna tylko dla języka HTML5.
+   
+  Składnia:
+  sprite_get_tpe(sprite, index);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        sprite
+        Aktywa Sprite
+        The index of the sprite to find the texture page entry of.
+      
+      
+        index
+        Real
+        The image index of the sprite.
+      
+    
+  
+   
+  Zwraca
+  Texture Page Entry
+   
+  Przykład:
+  home_but = clickable_add(32, 32, sprite_get_tpe(spr_MS_Home, 0), "http://macsweeney_games.com", "_blank", "width=700, height=500, menubar=0, toolbar=0, scrollbars=0");
+  Powyższy kod tworzy przycisk DOM na pozycji (32, 32) strony, na której uruchomione jest płótno gry. Przycisk wykorzystuje adres sprite, do którego odwołuje się strona texture jako "spr_MS_Home". Po kliknięciu przycisku otworzy się nowe okno o podanym adresie URL i zdefiniowanych właściwościach.
+   
+   
+   
+  
+    
+      
+        Powrót: Informacje o Sprite
+        Następny: sprite_get_texture
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

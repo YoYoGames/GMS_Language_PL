@@ -1,0 +1,111 @@
+
+  
+  file_find_first
+  Ta funkcja zwróci nazwę pierwszego pliku, który spełnia warunki maski i atrybutów. Jeśli taki plik nie istnieje, zwracany jest pusty adres string.
+  Maska może zawierać adres path z symbolami wieloznacznymi, na przykład C:™temp.doc.
+  Atrybuty określają dodatkowe pliki, które chcesz zobaczyć, więc normalne pliki są zawsze zwracane, jeśli spełniają wymagania maski. Możesz dodać poniższe stałe, aby zobaczyć żądany typ plików (używając |). Jeśli nie chcesz dodawać żadnych atrybutów, użyj wartości 0.
+  
+    
+      
+      
+    
+    
+      
+        Atrybut pliku Stała
+      
+      
+        Stała
+        Opis
+      
+      
+        fa_readonly
+        Pliki tylko do odczytu
+      
+      
+        fa_hidden
+        Pliki ukryte
+      
+      
+        fa_sysfile
+        Pliki systemowe
+      
+      
+        fa_volumeid
+        Pliki z identyfikatorami woluminów
+      
+      
+        fa_directory
+        Katalogi
+      
+      
+        fa_archive
+        Pliki zarchiwizowane
+      
+    
+  
+  Atrybuty mogą być używane tylko na platformie Windows. Dla wszystkich innych platform należy użyć wartości 0.
+  OSTRZEŻENIE Ta funkcja może nie działać zgodnie z oczekiwaniami użytkownika, ponieważ GameMaker Studio 2 jest sandboxed! Więcej informacji na ten temat można znaleźć w rozdziale System plików.
+  UWAGA Ta funkcja nie będzie w ogóle działać w przypadku celu HTML5.
+   
+  Składnia:
+  file_find_first(mask, attr);
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        mask
+        String
+        The mask to use for searching.
+      
+      
+        attr
+        Atrybut pliku Stała(s)
+        The specific file attribute to look for.
+      
+    
+  
+   
+  Zwroty:
+  String
+   
+  Przykład:
+  if directory_exists("\User Content")
+    {
+        fileA = file_find_first("/User Content/*.doc", fa_readonly);
+        fileB = file_find_next();
+        fileC = file_find_next();
+        file_find_close();
+    }
+  Ten kod sprawdza, czy podany katalog istnieje, a jeśli tak, to przechodzi do niego i zwraca pierwszy znaleziony plik "tylko do odczytu" .doc. Następnie szuka dwóch kolejnych plików i zamyka wyszukiwarkę plików.
+  Można wyszukać dowolną liczbę plików za pomocą while pętli:
+  var files = [];
+    var file_name = file_find_first("/User Content/*.doc", fa_readonly);
+    
+    while (file_name != "")
+    {
+        array_push(files, file_name);
+    
+        file_name = file_find_next();
+    }
+    
+    file_find_close();
+  
+  Powyższy kod tworzy pustą tablicę przechowującą wszystkie nazwy plików, które zostały znalezione, i rozpoczyna wyszukiwanie plików tylko do odczytu .doc. Jeśli dana nazwa pliku nie jest pustym string, przesuwa ją do tablicy files, a następnie próbuje znaleźć następny plik. Operacja loop będzie powtarzana do momentu znalezienia pustej tablicy string (co oznacza, że nie ma już pasujących plików), co spowoduje zakończenie operacji loop i zamknięcie wyszukiwarki plików na końcu.
+   
+   
+  
+    
+      
+        Powrót: System plików
+        Następny: file_find_next
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

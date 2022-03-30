@@ -1,0 +1,65 @@
+
+  
+  date_valid_datetime
+  Za pomocą tej funkcji można sprawdzić, czy wartość datetime jest ważna (zwraca true), czy nie (zwraca false). Zwróć uwagę, że ta funkcja uzna za poprawną datę tylko taką, która jest po 1/1/1970, a wszystko wcześniejsze zwróci false, więc najwcześniej można to sprawdzić:
+  date_valid_datetime(1970, 01, 01, 0, 0, 0);
+   
+  Składnia:
+  date_valid_datetime(year, month, day, hour, minute, second);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        year
+        The year to check.
+     
+      
+        month
+        The month to check.
+     
+      
+        day
+        The day to check.
+     
+      
+        hour
+        The hour to check.
+     
+      
+        minute
+        The minute to check.
+     
+      
+        second
+        The second to check.
+     
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if date_valid_datetime(2011, 9, 15, 10, 3, 30)
+    {
+        mydatetime = date_create_datetime(2011, 9, 15, 10, 3, 30);
+    }
+  Spowoduje to ustawienie "mydatetime" na 15 września 2011, 10:03.30, jeśli jest to poprawna wartość (a jest).
+   
+   
+   
+  
+    
+      
+        Powrót: Data i czas
+        Następny: date_date_of
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

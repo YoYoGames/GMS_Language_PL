@@ -1,0 +1,48 @@
+
+  
+  camera_set_view_target
+  Za pomocą tej funkcji można ustawić cel podążania kamery w obrębie strony room. Należy podać unikatową wartość ID kamery (zwracaną przez różne camera_create() funkcje), a następnie podajesz instancję docelową lub identyfikator object, na który chcesz ustawić widok kamery. Zwróć uwagę, że jeśli wybierzesz identyfikator object ID, a w object jest więcej niż jedna instancja tej room, nie ma sposobu, aby GameMaker Studio 2 wiedziała, którą instancję chcesz śledzić, więc może to być dowolna z nich.
+   
+  Składnia:
+  camera_set_view_target(camera_id, instance_id/object_id)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        camera_id
+        Identyfikator kamery
+        The unique camera ID value returned when you created the camera
+      
+      
+        instance_id/object_id
+         Identyfikatorzasobu lub instancjiobiektu 
+        Instance or object to have the camera target for following
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  camera_set_view_target(view_camera[0], id);
+  Powyższy kod ustawi cel kamery widoku dla kamery przypisanej do portu widoku[0] na taki, jaki ma instancja uruchamiająca ten kod.
+   
+   
+   
+  
+    
+      
+        Powrót: Kamery i porty podglądu
+        Następny: camera_set_default
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

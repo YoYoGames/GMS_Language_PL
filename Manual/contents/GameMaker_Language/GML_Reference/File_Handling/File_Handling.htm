@@ -15,8 +15,8 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Obsługa plików</h1>
-  <p>W pewnym momencie podczas tworzenia gry konieczne będzie przechowywanie informacji z zewnątrz i możliwość ich wyszukiwania. Na przykład, możesz chcieć przechowywać dane logowania, wyniki, lub postępy gracza w przechodzeniu poziomów. Niezależnie od tego, jaki jest powód, trzeba wiedzieć, jak korzystać z różnych funkcji plików dostępnych podczas pracy z <span class="notranslate">GameMaker Studio 2</span>.</p>
-  <p>Bardzo ważne jest, aby zdawać sobie sprawę, że <span class="notranslate">GameMaker Studio 2</span> jest domyślnie <b>Sandboxed </b>, co oznacza, że istnieje szereg ograniczeń i drobnych komplikacji podczas korzystania z dostępnych funkcji systemu plików, a także warto zauważyć, że system plików będzie działał nieco inaczej w zależności od platformy, na którą jest przeznaczony. Więcej informacji na ten temat można znaleźć w następującej sekcji:</p>
+  <p>W pewnym momencie podczas tworzenia gry konieczne będzie przechowywanie informacji z zewnątrz i możliwość ich wyszukiwania. Na przykład, możesz chcieć przechowywać dane logowania, wyniki lub postępy gracza w przechodzeniu poziomów. Niezależnie od tego, jaki jest tego powód, będziesz musiał wiedzieć, jak korzystać z różnych funkcji plików dostępnych w programie <span data-keyref="GameMaker Name">GameMaker</span>.</p>
+  <p>Bardzo ważne jest, aby zdawać sobie sprawę, że <span data-keyref="GameMaker Name">GameMaker</span> jest domyślnie <b>Sandboxed </b>, co oznacza, że istnieje szereg ograniczeń i drobnych komplikacji podczas korzystania z funkcji systemu plików, które są dostępne. Więcej informacji na ten temat można znaleźć w następującej sekcji:</p>
   <ul class="colour">
     <li><a href="../../../Additional_Information/The_File_System.htm">System plików</a></li>
   </ul>
@@ -25,7 +25,7 @@
   <p>Na koniec należy zauważyć, że istnieją pewne różnice między niektórymi platformami docelowymi, które należy wziąć pod uwagę przy korzystaniu z funkcji plików. Są to:<b></b></p>
   <ul class="colour">
     <li><b>iOS</b>: Na <span class="notranslate">iOS</span>, jeśli ładujesz dołączony plik z folderu, np. z <span class="notranslate">path</span> coś w rodzaju &quot;<span class="inline">Backgrounds/background1.png</span>&quot;, NIE musisz dołączać folderu jako części <span class="notranslate">path</span> i wystarczy podanie nazwy pliku. Na wszystkich innych platformach musisz podać folder(y) jako część adresu <span class="notranslate">path</span> do pliku.<b></b></li>
-    <li><b>macOS i <span class="notranslate">Ubuntu</span> (<span class="notranslate">Linux</span>)</b>: Na platformach <span class="notranslate">macOS</span> i <span class="notranslate">Ubuntu</span>, w nazwach plików i <span class="notranslate">paths</span> wielkość liter ma znaczenie na tych platformach, dlatego aby zapobiec potencjalnym problemom, <span class="notranslate">GameMaker Studio 2</span> automatycznie sprawi, że wszystkie nazwy/ścieżki będą domyślnie używać małych liter.<b></b></li>
+    <li><b>macOS i <span class="notranslate">Ubuntu</span> (<span class="notranslate">Linux</span>)</b>: Na stronach <span class="notranslate">macOS</span> i <span class="notranslate">Ubuntu</span>, w nazwach plików i <span class="notranslate">paths</span> na tych platformach rozróżniana jest wielkość liter, dlatego aby zapobiec potencjalnym problemom, <span data-keyref="GameMaker Name">GameMaker</span> automatycznie sprawi, że wszystkie nazwy/ścieżki będą domyślnie pisane małymi literami.<b></b></li>
     <li><b>HTML5</b>: W HTML5 zapisywanie i ładowanie do i z pamięci <b>lokalnej</b> będzie działać tak, jak wyjaśniono na stronach z różnymi funkcjami, jednak jeśli ładujesz plik z <span class="notranslate">server</span>, <b>musisz użyć tylko funkcji <a href="../Buffers/buffer_load_async.htm"><span class="inline">buffer_load_async()</span></a></b>, ponieważ ładowanie synchroniczne zostało wycofane z większości przeglądarek i w końcu zostanie zastąpione. Należy również pamiętać, że nie można tworzyć ani niszczyć katalogów w lokalnej pamięci masowej przeglądarki.</li>
   </ul>
   <p>Informacje o różnych funkcjach plików można znaleźć na kolejnych stronach:</p>
@@ -37,7 +37,7 @@
     <li><a href="File_Directories/File_Directories.htm">Katalogi plików</a></li>
   </ul>
   <p> </p>
-  <p>GameMaker Studio 2 zawiera także szereg funkcji do <a class="glossterm" data-glossterm="kodowanie" href="#">kodowania</a> i <a class="glossterm" data-glossterm="haszowanie" href="#">haszowania</a> plików i danych, które można znaleźć tutaj:</p>
+  <p><span data-keyref="GameMaker Name">GameMaker</span> zawiera także wiele funkcji do <a class="glossterm" data-glossterm="kodowanie" href="#">kodowania</a> i <a class="glossterm" data-glossterm="haszowanie" href="#">haszowania</a> plików i danych, które można znaleźć tutaj:</p>
   <ul class="colour">
     <li><a href="Encoding_And_Hashing/Encoding_And_Hashing.htm">Kodowanie i haszowanie</a></li>
   </ul>

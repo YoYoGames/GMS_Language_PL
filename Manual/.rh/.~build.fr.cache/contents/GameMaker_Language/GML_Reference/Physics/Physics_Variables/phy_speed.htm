@@ -1,0 +1,36 @@
+
+  
+  phy_speed
+  Ta zmienna tylko do odczytu zwraca bieżącą prędkość instancji aktywnej fizyki, określoną w pikselach na krok. Jeśli chcesz zmienić tę wartość, musisz to zrobić, zmieniając wektory x i y za pomocą zmiennych phy_speed_x oraz . phy_speed_y.
+   
+  Składnia:
+  phy_speed;
+   
+  Zwroty:
+   (single precision floating point value, or undefined if the instance is not physics enabled)
+   
+  Przykład:
+  if phy_speed > 10
+    {
+        phy_linear_damping += 0.01;
+    }
+    else
+    {
+        phy_linear_damping = 2;
+    }
+  Powyższy kod sprawdza prędkość instancji z włączoną fizyką, a następnie zmienia tłumienie liniowe na podstawie zwróconej wartości.
+   
+   
+   
+  
+    
+      
+        Powrót: Zmienne fizyki
+        Następny: phy_com_x
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

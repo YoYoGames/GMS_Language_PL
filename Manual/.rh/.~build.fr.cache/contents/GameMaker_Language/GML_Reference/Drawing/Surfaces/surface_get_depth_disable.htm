@@ -1,0 +1,36 @@
+
+  
+  surface_get_depth_disable
+  Ta funkcja sprawdza, czy włączone jest automatyczne generowanie głębokości buffer dla powierzchni. Normalnie wszystkie powierzchnie mają głębokość buffers, więc jeśli narysujesz na nich 3D objects, to zostaną one odpowiednio posortowane według głębokości, jednak alokowanie głębokości buffers zasadniczo podwaja rozmiar powierzchni, co może być nadmiernym i niepotrzebnym narzutem, zwłaszcza jeśli Twoja gra wymaga dużo pamięci lub jest w przeważającej mierze 2D. W takich przypadkach można to sprawdzić za pomocą tej funkcji i w razie potrzeby wyłączyć głębokość buffer dla powierzchni za pomocą funkcji surface_depth_disable().
+   
+  Składnia:
+  surface_get_depth_disable();
+   
+  Zwroty:
+  
+   
+  Przykład:
+  if (!surface_exists(surf))
+    {
+        if surface_get_depth_disable() == false
+        {
+            surface_depth_disable(true);
+        }
+        surf = surface_create(room_width, room_height);
+    }
+  Powyższy kod sprawdzi, czy dana powierzchnia istnieje, a jeśli nie, to sprawdzi bieżący stan głębokości powierzchni buffer i jeśli jest ona włączona, to wyłączy ją, zanim ostatecznie utworzy powierzchnię.
+   
+   
+   
+  
+    
+      
+        Powrót: Powierzchnie
+        Następny: surface_getpixel
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

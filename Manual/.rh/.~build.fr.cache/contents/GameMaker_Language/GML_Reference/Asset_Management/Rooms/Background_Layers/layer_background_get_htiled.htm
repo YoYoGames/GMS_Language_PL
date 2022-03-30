@@ -1,0 +1,46 @@
+
+  
+  layer_background_get_htiled
+  Za pomocą tej funkcji można dowiedzieć się, czy element tła jest ułożony poziomo, czy nie. Podajesz identyfikator elementu tła (który otrzymujesz podczas tworzenia elementu tła za pomocą layer_background_create() lub po użyciu funkcji layer_background_get_id()), a funkcja zwróci albo true, jeśli element jest obecnie ułożony w kafelki, albo false, jeśli nie jest.
+   
+  Składnia:
+  layer_background_get_htiled(background_element_id);
+  
+    
+      
+        ArgumentTyp
+        Opis
+     
+      
+        background_element_id
+        The unique ID value of the background element to get the information from
+     
+    
+  
+   
+  Zwroty:
+  
+   
+  Przykład:
+  var lay_id = layer_get_id("Background_sky");
+    var back_id = layer_background_get_id(lay_id);
+    if !layer_background_get_htiled(back_id)
+    {
+        layer_background_htiled(back_id, true);
+    }
+  Powyższy kod pobierze identyfikator warstwy o nazwie "Tło_sky", a następnie użyje go do uzyskania identyfikatora elementu tła na tej warstwie. Identyfikator ten zostanie następnie użyty do sprawdzenia, czy element jest ułożony w kafelki na osi poziomej, a jeśli nie jest, to zostanie ustawiony w tym kierunku.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy tła
+        Następny: layer_background_get_vtiled
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,59 @@
+
+  
+  warstwa_tła_widoczna
+  Za pomocą tej funkcji można przełączać widoczność elementów tła. Podajesz identyfikator elementu tła (który otrzymujesz podczas tworzenia elementu tła za pomocą layer_background_create() lub po użyciu funkcji layer_background_get_id()), a następnie ustaw argument visible na true lub false. Po ustawieniu na true element będzie wyświetlany, a po ustawieniu na false element nie będzie wyświetlany. Należy pamiętać, że jest to zależne od widoczności warstwy i nawet jeśli element tła jest oznaczony jako widoczny, nie zostanie narysowany, jeśli warstwa, na której się znajduje, jest oznaczona jako niewidoczna.
+   
+  Składnia:
+  layer_background_visible(background_element_id, visible)
+  
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        background_element_id
+        Identyfikator elementu tła
+        The unique ID value of the background element to change
+      
+      
+        visible
+        Boolean
+        The visibility toggle, which can be true lub . false
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  if mouse_check_button_pressed(mb_left)
+    {
+        var back = layer_background_get_id(layer);
+        if layer_background_get_visible(back)
+        {
+            layer_background_visible(back, false);
+        }
+        else
+        {
+            layer_background_visible(back, true);
+        }
+    }
+  Powyższy kod sprawdza, czy nie został naciśnięty przycisk myszy, a jeśli zostanie wykryty, przełącza widoczność elementu tła przypisanego do warstwy, na której znajduje się instancja wykonująca kod.
+   
+   
+   
+  
+    
+      
+        Wstecz: Warstwy tła
+        Następny: layer_background_sprite
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

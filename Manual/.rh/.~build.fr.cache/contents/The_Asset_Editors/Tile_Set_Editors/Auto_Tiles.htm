@@ -1,0 +1,40 @@
+
+  
+  Auto Dachówki
+  Funkcja automatycznego kafelkowania to niezwykle potężne narzędzie, które znacznie ułatwia budowanie poziomów, zarówno w przypadku projektów z widokiem z góry na dół, jak i z boku. Zasadniczo tworzysz bibliotekę auto tile, a następnie za każdym razem, gdy
+    tile z tej biblioteki, będzie ona "łączyć się" z tymi tiles, które znajdują się wokół niej, tworząc jednolitą ścianę lub platformę.
+  Zanim jednak zaczniesz korzystać z funkcji auto tile, bardzo ważne jest, abyś poprawnie skonfigurował stronę tile set sprite i wybrał odpowiedni typ auto tile. Dostępne są następujące typy: 47 tile auto tiles, lub
+   16 tile auto tiles, przy czym (ogólnie rzecz biorąc) 16 tiles jest używane do widoków z góry na dół lub krajobrazów (ponieważ zapewnia ładniejsze przejścia), a 47 jest używane do widoków z platformówki/bocznych lub z góry na dół, gdzie ściany wymagają wielu połączeń, ale to
+    ale nie jest to w żadnym wypadku sztywna reguła i zależy od tego, jak chcesz, aby wyglądał Twój ostateczny projekt.
+  Na poniższym rysunku pokazano typowe strony 47 tile i 16 tile tile set do automatycznego profilowania:
+  Samo spojrzenie na obrazki nie mówi, jak będą do siebie pasować, dlatego otworzymy Edytor płytek z Edytora zestawu płytek i dodamy je do siebie. Edytor płytek wygląda następująco:
+  Zauważ, że używany adres tile set sprite ma WSZYSTKIE wymagane przez nas adresy tiles i może mieć także inne adresy tiles, ponieważ możesz wybrać
+    które z nich mają się znaleźć w auto tile. Możesz teraz kliknąć  na przycisku 47 tile w obszarze Szablony, aby utworzyć nową pozycję biblioteki 47 tile, co spowoduje
+    zostanie wyświetlony szablon, którego można użyć do wybrania potrzebnej strony tiles:
+  W szablonie jasnoszary obszar reprezentuje zewnętrzną krawędź używanej strony tile, a ciemniejszy szary to obszar "wypełnienia".
+    Aby dodać stronę tile do szablonu, wystarczy kliknąć pierwszą dostępną komórkę szablonu, a następnie wybrać z lewej strony stronę tile, którą chcesz dodać:
+  Jeśli popełnisz błąd, po prostu zaznacz autotile, które chcesz usunąć, i wybierz "pustą" stronę tile z adresu
+    tile set . Po dodaniu wszystkich elementów możesz sprawdzić zgodność tiles z szablonem, klikając przycisk "Pokaż szablon"  u góry.
+    spowoduje to włączenie nakładki szablonu na końcowy autotile, jak pokazano na poniższym rysunku:
+  Jeśli chcesz utworzyć autotile 16 tile, procedura jest dokładnie taka sama, jak opisana powyżej, tylko zamiast używać
+    47 tile szablonu należy użyć szablonu 16 tile:
+  W naszej bibliotece auto tiles mamy teraz kilka auto tile pobranych z portalu tile set. Można ich użyć w edytorze room, po prostu tworząc warstwę mapy kafelkowej
+    mapę, a następnie wybierz jedną z warstw auto tiles z biblioteki (co spowoduje automatyczne wybranie pędzla auto tile z górnej części edytora room ) i zamaluj ją na swojej stronie room. Teraz tiles w "magiczny" sposób połączy się, tworząc
+    prawidłowo ułożone mapy tile.
+  Należy pamiętać, że zachowanie autotile'a wokół krawędzi room będzie zależało od przycisku Open Or Closed Edges (Krawędzie otwarte lub zamknięte ) . Domyślnie, gdy automatyczny tile zostanie umieszczony wzdłuż krawędzi room, wybierze tile, tak jakby zewnętrzna strona room była pusta (tzn:
+    nada stronie room "krawędź"). Jeśli jednak klikniesz ten przycisk, autotile będzie tile room tak, jakby obszar na zewnątrz był wypełniony stroną tiles, a więc wybierze stronę tiles, która się miesza i nie ma "krawędzi".
+   
+   
+   
+  
+    
+      
+        Powrót: Zestawy płytek
+        Następny: Konstruktor pędzli
+      
+    
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+  
+  
+  
+
