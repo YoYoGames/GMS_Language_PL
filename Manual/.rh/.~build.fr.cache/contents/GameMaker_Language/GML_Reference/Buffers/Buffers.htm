@@ -1,7 +1,7 @@
 
   
   Bufory
-   buffer to region pamięci fizycznej używany do tymczasowego przechowywania danych podczas przenoszenia ich z jednego miejsca do drugiego lub manipulowania nimi w jakiś sposób, na przykład można użyć buffer do przechowywania pakietów danych oczekujących na transmisję przez sieć lub do przechowywania pakietów odebranych przez sieć. GameMaker Studio 2 ma wiele specyficznych funkcji związanych z tworzeniem, modyfikowaniem i ładowaniem/zapisywaniem buffers, ale przed ich użyciem należy zwrócić uwagę na następujące kwestie:
+   buffer to region pamięci fizycznej używany do tymczasowego przechowywania danych podczas przenoszenia ich z jednego miejsca do drugiego lub manipulowania nimi w jakiś sposób, na przykład można użyć buffer do przechowywania pakietów danych oczekujących na transmisję przez sieć lub do przechowywania pakietów odebranych przez sieć. GameMaker ma wiele specjalnych funkcji związanych z tworzeniem, modyfikowaniem i ładowaniem/zapisywaniem buffers, ale przed ich użyciem należy zwrócić uwagę na następujące kwestie:
   
     Po utworzeniu strony buffer jest ona automatycznie czyszczona i wypełniana do wartości 0.
     Argument "size" funkcji buffer zawsze odnosi się do rozmiaru w bajtach strony buffer.
@@ -10,7 +10,7 @@
     Niektóre z funkcji buffer tworzą także nowy adres buffer (na przykład buffer_load ). Pamiętaj, że te buffers będą musiały zostać usunięte z pamięci, gdy nie będą używane, za pomocą funkcji buffer_delete.
     Pamięć używana do tworzenia strony buffers jest pamięcią systemową, więc nawet jeśli gra nie jest skoncentrowana, wszelkie dane przechowywane w witrynie buffer powinny być bezpieczne, jednak jeśli aplikacja zostanie zamknięta lub ponownie uruchomiona, zostaną utracone.
   
-  Na następnych stronach wyjaśniono, jak działa buffers w kontekście GameMaker Studio 2, oraz zamieszczono kilka przykładów kodu dla użytkowników, którzy nie są pewni, jak z nich korzystać:
+  Na kolejnych stronach wyjaśniono działanie strony buffers w kontekście programu GameMaker oraz podano kilka przykładów kodu dla tych użytkowników, którzy nie są pewni, jak z nich korzystać:
   
     Używanie buforów
   

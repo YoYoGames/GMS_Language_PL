@@ -1,10 +1,10 @@
 
   
   buffer_async_group_option
-  Za pomocą tej funkcji można ustawić pewne specyficzne dla platformy opcje zapisywanej grupy buffer. Dostępne są następujące opcje:
+  Za pomocą tej funkcji można ustawić pewne specyficzne dla platformy opcje zapisywanej/wczytywanej grupy buffer. Dostępne są następujące opcje:
   
     "subtitle" lub "slottitle" - Wartością tej opcji będzie string, który będzie wyświetlany użytkownikowi podczas zarządzania danymi zapisu w systemie operacyjnym. Ma to znaczenie tylko przy zapisywaniu danych, a nie przy ich ponownym wczytywaniu.
-    "showdialog" - Wartością tej opcji jest boolean true lub false. Jeśli ustawiona na true, podczas zapisywania lub ładowania GameMaker Studio 2 pokaże UI systemu, w przeciwnym razie będzie to quicksave/quickload bez pokazywania UI. Zazwyczaj jest ona potrzebna tylko w przypadku obsługi wielu gniazd zapisu, aby umożliwić użytkownikowi wybór gniazda, ale jeśli obsługujesz tylko jedno gniazdo na użytkownika, ustaw ją na false.
+    "showdialog" - Wartością tej opcji jest boolean true lub false. Jeśli ustawiona na true, podczas zapisu lub ładowania GameMaker pokaże UI systemu, w przeciwnym razie wykona quicksave/quickload bez pokazywania UI. Zazwyczaj jest to potrzebne tylko wtedy, gdy obsługujesz wiele miejsc zapisu, aby umożliwić użytkownikowi wybór miejsca, ale jeśli obsługujesz tylko jedno miejsce na użytkownika, ustaw tę opcję na false.
     "savepadindex" - W tej opcji należy podać indeks gracza, który zapisuje lub ładuje dane, a system będzie zapisywał i odczytywał dane z folderu zapisów tego gracza.
     "saveslotsize" - Ta opcja wymaga podania rzeczywistego rozmiaru w bajtach, który ma zostać zapisany (można więc wykonać operację buffer_seek() i buffer_tell() aby to uzyskać). Należy pamiętać, że podanie tej wartości nie jest obowiązkowe, ponieważ wszystkim zapisom jest wstępnie przypisywane minimalne miejsce, które zwykle różni się w zależności od platformy docelowej.
     "ps_create_backup" - (tylko PlayStation) - ustawienie tej opcji na true daje pewność, że dane zapisu zostaną zarchiwizowane, gdy katalog zapisu zostanie odmontowany (tj. gdy zostanie wywołana funkcja buffer_async_group_end() ). Więcej informacji można znaleźć w dokumentacji konsoli.
@@ -27,7 +27,7 @@
       
       
         value
-        Wartośćrzeczywista lub łańcuch
+        Real lub String
         The value to set (can be a real or string, depending on the option).
       
     

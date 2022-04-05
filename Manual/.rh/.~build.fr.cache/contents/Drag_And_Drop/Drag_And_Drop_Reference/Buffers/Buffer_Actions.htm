@@ -2,21 +2,16 @@
   
   Bufory Biblioteka akcji
   
-   Bufor to obszar pamięci fizycznej służący do tymczasowego przechowywania danych podczas przenoszenia ich z jednego miejsca do drugiego lub manipulowania nimi w jakiś sposób, na przykład można użyć buffer do przechowywania danych o stanie gry. GameMaker Studio 2 ma wiele konkretnych
-    czynności związanych z tworzeniem, modyfikowaniem i ładowaniem/zapisywaniem buffers, ale przed ich użyciem należy zwrócić uwagę na następujące kwestie:
+   Bufor to obszar pamięci fizycznej używany do tymczasowego przechowywania danych podczas przenoszenia ich z jednego miejsca w inne lub manipulowania nimi w jakiś sposób, na przykład można użyć buffer do przechowywania danych o stanie gry. W programie GameMaker jest wiele specjalnych działań związanych z tworzeniem, modyfikowaniem i ładowaniem/zapisywaniem buffers, ale przed ich użyciem należy zwrócić uwagę na następujące kwestie:
   
     Po utworzeniu strony buffer jest ona automatycznie czyszczona i wypełniana do wartości 0.
     Argument "size" funkcji buffer zawsze odnosi się do rozmiaru w bajtach strony buffer.
-    Strony DnD™ buffers są zawsze wyrównane do 1 bajta. Wyrównanie" odnosi się do sposobu przechowywania danych na stronie buffer i jest używane podczas korzystania z funkcji GML buffer , ale
-      w przypadku Drag And Drop nie ma to znaczenia.
-    Dane w witrynie buffers są odczytywane i zapisywane w sposób sekwencyjny (np. trzykrotne wywołanie akcji Write Buffer spowoduje zapisanie pierwszych danych, przejście do przodu, zapisanie drugich danych, przejście do przodu, a następnie zapisanie
-      ostatnie dane), z czymś, co nazywa się wartością "seek" (szukaj), aby określić, w którym miejscu w witrynie buffer nastąpi następny odczyt/zapis.
-    Wszystkie dane są zapisywane na stronie buffer i zwracane ze strony buffer w postaci łańcucha znaków, więc jeśli w pamięci znajdują się liczby rzeczywiste, należy użyć jednej z funkcji Data Type Actions, aby przekonwertować je z łańcucha
-      na wartość.
+    Pliki GML Visual buffers są zawsze wyrównane do 1 bajta. Wyrównanie" odnosi się do sposobu przechowywania danych w witrynie buffer i jest używane podczas korzystania z funkcji GML buffer , ale w przypadku języka GML Visual nie ma to znaczenia.
+    Dane w buffers są odczytywane i zapisywane w sposób sekwencyjny (np. trzykrotne wywołanie akcji Write Buffer spowoduje zapisanie pierwszych danych, przejście do przodu, zapisanie drugich danych, przejście do przodu, a następnie zapisanie ostatnich danych), przy czym wartość "seek" określa, w którym miejscu w buffer nastąpi następny odczyt/zapis.
+    Wszystkie dane są zapisywane na stronie buffer i zwracane ze strony buffer jako ciąg znaków, więc jeśli przechowywane są liczby rzeczywiste, trzeba będzie użyć jednej z akcji typu danych, aby przekonwertować je z adresu string na wartość.
   
-  Pamięć używana do tworzenia buffers jest pamięcią systemową, więc nawet jeśli gra nie jest skoncentrowana, wszelkie dane przechowywane w buffer powinny być bezpieczne, jednak jeśli aplikacja zostanie zamknięta lub ponownie uruchomiona, zostaną utracone. Warto również zauważyć, że stronę buffers można
-    być zapisywane jako pliki, a następnie ładowane z powrotem do gry za pomocą akcji plikowych.
-  Na następnej stronie wyjaśniono bardziej szczegółowo, jak działa strona buffers w kontekście strony GameMaker Studio 2, oraz zamieszczono kilka przykładów kodu GML:
+  Pamięć używana do tworzenia buffers jest pamięcią systemową, więc nawet jeśli gra nie jest skoncentrowana, wszelkie dane zapisane w buffer powinny być bezpieczne, ale jeśli aplikacja zostanie zamknięta lub ponownie uruchomiona, zostaną utracone. Warto również zauważyć, że stronę buffers można również zapisać jako plik, a następnie załadować z powrotem do gry za pomocą akcji plikowych.
+  Na następnej stronie wyjaśniono bardziej szczegółowo, jak działa strona buffers w kontekście programu GameMaker, oraz zamieszczono kilka przykładów kodu GML:
   
     Używanie buforów
   
@@ -90,7 +85,7 @@
         Następny: Akcje plików
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

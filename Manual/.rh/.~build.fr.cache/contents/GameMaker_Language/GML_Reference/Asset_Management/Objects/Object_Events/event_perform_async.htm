@@ -1,7 +1,7 @@
 
   
   zdarzenie_perform_async
-  Funkcja ta służy do wykonywania dowolnego ze zdarzeń asynchronicznych dostępnych na stronie GameMaker Studio 2. W zmiennej async_load należy podać stałą zdarzenia Async (przedstawioną w poniższej tabeli) oraz mapę DS, która będzie dostępna w wywołanym zdarzeniu Async.
+  Funkcja ta służy do wykonywania dowolnego zdarzenia asynchronicznego dostępnego w programie GameMaker. W zmiennej async_load podajesz stałą zdarzenia Async (przedstawioną w poniższej tabeli) oraz mapę DS, która będzie dostępna w wywołanym zdarzeniu Async.
   
     
       
@@ -69,6 +69,7 @@
       
     
   
+  Zdarzenia nieasynchroniczne można wywoływać za pomocą event_perform().
   Należy zauważyć, że mapa DS podana w drugim argumencie nie musi być niszczona ręcznie, ponieważ zostanie automatycznie zniszczona przez funkcję po wykonaniu zdarzenia Async.
    
   Składnia:

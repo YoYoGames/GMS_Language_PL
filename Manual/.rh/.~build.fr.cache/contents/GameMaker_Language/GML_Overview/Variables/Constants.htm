@@ -2,10 +2,10 @@
   
   Stałe
   Stała to rodzaj zmiennej, która jest ustawiana raz na początku gry i nigdy się nie zmienia. W rzeczywistości wartości stałych nie można zmieniać po ich zadeklarowaniu. Dzięki temu idealnie nadają się do przechowywania wartości, które są używane w grze do identyfikacji specjalnych danych.
-  W witrynie GameMaker Language istnieją dwa rodzaje stałych definiowanych przez użytkownika: makra i enumy, które zostały omówione poniżej. Należy również pamiętać, że każda wartość, która jest zawsze taka sama, jest klasyfikowana jako stała, niezależnie od typu danych, na przykład string lub liczba 3.
-  UWAGA: Strona GameMaker Language ma także szereg wbudowanych stałych wartości, które służą do identyfikacji określonych rzeczy. Są one opisane na odpowiednich stronach dla funkcji runtime, które ich wymagają, w sekcji GML Reference.
+  W witrynie GameMaker Language istnieją dwa rodzaje stałych definiowanych przez użytkownika: makra i enumy, które zostały omówione poniżej. Należy również pamiętać, że każda wartość, która jest zawsze taka sama, jest klasyfikowana jako stała, niezależnie od typu danych, np. string lub liczba 3.
+  UWAGA Strona GameMaker Language ma także szereg wbudowanych stałych wartości, które służą do identyfikacji określonych rzeczy. Są one opisane na odpowiednich stronach dla funkcji runtime, które ich wymagają, w sekcji GML Reference.
   Makra
-  Makra, choć nie są zmiennymi, są do nich podobne pod względem sposobu użycia, tzn. są nazwanymi wartościami, których można używać w kodzie w celu zastąpienia wartości zakodowanych na sztywno. Zasadniczo makro jest zmienną nazwaną, która przechowuje wyrażenie. Makra można definiować za pomocą Edytora skryptów, a następnie używać ich w kodzie i na stronie DnD tak jak zwykłych zmiennych, z tą różnicą, że nie można ich zmieniać w grze.
+  Makra, choć nie są zmiennymi, są do nich podobne pod względem sposobu użycia, tzn. są nazwanymi wartościami, których można używać w kodzie w celu zastąpienia wartości zakodowanych na sztywno. Zasadniczo makro jest zmienną nazwaną, która przechowuje wyrażenie. Makra można definiować za pomocą Edytora skryptów, a następnie używać ich w kodzie i akcjach tak, jakby były zwykłymi zmiennymi, z tą różnicą, że nie można ich zmieniać w grze.
   Struktura składni makra jest następująca:
   #macro <variable> <expression>
   Na przykład, zdefiniuj następujące makro "total_weapons":
@@ -30,7 +30,7 @@
   Zauważ, że nie będziesz mógł zmienić wartości stałej, więc taki kod spowoduje awarię gry:
   total_weapons = 11;
   Makro można zdefiniować w dowolnym miejscu w kodzie lub w skrypcie, a zostanie ono prekompilowane i dołączone do gry, tak jakby było tam od początku. Zalecamy jednak utworzenie specjalnej strony script asset i zdefiniowanie tam wszystkich makr. Będzie to łatwiejsze do zorganizowania i późniejszego debugowania!
-  Jeśli wartość makra ma się zmieniać w czasie wykonywania gry, to prawdopodobnie należy uczynić z niego zmienną globalną, ponieważ można je zmieniać z poziomu kodu podczas gry, chyba że makro zostanie ustawione jako runtime  function. Ustawienie makra jako funkcji oznacza, że funkcja ta będzie wywoływana za każdym razem, gdy użyjesz makra. Na przykład:
+  Jeśli wartość makra ma się zmieniać w czasie wykonywania gry, to prawdopodobnie należy uczynić z niego zmienną globalną, ponieważ można je zmieniać z poziomu kodu w czasie gry, chyba że makro zostanie ustawione jako runtime  function. Ustawienie makra jako funkcji oznacza, że funkcja ta będzie wywoływana za każdym razem, gdy użyjesz makra. Na przykład:
   #macro col make_colour_hsv(irandom(255), 255, 255)
   Makro to można wywołać w następujący sposób:
   image_blend = col;
@@ -38,14 +38,14 @@
   #macro hello show_debug_message("Hello" + \
     string(player_name) + \
     ", how are you today?");
-  Jest to rozwiązanie czysto kosmetyczne, ponieważ podział makra w ten sposób nie będzie miał żadnego wpływu na wynik działania makra końcowego, a jego celem jest po prostu zapewnienie obsługi tekstu wielowierszowego w makrach zawierających dłuższe wiersze kodu.
-  Bardzo ważną cechą makr jest to, że można je zdefiniować do użycia z określonymi konfiguracjami (configami), co oznacza, że można mieć tę samą nazwę makra, ale nadać mu różne wartości w zależności od aktualnie wybranego configu. Na przykład, jeśli masz konfigurację dla Android Ads i inną dla iOS Ads, możesz zdefiniować jedno makro, które będzie przechowywało wymaganą wartość App ID:
+  Jest to rozwiązanie czysto kosmetyczne, ponieważ podział makra w ten sposób nie będzie miał żadnego wpływu na wynik działania makra końcowego, a jego celem jest po prostu zapewnienie obsługi tekstu wielowierszowego w makrach zawierających dłuższe linie kodu.
+  Bardzo ważną cechą makr jest to, że można je zdefiniować do użycia z określonymi konfiguracjami (configami), co oznacza, że można mieć tę samą nazwę makra, ale nadawać mu różne wartości w zależności od aktualnie wybranego configu. Na przykład, jeśli masz konfigurację dla Android Ads i inną dla iOS Ads, możesz zdefiniować jedno makro, które będzie przechowywało wymaganą wartość App ID:
   #macro ad_id "";
     #macro Android:ad_id "com.yoyogames.googlegame"
     #macro iOS:ad_id "com.yoyogames.appstoregame"
   Jak widać, najpierw podajesz nazwę konfiguracji, potem dwukropek :, a następnie nazwę i wartość makra. Zwróć uwagę, że pomiędzy dwukropkiem : a nazwą konfiguracji lub nazwą makra nie może być białych spacji, w przeciwnym razie zostanie wyświetlony błąd.
   Enumy
-  Enum to "wyliczarka", która zasadniczo umożliwia utworzenie własnego ograniczonego typu danych z listą stałych wartości, które mają następującą strukturę:
+  Enum to "wyliczarka", która umożliwia utworzenie własnego ograniczonego typu danych z listą stałych wartości o następującej strukturze:
   enum <variable>
     {
         <constant> [= <value>],
@@ -125,11 +125,11 @@
       
       
         true
-        Ta stała reprezentuje wartość 1, czyli to, co GameMaker Studio oceni jako boolean "true" (zauważ, że każda wartość równa lub większa od 1 będzie oceniana jako true).
+        Ta stała reprezentuje wartość 1, którą GameMaker oceni jako wartość logiczną "true" (zauważ, że każda wartość równa lub większa od 1 zostanie oceniona jako true).
       
       
         false
-        Ta stała reprezentuje wartość 0, czyli to, co GameMaker Studio oceni jako boolean "false" (zauważ, że każda wartość mniejsza lub równa 0 będzie oceniana jako false).
+        Ta stała reprezentuje wartość 0, którą GameMaker oceni jako wartość logiczną "false" (zauważ, że każda wartość mniejsza lub równa 0 zostanie oceniona jako false).
       
       
         pi

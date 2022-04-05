@@ -22,9 +22,9 @@
     var _val = a[3];
       show_debug_message(_val);
     Na wyjściu pojawi się napis "Cześć!".
-    Jak widać, nadajemy tablicy nazwę zmiennej, a następnie wartość w nawiasach kwadratowych [], gdzie wartość jest pozycją w tablicy, z której chcemy pobrać dane. Zasadniczo więc tablica jest pojemnikiem z pewną liczbą gniazd do przechowywania wartości, a każda pozycja w pojemniku ma określony numer, który ją identyfikuje - taki właśnie numer umieszczamy w nawiasie kwadratowym []. Warto zauważyć, że zawartość tablicy zawsze zaczyna się od 0 i nigdy niemoże być ujemna!
+    Jak widać, nadajemy tablicy nazwę zmiennej, a następnie wartość w nawiasach kwadratowych [], gdzie wartość jest pozycją w tablicy, z której chcemy pobrać dane. Zasadniczo więc tablica jest pojemnikiem zawierającym pewną liczbę gniazd do przechowywania wartości, a każda pozycja w pojemniku ma określony numer, który ją identyfikuje - taki właśnie numer umieszczamy na stronie []. Warto zauważyć, że zawartość tablicy zawsze zaczyna się od 0 i nigdy niemoże być ujemna!
            Tworzenie tablic
-    Pokazaliśmy, jak sprawdzić tablicę w poszukiwaniu danych, ale jak utworzyć tablicę na początek? Najpierw należy ją zainicjalizować, zanim będziemy mogli jej użyć, w przeciwnym razie GameMaker Studio 2 wyśle nam błąd. Inicjalizacja tablicy oznacza, że nadajemy każdemu slotowi tablicy wartość początkową, przygotowując go do użycia w innym miejscu kodu projektu. Należy o tym pamiętać, ponieważ oznacza to, że przed użyciem tablic trzeba się trochę zastanowić, ale inicjalizacja tablicy za pomocą powtórzenia loop jest dość prosta:
+    Pokazaliśmy już, jak sprawdzać tablicę w poszukiwaniu danych, ale jak utworzyć tablicę na początek? Najpierw trzeba ją zainicjalizować, zanim będziemy mogli jej użyć, inaczej GameMaker wyśle nam błąd. Inicjalizacja tablicy oznacza po prostu, że nadajemy każdemu slotowi tablicy wartość początkową, przygotowując go do użycia w innym miejscu kodu projektu. Należy o tym pamiętać, ponieważ oznacza to, że przed użyciem tablic trzeba się nieco zastanowić, ale inicjalizacja tablicy za pomocą powtórzenia loop jest dość prosta:
     var i = 9;
       repeat(10)
       {
@@ -35,11 +35,11 @@
     UWAGA: Wyjątkiem od powyższej reguły jest eksport HTML5, w którym należy inicjalizować tablice w kolejności od 0 w górę.
     Można także użyć funkcji GML array_create() do inicjalizacji tablicy o stałym rozmiarze, a nawet można tworzyć "puste" tablice, na przykład bez wartości:
     my_array = [];
-    W ten sposób GameMaker dowie się, że zmienna "my_array" jest tablicą, do której można dodawać wartości w dowolnym momencie w przyszłości. Jeśli jednak spróbujesz uzyskać dostęp do wartości w pustej tablicy, otrzymasz błąd.
+    Dzięki temu GameMaker dowie się, że zmienna "my_array" jest tablicą i można do niej dodawać wartości w dowolnym momencie w przyszłości. Jeśli jednak spróbujesz uzyskać dostęp do wartości w pustej tablicy, otrzymasz błąd.
     Jeśli wiesz już, które elementy chcesz umieścić w tablicy, możesz dodać wartości oddzielone przecinkami między nawiasami podczas deklarowania tablicy:
     my_array = ["Steve", 36, "ST-3V3 - Steve Street"];
            Granice tablic
-    Należy zawsze dbać o to, aby mieć dostęp tylko do prawidłowych pozycji w tablicy, ponieważ próba dostępu do wartości spoza tablicy również spowoduje błąd. Na przykład spowoduje to awarię projektu podczas jego uruchamiania:
+    Należy zawsze zwracać uwagę na to, aby mieć dostęp tylko do prawidłowych pozycji w tablicy, ponieważ próba dostępu do wartości spoza tablicy również spowoduje błąd. Na przykład spowoduje to awarię projektu podczas jego uruchamiania:
     my_array = array_create(5, 0);
       var _val = my_array[6];
     Tablica została zainicjowana tylko na 5 pozycji, ale próbowaliśmy uzyskać pozycję 7 - ponieważ tablice są numerowane od 0, array[6] jest pozycją 7 - dlatego gra generuje błąd i zawiesza się.
@@ -84,7 +84,7 @@
   
   Tablice wielowymiarowe
   
-    Wiemy już, czym jest tablica jednowymiarowa, ale w witrynie GameMaker Studio 2 można tworzyć tablice wielowymiarowe, które zasadniczo są zbudowane jako tablica wewnątrz tablicy wewnątrz tablicy... Na przykład poniżej przedstawiono tablicę 2D (dwuwymiarową):
+    Wiemy już, czym jest tablica jednowymiarowa, ale w GameMakerze można mieć tablice wielowymiarowe, które są skonstruowane jako tablica wewnątrz tablicy wewnątrz tablicy... Na przykład poniżej przedstawiono tablicę 2D (dwuwymiarową):
     array[0][0] = 5;
     Jest to w zasadzie informacja dla GameMaker, że tablica składa się z różnych tablic 1D. Oto rozszerzony przykład:
     array[0][0] = 0;
@@ -164,9 +164,9 @@
     
     show_debug_message(my_array); // Prints [2, 4, 6];
   
-  W poprzednich wersjach GameMaker tak nie było, ponieważ modyfikacja tablicy wewnątrz funkcji powodowała utworzenie kopii. To przestarzałe zachowanie nadal można włączyć, jeśli jest to pożądane: przeczytaj sekcję "Kopiowanie przy zapisie" poniżej, aby uzyskać więcej informacji.
+  W poprzednich wersjach GameMaker nie było to możliwe, ponieważ modyfikacja tablicy wewnątrz funkcji powodowała utworzenie kopii. To przestarzałe zachowanie nadal można włączyć, jeśli jest to pożądane: przeczytaj sekcję "Kopiowanie przy zapisie" poniżej, aby uzyskać więcej informacji.
   Kopiuj na Napisz
-   Opcja kopiowania przy zapisie jest przestarzała i jest używana tylko wtedy, gdy w opcjach ogólnych gry włączona jest opcja "Włącz kopiowanie przy zapisie dla tablic". W tym rozdziale opisano zachowanie tablic, gdy ta opcja jest włączona.
+   Opcja Kopiuj przy zapisie jest przestarzała i jest używana tylko wtedy, gdy w opcjach ogólnych gry włączona jest opcja "Włącz zachowanie Kopiuj przy zapisie dla tablic". W tym rozdziale opisano zachowanie tablic, gdy ta opcja jest włączona.
   Jak opisano w poprzednim rozdziale, tablice można przekazywać do funkcji jako argumenty. W tym celu wystarczy podać zmienną tablicową (nie trzeba podawać poszczególnych pozycji ani nawiasów [] ), a cała tablica zostanie przekazana do funkcji przez referencję:
   my_array = [1, 2, 4, 8, 16];
     
@@ -193,13 +193,13 @@
         return array;
     }
   
-  UWAGA Powyższy kod nie jest konieczny, jeśli nie zmieniamy żadnej z wartości tablicy, a jedynie odwołujemy się do nich. Odwołanie się do tablicy nie spowoduje jej skopiowania i będzie szybsze w parsowaniu.
+  UWAGA Powyższy kod nie jest konieczny, jeśli nie zmieniamy żadnej z wartości tablicy, a jedynie odwołujemy się do nich. Odwołanie do tablicy nie spowoduje jej skopiowania i będzie szybsze w parsowaniu.
   Drugim rozwiązaniem jest użycie dostępnika @ do bezpośredniej zmiany wartości tablicy, co pozwala zaoszczędzić obciążenie procesora związane z tworzeniem tymczasowej kopii. Oznacza to, że nie trzeba zwracać tablicy z funkcji i można ją bezpośrednio edytować:
   do_something = function(array)
     {
         array[@ 1] = 200;
     }
-  Użycie tego dostępnika pozwala ominąć zachowanie Kopiuj przy zapisie i bezpośrednio zmodyfikować tablicę, do której się odwołujemy. Może to być użyte do selektywnego wyłączenia funkcji Kopiuj przy zapisie dla określonych instrukcji, przy jednoczesnym zachowaniu tej opcji jako włączonej.
+  Użycie tego dostępnika pozwala ominąć zachowanie Kopiuj przy zapisie i bezpośrednio zmodyfikować tablicę, do której się odwołujemy. Może to być użyte do selektywnego wyłączenia funkcji Kopiuj przy zapisie dla określonych instrukcji, przy jednoczesnym utrzymaniu tej opcji włączonej.
   Ponownie, wszystkie te czynności nie są konieczne, jeśli opcja Kopiuj przy zapisie jest wyłączona (co jest opcją domyślną i zalecaną).
   Więcej informacji na temat akcesorów i sposobu ich działania, wraz z przykładem dotyczącym tablic, można znaleźć na następującej stronie:
   

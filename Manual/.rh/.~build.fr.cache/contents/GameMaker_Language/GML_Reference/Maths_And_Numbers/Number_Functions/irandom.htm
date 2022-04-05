@@ -1,8 +1,8 @@
 
   
   irandom
-  Ta bardzo przydatna funkcja zwraca tylko liczby całkowite. Na przykład, aby otrzymać losową liczbę od 0 do 9, możesz użyć irandom(9), a zwróci ona liczbę od 0 do 9 włącznie. Zauważ, że można również użyć liczb zmiennoprzecinkowych, ale górna wartość po kropce nie będzie brana pod uwagę, więc irandom(9.7) zwróci tylko wartości od 0 do 9. Funkcja ma górną granicę równą 7fffffffffffffffLL, więc należy zachować ostrożność przy używaniu bardzo dużych liczb.
-  UWAGA Ta funkcja będzie zwracać tę samą wartość za każdym razem, gdy gra jest uruchamiana od nowa, ponieważ GameMaker Studio 2 generuje za każdym razem to samo początkowe losowe ziarno, aby ułatwić zadanie debugging. Aby uniknąć tego zachowania, użyj randomise() na początku gry.
+  Ta bardzo przydatna funkcja zwraca tylko liczby całkowite. Na przykład, aby otrzymać losową liczbę od 0 do 9, możesz użyć irandom(9), a zwróci ona liczbę od 0 do 9 włącznie. Należy pamiętać, że można też użyć liczb zmiennoprzecinkowych, ale górna wartość po kropce nie będzie brana pod uwagę, więc irandom(9.7) zwróci tylko wartości od 0 do 9. Funkcja ma górną granicę równą 7fffffffffffffffLL, więc należy zachować ostrożność przy używaniu bardzo dużych liczb.
+  UWAGA Ta funkcja będzie zwracać tę samą wartość za każdym razem, gdy gra jest uruchamiana od nowa, ponieważ GameMaker generuje za każdym razem to samo początkowe losowe ziarno, aby ułatwić debugging. Aby uniknąć tego zachowania, użyj randomise() na początku swojej gry.
    
   Składnia:
   irandom(n);
@@ -34,7 +34,7 @@
   
     
       
-        Powrót: Funkcje numeryczne
+        Powrót: Funkcje liczbowe
         Następny: irandom_range
       
     

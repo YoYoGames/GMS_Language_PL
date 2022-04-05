@@ -1,22 +1,31 @@
 
   
   Opera GX Opcje gry
-  W tej sekcji opisano różne dostępne opcje, które pozwalają kontrolować sposób kompilacji projektów gier Opera GX. Poszczególne sekcje to:
+  Opcje gry Opera GX umożliwiają modyfikowanie właściwości gry GXC. Dostępne są następujące sekcje:
   Ogólne
-  W tej części znajdują się pola do wypełnienia następujących informacji o grze:
+  W tej sekcji dostępne są następujące opcje:
   
-    Nazwa gry: Tutaj możesz podać nazwę swojej gry na GXC.
-    Wersja: Bieżący numer wersji gry.
+    GXC GUID: Jest to identyfikator (ID), który łączy Twój projekt GameMaker z grą na GXC. Gdy ten identyfikator jest pusty, gra jest przesyłana do GXC jako nowa gra. Jeśli zawiera prawidłowy identyfikator GUID, gra GXC powiązana z tym identyfikatorem jest aktualizowana przy każdym nowym przesyłaniu.
+    Nazwa gry: Jest to nazwa (tytuł) Twojej gry na GXC. Możesz zmienić to pole tylko przed wysłaniem gry na GXC (gdy pole GUID jest puste). Po pierwszym załadowaniu gry możesz zmienić jej nazwę tylko na GXC.
+    Wersja: Jest to wersja gry, która została ostatnio załadowana. Możesz zmienić to pole tylko przed wysłaniem gry do GXC.
+    Następna wersja: Jest to numer wersji, która zostanie użyta do następnego załadowania gry na GXC. Możesz go zmienić dopiero po wysłaniu gry na GXC. Nie musisz zmieniać tej wartości ręcznie przy każdym wysyłaniu gry, ponieważ GameMaker automatycznie zwiększy ostatnią cyfrę numeru wersji.
+    Zaloguj się i zsynchronizuj: Kliknij ten przycisk, aby pobrać informacje z gry GXC powiązanej z podanym identyfikatorem GUID. Jeśli identyfikator GUID jest nieprawidłowy, nie można przeprowadzić synchronizacji.
+    Nazwa zespołu: Jest ona automatycznie pobierana z GXC podczas synchronizacji projektu. W tym miejscu nie można jej zmienić.
+    Edytuj grę w Operze: To otwiera GXC DevCloud i przenosi Cię na stronę "Szczegóły gry". Kliknięcie na tę stronę jest możliwe tylko wtedy, gdy projekt jest zsynchronizowany.
+    Wewnętrzny URL udostępniania: Otwiera prywatną wersję Twojej gry, tylko jeśli została ona włączona w GXC DevCloud.
+    Public Share URL: Otwiera publiczną wersję Twojej gry, tylko jeśli została ona włączona w GXC DevCloud.
+      
+      Oba te adresy URL mogą być udostępnione innym, aby umożliwić im grę w Twoją grę.
+    
   
   Grafika
   W tym miejscu możesz zmienić następujące szczegóły dotyczące sposobu wyświetlania Twojej gry:
   
-    Wyświetl kursor: Określa, czy kursor myszy ma być widoczny podczas uruchamiania gry. Przydatne w grach, które nie wymagają obsługi myszy lub używają niestandardowego obrazka myszy.
+    Wyświetl kursor: Określa, czy kursor myszy jest widoczny podczas uruchamiania gry. Przydatne w grach, które nie wymagają obsługi myszy lub używają niestandardowego obrazka myszy.
     Interpoluj kolory między pikselami: Włącza interpolację liniową, która zasadniczo "wygładza" piksele. W przypadku wyraźnej grafiki pikselowej powinno być wyłączone, ale jeśli chcesz uzyskać ładne mieszanki alfa i grafikę o wygładzonych krawędziach, lepiej pozostawić to włączone. Domyślnie opcja ta jest włączona.
     Skalowanie: Grę można skonfigurować tak, aby automatycznie skalowała rysowany obszar, zachowując proporcje obrazu w przeglądarce, lub aby działała w pełnej skali. Opcja pełnego skalowania nie spowoduje wyświetlenia gry na pełnym ekranie w przeglądarce, ale raczej rozciągnie rysowane elementy, aby dopasować je do rozmiaru płótna, określonego przez pierwszą stronę room gry. Domyślnie jest ustawiona na zachowanie proporcji obrazu.
   
   Na koniec jest jeszcze opcja ustawienia rozmiaru strony tekstury. Domyślnym (i najbardziej kompatybilnym) rozmiarem jest 2048x2048, ale można wybrać dowolny rozmiar z zakresu od 256x256 do 8192x8192. Dostępny jest także przycisk oznaczony Podgląd który wygeneruje strony texture dla tej platformy, a następnie otworzy okno, w którym będzie można zobaczyć, jak wyglądają. Może to być bardzo przydatne, jeśli chcesz zobaczyć, jaką strukturę mają strony texture i uniknąć sytuacji, w której strony texture byłyby większe (lub mniejsze) niż to konieczne. Więcej informacji na temat stron texture można znaleźć tutaj.
-  UWAGA Pamiętaj, że im większy jest rozmiar strony texture, tym mniejsza jest kompatybilność gry z różnymi przeglądarkami i urządzeniami.
    
    
    

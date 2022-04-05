@@ -2,7 +2,7 @@
   
    Ustaw Tile Data In Cell
   Za pomocą tej akcji można ustawić dane tile dla komórki tile na warstwie mapy kafelkowej. Dane tile to po prostu wartość odzwierciedlająca indeks komórki tile wraz z wartościami przerzucania, odbicia lustrzanego i obracania,
-    a także z wszelkimi niestandardowymi maskami tile, które zostały użyte. W tym działaniu najpierw podaje się warstwę docelową, używając jej nazwy ( string) zdefiniowanej w edytorze room, a następnie kolumnę i wiersz warstwy mapy tile, dla których mają zostać ustawione dane kafelkowe
+    a także z wszelkimi niestandardowymi maskami tile, które zostały użyte. W tym działaniu najpierw podaje się warstwę docelową, używając nazwy warstwy ( string) zdefiniowanej w edytorze room, a następnie kolumnę i wiersz warstwy mapy tile, dla których mają zostać ustawione dane kafelkowe
     dla. Komórka" to obszar na siatce mapy tile, w którym znajduje się strona tile, dla której chcesz ustawić dane, więc jeśli na przykład tiles ma rozmiar 16x16, a room 1024x768, mapa tile będzie miała 64 kolumny i 48 wierszy.
   UWAGA: Wybrana warstwa musi być zdefiniowana jako warstwa mapy Tile w edytorze room, w przeciwnym razie mogą wystąpić błędy.
   Ostatnim argumentem akcji są same dane kafelka. Zazwyczaj dane tile dla komórki mapy tile pobiera się za pomocą akcji Pobierz Tile Dane w komór ce, a następnie manipuluje się nimi za pomocą akcji Ustaw transformację danych Tile  przed ponownym ustawieniem ich za pomocą tej akcji. Więcej informacji na temat danych tile można znaleźć na stronie GML w rozdziale Funkcje mapy kafelkowej.

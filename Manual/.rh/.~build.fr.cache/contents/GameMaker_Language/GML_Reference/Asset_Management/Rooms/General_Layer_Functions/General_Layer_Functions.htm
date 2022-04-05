@@ -1,7 +1,7 @@
 
   
   Funkcje warstwy ogólnej
-   Edytor pomieszczeń GameMaker Studio 2 umożliwia dodawanie warstw różnych assets do strony room. Mogą to być mapy tile (przy użyciu tile sets), tła, sprites lub sequences oraz instancje, ale należy pamiętać, że w przeciwieństwie do edytora room nie ma ograniczenia do jednego typu asset na warstwę i można dodawać wiele typów asset do tej samej warstwy - na przykład na tej samej warstwie można umieścić tło i mapę tile. Należy pamiętać, że każda strona asset dodana do warstwy jest traktowana jako element tej warstwy.
+   Edytor pomieszczeń GameMaker pozwala na dodawanie warstw różnych assets do witryny room. Mogą to być mapy tile (przy użyciu tile sets), tła, sprites lub sequences oraz instancje. Zauważ jednak, że w przeciwieństwie do edytora room nie jesteś ograniczony do jednego typu asset na warstwę i możesz dodać wiele typów asset do tej samej warstwy - na przykład możesz mieć tło i mapę tile na tej samej warstwie. Należy pamiętać, że każda strona asset dodana do warstwy jest traktowana jako element tej warstwy.
   W tej sekcji opisano ogólne funkcje używane podczas pracy z warstwami room, a także kilka funkcji specyficznych dla pracy z warstwa instancji elementami:
   
     layer_exists
@@ -50,7 +50,7 @@
   
    
   W tym celu należy ustawić docelowy adres room za pomocą odpowiedniej funkcji, a następnie wywołać funkcje warstwy w normalny sposób. Te funkcje warstwy będą teraz stosowane tylko do docelowego room, a nie do bieżącego. Gdy skończysz, wywołasz funkcję reset, aby przywrócić zakres kodu do bieżącego adresu room.
-  UWAGA! Podczas kierowania na inną stronę room można używać wszystkich funkcji zwykłych warstw, z wyjątkiem tego, że nie można tworzyć instancji przy użyciu instance_create_layer() lub instance_create_depth()ani nie będzie dostępna funkcja warstwy layer_add_instance() nie będzie dostępna.
+  UWAGA! Podczas kierowania na inną stronę room można używać wszystkich funkcji zwykłych warstw, z wyjątkiem tego, że nie można tworzyć instancji za pomocą instance_create_layer() lub instance_create_depth()ani nie będzie dostępna funkcja warstwy layer_add_instance() nie będzie dostępna.
   Na koniec, co dotyczy wyłącznie instancji na warstwach (choć sama warstwa może mieć inne elementy, to poniższe funkcje nie będą miały na nie wpływu), mamy kilka funkcji, które można wykorzystać do dezaktywowania lub ponownego aktywowania wszystkich instancji:
   
     instance_deactivate_layer

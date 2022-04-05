@@ -1,7 +1,7 @@
 
   
   image_blend
-  Ta zmienna kontroluje "zabarwienie" instancji sprite. Domyślną wartością jest -1 (ale może to być również c_white). Każda inna wartość (w tym wewnętrzne stałe kolorów, takie jak c_red, lub c_aqua) spowoduje zmieszanie określonego koloru z oryginalnym sprite. Należy pamiętać, że aby zmiany w tej zmiennej były widoczne, instancja nie powinna mieć zdarzenia draw (a więc GameMaker Studio 2 domyślnie narysuje sprite) lub powinna być rysowana przy użyciu jednej z rozszerzonych funkcji rysowania, takich jak draw_self() lub . draw_sprite_ext().
+  Ta zmienna kontroluje "zabarwienie" instancji sprite. Domyślną wartością jest -1 (ale może to być również c_white). Każda inna wartość (w tym wewnętrzne stałe kolorów, takie jak c_red, lub c_aqua) spowoduje zmieszanie określonego koloru z oryginalnym sprite. Należy pamiętać, że aby zmiany w tej zmiennej były widoczne, instancja nie powinna mieć zdarzenia draw (a więc GameMaker domyślnie narysuje sprite) lub powinna być rysowana przy użyciu jednej z rozszerzonych funkcji rysowania, takich jak draw_self() lub . draw_sprite_ext().
   
   Należy pamiętać, że na platformie HTML5 należy ograniczyć mieszanie (chyba że używa się WebGL), ponieważ każda mieszana strona sprite musi być buforowana osobno, a zatem posiadanie wielu mieszanych stron sprites może negatywnie wpłynąć na wydajność (rozmiar strony cache można także ustawić za pomocą funkcji sprite_set_cache_size()).
    

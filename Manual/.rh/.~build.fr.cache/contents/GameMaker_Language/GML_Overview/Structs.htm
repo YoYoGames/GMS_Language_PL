@@ -3,7 +3,7 @@
   Struktury i konstruktory
    Struktura to zmienna, która przechowuje kolekcję innych zmiennych. Zmienne przechowywane na stronie struct mogą być dowolnego typu danych wymienionych wcześniej, a zmienne te można odczytywać i zapisywać po wstępnej deklaracji struct. Można również dodawać kolejne zmienne do strony struct po jej zadeklarowaniu.
   Zmienne używane w struct powinny być zgodne ze zwykłym schematem nazewnictwa zmiennych, tzn.: nie mogą zaczynać się od liczby i powinny składać się tylko ze znaków alfanumerycznych i znaku podkreślenia "_". Należy również pamiętać, że zawartość struct jest niezależna od instancji lub funkcji, która ją utworzyła, i jako taka może - jeśli chcesz - używać wbudowanych nazw zmiennych, takich jak image_index lub x i y.
-  Po początkowym utworzeniu, structs nie ma kosztów ogólnych przetwarzania, choć zajmuje miejsce w pamięci. Składnia strony struct jest następująca:
+  Po początkowym utworzeniu, structs nie ma żadnego narzutu na przetwarzanie danych w czasie swojego istnienia, ale zajmuje miejsce w pamięci. Składnia strony struct jest następująca:
   <variable> =
     {
         <variable> : <value>,
@@ -128,7 +128,7 @@
         }
     }
   
-  Tworzymy tutaj funkcję o nazwie Vector2 i informujemy GameMaker Studio 2, że jest to funkcja służąca do tworzenia struktur, dodając słowo kluczowe constructor po jej definicji. Następnie można wywołać tę funkcję konstruktora w następujący sposób:
+  Tworzymy tutaj funkcję o nazwie Vector2 i informujemy program GameMaker, że jest to funkcja służąca do tworzenia struktur, dodając słowo kluczowe constructor po jej definicji. Następnie można wywołać tę funkcję konstruktora w następujący sposób:
   v2 = new Vector2(10, 10);
   Zmienna v2 będzie teraz zawierać struct ze zmiennymi x i y oraz static zmienną metodyczną Add.
   W funkcjach konstruktorów można również używać opcjonalnych argumentów:
@@ -169,7 +169,7 @@
     show_debug_message(_basic_sword.my_damage); // Prints 10
   
   Oznacza to, że obrażenia miecza podstawowego zawsze będą wynosić 10, ponieważ konstruktor przekazuje tę wartość swojemu konstruktorowi nadrzędnemu, niezależnie od tego, jakie są jego własne argumenty.
-  Należy zauważyć, że przypisanie domyślnej wartości do argumentu w konstruktorze potomnym spowoduje zastąpienie domyślnej wartości tego argumentu w konstruktorze rodzica. Zobacz poniższy przykład:
+  Należy zauważyć, że przypisanie domyślnej wartości do argumentu w konstruktorze potomnym spowoduje zastąpienie domyślnej wartości rodzica dla tego argumentu. Zobacz poniższy przykład:
   function Parent(value = 10) constructor
     {
         show_debug_message(value);

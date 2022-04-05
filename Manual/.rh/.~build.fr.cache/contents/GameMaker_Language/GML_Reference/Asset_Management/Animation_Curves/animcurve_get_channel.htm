@@ -5,27 +5,32 @@
   
     
       
+      
+      
+    
+    
+      
         Nazwa zmiennej
         Typ danych
         Opis
       
       
-        nazwa
+        name
         ciąg
         Jest to nazwa kanału.
       
       
-        typ
-        niezmienny
-        Będzie to jedna ze stałych animcurvetype_linear dla interpolacji liniowej między punktami lub animcurvetype_catmullrom dla "gładkiej" interpolacji między punktami przy użyciu interpolacji katmull-rom.
+        type
+        Typ interpolacji krzywej animacji Stała
+        Będzie to jedna ze stałych animcurvetype_linear dla interpolacji liniowej między punktami, animcurvetype_catmullrom dla "gładkiej" interpolacji między punktami z wykorzystaniem interpolacji katmull-rom lub animcurvetype_bezier dla interpolacji Beziera.
       
       
-        iteracje
+        iterations
         liczba całkowita
         Jeśli kanał używa interpolacji katmull-rom ("gładkiej"), wartość ta określa, ile punktów zostało wygenerowanych dla każdego segmentu krzywej (należy pamiętać, że te dodatkowe punkty są wewnętrzne dla funkcji i używane tylko do obliczeń runtime ). Jeśli kanał korzysta z interpolacji liniowej, wartość ta nadal będzie istnieć, ale można ją zignorować, ponieważ nie ma ona wpływu na sposób interpolacji krzywej.
       
       
-        punkty
+        points
         wskaźnik do tablicy
         Jest to tablica, w której każdy element tablicy jest punktem struct.
       
@@ -34,7 +39,6 @@
   
     Identyfikator animation curve to nazwa strony animation curve zdefiniowana w przeglądarce Asset lub wskaźnik struct zwrócony przez funkcję animcurve_create(). Nazwa kanału to znak string, który odnosi się do kanału zdefiniowanego w krzywej animacji asset, lub można podać wartość indeksu z zakresu od 0 do n, gdzie n to ostatni kanał w krzywej asset (np.: jeśli animation curve ma 4 kanały, będą one indeksowane od 0 do 3). Należy zauważyć, że przekazanie wartości indeksu będzie wymagało mniej przetwarzania niż przekazanie nazwy kanału. Jeśli funkcja się nie powiedzie (tzn. nie istnieje kanał o podanej nazwie lub indeksie), zostanie wyświetlony błąd.
   Punkty na pojedynczym kanale są przechowywane jako structs w tablicy, gdzie każda pozycja w tablicy jest pojedynczym punktem struct. Punkt struct ma następujące zmienne:
-   
   
     
       
@@ -48,7 +52,7 @@
         Położenie w czasie (znormalizowane od 0 do 1) punktu.
       
       
-        wartość
+        value
         prawdziwy
         Wartość punktu.
       

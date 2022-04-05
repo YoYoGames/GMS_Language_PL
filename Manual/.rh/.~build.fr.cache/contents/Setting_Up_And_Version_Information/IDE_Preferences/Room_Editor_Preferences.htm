@@ -4,17 +4,17 @@
   
    Preferencje edyt ora sali służą do określania wyglądu i sposobu działania edytora sali. Ustawienia ogólne są następujące:
   
-    Odległość początkowa wygaszania łańcucha (px): Określa odległość od okna nadrzędnego, od której ma następować wygaszanie ogniwa łańcucha. Wartość domyślna to 10px.
-    Odległość zatrzymania wygasania łańcucha (px): Ustawia odległość od okna nadrzędnego, w jakiej ma zakończyć się wygasanie ogniwa łańcucha. Domyślnie jest to 100px.
+    Odległość początkowa wygaszania łańcucha (px): Określa odległość od okna nadrzędnego, od której ma zostać wygaszone ogniwo łańcucha. Wartość domyślna to 10px.
+    Odległość zatrzymania wygasania łańcucha (px): Ustawia odległość od okna nadrzędnego, w jakiej ma się zakończyć wygasanie ogniwa łańcucha. Domyślnie jest to 100px.
     Minimalna alfa łańcucha: Określa końcową wartość alfa po punkcie wyłączenia łańcucha alfa. Wartość domyślna to 0,3.
     Domyślne odstępy głębokości warstw: Podczas tworzenia wielu warstw w edytorze room automatycznie przypisywana jest im głębokość zależna od ich położenia na liście warstw. Głębokość ta jest zwiększana o podaną tutaj wartość. Domyślnie
       wartość domyślna to 100, więc każda warstwa będzie miała głębokość poprzedniej warstwy + 100.
     Domyślna szerokość room : Ustawia początkową szerokość, która zostanie wybrana jako domyślna dla nowej strony room. Domyślnie jest to 1024px.
     Domyślna wysokość room: Ustawia początkową wysokość, która zostanie wybrana jako domyślna dla nowej strony room. Domyślnie jest to 768px.
-    Dodaj domyślne warstwy room: Gdy tworzysz dowolny nowy zasób room, GameMaker Studio 2 wygeneruje dla Ciebie kilka warstw "bazowych" - warstwę tła i warstwę instancji. Możesz tutaj switch wyłączyć to zachowanie, aby
-      nowa strona rooms nie będzie miała gotowych warstw. Domyślnie jest to włączone.
+    Dodaj domyślne warstwy room: Gdy tworzysz dowolny nowy zasób room, GameMaker wygeneruje dla Ciebie kilka warstw "bazowych" - warstwę tła i warstwę instancji. Możesz tutaj switch wyłączyć to zachowanie, aby
+      nowy rooms nie będzie miał gotowych warstw. Domyślnie jest to włączone.
     Pokaż widoki room: Jeśli w witrynie room aktywne są widoki, są one pokazywane za pomocą konturu w miejscu, gdzie znajdowałyby się granice widoków w witrynie room, a widoczność tego obszaru można przełączać za pomocą specjalnego przycisku w samym edytorze.
-      Można jednak wybrać, aby granice widoku były niewidoczne po otwarciu strony room, odznaczając tę opcję (przycisk nadal może być używany do ich ponownego wyświetlania). Domyślnie opcja jest włączona, co powoduje, że granice widoku są widoczne po otwarciu strony room.
+      Można jednak wybrać, aby granice widoku były niewidoczne po otwarciu strony room, odznaczając tę opcję (przycisk nadal może być używany do ich ponownego wyświetlania). Domyślnie opcja jest włączona, dzięki czemu granice widoku są widoczne po otwarciu strony room.
     Ogólne opcje kolorów: Dotyczą one różnych kolorów używanych w interfejsie edytora room. Po dwukrotnym kliknięciu dowolnego wzornika można edytować kolor dla danego ustawienia.
     Ustawienie głośności głównej: Ustawienie głośności głównej dla odtwarzania podglądu w edytorze Room, wartość z zakresu od 0 do 1. Domyślnie 1.
   
@@ -33,10 +33,10 @@
       Automatyczna reakcja na ostrzeżenie o zablokowaniu warstwy właściciela elementu: Jeśli spróbujesz usunąć element na warstwie, a okaże się, że warstwa jest zablokowana (nawet jeśli element nie jest zablokowany), domyślnie zostanie wyświetlony komunikat informujący, że nie można
         nie może zostać wykonana. Jednak ustawienie tej opcji na "Ok" nie spowoduje wyświetlenia komunikatu, a jedynie uniemożliwi usunięcie elementu.
       Tworzenie nowej warstwy asset podczas przeciągania sekwencji/spritów na nieodpowiednie warstwy: Jeśli spróbujesz dodać sekwencję sprite (lub sequence) do warstwy, która nie jest warstwą asset, domyślnie zostanie wyświetlony komunikat informujący, że nie można
-        i pytanie, czy chcesz utworzyć nową warstwę asset dla przeciąganego elementu. Jednak ustawienie tej opcji na "Ok" nie spowoduje wyświetlenia komunikatu i automatycznie utworzy nową warstwę dla sprites (oraz sequences).
-      Automatyczna reakcja na usunięcie elementu nadrzędnego room: Tutaj możesz wybrać, co się stanie, gdy usuniesz element będący częścią rodzica room (a więc obecny we wszystkich dzieciach rooms). Domyślnie wyświetlany jest komunikat ostrzegawczy i pozwalamy Ci
+        i zapyta, czy chcesz utworzyć nową warstwę asset dla przeciąganego elementu. Jednak ustawienie tej opcji na "Ok" nie spowoduje wyświetlenia komunikatu i automatycznie utworzy nową warstwę dla sprites (oraz sequences).
+      Automatyczna reakcja na usunięcie elementu nadrzędnego room: Tutaj możesz wybrać, co się stanie, gdy usuniesz element będący częścią rodzica room (a więc obecny we wszystkich dzieciach rooms). Domyślnie wyświetlany jest komunikat ostrzegawczy i pozwalamy
         Możesz jednak wybrać opcję "Usuń wszystko", aby wyłączyć komunikat i kontynuować usuwanie elementu z rodzica room i wszystkich jego dzieci, lub wybrać opcję "Zachowaj wszystko", aby wyłączyć komunikat i przerwać usuwanie.
-      Automatyczna reakcja na usunięcie warstwy nadrzędnej room: Tutaj można wybrać, co się stanie, gdy zostanie usunięta warstwa będąca częścią warstwy nadrzędnej room (a więc obecna we wszystkich warstwach potomnych rooms). Domyślnie wyświetlany jest komunikat ostrzegawczy, a następnie użytkownik
+      Automatyczna reakcja na usunięcie warstwy nadrzędnej room: Tutaj można wybrać, co się stanie, gdy zostanie usunięta warstwa będąca częścią warstwy nadrzędnej room (a więc obecna we wszystkich warstwach potomnych rooms). Domyślnie wyświetlany jest komunikat ostrzegawczy i pozwalamy użytkownikowi
         Możesz jednak wybrać opcję "Usuń wszystko", aby wyłączyć komunikat i kontynuować usuwanie warstwy z warstwy nadrzędnej room i wszystkich jej dzieci, lub możesz wybrać opcję "Zachowaj wszystko", aby wyłączyć komunikat i przerwać usuwanie.
       Automatyczna reakcja na błąd nieprawidłowego przeciągania asset: Jeśli spróbujesz dodać warstwę asset do warstwy, która nie jest przeznaczona dla danego typu asset (np. dodanie warstwy path do warstwy instancji), domyślnie zostanie wyświetlony komunikat informujący, że nie można tego zrobić.
         informujący, że nie można tego zrobić. Jednak ustawienie tej opcji na "Ok" nie spowoduje wyświetlenia komunikatu i po prostu nie pozwoli na dodanie warstwy asset. Należy pamiętać, że ta opcja nie dotyczy instancji, sprites ani sequences.
@@ -60,7 +60,7 @@
       
        Odstęp poziomy siatki (px): Ustawia odstęp poziomy komórek siatki room w pikselach. Domyślna wartość to 32px.
       
-       Odstęp pionowy siatki (px): Ustawia pionową przestrzeń dla komórek siatki room w pikselach. Domyślna wartość to 32px.
+       Odstęp pionowy siatki (px): Ustawia pionową przestrzeń komórek siatki room w pikselach. Domyślna wartość to 32px.
       
        Wyświetlaj siatkę: Ta opcja włącza lub wyłącza siatkę room przy pierwszym otwarciu strony room. Domyślnie jest ona włączona, ale nawet jeśli jest wyłączona, można ją ponownie włączyć za pomocą odpowiedniego przycisku w edytorze room.
       

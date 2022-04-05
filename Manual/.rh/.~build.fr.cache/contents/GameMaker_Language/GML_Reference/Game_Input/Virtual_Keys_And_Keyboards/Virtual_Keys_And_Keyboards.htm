@@ -1,12 +1,12 @@
 
   
   Klawisze wirtualne i klawiatury wirtualne
-  Podczas tworzenia gier na urządzenia z ekranem dotykowym często ważne jest, aby użytkownik mógł wprowadzać dane z klawiatury. W przypadku korzystania z witryny GameMaker Studio 2 można to zrobić na jeden z dwóch sposobów:
+  Podczas tworzenia gier na urządzenia z ekranami dotykowymi często ważne jest, aby użytkownik mógł wprowadzać dane z klawiatury. W programie GameMaker można to zrobić na jeden z dwóch sposobów:
   
     Tworzenie własnych ekranowych klawiszy wirtualnych do wprowadzania danych
     Wyświetlaj wirtualną klawiaturę systemu operacyjnego i wprowadzaj dane za jej pomocą
   
-  To, z czego korzystasz, zależy w dużej mierze od gry i jej potrzeb, ale generalnie używasz klawiszy wirtualnych, gdy chcesz mieć przyciski ekranowe do sterowania graczem lub do menu, a klawiatury wirtualnej używasz, gdy potrzebujesz danych wejściowych gracza, takich jak uzyskanie nazwy lub ustawienie wartości.
+  To, z czego korzystasz, zależy w dużej mierze od gry i jej potrzeb, ale generalnie używasz klawiszy wirtualnych, gdy chcesz mieć przyciski ekranowe do sterowania graczem lub do menu, a wirtualnej klawiatury używasz, gdy potrzebujesz danych wejściowych gracza, takich jak uzyskanie nazwy lub ustawienie wartości.
   Aby gry działały poprawnie na urządzeniach przenośnych z ekranem dotykowym, może być konieczne przypisanie obszarom ekranu funkcji reagowania na określone rzeczy po ich dotknięciu przez użytkownika. W tym celu należy przypisać "klawisz wirtualny" do wewnętrznie odwzorowanego standardowego klawisza klawiatury, a następnie wykorzystać generowane przez niego zdarzenia klawiaturowe do sterowania aplikacją. Warto zauważyć, że te "wirtualne klawisze" są mapowane do pozycji na ekranie, a nie na stronie room, dlatego wartości x/y są bezwzględne, zależne od rozmiaru ekranu. Oznacza to, że nie trzeba się martwić o używanie widoków ani względnych współrzędnych room. Można po prostu zdefiniować klawisze w zdarzeniu Utwórz na stronie object (klawisz wirtualny można zdefiniować tylko raz dla danego pomieszczenia), a następnie narysować klawisz sprites w zdarzeniu Narysuj GUI, dostosowując rozmiar warstwy GUI do rozmiaru ekranu.
   UWAGA Te funkcje nie będą działać na platformach Windows, Ubuntu (Linux) ani MacOS, platformach docelowych z ekranem dotykowym, chociaż będą odbierać kliknięcia myszą jako "dotknięcia".
   Dostępne są następujące funkcje klawiszy wirtualnych:

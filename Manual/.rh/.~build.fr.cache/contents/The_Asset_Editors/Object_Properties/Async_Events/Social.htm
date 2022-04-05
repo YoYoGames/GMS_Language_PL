@@ -2,7 +2,8 @@
   
   Społeczny
   To zdarzenie może być wywołanetylko przez wywołania zwrotnez różnych określonych Funkcji społecznościowych i Funkcji Xbox Live UWP i zwróci mapę DS Map przechowywaną w zmiennej async_loadzawierającą różne pary klucz/wartość, w zależności od wywołania zwrotnego funkcji, która wywołała zdarzenie.
-  Mapa DS będzie zawierała kilka kluczy, z których najważniejszy jest klucz "id". Zwraca on stałą, którą można następnie sprawdzić w kodzie, aby określić, które z wielu wywołań zwrotnych otrzymało dane zdarzenie. Po przetworzeniu tego klucza i porównaniu zwróconej wartości z dostępnymi stałymi, można kontynuować wydobywanie pozostałych informacji z mapy.
+  To zdarzenie może być również wywołane przez Odtwarzanie wideo.
+  Mapa DS będzie zawierać kilka kluczy, z których najważniejszy jest klucz "id". Zwraca on stałą, którą można następnie sprawdzić w kodzie, aby określić, które z wielu wywołań zwrotnych otrzymało dane zdarzenie. Po przetworzeniu tego klucza i porównaniu zwróconej wartości z dostępnymi stałymi, można kontynuować wydobywanie pozostałych informacji z mapy.
   Na stronach poświęconych funkcjom Osiągnięć i Tablic Liderów w sekcji Odnośnik znajdują się szczegółowe informacje na temat funkcji i wywołań zwrotnych oraz stałych używanych do wywołania tego zdarzenia, ale istnieją również pewne okoliczności, w których zostanie ono wywołane bez wywołania funkcji z uruchomionej gry:
   
     gdy gra jest uruchamiana z pulpitu systemu operacyjnego
@@ -10,7 +11,7 @@
     gdy inny gracz wykona zadanie
     gdy gra jest uruchamiana z pulpitu systemu operacyjnego przez wybranie wyzwania
   
-  Każde z powyższych wywołań zwrotnych wywoła zdarzenie społecznościowe i zostanie wygenerowana mapa async_load z następującymi szczegółami (należy zauważyć, że istnieje inna wartość klucza "id" określająca każdy z różnych powodów wywołania zdarzenia, ale cała pozostała zawartość mapy jest taka sama):
+  Każde z powyższych wywołań zwrotnych spowoduje uruchomienie zdarzenia społecznego i wygenerowanie mapy async_load z następującymi szczegółami (należy zauważyć, że istnieje inna wartość klucza "id" określająca każdy z różnych powodów, dla których wywołano zdarzenie, ale cała pozostała zawartość mapy jest taka sama):
   
     "id" - Wartość tego klucza będzie zależała od typu wywołania zwrotnego wywołującego zdarzenie (najczęściej używanego przez extensions).
     "playerid" - Identyfikator gracza w wyzwaniu.

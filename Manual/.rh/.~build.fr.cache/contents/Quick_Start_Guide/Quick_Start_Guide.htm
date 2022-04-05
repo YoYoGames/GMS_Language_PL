@@ -1,19 +1,19 @@
 
   
   Skrócona instrukcja obsługi
-  Witamy w podręczniku szybkiego startu! Ta część podręcznika ma na celu zapoznanie użytkownika z najważniejszymi aspektami witryny GameMaker Studio 2 oraz pokazanie podstaw, które pozwolą na jak najszybsze tworzenie gier. Podręcznik obejmuje najważniejsze funkcje IDE, a także zawiera krótkie wprowadzenie do programowania, dzięki czemu można jak najszybciej w pełni wykorzystać możliwości produktu, niezależnie od tego, czy korzysta się z GameMaker Language (GML), czy z wizualnego języka skryptowego Drag and Drop™.
-  Aby zilustrować przepływ pracy w serwisie GameMaker Studio 2 i od razu zabrać się za tworzenie czegoś, przygotowaliśmy ten przewodnik, który poprowadzi Cię od podstaw, czyli od tego, czym jest GameMaker Studio 2 i czym jest program, przez tworzenie ogólnych informacji na stronie assets, aż po kodowanie podstawowych rzeczy, takich jak ruch i partytura.
-  Tworzenie gier za pomocą witryny GameMaker Studio 2 jest, koncepcyjnie rzecz biorąc, dość proste i nieskomplikowane:
+  Witamy w Podręczniku szybkiego startu! Ta część podręcznika ma na celu zapoznanie Cię z najważniejszymi aspektami GameMakera i pokaże Ci podstawy, które pozwolą Ci tworzyć gry tak szybko, jak to tylko możliwe. Przewodnik obejmuje najważniejsze funkcje IDE oraz zawiera krótkie wprowadzenie do programowania, dzięki czemu możesz jak najszybciej w pełni wykorzystać możliwości produktu, niezależnie od tego, czy używasz GML Code czy GML Visual.
+  Aby zilustrować przepływ pracy w GameMakerze i od razu zabrać się za tworzenie czegoś, przygotowaliśmy ten przewodnik, który poprowadzi Cię od podstaw, czyli od tego, czym jest GameMaker i czym jest program, przez tworzenie ogólnych stron assets, aż po kodowanie podstawowych rzeczy, takich jak ruch i wynik.
+  Tworzenie gier w programie GameMaker jest, koncepcyjnie rzecz biorąc, dość proste i nieskomplikowane:
   
-    Tworzenie zasobów graficznych ( sprite'ów, zestawów kafelków, czcionek) i dodawanie ich do przeglądarki Asset.
+    Tworzenie zasobów graficznych (sprite'ów, zestawów kafelków, czcionek) i dodawanie ich do przeglądarki Asset.
     Utwórz zasoby obiektów reprezentujące rzeczy, które chcesz wykorzystać w grze, i przypisz im wymagane obrazy assets.
     Zaprogramuj stronę objects, aby wykonywała czynności w odpowiedzi na określone zdarzenia.
     Dodaj instancje tych stron objects do pomieszczenia , w którym będą wykonywać swoje programy.
   
   Na kolejnych stronach omówimy szczegółowo każdy z wymienionych wyżej elementów, ale tak wygląda ogólny tok działań niezbędnych do stworzenia gry. Ważne jest, aby pamiętać, że głównymi elementami gry będą zawsze sprites, objects i rooms, choć istnieje wiele pomocniczych stron assets, które można wykorzystać do dodania dodatkowych funkcji lub zachowań do tych elementów (np.  shadery, lub  linie czasu).
-  Zanim przejdziemy do bardziej szczegółowego objaśnienia każdej z tych rzeczy, przedstawimy pokrótce, w jaki sposób GameMaker Studio 2 przekształci powyższe elementy w Twoją grę. Zasadniczo wszystko dzieje się w tak zwanej pętli gry, której szybkość mierzona jest w klatkach  na sekundę, a jedna "klatka" nazywana jest krokiem w GameMaker. Domyślna liczba klatek na sekundę ( FPS) wynosi 60, co oznacza, że na każdą upływającą sekundę GameMaker Studio 2 uruchomi grę loop 60 razy, a w każdym kroku (pętli/ramce) wystąpi pewna liczba zdarzeń i gra będzie się rozwijać.
+  Zanim przejdziemy do bardziej szczegółowego objaśnienia każdej z tych rzeczy, przedstawimy pokrótce, jak GameMaker przekształci powyższe elementy w Twoją grę. Zasadniczo wszystko dzieje się w tak zwanej pętli gry, której prędkość mierzona jest w klatkach  na sekundę, a jedna "klatka" nazywana jest krokiem w GameMaker. Domyślna liczba klatek na sekundę ( FPS) wynosi 60, co oznacza, że w ciągu każdej upływającej sekundy GameMaker uruchomi grę loop 60 razy, a w każdym kroku (pętli/klatce) wystąpi pewna liczba zdarzeń i gra będzie się rozwijać.
   Aby to zrozumieć, wyobraźmy sobie, że mamy postać, którą chcemy poruszać po grze room. Utworzyłbyś sprite dla tej postaci, następnie utworzyłbyś obiekt i przypisałbyś mu adres sprite, a na stronie object dodałbyś zdarzenie o nazwie Step Event. W zdarzeniu tym każesz postaci przesunąć się w prawo o 2 piksele. Następnie umieścisz instancję tego obiektu object w grze room, a gdy uruchomisz grę, instancja zacznie przesuwać się w prawo o 2 piksele co krok (zdarzenie Step Event uruchamia się raz na każdy krok gry), tak że w ciągu 1 sekundy instancja przesunie się o 120 pikseli w prawo.
-  W powyższym przykładzie mówimy o tym, że chcemy powiedzieć stronie object, aby przesunęła się w prawo, ale jak to zrobić? Cóż, robi się to za pomocą programu , który piszemy przy użyciu Drag and Drop™ (wizualny język skryptowy) lub GML ( język GameMaker). To, którego z nich użyjesz, zależy od Ciebie i sposobu, w jaki chcesz pracować, ale używając ich, programujesz swoją grę. W następnym rozdziale omówimy to bardziej szczegółowo.
+  W powyższym przykładzie mówimy o tym, że object ma się przesunąć w prawo, ale jak to zrobić? Cóż, robi się to za pomocą programu , który piszemy przy użyciu GML Visual lub GML Code. Którego z nich użyjesz, zależy od Ciebie i sposobu, w jaki chcesz pracować, ale używając ich, programujesz swoją grę. W następnym rozdziale omówimy to bardziej szczegółowo.
    
    
   
@@ -23,7 +23,7 @@
         Następny: Co to jest programowanie?
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

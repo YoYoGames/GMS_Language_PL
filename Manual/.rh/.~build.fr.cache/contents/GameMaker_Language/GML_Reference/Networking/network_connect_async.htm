@@ -2,8 +2,8 @@
   
   network_connect_async
   Za pomocą tej funkcji można wysłać żądanie połączenia z adresem server. Funkcja pobiera identyfikator gniazda, przez które ma zostać nawiązane połączenie (zob. network_create_socket()) i wymaga podania adresu IP, z którym chcemy się połączyć
-    z którym ma się połączyć ( string) oraz port, przez który ma się połączyć, a jeśli połączenie nie powiedzie się, zwrócona zostanie wartość mniejsza niż 0. Połączenie wykorzystuje specjalny protokół, który zapewnia, że tylko gry GameMaker Studio 2 łączą się ze sobą, jednak jeśli potrzebujesz
-    połączyć się z grą server, która nie jest grą GameMaker Studio 2, możesz użyć network_connect_async_raw(). Należy pamiętać, że ta funkcja jest asynchroniczna i generuje zdarzenie Asynchronous Networking typu network_type_non_blocking_connect.
+    z którym chcesz się połączyć ( string) oraz port, przez który chcesz się połączyć, a jeśli połączenie się nie powiedzie, zwrócona zostanie wartość mniejsza niż 0. Połączenie wykorzystuje specjalny protokół, który zapewnia, że tylko gry GameMaker łączą się ze sobą, jednak jeśli potrzebujesz
+    połączyć się z witryną server, która nie jest grą GameMaker, możesz użyć polecenia network_connect_async_raw(). Należy pamiętać, że ta funkcja jest asynchroniczna i generuje zdarzenie Asynchronous Networking typu network_type_non_blocking_connect.
    
   Składnia:
   network_connect_async(socket, url, port);

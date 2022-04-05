@@ -1,7 +1,7 @@
 
   
   dla
-  Jednym z najczęściej używanych sposobów wielokrotnego iterowania nad instrukcją (lub instrukcjami) jest użycie for loop, które ma taką postać:
+  Jednym z najczęściej używanych sposobów wielokrotnego iterowania nad instrukcją (lub instrukcjami) jest użycie for loop, które ma następującą postać:
   for (<assignment>; <expression>; <operation>;)
     {
         <statement>;
@@ -22,8 +22,8 @@
     {
         draw_text(32, 32 + (i * 32), string(i) + ". "+ string(scr[i]));
     }
-  Powyższy kod inicjalizuje zmienną for loop, zaczynając od 0 i licząc w górę do 9 (włącznie), a następnie używa wartości loop zmiennej i do rysowania na ekranie wartości przechowywanych w tablicy. Zwróć uwagę, że zmienna for loop i jest używana nie tylko do loop przeglądania tablicy, ale także do rysowania liczby oraz informowania GameMaker Studio 2, dokąd mają być rysowane wartości w tablicy room. Ta elastyczność jest jednym z głównych powodów, dla których for loops są tak ważne w programowaniu.
-  Kiedy należy używać for loop? Zawsze wtedy, gdy trzeba wykonać stałą liczbę iteracji jednego lub więcej poleceń, przy czym należy śledzić aktualnie wykonywaną iterację i używać jej wartości.
+  Powyższy kod inicjalizuje zmienną for loop, zaczynając od 0 i licząc do (włącznie) 9, a następnie używa wartości loop zmiennej i do rysowania na ekranie wartości przechowywanych w tablicy. Zwróć uwagę, że zmienna for loop i jest używana nie tylko do loop przeglądania tablicy, ale także do rysowania liczby oraz informowania programu GameMaker, do którego miejsca w room mają być rysowane wartości. Ta elastyczność jest jednym z głównych powodów, dla których for loops są tak ważne w programowaniu.
+  Kiedy należy używać for loop? Zawsze wtedy, gdy trzeba wykonać stałą liczbę iteracji jednego lub więcej poleceń, śledząc jednocześnie aktualnie wykonywaną iterację i wykorzystując jej wartość.
   UWAGA: Podczas pracy z innymi osobami można spotkać się z wieloma przykładami użycia zmiennych "i" i "j" dla zmiennej licznika loop. Nie są to obowiązkowe nazwy zmiennych i można używać dowolnych nazw, takich jak "a" lub "foo" lub innych. Używanie "i" i "j" jest po prostu standardową konwencją w programowaniu.
   Warto zauważyć, że specjalnych instrukcji break i continue można używać także wewnątrz for loop. Użycie break spowoduje natychmiastowe opuszczenie loop i przejście do dowolnego kodu znajdującego się w zdarzeniu lub funkcji po zakończeniu loop, np:
   var _inst = noone;

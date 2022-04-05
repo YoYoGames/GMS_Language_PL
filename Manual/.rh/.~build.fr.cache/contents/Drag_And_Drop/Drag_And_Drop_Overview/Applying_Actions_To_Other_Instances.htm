@@ -1,8 +1,8 @@
 
   
   Stosowanie akcji do innych instancji
-  Większość akcji w bibliotekach DnD™ posiada opcję zastosowania akcji na różne sposoby. Nazywa się to ustawieniem zakresu akcji i może to być jedna z kilku rzeczy:
-  Zasadniczo to, co mówisz GameMaker Studio 2, to to, która instancja powinna uruchomić akcję. Domyślnym zakresem akcji
+  Większość akcji w bibliotekach GML Visual ma możliwość zastosowania ich na różne sposoby. Nazywa się to ustawieniem zakresu akcji i może to być jedna z kilku rzeczy:
+  Zasadniczo to, co mówisz GameMakerowi, to to, która instancja powinna wykonać akcję. Domyślnym zakresem akcji
     jest self, co oznacza, że gdy object zostanie utworzona jako instancja w room, ta instancja wykona kod akcji. Jednak nie zawsze jest to zgodne z oczekiwaniami użytkownika, który może chcieć, aby niektóre akcje oddziaływały na inne, a nawet
     lub nawet wszystkie instancje w room. W tym miejscu przydaje się zmiana zakresu akcji.
   Poniżej wymieniono różne zakresy wykonywania akcji, ale należy zauważyć, że zmiana zakresu akcji w ten sposób spowoduje zastosowanie nowego zakresu tylko do tej akcji, a nie do kolejnych akcji w łańcuchu. Jeśli chcesz zastosować
@@ -18,7 +18,7 @@
     Zakres other ma dwie główne funkcje, a wartość, którą zwraca, zależy od tego, gdzie i jak jej używasz. W zdarzeniu kolizji other zwróci unikatową wartość identyfikatora instancji
       (unikatowa wartość, która jest używana do rozróżniania poszczególnych instancji każdego object), więc można na przykład utworzyć instancję "pocisku" i wywołać zdarzenie kolizji z instancją "gracza", a następnie użyć zakresu other do usunięcia punktów trafienia z instancji "gracza" object i powrócić do zakresu self, aby zniszczyć instancję "pocisku".
     Poza zdarzeniem kolizji ustawienie other będzie się zachowywało tak, jakby było ustawione na noone, chyba że zostanie wywołane z bloku akcji o określonym zakresie. Oznacza to, że jeśli zmienisz zakres
-      zakres grupy akcji na określony object, to podczas wywoływania tych akcji zakres other zwróci identyfikator instancji, która pierwotnie wywołała grupę akcji. Na przykład można uruchomić
+      zakres grupy akcji na określony object, to podczas wywoływania tych akcji zakres other będzie zwracał identyfikator instancji, która pierwotnie wywołała grupę akcji. Na przykład można uruchomić
       akcję Apply to..., a następnie w następnym bloku kodu ustawić zakres na other, aby wykonać akcję na instancji uruchamiającej cały blok zdarzeń, a nie na instancji, która jest przypisana w bloku zdarzenia.
       a nie instancji, do której odnosi się blok kodu apply to. Poniższa ilustracja przedstawia przykład:
     Na obrazku sprawdzamy, czy w instancji jest naciśnięcie myszy, a jeśli takowe zostanie wykryte, zmieniamy zakres za pomocą akcji Apply To.... Kolejne dwa bloki akcji są teraz wywoływane z instancji "obj_Player" (jeśli jest ich więcej niż jeden, to będą uruchamiane dla wszystkich), więc object zmieni swoją sprite, a następnie utworzy object w innej pozycji,
@@ -27,7 +27,7 @@
   
   Wszystkie
   
-    Gdy określasz akcję dla wszystkich, mówisz GameMaker Studio 2, by uruchomił ten blok dla każdej aktywnej instancji w bieżącym pomieszczeniu. Na przykład utworzenie akcji Zniszcz instancję Object  
+    Gdy określasz akcję dla wszystkich, mówisz GameMakerowi, by uruchomił ten blok dla każdej pojedynczej aktywnej instancji w bieżącym pomieszczeniu. Na przykład utworzenie akcji Destroy Object Instance 
       i ustawienie jej zakresu na all spowoduje, że każda instancja w room zniknie, bez względu na to, z jakiej strony object została utworzona.
      
   

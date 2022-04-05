@@ -1,8 +1,8 @@
 
   
   Funkcje asynchroniczne
-  W kontekście GameMaker Studio 2 funkcja asynchroniczna to taka, która wysyła informacje do strony internetowej server, prosi o dane wejściowe użytkownika lub nawet przesyła dane strumieniowo, pozwalając jednocześnie na dalsze działanie GameMaker Studio 2 bez blokowania uruchomionej gry. Po odebraniu wywołania zwrotnego informacji uruchamiane jest specjalne zdarzenie Async Event, które z kolei pozwala każdej instancji z przypisanym zdarzeniem Async Event wykonywać kolejne funkcje (choć nie musi tak być). Zasadniczo jest to więc sposób komunikacji z jakimś zasobem zewnętrznym (server, użytkownikiem lub urządzeniem) bez zatrzymywania gry lub projektu w oczekiwaniu na odpowiedź.
-  Dlaczego jest to ważne? Ponieważ umożliwia ona dalsze funkcjonowanie witryny GameMaker Studio 2 podczas wysyłania i odbierania danych, a to oznacza, że można robić wiele rzeczy bez blokowania gry loop:
+  W kontekście GameMakera funkcja asynchroniczna to taka, która wysyła informacje na stronę server, prosi o dane wejściowe użytkownika lub nawet przesyła dane, pozwalając jednocześnie na kontynuowanie pracy programu GameMaker bez blokowania uruchomionej gry. Po otrzymaniu wywołania zwrotnego informacji uruchamiane jest specjalne zdarzenie Async Event, które z kolei pozwala dowolnej instancji z przypisanym zdarzeniem Async Event wykonywać dalsze funkcje (choć nie musi tak być). Zasadniczo jest to więc sposób komunikacji z jakimś zasobem zewnętrznym (server, użytkownikiem lub urządzeniem) bez zatrzymywania gry lub projektu w oczekiwaniu na odpowiedź.
+  Dlaczego jest to ważne? Cóż, ponieważ pozwala to na dalsze działanie programu GameMaker podczas wysyłania i odbierania danych, a to oznacza, że można robić wiele rzeczy bez blokowania gry loop, np:
   
     przesyłanie danych z urządzenia do gry bez konieczności czekania przez gracza na załadowanie się elementów
     mieć zdarzenia wywołania zwrotnego, aby wykonywać zadania tylko wtedy, gdy zostaną odebrane właściwe informacje
@@ -18,7 +18,7 @@
     Facebook
   
    
-  Istnieje także wiele funkcji bufora, których można używać do ładowania i zapisywania strony buffers w sposób asynchroniczny, co jest wymagane podczas pracy na różnych konsolach obsługiwanych przez GameMaker STudio 2, choć można ich używać także na innych platformach docelowych:
+  Istnieje także wiele funkcji Buffer, których można używać do asynchronicznego wczytywania i zapisywania strony buffers. Są one wymagane podczas pracy na różnych konsolach obsługiwanych przez program GameMaker, choć można ich używać także na innych platformach docelowych:
   
     buffer_save_async
     buffer_load_async

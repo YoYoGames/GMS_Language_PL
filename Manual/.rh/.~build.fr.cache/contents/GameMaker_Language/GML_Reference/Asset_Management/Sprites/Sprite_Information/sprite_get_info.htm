@@ -30,7 +30,7 @@
       
         xoffset
         prawdziwy
-        Przesunięcie X sprite'a/pochodzenie (w pikselach)
+        Przesunięcie X sprite'a lub jego początek (w pikselach)
       
       
         yoffset
@@ -215,12 +215,12 @@
         
           wiadomość
           ciąg
-          Ciąg komunikatu nadawczego
+          Ciąg komunikatów nadawczych
         
       
     
      
-    Zmienna frame_info jest tablicą, która zawiera informacje o czasie trwania klatek sprite'a. Każda klatka w tej tablicy jest adresem struct zawierającym następujące zmienne:
+    Zmienna frame_info jest tablicą zawierającą informacje o czasie trwania klatek sprite'a. Każda klatka w tej tablicy jest adresem struct zawierającym następujące zmienne:
     
       
         
@@ -261,7 +261,7 @@
         
           y
           prawdziwy
-          Położenie Y tej ramki na stronie texture (w pikselach)
+          Pozycja Y tej ramki na stronie texture (w pikselach)
         
         
           w
@@ -291,7 +291,7 @@
         
           crop_width
           prawdziwy
-          Rzeczywista szerokość ramki na stronie texture po wykadrowaniu i przeskalowaniu (ponieważ GMS2 automatycznie przycina pustą przestrzeń wokół obrazu, a także skaluje go w dół, jeśli się nie mieści)
+          Rzeczywista szerokość ramki na stronie texture po przycięciu i przeskalowaniu (ponieważ GameMaker automatycznie przycina pustą przestrzeń wokół obrazu, a także skaluje go w dół, jeśli się nie mieści)
         
         
           crop_height
@@ -315,7 +315,7 @@
   Kręgosłup Sprite Dane
   
     Ta sekcja zawiera informacje na temat zmiennych zawartych w serwisie struct na stronie Spine sprites.
-    Zmienna bones jest tablicą, która zawiera informacje o wszystkich kościach w podanym adresie Spine sprite. Każda kość w tej tablicy jest adresem struct zawierającym następujące zmienne:
+    Zmienna bones jest tablicą, która zawiera informacje o wszystkich kościach w podanej witrynie Spine sprite. Każda kość w tej tablicy jest adresem struct zawierającym następujące zmienne:
     
       
         
@@ -461,7 +461,7 @@
         
       
     
-    * UWAGA: Zmienne ciemnego koloru są dostępne tylko wtedy, gdy w gnieździe jest włączona opcja Tint Black.
+    * UWAGA: Zmienne dotyczące ciemnych kolorów są dostępne tylko wtedy, gdy w gnieździe jest włączona opcja Tint Black.
      
   
    

@@ -1,49 +1,10 @@
 
   
   fx_create
-  Przegląd
-  Funkcja ta służy do tworzenia nowego FX Struct dla danego typu efektu, który zawiera informacje o efekcie i wartości jego parametrów. Parametry efektu można odczytać, wywołując funkcję fx_get_parameter/s na zwróconym adresie struct, a nowe wartości można im przypisać, wywołując adresy fx_set_parameter/s.
-  Do tej funkcji można przekazać dowolny z poniższych adresów strings, aby utworzyć odpowiadający mu efekt:
-  
-    
-      
-        String
-        Opis
-      
-      
-        "_filter_colourise"
-        Filtr koloryzujący
-      
-      
-        "_filter_edgedetect"
-        Filtr wykrywający krawędzie
-      
-      
-        "_filter_greyscale"
-        Filtr skali szarości
-      
-      
-        "_filter_large_blur"
-        Duży filtr rozmywający
-      
-      
-        "_filter_pixelate"
-        Filtr pikselowy
-      
-      
-        "_filter_posterise"
-        Filtr posteryzacyjny
-      
-      
-        "_filter_screenshake"
-        Filtr wstrząsów ekranu
-      
-      
-        "_filter_tintfilter"
-        Filtr barwny
-      
-    
-  
+  Ta funkcja służy do tworzenia nowej strony FX Struct dla danego typu efektu, który można następnie zastosować do warstwy.
+  Na tej stronie podano nazwy filtrów/efektów, które można włączyć do tej funkcji: Wszystkie typy filtrów/efektów.
+  Zastosowanie
+  Parametry utworzonego efektu można odczytać, wywołując polecenie fx_get_parameter/s na zwróconym adresie struct i przypisać im nowe wartości, wywołując fx_set_parameter/s.
   Należy pamiętać, że strona struct zwrócona przez tę funkcję nie będzie zawierała żadnych widocznych elementów i będzie można ją zmodyfikować tylko za pomocą jednej z funkcji Filtr/Efekt.
   Awarie funkcji
   Funkcja zwróci -1, jeśli z jakiegoś powodu nie uda się utworzyć strony struct; może się tak zdarzyć, jeśli podana nazwa FX jest nieprawidłowa lub FX nie został załadowany do pakietu gry.
@@ -66,7 +27,7 @@
       
         filter_or_effect_name
         String
-        The name of the filter/effect to create (from the table listed at the top).
+        The name of the filter/effect to create (get them from All Filter/Effect Types).
       
     
   

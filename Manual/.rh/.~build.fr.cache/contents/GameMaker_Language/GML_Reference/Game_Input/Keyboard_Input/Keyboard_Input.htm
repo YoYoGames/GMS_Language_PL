@@ -1,14 +1,14 @@
 
   
   Wprowadzanie danych z klawiatury
-  Podczas pracy z klawiaturą w GameMaker Studio 2 użytkownik ma do dyspozycji wiele funkcji, które mogą być używane do rozpoznawania różnych stanów klawiatury, takich jak naciśnięty lub zwolniony. Są też takie, które zapisują wszystkie naciśnięcia klawiszy jako string lub informują, jaki był ostatnio naciśnięty klawisz, a także takie, które pozwalają całkowicie wyczyścić stan klawiatury.
+  Podczas pracy z klawiaturą w GameMakerze masz do dyspozycji wiele funkcji, które mogą być używane do rozpoznawania różnych stanów klawiatury, takich jak wciśnięty lub zwolniony. Są też takie, które zapisują wszystkie naciśnięcia klawiszy jako string lub informują, jaki był ostatnio naciśnięty klawisz, a także takie, które pozwalają całkowicie wyczyścić stan klawiatury.
   UWAGA Te funkcje są przeznaczone wyłącznie dla platform Windows/Mac/Ubuntu. Może się okazać, że niektóre wbudowane zmienne i stałe nie są ważne na innych platformach, a wiele funkcji nie będzie działać na telefonach komórkowych.
-  Każdy znak wejściowy z klucza (lub wielu kluczy) jest określany przez jego kod UTF8, który jest wartością liczbową. Wartość tę można uzyskać dla dowolnego znaku za pomocą funkcji ord() ale GameMaker Studio 2 zawiera także serię constants dla najczęściej używanych klawiszy specjalnych klawiatury oraz funkcji specjalnych. Zazwyczaj używa się kombinacji ord() z funkcjami keyboard_check*(), czyli coś takiego:
+  Każdy znak wejściowy z klucza (lub wielu kluczy) jest określany przez jego kod UTF8, który jest wartością liczbową. Wartość tę można uzyskać dla dowolnego znaku za pomocą funkcji ord() ale GameMaker posiada także serię stron constants dla najczęściej używanych klawiszy specjalnych klawiatury oraz funkcji specjalnych. Zazwyczaj używa się kombinacji ord() z funkcjami keyboard_check*(), czyli coś takiego:
   if keyboard_check(ord("A"))
     {
         hspeed = -5;
     }
-  Tak więc powyższa funkcja sprawdzi, czy jest naciśnięty klawisz "A", i jeśli tak, ustawi prędkość poziomą strony object na -5. Zauważ, że użycie ord() w ten sposób będzie działać poprawnie tylko wtedy, gdy dane wejściowe string będą miały długość jednego znaku i będą liczbami od 0 do 9 lub wielkimi literami od A do Z. Funkcja ord() zwróci pełną wartość UTF8, ale funkcje keyboard_check*() wykryją tylko A - Z i 0 - 9. Ale co zrobić, jeśli chcesz użyć klawiszy strzałek? Albo jeśli chcesz zmodyfikować działanie za pomocą klawisza "shift"? Cóż, w tym celu GameMaker Studio 2 zawiera serię stałych vk_ (vk_ oznacza klawisz wirtualny), których można użyć zamiast ord():
+  Tak więc powyższa funkcja sprawdzi, czy jest naciśnięty klawisz "A", i jeśli tak, ustawi prędkość poziomą strony object na -5. Zauważ, że użycie ord() w ten sposób będzie działać poprawnie tylko wtedy, gdy dane wejściowe string będą miały długość jednego znaku i będą liczbami od 0 do 9 lub wielkimi literami od A do Z. Funkcja ord() zwróci pełną wartość UTF8, ale funkcje keyboard_check*() wykryją tylko A - Z i 0 - 9. Ale co zrobić, jeśli chcesz użyć klawiszy strzałek? Albo jeśli chcesz zmodyfikować działanie za pomocą klawisza "shift"? Cóż, w tym celu GameMaker posiada serię stałych vk_ (vk_ oznacza wirtualny klawisz), których można użyć zamiast ord():
   
     
       
@@ -32,7 +32,7 @@
       
       
         vk_left
-        kod klucza dla klawisza strzałki w lewo
+        kod klawisza dla klawisza strzałki w lewo
       
       
         vk_right
@@ -215,7 +215,7 @@
     keyboard_key_release
   
    
-  Wreszcie, następujące zmienne są wbudowane w GameMaker Studio 2 i można się do nich odwoływać, aby uzyskać informacje o stanie klawiatury i wprowadzanych danych:
+  Poniższe zmienne są wbudowane w GameMakera i można się do nich odwoływać, aby uzyskać informacje o stanie klawiatury i wprowadzanych danych:
   UWAGA: W przypadku korzystania z klawiatury wirtualnej tylko zmienna keyboard_string zostanie zaktualizowana o dane wprowadzone z klawiatury.
   
     keyboard_key

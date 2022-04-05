@@ -1,7 +1,7 @@
 
   
   Audio
-  GameMaker Studio 2 posiada kompletny silnik dźwiękowy oparty na formatach dźwiękowych *.ogg, *.mp3 oraz *.wav. Dźwięki tych typów dodane do strony IDE można wykorzystać w grze, korzystając z podstawowych funkcji audio przedstawionych poniżej. Aby uzyskać bardziej złożone efekty dźwiękowe lub odtworzyć pojedynczy utwór muzyczny, można skorzystać z zaawansowanych funkcji audio, które umożliwiają modyfikowanie sposobu odtwarzania dźwięku. Dostępne są także bardziej wyspecjalizowane funkcje do strumieniowego przesyłania dźwięku, pozycjonowania dźwięku (w celu uzyskania dźwięku 3D) oraz grupowania dźwięku.
+  ProgramGameMaker posiada kompletny silnik dźwiękowy oparty na formatach dźwiękowych *.ogg, *.mp3 oraz *.wav. Dźwięki tych typów dodane do strony IDE można wykorzystać w grze za pomocą podstawowych funkcji audio przedstawionych poniżej. Aby uzyskać bardziej złożone efekty dźwiękowe lub odtworzyć pojedynczy utwór muzyczny, można skorzystać z zaawansowanych funkcji audio, które umożliwiają modyfikowanie sposobu odtwarzania dźwięku. Dostępne są także bardziej wyspecjalizowane funkcje do strumieniowego przesyłania dźwięku, pozycjonowania dźwięku (w celu uzyskania dźwięku 3D) oraz grupowania dźwięku.
   WAŻNE! Używając dźwięku w celu HTML5, należy pamiętać, że nie wszystkie przeglądarki obsługują Web Audio i w związku z tym po uruchomieniu mogą nie odtwarzać dźwięku w projekcie. Ogólne pojęcie o obsłudze Web Audio można uzyskać, korzystając z poniższego odnośnika: Czy mogę używać Web Audio?
   Poniższe funkcje służą do obsługi dźwięku w najprostszy możliwy sposób, bez użycia emiterów, pozwalając użytkownikowi na łatwe generowanie dźwięków i odtwarzanie muzyki, ponieważ dźwięki są zawsze generowane w pozycji słuchacza (więcej informacji o słuchaczu można znaleźć w rozdziale poniżej), a więc na ogół nie mają na nie wpływu żadne zmiany w pozycji słuchacza:
   
@@ -22,7 +22,7 @@
     audio_destroy_stream
   
    
-  Poniższe funkcje mają na celu zapewnienie większej kontroli nad tym, jak działa silnik audio i jak dźwięki odtwarzane przez niego będą "słyszane" przez słuchacza. W związku z tym zaleca się, abyś przed użyciem którejkolwiek z poniższych funkcji posiadał dobrą praktyczną wiedzę na temat działania pozostałych elementów silnika dźwiękowego GameMaker Studio 2:
+  Poniższe funkcje mają na celu zapewnienie większej kontroli nad tym, jak działa silnik audio i jak dźwięki przez niego odtwarzane będą "słyszane" przez słuchacza. W związku z tym zaleca się, abyś przed użyciem którejkolwiek z poniższych funkcji posiadał dobrą wiedzę na temat działania pozostałych elementów silnika dźwiękowego GameMakera:
   
     audio_sound_set_track_position
     audio_sound_get_track_position
@@ -53,7 +53,7 @@
    
   Dźwięk sieciowy
   Podczas tworzenia gier na platformę docelową HTML5 silnik audio wymaga obsługi Web Audio, a to z kolei oznacza, że czasami dźwięk nie będzie odtwarzany w oczekiwany sposób. Dzieje się tak, ponieważ kontekst Web Audio może nie być uruchomiony lub może przestać działać podczas gry. Przyczyny takiego stanu rzeczy są bardzo różne w różnych przeglądarkach, a nawet w różnych wersjach tej samej przeglądarki, dlatego wykrywanie zmiany stanu kontekstu Web Audio jest bardzo ważne, np. w celu wykrycia zmiany kontekstu i wstrzymania/uruchomienia zapętlonego dźwięku, np. muzyki w tle.
-  Aby pomóc w rozwiązaniu tego problemu, w witrynie GameMaker Studio 2 dostępne są dwa różne sposoby wykrywania zmiany stanu kontekstu Web Audio: za pomocą poniższej funkcji:
+  Aby pomóc w rozwiązaniu tego problemu, program GameMaker ma dwa różne sposoby wykrywania zmiany stanu kontekstu Web Audio - można to zrobić za pomocą następującej funkcji:
   
     audio_system_is_available
   

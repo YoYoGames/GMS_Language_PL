@@ -6,11 +6,11 @@
     Typ cząsteczki będzie nadal istniał, ale nie będziesz miał do niego dostępu, więc należy zachować ostrożność podczas korzystania z tej funkcji (generalnie typy cząsteczek nigdy nie muszą być przechowywane w tymczasowej zmiennej lokalnej, ale w przypadku niektórych rzeczy, takich jak przyciąganie cząsteczek do powierzchni,
     może to być konieczne).
   UWAGA: Raz utworzony typ cząstki pozostaje w pamięci systemu przez cały czas trwania gry, więc jeśli w którymś momencie trzeba będzie go ponownie utworzyć (na przykład po wywołaniu akcji Uruchom ponownie grę),
-   musisz zniszczyć bieżący typ cząstki, w przeciwnym razie nastąpi wyciek pamięci. Dzieje się tak, gdy zasób jest dodawany do pamięci, a następnie "usuwany", co oznacza, że GameMaker Studio 2 nie ma już możliwości interakcji z tym zasobem.
+   musisz zniszczyć bieżący typ cząstki, w przeciwnym razie nastąpi wyciek pamięci. Dzieje się tak, gdy zasób jest dodawany do pamięci, a następnie "odwoływany", co oznacza, że GameMaker nie ma już możliwości interakcji z tym zasobem.
     więcej. Prowadzi to do zapchania pamięci przez niedostępne zasoby, co z kolei może powodować problemy w grze. Aby zniszczyć typ cząsteczki, gdy nie jest już potrzebny, użyj akcji Zniszcz typ cząsteczki.
   Można także ustawić tryb mieszania, który będzie używany dla cząstek. Domyślnie będą one rysowane w "normalnym" trybie mieszania, więc kolory nie będą modyfikowane przez to, co zostało narysowane pod cząstką, jednak gdy opcja "Mieszanie" jest włączona, cząstki będą rysowane z użyciem mieszania addytywnego.
     zostanie włączona, cząstki będą rysowane z użyciem mieszania addytywnego, co oznacza, że kolory będą się zmieniać w zależności od tego, co zostało narysowane pod cząstką. Mieszanie addytywne daje bardzo jasne i "świecące" efekty i jest
-    Idealnie nadaje się do wybuchów, laserów, ognia itp., natomiast mieszanie normalne jest lepsze do takich efektów, jak deszcz, dym i gruz. Na poniższym rysunku pokazano ten sam efekt przy wyłączonym (po lewej) i włączonym (po prawej) mieszaniu addytywnym:
+    Idealnie nadaje się do eksplozji, laserów, ognia itp., podczas gdy normalne mieszanie jest lepsze do takich efektów, jak deszcz, dym i gruz. Na poniższym rysunku pokazano ten sam efekt przy wyłączonym (po lewej) i włączonym (po prawej) mieszaniu addytywnym:
   
    
   Składnia działania:

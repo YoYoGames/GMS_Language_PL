@@ -1,7 +1,7 @@
 
   
   http_get
-  Za pomocą tej funkcji użytkownik łączy się z podanym adresem URL w celu pobrania informacji. Ponieważ jest to funkcja asynchroniczna, GameMaker Studio 2 nie zablokuje się w oczekiwaniu na odpowiedź, lecz będzie działać dalej, dopóki nie otrzyma informacji zwrotnej. Informacja ta będzie miała postać string i wywoła zdarzenie Async Event w każdej instancji, która ma je zdefiniowane we właściwościach object. Należy również pamiętać, że parametry żądania HTTP (fragmenty czasami "doklejane" do końca adresu URL, gdy użytkownik przesyła formularz na stronie internetowej) są całkowicie dopuszczalne przy korzystaniu z tej funkcji, na przykład:
+  Za pomocą tej funkcji łączysz się z podanym adresem URL w celu pobrania informacji. Ponieważ jest to funkcja asynchroniczna, GameMaker nie będzie się blokował w oczekiwaniu na odpowiedź, ale będzie działał dalej, dopóki nie otrzyma informacji zwrotnej. Informacja ta będzie miała postać string i wywoła zdarzenie Async Event w każdej instancji, która ma je zdefiniowane we właściwościach object. Należy również pamiętać, że parametry żądania HTTP (fragmenty czasami "doklejane" do końca adresu URL, gdy użytkownik przesyła formularz na stronie internetowej) są całkowicie dopuszczalne przy korzystaniu z tej funkcji, na przykład:
   http_get("http://www.YoYoGames.com/logon?username="+name);
   przekaże adres string przechowywany w zmiennej "name" do adresu server oraz pobierze dane z tego adresu URL. Zatem zasadniczo za każdym razem, gdy trzeba przekazać prosty, krótki fragment danych od klienta do server, można użyć tej funkcji.
   UWAGA: Należy pamiętać, że ze względu na ochronę XSS w przeglądarkach, żądania i próby załadowania zasobów z innych domen są blokowane i mogą zwracać puste wyniki. Więcej informacji na ten temat można znaleźć w części poświęconej problemom domen krzyżowych.
@@ -13,7 +13,7 @@
     url: Pełny adres URL żądany przez użytkownika.
     http_status: Nieprzetworzony kod statusu http (jeśli jest dostępny). Zwraca on standardowy kod statusu dla większości przeglądarek, np.: 304 dla "Not Modified" lub 204 dla "No Content", itd.
   
-  Jeśli do gry zwracanych jest wiele pakietów, klawisz wywołania zwrotnego "status" zwróci 1. W takim przypadku mapa DS będzie miała następujące dodatkowe klawisze:
+  Jeśli do gry zwracanych jest wiele pakietów, klucz wywołania zwrotnego "status" zwróci 1. W takim przypadku mapa DS będzie miała następujące dodatkowe klucze:
   
     "contentLength": Jest to rozmiar pliku, którego zgodnie z informacją zawartą na stronie server należy się spodziewać (może być -1, jeśli strona server nie zwraca tych danych).
     "sizeDownloaded": Rozmiar danych, które zostały już pobrane.
@@ -40,7 +40,7 @@
   Przykład rozszerzony:
   Funkcję http_get() można wywołać z dowolnego zdarzenia, a ponieważ jest to funkcja asynchroniczna, wywołanie zwrotne może być niemal natychmiastowe lub może trwać kilka sekund. Wywołanie funkcji jest proste i wygląda mniej więcej tak:
   get = http_get("http://www.MacSweeneyGames.com/logon?username=" + name);
-  Powyższy kod przekaże adres string przechowywany w zmiennej "name" do podanego adresu server, a także pobierze dane z tego adresu URL, wywołując zdarzenie Async, które będzie zawierało mapę async_load DS (indeks mapy async_load będzie przechowywany w zmiennej "get", dzięki czemu będzie można sprawdzić, czy wywołanie zwrotne jest prawidłowe). Wywołane zdarzenie Async będzie zdarzeniem podrzędnym HTTP, a w tym zdarzeniu pojawią się następujące elementy:
+  Powyższy kod przekaże adres string przechowywany w zmiennej "name" do podanego adresu server, a także pobierze dane z tego adresu URL, wywołując zdarzenie Async, które będzie zawierało mapę async_load DS (indeks mapy async_load będzie przechowywany w zmiennej "get", dzięki czemu będzie można sprawdzić, czy wywołanie zwrotne jest prawidłowe). Wywołane zdarzenie Async będzie zdarzeniem podrzędnym HTTP, a w tym zdarzeniu będziesz miał następujące informacje:
   if ds_map_find_value(async_load, "id") == get
     {
         if ds_map_find_value(async_load, "status") == 0

@@ -1,6 +1,8 @@
 
   wideo_otwarte
-  Ta funkcja otwiera plik wideo przy użyciu podanego adresu path. Ponieważ w danym momencie można załadować tylko jeden plik wideo, funkcja ta ładuje określony plik wideo do jedynego dostępnego "gniazda wideo", którym następnie można manipulować za pomocą innych funkcji wideo.
+  Ta funkcja otwiera plik wideo przy użyciu podanego adresu path. Adres path może odnosić się do pliku w folderze Included Files projektu, pliku znajdującego się lokalnie na urządzeniu użytkownika lub adresu URL służącego do załadowania pliku z Internetu (co może nie działać na wszystkich platformach).
+  Ponieważ w danym momencie można załadować tylko jeden plik wideo, funkcja ta ładuje określony plik wideo do jedynego dostępnego "gniazda wideo", którym następnie można manipulować za pomocą innych funkcji wideo.
+  Z odtwarzaniem wideo związane są asynchroniczne wywołania zwrotne. Więcej informacji można znaleźć w temacie Wywołania asynchroniczne.
    
   Składnia:
   video_open(path);
@@ -35,7 +37,7 @@
   
     
       
-        Powrót: Filmy
+        Powrót: Odtwarzanie wideo
         Next: video_close
       
     

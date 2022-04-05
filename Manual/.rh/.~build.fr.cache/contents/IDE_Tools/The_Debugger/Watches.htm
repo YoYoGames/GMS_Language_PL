@@ -3,8 +3,8 @@
   Zegarki
   Cała idea serwisu Debugger polega na umożliwieniu "oglądania" każdego szczegółu gry. Służą do tego "okna obserwacji", które domyślnie są otwarte w oknie Wyjście zadokowanym na dole strony .
    IDE Niektóre z nich mogą być aktualizowane w czasie rzeczywistym (po włączeniu funkcji czasu rzeczywistego debugging  na pasku narzędzi Debugger ), podczas gdy inne wymagają wstrzymania gry na stronie debugger.
-  Gdy obserwujesz zmienne w dowolnym oknie, może to być jeden z wielu typów danych. Jednak ze względu na sposób, w jaki GameMaker Studio 2 przechowuje pewne dane, Debugger nie zawsze wie dokładnie, co przechowuje dana
-    co przechowuje zmienna. Dzieje się tak dlatego, że wewnętrzne wartości ID struktur danych lub instancji są liczbami całkowitymi , więc Debugger nie zawsze wie, czy wartość całkowita przechowywana w zmiennej dotyczy struktury danych lub instancji, czy też jest to
+  Gdy obserwujesz zmienne w którymś z okien, może to być jeden z wielu typów danych. Jednak ze względu na sposób, w jaki GameMaker przechowuje pewne rzeczy, Debugger nie zawsze wie dokładnie, co przechowuje dana
+    co przechowuje zmienna. Dzieje się tak dlatego, że wewnętrzne wartości ID struktur danych lub instancji są liczbami całkowitymi , a więc Debugger nie zawsze wie, czy wartość całkowita przechowywana w zmiennej dotyczy struktury danych lub instancji, czy też jest to
     po prostu wartością całkowitą. Z tego powodu można kliknąć prawym przyciskiem myszy  na dowolnej wartości zmiennej i wyświetlić okno z listą dostępnych typów danych
     którymi może być ta zmienna:
   Łańcuchy i tablice nie pozwalają na taką opcję, a warto zauważyć, że nawet jeśli struktura danych jest przechowywana w zmiennej instancji, to jej numer ID
@@ -39,8 +39,8 @@
   
   Instance
   
-    Jak sama nazwa wskazuje, okno to pokaże wszystkie zmienne instancji ,
-      zmienne lokalne dla zdarzenia instancji, zmienne wbudowane oraz struktury związane z instancją aktualnie przeglądaną w oknie Source (jeśli instancja jest przywoływana przy użyciu
+    Jak sama nazwa wskazuje, okno to pokaże wszystkie zmienne instancji, 
+      zmienne lokalne dla zdarzenia instancji, zmienne wbudowane oraz struktury związane z instancją, przez którą aktualnie przechodzimy w oknie Source (jeśli do instancji odwołujemy się, używając
       słowa kluczowego "other" lub instrukcji with , to w tym oknie zostaną pokazane właściwości tej instancji). Jeśli klikniesz prawym przyciskiem myszy  na wartości, możesz ustawić jej typ, usunąć ją lub wyczyścić wszystkie zegarki z okna. 
     
   
@@ -76,7 +76,7 @@
   Profil
   
     W tym oknie można zobaczyć aktualny profil systemowy testowanej gry i sprawdzić wszystkie elementy gry, od całych zdarzeń do pojedynczych wywołań funkcji, aby sprawdzić ich działanie i wykryć
-      Można tu sprawdzić wszystkie elementy gry, od całych zdarzeń po pojedyncze wywołania funkcji, aby sprawdzić ich wydajność i wykryć ewentualne problemy lub wąskie gardła. Więcej informacji na temat profilowania można znaleźć na następującej stronie: 
+      Można tu sprawdzić wszystkie elementy gry, od całych zdarzeń po pojedyncze wywołania funkcji, aby sprawdzić ich działanie i wykryć ewentualne problemy lub wąskie gardła. Więcej informacji na temat profilowania można znaleźć na następującej stronie: 
     
       Profiler
     

@@ -1,13 +1,80 @@
 
-  Filmy BETA
+  Odtwarzanie wideo
+  Jak odtwarzać filmy?
+  Wykonaj poniższe kroki, aby załadować filmy na stronę runtime i odtwarzać je:
+  
+    Dodaj plik wideo do katalogu Included Files(/datafiles ) swojego projektu.
+    Załaduj film za pomocą strony video_open().
+      
+        Alternatywnie można załadować film z adresu URL.
+      
+    
+    Narysuj ją w zdarzeniu Draw, używając video_draw().
+      
+        Ta funkcja rysuje wideo na wewnętrznej powierzchni, którą zwraca jako część swojej tablicy powrotnej.
+        Aby film został wyświetlony, musisz ręcznie narysować tę powierzchnię za pomocą strony draw_surface().
+          
+            Rysowanie filmów YUV będzie wymagało dodatkowych czynności.
+          
+        
+      
+    
+    Po zakończeniu filmu usuń go z pamięci, wywołując video_close().
+      
+        Użyj wywołań zwrotnych async do uruchomienia kodu po zakończeniu filmu.
+      
+    
+  
+  Kodeki wideo i licencjonowanie
+  GameMaker nie dostarcza żadnych kodeków i korzysta z kodeków obecnych na platformie, na której działa gra. Oznacza to, że pliki wideo muszą być zakodowane w formacie, który można zdekodować na platformie docelowej (platformach docelowych).
+  Korzystanie z niektórych formatów może wymagać uiszczenia opłat licencyjnych zależnych od licencji danego kodeka i przychodów gry, a w takim przypadku twórca ponosi odpowiedzialność prawną za wszelkie opłaty, które należy uiścić na rzecz właścicieli kodeków. Kodeki są również licencjonowane inaczej na każdej platformie, dlatego należy zachować ostrożność w przypadku gier dystrybuowanych na wielu platformach.
+  Należy pamiętać, że formaty wideo (takie jak .mp4, . avi, .mkv itd.) są po prostu kontenerami zawierającymi strumienie wideo i audio, które mogą być kodowane oddzielnie i mogą wymagać oddzielnych licencji.
+  W przypadku dystrybucji na platformach konsolowych należy skontaktować się z przedstawicielem konta, aby dowiedzieć się, jakich formatów można używać bez konieczności uiszczania dodatkowych opłat licencyjnych.
+  Formaty
+  Formaty wideo, które można wczytać i odtwarzać w grze, zależą od platformy docelowej oraz obsługiwanych przez nią kodeków.
+  Funkcje
   Pliki wideo można ładować, odtwarzać i manipulować nimi na stronie runtime przy użyciu następujących funkcji:
   
     wideo_otwarte
     video_close
     wideo_rysuj
     video_set_volume
+    video_pauza
+    wideo_resume
+    video_enable_loop
+    video_seek_to
   
-  WAŻNE Jeśli sprzedajesz grę w celach komercyjnych i zawiera ona materiały wideo w określonym formacie, upewnij się, że sprawdzasz licencję, ponieważ w niektórych przypadkach możesz być zobowiązany do uiszczenia opłaty licencyjnej na rzecz właścicieli formatu wideo, jeśli zarobki przekroczą określoną kwotę. Informacje o licencjach dotyczących formatu MPEG-4 można znaleźć tutaj. Jeśli używasz innego formatu, sprawdź jego licencję, jeśli zamierzasz używać go komercyjnie.
+   
+  Poniższe funkcje służą do uzyskiwania informacji o aktualnie załadowanym filmie:
+  
+    video_is_looping
+    video_get_volume
+    video_get_duration 
+    video_get_position
+    video_get_status
+    video_get_format 
+  
+  Wywołania zwrotne asynchroniczne
+  Zdarzenie Async Social jest wyzwalane na etapach podanych poniżej, a klucz "type" w jego mapie async_load jest ustawiony na podaną wartość:
+  
+    "video_start": Kiedy wideo zaczyna się odtwarzać, czyli kiedy jego status zmienia się z video_status_przygotowania na video_status_odtwarzania.
+    "video_end": Kiedy kończy się nagranie wideo. Nie jest to wyzwalane, gdy wideo jest ustawione na pętlę.
+  
+  Poniżej znajduje się przykład zdarzenia Async Social nasłuchującego wywołań zwrotnych wideo:
+  var _type = async_load[? "type"];
+    
+    if (_type == "video_start")
+    {
+        obj_video.display_video = true;
+    }
+    else if (_type == "video_end")
+    {
+        obj_video.display_video = false;
+        video_close();
+    }
+  
+  Powyższy kod odczytuje typ z mapy async_load. Po uruchomieniu filmu ustawia zmienną w object na wartość true, dzięki czemu może wyświetlić film.
+  Po zakończeniu filmu ustawia tę samą zmienną na false, a następnie wywołuje video_close(), aby usunąć film z pamięci.
    
    
   

@@ -5,10 +5,10 @@
     unikatową wartość ID, która będzie używana w dalszych akcjach. Możesz wybrać stronę flag jako tymczasową zmienną lokalną, ale będzie to oznaczać, że zostanie ona usunięta po zakończeniu akcji script lub zdarzenia, co oznacza, że emiter będzie nadal istniał, ale nie będzie
     (ogólnie rzecz biorąc, emiterów nie trzeba przechowywać w tymczasowej zmiennej lokalnej, ale w niektórych przypadkach, takich jak przyciąganie cząsteczek do powierzchni, może to być konieczne).
   WAŻNE! Jeśli Twój system cząsteczek jest trwały, musisz albo zniszczyć wszystkie emitery na końcu każdej strony room, używając polecenia Destroy Particle Emitter (Zniszcz emiter cząsteczek ), i utworzyć je ponownie w następnej room w zależności od potrzeb,
-    albo przechowywać ich wartości ID w zmiennych globalnych, tak by można było do nich sięgnąć w dowolnym momencie na dowolnej stronie room, albo utworzyć je w trwałej witrynie object, tak by witryna object była trwała i miała do nich dostęp poprzez zmienne instancji. Pamiętaj też, że
+    albo przechowywać ich wartości ID w zmiennych globalnych, aby można było do nich sięgnąć w dowolnym momencie w dowolnym room, albo utworzyć je w trwałym object, dzięki czemu object będzie trwały i będzie można do nich sięgać za pomocą zmiennych instancji. Pamiętaj też, że
     jeśli wywołasz akcję Restart gry, powinieneś wcześniej zniszczyć system cząsteczek, aby system i przypisane do niego emitery zostały usunięte z pamięci przed ponownym uruchomieniem. Nieprawidłowe usunięcie emiterów
-    z pamięci systemu, jak opisano powyżej, doprowadzi do wycieku pamięci. Dzieje się tak, gdy zasób jest dodawany do pamięci, a następnie "usuwany", co oznacza, że strona GameMaker Studio 2 nie ma już możliwości interakcji z tym zasobem. Prowadzi to
-    do zapchania pamięci niedostępnymi zasobami, co z kolei może powodować problemy w grze.
+    z pamięci systemu, jak opisano powyżej, doprowadzi do wycieku pamięci. Dzieje się tak, gdy zasób jest dodawany do pamięci, a następnie "usuwany", co oznacza, że GameMaker nie ma już możliwości interakcji z tym zasobem. Prowadzi to
+    do zapchania pamięci niedostępnymi zasobami, co z kolei może powodować problemy z grą.
    
   Składnia działania:
   

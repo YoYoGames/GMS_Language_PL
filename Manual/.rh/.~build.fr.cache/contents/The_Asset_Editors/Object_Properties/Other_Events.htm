@@ -30,14 +30,14 @@
   
     To specjalne zdarzenie jest wywoływane tylko raz w całej grze i tylko dla tych instancji, które mają akcje lub kod umieszczony w zdarzeniu. Te instancje muszą znajdować się w pierwszym room gry i zostać tam umieszczone w edytorze room, a nie
       a nie zostały utworzone dynamicznie za pomocą kodu lub akcji. Należy zauważyć, że zdarzenie to występuje po zdarzeniu tworzenia wszystkich instancji, a więc może zawierać kod lub akcje ze zmiennymi, które zostały wcześniej zdefiniowane w tym zdarzeniu.
-      To zdarzenie jest zwykle zdefiniowane tylko w jednym "kontrolerze" object i jest zwykle używane do inicjalizacji zmiennych globalnych, uruchamiania muzyki, odczytywania z plików i innych czynności, które zwykle wykonuje się tylko raz na początku gry.
+      To zdarzenie jest zwykle zdefiniowane tylko w jednym "kontrolerze" object i jest zwykle używane do inicjalizacji zmiennych globalnych, uruchamiania muzyki, odczytywania z plików i wszelkich innych czynności, które zwykle wykonuje się tylko raz na początku gry.
      
   
   Koniec gry
   
-    Podobnie jak w przypadku wspomnianego wyżej zdarzenia rozpoczęcia gry, to zdarzenie jest wywoływane tylko raz w całej grze i to tuż przed zamknięciem okna gry. Ponownie, aby instancja z tym zdarzeniem mogła cokolwiek zrobić, musi się znaleźć na stronie room w momencie
-      w momencie zamykania gry. Zwróć uwagę, że to zdarzenie ma zastosowanie tylko w grach dla systemów Windows, Ubuntu ( Linux) i macOS, ponieważ urządzenia mobilne mogą po prostu zamknąć grę, nie dając GameMaker Studio 2 
-      na wywołanie tego zdarzenia. W przypadku gier przeglądarkowych wykonanych przy użyciu modułu HTML5 zdarzenie to powinno działać po zamknięciu karty gry lub przeglądarki, ale nie wszystkie przeglądarki obsługują tę funkcję (w momencie pisania tego tekstu Firefox, Chrome i Safari), więc należy
+    Podobnie jak w przypadku wspomnianego wyżej zdarzenia rozpoczęcia gry, to zdarzenie jest wywoływane tylko raz w całej grze i to tuż przed zamknięciem okna gry. Ponownie, aby instancja z tym zdarzeniem mogła cokolwiek zrobić, musi znajdować się na stronie room w momencie
+      w momencie zamykania gry. Należy pamiętać, że to zdarzenie jest przydatne tylko w grach dla systemów Windows, Ubuntu ( Linux) i macOS, ponieważ urządzenia mobilne mogą po prostu zamknąć grę, nie dając GameMakerowi 
+      szansy na wywołanie tego zdarzenia. W przypadku gier przeglądarkowych z modułem HTML5 zdarzenie to powinno działać po zamknięciu karty gry lub przeglądarki, ale nie wszystkie przeglądarki obsługują tę funkcję (w chwili pisania tego tekstu Firefox, Chrome i Safari), więc należy
       należy zachować ostrożność podczas korzystania z tej funkcji. Zazwyczaj to zdarzenie jest używane do zapisywania danych.
      
   
@@ -54,7 +54,7 @@
   
   Koniec animacji
   
-    W witrynie GameMaker Studio 2 sprites animacje nie są statyczne, ponieważ mogą mieć pod-obrazy i być animowane z różną szybkością. Każda klatka animacji (zwana podobrazem) ma swój własny numer, zaczynający się od 0, który można sprawdzić w kodzie lub za pomocą działań,
+    W GameMakerze strona sprites nie jest statyczna, ponieważ może mieć pod-obrazy i być animowana z różną szybkością. Każda klatka animacji (zwana podobrazem) ma swój własny numer, zaczynający się od 0, który można sprawdzić w kodzie lub za pomocą akcji,
       Czasami jednak wystarczy wiedzieć, kiedy animacja się zakończyła. Wtedy właśnie wywoływane jest to zdarzenie - tuż po zakończeniu animacji, gdy indeks podobrazu wskazuje, że osiągnięto ostatnią klatkę. To zdarzenie jest naprawdę przydatne
       na przykład w przypadku eksplozji object, gdzie można ustawić instancję tak, aby zniszczyła się po osiągnięciu ostatniej klatki animacji.
      
@@ -69,9 +69,9 @@
   Impreza animacyjna
   
     To zdarzenie jest przeznaczone tylko do użycia z funkcjami animacji szkieletowej. Zdarzenie to jest wywoływane w obiekcie
-      który ma przypisaną animację szkieletową sprite i gdzie object używa domyślnego rysowania dla przypisanej animacji sprite, lub sprite jest rysowana przez draw_self(). Obecnie nie wywołuje się go w animacji szkieletowej sprites narysowanej w inny sposób.
-      w inny sposób. Zdarzenie to służy do przechwytywania i przekazywania danych, które zostały przypisane do poszczególnych zdarzeń w animacji sprite, tak jak zostało to zdefiniowane w edytorze używanym do ich tworzenia.
-    Po wyzwoleniu zdarzenia animacji zostanie utworzona specjalna mapa DS o nazwie event_data map (podobnie jak w przypadku mapy async_load dla zdarzenia asynchronicznego).
+      który ma przypisaną animację szkieletową sprite i gdzie object używa domyślnego rysowania dla przypisanej animacji sprite, lub sprite jest rysowana przez draw_self(). Obecnie nie wywołuje się go na animacji szkieletowej sprites narysowanej w inny sposób.
+      w inny sposób. Zdarzenie to służy do przechwytywania i przekazywania danych, które zostały przypisane do poszczególnych zdarzeń w animacji sprite, tak jak zostało to zdefiniowane w edytorze użytym do ich tworzenia.
+    Po wyzwoleniu zdarzenia animacji zostanie utworzona specjalna mapa DS o nazwie event_data map (podobnie jak w przypadku mapy async_load dla zdarzeń asynchronicznych).
       Ta mapa będzie zawierać wszystkie następujące pary klucz-wartość, które można przetwarzać w celu uzyskania informacji o zdarzeniu:
     
       "name": nazwa zdarzenia (zdefiniowana w programie animacji)
@@ -92,11 +92,11 @@
   
   Wydarzenia z udziałem użytkowników
   
-    Są to specjalne zdarzenia, które nie są wywoływane automatycznie przez stronę GameMaker Studio 2, ale muszą być wywołane przez użytkownika za pomocą kodu lub akcji w trakcie gry. W sumie istnieje 12 zdarzeń użytkownika, które mogą zawierać kod lub akcje
-      i mogą być wywoływane w dowolnym momencie gry loop, co czyni je bardzo przydatnymi do tworzenia własnych zdarzeń, które pojawiają się wtedy, gdy użytkownik zdecyduje.
+    Są to specjalne zdarzenia, które nie są wywoływane automatycznie przez program GameMaker, ale muszą być wywołane przez Ciebie za pomocą kodu lub akcji podczas działania gry. W sumie jest 12 zdarzeń użytkownika, które mogą zawierać kod lub akcje
+      i mogą być wywoływane w dowolnym momencie gry loop, co czyni je bardzo przydatnymi do tworzenia własnych zdarzeń, które dzieją się wtedy, gdy Ty o tym zdecydujesz.
      
   
-  Nadawanie komunikatu
+  Rozgłaszanie wiadomości
   
     To zdarzenie jest wyzwalane za każdym razem, gdy na stronie sprite lub sequence zostanie wygenerowana wiadomość rozsyłana string. Więcej informacji można znaleźć na stronie poświęconej komunikatom rozsyłanym.
      

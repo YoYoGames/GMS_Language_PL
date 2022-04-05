@@ -1,7 +1,7 @@
 
   
   powierzchnia_resize
-  Ta funkcja zmieni rozmiar powierzchni do podanych wymiarów (w pikselach). Identyfikator "surface_id" to identyfikator powierzchni utworzonej wcześniej lub identyfikator application_sufacea funkcja zmieni rozmiar tej powierzchni. Nie powoduje to przycięcia ani rozciągnięcia zawartości powierzchni, ale raczej niszczy bieżącą powierzchnię i tworzy ją ponownie z tym samym uchwytem (identyfikatorem powierzchni) i nowymi wymiarami, co oznacza, że trzeba ją wyczyścić i narysować ponownie (chyba że jest to application_surface, w którym to przypadku GameMaker Studio 2 zrobi to automatycznie).
+  Ta funkcja zmieni rozmiar powierzchni do podanych wymiarów (w pikselach). Identyfikator "surface_id" to identyfikator wcześniej utworzonej powierzchni lub identyfikator application_sufacea funkcja zmieni rozmiar tej powierzchni. Nie powoduje to ani przycięcia, ani rozciągnięcia zawartości powierzchni, ale raczej niszczy bieżącą powierzchnię i tworzy ją ponownie z tym samym uchwytem (surface_id) i nowymi wymiarami, co oznacza, że trzeba będzie ją wyczyścić i narysować ponownie (chyba że jest to application_surface, w którym to przypadku GameMaker zrobi to automatycznie).
   UWAGA: W przypadku zmiany rozmiaru powierzchni aplikacji zmiany te nie zostaną zarejestrowane aż do rozpoczęcia następnej ramki rysowania, co oznacza, że wywołanie polecenia surface_get_width() lub surface_get_height() w tym samym zdarzeniu lub kroku zwróci poprzednie wartości.
    
   Składnia:

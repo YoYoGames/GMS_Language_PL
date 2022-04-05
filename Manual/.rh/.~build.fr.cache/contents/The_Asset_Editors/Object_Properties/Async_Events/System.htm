@@ -1,7 +1,7 @@
 
   
   System
-  To zdarzenie może być wywołane tylko przez wywołanie zwrotne ze zdarzenia na poziomie systemu (takiego jak wykrycie gamepada lub automatyczne zalogowanie się do usługi XBox Live) i zwróci ono mapę DS Map przechowywaną w zmiennej async_loadzawierającą różne pary klucz/wartość, w zależności od zdarzenia systemowego, które wywołało oddzwonienie. Te zdarzenia to:
+  To zdarzenie może zostać wywołane tylko przez wywołanie zwrotne ze zdarzenia na poziomie systemu (takiego jak wykrycie gamepada lub automatyczne zalogowanie się do usługi XBox Live) i zwróci ono mapę DS Map przechowywaną w zmiennej async_loadzawierającą różne pary klucz/wartość, w zależności od zdarzenia systemowego, które wywołało oddzwonienie. Te zdarzenia to:
    
   Klocki do gier
   Gdy to zdarzenie zostanie wywołane dla podłączonego lub odłączonego gamepada, zwróci jedną z następujących par klucz/wartość w mapie async_load:
@@ -15,7 +15,7 @@
     "pad_index" - indeks klocka, który został dodany lub usunięty
   
   Dzięki temu zdarzeniu można przenieść całą logikę sprawdzania gamepada ze zdarzenia Krok lub Alarm do zdarzenia systemowego i uruchamiać ją tylko wtedy, gdy jest to rzeczywiście wymagane.
-  WAŻNE! To zdarzenie NIE zostanie wywołane, jeśli w kodzie gry nie ma co najmniej jednej gamepad_* funkcji lub akcji DnD™ w kodzie gry. Program uruchamiający zainicjuje podsystem gamepadów tylko wtedy, gdy w projekcie zostaną użyte funkcje, więc jeśli ich nie ma, dodawanie/usuwanie gamepadów nie spowoduje wywołania zdarzenia systemowego.
+  WAŻNE! To zdarzenie NIE zostanie wywołane, jeśli w kodzie gry nie ma co najmniej jednej gamepad_* funkcji lub akcji GML Visual w kodzie gry. Program uruchamiający zainicjuje podsystem gamepadów tylko wtedy, gdy w projekcie zostaną użyte funkcje, więc jeśli ich nie ma, dodawanie/usuwanie gamepadów nie spowoduje wywołania zdarzenia systemowego.
    
   Klawiatury wirtualne
   Gdy to zdarzenie zostanie wywołane w przypadku otwarcia lub zamknięcia klawiatury wirtualnej, zwróci następujące pary klucz/wartość w mapie async_load:
@@ -34,7 +34,7 @@
   Więcej informacji na temat klawiatury wirtualnej można znaleźć tutaj.
    
   Xbox Live
-  Asynchroniczne zdarzenie systemowe można wywołać po skierowaniu projektu na konsolę Xbox One za pomocą eksportu UWP i zaznaczeniu opcji Włącz Xbox Live w opcjach gry UWP. Po uruchomieniu projektu GameMaker Studio 2 UWP z włączoną usługą Xbox Live projekt automatycznie spróbuje się bezgłośnie zalogować do usługi Xbox Live. Wyniki tej próby logowania zostaną zwrócone w postaci jednej z następujących par klucz/wartość w mapie async_load:
+  Asynchroniczne zdarzenie systemowe można wywołać, gdy projekt jest skierowany na konsolę Xbox One za pomocą eksportu UWP i zaznaczenia opcji Włącz Xbox Live w opcjach gry UWP. Po uruchomieniu projektu GameMaker UWP, w którym włączono usługę Xbox Live, projekt automatycznie spróbuje bezgłośnie zalogować się do usługi Xbox Live. Wyniki tej próby logowania zostaną zwrócone jako jedna z następujących par klucz/wartość w mapie async_load:
   
     "event_type" - typ odebranego zdarzenia systemowego, który będzie jednym z następujących ciągów znaków:
     "user signed in" - ciche logowanie użytkownika zostało zakończone pomyślnie
@@ -55,7 +55,7 @@
     "unavailable" - System audio nie jest zainicjalizowany lub kontekst nie jest aktualnie uruchomiony, a zatem nie może odtwarzać dźwięków (wszystkie funkcje odtwarzania dźwięków zwrócą -1)
   
   Więcej informacji o poszczególnych funkcjach dostępnych dla dźwięku można znaleźć tutaj.
-  UWAGA: Chociaż zdarzenie to zostało zaprojektowane do użytku z celem HTML5, będzie ono wywoływane także na wszystkich innych platformach, ale na wszystkich (z wyjątkiem HTML5) będzie wywoływane tylko raz podczas uruchamiania gry, gdy silnik audio jest inicjowany po raz pierwszy.
+  UWAGA: Chociaż zdarzenie to zostało zaprojektowane do użytku z platformą docelową HTML5, będzie ono wywoływane także na wszystkich innych platformach, ale na wszystkich (z wyjątkiem HTML5) będzie wywoływane tylko raz podczas uruchamiania gry, gdy silnik audio jest inicjalizowany po raz pierwszy.
    
    
    

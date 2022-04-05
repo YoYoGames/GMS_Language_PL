@@ -1,7 +1,7 @@
 
   
   gpu_set_texrepeat_ext
-  Za pomocą tej funkcji można określić, czy pojedynczy "slot" samplera ma powtarzać podany adres texture podczas używania Shaderów w GameMaker Studio 2. Ustawienie jej na true spowoduje powtarzanie texture, jeśli współrzędne uv będą z zakresu 0-1, natomiast ustawienie false będzie oznaczało brak powtarzania. Prawdopodobnym zastosowaniem tych funkcji jest powtarzanie strony texture w 3D, ale aby to działało i nie ciągnęło obrazów z reszty strony texture, używana strona sprite musi być oznaczona jako "Oddzielna strona Texture " w edytorze Sprite.
+  Za pomocą tej funkcji można określić, czy pojedynczy "slot" samplera ma powtarzać podany adres texture podczas używania Shaderów w GameMakerze. Ustawienie jej na true spowoduje powtarzanie texture, jeśli współrzędne uv będą poza zakresem 0-1, podczas gdy ustawienie false będzie oznaczało brak powtarzania. Prawdopodobnym zastosowaniem tych funkcji jest powtarzanie strony texture w 3D, ale aby to działało i nie ciągnęło obrazów z reszty strony texture, używana strona sprite musi być oznaczona jako "Oddzielna strona Texture " w edytorze Sprite.
   UWAGA To ustawienie zostanie zastąpione wartością ustawioną podczas wywoływania funkcji gpu_set_texrepeat().
    
   Składnia:

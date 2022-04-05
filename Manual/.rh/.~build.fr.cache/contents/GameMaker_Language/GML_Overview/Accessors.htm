@@ -1,7 +1,7 @@
 
   
   Akcesoria
-  Program GameMaker Language (GML) umożliwia także dostęp do pewnych struktur danych i tablic za pomocą wyrażeń logicznych zwanych accessorami. Struktura jest podobna jak w przypadku normalnej pracy z tablicą, z tą różnicą, że przed pierwszym argumentem używamy symbolu identyfikatora, aby poinformować GameMaker Studio 2, że pracujemy nad (wcześniej utworzoną) strukturą danych lub literałem tablicy.
+  Strona GameMaker Language (GML) pozwala także na dostęp do pewnych struktur danych i tablic za pomocą wyrażeń logicznych zwanych accessorami. Struktura jest podobna do normalnej pracy z tablicą, z tą różnicą, że używamy symbolu identyfikatora przed pierwszym argumentem, aby poinformować GameMakera, że pracujemy nad (wcześniej utworzoną) strukturą danych lub literałem tablicy.
    
   Listy DS [| ]
   
@@ -61,7 +61,7 @@
   Tablice [@ ]
   
     Ten accessor jest używany tylko wtedy, gdy włączona jest opcja Copy on Write.
-    Tablice posiadają również własne accessory, które działają w podobny sposób, jak te wymienione powyżej dla struktur danych. Dostęp do tablic ma jednak pewną ciekawą właściwość, a mianowicie pozwala na modyfikowanie tablicy z poziomu funkcji skryptu lub method bez konieczności jej kopiowania. Gdy przekazujemy tablicę do funkcji, jest ona przekazywana przez referencję, co oznacza, że sama tablica nie jest przekazywana do script, lecz po prostu jest do niej odwoływana w celu uzyskania danych. W normalnej sytuacji, jeśli trzeba by zmienić tablicę, należałoby ją skopiować na stronę script, a następnie przekazać z powrotem (zwrócić) skopiowaną tablicę, aby oryginalna tablica została zaktualizowana. Może to powodować kosztowne koszty przetwarzania, dlatego zamiast tego można skorzystać z narzędzia dostępu, które zmieni oryginalną tablicę bezpośrednio , bez konieczności jej kopiowania. Jak to działa, można zobaczyć na poniższych przykładach.
+    Tablice posiadają również własne accessory, które działają w podobny sposób, jak te wymienione powyżej dla struktur danych. Jednak dostęp do tablic ma jeszcze jedną ciekawą właściwość, a mianowicie pozwala na modyfikowanie tablicy z poziomu funkcji skryptu lub method bez konieczności jej kopiowania. Gdy przekazujemy tablicę do funkcji, jest ona przekazywana przez referencję, co oznacza, że sama tablica nie jest przekazywana do script, lecz po prostu jest do niej odwoływana w celu uzyskania danych. W normalnej sytuacji, jeśli trzeba by zmienić tablicę, należałoby ją skopiować na stronę script, a następnie przekazać z powrotem (zwrócić) skopiowaną tablicę, aby oryginalna tablica została zaktualizowana. Może to powodować kosztowne koszty przetwarzania, dlatego zamiast tego można skorzystać z narzędzia dostępu, które zmieni oryginalną tablicę bezpośrednio , bez konieczności jej kopiowania. Jak to działa, można zobaczyć w poniższych przykładach.
     Składnia dla tablic, przy użyciu narzędzia dostępu @, jest następująca:
     array[@ i]
     Po utworzeniu tablicy w instancji można przekazać ją do script przez referencję i użyć akcesora @, aby ją bezpośrednio zmienić. Na przykład można utworzyć tablicę i wywołać funkcję w następujący sposób:
@@ -99,7 +99,7 @@
      
   
    
-  Ważną cechą akcesorów jest to, że można je łączyć w łańcuchy. Oznacza to, że jeśli mamy kilka zagnieżdżonych struktur danych i/lub tablic, nie ma już potrzeby używania wielu funkcji, aby uzyskać dostęp do wartości znajdującej się głęboko w zagnieżdżonej strukturze. Na przykład, powiedzmy, że mamy tablicę, a każdy element w tablicy jest listą DS, jak poniżej:
+  Ważną cechą akcesorów jest to, że można je łączyć w łańcuchy. Oznacza to, że jeśli masz kilka zagnieżdżonych struktur danych i/lub tablic, nie musisz już używać wielu funkcji, aby uzyskać dostęp do wartości, która znajduje się głęboko w zagnieżdżonej strukturze. Na przykład, powiedzmy, że mamy tablicę, a każdy element w tablicy jest listą DS, jak poniżej:
   array = array_create(3);
     for (var i = 0; i < 3; ++i;)
     {
@@ -123,9 +123,9 @@
   W powyższym kodzie utworzyliśmy tablicę składającą się z 3 elementów i przypisaliśmy każdej z nich listę DS, a następnie wypełniliśmy poszczególne listy identyfikatorami instancji różnych objects w grze. Teraz, aby uzyskać dostęp do identyfikatora na jednej z list, możemy wykonać następujące czynności:
   var _list = array[0];
     var _id = ds_list_find_value(_list, 0);
-  Można jednak zrobić to samo, używając łańcuchowych accessorów w znacznie czystszy sposób, który wymaga mniej kodu:
+  Można jednak zrobić to samo, używając łańcuchowych accessorów, w znacznie czystszy sposób i przy użyciu mniejszej ilości kodu:
   var _id = array[0][| 0];
-  W ten sposób można połączyć łańcuchowo wiele akcesorów i mogą one być różnych typów, aby uzyskać dostęp do informacji przechowywanych w każdej części zagnieżdżonej struktury. Oto kilka kolejnych przykładów:
+  W ten sposób można łączyć ze sobą wiele akcesorów i mogą one być różnych typów, aby uzyskać dostęp do informacji przechowywanych w każdej części zagnieżdżonej struktury. Oto kilka kolejnych przykładów:
   // Access a grid that has been added to a list that is part of a map:
     var _a = data[? "lists"][| 0][# 0, 0];
     

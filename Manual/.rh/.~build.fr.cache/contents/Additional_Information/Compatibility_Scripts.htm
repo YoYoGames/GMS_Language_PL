@@ -1,29 +1,29 @@
 
   
   Skrypty zgodności
-  Użytkownicy korzystający z poprzednich wersji GameMaker mogą być na początku nieco zdezorientowani, ponieważ w GameMaker Studio 2 wprowadzono szereg zmian w sposobie obsługi projektu assets, edycji i kodowania. Zmiany te oznaczają, że
+  Użytkownicy korzystający z poprzednich wersji programu GameMaker mogą być na początku nieco zdezorientowani, ponieważ w GameMakerze wprowadzono szereg zmian w sposobie obsługi projektu assets, edycji i kodowania. Zmiany te oznaczają, że
     że ani IDE, ani język GameMaker Language (GML) nie obsługują elementów wymienionych poniżej. Nie oznacza to jednak, że
-    GameMaker Studio 2 GameMaker Studio 2 automatycznie przekonwertuje wszystkie starsze funkcje na skrypty zgodności, które są scripts zawierające funkcje konwertujące
-    które konwertują stare metody na metody zaktualizowane.
-  Polega to na tym, że GameMaker Studio 2 sprawdzi projekt pod kątem wszystkich przestarzałych funkcji i zmiennych, których używałeś, a następnie utworzy serię stron scripts z nazwami tych funkcji. Te scripts będą zawierać albo nowy odpowiednik
+    że nie możesz importować do programu GameMaker gier stworzonych w poprzednich wersjach, ponieważ możesz. GameMaker automatycznie przekształci wszystkie starsze funkcje w skrypty zgodności, które są scripts zawierające funkcje konwertujące
+    które konwertują starsze metody na metody zaktualizowane.
+   GameMaker sprawdzi projekt pod kątem wszystkich przestarzałych funkcji i zmiennych, których używałeś, a następnie utworzy serię stron scripts z nazwami tych funkcji. Te scripts będą zawierać albo nowy odpowiednik
     lub krótką funkcję skryptu, która wykonuje to samo działanie, co przestarzała funkcja.
-  Podczas pierwszego importowania projektu GameMaker Studio 2 zostanie wyświetlony raport zgodności, podobny do tego:
-  Główna część raportu pokazuje, które strony objects i scripts zostały dotknięte i gdzie, natomiast na końcu
+  Podczas pierwszego importowania projektu GameMakera zostanie wyświetlony raport zgodności, podobny do tego:
+  W głównej części raportu pokazano, które strony objects i scripts zostały dotknięte i gdzie, a na końcu
     znajduje się lista stron scripts, które zostały utworzone dla danego projektu. Aby otworzyć raport i zobaczyć, co zostało zrobione, można kliknąć środkowy przycisk myszy  lub nacisnąć przycisk  na dowolnej stronie scripts wymienionej w raporcie.
   Zwróć uwagę, że jeśli zobaczysz stronę scripts z podwójną kreską przed nazwą (na przykład: __global_object_depths), to są to skrypty scripts, które zostały utworzone przez IDE w celu zapewnienia kompatybilności, a nie skrypty
     które zostały przekonwertowane z przestarzałych funkcji, więc nie należy w nie ingerować, ponieważ są one wymagane do działania innych kompatybilnych scripts.
   Po zakończeniu zmiany raportu zgodności można zamknąć stronę workspace, ale jeśli zajdzie potrzeba zmiany czegokolwiek w raporcie, można to ponownie znaleźć, przechodząc do sekcji Uwagi w
    Przeglądarka zasobów.
   Należy pamiętać, że można nadal używać tych funkcji scripts tak samo, jak w starszej wersji GameMaker, jednak ze względu na sposób ich działania będzie to miało wpływ na wydajność. Zalecamy, aby
-    zaktualizować projekty, aby bezpośrednio korzystały z nowych metod i usunąć kompatybilność scripts, jeśli jest to możliwe, ponieważ poprawi to wydajność i pozwoli zapoznać się ze sposobem działania GameMaker Studio 2 i GameMaker Language w porównaniu ze starszymi produktami.
+    zaktualizować projekty tak, by bezpośrednio korzystały z nowych metod i usunąć kompatybilność scripts, jeśli to możliwe, ponieważ poprawi to wydajność, a także da Ci wgląd w sposób, w jaki działa GameMaker i GameMaker Language w porównaniu ze starszymi produktami.
   Należy również pamiętać, że istnieją pewne funkcje, które zostały wprowadzone do GameMaker Language w celu zapewnienia kompatybilności ze starszymi projektami i które pojawią się w tej kompatybilności scripts. Funkcji tych nie należy jednak nigdy używać we własnych projektach.
-    Listę tych funkcji można znaleźć w następnej części podręcznika:
+    Listę tych funkcji można znaleźć w następującej części podręcznika:
   
     Funkcje zgodności
   
   Na poniższej stronie znajduje się również pełna lista wszystkich przestarzałych funkcji, dla których utworzono odpowiedniki kompatybilności scripts:
   
-    Nieaktualne funkcje
+    Przestarzałe funkcje
   
    
    
@@ -32,7 +32,7 @@
     
       
         Powrót: Informacje dodatkowe
-        Następny: Przestarzałe funkcje
+        Następny: Nieaktualne funkcje
       
     
     © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.

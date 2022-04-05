@@ -4,7 +4,7 @@
   Za pomocą tej funkcji można zastąpić w grze stronę font z tych stron fonts, które są zainstalowane w systemie, w którym działa gra. Należy pamiętać, że zastępowana strona font nie może być stroną font z przeglądarki Asset i musi być stroną font, która została dodana wcześniej za pomocą funkcji font_add().
   Zastępując w ten sposób stronę font, można określić wielkość strony font (w punktach), a także to, czy strona font ma być pogrubiona czy pochylona, oraz zakres znaków, które mają być uwzględnione. Jeżeli funkcja nie powiedzie się, to nie zostanie wykonana, a podany adres font nie zostanie zastąpiony.
   W przypadku modułu docelowego HTML5 tej funkcji można użyć tylko do zastąpienia czcionek internetowych i będzie ona działać tylko wtedy, gdy nie jest włączona obsługa WebGL - jeśli WebGL jest włączona, należy użyć ogólnego zasobu font (tzn. użyć draw_set_font() wraz z font z przeglądarki Asset ) lub bitmapy fonts (zob. font_add_sprite()).
-  WAŻNE W przypadku stosowania języka HTML5 kursywa i pogrubienie tekstu są obsługiwane tylko wtedy, gdy na stronie font asset lub stronie font znajdują się te znaki. Nie zostaną one zsyntetyzowane z podstawowej strony font.
+  WAŻNE W przypadku stosowania języka HTML5 kursywa i pogrubienie tekstu są obsługiwane tylko wtedy, gdy na stronie font asset lub stronie font znajdują się te znaki. Nie będą one syntetyzowane z podstawowej strony font.
   W poniższej tabeli przedstawiono czcionki fonts, które są standardowe we wszystkich przeglądarkach i które powinny być dostępne do bezproblemowego użycia. Wszelkie inne font mogą, ale nie muszą, występować na komputerze lub urządzeniu, na którym uruchomiona jest gra, dlatego korzystanie z tej funkcji powinno być ograniczone do tych standardowych czcionek:
   
     
@@ -110,10 +110,10 @@
       
     
   
-  W przypadku wszystkich innych celów (nie internetowych) można użyć tej funkcji do zastąpienia pliku font z pliku. Plik musi być dołączony do pakietu gry za pomocą funkcji Dołączone pliki na stronie GameMaker Studio 2 i musi być plikiem w formacie *.ttf lub *.otf font , przydatnym do dodawania niestandardowych plików fonts, takich jak azjatyckie lub arabskie.
+  W przypadku wszystkich innych celów (nie internetowych) można użyć tej funkcji do zastąpienia adresu font z pliku. Plik musi być dołączony do pakietu z grą za pomocą funkcji Included Files programu GameMaker i musi być plikiem w formacie *.ttf lub *.otf font , przydatnym do dodawania niestandardowych plików fonts, takich jak azjatyckie lub arabskie.
   WSKAZÓWKA Jeśli dołączasz taki plik font do gry, upewnij się, że posiada on odpowiednią licencję na dystrybucję z grą.
   Podczas ładowania strony font z pliku w ten sposób rozmiar strony font jest podawany w pikselach, a pierwsza i ostatnia wartość są ignorowane, co oznacza, że wszystkie glify w font zostaną dodane. Fonts dodane w ten sposób są przypisane do własnej strony texture, więc należy zachować ostrożność podczas korzystania z tej funkcji, ponieważ spowoduje ona zwiększenie liczby podmian texture podczas rysowania. Warto także zauważyć, że strona fonts może wydawać się nieco większa podczas rysowania, ponieważ glify mogą mieć części rysowane poza ramką zdefiniowaną dla strony font. Należy także pamiętać, że istnieje ograniczenie liczby glifów, które mogą być renderowane w pojedynczej ramce dla danej strony font, do około 200.
-  UWAGA Po załadowaniu strony font do GameMaker Studio 2 należy pamiętać o jej ponownym usunięciu (za pomocą font_delete()), gdy nie jest już potrzebna, w przeciwnym razie istnieje ryzyko wycieku pamięci, który spowolni, a w końcu doprowadzi do awarii gry.
+  UWAGA Po załadowaniu strony font do programu GameMaker musisz pamiętać o jej ponownym usunięciu (za pomocą font_delete()), gdy nie jest już potrzebna, w przeciwnym razie istnieje ryzyko wycieku pamięci, który spowolni, a w końcu spowoduje awarię gry.
    
   Składnia:
   font_replace(ind, name, size, bold, italic, first, last);

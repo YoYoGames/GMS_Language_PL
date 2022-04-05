@@ -1,10 +1,10 @@
 
   
   Siatki DS
-  Siatka DS jest rodzajem tablicy o dwóch wymiarach. Definiujesz siatkę, ustawiając jej szerokość i wysokość, co z kolei określa całkowitą liczbę "komórek" w siatce (mnożąc szerokość i wysokość). Komórki te są następnie używane do przechowywania różnych wartości danych (liczb rzeczywistych lub strings).
+  Siatka DS jest rodzajem tablicy o dwóch wymiarach. Definiuje się ją, ustawiając jej szerokość i wysokość, a następnie całkowitą liczbę "komórek" w obrębie siatki (mnożąc szerokość i wysokość). Komórki te służą do przechowywania różnych wartości danych (liczb rzeczywistych lub strings).
   Ten typ struktury umożliwia ustawianie i pobieranie wartości komórek w siatce przez podanie indeksu x i y (który zaczyna się od 0 zarówno dla osi x, jak i y, i sięga do szerokości - 1 oraz wysokości -1). Można również ustawiać wartości w określonych regionach siatki, dodawać pojedyncze wartości oraz pobierać sumę, maksimum, minimum i średnią wartość w danym regionie, co czyni tę strukturę danych najbardziej uniwersalną ze wszystkich dostępnych.
-  Podczas uzyskiwania dostępu do struktur danych siatki DS należy zawsze starać się używać wartości całkowitych dla pozycji komórek. W przeciwnym razie wszystkie indeksy niecałkowite będą zaokrąglane przez GameMaker Studio 2. Jeśli nie jest to wymagane, należy wykonać zaokrąglenie przed przekazaniem indeksu, który ma być sprawdzany.
-  UWAGA Podobnie jak wszystkie zasoby dynamiczne, struktury danych zajmują pamięć, dlatego powinny być zawsze niszczone, gdy nie są już potrzebne, aby zapobiec wyciekom pamięci, które spowalniają grę i prowadzą do jej awarii.
+  Podczas uzyskiwania dostępu do struktur danych siatki DS należy zawsze starać się używać wartości całkowitych dla pozycji komórek, a w przeciwnym razie wszystkie niecałkowite indeksy zostaną spławione przez program GameMaker. Jeśli nie jest to wymagane, trzeba będzie wykonać zaokrąglenie przed przekazaniem indeksu, który ma być sprawdzany.
+  UWAGA Podobnie jak wszystkie zasoby dynamiczne, struktury danych zajmują pamięć, dlatego powinny być zawsze niszczone, gdy nie są już potrzebne, aby zapobiec wyciekom pamięci, które spowolnią, a w końcu doprowadzą do awarii gry.
   UWAGA jeśli trzeba sprawdzić, czy dana struktura danych istnieje, można użyć funkcji ds_exists() funkcji.
   Oprócz konkretnych funkcji wymienionych poniżej, do dodawania lub modyfikowania zawartości siatki DS można użyć wyrażenia (zwanego accessorem). Dostęp ten wygląda podobnie jak tablica 2D o następującej składni:
   grid_index[# xpos, ypos]

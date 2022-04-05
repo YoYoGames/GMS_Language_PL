@@ -1,12 +1,12 @@
 
   
   Kod komentowania
-  Podczas pracy we współpracy z innymi osobami, przy dużych projektach, a nawet dla własnych potrzeb i debugging, pozostawianie komentarzy w kodzie zdarzeń i na stronie scripts jest bardzo ważne. W GameMaker Studio 2 masz do dyspozycji różne mechanizmy ułatwiające zostawianie notatek i komentarzy dotyczących fragmentów kodu, a nawet całych bloków kodu, które są widoczne na liście zdarzeń object, którą właśnie edytujesz. W ten sposób można zostawiać notatki dla siebie i kolegów, wyjaśniać szczególnie skomplikowane fragmenty kodu lub po prostu przypominać, co coś robi lub co ma robić w przyszłości.
+  Kiedy pracujesz we współpracy z innymi ludźmi, kiedy masz do czynienia z dużym projektem, a nawet po prostu dla własnego odniesienia i debugging, zostawianie komentarzy w kodzie zdarzeń i scripts jest bardzo ważne. W GameMakerze masz do dyspozycji różne mechanizmy ułatwiające zostawianie notatek i komentarzy dotyczących fragmentów kodu, a nawet całych bloków kodu, które są widoczne na liście zdarzeń object, którą właśnie edytujesz. W ten sposób możesz zostawiać notatki dla siebie i kolegów, wyjaśniać szczególnie skomplikowany fragment kodu lub po prostu przypominać, co coś robi lub co chcesz, żeby robiło w przyszłości.
   Aby zostawić prosty, jednowierszowy komentarz, należy przede wszystkim użyć adresu // przed tekstem. Na przykład:
   //initialize variables
     sr = 10;
     hp = 100;
-  Można również zostawiać wielowierszowe komentarze, aby wyrazić uznanie, pominąć cały fragment kodu na stronie debugging, a nawet zostawić uwagi o tym, jak chcesz zmienić kod w przyszłości. Do tego celu można użyć /* ... */ na przykład tak:
+  Możesz również zostawiać wielowierszowe komentarze, aby wyrazić uznanie, pominąć cały fragment kodu na stronie debugging, a nawet zostawić uwagi dotyczące tego, jak chcesz zmienić kod w przyszłości. Do tego celu można użyć /* ... */ na przykład tak:
   /*
     Setup GIF Variables to initial values (these can be edited so you don't need to use the setter functions all the time if you are always using the same values)
     
@@ -19,8 +19,8 @@
     frame_height = 256;
     frame_quality = gifcam_quality_high;
   
-  Oprócz komentarzy można również używać specjalnych znaczników #region do oznaczania fragmentów kodu do składania, a każdy z tych fragmentów może zawierać komentarz. Działa to w ten sposób, że dodajesz znacznik #region - wraz z tekstem komentarza - na górze sekcji kodu, a następnie dodajesz odpowiadający mu znacznik #endregion na dole sekcji i możesz "złożyć" kod, tzn. ukryć go, aby zmniejszyć liczbę linii kodu widocznych w edytorze w danym momencie:
-  Rzeczywisty kod wygląda mniej więcej tak:
+  Oprócz komentarzy można również używać specjalnych znaczników #region do oznaczania fragmentów kodu do składania, a każdy z tych fragmentów może zawierać komentarz. Działa to w ten sposób, że dodajesz znacznik #region - wraz z tekstem komentarza - na górze sekcji kodu, a następnie dodajesz odpowiadający mu znacznik #endregion na dole sekcji i wtedy możesz "zwijać" kod, tzn. ukrywać go, aby zmniejszyć liczbę linii kodu widocznych w edytorze w danym momencie:
+  Faktyczny kod wygląda mniej więcej tak:
   #region This is an example region
     
     width = sprite_get_width(sprite);

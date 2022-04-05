@@ -1,89 +1,60 @@
 
-  
-  Konstruowanie kodu bloku akcji
-  Aby dodać zachowania do strony objects, możesz skonstruować swój kod za pomocą akcji ( Actions ) z różnych bibliotek dostępnych w oknie narzędziowym Action Toolbox. Na początek musisz utworzyć nowy projekt Drag and Drop , a następnie nowy obiekt (w razie potrzeby możesz też przypisać sprite 'a do object ). W nowym projekcie object możesz zacząć dodawać events,
-    a w zdarzeniach dodaj swoje akcje z kodu DnD™.
-  Zauważ, że po dodaniu nowego zdarzenia otwierane jest okno "kodu" z zakładką dla danego zdarzenia (zob. rysunek
-    Możesz teraz przeciągnąć dowolną akcję z Przybornika po prawej stronie do okienka Bloku akcji w oknie kodu. To prawda, że możesz dodać dowolną akcję, ale nie oznacza to, że wszystkie one będą działać lub że projekt będzie
-    skompiluje się z nimi. Niektóre akcje wymagają do działania co najmniej jednej zmiennej, a inne - jak na przykład akcja Draw - będą działać tylko
-    będą działać tylko wtedy, gdy zostaną użyte w określonym zdarzeniu. Skąd wiadomo, których z nich użyć? Cóż, generalnie jest to po prostu kwestia logiki... jeśli akcja wymaga zmiennej, a my jeszcze jej nie zdefiniowaliśmy, to nie powinniśmy jej używać, dopóki nie
-    dodamy akcję, która utworzy zmienną.
-  Po przeciągnięciu akcji z Przybornika na główną stronę bloku akcji workspace, zostanie ona rozwinięta, aby pokazać dostępneargumenty (parametry), które można wypełnić
-    które można wypełnić i zmienić, aby ustawić zachowanie. Na poniższym rysunku przeciągnęliśmy akcję Przydziel zmienną z biblioteki Toolbox Common do
-    do obszaru roboczego bloku akcji:
-  Można zauważyć, że nowa akcja jest również wyświetlana po lewej stronie okna kodu w formie skróconej. Ta lista akcji,
-    nazywana Przeglądem akcji, może zostać kliknięta, aby szybko przejść do tej akcji w celu jej edycji. W razie potrzeby możesz kontynuować dodawanie akcji do zdarzenia, przy czym każda nowa akcja jest "połączona" z poprzednią, aby pokazać przepływ konstruowanego kodu DnD™.
-    DnD™, aby pokazać przepływ tworzonego kodu. Zauważ, że obszar, w którym możesz umieszczać kolejne akcje, jest podświetlony pod akcją początkową, a w zależności od tego, jakiej akcji używasz, różne obszary będą podświetlone, aby pokazać, w którym miejscu łańcucha możesz
-    ją dodać:
-  W miarę dodawania akcji na stronie workspace, będą one "łączone" z akcjami powyżej, dzięki czemu można zobaczyć, jak
-    Kod DnD™ płynie, jedna akcja prowadzi do drugiej, a panel przeglądowy pokazuje je w skróconej formie i w kolejności wykonywania:
-  Niektóre akcje umieszczają kod w osobnym łańcuchu z dala od głównego przepływu - rzeczy takie jak zmienna If 
-    utworzy podłańcuch akcji, które powinny zostać wykonane, jeśli zostaną spełnione odpowiednie warunki, przed kontynuowaniem głównego łańcucha:
-  Należy pamiętać, że podczas korzystania z akcji, które mogą mieć blok łańcucha bocznego, jak w tym przypadku, akcja będzie miała dwa obszary
-    podświetlone do upuszczania kolejnych akcji:
-  
-    Jeden pod działaniem jak zwykle
-    Jeden na prawo od akcji, aby pokazać, że chcesz utworzyć osobny blok akcji, które będą uruchamiane, gdy warunek pierwszej akcji zwróci wartość true
-  
-  Pozycję akcji w łańcuchu można zmienić, klikając stronę  i przeciągając ją w nowe miejsce, a jeśli klikniesz stronę  i
-    i przytrzymać przez sekundę, a następnie poruszyć myszą, można przesuwać akcję w obrębie workspace, zachowując jej miejsce w łańcuchu bloków akcji.
-  Możliwe jest także dodawanie komentarzy do akcji Drag and Drop™, dzięki czemu można zostawiać notatki obok różnych bloków, aby wyjaśnić ich działanie (jest to szczególnie przydatne podczas pracy w zespole):
-  Więcej informacji na temat tej funkcji można znaleźć na stronie poświęconej menu prawego przycisku myszy.
-  Tak wyglądają podstawy korzystania z edytora kodu Drag and Drop, ale w poniższych sekcjach wyjaśniono jeszcze inne ważne szczegóły:
-   
-  Zmienne docelowe
-  
-    Należy zauważyć, że wiele działań oferuje zmienną "cel", która może być oznaczona na przykład jako "Tymczasowa":
-    Oznacza to, że można podać zmienną, która będzie przechowywała wartość zwróconą przez akcję
-      akcji. W powyższym przykładzie akcja zwróci głośność wybranego przez użytkownika zasobu audio, dlatego podajemy zmienną docelową, która będzie przechowywać tę wartość, aby można się było do niej później odwołać.
-    Zmienna docelowa będzie musiała być wcześniej zadeklarowana za pomocą Assign Variable (co tworzy zmienną instancji) lub Declare Temporary V ariable (co tworzy lokalną zmienną tymczasową).
-      Jeśli zaznaczysz opcję "Temp", możesz po prostu dodać nazwę zmiennej, a akcja utworzy tę zmienną i ustawi ją tak, aby przechowywała wartość zwracaną (tworząc tymczasową zmienną lokalną).
-      zmienną lokalną). Wszystkie akcje użyte po tej operacji mogą teraz uzyskać dostęp do wartości zmiennej tymczasowej, ale tylko w ramach tego samego zdarzenia lub skryptu. Zmienne tymczasowe są dostępne tylko w zakresie, w którym zostały utworzone. Aby uzyskać więcej szczegółowych
-      informacji na temat zmiennych i zakresu zmiennych można znaleźć tutaj.
+    Konstruowanie kodu bloku akcji
+    Aby dodać zachowania do strony objects, możesz skonstruować swój kod za pomocą akcji ( Actions ) z różnych bibliotek dostępnych w oknie narzędziowym Action Toolbox. Na początek musisz utworzyć nowy projekt GML Visual, a następnie nowy obiekt (w razie potrzeby możesz też przypisać sprite 'a do object ). W nowym projekcie object możesz zacząć dodawać eventsa w zdarzeniach dodaj swoje akcje z kodu GML Visual.
+    Zauważ, że po dodaniu nowego zdarzenia otwierane jest okno "kodu" z zakładką dla danego zdarzenia (patrz ilustracja powyżej), a teraz możesz przeciągnąć dowolną akcję z Przybornika po prawej stronie do okienka Bloku akcji w oknie kodu. To prawda, że możesz dodać dowolną akcję, ale nie oznacza to, że wszystkie one będą działać i że projekt się z nimi skompiluje. Niektóre akcje wymagają do działania co najmniej jednej zmiennej, a inne - jak na przykład akcja Rysuj - będą działać tylko wtedy, gdy zostaną użyte w określonym zdarzeniu. Skąd wiadomo, których z nich użyć? Cóż, na ogół jest to po prostu kwestia logiki... jeśli akcja wymaga zmiennej, a my jeszcze jej nie zdefiniowaliśmy, to nie powinniśmy jej używać, dopóki nie dodamy akcji tworzącej tę zmienną.
+    Po przeciągnięciu akcji z Przybornika na główną stronę bloku akcji workspace, zostanie ona rozwinięta, aby pokazać dostępneargumenty (parametry), które można wypełnić i zmienić, aby ustawić zachowanie. Na poniższym rysunku przeciągnęliśmy akcję Przydziel zmienną z biblioteki Toolbox Common do obszaru roboczego bloku akcji:
+    Można zauważyć, że nowa akcja jest również wyświetlana po lewej stronie okna kodu w formie skróconej. Ta lista akcji, zwana Przeglądem akcji, może być kliknięta, aby szybko przejść do tej akcji w celu jej edycji. W razie potrzeby można kontynuować dodawanie akcji do zdarzenia, przy czym każda nowa akcja jest "połączona" z poprzednią, aby pokazać przepływ tworzonego kodu GML Visual. Zauważ, że obszar, w którym można umieszczać kolejne akcje, jest podświetlony pod akcją początkową, a w zależności od używanej akcji różne obszary będą podświetlone, aby pokazać, w którym miejscu łańcucha można ją dodać:
+    Po dodaniu działań do witryny workspace zostaną one "połączone" z działaniami znajdującymi się powyżej, dzięki czemu można zobaczyć, jak przepływa kod wizualny GML, w którym jedno działanie prowadzi do drugiego, a w okienku przeglądu są one wyświetlane w skróconej formie i w kolejności wykonywania:
+    Niektóre akcje umieszczają kod w osobnym łańcuchu, z dala od głównego przepływu - takie rzeczy jak Jeśli zmienna utworzy podłańcuch akcji, które powinny wystąpić, jeśli zostaną spełnione odpowiednie warunki, przed kontynuowaniem głównego łańcucha:
+    Należy pamiętać, że podczas korzystania z akcji, które mogą mieć blok łańcucha bocznego, jak w tym przypadku, akcja będzie miała podświetlone dwa obszary umożliwiające upuszczanie kolejnych akcji:
+    
+      Jeden pod działaniem jak zwykle
+      Jeden na prawo od akcji, aby pokazać, że chcesz utworzyć osobny blok akcji, które będą uruchamiane, gdy warunek pierwszej akcji zwróci wartość true
+    
+    Pozycję akcji w łańcuchu można zmienić, klikając stronę  i przeciągając ją w nowe miejsce, a jeśli klikniesz stronę  i przytrzymasz przez sekundę, a następnie poruszysz myszą, możesz przesunąć akcję w obrębie strony workspace, zachowując jej miejsce w łańcuchu bloków akcji.
+    Istnieje również możliwość dodawania komentarzy do strony GML Visual actions, dzięki czemu obok różnych bloków można umieszczać notatki wyjaśniające ich działanie (jest to szczególnie przydatne podczas pracy w zespole):
+    Więcej informacji na temat tej funkcji można znaleźć na stronie poświęconej menu prawego przycisku myszy.
+    Tak wyglądają podstawy korzystania z edytora kodu GML Visual, ale w poniższych sekcjach wyjaśniono jeszcze inne ważne szczegóły:
      
-  
-  Zakres działania
-  
-    Nie tylko zmienne mają zakresy (patrz sekcja Zmienne docelowe , powyżej), również akcje mogą mieć różne zakresy. W rzeczywistości prawie wszystkim akcjom można przypisać różne zakresy działania, ustawiane w rozwijanym oknie otwieranym w samej akcji
-      jak pokazano tutaj:
-    Możesz także ustalić zakres wszystkich kolejnych akcji, używając specjalnej akcji Zastosuj do.
-      Więcej informacji na temat tej cechy akcji DnD™ znajdziesz tutaj:
+    Zmienne docelowe
     
-      Stosowanie akcji do innych instancji
+      Należy zauważyć, że wiele działań oferuje zmienną "cel", która może być oznaczona na przykład jako "Tymczasowa":
+      Oznacza to, że można podać zmienną docelową, która będzie przechowywała wartość zwracaną przez akcję. W powyższym przykładzie akcja zwróci głośność wybranego przez użytkownika zasobu audio, dlatego podajemy zmienną docelową, która będzie przechowywać tę wartość, aby można się było do niej później odwołać.
+      Jeśli zaznaczysz opcję "Temp", możesz po prostu dodać nazwę zmiennej, a akcja utworzy tę zmienną i ustawi ją tak, aby przechowywała wartość zwracaną przez użytkownika (tworząc tymczasową zmienną lokalną). Wszystkie akcje użyte po tej operacji mogą teraz uzyskać dostęp do wartości zmiennej tymczasowej, ale tylko w ramach tego samego zdarzenia lub skryptu. Zmienne tymczasowe są dostępne tylko w zakresie, w którym zostały utworzone. Więcej szczegółowych informacji na temat zmiennych i zakresu zmiennych można znaleźć tutaj.
+       
     
-     
-  
-  Auto Complete
-  
-    Podczas pracy z Drag and Drop trzeba dodawać zmienne i wyrażenia do różnych pól wprowadzania działań. Jednak w trakcie tej czynności często pojawia się okno Autouzupełniania, aby pomóc użytkownikowi:
-    W tym oknie zostanie wyświetlona lista wszystkich wbudowanych w GML (GameMaker Language) zmiennych, stałych i funkcji, a także
-      a także wszystkie zasoby, które zawierają początkowe litery wpisywanego tekstu. Można go użyć do szybkiego znalezienia zasobu lub zmiennej, która jest potrzebna do wykonania danej czynności, bez konieczności wpisywania jej samodzielnie. Na przykład, jeśli wszystkie pokoje
-      mają przedrostek "rm_", to wpisanie tego i odczekanie chwili spowoduje wyświetlenie okna autouzupełniania ze wszystkimi assets zaczynającymi się od "rm_". Zwróć uwagę, że wszystkie zmienne wbudowane
-      które są wyświetlane w oknie autouzupełniania, mogą być używane wszędzie tam, gdzie w działaniu jest oczekiwana zmienna lub wyrażenie, podobnie jak większość funkcji GML.
-     
-  
-  Działanie Rozszerzenie
-  
-    Czasami podczas korzystania z działania widoczna jest mała ikona plusa  z boku. Oznacza to, że można rozwinąć akcję, aby wykonać dodatkowe zadania lub przyjąć dodatkowe
-      argumentów. Na przykład, jeśli spojrzysz na akcję Deklarowanie zmiennych tymczasowych, zobaczysz, że ma ona taką ikonę:
-    Po kliknięciu ikony akcja zostanie rozwinięta i umożliwi zadeklarowanie większej liczby zmiennych, co ułatwi i przyspieszy
-      ułatwia i przyspiesza definiowanie wielu zmiennych jednocześnie.
-    Ikona może być także używana w akcjach wymagających opcjonalnych argumentów,
-      na przykład akcji " Wybierz ", która umożliwia dodanie różnych wartości zwracanych przez akcję:
+    Zakres działania
     
-  
-   
-   
-   
-  
-    
+      Nie tylko zmienne mają zakresy (patrz sekcja Zmienne docelowe , powyżej), również akcje mogą mieć różne zakresy. W rzeczywistości prawie wszystkim akcjom można przypisać różne zakresy działania, ustawiane w oknie rozwijanym w samej akcji, jak pokazano tutaj:
+      Za pomocą akcji specjalnej Zastosuj do można także określić zakres wszystkich dalszych działań. Więcej informacji na temat tej funkcji akcji wizualnych GML można znaleźć tutaj:
       
-        Powrót: Indeks
-        Następny: Stosowanie akcji do innych instancji
+        Stosowanie akcji do innych instancji
+      
+       
+    
+    Auto Complete
+    
+      Podczas pracy z GML Visual będziesz musiał dodawać zmienne i wyrażenia do różnych pól wprowadzania działań. W trakcie tej czynności często pojawia się okno Autouzupełniania, które pomaga w tym zadaniu:
+      W tym oknie pojawi się lista wszystkich wbudowanych w GML (GameMaker Language) zmiennych, stałych i funkcji, a także wszelkich zasobów, które zawierają początkowe litery wpisywanego tekstu. Można go użyć do szybkiego znalezienia zasobu lub zmiennej, która jest potrzebna do wykonania danej czynności, bez konieczności wpisywania jej samodzielnie. Na przykład, jeśli wszystkie strony rooms są poprzedzone "rm_", to wpisanie tej litery i odczekanie chwili spowoduje wyświetlenie okna autouzupełniania ze wszystkimi stronami assets zaczynającymi się od "rm_". Należy pamiętać, że wszystkie wbudowane zmienne, które są widoczne w oknie autouzupełniania, mogą być używane wszędzie tam, gdzie w działaniu jest oczekiwana zmienna lub wyrażenie, podobnie jak większość funkcji GML.
+       
+    
+    Działanie Rozszerzenie
+    
+      Czasami podczas używania akcji można zobaczyć małą ikonę plusa  z boku. Oznacza to, że można ją rozwinąć, aby wykonać dodatkowe zadania lub przyjąć dalsze argumenty. Na przykład, jeśli spojrzysz na akcję Deklarowanie zmiennych tymczasowych, zobaczysz, że ma ona taką ikonę:
+      Po kliknięciu ikony akcja zostanie rozwinięta i umożliwi zadeklarowanie większej liczby zmiennych, co ułatwi i przyspieszy jednoczesne definiowanie wielu zmiennych.
+      Ikona ta może być także używana w akcjach wymagających opcjonalnych argumentów, takich jak akcja Wybierz, która umożliwia dodawanie różnych wartości zwracanych przez użytkownika:
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
-  
-  
-  
-
+     
+     
+     
+    
+      
+        
+          Powrót: Indeks
+          Następny: Stosowanie akcji do innych instancji
+        
+      
+      © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    
+    

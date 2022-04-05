@@ -1,7 +1,7 @@
 
   
   display_get_orientation
-  Ta funkcja zwraca jedną z czterech stałych dostępnych na stronie GameMaker Studio 2, które określają, czy urządzenie, na którym uruchomiono grę, jest trzymane w trybie poziomym czy pionowym (patrz tabela poniżej).
+  Funkcja ta zwraca jedną z czterech stałych, które GameMaker posiada, aby określić, czy urządzenie, na którym uruchomiona jest gra, jest trzymane w trybie poziomym czy pionowym (patrz tabela poniżej).
   Należy pamiętać, że ta funkcja może nie wykrywać poprawnie orientacji urządzenia, gdy jest używana w module docelowym HTML5. Można to jednak łatwo naśladować za pomocą poniższego skryptu:
   return (browser_width < browser_height);
   Taka funkcja zwróciłaby wartość true dla trybu pionowego i false dla trybu poziomego.

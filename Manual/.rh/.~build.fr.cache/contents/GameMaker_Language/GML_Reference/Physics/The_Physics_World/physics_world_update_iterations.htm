@@ -1,7 +1,7 @@
 
   
   physics_world_update_iterations
-  Wszystko w GameMaker Studio 2 opiera się na krokach i w normalnych warunkach każde zdarzenie występuje tylko raz na krok. Jednak aby uzyskać odpowiednią precyzję funkcji fizyki, są one zmuszone do wykonywania w każdym kroku kilku obliczeń, zwanych "iteracjami", których liczba jest kontrolowana przez tę funkcję. Domyślną liczbą dla systemu fizyki jest 10, ale można ją zmienić na wyższą lub niższą, w zależności od tego, ile razy fizyka ma obliczać każdy krok, ale zaleca się ustawienie jej na poziomie nie niższym niż 5 i nie wyższym niż 30. Należy również pamiętać, że funkcja ta jest zależna od funkcji physics_world_update_speed() funkcji.
+  Wszystko w GameMakerze opiera się na krokach i normalnie każde zdarzenie ma miejsce tylko raz na krok. Jednak aby uzyskać odpowiednią precyzję funkcji fizyki, muszą one wykonywać kilka obliczeń na każdym kroku, które nazywane są "iteracjami", a ich liczba jest kontrolowana przez tę funkcję. Domyślną liczbą dla systemu fizyki jest 10, ale można ją zmienić na wyższą lub niższą, w zależności od tego, ile razy fizyka ma obliczać każdy krok, ale zaleca się ustawienie jej na poziomie nie niższym niż 5 i nie wyższym niż 30. Należy również pamiętać, że funkcja ta jest zależna od funkcji physics_world_update_speed() funkcji.
    
   Składnia:
   physics_world_update_iterations(iterations)

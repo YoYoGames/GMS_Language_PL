@@ -1,7 +1,7 @@
 
   
   draw_primitive_begin
-  This function must be called before you can define any primitives. There are 6 types of primitives you can define as the following constants:
+  Funkcja ta musi zostać wywołana przed zdefiniowaniem jakichkolwiek prymitywów. Istnieje 6 typów prymitywów, które można zdefiniować jako następujące stałe:
   
     
       
@@ -9,63 +9,63 @@
     
     
       
-        Primitive Type Constant
+        Typ prymitywny Stała
       
       
-        Constant
-        Description
+        Stała
+        Opis
       
       
         pr_pointlist
-        A point list
+        Lista punktów
       
       
         pr_linelist
-        A line list
+        Lista wierszy
       
       
         pr_linestrip
-        A line strip
+        Pasek linii
       
       
         pr_trianglelist
-        A triangle list
+        Lista trójkątów
       
       
         pr_trianglestrip
-        A triangle strip
+        Listwa trójkątna
       
       
         pr_trianglefan
-        A triangle fan
+        Wentylator trójkątny
       
     
   
-   
-  The following image illustrates basically how these should look and also the order in which you should define the vertexes:
-  Please note that on some platforms (Windows, UWP, XBox) the pr_trianglefan type is not natively supported and so GameMaker Studio 2 does a conversion when the game is compiled to make them work. This means that on those platforms the pr_trianglefan type will be much slower to use than the others. This Also note that to use this function on HTML5, you must enable WebGL in the Game Options.
-   
-  Syntax:
+   
+  Poniższy rysunek pokazuje, jak powinny one wyglądać oraz w jakiej kolejności należy definiować wierzchołki:
+  Należy pamiętać, że na niektórych platformach (Windows, UWP, XBox) typ pr_trianglefan nie jest obsługiwany natywnie i dlatego GameMaker dokonuje konwersji podczas kompilacji gry, aby umożliwić ich działanie. Oznacza to, że na tych platformach typ pr_trianglefan będzie znacznie wolniejszy w użyciu niż pozostałe. Należy również pamiętać, że aby korzystać z tej funkcji w HTML5, należy włączyć obsługę WebGL w opcjach gry.
+   
+  Składnia:
   draw_primitive_begin(kind)
   
     
       
         Argument
-        Type
-        Description
+        Typ
+        Opis
       
       
         kind
-        Primitive Type Constant
+        Typ prymitywny Stała
         The kind of primitive you are going to draw.
       
     
   
-   
-  Returns:
+   
+  Zwroty:
   N/A
-   
-  Example:
+   
+  Przykład:
   var _steps = 20;
     var _xx = 50;
     var _yy = 50;
@@ -77,18 +77,18 @@
         draw_vertex(_xx + lengthdir_x(_radius, 270 * i / _steps), _yy + lengthdir_y(_radius, 270 * i / _steps));
     }
     draw_primitive_end();
-  The above code will draw three quarters of a circle made from primitives.
-   
-   
-   
+  Powyższy kod narysuje trzy ćwiartki okręgu utworzonego z prymitywów.
+   
+   
+   
   
     
       
-        Back: Primitives And Vertex Formats
-        Next: draw_primitive_begin_texture
+        Powrót: Prymitywy i Vertex Formaty
+        Następny: draw_primitive_begin_texture
       
     
-    © Copyright YoYo Games Ltd. 2022 All Rights Reserved
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

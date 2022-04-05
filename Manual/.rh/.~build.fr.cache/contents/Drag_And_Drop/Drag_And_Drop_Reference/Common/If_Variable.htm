@@ -1,7 +1,7 @@
 
   
    Jeśli zmienna
-  Ta akcja służy do sprawdzania stanu danej zmiennej względem danej wartości przy użyciu określonego wyrażenia. Instrukcja "if" zawsze zwraca wartość true lub false, a wyrażeniem sprawdzającym może być dowolne z następujących wyrażeń
+  Ta akcja służy do sprawdzania stanu danej zmiennej względem danej wartości przy użyciu określonego wyrażenia. Instrukcja "if" zawsze zwróci albo true albo false, a wyrażeniem sprawdzającym może być dowolne z następujących wyrażeń
     następujących:
   
     Equals to - zmienna i wartość są dokładnie równe
@@ -13,7 +13,7 @@
   Jeśli flag argument "Not", to powyższe wyrażenia zostaną zanegowane, na przykład "równa się" stanie się "nie równa się". Należy również pamiętać, że ani zmienna, ani argument "value" nie są ograniczone do wartości liczbowych
     i mogą to być string, wskaźnik, identyfikator zasobu lub cokolwiek innego, co funkcja może zwrócić lub wykorzystać (więcej informacji na ten temat znajduje się w rozdziale dotyczącym typów danych ), ale nie można porównywać dwóch
     ale nie można porównywać dwóch różnych typów danych bez otrzymania błędu - na przykład jeśli zmienna przechowuje adres string i próbujesz sprawdzić, czy jest ona równa liczbie, otrzymasz błąd składni.
-  WAŻNA UWAGA: Ze względu na problemy z precyzją zmiennoprzecinkową sprawdzenie, czy dwie wartości są dokładnie równe, może zwrócić false, ponieważ jedna z nich może wynosić dokładnie 1, podczas gdy
+  WAŻNA UWAGA: Ze względu na problemy z precyzją zmiennoprzecinkową sprawdzenie, czy dwie wartości są dokładnie równe, może zwrócić false, ponieważ jedna z nich może wynosić dokładnie 1, a
     druga może mieć wartość 1.00000000000001. Można tego uniknąć, stosując przed sprawdzeniem działanie Decimal to Integer lub używając wyrażeń "greater than" i "less than".
   Należy pamiętać, że aby dodać akcje do bloku "jeśli", należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:
   Te akcje będą teraz uruchamiane, jeśli "if" zakończy się wynikiem true, podczas gdy wszelkie
@@ -34,7 +34,7 @@
       
       
         Not
-        Ustawiane w celu sprawdzenia, czy wyrażenie nie ma wartości true.
+        Ustawia się w celu sprawdzenia, czy wyrażenie nie ma wartości true.
       
       
         Expression

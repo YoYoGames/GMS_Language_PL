@@ -3,8 +3,8 @@
   physics_fixture_set_density
   Gęstość czegoś definiuje się jako masę na jednostkę objętości, co oznacza, jak wiele masy mieści się w przestrzeni, którą zajmuje dany przedmiot w świecie. Zatem balon ma małą gęstość, ponieważ ma małą masę, a zajmuje dużą przestrzeń,
     natomiast sztabka ołowiu miałaby dużą gęstość, ponieważ ma dużą masę, ale zajmuje mało miejsca.
-  W świecie fizyki GameMaker Studio 2 2D, masa jest obliczana automatycznie
-    na podstawie wartości wprowadzonych dla gęstości oraz powierzchni kształtu zdefiniowanego przez ciebie dla elementu mocującego. Będzie to miało bezpośredni wpływ na stopień bezwładności, jak również na reakcję na kolizje i siły, więc
+  W świecie fizyki 2D programu GameMaker masa jest obliczana automatycznie
+    na podstawie wartości wprowadzonych przez ciebie dla gęstości oraz powierzchni kształtu, który zdefiniowałeś dla uchwytu. Będzie to miało bezpośredni wpływ na to jak dużą bezwładność ma element, jak reaguje na kolizje i siły, więc
     jeśli zdefiniujesz mały kształt o dużej gęstości, będzie on miał bardzo dużą masę (jak sztabka ołowiu), ale jeśli zdefiniujesz duży kształt o małej gęstości, będzie on miał dużo mniejszą masę (jak balon).
   UWAGA: Jeśli chcesz, by instancja, która ma otrzymać element mocujący była statyczna (tzn. nieruchoma w świecie gry), wówczas gęstość powinna być ustawiona na 0, co w istocie daje jej nieskończoną gęstość.
   UWAGA Statyczny uchwyt można uczynić kinematycznym (tzn. może się on poruszać, ale bez efektów siły lub grawitacji) przez nadanie mu gęstości 0, a następnie ustawienie parametrów phy_speed_x

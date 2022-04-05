@@ -2,15 +2,15 @@
   
   Redaktor Room 
   
-  W edytorze room tworzy się pokoje gier. Każda gra wymaga do działania co najmniej jednej strony room. Na stronie room można umieszczać instancje, strony sprites, tiles, paths oraz tła. Każda z tych różnych stron assets może być umieszczona na swojej własnej warstwie , którą można dowolnie uporządkować w edytorze warstw. Ze względu na złożoność edytora room przedstawimy najpierw krótki przegląd najważniejszych funkcji, a następnie można znaleźć bardziej szczegółowe informacje w odnośnikach do sekcji wymienionych poniżej.
+  W edytorze room tworzy się pokoje gier. Każda gra wymaga do działania co najmniej jednej strony room. Na stronie room można umieszczać instancje, sprites, tiles, paths i tła. Każda z tych różnych stron assets może być umieszczona na swojej własnej warstwie , którą można dowolnie uporządkować w edytorze warstw. Ze względu na złożoność edytora room przedstawimy najpierw krótki przegląd najważniejszych funkcji, a następnie można znaleźć bardziej szczegółowe informacje w odnośnikach do sekcji wymienionych poniżej.
     Gdy utworzysz zasób room, możesz kliknąć prawym przyciskiem myszy na nim w przeglądarce Asset, by otworzyć menu kontekstowe, które pozwoli Ci utworzyć dzieci rooms (więcej informacji znajdziesz na stronie Dziedziczenie ), otworzyć room do edycji, dodać nową grupę zasobów, by lepiej zorganizować rooms, zmienić nazwę room lub go usunąć. Pamiętaj, że aby zmienić kolejność i/lub dziedziczenie room, musisz użyć narzędzia Room Manager, które możesz otworzyć za pomocą menu w prawym górnym rogu przeglądarki Asset.
-  Edytor room sam w sobie jest przestrzenią roboczą i jako taki może być kliknięty na zakładce  i przeciągnięty z okna głównego do nowego, własnego okna - na przykład w innym wyświetlaczu. Można ją również umieścić z powrotem w oknie głównym, przeciągając kartę na górę okna IDE i zwalniając przycisk myszy.
+  Edytor room jest sam w sobie obszarem roboczym i jako taki może być kliknięty na zakładce  i przeciągnięty z okna głównego do nowego, własnego okna - na przykład w innym wyświetlaczu. Można ją również umieścić z powrotem w oknie głównym, przeciągając kartę na górę okna IDE i zwalniając przycisk myszy.
   Interfejs użytkownika edytora room jest prosty w nawigacji i podzielony na różne dyskretne sekcje. Te części edytora, które są zadokowane - właściwości pomieszczenia i edytor warstw, a także różne sekcje właściwości warstw - można również usunąć z doku, przeciągając je na stronę workspace, a następnie dodać z powrotem do doku, przeciągając je na boki lub na dół strony workspace.
   Poniżej znajduje się krótkie omówienie każdej z sekcji Edytora Room:
   Linijki / Prowadnice
   
     Linijki wzdłuż krawędzi płótna pokazują położenie elementów, które są w nim umieszczane, i są zaznaczone od punktu (0, 0), który jest środkiem płótna i punktem początkowym dla room. Możesz kliknąć i przeciągnąć linijki, aby przyciągnąć poziomą lub pionową prowadnicę do room. Prowadnica ta może być używana do dokładnego pozycjonowania różnych używanych stron assets, ponieważ zbliżenie strony asset do jednej z nich spowoduje jej "przytrzaśnięcie" do prowadnicy. Podczas pozycjonowania strony assets w obrębie strony room tymczasowo wyświetlane są także inteligentne prowadnice wskazujące odległość między stronami assets oraz odległość od granicy lub punktu centralnego strony room.
-    Odległość, na jaką strona assets "przyciąga" się do prowadnic, a także inne właściwości można ustawić w oknie Preferencje edytora sali.
+    Odległość, na jaką strona assets "przyciąga" się do prowadnic, a także inne właściwości, można ustawić w preferencjach edytora sali.
      
   
   Edytor warstw
@@ -23,7 +23,7 @@
         
           
           Instancje
-          Ta warstwa służy do umieszczania instancji, które będą używane w serwisie room.
+          Na tej warstwie umieszcza się instancje, które będą używane w witrynie room.
         
         
           
@@ -64,20 +64,20 @@
   
   Właściwości pomieszczenia
   
-    W tej części edytora room można zdefiniować wszystkie podstawowe właściwości strony room, takie jak jej rozmiar, użycie fizyki, kamery i rzutnie, których wymaga. Sekcja ta jest omówiona bardziej szczegółowo tutaj.
+    W tej części edytora room można zdefiniować wszystkie podstawowe właściwości strony room, takie jak jej rozmiar, użycie fizyki czy wymagane kamery i rzutnie. Sekcja ta jest omówiona bardziej szczegółowo tutaj.
      
   
   Przybornik warstw
   
-    Niektóre typy warstw mają dodatkowe narzędzia dodane na górze strony IDE w Przyborniku warstw (na przykład warstwy tile lub path ). Dokładne narzędzia zmieniają się w zależności od typu aktualnie edytowanej warstwy, dlatego zostały wyjaśnione na stronie wyjaśniającej poszczególne warstwy, tutaj.
+    W przypadku niektórych typów warstw do górnej części strony IDE w Przyborniku warstw zostaną dodane dodatkowe narzędzia (na przykład warstwy tile lub path ). Dokładne narzędzia zmieniają się w zależności od typu aktualnie edytowanej warstwy, dlatego zostały wyjaśnione na stronie wyjaśniającej poszczególne warstwy, tutaj.
      
   
   Przybornik pokojowy
   
     W górnej części głównego okna edytora Room znajdują się elementy sterujące sposobem wyświetlania elementów. Są to:
     
-       Przełącz siatkę na płótnie: Ta opcja włącza lub wyłącza siatkę płótna edytora Room. Jest to siatka, którą GameMaker Studio 2 rysuje nad głównym płótnem, aby podzielić je na sekcje. Domyślnie jest ona ustawiona na rozmiar 32x32px. Jeśli jednak klikniesz ikonę menu Siatka , otworzysz opcje siatki:. Opcje te pozwalają ustawić kolor i alfę siatki, a także wartości komórek siatki wzdłuż osi X i Y. Masz także możliwość włączenia lub wyłączenia siatki. Można tu również włączyć lub wyłączyć przyciąganie siatki (domyślnie włączone). Skróty klawiaturowe "G" oraz  + "G" służą do przełączania widoczności siatki i jej przyciągania.
-       Elementy sterujące powiększeniem obrazu: Te przyciski sterują bieżącym poziomem powiększenia obrazu. Możesz powiększać lub pomniejszać, a kliknięcie przycisku  spowoduje przywrócenie proporcji obszaru roboczego 1:1 z edytowanym obszarem room. Możesz także kliknąć przycisk Dopasuj do okna , aby całe płótno room zmieściło się w bieżącym edytorze workspace (nastąpi odpowiednie powiększenie/pomniejszenie). Możesz także powiększać i zmniejszać obraz za pomocą przycisków  /  i kółka myszy , a naciśnięcie  /  +  spowoduje ustawienie płótna room w stosunku 1:1 z ustawieniami room.
+       Przełącz siatkę na płótnie: Ta opcja włącza/wyłącza siatkę płótna edytora Room. Jest to siatka, którą GameMaker rysuje nad głównym płótnem, aby podzielić je na sekcje. Domyślnie jest ona ustawiona na rozmiar 32x32px. Jeśli jednak klikniesz ikonę menu siatki , otworzysz opcje siatki:. Opcje te pozwalają ustawić kolor i alfę siatki, a także wartości komórek siatki wzdłuż osi X i Y. Masz także możliwość włączenia lub wyłączenia siatki. Można tu również włączyć lub wyłączyć przyciąganie siatki (domyślnie włączone). Skróty klawiaturowe "G" oraz  + "G" służą do przełączania widoczności siatki i jej przyciągania.
+       Elementy sterujące powiększeniem obrazu: Te przyciski sterują bieżącym poziomem powiększenia obrazu. Możesz powiększać lub pomniejszać, a kliknięcie przycisku  spowoduje przywrócenie proporcji obszaru roboczego 1:1 z edytowanym obszarem room. Możesz także kliknąć przycisk Dopasuj do okna , aby całe płótno room zmieściło się w bieżącym edytorze workspace (nastąpi odpowiednie powiększenie/pomniejszenie). Możesz także powiększać i zmniejszać obraz za pomocą przycisków  /  i kółka myszy , a naciśnięcie przycisków  /  +  spowoduje ustawienie płótna room w stosunku 1:1 z ustawieniami room.
         Pokaż widoki: Kliknięcie tego przycisku powoduje włączenie lub wyłączenie prostokąta widoku. Po włączeniu tej funkcji pojawi się podświetlony obszar oznaczający różne widoki dostępne na stronie room.
         Odtwórz animacje: Podczas dodawania stron sprites, sequences lub animowanych tiles, możesz chcieć zobaczyć, jak będą one wyglądać w samej witrynie room, bez konieczności kompilowania całego projektu. Możesz więc kliknąć to pole, aby rozpocząć odtwarzanie różnych animacji. Ponowne kliknięcie tego przycisku spowoduje zatrzymanie animacji.
         Kanwa Zaznacz z dowolnej warstwy: Domyślnie po kliknięciu elementu na kanwie room można zaznaczyć tylko te elementy assets, które znajdują się na aktualnie edytowanej warstwie. Jeśli jednak włączysz tę opcję, możesz kliknąć dowolny element i zostanie on zaznaczony, a warstwa docelowa zostanie zmieniona na tę, na której znajduje się dany element. Aby tymczasowo włączyć tę funkcję, można użyć skrótu klawiaturowego " P" (przytrzymaj "P", aby włączyć, i puść, aby wyłączyć)
@@ -90,7 +90,7 @@
     W środkowej części okna edytora room znajduje się obszar, w którym odbywa się cała właściwa edycja. To tutaj będziesz umieszczał swoje instancje i assets, rysował tiles lub pozycjonował paths. Powiększanie i pomniejszanie odbywa się za pomocą kółka myszy lub elementów sterujących room na górze, a przesuwanie - przez przytrzymanie środkowego przycisku myszy  i przesuwanie myszy lub użycie  +  podczas przesuwania.
     Podczas tworzenia warstw asset lub warstw instancji możesz umieścić warstwę asset lub instancję, po prostu przeciągając ją z przeglądarki Asset, a następnie upuszczając w wybranym miejscu. Możesz też wybrać stronę asset lub instancję z przeglądarki Asset, a następnie nacisnąć i przytrzymać przycisk , aby wyświetlić podgląd zasobu "in-situ", a jeśli dodatkowo klikniesz lewy przycisk myszy , możesz dodać instancję, a nawet "namalować" ją na warstwie room, trzymając wciśnięty przycisk i przeciągając mysz. Zauważ, że domyślnie instancje i sprites dodane do room w ten sposób będą przyciągane do zdefiniowanych ustawień siatki room, ale możesz przytrzymać  / , by instancja podążała dokładnie za myszą i nie była przyciągana (zwolnienie  /  pozwoli na ponowne przyciąganie).
     W przypadku paths możesz utworzyć nową warstwę path i zasób path bezpośrednio z edytora Room - lub utworzyć nowy zasób path i przeciągnąć go do głównego okna edytora, tak jak w przypadku instancji - a następnie edytować warstwę path i jej połączenia także w oknie edytora. W przypadku tile sets można je "namalować" z poziomu edytora tile set.
-    Zauważ, że możesz zaznaczyć i przenieść lub usunąć wiele stron assets z tej samej warstwy, przytrzymując przyciski  /  +  na tych, które chcesz, a większość zasobów w edytorze room pozwoli Ci je obracać i skalować (pojedynczo lub jako grupę), klikając i przytrzymując przycisk  wzdłuż zewnętrznych krawędzi lub rogów i przeciągając myszą. Możesz także dwukrotnie kliknąć  na dowolnym pojedynczym elemencie asset (tiles, instancje, sprites), aby edytor przesunął się na niego i otworzył okno właściwości wybranego elementu asset.
+    Zauważ, że możesz zaznaczyć i przenieść lub usunąć wiele stron assets z tej samej warstwy, przytrzymując przyciski  /  +  na tych, które chcesz, a większość zasobów w edytorze room pozwoli Ci je obracać i skalować (pojedynczo lub jako grupę), klikając i przytrzymując  wzdłuż zewnętrznych krawędzi lub rogów i przeciągając myszą. Możesz także dwukrotnie kliknąć  na dowolnej pojedynczej stronie asset (tiles, instancje, sprites), aby edytor przesunął się na nią i otworzył okno właściwości wybranej strony asset.
      
   
   Pasek stanu
@@ -104,13 +104,14 @@
     Typy i właściwości warstw
     Właściwości pomieszczenia
     Dziedziczenie pomieszczeń
+    Filtry i efekty
   
   Menu pokojowe
   Oprócz narzędzi wewnętrznych w edytorze, w górnej części strony IDE dodano nowe menu rozwijane.
   Poniżej przedstawiono wyjaśnienia dotyczące tych menu:
   
     Widok warstwy: Umożliwia ponowne otwarcie okna edytora warstw, jeśli zostało ono zamknięte w dowolnym momencie.
-    Właściwości pomieszczenia: Ta opcja ponownie otworzy okno Room Properties (Właściwości sali), jeśli zostało ono zamknięte w dowolnym momencie.
+    Właściwości pomieszczenia: Spowoduje to ponowne otwarcie okna Room Properties (Właściwości sali), jeśli zostało ono zamknięte w dowolnym momencie.
     Właściwości warstwy: Umożliwia ponowne otwarcie okna Właściwości warstwy, jeśli zostało ono zamknięte w dowolnym momencie.
     Kolejność tworzenia instancji: Otworzy to okno  Kolejność tworzenia instancji (można je także otworzyć za pomocą przycisku w oknie Właściwości pomieszczenia ):
       Okno to zawiera listę wszystkich instancji w room w kolejności, w jakiej będą one tworzone (od góry do dołu). Jeśli chcesz, by konkretna instancja została utworzona przed innymi, możesz po prostu kliknąć na stronie  i przeciągnąć ją na żądaną pozycję.
@@ -122,10 +123,10 @@
     Edycja kafelków: Podczas pracy z warstwą tile ta opcja będzie podświetlona w menu rozwijanym. Posiada ona następujące podmenu:
       Podczas edycji warstwy tile możesz zaznaczyć wiele tiles, klikając, przytrzymując i przeciągając lewy przycisk myszy , lub zaznaczyć i pogrupować poszczególne tiles, używając  /  + , albo usunąć poszczególne tiles z zaznaczenia, używając  + . Z tego menu można następnie wyczyścić zaznaczenie lub odwrócić je, a także wyciąć, skopiować lub wkleić zaznaczenie do innej warstwy (lub nawet do tej samej warstwy, ale w innym położeniu). Ostatnia opcja spowoduje ponowne otwarcie zadokowanego okna edytora tile set, jeśli zostało ono zamknięte.
     
-    Konwertuj obraz na mapę Tile: Opcja Konwertuj obraz na mapę Tile jest potężnym narzędziem, które może być używane do importowania pojedynczego obrazu, a następnie wyodrębnienia z niego tiles i odtworzenia go jako warstwy mapy tile w edytorze room, tworząc w tym procesie wymagane tile set i sprite. Po wybraniu tego narzędzia użytkownik zostanie poproszony o dostarczenie nieskompresowanego pliku obrazu (PNG, GIF lub BMP), który zostanie wczytany. Po wczytaniu pliku zostanie wyświetlone narzędzie Import obrazu:
-      W tym miejscu można wybrać sposób podziału pliku tile podczas tworzenia strony tile set, a także ustawić szerokość i wysokość komórek oraz ewentualne przesunięcia wokół krawędzi. Można także ustawić przybliżoną szerokość (w pikselach) ostatecznej wersji tworzonej strony sprite. Na przykład jeśli witryna tile set składa się z komórek tile o rozmiarach 64x64 i ustawisz szerokość 200, ostateczna strona sprite, która zostanie utworzona w witrynie tile set, będzie miała szerokość 192 pikseli (czyli 3 komórki tile ). Jeśli pozostawisz domyślną wartość 0, to GameMaker Studio 2 będzie próbował utworzyć jak najbardziej "kwadratową" stronę sprite z mniej więcej taką samą liczbą komórek w poziomie i w pionie tile.
+    Konwertuj obraz na mapę Tile: Opcja Konwertuj obraz na mapę Tile jest potężnym narzędziem, które może być używane do importowania pojedynczego obrazu, a następnie wyodrębnienia z niego tiles i odtworzenia go jako warstwy mapy tile w edytorze room, tworząc w tym procesie wymagane tile set i sprite. Po wybraniu tego narzędzia użytkownik zostanie poproszony o dostarczenie nieskompresowanego pliku obrazu (PNG, GIF lub BMP), który następnie zostanie wczytany. Po wczytaniu pliku zostanie wyświetlone narzędzie Import obrazu:
+      W tym miejscu można wybrać sposób podziału pliku tile podczas tworzenia strony tile set, a także ustawić szerokość i wysokość komórek oraz ewentualne przesunięcia wokół krawędzi. Można także ustawić przybliżoną szerokość (w pikselach) ostatecznej wersji tworzonej strony sprite. Na przykład jeśli witryna tile set składa się z komórek tile o rozmiarach 64x64 i ustawisz szerokość 200, ostateczna strona sprite, która zostanie utworzona w witrynie tile set, będzie miała szerokość 192 pikseli (czyli 3 komórki tile ). Jeśli pozostawisz domyślną wartość 0, GameMaker będzie próbował utworzyć jak najbardziej "kwadratową" stronę sprite z mniej więcej taką samą liczbą komórek tile w poziomie i w pionie.
       
-      Po określeniu sposobu podziału obrazu kliknięcie suwaka obok opcji Usuń kolor spowoduje otwarcie palety kolorów i umożliwi wybranie koloru, który ma zostać usunięty z ostatecznej wersji sprite. Zazwyczaj jest to kolor tła, który ma zostać usunięty, a ustawienie tego paska na wartość inną niż 100% przezroczystości (alfa 0) spowoduje usunięcie wybranego koloru podczas importu.
+      Po ustawieniu sposobu podziału obrazu kliknięcie suwaka obok opcji Usuń kolor spowoduje otwarcie palety kolorów i umożliwi wybranie koloru, który ma zostać usunięty z ostatecznej wersji sprite. Zazwyczaj jest to kolor tła, który ma zostać usunięty, a ustawienie tego paska na wartość inną niż 100% przezroczystości (alfa 0) spowoduje usunięcie wybranego koloru podczas importu.
       
       Na koniec możesz nadać nazwy warstwom map sprite, tile set i tile, które zostaną utworzone za pomocą tego narzędzia. Po zakończeniu importu zostanie utworzona strona sprite ze wszystkimi obrazami ułożonymi w siatkę, a także strona tile set z tej strony sprite. Na stronie room zostanie utworzona nowa warstwa mapy tile, a obraz zostanie odtworzony przy użyciu wygenerowanej strony tile set. Należy pamiętać, że narzędzie nie powiela strony tiles i zamiast tego rozpoznaje, gdy komórka zawiera dane obrazu, które pokrywają się z inną komórką (dotyczy to także obróconej strony tiles). Widać to na poniższym obrazie, na którym utworzono tylko jeden kwiat tile i jedną skrzynię tile, ale na obrazie podstawowym jest wiele instancji obu tych elementów, a niektóre z nich są obrócone:
       
@@ -140,7 +141,7 @@
         Następny: Skrypty
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

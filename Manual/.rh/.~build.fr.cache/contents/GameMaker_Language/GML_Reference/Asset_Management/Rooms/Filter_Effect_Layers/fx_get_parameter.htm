@@ -2,24 +2,27 @@
   
   fx_get_parameter
   Funkcja ta służy do pobierania wartości parametru z FX Struct. Podaje się adres FX struct do odczytu (zwrócony przez fx_create() lub layer_get_fx()) i nazwę parametru jako string, a funkcja zwraca jego bieżącą wartość. Może to być wartość rzeczywista lub tablica, jeśli parametr jest wektorem (czyli grupą wartości, np. vec4 przechowującą kolor RGBA).
-  Należy pamiętać, że nazwy parametrów danego efektu odpowiadają nazwom używanym wewnętrznie przez jego witrynę shader, dlatego zawsze będą miały przedrostek "g_". Ze względu na to, że nazwy parametrów nie są ustandaryzowane, znajomość nazw parametrów filtrów/efektów może nie być intuicyjna, dlatego można użyć funkcji fx_get_parameter_names() aby poznać nazwy wszystkich parametrów, które mają zastosowanie dla danego filtra/efektu.
+  Na tej stronie można znaleźć nazwy parametrów filtru/efektu: Typy i parametry FX.
    
   Składnia:
   fx_get_parameter(filter_or_effect, parameter_name);
   
     
       
-        ArgumentTyp
+        Argument
+        Typ
         Opis
-     
+      
       
         filter_or_effect
+        Struktura walutowa
         The FX struct to get the parameter from
-     
+      
       
         parameter_name
+        String
         The name of the parameter to get the value of (as a string)
-     
+      
     
   
    

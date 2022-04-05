@@ -2,7 +2,7 @@
   
    Ustaw głośność główną
   Za pomocą tej czynności można ustawić głośność dla całego systemu dźwiękowego. Podawana wartość głośności może wynosić od 0 (cisza) do 1 (pełna głośność), a skala jest liniowa, czyli wartość 0,5 oznacza połowę głośności. Należy pamiętać, że to działanie będzie miało wpływ na wszystkie
-    wszystkie instancje wszystkich dźwięków odtwarzanych aktualnie w witrynie room, a także wpłynie na wszystkie przyszłe instancje wszystkich odtwarzanych dźwięków. Działanie to jest także niezależne od głośności ustawionej dla poszczególnych dźwięków, więc jeśli dźwięk ma być odtwarzany z głośnością 0,5
+    wszystkie instancje wszystkich dźwięków odtwarzanych aktualnie w witrynie room, a także wpłynie na wszystkie przyszłe instancje wszystkich odtwarzanych dźwięków. Działanie to jest również niezależne od głośności ustawionej dla poszczególnych dźwięków, więc jeśli dźwięk ma być odtwarzany z głośnością 0,5
     a następnie ustawisz głośność główną na 0,5, dźwięk ten będzie odtwarzany z głośnością 0,25.
    
   Składnia działania:
@@ -23,7 +23,7 @@
    
   Przykład:
   Powyższy kod bloku akcji sprawdza zmienną globalną, czy ma ona wartość true czy
-    false. Jeśli jest to true, to pobierana jest wartość głośności głównej systemu dźwiękowego i zapisywana w tymczasowej zmiennej lokalnej. Następnie sprawdzane jest, czy wartość ta nie jest równa 0,5, a jeśli nie, to głośność główna systemu dźwiękowego
+    false. Jeśli jest to true, to pobierana jest główna głośność systemu dźwiękowego i zapisywana w tymczasowej zmiennej lokalnej. Następnie sprawdzane jest, czy wartość ta nie jest równa 0,5, a jeśli nie, to głośność główna systemu dźwiękowego
     jest ustawiana na 0,5. Jeśli zmienna globalna ma wartość false, to głośność główna jest ustawiana na 1.
    
    

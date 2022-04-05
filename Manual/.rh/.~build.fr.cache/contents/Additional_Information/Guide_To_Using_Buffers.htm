@@ -1,10 +1,10 @@
 
   
-  Przewodnik po używaniu buforów
-  Strona buffer (w programowaniu) to miejsce w pamięci systemowej, które służy do przechowywania małych pakietów danych dotyczących praktycznie wszystkiego (na przykład: przesyłania danych, kolizji, kolorów itp...). Ponieważ jest przechowywana w pamięci systemowej, dostęp do niej jest bardzo szybki, a buffer jest zwykle używana do przechowywania bardzo krótkoterminowych danych, takich jak odbieranie informacji z sieci przed ich przetworzeniem lub do przechowywania punktu kontrolnego w grze (wyjaśniono to w przykładzie podanym w dalszej części strony).
-  Bufory są tworzone poprzez przydzielenie miejsca w pamięci systemowej , liczonego w bajtach, które jest następnie rezerwowane dla Twojej gry tak długo, jak gra jest uruchomiona lub do momentu usunięcia buffer za pomocą odpowiedniej funkcji (wszystkie funkcje GML buffer znajdziesz tutaj). Oznacza to, że nawet jeśli gra nie jest w centrum uwagi (np. na urządzeniu przenośnym, gdy odbierasz połączenie, gra przechodzi w tło), adres buffer nadal istnieje, ale jeśli gra zostanie zamknięta lub ponownie uruchomiona, adres buffer zostanie utracony.
+  Przewodnik korzystania z buforów
+  Strona buffer (w programowaniu) to miejsce w pamięci systemowej, które służy do przechowywania małych pakietów danych dotyczących praktycznie wszystkiego (np. transferu danych, kolizji, kolorów itp.). Ponieważ jest przechowywana w pamięci systemowej, dostęp do niej jest bardzo szybki, a buffer jest zwykle używana do bardzo krótkotrwałego przechowywania danych, na przykład do odbierania informacji z sieci przed ich przetworzeniem lub do przechowywania punktu kontrolnego w grze (wyjaśniono to w przykładzie podanym w dalszej części strony).
+  Bufory są tworzone poprzez przydzielenie miejsca w pamięci systemowej , liczonego w bajtach, które jest następnie rezerwowane dla Twojej gry tak długo, jak gra jest uruchomiona, lub do momentu usunięcia buffer za pomocą odpowiedniej funkcji (wszystkie funkcje GML buffer znajdziesz tutaj). Oznacza to, że nawet jeśli gra nie jest w centrum uwagi (np. na urządzeniu przenośnym, gdy odbierasz połączenie, gra przechodzi w tło), adres buffer będzie nadal istniał, jednak w przypadku zamknięcia lub ponownego uruchomienia gry adres buffer zostanie utracony.
   UWAGA: Ponowne uruchomienie gry nie spowoduje wyczyszczenia ani usunięcia adresu buffer! Uniemożliwi jednak dalszy dostęp do wcześniej utworzonej strony buffer, ponieważ utracony zostanie uchwyt identyfikacyjny, co spowoduje wyciek pamięci, który w końcu doprowadzi do awarii gry. Dlatego przy ponownym uruchamianiu gry pamiętaj, aby najpierw usunąć wszystkie buffers.
-  GameMaker Studio 2 pozwala na tworzenie czterech różnych typów buffer. Powodem tego jest fakt, że buffers został zaprojektowany jako wysoce zoptymalizowany tymczasowy nośnik danych i dlatego należy utworzyć buffer odpowiedni do typu danych, które mają być przechowywane, w przeciwnym razie mogą wystąpić błędy lub wąskie gardło w kodzie. Zanim wyjaśnimy to dalej, przyjrzyjmy się czterem dostępnym typom buffer (zdefiniowanym jako stałe w GML):
+  GameMaker pozwala na tworzenie czterech różnych typów buffer. Powodem tego jest fakt, że buffers został zaprojektowany jako wysoce zoptymalizowany tymczasowy nośnik danych i dlatego powinieneś utworzyć buffer odpowiedni do typu danych, które chcesz w nim przechowywać, w przeciwnym razie możesz otrzymać błędy lub spowodować wąskie gardło w swoim kodzie. Zanim wyjaśnimy to dalej, przyjrzyjmy się czterem dostępnym typom buffer (zdefiniowanym jako stałe w GML):
    
   
     
@@ -15,7 +15,7 @@
       
         buffer_fixed
         
-          Adres buffer o stałym rozmiarze w bajtach. Rozmiar ten jest ustalany podczas tworzenia strony buffer i nie może być ponownie zmieniony.
+          Adres buffer o stałym rozmiarze w bajtach. Rozmiar jest ustalany podczas tworzenia strony buffer i nie może być ponownie zmieniony.
       
       
         buffer_grow
@@ -30,17 +30,17 @@
       
         buffer_fast
         
-          Jest to specjalny, "okrojony" adres buffer, na którym można bardzo szybko odczytywać i zapisywać dane. Można go jednak używać tylko z typami danych buffer_u8 i musi być wyrównany do 1 bajta. (Informacje o typach danych i wyrównaniu bajtów można znaleźć w dalszej części tej strony).
+          Jest to specjalny, "okrojony" adres buffer, na którym można bardzo szybko odczytywać i zapisywać dane. Można go jednak używać tylko z typami danych buffer_u8 i musi być wyrównany do 1 bajta. (Informacje o typach danych i wyrównywaniu bajtów można znaleźć w dalszej części tej strony).
       
     
   
    
-  Są to typy buffer dostępne podczas korzystania z GameMaker Studio 2, a to, który z nich wybierzesz, zależy w dużej mierze od tego, do czego chcesz go wykorzystać. Na przykład strona grow buffer byłaby używana do przechowywania "migawek" danych w celu utworzenia zapisu gry, ponieważ nie znasz rzeczywistej ilości danych, które zostaną w niej umieszczone, a strona fast buffer byłaby używana, gdy wiesz, że wszystkie wartości, z którymi pracujesz, zawierają się w przedziale od 0 do 255 lub od -128 do 127, na przykład podczas przetwarzania danych ARGB z obrazu.
+  Są to typy buffer dostępne w programie GameMaker, a to, który z nich wybierzesz, zależy w dużej mierze od tego, do czego chcesz go wykorzystać. Na przykład strona grow buffer byłaby używana do przechowywania "migawek" danych w celu utworzenia zapisu gry, ponieważ nie znasz rzeczywistej ilości danych, które zostaną w niej umieszczone, lub szybka buffer byłaby używana, gdy wiesz, że wszystkie wartości, z którymi pracujesz, zawierają się w przedziale od 0 do 255 lub od -128 do 127, na przykład podczas przetwarzania danych ARGB z obrazu.
   Tworząc stronę buffer, należy zawsze starać się nadać jej rozmiar odpowiedni dla danego typu, przy czym ogólna zasada mówi, że powinna ona być utworzona tak, aby pomieścić maksymalny rozmiar danych, które ma przechowywać, a w razie wątpliwości należy użyć grow buffer, aby zapobiec błędom nadpisywania.
   Faktyczny kod tworzący stronę buffer wygląda mniej więcej tak:
   player_buffer = buffer_create(16384, buffer_fixed, 2);
   
-    W ten sposób powstanie stała strona buffer o rozmiarze 16384 bajtów i wyrównana do 2 bajtów. Funkcja zwróci unikatową wartość identyfikacyjną przechowywaną w zmiennej, która umożliwi późniejsze odwoływanie się do tej strony buffer.
+    W ten sposób powstałaby stała strona buffer o rozmiarze 16384 bajtów i wyrównana do 2 bajtów. Funkcja zwróciłaby unikatową wartość identyfikacyjną, która jest przechowywana w zmiennej w celu późniejszego odwoływania się do tej strony buffer.
   Podczas odczytywania i zapisywania danych na stronie buffer robi się to w "kawałkach" danych określonych przez ich "typ danych". Typ danych" określa liczbę bajtów przydzielonych w ramach buffer dla zapisywanej wartości i bardzo ważne jest, aby go poprawnie określić, w przeciwnym razie można uzyskać bardzo dziwne wyniki (lub nawet błędy) w swoim kodzie.
   Bufory są zapisywane (i odczytywane) sekwencyjnie, tzn. jedna porcja danych jest zapisywana po drugiej, a każda porcja danych jest określonego typu. Oznacza to, że użytkownik powinien zawsze wiedzieć, jakie dane zapisuje w buforze buffer. Te typy danych są zdefiniowane w witrynie GML za pomocą następujących stałych:
    
@@ -61,7 +61,7 @@
         buffer_s8
         1
         
-          Podpisana, 8-bitowa liczba całkowita. Może to być wartość dodatnia lub ujemna z zakresu od -128 do 127 (0 oznacza wartość dodatnią).
+          Podpisana, 8-bitowa liczba całkowita. Może to być wartość dodatnia lub ujemna z zakresu od -128 do 127 (0 jest wartością dodatnią).
       
       
         buffer_u16
@@ -73,7 +73,7 @@
         buffer_s16
         2
         
-          Podpisana, 16-bitowa liczba całkowita. Może to być wartość dodatnia lub ujemna z zakresu od -32,768 do 32,767 (wartość 0 jest dodatnia).
+          Podpisana, 16-bitowa liczba całkowita. Może to być wartość dodatnia lub ujemna z zakresu od -32,768 do 32,767 (0 oznacza wartość dodatnią).
       
       
         buffer_f16
@@ -132,7 +132,7 @@
     buffer_write(buff, buffer_s16, obj_Player.x);
     buffer_write(buff, buffer_s16, obj_Player.y);
     buffer_write(buff, buffer_string, global.Player_Name);
-  Patrząc na powyższy przykład, widać, że można zapisywać różne typy danych na stronie buffer w tym samym czasie (w przypadku korzystania z szybkiego bufora jesteśmy ograniczeni tylko do określonego typu danych), a dane te będą kolejno dodawane do strony buffer (choć ich faktyczna pozycja w buffer będzie zależała od wyrównania bajtów, co wyjaśniono poniżej). Tak samo jest w przypadku odczytywania informacji z buffer. W powyższym przykładzie dane z buffer należy odczytywać w takiej samej kolejności, w jakiej zostały zapisane, sprawdzając, czy dane są tego samego typu, np:
+  Patrząc na powyższy przykład, widać, że można zapisywać różne typy danych na stronie buffer w tym samym czasie (w przypadku korzystania z szybkiego bufora jesteśmy ograniczeni tylko do jednego typu danych), a dane te będą kolejno dodawane do strony buffer (choć ich faktyczna pozycja w buffer będzie zależała od wyrównania bajtów, co wyjaśniono poniżej). Tak samo jest w przypadku odczytywania informacji z buffer. W powyższym przykładzie dane z buffer należy odczytywać w takiej samej kolejności, w jakiej zostały zapisane, sprawdzając, czy dane są tego samego typu, np:
   global.Sound = buffer_read(buff, buffer_bool);
     global.Music = buffer_read(buff, buffer_bool);
     obj_Player.x = buffer_read(buff, buffer_s16);
@@ -147,7 +147,7 @@
    
   Bufor Punkt kontrolny
   
-    Prostym przykładem zastosowania strony buffer w dowolnej grze GameMaker Studio 2 na dowolną platformę jest funkcja game_save_buffer(). Funkcja ta wykonuje "migawkę" bieżącego stanu gry i zapisuje ją na wcześniej zdefiniowanej stronie buffer, z której następnie można ją odczytać w celu ponownego załadowania gry w tym punkcie.
+    Prostym przykładem na to, jak można wykorzystać stronę buffer w dowolnej grze GameMaker na dowolną platformę, jest funkcja game_save_buffer(). Funkcja ta wykonuje "migawkę" bieżącego stanu gry i zapisuje ją w zdefiniowanym wcześniej adresie buffer, który można następnie odczytać, aby ponownie załadować grę w tym samym punkcie.
     UWAGA: Ta funkcja jest bardzo ograniczona i została zaprojektowana dla początkujących graczy, aby szybko uruchomić system punktów kontrolnych. Bardziej zaawansowani użytkownicy mogą jednak preferować kodowanie własnego systemu przy użyciu funkcji pliku, ponieważ gra nie zapisze żadnych zasobów dynamicznych, które można utworzyć w czasie gry, takich jak struktury danych, powierzchnie, dodane strony sprites, itp.
     Pierwszą rzeczą, którą musimy zrobić, jest utworzenie nowego adresu object, który będzie sterował zapisywaniem i ładowaniem danych, dlatego należy go utworzyć i nadać mu zdarzenie Create. W tym zdarzeniu można umieścić następujący kod:
     SaveBuffer = buffer_create(1024, buffer_grow, 1);
@@ -158,7 +158,7 @@
       buffer_seek(SaveBuffer, buffer_seek_start, 0);
       game_save_buffer(SaveBuffer);
     Powyższe działanie spowoduje najpierw ustawienie zmiennej sterującej na true (dzięki czemu zostanie ona zapisana podczas zapisywania gry na stronie buffer), a następnie przejście na początek strony buffer przed zapisaniem do niej bieżącego stanu zapisu. Dlaczego używamy buffer_seek()? Otóż, jak już wspomniano na tej stronie, czytasz i zapisujesz na stronie buffer od miejsca, w którym ostatnio zostały do niej dodane dane. Oznacza to, że jeśli nie ustawisz buffer tell z powrotem na początek, to podczas zapisywania dane zostaną dodane do buffer w bieżącej pozycji odczytu/zapisu buffer. Dlatego użyjemy funkcji buffer_seek(), aby przenieść tell na początek buffer.
-    Aktualny stan gry został zapisany na stronie buffer. Następnym krokiem będzie zakodowanie sposobu jego wczytania, prawdopodobnie w innym zdarzeniu Keypress Event:
+    Aktualny stan gry został zapisany na stronie buffer. Następnym krokiem będzie zakodowanie sposobu jego załadowania, prawdopodobnie w innym zdarzeniu Keypress Event:
     if StateSaved
       {
           buffer_seek(SaveBuffer, buffer_seek_start, 0);
@@ -168,12 +168,12 @@
     UWAGA: Można tego używać tylko w tej samej witrynie room, a nie do generowania kompletnych zapisanych gier po zamknięciu lub ponownym uruchomieniu gry!
     Ostatnią rzeczą, którą należy dodać do kontrolera object, jest kod "czyszczący". Buffers są przechowywane w pamięci i jeśli nie wyczyścisz ich po zakończeniu, mogą wystąpić wycieki pamięci, które w końcu spowodują lagi i awarię gry. Można więc dodać zdarzenie zakończenia pomieszczenia (z kategorii Inne zdarzenia ) o treści:
     buffer_delete(SaveBuffer);
-    Tę stronę object można teraz umieścić w witrynie room, a po naciśnięciu klawisza zapisać i wczytać stan room z witryny buffer.
+    Tę stronę object można teraz umieścić w witrynie room, a po naciśnięciu klawisza zapisać i załadować stan room z witryny buffer.
      
   
   Bufory sieciowe
   
-    Podczas pracy z funkcjami sieciowymi GameMaker Studio 2 należy użyć buffers do utworzenia pakietu danych, który jest przesyłany przez połączenie sieciowe. Ten przykład ma na celu pokazanie, jak to się robi, ale ze względu na zakres możliwości sieciowych ma on na celu jedynie pokazanie, jak korzystać z samych funkcji buffers, a nie z całego systemu sieciowego.
+    Podczas pracy z funkcjami sieciowymi programu GameMaker należy używać adresu buffers do tworzenia pakietów danych, które są przesyłane przez połączenie sieciowe. Ten przykład ma na celu pokazanie, jak to się robi, ale ze względu na zakres możliwości sieciowych ma on na celu jedynie pokazanie, jak używać samego buffers, a nie całego systemu sieciowego.
     Pierwszą rzeczą, którą pokażemy, jest tworzenie i używanie buffer po stronie klienta połączenia sieciowego. Ta strona buffer będzie używana do tworzenia małych pakietów danych, które następnie będą mogły być wysyłane do strony server, dlatego w zdarzeniu tworzenia instancji przypisalibyśmy jej adres buffer w następujący sposób:
     send_buff = buffer_create(256, buffer_grow, 1);
     Strona buffer jest niewielka (256 bajtów), ponieważ nie jest przeznaczona do przechowywania dużych ilości danych, a następnie jest powiększana (grow buffer ), aby zapewnić brak błędów w przypadku konieczności dodania większej ilości danych do wysłania w dowolnym momencie, a wyrównanie jest ustawione na jeden dla wygody.
@@ -191,7 +191,7 @@
           key = buffer_read(buff, buffer_s16);
           key_state = buffer_read(buff, buffer_bool);
       }
-    Zdarzenie asynchroniczne będzie zawierało specjalną tymczasową mapę DS async_load (jest ona usuwana z pamięci po zakończeniu zdarzenia automatycznie), która zawiera różne informacje w zależności od typu danych przychodzących z sieci. W tym przypadku zakładamy, że mapa została sprawdzona i uznana za pakiet danych buffer wysłany od klienta. Sprawdzamy teraz pierwszą część danych, która znajduje się na stronie buffer, aby sprawdzić, jakiego rodzaju zdarzenie zostało wysłane - w tym przypadku wartość "1" oznacza zdarzenie związane z klawiszem, jednak podczas kodowania takich rzeczy należy zdefiniować stałe przechowujące te wartości, aby uprościć pracę - a następnie zapisujemy naciśnięty klawisz i jego stan (true = naciśnięty, false = zwolniony). Te informacje zostaną następnie użyte do aktualizacji wszystkich klientów o nowy stan gracza wysyłającego.
+    Zdarzenie asynchroniczne będzie zawierało specjalną tymczasową mapę DS async_load (jest ona usuwana z pamięci po zakończeniu zdarzenia automatycznie), która zawiera różne informacje w zależności od typu danych przychodzących z sieci. W tym przypadku zakładamy, że mapa została sprawdzona i uznana za pakiet danych buffer wysłany od klienta. Sprawdzamy teraz pierwszą część danych, która znajduje się na stronie buffer, aby sprawdzić, jakiego rodzaju zdarzenie zostało wysłane - w tym przypadku wartość "1" oznacza zdarzenie związane z klawiszem, jednak podczas kodowania takich rzeczy należy zdefiniować stałe przechowujące te wartości, aby uprościć pracę - a następnie zapisujemy naciśnięty klawisz i jego stan (true = naciśnięty, false = zwolniony). Te informacje zostaną następnie użyte do zaktualizowania wszystkich klientów o nowy stan gracza wysyłającego.
     UWAGA: Strona buffer utworzona z mapy DS jest automatycznie usuwana na końcu zdarzenia asynchronicznego sieci, więc nie ma potrzeby używania tutaj funkcji buffer_delete().
      
   

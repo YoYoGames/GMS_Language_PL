@@ -1,0 +1,328 @@
+
+  Typy i parametry FX
+  Na tej stronie znajduje się lista wszystkich typów filtrów/efektów dostępnych w programie GameMakerwraz z następującymi informacjami o każdym FX:
+  
+    Wewnętrzna nazwa (np. "_filter_tintfilter"), którą można przekazać do fx_create(), aby utworzyć FX w czasie pracy.
+    Opis
+    Przykładowy obraz
+    Parametry IDE, które można edytować w oknie Właściwości warstwy
+    Runtime Parameters (Parametry w czasie rzeczywistym), które mogą być używane do modyfikowania efektówFX na stronie runtime, za pomocą funkcji Filter i Effect.
+      
+        W parametrach Runtime podano także ich typy, dzięki czemu wiadomo, jaki typ danych należy zastosować do danego parametru.
+      
+    
+  
+   
+  
+    
+      
+      
+      
+      
+      
+    
+    
+      
+        Typ
+        Opis
+        Przykład
+        Parametry IDE
+        Parametry w czasie rzeczywistym
+      
+      
+        Odcień koloru
+          
+          "_filter_tintfilter"
+        
+        Nadaje kolorowy odcień renderowanej zawartości.
+        
+        Kolor odcienia
+        g_TintCol (Array)
+      
+      
+        Pokoloruj
+          
+          "_filter_colourise"
+        
+        Zmienia wszystko tak, aby wyświetlało się z podanym odcieniem i nasyceniem.
+        
+        Intensywność pomocy
+          Kolor odcienia
+        g_Intensity (Real)
+          g_TintCol (Array)
+        
+      
+      
+        Desaturacja
+          
+          "_filter_greyscale"
+        
+        Zmniejsza nasycenie renderowanej zawartości o określoną wartość intensywności.
+        
+        Intensywność pomocy
+        g_Intensity (Real)
+      
+      
+        Zniekształcenie
+          
+          "_filter_zniekształceń"
+        
+        Stosuje zniekształcenia w grze, używając obrazu texture.
+        
+        Skala
+          Kwota
+          Przesunięcie
+          Zniekształć teksturę
+        g_DistortScale (Real)
+          g_DistortAmount (Real)
+          g_DistortOffset (Real)
+          g_DistortTexture (Sampler)
+        
+      
+      
+        Tło w kropki
+          
+          "_filter_kropki"
+        
+        Wprowadza do gry efekt kropek, z opcjonalną animacją. Efekt szumu można uzyskać, ustawiając małą wartość skali.
+        
+        Skala
+          Rozmiar
+          Przesunięcie
+          Przesunięcie
+          Prędkość animacji
+          Kolor Szybkość
+          Liczba kolorów
+          Ostrość
+          Paleta kolorów
+        g_DotsScale (Real)
+          g_DotsSize (Real)
+          g_DotsOffset (Real)
+          g_DotsDisplacement (Real)
+          g_DotsSpeed (Real)
+          g_DotsColourSpeed (Real)
+          g_DotsColours (Real)
+          g_DotsSharpness (Real)
+          g_DotsPalette (Sampler)
+        
+      
+      
+        Wykryj krawędź
+          
+          "_filter_edgedetect"
+        
+        Wykorzystuje wykrywanie krawędzi, dzięki czemu w grze widoczne są tylko krawędzie.
+        
+        Próg
+        g_Threshold (Real)
+      
+      
+        Ciepła Haze
+          
+          "_filter_heathaze"
+        
+        Tworzy animowany efekt mgiełki ciepła, przydatny do wyświetlania gorących środowisk.
+        
+        Zniekształcenie 1 Prędkość
+          Zniekształcenia 2 Prędkość
+          Zniekształcenie 1 Skala
+          Skala zniekształcenia 2
+          Wartość zniekształcenia 1
+          Kwota zniekształcenia 2
+          Rozpiętość chromatyczna
+          Skala przesunięcia kamery
+          Zniekształć teksturę
+        g_Distort1Speed (Real)
+          g_Distort2Speed (Real)
+          g_Distort1Scale (Real)
+          g_Distort2Scale (Real)
+          g_Distort1Amount (Real)
+          g_Distort2Amount (Real)
+          g_ChromaSpreadAmount (Real)
+          g_CamOffsetScale (Real)
+          g_DistortTexture (Sampler)
+        
+      
+      
+        Duże rozmycie
+          
+          "_filter_large_blur"
+        
+        Rozmycie obrazu.
+        
+        Promień
+          Tekstura szumu
+        g_Radius (Real)
+          g_NoiseTexture (Sampler)
+        
+      
+      
+        Rozmycie liniowe
+          
+          "_filter_linear_blur"
+        
+        Tworzy liniowy efekt rozmycia kontrolowany przez podane wartości wektorów (X i Y, w zakresie od -128 do 128).
+        
+        Wektor
+          Tekstura szumu
+        g_LinearBlurVector (Array)
+          g_NoiseTexture (Sampler)
+        
+      
+      
+        Zarys
+          
+          "_filter_outline"
+        
+        Tworzy kontur wokół nieprzezroczystej zawartości warstwy. Aby uzyskać najlepszy efekt, użyj tej funkcji jako jednowarstwowego efektu FX.
+        
+        Kolor konturu
+          Promień
+          Skala pikseli
+        g_OutlineColour (Array)
+          g_OutlineRadius (Real)
+          g_OutlinePixelScale (Real)
+        
+      
+      
+        Pixelate
+          
+          "_filter_pixelate"
+        
+        Sprawia, że renderowana zawartość wygląda na rozpikselowaną, umożliwiając zmianę rozmiaru każdego piksela. Nadaje to renderowanej zawartości wygląd niskiej rozdzielczości.
+        
+        Wielkość komórki
+        g_CellSize (Real)
+      
+      
+        Posterise
+          
+          "_filter_posterise"
+        
+        Stosuje efekt posteryzacji do renderowanej zawartości, umożliwiając zmianę maksymalnych poziomów kolorów dla każdego odcienia.
+        
+        Poziomy kolorów
+        g_ColourLevels (Real)
+      
+      
+        Wstrząs ekranu
+          
+          "_filter_screenshake"
+        
+        Powoduje, że renderowana zawartość trzęsie się, symulując efekt drgań aparatu. Działa najlepiej, gdy jest kontrolowana pod adresem runtime.
+        
+        Magnituda
+          Prędkość wstrząsów
+          Tekstura szumu
+        g_Magnitude (Real)
+          g_ShakeSpeed (Real)
+          g_NoiseTexture (Sampler)
+        
+      
+      
+        Tło w paski
+          
+          "_filter_stripes"
+        
+        Tworzy efekt nieprzezroczystego, pasiastego tła.
+        
+        Szerokość
+          Kierunek
+          Przesunięcie
+          Przemieszczenie
+          Prędkość animacji
+          Skala fali
+          Amplituda fali
+          Liczba kolorów
+          Ostrość
+          Paleta kolorów
+        g_StripesWidth (Real)
+          g_StripesDirection (Real)
+          g_StripesOffset (Real)
+          g_StripesDisplacement (Real)
+          g_StripesSpeed (Real)
+          g_StripesFrequency (Real)
+          g_StripesAmplitude (Real)
+          g_StripesColours (Real)
+          g_StripesSharpness (Real)
+          g_StripesPalette (Sampler)
+        
+      
+      
+        Wirowanie Zniekształcenie
+          
+          "_filter_twirl_distort"
+        
+        Tworzy efekt wirującego zniekształcenia na środku kamery (+ przesunięcie).
+        
+        Kąt
+          Promień
+          Przesunięcie
+        g_DistortAngle (Real)
+          g_DistortRadius (Real)
+          g_DistortOffset (Real)
+        
+      
+      
+        Pod wodą
+          
+          "_filter_podwodny"
+        
+        Sprawia, że renderowana zawartość wygląda tak, jakby znajdowała się pod wodą.
+        
+        Zniekształcenie 1 Prędkość
+          Zniekształcenia 2 Prędkość
+          Zniekształcenie 1 Skala
+          Skala zniekształcenia 2
+          Wartość zniekształcenia 1
+          Kwota zniekształcenia 2
+          Rozpiętość chromatyczna
+          Skala przesunięcia kamery
+          Kolor połysku
+          Kolor tint
+          Dodaj kolor
+          Zniekształć teksturę
+        g_Distort1Speed (Real)
+          g_Distort2Speed (Real)
+          g_Distort1Scale (Real)
+          g_Distort2Scale (Real)
+          g_Distort1Amount (Real)
+          g_Distort2Amount (Real)
+          g_ChromaSpreadAmount (Real)
+          g_CamOffsetScale (Real)
+          g_GlintCol (Array)
+          g_TintCol (Array)
+          g_AddCol (Array)
+          g_DistortTexture (Sampler)
+        
+      
+      
+        Biały szum
+          
+          "_filter_whitenoise"
+        
+        Dodaje biały szum z opcjonalną animacją.
+        
+        Intensywność pomocy
+          Animacja
+          Tekstura szumu
+        g_WhiteNoiseIntensity (Real)
+          g_WhiteNoiseAnimation (Real)
+          g_WhiteNoiseTexture (Sampler)
+        
+      
+    
+  
+   
+  
+    
+      
+        Powrót: Filtry i efekty
+        Następny: Skrypty
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

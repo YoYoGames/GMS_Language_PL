@@ -1,10 +1,10 @@
 
   
   external_define
-  Tej funkcji można użyć do zdefiniowania zewnętrznego wywołania funkcji do określonego pliku dll (w przypadku Windows) lub dylib (w przypadku komputerów Mac). Ten plik może być zarówno plikiem dołączonym, jak i częścią extension.
+  Funkcji tej można użyć do zdefiniowania zewnętrznego wywołania funkcji do określonego pliku dll (w przypadku Windows) lub dylib (w przypadku komputerów Mac). Ten plik może być zarówno plikiem dołączonym, jak i częścią extension.
   Podajemy nazwę (oraz path) pliku, a następnie nazwę funkcji, którą chcemy zdefiniować. Następnie należy określić konwencję wywoływania (patrz lista stałych poniżej) oraz typ oczekiwanego wyniku (również stały, wymienione poniżej).
-  Na koniec należy podać liczbę argumentów, jakie może przyjmować funkcja (od 0 do 15), a dla każdego z nich należy określić jego typ. Należy pamiętać, że w przypadku funkcji z 4 lub więcej argumentami, wszystkie muszą być typu ty_real.
-  UWAGA: Dotyczy to tylko plików dll lub dylib, które zostały dodane jako "pliki dołączone" do pakietu GameMaker Studio 2 IDE. Nie będzie działać z plikami dodanymi jako extensions, ponieważ wymagają one zdefiniowania funkcji w samym pakiecie extension.
+  Na końcu należy podać liczbę argumentów, jakie może przyjmować funkcja (od 0 do 15), a dla każdego z nich należy określić jego typ. Należy pamiętać, że w przypadku funkcji z 4 lub więcej argumentami, wszystkie muszą być typu ty_real.
+  UWAGA: Dotyczy to tylko plików dll lub dylib, które zostały dodane jako "Included Files" do pakietu GameMaker IDE. Nie będzie działać z plikami dodanymi jako extensions, ponieważ wymagają one zdefiniowania funkcji w samym pakiecie extension.
   
     
       
@@ -24,7 +24,7 @@
       
       
         dll_stdcall
-        To jest standardowe wywołanie WinAPI (tylkoWindows dll )
+        Jest to standardowe wywołanie WinAPI (tylkoWindows dll )
       
     
   

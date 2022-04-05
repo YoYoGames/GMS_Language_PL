@@ -2,7 +2,7 @@
   
   Debugger
    Debugger to potężne narzędzie do sprawdzania gry, szczególnie przydatne do wyszukiwania błędów i usterek w kodzie, sprawdzania, czy scripts jest uruchamiany wtedy, kiedy powinien, czy zmienne i tablice zawierają wartości
-    wartości, których oczekujesz itd... Program Debugger można uruchomić, uruchamiając grę w GameMaker Studio 2 IDE za pomocą przycisku Debug  w górnej części strony IDE, lub przechodząc do menu Build i wybierając opcję "Debug".
+    wartości, których oczekujesz itd... Możesz uruchomić Debugger, uruchamiając grę z GameMaker IDE za pomocą przycisku Debug  w górnej części strony IDE, lub przechodząc do menu Build i wybierając opcję "Debug".
   UWAGA: W witrynie Windows Firewall (lub innym uruchomionym programie typu firewall) może pojawić się monit o utworzenie wyjątku bezpieczeństwa dla tego modułu. Musisz to zrobić, w przeciwnym razie moduł nie będzie działał poprawnie. Wynika to ze sposobu
     działania Debugger i jest niezbędne dla platform mobilnych debugging.
   Po uruchomieniu gry w trybie debugowania na stronie IDE zostaną wyświetlone różne narzędzia dostępne dla debuggera:
@@ -11,11 +11,11 @@
   Poniżej wyjaśniamy, do czego służą poszczególne części strony debugger:
   Widok wykresu
   
-    W widoku Wykres wyświetlane jest graficzne przedstawienie wykorzystania pamięci przez projekt oraz jego framerate w czasie:
+    W widoku Wykres wyświetlany jest graficzny obraz wykorzystania pamięci przez projekt oraz jego framerate w czasie:
     Wykres przedstawia bieżące i średnie użycie pamięci oraz bieżące i średnie FPS w czasie. Wykres można powiększać i pomniejszać za pomocą przycisków  /  oraz kółka myszy , a umieszczenie kursora myszy nad dowolnym elementem wykresu spowoduje wyświetlenie wartości tego elementu w wybranym punkcie.
-    W widoku Wykres są także wyświetlane pewne zdarzenia debugowania w postaci punktów na całej długości wykresu. Zdarzenia te są generowane automatycznie przez witrynę GameMaker Studio 2 w określonych momentach gry, aby pokazać konkretne ważne zdarzenia.
+    W widoku Graph wyświetlane są także pewne zdarzenia debugowania w postaci punktów na całej długości wykresu. Zdarzenia te są generowane automatycznie przez program GameMaker w pewnych momentach gry, aby pokazać konkretne ważne zdarzenia, ale możesz też
       dodawać własne elementy wykresu za pomocą funkcji show_debug_message() oraz . debug_event().
-      Zdarzenia systemowe będą oznaczane innym kolorem niż zdarzenia wywoływane przez kod:
+      Zdarzenia systemowe będą oznaczone innym kolorem niż te, które są wywoływane przez kod:
     Po uruchomieniu gry w trybie debugowania i kliknięciu myszą na te zdarzenia zostanie wyświetlona lista wszystkich zdarzeń, które zostały wywołane w danym momencie gry,
       Masz możliwość wyciągnięcia listy do osobnego okna, aby ją poprawić, klikając tekst "Kliknij, aby otworzyć w nowym oknie":
     
@@ -23,21 +23,21 @@
   
   Widok zasobów
   
-    Widok Zasobów pokazuje listę wszystkich zasobów używanych w projekcie, które mogą zawierać kod lub akcje DnD™. Ta sekcja działa podobnie jak Przeglądarka zasobów i możesz rozwijać znajdujące się w niej elementy, aby wyświetlić więcej informacji.
-      w niej, aby wyświetlić więcej informacji, na przykład różne zdarzenia dla konkretnej strony object. Możesz następnie dwukrotnie kliknąć  na dowolnym z zasobów, aby otworzyć
+    Widok Zasoby pokazuje listę wszystkich zasobów używanych w projekcie, które mogą zawierać kod lub akcje wizualne GML. Ta sekcja działa podobnie jak Przeglądarka zasobów i można rozwinąć elementy
+      w celu wyświetlenia większej ilości informacji, na przykład różnych zdarzeń dla danego zasobu object. Następnie można dwukrotnie kliknąć  na dowolnym z zasobów, aby otworzyć
       aby otworzyć jego kod w oknie Widok kodu, gdzie można sprawdzić wartości oraz dodać lub usunąć punkty przerwania.
      
   
   Stos wywołań
   
     W tym oknie zostanie wyświetlony bieżący stos wywołań zdarzeń oraz numer wiersza wykonywanego kodu. Stos wywołań to w zasadzie struktura danych typu "ostatnie weszło - pierwsze wyszło", która pokazuje kolejność wykonywania całego kodu gry
-      zarówno z runnera GameMaker Studio 2 - ponieważ debugging jest wykonywany przy użyciu maszyny wirtualnej (VM) - jak i z kodu napisanego przez użytkownika. Strona debugger będzie musiała
+      zarówno z programu uruchamiającego GameMaker - ponieważ debugging jest wykonywany przy użyciu maszyny wirtualnej (VM) - jak i z kodu napisanego przez użytkownika. Strona debugger będzie musiała
       zostać wstrzymany , zanim zostaną wyświetlone jakiekolwiek informacje.
      
   
   Pasek narzędzi
   
-    Na pasku narzędzi znajdują się elementy sterujące debugger oraz podstawowe informacje, takie jak użycie pamięci, bieżące (rzeczywiste) FPS dla gry oraz wskaźnik pokazujący, czy strona debugger jest aktualnie podłączona, czy nie (wskaźnik będzie miał kolor zielony, jeśli jest podłączona
+    Na pasku narzędzi znajdują się elementy sterujące debugger oraz podstawowe informacje, takie jak użycie pamięci, bieżące (rzeczywiste) FPS dla gry oraz wskaźnik pokazujący, czy strona debugger jest aktualnie podłączona, czy nie (wskaźnik będzie zielony, jeśli jest podłączona
       z działającą instancją Twojego projektu, a w przeciwnym razie będzie czerwony). Dostępne elementy sterujące to:
     
       
@@ -87,7 +87,7 @@
   
   Widok kodu
   
-    Widok kodu to miejsce, w którym można zobaczyć i przejrzeć różne scripts lub kod zdarzeń z naszego projektu w trakcie jego działania. Domyślnie jest on pusty, ale możesz dwukrotnie kliknąć  na dowolną stronę asset z Widoku zasobów , aby ją otworzyć. Możesz także otworzyć wiele różnych zdarzeń lub scripts, a zostaną one dodane do widoku kodu workspace w postaci zakładek na górze.
+    Widok kodu to miejsce, w którym możemy zobaczyć i przejrzeć różne scripts lub kod zdarzeń z naszego projektu w trakcie jego działania. Domyślnie jest on pusty, ale możesz dwukrotnie kliknąć  na dowolną stronę asset z Widoku zasobów , aby ją otworzyć. Możesz także otworzyć wiele różnych zdarzeń lub scripts, a zostaną one dodane do widoku kodu workspace w postaci zakładek na górze.
     Gdy dowolne okno kodu jest otwarte w Widoku kodu, możesz kliknąć lewym przyciskiem myszy  w rynnie (tam, gdzie znajdują się numery wierszy), aby dodać lub usunąć punkty przerwania (zob.
       dalej na tej stronie, aby uzyskać informacje na temat breakpoints).
     Można również użyć prawego przycisku myszy , aby otworzyć menu kontekstowe, które umożliwia również dodawanie i usuwanie breakpoints oraz kopiowanie dowolnego
@@ -109,9 +109,9 @@
   Kolejną ważną częścią strony debugging jest użycie punktów przerwania (Breakpoints). breakpoint to miejsce w kodzie projektu, które chcesz, aby zostało zatrzymane, abyś mógł zobaczyć, co się dzieje. Po uruchomieniu Debugger możesz dodawać i usuwać punkty przerwania
     w dowolnym momencie i w dowolnym kodzie lub bloku script, klikając lewym przyciskiem myszy  w rynnie (tam, gdzie znajdują się numery wierszy), lub używając prawego przycisku myszy  aby
     otworzyć menu kontekstowe, które również umożliwia dodawanie i usuwanie punktów przerwania:
-  Punkty przerwania można także ustawiać z poziomu strony GameMaker Studio 2 IDE. Podczas pisania projektu można je w każdej chwili dodać lub usunąć za pomocą
+  Punkty przerwania można także ustawiać w programie GameMaker IDE. Podczas pisania projektu można je w każdej chwili dodać lub usunąć za pomocą
     f9 (lub używając prawego przycisku myszy  i wybierając opcję "toggle breakpoint"), albo na akcji w oknie object 
-      (dla użytkowników DnD™), albo na linii w oknie edytora kodu. Teraz, gdy uruchomisz grę w trybie debugowania, zostanie ona zatrzymana w zdefiniowanym przez Ciebie punkcie (lub punktach).
+      (dla użytkowników GML Visual) lub na wierszu w oknie edytora kodu. Teraz, gdy uruchomisz grę w trybie debugowania, zostanie ona zatrzymana w zdefiniowanym przez Ciebie punkcie (lub punktach).
   Punkty przerwania ustawione na stronie IDE są zapisywane razem z projektem i pozostają w różnych uruchomieniach aż do ich ponownego usunięcia, jednak jeśli dodasz do kodu w breakpoint punkt Debugger, zostanie on utracony po zamknięciu modułu lub rozpoczęciu nowego uruchomienia testowego.
     Należy pamiętać, że wszystkie breakpoints pojawią się w oknie wyjściowym, gdzie można je włączyć lub wyłączyć, a nawet usunąć.
    

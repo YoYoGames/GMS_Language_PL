@@ -1,55 +1,53 @@
 
   
   przełącznik
-  W wielu sytuacjach chcemy, aby instancje wykonywały różne akcje w zależności od określonej wartości. Możesz to zrobić, używając kilku następujących po sobie if / else ale gdy liczba możliwych wyborów przekracza dwa lub trzy, zwykle łatwiej jest użyć instrukcji switch. Instrukcja switch ma następującą postać:
+  W wielu sytuacjach chcemy, aby instancje wykonywały różne czynności w zależności od określonej wartości. Możesz to zrobić, używając kilku następujących po sobie if / else ale gdy liczba możliwych wyborów przekracza dwa lub trzy, zwykle łatwiej jest użyć instrukcji switch.
+  Polecenie switch ma następującą składnię:
   switch (<expression>)
     {
-        case <constant1>: <statement1>; ... ; break;
-        case <constant2>: <statement2>; ... ; break;
-        ...
-        default: <statement>;
+        case <constant1>:
+            <code>
+        break;
+    
+        case <constant2>:
+            <code>
+        break;
+        
+        // more cases (with breaks)
+    
+        default:
+            <code>;
     }
+  
   Działa to w następujący sposób:
   
     Najpierw wykonywane jest wyrażenie.
-    Następnie jest ona porównywana z wynikami różnych stałych po każdym zwyrażeń case. Kiedy mówimy "stała", mamy na myśli to, że wartość w danym przypadku nie może być zmiennym wyrażeniem i musi być stałą wartością dowolnego typu danych, taką jak "walka" lub 3 albo słowo kluczowe noone. 
-    Wykonywanie jest kontynuowane po pierwszej instrukcji case z poprawną wartością, aż do napotkania instrukcji break .
-    Jeśli żadna instrukcja case nie ma właściwej wartości, zostanie wykonana instrukcja default (nie jest wymagane posiadanie instrukcji default, a jeśli nie zostanie podana żadna, nie zostanie podjęte żadne działanie).
+    Następnie jej wynik jest porównywany z różnymi stałymi występującymi po każdym zwyrażeń case. Kiedy mówimy "stała", mamy na myśli to, że wartość w danym przypadku nie może być zmiennym wyrażeniem, lecz musi być stałą wartością dowolnego typu danych, taką jak "walka", 3 lub słowo kluczowe noone. 
+    Wykonywanie rozpoczyna się od pierwszej instrukcji case z pasującą wartością, aż do napotkania instrukcji break .
+    Jeśli żadna z instrukcji case nie zawiera pasującej wartości, zostanie wykonana instrukcja default. Nie jest wymagane posiadanie instrukcji default, a jeśli nie ma żadnej, to nie zostanie podjęta żadna akcja, gdy nie ma pasujących przypadków. Instrukcja default może być umieszczona w dowolnym miejscu bloku switch, jednak tradycyjnie umieszcza się ją na dole, po wszystkich przypadkach.
   
+  UWAGA Instrukcja switch będzie kontynuować wykonywanie kodu w obrębie case, dopóki nie zostanie napotkana instrukcja break. Jeśli nie użyjesz breaks na końcu swoich przypadków, spowoduje to "przeciek" switch do następnej sekcji case, a nawet do sekcji default, jeśli na drodze nie ma breaks. Może to powodować niezamierzone zachowania, ponieważ wykonanie jednej strony case może spowodować wykonanie wielu stron case, dlatego należy używać strony break tam, gdzie jest to wskazane.
   Prostym przykładem użycia oświadczenia switch może być coś takiego:
-  switch (global.state)
+  switch (player_lives)
     {
-        case "alert":
-            if (instance_exists(obj_Player))
-            {
-                if (point_distance(x, y, obj_Player.x, obj_Player.y) < 100)
-                {
-                    global.state = "chase";
-                }
-            }
+        case 3:
+            draw_sprite(20, 20, spr_face_healthy);
         break;
-        case "chase":
-            var _lost = false;
-            if (instance_exists(obj_Player))
-            {
-                move_towards_point(obj_Player.x, obj_Player.y, 2);
-                if (point_distance(x, y, obj_Player.x, obj_Player.y) > 100)
-                {
-                    _lost = true;
-                }
-            }
-            else _lost = true;
     
-            if (_lost)
-            {
-                speed = 0;
-                global.state = "alert";
-            }
+        case 2:
+            draw_sprite(20, 20, spr_face_hurt);
         break;
+    
+        case 1:
+            draw_sprite(20, 20, spr_face_fatal);
+        break;
+    
+        default:
+            draw_sprite(20, 20, spr_face_fainted);
+        break;
     }
   
-  Mamy tu zmienną globalną przechowującą wartość string, która służy do ustawiania zachowania (stanu) instancji. W tym przykładzie instancja po prostu przełącza się między dwoma stanami, ale bardzo łatwo można to rozszerzyć o więcej stanów, dodając kolejne instrukcje case dla dodatkowych stanów strings, takich jak "walcz" lub "umieraj" itd.
-  Zwróć uwagę, że do wykonania tego samego polecenia można użyć wielu instrukcji case, ponieważ instrukcja break nie zawsze jest wymagana dla każdego case. Jeśli dla danego case nie ma instrukcji break, wykonywanie jest po prostu kontynuowane z kodem dla następnego przypadku, np:
+  Zauważ, że do wykonania tej samej instrukcji można użyć wielu instrukcji case, ponieważ instrukcja break nie zawsze jest wymagana dla każdej z nich case. Jeśli dla danego case nie ma instrukcji break, wykonywanie jest po prostu kontynuowane z kodem dla następnego przypadku, np:
   switch (keyboard_key)
     {
         case vk_left:
@@ -73,7 +71,8 @@
         break;
     }
   
-  Powyższy kod wykorzystuje stronę switch do sprawdzenia zdarzenia na klawiaturze, a następnie porównuje je z każdą z wymienionych stron case. Jeśli spełnia on którąś z wymaganych wartości, wykonywany jest odpowiedni kod. Zauważ, że w kodzie wykorzystaliśmy sposób, w jaki switch może sprawdzać wiele cases i kontynuować, jeśli nie napotka break, aby umożliwić użycie różnych klawiszy w celu uzyskania tego samego wyniku. Zauważ, że każdy adres case może mieć swój własny kod, dzięki czemu można stworzyć swego rodzaju system "dziedziczenia", w którym więcej niż jeden adres case i jego kod będą wykonywane kolejno po sobie, aż do osiągnięcia punktu przerwania, zależnego od wartości początkowego wyrażenia switch.
+  Powyższy kod wykorzystuje stronę switch do sprawdzenia zdarzenia na klawiaturze, a następnie porównuje je z każdą z wymienionych stron case. Jeśli spełnia on którąś z wymaganych wartości, wykonywany jest odpowiedni kod. Zwróć uwagę, że strona switch może sprawdzać wiele stron cases i wykonywać kod aż do następnej break, aby umożliwić użycie różnych klawiszy w celu uzyskania tego samego wyniku.
+  Każda strona case może mieć swój własny kod, dzięki czemu można utworzyć system "dziedziczenia", w którym sprawa wykonuje swój własny kod, a następnie kod dla następnej sprawy.
    
    
    
@@ -84,7 +83,7 @@
         Następny: break
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

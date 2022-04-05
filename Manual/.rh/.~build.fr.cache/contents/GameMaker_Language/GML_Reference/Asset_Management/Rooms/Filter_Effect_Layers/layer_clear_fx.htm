@@ -15,7 +15,7 @@
       
       
         layer_name_or_id
-        Ciąg lub identyfikator warstwy
+        String lub Identyfikator warstwy
         The name or ID of the layer to clear the FX for
       
     
@@ -43,7 +43,7 @@
             temp_fx = -1;
         }
     }
-  Powyższy kod sprawdza, czy został naciśnięty klawisz "E", a następnie sprawdza, czy na warstwie "EffectLayer" został zastosowany filtr/efekt; w takim przypadku zapisuje jego FX struct w tymczasowej zmiennej instancji i oczyszcza warstwę z wszelkich filtrów/efektów. Po naciśnięciu klawisza "F" sprawdzane jest, czy zmienna tymczasowa zawiera wartość inną niż -1, i w takim przypadku następuje ponowne zastosowanie tego efektu do warstwy i przywrócenie zmiennej tymczasowej wartości -1. Wszystko to umożliwia włączanie i wyłączanie efektu w dowolnym momencie bez utraty jego parametrów.
+  Powyższy kod sprawdza, czy został naciśnięty klawisz "E", a następnie sprawdza, czy na warstwie "EffectLayer" został zastosowany filtr/efekt; w takim przypadku zapisuje jego FX struct w tymczasowej zmiennej instancji i oczyszcza warstwę z wszelkich filtrów/efektów. Po naciśnięciu klawisza "F" sprawdzane jest, czy zmienna tymczasowa zawiera wartość inną niż -1, a w takim przypadku następuje ponowne zastosowanie tego efektu do warstwy i przywrócenie zmiennej tymczasowej wartości -1. Wszystko to umożliwia włączanie i wyłączanie efektu w dowolnym momencie bez utraty jego parametrów.
    
    
    
@@ -51,7 +51,7 @@
     
       
         Powrót: Funkcje filtrów i efektów
-        Next: fx_create
+        Next: layer_enable_fx
       
     
     © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.

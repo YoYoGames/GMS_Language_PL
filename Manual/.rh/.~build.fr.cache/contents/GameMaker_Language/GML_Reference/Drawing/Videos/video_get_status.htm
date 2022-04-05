@@ -1,0 +1,71 @@
+
+  video_get_status
+  Ta funkcja zwraca stan aktualnie załadowanego filmu. Statusem może być dowolna z poniższych stałych:
+  
+    
+      
+      
+    
+    
+      
+        Stała stanu wideo
+      
+      
+        Stała
+        Opis
+      
+      
+        video_status_closed
+        Nie załadowano żadnego filmu lub film został zamknięty za pomocą video_close()
+      
+      
+        video_status_preparing
+        Film jest w trakcie przygotowywania i nie rozpoczął jeszcze odtwarzania
+      
+      
+        video_status_playing
+        Film jest obecnie odtwarzany
+      
+      
+        video_status_paused
+        Film zostanie wstrzymany (patrz video_pause()).
+      
+    
+  
+   
+  Składnia:
+  video_get_status();
+   
+  Zwroty:
+  Video Status Constant
+   
+  Przykład:
+  var _status = video_get_status();
+    
+    if (keyboard_check_pressed(vk_space))
+    {
+        if (_status == video_status_playing)
+        {
+            video_pause();
+        }
+        else if (status == video_status_paused)
+        {
+            video_resume();
+        }
+    }
+  
+  Powyższy kod pobiera stan filmu, a następnie sprawdza, czy gracz nacisnął przycisk Spacja. W takim przypadku wstrzymuje odtwarzanie filmu, jeśli jest on odtwarzany, i wznawia je, jeśli jest wstrzymany.
+   
+   
+  
+    
+      
+        Powrót: Filmy
+        Next: video_get_format
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

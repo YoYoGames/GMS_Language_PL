@@ -14,7 +14,7 @@
     var _filter_to_use = "_filter" + _myfilters.screenshake;
     var _fxshake = fx_create(_filter_to_use);
   
-  Aby mieć pewność, że ta druga metoda zadziała, wystarczy dodać filtr do co najmniej jednej strony room w projekcie lub upewnić się, że strona fx_create() jest wywoływana w dowolnym miejscu projektu, a nazwa filtra jest stałą string (a nie zmienną).
+  Aby mieć pewność, że ta ostatnia metoda zadziała, wystarczy dodać filtr do co najmniej jednej strony room w projekcie lub upewnić się, że strona fx_create() jest wywoływana w dowolnym miejscu projektu, a nazwa filtra jest stałą string (a nie zmienną).
   Lista funkcji
   Poniższe funkcje służą do tworzenia "Struktur FX" zawierających dane efektów i zarządzania nimi:
   
@@ -28,25 +28,31 @@
     fx_set_parametry
     fx_set_single_layer
   
-  Poniższe funkcje służą do modyfikowania warstw, które zawierają lub mogą zawierać filtry/efekty, poprzez wykorzystanie struktur FX:
+  Poniższe funkcje służą do modyfikowania warstw, które mogą zawierać filtry/efekty, za pomocą struktur FX:
   
     layer_set_fx
     layer_get_fx
     layer_clear_fx
+    layer_enable_fx
+    warstwa_fx_jest_wyłączona
   
-  Przykłady zastosowania
+  Modyfikowanie elementów FX w czasie rzeczywistym
   Filtry/efekty można modyfikować na stronie runtime, wykonując następujące czynności:
   
-    Pobierz warstwę FX struct z warstwy, którą chcesz zmodyfikować, wywołując polecenie layer_get_fx()
+    Pobierz strukturę FX z warstwy, którą chcesz zmodyfikować, wywołując polecenie layer_get_fx()
       
-        Można też utworzyć nową warstwę FX, wywołując polecenie fx_create() i zastosować ją do warstwy za pomocą polecenia layer_set_fx()
+        Można też utworzyć nową strukturę FX struct, wywołując polecenie fx_create(), i zastosować ją do warstwy za pomocą polecenia layer_set_fx()
       
     
-    Pobierz jego strukturę parametrów, wywołując fx_get_parameters() i znajdź nazwy tych parametrów, wywołując fx_get_parameter_names()
+    Uzyskaj strukturę parametrów, wywołując fx_get_parameters()
     Zmodyfikuj parametry zgodnie z wymaganiami, przypisując wartości zmiennym struct 
-    Zastosuj zmodyfikowaną stronę struct z powrotem do FX struct, wywołując polecenie fx_set_parameters()
       
-        Nie ma potrzeby wywoływania layer_set_fx() ponieważ modyfikacja FX struct wpływa bezpośrednio na warstwę, do której jest już przypisana.
+        Nazwy parametrów można pobrać stąd: FX Types & Parameters (Typy i parametry FX)
+      
+    
+    Zastosuj zmodyfikowaną strukturę z powrotem do FX struct, wywołując polecenie fx_set_parameters()
+      
+        Nie ma potrzeby wywoływania layer_set_fx() ponieważ modyfikowanie struktury FX struct wpływa bezpośrednio na warstwę, do której jest już przypisana.
       
     
   
@@ -65,8 +71,20 @@
     // Apply updated parameters struct to the FX struct
     fx_set_parameters(pixelate_fx, pixelate_fx_params);
   
+  Parametry FX Runtime 
+  Na stronie Typy i parametry FX znajduje się lista wszystkich filtrów/efektów wraz z ich parametrami w czasie rzeczywistym.
+  Nazwy parametrów Runtime można wykorzystać na trzy następujące sposoby (na przykładzie parametru "g_CellSize" ):
+  
+    Zmodyfikuj parametr w pliku FX struct, wywołując fx_set_parameter(): fx_set_parameter(fx_struct, "g_CellSize", 8);
+    Zmodyfikuj zmienną w strukturze parametrów: params_struct.g_CellSize= 8;
+     
+        UWAGA Upewnij się, że najpierw uzyskasz parametr struct przez wywołanie fx_get_parameters().
+      
+    
+    Zmodyfikuj zmienną w parametrze struct, używając akcesora $ i łańcucha znaków: params_struct[$ "g_CellSize"] = 8;
+  
   Tryb jednowarstwowy
-  Domyślnie filtr/efekt jest stosowany na warstwie, do której jest przypisany, oraz na wszystkich warstwach poniżej tej warstwy, jednak można użyć opcji fx_set_single_layer() aby włączyć tryb pojedynczej warstwy dla filtra/efektu, dzięki czemu będzie on stosowany tylko na warstwie, do której jest przypisany.
+  Domyślnie filtr/efekt jest stosowany do warstwy, do której jest przypisany, oraz do wszystkich warstw poniżej tej warstwy, jednak można użyć opcji fx_set_single_layer() aby włączyć tryb pojedynczej warstwy dla filtra/efektu, dzięki czemu będzie on stosowany tylko na warstwie, do której jest przypisany.
   Poniższa ilustracja przedstawia filtr zastosowany do wielu warstw (co jest domyślnym zachowaniem dla wszystkich warstw FX), a następnie ten sam filtr z włączonym trybem Pojedyncza warstwa i zastosowany do warstwy innej niż FX:
   
     

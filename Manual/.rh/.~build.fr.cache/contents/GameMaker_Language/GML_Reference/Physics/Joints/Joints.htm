@@ -1,9 +1,9 @@
 
   
   Stawy
-  W świecie fizyki GameMaker Studio 2 przeguby są używane do ograniczania instancji do świata lub do siebie nawzajem. Typowe przykłady w grach to ragdolls, teeters i pulleys, ale przeguby można łączyć na wiele różnych sposobów, tworząc ciekawe ruchy lub dodając realizmu do świata gry.
-  UWAGA: Przegub nie musi być usuwany, gdy niszczysz instancję połączoną z inną instancją, ani nie musi być usuwany na końcu room. Z wyjątkiem bardzo szczególnych przypadków (patrz przegub kół zębatych), ponieważ jest on automatycznie obsługiwany przez GameMaker Studio.
-  Na kolejnych stronach wyjaśniono dostępne połączenia i sposoby ich tworzenia:
+  W świecie fizyki GameMakera przeguby służą do ograniczania obiektów do świata lub do siebie nawzajem. Typowymi przykładami w grach są ragdolls, teeters i pulleys, ale przeguby można łączyć na wiele różnych sposobów, tworząc ciekawe ruchy lub dodając realizmu do świata gry.
+  UWAGA: Łącznik nie musi być usuwany, gdy niszczysz instancję połączoną z inną instancją, ani nie musi być usuwany na końcu gry room. Wyjątkiem są bardzo specyficzne przypadki (patrz łącznik ekwipunku), ponieważ GameMaker zajmuje się tym automatycznie.
+  Na kolejnych stronach opisano dostępne połączenia i sposoby ich tworzenia:
   
     physics_joint_distance_create
     physics_joint_revolute_create
@@ -17,14 +17,14 @@
     physics_joint_delete
   
    
-  Po utworzeniu przegubu często konieczna jest znajomość jego właściwości, aby móc je zmieniać w określonych momentach gry. Poniższe funkcje (wraz z odpowiadającymi im stałymi wewnętrznymi) są dostępne do testowania i zmiany wartości stawów:
+  Po utworzeniu przegubu często konieczna jest znajomość jego właściwości, aby móc je zmieniać w określonych momentach gry. Do testowania i zmiany wartości przegubów służą następujące funkcje (wraz z odpowiadającymi im stałymi wewnętrznymi):
   
     physics_joint_enable_motor
     physics_joint_get_value
     physics_joint_set_value
   
    
-  Dodatkowo, w celu uzyskania (lub ustawienia) różnych właściwości niektórych przegubów, można użyć szeregu stałych z poziomu funkcji GameMaker Studio 2. Wszystkie te stałe można znaleźć w następującej sekcji:
+  Ponadto w funkcjach GameMakera można użyć wielu stałych, aby uzyskać (lub ustawić) różne właściwości niektórych przegubów. Wszystkie te stałe można znaleźć w poniższej sekcji:
   
     Fizyka Stałe zespolone
   

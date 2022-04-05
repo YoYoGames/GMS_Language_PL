@@ -1,7 +1,7 @@
 
   
   pokaż_wiadomość_async
-  Ta funkcja otwiera okno i wyświetla użytkownikowi komunikat zdefiniowany w funkcji. Jest to funkcja asynchroniczna i jako taka GameMaker Studio 2 nie blokuje urządzenia, na którym jest uruchamiana, w oczekiwaniu na odpowiedź, lecz kontynuuje normalne wykonywanie zdarzeń. Po naciśnięciu przez użytkownika przycisku "OK" uruchamiane jest zdarzenie asynchroniczne Dialog które tylko na czas trwania tego zdarzenia będzie miało mapę ds_map przechowywaną w zmiennej async_load.
+  Ta funkcja otwiera okno i wyświetla użytkownikowi wiadomość, którą definiujemy w funkcji. Jest to funkcja asynchroniczna, dlatego GameMaker nie blokuje urządzenia, na którym jest uruchamiana, w oczekiwaniu na odpowiedź, lecz kontynuuje wykonywanie zdarzeń w normalny sposób. Po naciśnięciu przez użytkownika przycisku "OK" uruchamiane jest zdarzenie asynchroniczne, które Dialog które tylko na czas trwania tego zdarzenia będzie miało mapę ds_map przechowywaną w zmiennej async_load.
   Mapa ta będzie zawierać dwa klucze: "id" i "status", przy czym "id" to wartość zwrócona przez funkcję w momencie jej wywołania, a "status" to albo true w przypadku naciśnięcia przycisku "OK", albo false w przypadku anulowania komunikatu (jeśli jest to możliwe, ponieważ nie wszystkie platformy docelowe umożliwiają anulowanie dialogów).
   UWAGA Ta funkcja jest przeznaczona  wyłącznie do debugowania i testowaniai nie powinna być używana w wydanych grach. W tym celu powinieneś stworzyć własny interfejs użytkownika, który będzie odbierał dane od graczy, tak abyś miał pełną kontrolę nad wyglądem i zachowaniem okien dialogowych.
    

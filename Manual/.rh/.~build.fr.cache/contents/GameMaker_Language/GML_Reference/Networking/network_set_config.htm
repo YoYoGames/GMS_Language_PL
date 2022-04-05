@@ -26,7 +26,7 @@
       
       
         network_config_use_non_blocking_socket
-        Powiedz GameMaker Studio 2, aby nie blokował połączenia.
+        Powiedz programowi GameMaker, aby nie blokował połączeń.
         0 = block, 1 = don't block
       
       
@@ -47,9 +47,9 @@
     
   
   
-    Pierwsza opcja (network_config_connect_timeout) po prostu ustawia limit czasu na połączenie z server, ale nie zmienia zachowania połączenia poza czasem, jaki trzeba odczekać. Zaleca się, aby nie ustawiać go zbyt nisko i utrzymywać na poziomie około 1000 dla gry tylko w sieci LAN lub 4000 dla Internetu, w przeciwnym razie gra może nie łączyć się losowo. Jeśli chcesz ustawić limit czasu dla wysyłania/odbierania pakietów, użyj funkcji network_set_timeout().
-  Druga opcja (network_config_use_non_blocking_socket) oznacza, że wszystkie funkcje network_connect_* (nieasynchroniczne) natychmiast zwrócą adres socket_id, ale nie będzie można wysyłać ani odbierać na tym gnieździe, dopóki nie zostanie odebrane zdarzenie sieciowe asynchroniczne. Wywołane zdarzenie będzie miało klucz "type" ustawiony na network_type_non_blocking_connect (więcej szczegółów można znaleźć na stronie poświęconej asynchronicznemu zdarzeniu sieciowemu). Jest to ustawienie globalne, ponieważ GameMaker Studio 2 nie obsługuje połączenia blokowania i nieblokowania w jednej aplikacji.
-  Trzecia i czwarta opcja (network_config_enable_reliable_udp, network_config_disable_reliable_udp) służą do włączania lub wyłączania niezawodnego protokołu UDP GameMaker Studio 2 i jako takie powinny być używane tylko z połączeniami UDP. Termin "niezawodny" w tym przypadku oznacza, że po włączeniu go na obu końcach połączenia witryna GameMaker Studio 2 będzie próbowała sprawdzić, czy pakiety dotarły prawidłowo, i ponownie wysłać te, które nie dotarły (uwaga: nie gwarantujemy, że pakiety dotrą w kolejności transmisji). W przypadku korzystania z niezawodnego typu gniazda, do wszystkich pakietów udp dodawany jest 12-bajtowy nagłówek, który zawiera informacje potrzebne GameMaker Studio 2 do sprawdzenia pakietu pod kątem błędów i ponownego wysłania brakujących pakietów. Przy korzystaniu z tej opcji warto zwrócić uwagę na następujące kwestie:
+    Pierwsza opcja (network_config_connect_timeout) po prostu ustawia limit czasu na nawiązanie połączenia z server, ale nie zmienia zachowania połączenia poza czasem, jaki trzeba odczekać. Zaleca się, aby nie ustawiać go zbyt nisko i utrzymywać na poziomie około 1000 dla gry tylko w sieci LAN lub 4000 dla Internetu, w przeciwnym razie gra może nie łączyć się losowo. Jeśli chcesz ustawić limit czasu dla wysyłania/odbierania pakietów, użyj funkcji network_set_timeout().
+  Druga opcja (network_config_use_non_blocking_socket) oznacza, że wszystkie funkcje network_connect_* (nieasynchroniczne) natychmiast zwrócą adres socket_id, ale nie będzie można wysyłać ani odbierać na tym gnieździe, dopóki nie zostanie odebrane zdarzenie sieciowe asynchroniczne. Wywołane zdarzenie będzie miało klucz "type" ustawiony na network_type_non_blocking_connect (więcej szczegółów znajdziesz na stronie poświęconej asynchronicznemu zdarzeniu sieciowemu). Jest to ustawienie globalne, ponieważ GameMaker nie obsługuje mieszanki blokowania i nieblokowania w jednej aplikacji.
+  Trzecia i czwarta opcja (network_config_enable_reliable_udp, network_config_disable_reliable_udp) służą do włączania lub wyłączania niezawodnego protokołu UDP GameMakera i jako takie powinny być używane tylko w połączeniach UDP. W tym przypadku "niezawodny" oznacza, że po włączeniu tej opcji na obu końcach połączenia, GameMaker będzie próbował sprawdzić, czy pakiety dotarły prawidłowo i ponownie wysłać te, które nie dotarły (uwaga, nie gwarantujemy, że pakiety dotrą w kolejności transmisji). Gdy używasz niezawodnego typu gniazda, do wszystkich pakietów udp dodawany jest 12-bajtowy nagłówek, który zawiera informacje potrzebne GameMakerowi do sprawdzenia pakietów pod kątem błędów i ponownego wysłania brakujących pakietów. Przy korzystaniu z tej opcji warto zwrócić uwagę na następujące kwestie:
   
     Protokół ten należy włączyć/wyłączyć po obu stronach przed wysłaniem danych, a wszelkie dane wysłane lub odebrane przed włączeniem/wyłączeniem tej opcji nie zostaną naruszone.
     Można wielokrotnie włączać lub wyłączać protokół dla dowolnego identyfikatora gniazda, o ile jest to odpowiednio zarządzane zarówno po stronie server, jak i po stronie klienta
@@ -85,14 +85,14 @@
   Przykład:
   network_set_config(network_config_connect_timeout, 1000);
     network_set_config(network_config_use_non_blocking_socket, 1);
-  Powyższy kod ustawi limit czasu dla połączenia sieciowego na 1000 ms i powie GameMaker Studio 2, aby nie blokować połączenia.
+  Powyższy kod ustawi timeout dla połączenia sieciowego na 1000ms i powie GameMakerowi, aby nie blokował połączenia.
    
    
    
   
     
       
-        Powrót: Praca w sieci
+        Powrót: Tworzenie sieci
         Następny: network_set_timeout
       
     

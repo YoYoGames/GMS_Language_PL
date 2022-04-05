@@ -1,21 +1,21 @@
 
   
   display_set_gui_size
-  This function will only affect things drawn in the Draw GUI Event and can be used to set a specific width and height for all GUI components in that event, and no matter what
-    size of display or window is used to display the GUI, it will be scaled to fit correctly. Where the GUI is positioned (ie: the (0,0) position) will depend on whether you have used the function display_set_gui_maximise()    or not. If you do not use this function (the default setting) then the GUI layer will be positioned with its (0,0) point at the same position as that for the application surface (the area where your game is being drawn) and the width and height will
-    be stretched to fit the this surface, such that setting a GUI width of 256px with this function when the application surface is 512px would stretch those 256 pixels to fit, effectively making the pixels twice as large. This is ideal for those games
-    that have aspect ratio correction set in the global Game Settings.
-  If you have used the display_set_gui_maximise() function then the (0,0) position for the GUI layer will default to the top left corner of the game window, or display (when in fullscreen or on devices), with the scaling factor set by that function,
-    and the width and height set by this one. You can reset the GUI layer at any time to the default configuration by calling this function using -1 as both the width and height - this will set the (0, 0) position to the application surface and the width
-    and height will be reset to 1:1 with the surface too.
-   
-  Syntax:
+  Ta funkcja będzie miała wpływ tylko na elementy rysowane w zdarzeniu Draw GUI i może być użyta do ustawienia określonej szerokości i wysokości dla wszystkich elementów GUI w tym zdarzeniu.
+    rozmiar wyświetlacza lub okna użytego do wyświetlenia GUI, zostanie ono poprawnie dopasowane. Pozycja GUI (tzn. pozycja (0,0)) zależy od tego, czy została użyta funkcja display_set_gui_maximise()    czy też nie. Jeśli nie użyjesz tej funkcji (ustawienie domyślne), warstwa GUI zostanie umieszczona tak, aby jej punkt (0,0) znajdował się w tym samym miejscu, co powierzchnia aplikacji (obszar, na którym rysowana jest gra), a szerokość i wysokość zostaną
+    zostanie rozciągnięta, aby dopasować się do tej powierzchni, np. ustawienie za pomocą tej funkcji szerokości GUI 256px, gdy powierzchnia aplikacji wynosi 512px, spowoduje rozciągnięcie tych 256 pikseli, dzięki czemu piksele staną się dwa razy większe. Jest to idealne rozwiązanie dla gier
+    które mają ustawioną korekcję współczynnika proporcji w globalnych Ustawieniach gry.
+  Jeśli użyto funkcji display_set_gui_maximise(), pozycja (0,0) warstwy GUI będzie domyślnie ustawiona w lewym górnym rogu okna gry lub wyświetlacza (w trybie pełnoekranowym lub na urządzeniach), ze współczynnikiem skalowania ustawionym przez tę funkcję,
+    oraz szerokości i wysokości ustawionej przez tę funkcję. W dowolnym momencie można przywrócić domyślną konfigurację warstwy GUI, wywołując tę funkcję z użyciem -1 jako szerokości i wysokości - spowoduje to ustawienie pozycji (0, 0) na powierzchni aplikacji, a szerokość
+    i wysokość zostaną zresetowane do wartości 1:1 z tą powierzchnią.
+   
+  Składnia:
   display_set_gui_size(width, height);
   
     
       
-        ArgumentType
-        Description
+        ArgumentTyp
+        Opis
      
       
         width
@@ -27,24 +27,24 @@
      
     
   
-   
-  Returns:
+   
+  Zwroty:
   
-   
-  Example:
+   
+  Przykład:
   display_set_gui_size(768, 1024);
-  The above code will lock the draw GUI event to the given width and height, scaling all components to fit either the application surface, or the display, using that proportion.
-   
-   
-   
+  Powyższy kod zablokuje zdarzenie rysowania GUI na podanej szerokości i wysokości, skalując wszystkie komponenty tak, aby pasowały do powierzchni aplikacji lub wyświetlacza przy użyciu tej proporcji.
+   
+   
+   
   
     
       
-        Back: Cameras And Display
-        Next: display_set_gui_maximise
+        Powrót: Aparaty i wyświetlacz
+        Następny: display_set_gui_maximise
       
     
-    © Copyright YoYo Games Ltd. 2021 All Rights Reserved
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
   
   
   

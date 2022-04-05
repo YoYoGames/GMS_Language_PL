@@ -2,7 +2,8 @@
   
   zdarzenie_wykonalne
   Ta funkcja wykona określone zdarzenie, z podanym argumentem, dla instancji uruchamiającej kod. Istnieje wiele opcji, które pozwalają na pełną symulację wszystkich możliwych zdarzeń, ale należy pamiętać, że funkcja ta dosłownie wykonuje cały kod zdarzenia, a gra nie zmodyfikuje niczego, co spowodowałoby, że zdarzenie zostanie wywołane ręcznie. Jeśli na przykład użytkownik wybierze zdarzenie związane z naciśnięciem klawisza, zdarzenie zostanie wywołane, ale odpowiedni klawisz nie zostanie rozpoznany jako naciśnięty.
-  W poniższej tabeli przedstawiono wszystkie stałe zawarte w GameMaker Studio 2, służące do odwoływania się do typów zdarzeń, a także ich wartości liczbowe. Same zdarzenia są zaznaczone pogrubioną czcionką i są tożsame z wartościami zwracanymi przez zmienną event_type (przekazywanej do pierwszego argumentu tej funkcji), natomiast ich wartości liczbowe są zaznaczone kursywą i są takie same jak wartości zwracane przez zmienną event_number (przekazywanych do drugiego argumentu tej funkcji):
+  Zdarzenia asynchroniczne można wywoływać za pomocą event_perform_async().
+  Poniższa tabela przedstawia wszystkie stałe, które są zawarte w GameMakerze do odwoływania się do typów zdarzeń, a także ich wartości liczbowe. Same zdarzenia są zaznaczone pogrubioną czcionką i są tożsame z wartościami zwracanymi przez zmienną event_type (które należy przekazać do pierwszego argumentu tej funkcji), natomiast ich wartości liczbowe są zaznaczone kursywą i są takie same jak wartości zwracane przez zmienną event_number (przekazywanych do drugiego argumentu tej funkcji):
   
     
       
@@ -178,7 +179,7 @@
       
       
            ---- ev_gesture_drag_end
-        Wykryto zwolnienie dotknięcia/kliknięcia podczas przeciągania dla instancji
+        Wykryto zwolnienie dotknięcia/kliknięcia z przeciągania dla instancji
       
       
            ---- ev_gesture_flick
@@ -238,7 +239,7 @@
       
       
            ---- ev_global_gesture_pinch_start
-        Dwa dotknięcia i ruch prostoliniowy zostały wykryte w dowolnym miejscu w pomieszczeniu
+        W dowolnym miejscu w pomieszczeniu zostały wykryte dwa dotknięcia i ruch prostoliniowy
       
       
            ---- ev_global_gesture_pinch_in
@@ -318,7 +319,7 @@
       
       
            ---- ev_animation_event
-        Zdarzenie animacji, które jest uruchamiane dla animacji szkieletowych przypisanych w narzędziu do animacji szkieletowych
+        Zdarzenie animacji, które jest uruchamiane dla animacji szkieletowych przypisanych w narzędziu animacji szkieletowej
       
       
            ---- ev_end_of_path

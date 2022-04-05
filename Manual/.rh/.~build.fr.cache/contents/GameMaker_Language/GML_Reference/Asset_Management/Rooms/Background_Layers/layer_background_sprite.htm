@@ -2,28 +2,32 @@
   
   warstwa_tła_sprite
   Za pomocą tej funkcji można ustawić indeks sprite elementu tła. Podajesz identyfikator elementu tła (który otrzymujesz podczas tworzenia elementu tła za pomocą layer_background_create() lub po użyciu funkcji layer_background_get_id()), a następnie podajesz indeks sprite, który ma zostać użyty. Obraz elementu tła zostanie zastąpiony nowym adresem sprite. Jeśli podasz wartość -1, element nie będzie miał przypisanego adresu sprite (ale nadal będzie istniał i będzie mógł mieć później ponownie przypisany adres sprite ).
+  Funkcja ta ma również alias layer_background_change().
    
   Składnia:
   layer_background_sprite(background_element_id, sprite_index)
   
     
       
-        ArgumentTyp
+        Argument
+        Typ
         Opis
-     
+      
       
         background_element_id
+        Identyfikator elementu tła
         The unique ID value of the background element to change
-     
+      
       
         sprite_index
+        Aktywa Sprite
         The sprite index of the sprite to use for the background element
-     
+      
     
   
    
   Zwroty:
-  
+  N/A
    
   Przykład:
   var lay_id = layer_get_id("Background_sky");
@@ -40,10 +44,10 @@
     
       
         Wstecz: Warstwy tła
-        Następny: layer_background_htiled
+        Next: layer_background_htiled
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

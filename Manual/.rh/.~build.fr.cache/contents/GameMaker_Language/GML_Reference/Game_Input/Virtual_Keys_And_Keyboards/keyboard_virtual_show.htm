@@ -91,7 +91,7 @@
       
       
         kbv_returnkey_search
-        Ustawia nazwę klawisza powrotu na "Szukaj" lub w niektórych przypadkach na ogólną ikonę wyszukiwania.
+        Ustawia tytuł klawisza powrotu na "Szukaj" lub w niektórych przypadkach na ogólną ikonę wyszukiwania.
       
       
         kbv_returnkey_send
@@ -151,7 +151,7 @@
     
   
    
-  Ostatnim argumentem jest włączenie/wyłączenie predykcyjnego tekstu, który powinien być ustawiony na true, aby go dopuścić, oraz false w przeciwnym razie, ale należy pamiętać, że to, że jest on dopuszczony, nie oznacza, że będzie używany, ponieważ zależy to od preferencji użytkownika urządzenia. W trybie przewidywania tekstu klawiatura wirtualna nie będzie generować normalnych zdarzeń związanych z naciśnięciem klawiszy GameMaker Studio 2. Zamiast tego będą aktualizowane jedynie zmienne dotyczące ostatniego naciśniętego znaku i klawiatury string. Wynika to z niemożności wykrycia, czy zmiana w wewnętrznym polu tekstowym używanym do wykrywania naciśnięć klawiszy została spowodowana faktycznym naciśnięciem klawisza klawiatury wirtualnej, czy sugestią tekstową. W takich przypadkach należy odczytywać dane wejściowe keyboard_string, a nie surowe dane wejściowe.
+  Ostatni argument to włączenie/wyłączenie predykcyjnego tekstu, który powinien być ustawiony na true, aby na niego zezwolić, i false w przeciwnym razie, ale należy pamiętać, że to, że jest on dozwolony, nie oznacza, że będzie używany, ponieważ zależy to od preferencji użytkownika urządzenia. W trybie przewidywania tekstu wirtualna klawiatura nie będzie generować normalnych zdarzeń naciśnięcia klawiszy w programie GameMaker. Zamiast tego będzie aktualizować jedynie zmienne dotyczące ostatniego naciśniętego znaku oraz klawiatury string. Wynika to z niemożności wykrycia, czy zmiana w wewnętrznym polu tekstowym używanym do wykrywania naciśnięć klawiszy została spowodowana faktycznym naciśnięciem klawisza klawiatury wirtualnej, czy sugestią tekstową. W takich przypadkach należy odczytywać dane wejściowe keyboard_string, a nie surowe dane wejściowe.
   Należy również zauważyć, że użytkownik otrzyma różne klawiatury o różnych możliwościach w zależności od systemu operacyjnego platformy, z następującymi zastrzeżeniami dotyczącymi stosowania w poszczególnych celach:
   
     UWP: Implementacja UWP nie obsługuje return_key_type, autocapitalization_type ani predictive_text_enabled. Przekazanie tych parametrów do funkcji nie spowoduje żadnych błędów, po prostu nie będą one miały żadnego wpływu na klawiaturę.

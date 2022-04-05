@@ -1,7 +1,7 @@
 
   
   animcurve_get
-  This function will return a struct containing all the data for the given animation curve. You supply the animation curve asset ID (as defined in the Asset Browser), and the function will return a struct with the following variables:
+  Ta funkcja zwraca strukturę zawierającą wszystkie dane dla podanego adresu animation curve. Użytkownik podaje identyfikator animation curve asset (zdefiniowany w przeglądarce Asset ), a funkcja zwróci strukturę struct z następującymi zmiennymi:
   
     
       
@@ -10,69 +10,69 @@
     
     
       
-        Animation Curve Struct
+        Struktura krzywej animacji
       
       
-        Variable Name
-        Data Type
-        Description
+        Nazwa zmiennej
+        Typ danych
+        Opis
       
       
         name
-        string
-        This is the name of the animation curve.
+        String
+        Taką nazwę nosi strona animation curve.
       
       
         channels
-        array pointer
-        This is an array, where each item in the array is a channel struct.
+        Tablica of Kanał krzywej animacji Strukturas
+        Jest to tablica, w której każdy element tablicy jest kanałem struct.
       
     
   
   
-    The channels variable in the struct is an array where each array item is an Animation Curve Channel Struct with data relating to a channel within the curve. The channel struct is explained on this page.
-  As with channels, the points on a single channel are stored as structs in an array, where each item in the array is a single point struct. The point struct is explained on this page.
-  Note that if the function fails (e.g. the given Animation Curve asset does not exist) then the function will return -1.
-   
-  Syntax:
+    Zmienna channels w witrynie struct jest tablicą, w której każdy element jest tablicą Struktura kanału krzywej animacji z danymi dotyczącymi kanału w krzywej. Kanał struct jest objaśniony na tej stronie.
+  Podobnie jak w przypadku kanałów, punkty pojedynczego kanału są przechowywane w postaci structs w tablicy, gdzie każdy element tablicy jest pojedynczym punktem struct. Punkt struct został wyjaśniony na tej stronie.
+  Należy pamiętać, że jeśli funkcja nie powiedzie się (np. podana krzywa animacji asset nie istnieje), zwróci ona wartość -1.
+   
+  Składnia:
   animcurve_get(curve_id);
   
     
       
         Argument
-        Type
-        Description
+        Typ
+        Opis
       
       
         curve_id
-        Animation Curve Asset
+        Aktywa krzywej animacji
         The asset browser ID (index) of the animation curve to get.
       
     
   
-   
-  Returns:
+   
+  Zwroty:
   Animation Curve Struct or -1
-   
-  Example:
+   
+  Przykład:
   var _curve = animcurve_get(ac_ButtonTween);
     var _channel = _curve.channels[0];
     if _channel.type != animcurvetype_linear
     {
         _channel.type = animcurvetype_linear;
     }
-  The above code retrieves the animation curve struct for the curve asset "ac_ButtonTween", then checks the curve type for the first channel, and if it's not linear it sets it to linear.
-   
-   
-   
+  Powyższy kod pobiera stronę animation curve struct dla krzywej asset "ac_ButtonTween", następnie sprawdza typ krzywej dla pierwszego kanału i jeśli nie jest ona liniowa, ustawia ją na liniową.
+   
+   
+   
   
     
       
-        Back: Animation Curves
-        Next: animcurve_get_channel
+        Powrót: Krzywe animacji
+        Następny: animcurve_get_channel
       
     
-    © Copyright YoYo Games Ltd. 2022 All Rights Reserved
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

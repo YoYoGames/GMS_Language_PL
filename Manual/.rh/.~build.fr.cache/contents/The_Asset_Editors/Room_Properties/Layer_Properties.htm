@@ -2,7 +2,7 @@
   
   Typy i właściwości warstw
   Wszystko, co wchodzi w skład strony room tworzonej w Edytorze pomieszczeń, jest umieszczane na warstwach. Warstwy można dodawać, usuwać i sortować w Edytorze warstw. Są one dostępne w wielu różnych typach, z których każdy ma własny zestaw opcji i sposób działania. Nie jesteś ograniczony liczbą warstw każdego typu i możesz mieć wiele warstw tile, path, warstw instancji itd. Każdy typ warstwy ma swoje własne okno właściwości, w którym można ustawić różne rzeczy w zależności od typu warstwy. Można również przełączać widoczność warstwy, przy czym warstwy niewidoczne nie są przetwarzane na stronie runtime (ale w każdej chwili można je ponownie uwidocznić, używając odpowiedniej funkcji warstwy).
-  Na powyższym rysunku widać edytor warstw, w którym na górze znajduje się lista bieżących warstw, a na dole przyciski służące do ich tworzenia. W tym edytorze można zmienić nazwę dowolnej warstwy, klikając powoli dwukrotnie jej nazwę (należy pamiętać, że w nazwach nie można używać niczego poza literami, cyframi i znakiem "_" pod paskiem), a także można switch włączyć lub wyłączyć jej widoczność, klikając ikonę oka . Jeśli witryna room odziedziczyła warstwy po swoim rodzicu room, możesz przełączyć dziedziczenie za pomocą przycisku na dole, ale pamiętaj, że będzie to miało wpływ na wszystkie warstwy (więcej informacji o dziedziczeniu znajdziesz tutaj ). Możesz także użyć  lub  /  i kliknąć lewym przyciskiem myszy  na wielu warstwach, aby zaznaczyć je do powielenia lub usunięcia (opcje te są także dostępne w prawym menu myszy  ).
+  Na powyższym rysunku widać edytor warstw, w którym na górze znajduje się lista bieżących warstw, a na dole przyciski służące do ich tworzenia. W tym edytorze można zmienić nazwę dowolnej warstwy, klikając powoli dwukrotnie jej nazwę (należy pamiętać, że w nazwach nie można używać niczego poza literami, cyframi i znakiem "_" pod paskiem), a także można switch włączyć lub wyłączyć jej widoczność, klikając ikonę oka . Jeśli witryna room odziedziczyła warstwy po swoim rodzicu room, możesz przełączyć dziedziczenie za pomocą przycisku na dole, ale pamiętaj, że będzie to miało wpływ na wszystkie warstwy (więcej informacji o dziedziczeniu znajdziesz tutaj ). Możesz także użyć  lub  /  i kliknąć lewym przyciskiem myszy  na wielu warstwach, aby zaznaczyć je do powielenia lub usunięcia (opcje te są także dostępne w menu prawym przyciskiem myszy  ).
   Aby łatwiej uporządkować warstwy i zachować ich porządek, można tworzyć grupy warstw w folderze warstw, klikając ikonę folderu . Możesz także usunąć jedną lub więcej wybranych warstw, klikając przycisk Usuń . Wszystkie warstwy będą miały wartość głębokości , która określa, w którym miejscu w kolejności rysowania dana warstwa zostanie umieszczona podczas renderowania jej zawartości na stronie room. Warstwy są rysowane od największej głębokości do najmniejszej, więc warstwa o głębokości -100 zostanie narysowana nad warstwą o głębokości 200.
   WAŻNE Istnieje minimalna i maksymalna głębokość warstwy w zakresie od -16000 do 16000. Wszystko, co zostanie umieszczone na warstwie spoza tego zakresu, nie zostanie narysowane, choć wszystkie zdarzenia będą przebiegać normalnie dla wszystkiego, co znajduje się na tej warstwie.
   Kliknięcie prawym przyciskiem myszy  na dowolnej warstwie spowoduje wyświetlenie menu warstw:
@@ -18,7 +18,7 @@
     Po utworzeniu nowej warstwy tła jest ona domyślnie pusta, a więc rysowany jest na niej zdefiniowany kolor tła. Jeśli nie przypiszesz adresu sprite do obrazu warstwy tła, zostanie on narysowany w tym samym kolorze.
       Można kliknąć pole koloru, aby otworzyć próbnik kolorów i zmienić używany kolor. Jeśli wybierzesz stronę sprite, możesz zaznaczyć opcje kafelkowania, aby tile był rysowany poziomo lub pionowo, lub aby rozciągnąć obraz tak, aby wypełniał całą stronę room.
     Jeśli chcesz, aby tło przewijało się w jakimś kierunku, możesz ustawić także prędkość poziomą i/lub pionową (każdy krok gry będzie przesuwał się wzdłuż danego dostępu o liczbę pikseli, którą tutaj ustawisz), a także możesz zmienić położenie tła
-      tła, ustawiając wartości przesunięcia x i y. Możesz także ustawić szybkość animacji tła, jeśli wybrany przez Ciebie zasób sprite ma wiele podobrazów, choć domyślnie jest ona zablokowana do wartości ustawionej w edytorze Sprite
+      tła, ustawiając wartości przesunięcia x i y. Możesz także ustawić szybkość animacji tła, jeśli wybrany przez Ciebie zasób sprite ma wiele podobrazów, choć domyślnie jest to wartość ustawiona w edytorze Sprite
       Sprite Editor dla używanego obrazu. Można także ustawić głębokość warstwy, choć również ta wartość jest domyślnie zablokowana i aby ją zmienić, wystarczy przeciągnąć i zmienić kolejność warstw w Edytorze warstw.
     Należy pamiętać, że dziedziczenie tła można przełączać także w tym oknie, klikając przycisk na samej górze.
      
@@ -28,7 +28,7 @@
     Nową warstwę instancji można dodać, klikając przycisk . Spowoduje to dodanie nowej warstwy, a następnie otworzy się okno właściwości instancji
       okno właściwości instancji:
     
-    To okno pokazuje po prostu listę wszystkich instancji, które aktualnie znajdują się na warstwie. Do warstwy można dodawać kolejne instancje
+    W tym oknie jest wyświetlana lista wszystkich instancji, które aktualnie znajdują się na warstwie. Do warstwy można dodawać kolejne instancje
       otwierając Przeglądarkę zasobów, a następnie przeciągając z niej stronę objects na warstwę room, lub możesz wybrać instancję z Przeglądarki Asset, a następnie nacisnąć i przytrzymać przycisk , aby wyświetlić podgląd zasobu "in-situ", a jeśli dodatkowo klikniesz lewym przyciskiem myszy , możesz dodać instancję, a nawet "namalować" ją na warstwie room, trzymając wciśnięty przycisk i poruszając myszą.
     Listę warstw można uporządkować, klikając przycisk  i przeciągając instancję z listy na żądaną pozycję, ale warto zauważyć, że służy to wyłącznie do celów organizacyjnych w edytorze .
      room Jeśli chcesz ustawić konkretną kolejność tworzenia, skorzystaj z okna Kolejność tworzenia, które można otworzyć z okna Właściwości pomieszczenia lub z menu kontekstowego pomieszczenia.
@@ -46,7 +46,7 @@
       tak, by była to wartość unikalna dla jednej instancji). Kliknięcie tego kodu spowoduje wyświetlenie okna skryptu dla instancji, w którym możesz dodać dowolne funkcje lub zmodyfikować zmienne.
       po utworzeniu instancji i uruchomieniu zdarzenia tworzenia instancji. Zauważ, że możesz włączyć lub wyłączyć dziedziczenie kodu tworzenia niezależnie od dziedziczenia instancji.
     Warto zauważyć, że każda instancja na warstwie jest automatycznie oznaczana do wyeksportowania podczas tworzenia gry. Jednak, zwłaszcza gdy pracujesz z dziedziczeniem, może się okazać, że nie chcesz , by konkretne instancje były dodawane do pomieszczenia
-      w ostatecznej wersji gry (lub może się zdarzyć, że na każdej stronie room znajduje się instancja debugowania i chcesz ją po prostu wykluczyć z ostatecznej wersji gry). W takim przypadku wystarczy usunąć zaznaczenie pola wyboru "Eksportuj" znajdującego się po lewej stronie instancji na liście.
+      w ostatecznej wersji gry (lub może się zdarzyć, że w każdej witrynie room znajduje się instancja debugowania i chcesz ją po prostu wykluczyć z ostatecznej wersji gry). W takim przypadku wystarczy usunąć zaznaczenie pola wyboru "Eksportuj" znajdującego się po lewej stronie instancji na liście.
       na liście uniemożliwi jej eksportowanie jako części pliku wykonywalnego. Należy jednak pamiętać, że jeśli w kodzie znajduje się odwołanie do instancji, gra nie będzie działać poprawnie, dlatego należy używać tej funkcji z rozwagą.
      
   
@@ -54,13 +54,13 @@
   
     Nową warstwę mapy k afelkowej można dodać, klikając przycisk . Spowoduje to dodanie nowej warstwy, a następnie otwarcie okna Właściwości warstwy mapy kafelkowej oraz okna Edycja kafelków :
     We właściwościach warstwy mapy kafelkowej można przełączyć dziedziczenie warstwy, zmienić używaną stronę tile set oraz ustawić przesunięcie x lub y dla warstwy, jeśli ma ona nie być dokładnie wyrównana z pozycją (0, 0) na stronie .
-      a także ustawić przesunięcie x lub y dla warstwy, jeśli chcesz, aby siatka warstwy nie była dokładnie wyrównana do pozycji (0, 0) na stronie room. Możesz także ustawić głębokość, w jakiej warstwa ma być renderowana (ma to swój własny, unikalny przycisk dziedziczenia), a także "zablokować" tę głębokość, co uniemożliwi jej dalszą edycję po utworzeniu.
-    Po otwarciu okna właściwości warstwy zostanie również otwarte okno Edycja kafelków, w którym wyświetlane są używane tile set (jeśli przez pomyłkę zamkniesz to okno, możesz je ponownie otworzyć, korzystając z menu Pomieszczenie >  Edycja kafelków u góry strony IDE). Możesz kliknąć  na dowolnej stronie tile, aby wybrać ją jako bieżący pędzel , a następnie narysować ją na warstwie w edytorze room, klikając
-       na kanwie room. Jeśli chcesz narysować kilka tiles razem, możesz wybrać je jako grupę, klikając lewym przyciskiem myszy  i przeciągając, aby wybrać je z zestawu kafelków przed rysowaniem. Jeśli zakres tiles, które chcesz narysować razem, nie znajduje się w bloku, możesz przytrzymać przyciski  / , a następnie wybrać poszczególne tiles za pomocą lewego przycisku myszy  i utworzyć w ten sposób własny pędzel (możesz także usunąć tiles z własnego pędzla za pomocą przycisków  + ). Pamiętaj, że tworzenie własnych pędzli w ten sposób jest tymczasowe i przeznaczone do jednorazowego użytku, ale możesz użyć trybu edycji na karcie Pędzle, aby utworzyć stałe pędzle
+      oraz ustawić przesunięcie x lub y dla warstwy, jeśli chcesz, aby siatka warstwy nie była wyrównana dokładnie do pozycji (0, 0) na stronie room. Możesz także ustawić głębokość, w jakiej warstwa ma być renderowana (ma to swój własny, unikalny przycisk dziedziczenia), a także "zablokować" tę głębokość, co uniemożliwi jej dalszą edycję po utworzeniu.
+    Po otwarciu okna właściwości warstwy zostanie również otwarte okno Edycja k afelków, w którym wyświetlane są używane tile set (jeśli przez pomyłkę zamkniesz to okno, możesz je ponownie otworzyć, korzystając z menu Pomieszczenie >  Edycja kafelków u góry strony IDE). Możesz kliknąć  na dowolnej stronie tile, aby wybrać ją jako bieżący pędzel , a następnie narysować ją na warstwie w edytorze room, klikając
+       na kanwie room. Jeśli chcesz narysować kilka tiles razem, możesz zaznaczyć je jako grupę, klikając lewym przyciskiem myszy  i przeciągając, aby wybrać je z zestawu kafelków przed rysowaniem. Jeśli zakres tiles, które chcesz narysować razem, nie znajduje się w bloku, możesz przytrzymać przyciski  / , a następnie wybrać poszczególne tiles za pomocą lewego przycisku myszy  i utworzyć w ten sposób własny pędzel (możesz także usunąć tiles z własnego pędzla za pomocą przycisków  + ). Pamiętaj, że tworzenie własnych pędzli w ten sposób jest tymczasowe i przeznaczone do jednorazowego użytku, ale możesz użyć trybu edycji na karcie Pędzle, aby utworzyć stałe pędzle
       które będą przechowywane w zasobie tile set:
     
     
-    Zwróć uwagę, że w oknie edycji Tile możesz powiększać i pomniejszać obszar tile za pomocą kółka myszy lub przycisków na górze, a także przesuwać za pomocą środkowego przycisku myszy  
+    Zauważ, że w oknie edycji Tile możesz powiększać i pomniejszać obszar tile za pomocą kółka myszy lub przycisków na górze, a także przesuwać za pomocą środkowego przycisku myszy  
       lub  + . Należy pamiętać, że dostępna jest opcja
       siatkę, którą można włączyć lub wyłączyć, aby ograniczyć obszar tiles w oknie, a także ustawić kolor siatki, chociaż tiles zawsze będzie przyciągany do siatki, niezależnie od tego, czy jest ona widoczna, czy nie.
     Okno edycji Tile umożliwia także wybór pędzli, kafelków animowanych i kafelków automatycznych z karty Biblioteki, które zostały omówione w części poświęconej edytorowi zestawów kafelków.
@@ -70,7 +70,7 @@
         
           
           Ołówek
-          Jest to narzędzie ołówek. Używa zaznaczonej strony tile do malowania w Edytorze Room za pomocą lewego przycisku myszy , a można ją wymazać za pomocą prawego przycisku myszy . Zwróć uwagę, że wartość indeksu dla narzędzia tile jest wyświetlana na dole paska stanu Room w Edytorze Room. Jeśli do malowania wybrano wiele narzędzi tiles 
+          Jest to narzędzie ołówek. Używa zaznaczonej strony tile do malowania w Edytorze Room za pomocą lewego przycisku myszy , a można ją wymazać za pomocą prawego przycisku myszy . Zwróć uwagę, że wartość indeksu dla tile jest wyświetlana na dole paska stanu Room w Edytorze Room, a jeśli do malowania wybrano wiele stron tiles 
             (np. pędzel), zostanie wyświetlona lista wszystkich indeksów tile użytych do malowania.
         
         
@@ -96,7 +96,7 @@
           
           Prostokąt
           Po wybraniu narzędzia Prostokąt kliknij przycisk , a następnie przeciągnij i puść, aby utworzyć wypełniony prostokąt o wymiarach tiles, którego lewy górny róg znajduje się w miejscu kliknięcia
-            a w prawym dolnym rogu - miejsce zwolnienia. Jeśli za pomocą narzędzia Przekrój zaznaczono obszar na warstwie mapy z kafelkami, prostokąt zostanie dodany tylko w granicach zaznaczenia. Prostokąty można rysować za pomocą pojedynczego pędzla tile,
+            a w prawym dolnym rogu - miejsce zwolnienia. Jeśli za pomocą narzędzia Przekrój zaznaczono obszar warstwy mapy z kafelkami, prostokąt zostanie dodany tylko w granicach zaznaczenia. Prostokąty można rysować za pomocą pojedynczego pędzla tile,
             pędzla złożonego z różnych tiles, lub animowanego tile z biblioteki.
         
         
@@ -110,8 +110,8 @@
         
           
           AutoTile
-          Kliknięcie tego narzędzia powoduje włączenie stylu malowania Autokafelkowanie. Gdy ta opcja jest aktywna, możesz wybrać dowolną stronę tile z zakładki Biblioteki automatyczne, a następnie zamalować ją na warstwie room, a strona GameMaker Studio 2 automatycznie zmieni ją tak, aby pasowała do otaczających ją elementów.
-           tiles pod warunkiem, że zakładka Autotile Tile  została prawidłowo skonfigurowana. Należy pamiętać, że wybranie strony tile z zakładki tile set, która nie należy do bibliotek automatycznych, spowoduje przywrócenie standardowego narzędzia do rysowania
+          Kliknięcie tego narzędzia włącza styl malowania Autokafelkowanie. Gdy ta opcja jest aktywna, możesz wybrać dowolną stronę tile z zakładki Autotile Libraries, a następnie namalować ją na warstwie room, a GameMaker automatycznie zmieni ją tak, aby pasowała do otoczenia.
+           tiles pod warunkiem, że poprawnie skonfigurowałeś zakładkę Auto Tile . Pamiętaj, że wybranie strony tile z tile set, która nie jest częścią bibliotek autotile, spowoduje przywrócenie narzędzia do rysowania do standardowego
             Ołówek.
         
         
@@ -126,20 +126,20 @@
           Flip
           Kliknięcie narzędzia Przerzuć lewym przyciskiem myszy  (lub użycie skrótu klawiaturowego "X" ) spowoduje przerzucenie zaznaczonej strony tile wzdłuż osi poziomej bez zmiany narzędzia rysowania (jeśli do rysowania wybrano pędzel niestandardowy, przerzucony zostanie cały pędzel).
             do rysowania wzdłuż osi poziomej , bez zmiany narzędzia do rysowania (jeśli do rysowania wybrano pędzel niestandardowy, przerzucony zostanie cały pędzel). Jeśli do rysowania nie jest wybrana żadna strona tile, ale jest wybrana grupa stron tiles na
-            na warstwie, wówczas narzędzie Przerzucanie spowoduje przerzucenie zaznaczonej strony tiles.
+            na warstwie, to narzędzie Przerzucanie spowoduje przerzucenie zaznaczonej strony tiles.
         
         
           
           Lustro
           Kliknięcie narzędzia Odbicie lustrzane lewym przyciskiem myszy  (lub użycie skrótu klawiaturowego " Y" ) spowoduje odbicie lustrzane aktualnie wybranego do rysowania obszaru tile wzdłuż osi pionowej bez zmiany narzędzia rysowania (jeśli do rysowania wybrano pędzel niestandardowy, odbicie lustrzane obejmie cały pędzel).
-            wybranego do rysowania wzdłuż osi pionowej , bez zmiany narzędzia rysowania (jeśli do rysowania wybrano pędzel niestandardowy, lustrzane odbicie obejmie cały pędzel). Jeśli do rysowania nie jest wybrana żadna strona tile, ale jest wybrana grupa stron tiles 
+            wybraną do rysowania wzdłuż osi pionowej , bez zmiany narzędzia rysowania (jeśli do rysowania wybrano pędzel niestandardowy, lustrzane odbicie obejmie cały pędzel). Jeśli do rysowania nie jest wybrana żadna strona tile, ale jest wybrana grupa stron tiles 
             na warstwie, wówczas narzędzie Lustro odzwierciedli wybrane tiles.
         
         
           
           Obróć
           Kliknięcie narzędzia Obrót lewym przyciskiem myszy  (lub użycie skrótu klawiaturowego " Z" ) spowoduje obrót aktualnie wybranego do rysowania obszaru tile o 90° zgodnie z ruchem wskazówek zegara bez zmiany narzędzia rysowania (jeśli do rysowania wybrano pędzel niestandardowy, obrócony zostanie cały pędzel).
-            wybranego do rysowania o 90° zgodnie z ruchem wskazówek zegara, bez zmiany narzędzia rysowania (jeśli do rysowania wybrano pędzel niestandardowy, obrócony zostanie cały pędzel). Jeśli do rysowania nie została wybrana żadna strona tile, ale grupa stron tiles została wybrana na warstwie
+            wybranego do rysowania o 90° zgodnie z ruchem wskazówek zegara, bez zmiany narzędzia rysowania (jeśli do rysowania wybrano niestandardowy pędzel, obrócony zostanie cały pędzel). Jeśli do rysowania nie została wybrana żadna strona tile, ale grupa stron tiles została wybrana na warstwie
             na warstwie, wówczas narzędzie Obrót spowoduje obrót wybranej strony tiles.
         
       
@@ -154,13 +154,13 @@
     W tym miejscu można wybrać stronę path z Przeglądarki Asset, która ma być użyta dla warstwy, a następnie zmienić zdefiniowany typ połączenia (albo
       przy użyciu interpolacji płynnej lub prostej), a także określić, czy ma być ono zamknięte, czy nie, oraz z jaką dokładnością ma być tworzone na stronie path. Zauważ też, że możesz tutaj włączyć
      a także, że możesz ustawić określony kolor path (domyślnie czerwony), by lepiej było je widać w edytorze. Jeśli nie masz zdefiniowanego zasobu path, możesz kliknąć przycisk Nowy 
-      aby go utworzyć. Warstwy Path mają również przypisaną wartość głębi (domyślnie zablokowaną), mimo że w grze nic nie jest renderowane przy ich użyciu.
+      aby go utworzyć. Warstwy Path mają także przypisaną wartość głębi (domyślnie zablokowaną), mimo że w grze nic nie jest renderowane przy ich użyciu.
     
-    Warto zauważyć, że do strony path można także dodawać punkty, klikając lewym przyciskiem myszy , usuwać punkty, klikając prawym przyciskiem myszy , lub wybierać punkty, klikając je i przeciągając - wszystko to w samym edytorze room , dzięki czemu tworzenie i edytowanie strony paths jest bardzo proste (choć
+    Warto zauważyć, że do strony path można także dodawać punkty, klikając lewym przyciskiem myszy , usuwać punkty, klikając prawym przyciskiem myszy , lub zaznaczać punkty, klikając je i przeciągając - wszystko to w samym edytorze room , dzięki czemu tworzenie i edytowanie strony paths jest bardzo łatwe (chociaż
       nadal możesz edytować stronę path w edytorze ścieżek ). Jeśli przytrzymasz przyciski  /  +  na różnych punktach path, wszystkie zostaną zaznaczone i można je przesuwać razem lub
       usunąć je wszystkie za pomocą opcji menu (wyjaśnione poniżej).
     Po kliknięciu prawym przyciskiem myszy adresu  w oknie edytora room podczas manipulowania plikiem path pojawią się następujące opcje:
-    W tym miejscu można odwrócić kierunek path (nie będzie to miało widocznego efektu, ale odwróci kolejność zliczania punktów path.
+    W tym miejscu można odwrócić kierunek path (nie będzie to miało widocznego efektu, ale odwróci kolejność zliczania punktów path, tak że punkt początkowy stanie się punktem końcowym i odwrotnie) oraz odwrócić je w poziomie lub w pionie.
       liczone, tak że punkt początkowy staje się punktem końcowym i odwrotnie), a także przerzucić je w poziomie lub w pionie. Z tego menu można także usunąć wybrany punkt. Należy pamiętać, że można przytrzymać przyciski "T", "
      S" lub "R", a następnie kliknąć  i przeciągnąć, aby przesunąć, przeskalować lub obrócić całą stronę path.
     
@@ -170,17 +170,17 @@
   
     Nową warstwę asset można dodać, klikając przycisk . Spowoduje to dodanie nowej warstwy, a następnie otwarcie okna właściwości warstwy asset:
     Warstwa asset to po prostu graficzna warstwa asset (sprite lub sequence), która została umieszczona w room niezależnie od instancji.
-      Możesz je umieścić, przeciągając je z Przeglądarki zasobów lub wybierając w Przeglądarce Asset, a następnie używając  + , aby je "namalować". Sprite assets są podobne do tiles, z tą różnicą, że mogą być w pełni animowane - jeśli używane
+      Możesz je umieszczać, przeciągając je z Przeglądarki zasobów lub wybierając w Przeglądarce Asset, a następnie używając  + , aby je "namalować". Sprite assets są podobne do tiles, z tą różnicą, że mogą być w pełni animowane - jeśli używane
       sprite nie mają ograniczeń, które obowiązują w przypadku tiles, tzn. nie są przymuszane do stosowania siatki, a animacje mogą mieć dowolną długość i szybkość. Sequences to "kolekcje" sprites, dźwięków i instancji
       które będą odtwarzane po wejściu na stronę room.
     Podczas umieszczania assets na warstwie asset będą one przyciągane do wartości przyciągania siatki ustawionych w górnej części edytora room dla siatki, ale jeśli chcesz umieścić je z wolnej ręki, po prostu switch wyłącz siatkę lub użyj klawiszy  /  i lewego przycisku myszy . Gdy te klawisze są wciśnięte, możesz umieścić element asset w dowolnym miejscu, bez przyciągania do rozdzielczości siatki.
     Po umieszczeniu strony asset na stronie room można w pewnym stopniu kontrolować jej wygląd, klikając dwukrotnie stronę , aby otworzyć okno właściwości asset:
     W tym miejscu można nadać stronie asset unikalną nazwę, określić, czy ma ona trafić na stronę inherit z nadrzędnej strony room, a także zmienić stronę sprite lub sekwencję
       które mają być wyświetlane. W przypadku sekwencji można ustawić szybkość animacji i początkową ramkę głowicy odtwarzania, a także kolor, który ma się z nią łączyć (domyślnie biały), oraz pozycję w oknie
-      room . Można także zmienić właściwości strony sprite assets, ustawiając kolor, w którym ma być wtopiona (domyślnie biały), oraz obracając ją i odwracając. Można także skalować stronę sprites wzdłuż jednej lub obu osi oraz określać jej położenie w obrębie strony room.
+      room . Można także zmieniać właściwości strony sprite assets, ustawiając kolor, w którym ma być wtopiona (domyślnie biały), oraz obracając ją i odwracając. Można także skalować stronę sprites wzdłuż jednej lub obu osi oraz określać jej położenie w obrębie strony room.
       Jeśli na stronie sprite znajdują się podobrazy, można wybrać szybkość animacji oraz ustawić początkową klatkę, która ma być wyświetlana.
     Warto zauważyć, że każda strona asset na warstwie jest automatycznie oznaczana do wyeksportowania podczas tworzenia gry. Jednak, zwłaszcza w przypadku dziedziczenia, może się okazać, że nie chcesz, aby określone sprite'y
-      nie mają być dodawane do room w ostatecznej wersji gry. W takim przypadku wystarczy usunąć zaznaczenie pola wyboru "Eksportuj" znajdującego się po lewej stronie adresu sprite na liście właściwości warstwy, aby uniemożliwić eksportowanie jej jako części pliku wykonywalnego.
+      być dodawane do room w ostatecznej wersji gry. W takim przypadku wystarczy usunąć zaznaczenie pola wyboru "Eksportuj" znajdującego się po lewej stronie adresu sprite na liście właściwości warstwy, aby uniemożliwić eksportowanie jej jako części pliku wykonywalnego.
       Należy jednak pamiętać, że jeśli w kodzie znajduje się odwołanie do tej strony asset, gra nie będzie działać poprawnie, dlatego należy ostrożnie korzystać z tej funkcji.
   
    Filtr/efekt
@@ -189,6 +189,7 @@
     
     Warstwa Filtr/Efekt (lub FX) służy do nakładania filtru wizualnego lub efektu na niektóre warstwy. Dodanie warstwy FX i wybranie efektu z menu rozwijanego "Typ efektu" spowoduje zastosowanie tego efektu do wszystkich warstw znajdujących się poniżej wybranej warstwy FX, jak pokazano na poniższym rysunku:
     Oznacza to, że do wszystkich "dotkniętych" warstw zostanie zastosowany wybrany filtr (w tym przypadku "Desaturacja"), ponieważ znajdują się one poniżej warstwy FX. Wszystkie warstwy znajdujące się powyżej warstwy FX pozostaną nienaruszone.
+    Jednowarstwowe efekty specjalne można tworzyć za pomocą Inspektora.
     Aby dowiedzieć się więcej o warstwach filtra/efektu, przeczytaj Filtr i efekty.
      
      

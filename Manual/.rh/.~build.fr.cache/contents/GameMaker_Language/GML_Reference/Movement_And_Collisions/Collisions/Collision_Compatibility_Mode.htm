@@ -1,7 +1,7 @@
 
   
   Tryb zgodności kolizyjnej
-  W ogólnych opcjach gry dla swojego projektu możesz włączyć "Tryb zgodności z kolizjami", aby przejść na switch do starszego systemu kolizji. Będzie to konieczne tylko wtedy, gdy po aktualizacji do wersji GameMaker Studio 2 2022.1, w której zmieniono sposób działania kolizji, zauważysz dziwne zachowanie kolizji w istniejących projektach.
+  W ogólnych opcjach gry dla swojego projektu możesz włączyć "Tryb zgodności z kolizjami", aby przejść na switch do starszego systemu kolizji. Będzie to konieczne tylko wtedy, gdy zauważysz dziwne zachowanie kolizji w swoich projektach po aktualizacji do wersji GameMaker 2022.1, która zmieniła sposób działania kolizji.
   
   Zmiany w liczbie kolizji
   W starszym systemie kolizji wszystkie współrzędne pola ograniczającego były zaokrąglane do liczb całkowitych i były "wyłączne", tzn. wykluczały dolną i prawą krawędź maski kolizyjnej. Na przykład ramka ograniczająca dla maski kolizji o wymiarach 16x16 byłaby wygenerowana z zakresu od (0, 0) do (15, 15) (względnie). Takie rozwiązanie działałoby dobrze w instancjach, które do pozycjonowania i skalowania używały tylko wartości całkowitych, jednak użycie wartości zmiennoprzecinkowych spowodowałoby nieoczekiwane zachowanie i lekki rozdźwięk między renderowaniem a sprawdzaniem kolizji, ponieważ witryna GameMaker zawsze zaokrąglałaby wartości pola ograniczającego podczas sprawdzania kolizji.

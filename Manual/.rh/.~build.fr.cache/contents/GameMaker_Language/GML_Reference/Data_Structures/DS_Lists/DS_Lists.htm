@@ -3,9 +3,9 @@
   Listy DS
   Lista DS jest strukturą danych, która przechowuje informacje sekwencyjnie w miarę ich dodawania (podobnie jak tablica). Listy DS są bardzo elastycznymi strukturami danych, które pozwalają na dodawanie wartości na końcu lub wstawianie ich gdzieś w środku listy, a także dają możliwość tasowania kolejności (w celu randomizacji wartości) lub sortowania ich w porządku rosnącym lub malejącym.
   UWAGA: Zaleca się używanie tablic zamiast list DS, ponieważ mają one podobne właściwości, są łatwiejsze w użyciu i są automatycznie odśmiecane.
-  Podczas uzyskiwania dostępu do struktur danych listy DS należy zawsze starać się używać wartości całkowitych dla pozycji listy. W przeciwnym razie wszystkie indeksy niecałkowite zostaną zaokrąglone przez GameMaker Studio 2. Jeśli nie jest to wymagane, to przed przekazaniem indeksu, który ma być sprawdzony, należy samodzielnie wykonać zaokrąglenie.
+  Podczas dostępu do struktur danych listy DS należy zawsze starać się używać wartości całkowitych dla pozycji na liście, a wszystkie indeksy niecałkowite zostaną spławione przez GameMaker, jeśli tego nie zrobisz. Jeśli nie tego właśnie wymagasz, będziesz musiał samodzielnie wykonać zaokrąglenie przed przekazaniem indeksu, który chcesz sprawdzić.
   UWAGA: Podobnie jak wszystkie zasoby dynamiczne, struktury danych zajmują pamięć, dlatego powinny być zawsze niszczone, gdy nie są już potrzebne, aby zapobiec wyciekom pamięci, które spowolnią, a w końcu doprowadzą do awarii gry.
-  Poza wymienionymi poniżej funkcjami można użyć wyrażenia (zwanego accessorem), aby dodać lub zmodyfikować zawartość listy DS. Taki accessor wygląda podobnie jak tablica 1D o następującej składni:
+  Poza wymienionymi poniżej funkcjami, do dodawania lub modyfikowania zawartości listy DS można użyć wyrażenia (zwanego accessorem). Taki accessor wygląda podobnie jak tablica 1D o następującej składni:
   list_index[| index]
   Więcej informacji oraz przykłady można znaleźć na stronie GML Overview page on Accessors.
   Istnieją następujące funkcje związane z listami DS:

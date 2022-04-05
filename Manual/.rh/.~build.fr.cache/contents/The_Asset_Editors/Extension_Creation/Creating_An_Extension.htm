@@ -14,7 +14,7 @@
   
     .gml: Jest to plik przygotowany wyłącznie za pomocą strony GameMaker Language i jest kompatybilny ze wszystkimi platformami.
     .js: Jest to format JavaScript extension i jest kompatybilny tylko z docelowym HTML5.
-    .dll: Jest to format biblioteki dynamicznego łącza extension i jest zgodny tylko z platformami Windows, UWP i Xbox (każda z nich wymaga innego pliku *.dll zgodnego z jej specyfikacją).
+    .dll: Jest to format biblioteki dynamicznej extension i jest zgodny tylko z platformami docelowymi Windows, UWP i Xbox (każda z nich wymaga innego pliku *.dll zgodnego z jej specyfikacją).
     .dylib: Jest to odpowiednik biblioteki DLL w systemie Mac i jest kompatybilny tylko z systemem docelowym Mac (nie iOS).
     .so: To jest Linux odpowiednik biblioteki DLL i jest kompatybilny tylko z celem Ubuntu (Linux).
     .prx: Jest to format pliku służącego do dodawania funkcji do celu PlayStation (każdy cel będzie wymagał innego pliku *.prx zgodnego z jego specyfikacją).
@@ -41,14 +41,14 @@
     Na końcu znajduje się instrukcja return która jest używana do zwracania danych z extension z powrotem do kodu GML, w którym wywołano funkcję.
   
   Gdybyś pisał stronę DLL lub JavaScript extension, proces byłby podobny, ale w języku odpowiednim dla formatu pliku z danym rozszerzeniem.
-  Po wykonaniu tych czynności należy dodać plik do witryny extension (używając opcji "Add File" (Dodaj plik)), co spowoduje wyświetlenie nowego okna w witrynie Extensions Properties (Właściwości pliku):
+  Po wykonaniu tych czynności należy dodać plik do witryny extension (używając opcji "Add File" (Dodaj plik)), co spowoduje wyświetlenie nowego okna Właściwości pliku w witrynie Extensions:
   
   W tym miejscu należy wybrać platformę docelową dla extension (w przypadku GML należy wybrać wszystkie), a także zmienić nazwę pliku extension i ustalić kilka innych szczegółów, którymi zajmiemy się za chwilę.
   UWAGA: Dodanie pliku do extension powoduje skopiowanie go do katalogu projektu, co oznacza, że wszelkie dalsze zmiany muszą być wprowadzane do tej kopii, aby były widoczne w grze. Kopię można znaleźć, klikając prawym przyciskiem myszy na stronie extension w przeglądarce Asset i wybierając opcję "Otwórz w Eksploratorze".
   Dodawanie funkcji
   Edytor powinien być automatycznie wypełniony funkcjami zawartymi w naszym pliku GML, ale jeśli tak nie jest, można je dodać ręcznie, klikając przycisk menu Funkcje  i wybierając potrzebne funkcje:
   
-  Wybranie opcji "Dodaj funkcję" umożliwia dodanie funkcji do witryny extension, którą można następnie wywoływać w witrynie GameMaker Studio 2 w taki sam sposób, jak każdą inną funkcję wbudowaną. Po dodaniu funkcji otworzy się następujące okno, w którym można określić właściwości funkcji (można też dwukrotnie kliknąć funkcję, aby ją otworzyć):
+  Wybranie opcji "Dodaj funkcję" pozwoli Ci dodać funkcję do strony extension, którą będzie można wywoływać w GameMakerze tak samo, jak każdą z wbudowanych funkcji. Po dodaniu funkcji otworzy się następujące okno, w którym możesz określić jej właściwości (możesz też dwukrotnie kliknąć na funkcję, aby ją otworzyć):
   
   Na powyższym rysunku wypełniliśmy edytor funkcji szczegółami funkcji instance_create_colour(), którą zdefiniowaliśmy w naszym pliku GML extension (zauważ, że to okno edytora funkcji nie służy tylko do definiowania funkcji GML - będzie ono takie samo dla wszystkich typów extension ). Omówimy teraz wszystkie opcje, które można zdefiniować w funkcji:
   
@@ -63,18 +63,18 @@
   UWAGA: Jeśli funkcja jest częścią rodzimego extension dla Windows, Mac lub Ubuntu (dll, dylib lub so odpowiednio) i ma więcej niż cztery argumenty, wszystkie argumenty muszą być tego samego typu.
   Po wykonaniu wszystkich tych czynności funkcja jest gotowa do użycia w projekcie; pojawi się teraz w autouzupełnianiu i będzie oznaczona kolorami:
   Zdefiniowane funkcje można również ustawić jako funkcje początkowe (Init) lub końcowe(Final), co oznacza, że będą one wywoływane automatycznie przy rozpoczęciu gry (Init) i po jej zakończeniu (Final).
-  WAŻNE! Wszystkie platformy obsługują wywołanie funkcji Init, ale nie wszystkie wykonują wywołanie funkcji Final. Dzieje się tak dlatego, że niektóre platformy po prostu zamykają aplikację, nie dając żadnego powiadomienia ani czasu na wywołanie tej funkcji. Najczęściej dotyczy to platform iOS, Android, HTML5, PlayStation i Xbox.
+  WAŻNE! Wszystkie platformy obsługują wywołanie funkcji Init, ale nie wszystkie platformy wykonają wywołanie funkcji Final. Dzieje się tak dlatego, że niektóre platformy po prostu zamykają aplikację, nie dając żadnego powiadomienia ani czasu na wywołanie tej funkcji. Najczęściej dotyczy to platform iOS, Android, HTML5, PlayStation i Xbox.
   Makra
-  Inną dostępną opcją jest utworzenie makra. Makro może być zarówno stałą wartością, jak i krótkim fragmentem kodu (więcej informacji o makrach można znaleźć tutaj). Na przykład możemy usunąć funkcję c_alice_blue z naszego wcześniej zdefiniowanego rozszerzenia GML i zamiast niej utworzyć makro. Aby utworzyć makro, wystarczy kliknąć przycisk "Makra" w oknie Właściwości Extension, co spowoduje otwarcie następującego okna:
+  Inną dostępną opcją jest utworzenie makra. Makro może być albo stałą wartością, albo krótkim fragmentem kodu (więcej informacji o makrach można znaleźć tutaj). Na przykład możemy usunąć funkcję c_alice_blue z naszego wcześniej zdefiniowanego rozszerzenia GML i zamiast niej utworzyć makro. Aby utworzyć makro, wystarczy kliknąć przycisk "Makra" we właściwościach Extension, co spowoduje otwarcie następującego okna:
   
   Edytor jest dość prosty: podajesz nazwę makra i jego stałą wartość lub krótki wiersz kodu. Zwróć uwagę, że jeśli makro jest linią kodu, to będzie ona obliczana przy każdym wywołaniu makra.
   Pliki proxy
   W przypadku pracy z wieloma platformami docelowymi warto zauważyć, że można utworzyć pojedynczy plik extension z jednym zestawem funkcji/makr, który będzie działał na wszystkich platformach. W tym celu należy dodać do gry tylko jedną z bibliotek linków jako extension, a pozostałe umieścić na liście plików proxy w oknie Właściwości rozszerzenia.
-  Na przykład, powiedzmy, że mamy Windows extension z  dll "Haggis.dll". Wystarczy powielić tę stronę  dll jako Mac  DyLib, nadając jej nazwę "libHaggis.dylib" i upewniając się, że nazwy funkcji wewnętrznych odpowiadają nazwom funkcji z oryginalnej strony Windows  dll. Ta strona  DyLib Następnie należy dodać ją do plików proxy i ustawić na eksportowanie podczas uruchamiania gry na komputerze Mac, a witryna GameMaker Studio 2 będzie automatycznie używać jej podczas wywoływania funkcji extension.
+  Na przykład, powiedzmy, że mamy Windows extension z  dll "Haggis.dll". Wystarczy powielić tę stronę  dll jako Mac  DyLib, nadając jej nazwę "libHaggis.dylib" i upewniając się, że nazwy funkcji wewnętrznych odpowiadają nazwom funkcji z oryginalnej strony Windows  dll. Ta strona  DyLib Zostanie on dodany do plików proxy i ustawiony na eksportowanie podczas uruchamiania gry na komputerze Mac, a GameMaker będzie go automatycznie używał podczas wywoływania funkcji extension.
   Aby dodać plik proxy, wystarczy kliknąć przycisk  w oknie Właściwości wybranego pliku zasobów i przejść do jego lokalizacji. Po jego dodaniu może być konieczne zaktualizowanie celów rozszerzenia, aby dodać odpowiedni moduł, a przy następnym uruchomieniu gry zostanie ona uwzględniona jako plik proxy dla danej platformy. Możesz także usunąć pliki proxy, klikając przycisk , co spowoduje usunięcie wybranego pliku proxy.
-  Po dodaniu plików proxy zostaną one skopiowane do folderu Extensions twojego projektu (możesz je znaleźć, klikając prawym przyciskiem myszy  na stronie extension i wybierając opcję Otwórz w Eksploratorze), więc jeśli musisz je edytować, powinieneś edytować skopiowane pliki dołączone do gry, a nie zaimportowany plik źródłowy, ponieważ GameMaker Studio 2 będzie używał do kompilacji plików znajdujących się w projekcie.
+  Po dodaniu plików proxy zostaną one skopiowane do folderu Extensions twojego projektu (możesz je znaleźć, klikając prawym przyciskiem myszy na  na stronie extension i wybierając opcję Otwórz w Eksploratorze), więc jeśli musisz je edytować, powinieneś edytować skopiowane pliki dołączone do gry, a nie zaimportowany plik źródłowy, ponieważ GameMaker będzie używał do kompilacji tych, które znajdują się w projekcie.
   Konwencje nazewnictwa
-  Bardzo ważne jest, aby pliki proxy były zgodne z poniższymi konwencjami nazewniczymi, ponieważ GameMaker Studio 2 przetworzy te nazwy i przypisze moduł docelowy dla pliku zgodnie z jego adresem extension i nazwą, a następnie automatycznie połączy pliki za Ciebie. Jeśli nie zastosujesz się do tych konwencji, Twoja gra może nie działać na stronie runtime, ponieważ GameMaker Studio 2 nie będzie w stanie określić, którego pliku użyć, więc nie załaduje go poprawnie.
+  Bardzo ważne jest, aby Twoje pliki proxy były zgodne z poniższymi konwencjami nazewnictwa, ponieważ GameMaker przetworzy te nazwy i przypisze moduł docelowy dla pliku zgodnie z jego adresem extension i nazwą, a następnie automatycznie połączy pliki za Ciebie. Jeśli nie będziesz przestrzegał tych konwencji, Twoja gra może nie działać na stronie runtime, ponieważ GameMaker nie będzie w stanie określić, którego pliku użyć, więc nie załaduje go poprawnie.
   Poniżej podano konwencje nazewnictwa dla każdej platformy docelowej:
   
     

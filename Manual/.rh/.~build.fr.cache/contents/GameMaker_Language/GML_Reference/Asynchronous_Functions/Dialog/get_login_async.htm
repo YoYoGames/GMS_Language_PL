@@ -1,7 +1,7 @@
 
   
   get_login_async
-  Ta funkcja otwiera okno, w którym użytkownik jest proszony o wprowadzenie nazwy użytkownika i hasła. Argumenty te mogą być ustawione jako puste string lub można przechowywać wcześniej wprowadzone wartości do wykorzystania w razie potrzeby. Jest to funkcja asynchroniczna i jako taka GameMaker Studio 2 nie blokuje urządzenia, na którym jest uruchamiana, w oczekiwaniu na odpowiedź, lecz kontynuuje normalne wykonywanie zdarzeń. Gdy użytkownik wprowadzi szczegóły i naciśnie przycisk "OK", zostanie wywołane asynchroniczne zdarzenie User Interaction, które tylko na czas trwania tego zdarzenia będzie miało mapę DS przechowywaną w zmiennej async_load.
+  Ta funkcja otwiera okno, w którym użytkownik jest proszony o wprowadzenie nazwy użytkownika i hasła. Argumenty te mogą być ustawione jako puste string lub możesz przechowywać wcześniej wprowadzone wartości, które możesz wykorzystać, jeśli chcesz. Jest to funkcja asynchroniczna, dlatego GameMaker nie blokuje urządzenia, na którym jest uruchamiana, w oczekiwaniu na odpowiedź, lecz kontynuuje wykonywanie zdarzeń w normalny sposób. Gdy użytkownik wprowadzi dane i naciśnie przycisk "OK", wywoływane jest asynchroniczne zdarzenie User Interaction, które tylko na czas trwania tego zdarzenia będzie miało mapę DS zapisaną w zmiennej async_load.
   Ta mapa będzie zawierać dwa klucze: "nazwa użytkownika" i "hasło", a w każdym z nich będą przechowywane odpowiednie dane wejściowe użytkownika. Ponieważ jest to utworzona mapa DS, może ona zostać wykorzystana na przykład przez funkcję json_encode() gotową do wysłania na adres server lub zapisania w pliku na wybranym urządzeniu.
   Funkcja ta zwróci numer indeksu wywołanego zdarzenia asynchronicznego, który można następnie sprawdzić w odpowiednim zdarzeniu, aby można było "wycelować" w konkretne dane w przypadku, gdy spodziewamy się wywołania więcej niż jednego zdarzenia asynchronicznego (być może przez inną funkcję).
   UWAGA Ta funkcja jest przeznaczona  wyłącznie do debugowania i testowaniai nie powinna być używana w wydanych grach. W tym celu powinieneś stworzyć własny interfejs użytkownika, który będzie odbierał dane od graczy, tak abyś miał pełną kontrolę nad wyglądem i zachowaniem okien dialogowych.
@@ -29,13 +29,13 @@
   Async Request ID
    
   Przykład rozszerzony:
-  W zdarzeniu create (na przykład) strony object, która kontroluje logowanie naszego użytkownika, znajdowałby się następujący kod:
+  W zdarzeniu create (na przykład) strony object, która kontroluje logowanie naszego użytkownika, znalazłby się następujący kod:
   ini_open("Profile.ini");
     u = ini_read_string("User","0","");
     p = ini_read_string("User","1","");
     ini_close();
     login = get_login_async(u,p);
-  Powyższy kod otwiera plik ini (lub tworzy go, jeśli nie istnieje) i pobiera nazwę oraz hasło zapisane w tym pliku. Jeśli nie istnieją, zwracana jest domyślna wartość pusta string (""). Wartości te są następnie wykorzystywane w get_login_async() do zapytania użytkownika o nazwę użytkownika i hasło, przy czym indeks żądania jest przechowywany w zmiennej "login". Należy pamiętać, że podczas oczekiwania na podanie przez użytkownika niezbędnych informacji gra i jej wydarzenia będą przebiegać normalnie.
+  Powyższy kod otwiera plik ini (lub tworzy go, jeśli nie istnieje) i pobiera nazwę oraz hasło zapisane w tym pliku. Jeśli nie istnieją, zwracana jest domyślnie pusta strona string (""). Wartości te są następnie wykorzystywane w get_login_async() do zapytania użytkownika o nazwę użytkownika i hasło, przy czym indeks żądania jest przechowywany w zmiennej "login". Należy pamiętać, że podczas oczekiwania na podanie przez użytkownika niezbędnych informacji gra i jej wydarzenia będą przebiegać normalnie.
   Teraz, gdy kod asynchroniczny został już uruchomiony, musimy sprawdzić wartość zwracaną w zdarzeniu asynchronicznym dla Dialogów w następujący sposób:
   if ds_map_find_value(async_load, "id") == login
     {

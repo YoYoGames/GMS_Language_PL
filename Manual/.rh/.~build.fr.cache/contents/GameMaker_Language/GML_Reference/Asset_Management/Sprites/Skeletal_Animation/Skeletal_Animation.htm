@@ -1,7 +1,7 @@
 
   
   Animacja szkieletowa Sprite'y
-  Funkcje znajdujące się w tej sekcji są przeznaczone wyłącznie do użytku ze stroną sprites, która została zaimportowana z pliku animacji szkieletowej (a konkretnie z plików JSON, które Kręgosłup i mogą być używane do uzyskiwania informacji o animacji asset w grze, a także do ustawiania pewnych właściwości animacji. Tych funkcji można używać razem ze zwykłymi funkcjami i zmiennymi sprite, co pozwala na przykład mieszać dwie animacje szkieletowe przy użyciu tych specjalnych funkcji, a jednocześnie ustawiać skalę obrazu za pomocą zwykłych zmiennych instancji sprite (więcej informacji o zmiennych instancji sprite można znaleźć tutaj).
+  Funkcje znajdujące się w tej sekcji są przeznaczone wyłącznie do użytku ze stroną sprites, która została zaimportowana z pliku animacji szkieletowej (a konkretnie z plików JSON, które Kręgosłup i mogą być używane do uzyskiwania informacji o animacji asset w grze, a także do ustawiania pewnych właściwości animacji. Tych funkcji można używać razem ze zwykłymi funkcjami i zmiennymi sprite, co pozwala na przykład mieszać dwie animacje szkieletowe przy użyciu tych specjalnych funkcji i jednocześnie ustawiać skalę obrazu za pomocą zwykłych zmiennych instancji sprite (więcej informacji o zmiennych instancji sprite można znaleźć tutaj).
   UWAGA Aby uzyskać więcej informacji na temat importowania animacji szkieletowej sprites wykonanej za pomocą Spine, zapoznaj się z częścią Importowanie sprite'ów bez mapy bitowej.
   Więcej informacji na temat funkcji tego rodzaju strony sprites można znaleźć w poniższych sekcjach:
   
@@ -14,7 +14,7 @@
   
    
   Odcień czarny Wsparcie
-  Ta właściwość umożliwia nadanie ciemnym obszarom slotów Spine sprite innego koloru niż obszarom jasnym (jest to właściwość Spine IDE, więcej szczegółów można znaleźć w sekcji Tint black ). Obecnie, aby móc korzystać z tej funkcji w witrynie GameMaker Studio 2, trzeba użyć niestandardowego shadera podczas rysowania witryny Spine sprite, która jej używa. Ta strona shader zawiera globalną zmienną jednorodną o nazwie "gm_SpineTintBlackColour", którą runner wypełnia bieżącym kolorem tint-black, pobieranym automatycznie z danych Spine. Wymagany adres shader jest pokazany poniżej:
+  Ta funkcja umożliwia zabarwienie ciemnych obszarów slotów Spine sprite w inny sposób niż obszarów jasnych (jest to funkcja Spine IDE, więcej szczegółów znajdziesz w sekcji Tint black ). Obecnie, aby móc korzystać z tej funkcji w GameMakerze, musisz użyć niestandardowego shadera podczas rysowania strony Spine sprite, która z niej korzysta. Ta strona shader zawiera globalną zmienną uniform o nazwie "gm_SpineTintBlackColour", którą runner wypełnia bieżącym kolorem tint-black, pobieranym automatycznie z danych Spine. Wymagany adres shader jest pokazany poniżej:
    Vertex Shader (jest to ten sam adres, co domyślny passthrough vertex shader)
   attribute vec3 in_Position; // (x,y,z)
     attribute vec4 in_Colour; // (r,g,b,a)

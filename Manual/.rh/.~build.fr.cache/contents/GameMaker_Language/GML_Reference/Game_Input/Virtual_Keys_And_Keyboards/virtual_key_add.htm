@@ -1,7 +1,7 @@
 
   
   virtual_key_add
-  Ta funkcja umożliwia mapowanie "dotknięć" obszaru ekranu na zdarzenia na klawiaturze. Oznacza to, że po przypisaniu obszaru do klawisza wirtualnego wszystkie dotknięcia tego obszaru będą wywoływać zdarzenie klawiaturowe odpowiadające klawiszowi, który został zmapowany do tego obszaru. Każdy zdefiniowany klawisz wirtualny można przypisać do zmiennej, która może być następnie użyta w dalszych funkcjach klawiszy wirtualnych do ich pokazywania, ukrywania i usuwania. Klawisze te są przypisywane do poszczególnych pomieszczeń i będą automatycznie usuwane przez stronę GameMaker Studio 2 przy zmianie adresu rooms.
+  Ta funkcja umożliwia mapowanie "dotknięć" obszaru ekranu na zdarzenia na klawiaturze. Oznacza to, że po przypisaniu obszaru do klawisza wirtualnego wszystkie dotknięcia tego obszaru będą wywoływać zdarzenie klawiaturowe odpowiadające klawiszowi, który został zmapowany do tego obszaru. Każdy zdefiniowany klawisz wirtualny można przypisać do zmiennej, która może być następnie użyta w dalszych funkcjach klawiszy wirtualnych do ich pokazywania, ukrywania i usuwania. Klawisze te są przypisywane do poszczególnych pomieszczeń i będą automatycznie usuwane przez GameMaker przy zmianie strony rooms.
   Rzeczywiste położenie klucza wirtualnego jest oparte na pozycji ekranu, a nie na pozycji room, dlatego wartości x/y są bezwzględne na ekranie. Oznacza to, że nie trzeba się martwić o używanie widoków ani względnych współrzędnych room. Można po prostu zdefiniować klucze w zdarzeniu Utwórz w witrynie object (wystarczy zdefiniować klucz wirtualny tylko raz dla danego pomieszczenia), a następnie narysować klucz sprites w zdarzeniu Narysuj GUI, ustawiając warstwę GUI tak, aby była taka sama jak ekran.
    
   Składnia

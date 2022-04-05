@@ -1,0 +1,42 @@
+
+  video_get_position
+  Ta funkcja zwraca bieżącą pozycję załadowanego filmu w milisekundach. Oznacza to, ile czasu film został odtworzony z całego czasu jego trwania.
+   
+  Składnia:
+  video_get_position();
+   
+  Zwroty:
+  Real
+   
+  Przykład:
+  if (keyboard_check_pressed(vk_right))
+    {
+        var _video_position = video_get_position();
+        _video_position += 2000;
+    
+        if (_video_position < video_get_duration()) 
+        {
+            video_seek_to(_video_position);
+        }
+        else
+        {
+            video_close();
+        }
+    }
+  
+  Powyższy kod przesuwa odtwarzany film o 2 sekundy do przodu, gdy zostanie naciśnięty klawisz strzałki w prawo, a nowa pozycja jest mniejsza niż czas trwania filmu. Jeśli jednak nie mieści się ona w czasie trwania filmu, zostanie on zamknięty.
+  W tym przykładzie strona video_get_position() jest używana do zwracania pozycji odtwarzanego filmu.
+   
+   
+  
+    
+      
+        Powrót: Filmy
+        Next: video_get_status
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,7 +1,7 @@
 
   
   push_local_notification
-  Ta funkcja może być użyta do ustawienia lokalnego powiadomienia, które ma być wyświetlane w określonym dniu i o określonej godzinie. Fire_time" jest datą/godziną, kiedy powiadomienie powinno zostać wysłane do urządzenia użytkownika (możesz użyć funkcji GameMaker Studio 2 Date and Time, aby to uzyskać). Możesz nadać powiadomieniu tytuł i tekst wiadomości, jak również ładunek string, który zostanie przekazany do Twojej gry, kiedy użytkownik stuknie w powiadomienie.
+  Ta funkcja może być użyta do ustawienia lokalnego powiadomienia, które ma być wyświetlane w określonym dniu i o określonej godzinie. Fire_time" to data/godzina, kiedy powiadomienie powinno zostać wysłane do urządzenia użytkownika (możesz użyć funkcji GameMaker Date and Time, aby to uzyskać), a także możesz nadać powiadomieniu tytuł i tekst wiadomości, jak również ładunek string, który zostanie przekazany do Twojej gry, gdy użytkownik dotknie powiadomienia.
   UWAGA: Argument "title" jest ignorowany na stronie iOS i zamiast niego wyświetlana jest nazwa gry.
   Stuknięcie powiadomienia spowoduje uruchomienie gry na urządzeniu i wyzwoli zdarzenie asynchronicznego powiadomienia Push. async_load DS map może zostać przetworzona, aby sprawdzić ładunek string i wykonać dowolną wymaganą akcję.
   UWAGA: Ta funkcja jest ograniczona do modułów docelowych dla systemów iOS i Android.
@@ -46,7 +46,7 @@
   var fireTime = date_inc_day(date_current_datetime(), 1);
     var data = "daily_reward";
     push_local_notification(fireTime, "Ahoy!", "Catch The Haggis Has A Present", data);
-  Ustawi to licznik czasu, który "wypchnie" powiadomienie do urządzenia, gdy minie jeden dzień. Po upływie tego dnia, jeśli gra jest w tle lub nie jest uruchomiona, użytkownikowi zostanie wyświetlone powiadomienie z podanym tytułem i wiadomością (na stronie iOS wyświetlana jest nazwa gry, a tytuł jest ignorowany), a następnie zostanie wywołane asynchroniczne zdarzenie powiadomienia Push. Zauważ, że jeśli gra jest na pierwszym planie, gdy nadejdzie czas na powiadomienie, nie zostanie wyświetlona, ale zdarzenie asynchroniczne zostanie wywołane. W samym zdarzeniu należy obsłużyć wywołanie zwrotne w następujący sposób:Zdarzenie asynchroniczne w następujący sposób:
+  Spowoduje to ustawienie licznika czasu, który "wypchnie" powiadomienie do urządzenia, gdy minie jeden dzień. Po upływie tego dnia, jeśli gra jest w tle lub nie jest uruchomiona, użytkownikowi zostanie wyświetlone powiadomienie z podanym tytułem i wiadomością (na stronie iOS wyświetlana jest nazwa gry, a tytuł jest ignorowany), a następnie zostanie wywołane asynchroniczne zdarzenie powiadomienia Push. Zauważ, że jeśli gra jest na pierwszym planie, gdy nadejdzie czas na powiadomienie, nie zostanie wyświetlona, ale zdarzenie asynchroniczne zostanie wywołane. W samym zdarzeniu należy obsłużyć wywołanie zwrotne w następujący sposób:Zdarzenie asynchroniczne w następujący sposób:
   var type = ds_map_find_value(async_load, "type");
     var status = ds_map_find_value(async_load, "status");
     if status == 0

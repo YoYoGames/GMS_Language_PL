@@ -1,7 +1,7 @@
 
   
   pozycja_zmiana
-  Funkcja ta sprawdzi, czy w danym punkcie nie ma kolizji z żadną instancją, a jeśli takowa istnieje, zmieni wszystkie kolidujące instancje na instancje wybranego obiektu object. Możesz ustawić argument "perf" na true, co spowoduje, że GameMaker Studio 2 wykona zdarzenia Destroy i Clean Up znalezionej instancji oraz zdarzenie Create nowej instancji, lub false nie wykona żadnego z tych zdarzeń. Zwróć uwagę, że jeśli nie wykonasz zdarzeń Destroy, Clean Up i Create, każda utworzona instancja, która używa zmiennej normalnie zdefiniowanej w zdarzeniu create, spowoduje awarię gry, ponieważ zmienna ta nie będzie już istnieć.
+  Funkcja ta sprawdza pozycję pod kątem kolizji z dowolnymi instancjami w podanym punkcie, a jeśli taka kolizja występuje, zmienia wszystkie instancje w kolizji na instancje wybranego obiektu object. Możesz ustawić argument "perf" na true, co zmusi GameMakera do wykonania zdarzeń Destroy i Clean Up znalezionej instancji oraz zdarzenia Create nowej instancji, lub false, by nie wykonywać żadnego z tych zdarzeń. Należy pamiętać, że jeśli nie wykonasz zdarzeń Destroy, Clean Up i Create, każda utworzona instancja, która używa zmiennej normalnie zdefiniowanej w zdarzeniu create, spowoduje awarię gry, ponieważ zmienna ta nie będzie już istnieć.
    
   Składnia:
   position_change(x, y, obj, perf);

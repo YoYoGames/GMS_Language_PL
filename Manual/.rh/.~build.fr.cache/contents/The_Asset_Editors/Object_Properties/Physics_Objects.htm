@@ -20,8 +20,8 @@
   Gęstość
   
     Gęstość czegoś definiuje się jako masę na jednostkę objętości, co oznacza, ile masy mieści się w przestrzeni, którą zajmuje dany przedmiot. Tak więc balon ma małą gęstość, ponieważ ma niewielką masę i zajmuje dużą przestrzeń, podczas gdy
-      ołowiana sztabka miałaby dużą gęstość, ponieważ ma dużą masę, ale zajmuje mało miejsca. W świecie fizyki GameMaker Studio 2 2D masa jest obliczana automatycznie na podstawie wartości wprowadzonych przez użytkownika dla gęstości oraz na podstawie pola powierzchni kształtu zdefiniowanego przez użytkownika.
-      kształtu, który definiujesz dla elementu mocującego. Będzie to miało bezpośredni wpływ na stopień bezwładności, jak również na reakcję na kolizje i siły, więc jeśli stworzysz mały kształt o dużej gęstości, będzie on miał bardzo dużą masę (jak sztabka ołowiu).
+      ołowiana sztabka miałaby dużą gęstość, ponieważ ma dużą masę, ale zajmuje mało miejsca. W świecie fizyki 2D programu GameMaker masa jest obliczana automatycznie na podstawie wartości wprowadzonych przez użytkownika dla gęstości i powierzchni
+      kształtu, który zdefiniowałeś dla elementu mocującego. Będzie to miało bezpośredni wpływ na to jak dużą bezwładność ma element, jak reaguje na kolizje i siły, więc jeśli stworzysz mały kształt o dużej gęstości, będzie on miał bardzo dużą masę (jak sztabka ołowiu), ale jeśli zdefiniujesz ołów, będzie on miał bardzo dużą masę.
       ołowiu), ale jeśli zdefiniujemy duży kształt o małej gęstości, będzie on miał znacznie mniejszą masę (np. balon).
     Zauważ, że ustawienie gęstości na 0 utworzy "statyczny" uchwyt, który jest zasadniczo nieskończenie gęsty i nie będą na niego działać zewnętrzne siły ani kolizje, z wyjątkiem specjalnych przypadków, gdy instancja została utworzona jako kinematyczna (zobacz
       poniżej po więcej szczegółów).
@@ -29,24 +29,24 @@
   
   Restytucja
   
-    W fizyce, restytucja jest definiowana jako "powrót object lub systemu do stanu pierwotnego po sprężystym odkształceniu", ale ponieważ uchwyty w GameMaker Studio 2 są naprawdę sztywnymi ciałami i nie mogą być odkształcone, restytucja jest tak naprawdę
-      sposobem na określenie, jak "sprężyste" jest mocowanie. To ustawienie będzie miało wpływ na to, jak bardzo object "odbija się", gdy zderza się z innymi objects i jest współzależne od innych sił działających na instancję, takich jak grawitacja i tarcie.
+    W fizyce, restytucja jest definiowana jako "powrót object lub systemu do stanu pierwotnego po sprężystym odkształceniu", ale ponieważ uchwyty w GameMakerze są naprawdę sztywnymi ciałami i nie mogą być odkształcane, restytucja jest tak naprawdę
+      sposobem na określenie, jak "sprężyste" jest mocowanie. To ustawienie wpływa na to, jak bardzo object "odbija się", gdy zderza się z innymi objects i jest współzależne od innych sił, które działają na instancję, takich jak grawitacja i tarcie.
      
   
   Grupa Kolizyjna
   
     Domyślnie grupa kolizji dla wszystkich elementów fizyki objects wynosi 0, co oznacza, że będą one oddziaływać ze sobą w normalny sposób, a to z kolei oznacza, że muszą mieć zdarzenie kolizji, aby mogły oddziaływać (wystarczy zwykły komentarz, aby wywołać kolizję), w przeciwnym razie
-      nie zostanie zarejestrowana żadna kolizja. Można jednak także określić, że object powinien należeć do określonej, ponumerowanej grupy kolizji. Przypisując objects do dodatniej grupy kolizyjnej (np. trzy objects są w grupie
-      " 2") mówisz GameMaker Studio 2, że instancje tych objects powinny zawsze się zderzać, nawet jeśli nie mają nic w swoim zdarzeniu kolizyjnym, przestrzegając właściwości fizycznych, które im przypisałeś, oraz
-      room , w którym się znajdują. I odwrotnie, jeśli masz objects z ujemną grupą kolizji (tzn. cztery objects z przypisaniem "-1"), mówisz GameMaker Studio 2, że te instancje nigdy nie powinny się zderzyć, a wszelkie zdarzenia kolizji między nimi będą ignorowane.
+      nie zostanie zarejestrowana żadna kolizja. Można jednak także określić, że object powinien należeć do określonej, numerowanej grupy kolizji. Przypisując objects do dodatniej grupy kolizyjnej (np. trzy objects są w grupie
+      " 2") mówisz GameMakerowi, że instancje tych objects powinny zawsze się zderzać, nawet jeśli nie mają nic w swoim zdarzeniu kolizji, zgodnie z fizycznymi właściwościami, które im przypisałeś, oraz
+      room , w którym się znajdują. I odwrotnie, jeśli masz objects z ujemną grupą kolizji (np. cztery objects przypisane do "-1"), mówisz GameMakerowi, że te instancje nigdy nie powinny się zderzyć, a wszelkie zdarzenia kolizji między nimi będą ignorowane.
       między nimi będą ignorowane.
     UWAGA: Użycie grup kolizji drastycznie zwiększa przetwarzanie danych przez system fizyki i powinno być stosowane tylko wtedy, gdy jest to absolutnie konieczne, a grup powinno być jak najmniej.
      
   
   Tłumienie liniowe
   
-    Tłumienie jest używane do zmniejszenia prędkości instancji w świecie fizyki, gdy porusza się ona po stronie room. W zasadzie przypomina to tarcie o powierzchnię w "prawdziwym" świecie, ale w systemie fizyki GameMaker Studio 2 tarcie jest tak naprawdę
-      stosowane tylko wtedy, gdy stykają się dwie instancje o kolizyjnych kształtach (armaturach). Można więc traktować tłumienie liniowe bardziej jak "tarcie powietrza", które stopniowo spowalnia poruszającą się instancję fizyki w czasie, bez potrzeby kontaktu z
+    Tłumienie jest używane do zmniejszania prędkości instancji w świecie fizyki, gdy porusza się ona po stronie room. W zasadzie przypomina to tarcie o powierzchnię w "prawdziwym" świecie, ale w systemie fizyki GameMakera tarcie jest właściwie
+      jest stosowane tylko wtedy, gdy stykają się dwie instancje z kształtami kolizyjnymi (fixtures). Można więc traktować tłumienie liniowe bardziej jak "tarcie powietrza", które stopniowo spowalnia każdą poruszającą się instancję fizyki w czasie, bez potrzeby kontaktu z
       inną instancją fizyki.
      
   
@@ -58,18 +58,18 @@
   
   Tarcie
   
-    Tarcie to siła, która przeciwstawia się względnemu ruchowi ślizgających się po sobie elementów materialnych, co w świecie fizyki GameMaker Studio 2 przekłada się na utratę pędu spowodowaną zderzeniem dwóch instancji z elementami fizyki.
-      Gdy więc dwie instancje zderzą się ze sobą, na ich ruch wpływa ta wartość, przy czym duże tarcie powoduje większą utratę pędu niż mniejsza wartość.
+    Tarcie to siła, która przeciwstawia się względnemu ruchowi ślizgających się po sobie elementów materialnych, co w świecie fizyki GameMakera przekłada się na utratę pędu spowodowaną zderzeniem dwóch instancji z elementami fizyki.
+      Tak więc, gdy dwie instancje zderzają się ze sobą, ich ruch jest zależny od tej wartości, przy czym duże tarcie powoduje większą utratę pędu niż mniejsza wartość.
      
   
    
-  Na koniec są trzy dodatkowe opcje, które mogą być oznaczone jako włączone lub wyłączone dla twojego urządzenia: Sensor, Start Awake i Kinematic. Każda z tych opcji flags zmieni zachowanie twojego urządzenia w następujący sposób
+  Na koniec są trzy dodatkowe opcje, które mogą być zaznaczone jako włączone lub wyłączone dla twojego urządzenia: Sensor, Start Awake i Kinematic. Każda z tych opcji flags zmieni zachowanie twojego urządzenia w następujący sposób
     sposób:
    
   Czujnik
   
-    Zaznaczając to pole, mówisz GameMaker Studio 2, aby w zasadzie "ignorował" fizyczne właściwości object, ale mimo to zwracał zdarzenie kolizji z otaczającą go stroną objects. W ten sposób możesz mieć instancję, która nie jest fizycznie obecna
-      w room, ale która może reagować na kolizję innej instancji, np. gracza, i robić coś w zamian, np. otwierać drzwi lub wywoływać jakieś działania w innym miejscu w room.
+    Zaznaczając to pole, mówisz programowi GameMaker, aby w zasadzie "ignorował" fizyczne właściwości object, ale mimo to zwracał zdarzenie kolizji z objects wokół niego. W ten sposób możesz mieć instancję, która nie jest fizycznie obecna
+      w room, ale która może reagować na zderzenie z inną instancją, np. z graczem, i zrobić coś w zamian, np. otworzyć drzwi lub wywołać jakieś działanie w innym miejscu w room.
     UWAGA: Oprzyrządowanie czujnika spowoduje wyzwolenie zdarzenia kolizji tylko wtedy, gdy zderzenie wystąpi po raz pierwszy, co oznacza, że nie otrzymasz strumienia zdarzeń kolizji, gdy dwa ciała będą się nadal na siebie nakładać (co tradycyjnie
       zachodzi). Jeśli ciała przestaną na siebie nachodzić i nałożą się ponownie, zostanie wyzwolone kolejne zdarzenie kolizji.
      
@@ -79,15 +79,15 @@
     Ta opcja jest domyślnie zaznaczona i reprezentuje początkowy "stan" elementu na początku room, w którym został umieszczony. Normalnie chcesz by była ona przebudzona (tj. uczestniczyła w świecie fizyki) od samego początku, ale czasami może to
       może prowadzić do pewnych niestabilności i niepożądanych efektów z powodu nagłego rozpoczęcia symulacji fizyki. Aby uniknąć tych efektów, możesz odznaczyć tę stronę flag i instancja zostanie utworzona z uśpionym elementem, który nie będzie brał udziału w
       symulacji fizyki, chyba że coś na nią zadziała.
-    Zauważ, że instancje fizyki będą oznaczane jako "uśpione", gdy nie będą się już poruszać ani wchodzić w interakcję z żadną inną instancją fizyki, a "uśpiona" instancja to po prostu taka, która nie jest obecnie w pełni
+    Zauważ, że instancje fizyki zostaną oznaczone jako "uśpione", gdy nie są już poddawane żadnemu ruchowi ani nie mają interakcji z żadną inną instancją fizyki, a "uśpiona" instancja to po prostu taka, która nie jest obecnie w pełni
       przetwarzana przez symulację fizyki (co oszczędza obciążenie procesora).
      
   
   Kinematyczny
   
-    W grach opartych na fizyce zdarzają się sytuacje, w których użytkownik chce się poruszać, ale nie chcą na niego działać siły takie jak grawitacja ani siły wynikające z kolizji z dynamiczną stroną objects (na przykład ruchome platformy w grze platformowej).
+    W grach opartych na fizyce zdarzają się sytuacje, w których użytkownik chce się poruszać, ale nie chcą na niego działać siły takie jak grawitacja ani siły powstałe w wyniku zderzenia z dynamiczną stroną objects (na przykład ruchome platformy w grze platformowej).
       na przykład). W przypadku takiej strony objects ustawienie gęstości mocowania na 0 spowoduje, że fizyka przyjmie, że strona object ma być statyczna i nie będzie na nic reagować. Jednak zaznaczenie tego pola spowoduje
-      sprawi, że statyczny object stanie się kinematyczny i choć nadal nie będą na niego działać kolizje i siły takie jak grawitacja, będzie można go teraz przemieszczać lub obracać, używając odpowiednich zmiennych (zobacz phy_position_x oraz .
+      sprawi, że statyczny object stanie się kinematyczny i choć nadal nie będą na niego oddziaływać kolizje i siły takie jak grawitacja, będzie można go teraz przemieszczać lub obracać, używając odpowiednich zmiennych (zobacz phy_position_x oraz .
       phy_position_y, na przykład).
      
   

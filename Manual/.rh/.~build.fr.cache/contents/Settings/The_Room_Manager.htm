@@ -2,8 +2,8 @@
   
    Room Manager
   Korzystając z Przeglądarki zasobów, można tworzyć strony rooms i przenosić je między
-    między różnymi grupami folderów, aby zorganizować projekt w sposób, który najbardziej Ci odpowiada. Jednak gry w GameMaker Studio 2 zazwyczaj mają rooms w określonej kolejności, a co najmniej muszą mieć określony pokój startowy (po
-    (po rozpoczęciu gry w tym room możesz użyć kodu lub akcji, aby przejść do dowolnego room w grze).
+    między różnymi grupami folderów, aby zorganizować projekt w sposób, który najbardziej Ci odpowiada. Jednak gry w GameMakerze zwykle mają stronę rooms, która ma określoną kolejność, a przynajmniej musi mieć określony pokój startowy (po
+    (po rozpoczęciu gry w tym room możesz użyć kodu lub akcji, aby przejść do dowolnego room w grze, jeśli chcesz).
   Menedżera room można otworzyć, klikając przycisk "Dodatki"  w górnej części przeglądarki Asset i wybierając go z otwartego menu, można też
     po prostu kliknąć  ikonę znajdującą się po lewej stronie adresu room w przeglądarce asset:
   Po otwarciu, w menedżerze Room znajdują się dwie różne karty, jedna do porządkowania pomieszczeń, a druga do dziedziczenia pomieszczeń.
@@ -12,7 +12,7 @@
     pokój startowy dla gry. Ikona ta będzie również wyświetlana w przeglądarce Asset, abyś mógł wyraźnie zobaczyć, która to sala room, niezależnie od sposobu filtrowania lub konfiguracji strony assets.
   Uwaga: Identyfikatory w witrynie room assets nie będą w takiej samej kolejności jak na tej liście, dlatego nie należy bezpośrednio podawać wartości liczbowej, aby zmienić adres room na runtime. Zawsze używaj stałej pokojowej dla asset, do której chcesz się odwołać (jest to po prostu jej nazwa), lub pobieraj ją za pomocą funkcji.
   Kolejność stron rooms można zmienić, klikając stronę  i przeciągając stronę room, którą chcesz przesunąć w górę lub w dół listy. Za pomocą strony  i/lub  /  można zaznaczyć wiele stron rooms, a następnie kliknąć i przeciągnąć je, aby przesunąć je w całości:
-  Karta Dziedziczenie pokoju służy do konfigurowania "dzieci" rooms. Dziecko room to takie, które zostało skopiowane z
+  Karta Dziedziczenie pokoju służy do ustawiania "dzieci" rooms. Dziecko room to takie, które zostało skopiowane z
     rodzica" room i ustawiono na inherit wszystkie jego właściwości. Jeśli nie zrobisz nic z tym room, to room będzie rzeczywiście kopią oryginalnego room, ale możesz potem przejść do Edytora pomieszczenia i
     włączać lub wyłączać dziedziczenie dla określonych elementów, takich jak warstwy lub instancje, a także dodawać nowe warstwy, instancje i właściwości do room.
   Podobnie jak w przypadku karty Kolejność Room, można kliknąć przycisk  i przeciągnąć go, aby zmienić kolejność rooms, ale należy pamiętać, że wybranie dziecka room i przeniesienie go do innego rodzica spowoduje przerwanie dziedziczenia room z oryginalnym rodzicem, a zamiast tego inherit właściwości nowego room. Należy także pamiętać, że można przekształcić
@@ -26,7 +26,7 @@
     Strona Rooms, w której znajduje się szukane hasło, zostanie podświetlona, a następnie można do niej szybko przejść, używając przycisków góra/dół znajdujących się z boku:
   W dolnej części strony Room Manager znajdują się również pomocne przyciski, które umożliwiają przesuwanie strony rooms w górę lub w dół listy zamówień room:
   Obok tych przycisków znajduje się także przycisk Utwórz grupę, który służy do tworzenia folderów grup.
-    Foldery te mogą być używane do lepszej organizacji rooms w grze (kolejnośćroom nadal będzie respektowana). Aby je dodać, możesz kliknąć i przeciągnąć rooms do folderu. Możesz także zaznaczyć wiele stron rooms, klikając i przytrzymując stronę  i/lub  / , a następnie kliknąć przycisk Utwórz grupę, a wszystkie zaznaczone strony rooms zostaną dodane do grupy. Pamiętaj, że zmieni to kolejność rooms w grze, a także, że jeśli później usuniesz folder grupy, wszystkie rooms znajdujące się w tym folderze również zostaną usunięte (domyślnie
+    Foldery te mogą być używane do lepszej organizacji rooms w grze (kolejnośćroom nadal będzie respektowana). Aby je dodać, możesz kliknąć i przeciągnąć rooms do folderu. Możesz także zaznaczyć wiele stron rooms, klikając i przytrzymując  i/lub  / , a następnie kliknąć przycisk Utwórz grupę, a wszystkie zaznaczone strony rooms zostaną dodane do grupy. Pamiętaj, że zmieni to kolejność rooms w grze, a także, że jeśli później usuniesz folder grupy, wszystkie rooms znajdujące się w tym folderze również zostaną usunięte (domyślnie
     domyślnie GameMaker ostrzeże Cię o tym).
   Należy również pamiętać, że można kliknąć prawym przyciskiem myszy dowolną stronę room w Menedżerze Room, aby wyświetlić następujące menu:
   W tym menu dostępne są następujące opcje:

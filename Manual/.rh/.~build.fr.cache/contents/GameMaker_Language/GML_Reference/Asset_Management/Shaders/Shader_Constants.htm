@@ -1,7 +1,7 @@
 
   
   Stałe shadera
-  Oprócz funkcji i stałych shader zdefiniowanych na stronach referencyjnych języka cieniowania OpenGL ES (GLSL ES), dostępnych jest także wiele stałych shader, które są unikalne dla GameMaker Studio 2.
+  Oprócz funkcji i stałych shader zdefiniowanych na stronach referencyjnych języka cieniowania OpenGL ES (GLSL ES) dostępnych jest także wiele stałych shader, które są unikalne dla GameMakera.
   Następujące stałe matrycy wyświetlacza mogą być używane jako indeksy tablicy przy użyciu stałej tablicowej shader gm_Matrices :
   
     
@@ -54,7 +54,7 @@
     
   
    
-  W witrynie shader można używać następujących predefiniowanych uniformów i stałych macierzowych, aby uzyskać dostęp do wartości specyficznych dla witryny GameMaker Studio 2:
+  Poniższe predefiniowane uniformy i stałe macierzy mogą być używane w witrynie shader w celu uzyskania dostępu do wartości specyficznych dla programu GameMaker:
   
     
       
@@ -63,15 +63,15 @@
       
       
         gm_Matrices[matrix]
-        Ta stała tablicowa zwraca macierz transformacji i jest jedną z dostępnych predefiniowanych uniformów, które GameMaker Studio 2 tworzy do użytku w edytorze kodu shader. Indeks tablicy jest wybierany z jednej z wyżej wymienionych stałych.
+        Ta stała tablicowa zwraca macierz transformacji i jest jednym z dostępnych predefiniowanych uniformów, które GameMaker tworzy dla użytkownika w edytorze kodu shader. Indeks tablicy jest wybierany z jednej z wyżej wymienionych stałych.
       
       
         gm_BaseTexture
-        Jest to stała próbnika 2D, która zwraca wartość texture bieżącej strony object, ustawioną przez GameMaker Studio 2. Byłaby to więc bieżąca strona sprite, powierzchnia lub texture, która normalnie byłaby używana podczas rysowania bez wywoływania strony shader.
+        Jest to stała próbnika 2D, która zwraca adres texture bieżącego adresu object, ustawionego przez program GameMaker. Byłaby to więc aktualna strona sprite, powierzchnia lub texture, która normalnie byłaby używana podczas rysowania bez wywoływania strony shader.
       
       
         gm_LightingEnabled
-        Można go użyć do uzyskania lub ustawienia oświetlenia GameMaker Studio 2 podczas korzystania z funkcji 3D.
+        Można go użyć do uzyskania lub ustawienia oświetlenia w programie GameMaker podczas korzystania z trybu 3D.
       
       
         gm_FogStart
@@ -83,11 +83,11 @@
       
       
         gm_PS_FogEnabled
-        Zwróci ona wartość true lub false, jeśli układ GPU ma włączoną funkcję mgły pikselowej lub nie.
+        Zwróci ona wartość true lub false, jeśli układ GPU ma włączoną funkcję mgły pikselowej.
       
       
         gm_FogColour
-        Można go użyć do uzyskania koloru mgły używanego przez stronę GameMaker Studio 2.
+        Można go użyć do uzyskania koloru mgły używanego w programie GameMaker.
       
       
         gm_VS_FogEnabled

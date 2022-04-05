@@ -2,8 +2,8 @@
   
   JSDoc Script Uwagi
   Jeśli chcesz, aby Twoje funkcje były wyposażone w funkcję uzupełniania kodu i pokazywały wymagane argumenty w określony sposób w edytorze kodu, musisz dodać komentarze w stylu JSDoc. Komentarze te służą do informowania funkcji autouzupełniania o tym, w jaki sposób funkcja powinna być używana i wypełniana w edytorze skryptów.
-  Typowy nagłówek funkcji powinien zawierać nazwę funkcji, jej opis, a następnie listę różnych argumentów (parametrów), które przyjmuje funkcja. Należy pamiętać, aby każdy wiersz zaczynać od potrójnego odwrotnego ukośnika "
-   ///", ponieważ to informuje GameMaker Studio 2, że komentarz powinien być przetwarzany w stylu JSDoc. Samym komentarzom należy nadać identyfikator (poprzedzony znakiem "@") i treść, a dostępne są następujące identyfikatory
+  Typowy nagłówek funkcji powinien zawierać nazwę funkcji, jej opis, a następnie listę różnych argumentów (parametrów), które przyjmuje funkcja. Należy pamiętać, aby każdą linię zaczynać od potrójnego odwrotnego ukośnika "
+   ///", ponieważ to mówi GameMakerowi, że komentarz jest w stylu JSDoc. Samemu komentarzowi należy nadać identyfikator (poprzedzony znakiem "@") i treść, a dostępne są następujące identyfikatory
     identyfikatory są następujące:
    
   
@@ -28,7 +28,7 @@
     
   
    
-  Aby zorientować się, jak to działa podczas pisania własnych funkcji, posłużmy się podstawowym przykładem:
+  Aby wyobrazić sobie, jak to działa podczas pisania własnych funkcji, posłużmy się podstawowym przykładem:
   function is_same_object(_id, _obj) {
          if (_id.object_index == _obj)     {         return true;     }     else return false; }
   
@@ -54,7 +54,7 @@
   
   Argumenty start_x i start_y są oznaczone jako opcjonalne, co oznacza, że edytor kodu będzie teraz oczekiwał od 2 do 4 argumentów, jak widać w komunikacie ostrzegawczym:
   
-  UWAGA: Takie samo zachowanie uzyskasz, jeśli w deklaracji funkcji użyjesz opcjonalnych argumentów. Więcej informacji na ten temat można znaleźć w części Funkcje skryptu.
+  UWAGA: Takie samo zachowanie uzyskasz, jeśli w deklaracji funkcji użyjesz opcjonalnych argumentów. Więcej informacji na ten temat można znaleźć w rozdziale Funkcje skryptu.
   Ponieważ strona scripts może zawierać wiele funkcji, można dodać komentarze JSDoc dla każdej z nich przed jej deklaracją:
   
    

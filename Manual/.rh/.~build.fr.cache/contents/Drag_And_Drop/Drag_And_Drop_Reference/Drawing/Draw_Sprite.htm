@@ -1,11 +1,11 @@
 
   
    Rysuj sprite
-  Ta akcja narysuje stronę sprite gdzieś na stronie room. Określasz adres sprite, pozycję (absolutną w obrębie room lub względną względem instancji rysującej) oraz klatkę animacji sprite, jeśli ma ona wiele
+  Ta akcja narysuje stronę sprite gdzieś na stronie room. Określasz adres sprite, pozycję (absolutną w obrębie room lub względną względem instancji rysującej) oraz klatkę animacji sprite, jeśli ma ona wiele klatek (pamiętaj, że klatki obrazu są numerowane od 0 w górę).
     klatek (zauważ, że klatki obrazu są numerowane od 0 w górę). Jeśli masz animowaną stronę sprite i chcesz, aby rysowała klatki tak, jakby była przypisana do object, to użyj -1 dla indeksu klatki lub wbudowanej zmiennej instancji image_index,
     Pamiętaj jednak, że jeśli do instancji nie jest przypisana sprite, to nie będzie ona animowana, a jeśli przypisana sprite ma inną liczbę klatek niż ta, która jest rysowana, to sprite będzie rysowana z dodatkowymi klatkami lub pominiętymi.
   WAŻNE: Ta akcja nie narysuje przekształconej strony sprite, nawet jeśli zmieniono mieszanie lub skalę obrazu. Więcej informacji na ten temat można znaleźć w akcji Rysuj Sprite przekształcony.
-  UWAGA: Ta akcja jest przeznaczona tylko do użycia w różnych zdarzeniach losowania i nie wylosuje niczego, jeśli zostanie użyta w innym miejscu.
+  UWAGA: Ta akcja jest przeznaczona wyłącznie do użycia w różnych zdarzeniach losowania i nie spowoduje wylosowania niczego, jeśli zostanie użyta w innym miejscu.
    
    
   Składnia działania:
@@ -31,7 +31,7 @@
       
       
         Frame Index
-        Indeks ramki, która ma zostać narysowana
+        Indeks ramki do narysowania
       
     
   

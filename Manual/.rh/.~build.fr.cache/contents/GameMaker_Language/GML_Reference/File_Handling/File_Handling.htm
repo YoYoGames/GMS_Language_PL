@@ -1,8 +1,8 @@
 
   
   Obsługa plików
-  W pewnym momencie podczas tworzenia gry konieczne będzie przechowywanie informacji z zewnątrz i możliwość ich wyszukiwania. Na przykład, możesz chcieć przechowywać dane logowania, wyniki, lub postępy gracza w przechodzeniu poziomów. Niezależnie od tego, jaki jest powód, trzeba wiedzieć, jak korzystać z różnych funkcji plików dostępnych podczas pracy z GameMaker Studio 2.
-  Bardzo ważne jest, aby zdawać sobie sprawę, że GameMaker Studio 2 jest domyślnie Sandboxed , co oznacza, że istnieje szereg ograniczeń i drobnych komplikacji podczas korzystania z dostępnych funkcji systemu plików, a także warto zauważyć, że system plików będzie działał nieco inaczej w zależności od platformy, na którą jest przeznaczony. Więcej informacji na ten temat można znaleźć w następującej sekcji:
+  W pewnym momencie podczas tworzenia gry konieczne będzie przechowywanie informacji z zewnątrz i możliwość ich wyszukiwania. Na przykład, możesz chcieć przechowywać dane logowania, wyniki lub postępy gracza w przechodzeniu poziomów. Niezależnie od tego, jaki jest tego powód, będziesz musiał wiedzieć, jak korzystać z różnych funkcji plików dostępnych w programie GameMaker.
+  Bardzo ważne jest, aby zdawać sobie sprawę, że GameMaker jest domyślnie Sandboxed , co oznacza, że istnieje szereg ograniczeń i drobnych komplikacji podczas korzystania z funkcji systemu plików, które są dostępne. Więcej informacji na ten temat można znaleźć w następującej sekcji:
   
     System plików
   
@@ -11,7 +11,7 @@
   Na koniec należy zauważyć, że istnieją pewne różnice między niektórymi platformami docelowymi, które należy wziąć pod uwagę przy korzystaniu z funkcji plików. Są to:
   
     iOS: Na iOS, jeśli ładujesz dołączony plik z folderu, np. z path coś w rodzaju "Backgrounds/background1.png", NIE musisz dołączać folderu jako części path i wystarczy podanie nazwy pliku. Na wszystkich innych platformach musisz podać folder(y) jako część adresu path do pliku.
-    macOS i Ubuntu (Linux): Na platformach macOS i Ubuntu, w nazwach plików i paths wielkość liter ma znaczenie na tych platformach, dlatego aby zapobiec potencjalnym problemom, GameMaker Studio 2 automatycznie sprawi, że wszystkie nazwy/ścieżki będą domyślnie używać małych liter.
+    macOS i Ubuntu (Linux): Na stronach macOS i Ubuntu, w nazwach plików i paths na tych platformach rozróżniana jest wielkość liter, dlatego aby zapobiec potencjalnym problemom, GameMaker automatycznie sprawi, że wszystkie nazwy/ścieżki będą domyślnie pisane małymi literami.
     HTML5: W HTML5 zapisywanie i ładowanie do i z pamięci lokalnej będzie działać tak, jak wyjaśniono na stronach z różnymi funkcjami, jednak jeśli ładujesz plik z server, musisz użyć tylko funkcji buffer_load_async(), ponieważ ładowanie synchroniczne zostało wycofane z większości przeglądarek i w końcu zostanie zastąpione. Należy również pamiętać, że nie można tworzyć ani niszczyć katalogów w lokalnej pamięci masowej przeglądarki.
   
   Informacje o różnych funkcjach plików można znaleźć na kolejnych stronach:
@@ -23,7 +23,7 @@
     Katalogi plików
   
    
-  GameMaker Studio 2 zawiera także szereg funkcji do kodowania i haszowania plików i danych, które można znaleźć tutaj:
+  GameMaker zawiera także wiele funkcji do kodowania i haszowania plików i danych, które można znaleźć tutaj:
   
     Kodowanie i haszowanie
   

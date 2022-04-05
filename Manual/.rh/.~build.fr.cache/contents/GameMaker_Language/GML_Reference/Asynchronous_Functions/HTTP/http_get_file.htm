@@ -1,17 +1,17 @@
 
   
   http_get_file
-  Za pomocą tej funkcji można połączyć się z podanym adresem URL w celu pobrania informacji w postaci pliku. Ponieważ jest to funkcja asynchroniczna, GameMaker Studio 2 nie zablokuje się w oczekiwaniu na odpowiedź, lecz będzie działać dalej, dopóki nie otrzyma informacji zwrotnej. Informacja ta będzie miała postać string i wywoła zdarzenie asynchroniczne w każdej instancji, która ma je zdefiniowane we właściwościach object.
+  Za pomocą tej funkcji możesz połączyć się z podanym adresem URL w celu pobrania informacji w postaci pliku. Ponieważ jest to funkcja asynchroniczna, GameMaker nie będzie się blokował w oczekiwaniu na odpowiedź, ale będzie działał dalej, dopóki nie otrzyma informacji zwrotnej. Informacja ta będzie miała postać string i wywoła zdarzenie Async Event w każdej instancji, która ma je zdefiniowane we właściwościach object.
   UWAGA Należy pamiętać, że ze względu na ochronę XSS w przeglądarkach, żądania i próby załadowania zasobów z innych domen są blokowane i mogą zwracać puste wyniki. Więcej informacji na ten temat można znaleźć w części poświęconej problemom domen krzyżowych.
-  Zdarzenie to wygeneruje "wywołanie zwrotne", które zostanie odebrane przez dowolne zdarzenie HTTP, w którym to przypadku wygeneruje ono wartość DS Map (bardziej znany jako "słownik"), który jest wyłączny dla tego zdarzenia i jest przechowywany w specjalnej zmiennej async_load. Ta mapa DS będzie zawierać różne wartości w zależności od zwracanych danych, tzn. zdarzenie będzie wyzwalane wielokrotnie po odebraniu każdego pakietu danych, dzięki czemu będzie można na przykład wyświetlić pasek postępu. Ogólna struktura mapy DS będzie następująca:
+  Zdarzenie to wygeneruje "wywołanie zwrotne", które zostanie odebrane przez dowolne zdarzenie HTTP, w którym to przypadku wygeneruje ono wartość DS Map (bardziej znany jako "słownik"), który jest wyłączny dla tego zdarzenia i jest przechowywany w specjalnej zmiennej async_load. Ta mapa DS będzie zawierać różne wartości w zależności od zwracanych danych, tzn. zdarzenie będzie wyzwalane wielokrotnie po odebraniu każdego pakietu danych, dzięki czemu można na przykład wyświetlić pasek postępu. Ogólna struktura mapy DS będzie następująca:
   
     id: Identyfikator, który został zwrócony przez polecenie. Jeśli wystrzelisz serię żądań http_, musisz wiedzieć, na które z nich otrzymasz odpowiedź, dlatego użyjesz tej wartości do porównania z wartością zapisaną podczas wysyłania żądania, aby znaleźć właściwe żądanie.
     status: Zwraca wartość mniejszą niż 0 w przypadku błędu, 0 w przypadku zakończenia i 1 w przypadku odebrania pakietów (więcej szczegółów w dalszej części instrukcji).
     wynik: Odebrane dane (tylkostring ).
     url: Pełny adres URL żądany przez użytkownika.
-    http_status: Nieprzetworzony kod statusu http (jeśli jest dostępny). Zwraca on standardowy kod statusu dla większości przeglądarek, np. 304 dla "Not Modified" lub 204 dla "No Content", itd.
+    http_status: Nieprzetworzony kod statusu http (jeśli jest dostępny). Zwraca on standardowy kod statusu dla większości przeglądarek, np.: 304 dla "Not Modified" lub 204 dla "No Content", itd.
   
-  Jeśli do gry zwracanych jest wiele pakietów, klawisz wywołania zwrotnego "status" zwróci 1. W takim przypadku mapa DS będzie miała następujące dodatkowe klawisze:
+  Jeśli do gry zwracanych jest wiele pakietów, klucz wywołania zwrotnego "status" zwróci 1. W takim przypadku mapa DS będzie miała następujące dodatkowe klucze:
   
     "contentLength": Jest to rozmiar pliku, którego zgodnie z informacją zawartą na stronie server należy się spodziewać (może być -1, jeśli strona server nie zwraca tych danych).
     "sizeDownloaded": Rozmiar danych, które zostały już pobrane.

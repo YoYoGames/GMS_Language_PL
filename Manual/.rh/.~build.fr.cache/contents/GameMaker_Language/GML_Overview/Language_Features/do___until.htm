@@ -1,7 +1,7 @@
 
   
   robić / aż
-  Funkcja do to kolejny sposób wielokrotnego iterowania po jednej lub kilkuinstrukcjach. Jest to tak naprawdę instrukcja "do... until", ponieważ nie można mieć jednej bez drugiej, ponieważ każesz GameMaker Studio 2 robić coś, dopóki określone wyrażenie nie zwróci wartości true. Ma ona następującą postać:
+  Funkcja do to inny sposób wielokrotnego iterowania po jednym lub kilku wyrażeniach, a tak naprawdę jest to "do... until" wyrażenie, ponieważ nie możesz mieć jednego bez drugiego, ponieważ mówisz GameMakerowi, aby robił coś, dopóki określone wyrażenie nie zwróci wartości true. Ma ona następującą postać:
   do
     {
         <statement>;
@@ -9,7 +9,7 @@
         ...
     }
     until (<expression>);
-  Instrukcja (która może być blokiem kodu składającym się z wielu instrukcji w nawiasach klamrowych {}) jest wykonywana do momentu, aż wyrażenie zostanie uznane za true, przy czym początkowa instrukcja jest zawsze wykonywana co najmniej raz. Poniżej znajduje się przykład typowego sposobu użycia do... until:
+  Instrukcja (która może być blokiem kodu składającym się z wielu instrukcji umieszczonych w nawiasach klamrowych {}) jest wykonywana do momentu, gdy wyrażenie zostanie uznane za true, przy czym początkowa instrukcja jest zawsze wykonywana co najmniej raz. Poniżej znajduje się przykład typowego sposobu użycia do... until:
   do
     {
         x = random(room_width);

@@ -2,8 +2,8 @@
   
   Zdarzenia asynchroniczne
   
-  Zdarzenie asynchroniczne to takie, które jest uruchamiane, gdy GameMaker Studio 2 otrzyma wywołanie zwrotne z jakiegoś zewnętrznego źródła, które może pochodzić z sieci lub z urządzenia, na którym działa gra. Zasadniczo,
-    każesz GameMaker Studio 2 coś zrobić - na przykład wczytać obrazek - a on zacznie to robić, ale w międzyczasie będzie kontynuował wszystkie inne czynności, które musi wykonać. Następnie, gdy żądanie zostanie zakończone, do GameMaker
+  Zdarzenie asynchroniczne to takie, które jest uruchamiane, gdy GameMaker otrzymuje wywołanie zwrotne z jakiegoś zewnętrznego źródła, które może pochodzić z sieci lub z urządzenia, na którym uruchomiona jest gra. Zasadniczo,
+    każesz GameMakerowi coś zrobić - np. załadować obrazek - i GameMaker zacznie to robić, ale będzie kontynuował wszystkie inne czynności, które musi wykonać w międzyczasie. Następnie, gdy żądanie zostanie zakończone, do GameMaker
     Studio 2 i zostaną uruchomione wszystkie zdarzenia asynchroniczne zdefiniowane dla tego typu wywołania zwrotnego.
   Należy pamiętać, że zdarzenia asynchroniczne są wywoływane we wszystkich instancjach, które je posiadają, podobnie jak zdarzenia klawiatury, więc można na przykład wykonać wywołanie http_get() w jednej instancji, a w innej mieć asynchroniczne zdarzenie HTTP, które zajmie się wywołaniem zwrotnym.
   UWAGA: Należy pamiętać, że ze względu na ochronę XSS w przeglądarkach, żądania i próby ładowania zasobów z innych domen są blokowane i mogą zwracać puste wyniki podczas korzystania z któregokolwiek z poniższych zdarzeń.

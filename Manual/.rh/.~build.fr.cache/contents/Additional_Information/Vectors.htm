@@ -9,9 +9,9 @@
   Podobnie postąpmy teraz z wektorem b:
   b = [(-1.2 -(-3.2)) ,(2.1 - 1.1)] = [2 ,1]
   Zauważyłeś coś? Te dwa wektory są takie same! To jeszcze jeden dowód na to, że wektor nie ma położenia, a jedynie kierunek i długość, i że możemy narysować te wektory względem siebie wokół lokalnej osi [0,0]:
-  Oznacza to, że wektor 2D jest definiowany przez dwie wartości - położenie "x" i "y" względem lokalnej osi [0,0]. A co z wektorami 3D? Cóż, mają one do czynienia z dodatkowym wymiarem "głębokości" i byłyby obliczane jako pozycje "x", "y" i "z" wokół lokalnej osi, mniej więcej tak jak poniżej:
-  Dobrym przykładem wektora używanego w witrynie GameMaker Studio 2 jest właściwość fizyki Grawitacja w edytorze room. Grawitacja jest obliczana jako wektor wokół pozycji [0,0]. Jeśli więc zdefiniujesz grawitację jako [x0, y10], grawitacja będzie skierowana w dół z siłą równą 10.
-  Zwykle wektory można wykorzystywać w wielu sytuacjach, ale czasami chcemy ograniczyć ich wartość (np. w przypadku kątów), dlatego też dokonujemy ich normalizacji . Jest to sztuczka matematyczna, która służy do przekształcenia wektora o długości n na wektor o długości 1, co oznacza, że składowe wektora są normalizowane do wartości z przedziału od 0 do 1. Takie wektory są również nazywane wektorami jednostkowymi:
+  Oznacza to, że wektor 2D jest definiowany przez dwie wartości, pozycję "x" i "y" względem lokalnej osi [0,0]. A co z wektorami 3D? Cóż, mają one do czynienia z dodatkowym wymiarem "głębokości" i byłyby obliczane jako pozycje "x", "y" i "z" wokół lokalnej osi, mniej więcej tak jak poniżej:
+  Dobrym przykładem wektora używanego w programie GameMaker jest właściwość fizyki grawitacji w edytorze room. Grawitacja jest obliczana jako wektor wokół pozycji [0,0]. Jeśli więc zdefiniujesz grawitację jako [x0, y10], grawitacja będzie skierowana w dół z siłą równą 10.
+  Zwykle wektory można wykorzystywać w wielu sytuacjach, ale czasami chcemy ograniczyć ich wartość (np. w przypadku kątów), dlatego też dokonujemy ich normalizacji . Jest to sztuczka matematyczna służąca do przekształcenia wektora o długości n na wektor o długości 1, co oznacza, że składowe wektora są normalizowane do wartości z przedziału od 0 do 1. Wektory takie nazywane są również wektorami jednostkowymi:
   Aby obliczyć wektor znormalizowany, musimy najpierw mieć oryginalne składowe wektora, a następnie użyć ich do uzyskania długości wektora. Następnie dzielimy każdą ze składowych wektora przez tę długość, aby otrzymać znormalizowane składowe wektora, które tworzą wektor znormalizowany, w którym suma kwadratów wszystkich współrzędnych jest równa 1. Oto, jak to zrobić:
   Najpierw bierzemy współrzędne wektora i otrzymujemy jego składowe:
   vx = (x2 - x1) = (7 - 1) = 6
@@ -21,7 +21,7 @@
   Teraz otrzymujemy dokładną długość wektora "a", więc wykorzystajmy ją do znormalizowania dwóch składowych wektora vx i vy:
   vx = (vx/len); // = (6 / 6.708203932499369) = 0.8944271909999159
     vy = (vy/len); // = (3 / 6.708203932499369) = 0.4472135954999579
-  Świetnie! Znormalizowaliśmy składowe wektora! Ale jakie praktyczne zastosowanie ma to w kontekście strony GameMaker Studio 2? Dobrze, podajmy praktyczny przykład...
+  Świetnie! Znormalizowaliśmy składowe wektora! Ale jakie praktyczne zastosowanie ma to w kontekście GameMakera? Dobrze, podajmy praktyczny przykład...
   Załóżmy, że mamy grę, w której gracz musi strzelać do przeciwnika i musimy wiedzieć, o ile razy kula object musi się przesunąć wzdłuż osi x i y w każdym kroku, aby w niego trafić:
   W tym celu należy użyć współrzędnych gracza i wroga, aby uzyskać składowe wektora i jego długość, a następnie znormalizować je, aby uzyskać wartość z przedziału od 0 do 1, którą należy pomnożyć przez prędkość, z jaką pocisk ma się poruszać w każdym kroku. Te dwie ostatnie wartości należy zapisać i dodać do początkowych współrzędnych x i y w każdym kroku. Brzmi skomplikowanie? Nie jest, spójrz (dla uproszczenia wartości zostały zaokrąglone do jednego miejsca po przecinku):
   px = 100;

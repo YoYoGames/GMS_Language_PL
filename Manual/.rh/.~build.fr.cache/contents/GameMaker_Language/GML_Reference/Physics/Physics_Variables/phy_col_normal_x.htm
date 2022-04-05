@@ -1,16 +1,16 @@
 
   
   phy_col_normal_x
-  This read-only variable returns the x component of the collision normal corresponding to the phy_collision_x array value. For each contact point there is an associated contact normal (which is usually the same normal for all points of contact in the collision). This contact normal is a unit vector that points from one instance in the collision to another, and can be used, for example, to calculate the correct "push" direction to resolve collisions
-  NOTE: This variable is only available in the collision event of a physics enabled instance.
-   
-  Syntax:
+  Ta zmienna tylko do odczytu zwraca składową x normalnej kolizyjnej odpowiadającej wartości phy_collision_x wartości tablicy. Dla każdego punktu styczności istnieje powiązana normalna styczności (zazwyczaj jest to ta sama normalna dla wszystkich punktów styczności w kolizji). Normalna kontaktu to wektor jednostkowy, który wskazuje od jednego punktu kolizji do drugiego. Można jej użyć na przykład do obliczenia prawidłowego kierunku "pchania" w celu rozwiązania kolizji.
+  UWAGA: Ta zmienna jest dostępna tylko w zdarzeniu kolizji instancji z włączoną fizyką.
+   
+  Składnia:
   phy_col_normal_x;
-   
-  Returns:
+   
+  Zwroty:
    (single precision floating point value, or undefined if the instance is not physics enabled)
-   
-  Example:
+   
+  Przykład:
   repeat(5 + irandom(5))
     {
         with (instance_create_layer(x, y, "Effects", obj_Debris)
@@ -18,18 +18,18 @@
             physics_apply_local_impulse(0, 0, other.phy_col_normal_x[0], other.phy_col_normal_y[0]);
         }
     }
-  The above code uses the contact normal to set the direction of movement for an instance created in the collision event between two physics enabled instances.
-   
-   
-   
+  Powyższy kod wykorzystuje normalną kontaktową do ustawienia kierunku ruchu dla instancji utworzonej w zdarzeniu kolizji między dwiema instancjami z włączoną fizyką.
+   
+   
+   
   
     
       
-        Back: Physics Variables
-        Next: phy_col_normal_y
+        Powrót: Zmienne fizyki
+        Następny: phy_col_normal_y
       
     
-    © Copyright YoYo Games Ltd. 2022 All Rights Reserved
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

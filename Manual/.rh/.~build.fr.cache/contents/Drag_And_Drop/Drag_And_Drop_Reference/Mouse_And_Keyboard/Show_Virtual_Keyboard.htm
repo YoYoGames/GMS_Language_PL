@@ -3,7 +3,7 @@
    Pokaż klawiaturę wirtualną
   Tej akcji można użyć do wyświetlenia wirtualnej klawiatury na urządzeniu, na którym uruchomiona jest gra. Po wywołaniu tej akcji zostaniesz poproszony o podanie jednej z poniższych stałych dla każdego z trzech pierwszych argumentów:
   
-    Typ klawiatury: Ta stała jest używana do określania zestawu klawiszy, który będzie dostępny na klawiaturze wirtualnej. Dostępne typy klawiatury to:
+    Typ klawiatury: Ta stała jest używana do określania zestawu klawiszy, który będzie dostępny na klawiaturze wirtualnej. Dostępne są następujące typy klawiatury:
       
         
           
@@ -78,7 +78,7 @@
           
           
             kbv_returnkey_send
-            Ustawia nazwę klawisza powrotu na "Wyślij".
+            Ustawia tytuł klawisza powrotu na "Wyślij".
           
           
             kbv_returnkey_yahoo
@@ -90,7 +90,7 @@
           
           
             kbv_returnkey_continue
-            Ustawia tytuł klawisza powrotu na "Kontynuuj".
+            Ustawia nazwę klawisza powrotu na "Kontynuuj".
           
           
             kbv_returnkey_emergency
@@ -127,8 +127,8 @@
     
   
   Ostatni argument to włączenie/wyłączenie predykcyjnego tekstu, który powinien być ustawiony na true, aby go dopuścić, oraz false w przeciwnym razie, ale należy pamiętać, że sam fakt, że jest on dopuszczony, nie oznacza, że będzie używany, ponieważ zależy to od preferencji
-    użytkownika urządzenia. W trybie przewidywania tekstu klawiatura wirtualna nie będzie generować normalnych zdarzeń naciśnięcia klawiszy GameMaker Studio 2. Zamiast tego będzie aktualizować tylko zmienne dotyczące ostatniego naciśniętego znaku i klawiatury string. Wynika to z
-    niemożnością wykrycia, czy zmiana w wewnętrznym polu tekstowym używanym do wykrywania naciśnięć klawiszy została spowodowana przez rzeczywisty klawisz klawiatury wirtualnej, czy przez sugestię tekstową. W takich przypadkach należy odczytywać dane wejściowe keyboard_string, a nie
+    użytkownika urządzenia. W trybie przewidywania tekstu wirtualna klawiatura nie będzie generować normalnych zdarzeń związanych z naciskaniem klawiszy w programie GameMaker. Zamiast tego będzie aktualizować jedynie zmienne dotyczące ostatniego naciśniętego znaku oraz klawiatury string. Wynika to z
+    niemożnością wykrycia, czy zmiana w wewnętrznym polu tekstowym używanym do wykrywania naciśnięć klawiszy została spowodowana przez rzeczywisty klawisz klawiatury wirtualnej, czy też przez sugestię tekstową. W takich przypadkach należy odczytywać dane wejściowe keyboard_string, a nie
     a nie odczytywać surowe dane wejściowe.
   Należy również zauważyć, że użytkownik otrzyma różne klawiatury o różnych możliwościach w zależności od systemu operacyjnego platformy, z następującymi zastrzeżeniami dotyczącymi stosowania w poszczególnych celach:
   

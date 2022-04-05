@@ -1,7 +1,7 @@
 
   
   animcurve_channel_new
-  This function can be used to create a new animation curve channel struct. A channel struct has the following variables:
+  Za pomocą tej funkcji można utworzyć nowy kanał animation curve channel struct. Kanał struct ma następujące zmienne:
   
     
       
@@ -10,36 +10,36 @@
     
     
       
-        Animation Curve Channel Struct
+        Struktura kanału krzywej animacji
       
       
-        Variable Name
-        Data Type
-        Description
+        Nazwa zmiennej
+        Typ danych
+        Opis
       
       
-        name
-        string
-        This is the name of the channel.
+        nazwa
+        ciąg
+        Jest to nazwa kanału.
       
       
-        type
-        Animation Curve Interpolation Type Constant
-        This will be one of the constants given in the table below.
+        typ
+        Typ interpolacji krzywej animacji Stała
+        Będzie to jedna ze stałych podanych w poniższej tabeli.
       
       
-        iterations
-        integer
-        If the channel is using catmull-rom ("smooth") interpolation this holds how many points have been generated for each segment of the curve (note that these extra points are internal to the function and only used for the runtime calculations). If the channel is using linear interpolation, this value will still exist but can be ignored as it has no bearing on how the curve is interpolated.
+        iteracje
+        liczba całkowita
+        Jeśli kanał używa interpolacji katmull-rom ("gładkiej"), wartość ta określa, ile punktów zostało wygenerowanych dla każdego segmentu krzywej (należy pamiętać, że te dodatkowe punkty są wewnętrzne dla funkcji i używane tylko do obliczeń runtime ). Jeśli kanał korzysta z interpolacji liniowej, wartość ta nadal będzie istnieć, ale można ją zignorować, ponieważ nie ma ona wpływu na sposób interpolacji krzywej.
       
       
-        points
-        array
-        This is an array, where each item in the array is an Animation Curve Point Struct.
+        punkty
+        tablica
+        Jest to tablica, w której każdy element jest tablicą Struktura punktów krzywej animacji.
       
     
   
-   
+   
   
     
       
@@ -47,32 +47,36 @@
     
     
       
-        Animation Curve Interpolation Type Constant
+        Typ interpolacji krzywej animacji Stała
       
       
-        Constant
-        Description
+        Stała
+        Opis
       
       
         animcurvetype_linear
-        Used for linear interpolation between points.
+        Służy do interpolacji liniowej między punktami.
       
       
         animcurvetype_catmullrom
-        Used for smooth interpolation between points using catmull-rom interpolation.
+        Służy do płynnej interpolacji między punktami przy użyciu interpolacji katmull-rom.
+      
+      
+        animcurvetype_bezier
+        Służy do interpolacji beziera między punktami.
       
     
   
   
-    By default when you create a new channel struct, the "name" variable will be an empty string, the "type" will be animcurvetype_linear and the "iterations" will be 16. All these variables can be set to the values that you require (note that the "iterations" value has no effect on linear curve types). Once created you need to add points to the curve, which is done by adding different point structs to the "points" array. These point structs can be created using the function animcurve_point_new().
-   
-  Syntax:
+    Domyślnie po utworzeniu nowego kanału struct zmienna "name" będzie pusta string, zmienna "type" będzie miała wartość animcurvetype_linear, a zmienna "iterations" będzie miała wartość 16. Wszystkie te zmienne można ustawić na żądane wartości (należy pamiętać, że wartość "iteracje" nie ma wpływu na typy krzywych liniowych). Po utworzeniu krzywej należy dodać do niej punkty, co odbywa się przez dodanie różnych punktów structs do tablicy"points". Punkty te structs można utworzyć za pomocą funkcji animcurve_point_new().
+   
+  Składnia:
   animcurve_channel_new();
-   
-  Returns:
+   
+  Zwroty:
   Animation Curve Channel Struct
-   
-  Example:
+   
+  Przykład:
   my_curve = animcurve_create();
     my_curve.name = "My_Curve";
     var _channels = array_create(1);
@@ -92,18 +96,18 @@
     _points[2].value = 0;
     _channels[0].points = _points;
     my_curve.channels = _channels;
-  The above code creates a new animation curve struct and stores it in the variable "my_curve". This struct is then populated with a name and a channel array. The channel array contains a single channel with three points.
-   
-   
-   
+  Powyższy kod tworzy nową stronę animation curve struct i zapisuje ją w zmiennej "my_curve". Następnie na stronie struct umieszczana jest nazwa i tablica kanałów. Tablica kanałów zawiera pojedynczy kanał z trzema punktami.
+   
+   
+   
   
     
       
-        Back: Animation Curves
-        Next: animcurve_point_new
+        Powrót: Krzywe animacji
+        Następny: animcurve_point_new
       
     
-    © Copyright YoYo Games Ltd. 2022 All Rights Reserved
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

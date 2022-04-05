@@ -8,7 +8,7 @@
   WAŻNE! W przypadku stosowania języka HTML5 kursywa i pogrubienie tekstu są obsługiwane tylko wtedy, gdy na stronie font asset lub stronie font znajdują się te znaki. Nie zostaną one zsyntetyzowane z podstawowej strony font.
   Podczas ładowania strony font z pliku rozmiar strony font jest podawany w pikselach, a pierwsza i ostatnia wartość są ignorowane, co oznacza, że wszystkie glify w font zostaną dodane. Fonts dodane w ten sposób są przypisane do własnej strony texture, więc należy zachować ostrożność podczas korzystania z tej funkcji, ponieważ spowoduje ona zwiększenie liczby podmian texture podczas rysowania. Warto także zauważyć, że strona fonts może wydawać się nieco większa podczas rysowania, ponieważ glify mogą mieć części rysowane poza ramką zdefiniowaną dla strony font. Należy także pamiętać, że istnieje ograniczenie liczby glifów, które mogą być renderowane w pojedynczej ramce dla danej strony font, do około 200.
   Domyślnie strona fonts ma włączony antyaliasing. Stan AA można jednak sprawdzić w dowolnym momencie za pomocą funkcji font_add_get_enable_aa() oraz włączyć/wyłączyć AA za pomocą funkcji font_add_enable_aa().
-  UWAGA Po załadowaniu strony font do GameMaker Studio 2 należy pamiętać o jej ponownym usunięciu (za pomocą font_delete()), gdy nie jest już potrzebna, w przeciwnym razie istnieje ryzyko wycieku pamięci, który spowolni, a w końcu doprowadzi do awarii gry.
+  UWAGA Po załadowaniu strony font do programu GameMaker musisz pamiętać o jej ponownym usunięciu (za pomocą font_delete()), gdy nie jest już potrzebna, w przeciwnym razie istnieje ryzyko wycieku pamięci, który spowolni, a w końcu spowoduje awarię gry.
    
   Składnia:
   font_add(name, size, bold, italic, first, last);
@@ -57,7 +57,7 @@
    
   Przykład:
   new_font = font_add("gamefont.ttf", 24, true, true, 32, 128);
-  Spowoduje to wczytanie pliku "gamefont.ttf" znajdującego się w folderze Included Files gry w rozmiarze 24pt. Czcionka font będzie pogrubiona i kursywna, a zakres czcionek będzie obejmował duże i małe litery, cyfry oraz wszystkie powszechnie używane znaki interpunkcyjne. Po załadowaniu pliku font jego identyfikator zostanie zapisany w zmiennej new_font.
+  Spowoduje to wczytanie pliku "gamefont.ttf" znajdującego się w folderze Included Files gry w rozmiarze 24pt. Czcionka font będzie pogrubiona i kursywna, a zakres czcionek będzie obejmował wielkie i małe litery, cyfry oraz wszystkie powszechnie używane znaki interpunkcyjne. Po załadowaniu pliku font jego identyfikator zostanie zapisany w zmiennej new_font.
    
    
   

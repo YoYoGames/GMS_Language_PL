@@ -1,7 +1,7 @@
 
   
   miejsce_spotkania
-  Za pomocą tej funkcji można sprawdzić pozycję pod kątem kolizji z inną instancją lub wszystkimi instancjami object, używając maski kolizji instancji, która uruchamia kod sprawdzający. Używając tej funkcji, prosisz GameMaker Studio 2 o przesunięcie instancji do nowej pozycji, sprawdzenie kolizji, cofnięcie się i poinformowanie Cię, czy kolizja została znaleziona, czy nie. Działa to w przypadku precyzyjnych kolizji, ale tylko wtedy, gdy zarówno instancja, jak i sprawdzany obiekt object mają zaznaczone maski precyzyjnych kolizji, w przeciwnym razie stosowane są tylko kolizje typu bounding box. Ta funkcja akceptuje także specjalne słowa kluczowe all i other. Zwróć uwagę, że jeśli chcesz uzyskać unikalny identyfikator instancji object, z którą się zderzasz, powinieneś użyć instance_place().
+  Za pomocą tej funkcji możesz sprawdzić, czy pozycja nie koliduje z inną instancją lub wszystkimi instancjami obiektu object, używając maski kolizji instancji, która uruchamia kod sprawdzający. Używając tej funkcji, prosisz program GameMaker o przesunięcie instancji do nowej pozycji, sprawdzenie kolizji, cofnięcie się i poinformowanie Cię, czy kolizja została znaleziona, czy nie. Działa to w przypadku precyzyjnych kolizji, ale tylko wtedy, gdy zarówno instancja, jak i sprawdzana strona object mają zaznaczone maski precyzyjnych kolizji, w przeciwnym razie stosowane są tylko kolizje typu bounding box. Ta funkcja akceptuje także specjalne słowa kluczowe all i other. Zwróć uwagę, że jeśli chcesz uzyskać unikalny identyfikator instancji object, z którą się zderzasz, powinieneś użyć instance_place().
   Należy pamiętać, że podane współrzędne x/y zostaną spolszczone do najbliższej liczby całkowitej przed wykonaniem sprawdzenia.
    
   Składnia:

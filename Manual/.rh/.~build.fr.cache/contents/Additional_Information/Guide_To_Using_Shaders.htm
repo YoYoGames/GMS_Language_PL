@@ -1,22 +1,22 @@
 
   
   Przewodnik po użyciu shaderów
-  Shadery są często używane do tworzenia pięknych efektów graficznych w grach. Należą one również do najbardziej zaawansowanych funkcji oferowanych przez witrynę GameMaker Studio 2, dlatego przed rozpoczęciem pracy z nimi konieczne jest posiadanie podstawowej wiedzy na temat programowania i działania witryny GameMaker Studio 2.
+  Shadery są często używane do tworzenia pięknych efektów graficznych w grach. Należą one również do najbardziej zaawansowanych funkcji oferowanych przez program GameMaker, dlatego przed rozpoczęciem pracy z nimi konieczne jest posiadanie podstawowej wiedzy na temat programowania i działania programu GameMaker.
   Czym więc jest shader? Początkowo były one tworzone w celu zapewnienia cieniowania oświetlenia (stąd nazwa), ale obecnie są wykorzystywane do tworzenia bardzo wielu różnych efektów. Kod Shader jest podobny do zwykłego kodu, ale (prawie zawsze) jest wykonywany przez GPU, a nie CPU. Ta różnica wiąże się z własnym zestawem zasad i ograniczeń, ale o tym później.
-  Każda strona shader składa się z dwóch osobnych elementów: wierzchołka shader i fragmentu shader (zwanego też pixel shader). Zacznijmy od strony vertex shader. Każda strona sprite jest utworzona przez prostokąt, ale komputery lubią rysować trójkąty, więc te prostokąty są dzielone na dwa trójkąty (czasami nazywane quadami). W ten sposób na stronie sprite mamy sześć wierzchołków (narożników), ale dwa z nich są takie same, więc powinniśmy się martwić tylko o cztery. Wyobraźmy sobie teraz, że mamy for loop, które przechodzi przez każdą stronę vertex i wykonuje kod wewnątrz vertex shader dla każdej z nich. Dzięki temu możemy zmienić położenie i kolor vertex przed przekazaniem go do fragmentu shader, ponieważ vertex shader jest wykonywany wcześniej.
+  Każda strona shader składa się z dwóch osobnych elementów: wierzchołka shader i fragmentu shader (zwanego też pixel shader). Zacznijmy od strony vertex shader. Każda strona sprite jest utworzona przez prostokąt, ale komputery lubią rysować trójkąty, więc prostokąty są dzielone na dwa trójkąty (czasami nazywane quadami). W ten sposób na stronie sprite mamy sześć wierzchołków (narożników), ale dwa z nich są takie same, więc powinniśmy się martwić tylko o cztery. Wyobraźmy sobie teraz, że mamy for loop, które przechodzi przez każdą stronę vertex i wykonuje kod wewnątrz vertex shader dla każdej z nich. Dzięki temu możemy zmienić położenie i kolor vertex przed przekazaniem go do fragmentu shader, ponieważ vertex shader jest wykonywany wcześniej.
   Oto jak by to wyglądało:
-  W przypadku fragmentu shader możesz sobie wyobrazić ten sam fragment loop, co poprzednio, ale tym razem przechodzi on przez każdy pojedynczy piksel w kodzie sprite, podając takie informacje, jak położenie i kolor tego piksela. W kodzie fragmentu shader wykonujesz operacje i obliczenia w celu określenia koloru tego piksela, aby uzyskać pożądany efekt. Na przykład, jeśli chcesz, aby strona shader sprawiła, że Twoja strona sprite będzie czarno-biała, obliczysz, jaki odcień szarości powinien mieć każdy piksel, aby uzyskać ten efekt.
+  W przypadku fragmentu shader możesz sobie wyobrazić ten sam fragment loop, co poprzednio, ale tym razem przegląda on każdy piksel w kodzie sprite, podając takie informacje, jak położenie i kolor tego piksela. W kodzie fragmentu shader wykonujesz operacje i obliczenia w celu określenia koloru tego piksela, aby uzyskać pożądany efekt. Na przykład, jeśli chcesz, aby strona shader sprawiła, że Twoja strona sprite będzie czarno-biała, obliczysz, jaki odcień szarości powinien mieć każdy piksel, aby uzyskać ten efekt.
   Wyglądałoby to mniej więcej tak:
-  Powodem, dla którego kod shader jest zwykle wykonywany przez procesor graficzny, jest jego wyższa wydajność. Nowoczesne procesory mają zazwyczaj od dwóch do ośmiu rdzeni. Każdy rdzeń może wykonywać jedno zadanie w tym samym czasie, więc wykorzystując wiele rdzeni, możemy wykonywać wiele zadań jednocześnie. Z kolei nowoczesne procesory graficzne mogą wykonywać tysiące, a nawet dziesiątki tysięcy zadań jednocześnie. Jest to przydatne w przypadku strony shaders, ponieważ możemy wykonywać kod shader tysięcy pikseli jednocześnie. Ograniczeniem jest to, że mamy dostęp tylko do stanu początkowego sprite, więc nie wiemy o żadnych modyfikacjach dokonanych na innych pikselach, ponieważ nie mamy pewności, że kod został już na nich uruchomiony.
-  UWAGA GameMaker Studio 2 : shaders umożliwia pisanie w języku GLSL (OpenGL Shader Language), HLSL (High-level Shader Language, używany podczas pracy z DirectX) oraz GLSL ES (podzbiór GLSL, który jest popularny w urządzeniach mobilnych). Jako języka shader używamy GLSL ES, ponieważ zapewnia on najlepszą kompatybilność między platformami docelowymi. Generalnie jest to język, którego zawsze chcemy używać, chyba że mamy bardzo specyficzne potrzeby i rozumiemy ograniczenia innych języków shader. Matematyka i techniki powinny być jednak podobne we wszystkich trzech językach, z wyjątkiem kilku różnic w składni.
-  Najpierw wykonywana jest instrukcja vertex shader, która, jak wyjaśniliśmy powyżej, zajmuje się wierzchołkami. Służy do obliczania pozycji, normaliów i współrzędnych texture. Te shaders nie są szczególnie użyteczne w 2D, ponieważ każdy sprite jest zwykle kwadratem, ale można je wykorzystać do pochylania, skalowania itp. Stają się one znacznie bardziej przydatne w 3D do obliczania oświetlenia i deformacji siatki. Fragment shaders jest o wiele bardziej interesujący i to właśnie nim zajmiemy się tutaj, ponieważ fragment shader jest miejscem, w którym otrzymujemy informacje o naszej stronie textures i możemy zmieniać ostateczny kolor każdego piksela w naszym obrazie.
+  Powodem, dla którego kod shader jest zwykle wykonywany przez procesor graficzny, jest jego wyższa wydajność. Nowoczesne procesory mają zazwyczaj od dwóch do ośmiu rdzeni. Każdy rdzeń może wykonywać jedno zadanie w tym samym czasie, więc wykorzystując wiele rdzeni, możemy wykonywać wiele zadań jednocześnie. Z kolei nowoczesne procesory graficzne mogą wykonywać tysiące, a nawet dziesiątki tysięcy zadań jednocześnie. Jest to pomocne w przypadku strony shaders, ponieważ możemy wykonywać kod shader tysięcy pikseli jednocześnie. Ograniczeniem jest to, że mamy dostęp tylko do stanu początkowego sprite, więc nie wiemy o żadnych modyfikacjach dokonanych na innych pikselach, ponieważ nie mamy pewności, że kod został już na nich uruchomiony.
+  UWAGA: GameMaker umożliwia pisanie stron shaders w językach GLSL (OpenGL Shader Language), HLSL (High-level Shader Language, używany podczas pracy z DirectX) oraz GLSL ES (podzbiór GLSL, który jest popularny w urządzeniach przenośnych). Jako języka shader używamy GLSL ES, ponieważ zapewnia on najlepszą kompatybilność między platformami docelowymi. Generalnie jest to język, którego zawsze chcemy używać, chyba że mamy bardzo specyficzne potrzeby i rozumiemy ograniczenia innych języków shader. Matematyka i techniki powinny być jednak podobne we wszystkich trzech językach, z wyjątkiem kilku różnic w składni.
+  Najpierw wykonywana jest instrukcja vertex shader, która, jak wyjaśniliśmy powyżej, zajmuje się wierzchołkami. Służy do obliczania pozycji, normaliów i współrzędnych texture. Te shaders nie są szczególnie użyteczne w 2D, ponieważ każdy sprite jest zwykle kwadratem, ale można ich użyć do pochylania, skalowania itd. Stają się one znacznie bardziej przydatne w 3D do obliczania oświetlenia i deformacji siatki. Fragment shaders jest o wiele bardziej interesujący i to właśnie nim zajmiemy się tutaj, ponieważ fragment shader jest miejscem, w którym otrzymujemy informacje o naszej stronie textures i możemy zmieniać ostateczny kolor każdego piksela w naszym obrazie.
    
   Zmienne shadera
-  Jeśli utworzyłeś stronę shader w witrynie GameMaker Studio 2, być może zauważyłeś następujące słowa kluczowe w domyślnym przejściu shader. Te słowa kluczowe pomagają witrynie shader zrozumieć cel i zakres każdej zmiennej:
+  Jeśli utworzyłeś stronę shader w programie GameMaker, mogłeś zauważyć następujące słowa kluczowe w domyślnym przejściu shader. Te słowa kluczowe pomagają stronie shader zrozumieć cel i zakres każdej zmiennej:
   
     Atrybut: Są to zmienne przekazywane przez OpenGL do shadera wierzchołków . Mogą się one zmieniać na stronie vertex i są przeznaczone tylko do odczytu. Obejmują one takie informacje, jak vertex position, texture coordinates, vertex color oraz vertex normal.
     Zmienne: Są to zmienne używane do przekazywania danych między shaderami wierzchołków i fragmentów . Można je zapisywać na stronie vertex shader, natomiast na stronie fragmentu shader są one tylko do odczytu.
-    Jednolite: Są to zmienne, które zmieniają się na stronie object i są przekazywane przez użytkownika do strony shader. Mogą być używane zarówno na stronie vertex, jak i we fragmencie shaders, ale są tylko do odczytu.
+    Jednolite: Są to zmienne, które zmieniają się na stronie object i są przekazywane przez użytkownika do strony shader. Można ich używać zarówno na stronie vertex, jak i we fragmencie shaders, ale są one tylko do odczytu.
   
   Zobaczysz również użycie słowa kluczowego vec. Jest ono używane do identyfikacji zmiennej wektorowej w shader. Wkrótce przekonasz się, że wektory są bardzo ważne podczas pracy z shaders. Dlatego w GLSL są one zaimplementowane jako typ bazowy. Jeśli nie jesteś zaznajomiony z wektorami, są one pojęciem matematycznym reprezentowanym jako macierz z tylko jedną kolumną. W programowaniu zwykle reprezentujemy je jako tablicę, w której liczba elementów odpowiada wymiarowi. Wektory dwu- i trójwymiarowe są często używane do określania pozycji, współrzędnych texture lub kolorów bez kanału alfa, natomiast wektory czterowymiarowe są używane do określania kolorów z kanałem alfa. Możemy również określić, czy mają one zawierać wartości logiczne, całkowite czy zmiennoprzecinkowe. Składnia deklaracji wektora jest następująca:
   vec2 firstVec;  // Two-dimensional vector of floats
@@ -26,7 +26,7 @@
     bvec3 boolVec;  // Three-dimensional vector of booleans
     ivec4 intVec;   // Four-dimensional vector of integers
   
-  Aby je zainicjować, możemy użyć konstruktora do utworzenia wektora. Musisz podać taką samą liczbę wartości, jak długość wektora, ale możesz mieszać i łączyć ze sobą skalary i mniejsze wektory, aby osiągnąć docelową długość. Oto kilka przykładów:
+  Aby je zainicjować, możemy użyć konstruktora do utworzenia wektora. Musisz podać taką samą liczbę wartości, jak długość wektora, ale możesz mieszać i łączyć skalary i mniejsze wektory, aby osiągnąć docelową długość. Oto kilka przykładów:
   // Simple 2D vector with 2 scalar values
     vec2 firstVec  = vec2(2.0, 1.0);
     // A 4D vector using 2 scalars and a vec2 create the 4 values
@@ -53,7 +53,7 @@
     vec3 secondVec = firstVec.xyz;
     vec2 thirdVec  = secondVec.zy;
     vec4 fourthVec = thirdVec.yxxy;
-  Jak widać, do utworzenia wektora o tej długości możemy użyć dowolnej kombinacji maksymalnie czterech liter. Nie możemy próbować uzyskać dostępu do składnika, który byłby poza granicami (na przykład próbować uzyskać dostęp do w w secondVec lub thirdVec, ponieważ nie mają one czwartego składnika). Ponadto możemy powtarzać litery i używać ich w dowolnej kolejności, o ile zmienna wektorowa, do której są przypisane, ma taki sam rozmiar jak liczba użytych liter.
+  Jak widać, do utworzenia wektora o tej długości możemy użyć dowolnej kombinacji maksymalnie czterech liter. Nie możemy próbować uzyskać dostępu do składnika, który byłby poza granicami (na przykład próbować uzyskać dostęp do w w secondVec lub thirdVec, ponieważ nie mają one czwartego składnika). Ponadto możemy powtarzać litery i używać ich w dowolnej kolejności, o ile zmienna wektorowa, do której są przypisywane, ma taki sam rozmiar jak liczba użytych liter.
   Z oczywistych powodów, gdy używasz swizzle do ustawiania wartości komponentów, nie możesz użyć tego samego komponentu dwa razy. Na przykład poniższy tekst jest niepoprawny, ponieważ próbujesz nadać temu samemu komponentowi dwie różne wartości:
   myVec.xx = vec2(2.0, 3.0);
   Ostatnio używaliśmy xyzw jako naszej maski swizzle, co zwykle ma miejsce, gdy mamy do czynienia z pozycjami. Istnieją jeszcze dwa zestawy masek, których można użyć: rgba (używana dla kolorów) lub stpq (używana dla współrzędnych texture ). Wewnętrznie nie ma żadnej różnicy między tymi maskami, a używamy ich tylko po to, aby kod był bardziej przejrzysty, co wektor reprezentuje w danym przypadku. Ponadto nie można łączyć masek swizzle w tej samej operacji, więc jest to nieprawidłowe:
@@ -61,7 +61,7 @@
   To było wiele definicji i informacji, ale ich znajomość jest niezbędna do zrozumienia strony shaders.
    
   Tworzenie shadera
-  Gdy utworzysz stronę shader w witrynie GameMaker Studio 2, otworzy ona dwa pliki: vertex shader (.vsh) oraz fragment shader (.fsh). Jest to najbardziej podstawowy plik shader, jaki można utworzyć. Pobiera on adres sprite, odczytuje adres texture i koloruje każdy piksel tym kolorem. Jeśli podczas rysowania zostaną określone kolory vertex, będą się one mieszać z kolorem texture.
+  Gdy utworzysz stronę shader w programie GameMaker, otworzy on dla Ciebie dwa pliki: vertex shader (.vsh) i fragment shader (.fsh). Jest to najbardziej podstawowy plik shader, jaki można utworzyć. Pobiera on plik sprite, wczytuje plik texture i koloruje każdy piksel tym kolorem. Jeśli podczas rysowania zostaną określone kolory vertex, będą się one mieszać z kolorem texture.
   Prześledźmy kod nowo utworzonej strony shader asset i przeanalizujmy go, zaczynając od strony vertex shader.
   // Passthrough Vertex Shader
     attribute vec3 in_Position;                  // (x,y,z)
@@ -84,7 +84,7 @@
   Poza funkcją główną widzimy kilka deklaracji zmiennych i ich kwalifikatorów. Atrybuty zostały nam przekazane przez GameMaker. Zmienne są tworzone przez użytkownika, aby przekazać tę informację do fragmentu shader. Wewnątrz funkcji głównej znajdują się obliczenia pozwalające znaleźć pozycję wierzchołka na ekranie:
   
     Najpierw tworzymy stronę vec4 i inicjalizujemy ją składowymi położenia, dodając jeden jako czwartą składową. W algebrze liniowej przyjęło się, że do czwartej składowej dodajemy jedynkę, jeśli wektor reprezentuje punkt, lub zero, jeśli reprezentuje rzeczywisty wektor.
-    Następnie musimy dodać ten czwarty składnik, aby pomnożyć go przez macierz MATRIX_WORLD_VIEW_PROJECTION, która jest macierzą o wymiarach 4x4. To mnożenie spowoduje rzutowanie pozycji świata vertex na współrzędne ekranu.
+    Następnie musimy dodać ten czwarty składnik i pomnożyć go przez macierz MATRIX_WORLD_VIEW_PROJECTION, która jest macierzą 4x4. To mnożenie spowoduje rzutowanie pozycji świata vertex na współrzędne ekranu.
     Na koniec przekazujemy kolor vertex i współrzędne texture do fragmentu shader za pomocą zmiennych.
   
   Tę stronę shader należy zostawić w spokoju, jeśli nie planuje się zabawy z pozycjami vertex. Nie będzie ona używana w żadnym z poniższych przykładów, ponieważ wszystkie pokazane efekty zostaną utworzone przy użyciu fragmentu shader.
@@ -217,7 +217,7 @@
           gl_FragColor = v_vColour * vec4(hsv2rgb(col), alpha);
       }
     
-    Dzieje się tu nieco więcej niż w poprzednich przykładach, ale większość z nich powinna być już dla Ciebie dość oczywista. Po pierwsze, jest to funkcja hsv2rgb, która pobiera adres vec3 z naszym kolorem HSV i zwraca inny adres vec3 z naszą konwersją RGB. W głównej funkcji zaczynamy od utworzenia naszego koloru HSV, gdzie odcień jest naszą pozycją x, a nasycenie i jasność pozostawimy na razie na poziomie 1,0. Następnie pobieramy alfę z adresu texture, tak aby kolorowała ona tylko naszą postać sprite, a nie cały prostokąt sprite (tak jak w przykładzie z nakładaniem kolorów powyżej). Na koniec ustawiamy kolor Fragmentu jako nasz kolor HSV przekonwertowany na RGB z alfą, pomnożony przez kolor vertex (dobrze jest robić to zawsze).
+    Dzieje się tu nieco więcej niż w poprzednich przykładach, ale większość z nich powinna być już dla Ciebie dość oczywista. Po pierwsze, jest to funkcja hsv2rgb, która pobiera adres vec3 z naszym kolorem HSV i zwraca inny adres vec3 z naszą konwersją RGB. W głównej funkcji zaczynamy od utworzenia naszego koloru HSV, gdzie odcień jest naszą pozycją x, a nasycenie i jasność pozostawimy na razie na poziomie 1,0. Następnie pobieramy alfę z adresu texture, aby kolorowała ona tylko naszą postać sprite, a nie cały prostokąt sprite (tak jak w przykładzie nakładania kolorów powyżej). Na koniec ustawiamy kolor Fragmentu jako nasz kolor HSV przekonwertowany na RGB z alfą, pomnożony przez kolor vertex (dobrze jest robić to zawsze).
     Jeśli chodzi o nasz kod losowania, jest on w tej chwili banalnie prosty:
     // Draw Event
       shader_set(shdrRainbow);
@@ -228,14 +228,14 @@
     Jak wyjaśniono powyżej, strona v_vTexcoord podaje nam bezwzględne współrzędne strony sprite w obrębie całej strony texture, ale my chcemy uzyskać wartość z zakresu od 0,0 do 1,0, która obejmuje tylko bieżącą stronę sprite. Proces ten nazywamy normalizacją (uzyskanie wartości i przekształcenie jej na zakres od 0 do 1). Aby znormalizować nasze wartości poziome, musimy znać wartości x0 i x1 na powyższym rysunku. Na szczęście w witrynie GameMaker dostępna jest funkcja, która podaje nam położenie każdego narożnika w witrynie sprite w obrębie strony texture. Najpierw musimy przejść do zdarzenia Create Event i utworzyć uniform, który będzie przekazywał te dane do shadera:
     // Create Event
       _uniUV = shader_get_uniform(shdrRainbow, "u_uv");
-    Modyfikujemy zdarzenie draw, aby pobrać wartości i przekazać je do shadera:
+    Zmodyfikujemy zdarzenie draw, aby pobrać wartości i przekazać je do shadera:
     // Draw Event
       shader_set(shdrRainbow);
       var uv = sprite_get_uvs(sprite_index, image_index);
       shader_set_uniform_f(_uniUV, uv[0], uv[2]);
       draw_self();
       shader_reset();
-    Funkcja sprite_get_uvs() przyjmuje adres sprite i indeks, a następnie zwraca tablicę zawierającą mnóstwo informacji, takich jak współrzędne każdego rogu, ile pikseli zostało przyciętych w celu optymalizacji itp. Nas interesują dwie z tych wartości: lewa i prawa współrzędna strony sprite, które są przechowywane odpowiednio w uv[0] i uv[2]. We fragmencie shader użyjemy tych wartości do obliczenia znormalizowanej pozycji poziomej w następujący sposób:
+    Funkcja sprite_get_uvs() przyjmuje adres sprite i indeks, a następnie zwraca tablicę zawierającą mnóstwo informacji, takich jak współrzędne każdego rogu, ile pikseli zostało przyciętych w celu optymalizacji itp. Nas interesują dwie z tych wartości: lewa i prawa współrzędna strony sprite, które są przechowywane odpowiednio w uv[0] i uv[2]. We fragmencie shader wykorzystamy te wartości do obliczenia znormalizowanej pozycji poziomej w następujący sposób:
     // Fragment Shader
       varying vec2 v_vTexcoord;
       varying vec4 v_vColour;
@@ -365,7 +365,7 @@
           gl_FragColor = v_vColour * finalCol;
       }
     
-    A oto nasz ostateczny rezultat!
+    I oto nasz ostateczny rezultat!
     
      
   

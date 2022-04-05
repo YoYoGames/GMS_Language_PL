@@ -1,21 +1,21 @@
 
   
   Przewodnik korzystania z Blendmodes
-  Jeśli korzystasz z witryny GameMaker Studio 2 przez dłuższy czas, z pewnością zetknąłeś się z trybami mieszania, a prawdopodobnie nawet używałeś ich w swoich grach.
-    Tryby mieszania to świetny sposób na zmianę sposobu rysowania, aby uzyskać interesujące i specyficzne efekty graficzne, ale czy wiesz, jak one działają i jak ich używać? Jest to temat, który może wprawiać ludzi w zakłopotanie, dlatego w tym rozdziale mamy nadzieję rozwiać
+  Jeśli korzystasz z GameMakera przez dłuższy czas, z pewnością zetknąłeś się z trybami mieszania, a prawdopodobnie nawet używałeś ich w swoich grach.
+    Tryby mieszania to świetny sposób, by zmienić sposób rysowania czegoś w celu uzyskania interesujących i specyficznych efektów graficznych, ale czy wiesz, jak one działają i jak z nich korzystać? Jest to temat, który może wprawiać ludzi w zakłopotanie, dlatego w tym rozdziale mamy nadzieję rozwiać
     Dlatego w tym rozdziale mamy nadzieję rozwiać część tajemnic związanych z trybami mieszania i umożliwić ich pełne wykorzystanie w grach.
    
   PRZEGLĄD
-  Tryby mieszania pozwalają grze na rysowanie pewnych elementów w połączeniu z innymi, już narysowanymi wcześniej. Wszystko, co jest rysowane na ekranie, składa się z czterech elementów - czerwonego, zielonego, niebieskiego i alfa - i domyślnie są one rysowane na
+  Tryby mieszania pozwalają grze na rysowanie pewnych elementów w połączeniu z innymi, już narysowanymi wcześniej. Wszystko, co jest rysowane na ekranie, składa się z czterech części składowych - czerwonej, zielonej, niebieskiej i alfa - i domyślnie jest rysowane na
     domyślnie są one rysowane na ekranie przy użyciu trybu mieszania bm_normal. Ten tryb mieszania rysuje wszystkie piksele z niezmienionymi wartościami kolorów i alfa (choć w dalszej części tego rozdziału przekonasz się, że to nie do końca prawda...),
-    ale GameMaker Studio 2 ma wiele wbudowanych trybów mieszania, które można ustawić, aby zmienić to zachowanie.
-  Gdy na stronie GameMaker Studio 2 chcemy narysować piksel, mamy do dyspozycji kolor źródłowy (kolor piksela, który chcemy narysować) oraz kolor docelowy (kolor, który już znajduje się w pikselu, do którego chcemy narysować piksel). Na stronie
+    ale GameMaker ma wiele wbudowanych trybów mieszania, które można ustawić, aby zmienić to zachowanie.
+  Gdy GameMaker chce narysować piksel, istnieje kolor źródłowy (kolor piksela, który ma zostać narysowany) oraz kolor docelowy (kolor, który już znajduje się w pikselu, do którego rysujemy). Na stronie
     określając nowy kolor piksela, GameMaker połączy kolory źródłowy i docelowy zgodnie z trybem mieszania, jak wspomniano powyżej. Każda składowa kolorów jest przechowywana jako wartość zmiennoprzecinkowa z przedziału od 0 do 1,
     a nowy kolor jest obliczany przez pomnożenie każdej składowej koloru źródłowego przez pewien współczynnik oraz przez pomnożenie każdej składowej koloru docelowego przez inny współczynnik, a następnie zsumowanie wyników składnik po składniku.
    
   PODSTAWOWE TRYBY MIESZANIA
-  GameMaker Studio 2 używa funkcji gpu_set_blendmode() do zmiany sposobu mieszania, jaki gra wykorzystuje do rysowania. Wywołałbyś ją przed (na przykład) narysowaniem
-    sprite , a następnie ustawić go z powrotem po zakończeniu rysowania, coś takiego:
+  GameMaker używa funkcji gpu_set_blendmode() do zmiany sposobu mieszania, jaki gra wykorzystuje do rysowania. Wywołałbyś ją przed (na przykład) rysowaniem
+    sprite , a następnie ustawić go z powrotem po zakończeniu rysowania, coś w tym stylu:
   gpu_set_blendmode(bm_add); draw_self();
      gpu_set_blendmode(bm_normal);
   
@@ -39,7 +39,7 @@
   
     Ten tryb mieszania różni się nieco od poprzedniego, ponieważ działa na zasadzie procentowej, a nie bezpośredniej wartości. Wartość procentowa jest tym, co zostanie odjęte od koloru docelowego (koloru piksela, do którego rysowany jest obraz). Aby lepiej to wyjaśnić
       lepiej, przyjrzyjmy się przykładowi.
-    Wyobraź sobie, że chcesz zmniejszyć wartość koloru czerwonego wszystkich pikseli narysowanych na obszarze room o 25%. Musiałbyś najpierw uzyskać 25% z 255, następnie przekonwertować to na wartość koloru RGB, a na koniec użyć tego wraz z bm_subtract do narysowania obszaru.
+    Wyobraź sobie, że chcesz zmniejszyć wartość koloru czerwonego wszystkich pikseli narysowanych w obszarze room o 25%. Musiałbyś najpierw uzyskać 25% z 255, następnie przekonwertować to na wartość koloru RGB, a na koniec użyć tego wraz z bm_subtract do narysowania obszaru.
       Coś w tym stylu:
     var red = (25 / 100) * 255;var col = make_colour_rgb(red, 0, 0);gpu_set_blendmode(bm_subtract);draw_rectangle_colour(0, 0, 128, 256, col, col, col, col, false);gpu_set_blendmode(bm_normal);
     Zgodnie z tą samą zasadą, jeśli chcesz po prostu zmniejszyć jasność tła o 50%, uzyskasz kolor, który jest w 50% czerwony, w 50% zielony i w 50% niebieski, czyli RGB (128, 128, 128). Ten tryb mieszania jest używany głównie do rysowania cieni lub tworzenia
@@ -55,14 +55,14 @@
       będzie miała również wpływ na efekt końcowy przy użyciu tego trybu mieszania.
   
    
-  Teraz znasz już podstawy korzystania z trybu mieszania w witrynie GameMaker Studio 2. Pobiera on wartości RGB i alfa obrazu źródłowego (tego, który jest rysowany), a następnie miesza je z wartościami RGB i alfa obrazu docelowego (tego, który jest rysowany
-    również). Mieszanie odbywa się przez mnożenie poszczególnych składowych dla każdego koloru piksela i alfa przez różne wartości, w zależności od efektów, jakie chcemy uzyskać. Mając tę wiedzę, możesz zacząć używać trybów mieszania w swoich grach, aby uzyskać
+  Teraz znasz już podstawy używania trybu mieszania w GameMakerze. Tryb ten pobiera wartości RGB i alfa obrazu źródłowego (tego, który jest rysowany), a następnie miesza je z wartościami RGB i alfa obrazu docelowego (tego, który jest rysowany).
+    również). Mieszanie odbywa się poprzez mnożenie poszczególnych składowych dla każdego koloru piksela i alfa przez różne wartości, w zależności od efektów, jakie chcemy uzyskać. Mając tę wiedzę, możesz zacząć używać trybów mieszania w swoich grach, aby uzyskać
     świecące lasery, realistyczne cienie czy nasycone efekty przejścia, ale wciąż jest jeszcze wiele do nauczenia się! Poniżej przyjrzymy się rozszerzonym trybom mieszania, a także zgłębimy nieco matematyki, która się za nimi kryje, abyś mógł tworzyć własne
     własne efekty mieszania, takie jak mnożenie czy nakładanie.
    
   Rozszerzone tryby mieszania
   Powyżej omówiliśmy funkcję gpu_set_blendmode()teraz zajmiemy się gpu_set_blendmode_ext().
-    Jest to (jak sama nazwa wskazuje) rozszerzona funkcja służąca do ustawiania niestandardowych trybów mieszania, ale jak to działa? Zanim przejdziemy dalej, zapoznajmy się z suchą, techniczną odpowiedzią:
+    Jest to (jak sama nazwa wskazuje) rozszerzona funkcja do ustawiania niestandardowych trybów mieszania, ale jak to działa? Zanim przejdziemy dalej, zapoznajmy się z suchą, techniczną odpowiedzią:
   
     Funkcja gpu_set_blendmode_ext(src, dest) wskazuje tryb mieszania, który należy zastosować zarówno dla koloru źródłowego, jak i docelowego. Nowy kolor to pewien współczynnik razy kolor źródłowy i inny współczynnik razy
       koloru docelowego. Współczynniki te ustawia się za pomocą tej funkcji. Aby to zrozumieć, należy pamiętać, że zarówno kolor źródłowy, jak i docelowy mają składową czerwoną, zieloną, niebieską i alfa. Zatem źródło to (Rs, Gs, Bs, As), a miejsce docelowe to
@@ -80,8 +80,8 @@
   
   Kiedy więc rysujemy coś na ekranie, nasz procesor graficzny wykonuje następujące czynności dla każdego piksela:
   final_pixel_colour =  (Rs,Gs,Bs,As) * source_blend_factor + (Rd,Gd,Bd,Ad) * destination_blend_factor
-  Wspomniane wyżej współczynniki mieszania są zdefiniowane w serwisie GameMaker Studio 2 za pomocą kilku stałych GML, a każda z nich oznacza współczynnik, przez który należy pomnożyć źródłowe lub docelowe wartości R, G, B i A. Dostępne współczynniki
-    są następujące:
+  Wspomniane wyżej współczynniki mieszania są zdefiniowane w programie GameMaker za pomocą kilku stałych GML. Każda z nich reprezentuje współczynnik, przez który należy pomnożyć źródłowe lub docelowe wartości R, G, B i A. Dostępne współczynniki
+    to:
   
     bm_zero: Współczynnik mieszania wynosi (0, 0, 0, 0)
     bm_one: Współczynnik mieszania wynosi (1, 1, 1, 1, 1)
@@ -95,7 +95,7 @@
     bm_inv_dest_colour: Współczynnik mieszanki wynosi (1-Rd, 1-Gd, 1-Bd, 1-Ad).
     bm_src_alpha_sat: Współczynnik mieszania to (f, f, f, 1); f = min(As, 1-Ad)
   
-  Cztery "podstawowe" tryby mieszania dostępne w witrynie GameMaker Studio 2 są w rzeczywistości kompozycjami dwóch z tych czynników mieszania.
+  Cztery "podstawowe" tryby mieszania dostępne w programie GameMaker są w rzeczywistości kompozycjami dwóch z tych czynników mieszania.
   Przykład działania bm_normal
   
     Czas przyjrzeć się praktycznemu przykładowi, jak to się łączy w rysowaniu w GameMaker Studio 2. W tym celu przyjrzymy się bm_normal, który jest naprawdę:
@@ -128,24 +128,24 @@
   Korzystając z rozszerzonego trybu mieszania, uzyskamy następujące wyniki:
   (Rs, Gs, Bs, As) * (Rd, Gd, Bd, Ad) + (Rd, Gd, Bd, Ad) * (0,0,0,0) = (Rs, Gs, Bs, As) * (Rd, Gd, Bd, Ad) Source colour * dest colour + dest colour * zero = source colour * dest colour
   Współczynnik mieszania bm_zero w rzeczywistości usuwa kolor docelowy z równania (ponieważ zero razy cokolwiek jest zerem), więc otrzymujemy kolor źródłowy pomnożony przez współczynnik mieszania koloru docelowego, stąd
-    stąd nazwa trybu "mnożenie". Aby użyć tego trybu w witrynie GameMaker Studio 2, wystarczy w zdarzeniu rysowania wprowadzić coś takiego:
+    stąd nazwa trybu "multiply". Aby użyć tego trybu w programie GameMaker, wystarczy w zdarzeniu Draw wprowadzić coś takiego:
   gpu_set_blendmode_ext(bm_dest_colour, bm_zero); draw_self();
      gpu_set_blendmode(bm_normal);
   
   Następny obraz pochodzi z projektu testowego w witrynie GameMaker, w którym użyto dokładnie tego kodu:
   Czy potrafisz dostrzec różnicę? Prawdopodobnie nie! Będą jednak występować pewne odchylenia
-    między nimi ze względu na różnice między używanymi narzędziami do renderowania, ale jest to prawie dokładnie tak, jak można by się spodziewać. Należy jednak pamiętać, że nie wszystkie tryby mieszania używane w programach artystycznych są dostępne w witrynie GameMaker Studio 2.
-    Niektóre z nich mogą wymuszać przekroczenie wartości 255 i w ten sposób tworzyć efekty specjalne, ale nie oznacza to, że nie można za ich pomocą tworzyć udanych imitacji tych efektów, a nawet zupełnie nowych efektów.
-  Warto wspomnieć, że dzięki funkcji GameMaker Studio 2 można pójść o krok dalej, używając funkcji gpu_set_blendmode_ext_sepalpha().
-    Pozwala ona wyodrębnić składową alfa różnych czynników trybu mieszania i używać ich pojedynczo w celu tworzenia jeszcze większej liczby możliwych kombinacji. Nie będziemy tutaj omawiać tej funkcji, ponieważ jest ona szczegółowo opisana w podręczniku,
+    między nimi ze względu na różnice między używanymi narzędziami do renderowania, ale jest to prawie dokładnie tak, jak można by się spodziewać. Należy jednak pamiętać, że nie wszystkie tryby mieszania używane w programach artystycznych są dostępne w GameMakerze, ponieważ niektóre z nich
+    Niektóre z nich mogą wymuszać przekroczenie wartości 255 i w ten sposób tworzyć efekty specjalne, ale nie oznacza to, że nie można tworzyć przy ich użyciu udanych imitacji tych efektów, a nawet zupełnie nowych efektów.
+  Warto wspomnieć, że w GameMakerze można pójść o krok dalej, korzystając z funkcji gpu_set_blendmode_ext_sepalpha().
+    Pozwala ona wyodrębnić składowe alfa różnych trybów mieszania i używać ich pojedynczo w celu tworzenia jeszcze większej liczby możliwych kombinacji. Nie będziemy tutaj omawiać tej funkcji, ponieważ została ona dokładnie wyjaśniona w podręczniku,
     ale warto o niej wspomnieć, aby wiedzieć, że można z niej korzystać.
    
   POWIERZCHNIE I ALFA
   Warto zwrócić uwagę na ostatnią rzecz dotyczącą trybów mieszania, a mianowicie na to, jak wpływają one na składową alfa koloru. Podczas rysowania na powierzchni aplikacji lub
    bufora wyświetlacza, nie trzeba brać pod uwagę docelowej wartości alfa, ponieważ zawsze będzie ona równa jeden. Jednak powierzchnie, które tworzysz samodzielnie, są inne,
     ponieważ można nadać powierzchni dowolną wartość alfa w zakresie od zera do jednego. Prowadzi to do ciekawych efektów, które są sprzeczne z oczekiwaniami większości ludzi.
-  Aby to zilustrować, przyjrzymy się rysowaniu przy użyciu podstawowej domyślnej strony bm_normal. Większość ludzi myśli, że jeśli powierzchnia ma wyczyszczoną wartość alfa 0, a następnie narysuje coś z alfą 0,5, to wynikowa wartość alfa
-   jednak tak nie jest i wiele osób uważa to za "błąd" w sposobie renderowania w witrynie GameMaker Studio 2. Jednak, jak się przekonasz, to wcale nie jest błąd!
+  Aby to zilustrować, przyjrzymy się rysowaniu przy użyciu podstawowej domyślnej strony bm_normal. Większość ludzi myśli, że jeśli powierzchnia jest wyczyszczona do wartości alfa 0, a następnie narysuje coś z alfą 0,5, to wynikowa wartość alfa
+    ... ale tak nie jest i wiele osób uważa to za "błąd" w sposobie renderowania w GameMakerze. Jednak, jak się przekonasz, to wcale nie jest błąd!
   Powiedzmy, że mamy powierzchnię, której każdy piksel ma alfę 0, a następnie rysujemy na niej okrąg z alfą 0,5 za pomocą trybu mieszania bm_normal. Cała powierzchnia nadal będzie miała alfa 0, ale w okręgu alfa będzie wynosić 0,25,
     ponieważ:
   0.5 * 0.5 + 0 * 0.5 = 0.5 * 0.5 = 0.25

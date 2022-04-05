@@ -1,82 +1,53 @@
 
   
   Edytor tekstu Preferencje edytora
-  Preferencje edytorów tekstu służą do określania wyglądu i sposobu działania różnych edytorów kodu/skryptu.
-    Na stronie głównej dostępne są następujące opcje:
+  Preferencje edytorów tekstu służą do określania wyglądu i sposobu działania różnych edytorów kodu/skryptu. Na stronie głównej dostępne są następujące opcje:
   
     Opóźnienie sprawdzania składni (ms): Czas opóźnienia (w milisekundach) przed uruchomieniem sprawdzania składni. Domyślną wartością jest 2000 ms.
     Opóźnienie zakończenia kodu (ms): Czas opóźnienia (w milisekundach).
-    Otwórz stronę scripts w edytorze pełnoekranowym: Zaznaczenie tej opcji spowoduje, że zasoby script będą otwierane automatycznie w nowym oknie workspace. Jeśli ta opcja nie zostanie zaznaczona, będą one otwierane w oknie w obrębie bieżącego workspace. Opcja ta jest domyślnie odznaczona.
-      domyślnie.
-    Otwórz stronę shaders w edytorze pełnoekranowym: Zaznaczenie tej opcji spowoduje, że zasoby shader będą otwierane automatycznie w nowym oknie workspace. Jeśli ta opcja nie zostanie zaznaczona, będą one otwierane w oknie w obrębie bieżącego workspace. Opcja ta jest domyślnie odznaczona.
-      domyślnie.
-    Otwieraj zdarzenia object w edytorze pełnoekranowym: Zaznaczenie tej opcji spowoduje, że edytory kodów zdarzeń object będą automatycznie otwierane w nowym oknie workspace. Jeśli opcja nie zostanie zaznaczona, będą one otwierane w oknie połączonym łańcuchowo z edytorem zdarzeń object. Ta opcja
-      jest domyślnie niezaznaczona.
-    Otwieraj zdarzenia scripts jako karty w tym samym oknie: Podczas dodawania kodu lub strony Drag and Drop do zdarzenia okno kodu jest dołączane łańcuchowo do okna zdarzenia, a gdy ta opcja jest zaznaczona, wszystkie kolejne zdarzenia otwarte do edycji będą dodawane
-      do tego samego okna w postaci zakładek na górze. Usunięcie zaznaczenia tej opcji spowoduje, że każde zdarzenie będzie otwierane jako własne, unikalne okno łańcuchowe. Opcja ta jest domyślnie zaznaczona.
-    Otwieranie połączonych stron scripts jako kart w tym samym oknie: Jeśli masz wiele powiązanych stron scripts i otwierasz je, domyślnie będą one zgrupowane w tym samym oknie jako karty. Usunięcie zaznaczenia tej opcji spowoduje, że będą one otwierane w osobnych oknach/obszarach roboczych.
-      Opcja ta jest domyślnie zaznaczona.
+    Otwórz stronę scripts w edytorze pełnoekranowym: Zaznaczenie tej opcji spowoduje, że zasoby script będą otwierane automatycznie w nowym oknie workspace. Jeśli opcja ta nie zostanie zaznaczona, będą one otwierane w oknie w obrębie bieżącego workspace. Opcja ta jest domyślnie odznaczona.
+    Otwórz stronę shaders w edytorze pełnoekranowym: Zaznaczenie tej opcji spowoduje, że zasoby shader będą otwierane automatycznie w nowym oknie workspace. Jeśli opcja ta nie zostanie zaznaczona, będą one otwierane w oknie w obrębie bieżącego workspace. Opcja ta jest domyślnie odznaczona.
+    Otwieraj zdarzenia object w edytorze pełnoekranowym: Zaznaczenie tej opcji spowoduje, że edytory kodów zdarzeń object będą automatycznie otwierane w nowym oknie workspace. Jeśli ta opcja nie zostanie zaznaczona, będą one otwierane w oknie połączonym łańcuchowo z edytorem zdarzeń object. Opcja ta jest domyślnie odznaczona.
+    Otwieraj zdarzenia scripts jako zakładki w tym samym oknie: Podczas dodawania kodu lub strony GML Visual do zdarzenia okno kodu jest połączone łańcuchowo z oknem zdarzenia, a gdy ta opcja jest zaznaczona, wszystkie kolejne zdarzenia otwarte do edycji będą dodawane do tego samego okna w postaci zakładek na górze. Usunięcie zaznaczenia tej opcji spowoduje, że każde zdarzenie będzie otwierane jako własne, unikalne okno łańcuchowe. Opcja ta jest domyślnie zaznaczona.
+    Otwieranie połączonych stron scripts jako kart w tym samym oknie: Jeśli masz wiele powiązanych stron scripts i otwierasz je, domyślnie będą one zgrupowane w tym samym oknie jako karty. Usunięcie zaznaczenia tej opcji spowoduje, że będą one otwierane w osobnych oknach/obszarach roboczych. Opcja ta jest domyślnie zaznaczona.
     Przesuń edytortekstu do widoku po ustawieniu ostrości: Jeśli edytor tekstu zostanie otwarty ze zdarzenia object, wybranie tej opcji spowoduje automatyczne obrócenie strony workspace, aby edytor znalazł się w granicach. Opcja ta jest domyślnie wyłączona.
     Domyślna szerokość okna kodowego: Ustaw domyślną szerokość (w pikselach), jaką ma mieć okno kodowe po otwarciu. Domyślną wartością jest 900.
     Domyślna wysokość okna kodu: Określa domyślną wysokość (w pikselach), jaką ma mieć okno kodu po otwarciu. Domyślną wartością jest 600.
     Minimalna szerokość okna kodu: Ustawminimalną szerokość (w pikselach) dozwoloną dla okna kodu. Wartość domyślna to 300.
     Minimalna wysokość okna kodu: Określa minimalną wysokość (w pikselach) dozwoloną dla okna kodu. Domyślną wartością jest 200.
   
-  Oprócz powyższych opcji istnieje również podkategoria preferencji edytora kodu:
+   
+  Oprócz powyższych opcji istnieją dwie podkategorie, Edytor kodu i Edytor wizualny, opisane poniżej.
   Edytor kodu
   
-    
-      
-    Strona
-     Preferencje kolorów służą do zmiany sposobu wyświetlania różnych tekstów w edytorze kodu i na stronie script. Każda pozycja ma wiele podpozycji, co pozwala dokładnie określić, jak powinien wyglądać każdy oddzielny fragment tekstu, jak pokazano na przykładzie
-      na powyższym obrazku. Ogólnie rzecz biorąc, można ustawić kolor, font, rozmiar i styl dla każdej z różnych opcji. W dalszej części rozdziału można również ustawić bardziej ogólną stylizację, np. zaznaczanie wierszy, nawiasy itp.
-      
-    
-      
-    W obszarze preferencji koloru dostępne są różne
-     Opcje stylizacji. Preferencje te służą do ustawiania zachowania edytora kodu/skryptu, przy czym dostępne są następujące opcje:
-    
-      
-       Zachowaj tabulatory: Jeśli jest zaznaczone, naciśnięcia klawiszy tabulacji będą traktowane w edytorze jako znaki tabulacji - '
-       \t' - w edytorze, natomiast odznaczona oznacza, że tabulatory są zamieniane na spacje. Domyślnie opcja jest wyłączona.
-      
-       Rozmiar tabulatora: Liczba spacji, o jaką wciśnięcie klawisza "Tab" powinno spowodować wcięcie kodu. Wartość domyślna to 4.
-      
-       Pokaż białą spację: Wyświetl "
-       .", aby wyświetlić białe znaki (patrz obrazek poniżej). Domyślnie jest wyłączona.
-      
-       Pokaż numery wierszy: Określenie, czy numery wierszy mają być wyświetlane po lewej stronie, czy nie. Domyślnie włączone.
-      
-       Pokaż linie zakładek: Wyświetl "
-       ....", aby wyświetlić przestrzeń tabulacji. Domyślnie wyłączone.
-      
-       Włącz kodowanie kolorem: Włącza lub wyłącza kodowanie kolorami w edytorze. Jeśli opcja jest wyłączona, kod nie będzie stylizowany, natomiast jeśli jest włączona, będzie stylizowany przy użyciu formatowania podanego powyżej w sekcji Kolor. Domyślnie włączone.
-      
-       Limit linii dokumentu: Ustawia maksymalną liczbę linii dla danego dokumentu edytora. Domyślną wartością jest 0 (0 lub mniej jest w zasadzie nieskończone), a każda inna wartość ograniczy dozwoloną liczbę linii.
-      
-       Dopasuj wcięcia w nowych liniach: Włączenie lub wyłączenie automatycznego wcięcia dla Twojego kodu. Domyślnie włączone, co spowoduje zachowanie tabulatorów ustawionych w wierszu, gdy zostanie dodany nowy wiersz.
-      
-       Automatyczne wcięcie po nawiasie: Włączenie lub wyłączenie automatycznego wcięcia w kodzie podczas dodawania nawiasów klamrowych
-       {}. Domyślnie jest włączone, co spowoduje, że następna linia kodu będzie wcinana na zakładkę, gdy zostanie dodany nowy nawias
-        { i nowej linii.
-      
-       Włącz uzupełnianie kodu: Włączenie lub wyłączenie okna uzupełniania kodu. Gdy piszesz kod, a opcja ta jest włączona, pojawi się okienko z możliwymi funkcjami, których możesz użyć na podstawie bieżącego tekstu wejściowego. Domyślnie opcja jest włączona.
-      
-       Automatycznie dodawaj nawiasy funkcyjne: Włączenie lub wyłączenie automatycznego dodawania nawiasów
-        () podczas korzystania z autouzupełniania. Gdy podczas pisania kodu ta opcja jest włączona, witryna IDE automatycznie doda dwa nawiasy
-        () które są wymagane przez funkcję, umieszczając kursor wewnątrz nich, jeśli funkcja przyjmuje argumenty, lub umieszczając kursor za nimi, jeśli ich nie przyjmuje. Funkcja ta działa tylko wtedy, gdy funkcja została wybrana z autouzupełniania.
-        Domyślnie jest włączona.
-      
-       Limit stosu Cofnij / Ponów: Tutaj można ustawić limit stosu Cofnij / Ponów. Wartość poniżej 0 jest w zasadzie nieskończona (ograniczona dostępną pamięcią), podczas gdy wartości dodatnie ograniczą stos do tej liczby, usuwając wszelkie działania na
-        Jeśli limit zostanie osiągnięty, usuwane są działania znajdujące się na końcu stosu. Domyślnie jest to -1.
-      
-        Podświetl dopasowania zaznaczenia: Spowoduje to lekkie podświetlenie każdego fragmentu kodu, który jest powielony w innym miejscu. Tak więc, jeśli na przykład zaznaczysz funkcję, wszystkie jej wystąpienia w bieżącym oknie kodu zostaną podświetlone
-        również. Domyślnie jest włączona.
-      
-       Kodowanie kolorami/uzupełnianie kodu dla przestarzałych funkcji: Podświetla fragmenty kodu, które są przestarzałe. Domyślnie jest włączona.
-    
-    
-      
+   Preferencje kolorów służą do zmiany sposobu wyświetlania różnych tekstów w edytorze kodu i na stronie script. Każda pozycja ma kilka podpozycji umożliwiających dokładne określenie wyglądu poszczególnych fragmentów tekstu, jak pokazano na przykładowym obrazku powyżej. Ogólnie rzecz biorąc, można ustawić kolor, font, rozmiar i styl dla każdej z różnych opcji. W dalszej części rozdziału można również ustawić bardziej ogólną stylizację, np. zaznaczanie wierszy, nawiasy itp.
+  
+  W obszarze Preferencje kolorów dostępne są różne opcje stylizacji. Preferencje te służą do ustawiania zachowania edytora kodu/skryptu, przy czym dostępne są następujące opcje:
+  
+    Zachowaj tabulatory: Jeśli zaznaczone, naciśnięcie klawisza tabulacji spowoduje, że w edytorze tabulatory będą traktowane jako znaki tabulacji - ' \t', natomiast odznaczone oznacza, że tabulatory będą zamieniane na spacje. Domyślnie wyłączona.
+    Rozmiar tabulatora: Liczba spacji, o jaką wciśnięcie klawisza "Tab" powinno spowodować wcięcie kodu. Wartość domyślna to 4.
+    Pokaż białe spacje: Wyświetlaj " .", aby pokazać białe spacje (patrz obrazek poniżej). Domyślnie jest wyłączona.
+    Pokaż numery wierszy: Określenie, czy numery wierszy mają być wyświetlane po lewej stronie, czy nie. Domyślnie włączone.
+    Pokaż linie tabulatorów: Wyświetlaj " ....", aby pokazać tabulatory. Domyślnie jest wyłączona.
+    Włącz kodowanie kolorem: Włącza lub wyłącza kodowanie kolorami w edytorze. Jeśli opcja jest wyłączona, kod nie będzie stylizowany, natomiast jeśli jest włączona, będzie stylizowany przy użyciu formatowania podanego powyżej w sekcji Kolor. Domyślnie włączone.
+    Limit linii dokumentu: Ustawia maksymalną liczbę linii dla danego dokumentu edytora. Domyślną wartością jest 0 (0 lub mniej jest w zasadzie nieskończone), a każda inna wartość ograniczy dozwoloną liczbę linii.
+    Dopasuj wcięcia w nowych liniach: Włączenie lub wyłączenie automatycznego wcięcia dla Twojego kodu. Domyślnie włączone, co spowoduje zachowanie tabulatorów ustawionych w wierszu, gdy zostanie dodany nowy wiersz.
+    Automatyczne wcięcie po nawiasie: Włącza lub wyłącza automatyczne wcięcie w kodzie podczas dodawania nawiasów klamrowych {}. Domyślnie włączone, co spowoduje, że po dodaniu nowego nawiasu klamrowego { i nowej linii następny wiersz kodu będzie wyświetlany na tabulatorach.
+    Włącz uzupełnianie kodu: Włączenie lub wyłączenie okna uzupełniania kodu. Gdy piszesz kod i opcja ta jest włączona, pojawi się okienko pokazujące możliwe funkcje, których możesz użyć na podstawie bieżącego tekstu wejściowego. Domyślnie opcja jest włączona.
+    Automatyczne dodawanienawiasów funkcyjnych: Włączenie lub wyłączenie automatycznego dodawania nawiasów () podczas korzystania z autouzupełniania. Gdy podczas pisania kodu ta funkcja jest włączona, IDE automatycznie doda dwa nawiasy (), których wymaga funkcja, umieszczając kursor w ich obrębie, jeśli funkcja przyjmuje argumenty, lub umieszczając kursor za nimi, jeśli nie przyjmuje argumentów. Funkcja ta działa tylko wtedy, gdy funkcja została wybrana z autouzupełniania. Domyślnie jest włączona.
+    Limit stosu Cofnij / Ponów: Tutaj można ustawić limit stosu Cofnij/ Ponów. Wszystko poniżej 0 jest w zasadzie nieskończone (ograniczone dostępną pamięcią), podczas gdy wartości dodatnie ograniczą stos do tej liczby, usuwając wszelkie działania na końcu stosu, jeśli limit zostanie osiągnięty. Domyślnie jest to -1.
+    Podświetldopasowania zaznaczenia: Spowoduje to lekkie podświetlenie każdego fragmentu kodu, który jest powielony w innym miejscu. Jeśli więc wybierzesz np. funkcję, to wszystkie jej wystąpienia w bieżącym oknie kodu również zostaną podświetlone. Domyślnie jest włączona.
+    Kodowanie kolorami/uzupełnianie kodu dla przestarzałych funkcji: Podświetla fragmenty kodu, które są przestarzałe. Domyślnie jest włączona.
+  
+  Edytor wizualny
+  
+  Preferencje Komentarze kontrolują różne opcje kolorów i formatowania komentarzy dodanych do dokumentu GML Visual scripts. Opcje te to:
+  
+    Kolor: Domyślny kolor tekstu zapisywanego w oknie (domyślnie ARGB #FF53E270).
+    Nazwaczcionki: Nazwa strony font, która ma być używana (dostępne strony fonts zależą od tych zainstalowanych w systemie).
+    Styl: Styl font, który ma zostać użyty, np. pogrubienie lub kursywa (należy pamiętać, że nie wszystkie okna pozwalają na stosowanie tych samych stylów, a także zależy to od używanej strony font ).
+    Rozmiar: Rozmiar, na jaki ma być ustawiona strona font dla danego okna wyjściowego.
+    Antyaliasing: W tym miejscu można ustawić tryb antyaliasingu dla renderowania okien wyjściowych font. Można pozwolić, by decydowała o tym witryna IDE, wybierając opcję Użyj domyślnego, albo wymusić włączenie lub wyłączenie tej opcji, wybierając jedną z nich.
   
    
    
@@ -88,7 +59,7 @@
         Następny: Preferencje językowe
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

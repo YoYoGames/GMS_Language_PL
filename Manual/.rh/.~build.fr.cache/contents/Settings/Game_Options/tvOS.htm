@@ -4,8 +4,8 @@
   W tej sekcji opisano różne dostępne opcje, które pozwalają kontrolować sposób kompilowania projektów gier tvOS. Poszczególne sekcje to:
    
   Ogólne
-  W tym miejscu możesz wypełnić informacje o produkcie, takie jak nazwa gry, ID pakietu i wersja . Zwróć uwagę, że identyfikator pakietu musi mieć poprawny odwrotny format URL, aby końcowy build gry działał poprawnie, np.: com.[Company].[GameName]. Możesz także ustawić lokalizację App Output na komputerze Mac oraz podać identyfikator zespołu, którego chcesz używać do podpisywania końcowej aplikacji tworzonej przez GameMaker Studio 2. Ustawienie go tutaj spowoduje zastąpienie identyfikatora zespołu, który podałeś w Preferencjach tvOS.
-  Tutaj masz również możliwość wygenerowania pliku Podfile i Podfile.lock. Te pliki są wymagane, jeśli dodajesz CocoaPods do rozszerzenia tvOS za pomocą Edytora rozszerzeń. Pliki te zawierają specyficzne makra wymagane przez GameMaker Studio 2, aby skonfigurować wszystkie wymienione CocaoPods podczas budowania Twojej gry. Kliknięcie przycisków spowoduje utworzenie plików z
+  W tym miejscu możesz wypełnić informacje o produkcie, takie jak nazwa gry, ID pakietu i wersja . Zwróć uwagę, że identyfikator pakietu musi mieć poprawny odwrotny format URL, aby końcowy build gry działał poprawnie, np.: com.[Company].[GameName]. Możesz także ustawić lokalizację App Output na budowanym komputerze Mac oraz podać identyfikator zespołu, którego chcesz użyć do podpisania ostatecznej aplikacji tworzonej przez GameMakera. Ustawienie go tutaj spowoduje zastąpienie identyfikatora zespołu, który podałeś w Preferencjach tvOS.
+  Tutaj masz również możliwość wygenerowania pliku Podfile i Podfile.lock. Te pliki są wymagane, jeśli dodajesz CocoaPods do rozszerzenia tvOS za pomocą Edytora rozszerzeń. Pliki te zawierają specyficzne makra wymagane przez GameMaker do skonfigurowania każdej wymienionej strony CocaoPods podczas budowania gry. Kliknięcie przycisków spowoduje utworzenie plików z
     z wygenerowanymi makrami, a także otworzy eksplorator plików w miejscu, w którym się znajdują, jeśli chcesz je ręcznie edytować. Dostępny jest również przycisk, który przeniesie Cię do następującego przewodnika:
   
     iOS i tvOS: Używanie Cocoa Pods
@@ -21,7 +21,7 @@
   
   Następnie można ustawić rozmiar strony tekstury. Domyślnym (i najbardziej kompatybilnym) rozmiarem jest 2048x2048, ale można wybrać dowolny rozmiar z zakresu od 256x256 do 8192x8192. Na stronie
     znajduje się również przycisk Podgląd , który wygeneruje strony texture dla tej platformy, a następnie otworzy okno, w którym będzie można zobaczyć, jak wyglądają. Może to być bardzo przydatne, jeśli chcesz zobaczyć, jaką strukturę mają strony texture i
-    uniknąć sytuacji, w której strony texture byłyby większe (lub mniejsze) niż to konieczne. Więcej informacji na temat stron texture można znaleźć tutaj.
+    uniknąć sytuacji, w której strony texture byłyby większe (lub mniejsze), niż to konieczne. Więcej informacji na temat stron texture można znaleźć tutaj.
   UWAGA: Pamiętaj, że im większy rozmiar strony texture, tym mniejsza kompatybilność gry z różnymi przeglądarkami i urządzeniami.
   Na koniec należy wybrać opcję Wyświetl kursor lub nie. Jeśli opcja ta jest zaznaczona, system operacyjny będzie wyświetlał kursor przy każdym ruchu myszy (w pozycji myszy), a kursor będzie wygaszany i znikał, gdy mysz nie będzie poruszana przez pewien czas.
     Jeśli nie zostanie zaznaczone, kursor nie będzie wyświetlany.
@@ -29,13 +29,13 @@
   Ikony
   W tej sekcji można dodawać różne ikony wymagane przez różne urządzenia i różne części App Store.
     App Store. Ikony te powinny być zapisane jako obrazy 24bit *.png o rozmiarze określonym dla każdej z nich.
-  Warto zauważyć, że GameMaker Studio 2 posiada narzędzie Project Image Generator, za pomocą którego można automatycznie tworzyć wszystkie obrazy wymagane dla różnych platform docelowych, na które kompilowana jest gra.
-    na które kompilowana jest gra. Jeśli korzystasz z tego narzędzia, powinieneś zweryfikować utworzone obrazy, aby upewnić się, że spełniają one Twoje wymagania, zwłaszcza w przypadku tej platformy, ponieważ wymagane ikony są prostokątne, a nie kwadratowe. Narzędzie to generuje również obrazy (wyjaśnione
+  Warto zauważyć, że GameMaker posiada narzędzie Project Image Generator, które może być używane do automatycznego tworzenia wszystkich obrazów wymaganych dla różnych platform docelowych, na które kompilowana jest gra.
+    na które kompilowana jest gra. Jeśli korzystasz z tego narzędzia, powinieneś zweryfikować utworzone obrazy, aby upewnić się, że są one zgodne z Twoimi wymaganiami, zwłaszcza w przypadku tej platformy, ponieważ wymagane ikony są prostokątne, a nie kwadratowe. Narzędzie to generuje również obrazy (wyjaśnione
     poniżej), jak również ikony.
    
   Zdjęcia
   Ta sekcja umożliwia dodanie osobnych grafik jako obrazów "górnej półki" i ekranów powitalnych dla każdego z różnych
-    tvOS rozmiarów docelowych. Obrazy te muszą być napisane jako pojedyncze obrazy 24bit *.png bez przezroczystości i w odpowiednim rozmiarze. Można także ustawić minimalny czas wyświetlania ekranów startowych, korzystając z menu rozwijanego na dole strony (od 0 do 10 sekund).
+    tvOS rozmiarów docelowych. Obrazy te muszą być napisane jako pojedyncze obrazy 24bit *.png bez przezroczystości i w odpowiednim rozmiarze. Można również ustawić minimalny czas wyświetlania ekranów powitalnych, korzystając z menu rozwijanego na dole strony (od 0 do 10 sekund).
     w dolnej części (od 0 do 10 sekund).
   Jak wspomniano w rozdziale Ikony, do tworzenia tych obrazów można użyć Generatora obrazów projektu.
    

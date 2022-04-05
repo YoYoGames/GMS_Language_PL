@@ -4,16 +4,16 @@
   Preferencje edyt ora czcionek służą do określania sposobu działania edytora czcionek.
     Poniżej wymieniono różne dostępne opcje wraz z opisem działania każdej z nich.
   
-    Aktualizuj stronę Fonts zaimportowaną z projektów GameMaker Studio 1: Gdy ta opcja jest zaznaczona, GameMaker Studio 2 będzie próbował zaktualizować fonts i zregenerować ich texture. Stanie się tak tylko wtedy, gdy:
+    Aktualizuj stronę Fonts zaimportowaną z projektów GameMaker 1: Gdy ta opcja jest zaznaczona, GameMaker będzie próbował zaktualizować fonts i zregenerować ich texture. Stanie się tak tylko wtedy, gdy:
       
         Ta preferencja jest włączona.
         Strona font jest dostępna na komputerze.
-        Program GameMaker Studio 2 może zlokalizować pasującą twarz w rodzinie font (jest to najbardziej prawdopodobna przyczyna niespójności podczas importu).
+        GameMaker może znaleźć pasującą twarz w rodzinie font (jest to najbardziej prawdopodobna przyczyna niespójności podczas importu).
       
-      Zauważ, że stanie się to również wtedy, gdy GameMaker Studio 1 font nie ma buforowanej strony font texture. Jeśli starszej strony font nie można zaktualizować, wówczas strona GameMaker Studio 2 będzie domyślnie używać buforowanej strony.
-     font texture a edytor Font nie będzie pozwalał na edycję strony font, wyświetlając opcję tworzenia kopii zapasowej i aktualizacji do innej:
+      Zauważ, że stanie się to również wtedy, gdy projekt GameMaker 1 font nie ma zbuforowanej strony font texture. Jeśli starszy font nie moż e zostać zaktualizowany, GameMaker domyślnie użyje buforowanej wersji .
+     font texture a edytor Font nie będzie pozwalał na edycję font, wyświetlając opcję tworzenia kopii zapasowej i aktualizacji do innej:
       
-      Kliknięcie tej opcji umożliwi edycję strony font, dodając brakującą stronę font lub ustawiając inną, a
+      Kliknięcie tej opcji umożliwi Ci edycję font, dodając brakujący font lub ustawiając inny, a
       font jest przechowywany w folderze font asset jako <font name>.yy.gms1 i <font name>.png.gms1. Aby przywrócić te pliki, należy ręcznie usunąć pliki <font name>.yy i zastąpić je tymi, usuwając .gms1 extension z nazw plików.  Ważne! Wszystkie pliki assets przechowują swoje nazwy w pliku .yy, więc musisz je edytować
       i w polu <name> umieścić właściwą nazwę zasobu (jeśli jest inna).
     Automatyczny wybór okna dialogowego nieudanej regeneracji zawartości: Gdy chcesz zregenerować stronę font asset texture , wyświetlane jest ostrzeżenie. Ustawienie tej opcji na "OK" spowoduje, że strona font zostanie zregenerowana bez wyświetlania ostrzeżenia.

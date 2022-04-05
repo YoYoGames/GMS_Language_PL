@@ -1,7 +1,7 @@
 
   
   gamepad_jest_podłączony
-  Ta funkcja zwraca, czy do podanego "gniazda" podłączony jest gamepad (zwraca true), czy nie (zwraca false). Zazwyczaj używasz tej funkcji w połączeniu z funkcją gamepad_get_device_count() aby uzyskać prawidłową liczbę dostępnych gamepadów i/lub "slotów" na gamepady. Należy pamiętać, że może wystąpić niewielkie opóźnienie między podłączeniem gamepada przez użytkownika a wykryciem go przez stronę GameMaker Studio 2 jako podłączonego (ma to miejsce szczególnie w przypadku kontrolerów podłączonych przez bluetooth).
+  Ta funkcja zwraca, czy do podanego "gniazda" podłączony jest gamepad (zwraca true), czy nie (zwraca false). Zazwyczaj używasz tej funkcji w połączeniu z funkcją gamepad_get_device_count() aby uzyskać prawidłową liczbę dostępnych gamepadów i/lub "slotów" na gamepady. Należy pamiętać, że może wystąpić niewielkie opóźnienie pomiędzy podłączeniem gamepada przez użytkownika a wykryciem go przez GameMaker (ma to miejsce szczególnie w przypadku kontrolerów podłączonych przez bluetooth).
   UWAGA: Na niektórych platformach - zwłaszcza konsolach - funkcja ta może zwracać wartość false natychmiast po podłączeniu/wybraniu gamepada i może wymagać sprawdzenia w alarmie kilka klatek (kroków) później, aby prawidłowo wykryć gamepada.
    
   Składnia:

@@ -21,14 +21,14 @@
     Głębokość - wartość głębokości przypisana do warstwy.
     Sprite - Zasób sprite przypisany do instancji.
     Indeks obrazu- indeks obrazu przypisanej strony sprite. Ta wartość ustawia klatkę sprite przypisaną do instancji, a jeśli
-      wartość jest większa niż liczba klatek animacji, to animacja będzie się "zapętlać", np. na stronie sprite z 5 klatkami, jeśli ustawiona jest klatka 7, będzie wyświetlana klatka 2.
+      wartość jest większa niż liczba klatek animacji, to animacja będzie się "zapętlać", np. na stronie sprite z 5 klatkami, jeśli zostanie ustawiona na klatkę 7, w rzeczywistości zostanie wyświetlona klatka 2.
     Kąt obrazu - Kąt, pod jakim powinna być ustawiona instancja (domyślnie 0, gdzie w prawo jest 0°, w górę 90°, w lewo 180°, a w dół 270°).
       wynosi 270°).
     Alfa obrazu - wartość alfa dla instancji (domyślnie 1) z zakresu od 0 do 1, gdzie 0 oznacza pełną przezroczystość, a 1 - pełną nieprzezroczystość.
     Image Blend - kolor, który ma być mieszany z instancją sprite (domyślnie jest to kolor biały).
     Szybkośćobrazu - szybkość animacji dla instancji.
     Horizontal Scale - skala pozioma, w jakiej ma być rysowana instancja sprite (ma to także wpływ na bounding box i kolizje instancji).
-      i kolizje). Skala 1 oznacza brak skalowania (1:1), mniejsze wartości będą skalowane w dół (na przykład 0,5 spowoduje zmniejszenie szerokości sprite o połowę), większe wartości będą skalowane w górę, a ujemne wartości będą odzwierciedleniem sprite i przeskalują go, chyba że
+      i kolizje). Skala równa 1 oznacza brak skalowania (1:1), mniejsze wartości będą skalowane w dół (na przykład 0,5 zmniejszy szerokość sprite o połowę), większe wartości będą skalowane w górę, a ujemne wartości będą odzwierciedlały sprite i skalowały go, chyba że
       użyta wartość to dokładnie -1 (w takim przypadku strona sprite zostanie odbita lustrzanie wzdłuż osi y bez skalowania).
     Vertical Scale - skala pionowa, w jakiej powinna być rysowana instancja sprite (ma to także wpływ na ramkę ograniczającą instancję i kolizje).
       i kolizje). Skala 1 oznacza brak skalowania (1:1), mniejsze wartości będą skalowane w dół (na przykład 0,5 zmniejszy wysokość sprite o połowę), większe wartości będą skalowane w górę, a ujemne wartości odwrócą sprite i przeskalują go, chyba że
@@ -40,12 +40,12 @@
     Grawitacja - Grawitacja spowoduje przyłożenie stałej siły w kierunku grawitacji (patrz poniżej) instancji, wpływając na jej prędkość (domyślnie
       0). Zauważ, że grawitacja jest siłą kumulatywną i będzie przyspieszać object, jeśli nie zdecydujesz się na ograniczenie prędkości końcowej.
     Kierunek grawitacji - w tym miejscu można ustawić kierunek ruchu, gdy grawitacja instancji jest większa niż 0 (domyślnie
-      wynosi 270). Zwróć uwagę, że kierunki w GameMaker Studio 2 są obliczane jako 0° w prawo, 90° w górę, 180° w lewo i 270° w dół.
+      wynosi 270). Należy pamiętać, że kierunki w GameMakerze są obliczane jako 0° w prawo, 90° w górę, 180° w lewo i 270° w dół.
     Score - Ustawienie zmiennej score.
     Lives - ustawia zmienną lives.
     Zdrowie - ustawienie zmiennej health.
   
-  Po wybraniu wbudowanej zmiennej, która ma być używana, należy ustawić jej wartość. Wartość, której użyjesz, będzie zależała od wybranej zmiennej (zobacz powyższą listę wartości domyślnych i zakresów) i możesz flag ustawić ją tak, aby była względna w stosunku do bieżącej
+  Po wybraniu wbudowanej zmiennej, która ma być używana, należy ustawić jej wartość. Wartość, której użyjesz, będzie zależała od wybranej zmiennej (zobacz powyższą listę wartości domyślnych i zakresów) i możesz flag ustawić ją jako względną w stosunku do bieżącej
     wartości dla danej zmiennej. Można także dodać dodatkowe zmienne do ustawienia w tej samej akcji, klikając ikonę plusa  obok strony .
     akcji, wybierając kolejną zmienną instancji i nadając jej wartość.
    

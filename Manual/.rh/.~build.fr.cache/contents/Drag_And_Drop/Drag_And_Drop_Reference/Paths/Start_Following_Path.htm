@@ -5,16 +5,16 @@
     jak ma się zachować, gdy dojdzie do końca strony path, oraz czy ma podążać za bezwzględną czy względną pozycją path. Ustawiając prędkość, możesz użyć wartości ujemnych, aby zaznaczyć, że instancja powinna podążać za stroną path w odwrotnym kierunku, a warto zauważyć, że
     ustawiona tu prędkość może być modyfikowana przez modyfikator prędkości ustawiony w edytorze path dla każdego punktu path, więc jeśli ustawisz prędkość path na 2, a w path jeden z punktów ma modyfikator prędkości 200%, to rzeczywista prędkość w tym punkcie wyniesie
     4 piksele na klatkę gry.
-  Po ustawieniu początkowej prędkości path możesz określić, jak instancja ma się zachowywać, gdy osiągnie koniec path, korzystając z następujących opcji (zauważ, że gdy instancja osiągnie koniec path, spowoduje to również uruchomienie zdarzenia Inne - Path Ended Event):
+  Po ustawieniu początkowej prędkości path możesz określić, jak instancja ma się zachowywać, gdy osiągnie koniec path, korzystając z następujących opcji (zwróć uwagę, że gdy instancja osiągnie koniec path, spowoduje to również zdarzenie Inne - Path Ended Event):
   
     Stop: Zakończ path, zatrzymując instancję na ostatnim punkcie path.
     Restart: Kontynuuj stronę path od początku, przeskakując ponownie do pozycji początkowej, jeśli strona path nie jest oznaczona jako zamknięta w edytorze Path.
     Pętla: Kontynuuj od bieżącej pozycji, aby ponownie uruchomić stronę path.
-    Wstecz: Przejście do tyłu wzdłuż trasy path (przez odwrócenie prędkości podążania wzdłuż trasy path ), a po dotarciu do początku trasy path- ponowne przejście do tyłu, itd.
+    Wstecz: Przejście do tyłu wzdłuż trasy path (przez odwrócenie prędkości podążania wzdłuż trasy path ), a po dotarciu do początku trasy path- ponowne przejście do tyłu itd.
   
-  Na koniec możesz flag zaznaczyć, że path ma być bezwzględne lub nie. Domyślnie instancja zacznie podążać za path od swojej bieżącej pozycji (pozycja względna), ale jeśli flag zaznaczysz pole wyboru Absolute, instancja zacznie podążać za dokładnie tak, jak ją zaprojektowałeś i umieściłeś w edytorze (pozycja bezwzględna).
+  Na koniec możesz flag zaznaczyć, że path ma być bezwzględna lub nie. Domyślnie instancja zacznie podążać za path od swojej bieżącej pozycji (pozycja względna), ale jeśli flag zaznaczysz pole wyboru Absolute, instancja zacznie podążać za dokładnie tak, jak ją zaprojektowałeś i umieściłeś w edytorze (pozycja bezwzględna).
     path dokładnie tak, jak ją zaprojektowałeś i umieściłeś w edytorze Path (pozycja bezwzględna). Pokazuje to poniższy rysunek:
-  Jak widać na powyższym rysunku, dwie instancje podążają za tą samą stroną path rozpoczętą
+  Jak widać na powyższym obrazku, dwie instancje podążają za tą samą stroną path rozpoczętą
     tym działaniem, ale jedna z nich podąża za absolutnym path, a druga za względnym path. Należy zauważyć, że gdy zaznaczona jest opcja Absolute , instancja "przeskoczy" na początek strony
     path bez względu na to, w którym miejscu strony room zostanie umieszczona.
    

@@ -1,7 +1,7 @@
 
   
   show_question_async
-  Funkcja ta otwiera okno i wyświetla użytkownikowi pytanie zdefiniowane w funkcji. Jest to funkcja asynchroniczna i jako taka GameMaker Studio 2 nie blokuje urządzenia, na którym jest uruchamiana, w oczekiwaniu na odpowiedź, lecz kontynuuje normalne wykonywanie zdarzeń. Funkcja ma dwa przyciski, które pokazują "Tak" i "Nie", a po naciśnięciu jednego z nich przez użytkownika wywoływane jest asynchroniczne zdarzenie Dialog, które tylko na czas trwania tego zdarzenia będzie miało mapę DS zapisaną w zmiennej async_load.
+  Funkcja ta otwiera okno i wyświetla użytkownikowi pytanie zdefiniowane w funkcji. Jest to funkcja asynchroniczna i jako taka GameMaker nie blokuje urządzenia, na którym jest uruchamiana, w oczekiwaniu na odpowiedź, lecz kontynuuje normalne wykonywanie zdarzeń. Funkcja ma dwa przyciski, które pokazują "Tak" i "Nie", a gdy użytkownik naciśnie jeden z nich, wywoływane jest asynchroniczne zdarzenie Dialog, które tylko na czas trwania tego zdarzenia będzie miało mapę DS zapisaną w zmiennej async_load.
   Mapa ta będzie zawierała dwa klucze: "id" oraz "status". "id" to wartość zwrócona przez funkcję w momencie jej wywołania, natomiast "status" będzie miał postać true lub false, co oznacza odpowiednio "Tak" i "Nie".
   UWAGA Ta funkcja jest przeznaczona  wyłącznie do debugowania i testowaniai nie powinna być używana w wydanych grach. W tym celu powinieneś stworzyć własny interfejs użytkownika, który będzie odbierał dane od graczy, tak abyś miał pełną kontrolę nad wyglądem i zachowaniem okien dialogowych.
    
@@ -28,7 +28,7 @@
   Przykład rozszerzony:
    Zdarzenie lewego naciśnięcia myszy (na przykład) w witrynie object, w której wyświetlany jest komunikat, zawierałoby następujący kod:
   msg = show_question_async("Do you want to buy some armour for " + string(armour[0, 5]) + "coins?");
-  Powyżej zostanie wyświetlone pytanie z podanym adresem string, wymagające od użytkownika naciśnięcia przycisku "Tak" lub "Nie". Identyfikator funkcji jest przechowywany w zmiennej "msg" i zostanie użyty w zdarzeniu Asynchronous Dialog, jak pokazano poniżej:
+  Powyżej zostanie wyświetlone pytanie z podanym adresem string, wymagające od użytkownika naciśnięcia przycisku "Tak" lub "Nie". Identyfikator funkcji jest przechowywany w zmiennej "msg" i zostanie użyty w zdarzeniu dialogu asynchronicznego, jak pokazano poniżej:
   var i_d, stat;
     i_d = ds_map_find_value(async_load, "id");
     if i_d == msg

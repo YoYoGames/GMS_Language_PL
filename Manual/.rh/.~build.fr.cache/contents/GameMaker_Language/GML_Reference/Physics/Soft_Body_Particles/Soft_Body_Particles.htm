@@ -1,7 +1,7 @@
 
   
   Miękkie cząstki ciała
-  GameMaker Studio 2 korzysta z biblioteki fizyki ciała sztywnego Box2D i jako taka nie pozwala na stosowanie fizyki ciała miękkiego. Jednak program Płynna zabawa extension dodaje do systemu fizyki cząsteczki, które umożliwiają tworzenie symulowanych ciał miękkich przy użyciu fizyki ciała sztywnego. Zasadniczo można utworzyć kształt cząstek, które zachowują spójność i w ten sposób symulują pełne ciało, które ze względu na interakcję cząstek sprawia wrażenie ciała miękkiego. Cząstki fizyki można także wykorzystać do symulowania cieczy i innych systemów fizyki opartych na cząsteczkach.
+  GameMaker korzysta z biblioteki fizyki ciała sztywnego Box2D i jako taka nie pozwala na stosowanie fizyki ciała miękkiego. Jednakże Płynna zabawa extension dodaje do systemu fizyki cząsteczki, które umożliwiają tworzenie symulowanych ciał miękkich przy użyciu fizyki ciała sztywnego. Zasadniczo można utworzyć kształt cząstek, które zachowują spójność i w ten sposób symulują pełne ciało, które ze względu na interakcję cząstek sprawia wrażenie ciała miękkiego. Cząstki fizyki można także wykorzystać do symulowania cieczy i innych systemów fizyki opartych na cząsteczkach.
   Zanim zaczniesz tworzyć cząstki fizyki, będziesz musiał ustawić dla nich podstawowe właściwości fizyki, tak jak dla elementów stałych w zwykłej fizyce. Należy jednak pamiętać, że ustawienie tych właściwości będzie miało wpływ na wszystkie cząstki utworzone wcześniej, a także na wszystkie nowe cząstki, które zostaną utworzone, więc zwykle używa się tych funkcji tylko na początku gry lub poziomu. Istnieją jednak specjalne funkcje do ustawiania flag cząstek dla poszczególnych cząstek (i grup cząstek), które zmienią ich właściwości, takie jak "odbijanie" czy "lepkość", umożliwiając tworzenie różnych typów cząstek w zakresie tych globalnych ustawień.
   Do ustawiania i uzyskiwania danych globalnego systemu cząstek stałych dostępne są następujące funkcje:
   
@@ -26,6 +26,7 @@
     physics_particle_set_group_flags
     physics_particle_get_group_flags
     physics_particle_group_get_inertia
+    physics_particle_group_get_mass
     physics_particle_group_get_centre_x
     physics_particle_group_get_centre_y
     physics_particle_group_get_vel_x

@@ -1,7 +1,7 @@
 
   
   widoczny
-  Instancję można oznaczyć jako visible lub nie, ustawiając tę zmienną na true (widoczna) lub false (niewidoczna). Działa to w ten sposób, że GameMaker Studio 2 pomija zdarzenie draw dla tej instancji, więc należy zachować ostrożność przy korzystaniu z tego, ponieważ oznacza to, że żaden kod umieszczony w zdarzeniu draw nie zostanie uruchomiony, gdy instancja nie jest widoczna. Należy również pamiętać, że jeśli kontrolka layer do której przypisana jest instancja, jest oznaczona jako niewidoczna, ustawienie tej zmiennej na true nie przyniesie żadnego efektu, dopóki warstwa nie zostanie oznaczona jako widoczna.
+  Instancję można oznaczyć jako visible lub nie, ustawiając tę zmienną na true (widoczna) lub false (niewidoczna). Działa to na zasadzie nakazania programowi GameMaker pominięcia zdarzenia losowania dla tej instancji, więc należy zachować ostrożność przy jej używaniu, ponieważ oznacza to, że żaden kod umieszczony w zdarzeniu losowania nie zostanie uruchomiony, gdy instancja nie jest widoczna. Należy również pamiętać, że jeśli kontrolka layer do której przypisana jest instancja, jest oznaczona jako niewidoczna, ustawienie tej zmiennej na true nie przyniesie żadnego efektu, dopóki warstwa nie zostanie oznaczona jako widoczna.
    
   Składnia:
   visible;

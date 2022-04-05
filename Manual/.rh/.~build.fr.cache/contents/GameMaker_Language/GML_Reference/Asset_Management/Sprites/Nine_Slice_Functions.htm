@@ -1,7 +1,7 @@
 
   
   Dziewięć funkcji krojenia
-  Oprócz sekcji Nine Slice w edytorze Sprite Editor, w programie GameMaker Studio 2 dostępne są funkcje umożliwiające ustawienie właściwości Nine Slice dla strony sprites pod adresem runtime. Przed zapoznaniem się z tymi funkcjami zalecane jest przeczytanie tej strony, aby zapoznać się z techniką Nine Slice.
+  Oprócz sekcji Nine Slice w edytorze Sprite Editor, GameMaker udostępnia funkcje do ustawiania właściwości Nine Slice dla strony sprites pod adresem runtime. Przed zapoznaniem się z tymi funkcjami zalecane jest przeczytanie tej strony, aby zapoznać się z techniką Nine Slice.
   Do pobierania i zmieniania właściwości plasterka Nine Slice dla strony sprite asset w czasie rzeczywistym można użyć następujących funkcji:
   
     sprite_nineslice_create
@@ -11,7 +11,7 @@
   Funkcje te wykorzystują stronę struct, na której można przeczytać o zawartości tej strony struct.
   Rysowanie sprite'ów dziewięciu plasterków
   Nie ma osobnych funkcji do rysowania plastrów Nine Slice sprites, ponieważ działają one z istniejącymi funkcjami rysowania sprite'ów (z wyjątkiem funkcji, które rysują tylko część sprite lub zniekształcają ją, takich jak draw_sprite_part() lub draw_sprite_pos()).
-  Zaleca się używanie funkcji draw_sprite_stretched() sprite , ponieważ umożliwia ona określenie bezwzględnych wymiarów strony sprite w pikselach i jest łatwa w użyciu wraz z funkcją Nine Slice. Można również użyć funkcji draw_sprite_ext() która zamiast tego pobiera wartości skali.
+  Zalecane jest używanie funkcji draw_sprite_stretched() sprite , ponieważ umożliwia ona określenie bezwzględnych wymiarów strony sprite w pikselach i jest łatwa w użyciu wraz z funkcją Nine Slice. Można również użyć funkcji draw_sprite_ext() która zamiast tego pobiera wartości skali.
    
    
   

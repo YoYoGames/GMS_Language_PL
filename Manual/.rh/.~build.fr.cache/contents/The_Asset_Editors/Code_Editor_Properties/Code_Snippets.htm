@@ -1,47 +1,47 @@
 
-  
-  Wycinki kodu
-  Bardzo przydatnym narzędziem, które masz do dyspozycji podczas edycji kodu, jest użycie wycinków kodu ( Code Snippets). Korzystając z edytora script, możesz nacisnąć przycisk F4, aby otworzyć okienko wycinka kodu, które pozwala wybrać z listy
-    z listy jedną z powszechnie używanych metod kodowania:
-  W tym oknie można wybrać myszą fragment, który ma zostać użyty, lub nacisnąć odpowiedni klawisz skrótu wymieniony po prawej stronie. Spowoduje to dodanie
-    snippet do kodu, który można edytować.
-  W razie potrzeby można również zdefiniować własne fragmenty kodu. Aby to zrobić, należy utworzyć plik o nazwie "snippets.txt" w jednym z następujących katalogów:
-  
-    Okna: %ProgramData%\GameMakerStudio2\User\
-    macOS: /Users/Shared/GameMakerStudio2/User/
-  
-  Folder ten nie jest modyfikowany podczas aktualizacji GameMaker Studio 2, więc edytowany plik pozostanie nienaruszony (ale wszelkie zmiany w bazowym pliku snippets w katalogu instalacyjnym zostaną cofnięte).
-  Po utworzeniu pliku w katalogu User można go edytować za pomocą dowolnego edytora tekstu, stosując się do poniższych zasad:
-  
-    Każdy snippet musi znajdować się w osobnej linii (nie może być pustych linii)
-    Każdy wycinek musi zaczynać się od skrótu klawiszowego, po którym następuje "-", a następnie nazwa wycinka (czyli to, co jest wyświetlane w menu), po której następuje dwukropek ":", np:
-  
-  I - Utwórz instancję:
-  Po dwukropku dodajemy fragment kodu
-  I - Tworzenie instancji:instance_create_layer(x, y, |layer|, object);
-  Dodawany kod musi być zgodny z określonym formatem, w którym:
-  
-    Cały kod znajduje się w jednej linii
-    Używasz "$" jako nowej linii
-    Tekst, który ma być zaznaczony jako pierwszy, umieszczasz pomiędzy symbolami "|" (kursor zaznaczy ten tekst do edycji po dodaniu snippetu)
-  
-  Zobacz przykłady, które znajdują się już w pliku bazowym, aby zobaczyć, jak jest on skonfigurowany zgodnie z powyższymi zasadami. Plik bazowy można znaleźć w katalogu instalacyjnym GameMaker Studio 2:
-  
-    \GameMaker Studio 2\TextEditor\snippets.txt
-  
-  
-   
-   
-   
-  
+    Wycinki kodu
+    Bardzo przydatnym narzędziem, które masz do dyspozycji podczas edycji swojego kodu, jest użycie Code Snippets. Podczas korzystania z edytora script można nacisnąć przycisk F4, aby otworzyć okno podręczne wycinka kodu, które pozwala wybrać z listy jedną z powszechnie używanych metod kodowania:
+    W tym oknie możesz wybrać myszą snippet, którego chcesz użyć, lub nacisnąć odpowiedni klawisz skrótu, który znajduje się po prawej stronie. Spowoduje to dodanie snippetu do kodu w celu jego edycji.
+    W razie potrzeby można również zdefiniować własne fragmenty kodu. Aby to zrobić, należy utworzyć plik o nazwie "snippets.txt" w jednym z następujących katalogów:
+    
+      Okna: %ProgramData%\GameMaker\User\
+      macOS: /Users/Shared/GameMaker/User/
+    
+    Ten folder nie jest modyfikowany podczas aktualizacji GameMakera, więc edytowany przez Ciebie plik pozostanie nienaruszony (ale wszelkie zmiany w bazowym pliku snippets w katalogu instalacyjnym zostaną cofnięte).
+    Po utworzeniu pliku w katalogu User można go edytować za pomocą dowolnego edytora tekstu, stosując się do poniższych zasad:
+    
+      Każdy snippet musi znajdować się w osobnej linii (nie może być pustych linii)
+      Każdy wycinek musi zaczynać się od skrótu klawiszowego, po którym następuje "-", a następnie nazwa wycinka (czyli to, co jest wyświetlane w menu), po której następuje dwukropek ":", np:
+    
+    I - Utwórz instancję:
+    Po dwukropku dodajemy fragment kodu
+    I - Tworzenie instancji:instance_create_layer(x, y, |layer|, object);
+    Dodawany kod musi być zgodny z określonym formatem, w którym:
+    
+      Cały kod znajduje się w jednej linii
+      Aby dodać nową linię, należy użyć znaku "$".
+        
+          UWAGA Przy tworzeniu wielu nowych linii, pomiędzy każdym znakiem "$" musi być spacja. Na przykład, aby dodać trzy nowe linie, należy napisać $ $ $.
+        
+      
+      Tekst, który ma być wyróżniony, umieszczasz między symbolami "|". Edytor kodu automatycznie zaznaczy ten tekst do edycji po dodaniu snippetu.
+    
+    Zapoznaj się z przykładami, które znajdują się już w pliku bazowym snippets, aby zobaczyć, jak jest on skonfigurowany zgodnie z powyższymi zasadami. Plik bazowy można znaleźć w katalogu instalacyjnym GameMakera:
+    
+      Windows: GameMaker\TextEditor\snippets.txt
+      macOS: /Applications/GameMaker.app/Contents/MonoBundle/TextEditor/snippets.txt
+    
+    
+     
+     
+     
     
       
-        Powrót: Redaktor Script 
-        Następny: Edytowanie kodu
+        
+          Powrót: Redaktor Script 
+          Następny: Edytowanie kodu
+        
       
+      © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
-  
-  
-  
-
+    

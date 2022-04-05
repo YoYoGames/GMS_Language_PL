@@ -1,49 +1,49 @@
 
   
   tilemap_clear
-  Using this function you can clear/set all the tiles on a given tile-map. You give the tile map element ID (which you get when you create a tile map element using layer_tilemap_create() or when you use the function layer_tilemap_get_id()), and then supply the tile data that you wish to clear the layer with. A default value of 0 will clear all the tiles from the layer (essentially making all tiles "empty"), while you can use the dedicated tile_* functions to create your own tile data to clear the tile map with.
-   
-  Syntax:
+  Za pomocą tej funkcji można wyczyścić/ustawić wszystkie strony tiles na danej mapie kafelkowej. Podajesz identyfikator elementu mapy tile (który otrzymujesz, gdy tworzysz element mapy tile za pomocą layer_tilemap_create() lub po użyciu funkcji layer_tilemap_get_id()), a następnie podajesz dane tile, którymi chcesz wyczyścić warstwę. Domyślna wartość 0 spowoduje usunięcie wszystkich danych tiles z warstwy (w zasadzie wszystkie tiles staną się "puste"), natomiast można użyć specjalnych funkcji tile_* do utworzenia własnych danych tile, którymi można wyczyścić mapę tile.
+   
+  Składnia:
   tilemap_clear(tilemap_element_id, tiledata)
   
     
       
         Argument
-        Type
-        Description
+        Typ
+        Opis
       
       
         tilemap_element_id
-        Tile Map Element ID
+        Identyfikator elementu mapy kafelkowej
         The unique ID value of the tile map element to change
       
       
         tiledata
-        Tile Data (Real)
+        Dane kafelka (rzeczywiste)
         The tile data to use to clear the layer
       
     
   
-   
-  Returns:
+   
+  Zwroty:
   N/A
-   
-  Example:
+   
+  Przykład:
   var layer_id = layer_get_id("Forest");
     var tile_id = layer_tilemap_get_id(layer_id);
     tilemap_clear(tile_id, 0);
-  The above code gets the ID value of a tile map created in the room editor, and then clears it using "empty" tiles.
-   
-   
-   
+  Powyższy kod pobiera wartość ID mapy tile utworzonej w edytorze room, a następnie czyści ją przy użyciu "pustej" mapy tiles.
+   
+   
+   
   
     
       
-        Back: Tile Map Layers
-        Next: tilemap_x
+        Wstecz: Warstwy mapy kafelkowej
+        Następny: tilemap_x
       
     
-    © Copyright YoYo Games Ltd. 2022 All Rights Reserved
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

@@ -1,7 +1,7 @@
 
   
   network_connect
-  Za pomocą tej funkcji można wysłać żądanie połączenia z adresem server. Funkcja pobiera identyfikator gniazda, przez które ma się połączyć (zob. network_create_socket()) i wymaga podania adresu IP, z którym chcesz się połączyć ( string) oraz portu, przez który chcesz się połączyć, a jeśli połączenie nie powiedzie się, zwrócona zostanie wartość mniejsza niż 0. Połączenie wykorzystuje specjalny protokół, który zapewnia, że tylko gry GameMaker Studio 2 łączą się ze sobą, jednak jeśli chcesz połączyć się z grą server, która nie jest grą GameMaker Studio 2, możesz użyć network_connect_raw(). Należy pamiętać, że domyślnie funkcja jest synchroniczna, co oznacza, że gra może się "zawiesić" podczas nawiązywania połączenia. Możesz ustawić czas oczekiwania na połączenie lub sprawić, by tworzenie było asynchroniczne, używając funkcji network_set_config(), albo zamiast niej użyć funkcji network_connect_async().
+  Za pomocą tej funkcji można wysłać żądanie połączenia z adresem server. Funkcja pobiera identyfikator gniazda, przez które ma się połączyć (zob. network_create_socket()) i wymaga podania adresu IP, z którym chcesz się połączyć ( string) oraz portu, przez który chcesz się połączyć, a jeśli połączenie nie powiedzie się, zwrócona zostanie wartość mniejsza niż 0. Połączenie używa specjalnego protokołu, który zapewnia, że tylko gry GameMaker łączą się ze sobą, jednak jeśli chcesz połączyć się z server, który nie jest grą GameMaker, możesz użyć network_connect_raw(). Zwróć uwagę, że domyślnie funkcja ta jest synchroniczna, co oznacza, że Twoja gra może się "zawiesić" w trakcie nawiązywania połączenia. Możesz ustawić wartość timeoutu dla połączenia lub sprawić, by tworzenie było asynchroniczne, używając funkcji network_set_config(), albo zamiast niej użyć funkcji network_connect_async().
    
   Składnia:
   network_connect(socket, url, port);
@@ -39,7 +39,7 @@
   
     
       
-        Powrót: Praca w sieci
+        Powrót: Tworzenie sieci
         Następny: network_connect_async
       
     

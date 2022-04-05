@@ -1,7 +1,7 @@
 
   
   Funkcje liczbowe
-  Liczby rzeczywiste w serwisie GameMaker Studio 2 są liczbami zmiennoprzecinkowymi o podwójnej precyzji - to znaczy, że mają w sobie kropkę dziesiętną bez ustalonej liczby cyfr przed lub po kropce - lub liczbami całkowitymi - to znaczy, że są to liczby całkowite bez wartości dziesiętnej. Na przykład 2 jest liczbą całkowitą, ale 2,01 jest liczbą rzeczywistą zmiennoprzecinkową.
+  Liczby rzeczywiste w programie GameMaker są liczbami zmiennoprzecinkowymi o podwójnej precyzji - to znaczy, że mają w sobie kropkę dziesiętną i nie mają ustalonej liczby cyfr przed ani po kropce - lub liczbami całkowitymi - to znaczy, że są to liczby całkowite bez wartości dziesiętnej. Na przykład 2 jest liczbą całkowitą, ale 2,01 jest liczbą rzeczywistą zmiennoprzecinkową.
   UWAGA: W celu HTML5 wszystkie liczby rzeczywiste są podwojone.
   To rozróżnienie między liczbami całkowitymi a zmiennoprzecinkowymi jest bardzo ważne w przypadku programowania międzyplatformowego, ponieważ precyzja obliczeń wykonywanych na komputerze Windows nie jest taka sama jak precyzja tych samych obliczeń wykonywanych na urządzeniach przenośnych. Oznacza to, że należy zwracać szczególną uwagę podczas wykonywania porównań, na przykład:
   if (image_index == 1)
@@ -16,14 +16,14 @@
   Warto również zauważyć, że podczas korzystania z docelowych platform kompilatora YoYo wszystkie wyrażenia i funkcje są obliczane od lewej do prawej, podczas gdy na wszystkich innych platformach docelowych są one obliczane od prawej do lewej, co oznacza, że np. to da różne wyniki w zależności od platformy:
   val = max(num, ++num, num++);
   UWAGA: Więcej informacji na ten temat znajduje się w rozdziale Zamówienie na ocenę.
-  Można również użyć specjalnej funkcji dostępnej w witrynie GameMaker Studio 2 do ustawienia wartości epsilon dla matematyki zmiennoprzecinkowej. Gdy liczba rzeczywista jest zaokrąglana do najbliższej liczby zmiennoprzecinkowej, epsilon (znany również jako "epsilon maszynowy") tworzy górną granicę błędu względnego. Wartość epsilon można uzyskać i ustawić za pomocą następujących funkcji:
+  Możesz także użyć specjalnej funkcji dostępnej w programie GameMaker, aby ustawić wartość epsilon dla matematyki zmiennoprzecinkowej. Gdy liczba rzeczywista jest zaokrąglana do najbliższej liczby zmiennoprzecinkowej, epsilon (znany także jako "epsilon maszynowy") tworzy górną granicę błędu względnego. Wartość epsilon można uzyskać i ustawić za pomocą następujących funkcji:
   
     math_set_epsilon
     math_get_epsilon
   
    
   Wszystkie te funkcje zajmują się używaniem liczb i wartości losowych:
-  UWAGA Kiedy używasz funkcji losowych, GameMaker Studio 2 zachowuje to samo losowe ziarno przy każdym uruchomieniu gry. To znacznie ułatwia debugging, ponieważ masz gwarancję, że funkcje losowe będą zawsze zwracać tę samą wartość. Jeśli jednak nie chcesz, aby tak się stało, musisz najpierw ustawić nowe ziarno losowe na samym początku gry, używając randomise() lub . random_set_seed().
+  UWAGA Kiedy używasz funkcji losowych, GameMaker zachowuje to samo losowe ziarno za każdym razem, kiedy rozpoczynasz grę. To znacznie ułatwia debugging, ponieważ masz gwarancję, że funkcje losowe będą zawsze zwracać tę samą wartość. Jeśli jednak nie chcesz, aby tak się stało, musisz najpierw ustawić nowe losowe ziarno na samym początku gry, używając randomise() lub . random_set_seed().
   
     choose
     random

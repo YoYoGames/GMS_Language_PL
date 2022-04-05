@@ -6,26 +6,15 @@
   
   Warstwa Filtr/Efekt (lub FX) służy do stosowania filtrów wizualnych lub efektów do niektórych warstw. Możesz wybrać efekt z listy rozwijanej "Typ efektu", co spowoduje wyświetlenie jego parametrów w oknie Właściwości warstwy, umożliwiając modyfikację jego wyglądu i zachowania. Na przykład wybranie efektu "Wstrząs ekranu" pozwoli Ci zmienić jego wielkość, szybkość wstrząsów oraz zastosować teksturę szumu sprite:
   Dodanie warstwy FX spowoduje zastosowanie wybranego efektu do wszystkich innych warstw, które znajdują się poniżej warstwy FX, jak pokazano na poniższej ilustracji:
-  Oznacza to, że do wszystkich "dotkniętych" warstw zostanie zastosowany wybrany filtr (w tym przypadku "Desaturacja"), ponieważ znajdują się one poniżej warstwy FX. Wszystkie warstwy znajdujące się powyżej warstwy FX pozostaną nienaruszone. Nie należy zapominać, że na warstwę może wpływać wiele warstw efektów znajdujących się nad nią w dowolnej kolejności warstw.
-  Można również łatwo modyfikować głębokość warstwy lub instancji na stronie runtime, zmieniając warstwy FX, które są do niej stosowane, poprzez zwiększenie jej głębokości powyżej głębokości warstwy FX (zasadniczo znajduje się pod warstwą FX i jest dotknięta) lub zmniejszenie jej głębokości poniżej głębokości warstwy FX (znajduje się powyżej warstwy FX i nie jest dotknięta).
+  Oznacza to, że do wszystkich "dotkniętych" warstw zostanie zastosowany wybrany filtr (w tym przypadku "Desaturacja"), ponieważ znajdują się one poniżej warstwy FX. Warstwy znajdujące się powyżej warstwy FX pozostaną nienaruszone. Na warstwę może wpływać wiele warstw efektów, które znajdują się nad nią w dowolnym miejscu w kolejności warstw.
+  Aby utworzyć filtry/efekty, które są stosowane tylko do jednej warstwy, zobacz: Single-Layer FX.
+  UWAGA Modyfikowanie głębokości warstwy lub instancji na stronie runtime może zmienić, które warstwy FX są na niej stosowane, poprzez zwiększenie jej głębokości w stosunku do głębokości warstwy FX (zasadniczo znajduje się pod warstwą FX i jest dotknięta) lub zmniejszenie jej głębokości w stosunku do głębokości warstwy FX (znajduje się nad warstwą FX i nie jest dotknięta).
   Typy efektów
-  Na liście rozwijanej "Typ efektu" można wybrać jeden z następujących efektów:
-  
-    Koloryzuj: Zmienia wszystko na jeden odcień o regulowanej wartości intensywności.
-    Duże rozmycie: powoduje rozmycie obrazu przy użyciu określonego szumu texture, umożliwiając zmianę promienia rozmycia w celu zwiększenia lub zmniejszenia efektu rozmycia.
-    Wykryj krawędzie: Włącza wykrywanie krawędzi shader dla renderowanej zawartości, z regulowaną wartością progową.
-    Ciepła mgiełka: Ta opcja wykorzystuje zamglenie cieplne shader i jest przydatna do wyświetlania gorących środowisk.
-    Nasycenie: Zmniejsza nasycenie renderowanej zawartości o określoną wartość intensywności.
-    Posteryzuj: Zastosuje efekt posteryzacji do renderowanej zawartości, umożliwiając zmianę maksymalnych poziomów kolorów dla każdego odcienia.
-    Trzęsienieekranu: Powoduje, że renderowana zawartość drży, symulując efekt drgania aparatu fotograficznego, umożliwiając dostosowanie wielkości (jak bardzo drży), szybkości drżenia (jak szybko drży) oraz szumu texture, który kontroluje ruch.
-    Pikselizacja: Sprawia, że renderowana zawartość wygląda na rozpikselowaną, umożliwiając zmianę rozmiaru każdego piksela; dzięki temu renderowana zawartość wygląda jak w niskiej rozdzielczości
-    Odcień koloru: powoduje zastosowanie odcienia koloru do renderowanej zawartości.
-    Zniekształcenie wirowe:Tworzy efekt zniekształcenia wirowego i umożliwia zmianę jego położenia za pomocą wartości przesunięcia
-    Pod wodą: Dzięki temu renderowana zawartość wygląda tak, jakby znajdowała się pod wodą, a także zawiera opcje barwienia kolorów.
-  
+  Wszystkie filtry i efekty z listy rozwijanej "Typ efektu" są udokumentowane na tej stronie: Wszystkie typy filtrów/efektów.
   Jednowarstwowa wymiana walut
-  Można utworzyć warstwę FX, aby zastosować filtr do wielu warstw, ale można też przypisać filtr tylko do jednej, określonej warstwy, korzystając z Inspektora. Otwarcie inspektora i wybranie warstwy room umożliwi zastosowanie do niej filtra/efektu, a jeśli jest to warstwa nie-FX (np. warstwa instancji, Asset itp.), efekt zostanie zastosowany tylko do tej warstwy, a nie do innych warstw poniżej niej.
+  Można utworzyć warstwę FX, aby zastosować filtr do wielu warstw, ale można też przypisać filtr tylko do jednej, określonej warstwy, korzystając z Inspektora. Otwarcie inspektora i wybranie warstwy room umożliwi zastosowanie do niej filtru/efektu, a jeśli jest to warstwa nie-FX (np. warstwa instancji, Asset itp.), efekt zostanie zastosowany tylko do tej warstwy, a nie do innych warstw poniżej niej.
   
+  Można również kliknąć ikonę , aby włączyć lub wyłączyć efekty FX dla wybranej warstwy.
   Użycie w czasie pracy
   Efekty można dodawać i kontrolować na stronie runtime za pomocą funkcji Filtr/Efekt GML .
    
@@ -36,7 +25,7 @@
     
       
         Powrót: Redaktor Room 
-        Następny: Typy i właściwości warstw
+        Następny: Wszystkie typy filtrów/efektów
       
     
     © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.

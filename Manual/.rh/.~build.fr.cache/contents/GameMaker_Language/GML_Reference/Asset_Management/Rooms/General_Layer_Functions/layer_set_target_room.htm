@@ -1,7 +1,7 @@
 
   
   layer_set_target_room
-  Wywołując tę funkcję, mówisz GameMaker Studio 2, że wszystkie kolejne funkcje warstw powinny być stosowane do danego pomieszczenia. W ten sposób można proceduralnie zmieniać lub generować warstwy i zawartość warstw w witrynie room, która nie jest bieżącą witryną room. Gdy skończysz dodawać warstwy lub elementy warstw do room, wywołaj funkcję layer_reset_target_room() aby zresetować cel room (lub wywołaj tę funkcję ponownie z argumentem room równym -1). Uwaga: funkcja ta może być używana tylko w pomieszczeniach innych niż bieżące pomieszczenie i została zaprojektowana w taki sposób, aby można było dodawać/usuwać warstwy i elementy warstw na stronie rooms innej niż aktualnie działająca room.
+  Wywołując tę funkcję, mówisz GameMakerowi, że wszystkie kolejne funkcje warstw powinny być zastosowane do danego pomieszczenia. W ten sposób możesz proceduralnie zmieniać lub generować warstwy i zawartość warstw na stronie room, która nie jest bieżącą stroną room. Gdy skończysz dodawać warstwy lub elementy warstw do room, wywołaj funkcję layer_reset_target_room() aby zresetować cel room (lub wywołaj tę funkcję ponownie z argumentem room równym -1). Uwaga: funkcja ta może być używana tylko w pomieszczeniach innych niż bieżące pomieszczenie i została zaprojektowana w taki sposób, aby można było dodawać/usuwać warstwy i elementy warstw na stronie rooms innej niż aktualnie działająca room.
   UWAGA! Podczas kierowania na inną stronę room można używać wszystkich funkcji zwykłych warstw, z wyjątkiem tego, że nie można tworzyć instancji przy użyciu instance_create_layer() lub instance_create_depth()ani nie będzie dostępna funkcja warstwy layer_add_instance() nie będzie dostępna.
    
   Składnia:

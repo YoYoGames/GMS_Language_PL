@@ -1,8 +1,8 @@
 
   
    Ustaw obrót instancji
-  Ten blok akcji ustawia kąt image_angle (obrót) instancji. Kąt jest mierzony w stopniach, przy czym prawy to 0°, górny to 90°, lewy to 180°, a dolny to 270°. Ustawienie tej zmiennej na 0 resetuje instancję, co oznacza, że będzie ona
-    będzie rysować dowolny obiekt sprite, do którego jest przypisana, tak jak został zdefiniowany w edytorze sprite. Zwróć uwagę, że aby zmiany w tej akcji były widoczne, instancja nie powinna mieć zdarzenia draw (a więc GameMaker Studio 2 będzie domyślnie rysować sprite) lub być rysowana
+  Ten blok akcji ustawia kąt image_angle (obrót) instancji. Kąt jest mierzony w stopniach, gdzie prawy to 0°, górny to 90°, lewy to 180°, a dolny to 270°. Ustawienie tej zmiennej na 0 resetuje instancję, co oznacza, że będzie ona
+    będzie rysować dowolny obiekt sprite, do którego jest przypisana, tak jak został zdefiniowany w edytorze sprite. Zwróć uwagę, że aby zmiany w tej akcji były widoczne, instancja nie powinna mieć zdarzenia draw (a więc GameMaker domyślnie narysuje sprite) lub powinna być rysowana za pomocą akcji Draw Self.
     przy użyciu akcji Draw Self.
    
   Składnia działania:
@@ -24,7 +24,7 @@
    
   Przykład:
   Powyższy kod bloku akcji ustawia nową stronę sprite oraz szereg innych
-    właściwości dotyczące sposobu wyświetlania tej strony sprite, w tym obrót o 180°.
+    właściwości dotyczące sposobu wyświetlania strony sprite, w tym obracanie jej o 180°.
    
    
    

@@ -1,23 +1,23 @@
 
   
   System plików
-  Przy korzystaniu z funkcji systemu plików lub plików dołączonych do GameMaker Studio 2 bardzo ważne jest, aby dokładnie wiedzieć, jak
-    jak działa system plików i co się dzieje za kulisami. W tym celu ta sekcja ma za zadanie wyjaśnić i objaśnić, jak dokładnie są przechowywane rzeczy, gdzie są przechowywane i jakie są możliwe ograniczenia lub obejścia tego systemu.
+  Podczas korzystania z funkcji systemu plików lub dołączonych plików w programie GameMaker niezwykle ważna jest dokładna znajomość
+    jak działa system plików i co dzieje się za kulisami. W tym celu ten rozdział ma za zadanie wyjaśnić i objaśnić dokładnie, jak rzeczy są przechowywane, gdzie są przechowywane i jakie są możliwe ograniczenia lub obejścia tego systemu.
     w tym systemie.
-  Pierwszą i najważniejszą rzeczą, na którą należy zwrócić uwagę w przypadku funkcji plików, jest to, że są one ograniczone - ogólnie i domyślnie - do piaskownicy. Oznacza to, że na stronie GameMaker Studio 2 nie można zapisywać ani wczytywać plików z dowolnego miejsca, które nie jest częścią pakietu z grą lub lokalnej pamięci urządzenia, bez wyraźnego polecenia użytkownika, a nawet wtedy polecenie to jest ograniczone tylko do platform docelowych Windows, macOS i Ubuntu (Linux).
+  Pierwszą i najważniejszą rzeczą, na którą należy zwrócić uwagę w przypadku funkcji plików, jest to, że są one ograniczone - ogólnie i domyślnie - do piaskownicy. Oznacza to, że GameMaker nie może zapisywać ani wczytywać plików z dowolnego miejsca, które nie jest częścią pakietu gry lub pamięci lokalnej urządzenia, bez wyraźnego polecenia użytkownika, a nawet wtedy polecenie to jest ograniczone tylko do platform docelowych Windows, macOS i Ubuntu (Linux).
   WAŻNE! Na platformach docelowych Desktop (Windows, macOS oraz Ubuntu (Linux)) można jednak wyłączyć piaskownicę, zaznaczając opcję Disable file system sandbox (Wyłącz piaskownicę systemu plików ) w opcjach gry dla platformy docelowej. Robisz to na własne ryzyko i chociaż otworzy to możliwość zapisywania i wczytywania plików oraz umożliwi dostęp do plików w dowolnym miejscu w systemie, może to być nadal ograniczone przez uprawnienia systemu operacyjnego i nie będzie można zapisywać
     do program_katalog folderu.
   Aby zrozumieć działanie piaskownicy, należy przede wszystkim zrozumieć, że istnieją dwa odrębne obszary dla plików:
   
-    The File Bundle - w tym miejscu znajdują się wszystkie pliki spakowane z grą wykonywalną, w tym pliki dodane do listy Included Files asset na stronie GameMaker Studio 2 IDE (są to
-      są to pliki zewnętrzne, które mają być spakowane z grą).
+    The File Bundle - w tym miejscu przechowywane są wszystkie pliki spakowane z grą wykonywalną, w tym pliki dodane do listy Included Files asset z programu GameMaker IDE (są to
+      są plikami zewnętrznymi, które mają być spakowane z grą).
     Obszar zapisu - jest to obszar pamięci masowej urządzenia, do którego gra może bezpiecznie zapisywać dane, a gra ma gwarancję, że jest to obszar, do którego można zapisywać dane.
   
   Poniższy schemat może pomóc w lepszej wizualizacji tego zjawiska:
   
   UWAGA: Nigdy nie można zapisywać w katalogu File Bundle (program).
-  Gdy gra jest sandboxowana, dwa obszary docelowe - katalog bundle i lokalny obszar przechowywania - są dostępne na każdej platformie docelowej, ale na każdej z nich będą działać nieco inaczej. Jednak GameMaker Studio 2 wyabstrahował główną
-    co można, a czego nie można zrobić, co ułatwia zmianę przeznaczenia gry na wiele środowisk.
+  Gdy gra jest sandboxowana, dwa docelowe obszary - katalog bundle i lokalny obszar przechowywania - są dostępne na każdej platformie docelowej, ale na każdej z nich będą działać nieco inaczej. Jednak GameMaker wyabstrahował główną
+    co można, a czego nie można zrobić, ułatwiając w ten sposób dostosowanie gry do wielu środowisk.
   Na początek należy zrozumieć, co mamy na myśli, gdy mówimy o working_directory. Jest to synonim dwóch
     możliwych miejsc zapisu (jak pokazano na powyższym diagramie) i kiedy użyjesz tego katalogu, zrobi on jedną z dwóch rzeczy, w zależności od tego, czy czytasz, czy piszesz, oraz od tego, czy plik, z którego czytasz, został zmieniony, czy nie:
   
@@ -25,7 +25,7 @@
       i używa go (jeśli szukany plik jest dołączony do gry).
     Operacje zapisu - można je wykonywać tylko w obszarze zapisu.
   
-  UWAGA: na ogół GameMaker Studio 2 zrobi to wszystko za Ciebie i rzadko trzeba używać wbudowanej zmiennej working_directory.
+  UWAGA: ogólnie rzecz biorąc, GameMaker zrobi to wszystko za Ciebie i rzadko będziesz musiał używać wbudowanej zmiennej working_directory.
   Korzystając z tych dwóch prostych reguł, możemy teraz zobaczyć, jak działają następujące funkcje (są to przykłady ułatwiające wizualizację procesu dla różnych dostępnych funkcji):
   
     directory_create() (oraz inne funkcje katalogów) będą działać tylko w obszarze zapisu .

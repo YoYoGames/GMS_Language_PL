@@ -40,7 +40,7 @@
    
    
    
-  Pozostałe opisane tutaj działania odnoszą się do klawiatury wirtualnej. Jeśli w grze na urządzeniu z ekranem dotykowym wymagane jest wprowadzanie tekstu lub cyfr, można użyć akcji klawiatury wirtualnej, aby korzystać z klawiatury systemu operacyjnego urządzenia. Te akcje będą wywoływać lub ukrywać klawiaturę systemu operacyjnego i przyjmować dane wejściowe tak samo, jak klawiatura fizyczna, więc zwykłe akcje klawiatury GameMaker Studio 2 powinny działać z wirtualnymi klawiaturami (na przykład akcja "Jeśli klawisz zwolniony"), a dane wejściowe z wirtualnej klawiatury będą zapisywane w różnych zmiennych klawiatury, takich jak keyboard_string lub keyboard_last_char, itd...).
+  Pozostałe opisane tutaj działania odnoszą się do klawiatury wirtualnej. Jeśli wymagasz wprowadzania tekstu lub cyfr w grze na urządzeniu z ekranem dotykowym, możesz użyć akcji klawiatury wirtualnej, aby korzystać z klawiatury systemu operacyjnego urządzenia. Te akcje będą wywoływać lub ukrywać klawiaturę systemu operacyjnego i przyjmować dane wejściowe tak samo, jak klawiatura fizyczna, więc wszystkie zwykłe akcje klawiatury GameMakera powinny działać z wirtualnymi klawiaturami (na przykład akcja "Jeśli klawisz zwolniony"), a dane wejściowe z wirtualnej klawiatury będą zapisywane w różnych zmiennych klawiatury, takich jak keyboard_string lub keyboard_last_char, itd.).
   Otwarcie lub zamknięcie wirtualnej klawiatury spowoduje wygenerowanie systemowych zdarzeń asynchronicznych, w których mapa async_load  DS zostanie wypełniona następującymi parami klucz/wartość:
   
     "event_type" - typ odebranego zdarzenia systemowego, w przypadku klawiatur wirtualnych będzie to "status klawiatury wirtualnej".

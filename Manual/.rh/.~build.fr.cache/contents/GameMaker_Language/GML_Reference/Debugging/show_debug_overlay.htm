@@ -1,7 +1,7 @@
 
   
   show_debug_overlay
-  Za pomocą tej funkcji można na stronie switch włączać i wyłączać standardową nakładkę debugowania podczas testowania gry. Nakładka debugowania pokazuje graficzny pasek użycia CPU/GPU w samym oknie gry wraz z bieżącą wartością liczby klatek na sekundę, liczbą podmian texture i liczbą wsadów werteksów (należy pamiętać, że podmianki texture i wsady werteksów nigdy nie będą równe zero i zwykle będą pokazywać wartości 2 lub 3, ponieważ nawet przy pustej stronie room i braku objects GameMaker Studio 2 nadal trzeba rysować i wsadować elementy).
+  Za pomocą tej funkcji można na stronie switch włączać i wyłączać standardową nakładkę debugowania podczas testowania gry. Nakładka debugowania pokazuje graficzny pasek użycia CPU/GPU w samym oknie gry wraz z bieżącą wartością fps, liczbą texture swaps i liczbą vertex batches (zauważ, że texture swaps i vertex batches nigdy nie będą równe zero i zwykle będą pokazywać wartości 2 lub 3, ponieważ nawet przy pustym room i braku objects GameMaker wciąż musi rysować i wsadować rzeczy).
   Pasek ten jest podzielony na sekcje, a każda sekcja ma długość 1/60 sekundy. Jak widać na powyższym obrazku, pasek składa się z różnych kolorów:
   
     Zielony - Przetwarzanie wejścia/wyjścia (np. klawiatura, mysz, gamepad, sieć itd.)

@@ -7,16 +7,16 @@
   Liczby rzeczywiste
   
     Liczby rzeczywiste to dowolne wartości, które nie są string ani żadnym z innych możliwych typów danych. Tak więc 124, 45639.566546456, 0, -45.5 itd. są przykładami liczb rzeczywistych. Wszystkie liczby rzeczywiste są zapisywane jako wartości zmiennoprzecinkowe podwójnej precyzji lub liczby całkowite
-      (32-bitowe liczby całkowite - int32 - lub 64-bitowe liczby całkowite - int64), a kompilator optymalizuje je tam, gdzie jest to możliwe (na przykład wartość 0.0 zostanie zoptymalizowana do wartości całkowitej 0). Gdy mamy do czynienia
+      (albo 32-bitowe liczby całkowite - int32 - albo 64-bitowe liczby całkowite - int64), a kompilator optymalizuje je tam, gdzie jest to możliwe (na przykład wartość 0.0 zostanie zoptymalizowana do wartości całkowitej 0). Gdy mamy do czynienia
       z dowolną wartością, która nie jest liczbą całkowitą, mogą wystąpić niewielkie błędy zaokrąglenia, wynikające z natury matematyki zmiennoprzecinkowej. Więcej informacji na temat tej i innych funkcji związanych z liczbami można znaleźć w dokumencie: GML Reference - Number Functions.
     UWAGA W celu HTML5 wszystkie liczby rzeczywiste są podwojone.
-    Zwróć uwagę, że chociaż wszystkie zmienne w GameMaker Studio 2 są przechowywane jako liczby zmiennoprzecinkowe lub całkowite podwójnej precyzji, możesz używać innych formatów podczas pracy z extensions. Można je przekazać do GameMaker Studio 2 z rozszerzenia
+    Zauważ, że chociaż wszystkie zmienne w GameMakerze są zapisywane jako liczby zmiennoprzecinkowe lub całkowite podwójnej precyzji, to w przypadku extensions możesz używać innych formatów. Można je przekazać do GameMakera z rozszerzenia
       a następnie sprawdzić je za pomocą odpowiedniej funkcji is_*(), których listę można znaleźć tutaj.
      
   
   Boolean
   
-    Boolean to po prostu wartość, która może być albo true, albo false. Zauważ, że obecnie GameMaker Studio 2 interpretuje liczbę rzeczywistą równą lub mniejszą od 0,5 jako wartość false, a każdą liczbę rzeczywistą większą od 0,5 jako true.
+    Boolean to po prostu wartość, która może być albo true albo false. Zauważ, że obecnie GameMaker interpretuje liczbę rzeczywistą równą lub mniejszą od 0,5 jako wartość false, a każdą liczbę rzeczywistą większą od 0,5 jako true.
      Nie oznacza to jednak, że powinieneś sprawdzać, czy 1 i 0 (lub jakakolwiek inna liczba rzeczywista) to prawda czy fałsz, ponieważ masz do dyspozycji stałe true i false, które zawsze powinny być używane w Twoim kodzie, aby
       aby zapobiec problemom, jeśli w przyszłej aktualizacji zostaną dodane prawdziwe typy danych boolean.
     Za pomocą poniższej funkcji można przekształcić dowolną liczbę rzeczywistą na wartość typu boolean w sposób niejawny:
@@ -27,7 +27,7 @@
   
   Struny
   
-    Strona string to po prostu dowolny tekst, który został ujęty w cudzysłów "...". Na stronie strings można wykonywać pewne operacje, takie jak dodawanie dwóch strings w celu utworzenia dłuższego string (konkatenacja), a także zmieniać właściwości string i wyodrębniać z niego liczby rzeczywiste. Więcej informacji na temat strings i funkcji string można znaleźć w: GML Reference - Strings.
+    Adres string to po prostu dowolny tekst, który został ujęty w cudzysłów "...". Na stronie strings można wykonywać pewne operacje, takie jak dodawanie dwóch strings w celu utworzenia dłuższego string (konkatenacja), a także zmieniać właściwości string i wyodrębniać z niego liczby rzeczywiste. Więcej informacji na temat strings i funkcji string można znaleźć w: GML Reference - Strings.
      
   
   Tablice
@@ -47,7 +47,7 @@
   
   Wartości szesnastkowe
   
-    GameMaker Studio 2 akceptuje literały szesnastkowe jako prawidłowe wartości. Wartości szesnastkowe są szczególnie popularne podczas pracy z kolorami, ale można ich używać wszędzie tam, gdzie wymagana jest dodatnia wartość całkowita. Wartości szesnastkowe można sformatować na dwa poniższe sposoby, gdzie abcd to rzeczywista wartość szesnastkowa:
+    GameMaker akceptuje literały szesnastkowe jako prawidłowe wartości. Wartości szesnastkowe są szczególnie popularne przy pracy z kolorami, ale mogą być używane wszędzie tam, gdzie wymagana jest dodatnia wartość całkowita. Wartości szesnastkowe można sformatować na dwa poniższe sposoby, gdzie abcd jest rzeczywistą wartością szesnastkową:
     $abcd
       0xabcd
     
@@ -112,7 +112,7 @@
   
   Infinity
   
-    Stała infinity odnosi się do liczby, która jest uważana za nieskończoną, np. wynik dzielenia dowolnej wartości zmiennoprzecinkowej przez zero, np. 1.0/0.
+    Stała infinity odnosi się do liczby, którą uważa się za nieskończoną, np. wynik dzielenia dowolnej wartości zmiennoprzecinkowej przez zero, np. 1.0/0.
     Zauważ, że stała infinity jest równa sobie, więc infinity == infinity zwróci true.
   
   Zmienna

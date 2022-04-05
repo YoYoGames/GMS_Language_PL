@@ -1,11 +1,11 @@
 
   
   Animowane kafelki
-  Kafelki są zwykle uważane za statyczne komórki w grze room, jednak w witrynie GameMaker Studio 2 można je animować, podobnie jak w przypadku sprite. Dlaczego nie użyć sprites, zapytasz? Cóż, sprites ma pewien narzut na przetwarzanie, ponieważ
-    że są powiązane z ramką ograniczającą i sposobem ich renderowania, ale tiles ma znacznie niższy narzut na przetwarzanie, a więc jest szybszy w renderowaniu. Ma to jednak swoją cenę, ponieważ w przypadku animacji tile set użytkownik jest ograniczony do
+  Kafelki są zwykle uważane za statyczne komórki w grze room, jednak w GameMakerze można je animować, podobnie jak kafelki sprite. Dlaczego nie użyć sprites, zapytacie? Cóż, sprites ma pewien narzut na przetwarzanie, ponieważ
+    że są powiązane z bounding boxem i sposobem renderowania, ale tiles ma znacznie niższy narzut na przetwarzanie i dlatego szybciej się je renderuje. Ma to jednak swoją cenę, ponieważ w przypadku animacji tile set użytkownik jest ograniczony do
     tworzenia animacji, które muszą mieć długość równą potędze dwójki, czyli 2, 4, 8, 16 itd..., muszą być oczywiście tworzone w obrębie siatki tile i wszystkie muszą animować z taką samą szybkością (w zależności od zestawu płytek). Jednak nawet
     nawet z tymi ograniczeniami, animowana strona tiles jest potężną funkcją, którą można wykorzystać do ożywienia i dodania kolorów do statycznych środowisk i tła.
-  Aby utworzyć animację tile, należy najpierw utworzyć stronę tile set, na której znajdują się wszystkie wymagane obrazy tiles w jednym obrazie sprite (ale nie w postaci klatek sprite, lecz pojedynczej dużej klatki sprite ze wszystkimi obrazami animacji w niej zawartymi), a następnie w edytorze zestawu k afelków kliknąć przycisk Animacja kafelkowa, aby wywołać edytor animacji:
+  Aby utworzyć animację tile, należy najpierw utworzyć stronę tile set, na której znajdują się wszystkie wymagane obrazy tiles w jednym obrazie sprite (ale nie w postaci klatek sprite, lecz pojedynczej dużej klatki sprite, w której znajdują się wszystkie obrazy animacji), a następnie w edytorze zestawu k afelków kliknąć przycisk Animacja kafelkowa, aby wywołać edytor animacji:
   Przykładowy obrazek powyżej to pojedynczy obrazek zawierający wszystkie klatki animacji, ale należy zauważyć, że obrazek ten może
     zawierać także inne, nieanimowane elementy tiles, ponieważ można użyć pojedynczego, masywnego obrazu tile set, a następnie wybrać z niego te części, które mają być wykorzystane do utworzenia animacji. Na przykład można mieć duży krajobraz tile set z drzewami,
     ziemią i wodą, a na stronie tile set można umieścić wiele stron tiles, które mają być animowane w celu wywołania falowania wody.

@@ -1,10 +1,10 @@
 
   
   Biblioteka akcji na gamepadzie
-  W programie GameMaker Studio 2 dostępnych jest wiele specjalnych akcji, których można używać do wykrywania analogowych i cyfrowych elementów sterujących z wielu podłączonych padów do gier. Akcje te wymagają podania wartości indeksu gamepada, czyli liczby (licząc od 0) reprezentującej wybrany gamepad. Należy pamiętać, że gdy gamepad zostanie podłączony do urządzenia (lub odłączony), zostanie wywołane asynchroniczne zdarzenie systemowe (aby sobie z tym poradzić, należy użyć odpowiedniego kodu).
+  ProgramGameMaker zawiera wiele specjalnych akcji, które można wykorzystać do wykrywania analogowych i cyfrowych elementów sterujących z wielu podłączonych padów do gier. Akcje te wymagają podania wartości indeksu gamepada, czyli liczby (licząc od 0) reprezentującej wybrany gamepad. Należy pamiętać, że gdy gamepad zostanie podłączony do urządzenia (lub odłączony), zostanie wywołane asynchroniczne zdarzenie systemowe (aby sobie z tym poradzić, należy użyć odpowiedniego kodu).
   Gniazda gamepadów są indeksowane od 0, przy czym gniazda 0 - 3 włącznie są przeznaczone tylko dla gamepadów Xinput, tj. kontrolerów Xbox360 i innych. Można jednak również sprawdzić gniazda 4 - 11 włącznie dla gamepadów z wejściem bezpośrednim, co oznacza, że po podłączeniu przez te gniazda można wykryć wiele innych modeli kontrolerów.
   Stałe wejściowe
-  Podczas pracy z akcjami gamepada dane wejściowe mogą pochodzić z osi, przycisków lub kapeluszy, które GameMaker Studio 2 przypisze do następujących wbudowanych stałych (należy pamiętać, że "kapelusze" są wykrywane tylko w przypadku niestandardowych kontrolerów):
+  Podczas pracy z gamepadami dane wejściowe mogą pochodzić z osi, przycisków lub kapeluszy, które GameMaker przypisze do następujących wbudowanych stałych (należy pamiętać, że "kapelusze" są zwykle wykrywane tylko w przypadku niestandardowych kontrolerów):
   
     
       
@@ -129,7 +129,7 @@
       
       
         
-        Jeśli przycisk Gamepad wciśnięty
+        Jeśli przycisk Gamepada wciśnięty
       
       
         
@@ -152,7 +152,7 @@
   Poniższa lista przedstawia aktualną kompatybilność między platformami (należy pamiętać, że będzie się ona zmieniać wraz z kolejnymi aktualizacjami):
   
     SystemWindows jest w pełni obsługiwany, a jednocześnie dozwolonych jest maksymalnie 11 podłączonych urządzeń. Należy pamiętać, że w witrynie Windows pierwsze 4 gniazda gamepadów (0 - 3) są obsługiwane za pomocą dll XInput, co oznacza, że tylko kontrolery XBox mogą być w 100% zgodne, a w przypadku innych typów kontrolerów należy sprawdzić pozostałe gniazda gamepadów (4 - 11).
-    SystemmacOS jest obsługiwany przez maksymalnie 4 podłączone urządzenia jednocześnie, przy czym mogą to być TYLKO urządzenia typu Playstation3 lub Xbox 360. Należy pamiętać, że aby obsługa padów działała, opcja "Build for Mac AppStore" w Mac Game Options musi być wyłączona.
+    SystemmacOS jest obsługiwany przez maksymalnie 4 podłączone urządzenia jednocześnie, przy czym mogą to być TYLKO urządzenia typu Playstation3 lub Xbox 360. Należy pamiętać, że aby obsługa padów działała, opcja "Build for Mac AppStore" w Mac Game Options musi być WYŁĄCZONA.
     Ubuntu obsługuje także wejście GamePad, ale może być konieczne zainstalowanie dodatkowych bibliotek z repozytorium Ubuntu. Można to zrobić w prosty sposób, otwierając terminal wiersza poleceń i wpisując poniższe polecenie, które zainstaluje obsługę GUI dla joysticka, jak również sam joystick:
   
   sudo apt-get install jstest-gtk
@@ -160,8 +160,8 @@
   
     GryHTML5 obsługują gamepady w większości głównych przeglądarek, z wyjątkiem Safari.
     Obsługa gamepadów w systemie iOS obejmuje także szafkę iCade. Lewa oś odwzorowuje kontroler drążka (choć wejście jest cyfrowe, a nie analogowe), cztery przyciski "twarzowe" odwzorowują przyciski z przodu obudowy, a cztery przyciski na ramionach odwzorowują przyciski z tyłu obudowy.
-    Android Export obsługuje kontrolery NYKO i ogólne kontrolery Bluetooth, ale tylko wtedy, gdy są one włączone, co oznacza, że musisz zaznaczyć opcję iCade/Bluetooth w sekcji Ogólne w opcjach gry w systemie Android. Do pełnego działania kontrolery te wymagają API na poziomie 12. Należy zauważyć, że witryna GameMaker Studio 2 zarejestruje jako połączone wszystkie urządzenia Bluetooth, z którymi sparowane jest urządzenie, niezależnie od tego, czy są one faktycznie połączone, czy nie. Dlatego należy wziąć to pod uwagę podczas przypisywania i sprawdzania "gniazd".
-    Na PS4, jeśli chcesz korzystać z funkcji śledzenia ruchu na panelu dotykowym, musisz użyć funkcji dla przycisków device_mouse_* przycisków (nie ma do tego żadnych akcji DnD™).
+    Android Export obsługuje kontrolery NYKO i ogólne kontrolery Bluetooth, ale tylko wtedy, gdy są one włączone, co oznacza, że musisz zaznaczyć opcję iCade/Bluetooth w sekcji Ogólne w opcjach gry na Androida. Do pełnego działania wymagają one API na poziomie 12. Należy zauważyć, że GameMaker zarejestruje jako podłączone każde urządzenie Bluetooth, z którym sparowane jest Twoje urządzenie, niezależnie od tego, czy jest ono faktycznie podłączone, czy nie. Dlatego należy wziąć to pod uwagę podczas przypisywania i sprawdzania "slotów".
+    Na PS4, jeśli chcesz używać śledzenia panelu dotykowego, musisz użyć funkcji dla przycisków device_mouse_* przycisków (nie ma w tym celu żadnej strony GML Visual actions).
   
    
    

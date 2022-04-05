@@ -2,8 +2,8 @@
   
   physics_fixture_add_point
   Funkcja ta definiuje punkty wielokąta, który został wcześniej ustawiony na uchwyt za pomocą physics_fixture_set_polygon_shape() lub może być użyta do dodania punktów do łańcucha krawędzi
-    uchwytów krawędziowych za pomocą funkcji physics_fixture_set_chain_shape(). W przypadku kształtu wielokąta punkty są względne względem początku uchwytu, przy czym środkiem jest pozycja 0,0 osi x/y,
-    a kolejne współrzędne są obliczane jak zwykle w GameMaker Studio 2, gdzie dół/prawo to +x,+y, a góra/lewo to -x,-y. Poniżej znajduje się ilustracja ułatwiająca wizualizację tego procesu:
+    uchwytów krawędziowych za pomocą funkcji physics_fixture_set_chain_shape(). Dla kształtu wielokąta, punkty są względne względem początku uchwytu, przy czym środkiem jest pozycja 0,0 osi x/y,
+    a kolejne współrzędne są obliczane jak zwykle w GameMakerze, gdzie dół/prawo to +x,+y, a góra/lewo to -x,-y. Poniżej znajduje się ilustracja ułatwiająca wizualizację tego procesu:
   Jak widać, można w ten sposób modelować dowolny prosty wielokąt wypukły, ale
     wielokąty wklęsłe nie są w tej chwili obsługiwane. Wreszcie, aby zamknąć wielokąt, należy powiązać uchwyt z instancją. Powinieneś także zauważyć, że musisz mieć przynajmniej trzy punkty zdefiniowane dla twojego wielokąta przed związaniem go z instancją.
     albo otrzymasz błąd i że dodanie punktu do uchwytu, który nie ma wcześniej ustawionego kształtu wielokąta również spowoduje błąd. Zauważ również, że maksymalna liczba punktów dozwolona dla jednego uchwytu wynosi osiem.

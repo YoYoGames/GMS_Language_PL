@@ -1,14 +1,14 @@
 
   
-   Utwórz układ cząstek
+   Utwórz układ cząsteczek
   Ta akcja inicjalizuje system cząsteczek, umożliwiając tworzenie i używanie w nim typów cząsteczek i emiterów. Podajesz nazwę warstwy jako string - na przykład "Particle Layer" (która musi istnieć w edytorze room ) - a następnie flag.
     system jako trwały lub nietrwały. Jeśli system zostanie oznaczony jako Persistent, pozostanie aktywny na wszystkich stronach rooms po jego utworzeniu i zostanie mu przypisana warstwa zarządzana, jeśli warstwa początkowa nie będzie istnieć w kolejnych rooms.
     Jeśli nie zaznaczono opcji trwałości, system zostanie automatycznie zniszczony po zakończeniu działania strony room, na której został utworzony, podobnie jak wszystkie emitery powiązane z systemem. Jeśli chcesz ręcznie usunąć system z pamięci, musisz użyć
     akcji Zniszcz system cząstek.
-  Należy również podać zmienną docelową, która będzie przechowywać unikalną wartość identyfikatora systemu cząsteczek. To właśnie ta wartość ID będzie używana w innych funkcjach do ustawiania właściwości systemu lub informowania GameMaker Studio 2, jakiego systemu użyć podczas tworzenia cząstek.
-    Możesz wybrać flag tę zmienną jako tymczasową zmienną lokalną, ale będzie to oznaczać, że zostanie ona usunięta po zakończeniu akcji script lub zdarzenia, co oznacza, że system będzie nadal istniał, ale nie będziesz miał do niego dostępu.
+  Musisz także podać zmienną docelową, która będzie przechowywać unikalną wartość identyfikatora systemu cząsteczek. To właśnie ta wartość ID będzie używana w innych funkcjach do ustawiania właściwości systemu lub informowania programu GameMaker, jakiego systemu użyć podczas tworzenia cząsteczek.
+    Możesz wybrać stronę flag jako tymczasową zmienną lokalną, ale będzie to oznaczało, że zostanie ona usunięta po zakończeniu akcji script lub zdarzenia, co oznacza, że system będzie nadal istniał, ale nie będziesz miał do niego dostępu, więc należy zachować ostrożność
     (ogólnie rzecz biorąc, nie ma potrzeby przechowywania układów w tymczasowej zmiennej lokalnej, ale w przypadku niektórych rzeczy, takich jak przyciąganie cząsteczek do powierzchni, może to być wymagane).
-  UWAGA: Raz utworzony trwały system cząsteczek pozostaje w pamięci systemu przez cały czas trwania gry, więc jeśli w dowolnym momencie trzeba go odtworzyć (na przykład po wywołaniu akcji Restart Game ), należy najpierw zniszczyć bieżący system, w przeciwnym razie nastąpi wyciek pamięci. Przeciek pamięci występuje wtedy, gdy zasób jest dodawany do pamięci, a następnie "de-referencjonowany", co oznacza, że GameMaker Studio 2 nie ma już możliwości interakcji z tym zasobem.
+  UWAGA: Raz utworzony trwały system cząsteczek pozostaje w pamięci systemu przez cały czas trwania gry, więc jeśli musisz go odtworzyć w dowolnym momencie (na przykład po wywołaniu akcji Restart Game ), musisz najpierw zniszczyć bieżący system, w przeciwnym razie nastąpi wyciek pamięci. Przeciek pamięci ma miejsce, gdy zasób jest dodawany do pamięci, a następnie "de-referencjonowany", co oznacza, że GameMaker nie ma możliwości interakcji z tym zasobem.
     z tym zasobem. Prowadzi to do zapchania pamięci niedostępnymi zasobami, co z kolei może powodować problemy w grze. Aby zniszczyć stały system cząsteczek, gdy nie jest już potrzebny, użyj akcji Zniszcz system cząsteczek.
    
   Składnia działania:

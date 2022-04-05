@@ -1,26 +1,27 @@
 
   
   physics_particle_group_get_inertia
-  Za pomocą tej funkcji można obliczyć bezwładność całej grupy cząstek. Wartość group jest wartością zwróconą podczas tworzenia grupy cząstek za pomocą funkcji physics_particle_group_end(),
-    a funkcja zwróci wartość, która jest połączoną wartością aktualnie ustawionych flags.
+  Za pomocą tej funkcji można obliczyć bezwładność całej grupy cząstek. Wartość group jest tą, która została zwrócona podczas tworzenia grupy cząstek za pomocą funkcji physics_particle_group_end()a funkcja zwróci wartość, która jest połączoną wartością aktualnie ustawionych flags.
    
   Składnia:
   physics_particle_group_get_inertia(group)
   
     
       
-        ArgumentTyp
+        Argument
+        Typ
         Opis
-     
+      
       
         group
+        Identyfikator grupy cząstek fizycznych
         The particle group to get.
-     
+      
     
   
    
   Zwroty:
-  
+  Real
    
   Przykład:
   i = physics_particle_group_get_inertia(group1);
@@ -32,10 +33,10 @@
     
       
         Powrót: Miękkie cząstki ciała
-        Następny: physics_particle_group_get_centre_x
+        Next: physics_particle_group_get_mass
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

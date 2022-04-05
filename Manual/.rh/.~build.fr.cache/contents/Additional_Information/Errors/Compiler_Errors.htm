@@ -1,9 +1,9 @@
 
   
   Błędy kompilacji
-  Drugim rodzajem błędu, który może zostać zgłoszony w grze, jest błąd kompilatora. Błąd kompilatora występuje wtedy, gdy gra napotka błąd, którego nie wykrył system sprawdzania składni - na przykład bardzo łatwo jest zapomnieć o zadeklarowaniu zmiennej lub omyłkowo wpisać adres string jako real - lub gdy błąd jest związany z ustawieniami narzędzi kompilacji w Preferencjach platformy dla platformy docelowej. Błędy te zostaną wychwycone przez GameMaker Studio 2 w trakcie kompilacji gry, a informacje o nich zostaną także wyświetlone w oknie Compiler Error Output (Wyjście błędów kompilatora), jak pokazano poniżej:
+  Drugim rodzajem błędu, który może zostać zgłoszony w grze, jest błąd kompilatora. Błąd kompilatora pojawia się, gdy gra napotka błąd, którego nie wykrył system sprawdzania składni - bardzo łatwo jest zapomnieć o zadeklarowaniu zmiennej lub omyłkowo wpisać adres string jako rzeczywisty - lub gdy błąd dotyczy sposobu skonfigurowania narzędzi kompilacji w Preferencjach platformy dla platformy docelowej. Błędy te zostaną wychwycone przez program GameMaker podczas kompilacji gry, a informacje o nich zostaną wyświetlone w oknie Compiler Error Output, jak pokazano poniżej:
   
-  UWAGA Błędy te zwykle nie powodują wyświetlenia okna, a w oknie wyjściowym kompilatora pojawia się po prostu komunikat "Build Failed". Jeśli wyskakuje okno, jest to zwykle błąd runnera, który jest wyjaśniony tutaj.
+  UWAGA Błędy te zwykle nie powodują wyświetlenia okna, a w oknie wyjściowym kompilatora pojawia się po prostu komunikat "Build Failed". Jeśli wyskakuje okno, jest to zwykle Błąd runnera, który jest wyjaśniony tutaj.
   Wszystkie komunikaty o błędach kompilatora będą miały ten sam format:
   [object] - [event] - [Line Number]: [error string]
   Jeśli błąd zostanie znaleziony w witrynie script, będzie to po prostu informacja:
@@ -31,7 +31,7 @@
       
       
         Nie jest obsługiwana rekursywna interpretacja makr
-        Użyłeś makr rekurencyjnych, które odwołują się do siebie i stale rozszerzają
+        Użyłeś makr rekurencyjnych, które odwołują się do siebie i ciągle rozszerzają
       
       
         Nie można znaleźć grupy tekstur [group]
@@ -94,7 +94,7 @@
       
       
         Nieudana próba parsowania funkcji action_execute_script() - otrzymano nieprawidłową liczbę argumentów
-        Akcja DnD™ Execute Script ma zbyt wiele lub zbyt mało argumentów dla wywoływanej strony script.
+        Akcja wizualna GML Wykonaj Script ma zbyt wiele lub zbyt mało argumentów dla wywoływanej strony script.
       
       
         Nieznana funkcja [function] sprawdź, czy script jest pusta
@@ -102,7 +102,7 @@
       
       
         Funkcja [function] oczekuje argumentów n, a podano
-        Funkcja otrzymała niewłaściwą liczbę argumentów (n), podczas gdy oczekiwano pewnej ich liczby (a)
+        Funkcja otrzymała niewłaściwą liczbę argumentów (n), gdy oczekiwano określonej liczby (a)
       
       
         Przypisanie pustej wartości (funkcja nie zwraca niczego?)
@@ -144,7 +144,7 @@
       
       
         Nie można użyć argumentu poza skryptem 
-        Wbudowane zmienne argumentów mogą być używane tylko wewnątrz script, ale próbowałeś użyć ich w innym miejscu
+        Wbudowane zmienne argumentów mogą być używane tylko wewnątrz script, ale próbowałeś użyć ich gdzie indziej
       
       
         Brak odniesień do strony argument[num], ale odniesienia argument[num]
@@ -298,7 +298,7 @@
         
       
       
-        Brak wartości zwracanej przez wyrażenie (czy wyrażenie ma wartość zwracaną?)
+        Brak wartości zwracanej z wyrażenia (czy wyrażenie ma wartość zwracaną?)
         Próbowałeś przypisać wartość zwracaną przez wyrażenie do zmiennej, gdy wyrażenie nie zwraca nic
       
       

@@ -1,9 +1,9 @@
 
   
   clickable_add
-  Za pomocą tej funkcji można utworzyć niestandardową, klikalną ikonę, która działa jako "przycisk" poza oknem gry, ale w oknie przeglądarki. Funkcja zwróci wartość ID, którą należy zapisać w zmiennej i wykorzystać we wszystkich kolejnych funkcjach przycisku, które odwołują się do nowej klikalnej ikony. Funkcja ta jest bardzo przydatna, ponieważ zapobiega tworzeniu przez przeglądarkę wyskakujących okienek po kliknięciu na przycisk, gdyż wszystko to odbywa się za pośrednictwem strony GameMaker Studio 2.
-  Najpierw należy ustawić pozycję, która jest względna w stosunku do (0,0) okna przeglądarki (lewy górny róg), a następnie podać na stronie texture wpis dotyczący strony sprite, na której ma się znajdować ikona przycisku (zob: sprite_get_tpe()). Następnie można podać adres URL do otwarcia lub adres script (z przeglądarki Asset w witrynie GameMaker Studio 2) do otwarcia lub uruchomienia. Parametr "target", który podajesz, jest taki sam, jak standardowa wartość "name" w JavaScript, gdy używasz metody open() (pamiętaj, że wszystkie oprócz "_self" mogą spowodować zablokowanie przeglądarki lub zapytanie użytkownika, czy chce na to pozwolić), a argument "params" jest taki sam, jak parametr "spec" w JavaScript do kontrolowania, jakie właściwości powinno mieć nowe okno/zakładka (nie wszystkie przeglądarki mogą obsługiwać wszystkie funkcje). Jeśli ikona jest używana do uruchamiania wewnętrznego script, te dwa ostatnie argumenty można pozostawić puste strings "".
-  Ważne cele to:
+  Za pomocą tej funkcji można utworzyć niestandardową, klikalną ikonę, która działa jako "przycisk" poza oknem gry, ale w oknie przeglądarki. Funkcja zwróci wartość ID, którą należy zapisać w zmiennej i wykorzystać we wszystkich kolejnych funkcjach przycisku, które odwołują się do nowej klikalnej ikony. Funkcja ta jest bardzo przydatna, ponieważ zapobiega tworzeniu przez przeglądarkę wyskakujących okienek po kliknięciu na przycisk, gdyż wszystko to odbywa się w samym programie GameMaker.
+  Najpierw należy ustawić pozycję, która jest względna w stosunku do (0,0) okna przeglądarki (lewy górny róg), a następnie podać na stronie texture wpis dotyczący strony sprite, na której ma się znajdować ikona przycisku (zob: sprite_get_tpe()). Następnie możesz podać adres URL do otwarcia lub adres script (z Asset Browser programu GameMaker) do otwarcia lub uruchomienia. Parametr "target", który podajesz, jest taki sam, jak standardowa wartość "name" w JavaScript, gdy używasz metody open() (pamiętaj, że wszystkie oprócz "_self" mogą spowodować zablokowanie przeglądarki lub zapytanie użytkownika, czy chce na to pozwolić), a argument "params" jest taki sam, jak parametr "spec" w JavaScript do kontrolowania, jakie właściwości ma wyświetlać nowe okno/zakładka (nie wszystkie przeglądarki obsługują wszystkie funkcje). Jeśli ikona jest używana do uruchamiania wewnętrznego script, te dwa ostatnie argumenty można pozostawić puste strings "".
+  Obowiązujące cele to:
   
     
       
@@ -74,7 +74,7 @@
       
       
         'titlebar=[boolean]'
-        Określenie, czy ma być wyświetlany pasek tytułowy. Jest to ignorowane, chyba że wywoływana aplikacja jest aplikacją HTML lub zaufanym oknem dialogowym (domyślnie 1);
+        Określenie, czy ma być wyświetlany pasek tytułu. Jest to ignorowane, chyba że wywoływana aplikacja jest aplikacją HTML lub zaufanym oknem dialogowym (domyślnie 1);
       
       
         'toolbar=[boolean]'
@@ -83,7 +83,7 @@
     
   
   
-    Warto również zauważyć, że jeśli podany argument URL jest nazwą funkcji skryptu (tzn. nie zaczyna się od "http://"), a adres script nazywa się gmcallback_*, można uzyskać bezpośrednie zasilanie zdarzenia html5. Nazwy funkcji skryptu w programie GameMaker Studio 2 nie są ukryte, jeśli zaczynają się od gmcallback_.
+    Warto również zauważyć, że jeśli podany przez Ciebie argument URL jest nazwą funkcji skryptu (tzn. nie zaczyna się od "http://"), a adres script nazywa się gmcallback_*, możesz uzyskać bezpośredni dostęp do zdarzenia html5. Nazwy funkcji skryptu GameMakera nie są zaszyfrowane, jeśli zaczynają się od gmcallback_.
    
   Składnia:
   clickable_add(x, y, tpe, url, target, params);

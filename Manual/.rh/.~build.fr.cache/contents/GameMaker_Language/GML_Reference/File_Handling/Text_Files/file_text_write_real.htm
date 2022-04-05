@@ -2,7 +2,7 @@
   
   file_text_write_real
   Za pomocą tej funkcji można zapisać liczbę do otwartego wcześniej pliku tekstowego. Należy pamiętać, że ponieważ zapisywana wartość może być liczbą rzeczywistą, wszystkie miejsca dziesiętne zostaną zapisane z kropką "." jako separatorem. Jeśli plik zawiera już informacje, zostaną one usunięte, a adres string zostanie zapisany na początku pliku, chyba że plik został otwarty za pomocą funkcji file_text_open_append(). Można tego uniknąć, używając funkcji file_text_readln() wraz z funkcją file_text_eof() loop do przeglądania zawartości pliku aż do końca, a następnie rozpoczęcie pisania.
-  Należy pamiętać, że podczas zapisywania bardzo dużych liczb do pliku tekstowego za pomocą tej funkcji mogą one zostać przetłumaczone na standardowy uproszczony format, taki jak "6.6624e+003", którego nie można poprawnie odczytać z powrotem na adres GameMaker Studio 2. Aby uniknąć tego typu problemów, należy przekonwertować wartość na format string i użyć funkcji file_text_write_string() zamiast.
+  Należy pamiętać, że podczas zapisywania bardzo dużych liczb do pliku tekstowego za pomocą tej funkcji, mogą one zostać przetłumaczone na standardowy, uproszczony format, taki jak "6.6624e+003", którego nie można poprawnie odczytać w programie GameMaker. Aby uniknąć tego typu problemów, należy przekonwertować wartość na string i użyć funkcji file_text_write_string() zamiast.
    
   Składnia:
   file_text_write_real(fileid, val);

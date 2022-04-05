@@ -4,7 +4,7 @@
   Shadery to niezwykle potężne narzędzie do manipulowania tym, co i w jaki sposób jest renderowane na ekranie przez kartę graficzną. Ponieważ te niewielkie programy są uruchamiane na samej karcie graficznej, ich przetwarzanie przebiega niezwykle szybko, co pozwala uwolnić cenne cykle procesora dla większej logiki gry.
   Aby utworzyć stronę shader, musisz mieć napisany zarówno Vertex Shader, jak i Fragment Shader (znany również jako Pixel Shader) za pomocą edytora shaderów. Nawet jeśli (na przykład) chcesz tylko zmienić pozycje vertex dla rysowanej instancji lub jeśli chcesz tylko zmienić wartości kolorów dla pikseli, nadal będziesz potrzebował obu programów, aby kompletna strona shader działała.
   UWAGA Shadery nie pozwalają na zmianę wartości zmiennych, które są do nich przekazywane, dlatego w całej dokumentacji będą one nazywane stałymi shadera.
-  Pełny przegląd dostępnych funkcji i zmiennych języka GLSL ES, które można wykorzystać do programowania strony shaders, można znaleźć na stronach referencyjnych OpenGL ES Shading Language (GLSL ES). Poniższy link jest również przydatny, ponieważ zawiera kilka kart szybkiego odniesienia do API OpenGL ES (zauważ, że tylko dwie ostatnie karty mają zastosowanie do GameMaker Studio 2): OpenGL ES Reference Cards.
+  Pełny przegląd dostępnych funkcji i zmiennych GLSL ES, których można używać do programowania strony shaders, można znaleźć na stronach referencyjnych OpenGL ES Shading Language (GLSL ES). Poniższy odnośnik jest również przydatny, ponieważ zawiera kilka kart referencyjnych dotyczących API OpenGL ES (zauważ, że tylko dwie ostatnie karty mają zastosowanie w GameMakerze): OpenGL ES Reference Cards.
   Używanie strony shader w projektach jest bardzo proste i wymaga tylko kilku wierszy kodu, aby uzyskać najbardziej podstawowe korzyści:
   shader_set(myShader);
     draw_self();
@@ -29,7 +29,7 @@
     }
     else show_debug_message("Shader failed");
   Jako dodatkowe sprawdzenie można również wywołać funkcję shaders_are_supported() aby sprawdzić, czy sprzęt w ogóle obsługuje shaders. Zazwyczaj takie sprawdzanie przeprowadza się przy starcie gry, a wyniki zapisuje się w zmiennej globalnej, aby móc je później sprawdzić.
-  Należy zauważyć, że witryna GameMaker Studio 2 obsługuje również pewne makra kompilacji warunkowej, które można wykorzystać w witrynie GLSL ES shaders, aby wykonać alternatywny kod na określonych obsługiwanych platformach. Makra i platformy, na których będą generowane, są przedstawione w poniższej tabeli:
+  Należy zauważyć, że GameMaker obsługuje również pewne makra kompilacji warunkowej, które mogą być używane w GLSL ES shaders, aby mogły wykonywać alternatywny kod na określonych obsługiwanych platformach. Makra i platformy, na których będą generowane, są przedstawione w poniższej tabeli:
    
   
     
@@ -61,13 +61,13 @@
     
   
    
-  Po skompilowaniu projektu GameMaker Studio 2 na dowolnej z wymienionych platform przy użyciu formatu GLSL ES shader zostanie wygenerowane jedno z powyższych makr, które można następnie wykorzystać w kodzie shader w sposób opisany poniżej:
+  Gdy skompilujesz swój projekt GameMakera na dowolnej z wymienionych platform, używając formatu GLSL ES shader, zostanie wygenerowane jedno z powyższych makr, które można następnie wykorzystać w kodzie shader w sposób opisany poniżej:
   #ifdef _YY_HLSL11_
     // HLSL shader code here
     #else
     // GLSL shader code here
     #endif
-  Jeśli jesteś nowym użytkownikiem strony shaders lub chcesz uzyskać bardziej kompletny przewodnik dotyczący tworzenia i korzystania z nich za pomocą strony GameMaker Studio 2, zapoznaj się z następną stroną podręcznika:
+  Jeśli jesteś początkującym użytkownikiem strony shaders lub chcesz poznać bardziej kompletny przewodnik po tworzeniu i używaniu ich w programie GameMaker, zajrzyj na następną stronę podręcznika:
   
     Przewodnik po użyciu shaderów
   
@@ -112,12 +112,12 @@
     gpu_set_texrepeat
   
    
-  Niniejsza instrukcja nie obejmuje wszystkich funkcji i zmiennych Open GL shader, ale zawiera listę tych, które są unikalne dla GameMaker Studio 2. Te stałe nie są częścią specyfikacji Open GL dla shaders i są dostarczane w celu uproszczenia integracji shaders w projektach.
+  Chociaż niniejszy podręcznik nie obejmuje wszystkich funkcji i zmiennych Open GL shader, zawiera listę tych, które są unikalne dla programu GameMaker. Stałe te nie są częścią specyfikacji Open GL dla shaders i są dostarczane w celu uproszczenia integracji shaders w Twoich projektach.
   
     Stałe shadera
   
    
-  Wreszcie, witryna GameMaker Studio 2 umożliwia definiowanie własnych formatów wierzchołków, na podstawie których można tworzyć własne prymitywy. Może to znacznie przyspieszyć operacje wykonywane na stronie shader lub rozszerzyć ich możliwości i stworzyć zaskakujące efekty. Informacje na ten temat można znaleźć w kolejnych rozdziałach:
+  Ponadto GameMaker umożliwia definiowanie własnych formatów wierzchołków (Vertex Formats ), na podstawie których można tworzyć własne prymitywy. Może to znacznie przyspieszyć operacje wykonywane na stronie shader lub rozszerzyć ich możliwości i stworzyć zaskakujące efekty. Informacje na ten temat można znaleźć w kolejnych rozdziałach:
   
     Prymitywy i Vertex Formaty
   

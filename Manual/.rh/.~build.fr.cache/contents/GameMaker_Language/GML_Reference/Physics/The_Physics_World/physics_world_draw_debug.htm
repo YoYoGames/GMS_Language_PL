@@ -1,7 +1,7 @@
 
   
   physics_world_draw_debug
-  Ta funkcja narysuje reprezentację systemu fizyki świata room, aby pomóc w debugging w przypadku problemów z poprawnym działaniem sceny fizyki. Czasami problem może tkwić w części renderowania gry, np. strona sprite może być narysowana w niewłaściwym położeniu lub obrócona, co sprawia wrażenie nieprawidłowej fizyki, lub też może się zdarzyć, że obliczenia nie są poprawne. Tak czy inaczej, funkcja ta pomoże znaleźć i rozwiązać problem, rysując, co dzieje się w systemie fizyki. Aby to zrobić, należy wskazać, którą część układu ma narysować, a robi się to, przekazując wartość utworzoną z bitów przechowywanych w różnych stałych "flagowych":
+  Ta funkcja narysuje reprezentację systemu fizyki świata room, aby pomóc w debugging, gdy masz problemy z poprawnym działaniem sceny fizyki. Czasami problem może tkwić w części renderowania gry, np. strona sprite może być narysowana w niewłaściwym położeniu lub obrócona, co sprawia wrażenie nieprawidłowej fizyki, lub też może się zdarzyć, że obliczenia nie są poprawne. Tak czy inaczej, funkcja ta pomoże znaleźć i rozwiązać problem, rysując, co dzieje się w systemie fizyki. Aby to zrobić, należy wskazać, którą część układu ma narysować, a robi się to, przekazując wartość utworzoną z bitów przechowywanych w różnych stałych "flagowych":
   
     
       
@@ -45,10 +45,10 @@
       
     
   
-  Tak więc, aby narysować dwie dowolne z tych opcji, musimy wykonać bitowe "lub" (w GameMaker Studio 2 jest to reprezentowane przez | ) na dwóch z nich i zapisać zmienną wynikową do wykorzystania przez funkcję. Poniżej znajduje się przykład ustawienia zmiennej, która będzie używana przez funkcję rysującą tylko środki masy i połączenia wszystkich elementów wyposażenia pomieszczenia:
+  Zatem, aby narysować dwie dowolne z tych opcji, musielibyśmy wykonać bitowe "lub" (w GameMakerze jest to reprezentowane przez | ) na obu z nich i zapisać zmienną wynikową do wykorzystania przez funkcję. Oto przykład, jak można ustawić zmienną, która będzie używana przez funkcję rysującą tylko środki masy i połączenia wszystkich elementów w pomieszczeniu:
   flag = phy_debug_render_coms | phy_debug_render_shapes;
   W ten sposób uzyskasz coś takiego:
-  Jak widać w powyższym kodzie, na ekranie rysowane są tylko kształty i środki masy (a także kolory reprezentujące ich stany - więcej informacji na ten temat można znaleźć w dokumentacji Box 2D dostępnej w Internecie). W ten sam sposób możesz wyświetlić więcej, a nawet wszystkie stałe, które chcesz usunąć... Po prostu "lub" je wszystkie razem! Należy zwrócić uwagę na jeszcze jedną rzecz - ta funkcja powinna być wywoływana tylko w zdarzeniu rysowania instancji, która ma głębokość mniejszą niż ta, którą chcesz debugować, w przeciwnym razie nie będziesz mógł zobaczyć informacji o debugowaniu.
+  Jak widać w powyższym kodzie, na ekranie rysowane są tylko kształty i środki masy (a także kolory reprezentujące ich stany - więcej informacji na ten temat można znaleźć w dokumentacji Box 2D dostępnej on-line). W ten sam sposób możesz wyświetlić więcej, a nawet wszystkie stałe, które chcesz usunąć... Po prostu "lub" je wszystkie razem! Należy zwrócić uwagę na jeszcze jedną rzecz - funkcja ta powinna być wywoływana tylko w zdarzeniu rysowania instancji, która ma głębokość mniejszą niż ta, którą chcesz debugować, w przeciwnym razie nie będziesz mógł zobaczyć informacji o debugowaniu.
    
   Składnia:
   physics_world_draw_debug(flag)

@@ -2,48 +2,43 @@
   
   Preferencje ścieżki
   
-  Preferencje ścieżki kontrolują różne pliki paths wymagane przez elementy w witrynie GameMaker Studio 2 IDE, a także przez zewnętrzne edytory, których użytkownik potrzebuje. W IDE dostępne są następujące opcje:
+  Preferencje Path kontrolują różne pliki paths wymagane przez elementy w programie GameMaker IDE, a także przez zewnętrzne edytory, których potrzebujesz. W IDE dostępne są następujące opcje:
   
     Katalog tymczasowy: Miejsce, w którym zapisywane są wszystkie foldery tymczasowe. Domyślnie na stronie Windows jest to
-     \Users\<Username>\AppData\Local\Temp\GameMakerStudio2
-      A w witrynie macOS jest to:
-     /var/folders/<Path_Hash>/GameMakerStudio2
+     \Users\<Username>\AppData\Local\Temp\GameMaker
+      A na stronie macOS jest to:
+     /var/folders/<Path_Hash>/GameMaker
       
     
     Katalog IDE cache: Miejsce zapisania pliku IDE cache. Domyślnie na stronie Windows jest to
-     \Users\<Username>\AppData\Roaming\GameMakerStudio2\Cache
+     \Users\<Username>\AppData\Roaming\GameMaker\Cache
       A na stronie macOS jest to:
-     /Users/<Username>/.config/GameMakerStudio2/Cache
+     /Users/<Username>/.config/GameMaker/Cache
       
     
     Katalog Asset cache: Lokalizacja, w której zapisywane są zasoby asset cache dla każdego projektu. Domyślnie na stronie Windows jest to
-     \Users\<Username>\AppData\Roaming\GameMakerStudio2\Cache
+     \Users\<Username>\AppData\Roaming\GameMaker\Cache
       Natomiast na stronie macOS jest to:
-     /Users/<Username>/.config/GameMakerStudio2/Cache
+     /Users/<Username>/.config/GameMaker/Cache
       
     
-    Lokalizacja "Moje projekty": Lokalizacja, w której GameMaker Studio 2 będzie początkowo tworzyć nowe projekty. Domyślnie na stronie Windows jest to
-     \Users\<Username>\Documents\GameMakerStudio2
-      Natomiast w witrynie macOS jest to
-     /Users/<Username>/GameMakerStudio2
+    Lokalizacja "Moje projekty": Miejsce, w którym GameMaker będzie początkowo tworzył nowe projekty. Domyślnie na Windows jest to
+     \Users\<Username>\Documents\GameMaker
+      A na stronie macOS jest to
+     /Users/<Username>/GameMaker
       
     
-    Automatycznie usuwaj katalog tymczasowy przy zamykaniu: Zaznaczenie tej opcji spowoduje, że GameMaker Studio 2 będzie automatycznie usuwać folder Temp, który jest tworzony w każdym projekcie do kompilacji itp. To ustawienie jest domyślnie włączone, a odznaczenie go spowoduje
-      switch go wyłączyć (co oznacza, że później trzeba będzie ręcznie usunąć wszystkie pliki tymczasowe).
-    Automatycznie usuwaj asset cache przy zamykaniu: Jeśli ta opcja jest zaznaczona, folder asset kompilatora cache zostanie usunięty po zamknięciu GameMaker Studio 2. Domyślnie opcja ta jest wyłączona, a jej włączenie spowoduje, że przy każdym załadowaniu i uruchomieniu
-      przy każdym załadowaniu i uruchomieniu projektu konieczne będzie ponowne utworzenie folderu cache (co może zająć dużo czasu w zależności od rozmiaru gry).
-    Automatycznie usuwaj IDE cache przy zamykaniu: Jeśli ta opcja jest zaznaczona, folder IDE kompilatora cache zostanie usunięty po zamknięciu GameMaker Studio 2. Domyślnie opcja ta jest wyłączona, a jej włączenie będzie oznaczało, że przy każdym uruchomieniu programu GameMaker
-      Studio 2 trzeba będzie odbudowywać folder cache.
+    Automatycznie usuwaj katalog tymczasowy przy zamykaniu: Zaznaczenie tej opcji spowoduje, że GameMaker będzie automatycznie usuwał folder Temp, który jest tworzony dla każdego projektu w celu kompilacji itp. To ustawienie jest domyślnie włączone, a odznaczenie go spowoduje switch jego wyłączenie (co oznacza, że będziesz musiał później ręcznie usunąć wszystkie pliki tymczasowe).
+    Automatically delete asset cache on close: Jeśli ta opcja jest zaznaczona, folder asset kompilatora cache będzie usuwany przy zamykaniu GameMakera. Domyślnie opcja ta jest wyłączona, a jej włączenie oznacza, że przy każdym załadowaniu i uruchomieniu projektu folder cache będzie musiał być odbudowywany (co może zająć dużo czasu w zależności od rozmiaru gry).
+    Automatically delete IDE cache on close: Jeśli ta opcja jest zaznaczona, folder IDE kompilatora cache będzie usuwany po zamknięciu GameMakera. Domyślnie opcja ta jest wyłączona, a jej włączenie oznacza, że przy każdym uruchomieniu GameMakera folder cache będzie musiał być odbudowywany.
     Usuń folder tymczasowy: Kliknięcie tego przycisku spowoduje usunięcie folderu tymczasowego dla projektu.
     Usuń Asset Cache: Kliknięcie tego przycisku spowoduje usunięcie kompilatora asset cache dla danego projektu.
     Usuń pamięć podręczną IDE: Kliknięcie tego przycisku spowoduje usunięcie pamięci podręcznej IDE.
   
   Istnieją następujące opcje ustawiania adresu paths dla zewnętrznych edytorów:
   
-    Ścieżka do zewnętrznego edytora/przeglądarki dla plików SWF: Jeśli pracujesz z plikami SWF w formacie sprites, możesz ustawić tę opcję na path preferowanej przeglądarki/edytora, a po kliknięciu przycisku Edytuj obraz w Edytorze Sprite zostanie
-      zostanie otwarty dany program. Domyślną wartością jest brak adresu path.
-    Ścieżka do zewnętrznego edytora/przeglądarki dla plików Spine: Jeśli pracujesz z formatem Spine sprites , możesz ustawić tę opcję na path preferowanej przeglądarki/edytora, a po kliknięciu przycisku Edytuj obraz w edytorze Sprite zostanie otwarty dany program.
-      zostanie otwarty dany program. Domyślną wartością jest brak adresu path.
+    Ścieżka do zewnętrznego edytora/przeglądarki dla plików SWF: Jeśli pracujesz z plikami SWF w formacie sprites, możesz ustawić tę wartość na path preferowanej przeglądarki/edytora, a po kliknięciu przycisku Edytuj obraz w Edytorze Sprite otworzy się dany program. Domyślną wartością jest brak adresu path.
+    Ścieżka do zewnętrznego edytora/przeglądarki dla plików Spine: Jeśli pracujesz z formatem Spine sprites , możesz ustawić tę wartość na path preferowanej przeglądarki/edytora, a po kliknięciu przycisku Edytuj obraz w Edytorze Sprite otworzy się dany program. Domyślną wartością jest brak adresu path.
   
    
    
@@ -55,7 +50,7 @@
         Następny: Preferencje dotyczące oszczędzania energii
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

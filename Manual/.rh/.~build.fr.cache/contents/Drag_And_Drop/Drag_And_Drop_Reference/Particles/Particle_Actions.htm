@@ -1,12 +1,12 @@
 
   
   Biblioteka działań cząstek stałych
-  W przypadku skomplikowanych rzeczy w GameMaker Studio 2 zwykle posiadasz obiekt, a następnie tworzysz instancje 
+  W przypadku złożonych rzeczy w GameMakerze zwykle tworzy się obiekt, a następnie instancje 
     tego obiektu object w pomieszczeniu. Jednak w przypadku efektów graficznych może to być kosztowne, ponieważ każda instancja wiąże się z "kosztem" przetwarzania ze względu na zawarte w niej zmienne i kody w różnych zdarzeniach. Można zmniejszyć ten
-    koszty, korzystając z tiles do rysowania grafiki lub nawet używając warstwy zasobów w edytorze room, ale obie te metody są zwykle używane tylko do rysowania prostych grafik, które zachowują tę samą pozycję w czasie i nie zawierają wielu efektów specjalnych.
+    koszty, korzystając z tiles do rysowania grafiki, a nawet używając warstwy zasobów w edytorze room, ale obie te metody są zwykle używane tylko do rysowania prostych grafik, które zachowują tę samą pozycję w czasie i mają niewiele efektów specjalnych.
     Istnieje jednak jeszcze jedna możliwość rysowania szybkich, ale wszechstronnych efektów graficznych w grach - jest nią użycie cząsteczek.
-  Cząstki to zasoby graficzne o określonych właściwościach, które są zdefiniowane w systemie cząstek. Właściwościami tymi nie można manipulować bezpośrednio w przypadku pojedynczych cząstek, ale są one zmieniane za pomocą akcji, które są używane do definiowania poszczególnych
-   typów cząstek w systemie. Są one bardzo przydatne do tworzenia pięknych i krzykliwych efektów (lub subtelnych i dyskretnych!), takich jak eksplozje, kalkomanie, deszcz, śnieg, pola gwiazd i gruz w grze, bez obciążenia procesora lub układu graficznego, które wynika z użycia
+  Cząstki to zasoby graficzne o określonych właściwościach, które są zdefiniowane w systemie cząstek. Właściwościami tymi nie można manipulować bezpośrednio w przypadku pojedynczych cząstek, ale są one zmieniane za pomocą akcji używanych do definiowania poszczególnych
+   typów cząstek w systemie. Są one bardzo przydatne do tworzenia w grze pięknych i krzykliwych efektów (lub subtelnych i dyskretnych!), takich jak eksplozje, kalkomanie, deszcz, śnieg, pola gwiezdne i gruz, bez obciążenia procesora i układu graficznego, które wynikałoby z użycia
     instancje i/lub tiles oraz assets.
   Podstawowa konfiguracja systemu cząstek składa się z trzech etapów:
   

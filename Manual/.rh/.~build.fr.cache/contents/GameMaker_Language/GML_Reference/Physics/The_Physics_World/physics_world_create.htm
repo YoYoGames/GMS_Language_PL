@@ -1,11 +1,11 @@
 
   
   physics_world_create
-  Nawet jeśli zdefiniowałeś fizykę dla swojego objects, bez świata, w którym można je umieścić, będą one domyślnie korzystać z tradycyjnego systemu kolizji GameMaker Studio 2, dlatego potrzebujesz tej funkcji, aby utworzyć system fizyki dla określonego room albo
-    w zdarzeniu object lub w kodzie tworzenia samej strony room (można ją również zdefiniować bez użycia kodu w edytorze room ). Ta funkcja przyporządkuje "świat" fizyki do room, a wszystkie instancje utworzone w room będą się zachowywać zgodnie z
+  Nawet jeśli zdefiniowałeś fizykę dla swojego objects, bez świata, w którym można je umieścić, będą one domyślnie korzystać z tradycyjnego systemu kolizji GameMakera, dlatego potrzebujesz tej funkcji, aby utworzyć system fizyki dla określonego room albo
+    w zdarzeniu object lub w kodzie tworzenia samego room (można go także zdefiniować bez użycia kodu w edytorze room ). Ta funkcja przyporządkuje "świat" fizyki do room, a wszystkie instancje utworzone w room będą się zachowywać zgodnie z
     fizyki, która została zdefiniowana dla nich i dla samego świata.
   Zauważysz, że mamy argument określający stosunek wielkości piksela do metrów.
-    Dzieje się tak dlatego, że funkcje fizyki działają w oparciu o rzeczywiste miary, a zatem musimy przełożyć współrzędne i rozmiary pikseli na te rzeczywiste miary, używając "skali pikseli do metrów". Ustawienie pixeltometrescale należy dostosować tak, aby średni rozmiar pikseli używanej strony objects przekładał się mniej więcej na symulację fizyki objects o odpowiedniej wielkości. Powyżej widać, że ustawiliśmy wartość 32 pikseli, co odpowiada 1 metrowi. Należy zauważyć, że
+    Dzieje się tak dlatego, że funkcje fizyki działają w oparciu o rzeczywiste miary, a zatem musimy przeliczyć współrzędne i rozmiary pikseli na te rzeczywiste miary, używając "skali pikseli do metrów". Ustawienie pixeltometrescale należy dostosować tak, aby średni rozmiar pikseli używanej strony objects przekładał się mniej więcej na symulację fizyki objects o odpowiedniej wielkości. Powyżej widać, że ustawiliśmy wartość 32 pikseli, co odpowiada 1 metrowi. Należy zauważyć, że
     że system fizyki będzie działał z większymi i mniejszymi współczynnikami, ale najlepsze wyniki osiąga się, gdy rzeczywiste wymiary strony objects wynoszą nie mniej niż 0,1 metra i nie więcej niż 50 metrów.
    
   Składnia:

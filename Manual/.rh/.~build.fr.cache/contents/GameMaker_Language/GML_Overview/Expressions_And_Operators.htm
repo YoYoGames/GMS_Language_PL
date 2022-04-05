@@ -7,7 +7,7 @@
   W wyrażeniach można stosować następujące operatory:
   Przypisanie (=)
   
-    = służy do przypisywania wartości do zmiennej. Zauważ, że można go także użyć do porównywania zmiennych w GameMaker Studio 2 i możesz to zobaczyć w przykładach i kodach innych osób. Jest to jednak pozostałość po starych wersjach GameMakera i powinieneś używać operatorów == do porównywania i = do przypisywania, jak pokazano w tych przykładach:
+    = służy do przypisywania wartości do zmiennej. Zauważ, że można go także użyć do porównywania zmiennych w GameMakerze i możesz to zobaczyć w przykładach i kodach innych osób. Jest to jednak pozostałość po starych wersjach GameMakera i powinieneś używać operatorów == do porównywania i = do przypisywania, jak pokazano w poniższych przykładach:
     a = 12;
       speed = 5;
       val = (old_val + 5);
@@ -57,10 +57,10 @@
     +, -, *, / oznaczają odpowiednio dodawanie, odejmowanie, mnożenie i dzielenie. Przykłady użycia:
     c = a * b;
       str = a + "world";
-    UWAGA Liczby zmiennoprzecinkowe nie zatrzymują się na dzieleniu przez zero, ponieważ w odpowiedzi otrzymają nieskończoność. Jeśli A i B są liczbami całkowitymi (int32 lub int64), to dzielenie zostanie wykonane jako dzielenie przez liczby całkowite (zostanie sprawdzone dzielenie przez 0 i zostanie usunięty błąd). W przeciwnym razie zostanie wykonane dzielenie zmiennoprzecinkowe (bez sprawdzania dzielenia przez 0).
+    UWAGA Liczby zmiennoprzecinkowe nie zatrzymują się na dzieleniu przez zero, ponieważ w odpowiedzi otrzymają nieskończoność. Jeśli A i B są liczbami całkowitymi (int32 lub int64), to dzielenie zostanie wykonane jako dzielenie liczb całkowitych (zostanie sprawdzone dzielenie przez 0 i zostanie usunięty błąd). W przeciwnym razie zostanie wykonane dzielenie zmiennoprzecinkowe (bez sprawdzania dzielenia przez 0).
      
   
-  Zwiększanie/ zmniejszanie (++, --)
+  Zwiększanie/zmniejszanie (++, --)
   
     ++, -- służą do dodawania lub odejmowania jednego(1) od wartości. Warto zauważyć, że umieszczenie tego przed lub po wartości, do której ma być dodane lub od której ma być odjęte, daje nieco inne wyniki. Na przykład:
     
@@ -119,7 +119,7 @@
     
     if my_var == your_var then ++their_var;
   
-  Patrząc na kod, można stwierdzić, że jedno z tych rozwiązań jest nieco głupie, ale to dlatego, że my wiemy, co chcemy osiągnąć i co ma się wydarzyć, ale kompilator tego nie wie. Widzi on jedynie dwie zmienne z operatorem ++ między nimi, więc musi wybrać, do której z nich go zastosować. Dlatego zawsze należy wyraźnie nawiasować wyrażenia, operacje i instrukcje. Poprawna wersja powyższego kodu powinna wyglądać następująco:
+  Patrząc na kod, można stwierdzić, że jedno z tych rozwiązań jest trochę głupie, ale to dlatego, że my wiemy, co chcemy osiągnąć i co ma się wydarzyć, ale kompilator nie. Widzi on jedynie dwie zmienne z operatorem ++ między nimi, więc musi wybrać, do której z nich go zastosować. Dlatego zawsze należy wyraźnie nawiasować wyrażenia, operacje i instrukcje. Poprawna wersja powyższego kodu powinna wyglądać następująco:
   if (my_var == your_var)
     {
         ++their_var;

@@ -5,7 +5,7 @@
     skalowanie (1:1), mniejsze wartości będą skalowane w dół (na przykład 0,5 zmniejszy o połowę szerokość sprite), a większe wartości będą skalowane w górę. Wartości ujemne powodują odwrócenie strony sprite i jej przeskalowanie, chyba że użyta wartość wynosi dokładnie -1 (w takim przypadku strona
     sprite zostanie po prostu odwrócona lub odbita lustrzanie od swojego początku bez skalowania). Skalę poziomą lub pionową można ustawić względem bieżących wartości, w takim przypadku nowa wartość będzie dodawana lub odejmowana od bieżących wartości skali.
   Należy pamiętać, że zmiana tych wartości spowoduje również zmianę sposobu wykrywania kolizji przez instancję, chyba że w edytorze obiektów podałeś osobny adres mask_index (maska kolizji). Pamiętaj, że
-    aby zmiany w tej zmiennej były widoczne, instancja powinna albo nie mieć zdarzenia draw (a więc GameMaker Studio 2 będzie domyślnie rysować sprite), albo być rysowana za pomocą akcji Draw Self.
+    aby zmiany w tej zmiennej były widoczne, instancja powinna albo nie mieć zdarzenia rysowania (a więc GameMaker domyślnie narysuje sprite), albo być rysowana za pomocą akcji Draw Self.
   
    
   Składnia działania:
@@ -29,8 +29,8 @@
   
    
   Przykład:
-  Powyższy kod bloku akcji ustawia nową stronę sprite oraz szereg innych właściwości
-    właściwości dotyczące sposobu wyświetlania strony sprite, w tym ustawienie jej skalowania do trzech czwartych rozmiaru podstawowego wzdłuż obu osi.
+  Powyższy kod bloku akcji ustawia nową stronę sprite oraz szereg innych
+    właściwości wyświetlania strony sprite, w tym skalowanie jej do trzech czwartych rozmiaru podstawowego wzdłuż obu osi.
    
    
    

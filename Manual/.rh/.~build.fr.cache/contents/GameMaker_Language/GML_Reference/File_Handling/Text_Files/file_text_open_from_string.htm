@@ -1,9 +1,9 @@
 
   
   file_text_open_from_string
-  Ta funkcja tworzy plik tekstowy z adresu string i otwiera go do odczytu, zwracając uchwyt pliku, który powinien być używany we wszystkich następnych wywołaniach funkcji pliku do odczytu z tego pliku. Należy pamiętać, że plik ten jest tymczasowy i tylko do odczytu, dlatego zostanie usunięty z pamięci w momencie jego zamknięcia.
+  Funkcja ta tworzy plik tekstowy z adresu string i otwiera go do odczytu, zwracając uchwyt pliku, który powinien być używany we wszystkich następnych wywołaniach funkcji pliku do odczytu z tego pliku. Należy pamiętać, że plik ten jest tymczasowy i tylko do odczytu, dlatego zostanie usunięty z pamięci w momencie jego zamknięcia.
   UWAGA: W danym momencie można mieć otwarte maksymalnie 32 pliki. Należy również zawsze zamykać pliki po zakończeniu pracy, ponieważ powoduje to zapisanie informacji i zwolnienie pamięci związanej z plikiem.
-  OSTRZEŻENIE! Ta funkcja może nie działać zgodnie z oczekiwaniami użytkownika, ponieważ GameMaker Studio 2 jest sandboxed! Więcej informacji na ten temat można znaleźć w rozdziale System plików.
+  OSTRZEŻENIE! Ta funkcja może nie działać tak, jak tego oczekujesz, ponieważ GameMaker jest sandboxed! Więcej informacji na ten temat znajdziesz w rozdziale System plików.
    
   Składnia:
   file_text_open_from_string(string);

@@ -14,7 +14,7 @@
     draw_vertex_texture_colour
   
    
-  GameMaker Studio 2 umożliwia definiowanie własnych formatów wierzchołków, na podstawie których można tworzyć własne prymitywy. Może to znacznie przyspieszyć operacje wykonywane na stronie shader lub rozszerzyć ich możliwości i stworzyć zaskakujące efekty. Informacje na ten temat można znaleźć w następujących sekcjach:
+  W programieGameMaker można zdefiniować własne formaty wierzchołków, na podstawie których można tworzyć własne prymitywy. Może to znacznie przyspieszyć operacje wykonywane na stronie shader lub rozszerzyć ich możliwości i stworzyć zaskakujące efekty. Informacje na ten temat można znaleźć w następujących rozdziałach:
   
     vertex_format_begin
     vertex_format_add_colour
@@ -53,7 +53,7 @@
     vertex_submit
   
   WAŻNE! Prymitywy, które budujesz, powinny być zgodne z formatem ustawionym za pomocą funkcji Format Vertex, więc jeśli zdefiniowałeś format vertex tylko z danymi pozycyjnymi, nie ma sensu budować prymitywu z danymi kolorowymi. Należy zauważyć, że kolejność dodawania właściwości do budowanego obiektu pierwotnego jest określona przez kolejność dodawania tych właściwości podczas tworzenia formatu vertex, więc jeśli zdefiniowano format wektorowy z kolejnością pozycji, koloru i współrzędnych texture, należy dodać te właściwości do budowanego obiektu pierwotnego w tej samej kolejności, w przeciwnym razie wystąpią błędy.
-  Omówienie sposobu tworzenia prymitywów za pomocą funkcji vertex można znaleźć na stronie:
+  Omówienie sposobu budowania prymitywów za pomocą funkcji vertex można znaleźć na stronie:
   
     Przewodnik po prymitywach i Vertex Budowanie
   

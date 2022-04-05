@@ -2,10 +2,10 @@
   
   Biblioteka działań na strukturach danych
   
-  W grach często zachodzi potrzeba przechowywania informacji w precyzyjny i uporządkowany sposób. Na przykład można przechowywać listę przedmiotów, które nosi dana osoba, lub siatkę miejsc, które należy jeszcze odwiedzić. Do tego celu można użyć wielu zmiennych
+  W grach często zachodzi potrzeba przechowywania informacji w precyzyjny i uporządkowany sposób. Na przykład można przechowywać listy przedmiotów, które nosi dana osoba, lub siatkę miejsc, które trzeba jeszcze odwiedzić. Do tego celu można użyć wielu zmiennych
     ale jeśli chcesz wykonać bardziej skomplikowane operacje, takie jak sortowanie danych lub wyszukiwanie określonego elementu, musisz napisać duże fragmenty kodu bloków akcji, który może być powolny w wykonaniu, trudny do debugowania i naprawdę uciążliwy w pisaniu!
-  Aby temu zaradzić, GameMaker Studio 2 ma kilka wbudowanych struktur danych, do których można uzyskać dostęp za pomocą specjalistycznych funkcji. Na stronie Drag and Drop dostępne są cztery różne typy struktur danych (w przypadku GML jest ich sześć),
-    Każdy z nich ma swoje zalety i wady, w zależności od rodzaju informacji, które chcesz przechowywać, oraz od tego, w jaki sposób chcesz nimi później manipulować - te cztery typy to:
+  Aby temu zaradzić, GameMaker posiada szereg wbudowanych struktur danych, do których można uzyskać dostęp za pomocą specjalistycznych funkcji. Istnieją cztery różne typy struktur danych dostępne na stronie GML Visual (jest ich sześć, jeśli używasz GML),
+    Każdy z nich ma swoje wady i zalety, zależnie od rodzaju informacji, które chcesz przechowywać, oraz sposobu, w jaki chcesz nimi później manipulować:
   
     
       
@@ -27,14 +27,14 @@
       
         
         Stosy
-        Struktura danych stosu jest tak zwaną strukturą LIFO (last-in-first-out). Możesz wciskać wartości na stos, a następnie usuwać je ze stosu, przy czym wartość, która została ostatnio wciśnięta na stos, jest pierwszą, która zostanie z niego wyciągnięta (pomyśl o stosie monet, gdzie każda dodawana moneta musi zostać najpierw usunięta, zanim będziesz mógł dostać się do pozostałych monet pod spodem). Stosy są często używane do obsługi przerwań, funkcji rekurencyjnych, a nawet do konstruowania podstawowej sztucznej inteligencji w grach.
+        Struktura danych stosu jest tak zwaną strukturą LIFO (last-in-first-out). Możesz wciskać wartości na stos, a następnie usuwać je ze stosu, przy czym wartość, która została wciśnięta na stos jako ostatnia, jest pierwszą, która zostanie z niego wyciągnięta (pomyśl o stosie monet, gdzie każda dodawana moneta musi zostać najpierw usunięta, zanim będziesz mógł dostać się do pozostałych monet pod spodem). Stosy są często używane do obsługi przerwań, funkcji rekurencyjnych, a nawet do konstruowania podstawowej sztucznej inteligencji w grach.
       
     
   
    
   Zasadniczo wszystkie struktury danych działają w ten sam sposób - tworzysz strukturę danych i przechowujesz wartość jej indeksu w zmiennej. Następnie używasz tego indeksu do odwoływania się do struktury danych we wszystkich kolejnych wywołaniach funkcji, które mogą wykonywać na niej operacje. Na koniec,
-    po zakończeniu pracy ponownie niszczysz strukturę danych, aby usunąć ją z pamięci. Możesz używać dowolnej liczby struktur jednocześnie, a wszystkie struktury mogą przechowywać zarówno strings, jak i wartości rzeczywiste.
-  UWAGA: Podobnie jak wszystkie zasoby dynamiczne, struktury danych zajmują pamięć, dlatego powinny być zawsze niszczone, gdy nie są już potrzebne, aby zapobiec wyciekom pamięci, które spowolnią, a w końcu doprowadzą do awarii gry.
+    po zakończeniu pracy ponownie niszczysz strukturę danych, aby usunąć ją z pamięci. W tym samym czasie można używać dowolnej liczby struktur, a wszystkie struktury mogą przechowywać zarówno wartości strings, jak i wartości rzeczywiste.
+  UWAGA: Tak jak wszystkie zasoby dynamiczne, struktury danych zajmują pamięć, dlatego powinny być zawsze niszczone, gdy nie są już potrzebne, aby zapobiec wyciekom pamięci, które spowolnią, a w końcu doprowadzą do awarii gry.
   Biblioteka Struktury danych ma następujące działania:
    
   

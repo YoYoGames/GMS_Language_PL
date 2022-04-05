@@ -11,7 +11,7 @@
     Greater than or Equal to - zmienna jest większa lub równa wartości
   
   Jeśli flag argument Not, to powyższe wyrażenia zostaną zanegowane, na przykład "równa się" stanie się "nie równa się", czyli sprawdzane będzie, czy wartość health nie jest równa podanej wartości.
-  WAŻNA UWAGA: Ze względu na problemy z precyzją zmiennoprzecinkową sprawdzenie, czy dwie wartości są dokładnie równe, może zwrócić false, ponieważ jedna z nich może wynosić dokładnie 1, podczas gdy
+  WAŻNA UWAGA: Ze względu na problemy z precyzją zmiennoprzecinkową sprawdzenie, czy dwie wartości są dokładnie równe, może zwrócić false, ponieważ jedna z nich może wynosić dokładnie 1, a
     druga może mieć wartość 1.00000000000001. Można tego uniknąć, stosując przed sprawdzeniem działanie Decimal to Integer lub używając wyrażeń "greater than" i "less than".
   Należy pamiętać, że aby dodać akcje do bloku "jeśli", należy je upuścić z boku akcji, jak pokazano na poniższym rysunku:
   Te akcje będą teraz uruchamiane, jeśli "if" zakończy się wynikiem true, podczas gdy wszelkie

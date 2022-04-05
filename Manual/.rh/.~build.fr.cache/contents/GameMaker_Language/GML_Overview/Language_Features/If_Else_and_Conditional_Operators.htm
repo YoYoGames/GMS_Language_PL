@@ -54,7 +54,7 @@
         variable = true;
     }
   
-  Zauważ, że choć jest to nieco bardziej czasochłonne, oznacza to, że w kodzie nie ma żadnych niejasności i że będzie on zawsze poprawnie kompilowany na wszystkich platformach. Jednak w początkowym przykładzie może być inaczej, co wyjaśniono w sekcji na stronie Wyrażenia i operatory.
+  Mimo że jest to nieco bardziej czasochłonne, oznacza to, że w kodzie nie ma żadnych niejasności i że będzie on zawsze poprawnie kompilowany na wszystkich platformach. Jednak w początkowym przykładzie może być inaczej, co wyjaśniono w sekcji na stronie Wyrażenia i operatory.
   UWAGA: Przy porównywaniu dwóch wartości w celu sprawdzenia, czy są równe, należy użyć operatora "==", a do przypisywania używać tylko operatora "=". Obecnie GameMaker traktuje je jako wymienne, ale w przyszłości może się to zmienić, a Twój kod będzie czystszy i bardziej oczywisty, jeśli będziesz używać właściwych operatorów do porównań i przypisań.
   Aby podać właściwy przykład użycia if, rozważmy następujący kod, który przesunie instancję w kierunku pozycji x=200 w room, gdy zostanie umieszczona w zdarzeniu Step:
   if (x < 200)
@@ -65,7 +65,7 @@
     {
         x = 200;
     }
-  Należy pamiętać, że w if można również wykonywać sprawdzenia złożone, tzn. sprawdzać różne wartości lub wyrażenia w tej samej instrukcji. W takich sprawdzeniach można używać różnych operatorów łączenia (&& and, || or i ^^ xor). Gdy to zrobisz, GameMaker Studio 2 oceni każdą z nich po kolei i w zależności od tego, jak zostaną ocenione, reszta może zostać pominięta. Na przykład:
+  Należy pamiętać, że w if można również wykonywać sprawdzenia złożone, tzn. sprawdzać różne wartości lub wyrażenia w tej samej instrukcji. W takich kontrolach można używać różnych operatorów łączenia (&& and, || or, oraz ^^ xor). Gdy to zrobisz, GameMaker oceni każdą z nich po kolei i w zależności od tego, jak zostaną ocenione, reszta może zostać pominięta. Na przykład:
   if (keyboard_check_pressed(vk_enter)) && (instance_exists(obj_Player))
     {
         go = false;

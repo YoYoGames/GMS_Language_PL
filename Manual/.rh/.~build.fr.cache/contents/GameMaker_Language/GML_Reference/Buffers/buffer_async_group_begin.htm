@@ -1,8 +1,8 @@
 
   
   buffer_async_group_begin
-  Ta funkcja jest wywoływana, gdy chcesz rozpocząć zapisywanie wielu buffers do wielu plików. Nazwa grupy" jest nazwą string i będzie używana jako nazwa katalogu, w którym pliki zostaną zapisane, oraz powinna być używana jako część pliku path podczas późniejszego ładowania plików z powrotem do IDE (przy użyciu dowolnej z buffer_load() funkcji). Ta funkcja jest przeznaczona wyłącznie do użycia z funkcją buffer_save_async() i musisz również zakończyć definicję zapisu, wywołując funkcję buffer_async_group_end() w przeciwnym razie pliki nie zostaną zapisane.
-  Zauważ, że w przypadku platform konsolowych (takich jak na przykład PS4) "nazwa grupy" będzie używana jako opis slotu zapisu, a użycie tej funkcji może pomóc uniknąć wyświetlania interfejsu użytkownika dla każdego zapisywanego pliku. Należy również pamiętać, że podczas korzystania z UWP można przenosić zapisane gry między natywnymi oknami sklepu XBox i Microsoft, tworząc na przykład grupę, która jest taka sama jak grupa ERA Xbox:
+  Ta funkcja jest wywoływana, gdy chcesz rozpocząć zapisywanie wielu buffers do wielu plików (lub ładowanie wielu buffers). Nazwa grupy jest nazwą string i będzie używana jako nazwa katalogu, w którym pliki zostaną zapisane, oraz powinna być używana jako część pliku path podczas późniejszego ładowania plików z powrotem do IDE (przy użyciu dowolnej z buffer_load() funkcji). Ta funkcja jest przeznaczona wyłącznie do użytku z funkcjami buffer_save_async() i buffer_load_async(). Musisz także zakończyć grupę async przez wywołanie funkcji buffer_async_group_end() w przeciwnym razie pliki nie zostaną zapisane/wczytane.
+  Zauważ, że w przypadku platform konsolowych (np. PS4) nazwa grupy będzie używana jako opis slotu zapisu, a użycie tej funkcji może pomóc uniknąć wyświetlania interfejsu użytkownika dla każdego zapisywanego pliku. Należy również pamiętać, że podczas korzystania z UWP można przenosić zapisane gry między natywnymi oknami Xbox i Microsoft Store, tworząc na przykład grupę, która jest taka sama jak grupa ERA Xbox:
   if os_type == os_uwp
     {
         buffer_async_group_begin("root/yourgroupname");
@@ -17,18 +17,20 @@
   
     
       
-        ArgumentTyp
+        Argument
+        Typ
         Opis
-     
+      
       
         groupname
+        String
         The name of the group (as a string).
-     
+      
     
   
    
   Zwroty:
-  
+  N/A
    
   Przykład:
   buffer_async_group_begin("SaveGame");

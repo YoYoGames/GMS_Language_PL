@@ -1,7 +1,7 @@
 
   
   exception_unhandled_handler
-  Ta funkcja runtime może być użyta do "przejęcia" domyślnego komunikatu o błędzie GameMaker Studio 2 w przypadku wystąpienia wyjątku runtime. Należy podać metodę lub funkcję, która zostanie wywołana w momencie wystąpienia wyjątku, a jej pierwszym argumentem będzie adres struct (znany jako Struktura wyjątków) zawierający informacje o wyjątku. Ten struct ma następujący format:
+  Ta funkcja runtime może być użyta do "przejęcia" domyślnego komunikatu o błędzie GameMakera, gdy wystąpi wyjątek runtime. Podajesz metodę lub funkcję, która zostanie wywołana w momencie wystąpienia wyjątku, a jej pierwszym argumentem będzie struct (znany jako Struktura wyjątków) zawierający informacje o wyjątku. Ten struct ma następujący format:
   
     
       
@@ -44,10 +44,10 @@
       
     
   
-  Jako argument można też podać undefined, co spowoduje usunięcie niestandardowego mechanizmu obsługi wyjątków (jeśli został ustawiony) i przywrócenie domyślnego komunikatu o błędzie programu GameMaker Studio 2.
+  Jako argument można też podać undefined, co spowoduje usunięcie niestandardowego mechanizmu obsługi wyjątków (jeśli został ustawiony) i przywrócenie domyślnego komunikatu o błędzie programu GameMaker.
   Ta funkcja zwróci poprzednio ustawioną metodę obsługi wyjątków, jednak jeśli nie została ona zmieniona lub została zresetowana za pomocą undefined, to zwróci po prostu undefined.
-  Przekazanie metody do tej funkcji oznacza, że użytkownikowi nie zostanie wyświetlony komunikat o błędzie, a Ty będziesz mógł samodzielnie obsłużyć wyjątek. Nie możesz jednak użyć tej funkcji do "wyłamania się" z wyjątku, aby kontynuować grę, ponieważ gra zostanie zamknięta po wywołaniu obsługi wyjątku. Nie można także wywoływać funkcji, które utrzymują grę w ruchu dłużej niż do ostatniej klatki (np. game_restart()), ponieważ gra musi zostać zamknięta po wystąpieniu awarii.
-  Należy pamiętać, że kontekst uruchomienia metody nie znajduje się w zdarzeniu, więc w tym momencie nic nie może być wyświetlane na ekranie. Ogólnie rzecz biorąc, najbezpieczniejszą rzeczą, jaką można by zrobić w tym momencie, jest zapisanie pliku z informacjami o kontekście wyjątku, aby można je było - na przykład - przetworzyć podczas następnego uruchomienia gry, a następnie zająć się nimi.
+  Przekazanie metody do tej funkcji oznacza, że użytkownikowi nie zostanie wyświetlony komunikat o błędzie, a Ty będziesz mógł samodzielnie obsłużyć wyjątek. Nie możesz jednak użyć tej funkcji do "wyłamania się" z wyjątku, aby kontynuować grę, ponieważ gra zostanie zamknięta po wywołaniu obsługi wyjątku. Nie można też wywoływać funkcji, które utrzymują grę w ruchu dłużej niż do ostatniej klatki (np. game_restart()), ponieważ gra musi zostać zamknięta po awarii.
+  Należy zauważyć, że kontekst uruchomienia metody nie znajduje się w zdarzeniu, więc w tym momencie nic nie może być wyświetlane na ekranie. Ogólnie rzecz biorąc, najbezpieczniejszą rzeczą, jaką można by zrobić w tym momencie, jest zapisanie pliku z informacjami o kontekście wyjątku, aby można je było - na przykład - przetworzyć podczas następnego uruchomienia gry, a następnie zająć się nimi.
   Zwróć uwagę, że jeśli w podanej metodzie użyjesz instrukcji return, to podana wartość zostanie przekonwertowana na liczbę całkowitą i użyta jako kod zakończenia runnera.
    
   Składnia:

@@ -1,11 +1,11 @@
 
   
   font_get_first (przestarzałe)
-  Podczas definiowania strony font w GameMaker Studio 2 można określić zakres znaków, które mają być uwzględnione. Dzieje się tak dlatego, że sam adres font nie jest dołączany do gry (ze względów prawnych).
-    font jest umieszczany na stronie texture i to właśnie z niego będzie korzystać gra (podobnie jak z innych stron graficznych asset). Oznacza to, że powinieneś ograniczyć liczbę znaków do minimum i podawać tylko taki zakres znaków, jakiego
+  Definiując stronę font w programie GameMaker, można określić zakres znaków, które mają być na niej umieszczone. Dzieje się tak dlatego, że sam adres font nie jest dołączany do gry (ze względów prawnych).
+    font jest umieszczony na stronie texture i to właśnie z niego będzie korzystać gra (podobnie jak z innych stron graficznych asset). Oznacza to, że powinieneś ograniczyć liczbę znaków do minimum i podawać tylko taki zakres znaków, jakiego
     których będzie potrzebować gra, aby zoptymalizować wykorzystanie pamięci texture. Za pomocą tej funkcji można znaleźć znak początkowy (w postaci wartości ASCII), który był używany podczas dodawania do gry font asset.
-  UWAGA Ze względu na zmiany w sposobie obsługi adresu fonts, funkcja ta zawsze będzie zwracać 32, ponieważ adres GameMaker Studio 2 wymusza stosowanie znaku spacji (32) w adresie font i nie
-    zezwala na stosowanie znaków o kodach niższych niż 32. Nowe funkcje do wykonywania podobnych zadań zostaną dodane w przyszłej aktualizacji.
+  UWAGA Ze względu na zmiany w sposobie obsługi strony fonts, funkcja ta zawsze będzie zwracać 32, ponieważ GameMaker wymusza stosowanie znaku spacji (32) na stronie font i nie pozwala
+    nie dopuszcza również znaków o kodach niższych niż 32. Nowe funkcje do wykonywania podobnych zadań zostaną dodane w przyszłych aktualizacjach.
    
   Składnia:
   font_get_first(ind);

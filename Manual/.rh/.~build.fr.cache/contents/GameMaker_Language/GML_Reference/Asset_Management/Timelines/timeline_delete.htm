@@ -1,7 +1,7 @@
 
   
   linia czasu_usuń
-  Jeśli linia czasu została utworzona w przeglądarce GameMaker Studio 2 Asset, należy pamiętać, że jest ona całkowicie usuwana z gry, a próba ponownego wywołania zaindeksowanej linii czasu po użyciu tej funkcji spowoduje błąd. Jeśli linia czasu została utworzona dynamicznie za pomocą funkcji timeline_add() to ta funkcja powinna być użyta w momencie, gdy linia czasu nie jest już potrzebna, aby zapobiec wyciekom pamięci, które mogłyby spowolnić (a w końcu spowodować) awarię gry.
+  Jeśli linia czasu została utworzona w GameMaker Asset Browser, należy pamiętać, że jest ona całkowicie usuwana z gry, a próba ponownego wywołania indeksowanej linii czasu po użyciu tej funkcji spowoduje błąd. Jeśli linia czasu została utworzona dynamicznie za pomocą funkcji timeline_add() to ta funkcja powinna być użyta w momencie, gdy linia czasu nie jest już potrzebna, aby zapobiec wyciekom pamięci, które mogłyby spowolnić (a w końcu spowodować awarię) Twojej gry.
    
   Składnia:
   timeline_delete(ind);

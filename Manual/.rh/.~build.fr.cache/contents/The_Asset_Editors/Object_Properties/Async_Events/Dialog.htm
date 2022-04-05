@@ -4,8 +4,8 @@
   Zdarzenie asynchroniczne Dialog jest wyzwalane tylko wtedy, gdy otrzyma wywołanie zwrotne od jednej z
     specjalnych asynchronicznych funkcji dialogowych, takich jak get_login_async() (proszę
     zobacz tę funkcję, aby zobaczyć rozszerzony przykład kodu, jak to zdarzenie jest używane).
-  Są to zdarzenia, w których użytkownik jest proszony o podanie jakiejś informacji, np. nazwy, danych logowania, liczby, koloru itp. Ponieważ większość urządzeń nie lubi siedzieć pod adresem loop i czekać na odpowiedź, muszą one być asynchroniczne, a GameMaker Studio 2 będzie
-    Ponieważ większość urządzeń nie lubi siedzieć w oknie  i czekać na odpowiedź, muszą one być asynchroniczne, a  będzie działać w tle, gdy te funkcje mają otwarte okno dialogowe i dopóki nie otrzymają wymaganego polecenia od użytkownika, które wywoła to zdarzenie. Oznacza to, że jeśli okno dialogowe jest otwarte w trakcie gry, należy wstrzymać grę
+  Zdarzenia te to te, które wymagają od użytkownika podania jakiejś informacji, np. nazwy, danych logowania, liczby, koloru itp. Ponieważ większość urządzeń nie lubi siedzieć pod adresem loop w oczekiwaniu na odpowiedź, zdarzenia te muszą być asynchroniczne, a program GameMaker będzie
+    GameMaker będzie działał w tle, gdy funkcje te będą miały otwarte okno dialogowe i dopóki nie otrzymają od użytkownika informacji, która wywoła to zdarzenie. Oznacza to, że jeśli dialog jest otwarty w trakcie gry, powinieneś wstrzymać grę
     grę do czasu otrzymania wywołania zwrotnego okna dialogowego.
   Również w tym przypadku zwracana jest mapa DS z identyfikatorem przechowywanym w zmiennej specjalnej async_load.
     Wartości przechowywane w tej mapie zależą od użytej funkcji. Szczegółowe informacje na ten temat można znaleźć w poszczególnych rozdziałach niniejszego podręcznika poświęconych poszczególnym funkcjom.

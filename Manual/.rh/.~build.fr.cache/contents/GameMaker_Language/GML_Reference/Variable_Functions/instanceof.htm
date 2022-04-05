@@ -1,20 +1,25 @@
 
   
   instanceof
-  Tej funkcji można użyć do uzyskania nazwy funkcji, która została użyta do utworzenia strony struct, gdy strona struct została utworzona za pomocą funkcji konstruktora i  new operatora. Podajesz zmienną z referencją struct do sprawdzenia, a funkcja zwróci albo string z nazwą funkcji, albo undefined. Zauważ, że jeśli przekażesz funkcji struct literał (tzn. struct, który został utworzony bez użycia funkcji konstruktora), to zwróci ona po prostu string "struct". Funkcji tej można również użyć do sprawdzenia, czy referencja do struct jest słabe odwołanie czy nie, w takim przypadku funkcja zwróci string "weakref" zamiast nazwy funkcji, która utworzyła tę referencję struct więcej informacji można znaleźć w funkcji weak_ref_create()).
+  Tej funkcji można użyć, aby uzyskać nazwę funkcji konstruktora, która została użyta do utworzenia strony struct. Strona struct powinna zostać utworzona przy użyciu funkcji  new wraz z samym konstruktorem. Podajesz zmienną z referencją struct do sprawdzenia, a funkcja zwróci albo string z nazwą funkcji, albo undefined.
+  Zwróć uwagę, że jeśli przekażesz funkcji struct literal (tzn. struct, który został utworzony bez użycia funkcji konstruktora), to zwróci ona po prostu "struct" string .
+  Funkcji tej można również użyć do sprawdzenia, czy odwołanie struct jest słabe odwołanie lub nie, w takim przypadku funkcja zwróci string "weakref" zamiast nazwy funkcji, która utworzyła struct. Więcej informacji można znaleźć w funkcji weak_ref_create().
+  Nazwa konstruktora, która jest zwracana, może być różna w zależności od tego, gdzie funkcja konstruktora została utworzona. Jeśli został on utworzony wewnątrz object, to jego nazwa będzie zawierała adres object oraz zdarzenie, w którym został utworzony. Na przykład, konstruktor o nazwie test_constructor utworzony w zdarzeniu Create obiektu1 zostanie zwrócony jako "test_constructor_gml_Object_Object1_Create_0". Aby tego uniknąć, należy tworzyć konstruktory w zdarzeniach script.
    
   Składnia:
   instanceof(struct_id);
   
     
       
-        ArgumentTyp
+        Argument
+        Typ
         Opis
-     
+      
       
         struct
+        Struktura
         The struct reference to use.
-     
+      
     
   
    

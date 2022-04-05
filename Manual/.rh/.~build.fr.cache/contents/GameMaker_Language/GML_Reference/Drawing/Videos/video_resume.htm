@@ -1,0 +1,40 @@
+
+  wideo_resume
+  Ta funkcja wznawia odtwarzanie aktualnie załadowanego pliku wideo. Przed wywołaniem tej funkcji musi on zostać wstrzymany za pomocą video_pause().
+   
+  Składnia:
+  video_resume();
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  var _status = video_get_status();
+    
+    if (keyboard_check_pressed(vk_space))
+    {
+        if (_status == video_status_playing)
+        {
+            video_pause();
+        }
+        else if (status == video_status_paused)
+        {
+            video_resume();
+        }
+    }
+  
+  Powyższy kod pobiera stan filmu, a następnie sprawdza, czy gracz nacisnął przycisk Spacja. W takim przypadku wstrzymuje odtwarzanie filmu, jeśli jest on odtwarzany, i wznawia je, jeśli jest wstrzymany.
+   
+   
+  
+    
+      
+        Wstecz: Odtwarzanie wideo
+        Next: video_enable_loop
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

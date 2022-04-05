@@ -1,20 +1,20 @@
 
   
-  path_delete_point
-  With this function you can remove a point from the specified path. Path points are numbered from 0 so the first point is always the 0th point and the last path point will be path_get_number() - 1. If you call this function on a path asset, then the removal of the point will be permanent and all instances assigned the path in the future will be missing the point that was removed. If this is not what you require, then you should use a function like path_duplicate() to create a copy of the path first, then call this function on the duplicated asset (don't forget to call path_delete() on the asset when it is no longer required).
-   
-  Syntax:
+  ścieżka_usuń_punkt
+  Za pomocą tej funkcji można usunąć punkt z określonej strony path. Punkty Path są numerowane od 0, więc pierwszy punkt jest zawsze punktem 0, a ostatni punkt path będzie punktem 1. path_get_number() - Jeśli wywołasz tę funkcję na stronie path asset, to usunięcie punktu będzie trwałe i we wszystkich instancjach przypisanych do path w przyszłości będzie brakowało punktu, który został usunięty. Jeśli nie tego potrzebujesz, powinieneś użyć funkcji takiej jak path_duplicate(), aby najpierw utworzyć kopię path, a następnie wywołać tę funkcję na powielonej stronie asset (nie zapomnij wywołać path_delete() na stronie asset, gdy nie będzie już potrzebna).
+   
+  Składnia:
   path_delete_point(ind, n);
   
     
       
         Argument
-        Type
-        Description
+        Typ
+        Opis
       
       
         index
-        Path Asset
+        Aktywa na ścieżce
         The index of the path to delete a point from.
       
       
@@ -24,11 +24,11 @@
       
     
   
-   
-  Returns:
+   
+  Zwroty:
   N/A
-   
-  Example:
+   
+  Przykład:
   var _col = true;
     while (_col)
     {
@@ -48,18 +48,18 @@
         }
         else _col = false;
     }
-  The above code generates a loop that checks the points on a backwards from the end for a collision with the given object. If a collision is found, a path point is deleted, until there is no collision, or the path is only 2 points long.
-   
-   
-   
+  Powyższy kod generuje stronę loop, która sprawdza, czy punkty na odcinku od końca do tyłu nie kolidują z podaną stroną object. Jeśli zostanie znaleziona kolizja, punkt path jest usuwany, aż do momentu, gdy nie będzie kolizji lub path będzie miał tylko 2 punkty długości.
+   
+   
+   
   
     
       
-        Back: Path Manipulation
-        Next: path_clear_points
+        Powrót: Manipulacja ścieżką
+        Następny: path_clear_points
       
     
-    © Copyright YoYo Games Ltd. 2022 All Rights Reserved
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

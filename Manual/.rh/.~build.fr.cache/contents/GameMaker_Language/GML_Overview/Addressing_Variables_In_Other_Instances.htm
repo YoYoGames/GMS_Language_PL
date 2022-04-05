@@ -1,13 +1,13 @@
 
   
   Adresowanie zmiennych w innych instancjach
-  W rozdziałach poświęconych zmiennym dowiedziałeś się, jak tworzyć i używać zmiennych w obrębie pojedynczej instancji lub w zakresie globalnym, ale co się stanie, jeśli chcesz, aby jedna instancja miała dostęp do zmiennej w innej, innej instancji? Istnieje wiele przypadków, w których możesz chcieć to zrobić, na przykład podczas zderzenia z pociskiem object, możesz chcieć dowiedzieć się, jak duże obrażenia zadaje pocisk, uzyskując dostęp do zmiennej w pocisku, możesz chcieć zatrzymać ruch wszystkich kulek w układance, możesz chcieć przesunąć głównego bohatera do określonej pozycji lub w wielu innych sytuacjach, z którymi zwykle spotykasz się w grach. Na szczęście gra GameMaker Language jest wyposażona w mechanizmy pozwalające to osiągnąć.
-  Jedną z najbardziej powszechnych metod dostępu do zmiennej w innej instancji lub jej zmiany jest użycie jej nazwy object jako identyfikatora, a następnie użycie kropki ".", aby poinformować GameMaker Studio 2, że zmienna, do której się odwołujemy, powinna być przypisana lub zmieniona w ramach instancji tego konkretnego obiektu. Jest to znane jako "notacja kropkowa", a jej składnia wygląda następująco:
+  W rozdziałach poświęconych zmiennym dowiedziałeś się, jak tworzyć i używać zmiennych w obrębie pojedynczej instancji lub w zakresie globalnym, ale co się stanie, jeśli chcesz, aby jedna instancja miała dostęp do zmiennej w innej, innej instancji? Istnieje wiele przypadków, w których możesz chcieć to zrobić, na przykład podczas zderzenia z pociskiem object, możesz chcieć dowiedzieć się, jak duże obrażenia zadaje pocisk, uzyskując dostęp do zmiennej w pocisku, możesz chcieć zatrzymać ruch wszystkich kulek w układance, możesz chcieć przesunąć głównego bohatera do określonej pozycji lub w wielu innych sytuacjach, z którymi zazwyczaj spotykasz się w grach. Na szczęście gra GameMaker Language jest wyposażona w mechanizmy pozwalające to osiągnąć.
+  Jedną z najczęstszych metod dostępu do zmiennej w innej instancji lub jej zmiany jest użycie jej nazwy object jako identyfikatora, a następnie użycie kropki ".", aby powiedzieć programowi GameMaker, że zmienna, do której się odwołujemy, powinna być przypisana lub zmieniona w ramach instancji tego konkretnego obiektu. Jest to tak zwana "notacja kropkowa", a jej składnia wygląda następująco:
   <object_id>.<variable> = <value>; 
   W praktyce wyglądałoby to następująco:
   obj_ball.speed = 0;
   Za pomocą powyższego kodu ustawiasz prędkość instancji "obj_ball". Jeśli jednak masz więcej niż jedną instancję danej object w room, to będzie to dotyczyć WSZYSTKICH z nich jednakowo - chyba że używasz HTML5, w którym to przypadku będzie to dotyczyć tylko jednej z nich, ale nie masz możliwości sprawdzenia, której z nich to dotyczy - więc jeśli potrzebujesz dostępu do wszystkich instancji object, powinieneś używać with()ponieważ jest on w 100% kompatybilny z innymi platformami. Ogólnie rzecz biorąc, tego formatu należy używać tylko wtedy, gdy mamy pojedynczą instancję object w room, lub (jak zobaczysz w następnej części) gdy mamy określony  identyfikator instancji.
-  Dostęp do pojedynczej instancji object można uzyskać także wtedy, gdy w room jest wiele instancji, używając unikalnej nazwy instancji, aby wskazać GameMaker Studio 2 dokładnie tę instancję, do której chcemy się odwołać. Stała nazwy instancji to unikalna stała identyfikacyjna, która jest nadawana każdej instancji dodanej do room w grze. Można ją znaleźć, klikając dwukrotnie instancję w edytorze pomieszczeń:
+  Można także uzyskać dostęp do pojedynczej instancji strony object, jeśli w obrębie strony room znajduje się wiele instancji, używając unikalnej nazwy instancji, aby wskazać programowi GameMaker, do której dokładnie instancji chcemy się odnieść. Stała nazwy instancji to unikalna stała identyfikacyjna, która jest nadawana każdej instancji dodanej do room w Twojej grze. Można ją znaleźć, klikając dwukrotnie na instancję w edytorze pomieszczeń:
   Należy pamiętać, że nazwę tę można edytować i nadać jej bardziej opisową nazwę - choć musi ona być unikalna dla całej gry - i można jej użyć jako lewej strony punktu:
   inst_4DB70D2.speed = 0;
   Zdecydowanie najbardziej powszechną i praktyczną metodą jest jednak użycie zmiennej po lewej stronie punktu, o ile zmienna ta ma zapisany poprawny identyfikator instancji. Ilustrują to poniższe przykłady.
@@ -24,7 +24,7 @@
     _inst.target = id;
   
   W powyższym kodzie dla przykładu 1 znajduje się instance_exists() w bloku kodu. Dzieje się tak dlatego, że użycie metody point do uzyskania dostępu lub zmiany wartości innej instancji spowoduje błąd i zawieszenie gry, jeśli instancja nie istnieje, a istnieje możliwość, że tak właśnie jest w tym przykładzie. W przykładach 2 i 3 nie potrzebujemy jednak tego sprawdzania, ponieważ wiemy, że instancja istnieje, ponieważ w przykładzie 2 ją stworzyliśmy, a w przykładzie 3 jest to inna instancja w zdarzeniu kolizji. Jeśli jednak istnieje jakakolwiek możliwość, że instancja może zostać zniszczona, dezaktywowana lub w inny sposób usunięta z room podczas używania tej metody, zawsze powinieneś sprawdzić to wcześniej, używając funkcji instance_exists() lub funkcji instance_number() function.
-  Zauważ, że nie możesz użyć specjalnego słowa kluczowego "all" w tej metodzie, aby skierować wszystkie instancje (np.: all.val = 10 spowoduje błąd), ale możesz użyć słów kluczowych "other" i "self" bez problemów. Na przykład, używając other w zdarzeniu kolizji:
+  Zauważ, że nie możesz użyć specjalnego słowa kluczowego "all" w tej metodzie, aby skierować wszystkie instancje (np.: all.val = 10 spowoduje błąd), ale możesz użyć słów kluczowych "other" i "self" bez problemu. Na przykład, używając other w zdarzeniu kolizji:
   // Example 3 other.hp -= 10;
     if other.hp <= 0
     {
@@ -32,7 +32,7 @@
     }
   Należy również pamiętać, że nie można używać żadnej funkcji jako lewej strony przypisania. Na przykład poniższy kod spowoduje błąd:
   instance_nearest(x, y, obj).speed = 0;
-  Wartość zwracana przez wyrażenie w tym przykładzie kodu jest liczbą całkowitą (unikalną wartością identyfikatora najbliższej instancji), a zatem musi być ujęta w nawiasy (), aby mogła być użyta w ten sposób i prawidłowo zaadresowana do wymaganej instancji. Powyższy kod zostałby poprawnie zapisany jako:
+  Wartość zwracana przez wyrażenie w tym przykładzie kodu jest liczbą całkowitą (unikalną wartością identyfikatora najbliższej instancji) i dlatego musi być ujęta w nawiasy (), aby mogła być użyta w ten sposób i prawidłowo zaadresowana do wymaganej instancji. Powyższy kod zostałby poprawnie zapisany jako:
   (instance_nearest(x, y, obj)).speed = 0;
     
     //or

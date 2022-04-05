@@ -1,26 +1,26 @@
 
   
   Najlepsze praktyki podczas programowania
-  Na tej stronie omówimy kilka "najlepszych praktyk" podczas programowania gry, a jednocześnie wyjaśnimy nieco działanie strony GameMaker Studio 2. Zanim jednak przejdziemy dalej, warto zwrócić uwagę na dwie bardzo ważne kwestie:
+  Na tej stronie omówimy kilka "najlepszych praktyk" podczas programowania gry, a jednocześnie wyjaśnimy nieco działanie GameMakera. Zanim jednak przejdziemy dalej, warto zwrócić uwagę na dwie bardzo ważne kwestie:
   
-    To jest przewodnik, a nie definitywna i w 100% doskonała metoda pisania gry! Wymienione tu rzeczy dotyczą raczej organizacji i mikrooptymalizacji i powinny zostać włączone do Twoich nawyków programistycznych, gdy poczujesz się komfortowo z GML i uznasz, że są one odpowiednie.
-    Jeśli gra działa dobrze i jesteś zadowolony z jej obecnego stanu, nie śpiesz się ze zmianą wszystkiego tylko po to, aby wycisnąć kilka dodatkowych FPS-ów. Trzeba znaleźć równowagę między czytelnym, elastycznym i modularnym kodem a czasem i energią potrzebną do jego zmiany, a także ogólnym zyskiem końcowym. Zasadniczo, jeśli coś nie jest zepsute, nie naprawiaj tego i zachowaj to, czego się tutaj nauczyłeś, do następnego projektu.
+    To jest przewodnik, a nie definitywna i w 100% doskonała metoda pisania gry! Wymienione tutaj rzeczy dotyczą raczej organizacji i mikrooptymalizacji i powinny zostać włączone do Twoich nawyków programistycznych, gdy poczujesz się komfortowo z GML i uznasz, że są one odpowiednie.
+    Jeśli gra działa dobrze i jesteś zadowolony z jej obecnego stanu, nie śpiesz się ze zmianą wszystkiego tylko po to, aby wycisnąć kilka dodatkowych FPS-ów. Trzeba znaleźć równowagę między czytelnym, elastycznym i modularnym kodem a czasem i energią potrzebną do jego zmiany, a także ogólnym zyskiem końcowym. Zasadniczo, jeśli coś nie jest zepsute, nie naprawiaj tego i zachowaj to, czego się tutaj nauczyłeś, do swojego następnego projektu.
   
   W związku z tym przejdźmy dalej i przyjrzyjmy się kilku ogólnym wskazówkom dotyczącym pisania dobrego kodu GML, które można zastosować w dowolnym momencie...
   Styl programowania
   
     Jeśli chodzi o pisanie kodu, każdy ma swój styl. Styl, w jakim programujesz, to sposób rozmieszczania nawiasów, wcięć w wierszach, deklarowania i nazywania zmiennych itp. i jest on niezbędny do tego, aby Twój kod był czytelny dla innych ludzi (oraz dla Ciebie samego, gdy będziesz musiał wrócić do tego projektu po pewnym czasie pracy nad czymś innym).
-    Istnieje wiele stylów programowania i niektórzy twierdzą, że ich własny jest najlepszy, ale prawda jest taka, że prawie każdy styl jest w porządku, o ile jest się konsekwentnym w jego stosowaniu oraz jasne i oczywiste jest, czym jest i co robi.
+    Istnieje wiele stylów programowania i niektórzy twierdzą, że ich własny jest najlepszy, ale prawda jest taka, że prawie każdy styl jest dobry, o ile jest się konsekwentnym w jego stosowaniu i jasne jest, czym jest i co robi.
     Na powyższym rysunku przedstawiono przykład deklaracji funkcji w witrynie script, aby zilustrować powyższe punkty. Widać, że użyto w nim komentarzy w stylu JSDoc, aby jasno wyjaśnić, co to wszystko robi, a styl kodowania jest spójny, z wcięciami 4 spacjami, podkreśleniami używanymi dla zmiennych lokalnych, logowanym wyjściem itd.
-    Należy również pamiętać, że chociaż edytor script pozwala na zwijanie kodu w każdym z nawiasów otwierających/zamykających, można użyć znaczników #region i #endregion, aby oddzielić fragmenty kodu i znacznie zwiększyć czytelność, zwłaszcza gdy mamy do czynienia z większymi scripts, które zawierają wiele funkcji. Regiony można także komentować - patrz sekcja Edycja na tej stronie podręcznika):
-    Pisząc kod, należy pamiętać, że podczas kompilacji finalnej wersji gry GameMaker Studio 2 usuwa komentarze, niepotrzebne przerwy między wierszami i białe przestrzenie, podstawia wartości stałe/makro/enum i ogólnie kompresuje kod w ramach tego procesu. Oznacza to, że możesz dodać tyle białych linii wokół swojego kodu, ile potrzebujesz, i nie musisz się martwić o to, by komentarze były krótkie lub używane oszczędnie.
+    Należy również pamiętać, że chociaż edytor script pozwala na zwijanie kodu w każdym z nawiasów otwierających/zamykających, można użyć znaczników #region i #endregion do wydzielenia części kodu i znacznego poprawienia czytelności, zwłaszcza gdy mamy do czynienia z większymi scripts, które zawierają wiele funkcji. Regiony można także komentować - patrz sekcja Edycja na tej stronie podręcznika):
+    Pisząc kod, powinieneś być świadomy, że podczas kompilacji gry GameMaker usuwa komentarze, usuwa niepotrzebne przerwy między wierszami i białe przestrzenie, podstawia wartości stałe/makro/enum i ogólnie kompresuje kod w ramach tego procesu. Oznacza to, że możesz dodać tyle białych linii wokół swojego kodu, ile potrzebujesz, i nie musisz się martwić o to, by komentarze były krótkie lub używane oszczędnie.
      
   
   Używanie zmiennych lokalnych
   
     Kontynuując powyższy punkt dotyczący stylu programowania, jedną z rzeczy, którą robi wielu początkujących, jest upychanie jak największej ilości kodu w jednym wierszu. Na przykład:
     draw_sprite(sprite_index, image_index, x + lengthdir_x(100, point_direction(x, y, mouse_x, mouse_y)), y + lengthdir_y(100, point_direction(x, y, mouse_x, mouse_y)));
-    Choć nie jest to całkowicie nieczytelne, to jednak jest nieefektywne (na przykład funkcja point_direction() jest wywoływana dwukrotnie) oraz nieporządne i niewygodne do oglądania. O wiele lepiej byłoby to wyrazić jako:
+    Choć nie jest całkowicie nieczytelny, jest nieefektywny (na przykład funkcja point_direction() jest wywoływana dwukrotnie) oraz nieporządny i niewygodny do oglądania. O wiele lepiej byłoby to wyrazić jako:
     var p_dir = point_direction(x, y, mouse_x, mouse_y);
       var local_x = x + lengthdir_x(100, p_dir);
       var local_y = y + lengthdir_y(100, p_dir);
@@ -46,7 +46,7 @@
                 array[i] = 0;
             }
         }
-    Pamięć związaną z tablicą można również zwolnić, ustawiając zmienną w niej użytą na 0. Zatem, aby wyczyścić tablicę w powyższym przykładzie, wystarczy użyć polecenia
+    Pamięć związaną z tablicą można również zwolnić, ustawiając zmienną w niej użytą na 0. Zatem, aby wyczyścić tablicę z powyższego przykładu kodu, wystarczy użyć polecenia
     array = 0;
     Należy również pamiętać, że tablice są przekazywane przez referencję, ale po wprowadzeniu zmiany kopiują całą tablicę (takie zachowanie nazywa się copy on write). Tak więc, jeśli przekazujesz tablicę do funkcji, przekazujesz referencję do oryginalnej tablicy, a wszelkie wartości odczytane z niej będą pochodziły z oryginalnego źródła. Jest to ładne i szybkie, ale jeśli trzeba zmodyfikować wartości tablicy, to sama tablica jest powielana w punkcie zapisu i wszelkie dokonane zmiany muszą zostać zwrócone z funkcji, gdyż w przeciwnym razie zostaną utracone. Jest to znacznie wolniejsze i zużywa więcej pamięci, dlatego należy uważać na sposób używania tablic w funkcjach.
     Można jednak uniknąć tego zachowania przy kopiowaniu przy zapisie, używając specjalnego narzędzia dostępu do tablicy @, ponieważ zapewnia ono bezpośredni dostęp do tablicy. Na przykład:
@@ -69,21 +69,21 @@
   
   Struktury danych
   
-    W GameMaker Studio 2 struktury danych zostały zoptymalizowane tak, aby były znacznie szybsze niż poprzednie wersje GameMaker. Nadal muszą one być czyszczone (niszczone), gdy nie są używane, aby zwolnić pamięć, i nadal mogą być wolniejsze niż np. tablice, ale łatwość użycia i dodatkowe funkcje do obsługi danych, które zawierają, często przewyższają minimalną różnicę w szybkości, więc nie bój się używać ich w swoich grach.
+    W GameMakerze struktury danych zostały zoptymalizowane tak, aby były o wiele szybsze niż w poprzednich wersjach GameMaker. Nadal muszą być czyszczone (niszczone), gdy nie są używane, aby zwolnić pamięć, i nadal mogą być wolniejsze niż np. tablice, ale łatwość użycia i dodatkowe funkcje do obsługi danych, które zawierają, często przewyższają minimalną różnicę w szybkości, więc nie bój się używać ich w swoich grach.
     Należy zauważyć, że spośród wszystkich struktur danych mapy DS są szczególnie szybkie, zarówno przy odczycie, jak i zapisie, co czyni je doskonałym rozwiązaniem dla wszystkich rodzajów zadań.
     Wcześniej wspomnieliśmy o accessorach dla tablic, ale są one również dostępne dla struktur danych, co może pomóc w uporządkowaniu kodu i ułatwić jego czytanie.
      
   
   Kolizje
   
-    Istnieje wiele sposobów radzenia sobie z kolizjami w GameMaker Studio 2, a większość z nich wiąże się z dodatkowym obciążeniem procesora. Funkcje collision_ i point_, place_ oraz instance_ polegają na sprawdzaniu pól ograniczających dla wszystkich instancji danego typu w obszarze room i chociaż w silniku wbudowano pewne optymalizacje, aby ograniczyć te sprawdzenia, kolizje nigdy nie są najbardziej wydajną rzeczą, z jaką można sobie poradzić. Jeśli zaczniesz używać precyzyjnych kolizji, wydajność również wyraźnie się pogorszy, ponieważ nie tylko będziesz sprawdzał granice pola, ale także będziesz sprawdzał poszczególne piksele, co jest bardzo powolne. Na blogu technicznym YoYo Games można znaleźć informacje na ten temat:
+    W programie GameMaker istnieje wiele sposobów radzenia sobie z kolizjami, ale większość z nich wiąże się z dodatkowym obciążeniem procesora. Funkcje collision_ i point_, place_ oraz instance_ polegają na sprawdzaniu pól ograniczających dla wszystkich instancji danego typu w obrębie room i chociaż w silniku wbudowano pewne optymalizacje, aby ograniczyć te sprawdzenia, kolizje nigdy nie są najbardziej wydajną rzeczą. Jeśli zaczniesz używać precyzyjnych kolizji, wydajność również znacznie się pogorszy, ponieważ nie tylko będziesz sprawdzał granice pola, ale także sprawdzał poszczególne piksele, co jest bardzo powolne. Na blogu technicznym YoYo Games można znaleźć informacje na ten temat:
     
       Zagrożenia związane z precyzyjnym wykrywaniem kolizji
     
-    Nie oznacza to, że nie należy korzystać z tych funkcji, ponieważ mogą one być bardzo przydatne. Należy jednak wiedzieć, których z nich używać i kiedy, ponieważ wszystkie działają nieco inaczej i mają różną szybkość działania. Zasadniczo funkcje place_ są szybsze od funkcji instance_, które są szybsze od funkcji collision_ i point_, dlatego należy przeczytać strony podręcznika poświęcone każdemu z tych typów funkcji i wybrać najbardziej odpowiednią dla danej sytuacji.
+    Nie oznacza to, że nie należy korzystać z tych funkcji, ponieważ mogą one być bardzo przydatne. Należy jednak wiedzieć, których z nich używać i kiedy, ponieważ wszystkie działają nieco inaczej i mają różną szybkość działania. Zasadniczo funkcje place_ są szybsze od funkcji instance_, które są szybsze od funkcji collision_ i point_, dlatego należy zapoznać się ze stronami podręcznika poświęconymi poszczególnym typom funkcji i wybrać te, które są najbardziej odpowiednie w danej sytuacji.
     Alternatywą może być stworzenie systemu kolizji opartego na kafelkach, który można utworzyć za pomocą funkcji tilemap lub nawet niestandardowej tablicy 2D albo siatki DS. Będą one bardzo szybkie i pomogą zwiększyć szybkość gry. Jeśli jednak używasz nieregularnego terenu lub ścian oraz strony objects, które nie są wyrównane do siatki, takie rozwiązanie może nie być odpowiednie. Bardzo prosty samouczek dotyczący kolizji map z płytkami można znaleźć na poniższym łączu wideo
     
-      Zderzenia kafelków w programie GameMaker Studio 2
+      Zderzenia kafelków w programie GameMaker
     
      
   
@@ -103,7 +103,7 @@
       
       gpu_set_blendmode(bm_normal);
     
-    UWAGA Nie dotyczy to tylko bm_add - każda zmiana mieszania spowoduje przerwanie partii i będzie miała wpływ na wydajność.
+    UWAGA Nie dotyczy to tylko użycia bm_add - każda zmiana mieszania spowoduje przerwanie partii i będzie miała wpływ na wydajność.
     W ten sposób wszystkie kule zostaną narysowane w tej samej partii. Rozsądne korzystanie z funkcji gpu_set_blendenable(), gpu_set_alphatestref(), oraz gpu_set_alphatestenable() można włączać i wyłączać w zależności od potrzeb w całym kodzie projektu, chociaż mogą one nie być odpowiednie dla wszystkich typów grafiki lub projektów.
     UWAGA Jeśli nie potrzebujesz, aby instancja rysowała się sama, gdy używasz kontrolera w ten sposób, możesz po prostu dodać komentarz do zdarzenia Draw, aby wyłączyć domyślne rysowanie, lub uczynić instancję niewidoczną (uniemożliwi to jednak uruchamianie kodu dla instancji we wszystkich zdarzeniach draw).
     Innym sposobem na zmniejszenie tych liczb jest wyłączenie opcji Oddzielna strona Texture  dla strony sprites, o ile nie jest to absolutnie konieczne. Każdy obraz zapisany w ten sposób jest wysyłany na własną stronę texture i inaczej pakowany, więc lepiej jest mieć te obrazy na zwykłej stronie texture. Następnie można uzyskać współrzędne UVS za pomocą funkcji sprite_get_uvs() i przechowywać je w zmiennych do późniejszego wykorzystania. Może to być niewielka ilość dodatkowego kodu, ale korzyści, jakie uzyskasz, są tego warte. Należy pamiętać, że ta metoda nie pozwala na powtórzenia texture!
@@ -112,25 +112,25 @@
   
   Cząstki stałe
   
-    Cząsteczki to bardzo szybki i wydajny sposób tworzenia dynamicznych efektów w grze, który generalnie zapewnia dobrą wydajność. Warto jednak zauważyć, że używanie mieszania addytywnego, mieszania alfa i mieszania kolorów na cząsteczkach może obniżyć tę wydajność, zwłaszcza na urządzeniach przenośnych, więc jeśli nie potrzebujesz tych funkcji, nie używaj ich! Zwłaszcza mieszanie addytywne może znacznie zwiększyć liczbę werteksów, dlatego należy z niego korzystać ostrożnie.
+    Cząsteczki to bardzo szybki i wydajny sposób tworzenia dynamicznych efektów w grze, który generalnie zapewnia dobrą wydajność. Warto jednak zauważyć, że stosowanie mieszania addytywnego, mieszania alfa i mieszania kolorów na cząsteczkach może obniżyć tę wydajność, zwłaszcza na urządzeniach przenośnych, więc jeśli nie potrzebujesz tych funkcji, nie używaj ich! Zwłaszcza mieszanie addytywne może znacznie zwiększyć liczbę werteksów, dlatego należy z niego korzystać ostrożnie.
     Należy pamiętać, że w przypadku przeglądarki HTML5 nie korzystającej z technologii WebGL posiadanie wielokolorowych, zanikających cząstek będzie wymagało buforowania wielu obrazów i będzie bardzo powolne. Ponieważ jednak cząsteczki sprites mogą być animowane, można utworzyć animowany obraz sprite, który ma podobrazy zmieniające kolor, a następnie użyć go jako cząsteczki. Nadal będzie to wyglądać jak stopniowa zmiana koloru, ale nie będzie wymagać ciągłego tworzenia obrazów cache.
-    Więcej informacji o cząsteczkach można znaleźć na stronie Przewodnik po używaniu cząsteczek.
+    Więcej informacji na temat cząsteczek można znaleźć na stronie Przewodnik po używaniu cząsteczek.
      
   
   Powierzchnie
   
-    Na koniec zajmiemy się krótko używaniem powierzchni, ponieważ GameMaker Studio 2 ma dość istotną optymalizację, jeśli chodzi o używanie ich w grach: możliwość switch włączania i wyłączania bufora głębokości.
-    Jeśli używasz powierzchni w normalny sposób, GMS2 utworzy powierzchnię i towarzyszącą jej głębię buffer, aby zapewnić prawidłowe sortowanie głębokości podczas rysowania czegokolwiek w 3D. Jednak w większości gier 2D ta dodatkowa głębia buffer nie jest potrzebna i zajmuje dodatkowe miejsce w pamięci oraz czas przetwarzania, który można by wykorzystać do innych celów. W tym miejscu funkcja surface_depth_disable() wchodzi do gry...
+    Na koniec zajmiemy się krótko używaniem powierzchni, ponieważ GameMaker ma dość istotną optymalizację, jeśli chodzi o używanie ich w grach: możliwość switch włączania i wyłączania bufora głębi.
+    Jeśli używasz powierzchni w normalny sposób, GameMaker tworzy powierzchnię i towarzyszącą jej głębię buffer, aby zapewnić prawidłowe sortowanie głębokości podczas rysowania czegokolwiek w 3D. Jednak w większości gier 2D ta dodatkowa głębia buffer nie jest potrzebna i zajmuje dodatkowe miejsce w pamięci oraz czas przetwarzania, który można by wykorzystać do innych celów. W tym miejscu funkcja surface_depth_disable() wchodzi do gry...
     Funkcję tę można wywołać przed utworzeniem powierzchni, aby wyłączyć generowanie głębi buffer, a wszystkie utworzone później powierzchnie nie będą miały utworzonej głębi buffer. Funkcję tę można włączać i wyłączać w zależności od potrzeb, a nawet można ją wywołać raz na początku gry, aby wyłączyć generowanie głębi buffers dla wszystkich kolejnych wywołań powierzchni (w większości gier 2D jest to w porządku). Nie spowoduje to znacznego wzrostu wydajności, ale warto o tym pamiętać, jeśli gra w dużym stopniu opiera się na powierzchniach, i może zapobiec wyczerpaniu pamięci na urządzeniach o niższej specyfikacji.
   
    
-  Poza wymienionymi powyżej najważniejszymi kwestiami istnieją inne, bardziej ogólne rzeczy, które mogą pomóc w zwiększeniu wydajności i które również są uważane za "dobre praktyki":
+  Poza wymienionymi powyżej najważniejszymi kwestiami istnieją inne, bardziej ogólne rzeczy, które mogą pomóc w zwiększeniu wydajności i które również są uznawane za "dobre praktyki":
   
     nie bój się używać funkcji trygonometrycznych, ponieważ (wbrew powszechnej opinii) są one dość szybkie, zwłaszcza w porównaniu z cząstkami, zderzeniami, strings, itd.
     nie umieszczaj w zdarzeniach Draw kodu, który nie służy do rysowania przedmiotów
     używać alarmu do wywoływania dowolnego kodu, który nie musi być wywoływany co krok (zamiast dodawać go do zdarzenia Step)
   
-  Jednak, jak już wspomnieliśmy na początku strony, wszystkie te optymalizacje są opcjonalne i jeśli Twoja gra działa dobrze przy 60 partiach wierzchołków, 80 texture podmianach, mieszaniu addytywnym itp. to nie przejmuj się tym zbytnio! Po prostu pamiętaj o tych rzeczach, programując swoją następną grę...
+  Jednak, jak już wspomnieliśmy na początku strony, wszystkie te optymalizacje są opcjonalne i jeśli Twoja gra działa dobrze przy 60 partiach wierzchołków, 80 texture podmianach, mieszaniu addytywnym itd., to nie przejmuj się tym zbytnio! Po prostu pamiętaj o tych rzeczach, programując swoją następną grę...
    
    
    

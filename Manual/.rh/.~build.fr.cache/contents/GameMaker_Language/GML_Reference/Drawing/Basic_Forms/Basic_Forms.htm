@@ -1,7 +1,7 @@
 
   
   Formularze podstawowe
-  GameMaker Studio 2 ma całą kolekcję funkcji do rysowania różnych form i kształtów. Funkcje te powinny być używane tylko w zdarzeniu rysowania instancji ( możesz ich używać gdzie indziej, ale nic nie zobaczysz!) i tworzą efekty czysto graficzne, co oznacza, że nie generują zdarzeń kolizji, ponieważ te mogą być wykonywane tylko przez stronę sprite lub maskę kolizji, która została przypisana do instancji. Na wszystkie te funkcje mają wpływ bieżący kolor rysowania, alfa i tryb mieszania (zobacz rozdział Kolor).
+  GameMaker posiada całą kolekcję funkcji do rysowania różnych form i kształtów. Funkcje te powinny być używane tylko w zdarzeniu draw instancji ( możesz ich używać gdzie indziej, ale nic nie zobaczysz!) i tworzą efekty czysto graficzne, co oznacza, że nie generują zdarzeń kolizji, ponieważ te mogą być wykonywane tylko przez sprite lub maskę kolizji, która została przypisana do instancji. Na wszystkie te funkcje mają wpływ bieżący kolor rysowania, alfa i tryb mieszania (zobacz rozdział Kolor).
   WAŻNE! Linie, punkty i kształty są zawsze rysowane w stosunku 1:1 do rozdzielczości ekranu, niezależnie od zdarzenia, w którym są rysowane.
   WAŻNE! Te funkcje przerywają podział wierzchołków i zwiększają liczbę podmian texture w grze, więc wielokrotne wywołanie dowolnej z nich w jednej ramce rysowania może spowodować problemy z wydajnością.
   Do rysowania podstawowych kształtów dostępne są następujące funkcje rysunkowe. Należy pamiętać, że funkcje te są wywoływane powoli i są dostarczane tylko jako podstawowe narzędzia rysunkowe:
@@ -27,7 +27,7 @@
     draw_triangle_colour
   
    
-  W witrynie GameMaker Studio 2 znajdują się również następujące funkcje umożliwiające ustawienie precyzji rysowania i rysowanie pewnych bardzo specyficznych rzeczy:
+  W programie GameMaker dostępne są także następujące funkcje, które pozwalają ustawić precyzję rysowania i narysować pewne bardzo specyficzne rzeczy:
   
     draw_set_circle_precision
     draw_button
