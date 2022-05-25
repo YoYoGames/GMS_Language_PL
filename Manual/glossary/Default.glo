@@ -4,7 +4,7 @@
 <title>Glossary Definitions</title>        
 <glossentry id="Default_absolute">
 <glossterm>absolutny</glossterm>
-<glossdef>Wartość bezwzględna to taka, w której znak wartości jest ignorowany, co oznacza, że wszystkie wartości są zamieniane na jedynki dodatnie lub zero. Zatem na przykład wartością bezwzględną dla -10 będzie 10.</glossdef></glossentry>
+<glossdef>Wartość bezwzględna to taka, w której znak wartości jest ignorowany, co w zasadzie zamienia wszystkie wartości na jedynki dodatnie lub zero. Zatem na przykład wartością bezwzględną dla -10 będzie 10.</glossdef></glossentry>
 <glossentry id="Default_algorithm">
 <glossterm>algorytm</glossterm>
 <glossdef>Algorytm to zbiór instrukcji lub reguł służących do rozwiązania określonego problemu. Problem ten może być prosty, jak dodanie dwóch liczb, lub złożony, jak konwersja pliku wideo z jednego formatu na drugi lub kompresja dźwięku do mniejszego rozmiaru pliku...</glossdef></glossentry>
@@ -43,7 +43,7 @@
 <glossdef>Interpolacja metodą Beziera polega na oszacowaniu nowej wartości przez połączenie dwóch sąsiadujących ze sobą znanych wartości za pomocą matematycznie wygenerowanej krzywej splajnu, którą można edytować za pomocą "uchwytów" dołączonych do każdego punktu. Następnie można uzyskać interpolowaną wartość, sprawdzając dowolny punkt wzdłuż linii.</glossdef></glossentry>
 <glossentry id="Default_bit">
 <glossterm>bit</glossterm>
-<glossdef>Pojedyncza wartość danych, która może wynosić 1 lub 0 (prawda lub fałsz). Bity są łączone w bloki po 8, tworząc bajt.</glossdef></glossentry>
+<glossdef>Pojedyncza wartość danych, która może mieć wartość 1 lub 0 (prawda lub fałsz). Bity są łączone w bloki po 8, tworząc bajt.</glossdef></glossentry>
 <glossentry id="Default_bit_depth">
 <glossterm>głębokość bitowa</glossterm>
 <glossdef>Głębia bitowa to liczba bitów w każdej próbce pliku audio. Mniejsza głębia bitowa zapewnia gorszą jakość dźwięku, ale znacznie mniejszy rozmiar pliku. Mniejsza głębia bitowa jest zwykle używana w przypadku małych efektów dźwiękowych i formatów, w których może być problem z pamięcią (np. HTML5).</glossdef></glossentry>
@@ -67,7 +67,7 @@
 <glossdef>Bajt to jednostka danych o długości ośmiu cyfr binarnych, a każda z cyfr składających się na bajt jest nazywana bitem, tzn. bajt to 8 bitów, a bit może mieć wartość 1 lub 0.</glossdef></glossentry>
 <glossentry id="Default_Cache">
 <glossterm>Pamięć podręczna</glossterm>
-<glossdef>Pamięć podręczna to zbiór plików, które są generowane przez program GameMaker raz, a następnie przechowywane i ponownie wykorzystywane w wielu uruchomieniach projektu. Należy pamiętać, że pamięć podręczna może czasami stać się "nieświeża", co oznacza, że należy ją wyczyścić, aby zmusić program GameMaker do odbudowania jej od podstaw, co zapewni, że żadne nieświeże pliki nie uszkodzą ostatecznej wersji gry.</glossdef></glossentry>
+<glossdef>Pamięć podręczna to zbiór plików, które są generowane przez program GameMaker raz, a następnie przechowywane i ponownie wykorzystywane w wielu uruchomieniach projektu. Należy pamiętać, że pamięć podręczna może czasami stać się "nieaktualna", co oznacza, że należy ją wyczyścić, aby zmusić program GameMaker do odbudowania jej od podstaw, co gwarantuje, że żadne nieaktualne pliki nie uszkodzą ostatecznej wersji gry.</glossdef></glossentry>
 <glossentry id="Default_callback">
 <glossterm>callback</glossterm>
 <glossdef>Wywołanie zwrotne to po prostu funkcja, która jest uruchamiana, a następnie wyzwala inną funkcję (lub blok kodu), gdy zakończy wykonywanie tego, do czego została przypisana. Na przykład funkcja sprite_add() wywoła wywołanie zwrotne w asynchronicznym zdarzeniu Image Loaded, gdy sprite zostanie załadowany.</glossdef></glossentry>
@@ -79,7 +79,7 @@
 <glossdef>Kompilacja polega na tym, że GameMaker pobiera Twój kod i zbiera go w taki sposób, aby utworzyć pakiet wykonywalny, który będzie działał na urządzeniu jako gra.</glossdef></glossentry>
 <glossentry id="Default_compression">
 <glossterm>kompresja</glossterm>
-<glossdef>Kompresja to wykorzystanie algorytmów matematycznych w celu zmniejszenia rozmiaru pliku. Stosuje się ją zwłaszcza w przypadku plików dźwiękowych i graficznych, gdzie formaty takie jak JPG (obraz) i MP3 (dźwięk) są formatami skompresowanymi. Kompresja zwykle powoduje zmniejszenie rozmiarów plików, ale wiąże się z pewną utratą danych, która może być zauważalna lub nie, w zależności od rodzaju i siły zastosowanej kompresji. Formaty nieskompresowane to BMP (obraz) lub WAV (dźwięk), które mają większe rozmiary plików, ale nie powodują utraty danych.</glossdef></glossentry>
+<glossdef>Kompresja to wykorzystanie algorytmów matematycznych w celu zmniejszenia rozmiaru pliku. Stosuje się ją zwłaszcza w przypadku plików dźwiękowych i graficznych, gdzie formaty takie jak JPG (obraz) i MP3 (dźwięk) są formatami skompresowanymi. Kompresja zwykle powoduje zmniejszenie rozmiaru pliku, ale wiąże się z pewną utratą danych, która może być zauważalna lub nie, w zależności od rodzaju i siły zastosowanej kompresji. Formaty nieskompresowane to BMP (obraz) lub WAV (dźwięk), które mają większe rozmiary plików, ale nie powodują utraty danych.</glossdef></glossentry>
 <glossentry id="Default_conditional">
 <glossterm>warunkowe</glossterm>
 <glossdef>Warunki, instrukcje warunkowe i wyrażenia warunkowe są cechami ogólnego języka programowania i pomagają kodowi dokonać wyboru, którego wynikiem jest prawda lub fałsz. Mogą one wykonywać różne czynności w zależności od potrzeb programisty, a wiele instrukcji warunkowych można łączyć w jeden warunek, o ile wartość końcowa warunku jest albo prawdziwa, albo fałszywa. Przykładami instrukcji warunkowych są instrukcje "if" i "while".</glossdef></glossentry>
@@ -94,7 +94,7 @@
 <glossdef>Strefa martwa to odległość, na jaką należy przesunąć drążek analogowy, aby gra rozpoznała, że jest on poruszany. Niska strefa martwa sprawi, że każdy niewielki ruch drążka analogowego spowoduje poruszenie graczem, celowanie lub cokolwiek innego. Wysoka wartość strefy martwej oznacza, że drążek analogowy musi wykonać znacznie większy ruch, zanim gra go wykryje i poruszy sterowanym obiektem.</glossdef></glossentry>
 <glossentry id="Default_back-buffer">
 <glossterm>bufor wyświetlacza</glossterm>
-<glossdef>Bufor wyświetlania to "płótno", na którym wszystko jest ostatecznie rysowane. Niektóre zdarzenia są skierowane bezpośrednio do tego miejsca (np. zdarzenie Pre Draw), podczas gdy inne najpierw rysują na powierzchni aplikacji, a dopiero potem do bufora wyświetlacza.</glossdef></glossentry>
+<glossdef>Bufor wyświetlania to "płótno", na którym wszystko jest ostatecznie rysowane. Niektóre zdarzenia są skierowane bezpośrednio do tego miejsca (np. zdarzenie Pre Draw), podczas gdy inne najpierw rysują na powierzchni aplikacji, a następnie rysują do bufora wyświetlania.</glossdef></glossentry>
 <glossentry id="Default_Dope_Sheet">
 <glossterm>Dope Sheet</glossterm>
 <glossdef>Dope Sheet to wizualna reprezentacja osi czasu sekwencji, na której można dodawać, usuwać i edytować różne klucze zasobów i parametry, które wpływają na zachowanie się poszczególnych ścieżek w sekwencji w czasie.</glossdef></glossentry>
@@ -124,7 +124,7 @@
 <glossdef>Czcionka to zbiór glifów graficznych używanych do reprezentowania tekstu w danym języku. Czcionki mogą mieć różne wagi, rozmiary oraz style i są używane do wyświetlania zawartości pisemnej w projekcie.</glossdef></glossentry>
 <glossentry id="Default_framework">
 <glossterm>rama</glossterm>
-<glossdef>Szkielet to podstawa kodu, który może być modyfikowany i/lub rozbudowywany przez użytkownika. W skład szkieletu mogą wchodzić różne biblioteki programistyczne, interfejsy API, kompilatory i wiele innych. Mówiąc prościej, szkielet zapewnia korzystne środowisko dla określonego typu i poziomu programowania projektu. W GameMaker Studio 2 można na przykład tworzyć własne projekty szkieletowe (za pomocą pakietów Local Asset Packages), które zawierają skrypty i obiekty do ogólnego sterowania, zarządzania statystykami, tworzenia sieci i innych elementów często używanych w projektach, a następnie importować je do nowych projektów na samym początku, aby zapewnić sobie podstawy do kontynuowania pracy bez konieczności przeprogramowywania tych systemów za każdym razem.</glossdef></glossentry>
+<glossdef>Szkielet to podstawa kodu, który może być modyfikowany i/lub rozbudowywany przez użytkownika. W skład szkieletu mogą wchodzić różne biblioteki programistyczne, interfejsy API, kompilatory i wiele innych. Mówiąc prościej, szkielet zapewnia korzystne środowisko dla określonego typu i poziomu programowania projektu. W GameMaker Studio 2 możesz na przykład tworzyć własne projekty szkieletowe (za pomocą pakietów Local Asset Packages), które zawierają skrypty i obiekty do ogólnego sterowania, zarządzania statystykami, tworzenia sieci i innych rzeczy, których często używasz w swoich projektach, a następnie importować je do nowych projektów na samym początku, aby zapewnić sobie podstawy do kontynuowania pracy bez konieczności przeprogramowywania tych systemów za każdym razem.</glossdef></glossentry>
 <glossentry id="Default_frontend">
 <glossterm>frontend</glossterm>
 <glossdef>Frontend to część programu, która jest skierowana do użytkownika, tzn. część, z którą użytkownik końcowy wchodzi w interakcję. Na przykład w GameMaker Studio 2 interfejs, w którym programujesz, dodajesz zasoby itp., to frontend programu, ponieważ to właśnie tam wchodzisz w interakcję z programem, wprowadzasz wartości, pliki i inne rzeczy. Jest to zasadniczo przeciwieństwo backendu.</glossdef></glossentry>
@@ -157,7 +157,7 @@
 <glossdef>IDE, czyli zintegrowane środowisko programistyczne, to aplikacja zapewniająca programistom komputerowym wszechstronne możliwości tworzenia oprogramowania. W tym przypadku cały frontend programu GameMaker Studio 2 jest uważany za IDE i zawiera sekcje do tworzenia grafiki, dodawania dźwięków i kodu do tworzenia gier.</glossdef></glossentry>
 <glossentry id="Default_iteration">
 <glossterm>iteracja</glossterm>
-<glossdef>Iteracja to pojedyncze przejście przez zestaw operacji w kodzie projektu. Jedną z form iteracji w programowaniu komputerowym są pętle. Pętla powtarza pewien segment kodu, dopóki nie zostanie spełniony warunek i nie będzie można przejść dalej. Każde uruchomienie pętli przez komputer jest nazywane iteracją. Najprościej mówiąc, iteracja to proces wielokrotnego powtarzania określonego fragmentu kodu w celu wykonania określonej czynności.</glossdef></glossentry>
+<glossdef>Iteracja to pojedyncze przejście przez zestaw operacji w kodzie projektu. Jedną z form iteracji w programowaniu komputerowym są pętle. Pętla powtarza pewien segment kodu, dopóki nie zostanie spełniony warunek i nie będzie można przejść dalej. Każde uruchomienie pętli przez komputer jest określane mianem iteracji. Najprościej mówiąc, iteracja to proces wielokrotnego powtarzania określonego fragmentu kodu w celu wykonania określonej czynności.</glossdef></glossentry>
 <glossentry id="Default_JSON">
 <glossterm>JSON</glossterm>
 <glossdef>JSON jest skrótem od JavaScript Object Notatio i jest lekkim formatem przechowywania danych. JSON jest często używany, gdy dane są przesyłane z serwera na stronę internetową, i jest uważany za "samoopisujący się" oraz łatwy do zrozumienia i śledzenia podczas przeglądania.</glossdef></glossentry>
@@ -289,7 +289,7 @@
 <glossdef>Wektor jest konstrukcją matematyczną, która ma określoną wielkość, zwaną magnitudą, oraz kierunek. W GameMakerze wektor jest zwykle używany do pokazywania odległości i kierunku, w którym coś się poruszyło. Wektor może być także używany do definiowania obrazów, a niektóre formaty obrazów, takie jak SWF, używają matematyki wektorowej do definiowania obrazów, które zawierają.</glossdef></glossentry>
 <glossentry id="Default_Version_Number">
 <glossterm>Numer wersji</glossterm>
-<glossdef>Numer wersji to unikatowy zestaw liczb przypisanych do konkretnego wydania programu, gry lub zasobów, zazwyczaj w formacie MAJOR.MINOR.MAINTENANCE, np. v2.3.56. Zazwyczaj numer wersji zwiększa się w miarę wydawania aktualizacji i zupełnie nowych wydań gry lub zasobów.</glossdef></glossentry>
+<glossdef>Numer wersji to unikatowy zestaw liczb przypisanych do konkretnego wydania programu, gry lub zasobów, zwykle w formacie MAJOR.MINOR.MAINTENANCE, np. v2.3.56. Zazwyczaj numer wersji zwiększa się w miarę wydawania aktualizacji i zupełnie nowych wydań gry lub zasobów.</glossdef></glossentry>
 <glossentry id="Default_vertex">
 <glossterm>wierzchołek</glossterm>
 <glossdef>Wierzchołek to nazwa nadana pojedynczemu punktowi wielokąta, który zawiera różne właściwości określające jego położenie, kolor i teksturę. W grafice komputerowej oznacza to zwykle narożnik trójkąta, który jest używany do tworzenia prymitywów, a kombinacja takich prymitywów tworzy grafikę na ekranie.</glossdef></glossentry>
@@ -298,7 +298,7 @@
 <glossdef>W programie GameMaker maszyna wirtualna (VM) jest metodą kompilacji, która wykorzystuje ogólny program uruchamiający dla każdej platformy, a następnie używa go do interpretacji kodu gry.</glossdef></glossentry>
 <glossentry id="Default_VRAM">
 <glossterm>VRAM</glossterm>
-<glossdef>VRAM to ilość pamięci dostępnej dla obrazu, czyli miejsce w pamięci, w którym można przechowywać tekstury i obrazy.</glossdef></glossentry>
+<glossdef>VRAM to ilość pamięci dostępnej dla obrazu, czyli przestrzeń pamięci, w której można przechowywać tekstury i obrazy.</glossdef></glossentry>
 <glossentry id="Default_weak_reference">
 <glossterm>słabe odniesienie</glossterm>
 <glossdef>Słaba referencja to referencja, która nie chroni obiektu, do którego się odwołujemy, przed zbieraniem przez garbage collector, a więc może być użyta do sprawdzenia, czy dana struktura jest wciąż "żywa" (odwołuje się do niej), czy nie gdzieś w grze.</glossdef></glossentry>

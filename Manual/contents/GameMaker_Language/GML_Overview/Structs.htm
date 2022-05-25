@@ -82,7 +82,7 @@
   <p class="code">mystruct.a += 1;<br />
     mystruct.b = mystruct.a + 20;<br />
     mydir = point_direction(mouse_x, mouse_y, mystruct.xx, mystruct.yy);</p>
-  <p>Wreszcie, <span class="notranslate">structs</span> może mieć inne <span class="notranslate">structs</span> zagnieżdżone wewnątrz siebie, tak jak w tym przypadku:</p>
+  <p>Wreszcie, w witrynie <span class="notranslate">structs</span> mogą być zagnieżdżone inne witryny <span class="notranslate">structs</span>, jak na przykład ta:</p>
   <p class="code">mystruct =<br />
     {<br />
         a :<br />
@@ -115,7 +115,7 @@
     // Clean Up event<br />
     delete mystruct;
   </p>
-  <h2>Funkcje konstruktora</h2>
+  <h2 id="constr">Funkcje konstruktora</h2>
   <p>Można także używać <a href="Script_Functions.htm">funkcji</a> lub <a href="Method_Variables.htm">metod</a> <a href="Script_Functions.htm">skryptu</a> do tworzenia funkcji, które mogą być używane do generowania nowych <span class="notranslate">structs</span>, co wymaga użycia słowa kluczowego <span class="inline">constructor</span> dla funkcji oraz operatora <a href="Language_Features/new.htm"><span class="inline">new</span></a> podczas tworzenia <span class="notranslate">struct</span> z takiej funkcji. Zobacz następującą funkcję:</p>
   <p class="code">function Vector2(_x, _y) <strong>constructor</strong><br />
     {<br />
@@ -197,7 +197,7 @@
     var _child = new Child();
   </p>
   <p>Oba te konstruktory wypiszą <span class="inline">20</span> do dziennika wyjściowego, ponieważ taka była domyślna wartość argumentu ustawiona przez konstruktor potomny i taka sama wartość została przekazana do konstruktora nadrzędnego.</p>
-  <p>Więcej informacji na temat operatorów <span class="inline">new</span> i <span class="inline">delete</span> można znaleźć na kolejnych stronach:</p>
+  <p>Więcej informacji na temat operatorów <span class="inline">new</span> i <span class="inline">delete</span> można znaleźć na następnych stronach:</p>
   <ul class="colour">
     <li><a href="Language_Features/new.htm"><span class="inline">new</span></a></li>
     <li><span class="inline"><a href="Language_Features/delete.htm"><span class="inline">delete</span> </li>

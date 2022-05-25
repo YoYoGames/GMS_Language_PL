@@ -16,7 +16,7 @@
     </colgroup>
     <tbody>
       <tr>
-        <th colspan="2"><span data-keyref="Type_Constant_Network_Socket_Type"><a data-rhwidget="HyperlinkPopover" href="../../../LINKGOESHERE">Socket Type Constant</a></span></th>
+        <th colspan="2"><span data-keyref="Type_Constant_Network_Socket_Type"><a data-rhwidget="HyperlinkPopover" href="../../../GameMaker_Language/GML_Reference/Networking/network_create_socket.htm">Socket Type Constant</a></span></th>
       </tr>
       <tr>
         <th>Constant</th>
@@ -32,7 +32,7 @@
       </tr>
       <tr>
         <td><span class="inline">network_socket_ws</span></td>
-        <td>Create a WebSocket using TCP.</td>
+        <td>Create a WebSocket using TCP. (<em><strong>NOTE</strong>: Use <a href="../../GameMaker_Language/GML_Reference/Networking/network_connect_raw_async.htm">Async</a> functions for connecting through WebSockets</em>)</td>
       </tr>
       <tr>
         <td><span class="inline">network_socket_wss</span> *</td>

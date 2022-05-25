@@ -17,7 +17,7 @@
   <h1>Funkcje w czasie rzeczywistym</h1>
   <p>Ogólna definicja funkcji jest następująca:</p>
   <p><i>Funkcja ma wejście i wyjście, a wyjście jest związane z wejściem.</i></p>
-  <p>W programie <span data-keyref="GameMaker Name">GameMaker</span> przekłada się to na dwie różne rzeczy, ale obie działają tak samo:</p>
+  <p>W <span data-keyref="GameMaker Name">GameMakerze</span> przekłada się to na dwie różne rzeczy, ale obie działają tak samo:</p>
   <ul class="colour">
     <li><b>Funkcje</b> <i>runtime</i> - Funkcja <i>runtime</i> to funkcja dostarczana jako część języka <b>GameMaker Language</b> (<span class="notranslate">GML</span>). Są one wbudowane w język i mogą być używane do tworzenia zdarzeń w grach. Dostępnych jest wiele funkcji <span class="notranslate">GML</span> <span class="notranslate">runtime</span>, z których wszystkie są wyjaśnione w sekcji <a href="../GML_Reference/GML_Reference.htm">Language Reference</a> w podręczniku.</li>
     <li><b>Funkcje i metody skryptów - </b><a href="Script_Functions.htm"><em>Skrypt </em><em>funkcje</em></a> i <a href="Method_Variables.htm"><em>M</em><i>etody Zmienne</i></a> to funkcje, które utworzyłeś samodzielnie przy użyciu podstawowych elementów <b>języka GameMaker Language</b> (<span class="notranslate">GML</span>). Mogą one zawierać funkcje <span class="notranslate">runtime</span> jako część swojego kodu.</li>
@@ -34,7 +34,7 @@
     // This takes four arguments and returns a real value<br />
     dist = point_distance(x, y, mouse_x, mouse_y);
   </p>
-  <p class="note"><strong>UWAGA</strong>: Gdziekolwiek w podręczniku jako wartość zwracana funkcji występuje &quot;N/A&quot;, oznacza to, że funkcja nie ma zwracać żadnej wartości w ramach swojego działania. Jeśli spróbujesz sprawdzić, czy te funkcje zwracają jakąś wartość, otrzymasz wartość <span class="inline">undefined</span>. </p>
+  <p class="note"><span class="note">UWAGA</span> Gdziekolwiek w podręczniku jako wartość zwracana funkcji występuje &quot;N/A&quot;, oznacza to, że funkcja nie ma zwracać żadnej wartości w ramach swojego działania. Jeśli spróbujesz sprawdzić, czy te funkcje zwracają jakąś wartość, otrzymasz wartość <span class="inline">undefined</span>. </p>
   <p>Czasami wartość zwracana przez funkcję może być wartością, której chcemy użyć w <a class="glossterm" data-glossterm="zadanie" href="#">przypisaniu</a>, ale należy pamiętać, że nie można użyć żadnej funkcji <em>bezpośrednio</em> jako lewej strony przypisania. Na przykład poniższy kod ustawiający prędkość na instancji spowodowałby błąd:</p>
   <p class="code">instance_nearest(x, y, obj).speed = 0;</p>
   <p>Wartość zwracana przez wyrażenie w tym przykładzie kodu jest liczbą całkowitą (unikalną wartością ID dla najbliższej instancji) i dlatego musi być ujęta w nawiasy, aby mogła być użyta w ten sposób i prawidłowo zaadresowana do wymaganej instancji (więcej informacji na ten temat można znaleźć w części <a href="Addressing_Variables_In_Other_Instances.htm">Adresowanie zmiennych w innych instancjach</a> ). Powyższy kod zostałby poprawnie zapisany jako:</p>

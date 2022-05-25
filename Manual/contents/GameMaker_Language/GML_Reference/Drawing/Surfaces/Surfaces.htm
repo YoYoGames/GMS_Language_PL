@@ -16,36 +16,36 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Powierzchnie</h1>
   <p>W normalnych zdarzeniach rysowania <span data-keyref="GameMaker Name">GameMaker</span> nie rysuje bezpośrednio na ekranie, ale raczej na <b>powierzchni</b> zwanej powierzchnią <i>aplikacji</i>. Powierzchnia ta jest w zasadzie pustym &quot;płótnem&quot;, którym można później manipulować przed narysowaniem go na ekranie, gdy zajdzie taka potrzeba. W większości przypadków <span data-keyref="GameMaker Name">GameMaker</span> robi to za Ciebie (choć możesz też manipulować nią samodzielnie w kodzie, np. <span class="notranslate">shaders</span>, skalując i robiąc wiele innych rzeczy - więcej szczegółów znajdziesz poniżej).</p>
-  <p>Jednak oprócz tej powierzchni użytkowej możesz także tworzyć własne powierzchnie i używać ich do tworzenia oszałamiających lub subtelnych efektów specjalnych w grze. Na przykład możesz użyć powierzchni do &quot;wyłapywania&quot; instancji, które następnie można zniszczyć, i w ten sposób stworzyć efekt kalkomanii, w którym <span class="notranslate">sprite</span> dla instancji jest wyświetlana na powierzchni, tak jakby nadal istniała, co pozwala na uzyskanie efektów graficznych, takich jak gruz, krew itp. bez konieczności przetwarzania danych. Inną rzeczą, którą można zrobić z powierzchniami, jest użycie ich jako strony <span class="notranslate">textures</span>, którą można manipulować, lub tworzenie strony <span class="notranslate">sprites</span> &quot;w locie&quot;, lub tworzenie złożonych nakładek. tak naprawdę zastosowania powierzchni są nieograniczone!</p>
+  <p>Oprócz tej powierzchni użytkowej możesz jednak tworzyć własne powierzchnie i używać ich do tworzenia oszałamiających lub subtelnych efektów specjalnych w swojej grze. Na przykład możesz użyć powierzchni do &quot;wyłapywania&quot; instancji, które następnie można zniszczyć, i w ten sposób stworzyć efekt kalkomanii, w którym <span class="notranslate">sprite</span> dla instancji jest wyświetlana na powierzchni, tak jakby nadal istniała, co pozwala na uzyskanie efektów graficznych, takich jak gruz, krew itp. bez konieczności przetwarzania danych. Inną rzeczą, którą można zrobić z powierzchniami, jest użycie ich jako strony <span class="notranslate">textures</span>, którą można manipulować, lub tworzenie strony <span class="notranslate">sprites</span> &quot;w locie&quot;, lub tworzenie złożonych nakładek. tak naprawdę zastosowania powierzchni są nieograniczone!</p>
   <p>Powierzchnie normalne są dość łatwe w użyciu, ale przy ich stosowaniu należy przestrzegać kilku podstawowych zasad:</p>
   <ul class="colour">
-    <li>Po pierwsze, należy zdać sobie sprawę, że powierzchnie<i>(z wyjątkiem</i> powierzchni aplikacji) są &quot;lotne&quot;. Oznacza to, że jeśli urządzenie lub okno straci fokus lub zostanie zminimalizowane (dobrym przykładem <strong>może</strong> być sytuacja, w której użytkownik przechodzi ALT +Tab do innego okna i z powrotem w systemie Windows lub na urządzeniu <span class="notranslate">Android</span>, gdy aplikacja straci fokus z powodu wywołania), powierzchnia <strong>może zostać zniszczona</strong>. Dzieje się tak dlatego, że jest ona przechowywana <em>tylko</em> w pamięci <span class="notranslate">texture</span> <a class="glossterm" data-glossterm="VRAM" href="#">(VRAM</a>) i może zostać nadpisana, gdy platforma docelowa potrzebuje tej pamięci do czegoś innego, co oznacza, że należy <i><b>zawsze</b></i> mieć przygotowany jakiś rodzaj kodu zabezpieczającego, zwykle z funkcją <a href="surface_exists.htm"><span class="inline">surface_exists()</span></a> funkcję.</li>
+    <li>Po pierwsze, należy zdać sobie sprawę, że powierzchnie<i>(z wyjątkiem</i> powierzchni aplikacji) są &quot;lotne&quot;. Oznacza to, że jeśli urządzenie lub okno straci fokus lub zostanie zminimalizowane (dobrym przykładem <strong>może</strong> być sytuacja, w której przechodzisz za pomocą kombinacji klawiszy ALT +Tab do innego okna i z powrotem w systemie Windows lub na urządzeniu <span class="notranslate">Android</span>, gdy aplikacja straci fokus z powodu wywołania), powierzchnia <strong>może zostać zniszczona</strong>. Dzieje się tak dlatego, że jest ona przechowywana <em>tylko</em> w pamięci <span class="notranslate">texture</span> <a class="glossterm" data-glossterm="VRAM" href="#">(VRAM</a>) i może zostać nadpisana, gdy platforma docelowa potrzebuje tej pamięci do czegoś innego, co oznacza, że należy <i><b>zawsze</b></i> mieć przygotowany jakiś rodzaj kodu zabezpieczającego, zwykle z funkcją <a href="surface_exists.htm"><span class="inline">surface_exists()</span></a> funkcję.</li>
   </ul>
-  <p class="note" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 4em"><strong>UWAGA</strong>: Wydaje się, że nie dzieje się tak w przypadku strony <span class="notranslate">sprites</span> lub innej wizualnej strony <span class="notranslate">assets</span> (ale w rzeczywistości dzieje się tak!), ponieważ są one również przechowywane w zwykłej pamięci (RAM), a po usunięciu ich z pamięci <span class="notranslate">texture</span> (VRAM) są natychmiast przywracane ze zwykłej pamięci, gdy gra odzyskuje ostrość.</p>
+  <p class="note" style="padding-top: 0.5em;padding-right: 1em;padding-bottom: 0.5em;padding-left: 4em"><span class="note">UWAGA</span><strong> </strong>Wydaje się, że nie dzieje się tak w przypadku strony <span class="notranslate">sprites</span> lub innych stron <span class="notranslate">assets</span> (ale w rzeczywistości tak jest!), ponieważ są one również przechowywane w zwykłej pamięci (RAM), a po usunięciu ich z pamięci <span class="notranslate">texture</span> (VRAM) są natychmiast przywracane ze zwykłej pamięci, gdy gra odzyskuje ostrość.</p>
   <ul class="colour">
-    <li>Po drugie, należy pamiętać, że powierzchnie mogą wymagać dużych ilości pamięci VRAM, dlatego należy starać się, aby były one jak najmniejsze. Zwykle starasz się, aby nie były większe niż rozmiar okna widoku lub wyświetlania.</li>
-    <li>Po trzecie, powierzchnie należy <b>tworzyć tylko w zdarzeniu draw</b>. Jeśli utworzysz powierzchnię w zdarzeniu tworzenia instancji, możesz potencjalnie uzyskać <i>ten sam</i> indeks co na stronie <span class="inline">application_surface</span>. Może to spowodować wiele problemów i zamieszania, ponieważ myślisz, że używasz własnej powierzchni, a tak naprawdę używasz bieżącego celu renderowania. Powinieneś także zawsze starać się ograniczyć <i>rysowanie</i> do powierzchni w zdarzeniu draw, ponieważ ze względu na zoptymalizowany sposób rysowania na ekranie w <span data-keyref="GameMaker Name">GameMakerze</span>, zaleca się, aby wszystkie funkcje rysowania były wykonywane w <i>zdarzeniu draw</i> - dotyczy to także czyszczenia powierzchni przy pierwszym jej utworzeniu, itp. Rysowanie na powierzchni poza zdarzeniem draw jest możliwe i może być nawet konieczne dla niektórych efektów, ale nie jest to sposób, w jaki <em>powinno</em> się to robić.</li>
-    <li>Po czwarte, podczas ręcznego rysowania na powierzchni, powierzchnia ta <i>zawsze</i> znajduje się w położeniu (0,0). Oznacza to, że może zajść potrzeba przekształcenia współrzędnych <em>bezwzględnych</em> na <em>względne</em> dla powierzchni. Na przykład, jeśli masz powierzchnię o rozmiarach kamery i chcesz narysować na niej coś, co jest aktualnie widoczne w kamerze, powinieneś odjąć współrzędne x i y widoku kamery od rzeczywistych współrzędnych x i y, aby uzyskać względną pozycję względem pozycji powierzchni (0,0). Kod wyglądałby więc następująco:</li>
+    <li>Po drugie, należy pamiętać, że powierzchnie mogą wymagać dużych ilości pamięci VRAM, dlatego należy starać się, aby były one jak najmniejsze. Zwykle starasz się, aby nie były one większe niż rozmiar okna widoku lub ekranu.</li>
+    <li>Po trzecie, powierzchnie należy <b>tworzyć tylko w zdarzeniu draw</b>. Jeśli utworzysz powierzchnię w zdarzeniu tworzenia instancji, możesz potencjalnie otrzymać <i>ten sam</i> indeks, co na stronie <span class="inline">application_surface</span>. Może to spowodować wiele problemów i zamieszania, ponieważ myślisz, że używasz własnej powierzchni, a tak naprawdę używasz bieżącego celu renderowania. Powinieneś także zawsze starać się ograniczyć <i>rysowanie</i> do powierzchni w zdarzeniu draw, ponieważ ze względu na zoptymalizowany sposób rysowania na ekranie w <span data-keyref="GameMaker Name">GameMakerze</span>, zaleca się, aby wszystkie funkcje rysowania były wykonywane w <i>zdarzeniu draw</i> - dotyczy to także czyszczenia powierzchni przy jej pierwszym utworzeniu, itd. Rysowanie na powierzchni poza zdarzeniem draw jest możliwe, a nawet może być konieczne dla niektórych efektów, ale nie jest to sposób, w jaki <em>powinno</em> się to robić.</li>
+    <li>Po czwarte, podczas ręcznego rysowania do powierzchni, powierzchnia <i>zawsze</i> znajduje się w położeniu (0,0). Oznacza to, że może zajść potrzeba przekształcenia współrzędnych <em>bezwzględnych</em> na <em>względne</em> dla powierzchni. Na przykład, jeśli masz powierzchnię o rozmiarach kamery i chcesz narysować na niej coś, co jest aktualnie widoczne w kamerze, powinieneś odjąć współrzędne x i y widoku kamery od rzeczywistych współrzędnych x i y, aby uzyskać względną pozycję względem pozycji powierzchni (0,0). Kod wyglądałby więc następująco:</li>
   </ul>
-  <p class="code" style="margin-top: 0px;margin-right: 50px;margin-bottom: 0px;margin-left: 100px">if view_current = 0<br>
-        {<br>
-        surface_set_target(surf);<br>
-        with (obj_Effect)<br>
-            {<br>
-            var _vx = camera_get_view_x(view_camera[1]);<br>
-            var _vy = camera_get_view_y(view_camera[1]);<br>
-            draw_sprite(sprite_index, image_index, x - _vx, y - _vy);<br>
-            }<br>
-        surface_reset_target();<br>
-        }<br>
-    else<br>
-        {<br>
-        draw_surface(surf, 0, 0);<br>
-        }</p>
+  <p class="code">if view_current = 0<br />
+    {<br />
+        surface_set_target(surf);<br />
+        with (obj_Effect)<br />
+        {<br />
+            var _vx = camera_get_view_x(view_camera[1]);<br />
+            var _vy = camera_get_view_y(view_camera[1]);<br />
+            draw_sprite(sprite_index, image_index, x - _vx, y - _vy);<br />
+        }<br />
+        surface_reset_target();<br />
+    }<br />
+    else<br />
+    {<br />
+        draw_surface(surf, 0, 0);<br />
+    }</p>
   <ul class="colour">
     <li>Na koniec warto zauważyć, że rysowanie na powierzchni będzie uwzględniało kolor <em>i</em> składową alfa każdego piksela, zarówno z samej powierzchni, jak i z tego, co jest na niej rysowane. Może to prowadzić do dość nieintuicyjnych wyników (na przykład narysowanie strony <span class="notranslate">sprite</span> o wartości 0,5 alfa na powierzchni o wartości 0 alfa da ostateczną wartość 0,25 alfa). Przyczyny tego zjawiska wyjaśniono na następnej stronie i zalecamy zapoznanie się z nią przed rozpoczęciem pracy z powierzchniami: <a href="../../../../Additional_Information/Guide_To_Using_Blendmodes.htm">Instrukcja korzystania z Blendmodes</a></li>
   </ul>
-  <p class="note"><strong>UWAGA</strong>: Nie dotyczy to powierzchni aplikacji, a jedynie powierzchni utworzonych przez użytkownika.</p>
+  <p class="note"><span class="note">UWAGA</span> Nie dotyczy to <a href="application_surface.htm">powierzchni aplikacji</a>, a jedynie <a href="application_surface.htm">powierzchni</a> utworzonych przez użytkownika.</p>
   <p>Podstawowe zastosowanie powierzchni jest następujące:</p>
   <ul class="colour">
     <li>Najpierw należy utworzyć powierzchnię i przypisać jej indeks do zmiennej.</li>
@@ -102,7 +102,7 @@
   <p> </p>
   <p>Jak wspomniano powyżej, <span data-keyref="GameMaker Name">GameMaker</span> nie renderuje większości rzeczy bezpośrednio na ekranie, lecz na <b>powierzchni aplikacji</b>. Jest to w istocie powierzchnia - taka sama jak każda inna, którą możesz stworzyć sam, używając funkcji powierzchni - i jako taka może być manipulowana, rysowana, wysyłana na <span class="notranslate">shaders</span>, itd. Zasadniczo wszystko, co normalnie można zrobić z utworzoną powierzchnią, można również zastosować do powierzchni aplikacji.</p>
   <p class="note"><b>UWAGA</b>: Jedyną rzeczą, której <b>nie można</b> zrobić z powierzchnią aplikacji, jest jej zwolnienie. Istnieje ona zawsze, choć wartość indeksu umożliwiająca dostęp do niej może się zmieniać.</p>
-  <p>Po uruchomieniu gry powierzchnia ta jest tworzona przy pierwszym wywołaniu <a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">zdarzenia draw</a> w każdym nowym oknie <span class="notranslate">room</span>, które zostanie wprowadzone, co oznacza, że do tego momentu nic nie jest rysowane. Można jednak uzyskać położenie powierzchni aplikacji i zmienić jej rozmiar w zdarzeniu <b>Create</b> lub dowolnym innym zdarzeniu bez otrzymywania żadnych błędów, a użyte wartości będą odpowiednie dla powierzchni w momencie jej tworzenia. Rzeczywisty adres <span class="notranslate">sequence</span> zdarzeń związanych z tworzeniem i rysowaniem powierzchni aplikacji jest następujący:</p>
+  <p>Po uruchomieniu gry powierzchnia ta jest tworzona przy pierwszym wywołaniu <a href="../../../../The_Asset_Editors/Object_Properties/Draw_Events.htm">zdarzenia draw</a> w każdym nowym oknie <span class="notranslate">room</span>, które zostanie wprowadzone, co oznacza, że do tego momentu nic nie jest rysowane. Jednak nadal można uzyskać położenie powierzchni aplikacji i zmienić jej rozmiar w zdarzeniu <b>Create</b> lub dowolnym innym zdarzeniu bez otrzymywania żadnych błędów, a użyte wartości będą odpowiednie dla powierzchni w momencie jej tworzenia. Rzeczywisty adres <span class="notranslate">sequence</span> zdarzeń związanych z tworzeniem i rysowaniem powierzchni aplikacji jest następujący:</p>
   <ul class="colour">
     <li>Wydarzenie przed losowaniem<br>
                --- &gt; <b>tworzona jest powierzchnia aplikacji (jeśli jeszcze nie istnieje) i ustawiany jest cel renderowania</b></li>
@@ -127,7 +127,7 @@
     <li><a href="application_surface.htm"><span class="notranslate">application_surface</span></a></li>
   </ul>
   <p> </p>
-  <p>Dostępnych jest także kilka specjalistycznych funkcji, które są przeznaczone <em>wyłącznie </em>do użycia na powierzchni aplikacji:</p>
+  <p>Dostępnych jest także kilka specjalistycznych funkcji, które są przeznaczone <em>wyłącznie </em>do użytku z powierzchnią aplikacji:</p>
   <ul class="colour">
     <li><a href="application_surface_enable.htm"><span class="notranslate">application_surface_enable</span></a></li>
     <li><a href="application_surface_is_enabled.htm"><span class="notranslate">application_surface_is_enabled</span></a></li>
@@ -144,7 +144,7 @@
         <div style="float:right">Następny: <a href="../Lighting/Lighting.htm">Oświetlenie</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
   </div>
   <!-- KEYWORDS
 Surfaces

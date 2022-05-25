@@ -16,10 +16,10 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>instanceof</h1>
-  <p>Tej funkcji można użyć, aby uzyskać nazwę <a href="../../GML_Overview/Structs.htm">funkcji konstruktora</a>, która została użyta do utworzenia strony <span class="notranslate">struct</span>. Strona <span class="notranslate">struct</span> powinna zostać utworzona przy użyciu <a href="../../GML_Overview/Structs.htm">funkcji</a> <a href="../../GML_Overview/Language_Features/new.htm"><span class="inline"></span></a> <a href="../../GML_Overview/Language_Features/new.htm"><span class="inline">new</span></a> wraz z samym konstruktorem. Podajesz zmienną z referencją <span class="notranslate">struct</span> do sprawdzenia, a funkcja zwróci albo <span class="notranslate">string</span> z nazwą funkcji, albo <span class="inline">undefined</span>.</p>
+  <p>Tej funkcji można użyć, aby uzyskać nazwę <a href="../../GML_Overview/Structs.htm">funkcji konstruktora</a>, która została użyta do utworzenia strony <span class="notranslate">struct</span>. Strona <span class="notranslate">struct</span> powinna zostać utworzona przy użyciu <a href="../../GML_Overview/Structs.htm">funkcji</a> <a href="../../GML_Overview/Language_Features/new.htm"><span class="inline"></span></a> <a href="../../GML_Overview/Language_Features/new.htm"><span class="inline">new</span></a> wraz z samym konstruktorem. Podajesz zmienną z referencją <span class="notranslate">struct</span> do sprawdzenia, a funkcja zwróci albo <span class="notranslate">string</span> z nazwą konstruktora, albo <span class="inline">undefined</span>.</p>
   <p>Zwróć uwagę, że jeśli przekażesz funkcji <span class="notranslate">struct</span> literal (tzn. <span class="notranslate">struct</span>, który został utworzony bez użycia funkcji konstruktora), to zwróci ona po prostu <span class="inline2">&quot;struct&quot;</span> <span class="notranslate">string</span> <span class="inline2"></span>.</p>
   <p>Funkcji tej można również użyć do sprawdzenia, czy odwołanie <span class="notranslate">struct</span> jest <strong><a class="glossterm" data-glossterm="słabe odniesienie" href="#">słabe odwołanie</a></strong> lub nie, w takim przypadku funkcja zwróci <span class="notranslate">string</span> <span class="inline2">&quot;weakref&quot;</span> zamiast nazwy funkcji, która utworzyła <span class="notranslate">struct</span>. Więcej informacji można znaleźć w funkcji <a href="../Garbage_Collection/weak_ref_create.htm"><span class="inline">weak_ref_create()</span></a>.</p>
-  <p>Nazwa konstruktora, która jest zwracana, może być różna w zależności od tego, gdzie funkcja konstruktora została utworzona. Jeśli został on utworzony wewnątrz <span class="notranslate">object</span>, to jego nazwa będzie zawierała adres <span class="notranslate">object</span> oraz zdarzenie, w którym został utworzony. Na przykład, konstruktor o nazwie <span class="inline2">test_constructor</span> utworzony w zdarzeniu Create <strong>obiektu1</strong> zostanie zwrócony jako <span class="inline2">&quot;test_constructor_gml_Object_Object1_Create_0&quot;.</span> Aby tego uniknąć, należy tworzyć konstruktory w zdarzeniach <a href="../../GML_Overview/Script_Functions.htm"><span class="notranslate">script</span></a>.</p>
+  <p>Zwrócona nazwa konstruktora będzie zawierać dodatkowy tekst, jeśli funkcja konstruktora nie została utworzona w <span class="notranslate">script</span>. Jeśli została utworzona wewnątrz <span class="notranslate">object</span>, jej nazwa będzie zawierać <span class="notranslate">object</span> oraz zdarzenie, w którym została utworzona. Na przykład, konstruktor o nazwie <span class="inline2">test_constructor</span> utworzony w zdarzeniu Create <strong>obiektu1</strong> zostanie zwrócony jako <span class="inline2">&quot;test_constructor_gml_Object_Object1_Create_0&quot;</span>. Aby tego uniknąć, należy tworzyć konstruktory w zdarzeniach <a href="../../GML_Overview/Script_Functions.htm"><span class="notranslate">script</span></a>.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">instanceof(struct_id);</p>
@@ -42,7 +42,7 @@
   <p class="code"><span data-keyref="Type_String"><a data-rhwidget="HyperlinkPopover" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span> or <span data-keyref="Type_Undefined"><a data-rhwidget="HyperlinkPopover" href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm">undefined</a></span></p>
   <p> </p>
   <h4>Przykład rozszerzony:</h4>
-  <p>W tym przykładzie musimy najpierw zdefiniować funkcję, która zostanie użyta jako konstruktor struktury:</p>
+  <p>W tym przykładzie musimy najpierw zdefiniować funkcję, która zostanie użyta jako konstruktor dla naszej strony <span class="notranslate">struct</span>. Poniższa funkcja jest zdefiniowana w elemencie <span class="notranslate">script</span>:</p>
   <p class="code">function init_struct(_a, _b, _c) constructor<br />
     {<br />
         a = _a;<br />
@@ -57,7 +57,7 @@
     {<br />
         show_debug_message(_name);<br />
     }</p>
-  <p>Spowoduje to wydrukowanie w dzienniku wyjścia adresu <span class="notranslate">string</span> <span class="inline2">&quot;init_struct&quot;</span>.</p>
+  <p>Spowoduje to wypisanie do dziennika wyjścia <span class="notranslate">string</span> <span class="inline2">&quot;init_struct&quot;</span>, czyli nazwy funkcji konstruktora zdefiniowanej na stronie <span class="notranslate">script</span>.</p>
   <p> </p>
   <p> </p>
   <div class="footer">

@@ -24,16 +24,16 @@
     "fileSize": 5683
   },
   "contents\\Additional_Information\\Error_Reporting.htm": {
-    "fileHash": "9F32F7FD20DED22DB24CD785645CB338",
-    "fileSize": 4092
+    "fileHash": "05C2CCA90780742F313F11C304E38ED4",
+    "fileSize": 4096
   },
   "contents\\Additional_Information\\Guide_To_Primitives_And_Vertex_Building.htm": {
     "fileHash": "9B98918545E745DF154B1C92053DFF52",
     "fileSize": 14032
   },
   "contents\\Additional_Information\\Guide_To_Using_Blendmodes.htm": {
-    "fileHash": "BDA8BC257BD5101EA213F84CE53701D6",
-    "fileSize": 23908
+    "fileHash": "777385E2A7E1E6535F0F44497EFCED85",
+    "fileSize": 23304
   },
   "contents\\Additional_Information\\Guide_To_Using_Buffers.htm": {
     "fileHash": "85BE6CE7F971E11B22637B7305905B74",
@@ -68,16 +68,16 @@
     "fileSize": 24802
   },
   "contents\\Additional_Information\\Errors\\Runner_Errors.htm": {
-    "fileHash": "3C9122118EB6C086494A8AA42D6A6715",
-    "fileSize": 28763
+    "fileHash": "E0CCEA5E3ABCE1903300326953121222",
+    "fileSize": 28839
   },
   "contents\\Additional_Information\\Errors\\Syntax_Errors.htm": {
     "fileHash": "59A02453EBC51579E43C710688C4C033",
     "fileSize": 33050
   },
   "contents\\Drag_And_Drop\\Drag_And_Drop_Index.htm": {
-    "fileHash": "5F6D30A760A8F60FCB54690FAB573708",
-    "fileSize": 5354
+    "fileHash": "41223523CB8391916232E069D608E6C4",
+    "fileSize": 2202
   },
   "contents\\Drag_And_Drop\\Drag_And_Drop_Overview\\Action_Block_Functions.htm": {
     "fileHash": "4D08D7663F580015E0B3E4957E90C8FF",
@@ -104,8 +104,8 @@
     "fileSize": 10319
   },
   "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\DnD_Reference.htm": {
-    "fileHash": "78023E121FAF59DE6A7D2E560C27D46F",
-    "fileSize": 4456
+    "fileHash": "3C3984E93DABF4BD6D1934A61DA06DB0",
+    "fileSize": 4567
   },
   "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Audio\\Audio_Actions.htm": {
     "fileHash": "969306D9B6394216C0429CCD346DE75A",
@@ -268,7 +268,7 @@
     "fileSize": 7815
   },
   "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Declare_A_New_Function.htm": {
-    "fileHash": "DC3387D77E960D067998161AD150AB72",
+    "fileHash": "62B83547C69F5ED0906FF0D7F360B995",
     "fileSize": 7540
   },
   "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Common\\Declare_Temporary_Variable.htm": {
@@ -928,8 +928,8 @@
     "fileSize": 3949
   },
   "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Particle_Actions.htm": {
-    "fileHash": "E7B67698F85F1B4EBF3D6B0F325493F0",
-    "fileSize": 16256
+    "fileHash": "7707146DE92B366E055588710D3207ED",
+    "fileSize": 16221
   },
   "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Particles\\Pause_Particle_System.htm": {
     "fileHash": "15DE66227E6D4F96DFC9491F149E3BE9",
@@ -1196,8 +1196,8 @@
     "fileSize": 3887
   },
   "contents\\GameMaker_Language\\GameMaker_Language_Index.htm": {
-    "fileHash": "F4E3E97B72D7CB9173B25BF0D230F044",
-    "fileSize": 5733
+    "fileHash": "3710A472CAA90EF0716E95E7496F4201",
+    "fileSize": 2178
   },
   "contents\\GameMaker_Language\\GML_Overview\\Accessors.htm": {
     "fileHash": "5E70BC478F434933410F2586C5096AEC",
@@ -1220,20 +1220,20 @@
     "fileSize": 5526
   },
   "contents\\GameMaker_Language\\GML_Overview\\Data_Types.htm": {
-    "fileHash": "9A8302B6AD664E7948A5A71F8A15B9F9",
-    "fileSize": 17157
+    "fileHash": "18DAF0176F97E74F95932DF3D9B5F0E3",
+    "fileSize": 18121
   },
   "contents\\GameMaker_Language\\GML_Overview\\Evaluation_Order.htm": {
     "fileHash": "B5BE340EE1B52AB0D486BED01986C57A",
     "fileSize": 4260
   },
   "contents\\GameMaker_Language\\GML_Overview\\Expressions_And_Operators.htm": {
-    "fileHash": "232972C8C443E5DBE5B5C8D916E42F94",
+    "fileHash": "E66B069BA0928058D9CEBB8FD0743299",
     "fileSize": 16723
   },
   "contents\\GameMaker_Language\\GML_Overview\\GML_Overview.htm": {
-    "fileHash": "F0FEEF1E24F98154795DF557F5C76262",
-    "fileSize": 4304
+    "fileHash": "12E101990EDF1E1E7CF89A3F6557E938",
+    "fileSize": 4843
   },
   "contents\\GameMaker_Language\\GML_Overview\\Instance_Keywords.htm": {
     "fileHash": "12C6398A7BD4321FBDAA0619225E0FAA",
@@ -1244,20 +1244,20 @@
     "fileSize": 2684
   },
   "contents\\GameMaker_Language\\GML_Overview\\Method_Variables.htm": {
-    "fileHash": "A2511DF94B85FC8911AE5D163F3C87F3",
-    "fileSize": 7918
+    "fileHash": "C76B04F2FB351A2106198D88FB622873",
+    "fileSize": 8459
   },
   "contents\\GameMaker_Language\\GML_Overview\\Runtime_Functions.htm": {
-    "fileHash": "DDD0D5340F01CA7CE7DA6AAF2471E03E",
-    "fileSize": 6006
+    "fileHash": "8680431EFFF1F95EB6F096597DF6059A",
+    "fileSize": 6015
   },
   "contents\\GameMaker_Language\\GML_Overview\\Script_Functions.htm": {
-    "fileHash": "951357FA80D5F6661FFD82292384ED8A",
-    "fileSize": 18238
+    "fileHash": "C737DA559D539F49834F84B323F38BF1",
+    "fileSize": 18562
   },
   "contents\\GameMaker_Language\\GML_Overview\\Structs.htm": {
-    "fileHash": "E3265CCA4EBFB2343F1542FDE57358C2",
-    "fileSize": 17926
+    "fileHash": "1D054CA2C8346A139A5734014B55032E",
+    "fileSize": 17938
   },
   "contents\\GameMaker_Language\\GML_Overview\\Struct_Forbidden_Variables.htm": {
     "fileHash": "33D2262F92E712588FF238A3A3117FE8",
@@ -1304,8 +1304,8 @@
     "fileSize": 9837
   },
   "contents\\GameMaker_Language\\GML_Overview\\Language_Features\\new.htm": {
-    "fileHash": "A24A4F00D1F3F1A9DB5A29099CC17240",
-    "fileSize": 3441
+    "fileHash": "9AF2DC3803957FEB8ECF9E90A587359F",
+    "fileSize": 3450
   },
   "contents\\GameMaker_Language\\GML_Overview\\Language_Features\\repeat.htm": {
     "fileHash": "DF9BF35A22899F0B1DBA9813D1D38975",
@@ -1376,8 +1376,8 @@
     "fileSize": 2511
   },
   "contents\\GameMaker_Language\\GML_Reference\\GML_Reference.htm": {
-    "fileHash": "B7B1845BE293904622B303D42CB582F5",
-    "fileSize": 3917
+    "fileHash": "786AC103C0E6EE5F28D74403A9885662",
+    "fileSize": 3982
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Asset_Management.htm": {
     "fileHash": "063E47001FEAA4E5EBAC545085719DEF",
@@ -1884,8 +1884,8 @@
     "fileSize": 2175
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Fonts\\font_get_texture.htm": {
-    "fileHash": "6AFAA8F91458084D0304DACE03C0F16F",
-    "fileSize": 2622
+    "fileHash": "8EA7B39ED3507EF27A959227736B159A",
+    "fileSize": 2926
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Fonts\\font_get_uvs.htm": {
     "fileHash": "5CBF745AF013431C393DD5E7DA7B826E",
@@ -1936,12 +1936,12 @@
     "fileSize": 2534
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Instances\\instance_create_depth.htm": {
-    "fileHash": "BD9AC7B5D0F84A07853F49DEB359EA7E",
-    "fileSize": 4543
+    "fileHash": "8213DA96173CEF249BBA74FE9FCED4A8",
+    "fileSize": 7618
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Instances\\instance_create_layer.htm": {
-    "fileHash": "569C0123157A5D409ECE78D6B1889B0F",
-    "fileSize": 4281
+    "fileHash": "3CE8190F047319CE25B0956C5D47BC4D",
+    "fileSize": 7493
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Instances\\instance_destroy.htm": {
     "fileHash": "0801ABD77DC74BDB5FB0CAA667FDB2AB",
@@ -2628,8 +2628,8 @@
     "fileSize": 4100
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Rooms\\Filter_Effect_Layers\\fx_get_parameters.htm": {
-    "fileHash": "93F8554652912808F00A7E17A9DF64F7",
-    "fileSize": 4852
+    "fileHash": "2A060AEB0D2365122408A098A7808077",
+    "fileSize": 4645
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Rooms\\Filter_Effect_Layers\\fx_get_parameter_names.htm": {
     "fileHash": "413BEBD21C5ED0A6D375335751A0B9F5",
@@ -3080,8 +3080,8 @@
     "fileSize": 3299
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Rooms\\Tile_Map_Layers\\tilemap_get_tileset.htm": {
-    "fileHash": "4330BFDE5CDC2FF3725EFBBE1869E940",
-    "fileSize": 3019
+    "fileHash": "85679BDCE7419C42E06997565C1CB5C3",
+    "fileSize": 3278
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Rooms\\Tile_Map_Layers\\tilemap_get_tile_height.htm": {
     "fileHash": "36A830B5812F7426D572D74324BEB290",
@@ -3128,8 +3128,8 @@
     "fileSize": 2978
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Rooms\\Tile_Map_Layers\\tilemap_tileset.htm": {
-    "fileHash": "BF42036DB03841BD587C1BB0947D9C91",
-    "fileSize": 3126
+    "fileHash": "0A660393D7C8D7F86458CCDDBDF17D95",
+    "fileSize": 3382
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Rooms\\Tile_Map_Layers\\tilemap_x.htm": {
     "fileHash": "6D19097A551C474DE7B5F355B79935E9",
@@ -3188,8 +3188,8 @@
     "fileSize": 1872
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Scripts\\script_execute.htm": {
-    "fileHash": "326F1803D621D794EE16C17DC0773B19",
-    "fileSize": 4235
+    "fileHash": "3DA62E32D45F2CA01960D4FBF2972985",
+    "fileSize": 4605
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Scripts\\script_execute_ext.htm": {
     "fileHash": "19FB017295A74B28055E0EAF94CE3483",
@@ -3584,8 +3584,8 @@
     "fileSize": 4907
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Sprites\\Sprite_Information\\sprite_get_texture.htm": {
-    "fileHash": "0621F7AE14AC33F871865B53EC36C47A",
-    "fileSize": 3543
+    "fileHash": "061F03565D6C2A8672B2426A613A55B0",
+    "fileSize": 3581
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Sprites\\Sprite_Information\\sprite_get_tpe.htm": {
     "fileHash": "8CD26CD1CFEF97F939986BAB14DC1587",
@@ -3792,12 +3792,12 @@
     "fileSize": 4954
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Tilsets\\tileset_get_name.htm": {
-    "fileHash": "353566312B60E1FFB5E31B1A4B327767",
-    "fileSize": 2959
+    "fileHash": "2793589FEA84DEB6F50F1E93480F3A6A",
+    "fileSize": 3172
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Tilsets\\tileset_get_texture.htm": {
-    "fileHash": "C8EA788FA6CF4E4F477EB5CA3FE6AAB3",
-    "fileSize": 2993
+    "fileHash": "EF9E8E19B4383C2DE3F914BD30174999",
+    "fileSize": 3301
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asset_Management\\Tilsets\\tileset_get_uvs.htm": {
     "fileHash": "1DA6FACCA441F26340FA75F4818AB2A2",
@@ -3888,8 +3888,8 @@
     "fileSize": 6685
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asynchronous_Functions\\Dialog\\Dialog.htm": {
-    "fileHash": "A545B7EA1C9D4893A381803EBFC8CE70",
-    "fileSize": 3124
+    "fileHash": "4D5483537E30A90C812E3963B0D67464",
+    "fileSize": 3147
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asynchronous_Functions\\Dialog\\get_integer_async.htm": {
     "fileHash": "B0FC0FD7254895D7A818740DF1FF0433",
@@ -3940,8 +3940,8 @@
     "fileSize": 7264
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asynchronous_Functions\\HTTP\\http_request.htm": {
-    "fileHash": "7FEA53A80C402321D8621F29C90CB6F0",
-    "fileSize": 7689
+    "fileHash": "B6A7443EC85DDD51F9E14B9E06CEB115",
+    "fileSize": 8722
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asynchronous_Functions\\HTTP\\http_set_request_crossorigin.htm": {
     "fileHash": "BA2EF21F642EC16C90B9156202535ADD",
@@ -3964,8 +3964,8 @@
     "fileSize": 5700
   },
   "contents\\GameMaker_Language\\GML_Reference\\Asynchronous_Functions\\Push_Notifications\\Push_Notifications.htm": {
-    "fileHash": "996F65F5E4DC4BEA13F29FD64B33895E",
-    "fileSize": 6916
+    "fileHash": "063FE9ECD90B7E69D3EECFC69CD54665",
+    "fileSize": 1973
   },
   "contents\\GameMaker_Language\\GML_Reference\\Buffers\\Buffers.htm": {
     "fileHash": "0B0527486CB2829EF6AB20C2D87D6EB1",
@@ -4088,8 +4088,8 @@
     "fileSize": 3620
   },
   "contents\\GameMaker_Language\\GML_Reference\\Buffers\\buffer_read.htm": {
-    "fileHash": "79DC2324527EF7D9BAFAE6820B4F2C83",
-    "fileSize": 5800
+    "fileHash": "4624FA10941BBCCBF950DE28EAD064FB",
+    "fileSize": 6372
   },
   "contents\\GameMaker_Language\\GML_Reference\\Buffers\\buffer_resize.htm": {
     "fileHash": "7B9387E8F1C23476AA78A8B5510F53F3",
@@ -4180,12 +4180,12 @@
     "fileSize": 1948
   },
   "contents\\GameMaker_Language\\GML_Reference\\Cameras_And_Display\\display_mouse_get_x.htm": {
-    "fileHash": "805BE9ACD2B91EFA84C3372C966CCE70",
-    "fileSize": 2441
+    "fileHash": "C68884ED23D2546E55E70CB17CA3CAAC",
+    "fileSize": 2557
   },
   "contents\\GameMaker_Language\\GML_Reference\\Cameras_And_Display\\display_mouse_get_y.htm": {
-    "fileHash": "6E60CEB15C3220B2630C1DF7B50FC06D",
-    "fileSize": 2436
+    "fileHash": "2F47F33A69BC9E16F69F54031BE9FFBB",
+    "fileSize": 2552
   },
   "contents\\GameMaker_Language\\GML_Reference\\Cameras_And_Display\\display_mouse_set.htm": {
     "fileHash": "73261DE6BDEE687E1B1EBAB5804FD5BB",
@@ -4464,8 +4464,8 @@
     "fileSize": 3004
   },
   "contents\\GameMaker_Language\\GML_Reference\\Cameras_And_Display\\The_Game_WIndow\\The_Game_Window.htm": {
-    "fileHash": "C15479E534D03998AF64FA813C48CCF4",
-    "fileSize": 5544
+    "fileHash": "350B864919531D49D9F4BCDC9DD866E0",
+    "fileSize": 5546
   },
   "contents\\GameMaker_Language\\GML_Reference\\Cameras_And_Display\\The_Game_WIndow\\window_center.htm": {
     "fileHash": "2313E91B0A21FF34F65ACF46C2472254",
@@ -4964,8 +4964,8 @@
     "fileSize": 2261
   },
   "contents\\GameMaker_Language\\GML_Reference\\Data_Structures\\DS_Maps\\ds_map_values_to_array.htm": {
-    "fileHash": "DDD597E9387E36E22B3F8D372AE4F685",
-    "fileSize": 3637
+    "fileHash": "5E0FE98B00DBEE2439F98B414E5F6BB6",
+    "fileSize": 4029
   },
   "contents\\GameMaker_Language\\GML_Reference\\Data_Structures\\DS_Maps\\ds_map_write.htm": {
     "fileHash": "0ED6707CE63AF18585F5322741D9E1B8",
@@ -5140,8 +5140,8 @@
     "fileSize": 4183
   },
   "contents\\GameMaker_Language\\GML_Reference\\Debugging\\debug_event.htm": {
-    "fileHash": "FF968C0908F8A014DFF0D68093E37A10",
-    "fileSize": 3508
+    "fileHash": "D6742CA6B9BC9FC5C2777EE08D2ABBA4",
+    "fileSize": 3986
   },
   "contents\\GameMaker_Language\\GML_Reference\\Debugging\\debug_get_callstack.htm": {
     "fileHash": "044BC2437D75B5AF60F0781C7544604B",
@@ -5356,8 +5356,8 @@
     "fileSize": 3785
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Colour_And_Alpha\\draw_set_colour.htm": {
-    "fileHash": "CBB4424CF718F13A9778498898223AD1",
-    "fileSize": 2558
+    "fileHash": "FA443AA9FD3513B44FDF28397ACC6860",
+    "fileSize": 2803
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Colour_And_Alpha\\make_colour_hsv.htm": {
     "fileHash": "67E8E7AEBDD28FBA323701F6DC551C04",
@@ -5432,12 +5432,12 @@
     "fileSize": 2015
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\GPU_Control\\gpu_get_texfilter.htm": {
-    "fileHash": "99B231459C94719B149614B93D00DAD4",
-    "fileSize": 2374
+    "fileHash": "0F7D7571CD126B306415A6E19C84DA11",
+    "fileSize": 2513
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\GPU_Control\\gpu_get_texfilter_ext.htm": {
-    "fileHash": "2B471EAD2E269639761F95FBB24B08CD",
-    "fileSize": 2789
+    "fileHash": "9EA455E7EEDAFF97AA4A94062CB68267",
+    "fileSize": 3111
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\GPU_Control\\gpu_get_texrepeat.htm": {
     "fileHash": "2F31712C5DD6D2414D3FA83BE3E06814",
@@ -5500,8 +5500,8 @@
     "fileSize": 3696
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\GPU_Control\\gpu_set_fog.htm": {
-    "fileHash": "A1CCFB6926063C120BF8D0198E6E86A1",
-    "fileSize": 3773
+    "fileHash": "4317FC30CA421A048FDA5F1D558560A8",
+    "fileSize": 4539
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\GPU_Control\\gpu_set_state.htm": {
     "fileHash": "337C3204E7E539BC1600EF3AAD533951",
@@ -6072,8 +6072,8 @@
     "fileSize": 2569
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Sprites_And_Tiles\\draw_sprite.htm": {
-    "fileHash": "D483B922BB9CB6BCBA75016403227B07",
-    "fileSize": 4673
+    "fileHash": "253DE977C504C3785B3F056DA4D55912",
+    "fileSize": 5105
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Sprites_And_Tiles\\draw_sprite_ext.htm": {
     "fileHash": "6F72B1361F7A0FB60C6D1D1E30382738",
@@ -6180,8 +6180,8 @@
     "fileSize": 3775
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Surfaces\\Surfaces.htm": {
-    "fileHash": "07ADA7DF3AC4B4B12B26FB44920A5573",
-    "fileSize": 14879
+    "fileHash": "87647059EDD70402D4FD0016D50554CC",
+    "fileSize": 14821
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Surfaces\\surface_copy.htm": {
     "fileHash": "3AD18904193B77E302E33FBFC50ACCD3",
@@ -6236,8 +6236,8 @@
     "fileSize": 2686
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Surfaces\\surface_get_texture.htm": {
-    "fileHash": "569E656F0AC90ABF36DB7C1A201E8D00",
-    "fileSize": 3133
+    "fileHash": "37BA9BADF2C0F0923B1A4609F866C904",
+    "fileSize": 3497
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Surfaces\\surface_get_width.htm": {
     "fileHash": "7085EEF0715E1B59919D378CDDEADF78",
@@ -6344,8 +6344,8 @@
     "fileSize": 2929
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Textures\\texturegroup_get_textures.htm": {
-    "fileHash": "B8E6F7CF93AAA364690729289F84AC7B",
-    "fileSize": 2998
+    "fileHash": "F2B0273510BFDEF9677C6B7D5AA3F632",
+    "fileSize": 3393
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Textures\\texturegroup_get_tilesets.htm": {
     "fileHash": "DF971C751F3A831014062ADD1D64EFDF",
@@ -6376,8 +6376,8 @@
     "fileSize": 2588
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Textures\\texture_get_uvs.htm": {
-    "fileHash": "29B43FEB0D9BF6956B912EFC79C58736",
-    "fileSize": 4132
+    "fileHash": "2FB0A534399EA066B01F31FB2F9B7C30",
+    "fileSize": 4213
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Textures\\texture_get_width.htm": {
     "fileHash": "80AF4C0FCDB81AEC411CEAA03AD5AB0D",
@@ -6416,8 +6416,8 @@
     "fileSize": 2951
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Videos\\video_set_volume.htm": {
-    "fileHash": "C57A103522E4F550207D3F6577AD3B25",
-    "fileSize": 2927
+    "fileHash": "8FD6233F7681106C5BF62A20CECDB03C",
+    "fileSize": 3140
   },
   "contents\\GameMaker_Language\\GML_Reference\\File_Handling\\File_Handling.htm": {
     "fileHash": "81D20CC0B5830F20387CA1BEDC1B66B1",
@@ -6624,8 +6624,8 @@
     "fileSize": 4232
   },
   "contents\\GameMaker_Language\\GML_Reference\\File_Handling\\Ini_Files\\ini_close.htm": {
-    "fileHash": "5D4E694060517ED635128F47F6F0FF61",
-    "fileSize": 2716
+    "fileHash": "E0108215515A0AD00B2A1EE2CE0B86C9",
+    "fileSize": 2811
   },
   "contents\\GameMaker_Language\\GML_Reference\\File_Handling\\Ini_Files\\Ini_Files.htm": {
     "fileHash": "CF175AD67A369B61C51BF01FC47CAAC5",
@@ -6816,8 +6816,8 @@
     "fileSize": 2321
   },
   "contents\\GameMaker_Language\\GML_Reference\\Game_Input\\GamePad_Input\\gamepad_button_value.htm": {
-    "fileHash": "690B9506981F90DF7655144F7D1A22DD",
-    "fileSize": 3081
+    "fileHash": "D9B312CAF64B2B781DDDADFC04CB4DE5",
+    "fileSize": 3421
   },
   "contents\\GameMaker_Language\\GML_Reference\\Game_Input\\GamePad_Input\\gamepad_get_axis_deadzone.htm": {
     "fileHash": "EEBF2B3330AD407EBEEA84203DA02483",
@@ -6924,7 +6924,7 @@
     "fileSize": 2336
   },
   "contents\\GameMaker_Language\\GML_Reference\\Game_Input\\Gesture_Input\\gesture_get_double_tap_time.htm": {
-    "fileHash": "692F05993F392CE4F425E2F94BB40460",
+    "fileHash": "E12915B4E9CB3CB8911C05563BBB3174",
     "fileSize": 2385
   },
   "contents\\GameMaker_Language\\GML_Reference\\Game_Input\\Gesture_Input\\gesture_get_drag_distance.htm": {
@@ -7280,8 +7280,8 @@
     "fileSize": 3417
   },
   "contents\\GameMaker_Language\\GML_Reference\\Maths_And_Numbers\\Maths_And_Numbers.htm": {
-    "fileHash": "65B332BF51A33DC07F007900A468C2EC",
-    "fileSize": 2902
+    "fileHash": "9E9A906ADA309E8B8FFFE63EEE3A420E",
+    "fileSize": 2938
   },
   "contents\\GameMaker_Language\\GML_Reference\\Maths_And_Numbers\\Angles_And_Distance\\Angles_And_Distance.htm": {
     "fileHash": "ACF4A57B64921C1BD153F3EE1C80B066",
@@ -7432,8 +7432,8 @@
     "fileSize": 1838
   },
   "contents\\GameMaker_Language\\GML_Reference\\Maths_And_Numbers\\Date_And_Time\\Date_And_Time.htm": {
-    "fileHash": "992A758DA2931DEB71C11B4779F7880E",
-    "fileSize": 5703
+    "fileHash": "C58A14E537B87BA763D27C7D098C00EE",
+    "fileSize": 5854
   },
   "contents\\GameMaker_Language\\GML_Reference\\Maths_And_Numbers\\Date_And_Time\\date_compare_date.htm": {
     "fileHash": "41C4955BD2B9216FB8B1967484FB2A18",
@@ -8060,16 +8060,16 @@
     "fileSize": 5987
   },
   "contents\\GameMaker_Language\\GML_Reference\\Networking\\network_connect.htm": {
-    "fileHash": "9C02ECCD16107B5AAAFBDF1FB1DBEA25",
-    "fileSize": 3714
+    "fileHash": "5E7B688EBFC6D1FB6A014833812A1FFC",
+    "fileSize": 4534
   },
   "contents\\GameMaker_Language\\GML_Reference\\Networking\\network_connect_async.htm": {
     "fileHash": "1AAD88CDDC8C38C951CF7DB9E2DDBADC",
     "fileSize": 3511
   },
   "contents\\GameMaker_Language\\GML_Reference\\Networking\\network_connect_raw.htm": {
-    "fileHash": "2231BF80E3D8A6051CEE2035C6B14D4E",
-    "fileSize": 3725
+    "fileHash": "6BB9EC94E877C71DF302CF3D5ECBEE89",
+    "fileSize": 4549
   },
   "contents\\GameMaker_Language\\GML_Reference\\Networking\\network_connect_raw_async.htm": {
     "fileHash": "2057AB0CA3F9571C46B5B94EE982E6DF",
@@ -8084,8 +8084,8 @@
     "fileSize": 4225
   },
   "contents\\GameMaker_Language\\GML_Reference\\Networking\\network_create_socket.htm": {
-    "fileHash": "DF361E378287378580DFD4129E09665B",
-    "fileSize": 3739
+    "fileHash": "3A53B2E1C28B23E9BA47FC0297537221",
+    "fileSize": 3806
   },
   "contents\\GameMaker_Language\\GML_Reference\\Networking\\network_create_socket_ext.htm": {
     "fileHash": "3220C998771D9F8DB8DD7D3CCFE4AD04",
@@ -8780,16 +8780,16 @@
     "fileSize": 2236
   },
   "contents\\GameMaker_Language\\GML_Reference\\Strings\\clipboard_get_text.htm": {
-    "fileHash": "359DB63DB7FC6083692F643B6D0A673D",
-    "fileSize": 2214
+    "fileHash": "6608F7C1364026EC2E4FAF32E3405800",
+    "fileSize": 2342
   },
   "contents\\GameMaker_Language\\GML_Reference\\Strings\\clipboard_has_text.htm": {
-    "fileHash": "2D301B12C67061DBEAF65BA1C29CF989",
-    "fileSize": 2214
+    "fileHash": "A4E0C244E013FD58C4971FA3ACD5D20D",
+    "fileSize": 2350
   },
   "contents\\GameMaker_Language\\GML_Reference\\Strings\\clipboard_set_text.htm": {
-    "fileHash": "0D16FF09DDBAD2981AE4696D997FFED5",
-    "fileSize": 2488
+    "fileHash": "41B2D8579AEDDCADF566203318400C11",
+    "fileSize": 2677
   },
   "contents\\GameMaker_Language\\GML_Reference\\Strings\\ord.htm": {
     "fileHash": "18412C9A3B281CF228727EA1E999AF6F",
@@ -8804,8 +8804,8 @@
     "fileSize": 2859
   },
   "contents\\GameMaker_Language\\GML_Reference\\Strings\\Strings.htm": {
-    "fileHash": "F51016BBCAF09891A71BE0769CA84BF2",
-    "fileSize": 9922
+    "fileHash": "68716719A34FF561530DFCDE09EF853D",
+    "fileSize": 9903
   },
   "contents\\GameMaker_Language\\GML_Reference\\Strings\\string_byte_at.htm": {
     "fileHash": "BC0FE5FADD727115D5FB06E803053930",
@@ -9068,8 +9068,8 @@
     "fileSize": 4744
   },
   "contents\\GameMaker_Language\\GML_Reference\\UWP_And_XBox_Live\\Stats_And_Leaderboards\\xboxlive_stats_get_leaderboard.htm": {
-    "fileHash": "1CC5D028677E10E01F471E9C9900914D",
-    "fileSize": 8310
+    "fileHash": "561CB46D0C936B34A266EA234EA76B6D",
+    "fileSize": 8916
   },
   "contents\\GameMaker_Language\\GML_Reference\\UWP_And_XBox_Live\\Stats_And_Leaderboards\\xboxlive_stats_get_social_leaderboard.htm": {
     "fileHash": "7FE73630ED9EA69873D9720505B2EAF3",
@@ -9252,16 +9252,16 @@
     "fileSize": 3003
   },
   "contents\\GameMaker_Language\\GML_Reference\\Variable_Functions\\array_sort.htm": {
-    "fileHash": "593FE86718EBEE41D687D99FDCA93028",
-    "fileSize": 6449
+    "fileHash": "227055D47F4988667D555718288C2CED",
+    "fileSize": 7278
   },
   "contents\\GameMaker_Language\\GML_Reference\\Variable_Functions\\bool.htm": {
     "fileHash": "736E0747904EB38E9DEE432580211BE5",
     "fileSize": 2274
   },
   "contents\\GameMaker_Language\\GML_Reference\\Variable_Functions\\instanceof.htm": {
-    "fileHash": "D5D9A1648AEAF15741661BFBB843B2B8",
-    "fileSize": 5064
+    "fileHash": "573951DD0A3AD9AD6131634D60B45B20",
+    "fileSize": 5197
   },
   "contents\\GameMaker_Language\\GML_Reference\\Variable_Functions\\int64.htm": {
     "fileHash": "55BA477697C9E0CBA0B86863F9B30C82",
@@ -9356,8 +9356,8 @@
     "fileSize": 5897
   },
   "contents\\GameMaker_Language\\GML_Reference\\Variable_Functions\\variable_global_exists.htm": {
-    "fileHash": "C12ECD1A563B85FB71C4A057043FE4C9",
-    "fileSize": 2643
+    "fileHash": "BE3491598F67740FEC8770AEAF5CAB62",
+    "fileSize": 2855
   },
   "contents\\GameMaker_Language\\GML_Reference\\Variable_Functions\\variable_global_get.htm": {
     "fileHash": "20F5F793AA810BA75A530DB768C5E125",
@@ -9368,8 +9368,8 @@
     "fileSize": 2799
   },
   "contents\\GameMaker_Language\\GML_Reference\\Variable_Functions\\variable_instance_exists.htm": {
-    "fileHash": "18AA4EC4E435A9F0E5EB78C1D6877E9F",
-    "fileSize": 3324
+    "fileHash": "0CC9AD1607AF205AE420423E769FB6B1",
+    "fileSize": 3629
   },
   "contents\\GameMaker_Language\\GML_Reference\\Variable_Functions\\variable_instance_get.htm": {
     "fileHash": "48A34556951D71D3A1623D2133AB2E61",
@@ -9384,8 +9384,8 @@
     "fileSize": 3517
   },
   "contents\\GameMaker_Language\\GML_Reference\\Variable_Functions\\variable_struct_exists.htm": {
-    "fileHash": "215D9379D0422C75ABEB11245AF26AC1",
-    "fileSize": 2842
+    "fileHash": "3FC071E02005EF8A166AAF08F4E599E2",
+    "fileSize": 3157
   },
   "contents\\GameMaker_Language\\GML_Reference\\Variable_Functions\\variable_struct_get.htm": {
     "fileHash": "49211480C9D9D567BFDDB13B0FED5B12",
@@ -9400,8 +9400,8 @@
     "fileSize": 2554
   },
   "contents\\GameMaker_Language\\GML_Reference\\Variable_Functions\\variable_struct_remove.htm": {
-    "fileHash": "3E6B3F6478E6E09EA027AA69D9E2DDBA",
-    "fileSize": 2599
+    "fileHash": "F6DA50F5EF156326B33A4CE20ED67C45",
+    "fileSize": 2859
   },
   "contents\\GameMaker_Language\\GML_Reference\\Variable_Functions\\variable_struct_set.htm": {
     "fileHash": "1EC581A92D2FCC9A6B992EF756C4530D",
@@ -9560,8 +9560,8 @@
     "fileSize": 16764
   },
   "contents\\IDE_Tools\\The_Inspector.htm": {
-    "fileHash": "D9A559550CC8CF6E0FAB4E9323337E68",
-    "fileSize": 5096
+    "fileHash": "2367AD42935FA27E1783DADA71A7DEC5",
+    "fileSize": 5739
   },
   "contents\\IDE_Tools\\The_Micro_Web_Server.htm": {
     "fileHash": "34663EAF5B125A6BC732606B8CEE68BB",
@@ -9604,8 +9604,8 @@
     "fileSize": 15261
   },
   "contents\\Introduction\\Compiling.htm": {
-    "fileHash": "C76C6FCCB9ACDEF75FE4BF1F2B8ED517",
-    "fileSize": 21278
+    "fileHash": "FA41D04D2EBC83D86626DFFB8E01A3B6",
+    "fileSize": 21603
   },
   "contents\\Introduction\\Debugging.htm": {
     "fileHash": "CFDD9B276AD3B1D2B4A26A11F6BA8E20",
@@ -9624,8 +9624,8 @@
     "fileSize": 3075
   },
   "contents\\Introduction\\The_Asset_Browser.htm": {
-    "fileHash": "4CFD2496A16761B59CC5BB8E80A5AD71",
-    "fileSize": 55197
+    "fileHash": "8534080ED5EC7701C1DAC4552CDD21C6",
+    "fileSize": 54745
   },
   "contents\\Introduction\\The_Marketplace.htm": {
     "fileHash": "5F94C85AB6ADA5D25B180A563CF9869E",
@@ -9664,8 +9664,8 @@
     "fileSize": 10233
   },
   "contents\\Introduction\\Marketplace\\Marketplace_Style_Guide.htm": {
-    "fileHash": "19FD053A349DBAF4FBDB23CF994655DA",
-    "fileSize": 13889
+    "fileHash": "624E2CF6D05A6B8C04926D229B159B7A",
+    "fileSize": 13721
   },
   "contents\\Introduction\\Marketplace\\Purchasing_An_Asset.htm": {
     "fileHash": "6B796AB27E8643F1A800BBCF33EEEA06",
@@ -9696,8 +9696,8 @@
     "fileSize": 35153
   },
   "contents\\Quick_Start_Guide\\Movement_And_Controls.htm": {
-    "fileHash": "B4CBBEB4D8463C2AFC47A71986B5277E",
-    "fileSize": 26703
+    "fileHash": "449C009365045006C192C4B90B331CB4",
+    "fileSize": 26712
   },
   "contents\\Quick_Start_Guide\\Objects_And_Instances.htm": {
     "fileHash": "92DA00D54DE7B3A68E8386CDFC533A2C",
@@ -9740,12 +9740,12 @@
     "fileSize": 7176
   },
   "contents\\Settings\\Game_Options.htm": {
-    "fileHash": "5358F6D57067F5523BE4418602F25352",
-    "fileSize": 8847
+    "fileHash": "BFCFD3F9AB6AC6B4CF9BCB5FA1547027",
+    "fileSize": 8896
   },
   "contents\\Settings\\Game_Settings.htm": {
-    "fileHash": "56CE874335C7B646184EA7EFF0C56C1E",
-    "fileSize": 2322
+    "fileHash": "D5097B89B1FBD58DF9D9DB7D06E519A6",
+    "fileSize": 2334
   },
   "contents\\Settings\\Included_Files.htm": {
     "fileHash": "6CA1C55261341891BC12F669AF30EEDA",
@@ -9760,20 +9760,20 @@
     "fileSize": 11478
   },
   "contents\\Settings\\Game_Options\\Amazon_Fire.htm": {
-    "fileHash": "FEF995E7C39BCE66401D2FE330F619FC",
-    "fileSize": 15795
+    "fileHash": "04266C15CC336123ABC6CF1434711045",
+    "fileSize": 15803
   },
   "contents\\Settings\\Game_Options\\Android.htm": {
-    "fileHash": "2D14B45DFE1A8581406626B782EA3C4A",
-    "fileSize": 22250
+    "fileHash": "F222A044E59BF8A21FC176A596B5949F",
+    "fileSize": 21731
   },
   "contents\\Settings\\Game_Options\\HTML5.htm": {
     "fileHash": "86352467331732808B6E476D94051C16",
     "fileSize": 11640
   },
   "contents\\Settings\\Game_Options\\iOS.htm": {
-    "fileHash": "9C748644C2B34DE5ECA550D112F17EDE",
-    "fileSize": 11000
+    "fileHash": "C1BB540AB8AD14847FF945AA14706C9C",
+    "fileSize": 9585
   },
   "contents\\Settings\\Game_Options\\macOS.htm": {
     "fileHash": "D464A0325B03DF7724B27CCFB8284646",
@@ -9788,8 +9788,8 @@
     "fileSize": 1963
   },
   "contents\\Settings\\Game_Options\\tvOS.htm": {
-    "fileHash": "83F3B15BC8E1314061206772F116F04F",
-    "fileSize": 8081
+    "fileHash": "6090BFC6A2FBAE50D05410DAD1480334",
+    "fileSize": 7136
   },
   "contents\\Settings\\Game_Options\\Ubuntu.htm": {
     "fileHash": "C01E8B7896BB9CE80B1211D02B7550F6",
@@ -9804,16 +9804,16 @@
     "fileSize": 16046
   },
   "contents\\Settings\\Runner_Details\\Compiler_Batch_Files.htm": {
-    "fileHash": "184F3D607D8ECD6D98B00A533249D1F3",
-    "fileSize": 3683
+    "fileHash": "56AA568C3C4D0EC465CC3AAAB5FAA5E0",
+    "fileSize": 5321
   },
   "contents\\Settings\\Runner_Details\\Runner_Details.htm": {
     "fileHash": "B72C6B75835E91F6DC3843F301F81C01",
     "fileSize": 2028
   },
   "contents\\Settings\\Texture_Information\\Non-Bitmap_Sprites.htm": {
-    "fileHash": "6E5BC8EA1C5F7384FC2456A29F696E61",
-    "fileSize": 15034
+    "fileHash": "F7B69D63CF5F06AD1771FAA8E65E756D",
+    "fileSize": 14895
   },
   "contents\\Settings\\Texture_Information\\Texture_Pages.htm": {
     "fileHash": "D9C9E96B369B59D8537EC832D7DD4E0E",
@@ -9840,8 +9840,8 @@
     "fileSize": 5219
   },
   "contents\\Setting_Up_And_Version_Information\\Platform_Preferences.htm": {
-    "fileHash": "C8313CA9D4ED4CACC87D9DEF3E26973F",
-    "fileSize": 4026
+    "fileHash": "40F8730C36C0187F6681CF1ABF07359B",
+    "fileSize": 3961
   },
   "contents\\Setting_Up_And_Version_Information\\Release_Notes.htm": {
     "fileHash": "07357CC653A9FBAB69E79FDA43A8098F",
@@ -9964,8 +9964,8 @@
     "fileSize": 3064
   },
   "contents\\Setting_Up_And_Version_Information\\IDE_Preferences\\General\\Go_To.htm": {
-    "fileHash": "82E74BAACB43916C756BDE5CD3AF069E",
-    "fileSize": 3621
+    "fileHash": "125C204DC66260EE45849EAF0B4FB227",
+    "fileSize": 3855
   },
   "contents\\Setting_Up_And_Version_Information\\IDE_Preferences\\General\\Help.htm": {
     "fileHash": "A19EBFEEEEBD9B334025A2E7F76B6C86",
@@ -10012,8 +10012,8 @@
     "fileSize": 2628
   },
   "contents\\Setting_Up_And_Version_Information\\Platform_Preferences\\macOS.htm": {
-    "fileHash": "663337FFDCE61E1CF6D99A3290B65AD6",
-    "fileSize": 2648
+    "fileHash": "7EF0B8871D0424E0C85DC23CA44418FC",
+    "fileSize": 2652
   },
   "contents\\Setting_Up_And_Version_Information\\Platform_Preferences\\Steam.htm": {
     "fileHash": "6C0FA0B59D4FFF21C26E0A5D22BC0FA7",
@@ -10036,8 +10036,8 @@
     "fileSize": 12684
   },
   "contents\\The_Asset_Editors\\Extensions.htm": {
-    "fileHash": "4F60B03CEA735BF66E781409D6250BF7",
-    "fileSize": 11998
+    "fileHash": "EE44DCC3C4A1E1EACA17A2696C88D93B",
+    "fileSize": 12186
   },
   "contents\\The_Asset_Editors\\Fonts.htm": {
     "fileHash": "F9A196456E1F5358903E02B5933E7F42",
@@ -10076,8 +10076,8 @@
     "fileSize": 9105
   },
   "contents\\The_Asset_Editors\\Sounds.htm": {
-    "fileHash": "45EF8F2EFE9E1B1001A62C9655FA797C",
-    "fileSize": 13552
+    "fileHash": "B2D728D2D2111634A628080E2EB856ED",
+    "fileSize": 13719
   },
   "contents\\The_Asset_Editors\\Sprites.htm": {
     "fileHash": "F75F91CB5424F255A46A11F0446029D9",
@@ -10088,8 +10088,8 @@
     "fileSize": 4639
   },
   "contents\\The_Asset_Editors\\Tile_Sets.htm": {
-    "fileHash": "F00AF2C193154725E4EF2EBBBB826AC1",
-    "fileSize": 17670
+    "fileHash": "8AA07B6850F7FD3548E7591C3EC1BB45",
+    "fileSize": 16259
   },
   "contents\\The_Asset_Editors\\Timelines.htm": {
     "fileHash": "56B4DF99C087FB93791439255F09C7F4",
@@ -10112,8 +10112,8 @@
     "fileSize": 7263
   },
   "contents\\The_Asset_Editors\\Extension_Creation\\Android_Extensions.htm": {
-    "fileHash": "78166FB01877276286630956C39E1605",
-    "fileSize": 7438
+    "fileHash": "69918F40B5ACE9CC516897E68EDD37E5",
+    "fileSize": 7479
   },
   "contents\\The_Asset_Editors\\Extension_Creation\\Creating_An_Extension.htm": {
     "fileHash": "070C739C077FEC341E2B29A74337AC75",
@@ -10124,8 +10124,8 @@
     "fileSize": 11079
   },
   "contents\\The_Asset_Editors\\Extension_Creation\\iOS_Extensions.htm": {
-    "fileHash": "BF0226EC4F9ACB8F5F6CEA3B6C6E35F7",
-    "fileSize": 11762
+    "fileHash": "9642011DFACEA30CBAC03F14E828CE08",
+    "fileSize": 12713
   },
   "contents\\The_Asset_Editors\\Extension_Creation\\Source_Files\\GenericTest-iOS.htm": {
     "fileHash": "D1F4C583E0881AA5FBD35E634465463B",
@@ -10188,8 +10188,8 @@
     "fileSize": 3489
   },
   "contents\\The_Asset_Editors\\Object_Properties\\Async_Events\\HTTP.htm": {
-    "fileHash": "88EA11F5CB755D06FD93DF2FC17C921E",
-    "fileSize": 5579
+    "fileHash": "877BF45D6BDA40B48A20949F5C87BEF0",
+    "fileSize": 5632
   },
   "contents\\The_Asset_Editors\\Object_Properties\\Async_Events\\IAP.htm": {
     "fileHash": "BA5DF0F19DBA7970F5322BD5659A39F6",
@@ -10204,8 +10204,8 @@
     "fileSize": 7256
   },
   "contents\\The_Asset_Editors\\Object_Properties\\Async_Events\\Push_Notifications.htm": {
-    "fileHash": "B4650453FA3E0CEC5E2C11CBAFCACDE8",
-    "fileSize": 6038
+    "fileHash": "ACEF9D690240103E43C21F3B9F30EFC3",
+    "fileSize": 2508
   },
   "contents\\The_Asset_Editors\\Object_Properties\\Async_Events\\Save_Load.htm": {
     "fileHash": "0E3A498764152D582810F1B91EAE1A50",
@@ -10224,8 +10224,8 @@
     "fileSize": 8916
   },
   "contents\\The_Asset_Editors\\Room_Properties\\Filters_and_Effects.htm": {
-    "fileHash": "6255DB4C966C135504E655BE1876A96D",
-    "fileSize": 5239
+    "fileHash": "BA1227514AAEDDA48C27205048FD3B1C",
+    "fileSize": 5701
   },
   "contents\\The_Asset_Editors\\Room_Properties\\Layer_Properties.htm": {
     "fileHash": "317FCE31650080D44ABD4CDAEA96CEEF",
@@ -10284,16 +10284,16 @@
     "fileSize": 14486
   },
   "contents\\The_IDE\\The_IDE.htm": {
-    "fileHash": "0C0EAD8A78BB2F972A9DCF367712E61D",
-    "fileSize": 2507
+    "fileHash": "9583582CF1EE6F140448B0636289CBB6",
+    "fileSize": 2518
   },
   "contents\\The_IDE\\Preferences_And_Information\\Preferences_And_Features.htm": {
     "fileHash": "E387FCE836FFC49D312D2522EE8BA5A9",
     "fileSize": 2142
   },
   "toc\\Default.toc": {
-    "fileHash": "AAAD79A56829E53DE9C9B69E465AE03F",
-    "fileSize": 424367
+    "fileHash": "8FB9B966DB0227826F6F0AA737C1320F",
+    "fileSize": 430768
   },
   "contents\\GameMaker_Language.htm": {
     "fileHash": "0E7179DB4E3351FEE653E919593CD3DF",
@@ -10408,8 +10408,8 @@
     "fileSize": 3233
   },
   "contents\\GameMaker_Language\\GML_Reference\\Drawing\\Videos\\YUV_Videos.htm": {
-    "fileHash": "97758D1338EB498FBA81A83497249429",
-    "fileSize": 6336
+    "fileHash": "AC35BF3EE6E30009407197B2B9B936B1",
+    "fileSize": 6340
   },
   "contents\\GameMaker_Language\\GML_Reference\\Physics\\Physics_Variables\\phy_col_normal_x.htm": {
     "fileHash": "066394B334E7BC4B2AEC1234231B45EC",
@@ -10440,11 +10440,195 @@
     "fileSize": 5981
   },
   "contents\\Setting_Up_And_Version_Information\\Platform_Preferences\\Opera_GX_Preferences.htm": {
-    "fileHash": "77ED58B0066B9EABAD79BB96366D0E75",
-    "fileSize": 1850
+    "fileHash": "E9961F28A21CC343C9F54ADA3C6AE509",
+    "fileSize": 2365
   },
   "contents\\The_Asset_Editors\\Room_Properties\\FX\\All_Filter_Effect_Types.htm": {
-    "fileHash": "921A35B900E262881EDDE0395EB242B6",
-    "fileSize": 15864
+    "fileHash": "D36B8773C1C07F6C100A5D6FCB53CC6F",
+    "fileSize": 27789
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\BPM_to_Seconds.htm": {
+    "fileHash": "5C325FF3E3E29B374A47745316FC7DA3",
+    "fileSize": 2799
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Create_Time_Source.htm": {
+    "fileHash": "D59C13BC6B12D1D6E459C9BC3D7856A9",
+    "fileSize": 6156
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Destroy_Time_Source.htm": {
+    "fileHash": "B2BC69FAF6C2656F3169A1651DAACC77",
+    "fileSize": 2920
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Get_Children.htm": {
+    "fileHash": "405A18E456FD0B93F3E23B886C04A56C",
+    "fileSize": 3402
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Get_Parent.htm": {
+    "fileHash": "539539AABC6E3E72459CCB551C578940",
+    "fileSize": 3030
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Get_Period.htm": {
+    "fileHash": "DF7D097AC964F52782F6CA0537E1E367",
+    "fileSize": 2491
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Get_Reps_Completed.htm": {
+    "fileHash": "E37A6D2BE1218BF2BB04859880DBDEC9",
+    "fileSize": 2651
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Get_Reps_Remaining.htm": {
+    "fileHash": "858D966DF36C3A497AE095AD8DB90418",
+    "fileSize": 2596
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Get_State.htm": {
+    "fileHash": "25CB351D95A7E611F984B5E7D9636B42",
+    "fileSize": 2554
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Get_Time_Remaining.htm": {
+    "fileHash": "4D2A58E0EBCC01F66BEB78E7E89CB839",
+    "fileSize": 2706
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Get_Units.htm": {
+    "fileHash": "F195E84A5EDCD471FCEF75B85EA60766",
+    "fileSize": 2606
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\If_Time_Source_Exists.htm": {
+    "fileHash": "2C3C35EA2DDB8645F0E5779408A2D98E",
+    "fileSize": 2877
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\If_Time_Source_Parent.htm": {
+    "fileHash": "E576FC431B15A6E3885BBC6E86A0E253",
+    "fileSize": 3092
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\If_Time_Source_State.htm": {
+    "fileHash": "2B33EC3B771B2415E14328220EA372E7",
+    "fileSize": 3788
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\If_Time_Source_Units.htm": {
+    "fileHash": "633CCC51F92E64F6B55DF91B3005753F",
+    "fileSize": 3178
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Pause_Time_Source.htm": {
+    "fileHash": "0125335976D9AB096212BFA8050B4C19",
+    "fileSize": 3009
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Reconfigure_Time_Source.htm": {
+    "fileHash": "2D25DACB73F3F8A787486E22175AB16C",
+    "fileSize": 4153
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Reset_Time_Source.htm": {
+    "fileHash": "061C4C52BA6497486DCB0C9E94EE0474",
+    "fileSize": 2337
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Seconds_to_BPM.htm": {
+    "fileHash": "9633B016D47CA2AB9A2F200C02243D77",
+    "fileSize": 2394
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Start_Time_Source.htm": {
+    "fileHash": "FD3A0783ED1C7C0AFB62769C3F6882A7",
+    "fileSize": 2427
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Stop_Time_Source.htm": {
+    "fileHash": "3981A43215F6030480053234EDA1D6BD",
+    "fileSize": 2348
+  },
+  "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Time_Sources\\Time_Sources_(GML_Visual).htm": {
+    "fileHash": "CF7E4DD626C1FF053B0288061E88BC81",
+    "fileSize": 4200
+  },
+  "contents\\GameMaker_Language\\GML_Overview\\Script_Functions_vs_Methods.htm": {
+    "fileHash": "71464F21288B8C434ED4079872704485",
+    "fileSize": 5923
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\Built_In_Time_Sources.htm": {
+    "fileHash": "1AA548DCF350EBDD26960E3350EDEB77",
+    "fileSize": 4275
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_bpm_to_seconds.htm": {
+    "fileHash": "E7EFE6EA9BCF7DBAF4134A3A503D8C4D",
+    "fileSize": 3312
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_seconds_to_bpm.htm": {
+    "fileHash": "E9075D62741F6473A7D499F4B6FE3A48",
+    "fileSize": 2842
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\Time_Sources.htm": {
+    "fileHash": "E9632134824A16A3201B93C690D7D8D3",
+    "fileSize": 7030
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_create.htm": {
+    "fileHash": "9327027B0945977A67EE87506BFFD59A",
+    "fileSize": 12259
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_destroy.htm": {
+    "fileHash": "A946A2FB6300E91FF1189AA03A94DC78",
+    "fileSize": 3251
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_exists.htm": {
+    "fileHash": "90916241B2114F3957D9894FC3EABF45",
+    "fileSize": 3399
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\Time_Source_Expiry_Types.htm": {
+    "fileHash": "75DB3CFF13DC7A92C3E668596ADB9861",
+    "fileSize": 3533
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_get_children.htm": {
+    "fileHash": "DDE1DDC7BF449DFC7EE01AF963665932",
+    "fileSize": 3694
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_get_parent.htm": {
+    "fileHash": "51A842D22208329078469997D751F43A",
+    "fileSize": 3271
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_get_period.htm": {
+    "fileHash": "DD5728DE9651AE6729C28B77EB7FE3F6",
+    "fileSize": 2779
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_get_reps_completed.htm": {
+    "fileHash": "36A2707837E6EA016EAC9CE18AE7E7CC",
+    "fileSize": 2800
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_get_reps_remaining.htm": {
+    "fileHash": "60E134EFE4C47D6030D12606E7175964",
+    "fileSize": 2868
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_get_state.htm": {
+    "fileHash": "9813709C000F075E3921EBC061348AAA",
+    "fileSize": 3361
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_get_time_remaining.htm": {
+    "fileHash": "9E7E613D7017F08288CC8080352017F4",
+    "fileSize": 2862
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_get_units.htm": {
+    "fileHash": "AD1EF5462F121DC36BAC95999334908D",
+    "fileSize": 2689
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_pause.htm": {
+    "fileHash": "7A449F89F111294306E24C1D2BAD922F",
+    "fileSize": 3212
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_reconfigure.htm": {
+    "fileHash": "8930D0AF9C476FBCA5A88B1511F916F8",
+    "fileSize": 6062
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_reset.htm": {
+    "fileHash": "713EDED45383BF1E1CE4C2FA408573C7",
+    "fileSize": 2933
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\Time_Source_States.htm": {
+    "fileHash": "E82A7FB667AF1779606DEC99F97BAF20",
+    "fileSize": 3919
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_stop.htm": {
+    "fileHash": "0CC0D5881CDD3845A5193C84948D10C8",
+    "fileSize": 2621
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\Time_Source_Units.htm": {
+    "fileHash": "F9A0271A931FB2629362544D6789D93D",
+    "fileSize": 3534
+  },
+  "contents\\The_Asset_Editors\\Extension_Creation\\Disabling_Extensions.htm": {
+    "fileHash": "66B3E364996E41588C2AB34F4EDE23EE",
+    "fileSize": 3371
   }
 }

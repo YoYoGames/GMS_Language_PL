@@ -22,7 +22,7 @@
     <li><img><br>
       Wyświetlane jest zdarzenie, w którym wystąpił błąd, a także strona <span class="notranslate">Object</span> (w stosownych przypadkach).</li>
     <li><img><br>
-      Pokazuje rzeczywisty błąd.  Pokazuje więc <em>zakres </em>błędu oraz jego typ. Pierwsza wartość w nawiasie to identyfikator instancji, w której uruchomiono kod - może to być też jedna z wartości specjalnych wymienionych w poniższej tabeli - a druga to wartość wewnętrzna, której <span class="notranslate">YoYo Games</span> używa do identyfikacji błędów i którą można zignorować. W przypadku powyższego rysunku jest to informacja, że zmienna <span class="inline">_image</span> nie została ustawiona (tzn. nie istnieje przed uzyskaniem do niej dostępu) na stronie <span class="notranslate">object</span> <span class="inline">obj_EA_DEMO_Control</span>.</li>
+      Pokazuje rzeczywisty błąd.  Pokazuje więc <em>zakres </em>błędu oraz jego typ. Pierwsza wartość w nawiasie to identyfikator instancji, w której uruchomiono kod - może to być też jedna z wartości specjalnych wymienionych w tabeli poniżej - a druga to wartość wewnętrzna, której <span data-keyref="GameMaker Name">GameMaker</span> używa do identyfikacji błędów i którą można zignorować. W przypadku powyższego obrazka jest to informacja, że zmienna <span class="inline">_image</span> nie została ustawiona (tzn. nie istnieje przed uzyskaniem do niej dostępu) na stronie <span class="notranslate">object</span> <span class="inline">obj_EA_DEMO_Control</span>.</li>
     <li><img><br>
       Pokazuje on numer wiersza, w którym występuje błąd, oraz fragment kodu pokazujący jego położenie. Należy pamiętać, że nie zawsze jest to w 100% dokładne, ze względu na sposób kompilacji gry, ale powinno wystarczyć, aby pomóc w znalezieniu dokładnego miejsca wystąpienia problemu.</li>
   </ul>
@@ -69,7 +69,7 @@
     <tbody>
       <tr>
         <th>Błąd</th>
-        <th>Komunikat</th>
+        <th>Wiadomość</th>
         <th>Operacja</th>
         <th>Opis</th>
       </tr>
@@ -130,7 +130,7 @@
         <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoDiv</span></td>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Podzielić przez zero</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Matematyka</td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Próbujesz podzielić przez 0 (zauważ, że dzieje się tak tylko przy dzieleniu przez liczby całkowite, dzielenie (niezerowej) liczby rzeczywistej przez 0 da w odpowiedzi nieskończoność, a dzielenie zera przez zero da w odpowiedzi NaN). Można sprawdzić te wartości za pomocą (<span class="inline">is_infinity</span>) i (<span class="inline">is_nan</span>)</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Próbujesz podzielić przez 0 (zauważ, że dzieje się tak tylko wtedy, gdy używasz dzielenia przez liczby całkowite, dzielenie (niezerowej) liczby rzeczywistej przez 0 da w wyniku nieskończoność, a dzielenie zera przez zero da w wyniku NaN). Można sprawdzić te wartości za pomocą (<span class="inline">is_infinity</span>) i (<span class="inline">is_nan</span>)</td>
       </tr>
       <tr>
         <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoMod</span></td>
@@ -207,7 +207,7 @@
         <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">DoShr</span></td>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Silnik wykonawczy - nie można operować na typie <span class="notranslate">string</span> </td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Bitwise</td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Próbujesz przesunąć w prawo (<span class="inline">&gt;&gt;</span>) zmienne niewłaściwego typu (np. próbujesz przesunąć w prawo zmienną <span class="notranslate">string</span>).</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Próbujesz przesunąć w prawo (<span class="inline">&gt;&gt;</span>) zmienne niewłaściwego typu (na przykład próbujesz przesunąć w prawo zmienną <span class="notranslate">string</span>).</td>
       </tr>
       <tr>
         <td colspan="4" style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">
@@ -297,7 +297,7 @@
         <td style="text-align: center;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px"><span class="inline">Stack Overflow</span></td>
         <td style="border-width: 1px;border-style: #333333;border-color: 1px;padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">-</td>
         <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Silnik</td>
-        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Przepełnienie stosu występuje wtedy, gdy na stosie wywołań znajduje się zbyt dużo pamięci, a gdy gra próbuje wykorzystać więcej miejsca, niż jest dostępne na stosie wywołań (to znaczy, gdy próbuje uzyskać dostęp do pamięci poza granicami stosu wywołań, co jest zasadniczo przepełnieniem <span class="notranslate">buffer</span> ), mówi się, że stos się przepełnia, co powoduje awarię programu. Uruchom ponownie komputer i program GameMaker: Studio i jeśli błąd będzie się powtarzał, skontaktuj się z pomocą techniczną i/lub zgłoś błąd (jak wyjaśniono powyżej).</td>
+        <td style="padding-top: 5px;padding-right: 10px;padding-left: 10px;padding-bottom: 8px">Przepełnienie stosu ma miejsce, gdy na stosie wywołań znajduje się zbyt dużo pamięci i gdy Twoja gra próbuje wykorzystać więcej miejsca, niż jest dostępne na stosie wywołań (to znaczy, gdy próbuje uzyskać dostęp do pamięci poza granicami stosu wywołań, co jest zasadniczo przepełnieniem <span class="notranslate">buffer</span> ), mówi się, że stos się przepełnia, co powoduje awarię programu. Uruchom ponownie komputer i <span data-keyref="GameMaker Name">GameMakera</span>, a jeśli błąd będzie się powtarzał, skontaktuj się z działem pomocy technicznej i/lub zgłoś błąd (jak opisano powyżej).</td>
       </tr>
     </tbody>
   </table>

@@ -18,24 +18,27 @@
   <p>Zasoby skryptowe to zbiór jednej lub więcej funkcji lub zmiennych zdefiniowanych przez użytkownika, które użytkownik zapisuje jako fragmenty kodu w <a href="../../The_Asset_Editors/Scripts.htm">Edytorze skryptów</a>. Funkcje zdefiniowane w witrynie <span class="notranslate">script</span> mogą rozwiązywać wyrażenia, zwracać wartości lub robić wszystko inne, na co pozwala witryna <span class="notranslate">GameMaker Language</span>, podobnie jak wbudowane <a href="Runtime_Functions.htm">funkcje runtime</a>.</p>
   <p>Funkcji skryptowych należy używać, gdy mamy blok kodu, który jest używany w więcej niż jednym miejscu lub <span class="notranslate">object</span>, lub gdy chcemy, aby blok kodu był używany w wielu <span class="notranslate">objects</span> w sposób modułowy. Używanie <span class="notranslate">scripts</span> do definiowania funkcji oznacza, że można zmienić funkcję tylko raz, gdy jest to wymagane, a zmiana zostanie &quot;odebrana&quot; przez każdy <span class="notranslate">object</span>, który ma wywołanie tej funkcji.</p>
   <p>Skrypty mogą być również bardzo przydatne z organizacyjnego punktu widzenia, ponieważ umożliwiają tworzenie grup funkcji należących do określonej kategorii - na przykład możesz mieć kilka funkcji związanych z kolizjami między instancjami w swojej grze, więc utworzysz &quot;<span class="inline">Collision_Functions</span>&quot; <span class="notranslate">script</span> i będziesz przechowywać w nim wszystkie te funkcje razem.</p>
+  <p>Zobacz także: <a data-xref="{title}" href="Script_Functions_vs_Methods.htm">Funkcje skryptu a metody</a></p>
   <h2>Tworzenie funkcji</h2>
   <p>Podczas tworzenia strony <span class="notranslate">script</span> zawierającej funkcje, funkcje muszą być utworzone w następujących formatach:</p>
-  <p class="code"><span>function &lt;name&gt;( &lt;parameter1&gt;, &lt;parameter2&gt;, etc... )<br />
+  <p class="code"><span>function name( parameter1, parameter2, ... )<br />
       {</span><br />
-    <span>    &lt;statement1&gt;;</span><br />
-    <span>    &lt;statement1&gt;;</span><br />
+    <span>    statement1;</span><br />
+    <span>    statement2;</span><br />
     <span>    ...</span><br />
     <span>}</span>
   </p>
   <p>lub:</p>
-  <p class="code"><span><span>&lt;name&gt; = </span>function( &lt;parameter1&gt;, &lt;parameter2&gt;, etc... )</span><br />
+  <p class="code"><span><span>name = </span>function( parameter1, parameter2, ... )</span><br />
     <span>{</span><br />
-    <span>    &lt;statement1&gt;;</span><br />
-    <span>    &lt;statement1&gt;;</span><br />
+    <span>    statement1;</span><br />
+    <span>    statement2;</span><br />
     <span>    ...</span><br />
     <span>}</span>
   </p>
-  <p>Ogólnie rzecz biorąc, używaj <em>pierwszej </em>formy dla funkcji <span class="notranslate">script</span>, ponieważ zdefiniuje ona funkcję jako funkcję <span class="notranslate">script</span>, co oznacza, że będzie ona miała <strong>globalny </strong> <a href="Variables_And_Variable_Scope.htm">zakres</a>, będzie miała przypisany <strong>indeks skryptu</strong> i nie będzie wymagała przedrostka <span class="inline">global</span> do jej identyfikacji, ponieważ kompilator rozpozna ją jako funkcję <span class="notranslate">script</span>. Użycie drugiej formy spowoduje wygenerowanie <a href="Method_Variables.htm">zmiennej metody</a> o zasięgu globalnym i jako taka <em>nie </em>zostanie rozpoznana jako funkcja <span class="notranslate">script</span> przez <span class="notranslate">IDE</span> i będzie wymagać użycia przedrostka <span class="inline">global</span> przy odwoływaniu się do niej w kodzie.</p>
+  <p class="note">Aby utworzyć funkcję w <span class="notranslate">GML</span> Visual, użyj polecenia <a data-xref="{title}" href="../../Drag_And_Drop/Drag_And_Drop_Reference/Common/Declare_A_New_Function.htm">Declare A New Function</a>. Włącz jej opcję &quot;Temp&quot;, aby utworzyć zmienną metody (druga składnia pokazana powyżej).</p>
+  <p>Generalnie jednak dla funkcji <span class="notranslate">script</span> należy używać <em>pierwszej </em>formy, ponieważ definiuje ona funkcję jako specyficzną funkcję <span class="notranslate">script</span>, co oznacza, że będzie ona miała <a href="Variables_And_Variable_Scope.htm">zasięg</a> <strong>globalny </strong>, będzie miała przypisany <strong>indeks skryptu</strong> i nie będzie wymagała prefiksu <span class="inline">global</span> do jej identyfikacji, ponieważ kompilator rozpozna ją jako funkcję <span class="notranslate">script</span>.</p>
+  <p>Użycie drugiej formy spowoduje wygenerowanie <a href="Method_Variables.htm">zmiennej metody</a> o zasięgu globalnym i jako taka <em>nie </em>zostanie rozpoznana jako funkcja <span class="notranslate">script</span> przez <span class="notranslate">IDE</span> i będzie wymagała użycia prefiksu <span class="inline">global</span> przy odwoływaniu się do niej w kodzie.</p>
   <p class="note"><span class="note">UWAGA</span> Można to sprawdzić, używając obu formularzy w witrynie <span class="notranslate">script</span>, a następnie wywołując na każdym z nich funkcję runtime <a href="../GML_Reference/Variable_Functions/typeof.htm">typeof()</a>. Jedna z nich zostanie zaklasyfikowana jako &quot;liczba&quot; - ponieważ zwraca identyfikator indeksu <span class="notranslate">script</span> - a druga jako &quot;metoda&quot;.</p>
   <h2>Parametry/Argumenty</h2>
   <p>Można zdefiniować własne parametry/argumenty funkcji, które będą dostępne dla funkcji jako zmienne lokalne i mogą być użyte w dowolnym celu w ramach danej funkcji:</p>
@@ -57,7 +60,7 @@
         speed = spd;<br />
         direction = dir;<br />
     }</p>
-  <p>Jeśli argument <span class="inline">dir</span> nie zostanie przekazany podczas wywoływania powyższej funkcji, jego wartość będzie domyślnie równa <span class="inline">90</span>, co spowoduje przesunięcie instancji w górę.</p>
+  <p>Jeśli argument <span class="inline">dir</span> nie zostanie podany podczas wywoływania powyższej funkcji, jego wartość będzie domyślnie równa <span class="inline">90</span>, co spowoduje przesunięcie instancji w górę.</p>
   <p class="note"><span class="tip">WSKAZÓWKA</span> W wywołaniach funkcji można pominąć argumenty, które domyślnie będą miały wartość <span class="inline">undefined</span> (lub wartość domyślną dla tego argumentu określoną przez funkcję).<br>
     <br>
     Na przykład wpisanie adresu <span class="inline">my_func(0,,,1)</span> jest równoznaczne z wpisaniem adresu <span class="inline">my_func(0, undefined, undefined, 1)</span>.
@@ -72,7 +75,7 @@
         <br />
         show_debug_message(_string);<br />
     }</p>
-  <p>Funkcja ta przyjmuje trzy argumenty, gdzie pierwszy argument jest domyślnie stałą <span class="notranslate">string</span>, drugi argument jest domyślnie zmienną instancji (w zakresie instancji wywołującej), a trzeci argument jest domyślnie wyrażeniem wywołującym funkcję pobierającą bieżącą datę i godzinę. Funkcję tę można teraz wywołać z maksymalnie trzema argumentami, jak widać na poniższym przykładzie:</p>
+  <p>Funkcja ta przyjmuje trzy argumenty, przy czym pierwszy argument jest domyślnie stałą <span class="notranslate">string</span>, drugi argument jest domyślnie zmienną instancji (w zakresie instancji wywołującej), a trzeci argument jest domyślnie wyrażeniem wywołującym funkcję pobierającą bieżącą datę i godzinę. Funkcję tę można teraz wywołać z maksymalnie trzema argumentami, jak widać na poniższym przykładzie:</p>
   <p class="code">log();<br />
     // Prints: [09-Jun-21 12:34:37 PM] Object1: Log<br />
     <br />

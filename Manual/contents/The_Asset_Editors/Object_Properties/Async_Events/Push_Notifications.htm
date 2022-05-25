@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Powiadomienia push</title>
   <meta name="generator" content="Adobe RoboHelp 2020" />
@@ -14,29 +15,8 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Powiadomienia push</h1>
-  <p><img>Zdarzenie powiadomienia Push to zdarzenie, które jest wyzwalane przez <a class="glossterm" data-glossterm="callback" href="#">wywołanie zwrotne</a> z <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Push_Notifications/Push_Notifications.htm"><strong>powiadomienia push</strong></a>    w systemie operacyjnym urządzenia, albo z lokalnego źródła za pomocą funkcji <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Push_Notifications/push_local_notification.htm"><span class="inline">push_local_notification()</span></a>, lub
-    ze źródła zdalnego (np. z witryny <span class="notranslate">server</span>). Generuje ono <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">mapę DS Map</a>, która jest przypisana wyłącznie do tego zdarzenia i jest przechowywana w specjalnej zmiennej <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"> <span class="inline">async_load</span> </a>    (przykłady kodu, które szczegółowo wyjaśniają użycie tego zdarzenia, można znaleźć w poszczególnych funkcjach wywołujących zdarzenia asynchroniczne). Ta mapa DS ma następujące klucze:</p>
-  <ul class="dropspotlist">
-    <li class="dropspot">&quot;<span class="inline">type</span>&quot;: Wartość może być &quot;local&quot; dla powiadomienia lokalnego urządzenia, &quot;remote&quot; dla powiadomienia zdalnego lub &quot;register&quot; dla rejestracji powiadomienia zdalnego.</li>
-    <li class="dropspot">&quot;<span class="inline">status</span>&quot;: Wartość będzie wynosić &quot;1&quot; w przypadku sukcesu lub &quot;0&quot; w przypadku błędu.</li>
-  </ul>
-  <p>W zależności od zwróconego &quot;typu&quot; i wartości &quot;status&quot; mogą występować dodatkowe wpisy kluczy. W przypadku &quot;statusu&quot;, jeśli zwrócony został błąd (&quot;0&quot;), pojawi się również następujący klucz:</p>
-  <ul class="dropspotlist">
-    <li class="dropspot">&quot;<span class="inline">error</span>&quot;: Zawiera szczegółowe informacje o otrzymanym błędzie.</li>
-  </ul>
-  <p>Jeśli wartość &quot;status&quot; wynosi 1 (tzn. brak błędów), wówczas mapa DS będzie zawierała następujące dodatkowe wartości, zależne od wartości klucza &quot;type&quot;:</p>
-  <ul class="dropspotlist">
-    <li class="dropspot">&quot;<span class="inline">reg_id</span>&quot;: Jeśli otrzymany &quot;typ&quot; to &quot;register&quot;, to ten klucz będzie przechowywał identyfikator rejestracji urządzenia dla zdalnych powiadomień.</li>
-    <li class="dropspot">&quot;<span class="inline">data</span>&quot;: Jeśli otrzymany &quot;typ&quot; był &quot;lokalny&quot; lub &quot;zdalny&quot;, to ten klucz będzie zawierał ładunek <span class="notranslate">string</span>, który został zdefiniowany podczas wywoływania funkcji powiadamiania.</li>
-  </ul>
-  <p>Aby lepiej to zrozumieć, stworzyliśmy poniżej mały przykład, na który można spojrzeć. W tym przykładzie wyślemy lokalne powiadomienie push za pomocą następującego kodu:</p>
-  <p class="code">var fireTime = date_inc_day(date_current_datetime(), 1);<br/> var data = &quot;daily_reward&quot;;<br/> push_local_notification(fireTime, &quot;Ahoy!&quot;, &quot;Catch The Haggis Has A Present&quot;, data);</p>
-  <p>Spowoduje to ustawienie licznika czasu, który &quot;wypchnie&quot; powiadomienie na urządzenie, gdy minie jeden dzień. Po upływie doby, jeśli gra jest w tle lub nie jest uruchomiona, użytkownikowi zostanie wyświetlone powiadomienie z podanym tytułem i wiadomością (w przypadku
-   <span class="notranslate">iOS</span> wyświetlana jest nazwa gry, a tytuł jest ignorowany), a następnie zostanie wywołane asynchroniczne zdarzenie powiadomienia Push. Zauważ, że jeśli gra jest na pierwszym planie, gdy nadejdzie czas na powiadomienie, <em>nie </em>zostanie ona wyświetlona, <strong>ale zd</strong>arzenie asynchroniczne zostanie wywołane.
-    W samym zdarzeniu należy obsłużyć wywołanie zwrotne w następujący sposób:</p>
-  <p class="code">var type = ds_map_find_value(async_load, &quot;type&quot;);<br/> var status = ds_map_find_value(async_load, &quot;status&quot;);<br/> if status == 0<br/>    {<br/>    //error of some kind<br/>    var error = ds_map_find_value(async_load, &quot;error&quot;);<br/>     show_debug_message(&quot;error=&quot; + string(error));<br/>    }<br/> else
-    <br/>    {<br/>    if type == &quot;register&quot;<br/>       {<br/>       global.reg_id = ds_map_find_value(async_load, &quot;reg_id&quot;);<br/>       }<br/>    else<br/>     {<br/>       var data = ds_map_find_value(async_load, &quot;data&quot;);<br/>             if data == &quot;daily_reward&quot;<br/>          {<br/>          global.Gold += 1000;<br/>          }<br/>       }<br/>    }</p>
-  <p> </p>
+  <p><img>Zdarzenie powiadomienia Push jest wyzwalane przez <a class="glossterm" data-glossterm="callback" href="#">wywołanie zwrotne</a> z <a href="../../../GameMaker_Language/GML_Reference/Asynchronous_Functions/Push_Notifications/Push_Notifications.htm"><strong>powiadomienia push</strong></a> w systemie operacyjnym urządzenia, pochodzącego z lokalnego lub zdalnego źródła. Generuje ono <a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/DS_Maps.htm">mapę DS Map</a>, która jest przypisana wyłącznie do tego zdarzenia i jest przechowywana w zmiennej specjalnej <a href="../../../GameMaker_Language/GML_Overview/Variables/Builtin_Global_Variables/async_load.htm"> <span class="inline">async_load</span></a>.</p>
+  <p>To zdarzenie jest wykorzystywane wyłącznie przez stronę <span class="notranslate">extensions</span> (np. <a href="https://marketplace.yoyogames.com/assets/10451/firebase-cloud-messaging-ext">Firebase Cloud Messaging</a> <span class="notranslate">extension</span>), dlatego instrukcje dotyczące korzystania z tego zdarzenia można znaleźć w dokumentacji rozszerzenia.</p>
   <p> </p>
   <p> </p>
   <div class="footer">
@@ -46,7 +26,7 @@
         <div style="float:right">Następny: <a href="Save_Load.htm">Zapisz / Wczytaj</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
   </div>
   <!-- KEYWORDS
 Asynchronous Push Notification Event
@@ -55,5 +35,5 @@ ev_push_notification
   <!-- TAGS
 ev_push_notification
 -->
-
-</body></html>
+</body>
+</html>

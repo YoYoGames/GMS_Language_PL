@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <title>Źródła czasu</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+  <meta name="template" content="../../../assets/masterpages/Manual_Page.htt" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page detailing Time Sources in GML" />
+  <meta name="rh-index-keywords" content="Time Source" />
+  <meta name="search-keywords" content="Time Sources" />
+</head>
+<body>
+  <h1>Źródła czasu</h1>
+  <p><span data-keyref="Type_Resource_TimeSource">Źródło czasu</span>&quot; to niestandardowy zegar utworzony przez użytkownika. Działa on przez określony czas, a na końcu wygasa.</p>
+  <p> <span data-keyref="Type_Resource_TimeSource">Źródło czasu</span> (TS) ma możliwość wywołania niestandardowej metody (&quot;callback&quot;) w momencie wygaśnięcia.</p>
+  <p><img>Może również powtarzać się określoną liczbę razy lub na zawsze. Każde powtórzenie <span data-keyref="Type_Resource_TimeSource">Źródła Czasu</span> jest nazywane &quot;powtórzeniem&quot;.</p>
+  <h2>Jak korzystać ze źródeł czasu?</h2>
+  <p>Utwórz i uruchom <span data-keyref="Type_Resource_TimeSource">źródło czasu</span>, które wywołuje metodę niestandardową:</p>
+  <ul class="colour">
+    <li>Wywołaj <a href="time_source_create.htm"><span class="inline">time_source_create()</span></a> / <a data-xref="{title}" href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Create_Time_Source.htm">Utwórz źródło czasu</a>, aby utworzyć <span data-keyref="Type_Resource_TimeSource">źródło czasu</span>
+      <ul>
+        <li>Określ, czy strona <span class="notranslate">inherits</span> ma pochodzić z globalnego <span data-keyref="Type_Resource_TimeSource">źródła czasu</span>, <span data-keyref="Type_Resource_TimeSource">źródła czasu</span> gry czy niestandardowego <span data-keyref="Type_Resource_TimeSource">źródła</span>czasu.</li>
+        <li>Określ okres czasu, przez jaki działa, oraz używane jednostki (sekundy lub klatki)</li>
+        <li>Określenie metody niestandardowej wraz z tablicą argumentów, które mają być przekazywane do tej metody</li>
+        <li>Opcjonalnie można określić liczbę powtórzeń.
+          <ul>
+            <li>Domyślnie jest ona uruchamiana tylko raz</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Wywołaj <a href="time_source_start.htm"><span class="inline">time_source_start()</span></a> / <a data-xref="{title}" href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Start_Time_Source.htm">Start Źródło czasu</a>, aby natychmiast uruchomić to <a data-xref="{title}" href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Start_Time_Source.htm">źródło</a> <span data-keyref="Type_Resource_TimeSource">czasu</span> lub wywołać je później, gdy zajdzie potrzeba jego uruchomienia</li>
+  </ul>
+  <p>Spowoduje to uruchomienie <span data-keyref="Type_Resource_TimeSource">źródła czasu</span>, a po upływie określonego czasu wygaśnie i wywoła wskazaną metodę.</p>
+  <h2>Wbudowane źródła czasu</h2>
+  <p> <span data-keyref="Type_Resource_TimeSource">Źródło czasu</span> może pochodzić ze strony <span class="notranslate">inherit</span> z jednego z dwóch wbudowanych <span data-keyref="Type_Resource_TimeSource">źródeł czasu</span>lub z własnego <span data-keyref="Type_Resource_TimeSource">źródła</span> czasu.</p>
+  <p>Zobacz: <a data-xref="{title}" href="Built_In_Time_Sources.htm">Wbudowane źródła czasu</a></p>
+  <h2>Lista funkcji</h2>
+  <p>Do tworzenia i modyfikowania <span data-keyref="Type_Resource_TimeSource">Źródeł czasu</span>służą następujące funkcje:</p>
+  <ul class="colour">
+    <li><a data-xref="{title}" href="time_source_create.htm">time_source_create</a></li>
+    <li><a data-xref="{title}" href="time_source_destroy.htm">time_source_destroy</a></li>
+    <li><a data-xref="{title}" href="time_source_start.htm">time_source_start</a></li>
+    <li><a data-xref="{title}" href="time_source_stop.htm">time_source_stop</a></li>
+    <li><a data-xref="{title}" href="time_source_pause.htm">czas_źródła_pauzy</a></li>
+    <li><a data-xref="{title}" href="time_source_reconfigure.htm">time_source_reconfigure</a></li>
+    <li><a data-xref="{title}" href="time_source_reset.htm">time_source_reset</a></li>
+    <li><a data-xref="{title}" href="time_source_get_children.htm">time_source_get_children</a></li>
+    <li><a data-xref="{title}" href="time_source_get_parent.htm">time_source_get_parent</a></li>
+    <li><a data-xref="{title}" href="time_source_get_period.htm">time_source_get_period</a></li>
+    <li><a data-xref="{title}" href="time_source_get_reps_completed.htm">time_source_get_reps_completed</a></li>
+    <li><a data-xref="{title}" href="time_source_get_reps_remaining.htm">time_source_get_reps_remaining</a></li>
+    <li><a data-xref="{title}" href="time_source_get_state.htm">time_source_get_state</a></li>
+    <li><a data-xref="{title}" href="time_source_get_time_remaining.htm">time_source_get_time_remaining</a></li>
+    <li><a data-xref="{title}" href="time_source_get_units.htm">time_source_get_units</a></li>
+    <li><a data-xref="{title}" href="time_source_exists.htm">time_source_exists</a></li>
+  </ul>
+  <p>Każda funkcja <span class="inline2">get_*</span> zwróci wartość <span class="inline2">undefined</span>, jeśli podane <span data-keyref="Type_Resource_TimeSource">źródło czasu</span> nie istnieje.</p>
+  <p>Do przeliczania okresów czasu służą następujące funkcje pomocnicze:</p>
+  <ul class="colour">
+    <li><a data-xref="{title}" href="time_seconds_to_bpm.htm">time_seconds_to_bpm</a></li>
+    <li><a data-xref="{title}" href="time_bpm_to_seconds.htm">time_bpm_to_seconds</a></li>
+  </ul>
+  <p> </p>
+  <p>Zobacz także: <a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Time_Sources_(GML_Visual).htm">GML Visual - Źródła czasu</a></p>
+  <h2>Stałe</h2>
+  <p>Następujące stałe są używane w funkcjach <span data-keyref="Type_Resource_TimeSource">Źródła czasu</span>:</p>
+  <ul class="colour">
+    <li><a data-xref="{title}" href="Built_In_Time_Sources.htm">Wbudowane źródła czasu</a></li>
+    <li><a data-xref="{title}" href="Time_Source_Units.htm">Źródło czasu Jednostki</a></li>
+    <li><a data-xref="{title}" href="Time_Source_Expiry_Types.htm">Typy wygaśnięcia źródła czasu</a></li>
+    <li><a data-xref="{title}" href="Time_Source_States.htm">Państwa źródła czasu</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Powrót: <a data-xref="{title}" href="../GML_Reference.htm">Odnośnik do kodu GML</a></div>
+        <div>Następny: <a data-xref="{title}" href="../Physics/Physics.htm">Fizyka</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+</body>
+</html>

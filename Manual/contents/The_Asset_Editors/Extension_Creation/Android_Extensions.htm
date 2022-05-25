@@ -21,11 +21,11 @@
   <p>W tym miejscu można podać następujące dane:</p>
   <ul class="colour">
     <li class="dropspot"><strong>Nazwa</strong> klasy: Strona <span class="notranslate">extension</span> może mieć wiele klas, a każda z nich może mieć swoje własne funkcje i stałe, dlatego należy nadać jej nazwę, która będzie odzwierciedlać jej przeznaczenie.</li>
-    <li class="dropspot"><strong>Uprawnienia systemu Android</strong>: Tutaj możesz dodać wszelkie dodatkowe uprawnienia, których wymaga Twoja aplikacja <span class="notranslate">extension</span>. Jakie to będą uprawnienia, zależy całkowicie od zastosowania <span class="notranslate">extension</span>, dlatego należy <a href="https://developer.android.com/reference/android/Manifest.permission.html">sprawdzić dokumentację dostarczoną przez Google</a> dla platformy <span class="notranslate">Android</span> lub, jeśli używasz SDK innej firmy, dokumentację dołączoną do SDK. Aby dodać nowe uprawnienie, musisz kliknąć przycisk <img>, aby dodać uprawnienie zastępcze, a następnie dwukrotnie <img> kliknąć to uprawnienie, aby edytować je zgodnie z wymaganiami. Uprawnienia można usuwać za pomocą przycisku <img>.</li>
+    <li class="dropspot"><strong>Uprawnienia systemu Android</strong>: Tutaj możesz dodać wszelkie dodatkowe uprawnienia, których wymaga Twoja aplikacja <span class="notranslate">extension</span>. Jakie to będą uprawnienia, zależy całkowicie od zastosowania <span class="notranslate">extension</span>, dlatego należy <a href="https://developer.android.com/reference/android/Manifest.permission.html">sprawdzić dokumentację dostarczoną przez Google</a> dla platformy <span class="notranslate">Android</span> lub, jeśli używasz SDK innej firmy, dokumentację dołączoną do SDK. Aby dodać nowe uprawnienie, należy kliknąć przycisk <img>, aby dodać uprawnienie zastępcze, a następnie dwukrotnie <img>, aby edytować je zgodnie z wymaganiami. Uprawnienia można usuwać za pomocą przycisku <img>.</li>
     <li class="dropspot"><b>Wstrzykiwanie kodu</b>: W tym miejscu możesz dodać dowolny kod, który ma być wstrzykiwany (dodawany) do aplikacji <span class="notranslate">Android</span>, gdy gra będzie budowana do testów lub ostatecznej wersji. Upewnij się, że przed wysłaniem gry do sklepu dokładnie sprawdzisz te ustawienia (i swoje uprawnienia), ponieważ nieprawidłowe ustawienia mogą spowodować, że gra nie zostanie wysłana. Więcej informacji można znaleźć w poniższej sekcji.</li>
   </ul>
   <h2 id="h">Wstrzykiwanie kodu</h2>
-  <p>Każdy kod wprowadzony w oknie &quot;Wstrzykiwanie kodu&quot; będzie musiał zostać rozdzielony na odrębne grupy XML, jak pokazano na powyższym zrzucie ekranu. Znacznik XML użyty w grupie określi, gdzie kod zostanie wstrzyknięty do aplikacji.</p>
+  <p>Każdy kod wprowadzony w oknie &quot;Wstrzykiwanie kodu&quot; będzie musiał zostać podzielony na odrębne grupy XML, jak pokazano na powyższym zrzucie ekranu. Znacznik XML użyty w grupie określi, gdzie kod zostanie wstrzyknięty do aplikacji.</p>
   <p>Do tworzenia grup wstrzykiwania kodu można użyć następującej składni:</p>
   <p class="code">&lt;YYTagName&gt;<br />
     <br />
@@ -45,7 +45,8 @@
     YYAndroidGradle<br />
     YYAndroidGradleEnd<br />
     YYAndroidGradleAndroid<br />
-    <span>YYAndroidGradleDependencies<span> </span></span><br />
+    <span>YYAndroidGradleDependencies<span> <br />
+        YYAndroidGradleProperties</span></span><br />
     YYAndroidManifestAttributes<br />
     YYAndroidManifestApplicationAttributes<br />
     YYAndroidManifestActivityAttributes<br />
@@ -54,7 +55,7 @@
     YYAndroidStringValuesInjection<br />
     YYAndroidLayout
   </p>
-  <p>Miejsce wstrzyknięcia kodu na stronie <span class="notranslate">runtime</span> zależy od typu znacznika:</p>
+  <p>Miejsce <span class="notranslate">runtime</span>, w które wstrzykiwany jest kod, zależy od typu znacznika:</p>
   <table>
     <colgroup>
       <col style="width: 174px;" />
@@ -100,7 +101,7 @@
         <div style="float:right">Następny: <a href="iOS_Extensions.htm">Rozszerzenia systemu iOS</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
   </div>
   <!-- KEYWORDS
 Android Extensions

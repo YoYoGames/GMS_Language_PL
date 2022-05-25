@@ -15,7 +15,13 @@
 </head>
 <body>
   <h1>Pliki wsadowe / skrypty kompilatora</h1>
-  <p>Kompilator <span data-keyref="GameMaker Name"><span data-keyref="GameMaker Name">GameMaker</span></span> kompilator pozwala na umieszczenie plików Batch (<span class="notranslate">Windows</span>) lub Shell <span class="notranslate">scripts</span> (na <span class="notranslate">macOS</span> i <span class="notranslate">Linux</span>) w katalogu projektu i wykonuje je w różnych punktach procesu kompilacji, jak opisano poniżej:</p>
+  <p>Kompilator <span data-keyref="GameMaker Name">GameMakera</span> pozwala na umieszczenie plików Batch (<span class="notranslate">Windows</span>) lub Shell <span class="notranslate">scripts</span> (na <span class="notranslate">macOS</span> i <span class="notranslate">Linux</span>) w katalogu projektu oraz w katalogu dla każdego <span class="notranslate">extension</span> w projekcie.</p>
+  <h2>Placówka</h2>
+  <p>Plik <span class="notranslate">script</span> można umieścić w głównym katalogu projektu, obok pliku <span class="inline2">.yyp</span> projektu.</p>
+  <p>Plik <span class="notranslate">script</span> można również umieścić w katalogu <span class="notranslate">extension</span>, który może wyglądać następująco: <span class="inline2">&lt;project_directory&gt;/extensions/&lt;extension_folder&gt;/</span>.</p>
+  <p>Wersje <span class="notranslate">extension</span> pliku <span class="notranslate">script</span> będą wykonywane jako pierwsze, a jego wersja główna jako ostatnia. Nie można kontrolować kolejności wykonywania <span class="notranslate">extensions</span>, dlatego programista <span class="notranslate">extension</span> musi zadbać o to, aby <span class="notranslate">scripts</span> jednego rozszerzenia nie opierało się na <span class="notranslate">scripts</span> innego rozszerzenia.</p>
+  <h2>Wykonanie</h2>
+  <p>Pliki skryptów o określonych nazwach, umieszczone w dowolnym z opisanych powyżej katalogów, są wykonywane w różnych punktach procesu kompilacji:</p>
   <table border="1" cellpadding="1" cellspacing="1">
     <colgroup>
       <col style="width:33.33%" />
@@ -58,9 +64,21 @@
         <td><strong>post_package_step.sh</strong></td>
         <td>Czynność ta jest wykonywana po zakończeniu ostatniego etapu pakowania i przygotowaniu ostatecznego pliku ZIP lub pakietu sklepowego.</td>
       </tr>
+      <tr>
+        <td><strong>post_textures.bat</strong></td>
+        <td><strong>post_textures.sh</strong></td>
+        <td>Czynność ta jest wykonywana po wygenerowaniu strony <span class="notranslate">textures</span> dla Twojej gry. Możesz użyć tego kroku do ręcznej optymalizacji gry <span class="notranslate">textures</span>.<br>
+          <br>
+          Ta strona <span class="notranslate">script</span> otrzymuje zmienną środowiskową o nazwie <span class="inline2">TexturesDir</span>, która przechowuje adres <span class="notranslate">path</span> do wygenerowanej strony <span class="notranslate">textures</span>.
+        </td>
+      </tr>
     </tbody>
   </table>
-  <p>Te pliki wsadowe/powłoka <span class="notranslate">scripts</span> są obsługiwane na wszystkich platformach docelowych.</p>
+  <p>Te pliki <span class="notranslate">script</span> są obsługiwane podczas budowania na wszystkich platformach docelowych.</p>
+  <h2>Wyłączanie strony <span class="notranslate">Scripts</span> dla rozszerzenia</h2>
+  <p>Jeśli używasz wielu stron <span class="notranslate">extensions</span>, na których działa <span class="notranslate">scripts</span>, na przykład Steamworks i GDK, to podczas eksportowania do GDK należy wyłączyć Steamworks i na odwrót.</p>
+  <p>Więcej informacji na ten temat można znaleźć w części: <a data-xref="{title}" href="../../The_Asset_Editors/Extension_Creation/Disabling_Extensions.htm">Jak wyłączyć stronę <span class="notranslate">Extensions</span>?</a></p>
+  <p> </p>
   <p> </p>
   <p> </p>
   <div class="footer">

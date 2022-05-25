@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <title>Jak wyłączyć rozszerzenia?</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../assets/css/default.css" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="How to disable extensions based on target platform?" />
+  <meta name="template" content="../../assets/masterpages/Manual_Page.htt" />
+  <meta name="rh-index-keywords" content="Disabling Extensions" />
+  <meta name="search-keywords" content="disable extensions, configurations, configs, config" />
+</head>
+<body>
+  <h1>Jak wyłączyć stronę <span class="notranslate">Extensions</span>?</h1>
+  <p>GameMaker posiada stronę <span class="notranslate">extensions</span> dla niektórych platform docelowych, np. <a href="https://marketplace.yoyogames.com/assets/10709/steamworks-ext">Steamworks</a> i <a href="https://github.com/YoYoGames/GDKExtension">GDK</a>.</p>
+  <p>Jeśli używasz obu tych stron <span class="notranslate">extensions</span>, będziesz chciał wyłączyć GDK <span class="notranslate">extension</span> podczas budowania dla <span class="notranslate">Steam</span>, i odwrotnie.</p>
+  <p>Problem ten nie ogranicza się do tych dwóch stron <span class="notranslate">extensions</span> i dotyczy każdej strony <span class="notranslate">extension</span>, która jest przeznaczona do określonego celu.</p>
+  <h2>Selektywne wyłączanie strony <span class="notranslate">extensions</span> </h2>
+  <p>Najpierw należy utworzyć <a href="../../Settings/Configurations.htm">konfigurację</a> dla każdej z platform docelowych, jeśli jeszcze tego nie zrobiono.</p>
+  <p>W tym przykładzie użyto tylko programów Steamworks i GDK.</p>
+  <p><img>Wybierz konfigurację dla jednej platformy docelowej. Załóżmy, że wybrana została konfiguracja <strong>GDK</strong>.</p>
+  <p>Otwórz stronę <span class="notranslate">extension</span>, która nie powinna być używana w GDK. W tym przykładzie otwórz stronę Steamworks <span class="notranslate">extension</span>.</p>
+  <p><img>Wyłącz wszystkie cele w sekcji <strong>Kopie do</strong>. Dzięki temu podczas korzystania z konfiguracji GDK nie będzie wykonywany program Steamworks <span class="notranslate">extension</span>.</p>
+  <p>Teraz, <span class="notranslate">switch</span> przejdź do swojej konfiguracji <strong>Steamworks</strong>. Otwórz GDK <span class="notranslate">extension</span>, a następnie wyłącz wszystkie jego cele.</p>
+  <h2>Gotowe!</h2>
+  <p>Teraz, gdy budujesz dla GDK, użyj konfiguracji GDK; gdy budujesz dla <span class="notranslate">Steam</span>, użyj konfiguracji Steamworks itd.</p>
+  <p>Użycie konfiguracji w ten sposób pozwala kontrolować, które strony <span class="notranslate">extensions</span> są używane do budowania poszczególnych platform.</p>
+  <p>Jeśli masz więcej stron <span class="notranslate">extensions</span>, potraktuj je tak samo: wyłącz ich eksport w konfiguracjach, które ich nie potrzebują.</p>
+  <p>Jeśli masz więcej platform docelowych, dodaj dla nich konfiguracje i zmień, które <span class="notranslate">extensions</span> są dla nich używane.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Powrót: <a data-xref="{title}" href="../Extensions.htm">Rozszerzenia</a></div>
+        <div>Następny: <a data-xref="{title}" href="Creating_An_Extension.htm">Tworzenie rozszerzenia</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+</body>
+</html>

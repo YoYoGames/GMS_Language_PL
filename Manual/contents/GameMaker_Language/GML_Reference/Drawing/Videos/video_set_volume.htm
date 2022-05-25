@@ -18,6 +18,7 @@
   <h1>video_set_volume</h1>
   <p>Ta funkcja zmienia głośność dźwięku w aktualnie załadowanym filmie. Przyjmuje ona wartość z przedziału od <span class="inline2">0</span> do <span class="inline2">1</span>, gdzie <span class="inline2">0</span> oznacza ciszę, a <span class="inline2">1</span> - maksymalną głośność.</p>
   <p>Upewnij się, że jest on wywoływany tylko po wywołaniu <span class="inline"><a href="video_open.htm">video_open()</a></span>, ale przed wywołaniem <span class="inline"><a href="video_close.htm">video_close()</a></span>, w przeciwnym razie nie wykona żadnego działania (ponieważ nie zostanie załadowany film).</p>
+  <p>Na niektórych platformach ta funkcja będzie działać dopiero po całkowitym załadowaniu filmu, więc użyj <a data-xref="{text}" href="Videos.htm#h">wywołań zwrotnych asynchronicznych</a>, aby dowiedzieć się, kiedy film jest gotowy, a następnie zmienić głośność.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">video_set_volume(value);</p>
@@ -48,8 +49,8 @@
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div>Powrót: <a data-xref="{title}" href="Videos.htm">Filmy</a></div>
-        <div>Next: <a data-xref="{title}" href="video_pause.htm">video_pause</a><a href="video_pause.htm"></a></div>
+        <div>Wstecz: <a data-xref="{title}" href="Videos.htm">Odtwarzanie wideo</a></div>
+        <div>Next: <a data-xref="{title}" href="video_pause.htm">video_pause</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>

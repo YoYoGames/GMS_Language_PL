@@ -1,64 +1,64 @@
 
   
-  HTML5 Game Options
-  This section outlines the different options available to you that control how your HTML5 game projects will be compiled. The different sections are:
-   
-  General
-  In this section you have fields to fill in the following information about your game:
+  Opcje gier HTML5
+  W tej sekcji opisano różne dostępne opcje, które pozwalają kontrolować sposób kompilacji projektów gier HTML5. Poszczególne sekcje to:
+   
+  Ogólne
+  W tej części znajdują się pola do wypełnienia następujących informacji o grze:
   
-    Browser Title: Here you can give text to be used for the title bar of the tab for your game in the browser.
-    Version: The version number for your game.
-    Name of folder: The name for the folder where your HTML5 game files will be stored (default is "html5game").
-    Output Name: This is the output HTML file name and can be changed to something other than the default "index.html".
+    Tytuł przeglądarki: W tym miejscu możesz podać tekst, który będzie używany na pasku tytułowym karty gry w przeglądarce.
+    Wersja: Numer wersji gry.
+    Nazwa folderu: Nazwa folderu, w którym będą przechowywane pliki gry HTML5 (domyślnie jest to "html5game").
+    Nazwa wyjściowa: Jest to nazwa wyjściowego pliku HTML, którą można zmienić na inną niż domyślna "index.html".
   
-   
-  Below the game information fields you have the following options too:
+   
+  Poniżej pól informacji o grze dostępne są również następujące opcje:
   
-    Output Debug To Console: This will send all debug output to the JS console of your browser. This is off by default.
-    Display Cursor: This will disable the mouse cursor when it is over the game canvas. This is on by default.
-    Display "Running Outside Server" Alert: If you are testing a game locally (ie: clicking on the index file from your computer rather than a server - not recommended), then you normally get a warning informing you that things won't work as you may expect due to browser security for local files. You can suppress this warning by un-checking this option. It is on by default.
+    Debug wyjścia do konsoli: Spowoduje to wysłanie wszystkich danych wyjściowych debugowania do konsoli JS przeglądarki. Domyślnie opcja ta jest wyłączona.
+    Wyświetl kursor: Powoduje wyłączenie kursora myszy, gdy znajduje się on nad płótnem gry. Domyślnie opcja ta jest włączona.
+    Wyświetl alert "Uruchomiono poza serwerem": Jeśli testujesz grę lokalnie (tzn. klikasz na plik indeksu ze swojego komputera, a nie z server - niezalecane), to zazwyczaj pojawia się ostrzeżenie informujące, że ze względu na zabezpieczenia przeglądarki dla plików lokalnych nie wszystko będzie działać tak, jak można się tego spodziewać. Ostrzeżenie to można wyłączyć, usuwając zaznaczenie tej opcji. Domyślnie jest ona włączona.
   
-  Below the general settings, you have the Advanced options, which are:
+  Poniżej ustawień ogólnych znajdują się opcje zaawansowane , do których należą:
   
-    Included file as index.html: This is for adding a custom "index.html" file to use instead of the pre-defined one that GameMaker generates by default. This can be very useful if you have a website design implemented or want to include certain features in all your HTML5 builds. The file to use must be included as an Included File in the game project.
-    Loading Bar Extension: This will change the default loading bar for one that has been added to your GameMaker project as an Extension.
-    Prepend output .js: Here you can prepend the *.js output with any extra JavaScript necessary for your game. For example, a Chrome Store app may require that you add window.localStorage = undefined; to the output JS, for which you would use this option.
+    Dołączony plik jako index.html: Służy do dodawania niestandardowego pliku "index.html", który ma być używany zamiast predefiniowanego pliku generowanego domyślnie przez program GameMaker. Może to być bardzo przydatne, jeśli masz zaimplementowany projekt strony internetowej lub chcesz włączyć pewne funkcje do wszystkich swoich kompilacji HTML5. Plik, który ma być użyty, musi być dołączony do projektu gry jako plik dołączony (Included File ).
+    Rozszerzenie paska ładowania: Zmieni domyślny pasek ładowania na taki, który został dodany do projektu GameMakera jako rozszerzenie.
+    Prepend output .js: Tutaj możesz dodać do wyjścia *.js dowolny dodatkowy JavaScript niezbędny w Twojej grze. Na przykład aplikacja Chrome Store może wymagać dodania window.localStorage = undefined; do wyjściowego pliku JS, w związku z czym należy użyć tej opcji.
   
-   
-  Analytics
-  This section permits you to add analytics to your game, permitting you to use certain third-party products to track your game and its sales or plays. You can specify whether to use Flurry Analytics or Google Analytics to track your game. Due to the nature of these functions, you can only have one active at a time, and once you have flagged the Enable Flurry Analytics or Enable Google Analytics you should also add the unique ID that you have been assigned into the appropriate area.
-  For information on the functions that you can use to send analytics data, please see here.
-   
-  Graphics
-  Here you can change the following details related to how your game will be displayed (note that not all browsers will display your game in the same way, so test these options on as many browsers as possible to make sure that they have the desired effect):
+   
+  Analityka
+  Ta sekcja umożliwia dodanie do gry funkcji analitycznych, pozwalających na korzystanie z produktów innych firm w celu śledzenia gry, jej sprzedaży lub odtworzeń. Możesz określić, czy do śledzenia gry chcesz używać Flurry Anal ytics czy Google Analytics. Ze względu na charakter tych funkcji, w danym momencie może być aktywna tylko jedna z nich. Po zaznaczeniu opcji Włącz Fl urry Analytics lub Włącz Google Anal ytics powinieneś również dodać w odpowiednim polu unikalny identyfikator, który został Ci przydzielony.
+  Informacje na temat funkcji, które można wykorzystać do wysyłania danych analitycznych, można znaleźć tutaj.
+   
+  Grafika
+  W tym miejscu możesz zmienić następujące szczegóły dotyczące sposobu wyświetlania gry (pamiętaj, że nie wszystkie przeglądarki będą wyświetlać grę w ten sam sposób, dlatego przetestuj te opcje na jak największej liczbie przeglądarek, aby upewnić się, że przyniosą one pożądany efekt):
   
-    Allow switching to fullscreen: Checking this will allow the user to toggle the game from windowed to fullscreen mode using   /  + "F" on Mac and F10 on Windows. This is on by default.
-    Interpolate colours between pixels: Turns on linear interpolation, which basically "smooths" pixels. For crisp pixel graphics, it should be off, but if you have nice alpha blends and smoothed edged graphics it is better left on. This is on by default.
-    Center the game in the browser: Checking this will automatically center the game screen within the browser running the game. This is off by default.
-    Use Built In Particles: This option will export the sprites required for the built in particle system along with your game. These sprites are stored in individual texture pages, meaning that they are not the most efficient method of generating particles for this platform, therefore it is recommended that (unless using WebGL) you un-check this option and use your own particle sprites which will be stored on the main texture pages all together for your game. This is on by default.
-    Use Built In Font: This option will export the GameMaker built in font along with the rest of the game files. This will slightly increase the size of the texture pages and require a small amount of extra memory and storage, so if your game doesn't use the built in Arial font, this should be disabled. It is on by default.
-    WebGL: Choose whether to switch off WebGL support, make it optional (auto-detect), or make it a requirement for your game. It should be noted that to test performance under all circumstances, you should have this as disabled, then normally set it to auto-detect for publishing. Making it a requirement may reduce considerably the compatibility that your game has with different browser types. This is set to auto-detect by default.
-    Scaling: Your game can be configured to scale the draw canvas automatically to maintain the aspect ratio within the browser, or you can select to have it run full scale. The full scale option will not full screen the game in the browser, but rather stretch what is drawn to fit the canvas size, as defined by the first room of the game. This is set to keep aspect ratio by default.
+    Zezwalaj na przełączanie do trybu pełnoekranowego: Zaznaczenie tej opcji pozwoli użytkownikowi na przełączanie gry z trybu okienkowego do pełnoekranowego za pomocą  /  + "F" na komputerach Mac oraz F10 na Windows. Opcja ta jest domyślnie włączona.
+    Interpoluj kolory między pikselami: Włącza interpolację liniową, która zasadniczo "wygładza" piksele. W przypadku wyraźnej grafiki pikselowej powinno być wyłączone, ale jeśli chcesz uzyskać ładne mieszanki alfa i grafikę o wygładzonych krawędziach, lepiej pozostawić to włączone. Domyślnie opcja ta jest włączona.
+    Wyśrodkuj grę w przeglądarce: Zaznaczenie tej opcji spowoduje automatyczne wyśrodkowanie ekranu gry w przeglądarce, w której uruchomiona jest gra. Domyślnie opcja ta jest wyłączona.
+    Użyj wbudowanych cząsteczek: Ta opcja spowoduje wyeksportowanie wraz z grą stron sprites wymaganych dla wbudowanego systemu cząsteczek. Te strony sprites są przechowywane na indywidualnych stronach texture, co oznacza, że nie są one najbardziej wydajną metodą generowania cząsteczek dla tej platformy, dlatego zaleca się (chyba że używasz WebGL) odznaczenie tej opcji i użycie własnych cząsteczek sprites, które będą przechowywane na głównych stronach texture razem dla twojej gry. Opcja ta jest domyślnie włączona.
+    Use Built In Font: Ta opcja spowoduje wyeksportowanie czcionki wbudowanej w programie GameMaker font wraz z resztą plików gry. Zwiększa to nieco rozmiar stron texture i wymaga niewielkiej ilości dodatkowej pamięci, więc jeśli Twoja gra nie korzysta z wbudowanej czcionki Arial font, ta opcja powinna być wyłączona. Domyślnie jest ona włączona.
+    WebGL: Wybierz, czy obsługa WebGL ma być wyłączona na stronie switch, opcjonalna (autowykrywanie), czy wymagana dla Twojej gry. Należy zauważyć, że aby przetestować wydajność w każdych warunkach, powinieneś mieć tę opcję wyłączoną, a następnie ustawić ją na automatyczne wykrywanie podczas publikowania. Wprowadzenie tego wymogu może znacznie zmniejszyć kompatybilność Twojej gry z różnymi typami przeglądarek. Domyślnie opcja ta jest ustawiona na automatyczne wykrywanie.
+    Skalowanie: Grę można skonfigurować tak, aby automatycznie skalowała rysowany obszar, zachowując proporcje obrazu w przeglądarce, lub aby działała w pełnej skali. Opcja pełnego skalowania nie spowoduje wyświetlenia gry na pełnym ekranie w przeglądarce, ale raczej rozciągnie rysowane elementy, aby dopasować je do rozmiaru płótna, określonego przez pierwszą stronę room gry. Domyślnie jest ustawiona na zachowanie proporcji obrazu.
   
-  Finally there is the option to set the size of the texture page. The default (and most compatible) size is 2048x2048, but you can choose from anywhere between 256x256 up to 8192x8192. There is also a button marked Preview which will generate the texture pages for this platform and then open a window so that you can see how they look. This can be very useful if you wish to see how the texture pages are structured and to prevent having texture pages larger (or smaller) than necessary. For more information on texture pages, please see here.
-  NOTE: Be aware that the larger the size of the texture page, the less compatible your game will be with different browsers and devices.
-   
-  Images
-  This section is where you can define the Favicon and the Splash Screen. The icon should be authored as an *.ico file and can be 16x16, 32x32, 48x48, or 64x64 pixels in size, and 8-bit, 24-bit, or 32-bit in colour depth. The splash screen should be the size of the canvas that is going to hold your game and will override any loading bars if you tick the Use Splash Screen option (ie: you can have a loading bar, OR a splash screen, but not both). Smaller or larger images are permitted but will be scaled to fit. The splash screen should be a *.png image.
-  It is worth noting that GameMaker has a Project Image Generator tool which can be used to automatically create all the images required for all the different target platforms your game is being compiled to. If you use this tool, you should revise the images created to ensure that they are what you require.
-   
-  Social
-  The social tab is used for setting up Facebook communication in your game. If you require the Facebook functions, you need to click the "Use Facebook" checkbox and then supply the Facebook App ID and Facebook App Display Name. Note that all Facebook functionality is accessed via an extension, and when you first check the Use Facebook box you will be prompted to download and install the Facebook extension from the Marketplace (you may need to log into your YoYo Account before it can be downloaded).
-   
-   
+  Na koniec jest jeszcze opcja ustawienia rozmiaru strony tekstury. Domyślnym (i najbardziej kompatybilnym) rozmiarem jest 2048x2048, ale można wybrać dowolny rozmiar z zakresu od 256x256 do 8192x8192. Dostępny jest także przycisk oznaczony Podgląd który wygeneruje strony texture dla tej platformy, a następnie otworzy okno, w którym będzie można zobaczyć, jak wyglądają. Może to być bardzo przydatne, jeśli chcesz zobaczyć, jaką strukturę mają strony texture i uniknąć sytuacji, w której strony texture byłyby większe (lub mniejsze) niż to konieczne. Więcej informacji na temat stron texture można znaleźć tutaj.
+  UWAGA: Pamiętaj, że im większy rozmiar strony texture, tym mniejsza kompatybilność gry z różnymi przeglądarkami i urządzeniami.
+   
+  Zdjęcia
+  W tej sekcji można zdefiniować Favicon i Splash Screen. Ikona powinna być zapisana jako plik *.ico i może mieć rozmiar 16x16, 32x32, 48x48 lub 64x64 pikseli oraz głębię kolorów 8-bitową, 24-bitową lub 32-bitową. Ekran powitalny powinien mieć rozmiar płótna, na którym będzie umieszczona gra, i będzie zastępował paski ładowania, jeśli zaznaczysz opcję Użyj ekranu powitalnego (tzn. możesz mieć pasek ładowania LUB ekran powitalny, ale nie oba). Mniejsze lub większe obrazy są dozwolone, ale będą skalowane, aby pasowały. Ekran powitalny powinien być obrazem *.png.
+  Warto zauważyć, że GameMaker posiada narzędzie Project Image Generator, które może być używane do automatycznego tworzenia wszystkich obrazów wymaganych dla różnych platform docelowych, na które kompilowana jest gra. Jeśli korzystasz z tego narzędzia, powinieneś zweryfikować utworzone obrazy, aby upewnić się, że spełniają one Twoje wymagania.
+   
+  Społeczny
+  Karta społecznościowa służy do konfigurowania komunikacji z Facebookiem w grze. Jeśli chcesz korzystać z funkcji Facebooka, musisz kliknąć pole wyboru "Użyj Facebooka", a następnie podać identyfikator aplikacji Facebook i nazwę wyświetlania aplikacji Facebook. Pamiętaj, że wszystkie funkcje Facebooka są dostępne za pośrednictwem strony extension, a po pierwszym zaznaczeniu pola wyboru Użyj Facebooka zostaniesz poproszony o pobranie i zainstalowanie strony extension z Marketplace (przed pobraniem może być konieczne zalogowanie się na swoje konto YoYo ).
+   
+   
   
     
       
-        Back: Game Options
-        Next: Amazon Fire
+        Wstecz: Opcje gry
+        Następny: Amazon Fire
       
     
-    © Copyright YoYo Games Ltd. 2021 All Rights Reserved
+    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
   
   
   

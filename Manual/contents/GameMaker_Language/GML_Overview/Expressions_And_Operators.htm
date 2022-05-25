@@ -43,7 +43,7 @@
     <p class="dropspot">Jeśli dane <span class="inline2">wejściowe</span> są <span class="inline2">niezdefiniowane</span> lub <span class="inline2">pointer_null</span>, wyrażenie zwróci wartość <span class="inline2">null_output</span>; jednak we wszystkich innych przypadkach zwróci po prostu wartość <span class="inline2">wejściową</span>. Można tego użyć do zdefiniowania &quot;domyślnej&quot; wartości zmiennej, na wypadek gdyby sama zmienna nie posiadała poprawnej wartości.</p>
     <p class="dropspot">Rozważmy następujący przykład:</p>
     <p class="code_plain">username = data.username ?? &quot;INVALID USERNAME&quot;;</p>
-    <p class="dropspot">W tym przypadku zmienna <span class="inline2">username</span> otrzyma wartość przechowywaną w <span class="inline2">data.</span>username, jednak jeśli <span class="inline2">data.us</span> ername będzie <span class="inline2">niezdefiniowana</span> lub <span class="inline2">pointer_null</span>, zmienna otrzyma zamiast tego <span class="notranslate">string</span> <span class="inline2">&quot;INVALID USERNAME&quot;</span>. Przykład ten gwarantuje, że wywołania funkcji korzystających ze zmiennej <span class="inline2">username</span> nie spowodują błędu z powodu otrzymania wartości null oraz że użytkownik będzie wiedział, kiedy jego nazwa użytkownika nie została zwrócona.</p>
+    <p class="dropspot">W tym przypadku zmienna <span class="inline2">username</span> otrzyma wartość zapisaną w <span class="inline2">data.</span>username, jednak jeśli <span class="inline2">data.us</span> ername będzie <span class="inline2">niezdefiniowana</span> lub <span class="inline2">pointer_null</span>, zmienna otrzyma zamiast tego <span class="notranslate">string</span> <span class="inline2">&quot;INVALID USERNAME&quot;</span>. Przykład ten gwarantuje, że wywołania funkcji korzystających ze zmiennej <span class="inline2">username</span> nie spowodują błędu z powodu otrzymania wartości null oraz że użytkownik będzie wiedział, kiedy jego nazwa użytkownika nie została zwrócona.</p>
     <p class="note"><span class="note">UWAGA</span> Wyrażenie po prawej stronie operatora koalescencji nullish jest wykonywane tylko wtedy, gdy wartość wejściowa jest nullish, co oznacza, że wszelkie wywołania funkcji zawarte w wyrażeniu RHS będą wykonywane tylko wtedy, gdy wartość wejściowa jest nullish.</p>
     <hr />
     <p class="dropspot"><span class="inline2">??=</span> jest podobny do opisanego powyżej operatora koalescencji nullish, ale jest używany specjalnie do przypisywania zmiennych. Operator ten wymaga następującej składni:</p>
@@ -60,7 +60,7 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Bitowe (|, &amp;, ^, &lt;&lt;, &gt;&gt;)</a></p>
   <div class="droptext" data-targetname="drop-down5">
-    <p class="dropspot"><b><span class="inline2">|</span>, <span class="inline2">&amp;</span>, ^, <span class="inline2">&lt;&lt;</span>, <span class="inline2">&gt;&gt;</span></b> służą do wykonywania operacji bitowych, gdzie | = bitowe lub, &amp; = bitowe i, ^ = bitowe xor, &lt;&lt; = przesunięcie w lewo, &gt;&gt; = przesunięcie w prawo. Przykłady użycia: </p>
+    <p class="dropspot"><b><span class="inline2">|</span>, <span class="inline2">&amp;</span>, ^, <span class="inline2">&lt;&lt;</span>, <span class="inline2">&gt;&gt;</span> </b>służą do wykonywania operacji bitowych, gdzie | = bitowe lub, &amp; = bitowe i, ^ = bitowe xor, &lt;&lt; = przesunięcie w lewo, &gt;&gt; = przesunięcie w prawo. Przykłady użycia:</p>
     <p class="code">x = (x &amp; $ffffffe0) + 32;<br />
       if (y ^ $1f) &gt; 0 {do something...};</p>
     <p class="dropspot">Dodatkowe informacje na temat używania operatorów bitowych i ich działania można znaleźć w rozdziale: <a href="../../Additional_Information/Bitwise_Operators.htm">Operatory bit</a>owe.</p>
@@ -71,10 +71,10 @@
     <p class="dropspot"><b><span class="inline2">+</span>, <span class="inline2">-</span>, <span class="inline2">*</span>, <span class="inline2">/</span></b> oznaczają odpowiednio dodawanie, odejmowanie, mnożenie i dzielenie. Przykłady użycia:</p>
     <p class="code">c = a * b;<br />
       str = a + &quot;world&quot;;</p>
-    <p class="note"><span class="note"><b>UWAGA</b></span> Liczby zmiennoprzecinkowe nie zatrzymują się na dzieleniu przez zero, ponieważ w odpowiedzi otrzymają nieskończoność. Jeśli A i B są liczbami całkowitymi (int32 lub int64), to dzielenie zostanie wykonane jako dzielenie liczb całkowitych (zostanie sprawdzone dzielenie przez 0 i zostanie usunięty błąd). W przeciwnym razie zostanie wykonane dzielenie zmiennoprzecinkowe (bez sprawdzania dzielenia przez 0).</p>
+    <p class="note"><span class="note"><b>UWAGA</b></span> Liczby zmiennoprzecinkowe nie zatrzymują się na dzieleniu przez zero, ponieważ w odpowiedzi otrzymają nieskończoność. Jeśli A i B są liczbami całkowitymi (int32 lub int64), to dzielenie zostanie wykonane jako dzielenie przez liczby całkowite (zostanie sprawdzone dzielenie przez 0 i zostanie usunięty błąd). W przeciwnym razie zostanie wykonane dzielenie zmiennoprzecinkowe (bez sprawdzania dzielenia przez 0).</p>
     <p class="dropspot"> </p>
   </div>
-  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Zwiększanie/zmniejszanie (++, --)</a></p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Zwiększanie/ zmniejszanie (++, --)</a></p>
   <div class="droptext" data-targetname="drop-down7">
     <p class="dropspot"><span class="inline2"><strong>++</strong></span>, <span class="inline2"><strong>--</strong></span> służą do dodawania lub odejmowania jednego<span class="inline2">(1</span>) od wartości. Warto zauważyć, że umieszczenie tego przed lub po wartości, do której ma być dodane lub od której ma być odjęte, daje nieco inne wyniki. Na przykład:</p>
     <ul class="dropspotlist">
@@ -85,7 +85,7 @@
     <p class="code">var a = 1;<br />
       show_debug_message(string(a++));<br />
       show_debug_message(string(++a));</p>
-    <p class="dropspot">Na wyjściu debugowania pojawią się wartości 1 i 3. Oto kilka przykładów użycia:</p>
+    <p class="dropspot">Wyjściem debugowania byłyby wartości 1 i 3. Oto kilka przykładów użycia:</p>
     <p class="code">for (var i = 0; i &lt; 10; i++;)<br />
       {<br />
           do something...<br />
@@ -133,7 +133,7 @@
     <br />
     if my_var == your_var then <strong>++</strong>their_var;
   </p>
-  <p>Patrząc na kod, można stwierdzić, że jedno z tych rozwiązań jest trochę głupie, ale to dlatego, że my wiemy, co chcemy osiągnąć i co ma się wydarzyć, ale kompilator nie. Widzi on jedynie dwie zmienne z operatorem ++ między nimi, więc musi wybrać, do której z nich go zastosować. Dlatego <strong>zawsze</strong> należy <strong>wyraźnie nawiasować wyrażenia, operacje i instrukcje</strong>. Poprawna wersja powyższego kodu powinna wyglądać następująco:</p>
+  <p>Patrząc na kod, można stwierdzić, że jedno z tych rozwiązań jest nieco głupie, ale to dlatego, że my wiemy, co chcemy osiągnąć i co ma się wydarzyć, ale kompilator tego nie wie. Widzi on jedynie dwie zmienne z operatorem ++ między nimi, więc musi wybrać, do której z nich go zastosować. Dlatego <strong>zawsze</strong> należy <strong>wyraźnie nawiasować wyrażenia, operacje i instrukcje</strong>. Poprawna wersja powyższego kodu powinna wyglądać następująco:</p>
   <p class="code">if (my_var == your_var)<br />
     {<br />
         ++their_var;<br />

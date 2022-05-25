@@ -18,7 +18,7 @@
 <body>
   <h1>Wideoklipy YUV</h1>
   <p>Platformy, które używają formatu kolorów YUV dla filmów wideo, wymagają dodatkowych czynności podczas rysowania tych filmów. Polega to na użyciu strony <span class="notranslate">shader</span> do narysowania dwóch powierzchni na prymitywnym quadzie.</p>
-  <p>Najpierw przeczytaj stronę <span class="inline"><a href="video_draw.htm">video_draw()</a></span>, aby dowiedzieć się, jakie dane zwraca ta funkcja w przypadku wideo YUV, a następnie kontynuuj czytanie poniżej, aby uzyskać instrukcje dotyczące używania tych danych do rysowania wideo.</p>
+  <p>Przeczytaj najpierw stronę <span class="inline"><a href="video_draw.htm">video_draw()</a></span>, aby dowiedzieć się, jakie dane zwraca ta funkcja w przypadku wideo YUV, a następnie kontynuuj czytanie poniżej, aby uzyskać instrukcje dotyczące używania tych danych do rysowania wideo.</p>
   <h2>YUV Shader</h2>
   <p>Utwórz w swoim projekcie stronę <span class="notranslate">shader</span> <span class="notranslate">asset</span> i zastąp jej kod Fragment <span class="notranslate">Shader</span> (<span class="inline2">.fsh</span>) następującym kodem:</p>
   <pre>//
@@ -96,7 +96,7 @@ if(_data[0] == 0)
   </pre>
   <p>Kod w <span class="inline2">przypadku video_format_yuv:</span> wykonuje następujące czynności:</p>
   <ul class="colour">
-    <li>Otrzymuje powierzchnię wideo<span class="inline2">(_surf</span>) i powierzchnię chromowaną<span class="inline2">(_chromasurf</span>)</li>
+    <li>Zbiera powierzchnię wideo<span class="inline2">(_surf</span>) i powierzchnię chroma<span class="inline2">(_chromasurf</span>)</li>
     <li>Upewnia się, że istnieją, używając <span class="inline"><a href="../Surfaces/surface_exists.htm">surface_exist()</a></span>
       <ul>
         <li>Ustawia <span class="notranslate">shader</span> na <span class="inline2">shader_YUV</span> (czyli nasz nowo utworzony YUV <span class="notranslate">shader</span>).</li>
@@ -117,7 +117,7 @@ if(_data[0] == 0)
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div>Powrót: <a data-xref="{text}" href="Videos.htm#h1">Odtwarzanie wideo</a></div>
+        <div>Wstecz: <a data-xref="{text}" href="Videos.htm#h1">Odtwarzanie wideo</a></div>
         <div>Next: <a data-xref="{title}" href="video_set_volume.htm">video_set_volume</a></div>
       </div>
     </div>

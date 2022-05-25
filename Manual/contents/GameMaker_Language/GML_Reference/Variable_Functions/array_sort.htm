@@ -17,17 +17,19 @@
   <h1><span>sortuj_sort</span></h1>
   <p>Za pomocą tej funkcji można posortować tablicę w kolejności rosnącej lub malejącej, lub też użyć własnej funkcji do określenia kolejności sortowania. Funkcja wymaga podania tablicy do posortowania, a następnie wykonania jednej z poniższych czynności:</p>
   <ul class="colour">
-    <li>Stałe <span class="inline">true</span> lub <span class="inline">false</span> oznaczają <span>porządek sortowania rosnący (<span class="inline">true</span>) lub malejący (<span class="inline">false</span>)</span>.</li>
+    <li>Stałe <span class="inline">true</span> lub <span class="inline">false</span> wskazujące <span>rosnącą (<span class="inline">true</span>) lub malejącą (<span class="inline">false</span>) kolejność sortowania</span></li>
     <li>Własna funkcja określająca kolejność sortowania</li>
   </ul>
+  <p>Ta funkcja zmodyfikuje zawartość oryginalnej tablicy, która została dostarczona. Aby utworzyć posortowaną kopię, należy najpierw zduplikować tablicę za pomocą <span class="inline"><a href="array_copy.htm">array_copy()</a></span>, a następnie przekazać ją do tej funkcji.</p>
+  <h3>Użycie funkcji niestandardowej</h3>
   <p>Jeśli do sortowania używana jest funkcja niestandardowa, musi ona przyjmować dwa argumenty, które otrzymają odpowiednio wartości bieżącego elementu i następnego elementu. Funkcja powinna zwracać dowolną z poniższych wartości, aby wpłynąć na kolejność sortowania (gdzie <span class="inline">elm1</span> to bieżący element, a <span class="inline">elm2</span> to następny element):</p>
   <ul class="colour">
     <li><span class="inline">0</span>: jeśli <span class="inline">elm1</span> i <span class="inline">elm2</span> są równe</li>
-    <li><span class="inline">&lt;0</span> (liczba ujemna): jeśli <span class="inline">elm1</span> jest przed <span class="inline">elm2</span></li>
-    <li><span class="inline">&gt;0</span> (liczba dodatnia): jeśli <span class="inline">elm1</span> idzie za <span class="inline">elm2</span></li>
+    <li><span class="inline">&lt;= -1</span> (ujemna liczba całkowita): jeśli <span class="inline">elm1</span> jest przed <span class="inline">elm2</span></li>
+    <li><span class="inline">&gt;= 1</span> (dodatnia liczba całkowita): jeśli <span class="inline">elm1</span> idzie za <span class="inline">elm2</span></li>
   </ul>
+  <p class="note"><span class="note">UWAGA</span> Wartość zwracana przez funkcję własną musi być liczbą całkowitą. Wartości zmiennoprzecinkowe mniejsze niż 1 zostaną odczytane jako 0, dlatego należy użyć <a href="../Maths_And_Numbers/Number_Functions/sign.htm"><span class="inline">sign()</span></a> lub <a href="../Maths_And_Numbers/Number_Functions/round.htm"><span class="inline">round()</span></a> jeśli funkcja operuje na wartościach zmiennoprzecinkowych.</p>
   <p>Jeśli tablica zawiera zestaw <span class="notranslate">strings</span>, to w przypadku domyślnego sortowania rosnącego i malejącego tablice <span class="notranslate">strings</span> zostaną posortowane alfabetycznie, zgodnie z alfabetem angielskim. Wszystkie inne typy danych zostaną posortowane na podstawie wartości liczbowych, których dokładne wartości zależą od typu danych (na przykład tablica <span class="notranslate">buffers</span> zostanie posortowana na podstawie wartości liczbowych ich adresów pamięci).</p>
-  <p>Należy pamiętać, że funkcja ta zmodyfikuje zawartość oryginalnej tablicy, która została dostarczona. Aby utworzyć posortowaną kopię, należy najpierw zduplikować tablicę za pomocą strony <span class="inline"><a href="array_copy.htm">array_copy()</a></span>, a następnie przekazać ją do tej funkcji.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">array_sort(variable, sorttype_or_function);</p>
@@ -40,12 +42,12 @@
       </tr>
       <tr>
         <td><span class="notranslate">variable</span></td>
-        <td><span data-keyref="Type_Array">Tablica</span></td>
+        <td><span data-keyref="Type_Array"><a href="../../../../GameMaker_Language/GML_Overview/Arrays.htm" target="_blank">Tablica</a></span></td>
         <td><span class="notranslate">The variable that holds the array.</span></td>
       </tr>
       <tr>
         <td><span class="notranslate"><span>sorttype_or_function<span> </span></td>
-        <td> <span data-keyref="Type_Function_Script">Funkcja/metoda</span><span data-keyref="Type_Bool">logiczna</span> lub <span data-keyref="Type_Function_Script">skryptowa</span></td>
+        <td><span data-keyref="Type_Bool"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Boolean</a></span> lub <span data-keyref="Type_Function_Script"><a href="../../../../GameMaker_Language/GML_Overview/Script_Functions.htm" target="_blank">Funkcja skryptu</a></span>/<span data-keyref="Type_Method"><a href="../../../../GameMaker_Language/GML_Overview/Method_Variables.htm" target="_blank">Metoda</a></span></td>
         <td><span class="notranslate">The sort type (<span><span class="inline">true</span> w przypadku sortowania rosnącego lub <span class="inline">false</span> w przypadku sortowania malejącego) lub odwołanie do funkcji, która ma być użyta do sortowania.</td>
       </tr>
     </tbody>
@@ -59,10 +61,10 @@
     <br />
     array_sort(_a, function(elm1, elm2)<br />
     {<br />
-            return elm1 - elm2;<br />
+        return elm1 - elm2;<br />
     });
   </p>
-  <p>Powyższy kod wykorzystuje własną funkcję sortującą do posortowania tablicy w porządku rosnącym. Funkcja sortująca pobiera dwa elementy tablicy: <span class="inline">elm1</span> oraz <span class="inline">elm2</span> i wykonuje na nich odejmowanie. Jeśli adres <span class="inline">elm1</span> jest większy od adresu <span class="inline">elm2</span>, to w wyniku odejmowania otrzymuje się liczbę dodatnią, która przesuwa adres <span class="inline">elm1</span> za adres <span class="inline">elm2</span>, co powoduje ułożenie elementów w kolejności rosnącej.</p>
+  <p>Powyższy kod wykorzystuje własną funkcję sortującą do posortowania tablicy w porządku rosnącym. Funkcja sortująca pobiera dwa elementy tablicy: <span class="inline">elm1</span> oraz <span class="inline">elm2</span> i wykonuje na nich odejmowanie. Jeśli adres <span class="inline">elm1</span> jest większy od adresu <span class="inline">elm2</span>, to w wyniku odejmowania otrzymujemy liczbę dodatnią, która przesuwa adres <span class="inline">elm1</span> za adres <span class="inline">elm2</span>, co powoduje ułożenie ich w kolejności rosnącej.</p>
   <p>Oto rozszerzony przykład:</p>
   <p class="code">var _xx, _yy, _a;<br />
     <br />

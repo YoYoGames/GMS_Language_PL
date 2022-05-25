@@ -25,7 +25,7 @@
     <li>&quot;<b>error</b>&quot; - 0 w przypadku powodzenia, inna wartość, jeśli wystąpił błąd. Najczęściej zwracane są dwa poniższe błędy:
       <ul>
         <li>2145844844: Nie można znaleźć żądanej tabeli liderów (statystyka nie jest zarejestrowana jako wyróżniona statystyka)</li>
-        <li>-2145844848: Bad request (stat nie jest prawidłowym typem leaderboarda, np. <span class="notranslate">string</span>)</li>
+        <li>-2145844848: Bad request (stat nie jest poprawnym typem leaderboard, powinien być <span class="notranslate">string</span>)</li>
       </ul>
     </li>
     <li>&quot;<b>errormessage</b>&quot; - Adres <span class="notranslate">string</span> z komunikatem o błędzie, jeśli taki jest dostępny.</li>
@@ -51,32 +51,32 @@
       </tr>
       <tr>
         <td><span class="notranslate">user_id</span></td>
-        <td><span data-keyref="Type_ID_Xbox_User">Identyfikator użytkownika konsoli Xbox</span></td>
+        <td><span data-keyref="Type_ID_Xbox_User"><a href="../../../../../GameMaker_Language/GML_Reference/UWP_And_XBox_Live/Users_And_Accounts/xboxlive_get_user.htm" target="_blank">Identyfikator użytkownika konsoli Xbox</a></span></td>
         <td><span class="notranslate">The user ID of the user to get the leaderboard for</span></td>
       </tr>
       <tr>
         <td><span class="notranslate">stat</span></td>
-        <td><span data-keyref="Type_String">String</span></td>
-        <td><span class="notranslate">The stat (as string) to create the global leaderboard from</span></td>
+        <td><span data-keyref="Type_String"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">String</a></span></td>
+        <td><span class="notranslate">The stat (as a string) to create the global leaderboard from</span></td>
       </tr>
       <tr>
         <td><span class="notranslate">num_entries</span></td>
-        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span data-keyref="Type_Real"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Real</a></span></td>
         <td><span class="notranslate">The number of entries from the global leaderboard to retrieve</span></td>
       </tr>
       <tr>
         <td><span class="notranslate">start_rank</span></td>
-        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span data-keyref="Type_Real"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Real</a></span></td>
         <td><span class="notranslate">The rank in the leaderboard to start from (use 0 if the &quot;start_at_user&quot; argument is set to <span class="inline">true</span>)</td>
       </tr>
       <tr>
         <td><span class="notranslate">start_at_user</span></td>
-        <td><span data-keyref="Type_Bool">Boolean</span></td>
+        <td><span data-keyref="Type_Bool"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Boolean</a></span></td>
         <td><span class="notranslate">Set to <span class="inline">true</span> aby zacząć od rangi ID użytkownika, <span class="inline">false</span> w przeciwnym razie (ustawione na <span class="inline">false</span>, jeśli argument &quot;start_rank&quot; ma wartość inną niż 0)</td>
       </tr>
       <tr>
         <td><span class="notranslate">ascending</span></td>
-        <td><span data-keyref="Type_Bool">Boolean</span></td>
+        <td><span data-keyref="Type_Bool"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Boolean</a></span></td>
         <td><span class="notranslate">Set to <span class="inline">true</span> dla porządku rosnącego i <span class="inline">false</span> dla porządku malejącego</td>
       </tr>
     </tbody>

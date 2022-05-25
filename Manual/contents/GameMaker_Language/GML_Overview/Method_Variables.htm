@@ -16,20 +16,25 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Zmienne metody</h1>
   <p>Zmienna metody jest zasadniczo zmienną, której przypisano funkcję, &quot;wiążąc&quot; ją z instancją i umożliwiając użycie zmiennej do odwołania się do funkcji - podobnie jak używa się <a href="Runtime_Functions.htm">nazwy funkcji runtime</a> do odwołania się do wbudowanej funkcji <span class="notranslate">GML</span>. Używana zmienna może mieć zakres <em>lokalny</em>, <em>instancyjny</em> lub <em>globalny</em> (więcej informacji o zakresie zmiennych można znaleźć <a href="Variables_And_Variable_Scope.htm">tutaj</a> ).</p>
+  <p>Zobacz także: <a data-xref="{title}" href="Script_Functions_vs_Methods.htm">Funkcje skryptu a metody</a></p>
+  <h2>Tworzenie metod</h2>
   <p>Składnia tworzenia zmiennej metody jest następująca:</p>
-  <p class="code">&lt;variablename&gt; = function(&lt;parameter1&gt;, &lt;parameter2&gt;, etc... )<br />
-    {<br />
-        &lt;statement1&gt;;<br />
-        &lt;statement1&gt;;<br />
-        ...<br />
-    }</p>
+  <p class="code"><span><span>name = </span>function( parameter1, parameter2, ... )</span><br />
+    <span>{</span><br />
+    <span>    statement1;</span><br />
+    <span>    statement2;</span><br />
+    <span>    ...</span><br />
+    <span>}</span>
+  </p>
   <p>lub .</p>
-  <p class="code">function &lt;variablename&gt;(&lt;parameter1&gt;, &lt;parameter2&gt;, etc... )<br />
-    {<br />
-        &lt;statement1&gt;;<br />
-        &lt;statement1&gt;;<br />
-        ...<br />
-    }</p>
+  <p class="code"><span>function name( parameter1, parameter2, ... )<br />
+      {</span><br />
+    <span>    statement1;</span><br />
+    <span>    statement2;</span><br />
+    <span>    ...</span><br />
+    <span>}</span>
+  </p>
+  <p class="note">Aby utworzyć funkcję w <span class="notranslate">GML</span> Visual, użyj polecenia <a data-xref="{title}" href="../../Drag_And_Drop/Drag_And_Drop_Reference/Common/Declare_A_New_Function.htm">Declare A New Function</a>. Włącz opcję &quot;Temp&quot;, aby utworzyć zmienną metody (pierwsza składnia pokazana powyżej).</p>
   <p>Ogólnie rzecz biorąc, <em>pierwszą </em>formę należy jednak stosować do metod, a drugą do definiowania <a href="Script_Functions.htm">funkcji skryptowych</a>, ponieważ druga forma będzie również przypisywać indeks <span class="notranslate">script</span> do nazwy funkcji, podczas gdy pierwsza forma będzie &quot;prawdziwą&quot; metodą (i będzie wymagać użycia przedrostka <a href="Variables/Global_Variables.htm"><span class="notranslate">global</span></a> jeśli jest używana do definiowania funkcji skryptowej).</p>
   <p class="note"><span class="note">UWAGA</span> Możesz to sprawdzić, używając obu formularzy w projekcie, a następnie wywołując na każdym z nich funkcję <span class="notranslate">runtime</span> <a href="../GML_Reference/Variable_Functions/typeof.htm">typeof()</a>. Jeden z nich zostanie zaklasyfikowany jako &quot;liczba&quot; - ponieważ zwraca identyfikator indeksu <span class="notranslate">script</span> - a drugi jako &quot;metoda&quot;.</p>
   <p>Należy więc pamiętać, że - ogólnie rzecz biorąc - mówiąc o metodach i zmiennych metodowych, zawsze będziemy odwoływać się do funkcji, które <em>nie </em>zostały zdefiniowane za pomocą indeksu <span class="notranslate">script</span>. </p>
@@ -52,8 +57,8 @@
         return point_distance(_x1, _y1, _x2, _y2);<br />
     }
   </p>
-  <p>Zauważ, że w powyższym kodzie różne parametry, które są podawane jako dane wejściowe funkcji, mają swoje nazwy i to właśnie tych nazw należy używać w funkcji, aby odnosić się do różnych danych wejściowych. Zwróć też uwagę, że możesz użyć instrukcji <span class="inline"><a href="Language_Features/return.htm">return</a></span>, aby zwrócić wartość z funkcji do wykorzystania w innym miejscu kodu, oraz że funkcja <em>bez</em> zdefiniowanej wartości zwracanej domyślnie zwróci <span class="inline">undefined</span>.</p>
-  <p class="note"><span class="note">UWAGA</span> Podczas gdy zmienna będzie znajdować się w wybranym zakresie, rzeczywista funkcja będzie związana z zakresem, w którym została początkowo zdefiniowana. Na przykład <a href="Script_Functions.htm">funkcje skryptów</a> mają zakres globalny i są &quot;niezwiązane&quot; (tzn. nie są powiązane z żadnymi instancjami), ale jeśli masz funkcję <span class="notranslate">script</span>, która tworzy w sobie inną funkcję jako zmienną metody, a następnie wywołujesz tę funkcję <span class="notranslate">script</span> z instancji, funkcja użyta w <span class="notranslate">script</span> będzie związana ze zmienną <strong>instancji jako metoda</strong>. Ogólnie rzecz biorąc, nie trzeba się nad tym zastanawiać, ale w przypadku bardziej złożonych operacji ze zmiennymi metod warto to wziąć pod uwagę. Dotyczy to również innych konstrukcji, takich jak <a href="Language_Features/with.htm"><span class="inline">with</span></a> - gdy tworzysz zmienną metody wewnątrz instrukcji with, funkcja zostanie związana z instancją, która jest aktualnie w zasięgu.</p>
+  <p>Zauważ, że w powyższym kodzie różne parametry, które są podawane jako dane wejściowe funkcji, mają swoje nazwy i to właśnie te nazwy powinny być używane w funkcji do odwoływania się do różnych danych wejściowych. Zwróć też uwagę, że możesz użyć instrukcji <span class="inline"><a href="Language_Features/return.htm">return</a></span>, aby zwrócić wartość z funkcji do wykorzystania w innym miejscu kodu, oraz że funkcja <em>bez</em> zdefiniowanej wartości zwracanej domyślnie zwróci <span class="inline">undefined</span>.</p>
+  <p class="note"><span class="note">UWAGA</span> Podczas gdy zmienna będzie znajdować się w wybranym zakresie, rzeczywista funkcja będzie związana z zakresem, w którym została początkowo zdefiniowana. Na przykład <a href="Script_Functions.htm">funkcje skryptów</a> mają zasięg globalny i są &quot;niezwiązane&quot; (tzn. nie są powiązane z żadnymi instancjami), ale jeśli masz funkcję <span class="notranslate">script</span>, która tworzy w sobie inną funkcję jako zmienną metody, a następnie wywołujesz tę funkcję <span class="notranslate">script</span> z instancji, funkcja użyta w <span class="notranslate">script</span> będzie związana ze zmienną <strong>instancji jako metoda</strong>. Ogólnie rzecz biorąc, nie trzeba się nad tym zastanawiać, ale w przypadku bardziej złożonych operacji ze zmiennymi metod warto to wziąć pod uwagę. Dotyczy to również innych konstrukcji, takich jak <a href="Language_Features/with.htm"><span class="inline">with</span></a> - gdy tworzysz zmienną metody wewnątrz instrukcji with, funkcja zostanie związana z instancją, która jest aktualnie w zasięgu.</p>
   <p>Po utworzeniu zmiennej metody można jej używać tak samo, jak na przykład funkcji <span class="notranslate">runtime</span> lub <span class="notranslate">script</span>:</p>
   <p class="code">create_vec = function(_x1, _y1, _x2, _y2);<br />
     {<br />
@@ -88,7 +93,7 @@
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Powrót: <a href="GML_Overview.htm">Przegląd GML</a></div>
-        <div style="float:right">Następny: <a href="Functions/Static_Variables.htm">Zmienne statyczne</a></div>
+        <div style="float:right">Następny: <a data-xref="{title}" href="Script_Functions_vs_Methods.htm">Funkcje skryptu a metody</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
