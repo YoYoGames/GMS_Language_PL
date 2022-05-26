@@ -1,15 +1,15 @@
 
   
   display_mouse_get_x
-  Ta funkcja zwraca pozycję x myszy na ekranie. Należy zauważyć, że ta funkcja działa poprawnie tylko wtedy, gdy jest używana na stronie docelowej Windows. Można jej użyć także w HTML5, ale zwróci ona wartość tylko względem 0,0
-    płótna i nie zwróci żadnej wartości, gdy mysz znajduje się poza płótnem. W przypadku innych urządzeń zwróci wartość 0, dlatego należy użyć opcji device_mouse_raw_x()oraz .
-    device_mouse_raw_y() zamiast nich.
+  Ta funkcja zwraca pozycję x myszy na ekranie. Należy zauważyć, że funkcja ta działa prawidłowo tylko w przypadku użycia jej na obiektach Windows i macOS.
+  Można jej użyć także w HTML5, ale zwróci ona wartość tylko względem 0,0 samego płótna i nie zwróci żadnej wartości, gdy mysz znajdzie się poza płótnem.
+  W przypadku innych urządzeń zwróci ona 0, a użytkownik powinien użyć device_mouse_raw_x() oraz device_mouse_raw_y() zamiast tego.
    
   Składnia:
   display_mouse_get_x();
    
   Zwroty:
-  
+  Real
    
   Przykład:
   my_x = display_mouse_get_x();
@@ -24,7 +24,7 @@
         Następny: display_mouse_get_y
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

@@ -1,0 +1,49 @@
+
+  time_source_reset
+  Ta funkcja resetuje dane źródło czasu, ustawiając na nowo jego licznik czasu i informacje o powtórzeniach.
+  Po wywołaniu tej funkcji trzeba będzie ponownie uruchomić Źródło czasu, aby mogło ono odliczać czas.
+   
+  Składnia:
+  time_source_reset(id);
+  
+    
+      
+      
+      
+    
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator źródła czasu
+        The Time Source do resetowania
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  // Room Start event
+    time_source_reset(global.spawn_time_source);
+    time_source_start(global.spawn_time_source);
+  Ten kod zresetuje dane źródło czasu za każdym razem, gdy rozpocznie się nowa strona room, a następnie ponownie uruchomi źródło czasu.
+   
+   
+  
+    
+      
+        Powrót: Źródła czasu
+        Next: time_source_exists
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

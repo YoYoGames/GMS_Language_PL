@@ -31,11 +31,15 @@
   Przykład:
   var _values = ds_map_values_to_array(lvl_score);
     var _total = 0;
-    for (var i = 0; i < array_lengh(values); ++i;)
-        {
+    var _length = array_length(_values);
+    
+    for (var i = 0; i < _length; i ++)
+    {
         _total += _values[i];
-        }
-    draw_text(32, 32, "Total score for all levels = " + string(_total"));
+    }
+    
+    draw_text(32, 32, "Total score for all levels: " + string(_total));
+  
   Powyższe polecenie pobiera wszystkie wartości z mapy DS dla każdego klucza w mapie i zapisuje je w zmiennej lokalnej w postaci tablicy. Następnie loops przegląda tablicę i dodaje każdą z wartości do zmiennej lokalnej, która jest następnie używana do wyświetlenia sumy wszystkich wartości.
    
    

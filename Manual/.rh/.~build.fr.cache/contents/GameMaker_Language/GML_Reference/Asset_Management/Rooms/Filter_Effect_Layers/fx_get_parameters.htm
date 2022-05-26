@@ -2,7 +2,7 @@
   
   fx_get_parameters
   Ta funkcja służy do pobierania struktury zawierającej wszystkie parametry dla danego FX struct. Użytkownik określa FX struct (zwrócony przez fx_create() lub layer_get_fx()), a ta funkcja zwraca struct zawierający zmienne dla wszystkich parametrów mających zastosowanie do tego filtra/efektu. Parametry, które używają wektorów (tzn. grup wartości), będą przedstawione w postaci tablic.
-  Należy pamiętać, że nazwy parametrów dla danego efektu odpowiadają nazwom używanym wewnętrznie przez jego shader, dlatego zawsze będą miały przedrostek "g_". Nazwy wszystkich parametrów można uzyskać w osobnej tablicy, wywołując adres fx_get_parameter_names(), lub znaleźć je na tej stronie: FX Types & Parameters.
+  Nazwy wszystkich parametrów można uzyskać w osobnej tablicy, wywołując polecenie fx_get_parameter_names(), lub znaleźć je na tej stronie: FX Types & Parameters.
   Zmiana wartości na stronie struct nie spowoduje zastosowania tych zmian w filtrze/efektcie; aby zmiany zaczęły obowiązywać, należy wywołać stronę fx_set_parameters() w celu zastosowania zmodyfikowanej strony struct z powrotem do filtra/efektu.
    
   Składnia:

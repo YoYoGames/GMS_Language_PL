@@ -11,7 +11,7 @@
     "error" - 0 w przypadku powodzenia, inna wartość, jeśli wystąpił błąd. Najczęściej zwracane są dwa poniższe błędy:
       
         2145844844: Nie można znaleźć żądanej tabeli liderów (statystyka nie jest zarejestrowana jako wyróżniona statystyka)
-        -2145844848: Bad request (stat nie jest prawidłowym typem leaderboarda, np. string)
+        -2145844848: Bad request (stat nie jest poprawnym typem leaderboard, powinien być string)
       
     
     "errormessage" - Adres string z komunikatem o błędzie, jeśli taki jest dostępny.
@@ -43,7 +43,7 @@
       
         stat
         String
-        The stat (as string) to create the global leaderboard from
+        The stat (as a string) to create the global leaderboard from
       
       
         num_entries

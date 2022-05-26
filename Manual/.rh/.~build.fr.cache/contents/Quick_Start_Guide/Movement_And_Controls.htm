@@ -1,8 +1,8 @@
 
   
   Ruchy i kontrole
-  W poprzedniej części podręcznika Szybki start podano kilka przykładów rysowania elementów na ekranie, ale samo rysowanie nie jest dobre, jeśli nie można ich poruszać... Dlatego w tej części podamy kilka przykładów poruszania się na stronie objects oraz kilka podstawowych schematów sterowania w różnych typach gier. Wszystkie przykłady są podane przy użyciu GML Visual oraz GML Code, więc możesz użyć tego, z czym czujesz się bardziej komfortowo. Zwróć uwagę, że nie będziemy tu zbyt szczegółowo wyjaśniać poszczególnych zagadnień, ponieważ chcemy, abyś jak najszybciej zaczął tworzyć gry. Zachęcamy więc do zapoznania się z linkami na bieżąco oraz do korzystania z funkcji "szukaj" w podręczniku w celu znalezienia dodatkowych informacji na temat wszystkiego, czego nie jesteś pewien.
-  Zanim przejdziesz dalej, warto utworzyć nowy projekt ( GML lub GML Visual) na stronie startowej i dodać (lub utworzyć) kilka sprites oraz object lub dwa - ponieważ będziemy podawać kod, który można przetestować przy ich użyciu - oraz upewnić się, że w projekcie jest room, w którym można umieszczać instancje. Nie przejmuj się zbytnio wyglądem strony sprites - wystarczy zwykły biały kwadrat. Gdy wszystko będzie gotowe, możesz rozpocząć pracę nad poniższymi przykładami.
+  W poprzedniej części podręcznika Szybki start podano kilka przykładów rysowania elementów na ekranie, ale samo rysowanie nie jest dobre, jeśli nie można się nimi poruszać... Dlatego w tej części podamy kilka przykładów poruszania się po stronie objects oraz kilka podstawowych schematów sterowania w różnych typach gier. Wszystkie przykłady są podane przy użyciu GML Visual oraz GML Code, więc możesz użyć tego, z czym czujesz się bardziej komfortowo. Zwróć uwagę, że nie będziemy tu zbyt szczegółowo wyjaśniać poszczególnych zagadnień, ponieważ chcemy, abyś jak najszybciej zaczął tworzyć gry. Zachęcamy więc do zapoznania się z linkami na bieżąco oraz do korzystania z funkcji "szukaj" w podręczniku w celu znalezienia dodatkowych informacji na temat wszystkiego, czego nie jesteś pewien.
+  Zanim przejdziesz dalej, warto utworzyć nowy projekt ( GML lub GML Visual) na stronie startowej i dodać (lub utworzyć) kilka sprites oraz object lub dwa - ponieważ będziemy podawać kod, który można przetestować przy ich użyciu - oraz upewnić się, że w projekcie jest room, w którym można umieszczać instancje. Nie przejmuj się zbytnio wyglądem strony sprites - wystarczy zwykły biały kwadrat, a gdy wszystko będzie gotowe, możesz zacząć pracować nad poniższymi przykładami.
    
   Przesuń w kierunku myszy
   
@@ -37,7 +37,7 @@
     
     x = x + 2;
     Ten rodzaj ruchu nazywany jest ruchem pozycyjnym , ponieważ w istocie podnosimy instancję i umieszczamy ją ponownie w nowej pozycji za każdym razem, gdy uruchamiany jest kod. W tym przykładzie pokażemy, jak używać tego typu ruchu do poruszania instancją w czterech kierunkach: w górę, w dół, w lewo i w prawo.
-    Na początek otwórz stronę object i przypisz jej adres sprite. W tym momencie moglibyśmy dodać różne zdarzenia klawiat ury, a w każdym z nich kazać instancji poruszać się w wybranym kierunku, jednak chcemy, aby gracz mógł poruszać się tylko w jednym kierunku na raz, a zrobienie tego za pomocą zdarzeń klawiatury jest nieco bardziej skomplikowane niż za pomocą kodu. Zamiast tego użyjemy zdarzenia Step - które powinieneś teraz dodać do strony object - z następującymi akcjami lub kodem, aby użyć klawiszy strzałek do poruszania się:
+    Na początek otwórz stronę object i przypisz jej adres sprite. W tym momencie moglibyśmy dodać różne zdarzenia klawiat ury, a w każdym z nich kazać instancji poruszać się w wybranym kierunku, jednak chcemy, aby gracz mógł poruszać się tylko w jednym kierunku na raz, a zrobienie tego tylko za pomocą zdarzeń klawiatury jest nieco bardziej skomplikowane niż zrobienie tego za pomocą kodu. Zamiast tego użyjemy zdarzenia Step - które powinieneś teraz dodać do strony object - z następującymi akcjami lub kodem, aby użyć klawiszy strzałek do poruszania się:
     
     if keyboard_check(vk_left)
       {
@@ -55,7 +55,7 @@
       {
           y = y + 2;
       }
-    Używamy struktury " if... else if... else if...", aby zapewnić, że instancja będzie poruszać się tylko w jednym kierunku na raz, a więc instancja powinna być w stanie poruszać się tylko w górę, w dół, w lewo lub w prawo, ale nie po przekątnej. Umieść instancję object na stronie room i naciśnij przycisk Odtwarzaj  , aby ją teraz przetestować! Jeśli wszystko przebiegło poprawnie, powinieneś otrzymać coś takiego:
+    Używamy struktury " if... else if... else if...", aby zapewnić, że instancja będzie poruszać się tylko w jednym kierunku na raz, a więc instancja powinna być w stanie poruszać się tylko w górę, w dół, w lewo lub w prawo, ale nie po przekątnej. Umieść instancję object na stronie room i naciśnij przycisk Odtwórz  , aby ją przetestować! Jeśli wszystko przebiegło poprawnie, powinieneś otrzymać coś takiego:
     
     Kod ten można łatwo zmodyfikować, aby przekształcić ruch 4-kierunkowy w ruch 8-kierunkowy. Wystarczy usunąć polecenia " else" z bloków kodu, aby wszystko wyglądało tak, jak poniżej:
     
@@ -73,11 +73,11 @@
       }
       if keyboard_check(vk_down)
       {
-          y = y - 2;
+          y = y + 2;
       }
     Teraz po naciśnięciu przycisku odtwarzania   będzie to wyglądało następująco:
     
-    Ostatnia rzecz, na którą warto zwrócić uwagę użytkownikom kodującym za pomocą GML... Podczas korzystania z GML Visual można wybrać klawisz klawiatury, który ma być użyty, z listy rozwijanej, ale w przypadku GML nie jest to takie proste. Istnieje wiele stałych klawiaturowych, których można używać - na przykład stałe klawiszy strzałek pokazane w powyższym kodzie - ale nie ma stałych dla klawiszy alfanumerycznych. Są one obsługiwane w nieco inny sposób i wymagają użycia funkcji ord(). Poniższy kod pokazuje, jak to działa przy użyciu klawisza WASD zamiast klawiszy strzałek:
+    Ostatnia rzecz, na którą warto zwrócić uwagę użytkownikom kodującym za pomocą GML... Podczas korzystania z GML Visual można wybrać klawisz klawiatury, który ma być użyty, z listy rozwijanej, ale w przypadku GML nie jest to takie proste. Istnieje wiele stałych klawiaturowych, których można użyć - na przykład stałe klawiszy strzałek pokazane w powyższym kodzie - ale nie ma stałych dla klawiszy alfanumerycznych. Są one obsługiwane w nieco inny sposób i wymagają użycia funkcji ord(). Poniższy kod pokazuje, jak to działa przy użyciu klawisza WASD zamiast klawiszy strzałek:
     if keyboard_check(ord("A"))
       {
           x = x - 2;
@@ -92,14 +92,14 @@
       }
       if keyboard_check(ord("S"))
       {
-          y = y - 2;
+          y = y + 2;
       }
      
   
   Ruch gamepada
   
     Omówiliśmy już ruchy myszy i klawiatury, więc nadszedł czas, aby omówić ruchy gamepada . Nie będziemy się zajmować d-padem, ponieważ działa on tak samo jak klawiatura (wystarczy zmienić funkcje klawiatury w powyższym przykładzie na gamepad_button_check() lub If Gamepad button Down), więc w tym przykładzie zajmiemy się używaniem drążka analogowego do poruszania się.
-    Na początek musimy wykryć, jaki gamepad jest używany. Gamepady mają przypisane wartości ID od 0 do 11, więc użyjemy polecenia " for" loop, aby wykryć ID wszystkich podłączonych gamepadów i zapisać tę wartość ID w zmiennej do wykorzystania w przyszłości. Ponieważ chcemy wykryć tylko pierwszy podłączony gamepad, a nie wszystkie, po wykryciu gamepada użyjemy polecenia " break", aby "przerwać" działanie loop (na przykład jeśli pierwszy podłączony gamepad ma identyfikator 4, to loop uruchomi się tylko 5 razy, sprawdzając wartości ID 0 - 4, a następnie wyłączy się z loop po napotkaniu gamepada). Utwórz więc (lub otwórz) stronę object, przypisz jej adres sprite, a następnie dodaj zdarzenie Create Event o następującej treści:
+    Na początek musimy wykryć, jaki gamepad jest używany. Gamepady mają przypisane wartości ID od 0 do 11, więc użyjemy polecenia " for" loop, aby wykryć ID wszystkich podłączonych gamepadów i zapisać tę wartość ID w zmiennej do wykorzystania w przyszłości. Ponieważ chcemy wykryć tylko pierwszy podłączony gamepad, a nie wszystkie, po wykryciu gamepada użyjemy polecenia " break", aby "przerwać" działanie loop (na przykład, jeśli pierwszy podłączony gamepad ma ID 4, to loop uruchomi się tylko 5 razy, sprawdzając wartości ID 0 - 4, a następnie wyłączy się z loop po napotkaniu gamepada). Utwórz więc (lub otwórz) stronę object, przypisz jej adres sprite, a następnie dodaj zdarzenie Create Event o następującej treści:
     
     gamepad_id = -1;
       
@@ -145,7 +145,7 @@
       var _down = keyboard_check(vk_down);
       var _hspd = _right - _left;
       var _vspd = _down - _up;
-    Aby móc się poruszać, musimy dodać trochę więcej kodu, ale zanim to zrobimy, wyjaśnijmy to trochę. Chcemy przekonwertować wartości lewo/prawo/góra/dół na równoważne wartości prędkości w poziomie i pionie, więc aby to zrobić, pobieramy wartość każdego klawisza, a następnie wykonujemy na niej pewne podstawowe działania matematyczne, aby uzyskać wartości prędkości. Działa to w ten sposób, że jeśli klawisz jest wciśnięty, to akcja lub funkcja sprawdzająca zwróci "1", a jeśli nie jest wciśnięty, to funkcja zwróci "0". Tak więc, jeśli na przykład wciśnięto prawy klawisz, to dla " _hspd" masz "1 - 0 = 1", a jeśli wciśnięto lewy, to dla " _hspd" masz "0 - 1 = -1" (a jeśli wciśnięto oba, to "1 - 1 = 0", więc instancja się nie poruszy). Pamiętaj, że w GameMakerze room, aby przesunąć się w prawo, dodajemy do pozycji x , a aby przesunąć się w lewo, odejmujemy, więc ten kod da nam dodatnią lub ujemną wartość, którą możemy dodać lub odjąć, aby przesunąć się w poziomie lub w pionie, w zależności od danych wprowadzonych z klawiatury.
+    Aby móc się poruszać, musimy dodać trochę więcej kodu, ale zanim to zrobimy, wyjaśnijmy to trochę. Chcemy przekonwertować wartości lewo/prawo/góra/dół na równoważne wartości prędkości w poziomie i pionie, więc aby to zrobić, pobieramy wartość każdego klawisza, a następnie wykonujemy na niej podstawowe działania matematyczne, aby uzyskać wartości prędkości. Działa to w ten sposób, że jeśli klawisz jest wciśnięty, to akcja lub funkcja sprawdzająca zwróci "1", a jeśli nie jest wciśnięty, to funkcja zwróci "0". Tak więc, jeśli na przykład wciśnięto prawy klawisz, to dla " _hspd" masz "1 - 0 = 1", a jeśli wciśnięto lewy, to dla " _hspd" masz "0 - 1 = -1" (a jeśli wciśnięto oba, to "1 - 1 = 0", więc instancja się nie poruszy). Pamiętaj, że w GameMakerze room, aby przesunąć się w prawo, dodajemy do pozycji x , a aby przesunąć się w lewo, odejmujemy, więc ten kod da nam dodatnią lub ujemną wartość, którą możemy dodać lub odjąć, aby przesunąć się w poziomie lub w pionie, zależnie od danych wprowadzonych z klawiatury.
     Teraz możemy dodać kod, który faktycznie przesunie instancję, a więc - nadal w zdarzeniu Step i po powyższym kodzie - dodajemy to:
     
     if (_hspd != 0 || _vspd != 0)
@@ -165,7 +165,7 @@
     W ten sposób można string wiele wyrażeń razem w " if" sprawdzać, a wyrażenia te mogą być obliczane na wiele różnych sposobów (więcej informacji na ten temat można znaleźć w rozdziale Wyrażenia tutaj).
     W następnej części kodu zapisujemy w zmiennej wartość rzeczywistej prędkości ruchu, a następnie pobieramy kierunek, korzystając z wartości _hspd i _vspd , które mogą wynosić -1, 0 lub 1. Funkcja kierunku sprawdza kierunek od (0, 0), ponieważ nie używamy współrzędnych room, a zamiast tego chcemy, aby na podstawie wartości zmiennych obliczyła kierunek od 0° do 360°. Poniższy diagram lepiej ilustruje to, co się dzieje, niż próby wyjaśnienia tego słowami:
     
-    UWAGA: Kierunek w GameMakerze jest obliczany przeciwnie do ruchu wskazówek zegara, więc 0° i 360° są w prawo, 90° to góra, 180° to prawo, a 270° to dół.
+    UWAGA Kierunek w programie GameMaker jest obliczany przeciwnie do ruchu wskazówek zegara, więc 0° i 360° są w prawo, 90° to góra, 180° to prawo, a 270° to dół.
     Na koniec używamy lengthdir_x() oraz lengthdir_y() aby faktycznie przesunąć zmienną. Są to  wektor  które pobierają długość (odległość) i kierunek, a następnie na podstawie tych wartości obliczają nową pozycję na danej osi (bardziej szczegółowe objaśnienia znajdują się w opisach funkcji).
     To bardzo dużo do ogarnięcia na raz i nie przejmuj się, jeśli nie do końca to wszystko rozumiesz! Z czasem zrozumiesz! Teraz pozostaje tylko dodać instancję tej strony object do strony room, a następnie nacisnąć przycisk Odtwórz  a powinieneś uzyskać jedwabiście gładki ruch w 8 kierunkach, bez żadnych problemów związanych z poruszaniem się po przekątnej:
     

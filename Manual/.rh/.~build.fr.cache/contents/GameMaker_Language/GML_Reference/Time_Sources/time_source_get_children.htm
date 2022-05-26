@@ -1,0 +1,57 @@
+
+  time_source_get_children
+  Dla podanego Źródła czasu funkcja ta zwraca tablicę zawierającą Identyfikator źródła czasujego dzieci.
+   
+  Składnia:
+  time_source_get_children(id);
+  
+    
+      
+      
+      
+    
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator źródła czasu
+        The Time Source aby uzyskać dzieci z
+      
+    
+  
+   
+  Zwroty:
+  Array of Time Source ID
+   
+  Przykład:
+  var _children = time_source_get_children(time_source);
+    var _count = array_length(_children);
+    
+    for (var i = 0; i < _count; i ++)
+    {
+        time_source_destroy(_children[i]);
+    }
+    
+    time_source_destroy(time_source);
+  
+  Ten kod przechodzi przez wszystkie dzieci Źródła Czasu i niszczy je jedno po drugim.
+  Na koniec niszczy macierzyste Źródło Czasu.
+  Jest to konieczne do niszczenia nadrzędnych źródeł czasu, ponieważ nie można zniszczyć źródła czasu, które ma dzieci.
+   
+   
+  
+    
+      
+        Powrót: Źródła czasu 
+        Next: time_source_get_parent
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

@@ -1,0 +1,54 @@
+
+  time_source_exists
+  Ta funkcja zwraca, czy podany identyfikator jest prawidłowym źródłem czasu.
+  Jeśli Źródło Czasu zostało zniszczone, funkcja ta zwróci wartość false, jeśli jednak Źródło Czasu zostało zatrzymane lub po prostu wygasło, będzie ono nadal istnieć, co oznacza, że funkcja ta zwróci wartość true.
+   
+  Składnia:
+  time_source_exists(id);
+  
+    
+      
+      
+      
+    
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator źródła czasu
+        The Time Source do sprawdzenia
+      
+    
+  
+   
+  Zwroty:
+  Boolean
+   
+  Przykład:
+  if (time_source_exists(global.spawn_time_source))
+    {
+        if (keyboard_check_pressed(vk_space))
+        {
+            time_source_destroy(global.spawn_time_source);
+        }
+    }
+  Ten kod sprawdza, czy istnieje źródło czasu. Jeśli tak, to sprawdza, czy został naciśnięty klawisz spacji.
+  W takim przypadku niszczy on Źródło Czasu.
+   
+   
+  
+    
+      
+        Powrót: Źródła czasu
+        Next: time_source_get_children
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

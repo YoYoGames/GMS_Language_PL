@@ -1,0 +1,51 @@
+
+  Państwa źródła czasu
+  
+    
+      
+        Źródło czasu Stała stanu
+      
+      
+        Stała
+        Opis
+        Wartość
+      
+      
+        time_source_state_initial
+         Źródło czasu nie zostało jeszcze uruchomione
+        0
+      
+      
+        time_source_state_active
+         Źródło czasu zostało uruchomione i odlicza czas.
+        1
+      
+      
+        time_source_state_paused
+         Źródło czasu to paused
+        2
+      
+      
+        time_source_state_stopped
+         Źródło czasu zostało zatrzymane lub całkowicie wygasło
+        3
+      
+    
+  
+   Źródło czasu może mieć stan, który może być dowolną z powyższych stałych. Domyślnym stanem dla nowo utworzonego źródła czasu jest time_source_state_initial.
+  Stan można zmienić za pomocą time_source_start(), time_source_stop(), i time_source_pause().
+  Stan źródła czasu jest zwracany przy użyciu time_source_get_state().
+   
+   
+  
+    
+      
+        Powrót: Źródła czasu 
+        Next: time_source_create
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

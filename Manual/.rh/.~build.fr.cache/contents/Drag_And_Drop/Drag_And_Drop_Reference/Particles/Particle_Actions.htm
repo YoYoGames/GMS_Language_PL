@@ -1,33 +1,22 @@
 
   
   Biblioteka działań cząstek stałych
-  W przypadku złożonych rzeczy w GameMakerze zwykle tworzy się obiekt, a następnie instancje 
-    tego obiektu object w pomieszczeniu. Jednak w przypadku efektów graficznych może to być kosztowne, ponieważ każda instancja wiąże się z "kosztem" przetwarzania ze względu na zawarte w niej zmienne i kody w różnych zdarzeniach. Można zmniejszyć ten
-    koszty, korzystając z tiles do rysowania grafiki, a nawet używając warstwy zasobów w edytorze room, ale obie te metody są zwykle używane tylko do rysowania prostych grafik, które zachowują tę samą pozycję w czasie i mają niewiele efektów specjalnych.
-    Istnieje jednak jeszcze jedna możliwość rysowania szybkich, ale wszechstronnych efektów graficznych w grach - jest nią użycie cząsteczek.
-  Cząstki to zasoby graficzne o określonych właściwościach, które są zdefiniowane w systemie cząstek. Właściwościami tymi nie można manipulować bezpośrednio w przypadku pojedynczych cząstek, ale są one zmieniane za pomocą akcji używanych do definiowania poszczególnych
-   typów cząstek w systemie. Są one bardzo przydatne do tworzenia w grze pięknych i krzykliwych efektów (lub subtelnych i dyskretnych!), takich jak eksplozje, kalkomanie, deszcz, śnieg, pola gwiezdne i gruz, bez obciążenia procesora i układu graficznego, które wynikałoby z użycia
-    instancje i/lub tiles oraz assets.
+  W przypadku złożonych elementów w programie GameMaker zwykle tworzy się obiekt, a następnie jego instancje w pomieszczeniu object. Jednak w przypadku efektów graficznych może to być kosztowne, ponieważ każda instancja wiąże się z "kosztem" przetwarzania ze względu na zawarte w niej zmienne i kody w różnych zdarzeniach. Można zmniejszyć ten koszt, korzystając z tiles do rysowania grafiki lub nawet używając warstwy zasobów w edytorze room, ale obie te metody są zwykle używane tylko do rysowania prostych grafik, które zachowują to samo położenie w czasie i nie zawierają zbyt wielu efektów specjalnych. Istnieje jednak jeszcze jedna możliwość rysowania szybkich, ale wszechstronnych efektów graficznych w grach - jest nią użycie cząsteczek.
+  Cząstki to zasoby graficzne o określonych właściwościach, które są zdefiniowane w systemie cząstek. Właściwościami tymi nie można manipulować bezpośrednio w przypadku pojedynczych cząstek, ale są one zmieniane za pomocą akcji, które są używane do definiowania poszczególnych typów cząstek w systemie. Są one bardzo przydatne do tworzenia pięknych i krzykliwych efektów (lub subtelnych i dyskretnych!), takich jak eksplozje, kalkomanie, deszcz, śnieg, pola gwiazd i gruz w grze, bez narzutu na procesor lub układ graficzny, jaki powoduje używanie instancji i/lub stron tiles i assets.
   Podstawowa konfiguracja systemu cząstek składa się z trzech etapów:
   
-    Utwórz system cząsteczek: System cząsteczek jest jak pojemnik, w którym przechowujemy różne emitery cząsteczek, gdy ich używamy. Używamy akcji, aby zdefiniować szereg aspektów wizualnych i zachowań cząstek, a następnie używamy
-      z emitera, który został umieszczony w "pojemniku" (systemie cząsteczek), aby można było je zobaczyć.
-    Tworzenie typów cząstek: Typy" cząsteczek to definicja samego efektu graficznego. Można utworzyć wiele różnych typów cząstek, każdy z własną gamą kolorów, alf, rozmiarów i ruchów, ale należy pamiętać, że nie ma się kontroli nad poszczególnymi cząstkami.
-      Zdefiniujesz serię parametrów, a cząstka zostanie utworzona w taki sposób, że będzie miała losowo wybrane z nich zachowania.
-    Tworzenie emiterów cząstek: Emitery służą do wybuchania lub emitowania strumienia cząstek z bardzo ściśle określonych granic i można im nadać specjalne parametry, aby dokładnie określić sposób tworzenia danego efektu cząsteczkowego. Emitery mogą być opcjonalne,
-      ponieważ do emulacji wielu efektów emiterów można użyć akcji Wybuchające cząstki, a dodatkową zaletą jest to, że nie trzeba się martwić o późniejsze czyszczenie emiterów. Należy pamiętać, że emitery, w przeciwieństwie do cząsteczek, muszą
-      należeć do systemu, aby tworzone cząstki były widoczne.
+    Utwórz system cząsteczek: System cząsteczek jest jak pojemnik, w którym będziemy przechowywać różne emitery cząsteczek, gdy będziemy ich używać. Używamy akcji, aby zdefiniować szereg wizualnych aspektów i zachowań cząstek, a następnie używamy ich z emiterów umieszczonych w "pojemniku" (systemie cząstek), aby były widoczne.
+    Tworzenie typów cząstek: Typy" cząsteczek to definicja samego efektu graficznego. Można utworzyć wiele różnych typów cząstek, każdy z własną gamą kolorów, alf, rozmiarów i ruchów, ale należy pamiętać, że nie ma się kontroli nad poszczególnymi cząstkami. Zdefiniujesz serię parametrów, a cząstka zostanie utworzona tak, aby miała losowy zestaw zachowań wybranych z tych parametrów.
+    Tworzenie emiterów cząstek: Emitery służą do wybuchania lub wysyłania strumienia cząstek z bardzo ściśle określonych granic i można im nadać specjalne parametry, aby dokładnie określić sposób tworzenia danego efektu cząsteczkowego. Emitery mogą być opcjonalne, ponieważ do emulacji wielu efektów emitera można użyć akcji Wybuchające cząstki, a dodatkową zaletą jest to, że nie trzeba się martwić o późniejsze czyszczenie emitera. Należy pamiętać, że emitery, w przeciwieństwie do cząsteczek, muszą należeć do systemu, aby tworzone cząsteczki były widoczne.
   
   Bardziej szczegółowy przewodnik po konfigurowaniu i używaniu cząsteczek można znaleźć na następnej stronie podręcznika:
   
     Przewodnik po użyciu cząstek
   
-  Choć cząsteczki są doskonałym narzędziem do tworzenia efektów, wiążą się z nimi pewne ograniczenia i zasady dobrej praktyki, których należy przestrzegać, jeśli nie chcesz, aby gra miała problemy:
+  Chociaż cząsteczki są doskonałym narzędziem do tworzenia efektów, wiążą się z nimi pewne ograniczenia i zasady dobrej praktyki, których należy przestrzegać, jeśli nie chcesz, aby gra miała problemy:
   
-    System cząsteczek, typy cząsteczek i emitery cząsteczek zajmują pamięć i dlatego należy bardzo uważać, jak się ich używa, ponieważ bardzo łatwo jest spowodować wyciek pamięci, który spowolni działanie gry i doprowadzi do jej awarii.
-      i emiter (oraz ewentualnie sam system) powinny być niszczone w momencie, gdy nie są potrzebne.
-    Cząstki mogą być szybkie i mało obciążające dla CPU i GPU, ale nadal wymagają pewnego przetwarzania, więc nie powinno być ich 40 000 naraz na ekranie. Ogranicz je do tych, które są niezbędne do uzyskania określonego efektu, i nie
-      więcej.
+    System cząsteczek, typy cząsteczek i emitery cząsteczek zajmują pamięć i dlatego należy bardzo uważać, jak się ich używa, ponieważ bardzo łatwo jest spowodować wyciek pamięci, który spowolni grę, a w końcu ją zawiesi. Dlatego każdy typ cząsteczek i emiter (oraz ewentualnie sam system) należy zniszczyć w momencie, gdy nie są potrzebne.
+    Cząstki są szybkie i mało obciążające dla CPU i GPU, ale nadal wymagają pewnego przetwarzania, więc nie powinno być ich na ekranie 40 000 naraz. Ogranicz je do tych, które są niezbędne do uzyskania określonego efektu, i nie więcej.
     Jeśli zdefiniujesz własne cząstki na stronie sprite zamiast używać jednej z 14 dołączonych do zestawu sprites, powinieneś starać się, aby były one jak najmniejsze, co pozwoli uzyskać pożądany efekt.
     Cząstki nie wchodzą w interakcję z niczym. Jeśli potrzebujesz, aby wchodziły w interakcję z użytkownikiem lub innymi obiektami w grze, powinieneś rozważyć użycie instancji, ponieważ cząsteczki są czysto graficzne.
     Mimo że nie ma technicznego ograniczenia liczby emiterów i cząsteczek, które można utworzyć w jednej grze, należy starać się ograniczyć ich liczbę do minimum, aby zużycie pamięci było jak najmniejsze.
@@ -71,7 +60,7 @@
       
       
         
-                         Ustawianie wielkości cząstek 
+                Ustawianie wielkości cząstek 
       
       
         
@@ -179,10 +168,10 @@
     
       
         Powrót: Indeks
-        Następny: Wspólne działania
+        Następny: Źródła czasu (GML Visual)
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

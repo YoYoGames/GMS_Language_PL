@@ -1,0 +1,42 @@
+
+  Typy wygaśnięcia źródła czasu
+  
+    
+      
+        Źródło czasu Stała wygaśnięcia
+      
+      
+        Stała
+        Opis
+        Wartość
+      
+      
+        time_source_expire_nearest
+         Źródło czasu wygaśnie w ramce najbliższej jego czasowi wygaśnięcia.
+        0
+      
+      
+        time_source_expire_after
+         Źródło czasu wygaśnie w pierwszej ramce po upływie czasu wygaśnięcia.
+        1
+      
+    
+  
+  Źródła czasu wykorzystujące sekundy jako jednostkę mogą nie zawsze wygasać w danej ramce gry. Mogą one wygasać po przetworzeniu ramki gry, ale przed rozpoczęciem przetwarzania nowej ramki.
+  Jednak wywołanie zwrotne dla źródła czasu może być uruchamiane tylko w jednej klatce gry, więc typ wygaśnięcia źródła czasu określa, kiedy zostanie uruchomione jego wywołanie zwrotne, na wypadek gdyby wygasło ono w środku dwóch klatek.
+  Jeśli zostanie użyta funkcja time_source_expire_nearest, wywołanie zwrotne dla źródła czasu zostanie uruchomione w ramce najbliższej jego czasu wygaśnięcia, która może być ramką przed nim lub po nim.
+  Jeśli użyto time_source_expire_after, wywołanie zwrotne dla źródła czasu będzie zawsze uruchamiane w ramce po upływie czasu jego ważności.
+   
+   
+  
+    
+      
+        Powrót: Źródła czasu 
+        Następny: Państwa źródła czasu
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

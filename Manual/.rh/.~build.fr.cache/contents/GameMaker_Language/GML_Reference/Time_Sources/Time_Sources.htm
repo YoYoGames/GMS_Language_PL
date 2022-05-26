@@ -1,0 +1,74 @@
+
+  Źródła czasu
+  Źródło czasu" to niestandardowy zegar utworzony przez użytkownika. Działa on przez określony czas, a na końcu wygasa.
+   Źródło czasu (TS) ma możliwość wywołania niestandardowej metody ("callback") w momencie wygaśnięcia.
+  Może również powtarzać się określoną liczbę razy lub na zawsze. Każde powtórzenie Źródła Czasu jest nazywane "powtórzeniem".
+  Jak korzystać ze źródeł czasu?
+  Utwórz i uruchom źródło czasu, które wywołuje metodę niestandardową:
+  
+    Wywołaj time_source_create() / Utwórz źródło czasu, aby utworzyć źródło czasu
+      
+        Określ, czy strona inherits ma pochodzić z globalnego źródła czasu, źródła czasu gry czy niestandardowego źródłaczasu.
+        Określ okres czasu, przez jaki działa, oraz używane jednostki (sekundy lub klatki)
+        Określenie metody niestandardowej wraz z tablicą argumentów, które mają być przekazywane do tej metody
+        Opcjonalnie można określić liczbę powtórzeń.
+          
+            Domyślnie jest ona uruchamiana tylko raz
+          
+        
+      
+    
+    Wywołaj time_source_start() / Start Źródło czasu, aby natychmiast uruchomić to źródło czasu lub wywołać je później, gdy zajdzie potrzeba jego uruchomienia
+  
+  Spowoduje to uruchomienie źródła czasu, a po upływie określonego czasu wygaśnie i wywoła wskazaną metodę.
+  Wbudowane źródła czasu
+   Źródło czasu może pochodzić ze strony inherit z jednego z dwóch wbudowanych źródeł czasulub z własnego źródła czasu.
+  Zobacz: Wbudowane źródła czasu
+  Lista funkcji
+  Do tworzenia i modyfikowania Źródeł czasusłużą następujące funkcje:
+  
+    time_source_create
+    time_source_destroy
+    time_source_start
+    time_source_stop
+    czas_źródła_pauzy
+    time_source_reconfigure
+    time_source_reset
+    time_source_get_children
+    time_source_get_parent
+    time_source_get_period
+    time_source_get_reps_completed
+    time_source_get_reps_remaining
+    time_source_get_state
+    time_source_get_time_remaining
+    time_source_get_units
+    time_source_exists
+  
+  Każda funkcja get_* zwróci wartość undefined, jeśli podane źródło czasu nie istnieje.
+  Do przeliczania okresów czasu służą następujące funkcje pomocnicze:
+  
+    time_seconds_to_bpm
+    time_bpm_to_seconds
+  
+   
+  Zobacz także: GML Visual - Źródła czasu
+  Stałe
+  Następujące stałe są używane w funkcjach Źródła czasu:
+  
+    Wbudowane źródła czasu
+    Źródło czasu Jednostki
+    Typy wygaśnięcia źródła czasu
+    Państwa źródła czasu
+  
+   
+   
+  
+    
+      
+        Powrót: Odnośnik do kodu GML
+        Następny: Fizyka
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+

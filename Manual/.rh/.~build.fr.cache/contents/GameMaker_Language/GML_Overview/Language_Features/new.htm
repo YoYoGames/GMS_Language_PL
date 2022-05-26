@@ -2,10 +2,10 @@
   
   nowa strona
   Operator new może być użyty do utworzenia struct za pomocą funkcji, która jest wywoływana z podanymi argumentami. Funkcja ta może następnie wypełnić struct zmiennymi z argumentów - podobnie jak zdarzenie create w instancji ustawia początkowe zmienne dla instancji - a następnie operator new zwróci struct. Przed użyciem tego operatora należy pamiętać, że podana funkcja musi być oznaczona jako funkcja constructor , w przeciwnym razie operator new nie utworzy struct (pokazuje to poniższy przykład kodu, a więcej informacji można znaleźć na stronie poświęconej strukturom).
-  UWAGA: Możesz sprawdzić stronę struct, aby dowiedzieć się, jaka funkcja została użyta do jej utworzenia, używając funkcji runtime instanceof().
+  UWAGA Można sprawdzić stronę struct, aby dowiedzieć się, jaka funkcja została użyta do jej utworzenia, korzystając z funkcji runtime instanceof().
   Operator ten ma następującą składnię:
   <variable> = new <function> (<argument>, <argument>, ...);
-  Użycie operatora new wraz z funkcją powoduje zwrócenie referencji do strony struct, która jest przechowywana w podanej zmiennej, co umożliwia dostęp do strony struct i wszystkich zmiennych utworzonych w niej przez funkcję.
+  Użycie operatora new wraz z funkcją spowoduje zwrócenie referencji do strony struct, która zostanie zapisana w podanej zmiennej, co umożliwi dostęp do strony struct i wszystkich zmiennych utworzonych w niej przez funkcję.
   Poniższy przykład przedstawia funkcję, która została zdefiniowana do użycia jako konstruktor:
   function init_struct(_a, _b, _c) constructor
     {
@@ -25,7 +25,7 @@
         Następny: delete
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

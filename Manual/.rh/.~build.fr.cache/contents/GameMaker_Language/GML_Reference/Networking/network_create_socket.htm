@@ -34,7 +34,7 @@
     else
     {
         client = network_create_socket(network_socket_ws);
-        network_connect( client, "192.134.0.1", 6520 );
+        network_connect_raw_async( client, "192.134.0.1", 6520 );
     }
   Powyższy kod sprawdzi, czy gra jest uruchomiona w przeglądarce, i utworzy nowe gniazdo TCP lub gniazdo sieci Web, a następnie spróbuje połączyć się przez nie z podanym adresem IP na podanym porcie.
    

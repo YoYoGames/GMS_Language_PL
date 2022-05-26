@@ -29,7 +29,7 @@
     Jeśli dane wejściowe są niezdefiniowane lub pointer_null, wyrażenie zwróci wartość null_output; jednak we wszystkich innych przypadkach zwróci po prostu wartość wejściową. Można tego użyć do zdefiniowania "domyślnej" wartości zmiennej, na wypadek gdyby sama zmienna nie posiadała poprawnej wartości.
     Rozważmy następujący przykład:
     username = data.username ?? "INVALID USERNAME";
-    W tym przypadku zmienna username otrzyma wartość przechowywaną w data.username, jednak jeśli data.us ername będzie niezdefiniowana lub pointer_null, zmienna otrzyma zamiast tego string "INVALID USERNAME". Przykład ten gwarantuje, że wywołania funkcji korzystających ze zmiennej username nie spowodują błędu z powodu otrzymania wartości null oraz że użytkownik będzie wiedział, kiedy jego nazwa użytkownika nie została zwrócona.
+    W tym przypadku zmienna username otrzyma wartość zapisaną w data.username, jednak jeśli data.us ername będzie niezdefiniowana lub pointer_null, zmienna otrzyma zamiast tego string "INVALID USERNAME". Przykład ten gwarantuje, że wywołania funkcji korzystających ze zmiennej username nie spowodują błędu z powodu otrzymania wartości null oraz że użytkownik będzie wiedział, kiedy jego nazwa użytkownika nie została zwrócona.
     UWAGA Wyrażenie po prawej stronie operatora koalescencji nullish jest wykonywane tylko wtedy, gdy wartość wejściowa jest nullish, co oznacza, że wszelkie wywołania funkcji zawarte w wyrażeniu RHS będą wykonywane tylko wtedy, gdy wartość wejściowa jest nullish.
     
     ??= jest podobny do opisanego powyżej operatora koalescencji nullish, ale jest używany specjalnie do przypisywania zmiennych. Operator ten wymaga następującej składni:
@@ -46,7 +46,7 @@
   
   Bitowe (|, &, ^, <<, >>)
   
-    |, &, ^, <<, >> służą do wykonywania operacji bitowych, gdzie | = bitowe lub, & = bitowe i, ^ = bitowe xor, << = przesunięcie w lewo, >> = przesunięcie w prawo. Przykłady użycia: 
+    |, &, ^, <<, >> służą do wykonywania operacji bitowych, gdzie | = bitowe lub, & = bitowe i, ^ = bitowe xor, << = przesunięcie w lewo, >> = przesunięcie w prawo. Przykłady użycia:
     x = (x & $ffffffe0) + 32;
       if (y ^ $1f) > 0 {do something...};
     Dodatkowe informacje na temat używania operatorów bitowych i ich działania można znaleźć w rozdziale: Operatory bitowe.
@@ -57,10 +57,10 @@
     +, -, *, / oznaczają odpowiednio dodawanie, odejmowanie, mnożenie i dzielenie. Przykłady użycia:
     c = a * b;
       str = a + "world";
-    UWAGA Liczby zmiennoprzecinkowe nie zatrzymują się na dzieleniu przez zero, ponieważ w odpowiedzi otrzymają nieskończoność. Jeśli A i B są liczbami całkowitymi (int32 lub int64), to dzielenie zostanie wykonane jako dzielenie liczb całkowitych (zostanie sprawdzone dzielenie przez 0 i zostanie usunięty błąd). W przeciwnym razie zostanie wykonane dzielenie zmiennoprzecinkowe (bez sprawdzania dzielenia przez 0).
+    UWAGA Liczby zmiennoprzecinkowe nie zatrzymują się na dzieleniu przez zero, ponieważ w odpowiedzi otrzymają nieskończoność. Jeśli A i B są liczbami całkowitymi (int32 lub int64), to dzielenie zostanie wykonane jako dzielenie przez liczby całkowite (zostanie sprawdzone dzielenie przez 0 i zostanie usunięty błąd). W przeciwnym razie zostanie wykonane dzielenie zmiennoprzecinkowe (bez sprawdzania dzielenia przez 0).
      
   
-  Zwiększanie/zmniejszanie (++, --)
+  Zwiększanie/ zmniejszanie (++, --)
   
     ++, -- służą do dodawania lub odejmowania jednego(1) od wartości. Warto zauważyć, że umieszczenie tego przed lub po wartości, do której ma być dodane lub od której ma być odjęte, daje nieco inne wyniki. Na przykład:
     
@@ -71,7 +71,7 @@
     var a = 1;
       show_debug_message(string(a++));
       show_debug_message(string(++a));
-    Na wyjściu debugowania pojawią się wartości 1 i 3. Oto kilka przykładów użycia:
+    Wyjściem debugowania byłyby wartości 1 i 3. Oto kilka przykładów użycia:
     for (var i = 0; i < 10; i++;)
       {
           do something...
@@ -119,7 +119,7 @@
     
     if my_var == your_var then ++their_var;
   
-  Patrząc na kod, można stwierdzić, że jedno z tych rozwiązań jest trochę głupie, ale to dlatego, że my wiemy, co chcemy osiągnąć i co ma się wydarzyć, ale kompilator nie. Widzi on jedynie dwie zmienne z operatorem ++ między nimi, więc musi wybrać, do której z nich go zastosować. Dlatego zawsze należy wyraźnie nawiasować wyrażenia, operacje i instrukcje. Poprawna wersja powyższego kodu powinna wyglądać następująco:
+  Patrząc na kod, można stwierdzić, że jedno z tych rozwiązań jest nieco głupie, ale to dlatego, że my wiemy, co chcemy osiągnąć i co ma się wydarzyć, ale kompilator tego nie wie. Widzi on jedynie dwie zmienne z operatorem ++ między nimi, więc musi wybrać, do której z nich go zastosować. Dlatego zawsze należy wyraźnie nawiasować wyrażenia, operacje i instrukcje. Poprawna wersja powyższego kodu powinna wyglądać następująco:
   if (my_var == your_var)
     {
         ++their_var;

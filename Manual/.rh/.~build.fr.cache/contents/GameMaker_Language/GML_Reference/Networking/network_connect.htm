@@ -2,27 +2,32 @@
   
   network_connect
   Za pomocą tej funkcji można wysłać żądanie połączenia z adresem server. Funkcja pobiera identyfikator gniazda, przez które ma się połączyć (zob. network_create_socket()) i wymaga podania adresu IP, z którym chcesz się połączyć ( string) oraz portu, przez który chcesz się połączyć, a jeśli połączenie nie powiedzie się, zwrócona zostanie wartość mniejsza niż 0. Połączenie używa specjalnego protokołu, który zapewnia, że tylko gry GameMaker łączą się ze sobą, jednak jeśli chcesz połączyć się z server, który nie jest grą GameMaker, możesz użyć network_connect_raw(). Zwróć uwagę, że domyślnie funkcja ta jest synchroniczna, co oznacza, że Twoja gra może się "zawiesić" w trakcie nawiązywania połączenia. Możesz ustawić wartość timeoutu dla połączenia lub sprawić, by tworzenie było asynchroniczne, używając funkcji network_set_config(), albo zamiast niej użyć funkcji network_connect_async().
+  UWAGA Tej funkcji nie można używać w języku HTML5. W przypadku gniazd WebSockets należy użyć funkcji Async.
    
   Składnia:
   network_connect(socket, url, port);
   
     
       
-        ArgumentTyp
+        Argument
+        Typ
         Opis
-     
+      
       
         socket
+        Identyfikator gniazda sieciowego
         The id of the socket to use.
-     
+      
       
         url
+        String
         The URL or IP to connect to (a string).
-     
+      
       
         port
+        Real
         The port to connect to.
-     
+      
     
   
    
@@ -39,7 +44,7 @@
   
     
       
-        Powrót: Tworzenie sieci
+        Powrót: Praca w sieci
         Następny: network_connect_async
       
     

@@ -1,0 +1,82 @@
+
+   Utwórz źródło czasu
+  Ta akcja tworzy nowe źródło czasu i zapisuje je w zmiennej Target. Więcej informacji na ten temat można znaleźć w części Źródła czasu.
+  Jest to oparte na time_source_create() funkcji. Przeczytaj jej stronę, aby uzyskać szczegółowe informacje o argumentach.
+  Aby aktywować źródło czasu po jego utworzeniu, należy użyć opcji Uruchom źródło czasu.
+  Musisz zniszczyć źródło czasu za pomocą opcji Zniszcz źródło czasu, gdy nie jest już potrzebne.
+   
+  Składnia działania:
+  
+  Argumenty:
+  
+    
+      
+        Argument
+        Opis
+      
+      
+        Target
+        Zmienna, w której zostanie zapisane nowe źródło czasu 
+      
+      
+        Parent
+        Nadrzędne źródło czasu: wbudowane lub własne źródło czasu 
+      
+      
+        Period
+        Długość okresu źródła czasu, czyli jak długo trwa jego wygaśnięcie.
+      
+      
+        Units
+         Jednostki, w których wyrażony jest okres (sekundy lub klatki)
+      
+      
+        Callback
+        Adres method do wywołania po wygaśnięciu źródła czasu 
+      
+      
+        Arguments
+        OPCJONALNE Tablica zawierająca argumenty, które należy przekazać do funkcji wywołania zwrotnego
+      
+      
+        Repetitions
+        OPCJONALNE Ile razy źródło czasu powinno być uruchamiane w sumie, lub -1 dla nieokreślonego powtarzania.
+      
+      
+        Expiry Type
+        OPCJONALNE Typ wygaśnięcia dla źródła czasu.
+      
+    
+  
+   
+  Przykład:
+  Ten blok kodu wykonuje następujące czynności:
+  
+    Tworzy ona nową funkcję z włączoną opcją "Temp". Tworzy to lokalną zmienną metody, która jest wymagana dla Źródła czasu.
+      
+         Ta metoda przyjmuje jeden argument, msg, który wypisuje do dziennika wyjściowego.
+      
+    
+    Następnie tworzy nowe źródło czasu o długości okresu 1 sekundy.
+      
+        Określa zmienną callback_method jako "Callback" oraz tablicę z jednym argumentem dla funkcji.
+         Źródło czasu jest ustawione na powtarzanie w nieskończoność, ponieważ w polu "Repetitions" podano wartość -1.
+      
+    
+    Następnie uruchamiane jest źródło czasu.
+  
+  To źródło czasu będzie wykonywać swoje wywołanie zwrotne co sekundę, drukując komunikat "Minęła sekunda!" w dzienniku wyjściowym.
+   
+   
+  
+    
+      
+        Powrót: Działania związane ze źródłem czasu
+        Następny: Zniszcz źródło czasu
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+

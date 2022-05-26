@@ -1,86 +1,61 @@
 
   
   Redaktor Tile Set 
-  Zestaw kafelków to zasób graficzny służący do rysowania poziomów i innych statycznych elementów gry. Strona tile set składa się z pojedynczego obrazu
-   tiles który jest następnie dzielony na różne "komórki" (tile), a każdy z nich można umieścić w edytorze room, aby utworzyć kompletny obraz. Poniżej przedstawiono dwa przykłady sprites, które można wykorzystać jako zestawy kafelków:
+  Zestaw kafelków to zasób graficzny służący do rysowania poziomów i innych statycznych elementów gry. Strona tile set składa się z jednego obrazu, który jest następnie dzielony na różne "komórki" (tiles), a każdy z nich tile może być umieszczony w edytorze room w celu utworzenia kompletnego obrazu. Poniżej przedstawiono dwa przykłady sprites, które można wykorzystać jako zestawy kafelków:
   
   Zdjęcia autorstwa Lost Garden
-  Są to najczęstsze sposoby, w jakie ludzie tworzą tile sets - albo wszystkie razem, albo z małymi odstępami między nimi, a GameMaker radzi sobie z obydwoma typami. Zasadniczo wszystkie strony tile sets muszą składać się z obrazków, które mieszczą się w
-    jasno zdefiniowanej siatce, przy czym każda komórka siatki musi mieć dokładnie taki sam rozmiar (zwróć uwagę, że chociaż obrazy pokazane powyżej składają się z kwadratowych stron tiles, stronę tile set można utworzyć także z prostokątnych stron tiles ).
-  Podczas tworzenia strony tile sets pamiętaj, że lewa górna komórka siatki musi być zawsze  pusta, ponieważ jest to komórka tile, której GameMaker będzie używał dla "pustych" tiles w room oraz do usuwania istniejących tiles (a nawet
-    nawet jeśli w tej części obrazu znajdują się piksele, zostaną one zignorowane).
+  Są to najczęstsze sposoby, w jakie ludzie tworzą strony tile sets - albo wszystkie zbite razem, albo z niewielkimi odstępami między nimi, a GameMaker radzi sobie z obydwoma typami. Zasadniczo wszystkie strony tile sets muszą składać się z obrazków, które mieszczą się w jasno określonej siatce, a każda komórka siatki ma dokładnie taki sam rozmiar (zauważ, że chociaż wszystkie przedstawione powyżej obrazki składają się z kwadratowych stron tiles, stronę tile set można też utworzyć z prostokątnych stron tiles ).
+  Podczas tworzenia strony tile sets należy pamiętać, że lewa górna komórka siatki musi być zawsze  pusta, ponieważ jest to komórka tile, której GameMaker będzie używał dla "pustych" tiles w room oraz do usuwania istniejących tiles (nawet jeśli w tej części obrazu znajdują się piksele, zostaną one zignorowane).
   Podczas pierwszego tworzenia zasobu tile set zostanie otwarte okno edytora Tile Set z następującymi opcjami:
    
   Nazwa
   
     Tutaj możesz nadać nazwę swojej stronie tile set. Nazwy mogą być tylko alfanumeryczne i mogą używać tylko symbolu "_" pod paskiem, nie mogą też zaczynać się od liczby.
-    
+     
   
   Sprite
   
     Tutaj można wybrać sprite asset, na podstawie którego zostanie utworzony nasz tile set. Kliknięcie przycisku głównego spowoduje otwarcie eksploratora Asset, w którym można wybrać stronę sprite, której chcemy użyć w zestawie kafelków:
     Możesz także kliknąć przycisk New Sprite , aby utworzyć nowy adres sprite asset (co spowoduje otwarcie edytora sp rajtów dla nowego adresu asset w obrębie adresu workspace do edycji), lub możesz edytować aktualnie wybrany adres sprite za pomocą przycisku Edit Sp rite , a nawet zdecydować się na edycję samego obrazu sprite w Edytorze obrazów, naciskając przycisk .
     Domyślnie po otwarciu strony tile set wyświetlane jest także okno Właściwości zestawu płytek (patrz poniżej), ale jeśli je zamkniesz, możesz kliknąć przycisk znajdujący się tutaj, aby otworzyć je ponownie.
-    
+     
   
   Właściwości
   
-    Okno Właściwości zestawu kafelków służy do określania podstawowego rozmiaru tile (domyślnie 16px kwadrat), wielkości przesunięcia i separacji między tiles (te dwie ostatnie opcje są używane w przypadku sprites, jak pokazano
-      na przykładowej ilustracji w dalszej części tej strony, gdzie między poszczególnymi częściami strony tiles występują przerwy.) Dla obrazu tile set można także ustawić wartości opcji Output Border (Obramowanie wyjściowe ), które określają sposób zapisywania obrazu na dysku, oraz
-      w razie potrzeby dodać dodatkowe piksele wokół każdej strony tile.
-    Ze względu na sposób renderowania strony tiles muszą być one wcześniej przygotowane z obramowaniem wokół każdej z nich, aby "rozmazać" krawędzie. Poniższy obrazek ilustruje sposób mapowania strony tiles przez sterowniki graficzne urządzenia.
-      tile pokazuje, gdzie są mapowane współrzędne U,V (litery "U" i "V" są używane do opisania siatki 2D texture, ponieważ "X", "Y" i "Z" są już używane do opisania współrzędnych przestrzennych room i object )
-      współrzędnych przestrzennych):
+    Okno Właściwości zestawu kafelków służy do określania podstawowego rozmiaru strony tile (domyślnie 16px kwadrat), wielkości przesunięcia i separacji między stronami tiles (dwie ostatnie opcje są przydatne w przypadku strony sprites, takiej jak ta pokazana na przykładowym obrazku na górze tej strony, gdzie między poszczególnymi częściami strony tiles występują przerwy). Można także ustawić wartości opcji Output Border (Wyjściowe ob ramowanie) dla obrazu tile set, które kontrolują sposób zapisywania obrazu na dysku, oraz dodać dodatkowe piksele wokół każdego obrazu tile, jeśli jest to wymagane.
+    Ze względu na sposób renderowania strony tiles muszą być one wcześniej przygotowane z obramowaniem wokół każdej z nich, aby "rozmazać" krawędzie. Poniższy obrazek ilustruje sposób mapowania strony tiles przez sterowniki graficzne urządzenia, przy czym czerwona linia wokół strony tile pokazuje, gdzie są mapowane współrzędne U,V (litery "U" i "V" są używane do opisania siatki 2D texture, ponieważ "X", "Y" i "Z" są już używane do opisania współrzędnych przestrzennych room i object ):
+    Jak widać, wybiera on środek teksela do bezpośredniego mapowania podczas rysowania obrazu na stronie room. W skali 1:1 wszystko jest w porządku, ale co się stanie, gdy przeskalujemy tę stronę tile w dół? Problem ze skalowaniem w dół polega na tym, że gdy zmniejszamy obraz, zmniejszają się także UV i próbują zmieścić się w bardziej ściśniętej przestrzeni, ale to oczywiście nie jest możliwe, więc sterownik graficzny wybiera tekstury do narysowania na podstawie dostępnych centrów pikseli.
+    Jeśli więc "tylko" przechodzimy do nowego piksela ekranu, to ponieważ sterowniki graficzne używają środka piksela do decydowania o tym, co ma być rysowane, zostanie wybrany tekstel otaczający stronę tile, a nie tekstel na samej stronie tile.
     
-    Jak widać, wybiera on środek obszaru tekstowego do
-      mapuje bezpośrednio podczas rysowania obrazu w room. W skali 1:1 wszystko jest w porządku, ale co się stanie, gdy przeskalujemy tile w dół? Problem ze skalowaniem w dół polega na tym, że gdy zmniejszasz obraz, zmniejszają się także UV, które próbują
-      To oczywiście nie jest możliwe, więc sterownik graficzny wybiera tekstury do narysowania na podstawie dostępnych centrów pikseli.
-    Jeśli więc "tylko" przechodzimy do nowego piksela ekranu, to ponieważ sterowniki graficzne używają środka piksela, aby zdecydować, co ma być rysowane, zostanie wybrany tekstel otaczający stronę tile, a nie tekstel na samej stronie tile.
-    
-    Powyżej pokazany jest rysunek tile rysowany w skali do 6 pikseli ekranu. Pokazuje on, że gdy tekstel nakłada się nieco na kolejny piksel ekranu, sterownik graficzny musi dokonać wyboru: albo zrezygnować z tego teksela, albo spróbować wypełnić go czymś, co jego zdaniem
-      jest prawidłowym tekselem. Powiedzmy, że w tym przypadku sterownik zdecyduje się narysować nałożony fragment tekstu na piksel ekranu, a ponieważ znajduje się on teraz wyraźnie poza obszarem tile, piksel ten zostanie pobrany z następnej strony tile lub z niewielkiego fragmentu przestrzeni, który udostępniłeś wokół strony .
-      tiles , co oznacza, że gdy się zmniejszy, pojawią się pęknięcia między tiles i "zacięcia" w sposobie rysowania, i tu powstaje wiele nieporozumień... Każdy sterownik graficzny i urządzenie robi to na swój własny
-      Każdy sterownik i urządzenie graficzne robi to na swój sposób, co oznacza, że rezultaty mogą być nieprzewidywalne i wyglądać okropnie... ale jeśli będziesz ostrożny i zaplanujesz to z wyprzedzeniem, możesz to obejść.
-    W grach z wyższej półki, jeśli rysujesz z pojedynczej strony texture (nie ze strony texture lub atlasu texture ), masz możliwość użycia trybu texture o nazwie clamp .
-      co pozwala na bezproblemowe skalowanie, ponieważ wymusza na sprzęcie pobieranie ostatniego rzędu pikseli bez względu na wszystko. To właśnie zapewniają ustawienia opcji Output Border :
-    Powyżej pokazano "naprawioną" stronę tile sprite. Widać, że ma ona teraz powtarzającą się sekcję wokół
-     tile co oznacza, że w przypadku przekroczenia limitu sprzęt zawsze wybierze ostatni teksel z tile, a nie jeden z odstępów lub tile. Dlatego podczas tworzenia strony tile set należy pamiętać, że jeśli chcesz powiększać lub pomniejszać widok gry
-      w górę lub w dół albo będzie renderować stronę tiles w skali, może być konieczne ustawienie większej szerokości lub wysokości ramki wyjściowej niż domyślna wartość 2.
-    Następnie można wybrać grupę tekstur, do której ma należeć dany zasób tilesetu. Zasadniczo grupa texture (zdefiniowana wcześniej w menedżerze grup tekstur) to coś, co można
-      można ustawić w taki sposób, aby wszystkie obrazy assets, które są potrzebne dla konkretnych stron rooms lub poziomów gry, były przechowywane razem. Możesz na przykład umieścić wszystkie obrazy poziomu 1 w jednej grupie texture, wszystkie obrazy poziomu 2 w innej itd..., a GameMaker
-      Studio 2 spróbuje umieścić wszystkie te zgrupowane zasoby na tej samej stronie tekstur, aby ograniczyć zamianę stron texture podczas działania gry na wybranej platformie docelowej.
+    Powyżej pokazano rysunek tile, który jest rysowany w skali do 6 pikseli ekranu. Pokazuje to, że gdy nałożymy trochę tekstu na następny piksel ekranu, sterownik graficzny musi dokonać wyboru: albo opuścić ten tekstel, albo spróbować wypełnić go czymś, co uważa za prawidłowy tekstel. Powiedzmy, że w tym przypadku sterownik zdecyduje się narysować nałożony fragment tekstu na piksel ekranu, a ponieważ znajduje się on teraz wyraźnie poza naszą stroną tile, piksel ten zostanie pobrany albo z następnej strony tile, albo z niewielkiego kawałka przestrzeni, którą zapewniłeś wokół strony tiles, co oznacza, że gdy się ona zmniejszy, pojawią się szczeliny między stronami tiles i powstaną "usterki" w sposobie rysowania... Każdy sterownik graficzny i urządzenie robi to na swój sposób, co oznacza, że rezultaty mogą być nieprzewidywalne i wyglądać okropnie... ale jeśli będziesz ostrożny i zaplanujesz to z wyprzedzeniem, możesz to obejść.
+    W grach z wyższej półki, jeśli rysujesz z pojedynczej strony texture (nie ze strony texture lub atlasu texture ), masz możliwość użycia trybu texture o nazwie clamp . Powoduje on nieskończone powtarzanie ostatniego rzędu tekseli w nieskończoność, co pozwala na bezproblemowe skalowanie, ponieważ zmusza sprzęt do uzyskania ostatniego rzędu pikseli bez względu na wszystko. To właśnie zapewniają ustawienia granicy wyjściowej :
+    Powyżej pokazano "naprawioną" stronę tile sprite. Widać, że ma ona teraz powtarzającą się sekcję wokół każdej strony tile, co oznacza, że w przypadku przekroczenia limitu sprzęt zawsze wybierze ostatni teksel ze strony tile, a nie jedną ze spacji lub następną tile. Dlatego podczas tworzenia strony tile set należy pamiętać, że jeśli widok gry ma być powiększany lub pomniejszany albo jeśli strona tiles ma być renderowana w skali, może być konieczne ustawienie większej szerokości lub wysokości ramki wyjściowej niż domyślna wartość 2.
+    Następnie możesz wybrać grupę tekstur, do której ma należeć zasób tilesetu. Zasadniczo, grupa texture (wcześniej zdefiniowana w menedżerze grup tekstur) jest czymś, co można ustawić tak, aby wszystkie obrazy assets, które są potrzebne dla poszczególnych rooms lub poziomów gry, były przechowywane razem. Na przykład, możesz umieścić wszystkie obrazy poziomu 1 w jednej grupie texture, wszystkie obrazy poziomu 2 w innej itd..., a GameMaker spróbuje umieścić wszystkie te zgrupowane zasoby na tej samej stronie tekstur, aby ograniczyć podmianę stron texture podczas działania gry na wybranej platformie docelowej.
     UWAGA: Nie zawsze musi to być konieczne, a wzrost wydajności uzyskany dzięki tej metodzie będzie zależał od tego, czy urządzenie docelowe jest związane z procesorem czy z układem graficznym.
-    Ostatnią opcją we właściwościach tile set jest Wyłącz eksport źródła Sprite . Jest ona domyślnie zaznaczona, a jej działanie polega na tym, że flags źródło sprite asset będzie pomijane podczas generowania strony texture dla Twojego projektu. Ta opcja
-      działa przy założeniu, że strona sprite użyta jako tile set nie będzie używana do niczego innego, a więc musi być eksportowana tylko raz. Jeśli jednak używasz podstawowego zasobu sprite do czegokolwiek innego niż tiles, to powinieneś
-      odznaczyć tę opcję, aby bazowy sprite i  tile set były dodawane do strony texture podczas kompilacji.
+    Ostatnią opcją we właściwościach tile set jest Wyłącz eksport źródła Sprite . flags Jest ona domyślnie zaznaczona, a jej działanie polega na pomijaniu źródłowej strony sprite asset podczas generowania strony texture dla projektu. Działa to w oparciu o założenie, że strona sprite użyta jako tile set nie będzie używana do niczego innego, a więc musi być eksportowana tylko raz. Jeśli jednak używasz bazowego zasobu sprite do czegokolwiek innego niż tiles, powinieneś usunąć zaznaczenie tej opcji, aby bazowy sprite i  tile set były dodawane do strony texture podczas kompilacji.
     
   
   Redaktorzy
   
-    Każdy z przycisków w sekcji Edytory otwiera inny edytor o określonej funkcjonalności tile set. Można tworzyć pędzle  tile set na podstawie wielu tiles razem, animowane płytki, używając różnych płytek
-      jako pojedynczych klatek, a także tworzyć automatyczne kafelki, które będą "łączyć się" ze sobą na podstawie otaczających je stron tiles. Każdy z tych edytorów został szczegółowo opisany w sekcjach, do których prowadzą odnośniki na końcu tej strony.
-    
+    Każdy z przycisków w sekcji Edytory otwiera inny edytor o określonej funkcjonalności tile set. Można tworzyć pędzle  tile set na podstawie wielu tiles razem, animowane płytki, używając różnych tiles jako pojedynczych klatek, a także tworzyć automatyczne płytki, które będą "łączyć się" ze sobą na podstawie tiles, które je otaczają. Każdy z tych edytorów został szczegółowo omówiony w sekcjach, do których prowadzą odnośniki na końcu tej strony.
+     
   
   Przybornik podglądu
   
-    Są to narzędzia, których można użyć do podglądu strony sprite wybranej do edycji tile set. Przyciski te sterują bieżącym poziomem powiększenia podglądu i można ich używać do powiększania lub pomniejszania, a kliknięcie przycisku  spowoduje zresetowanie podglądu do rozmiaru 1:1 z edytowaną stroną tile set sprite. Możesz także kliknąć przycisk Window Fit (Dopasuj do okna) , aby cała zawartość strony tile set zmieściła się w bieżącym oknie podglądu (nastąpi odpowiednie powiększenie/pomniejszenie). Zauważ, że możesz także powiększać i pomniejszać
-      za pomocą przycisków  /  i kółka myszy , a naciśnięcie przycisków  /  +  spowoduje ustawienie płótna w stosunku 1:1 do okna tile set sprite.
-    Kolejną funkcją jest możliwość switch włączenia lub wyłączenia widoku siatki przez kliknięcie przycisku , a także
-      ustawić kolor siatki, który ma być używany (klikając przycisk  ). Gdy siatka
-      jest aktywna, dla każdej strony tiles w siatce zostanie wyświetlony kolorowy kontur, z zachowaniem ustawień dotyczących separacji itp.
-    
+    Są to narzędzia, których można użyć do podglądu strony sprite wybranej do edycji tile set. Przyciski te sterują aktualnym poziomem powiększenia podglądu i można ich używać do powiększania lub pomniejszania, a kliknięcie przycisku  spowoduje zresetowanie podglądu do rozmiaru 1:1 z edytowaną stroną tile set sprite. Możesz także kliknąć przycisk Window Fit (Dopasuj do okna) , aby cała zawartość strony tile set zmieściła się w bieżącym oknie podglądu (nastąpi odpowiednie powiększenie/pomniejszenie). Możesz także powiększać i pomniejszać obraz za pomocą przycisków  /  i kółka myszy , a naciśnięcie przycisków  /  +  spowoduje ustawienie podglądu w stosunku 1:1 z oknem tile set sprite.
+    Kolejną funkcją jest możliwość switch włączenia lub wyłączenia widoku siatki przez kliknięcie przycisku , a także ustawienia koloru używanej siatki (kliknięcie przycisku  ). Gdy siatka jest aktywna, dla każdej strony tiles w siatce zostanie wyświetlony kolorowy kontur, z zachowaniem ustawień dotyczących separacji itp.
+     
   
   Podgląd
   
     W tej części znajduje się okno podglądu tile set. Do poruszania się po podglądzie można użyć tych samych podstawowych elementów sterujących, co w przypadku podglądu ogólnego Workspaces, tzn.: użyj środkowego przycisku myszy  i przeciągnij, aby przesunąć podgląd (lub użyj kombinacji klawiszy  +  ), możesz przewijać w poziomie za pomocą kółka myszy  lub powiększać i pomniejszać widok za pomocą klawiszy  /  i kółka myszy . Można także użyć różnych przycisków w oknie narzędziowym Podgląd, aby zmienić powiększenie oraz włączyć lub wyłączyć nakładanie komórek siatki.
   
    
-  Jak wspomniano powyżej w części poświęconej edytorom, dostępne są także inne narzędzia do edycji strony tile sets oraz generowania specjalnych pędzli (kombinacji stron tiles, które można namalować na stronie room), animowanych płytek i płytek z automatycznymi kafelkami
-    (są to specjalne płytki tiles, które łączą się automatycznie po umieszczeniu w room). Każdy z tych edytorów został szczegółowo omówiony na kolejnych stronach:
+  Jak wspomniano powyżej w rozdziale poświęconym edytorom, dostępne są także inne narzędzia do edycji stron tile sets oraz generowania specjalnych pędzli (kombinacji stron tiles, które można namalować na stronie room), animowanych płytek i płytek auto tiles (czyli specjalnych stron tiles, które łączą się automatycznie po umieszczeniu na stronie room). Każdy z tych edytorów został szczegółowo omówiony na kolejnych stronach:
   
     Konstruktor pędzli
     Animowane kafelki
-    Auto Dachówki
+    Dachówki samochodowe
   
    
    
@@ -92,7 +67,7 @@
         Następny: Timelines
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

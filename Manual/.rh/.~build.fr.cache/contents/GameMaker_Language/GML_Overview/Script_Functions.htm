@@ -4,24 +4,27 @@
   Zasoby skryptowe to zbiór jednej lub więcej funkcji lub zmiennych zdefiniowanych przez użytkownika, które użytkownik zapisuje jako fragmenty kodu w Edytorze skryptów. Funkcje zdefiniowane w witrynie script mogą rozwiązywać wyrażenia, zwracać wartości lub robić wszystko inne, na co pozwala witryna GameMaker Language, podobnie jak wbudowane funkcje runtime.
   Funkcji skryptowych należy używać, gdy mamy blok kodu, który jest używany w więcej niż jednym miejscu lub object, lub gdy chcemy, aby blok kodu był używany w wielu objects w sposób modułowy. Używanie scripts do definiowania funkcji oznacza, że można zmienić funkcję tylko raz, gdy jest to wymagane, a zmiana zostanie "odebrana" przez każdy object, który ma wywołanie tej funkcji.
   Skrypty mogą być również bardzo przydatne z organizacyjnego punktu widzenia, ponieważ umożliwiają tworzenie grup funkcji należących do określonej kategorii - na przykład możesz mieć kilka funkcji związanych z kolizjami między instancjami w swojej grze, więc utworzysz "Collision_Functions" script i będziesz przechowywać w nim wszystkie te funkcje razem.
+  Zobacz także: Funkcje skryptu a metody
   Tworzenie funkcji
   Podczas tworzenia strony script zawierającej funkcje, funkcje muszą być utworzone w następujących formatach:
-  function <name>( <parameter1>, <parameter2>, etc... )
+  function name( parameter1, parameter2, ... )
       {
-        <statement1>;
-        <statement1>;
+        statement1;
+        statement2;
         ...
     }
   
   lub:
-  <name> = function( <parameter1>, <parameter2>, etc... )
+  name = function( parameter1, parameter2, ... )
     {
-        <statement1>;
-        <statement1>;
+        statement1;
+        statement2;
         ...
     }
   
-  Ogólnie rzecz biorąc, używaj pierwszej formy dla funkcji script, ponieważ zdefiniuje ona funkcję jako funkcję script, co oznacza, że będzie ona miała globalny  zakres, będzie miała przypisany indeks skryptu i nie będzie wymagała przedrostka global do jej identyfikacji, ponieważ kompilator rozpozna ją jako funkcję script. Użycie drugiej formy spowoduje wygenerowanie zmiennej metody o zasięgu globalnym i jako taka nie zostanie rozpoznana jako funkcja script przez IDE i będzie wymagać użycia przedrostka global przy odwoływaniu się do niej w kodzie.
+  Aby utworzyć funkcję w GML Visual, użyj polecenia Declare A New Function. Włącz jej opcję "Temp", aby utworzyć zmienną metody (druga składnia pokazana powyżej).
+  Generalnie jednak dla funkcji script należy używać pierwszej formy, ponieważ definiuje ona funkcję jako specyficzną funkcję script, co oznacza, że będzie ona miała zasięg globalny , będzie miała przypisany indeks skryptu i nie będzie wymagała prefiksu global do jej identyfikacji, ponieważ kompilator rozpozna ją jako funkcję script.
+  Użycie drugiej formy spowoduje wygenerowanie zmiennej metody o zasięgu globalnym i jako taka nie zostanie rozpoznana jako funkcja script przez IDE i będzie wymagała użycia prefiksu global przy odwoływaniu się do niej w kodzie.
   UWAGA Można to sprawdzić, używając obu formularzy w witrynie script, a następnie wywołując na każdym z nich funkcję runtime typeof(). Jedna z nich zostanie zaklasyfikowana jako "liczba" - ponieważ zwraca identyfikator indeksu script - a druga jako "metoda".
   Parametry/Argumenty
   Można zdefiniować własne parametry/argumenty funkcji, które będą dostępne dla funkcji jako zmienne lokalne i mogą być użyte w dowolnym celu w ramach danej funkcji:
@@ -43,7 +46,7 @@
         speed = spd;
         direction = dir;
     }
-  Jeśli argument dir nie zostanie przekazany podczas wywoływania powyższej funkcji, jego wartość będzie domyślnie równa 90, co spowoduje przesunięcie instancji w górę.
+  Jeśli argument dir nie zostanie podany podczas wywoływania powyższej funkcji, jego wartość będzie domyślnie równa 90, co spowoduje przesunięcie instancji w górę.
   WSKAZÓWKA W wywołaniach funkcji można pominąć argumenty, które domyślnie będą miały wartość undefined (lub wartość domyślną dla tego argumentu określoną przez funkcję).
     
     Na przykład wpisanie adresu my_func(0,,,1) jest równoznaczne z wpisaniem adresu my_func(0, undefined, undefined, 1).
@@ -58,7 +61,7 @@
         
         show_debug_message(_string);
     }
-  Funkcja ta przyjmuje trzy argumenty, gdzie pierwszy argument jest domyślnie stałą string, drugi argument jest domyślnie zmienną instancji (w zakresie instancji wywołującej), a trzeci argument jest domyślnie wyrażeniem wywołującym funkcję pobierającą bieżącą datę i godzinę. Funkcję tę można teraz wywołać z maksymalnie trzema argumentami, jak widać na poniższym przykładzie:
+  Funkcja ta przyjmuje trzy argumenty, przy czym pierwszy argument jest domyślnie stałą string, drugi argument jest domyślnie zmienną instancji (w zakresie instancji wywołującej), a trzeci argument jest domyślnie wyrażeniem wywołującym funkcję pobierającą bieżącą datę i godzinę. Funkcję tę można teraz wywołać z maksymalnie trzema argumentami, jak widać na poniższym przykładzie:
   log();
     // Prints: [09-Jun-21 12:34:37 PM] Object1: Log
     

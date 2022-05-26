@@ -2,7 +2,8 @@
   
   surface_get_texture
   Ta funkcja zwraca specjalny wskaźnik na powierzchnię texture. Wartość tę można następnie wykorzystać w innych funkcjach rysowania, w szczególności w ogólnych funkcjach 3D i niektórych funkcjach prymitywów 2D.
-  UWAGA: Podczas pracy z powierzchniami istnieje możliwość, że w każdej chwili mogą one przestać istnieć, ponieważ są przechowywane w pamięci texture. Należy ZAWSZE sprawdzić, czy powierzchnia istnieje, używając polecenia surface_exists() przed bezpośrednim odwołaniem się do niej.
+  UWAGA Podczas pracy z powierzchniami istnieje możliwość, że w każdej chwili mogą one przestać istnieć, ponieważ są przechowywane w pamięci texture. Należy ZAWSZE sprawdzić, czy powierzchnia istnieje, używając polecenia surface_exists() przed bezpośrednim odwołaniem się do niej.
+   
    
   Składnia:
   surface_get_texture(surface_id);
@@ -15,14 +16,14 @@
       
       
         surface_id
-        Identyfikacja powierzchni
+        Identyfikator powierzchni
         The ID of the surface to get the width of.
       
     
   
    
   Zwroty:
-  Texture Pointer
+  Texture
    
   Przykład:
   var tex;

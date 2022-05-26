@@ -1,6 +1,6 @@
 
   Typy i parametry FX
-  Na tej stronie znajduje się lista wszystkich typów filtrów/efektów dostępnych w programie GameMakerwraz z następującymi informacjami o każdym FX:
+  Na tej stronie znajduje się lista wszystkich typów filtrów/efektów dostępnych w programie GameMaker wraz z następującymi informacjami o każdym FX:
   
     Wewnętrzna nazwa (np. "_filter_tintfilter"), którą można przekazać do fx_create(), aby utworzyć FX w czasie pracy.
     Opis
@@ -13,306 +13,501 @@
     
   
    
+  Wyświetlanie tabeli Filtry
   
     
       
+        
+        
+        
+        
+        
       
       
-      
-      
-    
-    
-      
-        Typ
-        Opis
-        Przykład
-        Parametry IDE
-        Parametry w czasie rzeczywistym
-      
-      
-        Odcień koloru
+        
+          Filtry
+        
+        
+          Typ
+          Opis
+          Przykład
+          Parametry IDE
+          Parametry w czasie rzeczywistym
+        
+        
+          Odcień koloru
+            
+            "_filter_tintfilter"
           
-          "_filter_tintfilter"
-        
-        Nadaje kolorowy odcień renderowanej zawartości.
-        
-        Kolor odcienia
-        g_TintCol (Array)
-      
-      
-        Pokoloruj
+          Nadaje kolorowy odcień renderowanej zawartości.
           
-          "_filter_colourise"
-        
-        Zmienia wszystko tak, aby wyświetlało się z podanym odcieniem i nasyceniem.
-        
-        Intensywność pomocy
           Kolor odcienia
-        g_Intensity (Real)
           g_TintCol (Array)
         
-      
-      
-        Desaturacja
+        
+          Pokoloruj
+            
+            "_filter_colourise"
           
-          "_filter_greyscale"
-        
-        Zmniejsza nasycenie renderowanej zawartości o określoną wartość intensywności.
-        
-        Intensywność pomocy
-        g_Intensity (Real)
-      
-      
-        Zniekształcenie
+          Zmienia wszystko tak, aby wyświetlało się z podanym odcieniem i nasyceniem.
           
-          "_filter_zniekształceń"
-        
-        Stosuje zniekształcenia w grze, używając obrazu texture.
-        
-        Skala
-          Kwota
-          Przesunięcie
-          Zniekształć teksturę
-        g_DistortScale (Real)
-          g_DistortAmount (Real)
-          g_DistortOffset (Real)
-          g_DistortTexture (Sampler)
-        
-      
-      
-        Tło w kropki
+          Intensywność pomocy
+            Kolor odcienia
+          g_Intensity (Real)
+            g_TintCol (Array)
           
-          "_filter_kropki"
         
-        Wprowadza do gry efekt kropek, z opcjonalną animacją. Efekt szumu można uzyskać, ustawiając małą wartość skali.
         
-        Skala
-          Rozmiar
-          Przesunięcie
-          Przesunięcie
-          Prędkość animacji
-          Kolor Szybkość
-          Liczba kolorów
-          Ostrość
-          Paleta kolorów
-        g_DotsScale (Real)
-          g_DotsSize (Real)
-          g_DotsOffset (Real)
-          g_DotsDisplacement (Real)
-          g_DotsSpeed (Real)
-          g_DotsColourSpeed (Real)
-          g_DotsColours (Real)
-          g_DotsSharpness (Real)
-          g_DotsPalette (Sampler)
-        
-      
-      
-        Wykryj krawędź
+          Desaturacja
+            
+            "_filter_greyscale"
           
-          "_filter_edgedetect"
-        
-        Wykorzystuje wykrywanie krawędzi, dzięki czemu w grze widoczne są tylko krawędzie.
-        
-        Próg
-        g_Threshold (Real)
-      
-      
-        Ciepła Haze
+          Zmniejsza nasycenie renderowanej zawartości o określoną wartość intensywności.
           
-          "_filter_heathaze"
+          Intensywność pomocy
+          g_Intensity (Real)
         
-        Tworzy animowany efekt mgiełki ciepła, przydatny do wyświetlania gorących środowisk.
         
-        Zniekształcenie 1 Prędkość
-          Zniekształcenia 2 Prędkość
-          Zniekształcenie 1 Skala
-          Skala zniekształcenia 2
-          Wartość zniekształcenia 1
-          Kwota zniekształcenia 2
-          Rozpiętość chromatyczna
-          Skala przesunięcia kamery
-          Zniekształć teksturę
-        g_Distort1Speed (Real)
-          g_Distort2Speed (Real)
-          g_Distort1Scale (Real)
-          g_Distort2Scale (Real)
-          g_Distort1Amount (Real)
-          g_Distort2Amount (Real)
-          g_ChromaSpreadAmount (Real)
-          g_CamOffsetScale (Real)
-          g_DistortTexture (Sampler)
-        
-      
-      
-        Duże rozmycie
+          Zniekształcenie
+            
+            "_filter_zniekształceń"
           
-          "_filter_large_blur"
-        
-        Rozmycie obrazu.
-        
-        Promień
-          Tekstura szumu
-        g_Radius (Real)
-          g_NoiseTexture (Sampler)
-        
-      
-      
-        Rozmycie liniowe
+          Stosuje zniekształcenia w grze, używając obrazu texture.
           
-          "_filter_linear_blur"
-        
-        Tworzy liniowy efekt rozmycia kontrolowany przez podane wartości wektorów (X i Y, w zakresie od -128 do 128).
-        
-        Wektor
-          Tekstura szumu
-        g_LinearBlurVector (Array)
-          g_NoiseTexture (Sampler)
-        
-      
-      
-        Zarys
+          Skala
+            Kwota
+            Przesunięcie
+            Zniekształć teksturę
+          g_DistortScale (Real)
+            g_DistortAmount (Real)
+            g_DistortOffset (Real)
+            g_DistortTexture (Sampler)
           
-          "_filter_outline"
         
-        Tworzy kontur wokół nieprzezroczystej zawartości warstwy. Aby uzyskać najlepszy efekt, użyj tej funkcji jako jednowarstwowego efektu FX.
         
-        Kolor konturu
+          Tło w kropki
+            
+            "_filter_kropki"
+          
+          Wprowadza do gry efekt kropek, z opcjonalną animacją. Efekt szumu można uzyskać, ustawiając małą wartość skali.
+          
+          Skala
+            Rozmiar
+            Przesunięcie
+            Przesunięcie
+            Prędkość animacji
+            Kolor Szybkość
+            Liczba kolorów
+            Ostrość
+            Paleta kolorów
+          g_DotsScale (Real)
+            g_DotsSize (Real)
+            g_DotsOffset (Real)
+            g_DotsDisplacement (Real)
+            g_DotsSpeed (Real)
+            g_DotsColourSpeed (Real)
+            g_DotsColours (Real)
+            g_DotsSharpness (Real)
+            g_DotsPalette (Sampler)
+          
+        
+        
+          Wykryj krawędź
+            
+            "_filter_edgedetect"
+          
+          Wykorzystuje wykrywanie krawędzi, dzięki czemu w grze widoczne są tylko krawędzie.
+          
+          Próg
+          g_Threshold (Real)
+        
+        
+          Ciepła Haze
+            
+            "_filter_heathaze"
+          
+          Tworzy animowany efekt mgiełki ciepła, przydatny do wyświetlania gorących środowisk.
+          
+          Zniekształcenie 1 Prędkość
+            Zniekształcenia 2 Prędkość
+            Zniekształcenie 1 Skala
+            Skala zniekształcenia 2
+            Wartość zniekształcenia 1
+            Kwota zniekształcenia 2
+            Rozpiętość chromatyczna
+            Skala przesunięcia kamery
+            Zniekształć teksturę
+          g_Distort1Speed (Real)
+            g_Distort2Speed (Real)
+            g_Distort1Scale (Real)
+            g_Distort2Scale (Real)
+            g_Distort1Amount (Real)
+            g_Distort2Amount (Real)
+            g_ChromaSpreadAmount (Real)
+            g_CamOffsetScale (Real)
+            g_DistortTexture (Sampler)
+          
+        
+        
+          Duże rozmycie
+            
+            "_filter_large_blur"
+          
+          Rozmycie obrazu.
+          
           Promień
-          Skala pikseli
-        g_OutlineColour (Array)
-          g_OutlineRadius (Real)
-          g_OutlinePixelScale (Real)
-        
-      
-      
-        Pixelate
+            Tekstura szumu
+          g_Radius (Real)
+            g_NoiseTexture (Sampler)
           
-          "_filter_pixelate"
         
-        Sprawia, że renderowana zawartość wygląda na rozpikselowaną, umożliwiając zmianę rozmiaru każdego piksela. Nadaje to renderowanej zawartości wygląd niskiej rozdzielczości.
         
-        Wielkość komórki
-        g_CellSize (Real)
-      
-      
-        Posterise
+          Rozmycie liniowe
+            
+            "_filter_linear_blur"
           
-          "_filter_posterise"
-        
-        Stosuje efekt posteryzacji do renderowanej zawartości, umożliwiając zmianę maksymalnych poziomów kolorów dla każdego odcienia.
-        
-        Poziomy kolorów
-        g_ColourLevels (Real)
-      
-      
-        Wstrząs ekranu
+          Tworzy liniowy efekt rozmycia kontrolowany przez podane wartości wektorów (X i Y, w zakresie od -128 do 128).
           
-          "_filter_screenshake"
-        
-        Powoduje, że renderowana zawartość trzęsie się, symulując efekt drgań aparatu. Działa najlepiej, gdy jest kontrolowana pod adresem runtime.
-        
-        Magnituda
-          Prędkość wstrząsów
-          Tekstura szumu
-        g_Magnitude (Real)
-          g_ShakeSpeed (Real)
-          g_NoiseTexture (Sampler)
-        
-      
-      
-        Tło w paski
+          Wektor
+            Tekstura szumu
+          g_LinearBlurVector (Array)
+            g_NoiseTexture (Sampler)
           
-          "_filter_stripes"
         
-        Tworzy efekt nieprzezroczystego, pasiastego tła.
         
-        Szerokość
-          Kierunek
-          Przesunięcie
-          Przemieszczenie
-          Prędkość animacji
-          Skala fali
-          Amplituda fali
-          Liczba kolorów
-          Ostrość
-          Paleta kolorów
-        g_StripesWidth (Real)
-          g_StripesDirection (Real)
-          g_StripesOffset (Real)
-          g_StripesDisplacement (Real)
-          g_StripesSpeed (Real)
-          g_StripesFrequency (Real)
-          g_StripesAmplitude (Real)
-          g_StripesColours (Real)
-          g_StripesSharpness (Real)
-          g_StripesPalette (Sampler)
-        
-      
-      
-        Wirowanie Zniekształcenie
+          Zarys
+            
+            "_filter_outline"
           
-          "_filter_twirl_distort"
-        
-        Tworzy efekt wirującego zniekształcenia na środku kamery (+ przesunięcie).
-        
-        Kąt
-          Promień
-          Przesunięcie
-        g_DistortAngle (Real)
-          g_DistortRadius (Real)
-          g_DistortOffset (Real)
-        
-      
-      
-        Pod wodą
+          Tworzy kontur wokół nieprzezroczystej zawartości warstwy. Aby uzyskać najlepszy efekt, użyj tej funkcji jako jednowarstwowego efektu FX.
           
-          "_filter_podwodny"
-        
-        Sprawia, że renderowana zawartość wygląda tak, jakby znajdowała się pod wodą.
-        
-        Zniekształcenie 1 Prędkość
-          Zniekształcenia 2 Prędkość
-          Zniekształcenie 1 Skala
-          Skala zniekształcenia 2
-          Wartość zniekształcenia 1
-          Kwota zniekształcenia 2
-          Rozpiętość chromatyczna
-          Skala przesunięcia kamery
-          Kolor połysku
-          Kolor tint
-          Dodaj kolor
-          Zniekształć teksturę
-        g_Distort1Speed (Real)
-          g_Distort2Speed (Real)
-          g_Distort1Scale (Real)
-          g_Distort2Scale (Real)
-          g_Distort1Amount (Real)
-          g_Distort2Amount (Real)
-          g_ChromaSpreadAmount (Real)
-          g_CamOffsetScale (Real)
-          g_GlintCol (Array)
-          g_TintCol (Array)
-          g_AddCol (Array)
-          g_DistortTexture (Sampler)
-        
-      
-      
-        Biały szum
+          Kolor konturu
+            Promień
+            Skala pikseli
+          g_OutlineColour (Array)
+            g_OutlineRadius (Real)
+            g_OutlinePixelScale (Real)
           
-          "_filter_whitenoise"
         
-        Dodaje biały szum z opcjonalną animacją.
         
-        Intensywność pomocy
-          Animacja
-          Tekstura szumu
-        g_WhiteNoiseIntensity (Real)
-          g_WhiteNoiseAnimation (Real)
-          g_WhiteNoiseTexture (Sampler)
+          Pixelate
+            
+            "_filter_pixelate"
+          
+          Sprawia, że renderowana zawartość wygląda na rozpikselowaną, umożliwiając zmianę rozmiaru każdego piksela. Nadaje to renderowanej zawartości wygląd niskiej rozdzielczości.
+          
+          Wielkość komórki
+          g_CellSize (Real)
+        
+        
+          Posterise
+            
+            "_filter_posterise"
+          
+          Stosuje efekt posteryzacji do renderowanej zawartości, umożliwiając zmianę maksymalnych poziomów kolorów dla każdego odcienia.
+          
+          Poziomy kolorów
+          g_ColourLevels (Real)
+        
+        
+          Wstrząs ekranu
+            
+            "_filter_screenshake"
+          
+          Powoduje, że renderowana zawartość trzęsie się, symulując efekt drgań aparatu. Działa najlepiej, gdy jest kontrolowana pod adresem runtime.
+          
+          Magnituda
+            Prędkość wstrząsów
+            Tekstura szumu
+          g_Magnitude (Real)
+            g_ShakeSpeed (Real)
+            g_NoiseTexture (Sampler)
+          
+        
+        
+          Tło w paski
+            
+            "_filter_stripes"
+          
+          Tworzy efekt nieprzezroczystego, pasiastego tła.
+          
+          Szerokość
+            Kierunek
+            Przesunięcie
+            Przemieszczenie
+            Prędkość animacji
+            Skala fali
+            Amplituda fali
+            Liczba kolorów
+            Ostrość
+            Paleta kolorów
+          g_StripesWidth (Real)
+            g_StripesDirection (Real)
+            g_StripesOffset (Real)
+            g_StripesDisplacement (Real)
+            g_StripesSpeed (Real)
+            g_StripesFrequency (Real)
+            g_StripesAmplitude (Real)
+            g_StripesColours (Real)
+            g_StripesSharpness (Real)
+            g_StripesPalette (Sampler)
+          
+        
+        
+          Wirowanie Zniekształcenie
+            
+            "_filter_twirl_distort"
+          
+          Tworzy efekt wirującego zniekształcenia na środku kamery (+ przesunięcie).
+          
+          Kąt
+            Promień
+            Przesunięcie
+          g_DistortAngle (Real)
+            g_DistortRadius (Real)
+            g_DistortOffset (Real)
+          
+        
+        
+          Pod wodą
+            
+            "_filter_podwodny"
+          
+          Sprawia, że renderowana zawartość wygląda tak, jakby znajdowała się pod wodą.
+          
+          Zniekształcenie 1 Prędkość
+            Zniekształcenia 2 Prędkość
+            Zniekształcenie 1 Skala
+            Skala zniekształcenia 2
+            Wartość zniekształcenia 1
+            Kwota zniekształcenia 2
+            Rozpiętość chromatyczna
+            Skala przesunięcia kamery
+            Kolor połysku
+            Kolor tint
+            Dodaj kolor
+            Zniekształć teksturę
+          g_Distort1Speed (Real)
+            g_Distort2Speed (Real)
+            g_Distort1Scale (Real)
+            g_Distort2Scale (Real)
+            g_Distort1Amount (Real)
+            g_Distort2Amount (Real)
+            g_ChromaSpreadAmount (Real)
+            g_CamOffsetScale (Real)
+            g_GlintCol (Array)
+            g_TintCol (Array)
+            g_AddCol (Array)
+            g_DistortTexture (Sampler)
+          
+        
+        
+          Biały szum
+            
+            "_filter_whitenoise"
+          
+          Dodaje biały szum z opcjonalną animacją.
+          
+          Intensywność pomocy
+            Animacja
+            Tekstura szumu
+          g_WhiteNoiseIntensity (Real)
+            g_WhiteNoiseAnimation (Real)
+            g_WhiteNoiseTexture (Sampler)
+          
         
       
     
   
+  Wyświetlanie tabeli efektów
+  
+    
+      
+        
+        
+        
+        
+        
+      
+      
+        
+          Efekty (tylko w grze)
+        
+        
+          Typ
+          Opis
+          Przykład
+          Parametry IDE
+          Parametry w czasie rzeczywistym
+        
+        
+          Cząsteczki niesione wiatrem
+            
+            "_efekt_windblown_particles"
+          
+          Tworzy efekt cząsteczek poruszanych wiatrem, wyświetlając domyślnie liść sprite.
+            
+            Jest to efekt i nie można go podglądać w edytorze Room.
+          
+          
+          Sprite
+            Liczba cząsteczek
+            Czas pojawienia się
+             Zeruj wszystkie na początku
+            Ramki rozgrzewania
+            Masa cząstek min.
+            Maks. masa cząstek stałych
+            Cząstki stałe sprite skala (Start)
+            Cząstka sprite skala (koniec)
+            Kolor cząstki 1
+            Kolor cząstek stałych 1 Alt
+            Kolor cząsteczek 2
+            Kolor cząstek stałych 2 Alt
+            Kolor cząstek stałych 2 Poz
+            Kolor cząstek stałych 2 Włączone
+            Kolor cząstek 3
+            Kolor cząstek 3 Alt
+            Kolor cząstek stałych 3 Poz
+            Kolor cząstek stałych 3 Włączone
+            Kolor cząstek stałych 4
+            Kolor cząstek stałych 4 Alt
+            Prędkość początkowa cząstki x Min
+            Prędkość początkowa cząstek x Maks.
+            Prędkość początkowa cząstki y Min
+            Prędkość początkowa cząstki y Maks.
+            Początkowa rotacja cząstki Min
+            Początkowy obrót cząstki Maks.
+            Prędkość rotacji cząstek Min
+            Maks. prędkość obrotu cząstek
+            Wyrównanie cząstek względem prędkości
+            Czas życia cząstek Min.
+            Czas życia cząstek Maks.
+            Pomijanie aktualizacji cząstek
+            Margines granicy tarła cząstek
+            Źródło cząstek mieszanka
+            Mieszanka docelowa cząstek
+            Rysuj tylko smugi
+            Szansa na pojawienie się śladu
+            Czas życia szlaku min.
+            Maks. żywotność szlaku
+            Grubość szlaku Min.
+            Grubość szlaku Maks.
+            Kolor szlaku 1
+            Kolor szlaku 1 Alt
+            Kolor szlaku 2
+            Kolor szlaku 2 alt
+            Kolor szlaku 2 Poz
+            Kolor szlaku 2 Włączony
+            Kolor szlaku 3
+            Kolor szlaku 3 Alt
+            Kolor szlaku 3 Poz
+            Kolor szlaku 3 Włączony
+            Kolor szlaku 4
+            Kolor szlaku 4 Alt
+            Minimalna długość odcinka szlaku
+            Źródło mieszanki szlaku
+            Trasa docelowa
+            Liczba dmuchaw
+            Wielkość dmuchawy Min
+            Wielkość dmuchawy Maks.
+            Prędkość dmuchawy Min.
+            Prędkość dmuchawy Maks.
+            Prędkość obrotowa dmuchawy Min.
+            Prędkość obrotowa dmuchawy Maks.
+            Siła dmuchawy Min.
+            Siła dmuchawy Maks.
+            Skala przesunięcia kamery dmuchawy
+            Rozdzielczość siatki siły X
+            Rozdzielczość siatki obliczeniowej Y
+            Siła wiatru X
+            Siła wiatru Y
+            Opór cząstek stałych
+            Grawitacja
+            Włącz tryb debugowania
+            
+              Wpisz tutaj tekst rozwijany
+            
+          
+          param_sprite (Sprite)
+            param_num_particles (Real)
+            param_particle_spawn_time (Real)
+            param_particle_spawn_all_at_start (Bool)
+            param_warmup_frames (Real)
+            param_particle_mass_min (Real)
+            param_particle_mass_max (Real)
+            param_particle_start_sprite_scale (Real)
+            param_particle_end_sprite_scale (Real)
+            param_particle_col_1 (Array)
+            param_particle_col_alt_1 (Array)
+            param_particle_col_2 (Array)
+            param_particle_col_alt_2 (Array)
+            param_particle_col_2_pos (Real)
+            param_particle_col_enabled_2 (Bool)
+            param_particle_col_3 (Array)
+            param_particle_col_alt_3 (Array)
+            param_particle_col_3_pos (Real)
+            param_particle_col_enabled_3 (Bool)
+            param_particle_col_4 (Array)
+            param_particle_col_alt_4 (Array)
+            param_particle_initial_velocity_range_x_min (Real)
+            param_particle_initial_velocity_range_x_max (Real)
+            param_particle_initial_velocity_range_y_min (Real)
+            param_particle_initial_velocity_range_y_max (Real)
+            param_particle_initial_rotation_min (Real)
+            param_particle_initial_rotation_max (Real)
+            param_particle_rot_speed_min (Real)
+            param_particle_rot_speed_max (Real)
+            param_particle_align_vel (Real)
+            param_particle_lifetime_min (Real)
+            param_particle_lifetime_max (Real)
+            param_particle_update_skip (Real)
+            param_particle_spawn_border_prop (Real)
+            param_particle_src_blend (Stała współczynnika trybu mieszania)
+            param_particle_dest_blend (Stała współczynnika trybu mieszania)
+            param_trails_only (Bool)
+            param_trail_chance (Real)
+            param_trail_lifetime_min (Real)
+            param_trail_lifetime_max (Real)
+            param_trail_thickness_min (Real)
+            param_trail_thickness_max (Real)
+            param_trail_col_1 (Array)
+            param_trail_col_alt_1 (Array)
+            param_trail_col_2 (Array)
+            param_trail_col_alt_2 (Array)
+            param_trail_col_2_pos (Real)
+            param_trail_col_enabled_2 (Bool)
+            param_trail_col_3 (Array)
+            param_trail_col_alt_3 (Array)
+            param_trail_col_3_pos (Real)
+            param_trail_col_enabled_3 (Bool)
+            param_trail_col_4 (Array)
+            param_trail_col_alt_4 (Array)
+            param_trail_min_segment_length (Real)
+            param_trail_src_blend (Stały współczynnik trybu mieszania)
+            param_trail_dest_blend (Stała współczynnika trybu mieszania)
+            param_num_blowers (Real)
+            param_blower_size_min (Real)
+            param_blower_size_max (Real)
+            param_blower_speed_min (Real)
+            param_blower_speed_max (Real)
+            param_blower_rot_speed_min (Real)
+            param_blower_rot_speed_max (Real)
+            param_blower_force_min (Real)
+            param_blower_force_max (Real)
+            param_blower_camvec_scale (Real)
+            param_force_grid_sizex (Real)
+            param_force_grid_sizey (Real)
+            param_wind_vector_x (Real)
+            param_wind_vector_y (Real)
+            param_dragcoeff (Real)
+            param_grav_accel (Real)
+            param_debug_grid (Bool)
+          
+        
+      
+    
+  
+   
    
   
     

@@ -1,10 +1,10 @@
 
   
   gpu_set_fog
-  Za pomocą tej funkcji można włączyć lub wyłączyć rysowanie mgły. W grach 3D mgła może być używana do tego, aby obiekty znajdujące się w oddali wyglądały na rozmyte lub nawet znikały, co pomaga w tworzeniu atmosfery, a także w maskowaniu faktu, że nie rysuje się obiektów
-    które znajdują się daleko. Ustawia się, czy ma być włączona (true) czy wyłączona (false), kolor, którego mgła ma używać do mieszania, a także początkową i końcową odległość rysowania. Należy pamiętać, że początek mgły to promień względem
-    w stosunku do kamery widoku, od którego zaczyna się mgła, a koniec mgły określa, przy jakim promieniu (również względnym) instancje będą całkowicie niewidoczne.
-  Funkcja ta może przyjmować cztery pojedyncze argumenty (podane powyżej) lub tablicę o następującej strukturze (poniższy przykładowy kod przedstawia tę metodę):
+  Za pomocą tej funkcji można włączyć lub wyłączyć rysowanie mgły. W grach 3D mgła może być używana do tego, aby obiekty znajdujące się w oddali wyglądały na wyblakłe lub nawet niewidoczne, co pomaga w tworzeniu atmosfery i maskuje fakt, że nie rysujesz obiektów znajdujących się daleko.
+  Określasz, czy ma być włączona (true) czy wyłączona (false), kolor, którego mgła ma używać do mieszania, a także początkową i końcową odległość rysowania. Wartości odległości to zasadniczo wartości głębokości w pikselach, które są względne w stosunku do pozycji kamery.
+  Na przykład pozycja 0 jest najbliżej kamery, a z każdym zwiększeniem odległości jest ona coraz bardziej oddalana. Domyślnie kamera widoku jest umieszczona na głębokości -16000, więc jeśli chcesz, aby mgła zaczynała się na głębokości 0, a kończyła na głębokości 1000, ustaw odległość początkową na 16000, a końcową na 17000.
+  Funkcja ta może przyjmować cztery pojedyncze argumenty (podane powyżej) lub pojedynczą tablicę o następującej strukturze (poniższy przykładowy kod przedstawia tę metodę):
   
     [0] = włączone przełączanie (wartość logiczna, true lub false), domyślnie false
     [1] = kolor (rzeczywisty), wartość domyślna c_black
@@ -17,34 +17,40 @@
   
     
       
-        ArgumentTyp
+        Argument
+        Typ
         Opis
-     
+      
       
         enable
+        Boolean
         Enable or disable fog
-     
+      
       
         colour
+        Kolor
         The fog colour
-     
+      
       
         start
-        The distance to start applying fog from
-     
+        Real
+        The distance to start applying fog from (relative to the camera)
+      
       
         end
-        The distance to end the fog
-     
+        Real
+        The distance to end the fog (relative to the camera)
+      
     
   
    
   Zwroty:
-  
+  N/A
    
   Przykład:
-  var fog_a = gpu_get_fog(); fog_a[1] = c_red; gpu_set_fog(fog_a);
-  
+  var fog_a = gpu_get_fog();
+    fog_a[1] = c_red;
+    gpu_set_fog(fog_a);
   Powyższy kod pobiera bieżące ustawienia mgły, a następnie ustawia element koloru w tablicy na c_red przed ponownym ustawieniem mgły przy użyciu zmienionej tablicy.
    
    
@@ -56,7 +62,7 @@
         Następny: gpu_set_cullmode
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

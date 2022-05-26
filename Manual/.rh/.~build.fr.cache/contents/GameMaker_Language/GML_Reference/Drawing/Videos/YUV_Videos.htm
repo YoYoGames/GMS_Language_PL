@@ -1,7 +1,7 @@
 
   Wideoklipy YUV
   Platformy, które używają formatu kolorów YUV dla filmów wideo, wymagają dodatkowych czynności podczas rysowania tych filmów. Polega to na użyciu strony shader do narysowania dwóch powierzchni na prymitywnym quadzie.
-  Najpierw przeczytaj stronę video_draw(), aby dowiedzieć się, jakie dane zwraca ta funkcja w przypadku wideo YUV, a następnie kontynuuj czytanie poniżej, aby uzyskać instrukcje dotyczące używania tych danych do rysowania wideo.
+  Przeczytaj najpierw stronę video_draw(), aby dowiedzieć się, jakie dane zwraca ta funkcja w przypadku wideo YUV, a następnie kontynuuj czytanie poniżej, aby uzyskać instrukcje dotyczące używania tych danych do rysowania wideo.
   YUV Shader
   Utwórz w swoim projekcie stronę shader asset i zastąp jej kod Fragment Shader (.fsh) następującym kodem:
   //
@@ -79,7 +79,7 @@ if(_data[0] == 0)
   
   Kod w przypadku video_format_yuv: wykonuje następujące czynności:
   
-    Otrzymuje powierzchnię wideo(_surf) i powierzchnię chromowaną(_chromasurf)
+    Zbiera powierzchnię wideo(_surf) i powierzchnię chroma(_chromasurf)
     Upewnia się, że istnieją, używając surface_exist()
       
         Ustawia shader na shader_YUV (czyli nasz nowo utworzony YUV shader).
@@ -100,7 +100,7 @@ if(_data[0] == 0)
   
     
       
-        Powrót: Odtwarzanie wideo
+        Wstecz: Odtwarzanie wideo
         Next: video_set_volume
       
     

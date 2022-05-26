@@ -22,7 +22,7 @@
       
       
         network_socket_ws
-        Create a WebSocket using TCP.
+        Create a WebSocket using TCP. (NOTE: Use Async functions for connecting through WebSockets)
       
       
         network_socket_wss *

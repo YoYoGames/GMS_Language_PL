@@ -2,36 +2,36 @@
   
   Powierzchnie
   W normalnych zdarzeniach rysowania GameMaker nie rysuje bezpośrednio na ekranie, ale raczej na powierzchni zwanej powierzchnią aplikacji. Powierzchnia ta jest w zasadzie pustym "płótnem", którym można później manipulować przed narysowaniem go na ekranie, gdy zajdzie taka potrzeba. W większości przypadków GameMaker robi to za Ciebie (choć możesz też manipulować nią samodzielnie w kodzie, np. shaders, skalując i robiąc wiele innych rzeczy - więcej szczegółów znajdziesz poniżej).
-  Jednak oprócz tej powierzchni użytkowej możesz także tworzyć własne powierzchnie i używać ich do tworzenia oszałamiających lub subtelnych efektów specjalnych w grze. Na przykład możesz użyć powierzchni do "wyłapywania" instancji, które następnie można zniszczyć, i w ten sposób stworzyć efekt kalkomanii, w którym sprite dla instancji jest wyświetlana na powierzchni, tak jakby nadal istniała, co pozwala na uzyskanie efektów graficznych, takich jak gruz, krew itp. bez konieczności przetwarzania danych. Inną rzeczą, którą można zrobić z powierzchniami, jest użycie ich jako strony textures, którą można manipulować, lub tworzenie strony sprites "w locie", lub tworzenie złożonych nakładek. tak naprawdę zastosowania powierzchni są nieograniczone!
+  Oprócz tej powierzchni użytkowej możesz jednak tworzyć własne powierzchnie i używać ich do tworzenia oszałamiających lub subtelnych efektów specjalnych w swojej grze. Na przykład możesz użyć powierzchni do "wyłapywania" instancji, które następnie można zniszczyć, i w ten sposób stworzyć efekt kalkomanii, w którym sprite dla instancji jest wyświetlana na powierzchni, tak jakby nadal istniała, co pozwala na uzyskanie efektów graficznych, takich jak gruz, krew itp. bez konieczności przetwarzania danych. Inną rzeczą, którą można zrobić z powierzchniami, jest użycie ich jako strony textures, którą można manipulować, lub tworzenie strony sprites "w locie", lub tworzenie złożonych nakładek. tak naprawdę zastosowania powierzchni są nieograniczone!
   Powierzchnie normalne są dość łatwe w użyciu, ale przy ich stosowaniu należy przestrzegać kilku podstawowych zasad:
   
-    Po pierwsze, należy zdać sobie sprawę, że powierzchnie(z wyjątkiem powierzchni aplikacji) są "lotne". Oznacza to, że jeśli urządzenie lub okno straci fokus lub zostanie zminimalizowane (dobrym przykładem może być sytuacja, w której użytkownik przechodzi ALT +Tab do innego okna i z powrotem w systemie Windows lub na urządzeniu Android, gdy aplikacja straci fokus z powodu wywołania), powierzchnia może zostać zniszczona. Dzieje się tak dlatego, że jest ona przechowywana tylko w pamięci texture (VRAM) i może zostać nadpisana, gdy platforma docelowa potrzebuje tej pamięci do czegoś innego, co oznacza, że należy zawsze mieć przygotowany jakiś rodzaj kodu zabezpieczającego, zwykle z funkcją surface_exists() funkcję.
+    Po pierwsze, należy zdać sobie sprawę, że powierzchnie(z wyjątkiem powierzchni aplikacji) są "lotne". Oznacza to, że jeśli urządzenie lub okno straci fokus lub zostanie zminimalizowane (dobrym przykładem może być sytuacja, w której przechodzisz za pomocą kombinacji klawiszy ALT +Tab do innego okna i z powrotem w systemie Windows lub na urządzeniu Android, gdy aplikacja straci fokus z powodu wywołania), powierzchnia może zostać zniszczona. Dzieje się tak dlatego, że jest ona przechowywana tylko w pamięci texture (VRAM) i może zostać nadpisana, gdy platforma docelowa potrzebuje tej pamięci do czegoś innego, co oznacza, że należy zawsze mieć przygotowany jakiś rodzaj kodu zabezpieczającego, zwykle z funkcją surface_exists() funkcję.
   
-  UWAGA: Wydaje się, że nie dzieje się tak w przypadku strony sprites lub innej wizualnej strony assets (ale w rzeczywistości dzieje się tak!), ponieważ są one również przechowywane w zwykłej pamięci (RAM), a po usunięciu ich z pamięci texture (VRAM) są natychmiast przywracane ze zwykłej pamięci, gdy gra odzyskuje ostrość.
+  UWAGA Wydaje się, że nie dzieje się tak w przypadku strony sprites lub innych stron assets (ale w rzeczywistości tak jest!), ponieważ są one również przechowywane w zwykłej pamięci (RAM), a po usunięciu ich z pamięci texture (VRAM) są natychmiast przywracane ze zwykłej pamięci, gdy gra odzyskuje ostrość.
   
-    Po drugie, należy pamiętać, że powierzchnie mogą wymagać dużych ilości pamięci VRAM, dlatego należy starać się, aby były one jak najmniejsze. Zwykle starasz się, aby nie były większe niż rozmiar okna widoku lub wyświetlania.
-    Po trzecie, powierzchnie należy tworzyć tylko w zdarzeniu draw. Jeśli utworzysz powierzchnię w zdarzeniu tworzenia instancji, możesz potencjalnie uzyskać ten sam indeks co na stronie application_surface. Może to spowodować wiele problemów i zamieszania, ponieważ myślisz, że używasz własnej powierzchni, a tak naprawdę używasz bieżącego celu renderowania. Powinieneś także zawsze starać się ograniczyć rysowanie do powierzchni w zdarzeniu draw, ponieważ ze względu na zoptymalizowany sposób rysowania na ekranie w GameMakerze, zaleca się, aby wszystkie funkcje rysowania były wykonywane w zdarzeniu draw - dotyczy to także czyszczenia powierzchni przy pierwszym jej utworzeniu, itp. Rysowanie na powierzchni poza zdarzeniem draw jest możliwe i może być nawet konieczne dla niektórych efektów, ale nie jest to sposób, w jaki powinno się to robić.
-    Po czwarte, podczas ręcznego rysowania na powierzchni, powierzchnia ta zawsze znajduje się w położeniu (0,0). Oznacza to, że może zajść potrzeba przekształcenia współrzędnych bezwzględnych na względne dla powierzchni. Na przykład, jeśli masz powierzchnię o rozmiarach kamery i chcesz narysować na niej coś, co jest aktualnie widoczne w kamerze, powinieneś odjąć współrzędne x i y widoku kamery od rzeczywistych współrzędnych x i y, aby uzyskać względną pozycję względem pozycji powierzchni (0,0). Kod wyglądałby więc następująco:
+    Po drugie, należy pamiętać, że powierzchnie mogą wymagać dużych ilości pamięci VRAM, dlatego należy starać się, aby były one jak najmniejsze. Zwykle starasz się, aby nie były one większe niż rozmiar okna widoku lub ekranu.
+    Po trzecie, powierzchnie należy tworzyć tylko w zdarzeniu draw. Jeśli utworzysz powierzchnię w zdarzeniu tworzenia instancji, możesz potencjalnie otrzymać ten sam indeks, co na stronie application_surface. Może to spowodować wiele problemów i zamieszania, ponieważ myślisz, że używasz własnej powierzchni, a tak naprawdę używasz bieżącego celu renderowania. Powinieneś także zawsze starać się ograniczyć rysowanie do powierzchni w zdarzeniu draw, ponieważ ze względu na zoptymalizowany sposób rysowania na ekranie w GameMakerze, zaleca się, aby wszystkie funkcje rysowania były wykonywane w zdarzeniu draw - dotyczy to także czyszczenia powierzchni przy jej pierwszym utworzeniu, itd. Rysowanie na powierzchni poza zdarzeniem draw jest możliwe, a nawet może być konieczne dla niektórych efektów, ale nie jest to sposób, w jaki powinno się to robić.
+    Po czwarte, podczas ręcznego rysowania do powierzchni, powierzchnia zawsze znajduje się w położeniu (0,0). Oznacza to, że może zajść potrzeba przekształcenia współrzędnych bezwzględnych na względne dla powierzchni. Na przykład, jeśli masz powierzchnię o rozmiarach kamery i chcesz narysować na niej coś, co jest aktualnie widoczne w kamerze, powinieneś odjąć współrzędne x i y widoku kamery od rzeczywistych współrzędnych x i y, aby uzyskać względną pozycję względem pozycji powierzchni (0,0). Kod wyglądałby więc następująco:
   
   if view_current = 0
-        {
-        surface_set_target(surf);
-        with (obj_Effect)
-            {
-            var _vx = camera_get_view_x(view_camera[1]);
-            var _vy = camera_get_view_y(view_camera[1]);
-            draw_sprite(sprite_index, image_index, x - _vx, y - _vy);
-            }
-        surface_reset_target();
-        }
+    {
+        surface_set_target(surf);
+        with (obj_Effect)
+        {
+            var _vx = camera_get_view_x(view_camera[1]);
+            var _vy = camera_get_view_y(view_camera[1]);
+            draw_sprite(sprite_index, image_index, x - _vx, y - _vy);
+        }
+        surface_reset_target();
+    }
     else
-        {
-        draw_surface(surf, 0, 0);
-        }
+    {
+        draw_surface(surf, 0, 0);
+    }
   
     Na koniec warto zauważyć, że rysowanie na powierzchni będzie uwzględniało kolor i składową alfa każdego piksela, zarówno z samej powierzchni, jak i z tego, co jest na niej rysowane. Może to prowadzić do dość nieintuicyjnych wyników (na przykład narysowanie strony sprite o wartości 0,5 alfa na powierzchni o wartości 0 alfa da ostateczną wartość 0,25 alfa). Przyczyny tego zjawiska wyjaśniono na następnej stronie i zalecamy zapoznanie się z nią przed rozpoczęciem pracy z powierzchniami: Instrukcja korzystania z Blendmodes
   
-  UWAGA: Nie dotyczy to powierzchni aplikacji, a jedynie powierzchni utworzonych przez użytkownika.
+  UWAGA Nie dotyczy to powierzchni aplikacji, a jedynie powierzchni utworzonych przez użytkownika.
   Podstawowe zastosowanie powierzchni jest następujące:
   
     Najpierw należy utworzyć powierzchnię i przypisać jej indeks do zmiennej.
@@ -88,7 +88,7 @@
    
   Jak wspomniano powyżej, GameMaker nie renderuje większości rzeczy bezpośrednio na ekranie, lecz na powierzchni aplikacji. Jest to w istocie powierzchnia - taka sama jak każda inna, którą możesz stworzyć sam, używając funkcji powierzchni - i jako taka może być manipulowana, rysowana, wysyłana na shaders, itd. Zasadniczo wszystko, co normalnie można zrobić z utworzoną powierzchnią, można również zastosować do powierzchni aplikacji.
   UWAGA: Jedyną rzeczą, której nie można zrobić z powierzchnią aplikacji, jest jej zwolnienie. Istnieje ona zawsze, choć wartość indeksu umożliwiająca dostęp do niej może się zmieniać.
-  Po uruchomieniu gry powierzchnia ta jest tworzona przy pierwszym wywołaniu zdarzenia draw w każdym nowym oknie room, które zostanie wprowadzone, co oznacza, że do tego momentu nic nie jest rysowane. Można jednak uzyskać położenie powierzchni aplikacji i zmienić jej rozmiar w zdarzeniu Create lub dowolnym innym zdarzeniu bez otrzymywania żadnych błędów, a użyte wartości będą odpowiednie dla powierzchni w momencie jej tworzenia. Rzeczywisty adres sequence zdarzeń związanych z tworzeniem i rysowaniem powierzchni aplikacji jest następujący:
+  Po uruchomieniu gry powierzchnia ta jest tworzona przy pierwszym wywołaniu zdarzenia draw w każdym nowym oknie room, które zostanie wprowadzone, co oznacza, że do tego momentu nic nie jest rysowane. Jednak nadal można uzyskać położenie powierzchni aplikacji i zmienić jej rozmiar w zdarzeniu Create lub dowolnym innym zdarzeniu bez otrzymywania żadnych błędów, a użyte wartości będą odpowiednie dla powierzchni w momencie jej tworzenia. Rzeczywisty adres sequence zdarzeń związanych z tworzeniem i rysowaniem powierzchni aplikacji jest następujący:
   
     Wydarzenie przed losowaniem
                --- > tworzona jest powierzchnia aplikacji (jeśli jeszcze nie istnieje) i ustawiany jest cel renderowania
@@ -113,7 +113,7 @@
     application_surface
   
    
-  Dostępnych jest także kilka specjalistycznych funkcji, które są przeznaczone wyłącznie do użycia na powierzchni aplikacji:
+  Dostępnych jest także kilka specjalistycznych funkcji, które są przeznaczone wyłącznie do użytku z powierzchnią aplikacji:
   
     application_surface_enable
     application_surface_is_enabled
@@ -130,7 +130,7 @@
         Następny: Oświetlenie
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

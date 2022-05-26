@@ -4,15 +4,20 @@
   Warstwy filtrów/efektów
   W edytorze Room można dodać nową warstwę filtra/efektu, klikając przycisk , co spowoduje dodanie nowej warstwy i otwarcie jej właściwości poniżej:
   
-  Warstwa Filtr/Efekt (lub FX) służy do stosowania filtrów wizualnych lub efektów do niektórych warstw. Możesz wybrać efekt z listy rozwijanej "Typ efektu", co spowoduje wyświetlenie jego parametrów w oknie Właściwości warstwy, umożliwiając modyfikację jego wyglądu i zachowania. Na przykład wybranie efektu "Wstrząs ekranu" pozwoli Ci zmienić jego wielkość, szybkość wstrząsów oraz zastosować teksturę szumu sprite:
+  Warstwa Filtr/Efekt (lub FX) służy do stosowania filtrów wizualnych lub efektów do niektórych warstw. Efekt można wybrać z listy rozwijanej "Typ efektu", co spowoduje wyświetlenie jego parametrów w oknie Właściwości warstwy, umożliwiając modyfikację jego wyglądu i zachowania.
+  Na przykład wybranie efektu "Drgania ekranu" umożliwi zmianę jego wielkości, prędkości drgań oraz zastosowanie tekstury szumu sprite:
   Dodanie warstwy FX spowoduje zastosowanie wybranego efektu do wszystkich innych warstw, które znajdują się poniżej warstwy FX, jak pokazano na poniższej ilustracji:
   Oznacza to, że do wszystkich "dotkniętych" warstw zostanie zastosowany wybrany filtr (w tym przypadku "Desaturacja"), ponieważ znajdują się one poniżej warstwy FX. Warstwy znajdujące się powyżej warstwy FX pozostaną nienaruszone. Na warstwę może wpływać wiele warstw efektów, które znajdują się nad nią w dowolnym miejscu w kolejności warstw.
   Aby utworzyć filtry/efekty, które są stosowane tylko do jednej warstwy, zobacz: Single-Layer FX.
   UWAGA Modyfikowanie głębokości warstwy lub instancji na stronie runtime może zmienić, które warstwy FX są na niej stosowane, poprzez zwiększenie jej głębokości w stosunku do głębokości warstwy FX (zasadniczo znajduje się pod warstwą FX i jest dotknięta) lub zmniejszenie jej głębokości w stosunku do głębokości warstwy FX (znajduje się nad warstwą FX i nie jest dotknięta).
+  Filtr a efekt
+  Filtr wykorzystuje tylko stronę shaders i można go wyświetlić w Edytorze Room.
+  Oprócz strony shaders efekt posiada również wewnętrzny kod do zarządzania sobą. Z tego powodu nie można ich podglądać w edytorze Room, a ich funkcjonalność jest widoczna tylko na stronie runtime (w grze).
+  Na przykład "Koloryzacja" to filtr, a "Cząstki wiatru" to efekt.
   Typy efektów
-  Wszystkie filtry i efekty z listy rozwijanej "Typ efektu" są udokumentowane na tej stronie: Wszystkie typy filtrów/efektów.
+  Wszystkie filtry i efekty z listy rozwijanej "Typ efektu" są opisane na tej stronie: Typy i parametry FX.
   Jednowarstwowa wymiana walut
-  Można utworzyć warstwę FX, aby zastosować filtr do wielu warstw, ale można też przypisać filtr tylko do jednej, określonej warstwy, korzystając z Inspektora. Otwarcie inspektora i wybranie warstwy room umożliwi zastosowanie do niej filtru/efektu, a jeśli jest to warstwa nie-FX (np. warstwa instancji, Asset itp.), efekt zostanie zastosowany tylko do tej warstwy, a nie do innych warstw poniżej niej.
+  Można utworzyć warstwę FX, aby zastosować filtr do wielu warstw, ale można też przypisać filtr tylko do jednej, określonej warstwy, korzystając z Inspektora. Otwarcie inspektora i wybranie warstwy room pozwoli na zastosowanie do niej filtra/efektu, a jeśli jest to warstwa nie-FX (np. warstwa instancji, Asset itp.), efekt zostanie zastosowany tylko do tej warstwy, a nie do innych warstw poniżej niej.
   
   Można również kliknąć ikonę , aby włączyć lub wyłączyć efekty FX dla wybranej warstwy.
   Użycie w czasie pracy
@@ -25,7 +30,7 @@
     
       
         Powrót: Redaktor Room 
-        Następny: Wszystkie typy filtrów/efektów
+        Następny: Typy i parametry FX
       
     
     © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.

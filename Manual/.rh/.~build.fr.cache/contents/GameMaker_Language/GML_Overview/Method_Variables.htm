@@ -2,20 +2,25 @@
   
   Zmienne metody
   Zmienna metody jest zasadniczo zmienną, której przypisano funkcję, "wiążąc" ją z instancją i umożliwiając użycie zmiennej do odwołania się do funkcji - podobnie jak używa się nazwy funkcji runtime do odwołania się do wbudowanej funkcji GML. Używana zmienna może mieć zakres lokalny, instancyjny lub globalny (więcej informacji o zakresie zmiennych można znaleźć tutaj ).
+  Zobacz także: Funkcje skryptu a metody
+  Tworzenie metod
   Składnia tworzenia zmiennej metody jest następująca:
-  <variablename> = function(<parameter1>, <parameter2>, etc... )
+  name = function( parameter1, parameter2, ... )
     {
-        <statement1>;
-        <statement1>;
-        ...
+        statement1;
+        statement2;
+        ...
     }
+  
   lub .
-  function <variablename>(<parameter1>, <parameter2>, etc... )
-    {
-        <statement1>;
-        <statement1>;
-        ...
+  function name( parameter1, parameter2, ... )
+      {
+        statement1;
+        statement2;
+        ...
     }
+  
+  Aby utworzyć funkcję w GML Visual, użyj polecenia Declare A New Function. Włącz opcję "Temp", aby utworzyć zmienną metody (pierwsza składnia pokazana powyżej).
   Ogólnie rzecz biorąc, pierwszą formę należy jednak stosować do metod, a drugą do definiowania funkcji skryptowych, ponieważ druga forma będzie również przypisywać indeks script do nazwy funkcji, podczas gdy pierwsza forma będzie "prawdziwą" metodą (i będzie wymagać użycia przedrostka global jeśli jest używana do definiowania funkcji skryptowej).
   UWAGA Możesz to sprawdzić, używając obu formularzy w projekcie, a następnie wywołując na każdym z nich funkcję runtime typeof(). Jeden z nich zostanie zaklasyfikowany jako "liczba" - ponieważ zwraca identyfikator indeksu script - a drugi jako "metoda".
   Należy więc pamiętać, że - ogólnie rzecz biorąc - mówiąc o metodach i zmiennych metodowych, zawsze będziemy odwoływać się do funkcji, które nie zostały zdefiniowane za pomocą indeksu script. 
@@ -38,8 +43,8 @@
         return point_distance(_x1, _y1, _x2, _y2);
     }
   
-  Zauważ, że w powyższym kodzie różne parametry, które są podawane jako dane wejściowe funkcji, mają swoje nazwy i to właśnie tych nazw należy używać w funkcji, aby odnosić się do różnych danych wejściowych. Zwróć też uwagę, że możesz użyć instrukcji return, aby zwrócić wartość z funkcji do wykorzystania w innym miejscu kodu, oraz że funkcja bez zdefiniowanej wartości zwracanej domyślnie zwróci undefined.
-  UWAGA Podczas gdy zmienna będzie znajdować się w wybranym zakresie, rzeczywista funkcja będzie związana z zakresem, w którym została początkowo zdefiniowana. Na przykład funkcje skryptów mają zakres globalny i są "niezwiązane" (tzn. nie są powiązane z żadnymi instancjami), ale jeśli masz funkcję script, która tworzy w sobie inną funkcję jako zmienną metody, a następnie wywołujesz tę funkcję script z instancji, funkcja użyta w script będzie związana ze zmienną instancji jako metoda. Ogólnie rzecz biorąc, nie trzeba się nad tym zastanawiać, ale w przypadku bardziej złożonych operacji ze zmiennymi metod warto to wziąć pod uwagę. Dotyczy to również innych konstrukcji, takich jak with - gdy tworzysz zmienną metody wewnątrz instrukcji with, funkcja zostanie związana z instancją, która jest aktualnie w zasięgu.
+  Zauważ, że w powyższym kodzie różne parametry, które są podawane jako dane wejściowe funkcji, mają swoje nazwy i to właśnie te nazwy powinny być używane w funkcji do odwoływania się do różnych danych wejściowych. Zwróć też uwagę, że możesz użyć instrukcji return, aby zwrócić wartość z funkcji do wykorzystania w innym miejscu kodu, oraz że funkcja bez zdefiniowanej wartości zwracanej domyślnie zwróci undefined.
+  UWAGA Podczas gdy zmienna będzie znajdować się w wybranym zakresie, rzeczywista funkcja będzie związana z zakresem, w którym została początkowo zdefiniowana. Na przykład funkcje skryptów mają zasięg globalny i są "niezwiązane" (tzn. nie są powiązane z żadnymi instancjami), ale jeśli masz funkcję script, która tworzy w sobie inną funkcję jako zmienną metody, a następnie wywołujesz tę funkcję script z instancji, funkcja użyta w script będzie związana ze zmienną instancji jako metoda. Ogólnie rzecz biorąc, nie trzeba się nad tym zastanawiać, ale w przypadku bardziej złożonych operacji ze zmiennymi metod warto to wziąć pod uwagę. Dotyczy to również innych konstrukcji, takich jak with - gdy tworzysz zmienną metody wewnątrz instrukcji with, funkcja zostanie związana z instancją, która jest aktualnie w zasięgu.
   Po utworzeniu zmiennej metody można jej używać tak samo, jak na przykład funkcji runtime lub script:
   create_vec = function(_x1, _y1, _x2, _y2);
     {
@@ -74,7 +79,7 @@
     
       
         Powrót: Przegląd GML
-        Następny: Zmienne statyczne
+        Następny: Funkcje skryptu a metody
       
     
     © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.

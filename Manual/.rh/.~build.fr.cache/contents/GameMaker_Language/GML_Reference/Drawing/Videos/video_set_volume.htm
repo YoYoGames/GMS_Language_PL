@@ -2,6 +2,7 @@
   video_set_volume
   Ta funkcja zmienia głośność dźwięku w aktualnie załadowanym filmie. Przyjmuje ona wartość z przedziału od 0 do 1, gdzie 0 oznacza ciszę, a 1 - maksymalną głośność.
   Upewnij się, że jest on wywoływany tylko po wywołaniu video_open(), ale przed wywołaniem video_close(), w przeciwnym razie nie wykona żadnego działania (ponieważ nie zostanie załadowany film).
+  Na niektórych platformach ta funkcja będzie działać dopiero po całkowitym załadowaniu filmu, więc użyj wywołań zwrotnych asynchronicznych, aby dowiedzieć się, kiedy film jest gotowy, a następnie zmienić głośność.
    
   Składnia:
   video_set_volume(value);
@@ -32,7 +33,7 @@
   
     
       
-        Powrót: Filmy
+        Wstecz: Odtwarzanie wideo
         Next: video_pause
       
     

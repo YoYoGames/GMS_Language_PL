@@ -1,29 +1,8 @@
 
   
   Powiadomienia push
-  Zdarzenie powiadomienia Push to zdarzenie, które jest wyzwalane przez wywołanie zwrotne z powiadomienia push    w systemie operacyjnym urządzenia, albo z lokalnego źródła za pomocą funkcji push_local_notification(), lub
-    ze źródła zdalnego (np. z witryny server). Generuje ono mapę DS Map, która jest przypisana wyłącznie do tego zdarzenia i jest przechowywana w specjalnej zmiennej  async_load     (przykłady kodu, które szczegółowo wyjaśniają użycie tego zdarzenia, można znaleźć w poszczególnych funkcjach wywołujących zdarzenia asynchroniczne). Ta mapa DS ma następujące klucze:
-  
-    "type": Wartość może być "local" dla powiadomienia lokalnego urządzenia, "remote" dla powiadomienia zdalnego lub "register" dla rejestracji powiadomienia zdalnego.
-    "status": Wartość będzie wynosić "1" w przypadku sukcesu lub "0" w przypadku błędu.
-  
-  W zależności od zwróconego "typu" i wartości "status" mogą występować dodatkowe wpisy kluczy. W przypadku "statusu", jeśli zwrócony został błąd ("0"), pojawi się również następujący klucz:
-  
-    "error": Zawiera szczegółowe informacje o otrzymanym błędzie.
-  
-  Jeśli wartość "status" wynosi 1 (tzn. brak błędów), wówczas mapa DS będzie zawierała następujące dodatkowe wartości, zależne od wartości klucza "type":
-  
-    "reg_id": Jeśli otrzymany "typ" to "register", to ten klucz będzie przechowywał identyfikator rejestracji urządzenia dla zdalnych powiadomień.
-    "data": Jeśli otrzymany "typ" był "lokalny" lub "zdalny", to ten klucz będzie zawierał ładunek string, który został zdefiniowany podczas wywoływania funkcji powiadamiania.
-  
-  Aby lepiej to zrozumieć, stworzyliśmy poniżej mały przykład, na który można spojrzeć. W tym przykładzie wyślemy lokalne powiadomienie push za pomocą następującego kodu:
-  var fireTime = date_inc_day(date_current_datetime(), 1); var data = "daily_reward"; push_local_notification(fireTime, "Ahoy!", "Catch The Haggis Has A Present", data);
-  Spowoduje to ustawienie licznika czasu, który "wypchnie" powiadomienie na urządzenie, gdy minie jeden dzień. Po upływie doby, jeśli gra jest w tle lub nie jest uruchomiona, użytkownikowi zostanie wyświetlone powiadomienie z podanym tytułem i wiadomością (w przypadku
-   iOS wyświetlana jest nazwa gry, a tytuł jest ignorowany), a następnie zostanie wywołane asynchroniczne zdarzenie powiadomienia Push. Zauważ, że jeśli gra jest na pierwszym planie, gdy nadejdzie czas na powiadomienie, nie zostanie ona wyświetlona, ale zdarzenie asynchroniczne zostanie wywołane.
-    W samym zdarzeniu należy obsłużyć wywołanie zwrotne w następujący sposób:
-  var type = ds_map_find_value(async_load, "type"); var status = ds_map_find_value(async_load, "status"); if status == 0    {    //error of some kind    var error = ds_map_find_value(async_load, "error");     show_debug_message("error=" + string(error));    } else
-        {    if type == "register"       {       global.reg_id = ds_map_find_value(async_load, "reg_id");       }    else     {       var data = ds_map_find_value(async_load, "data");             if data == "daily_reward"          {          global.Gold += 1000;          }       }    }
-   
+  Zdarzenie powiadomienia Push jest wyzwalane przez wywołanie zwrotne z powiadomienia push w systemie operacyjnym urządzenia, pochodzącego z lokalnego lub zdalnego źródła. Generuje ono mapę DS Map, która jest przypisana wyłącznie do tego zdarzenia i jest przechowywana w zmiennej specjalnej  async_load.
+  To zdarzenie jest wykorzystywane wyłącznie przez stronę extensions (np. Firebase Cloud Messaging extension), dlatego instrukcje dotyczące korzystania z tego zdarzenia można znaleźć w dokumentacji rozszerzenia.
    
    
   
@@ -33,7 +12,7 @@
         Następny: Zapisz / Wczytaj
       
     
-    © Copyright YoYo Games Ltd. 2021 Wszystkie prawa zastrzeżone.
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   

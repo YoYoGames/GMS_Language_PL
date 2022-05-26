@@ -8,7 +8,7 @@
     
       Wyświetlane jest zdarzenie, w którym wystąpił błąd, a także strona Object (w stosownych przypadkach).
     
-      Pokazuje rzeczywisty błąd.  Pokazuje więc zakres błędu oraz jego typ. Pierwsza wartość w nawiasie to identyfikator instancji, w której uruchomiono kod - może to być też jedna z wartości specjalnych wymienionych w poniższej tabeli - a druga to wartość wewnętrzna, której YoYo Games używa do identyfikacji błędów i którą można zignorować. W przypadku powyższego rysunku jest to informacja, że zmienna _image nie została ustawiona (tzn. nie istnieje przed uzyskaniem do niej dostępu) na stronie object obj_EA_DEMO_Control.
+      Pokazuje rzeczywisty błąd.  Pokazuje więc zakres błędu oraz jego typ. Pierwsza wartość w nawiasie to identyfikator instancji, w której uruchomiono kod - może to być też jedna z wartości specjalnych wymienionych w tabeli poniżej - a druga to wartość wewnętrzna, której GameMaker używa do identyfikacji błędów i którą można zignorować. W przypadku powyższego obrazka jest to informacja, że zmienna _image nie została ustawiona (tzn. nie istnieje przed uzyskaniem do niej dostępu) na stronie object obj_EA_DEMO_Control.
     
       Pokazuje on numer wiersza, w którym występuje błąd, oraz fragment kodu pokazujący jego położenie. Należy pamiętać, że nie zawsze jest to w 100% dokładne, ze względu na sposób kompilacji gry, ale powinno wystarczyć, aby pomóc w znalezieniu dokładnego miejsca wystąpienia problemu.
   
@@ -55,7 +55,7 @@
     
       
         Błąd
-        Komunikat
+        Wiadomość
         Operacja
         Opis
       
@@ -116,7 +116,7 @@
         DoDiv
         Podzielić przez zero
         Matematyka
-        Próbujesz podzielić przez 0 (zauważ, że dzieje się tak tylko przy dzieleniu przez liczby całkowite, dzielenie (niezerowej) liczby rzeczywistej przez 0 da w odpowiedzi nieskończoność, a dzielenie zera przez zero da w odpowiedzi NaN). Można sprawdzić te wartości za pomocą (is_infinity) i (is_nan)
+        Próbujesz podzielić przez 0 (zauważ, że dzieje się tak tylko wtedy, gdy używasz dzielenia przez liczby całkowite, dzielenie (niezerowej) liczby rzeczywistej przez 0 da w wyniku nieskończoność, a dzielenie zera przez zero da w wyniku NaN). Można sprawdzić te wartości za pomocą (is_infinity) i (is_nan)
       
       
         DoMod
@@ -193,7 +193,7 @@
         DoShr
         Silnik wykonawczy - nie można operować na typie string 
         Bitwise
-        Próbujesz przesunąć w prawo (>>) zmienne niewłaściwego typu (np. próbujesz przesunąć w prawo zmienną string).
+        Próbujesz przesunąć w prawo (>>) zmienne niewłaściwego typu (na przykład próbujesz przesunąć w prawo zmienną string).
       
       
         
@@ -283,7 +283,7 @@
         Stack Overflow
         -
         Silnik
-        Przepełnienie stosu występuje wtedy, gdy na stosie wywołań znajduje się zbyt dużo pamięci, a gdy gra próbuje wykorzystać więcej miejsca, niż jest dostępne na stosie wywołań (to znaczy, gdy próbuje uzyskać dostęp do pamięci poza granicami stosu wywołań, co jest zasadniczo przepełnieniem buffer ), mówi się, że stos się przepełnia, co powoduje awarię programu. Uruchom ponownie komputer i program GameMaker: Studio i jeśli błąd będzie się powtarzał, skontaktuj się z pomocą techniczną i/lub zgłoś błąd (jak wyjaśniono powyżej).
+        Przepełnienie stosu ma miejsce, gdy na stosie wywołań znajduje się zbyt dużo pamięci i gdy Twoja gra próbuje wykorzystać więcej miejsca, niż jest dostępne na stosie wywołań (to znaczy, gdy próbuje uzyskać dostęp do pamięci poza granicami stosu wywołań, co jest zasadniczo przepełnieniem buffer ), mówi się, że stos się przepełnia, co powoduje awarię programu. Uruchom ponownie komputer i GameMakera, a jeśli błąd będzie się powtarzał, skontaktuj się z działem pomocy technicznej i/lub zgłoś błąd (jak opisano powyżej).
       
     
   

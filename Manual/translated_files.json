@@ -6876,8 +6876,8 @@
     "fileSize": 3547
   },
   "contents\\GameMaker_Language\\GML_Reference\\Game_Input\\GamePad_Input\\gamepad_set_button_threshold.htm": {
-    "fileHash": "D82A7D74EF0B90957D0B680D18229FD7",
-    "fileSize": 3278
+    "fileHash": "EF4EA21ADC7419E5C30456CA42FD4BB6",
+    "fileSize": 3516
   },
   "contents\\GameMaker_Language\\GML_Reference\\Game_Input\\GamePad_Input\\gamepad_set_colour.htm": {
     "fileHash": "C144CEB946FFD47AD0CA5800340FD5F2",
@@ -8780,16 +8780,16 @@
     "fileSize": 2236
   },
   "contents\\GameMaker_Language\\GML_Reference\\Strings\\clipboard_get_text.htm": {
-    "fileHash": "6608F7C1364026EC2E4FAF32E3405800",
-    "fileSize": 2342
+    "fileHash": "A255323EEF38707867447FDC99EEE4A4",
+    "fileSize": 2325
   },
   "contents\\GameMaker_Language\\GML_Reference\\Strings\\clipboard_has_text.htm": {
-    "fileHash": "A4E0C244E013FD58C4971FA3ACD5D20D",
-    "fileSize": 2350
+    "fileHash": "AC0E9C1C2D63CABDDBF1444456556DD9",
+    "fileSize": 2297
   },
   "contents\\GameMaker_Language\\GML_Reference\\Strings\\clipboard_set_text.htm": {
-    "fileHash": "41B2D8579AEDDCADF566203318400C11",
-    "fileSize": 2677
+    "fileHash": "58DD59C95CF5E10C026B74584295957E",
+    "fileSize": 2624
   },
   "contents\\GameMaker_Language\\GML_Reference\\Strings\\ord.htm": {
     "fileHash": "18412C9A3B281CF228727EA1E999AF6F",
@@ -10630,5 +10630,9 @@
   "contents\\The_Asset_Editors\\Extension_Creation\\Disabling_Extensions.htm": {
     "fileHash": "66B3E364996E41588C2AB34F4EDE23EE",
     "fileSize": 3371
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Time_Sources\\time_source_start.htm": {
+    "fileHash": "76D48A904CB9DEA502DAF7D98811C976",
+    "fileSize": 3866
   }
 }

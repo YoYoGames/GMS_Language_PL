@@ -3,17 +3,19 @@
   sortuj_sort
   Za pomocą tej funkcji można posortować tablicę w kolejności rosnącej lub malejącej, lub też użyć własnej funkcji do określenia kolejności sortowania. Funkcja wymaga podania tablicy do posortowania, a następnie wykonania jednej z poniższych czynności:
   
-    Stałe true lub false oznaczają porządek sortowania rosnący (true) lub malejący (false).
+    Stałe true lub false wskazujące rosnącą (true) lub malejącą (false) kolejność sortowania
     Własna funkcja określająca kolejność sortowania
   
+  Ta funkcja zmodyfikuje zawartość oryginalnej tablicy, która została dostarczona. Aby utworzyć posortowaną kopię, należy najpierw zduplikować tablicę za pomocą array_copy(), a następnie przekazać ją do tej funkcji.
+  Użycie funkcji niestandardowej
   Jeśli do sortowania używana jest funkcja niestandardowa, musi ona przyjmować dwa argumenty, które otrzymają odpowiednio wartości bieżącego elementu i następnego elementu. Funkcja powinna zwracać dowolną z poniższych wartości, aby wpłynąć na kolejność sortowania (gdzie elm1 to bieżący element, a elm2 to następny element):
   
     0: jeśli elm1 i elm2 są równe
-    <0 (liczba ujemna): jeśli elm1 jest przed elm2
-    >0 (liczba dodatnia): jeśli elm1 idzie za elm2
+    <= -1 (ujemna liczba całkowita): jeśli elm1 jest przed elm2
+    >= 1 (dodatnia liczba całkowita): jeśli elm1 idzie za elm2
   
+  UWAGA Wartość zwracana przez funkcję własną musi być liczbą całkowitą. Wartości zmiennoprzecinkowe mniejsze niż 1 zostaną odczytane jako 0, dlatego należy użyć sign() lub round() jeśli funkcja operuje na wartościach zmiennoprzecinkowych.
   Jeśli tablica zawiera zestaw strings, to w przypadku domyślnego sortowania rosnącego i malejącego tablice strings zostaną posortowane alfabetycznie, zgodnie z alfabetem angielskim. Wszystkie inne typy danych zostaną posortowane na podstawie wartości liczbowych, których dokładne wartości zależą od typu danych (na przykład tablica buffers zostanie posortowana na podstawie wartości liczbowych ich adresów pamięci).
-  Należy pamiętać, że funkcja ta zmodyfikuje zawartość oryginalnej tablicy, która została dostarczona. Aby utworzyć posortowaną kopię, należy najpierw zduplikować tablicę za pomocą strony array_copy(), a następnie przekazać ją do tej funkcji.
    
   Składnia:
   array_sort(variable, sorttype_or_function);
@@ -31,7 +33,7 @@
       
       
         sorttype_or_function 
-         Funkcja/metodalogiczna lub skryptowa
+        Boolean lub Funkcja skryptu/Metoda
         The sort type (true w przypadku sortowania rosnącego lub false w przypadku sortowania malejącego) lub odwołanie do funkcji, która ma być użyta do sortowania.
       
     
@@ -45,10 +47,10 @@
     
     array_sort(_a, function(elm1, elm2)
     {
-            return elm1 - elm2;
+        return elm1 - elm2;
     });
   
-  Powyższy kod wykorzystuje własną funkcję sortującą do posortowania tablicy w porządku rosnącym. Funkcja sortująca pobiera dwa elementy tablicy: elm1 oraz elm2 i wykonuje na nich odejmowanie. Jeśli adres elm1 jest większy od adresu elm2, to w wyniku odejmowania otrzymuje się liczbę dodatnią, która przesuwa adres elm1 za adres elm2, co powoduje ułożenie elementów w kolejności rosnącej.
+  Powyższy kod wykorzystuje własną funkcję sortującą do posortowania tablicy w porządku rosnącym. Funkcja sortująca pobiera dwa elementy tablicy: elm1 oraz elm2 i wykonuje na nich odejmowanie. Jeśli adres elm1 jest większy od adresu elm2, to w wyniku odejmowania otrzymujemy liczbę dodatnią, która przesuwa adres elm1 za adres elm2, co powoduje ułożenie ich w kolejności rosnącej.
   Oto rozszerzony przykład:
   var _xx, _yy, _a;
     

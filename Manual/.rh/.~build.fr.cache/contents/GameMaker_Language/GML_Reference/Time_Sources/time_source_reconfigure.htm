@@ -1,0 +1,84 @@
+
+  time_source_reconfigure
+  Ta funkcja służy do modyfikowania podstawowych właściwości źródła czasu, bez konieczności tworzenia zupełnie nowego źródła.
+  Określasz istniejące Źródło czasu, a następnie ustawiasz właściwości, które są również ustawione w time_source_create()z wyjątkiem rodzica. Szczegółowe informacje o tych właściwościach można znaleźć na tej stronie.
+  Określone Źródło czasu zostanie zresetowane i dezaktywowane, a następnie trzeba będzie je ponownie uruchomić.
+   
+  Składnia:
+  time_source_reconfigure(id, period, units, callback, [args, repetitions, expiry_type]);
+  
+    
+      
+      
+      
+    
+    
+      
+        Argument
+        Typ
+        Opis
+      
+      
+        id
+        Identyfikator źródła czasu
+        The Time Source aby ponownie skonfigurować
+      
+      
+        period
+        Real
+        The period that the Time Source dla, w podanych jednostkach
+      
+      
+        units
+        Źródło czasu Jednostka Stała
+        The units that the given period is in
+      
+      
+        callback
+        Metoda
+        The method to call when the Time Source wygasa
+      
+      
+        args
+        Tablica
+        OPTIONAL Tablica zawierająca argumenty, które mają być przekazane do metody
+      
+      
+        repetitions
+        Real
+        OPTIONAL Liczba powtórzeń źródła czasu, lub -1 dla nieokreślonego powtarzania.
+      
+      
+        expiry_type
+        Źródło czasu Stała wygaśnięcia
+        OPTIONAL Czy źródło czasu wygasa w najbliższej ramce, czy w następnej ramce
+      
+    
+  
+   
+  Zwroty:
+  N/A
+   
+  Przykład:
+  function change_spawn_delay(new_delay)
+    {
+        time_source_reconfigure(obj_game.spawn_time_source, new_delay, time_source_units_frames, obj_game.spawn_method, [], -1);
+        time_source_start(obj_game.spawn_time_source);
+    }
+  Tworzy to nową funkcję, która zmienia opóźnienie tarła używane dla wrogów w grze.
+  Zakładając, że gra używa źródła czasu o nazwie obj_game.spawn_time_source do tarła wrogów, to źródło czasu będzie musiało zostać zaktualizowane, gdy zmieni się opóźnienie tarła.
+  Ta funkcja wykonuje dokładnie tę czynność, ponownie konfigurując źródło czasu z nowym opóźnieniem, a następnie uruchamiając je ponownie.
+   
+   
+  
+    
+      
+        Powrót: Źródła czasu
+        Next: time_source_reset
+      
+    
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
+  
+  
+  
+
