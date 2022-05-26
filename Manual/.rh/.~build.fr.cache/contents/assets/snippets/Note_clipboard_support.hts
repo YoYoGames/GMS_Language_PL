@@ -1,0 +1,3 @@
+
+  NOTE This function is only valid on the Windows, HTML5 and Opera GX targets. On HTML5, clipboards are not supported on Firefox without the use of an extension, and are not supported on Internet Explorer at all.
+

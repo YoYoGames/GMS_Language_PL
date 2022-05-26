@@ -1,10 +1,10 @@
 
   time_source_start
-  This function starts the given Time Source, changing its state to time_source_state_active.
-  The specified Time Source may be a new Time Source that was never started, was paused, stopped or expired with no repetitions.
-  This function will "soft-reset" the given Time Source, resetting its expiry time and reps remaining to the values that were configured for it.
-   
-  Syntax:
+  Funkcja ta uruchamia podane źródło czasu, zmieniając jego stan na time_source_state_active.
+  Podane Źródło czasu może być nowym Źródłem czasu, które nigdy nie zostało uruchomione, zostało wstrzymane, zatrzymane lub wygasło bez powtórzeń.
+  Ta funkcja powoduje "miękkie resetowanie" danego źródła czasu, resetując jego czas wygaśnięcia i pozostałe okres y do wartości, które zostały dla niego skonfigurowane.
+   
+  Składnia:
   time_source_start(id);
   
     
@@ -15,21 +15,21 @@
     
       
         Argument
-        Type
-        Description
+        Typ
+        Opis
       
       
         id
-        Time Source ID
-        The Time Source to start
+        Identyfikator źródła czasu
+        The Time Source na początek
       
     
   
-   
-  Returns:
+   
+  Zwroty:
   N/A
-   
-  Example:
+   
+  Przykład:
   var _my_method = function()
     {
         instance_destroy();
@@ -39,20 +39,20 @@
     
     time_source_start(_time_source);
   
-  In this example, we want the instance to destroy itself 300 frames later.
-  The code first creates a method that simply calls instance_destroy().
-  It then creates a Time Source, inheriting from the Game Time Source. It sets its period to 300 frames.
-  Finally, it starts the Time Source.
-   
-   
+  W tym przykładzie chcemy, aby instancja zniszczyła się 300 klatek później.
+  Kod najpierw tworzy metodę, która po prostu wywołuje instance_destroy().
+  Następnie tworzy źródło czasu, dziedziczące po źródle czasu gry. Ustawia jego okres na 300 klatek.
+  Na koniec uruchamia Źródło czasu.
+   
+   
   
     
       
-        Back: Time Sources
-        Next: time_source_stop
+        Powrót: Źródła czasu
+        Next: time_source_stop
       
     
-    © Copyright YoYo Games Ltd. 2022 All Rights Reserved
+    © Copyright YoYo Games Ltd. 2022 Wszystkie prawa zastrzeżone.
   
   
   
