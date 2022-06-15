@@ -1,3 +1,0 @@
-
-  NOTE On HTML5, this returns a struct instead of a texture pointer, as a pointer cannot be used on that platform. However this does not change the use of the returned value, as its usage in texture functions still remains the same.
-

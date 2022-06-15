@@ -1,8 +1,0 @@
-
-  Please note that there are currently only two ways to ensure that GameMaker loads a particular filter/effect in your game:
-  
-    By adding the filter/effect in at least one room through the IDE
-    By calling fx_create() with the filter/effect name as a string literal
-  
-  This means that to use a specific filter/effect at runtime, it must have either been added into a room first (so GameMaker knows you are going to use it) or specified explicitly in an fx_create() call.
-

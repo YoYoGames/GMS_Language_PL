@@ -1,4 +1,0 @@
-
-  NOTE When working with surfaces there is the possibility that they can cease to exist at any time due to them being stored in texture memory. You should ALWAYS check that a surface exists using surface_exists() before referencing them directly.
-  TIP How a surface appears depends on its contents, especially the alpha values inside the surface. A surface cleared with an alpha of 0 may appear different from a surface cleared with an alpha of 1, due to the way they blend with the background. Take care of this whenever you notice a difference in the way something renders on a custom surface as opposed to the application_surface.
-
