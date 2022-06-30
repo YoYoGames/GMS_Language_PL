@@ -90,8 +90,8 @@
       </tr>
       <tr>
         <td><span class="notranslate">callback</span></td>
-        <td><span data-keyref="Type_Method"><a href="../../../../GameMaker_Language/GML_Overview/Method_Variables.htm" target="_blank">Metoda</a></span></td>
-        <td><span class="notranslate">The method to call when the <span data-keyref="Type_Resource_TimeSource">Time Source</span> wygasa</td>
+        <td><span data-keyref="Type_Method"><a href="../../../../GameMaker_Language/GML_Overview/Method_Variables.htm" target="_blank">Metoda</a></span> lub . <span data-keyref="Type_Function_Script"><a href="../../../../GameMaker_Language/GML_Overview/Script_Functions.htm" target="_blank">Funkcja skryptu</a></span></td>
+        <td><span class="notranslate">The method or script function to call when the <span data-keyref="Type_Resource_TimeSource">Time Source</span> wygasa</td>
       </tr>
       <tr>
         <td><span class="notranslate">args</span></td>
@@ -142,7 +142,7 @@
   <p>W tym przykładzie tworzymy globalne <span data-keyref="Type_Resource_TimeSource">źródło czasu</span>, które wygasa raz na sekundę. Ten kod zostałby umieszczony w korzeniu pliku <a href="../../../The_Asset_Editors/Scripts.htm"><span class="notranslate">script</span></a>.</p>
   <p>Kod najpierw tworzy metodę, która wypisuje komunikat do dziennika wyjściowego o treści <strong>&quot;Minęła sekunda!&quot;</strong>.</p>
   <p>Następnie tworzy nowe <span data-keyref="Type_Resource_TimeSource">źródło czasu</span>, dziedziczące po <span data-keyref="Type_Resource_TimeSource">źródle</span> <span data-keyref="Type_Resource_TimeSource">czasu</span> gry. Ustawia jego okres na <strong>1 sekundę</strong>.</p>
-  <p>Metoda jest przekazywana do <span data-keyref="Type_Resource_TimeSource">źródła czasu</span>, aby można ją było wywoływać za każdym razem, gdy upływa jego termin ważności. Jako argumenty podawana jest pusta tablica.</p>
+  <p>Metoda jest przekazywana do <span data-keyref="Type_Resource_TimeSource">źródła czasu</span>, aby można ją było wywołać za każdym razem, gdy upływa jego czas. Jako argumenty podawana jest pusta tablica.</p>
   <p>Licznik powtórzeń jest ustawiony na -1, więc <span data-keyref="Type_Resource_TimeSource">źródło czasu</span> nigdy się nie zatrzymuje i powtarza w nieskończoność. Typ wygaśnięcia jest ustawiony tak, aby wywołanie zwrotne było uruchamiane w pierwszej klatce po wygaśnięciu.</p>
   <p>Na koniec uruchamiane jest <span data-keyref="Type_Resource_TimeSource">źródło czasu</span>.</p>
   <p> </p>

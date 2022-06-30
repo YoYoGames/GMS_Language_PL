@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Pióra</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <script src="../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="The Feather Preferences" />
+  <meta name="rh-index-keywords" content="Prefs - Feather Settings" />
+  <meta name="search-keywords" content="Feather Settings, Feather Options, Feather Preferences, Feather Prefs" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Pióra</h1>
+  <p>Feather zapewnia inteligentne uzupełnianie kodu i ulepszone sprawdzanie składni w <a href="../../GameMaker_Language/GameMaker_Language_Index.htm">kodzie GML</a> <span class="notranslate">scripts</span>, a także inteligentne opcje refaktoryzacji.</p>
+  <p>Ta strona zawiera informacje o następujących częściach Feather:</p>
+  <ul class="colour">
+    <li><a href="#s1">Opcje podstawy</a></li>
+    <li><a href="#s2">Podkreślanie</a></li>
+    <li>Poziom<a href="#s3">istotności komunikatu</a> (zasady &quot;GMXXXX&quot;)</li>
+    <li><a href="#s4">Zasady nazewnictwa</a> (dla <span class="notranslate">assets</span>, zmiennych itp.)</li>
+  </ul>
+  <div class="seealso" data-type="seealso" style="">
+    <p class="seealso-caption" data-close-text="" data-expanded="true" data-open-text="See Also" data-type="seealso-caption" style="">Zobacz także (placeholder)</p>
+    <ol class="seealso-list" data-keywords="" data-type="seealso-list" style="">
+      <li><a class="seealso-list-item" href="#">Lista tematów</a></li>
+    </ol>
+  </div>
+  <h2 id="s1">Opcje podstawy</h2>
+  <p><img>Podstawowe ustawienia piór zawierają następujące opcje:</p>
+  <ul class="colour">
+    <li><strong>Enabled</strong>: W tym miejscu można włączyć lub wyłączyć Feather. Po wyłączeniu funkcji Feather w witrynie <span class="notranslate">IDE</span> nie będą dostępne żadne funkcje Feather.</li>
+    <li><strong>Document Parse Delay</strong>: Czas, jaki Feather czeka na sprawdzenie Twojej strony <span class="notranslate">script</span> po wprowadzeniu w niej zmian.</li>
+    <li><strong>Kompaktowe etykiety</strong> narzędzi: Włączenie tej opcji spowoduje usunięcie niektórych informacji z etykiet narzędziowych, które są wyświetlane po najechaniu kursorem myszy na słowa kluczowe, takich jak opisy parametrów funkcji, dzięki czemu etykiety narzędziowe staną się mniejsze.</li>
+    <li><strong>Refaktoryzuj referencje</strong>: Włączenie tej opcji spowoduje, że po zmianie nazwy strony <span class="notranslate">asset</span> w przeglądarce <span class="notranslate">Asset</span>, wszystkie wzmianki o niej w kodzie zostaną również zmienione, aby nie doszło do uszkodzenia odniesień.</li>
+  </ul>
+  <h2 id="s2">Podkreślanie</h2>
+  <p><img class="center" src="../../assets/Images/Setup_And_Version/Preferences/Feather/FeatherPrefs_Base.png" /></p>
+  <p>Ta sekcja zawiera ustawienia umożliwiające zmianę kolorów używanych do podkreślania części kodu w celu zaznaczenia błędu, ostrzeżenia lub sugestii:</p>
+  <ul class="colour">
+    <li><strong>Kolor</strong> błędu: Kolor używany do oznaczania błędów.</li>
+    <li><strong>Kolor ost</strong>rzeżenia: kolor używany dla ostrzeżeń.</li>
+    <li><strong>Kolor sugestii</strong>: Kolor używany dla sugestii.</li>
+  </ul>
+  <h2 id="s3">Poziom istotności komunikatu</h2>
+  <p><img>Ta sekcja zawiera wszystkie reguły, których Feather używa do sprawdzania Twojego kodu, oraz pozwala Ci dostosować stopień surowości każdej z nich.</p>
+  <p>Możesz ustawić regułę jako &quot;<strong>Błąd</strong>&quot;, &quot;<strong>Ostrzeżenie</strong>&quot; lub &quot;<strong>Sugestia</strong>&quot;, co wpływa na sposób, w jaki kod łamiący regułę jest zgłaszany w Edytorze kodu i oknie komunikatów Feather.</p>
+  <p>Można ustawić regułę na &quot;<strong>Ignoruj</strong>&quot;, co spowoduje zignorowanie wszystkich przypadków złamania tej reguły.</p>
+  <p>Wszystkie reguły zaczynające się od &quot;<strong>GM1000</strong>&quot; sprawdzają składnię pod kątem ewentualnych błędów krytycznych, a te zaczynające się od &quot;<strong>GM2000</strong>&quot; są regułami dobrych praktyk, które pomagają zapobiegać błędom w grze.</p>
+  <h2 id="s4">Zasady nazewnictwa</h2>
+  <p><img>Ta sekcja umożliwia ustawienie reguł nazewnictwa dla <span class="notranslate">assets</span>, zmiennych i różnych innych części <span class="notranslate">GML</span> Code.</p>
+  <p>Reguła GM2017 w sekcji &quot;Istotność komunikatu&quot; musi być włączona, aby reguły nazewnictwa zaczęły działać. Domyślnie jest ona wyłączona.</p>
+  <p>W tej sekcji dostępne są następujące ustawienia:</p>
+  <ul class="colour">
+    <li><strong>Lista blokowania identyfikatorów</strong>: Jest to lista identyfikatorów oddzielonych spacjami, które będą ignorowane przez wszystkie reguły nazewnictwa.<br>
+      <br>
+      Na przykład, powiedzmy, że mamy regułę nakazującą używanie <span class="inline2">obj_</span> jako prefiksu dla <span class="notranslate">objects</span>, ale chcemy, aby <span class="inline2">menedżer</span> i <span class="inline2">sieć</span> <span class="notranslate">objects</span> pozostały bez zmian i nie używały prefiksu <span class="inline2">obj_</span>.<br>
+      <br>
+      W takim przypadku w polu <strong>Blocklist Indentifier</strong> należy wpisać <span class="inline2">manager network</span>. Feather zignoruje te <span class="notranslate">objects</span> <em>oraz</em> wszelkie inne identyfikatory (zmienne, enumy, parametry itp.) o tych samych nazwach.
+    </li>
+    <li><strong>&lt;identyfikator&gt; Reguła</strong> nazewnictwa: Można ustawić reguły nazewnictwa dla każdego typu identyfikatora z listy, takiego jak <span class="notranslate">assets</span>, makra, enumy, parametry funkcji, zmienne itp.<br>
+      <br>
+      Każda reguła nazewnictwa ma następujące opcje:
+      <ul>
+        <li><strong>Prefiks</strong>: Tekst, który powinien pojawić się przed nazwą identyfikatora, może to być <span class="inline2">obj_</span> dla <span class="notranslate">objects</span>, <span class="inline2">_</span> dla zmiennych lokalnych itp. w zależności od preferencji użytkownika.</li>
+        <li><strong>Sufiks</strong>: Tekst, który powinien pojawić się po nazwie identyfikatora.</li>
+        <li><strong>Styl</strong> nazewnictwa: Wybierz styl nazewnictwa dla identyfikatora. Do wyboru są:
+          <ul>
+            <li><strong>UpperCamelCase</strong>: <em>MyHealth, ObjGrappleHook, MaxInventoryItemsAllowed, itd.</em></li>
+            <li><strong>lowerCamelCase</strong>: <em>myHealth, objGrappleHook, maxInventoryItemsAllowed, etc.</em></li>
+            <li><strong>ALL_UPPER</strong>: <em>MY_HEALTH, OBJ_GRAPPLE_HOOK, MAX_INVENTORY_ITEMS_ALLOWED itd.</em></li>
+            <li><strong>all_lower</strong>: <em>my_health, obj_grapple_hook, max_inventory_items_allowed</em> itd.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="../IDE_Preferences.htm">Preferencje IDE</a></div>
+        <div style="float:right">Następny: <a data-xref="{title}" href="Marketplace_Preferences.htm">Preferencje dotyczące rynku</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+Preferences - Feather Settings
+-->
+  <!-- TAGS
+prefs_feather
+-->
+</body>
+</html>

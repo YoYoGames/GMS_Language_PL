@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Typy danych pióra</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <script src="../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page listing all Feather data types along with their JSDoc usages" />
+  <meta name="rh-index-keywords" content="Code Editor - JSDoc Comments,JSDoc" />
+  <meta name="search-keywords" content="JSDoc,JSDoc Comments" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Typy danych pióra</h1>
+  <p><a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">Feather</a> używa typów danych do inteligentnego sprawdzania składni podczas pisania kodu, zapewniając, że nie użyjesz niewłaściwego typu danych dla zmiennej lub parametru funkcji.</p>
+  <p>Umożliwia także określanie typów danych dla parametrów i wartości zwracanych własnych <a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">funkcji skryptu</a> za pomocą <a href="JSDoc_Script_Comments.htm">komentarzy JSDoc</a>.</p>
+  <p>Znaczniki <span class="inline">@param</span> i <span class="inline">@return</span> JSDoc umożliwiają określenie jednego z następujących typów:</p>
+  <p class="note"><span class="note">UWAGA</span> W typach JSDoc wielkość liter nie ma znaczenia, co oznacza, że <span class="inline2">Id.DsList</span> i <span class="inline2">id.dslist</span> są takie same.</p>
+  <table>
+    <colgroup>
+      <col />
+      <col />
+      <col />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Typy baz</th>
+        <th>Przykłady specyfikatorów*.</th>
+        <th>Opis</th>
+      </tr>
+      <tr>
+        <td><strong>Real</strong></td>
+        <td><em>N/A</em></td>
+        <td>Liczba rzeczywista</td>
+      </tr>
+      <tr>
+        <td><strong>Bool</strong></td>
+        <td><em>N/A</em></td>
+        <td>Wartość logiczna</td>
+      </tr>
+      <tr>
+        <td><strong>String</strong></td>
+        <td><em>N/A</em></td>
+        <td>Ciąg</td>
+      </tr>
+      <tr>
+        <td><strong>Tablica</strong></td>
+        <td>Brak -. <span data-keyref="Type_Array"><a href="../../../GameMaker_Language/GML_Overview/Arrays.htm" target="_blank">Tablica</a></span><br>
+          ...</td>
+        <td>Tablica, może zawierać specyfikatory</td>
+      </tr>
+      <tr>
+        <td><strong>Wskaźnik</strong></td>
+        <td>Brak -. <span data-keyref="Type_Pointer"><a href="../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Wskaźnik</a></span><br>
+          ...</td>
+        <td>Wskaźnik, może zawierać specyfikatory</td>
+      </tr>
+      <tr>
+        <td><strong>Funkcja</strong></td>
+        <td>Brak -. <span data-keyref="Type_Function"><a href="../../../GameMaker_Language/GML_Overview/Script_Functions.htm" target="_blank">Funkcja</a></span><br>
+          ...</td>
+        <td>Funkcja, może zawierać specyfikatory</td>
+      </tr>
+      <tr>
+        <td><strong>Struktura</strong></td>
+        <td>Brak -. <span data-keyref="Type_Struct"><a href="../../../GameMaker_Language/GML_Overview/Structs.htm" target="_blank">Struktura</a></span><br>
+          ...</td>
+        <td>Strona <span class="notranslate">struct</span>, może zawierać elementy określające</td>
+      </tr>
+      <tr>
+        <td><strong>Id</strong></td>
+        <td>.DsList -. <span data-keyref="Type_ID_DS_List"><a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Lists/ds_list_create.htm" target="_blank">Identyfikator listy DS</a></span><br>
+          .DsMap -. <span data-keyref="Type_ID_DS_Map"><a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Maps/ds_map_create.htm" target="_blank">Identyfikator mapy DS</a></span><br>
+          .DsGrid -. <span data-keyref="Type_ID_DS_Grid"><a href="../../../GameMaker_Language/GML_Reference/Data_Structures/DS_Grids/ds_grid_create.htm" target="_blank">Identyfikator siatki DS</a></span><br>
+         <em>...</em>
+        </td>
+        <td>Identyfikator, wymaga specyfikatorów</td>
+      </tr>
+      <tr>
+        <td><strong>Aktywa</strong></td>
+        <td>.GMObject - <span data-keyref="Type_Asset_Object"><a href="../../../The_Asset_Editors/Objects.htm" target="_blank">Obiekt Aktywa</a></span><br>
+          .GMSprite -. <span data-keyref="Type_Asset_Sprite"><a href="../../../The_Asset_Editors/Sprites.htm" target="_blank">Aktywa Sprite</a></span><br>
+          .GMScript -. <span data-keyref="Type_Asset_Script"><a href="../../../The_Asset_Editors/Scripts.htm" target="_blank">Aktywa skryptowe</a></span><br>
+          .GMSequence -. <span data-keyref="Type_Asset_Sequence"><a href="../../../The_Asset_Editors/Sequences.htm" target="_blank">Aktywa sekwencji</a></span><br>
+          .GMRoom -. <span data-keyref="Type_Asset_Room"><a href="../../../The_Asset_Editors/Rooms.htm" target="_blank">Aktywa związane z pomieszczeniem</a></span> <em><br>
+            ...</em></td>
+        <td>Strona <span class="notranslate">asset</span>, wymaga specyfikatorów</td>
+      </tr>
+      <tr>
+        <td><strong>Stała</strong></td>
+        <td>.Colour -. <span data-keyref="Type_Constant_Colour"><a href="../../../GameMaker_Language/GML_Reference/Drawing/Colour_And_Alpha/Colour_And_Alpha.htm" target="_blank">Kolor</a></span><br>
+          .HAlign -. <span data-keyref="Type_Constant_Draw_HAlign"><a href="../../../GameMaker_Language/GML_Reference/Drawing/Text/draw_set_halign.htm" target="_blank">Stała wyrównania poziomego</a></span><br>
+          .VAlign -. <span data-keyref="Type_Constant_Draw_VAlign"><a href="../../../GameMaker_Language/GML_Reference/Drawing/Text/draw_set_valign.htm" target="_blank">Stała wyrównania pionowego</a></span><br>
+          .Cursor -. <span data-keyref="Type_Constant_Cursor"><a href="../../../GameMaker_Language/GML_Reference/Cameras_And_Display/The_Game_Window/window_get_cursor.htm" target="_blank">Stała kursora</a></span><br>
+          ...</td>
+        <td>Stała, wymaga specyfikatorów</td>
+      </tr>
+      <tr>
+        <td><strong>Każdy</strong></td>
+        <td><em>N/A</em></td>
+        <td>Dowolny typ danych</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="note"><span class="note">UWAGA</span> <em>*</em> W kolumnie <strong>Przykłady</strong> specyfikatorów podano kilka przykładowych specyfikatorów, ale nie wszystkie. Na przykład w grupach <span class="inline2">Id</span>, <span class="inline2">Asset</span> i <span class="inline2">Constant</span> może istnieć więcej możliwych typów, które nie zostały tu wymienione.</p>
+  <p>Podczas korzystania z Feather na stronie <span class="notranslate">IDE</span> możesz zobaczyć typ <span class="inline2">Any*</span>, co oznacza, że typ identyfikatora (którym może być zmienna, parametr, wartość zwracana itp.) nie może być w tej chwili rozpoznany przez Feather. Kiedy zostanie dodane więcej kodu dla tego identyfikatora, może on być w stanie przyjąć określony typ.</p>
+  <h3>Specjaliści</h3>
+  <p>Po podstawowym typie danych dodaje się specyfikator za pomocą kropki <span class="inline2">.</span>, aby określić dokładny typ danych w tej grupie.</p>
+  <p>Typy takie jak <span class="inline2">Id.DsList</span>, <span class="inline2">Asset.GMObject</span> i <span class="inline2">Constant.Color</span> używają specyfikatorów.</p>
+  <h3>Rodzaje kolekcji</h3>
+  <p>Typy takie jak <span class="inline2">Array</span> i <span class="inline2">Id.DsList</span>, które są strukturami danych zawierającymi wiele wartości, mogą określać jeden typ danych dla całej swojej zawartości.</p>
+  <p>Do tego celu wykorzystuje się typy kolekcji, które są dołączane do typu za pomocą nawiasów kątowych <span class="inline2">&lt;&gt;</span>.</p>
+  <p>Na przykład tablica zawierająca <span class="notranslate">strings</span> to <span class="inline2">Array&lt;String&gt;</span>, a lista DS, zawierająca tablicę zawierającą liczby <span class="inline2">rzeczywiste, to Id.DsList&lt;Array&lt;Real&gt;&gt;</span>.</p>
+  <h2>Walidacja typu</h2>
+  <p>W poniższej tabeli pokazano, co się stanie, jeśli do parametru wymagającego typu danych (kolumna) zostanie przekazana wartość określonego typu (wiersze).</p>
+  <p>Na przykład podanie wartości <span class="inline2">undefined</span> (pierwszy wiersz) dla parametru wymagającego adresu <span class="notranslate">string</span> (druga kolumna) spowoduje wystąpienie błędu.</p>
+  <table>
+    <colgroup>
+      <col style="width: 124px;" />
+      <col style="width: 288px;" />
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+      <col />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th> </th>
+        <th>Niezdefiniowane</th>
+        <th>String</th>
+        <th>Real</th>
+        <th>Bool</th>
+        <th>Tablica</th>
+        <th>Wskaźnik</th>
+        <th>Funkcja</th>
+        <th>Struktura</th>
+      </tr>
+      <tr>
+        <th>Niezdefiniowane</th>
+        <td><span class="notranslate">Allowed</span></td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+      </tr>
+      <tr>
+        <th>String</th>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td><span class="notranslate">Allowed</span></td>
+        <td>Dozwolone</td>
+        <td><span class="notranslate">Allowed</span></td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #605B32">Ostrzeżenie</td>
+        <td style="background-color: #605B32">Ostrzeżenie</td>
+      </tr>
+      <tr>
+        <th>Real</th>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #605B32">Ostrzeżenie</td>
+        <td><span class="notranslate">Allowed</span></td>
+        <td>Dozwolone</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+      </tr>
+      <tr>
+        <th>Bool</th>
+        <td style="background-color: #605B32">Ostrzeżenie</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td><span class="notranslate">Allowed</span></td>
+        <td>Dozwolone</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #605B32">Ostrzeżenie</td>
+        <td style="background-color: #605B32">Ostrzeżenie</td>
+        <td style="background-color: #605B32">Ostrzeżenie</td>
+      </tr>
+      <tr>
+        <th>Tablica</th>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td><span class="notranslate">Allowed</span></td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+      </tr>
+      <tr>
+        <th>Wskaźnik</th>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td><span class="notranslate">Allowed</span></td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+      </tr>
+      <tr>
+        <th>Funkcja</th>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td><span class="notranslate">Allowed</span></td>
+        <td style="background-color: #452F2F">Błąd</td>
+      </tr>
+      <tr>
+        <th>Struktura</th>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td style="background-color: #452F2F">Błąd</td>
+        <td><span class="notranslate">Allowed</span></td>
+      </tr>
+    </tbody>
+  </table>
+  <p> </p>
+  <p> </p>
+  <div class="seealso" data-type="seealso" style="">
+    <p class="seealso-caption" data-close-text="" data-expanded="true" data-open-text="See Also" data-type="seealso-caption" style="">Zobacz także (placeholder)</p>
+    <ol class="seealso-list" data-keywords="" data-type="seealso-list" style="">
+      <li><a class="seealso-list-item" href="#">Lista tematów</a></li>
+    </ol>
+  </div>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="../Scripts.htm">Redaktor <span class="notranslate">Script</span> </a></div>
+        <div style="float:right">Następny: <a href="Code_Snippets.htm">Urywki kodu</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+JSDoc <span class="notranslate">Script</span> Comments
+-->
+  <!-- TAGS
+jsdoc_comments
+-->
+</body>
+</html>

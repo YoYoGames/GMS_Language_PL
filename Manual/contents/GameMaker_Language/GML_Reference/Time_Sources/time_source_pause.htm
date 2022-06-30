@@ -16,8 +16,8 @@
 </head>
 <body>
   <h1>czas_źródła_pauzy</h1>
-  <p>Ta funkcja wstrzymuje działanie podanego <span data-keyref="Type_Resource_TimeSource">źródła czasu</span>.</p>
-  <p>Aby go wznowić, należy zadzwonić pod numer <a href="time_source_start.htm"><span class="inline">time_source_start()</span></a>.</p>
+  <p>Ta funkcja wstrzymuje działanie podanego <span data-keyref="Type_Resource_TimeSource">źródła czasu</span>. <span data-keyref="Type_Resource_TimeSource">Źródło</span> czasu musi być aktywne, gdy wywoływana jest ta funkcja.</p>
+  <p>Aby go wznowić, należy zadzwonić pod numer <a href="time_source_resume.htm"><span class="inline">time_source_resume()</span></a>.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">time_source_pause(id);</p>
@@ -55,7 +55,7 @@
         }<br />
         else if (_state == time_source_state_paused)<br />
         {<br />
-            time_source_start(time_source);<br />
+            time_source_resume(time_source);<br />
         }<br />
     }
   </p>
@@ -67,7 +67,7 @@
     <div class="buttons">
       <div class="clear">
         <div>Powrót: <a data-xref="{title}" href="Time_Sources.htm">Źródła czasu</a> </div>
-        <div>Next: <a data-xref="{title}" href="time_source_reconfigure.htm">time_source_reconfigure</a></div>
+        <div>Następnie: <a data-xref="{title}" href="time_source_resume.htm">time_source_resume</a></div>
       </div>
     </div>
     <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>

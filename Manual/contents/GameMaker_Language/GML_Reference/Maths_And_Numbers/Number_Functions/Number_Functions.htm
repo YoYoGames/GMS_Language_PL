@@ -29,14 +29,14 @@
     }</p>
   <p>Warto również zauważyć, że podczas korzystania z docelowych platform <b>kompilatora YoYo</b> wszystkie wyrażenia i funkcje są <i>obliczane od lewej do prawej</i>, podczas gdy na wszystkich innych platformach docelowych są one obliczane <i>od prawej do lewej</i>, co oznacza, że np. to da różne wyniki w zależności od platformy:</p>
   <p class="code">val = max(num, ++num, num++);</p>
-  <p class="note"><strong>UWAGA</strong>: Więcej informacji na ten temat znajduje się w rozdziale <a href="../../../GML_Overview/Evaluation_Order.htm">Zamówienie na ocenę</a>.</p>
+  <p class="note"><strong>UWAGA</strong>: Więcej informacji na ten temat znajduje się w rozdziale <a href="../../../GML_Overview/Evaluation_Order.htm">Zlecenie oceny</a>.</p>
   <p>Możesz także użyć specjalnej funkcji dostępnej w programie <span data-keyref="GameMaker Name">GameMaker</span>, aby ustawić wartość <b>epsilon</b> dla matematyki zmiennoprzecinkowej. Gdy liczba rzeczywista jest zaokrąglana do najbliższej liczby zmiennoprzecinkowej, epsilon (znany także jako &quot;epsilon maszynowy&quot;) tworzy górną granicę błędu względnego. Wartość epsilon można uzyskać i ustawić za pomocą następujących funkcji:</p>
   <ul class="colour">
     <li><a href="math_set_epsilon.htm"><span class="notranslate">math_set_epsilon</span></a></li>
     <li><a href="math_get_epsilon.htm"><span class="notranslate">math_get_epsilon</span></a></li>
   </ul>
   <p> </p>
-  <p>Wszystkie te funkcje zajmują się używaniem liczb i wartości losowych:</p>
+  <p id="random">Wszystkie te funkcje zajmują się używaniem liczb i wartości losowych:</p>
   <p class="note"><b><span class="note">UWAGA</span> </b>Kiedy używasz funkcji losowych, <span data-keyref="GameMaker Name">GameMaker</span> zachowuje to samo losowe ziarno za każdym razem, kiedy rozpoczynasz grę. To znacznie ułatwia <span class="notranslate">debugging</span>, ponieważ masz gwarancję, że funkcje losowe będą zawsze zwracać tę samą wartość. Jeśli jednak nie chcesz, aby tak się stało, musisz najpierw ustawić nowe losowe ziarno na samym początku gry, używając <span style="font-size:1px;"><a href="randomise.htm"><span class="inline">randomise()</span></a></span> lub . <span style="font-size:1px;"><a href="random_set_seed.htm"><span class="inline">random_set_seed()</span></a></span>.</p>
   <ul class="colour">
     <li><a href="choose.htm"><span class="notranslate">choose</span></a></li>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <title>Definiowanie danych wejściowych</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../../assets/css/default.css" />
+  <script src="../../../assets/scripts/main_script.js"></script>
+  <meta name="template" content="../../../assets/masterpages/Manual_Page.htt" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="condition-tags" content="Export:Beta" />
+</head>
+<body>
+  <h1>Definiowanie danych wejściowych</h1>
+  <p>Wejścia są zarządzane przez system Rollback, więc mogą być odpowiednio zsynchronizowane między graczami. Wejścia dla gracza można pobrać za pomocą adresu <span class="inline"><a href="Rollback_Functions/rollback_get_input.htm">rollback_get_input()</a></span>, który zwraca adres <span class="notranslate">struct</span> zawierający wejścia dla danego gracza.</p>
+  <h2>Wejścia domyślne</h2>
+  <p>Domyślnie w strukturze wejściowej znajdują się następujące klucze:</p>
+  <p class="code"><strong>left</strong>, <strong>right</strong>, <strong>up</strong>, <strong>down</strong>, <strong>Z</strong>, <strong>X</strong>, <strong>C</strong>, <strong>space</strong></p>
+  <p>Wejścia kierunkowe są mapowane na klawisze strzałek.</p>
+  <h2>Warianty wejściowe</h2>
+  <p>Każde zdefiniowane wejście z klawiatury jest odczytywane za pomocą adresu <span class="inline"><a href="../Game_Input/Keyboard_Input/keyboard_check.htm">keyboard_check()</a></span>, który odczytuje, czy klawisz jest przytrzymany, czy nie. Do wprowadzania danych za pomocą myszy używana jest strona <span class="inline"><a href="../Game_Input/Mouse_Input/mouse_check_button.htm">mouse_check_button()</a></span>.</p>
+  <p>Z każdym zdefiniowanym wejściem (domyślnym lub niestandardowym) otrzymasz także warianty, które używają <span class="inline"><a href="../Game_Input/Keyboard_Input/keyboard_check_pressed.htm">keyboard_check_pressed()</a></span> i <span class="inline"><a href="../Game_Input/Keyboard_Input/keyboard_check_released.htm">keyboard_check_released()</a></span> (oraz równoważnych funkcji dla wejścia myszy). Są one dodawane odpowiednio z przyrostkiem &quot;<strong>_pressed</strong>&quot; i &quot;<strong>_released</strong>&quot;.</p>
+  <p>Na przykład dla wejścia <span class="inline">space</span> otrzymasz również <span class="inline">space_pressed</span> i <span class="inline">space_released</span>.</p>
+  <h2 id="h">Sterowniki niestandardowe</h2>
+  <h3>Definiowanie strony</h3>
+  <p>Aby zdefiniować własne wejścia, utwórz stronę <span class="notranslate">struct</span> zawierającą klawisze wejściowe i przypisane do nich stałe, a następnie przekaż ją do <span class="inline"><a href="Rollback_Functions/rollback_define_player.htm">rollback_define_input()</a></span>. Spowoduje to zastąpienie domyślnych elementów sterujących wymienionych na górze tej strony.</p>
+  <p>Po lewej stronie definiuje się nazwy wejść (np. <span class="inline2">fire</span>), a po prawej stronie przypisuje się wejście (np. <span class="inline2">mb_left</span>):</p>
+  <p class="code">// Before starting rollback game<br />
+    rollback_define_input({<br />
+        fire: mb_left,<br />
+        interact: vk_space,<br />
+        left: ord(&quot;A&quot;),<br />
+        right: ord(&quot;D&quot;)<br />
+    });</p>
+  <p>Wywołanie polecenia <span class="inline"><a href="Rollback_Functions/rollback_get_input.htm">rollback_get_input()</a></span> zwróci teraz tylko zdefiniowane tu wejścia<span class="inline2">(fire</span>, <span class="inline2">interact</span> itd.), wraz z wariantami <span class="inline2">*_pressed</span> i <span class="inline2">*_released</span> dla każdego z nich.</p>
+  <p>W przypadku strony <span class="notranslate">GML</span> Visual należy użyć opcji <a data-xref="{title}" href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Rollback/Define_Input.htm">Define Input</a>.</p>
+  <h3>Stałe</h3>
+  <p>Wejściom w strukturze można przypisać dowolne z poniższych wartości wejściowych:</p>
+  <table>
+    <colgroup>
+      <col />
+      <col />
+      <col />
+    </colgroup>
+    <tbody>
+      <tr>
+        <th>Typ wejścia</th>
+        <th>Wartość</th>
+        <th>Opis</th>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="2"><strong>Klawiatura</strong></td>
+        <td><span class="inline">vk_*</span> niezmienny</td>
+        <td>Stałe te służą do definiowania klawiszy klawiatury. Lista takich stałych jest <a href="../Game_Input/Keyboard_Input/Keyboard_Input.htm">podana tutaj</a>.</td>
+      </tr>
+      <tr>
+        <td><span class="inline">ord(&quot;&quot;)</span></td>
+        <td>Zdefiniuj klucz literowy, zawijając go w <a href="../Strings/ord.htm"><span class="inline">ord()</span></a>.</td>
+      </tr>
+      <tr>
+        <td><strong>Gamepad</strong></td>
+        <td><span class="inline">gp_*</span> niezmienny</td>
+        <td>Stałe te służą do definiowania wejść gamepada (przycisków i osi). Lista takich stałych jest <a href="../Game_Input/GamePad_Input/Gamepad_Input.htm">podana tutaj</a>.</td>
+      </tr>
+      <tr>
+        <td colspan="1" rowspan="5"><strong>Mysz</strong></td>
+        <td><span class="inline">mb_*</span> niezmienny</td>
+        <td>Stałe te służą do definiowania przycisków myszy. Lista takich stałych jest <a href="../Game_Input/Mouse_Input/Mouse_Input.htm">podana tutaj</a>.<br>
+         <span class="note">UWAGA</span>: Nie można używać adresów <span class="inline">mb_any</span> i <span class="inline">mb_none</span>.
+        </td>
+      </tr>
+      <tr>
+        <td><span class="inline">m_axisx</span></td>
+        <td>Pozycja X myszy w witrynie <span class="notranslate">room</span> (przy użyciu <span class="inline"><a href="../Game_Input/Mouse_Input/mouse_x.htm">mouse_x</a></span>).</td>
+      </tr>
+      <tr>
+        <td><span class="inline">m_axisy</span></td>
+        <td>Pozycja Y myszy w witrynie <span class="notranslate">room</span> (przy użyciu <span class="inline"><a href="../Game_Input/Device_Input/device_mouse_y.htm">mouse_y</a></span>).</td>
+      </tr>
+      <tr>
+        <td><span class="inline">m_axisx_gui</span></td>
+        <td>Pozycja X myszy na warstwie GUI (przy użyciu <a href="../Game_Input/Device_Input/device_mouse_x_to_gui.htm"><span class="inline">device_mouse_x_to_gui()</span></a>).</td>
+      </tr>
+      <tr>
+        <td><span class="inline">m_axisy_gui</span></td>
+        <td>Pozycja Y myszy na warstwie GUI (przy użyciu <a href="../Game_Input/Device_Input/device_mouse_y_to_gui.htm"><span class="inline">device_mouse_y_to_gui()</span></a>).</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Sterowanie wielokrotne</h3>
+  <p>Do każdego wejścia można przypisać wiele elementów sterujących, umieszczając stałe wejściowe w tablicy:</p>
+  <p class="code">rollback_define_input({<br />
+        fire:     [mb_left, ord(&quot;X&quot;)],<br />
+        interact: [vk_space, ord(&quot;C&quot;)],<br />
+        left:     [ord(&quot;A&quot;), vk_left],<br />
+        right:    [ord(&quot;D&quot;), vk_right]<br />
+    });</p>
+  <p>W tym przykładzie <span class="inline2">ogień</span> zostanie wywołany przez <span class="inline2">mb_left</span> i klawisz <span class="inline2">X</span>, <span class="inline2">interakcja</span> przez <span class="inline2">vk_space</span> i klawisz <span class="inline2">C</span> itd.</p>
+  <p class="code">var _input = rollback_get_input();<br />
+    if (_input.fire)<br />
+    {<br />
+        // Runs when LMB or X is pressed<br />
+    }</p>
+  <p class="note"><span class="note">UWAGA</span> Nie można przypisać tej samej stałej wejściowej do wielu wejść, np. konkretna wartość wejściowa (np. <span class="inline2">mb_left</span> lub <span class="inline2">ord(&quot;A&quot;)</span>) może być użyta tylko <strong>raz</strong> w całym wejściu <span class="notranslate">struct</span>.</p>
+  <h2 id="h1">Przykładowe dane wejściowe</h2>
+  <p>Podczas testowania lokalnego warto zdefiniować tymczasowe wejścia dla zdalnych graczy, aby móc testować rozgrywkę wieloosobową w trybie offline.</p>
+  <p>Można to osiągnąć, definiując mock input dla gracza za pomocą <a href="Rollback_Functions/rollback_define_mock_input.htm"><span class="inline">rollback_define_mock_input()</span></a>. Na przykład, po wywołaniu powyższego fragmentu kodu w celu zdefiniowania wejść <span class="inline">fire</span>, <span class="inline">interact</span>, <span class="inline">left</span> oraz <span class="inline">right</span> dla wszystkich graczy, możesz zdefiniować osobny zestaw wejść dla drugiego gracza, którego możesz użyć podczas testu synchronizacji.</p>
+  <p class="code">rollback_define_mock_input(1, {<br />
+        fire: vk_control,<br />
+        interact: vk_shift,<br />
+        left: ord(&quot;J&quot;),<br />
+        right: ord(&quot;L&quot;)<br />
+    });</p>
+  <p>W ten sposób definiuje się szydercze wejście dla gracza 1 (drugiego gracza), zachowując te same nazwy wejść, ale przypisując im różne wejścia. W ten sposób dwie osoby mogą grać w grę lokalnie na tym samym komputerze.</p>
+  <h2>Więcej informacji</h2>
+  <p>Więcej informacji na temat systemu Rollback można znaleźć na następnych stronach:</p>
+  <ul class="colour">
+    <li><a data-xref="{title}" href="Rollback_Constraints.htm">Ograniczenia cofania</a></li>
+    <li><a data-xref="{title}" href="Rollback_Events.htm">Zdarzenia cofnięcia</a></li>
+    <li><a href="Creating_Multiplayer.htm">Tworzenie gry wieloosobowej</a></li>
+    <li><a data-xref="{title}" href="Rollback_System.htm">System cofania</a></li>
+  </ul>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Powrót: <a data-xref="{title}" href="Rollback_Multiplayer.htm">Rollback Multiplayer</a></div>
+        <div>Następny: <a data-xref="{title}" href="Rollback_Constraints.htm">Ograniczenia cofania</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+</body>
+</html>

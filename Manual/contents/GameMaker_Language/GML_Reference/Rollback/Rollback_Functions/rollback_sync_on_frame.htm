@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <title>rollback_sync_on_frame</title>
+  <meta name="topic-status" content="Draft" />
+  <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css" />
+  <script src="../../../../assets/scripts/main_script.js"></script>
+  <meta name="template" content="../../../../assets/masterpages/Manual_Keyword_Page.htt" />
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Reference page for rollback_sync_on_frame" />
+  <meta name="condition-tags" content="Export:Beta" />
+  <meta name="rh-index-keywords" content="rollback_sync_on_frame" />
+  <meta name="search-keywords" content="rollback_sync_on_frame" />
+</head>
+<body>
+  <h1>rollback_sync_on_frame</h1>
+  <p>Ta funkcja sprawdza, czy wszyscy gracze są zsynchronizowani w bieżącej ramce, co oznacza, że ich stany nie są oparte na przewidywaniach, lecz na rzeczywistych danych otrzymanych od nich. W takim przypadku zwracana jest wartość <span class="inline2">true</span>.</p>
+  <p>Jeśli gracze nie są zsynchronizowani w bieżącej ramce, zwraca wartość <span class="inline2">false</span>.</p>
+  <p>Zmienna <span class="inline"><a data-xref="{title}" href="../Rollback_Variables/rollback_confirmed_frame.htm">rollback_confirmed_frame</a></span> jest aktualizowana automatycznie, gdy wszyscy gracze są zsynchronizowani.</p>
+  <p> </p>
+  <h4>Składnia:</h4>
+  <p class="code">rollback_sync_on_frame();</p>
+  <p> </p>
+  <h4>Zwroty:</h4>
+  <p class="code"><span data-keyref="Type_Bool"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Boolean</a></span></p>
+  <p> </p>
+  <h4>Przykład:</h4>
+  <p class="code">var _on_sync = rollback_sync_on_frame();<br />
+    <br />
+    if (_on_sync)<br />
+    {<br />
+        evaluate_game_over();<br />
+    }
+  </p>
+  <p>Ten kod sprawdza, czy bieżąca ramka jest zsynchronizowana, a zwróconą wartość zapisuje w zmiennej.</p>
+  <p>Jeśli jest to prawda, uruchamia funkcję sprawdzającą, czy został spełniony warunek zakończenia gry, dzięki czemu może zakończyć grę.</p>
+  <p>Robi się to, aby uniknąć zakończenia gry w stanie opartym na przewidywaniach, i czeka na w pełni zsynchronizowaną ramkę przed próbą sprawdzenia warunków zakończenia gry.</p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div>Powrót: <a data-xref="{title}" href="Rollback_Functions.htm">Funkcje cofania</a></div>
+        <div>Next: <a data-xref="{title}" href="rollback_use_random_input.htm">rollback_use_random_input</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+rollback_sync_on_frame
+-->
+  <!-- TAGS
+rollback_sync_on_frame
+-->
+</body>
+</html>

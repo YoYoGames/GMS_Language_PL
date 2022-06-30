@@ -106,7 +106,7 @@ h3 {
   padding-left: 20px;
   font-weight: bold;
   font-size: 16pt;
-  margin-top: 16px;
+  margin-top: 32px;
   margin-bottom: 10px;
   color: #dedede;
 }
@@ -357,6 +357,7 @@ th a:link,
 th a:visited {
   font-weight: bold;
   color: #eeeeee;
+  text-decoration: underline;
 }
 a[data-rhwidget="HyperlinkPopover"] {
   font-weight: 550;
@@ -611,6 +612,13 @@ video.center {
   margin-right: auto;
   position: relative;
 }
+p.video_subtitle {
+  font-size: 15px;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 16px;
+  margin-top: -40px;
+}
 /* -------------------------------------------------------- DIVS */
 div.banner {
   background-color: #000000;
@@ -685,8 +693,7 @@ th {
 td {
   border-spacing: 2px;
   border: solid #333333 1px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px 10px;
 }
 tr {
   border-spacing: 2px;
@@ -806,20 +813,20 @@ ol.minitoc-list ol {
 a.minitoc-list-item {}
 div.seealso {
   background-color: #444;
-  border-radius: 8px;
-  width: auto;
-  max-width: auto;
+  border-radius: 16px;
+  margin: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 p.seealso-caption {
   background-color: #444;
   font-weight: bold;
   font-size: 14pt;
+  border-radius: 16px;
 }
 ol.seealso-list {
   background-color: #444;
   padding-left: 20px;
-  margin-left: 0;
-  list-style: none;
 }
 a.seealso-list-item {
   padding-left: 20px;

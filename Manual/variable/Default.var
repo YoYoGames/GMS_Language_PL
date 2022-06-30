@@ -43,7 +43,7 @@
 <keydef keys="Type_Any">
 <topicmeta>
 <keywords>
-<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Overview/Data_Types.htm#variable&quot;&gt;Variable&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
+<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Overview/Data_Types.htm#variable&quot;&gt;Any&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
 <keydef keys="Type_Array">
 <topicmeta>
 <keywords>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Komentarze skryptu JSDoc</title>
   <meta name="generator" content="Adobe RoboHelp 2020" />
@@ -15,71 +16,130 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>JSDoc <span class="notranslate">Script</span> Uwagi</h1>
   <p>Jeśli chcesz, aby Twoje funkcje były wyposażone w funkcję uzupełniania kodu i pokazywały wymagane argumenty w określony sposób w edytorze kodu, musisz dodać komentarze w <a href="https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html">stylu JSDoc</a>. Komentarze te służą do informowania funkcji autouzupełniania o tym, w jaki sposób funkcja powinna być używana i wypełniana w <a href="../Scripts.htm">edytorze skryptów</a>.</p>
-  <p>Typowy nagłówek funkcji powinien zawierać nazwę funkcji, jej opis, a następnie listę różnych argumentów (parametrów), które przyjmuje funkcja. Należy pamiętać, aby każdą linię zaczynać od potrójnego odwrotnego ukośnika &quot;
-   <span class="inline">///</span>&quot;, ponieważ to mówi <span data-keyref="GameMaker Name">GameMakerowi</span>, że komentarz jest w stylu JSDoc. Samemu komentarzowi należy nadać identyfikator (poprzedzony znakiem &quot;<span class="inline">@</span>&quot;) i treść, a dostępne są następujące identyfikatory
-    identyfikatory są następujące:</p>
-  <p> </p>
+  <p>Format typowego nagłówka funkcji powinien zawierać nazwę funkcji, jej opis, a następnie listę różnych argumentów (parametrów), które przyjmuje funkcja, pamiętając o rozpoczęciu każdej linii od potrójnego ukośnika odwrotnego &quot;<span class="inline">///</span>&quot;, ponieważ mówi to programowi <span data-keyref="GameMaker Name">GameMaker</span>, aby przetworzył komentarz jako styl JSDoc. Możesz też zawijać komentarze JSDoc w <span class="inline">/**</span>... <span class="inline">*/</span> przy czym <span class="inline">/**</span> powinien znajdować się w osobnej linii.</p>
+  <p>Samym komentarzom należy nadać identyfikator (poprzedzony znakiem &quot;<span class="inline">@</span>&quot;) i treść, a dostępne identyfikatory są następujące:</p>
   <table>
+    <colgroup>
+      <col style="width: 306px;" />
+      <col style="width: 488px;" />
+      <col style="width: 487px;" />
+    </colgroup>
     <tbody>
       <tr>
         <th>Identyfikator</th>
         <th>Zawartość</th>
+        <th>Składnia</th>
       </tr>
       <tr>
         <td><span class="inline">@function</span> / <span class="inline">@func</span></td>
-        <td>Pełna nazwa funkcji i argumenty funkcji, np:<br>
-          <span class="inline"><span class="inline">my_func(x, y, colour)</span>.</td>
+        <td>Pełna nazwa funkcji wraz z argumentami</td>
+        <td><span class="inline">@func my_func(args)</span></td>
       </tr>
       <tr>
         <td><span class="inline">@description</span> / <span class="inline">@desc</span></td>
-        <td>Ogólny opis działania funkcji.</td>
+        <td>Ogólny opis działania funkcji</td>
+        <td><span class="inline">@desc &lt;Description goes&gt;</span></td>
       </tr>
       <tr>
-        <td><span class="inline">@param</span> / <span class="inline">@arg</span> / <span class="inline">@argument</span></td>
-        <td>Typ argumentu (opcjonalny), zawarty w <span class="inline">{}</span>, nazwa argumentu i krótki opis (ze spacjami pomiędzy nimi)</td>
+        <td><span class="inline">@param</span> / <span class="inline">@</span><span class="inline">parameter</span> / <span class="inline">@arg</span> / <span class="inline">@argument</span></td>
+        <td>Informacje o argumentach, z opcjonalnym <a href="Feather_Data_Types.htm"><span class="notranslate">type</span></a></td>
+        <td><span class="inline">@param <em>{type}</em> name &lt;Parameter description&gt;</span></td>
+      </tr>
+      <tr>
+        <td><span class="inline">@return / @returns</span></td>
+        <td><a href="Feather_Data_Types.htm">Typ</a> danych zwracanych przez funkcję</td>
+        <td><span class="inline">@return {type} &lt;Return description&gt;</span></td>
+      </tr>
+      <tr>
+        <th colspan="3">Tylko<a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">pióra</a> </th>
+      </tr>
+      <tr>
+        <td><span class="inline">@pure</span></td>
+        <td>Zaznacza funkcję jako <a class="glossterm" data-glossterm="czysty" href="#">czystą</a></td>
+        <td><span class="inline">@pure</span></td>
+      </tr>
+      <tr>
+        <td style=""><span class="inline">@ignore / @hide</span></td>
+        <td style="">Ukrywa funkcję w autouzupełnianiu Feathera</td>
+        <td><span class="inline">@ignore</span></td>
+      </tr>
+      <tr>
+        <td style=""><span class="inline">@deprecated</span></td>
+        <td style="">Oznacza funkcję jako przestarzałą</td>
+        <td><span class="inline">@deprecated</span></td>
+      </tr>
+      <tr>
+        <td style=""><span class="inline">@context / @self</span></td>
+        <td style="">Określa kontekst funkcji, którego autouzupełnianie Feather używa do podawania informacji kontekstowych. Może to być <span class="notranslate">object</span> lub konstruktor.</td>
+        <td><span class="inline">@self &lt;object&gt;</span></td>
       </tr>
     </tbody>
   </table>
-  <p> </p>
+  <p>Jeśli nie określiłeś typu dla swoich argumentów lub wartości zwracanej, a używasz <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">Feather</a>, program automatycznie przyjmie dla nich typ danych na podstawie ciała funkcji.</p>
+  <p>Zobacz informacje o typach danych dla <span class="inline">@param</span> i <span class="inline">@return</span> na stronie <a href="Feather_Data_Types.htm">Feather Data Types</a>.</p>
+  <h2>Przykłady</h2>
   <p>Aby wyobrazić sobie, jak to działa podczas pisania własnych funkcji, posłużmy się podstawowym przykładem:</p>
-  <p class="code">function is_same_object(_id, _obj)<br/> {
-    <br/>     if (_id.object_index == _obj)<br/>     {<br/>         return true;<br/>     }<br/>     else return false;<br/> }
-  </p>
+  <p class="code">function is_same_object(_id, _obj)<br />
+    {<br />
+        if (_id.object_index == _obj)<br />
+        {<br />
+            return true;<br />
+        }<br />
+        else return false;<br />
+    }</p>
   <p>To, co robi <span class="notranslate">script</span>, to sprawdzenie, czy instancja ma ten sam adres <span class="inline">object_index</span> co dany adres <span class="notranslate">object</span>:</p>
-  <p class="code">if is_same_object(id, obj_Player)<br/> {
-    <br/>     instance_destroy()<br/> }
-  </p>
-  <p>Jednak wpisanie tego do edytora kodu spowoduje wyświetlenie bezpośrednio nazw zmiennych argumentu (<span class="inline">_id</span> i <span class="inline">_obj</span>), co w większości przypadków nie jest zbyt opisowe. Można użyć JSDoc do zdefiniowania własnych nazw i opisów argumentów, wraz z
-    również informacje o funkcji:</p>
-  <p class="code">/// @function                is_same_object(id, object)<br/> /// @description             Compare an instance index with an object index.<br/> /// @param {real} inst_id    The unique instance ID value of the instance to check.<br/> /// @param {real}
-    object_id  The object index to be checked against.<br/>
-    <br/> function is_same_object(_id, _obj)<br/> {
-    <br/>     if (_id.object_index == _obj)<br/>     {<br/>         return true;<br/>     }<br/>     else return false;<br/> }
+  <p class="code">if is_same_object(id, obj_Player)<br />
+    {<br />
+        instance_destroy()<br />
+    }</p>
+  <p>Jednak wpisanie tego do edytora kodu spowoduje wyświetlenie bezpośrednio nazw zmiennych argumentów (<span class="inline">_id</span> i <span class="inline">_obj</span>), co w większości przypadków nie jest zbyt opisowe. Można użyć JSDoc do zdefiniowania niestandardowych nazw i opisów argumentów, a także informacji o funkcji:</p>
+  <p class="code">/// @function                is_same_object(id, object)<br />
+    /// @description             Compare an instance index with an object index.<br />
+    /// @param {Id.Instance}     inst_id    The unique instance ID value of the instance to check.<br />
+    /// @param {Asset.GMObject}  object_id  The object index to be checked against.<br />
+    /// @return {Bool}<br />
+    <br />
+    function is_same_object(_id, _obj)<br />
+    {<br />
+        if (_id.object_index == _obj)<br />
+        {<br />
+            return true;<br />
+        }<br />
+        else return false;<br />
+    }
   </p>
   <p>Teraz, gdy wywołasz tę funkcję w dowolnym miejscu projektu, zobaczysz nowe nazwy argumentów, które zostały wpisane w komentarzach JSDoc:</p>
-  <p><img alt="JSDoc Example" class="center" height="652" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Example.png" width="672"/></p>
-  <p>Na powyższym obrazku górna część przedstawia funkcję w autouzupełnianiu, a dolna - działanie pomocnika argumentów znajdującego się na dole. Zwróć uwagę, że zarówno opcjonalna część &quot;type&quot;, jak i obowiązkowa &quot;description&quot; w <span class="inline">@param</span> nie są domyślnie wyświetlane w <span class="notranslate">IDE</span> code complete i aby je zobaczyć, musisz aktywować opcje w <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/GML_Code_Preferences.htm">Preferencjach GML</a>.</p>
-  <p>Możesz zawinąć nazwę argumentu w nawiasy <span class="inline">[]</span>, aby zaznaczyć, że jest on opcjonalny. Wówczas edytor kodu będzie oczekiwał dowolnej liczby argumentów pomiędzy minimalną wymaganą liczbą argumentów a całkowitą liczbą argumentów. Na przykład, patrz poniższy przykład
-    funkcja:</p>
-  <p class="code">/// @function    animate_position(end_x, end_y, start_x, start_y)<br/> /// @desc        Animates the instance to ending point, from optional starting point<br/> /// @arg end_x<br/> /// @arg end_y<br/> /// @arg [start_x]<br/> /// @arg [start_y]<br/>
-    <br/> function animate_position (x1, y1, x2, y2)<br/> {
-    <br/>     // Function code<br/> }
+  <p><img>Na powyższym obrazku górna część przedstawia funkcję w autouzupełnianiu, a dolna - działanie pomocnika argumentów znajdującego się na dole. Zwróć uwagę, że zarówno opcjonalna część &quot;type&quot;, jak i obowiązkowa &quot;description&quot; w <span class="inline">@param</span> nie są domyślnie wyświetlane w <span class="notranslate">IDE</span> code complete i aby je zobaczyć, musisz aktywować opcje w <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/GML_Code_Preferences.htm">Preferencjach GML</a>.</p>
+  <p>Podczas korzystania z <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">Pióra</a> po najechaniu kursorem myszy na daną funkcję wyświetlane są szczegółowe informacje na jej temat:</p>
+  <p><img>Możesz zawinąć nazwę argumentu w nawiasy <span class="inline">[]</span>, aby zaznaczyć, że jest on opcjonalny. Wówczas edytor kodu będzie oczekiwał dowolnej liczby argumentów pomiędzy minimalną wymaganą liczbą argumentów a całkowitą liczbą argumentów.</p>
+  <p>Na przykład, patrz poniższa funkcja:</p>
+  <p class="code">/// @function    animate_position(end_x, end_y, start_x, start_y)<br />
+    /// @desc        Animates the instance to ending point, from optional starting point<br />
+    /// @arg end_x<br />
+    /// @arg end_y<br />
+    /// @arg [start_x]<br />
+    /// @arg [start_y]<br />
+    <br />
+    function animate_position (x1, y1, x2, y2)<br />
+    {<br />
+        // Function code<br />
+    }
   </p>
   <p>Argumenty <span class="inline">start_x</span> i <span class="inline">start_y</span> są oznaczone jako opcjonalne, co oznacza, że edytor kodu będzie teraz oczekiwał od 2 do 4 argumentów, jak widać w komunikacie ostrzegawczym:</p>
-  <p><img class="center" height="150" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Optional.png" width="537"/></p>
-  <p class="note"><strong>UWAGA</strong>: Takie samo zachowanie uzyskasz, jeśli w deklaracji funkcji użyjesz opcjonalnych argumentów. Więcej informacji na ten temat można znaleźć w rozdziale <a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">Funkcje skryptu</a>.</p>
+  <p><img alt="JSDoc Example" class="center" height="652" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_Example.png" width="672" /></p>
+  <p class="note"><span class="note">UWAGA</span> Takie samo zachowanie uzyskasz, jeśli w deklaracji funkcji użyjesz opcjonalnych argumentów. Więcej informacji na ten temat można znaleźć w rozdziale <a href="../../GameMaker_Language/GML_Overview/Script_Functions.htm">Funkcje skryptu</a>.</p>
   <p>Ponieważ strona <span class="notranslate">scripts</span> może zawierać wiele funkcji, można dodać komentarze JSDoc dla każdej z nich przed jej deklaracją:</p>
-  <p><img alt="Multiple Functions With JSDoc Comments Example" class="center" src="../../assets/Images/Scripting_Reference/Additional_Information/JavaDoc_MultipleFunctions.png"/></p>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/JSDoc_Feather_Info.png" /></p>
   <p> </p>
   <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Powrót: <a href="../Scripts.htm">Redaktor <span class="notranslate">Script</span> </a></div>
-        <div style="float:right">Następny: <a href="Code_Snippets.htm">Urywki kodu</a></div>
+        <div style="float:right">Następny: <a data-xref="{title}" href="Feather_Data_Types.htm">Typy danych pióra</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
   </div>
   <!-- KEYWORDS
 JSDoc <span class="notranslate">Script</span> Comments
@@ -87,5 +147,5 @@ JSDoc <span class="notranslate">Script</span> Comments
   <!-- TAGS
 jsdoc_comments
 -->
-
-</body></html>
+</body>
+</html>

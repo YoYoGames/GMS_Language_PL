@@ -17,7 +17,7 @@
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>audio_stop_nagrywanie</h1>
   <p>Ta funkcja zatrzyma nagrywanie na podanym kanale rejestratora (indeks kanału jest zwracany po wywołaniu funkcji <a href="audio_start_recording.htm"><span class="inline">audio_start_recording()</span></a>). Po zatrzymaniu nagrywania nie będą wyzwalane dalsze <a href="../../../../../The_Asset_Editors/Object_Properties/Async_Events/Audio_Recording.htm">zdarzenia asynchroniczne nagrywania dźwięku</a> dla danego kanału rejestratora, dlatego zwykle należy użyć tej funkcji w rzeczywistym zdarzeniu asynchronicznym, aby upewnić się, że wszystkie dane zostały przechwycone.</p>
-  <p class="note"><b><span class="note">UWAGA</span> </b>Większość platform z <b>wyjątkiem HTML5</b> obsługuje nagrywanie dźwięku w jakiejś formie, ale nie oznacza to, że wszystkie urządzenia będą na to zezwalać, nawet jeśli platforma to robi, dlatego zawsze należy sprawdzić, czy funkcja <span style="font-size:1px;"><a href="audio_get_recorder_count.htm"><span class="inline">audio_get_recorder_count()</span></a></span> zwraca wartość większą niż 0, aby sprawdzić, czy urządzenia do nagrywania są dostępne, zanim użyjesz pozostałych funkcji nagrywania.</p>
+  <p class="note"><b><span class="note">UWAGA</span> </b>Większość platform obsługuje nagrywanie dźwięku w jakiejś formie, ale nie oznacza to, że wszystkie urządzenia będą na to zezwalać, nawet jeśli platforma to robi, dlatego zawsze należy sprawdzić, czy funkcja <span style="font-size:1px;"><a href="audio_get_recorder_count.htm"><span class="inline">audio_get_recorder_count()</span></a></span> zwraca wartość większą niż 0, aby sprawdzić, czy urządzenia do nagrywania są dostępne, zanim użyjesz pozostałych funkcji nagrywania.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">audio_stop_recording(channel_index);</p>
@@ -30,7 +30,7 @@
       </tr>
       <tr>
         <td><span class="notranslate">channel_index</span></td>
-        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span data-keyref="Type_Real"><a href="../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Real</a></span></td>
         <td><span class="notranslate">The index of the recorder channel to stop.</span></td>
       </tr>
     </tbody>

@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Ustaw głośność dźwięku</title>
-  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <script src="../../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
@@ -15,8 +15,8 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1><img> Ustaw głośność dźwięku</h1>
-  <p>Za pomocą tej czynności można ustawić głośność danego dźwięku. Dźwięk jest wybierany w eksploratorze <span class="notranslate">asset</span>, a następnie ustawiana jest wartość głośności. Głośność może mieć wartość od 0 (cisza) do 1 (pełna głośność), a skala jest liniowa, tzn. wartość 0,5 oznacza
-    połowę głośności. Należy pamiętać, że to działanie będzie miało wpływ na wszystkie instancje dźwięku odtwarzane w danej chwili w witrynie <span class="notranslate">room</span>, a także na wszystkie przyszłe instancje odtwarzanego dźwięku.</p>
+  <p>Za pomocą tej czynności można ustawić głośność danego dźwięku. Dźwięk jest wybierany w eksploratorze <span class="notranslate">asset</span>, a następnie ustawiana jest wartość głośności. Głośność może wynosić od 0 (cisza) do 1 (pełna głośność), a skala jest liniowa, czyli wartość 0,5 oznacza połowę głośności. Należy pamiętać, że to działanie będzie miało wpływ na wszystkie instancje dźwięku odtwarzane w danej chwili w witrynie <span class="notranslate">room</span>, a także na wszystkie przyszłe instancje odtwarzanego dźwięku.</p>
+  <p>Pole &quot;Czas&quot; określa, po jakim czasie zmiana głośności zacznie obowiązywać. Wartość 0 powoduje natychmiastową zmianę, natomiast większa wartość powoduje stopniową zmianę głośności w ciągu określonej liczby milisekund.</p>
   <p> </p>
   <h4>Składnia działania:</h4>
   <p><img alt="Set Audio Volume Icon" class="icon" height="32" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Audio/i_Audio_Set_Audio_Volume.png" style="cursor: nesw-resize;" width="32" /></p>
@@ -35,12 +35,15 @@
         <td><span class="notranslate">Volume</span></td>
         <td>Nowa głośność dźwięku (od 0 do 1, domyślnie 1)</td>
       </tr>
+      <tr>
+        <td><span class="notranslate">Time</span></td>
+        <td>Czas, przez jaki głośność ma się zmniejszać (w milisekundach).</td>
+      </tr>
     </tbody>
   </table>
   <p> </p>
   <h4>Przykład:</h4>
-  <p><span><img></span>Powyższy kod bloku akcji sprawdza zmienną globalną, czy ma ona wartość <span class="inline">true</span> czy false. Jeśli jest to <span class="inline">true</span>, to pobierana jest głośność danego dźwięku i zapisywana w tymczasowej zmiennej lokalnej. Następnie sprawdzane jest, czy wartość ta nie jest równa 0,5, a jeśli nie, to głośność dźwięku zostaje ustawiona na 0,5. Jeśli
-    zmienna globalna ma wartość <span class="inline">false</span>, to głośność dźwięku jest ustawiana na 1.</p>
+  <p><span><img></span>Powyższy kod bloku akcji sprawdza zmienną globalną, czy ma ona wartość <span class="inline">true</span> czy false. Jeśli jest to <span class="inline">true</span>, to pobierana jest głośność danego dźwięku i zapisywana w tymczasowej zmiennej lokalnej. Następnie sprawdzane jest, czy wartość ta nie jest równa 0,5, a jeśli nie, to głośność dźwięku zostaje ustawiona na 0,5. Jeśli zmienna globalna ma wartość <span class="inline">false</span>, to głośność dźwięku jest ustawiana na 1.</p>
   <p> </p>
   <p> </p>
   <p> </p>
@@ -51,7 +54,7 @@
         <div style="float:right">Następny: <a href="Get_Audio_Volume.htm">Uzyskaj głośność dźwięku</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Set Audio Volume

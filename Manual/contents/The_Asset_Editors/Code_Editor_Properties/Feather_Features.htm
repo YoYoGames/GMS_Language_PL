@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Cechy piór</title>
+  <meta name="generator" content="Adobe RoboHelp 2020" />
+  <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
+  <script src="../../assets/scripts/main_script.js"></script>
+  <meta name="rh-authors" content="Gurpreet S. Matharoo" />
+  <meta name="topic-comment" content="Page explaining Feather features for the Code Editor" />
+  <meta name="rh-index-keywords" content="Code Editor - JSDoc Comments,JSDoc" />
+  <meta name="search-keywords" content="JSDoc,JSDoc Comments" />
+</head>
+<body>
+  <!--<div class="body-scroll" style="top: 150px;">-->
+  <h1>Cechy piór</h1>
+  <p><a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">Feather</a> zapewnia inteligentne uzupełnianie kodu i ulepszone sprawdzanie składni na stronie <span class="notranslate">GML</span> Code <span class="notranslate">scripts</span>, wraz z inteligentnymi opcjami refaktoryzacji.</p>
+  <p>Ta strona zawiera listę funkcji, które Feather udostępnia w edytorze kodu <span class="notranslate">GML</span> dla <a href="../Scripts.htm">skryptów</a> i <a href="../Object_Properties/Object_Events.htm">zdarzeń obiektów</a>. Funkcje te będą dostępne tylko wtedy, gdy Feather jest <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm#s1"><span class="notranslate">enabled</span></a>.</p>
+  <div class="seealso" data-type="seealso" style="">
+    <p class="seealso-caption" data-close-text="" data-expanded="true" data-open-text="See Also" data-type="seealso-caption" style="">Zobacz także (placeholder)</p>
+    <ol class="seealso-list" data-keywords="" data-type="seealso-list" style="">
+      <li><a class="seealso-list-item" href="#">Lista tematów</a></li>
+    </ol>
+  </div>
+  <h2>Informacje o zawisie</h2>
+  <p>Po najechaniu kursorem myszy na funkcję, adres <span class="notranslate">sprite</span>, kolor lub inną wartość specjalną zostaną wyświetlone informacje o niej. Poniżej można zobaczyć kilka przykładów.</p>
+  <figure><img class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_FeatherHoverFunction.png" />
+    <figcaption>Najechanie kursorem myszy na funkcję powoduje wyświetlenie jej opisu i listy wszystkich argumentów.</figcaption>
+  </figure>
+  <figure><img class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_FeatherHoverSprite.png" />
+    <figcaption>Najechanie kursorem myszy na stronę <span class="notranslate">sprite</span> powoduje wyświetlenie pierwszej klatki i innych informacji.</figcaption>
+  </figure>
+  <figure><img class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_FeatherHoverColour.png" />
+    <figcaption>Po najechaniu kursorem na kolor wyświetlane są jego wartości RGB i HSV oraz kod heksadecymalny CSS.</figcaption>
+  </figure>
+  <h2>Refaktoryzacja zasobów</h2>
+  <p>Jeśli zmienisz nazwę <span class="notranslate">asset</span> w przeglądarce <span class="notranslate">Asset</span>, Feather automatycznie zaktualizuje wszystkie wzmianki o nim w kodzie Twojego projektu, tak aby te odniesienia nie uległy uszkodzeniu. Można to włączyć lub wyłączyć w <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm">ustawieniach Fe</a>ather.</p>
+  <p>Nazwę strony <span class="notranslate">asset</span> można również zmienić w edytorze kodu. Umieść kursor tekstowy na odnośniku <span class="notranslate">asset</span> i naciśnij klawisze <strong>CTRL/CMD + SHIFT + R</strong>.</p>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_FeatherRename.png" /></p>
+  <p>Wprowadź nową nazwę i naciśnij przycisk &quot;<strong>Apply</strong>&quot;. Zostanie zmieniona nazwa samej strony <span class="notranslate">asset</span> oraz wszystkich odwołań do niej w projekcie.</p>
+  <h2>Szybkie rozwiązania</h2>
+  <p>Gdy w kodzie pojawi się błąd lub ostrzeżenie, umieść kursor tekstowy w zgłaszanym wierszu i naciśnij klawisze <strong>CTRL/CMD + Q</strong>, aby wyświetlić menu Quick Fixes. Można też kliknąć ikonę <img> Feather w rynience.</p>
+  <p>To menu pokazuje szybką naprawę, jeśli jest to możliwe, i umożliwia wyłączenie reguły dla tego wiersza lub zmianę jej <a href="../../Setting_Up_And_Version_Information/IDE_Preferences/Feather_Settings.htm#s3">dotkliwości</a>.</p>
+  <p><img class="icon" src="../../assets/Images/Icons/Icon_Feather.png" /></p>
+  <p>Powyższy przykład przedstawia szybką poprawkę użytą do naprawienia zdarzenia, w którym cel powierzchniowy nie został zresetowany po zmianie.</p>
+  <h2 id="h">Znajdź wszystkie referencje</h2>
+  <p>Feather umożliwia znalezienie wszystkich odwołań do zmiennej w całym projekcie.</p>
+  <p>Umieść kursor tekstowy na zmiennej i naciśnij klawisz <strong>F3</strong>. W górnej części obszaru roboczego pojawi się mały pasek Szukaj:</p>
+  <p><img class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_FeatherQuickFix.png" /></p>
+  <p>Przejdź do poprzedniego lub następnego odnośnika, naciskając odpowiednią strzałkę, lub zamknij go.</p>
+  <p>To wyszukiwanie jest inteligentne, więc zamiast po prostu szukać <a href="../../IDE_Navigation/Menus/The_Edit_Menu.htm">łańcucha tekstowego</a>, szuka odwołań do wybranej zmiennej w jej zadeklarowanym zakresie. Oznacza to, że dwie zmienne, które mają tę samą nazwę, ale istnieją osobno w dwóch różnych <span class="notranslate">objects</span>, nie będą pasować do siebie.</p>
+  <h3>Lista wszystkich referencji</h3>
+  <p>Umieść kursor tekstowy na zmiennej i naciśnij klawisze <strong>SHIFT + F3</strong>. Spowoduje to otwarcie okna Wyniki wyszukiwania i wyświetlenie wszystkich odwołań do wybranej zmiennej w postaci listy.</p>
+  <figure><img class="center" src="../../assets/Images/Asset_Editors/Editor_Scripts_FeatherF3.png" />
+    <figcaption>W tym przykładzie wybrano zmienną <span class="inline2">surf</span>.</figcaption>
+  </figure>
+  <p> </p>
+  <p> </p>
+  <p> </p>
+  <div class="footer">
+    <div class="buttons">
+      <div class="clear">
+        <div style="float:left">Powrót: <a href="../Scripts.htm">Redaktor <span class="notranslate">Script</span> </a></div>
+        <div style="float:right">Następny: <a data-xref="{title}" href="JSDoc_Script_Comments.htm">JSDoc <span class="notranslate">Script</span> Komentarze</a></div>
+      </div>
+    </div>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+  </div>
+  <!-- KEYWORDS
+JSDoc <span class="notranslate">Script</span> Comments
+-->
+  <!-- TAGS
+jsdoc_comments
+-->
+</body>
+</html>
