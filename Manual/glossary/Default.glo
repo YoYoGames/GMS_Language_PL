@@ -52,7 +52,7 @@
 <glossdef>Szybkość bitowa jest mierzona w kilobitach na sekundę (kbps lub k) i jest to liczba bitów zakodowanych na sekundę lub liczba bitów przesyłanych lub odbieranych na sekundę. Im wyższa szybkość bitowa i częstotliwość próbkowania, tym wyższa jakość dźwięku, ale tym więcej mocy obliczeniowej i przepustowości potrzebuje. Niższe stopy bitowe tworzą mniejszy rozmiar pliku i wykorzystują mniej przetwarzania i przepustowości, ale ze spadkiem jakości dźwięku. Dla dobrej jakości muzyki zazwyczaj preferowana jest szybkość bitowa 64-128kbps (zalecana 96kbps).</glossdef></glossentry>
 <glossentry id="Default_bitmap">
 <glossterm>bitmapa</glossterm>
-<glossdef>Bitmapa to termin używany do opisania każdego statycznego obrazu, który składa się z kolorowych pikseli, które są przechowywane jako bity (w przeciwieństwie do obrazów wektorowych, które są przechowywane za pomocą algorytmów matematycznych). PNG, JPG i BMP są przykładami obrazów bitmapowych, podczas gdy SWF byłby przykładem obrazu wektorowego.</glossdef></glossentry>
+<glossdef>Bitmapa jest terminem używanym do opisania każdego statycznego obrazu, który składa się z kolorowych pikseli, które są przechowywane jako bity (w przeciwieństwie do obrazów wektorowych, które są przechowywane za pomocą algorytmów matematycznych). PNG, JPG i BMP są przykładami obrazów bitmapowych, podczas gdy SWF byłby przykładem obrazu wektorowego.</glossdef></glossentry>
 <glossentry id="Default_boolean">
 <glossterm>boolean</glossterm>
 <glossdef>Boolean jest typem zmiennej, która może zwrócić wartość true lub false na podstawie jej wartości i może być używana w warunkach i wyrażeniach. Stałe "false" lub "true" mogą być zastosowane do boolean, które są odpowiednikiem rzeczywistych wartości 0 i 1.</glossdef></glossentry>
@@ -85,7 +85,7 @@
 <glossdef>Warunki, instrukcje warunkowe i wyrażenia warunkowe są cechami ogólnego języka programowania i pomagają kodowi dokonać wyboru, w którym wynikiem jest prawda lub fałsz. Mogą one wykonywać różne akcje w zależności od potrzeb programisty, a wiele warunków może być połączonych w jeden warunek, tak długo jak wartość końcowa warunku jest prawdziwa lub fałszywa. Przykładami wyrażeń warunkowych są 'if' i 'while'.</glossdef></glossentry>
 <glossentry id="Default_constants">
 <glossterm>stały</glossterm>
-<glossdef>Stała to termin używany do opisania nazwanej wartości, która nie zmienia się podczas wykonywania programu. GameMaker Studio 2 posiada wiele wbudowanych stałych - na przykład os_windows - ale możesz także tworzyć własne stałe wartości do wykorzystania w swoich projektach (zwanych Macros) i rozszerzeniach.</glossdef></glossentry>
+<glossdef>Stała to termin używany do opisania nazwanej wartości, która nie zmienia się podczas wykonywania programu. GameMaker Studio 2 posiada wiele wbudowanych stałych - na przykład os_windows - ale możesz również tworzyć własne stałe wartości do wykorzystania w swoich projektach (zwanych Macros) i rozszerzeniach.</glossdef></glossentry>
 <glossentry id="Default_CPU_overhead">
 <glossterm>Koszty ogólne procesora</glossterm>
 <glossdef>Obciążenie procesora mierzy ilość pracy, jaką może wykonać centralna jednostka obliczeniowa komputera oraz procent tej zdolności, który jest wykorzystywany przez poszczególne zadania obliczeniowe.</glossdef></glossentry>
@@ -97,7 +97,7 @@
 <glossdef>Bufor wyświetlania jest "płótnem", na którym wszystko jest ostatecznie rysowane. Niektóre zdarzenia są skierowane bezpośrednio do tego miejsca (jak np. zdarzenie Pre Draw), podczas gdy inne najpierw rysują do powierzchni aplikacji, a następnie rysują do bufora wyświetlacza.</glossdef></glossentry>
 <glossentry id="Default_Dope_Sheet">
 <glossterm>Dope Sheet</glossterm>
-<glossdef>Dope Sheet to wizualna reprezentacja osi czasu sekwencji, gdzie można dodawać, usuwać i edytować różne klucze zasobów i parametry, które wpływają na to, jak poszczególne ścieżki w sekwencji będą się zachowywać w czasie.</glossdef></glossentry>
+<glossdef>Dope Sheet to wizualna reprezentacja osi czasu sekwencji, gdzie możesz dodawać, usuwać i edytować różne klucze zasobów i parametry, które wpływają na to, jak poszczególne ścieżki w sekwencji będą się zachowywać w czasie.</glossdef></glossentry>
 <glossentry id="Default_encoding">
 <glossterm>kodowanie</glossterm>
 <glossdef>Kodowanie przekształca dane w inny format przy użyciu schematu, który jest publicznie dostępny, tak aby można go było łatwo odwrócić. Nie jest to to samo co szyfrowanie, ponieważ nie wymaga klucza do rozszyfrowania. Kodowanie jest zazwyczaj używane do zmiany danych na format łatwiejszy do wykorzystania przez inny system (np. wysyłanie danych na serwer) lub do uczynienia danych nieczytelnymi dla ludzkiego oka.</glossdef></glossentry>
@@ -124,7 +124,7 @@
 <glossdef>Czcionka to zbiór graficznych glifów używanych do reprezentacji tekstu w danym języku. Czcionki mogą mieć różne wagi, rozmiary i style i są używane do wyświetlania dowolnej zawartości pisemnej w projekcie.</glossdef></glossentry>
 <glossentry id="Default_framework">
 <glossterm>rama</glossterm>
-<glossdef>Szkielet to podstawa kodu, który może być zmieniany i/lub rozbudowywany przez użytkownika. Szkielet może zawierać różne biblioteki programistyczne, API, kompilatory i wiele innych. Mówiąc prościej, framework zapewnia korzystne środowisko dla określonego typu i poziomu programowania projektu. W GameMaker Studio 2 możesz na przykład tworzyć własne projekty szkieletowe (poprzez Local Asset Packages), które zawierają skrypty i obiekty do ogólnego sterowania, zarządzania statystykami, sieci lub czegokolwiek innego, czego używasz w swoich projektach, a następnie importować je do nowych projektów na samym początku, aby dać ci podstawy do kontynuowania pracy bez konieczności przeprogramowywania tych systemów za każdym razem.</glossdef></glossentry>
+<glossdef>Szkielet jest podstawą kodu, który może być zmieniany i/lub rozbudowywany przez użytkownika. Szkielet może zawierać różne biblioteki programistyczne, API, kompilatory i wiele innych. Mówiąc prościej, framework zapewnia korzystne środowisko dla określonego typu i poziomu programowania projektu. W GameMaker Studio 2 możesz, na przykład, tworzyć własne projekty ramowe (poprzez Local Asset Packages), które zawierają skrypty i obiekty do ogólnego sterowania, zarządzania statystykami, sieci, lub czegokolwiek innego, czego używasz w swoich projektach, a następnie importować je do nowych projektów na samym początku, aby dać ci podstawy do kontynuowania pracy bez konieczności przeprogramowywania tych systemów za każdym razem.</glossdef></glossentry>
 <glossentry id="Default_frontend">
 <glossterm>frontend</glossterm>
 <glossdef>Frontend jest częścią programu, która jest "skierowana do przodu", tj. częścią, z którą użytkownik końcowy wchodzi w interakcję. Na przykład w GameMaker Studio 2 interfejs, w którym programujesz i dodajesz zasoby, itd... jest frontendem programu, ponieważ to tam wchodzisz w interakcję z programem i wprowadzasz wartości, pliki i inne rzeczy. Jest to zasadniczo przeciwieństwo backendu.</glossdef></glossentry>
@@ -166,7 +166,7 @@
 <glossdef>Klatka kluczowa (zwana również kluczem parametrów) jest punktem na osi czasu w arkuszu dope, w którym zdefiniowana jest zmiana wartości parametru.</glossdef></glossentry>
 <glossentry id="Default_keyword">
 <glossterm>słowo kluczowe</glossterm>
-<glossdef>Słowa kluczowe to specjalne słowa, które są zarezerwowane przez język programowania lub program, ponieważ mają specjalne znaczenie. Te słowa kluczowe są zarezerwowane do wykonywania określonych zadań i mogą być zarówno poleceniami, jak i parametrami. Każdy język programowania ma zestaw zarezerwowanych słów kluczowych (znanych również jako zarezerwowane nazwy), które nie mogą być używane jako nazwy zmiennych, a język GameMaker nie jest wyjątkiem, gdzie słowa takie jak return, while, if i break są wszystkimi zarezerwowanymi słowami kluczowymi używanymi w języku programowania.</glossdef></glossentry>
+<glossdef>Słowa kluczowe to specjalne słowa, które są zarezerwowane przez język programowania lub program, ponieważ mają specjalne znaczenie. Te słowa kluczowe są zarezerwowane do wykonywania określonych zadań i mogą być zarówno poleceniami, jak i parametrami. Każdy język programowania posiada zestaw zarezerwowanych słów kluczowych (znanych również jako zarezerwowane nazwy), które nie mogą być używane jako nazwy zmiennych, a język GameMaker nie jest wyjątkiem, gdzie słowa takie jak return, while, if i break są wszystkimi zarezerwowanymi słowami kluczowymi używanymi w języku programowania.</glossdef></glossentry>
 <glossentry id="Default_linear_interpolation">
 <glossterm>interpolacja liniowa</glossterm>
 <glossdef>Interpolacja liniowa polega na oszacowaniu nowej wartości poprzez połączenie dwóch sąsiednich znanych wartości linią prostą. Następnie można uzyskać interpolowaną wartość, sprawdzając dowolny punkt wzdłuż linii. W grafice interpolacja liniowa odnosi się do podstawowej metody wygładzania krawędzi pikseli.</glossdef></glossentry>
@@ -190,7 +190,7 @@
 <glossdef>Ścieżka, która została przypisana do ścieżki aktywów w panelu ścieżek i która zmienia pojedynczy parametr ścieżki aktywów, z którą jest połączona, taki jak pozycja lub indeks obrazu.</glossdef></glossentry>
 <glossentry id="Default_physics">
 <glossterm>fizyka</glossterm>
-<glossdef>W GameMakerze, kiedy mówimy o obiekcie, instancji lub pomieszczeniu używającym "fizyki", mamy na myśli to, że używa ono wbudowanych funkcji symulacji fizyki, opartych na bibliotece fizyki Box2D.</glossdef></glossentry>
+<glossdef>W GameMakerze, kiedy mówimy o obiekcie, instancji lub pomieszczeniu używającym "fizyki", mamy na myśli, że korzysta ono z wbudowanych funkcji symulacji fizyki, opartych na bibliotece fizyki Box2D.</glossdef></glossentry>
 <glossentry id="Default_playhead">
 <glossterm>playhead</glossterm>
 <glossdef>Bieżąca pozycja "odtwarzania" na osi czasu w arkuszu sekwencji lub w widoku klatek edytora sprajtów. W sekwencjach (i sprite'ach) pozycja ta będzie się przesuwać w miarę podglądu animacji i możesz ją umieścić na konkretnych klatkach, aby zobaczyć i edytować klucze i klatki kluczowe w tej pozycji.</glossdef></glossentry>
@@ -202,7 +202,7 @@
 <glossdef>Czysta funkcja nie ma wpływu na grę, nie tworzy ani nie zmienia niczego. Zwraca jedynie wartość. Biorąc pod uwagę ten sam zestaw argumentów, zawsze zwraca tę samą wartość.</glossdef></glossentry>
 <glossentry id="Default_Remote_Workers">
 <glossterm>Pracownicy zdalni</glossterm>
-<glossdef>Remote Worker to specjalny program, którego GameMaker Studio 2 będzie używał na niektórych platformach do tworzenia plików wykonawczych gier bez konieczności uruchamiania GameMaker Studio 2 IDE na tej platformie.</glossdef></glossentry>
+<glossdef>Remote Worker to specjalny program, którego GameMaker Studio 2 będzie używał na niektórych platformach do tworzenia plików wykonywalnych gry bez konieczności uruchamiania GameMaker Studio 2 IDE na tej platformie.</glossdef></glossentry>
 <glossentry id="Default_render">
 <glossterm>renderowane</glossterm>
 <glossdef>Kiedy coś jest renderowane w GameMaker Studio 2, oznacza to, że zostało po prostu "narysowane do bufora wyświetlacza" lub "narysowane na powierzchni".  Renderowanie może również odnosić się do procesu przekształcania pewnego rodzaju źródła wektorowego (jak czcionka) w obraz bitmapowy.</glossdef></glossentry>
@@ -265,7 +265,7 @@
 <glossdef>Zestaw płytek to zbiór kwadratowych lub prostokątnych elementów graficznych ułożonych na siatce jako pojedynczy obraz. Każdy element w siatce może być następnie wielokrotnie umieszczony w pomieszczeniu, aby stworzyć większą scenę zwaną "mapą kafelkową".</glossdef></glossentry>
 <glossentry id="Default_timeline">
 <glossterm>harmonogramy</glossterm>
-<glossdef>Oś czasu w GameMaker Studio 2 to liniowa kolekcja zdarzeń, które będą uruchamiane w kolejności. Każdemu zdarzeniu można przypisać kod lub akcję do wykonania zadania, a gdy linia czasu jest uruchamiana, zadania te będą wykonywane po osiągnięciu każdego zdarzenia na linii czasu.</glossdef></glossentry>
+<glossdef>Oś czasu w GameMaker Studio 2 to liniowa kolekcja zdarzeń, które będą uruchamiane w kolejności. Każdemu zdarzeniu można nadać kod lub akcję, aby wykonać zadanie i kiedy linia czasu jest uruchamiana, zadania te będą wykonywane po osiągnięciu każdego zdarzenia w linii czasu.</glossdef></glossentry>
 <glossentry id="Default_Track_Panel">
 <glossterm>Panel ścieżek</glossterm>
 <glossdef>Obszar edytora sekwencji, który pokazuje wszystkie różne ścieżki w sekwencji - ścieżki zasobów, ścieżki parametrów, grupy ścieżek i grupy masek klipów.</glossdef></glossentry>
@@ -283,16 +283,16 @@
 <glossdef>Skrót od "Universal Resource Locator" i jest to w zasadzie adres czegoś w Internecie.</glossdef></glossentry>
 <glossentry id="Default_v-sync">
 <glossterm>v-sync</glossterm>
-<glossdef>V-sync lub synchronizacja pionowa jest używana do synchronizacji prędkości aktualizacji gry z częstotliwością odświeżania monitora. Może to zredukować zjawisko screen tearingu - czyli wyświetlania fragmentów wielu klatek za jednym razem - ale może też powodować problemy z wydajnością lub problemy na monitorach o wysokiej częstotliwości odświeżania.</glossdef></glossentry>
+<glossdef>V-sync lub synchronizacja pionowa służy do synchronizacji prędkości aktualizacji gry z częstotliwością odświeżania monitora. Może to zredukować zjawisko screen tearingu - czyli wyświetlania fragmentów wielu klatek za jednym razem - ale może też powodować problemy z wydajnością lub problemy na monitorach o wysokiej częstotliwości odświeżania.</glossdef></glossentry>
 <glossentry id="Default_variable">
 <glossterm>zmienna</glossterm>
-<glossdef>Zmienna to nazwana wartość w programie, która może być modyfikowana, przechowywana i wyświetlana, gdy jest to wymagane. Na przykład, jeśli mamy zmienną całkowitą o nazwie XYZ i przechowuje ona wartość 10, możemy wykonać takie czynności jak A = XYZ 10, co spowoduje ustawienie wartości zmiennej A na 20, ponieważ XYZ wynosi 10, a my dodajemy do niej 10. Można również zmieniać wartości zmiennych za pomocą operatorów, więc wykonanie XYZ = XYZ 100 zmodyfikuje wartość naszej zmiennej XYZ, aby była równa 110. Zmienne mogą być również używane do przechowywania identyfikatorów i odniesień do różnych zasobów.</glossdef></glossentry>
+<glossdef>Zmienna jest nazwaną wartością w programie, która może być modyfikowana, przechowywana i wyświetlana, gdy jest to wymagane. Na przykład, jeśli mamy zmienną całkowitą o nazwie XYZ i przechowuje ona wartość 10, możemy wykonać takie czynności jak A = XYZ 10, co spowoduje ustawienie wartości zmiennej A na 20, ponieważ XYZ wynosi 10, a my dodajemy do niej 10. Można również zmieniać wartości zmiennych za pomocą operatorów, więc wykonanie XYZ = XYZ 100 zmodyfikuje wartość naszej zmiennej XYZ, aby była równa 110. Zmienne mogą być również używane do przechowywania identyfikatorów i odniesień do różnych zasobów.</glossdef></glossentry>
 <glossentry id="Default_vector">
 <glossterm>wektor</glossterm>
 <glossdef>Wektor jest konstrukcją matematyczną, która posiada rozmiar, zwany wielkością, oraz kierunek. W GameMakerze, wektor jest zwykle używany do pokazania odległości i kierunku, w którym coś się poruszyło. Wektor może być również użyty do definiowania obrazów, a niektóre formaty obrazów, takie jak SWF, używają matematyki wektorowej do definiowania obrazów, które zawierają.</glossdef></glossentry>
 <glossentry id="Default_Version_Number">
 <glossterm>Numer wersji</glossterm>
-<glossdef>Numer wersji to unikalny zestaw numerów przypisany do konkretnego wydania programu, gry lub zasobów, zwykle w formacie MAJOR.MINOR.MAINTENANCE, np. v2.3.56. Zazwyczaj, w miarę wydawania aktualizacji i całkowicie nowych edycji gry lub zasobów, numer wersji będzie wzrastał.</glossdef></glossentry>
+<glossdef>Numer wersji to unikalny zestaw liczb przypisany do konkretnego wydania programu, gry lub zasobów, zwykle w formacie MAJOR.MINOR.MAINTENANCE, np. v2.3.56. Zazwyczaj, w miarę wydawania aktualizacji i całkowicie nowych edycji gry lub zasobów, numer wersji będzie wzrastał.</glossdef></glossentry>
 <glossentry id="Default_vertex">
 <glossterm>punkt</glossterm>
 <glossdef>Werteks to nazwa nadana pojedynczemu punktowi wielokąta, który zawiera różne cechy określające jego położenie, kolor i teksturę. W grafice komputerowej oznacza to zwykle narożnik trójkąta, który jest używany do tworzenia prymitywów, a kombinacja takich prymitywów jest tym, co tworzy grafikę na ekranie.</glossdef></glossentry>
