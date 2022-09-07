@@ -8164,8 +8164,8 @@
     "fileSize": 1910
   },
   "contents\\GameMaker_Language\\GML_Reference\\OS_And_Compiler\\OS_And_Compiler.htm": {
-    "fileHash": "8E8DD32FE4F1505F372503328A7250D3",
-    "fileSize": 4979
+    "fileHash": "BE73B44B33A209F316450C70135DD4CA",
+    "fileSize": 5111
   },
   "contents\\GameMaker_Language\\GML_Reference\\OS_And_Compiler\\os_browser.htm": {
     "fileHash": "D1C7F823D1F93E259FCE9C69CDD0AC40",
@@ -9620,8 +9620,8 @@
     "fileSize": 3268
   },
   "contents\\Introduction\\Our_Social_Links.htm": {
-    "fileHash": "BC9E28D471BA671A58935C9C6DE8DDC9",
-    "fileSize": 3075
+    "fileHash": "F067CDF2B2C55FEFCA80A9F0F2132DC5",
+    "fileSize": 3061
   },
   "contents\\Introduction\\The_Asset_Browser.htm": {
     "fileHash": "CF47DBD45521FACCEE89AA8C99548CE4",
@@ -9820,8 +9820,8 @@
     "fileSize": 7870
   },
   "contents\\Setting_Up_And_Version_Information\\Error_Reporting.htm": {
-    "fileHash": "8E9489A6C48A5EDAD32BB6A227B1306E",
-    "fileSize": 3528
+    "fileHash": "032EBC47517F79DB3EF5C6FC357D1B70",
+    "fileSize": 3470
   },
   "contents\\Setting_Up_And_Version_Information\\GMS2_Version_Information.htm": {
     "fileHash": "BC1DF6FBD931CA969BE0C651D5D6611B",
@@ -10644,8 +10644,8 @@
     "fileSize": 3778
   },
   "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Rollback\\Define_Input.htm": {
-    "fileHash": "BDE305B14FDF5F8E29958FBD037D3E3E",
-    "fileSize": 3244
+    "fileHash": "3F2E9BB6B69EFAA42E795C76FF34CD1C",
+    "fileSize": 3260
   },
   "contents\\Drag_And_Drop\\Drag_And_Drop_Reference\\Rollback\\Define_Input_Frame_Delay.htm": {
     "fileHash": "58CD0D3781DE05B236EB80C9AF26E83C",
@@ -10804,8 +10804,8 @@
     "fileSize": 3727
   },
   "contents\\GameMaker_Language\\GML_Reference\\Rollback\\Rollback_Functions\\rollback_use_random_input.htm": {
-    "fileHash": "083FF5D2A5B81C5EE1A2145DEEFBAF3E",
-    "fileSize": 2959
+    "fileHash": "64857455CF8B1F92225DE8DDE3F4241C",
+    "fileSize": 2969
   },
   "contents\\GameMaker_Language\\GML_Reference\\Rollback\\Rollback_Variables\\managed.htm": {
     "fileHash": "EF1912D34BFA9C8087B7354EC877ECAC",
@@ -10970,5 +10970,9 @@
   "contents\\Settings\\YoYo_Compiler.htm": {
     "fileHash": "D36CE87A75B77007963957C9E133045B",
     "fileSize": 4579
+  },
+  "contents\\GameMaker_Language\\GML_Reference\\Rollback\\Rollback_Functions\\rollback_get_player_prefs.htm": {
+    "fileHash": "3E01BD59CDBF26B76481385C2848D9B2",
+    "fileSize": 3386
   }
 }

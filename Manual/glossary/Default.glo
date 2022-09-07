@@ -55,7 +55,7 @@
 <glossdef>Bitmapa jest terminem używanym do opisania każdego statycznego obrazu, który składa się z kolorowych pikseli, które są przechowywane jako bity (w przeciwieństwie do obrazów wektorowych, które są przechowywane za pomocą algorytmów matematycznych). PNG, JPG i BMP są przykładami obrazów bitmapowych, podczas gdy SWF byłby przykładem obrazu wektorowego.</glossdef></glossentry>
 <glossentry id="Default_boolean">
 <glossterm>boolean</glossterm>
-<glossdef>Boolean jest typem zmiennej, która może zwrócić wartość true lub false na podstawie jej wartości i może być używana w warunkach i wyrażeniach. Stałe "false" lub "true" mogą być zastosowane do boolean, które są odpowiednikiem rzeczywistych wartości 0 i 1.</glossdef></glossentry>
+<glossdef>Boolean jest typem zmiennej, która może zwrócić wartość true lub false na podstawie jej wartości i może być używana w warunkach i wyrażeniach. Stałe 'false' lub 'true' mogą być zastosowane do boolean, które są odpowiednikiem wartości rzeczywistych 0 i 1.</glossdef></glossentry>
 <glossentry id="Default_bounding_box">
 <glossterm>ramka ograniczająca</glossterm>
 <glossdef>Dla sprite'ów, bounding-box jest nazwą nadaną krawędziom obszaru, w którym początkowo będą wykrywane kolizje, i nie musi mieć tego samego rozmiaru co sprite, do którego jest stosowany. W przypadku sekwencji bounding box jest zewnętrzną krawędzią przestrzeni, którą zajmuje jeden lub więcej obiektów w canvasie.</glossdef></glossentry>
@@ -67,7 +67,7 @@
 <glossdef>Bajt to jednostka danych o długości ośmiu cyfr binarnych, a każda z cyfr składających się na bajt nazywana jest bitem, tzn. bajt to 8 bitów, a bit może być 1 lub 0.</glossdef></glossentry>
 <glossentry id="Default_Cache">
 <glossterm>Cache</glossterm>
-<glossdef>Cache jest zbiorem plików, które są generowane przez GameMakera raz, a następnie przechowywane i ponownie wykorzystywane przez wiele uruchomień projektu. Zauważ, że ten cache może czasami stać się "nieświeży", co oznacza, że musi być wyczyszczony, aby zmusić GameMakera do odbudowania go od nowa, zapewniając, że żadne nieświeże pliki nie uszkodzą twojej ostatecznej gry.</glossdef></glossentry>
+<glossdef>Cache jest zbiorem plików, które są generowane przez GameMakera raz, a następnie przechowywane i ponownie wykorzystywane przez wiele uruchomień projektu. Zauważ, że ten cache może czasami stać się "nieświeży", co oznacza, że musi zostać wyczyszczony, aby zmusić GameMakera do odbudowania go od nowa, zapewniając, że żadne nieświeże pliki nie uszkodzą twojej ostatecznej gry.</glossdef></glossentry>
 <glossentry id="Default_callback">
 <glossterm>callback</glossterm>
 <glossdef>Wywołanie zwrotne jest po prostu funkcją, która działa, a następnie wyzwala inną funkcję (lub blok kodu), gdy zakończy wykonywanie tego, do czego została przypisana. Na przykład, funkcja sprite_add() wywoła callback w asynchronicznym zdarzeniu Image Loaded, gdy sprite zostanie załadowany.</glossdef></glossentry>
@@ -85,7 +85,7 @@
 <glossdef>Warunki, instrukcje warunkowe i wyrażenia warunkowe są cechami ogólnego języka programowania i pomagają kodowi dokonać wyboru, w którym wynikiem jest prawda lub fałsz. Mogą one wykonywać różne akcje w zależności od potrzeb programisty, a wiele warunków może być połączonych w jeden warunek, tak długo jak wartość końcowa warunku jest prawdziwa lub fałszywa. Przykładami wyrażeń warunkowych są 'if' i 'while'.</glossdef></glossentry>
 <glossentry id="Default_constants">
 <glossterm>stały</glossterm>
-<glossdef>Stała to termin używany do opisania nazwanej wartości, która nie zmienia się podczas wykonywania programu. GameMaker Studio 2 posiada wiele wbudowanych stałych - na przykład os_windows - ale możesz także tworzyć własne stałe wartości do wykorzystania w swoich projektach (zwanych Macros) i rozszerzeniach.</glossdef></glossentry>
+<glossdef>Stała to termin używany do opisania nazwanej wartości, która nie zmienia się podczas wykonywania programu. GameMaker Studio 2 posiada wiele wbudowanych stałych - na przykład os_windows - ale możesz również tworzyć własne stałe wartości do wykorzystania w swoich projektach (zwanych Macros) i rozszerzeniach.</glossdef></glossentry>
 <glossentry id="Default_CPU_overhead">
 <glossterm>Koszty ogólne procesora</glossterm>
 <glossdef>Obciążenie procesora mierzy ilość pracy, jaką może wykonać centralna jednostka obliczeniowa komputera oraz procent tej zdolności, który jest wykorzystywany przez poszczególne zadania obliczeniowe.</glossdef></glossentry>
@@ -136,7 +136,7 @@
 <glossdef>Garbage collector jest automatycznym narzędziem, które jest częścią kodu gry i jest używane do usuwania pewnych rzeczy (takich jak tablice i struktury) z pamięci, gdy nie ma już do nich odniesień w twoim kodzie, bez potrzeby wyraźnego usuwania ich przez użytkownika.</glossdef></glossentry>
 <glossentry id="Default_gizmos">
 <glossterm>gizmosy</glossterm>
-<glossdef>Gizmo to bezpośrednio manipulowalne, samowystarczalne, wizualne idiomy ekranowe - w zasadzie wszystko, co jest wizualne i może być poddane interakcji lub manipulacji przez użytkownika w celu wygenerowania efektu lub konkretnego rezultatu.</glossdef></glossentry>
+<glossdef>Gizmo są bezpośrednio manipulowalnymi, samowystarczalnymi, wizualnymi idiomami ekranowymi - zasadniczo wszystko, co jest wizualne i może być poddane interakcji lub manipulacji przez użytkownika w celu wygenerowania efektu lub konkretnego rezultatu.</glossdef></glossentry>
 <glossentry id="Default_GUI">
 <glossterm>GUI</glossterm>
 <glossdef>Skrót od "Graphical User Interface", czyli interfejs użytkownika, który zawiera elementy graficzne, takie jak okna, ikony i przyciski. W GameMakerze masz specyficzny zestaw zdarzeń obiektów (Draw GUI Events), które mogą rysować do tej warstwy specjalnie zaprojektowanej dla takich rzeczy jak wynik, życia, zapasy, itp.</glossdef></glossentry>
@@ -190,10 +190,10 @@
 <glossdef>Klucz parametrów (zwany również klatką kluczową) jest punktem na osi czasu w arkuszu dope, w którym zdefiniowana jest zmiana wartości parametru.</glossdef></glossentry>
 <glossentry id="Default_parameter_tracks">
 <glossterm>ścieżki parametrów</glossterm>
-<glossdef>Ścieżka, która została przypisana do ścieżki aktywów w panelu ścieżek i która zmienia pojedynczy parametr ścieżki aktywów, z którą jest powiązana, taki jak pozycja lub indeks obrazu.</glossdef></glossentry>
+<glossdef>Ścieżka, która została przypisana do ścieżki aktywów w panelu ścieżek i która zmienia pojedynczy parametr ścieżki aktywów, z którą jest połączona, taki jak pozycja lub indeks obrazu.</glossdef></glossentry>
 <glossentry id="Default_physics">
 <glossterm>fizyka</glossterm>
-<glossdef>W GameMakerze, kiedy mówimy o obiekcie, instancji lub pomieszczeniu używającym "fizyki", mamy na myśli to, że używa ono wbudowanych funkcji symulacji fizyki, opartych na bibliotece fizyki Box2D.</glossdef></glossentry>
+<glossdef>W GameMakerze, kiedy mówimy o obiekcie, instancji lub pomieszczeniu używającym "fizyki", mamy na myśli, że korzysta ono z wbudowanych funkcji symulacji fizyki, opartych na bibliotece fizyki Box2D.</glossdef></glossentry>
 <glossentry id="Default_playhead">
 <glossterm>playhead</glossterm>
 <glossdef>Bieżąca pozycja "odtwarzania" na osi czasu w arkuszu sekwencji lub w widoku klatek edytora sprajtów. W sekwencjach (i sprite'ach) pozycja ta będzie się przesuwać w miarę podglądu animacji i możesz ją umieścić na konkretnych klatkach, aby zobaczyć i edytować klucze i klatki kluczowe w tej pozycji.</glossdef></glossentry>
@@ -259,7 +259,7 @@
 <glossdef>Inna nazwa strony tekstur, która jest po prostu zbiorem obrazów wymaganych przez jeden lub więcej sprite'ów w Twojej grze, zorganizowanych w optymalny sposób, aby wykorzystać jak najmniej pamięci tekstur.</glossdef></glossentry>
 <glossentry id="Default_texture_page">
 <glossterm>strona z teksturą</glossterm>
-<glossdef>Strona tekstur (zwana również atlasem tekstur) jest zbiorem obrazów (sprite'ów, tilesetów, fontów, itd...), które są pogrupowane w optymalny sposób, tak aby zajmowały jak najmniej pamięci tekstur podczas uruchamiania gry.</glossdef></glossentry>
+<glossdef>Strona tekstur (zwana również atlasem tekstur) jest zbiorem obrazów (sprite'ów, tilesetów, znaków czcionek, itd...), które są pogrupowane w optymalny sposób, tak aby zajmowały jak najmniej pamięci tekstur podczas uruchamiania gry.</glossdef></glossentry>
 <glossentry id="Default_tile_map">
 <glossterm>mapa płytek</glossterm>
 <glossdef>Mapa kafelkowa to nazwa nadana kolekcji kafelków pobranych z zestawu kafelków i używanych do tworzenia poziomów w grze.</glossdef></glossentry>
@@ -295,7 +295,7 @@
 <glossdef>Wektor jest konstrukcją matematyczną, która posiada rozmiar, zwany wielkością, oraz kierunek. W GameMakerze, wektor jest zwykle używany do pokazania odległości i kierunku, w którym coś się poruszyło. Wektor może być również użyty do definiowania obrazów, a niektóre formaty obrazów, takie jak SWF, używają matematyki wektorowej do definiowania obrazów, które zawierają.</glossdef></glossentry>
 <glossentry id="Default_Version_Number">
 <glossterm>Numer wersji</glossterm>
-<glossdef>Numer wersji to unikalny zestaw numerów przypisany do konkretnego wydania programu, gry lub zasobów, zwykle w formacie MAJOR.MINOR.MAINTENANCE, np. v2.3.56. Zazwyczaj, w miarę wydawania aktualizacji i całkowicie nowych edycji gry lub zasobów, numer wersji będzie wzrastał.</glossdef></glossentry>
+<glossdef>Numer wersji to unikalny zestaw liczb przypisany do konkretnego wydania programu, gry lub zasobów, zwykle w formacie MAJOR.MINOR.MAINTENANCE, np. v2.3.56. Zazwyczaj, w miarę wydawania aktualizacji i całkowicie nowych edycji gry lub zasobów, numer wersji będzie wzrastał.</glossdef></glossentry>
 <glossentry id="Default_vertex">
 <glossterm>punkt</glossterm>
 <glossdef>Werteks to nazwa nadana pojedynczemu punktowi wielokąta, który zawiera różne cechy określające jego położenie, kolor i teksturę. W grafice komputerowej oznacza to zwykle narożnik trójkąta, który jest używany do tworzenia prymitywów, a kombinacja takich prymitywów jest tym, co tworzy grafikę na ekranie.</glossdef></glossentry>
