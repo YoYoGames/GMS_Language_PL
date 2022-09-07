@@ -30,11 +30,10 @@
 </head>
 <body>
   <h1>rollback_define_input_frame_delay</h1>
-  <p>Ta funkcja określa stałe opóźnienie ramki dla wejść lokalnego odtwarzacza.</p>
-  <p>Domyślnie gra będzie używać adaptacyjnego opóźnienia wejścia, które jest oparte na opóźnieniach między graczami. Będzie to działać w prawie każdej grze, jednak niektóre specyficzne typy gier (np. gry walki) mogą preferować stałe opóźnienie wejściowe zamiast opóźnienia adaptacyjnego, które może się zmieniać w dowolnym momencie.</p>
-  <p>Nie zaleca się zmiany tego ustawienia, chyba że użytkownik dokładnie wie, co robi.</p>
-  <p>Podana wartość opóźnienia musi być wyrażona w liczbie klatek. Jeśli podasz wartość <span class="inline2">-1</span>, gra powróci do stosowania opóźnienia adaptacyjnego. Maksymalne opóźnienie, jakie można ustawić, wynosi <strong>10 kl</strong>atek.</p>
-  <p>Ta funkcja musi być wywołana przed akcją <a href="rollback_join_game.htm">dołączania/tworzenia</a>.</p>
+  <p>Funkcja ta określa stałe opóźnienie ramki dla wejść lokalnego odtwarzacza.</p>
+  <p>Domyślnie twoja gra będzie używać adaptacyjnego opóźnienia wejścia, które jest oparte na opóźnieniu między graczami. Będzie to działać dla prawie każdej gry, jednak niektóre specyficzne typy gier (np. gry walki) mogą preferować używanie stałego opóźnienia wejściowego, zamiast adaptacyjnego opóźnienia, które może się zmienić w dowolnym momencie.</p>
+  <p>Nie zaleca się zmieniać tego, chyba że wiesz dokładnie, co robisz. Możesz wywołać tę funkcję w dowolnym momencie przed i w trakcie gry wieloosobowej.</p>
+  <p>Podana wartość opóźnienia musi być wyrażona w liczbie klatek. Jeśli podasz wartość <span class="inline2">-1</span>, gra powróci do używania opóźnienia adaptacyjnego. Maksymalne opóźnienie jakie możesz ustawić to <strong>10</strong> klatek.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">rollback_define_input_frame_delay(frames);</p>
@@ -53,7 +52,7 @@
       <tr>
         <td><span class="notranslate">frames</span></td>
         <td><span data-keyref="Type_Real"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Real</a></span></td>
-        <td><span class="notranslate">The number of frames to set as the fixed input delay, or <span class="inline2">-1</span> aby przywrócić ustawienia domyślne.</td>
+        <td><span class="notranslate">The number of frames to set as the fixed input delay, or <span class="inline2">-1</span> aby przywrócić je do ustawień domyślnych.</td>
       </tr>
     </tbody>
   </table>
@@ -74,17 +73,17 @@
         rollback_start_game(2, false);<br />
     }
   </p>
-  <p>Możesz zdefiniować wartość opóźnienia ramki jako zmienną globalną i użyć jej podczas wywoływania funkcji <span class="inline2">rollback_define_input_frame_delay()</span> przed rozpoczęciem gry.</p>
+  <p>Możesz zdefiniować swoją wartość opóźnienia ramki jako zmienną globalną i użyć jej podczas wywoływania <span class="inline2">rollback_define_input_frame_delay()</span> przed rozpoczęciem gry rollback.</p>
   <p> </p>
   <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
         <div>Powrót: <a data-xref="{title}" href="Rollback_Functions.htm">Funkcje cofania</a></div>
-        <div>Next: <a data-xref="{title}" href="rollback_define_mock_input.htm">rollback_define_mock_input</a></div>
+        <div>Następny: <a data-xref="{title}" href="rollback_define_mock_input.htm">rollback_define_mock_input</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 rollback_define_input_frame_delay

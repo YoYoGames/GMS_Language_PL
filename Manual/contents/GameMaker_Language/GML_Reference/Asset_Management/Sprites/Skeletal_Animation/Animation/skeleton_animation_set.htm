@@ -14,38 +14,46 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>szkielet_animacji_set</h1>
-  <p>Po przypisaniu animacji szkieletowej <span class="notranslate">sprite</span> do instancji możesz za pomocą tej funkcji określić, z którego <i>zestawu anim</i> acji powinna ona korzystać w danym momencie. Gdy tworzyłeś swoją instancję <span class="notranslate">sprite</span> (w <span class="notranslate">Spine</span>), zdefiniowałeś wiele zestawów animacji dla różnych stanów i odpowiednio nazwałeś każdy z nich. Za pomocą tych nazw będziesz informował program <span data-keyref="GameMaker Name">GameMaker</span>, z którego zestawu animacji ma korzystać w danym momencie gry. Na przykład, jeśli Twój adres <span class="notranslate">sprite</span> jest przeznaczony dla gry platformowej, możesz mieć zestawy &quot;skok&quot;, &quot;bieg&quot; i &quot;bezczynność&quot; w jednym <span class="notranslate">sprite</span> i możesz <span class="notranslate">switch</span> przełączać się między nimi w swojej grze, używając tej funkcji.</p>
-  <p>Należy pamiętać, że ustawienie nowej animacji w ten sposób spowoduje wyzerowanie parametru <a href="../../Sprite_Instance_Variables/image_index.htm"><span class="inline">image_index</span></a> do 0, co spowoduje rozpoczęcie nowej animacji od początku jej animacji <span class="notranslate">loop</span>. Jeśli <i>nie</i> jest to pożądane zachowanie, można ustawić wartość &quot;mix&quot; za pomocą polecenia <a href="skeleton_animation_mix.htm"><span class="inline">skeleton_animation_mix()</span></a> a nowa animacja będzie płynnie interpolowana z poprzednią. Należy także pamiętać o umieszczeniu na początku każdej animacji adresu <span class="notranslate">keyframe</span>, aby zapobiec przetrzymywaniu danych z poprzednich animacji, chyba że planujesz używać osobnych ścieżek animacji.</p>
+  <h1><span data-field="title" data-format="default">szkielet_animacji_set</span></h1>
+  <p>Gdy już przypiszesz animację szkieletową <span class="notranslate">sprite</span> do swojej instancji, możesz za pomocą tej funkcji określić, którego <i>zestawu anim</i> acji ma ona używać w danym momencie. Kiedy tworzyłeś swoją <span class="notranslate">sprite</span> (w <span class="notranslate">Spine</span>), zdefiniowałeś wiele zestawów animacji dla różnych stanów i nazwałeś każdy z nich odpowiednio. Te nazwy są tym, czego użyjesz, aby powiedzieć <span data-keyref="GameMaker Name">GameMakerowi</span>, który zestaw animacji ma być używany w danym momencie w Twojej grze. Na przykład, jeśli twój <span class="notranslate">sprite</span> jest dla gry platformowej, to możesz mieć zestaw &quot;skok&quot;, zestaw &quot;bieg&quot; i zestaw &quot;bezczynność&quot; wszystkie zawarte w jednym <span class="notranslate">sprite</span> i możesz <span class="notranslate">switch</span> między nimi w swojej grze za pomocą tej funkcji.<br>
+    Animacja jest odtwarzana w pętli, co jest domyślne.</p>
+  <p>Zauważ, że ustawienie nowej animacji w ten sposób spowoduje wyzerowanie wartości <a href="../../Sprite_Instance_Variables/image_index.htm"><span class="inline">image_index</span></a> na 0, co spowoduje rozpoczęcie nowej animacji od początku jej animacji <span class="notranslate">loop</span>. Jeśli <i>nie</i> jest to pożądane zachowanie, to możesz ustawić wartość &quot;mix&quot; za pomocą <a href="skeleton_animation_mix.htm"><span class="inline">skeleton_animation_mix()</span></a> i kiedy ustawisz nową animację, będzie ona płynnie interpolowana z poprzednim zestawem. Powinieneś również upewnić się, że masz <span class="notranslate">keyframe</span> na początku każdej animacji, aby zapobiec zatrzymaniu danych z poprzednich animacji, chyba że planujesz używać oddzielnych ścieżek animacji.</p>
   <p> </p>
   <h4>Składnia:</h4>
-  <p class="code">skeleton_animation_set(animname);</p>
+  <p class="code"><span data-field="title" data-format="default">skeleton_animation_set</span>(animname, [loop]);</p>
   <table>
     <tbody>
       <tr>
-        <th>Argument</th><th>Typ</th>
+        <th>Argument</th>
+        <th>Typ</th>
         <th>Opis</th>
-     </tr>
+      </tr>
       <tr>
-        <td><span class="notranslate">animname</span></td><td><span data-keyref="Type_String"></span></td>
+        <td><span class="notranslate">animname</span></td>
+        <td><span data-keyref="Type_String"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">String</a></span></td>
         <td><span class="notranslate">The name (a string) of the animation set to use.</span></td>
-     </tr>
+      </tr>
+      <tr>
+        <td><span class="notranslate">loop</span></td>
+        <td><span data-keyref="Type_Bool"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Boolean</a></span></td>
+        <td><span class="notranslate"><span data-conref="../../../../../../assets/snippets/Tag_optional.hts"> </span> Czy animacja powinna <span class="notranslate">loop</span> czy nie (domyślnie jest <span class="inline2"><span class="inline">true</span></span>)</td>
+      </tr>
     </tbody>
   </table>
   <p> </p>
   <p> </p>
   <h4>Zwroty:</h4>
-  <p class="code"><span data-keyref="Type_Void"></span></p>
+  <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p> </p>
   <h4>Przykład:</h4>
   <p class="code">if keyboard_check_pressed(vk_space)<br />
     {<br />
         if skeleton_animation_get() != &quot;jump&quot;<br />
         {<br />
-            skeleton_animation_set(&quot;jump&quot;);<br />
+            <span data-field="title" data-format="default">skeleton_animation_set</span>(&quot;jump&quot;);<br />
         }<br />
     }</p>
-  <p>Powyższy kod spowoduje zmianę używanego zestawu animacji na zestaw &quot;skok&quot; po naciśnięciu klawisza spacji, ale tylko wtedy, gdy aktualnie używany zestaw nie jest już zestawem &quot;skok&quot;.</p>
+  <p>Powyższy kod zmieni używany zestaw animacji na zestaw &quot;jump&quot; po naciśnięciu klawisza spacji, ale tylko wtedy, gdy aktualnie używany zestaw nie jest już &quot;jump&quot;.</p>
   <p> </p>
   <p> </p>
   <p> </p>
@@ -56,7 +64,7 @@
         <div style="float:right">Następny: <a href="skeleton_animation_get_ext.htm"><span class="notranslate">skeleton_animation_get_ext</span></a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_animation_set

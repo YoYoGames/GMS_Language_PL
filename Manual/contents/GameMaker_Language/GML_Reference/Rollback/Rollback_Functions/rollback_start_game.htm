@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="Adobe RoboHelp 2020" />
-  <title>rollback_start_gry</title>
+  <title>cofnąć się do tyłu_start_gry</title>
   <meta name="topic-status" content="Draft" />
   <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css" />
   <script src="../../../../assets/scripts/main_script.js"></script>
@@ -16,10 +16,11 @@
   <meta name="search-keywords" content="rollback_start_game" />
 </head>
 <body>
-  <h1>rollback_start_gry</h1>
-  <p>Ta funkcja wymusza rozpoczęcie bieżącej gry wieloosobowej, zanim dołączą do niej wszyscy gracze. Musisz najpierw utworzyć grę wieloosobową, używając <a href="rollback_create_game.htm"><span class="inline">rollback_create_game()</span></a>.</p>
-  <p>System zwykle czeka, aż wszyscy gracze dołączą do gry, zanim automatycznie ją rozpocznie. Tej funkcji można użyć, aby rozpocząć grę wcześniej, zanim wszyscy gracze dołączą do gry.</p>
-  <p>Wywołanie tej funkcji spowoduje wyzwolenie zdarzenia <a data-xref="{text}" href="../Rollback_Events.htm#h">Rollback Start</a>.</p>
+  <h1>cofnąć się do tyłu_start_gry</h1>
+  <p>Ta funkcja wymusza rozpoczęcie bieżącej gry wieloosobowej, zanim wszyscy gracze do niej dołączą. Musisz najpierw stworzyć grę wieloosobową używając <a href="rollback_create_game.htm"><span class="inline">rollback_create_game()</span></a>.</p>
+  <p>System normalnie czeka, aż wszyscy gracze dołączą, zanim automatycznie rozpocznie grę. Ta funkcja może być użyta, aby rozpocząć grę wcześniej, zanim wszyscy gracze dołączą.</p>
+  <p>Możesz wywołać <a href="rollback_use_manual_start.htm"><span class="inline">rollback_use_manual_start()</span></a> aby Rollback czekał na tę funkcję nawet po dołączeniu wszystkich graczy.</p>
+  <p>Wywołanie tej funkcji spowoduje wywołanie zdarzenia <a data-xref="{text}" href="../Rollback_Events.htm#h">Rollback Start</a>.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">rollback_start_game();</p>
@@ -33,7 +34,7 @@
     {<br />
         rollback_start_game();<br />
     }</p>
-  <p>Jeśli gra Rollback nie jest uruchomiona i zostanie naciśnięty klawisz Enter, spowoduje to uruchomienie gry.</p>
+  <p>Jeśli gra Rollback nie jest uruchomiona, a Enter jest wciśnięty, to rozpocznie to grę.</p>
   <p>Dzięki temu gracz może rozpocząć grę ręcznie, zanim dołączą do niej wszyscy gracze.</p>
   <p> </p>
   <p> </p>
@@ -41,10 +42,10 @@
     <div class="buttons">
       <div class="clear">
         <div>Powrót: <a data-xref="{title}" href="Rollback_Functions.htm">Funkcje cofania</a></div>
-        <div>Next: <a data-xref="{title}" href="rollback_leave_game.htm">rollback_leave_game</a></div>
+        <div>Następny: <a data-xref="{title}" href="rollback_leave_game.htm">rollback_leave_game</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 rollback_start_game

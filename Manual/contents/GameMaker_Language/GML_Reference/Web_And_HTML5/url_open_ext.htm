@@ -15,20 +15,20 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>url_open_ext</h1>
-  <p>Spowoduje to otwarcie podanego adresu URL w przeglądarce wybranego urządzenia docelowego lub, jeśli używasz modułu HTML5, w aktualnie otwartej przeglądarce. Parametr &quot;target&quot;, który podajesz, jest taki sam jak standardowa wartość &quot;name&quot; w JavaScript podczas używania metody <span class="inline">open()</span> i powinieneś być świadomy, że wszystkie oprócz &quot;<strong>_self</strong>&quot; mogą spowodować zablokowanie przeglądarki lub zapytanie użytkownika, czy chce na to pozwolić.</p>
+  <p>Spowoduje to otwarcie określonego adresu URL w przeglądarce wybranego urządzenia docelowego lub, jeśli używasz modułu HTML5, w aktualnie otwartej przeglądarce. Parametr &quot;target&quot;, który określasz, jest taki sam jak standardowa wartość JavaScript &quot;name&quot;, gdy używasz metody <span class="inline">open()</span> i powinieneś być świadomy, że wszystkie oprócz &quot;<strong>_self</strong>&quot; mogą spowodować zablokowanie przez przeglądarkę lub zapytanie użytkownika, czy chce na to pozwolić.</p>
   <p>Ważne cele to:</p>
   <table>
     <tbody>
       <tr>
-        <th>Cel</th>
+        <th>Target</th>
         <th>Opis</th>
       </tr>
       <tr>
         <td>_blank</td>
-        <td>Otwiera połączony dokument w nowym oknie lub karcie (ta funkcja nie będzie działać, jeśli wyskakujące okienka są blokowane przez użytkownika, w takim przypadku można użyć funkcji <a href="Web_And_HTML5.htm"><span class="inline">clickable_*</span></a> zamiast tego można użyć funkcji).</td>
+        <td>Otwiera linkowany dokument w nowym oknie lub karcie (nie będzie to działać, jeśli wyskakujące okienka są blokowane przez użytkownika, w tym przypadku można użyć funkcji <a href="Web_And_HTML5.htm"><span class="inline">clickable_*</span></a> zamiast tego).</td>
       </tr>
       <tr>
-        <td>_sama</td>
+        <td>Siebie</td>
         <td>Otwiera połączony dokument w tej samej ramce, w której został kliknięty (jest to ustawienie domyślne).</td>
       </tr>
       <tr>
@@ -36,8 +36,8 @@
         <td>Otwiera połączony dokument w ramce nadrzędnej.</td>
       </tr>
       <tr>
-        <td>_top</td>
-        <td>Otwiera połączony dokument w pełnym oknie.</td>
+        <td>Nie.</td>
+        <td>Otwiera połączony dokument w pełnej objętości okna.</td>
       </tr>
     </tbody>
   </table>
@@ -54,12 +54,12 @@
       </tr>
       <tr>
         <td><span class="notranslate">url</span></td>
-        <td><span data-keyref="Type_String">String</span></td>
+        <td><span data-keyref="Type_String"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">String</a></span></td>
         <td><span class="notranslate">The URL (website address) to link to.</span></td>
       </tr>
       <tr>
         <td><span class="notranslate">target</span></td>
-        <td><span data-keyref="Type_String">String</span></td>
+        <td><span data-keyref="Type_String"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">String</a></span></td>
         <td><span class="notranslate">This is the target area to open the URL in.</span></td>
       </tr>
     </tbody>
@@ -69,19 +69,19 @@
   <p class="code"><span data-keyref="Type_Void">N/A</span></p>
   <p> </p>
   <h4>Przykład:</h4>
-  <p class="code">url_open_ext(&quot;http://yoyogames.com&quot;, &quot;_blank&quot;);</p>
-  <p>Spowoduje to otwarcie strony głównej <span class="notranslate">YoYo Games</span> w nowym oknie.</p>
+  <p class="code">url_open_ext(&quot;http://gamemaker.io&quot;, &quot;_blank&quot;);</p>
+  <p>Otworzy to stronę główną GameMakera w nowym oknie.</p>
   <p> </p>
   <p> </p>
   <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Powrót: <a href="Web_And_HTML5.htm">Sieć i HTML5</a></div>
+        <div style="float:left">Powrót: <a href="Web_And_HTML5.htm">Web And HTML5</a></div>
         <div style="float:right">Następny: <a href="url_open_full.htm"><span class="notranslate">url_open_full</span></a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 url_open_ext

@@ -15,216 +15,173 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Edytor obrazów</h1>
-  <p><img><strong>Edytor Obraz </strong>ków to miejsce, w którym możesz tworzyć własne <a class="glossterm" data-glossterm="sprite'y" href="#">sprite</a> 'y lub edytować te, które zaimportowałeś lub stworzyłeś wcześniej. Jeśli korzystałeś już z innych narzędzi do tworzenia obrazów, to powinno to być dla Ciebie znajome, ale jest kilka rzeczy, na które należy zwrócić uwagę podczas korzystania z <span data-keyref="GameMaker Name">GameMaker</span> Image Editor, a które mogą nie być od razu widoczne:</p>
+  <p><img><strong>Edytor Obrazków </strong>to miejsce gdzie możesz tworzyć własne <a class="glossterm" data-glossterm="sprite'y" href="#">sprite</a> 'y lub edytować te, które zaimportowałeś lub stworzyłeś wcześniej. Jeśli używałeś innych narzędzi do tworzenia obrazów, to powinno to być dla Ciebie znajome, ale jest kilka rzeczy do zauważenia podczas używania <span data-keyref="GameMaker Name">GameMaker</span> Image Editor, które mogą nie być od razu widoczne:</p>
   <ul class="colour">
-    <li>Po utworzeniu wielu ramek można do nich rysować w trakcie ich animacji! Jeśli więc naciśniesz przycisk odtwarzania<img> na pasku <strong>sterowania</strong> ramkami, a następnie wybierzesz pędzel i zaczniesz rysować w oknie edytora, zobaczysz, że ramki będą animowane w edytorze, a to, co narysujesz, zostanie dodane do odpowiedniej ramki w danym momencie. Możesz eksperymentować z różnymi częstotliwościami wyświetlania klatek, aż uzyskasz coś, co Ci się spodoba, ale gdy już załapiesz, jak to działa, będziesz błyskawicznie tworzyć dynamiczne strony <span class="notranslate">sprites</span> i efekty.</li>
-    <li>Zakładkę Edytor obrazów można przenieść z głównego okna <span class="notranslate">workspace</span> do osobnego okna. Może to być przydatne na przykład przy korzystaniu z wielu monitorów.</li>
-    <li>Gdy używasz funkcji <em>Kopiuj </em>, aby na przykład skopiować zaznaczenie obrazu, skopiowane zaznaczenie jest dodawane do <strong>listy pędzli</strong>. Oznacza to, że można zaznaczyć fragment obrazu, a następnie użyć go w pozostałych narzędziach do rysowania linii, wielokątów lub po prostu swobodnie malować. Pędzel można także skalować i mieszać z kolorem. Należy pamiętać, że funkcja <em>Wklej </em>nie jest przeznaczona do użytku wewnętrznego w edytorze, ponieważ wszystko, co zostanie skopiowane, zostanie dodane do listy pędzli i może zostać wybrane do &quot;wklejenia&quot; w ten sposób. Zamiast tego funkcja Wklej służy po prostu do przechwytywania czegoś z zewnętrznego programu i wklejania tego do Edytora obrazów.</li>
-    <li>Dzięki poręcznemu <strong>edytorowi</strong> warstw dla każdej strony <span class="notranslate">sprite</span> można utworzyć wiele warstw. Warstwy te można porządkować, a nawet umieszczać w folderach, co ułatwia tworzenie bardziej złożonych obrazów.</li>
+    <li>Kiedy tworzysz wiele ramek, możesz rysować do nich w trakcie ich animacji! Jeśli więc wciśniesz przycisk odtwarzania<img> na pasku <strong>kontroli</strong> klatek, a następnie wybierzesz pędzel i zaczniesz rysować w oknie edytora, zobaczysz, że klatki będą animowane w edytorze, a to, co narysujesz, zostanie dodane do odpowiedniej klatki w tym momencie. Możesz eksperymentować z różnymi szybkościami klatek, aż uzyskasz coś, co Ci się podoba, ale gdy już opanujesz sposób działania, będziesz błyskawicznie tworzyć dynamiczne <span class="notranslate">sprites</span> i efekty.</li>
+    <li>Zakładka Edytor obrazów może zostać przeniesiona z głównego okna <span class="notranslate">workspace</span> do osobnego okna. Może to być przydatne na przykład przy korzystaniu z wielu monitorów.</li>
+    <li>Gdy używasz funkcji <em>Kopiuj </em>, aby na przykład skopiować zaznaczenie obrazu, skopiowane zaznaczenie zostaje dodane do <strong>listy pędzli</strong>. Oznacza to, że możesz wybrać fragment obrazu, a następnie użyć go w pozostałych narzędziach do rysowania linii, wielokątów lub po prostu swobodnie malować. Pędzel może być również skalowany i mieszany z kolorem. Zauważ, że funkcja <em>Wklej </em>nie jest przeznaczona do użytku wewnętrznego w edytorze, ponieważ wszystko, co kopiujesz, jest dodawane do listy pędzli i może być wybrane do &quot;wklejenia&quot; w ten sposób. Zamiast tego funkcja Wklej służy do przechwytywania czegoś z zewnętrznego programu i wklejania tego do edytora obrazów.</li>
+    <li>Możesz mieć wiele warstw dla każdego <span class="notranslate">sprite</span> dzięki poręcznemu <strong>edytorowi warstw</strong>. Te warstwy mogą być uporządkowane, a nawet umieszczone w folderach, aby ułatwić tworzenie bardziej złożonych obrazów.</li>
     <li>W edytorze można szybko przechodzić między podobrazami (ramkami) za pomocą klawiszy &quot;<span class="inline">1</span>&quot; i &quot;<span class="inline">2</span>&quot; na klawiaturze.</li>
   </ul>
-  <p>To tylko niektóre z bardziej zaawansowanych funkcji, jakie oferuje edytor obrazów. Aby zapoznać się z pełnym zakresem funkcji, przeczytaj poniższe punkty, w których szczegółowo opisano funkcje poszczególnych części edytora:</p>
+  <p>To tylko niektóre z bardziej zaawansowanych funkcji, które oferuje edytor zdjęć. Aby poznać pełen zakres funkcji, przeczytaj poniższe punkty, w których szczegółowo opisano funkcje każdej części edytora:</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down" href="#">Widok ramy</a></p>
   <div class="droptext" data-targetname="drop-down">
-    <p class="dropspot">W tej części okna ramki są wyświetlane w kolejności, w jakiej będą animowane. Można kliknąć przycisk <img> po lewej stronie, aby dodać kolejne klatki, lub skorzystać z menu Obrazek.
-     <strong>Menu Obraz</strong> - a także klikać i przeciągać dowolne klatki, aby zmieniać ich położenie na stronie <span class="notranslate">timeline</span>. W lewym górnym rogu widoku klatek można kliknąć przycisk <span class="notranslate">switch</span> na stronie <strong>Cebulkowanie</strong> <img>, co oznacza, że w pojedynczej klatce dowolnej animacji <span class="notranslate">sprite</span> można wybrać, aby dowolna z poprzedzających lub następujących po niej klatek była widoczna jako półprzezroczysta warstwa pod klatką obrazu
-      którą aktualnie edytujesz. Najlepsze w tym rozwiązaniu jest to, że każda klatka jest rysowana nieco jaśniej niż poprzednia, dzięki czemu można zobaczyć, jak animacja rozwijała się z klatki na klatkę podczas rysowania następnej.
-    </p>
-    <p class="dropspot">Włączenie tej funkcji spowoduje wyświetlenie dodatkowych elementów sterujących nad ramkami, które można kliknąć na stronie <img> i przeciągnąć, aby ustawić liczbę wyświetlanych klatek poprzedzających oraz
-      liczbę kolejnych ramek.</p>
-    <p class="dropspot"><img>Pewne właściwości skórki cebuli można ustawić w menu kontekstowym <strong>Widok</strong>, co zostało wyjaśnione w dalszej części tej strony.</p>
-    <p class="dropspot">Pod przyciskiem Onion Skin znajduje się przycisk <strong>Loop Control (Sterowanie pętlą</strong> ) <img>, który służy do ustawiania, czy program <span class="notranslate">sprite</span> <span class="notranslate">loops</span> (wraca do
-      klatki 1, gdy zostanie osiągnięta ostatnia klatka) lub ping-pong (przechodzi do tyłu przez kolejne klatki, gdy zostanie osiągnięta ostatnia klatka). Przycisk odtwarzania <img> na dole służy do
-      u dołu służy do uruchamiania/zatrzymywania podglądu animacji.</p>
-    <p class="dropspot">Można kliknąć dowolną ramkę, aby zaznaczyć ją do edycji, a w górnym rogu zaznaczonej ramki znajduje się przycisk Usuń <img>, który można kliknąć, aby usunąć ramkę z .
-      ramkę z <span class="notranslate">sprite</span>. Można także kliknąć <img> / <img> + <img> na wielu ramkach, aby zaznaczyć je razem, a wtedy kliknięcie przycisku Usuń spowoduje usunięcie wszystkich zaznaczonych ramek. Na koniec można
-      użyć standardowych skrótów klawiaturowych <em>Wytnij</em>, <em>Kopiuj </em>i <em>Wklej </em>, aby edytować wybrane klatki: <img> / <img> + &quot;<span class="inline">X</span>&quot;, <img> / <img> + &quot;<span class="inline">C</span>&quot; oraz <img> / <img> + &quot;<span class="inline">V</span>&quot;.</p>
+    <p class="dropspot">Ta część okna pokazuje ramki w kolejności, w jakiej będą one animowane. Możesz kliknąć przycisk <img> po lewej stronie, aby dodać kolejne klatki - lub skorzystać z <strong>menu Obraz</strong> - a także kliknąć i przeciągnąć dowolną klatkę, aby zmienić jej położenie wzdłuż <span class="notranslate">timeline</span>. W lewej górnej części widoku klatek możesz <span class="notranslate">switch</span> na <strong>Cebulkowanie</strong> <img>, co oznacza, że w pojedynczej klatce dowolnej animacji <span class="notranslate">sprite</span> możesz wybrać, aby każda z poprzednich lub kolejnych klatek była widoczna jako półprzezroczysta warstwa pod aktualnie edytowaną klatką obrazu. Wspaniałą rzeczą w tym rozwiązaniu jest to, że każda klatka jest rysowana nieco jaśniej niż ostatnia, dzięki czemu możesz zobaczyć, jak animacja postępowała z klatki na klatkę podczas rysowania kolejnej.</p>
+    <p class="dropspot">Włączenie tej funkcji spowoduje wyświetlenie dodatkowych elementów sterujących nad ramkami, które można kliknąć <img> i przeciągnąć, aby ustawić liczbę poprzedzających ramek do pokazania, jak również liczbę następujących ramek.</p>
+    <p class="dropspot"><img>Możesz ustawić pewne właściwości dla cebuli z menu <strong>View</strong> conext, co jest wyjaśnione w dalszej części tej strony.</p>
+    <p class="dropspot">Pod przyciskiem Onion Skin znajduje się przycisk <strong>Loop Control</strong> <img> służący do ustawiania, czy animacja <span class="notranslate">sprite</span> <span class="notranslate">loops</span> (wraca do klatki 1 po osiągnięciu ostatniej klatki), czy ping-ponga (przechodzi do tyłu przez klatki po osiągnięciu ostatniej klatki). Przycisk Play <img> na dole służy do uruchamiania/zatrzymywania podglądu animacji.</p>
+    <p class="dropspot">Możesz kliknąć dowolną ramkę, aby wybrać ją do edycji, a wybrana ramka będzie miała przycisk Usuń <img> w górnym rogu, który możesz kliknąć, aby usunąć ramkę z <span class="notranslate">sprite</span>. Możesz również kliknąć <img> / <img> + <img> na wielu ramkach, aby wybrać je razem, a wtedy kliknięcie przycisku Usuń spowoduje usunięcie wszystkich wybranych ramek. Na koniec możesz użyć standardowych skrótów klawiaturowych dla funkcji <em>Wytnij</em>, <em>Kopiuj </em>i <em>Wklej </em>, aby edytować wybrane ramki: <img> / <img> + &quot;<span class="inline">X</span>&quot;, <img> / <img> + &quot;<span class="inline">C</span>&quot; oraz <img> / <img> + &quot;<span class="inline">V</span>&quot;.</p>
     <p class="dropspot"> </p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down1" href="#">Informacje o ramie</a></p>
   <div class="droptext" data-targetname="drop-down1">
-    <p class="dropspot">Ten pasek zawiera <strong>informacje o klatkach</strong>. W tym miejscu można ustawić szybkość odtwarzania klatek animacji, korzystając z pola wprowadzania po lewej stronie. Szybkość odtwarzania klatek może być określana na podstawie liczby klatek<em>na sekundę</em> lub klatek na klatkę gry,
-      lub &quot; Klatki na klatkę<em>gry</em>&quot;. Całkowita liczba dostępnych klatek jest wyświetlana po prawej stronie wraz z aktualnie wybraną klatką. Pasek ten można zwinąć (ukryć), klikając ikonę <img> po lewej stronie. W <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Image_Editor_Preferences.htm">Preferencjach edytora obrazów</a> można ustawić, aby pasek był zawsze otwarty lub zawsze zamknięty.</p>
-    <p class="dropspot">Należy pamiętać, że wartość użyta tutaj dla szybkości animacji ustawi również sposób animowania strony <span class="notranslate">sprite</span>, gdy będzie ona używana w grze, jako <span class="notranslate">sprite</span> <span class="notranslate">asset</span> na warstwie lub jako <span class="notranslate">sprite</span> przypisana do instancji, choć można to zmienić na stronie <span class="notranslate">runtime</span> za pomocą odpowiednich
-     <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprites.htm">funkcji</a> i <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">zmiennych</a>.
-    </p>
+    <p class="dropspot">Ten pasek zawiera <strong>informacje o</strong> klatkach. Tutaj możesz ustawić prędkość, z jaką mają być odtwarzane klatki animacji, korzystając z pola wprowadzania danych po lewej stronie. Szybkość odtwarzania klatek może być oparta na &quot;klatkach na<em>sekundę</em>&quot; lub &quot;klatkach<em>na klatkę gry</em>&quot;. Całkowita liczba dostępnych klatek jest wyświetlana po prawej stronie wraz z aktualnie wybraną klatką. Możesz zwinąć ten pasek (ukryć go) klikając na ikonę <img> po lewej stronie. W <a href="../Setting_Up_And_Version_Information/IDE_Preferences/Image_Editor_Preferences.htm">Preferencjach edytora obrazu</a> można ustawić, aby zawsze rozpoczynał się otwarty lub zawsze rozpoczynał się zamknięty.</p>
+    <p class="dropspot">Zauważ, że użyta tutaj wartość dla szybkości animacji ustawi również sposób, w jaki <span class="notranslate">sprite</span> jest animowany, gdy jest używany w grze, albo jako <span class="notranslate">sprite</span> <span class="notranslate">asset</span> na warstwie, albo jako <span class="notranslate">sprite</span> przypisany do instancji, chociaż możesz to zmodyfikować na <span class="notranslate">runtime</span> używając odpowiednich <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprites.htm">funkcji</a> i <a href="../GameMaker_Language/GML_Reference/Asset_Management/Sprites/Sprite_Instance_Variables/Sprite_Instance_Variables.htm">zmiennych</a>.</p>
     <p class="dropspot"> </p>
   </div>
-  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Elementy sterujące na płótnie</a></p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down2" href="#">Sterowanie na płótnie</a></p>
   <div class="droptext" data-targetname="drop-down2">
-    <p class="dropspot">Kontrolki płótna dotyczą różnych aspektów wyświetlania głównego płótna rysunkowego i jego zawartości. Dostępne są następujące opcje:</p>
+    <p class="dropspot">Kontrolki płótna zajmują się różnymi aspektami wyświetlania głównego płótna rysunkowego i jego zawartości. Dostępne opcje to:</p>
     <ul class="dropspotlist">
-      <li class="dropspot">Toggle Canvas Grid <img>: Umożliwia włączenie/wyłączenie siatki na płótnie. Jest to siatka, którą <span data-keyref="GameMaker Name">GameMaker</span> rysuje nad głównym płótnem, aby podzielić je na sekcje,
-        Domyślnie jest ona ustawiona na 1px. Jeśli jednak klikniesz ikonę menu siatki <img>, otworzysz opcje siatki:<br>
-        <img>Opcje te umożliwiają ustawienie koloru siatki i alfa, a także wartości komórek siatki wzdłuż osi X i Y.
-        Można tu również włączyć lub wyłączyć przyciąganie siatki (domyślnie wyłączone).
+      <li class="dropspot">Toggle Canvas Grid <img>: Włącza/wyłącza siatkę płótna. Jest to siatka, którą <span data-keyref="GameMaker Name">GameMaker</span> rysuje na głównym płótnie, aby podzielić je na sekcje, i domyślnie jest ustawiona na 1px w rozmiarze. Jeśli jednak klikniesz ikonę menu siatki <img> otworzysz opcje siatki:<br>
+        <img>Opcje te pozwalają na ustawienie koloru siatki i alfa, a także wartości komórek dla siatki wzdłuż osi X i Y. Masz również możliwość włączenia lub wyłączenia przyciągania siatki (domyślnie wyłączone).
       </li>
-      <li class="dropspot">Elementy sterujące powiększeniem obrazu <img>: Te przyciski sterują bieżącym poziomem powiększenia obrazu. Możesz powiększać lub pomniejszać obraz, a kliknięcie przycisku <img> spowoduje zresetowanie obrazu do rozmiaru 1:1 z edytowanym obrazem. Możesz także kliknąć przycisk Dopasuj do okna <img>, aby cały obrazek zmieścił się w bieżącym edytorze <span class="notranslate">workspace</span> (zostanie on odpowiednio powiększony/ pomniejszony). Możesz także powiększać i pomniejszać obraz za pomocą przycisków <img> / <img> i kółka myszy <img>, a naciśnięcie przycisków <img> / <img> + <img> spowoduje ustawienie obrazu <span class="notranslate">room</span> w stosunku 1:1 do obrazu.</li>
-      <li class="dropspot">Podziel płótno <img>: Kliknięcie tego przycisku powoduje zmianę pomiędzy poziomym i pionowym podziałem płótna, tak aby pozostało ono pojedynczym płótnem.
-        W widoku podzielonego obszaru roboczego każdy obszar roboczy będzie miał własny zestaw elementów sterujących obszaru roboczego, dzięki czemu można na przykład powiększać i pomniejszać jeden obszar roboczy oraz edytować dowolny obszar roboczy, a zmiany zostaną odzwierciedlone na drugim. Aby zmienić widok płótna
-        Aby zmienić widok, możesz kliknąć przycisk Opcje podziału <img> i wybrać ten, którego chcesz użyć, lub po prostu klikać przycisk Podziel płótno, aż
-        aż zostanie wybrany żądany widok.</li>
+      <li class="dropspot">Elementy sterujące powiększeniem obrazu <img>: Te przyciski sterują aktualnym poziomem powiększenia obrazu. Możesz powiększać lub pomniejszać obraz, a kliknięcie przycisku <img> spowoduje zresetowanie obrazu do rozmiaru 1:1 z edytowanym obrazem. Możesz również kliknąć przycisk Window Fit (Dopasuj do okna) <img>, aby cały obrazek zmieścił się w bieżącym edytorze <span class="notranslate">workspace</span> (zostanie on odpowiednio powiększony/zmniejszony, aby go dopasować). Możesz także powiększać i pomniejszać obraz za pomocą przycisków <img> / <img> i kółka myszy <img>, a naciśnięcie <img> / <img> + <img> spowoduje, że obraz <span class="notranslate">room</span> będzie w stosunku 1:1 do obrazu.</li>
+      <li class="dropspot">Split Canvas <img>: Kliknięcie tego przycisku powoduje przełączenie między podziałem obrazu w poziomie i w pionie oraz utrzymaniem go jako pojedynczego obrazu. W widoku podzielonego obrazu każdy z nich będzie miał własny zestaw elementów sterujących, dzięki czemu można na przykład powiększyć jeden z nich, a drugi pomniejszyć. Aby zmienić przełącznik widoku obrazu, możesz kliknąć przycisk Opcje podziału <img> i wybrać żądany widok lub po prostu klikać przycisk Podziel obraz, aż zostanie on przełączony na żądany widok.</li>
     </ul>
     <p class="dropspot"> </p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down3" href="#">Rysuj płótno</a></p>
   <div class="droptext" data-targetname="drop-down3">
-    <p class="dropspot">Jest to główne okno edycji obrazów. W tym miejscu można zastosować dowolne z narzędzi znajdujących się po prawej stronie do malowania na aktualnie zaznaczonej warstwie. Można malować lewym <img> lub prawym <img> przyciskiem myszy (przypisując każdemu z nich kolor z próbnika kolorów) i używać dowolnych pędzli zdefiniowanych w prawym górnym rogu okna.
-      edytora. Możesz także użyć <img> / <img> oraz
-      kółka myszy <img>, aby powiększać lub pomniejszać obraz, a naciśnięcie przycisków <img> / <img> + <img> spowoduje ustawienie płótna w stosunku 1:1 do obrazu (można też
-      użyć elementów sterujących płótna, jak wyjaśniono powyżej). Zauważ też, że możesz przesuwać obraz po obszarze roboczym, używając środkowego przycisku myszy <img> lub <img> + <img>.</p>
+    <p class="dropspot">Jest to główne okno edycji obrazów. Można tu zastosować dowolne z narzędzi po prawej stronie do malowania na aktualnie zaznaczonej warstwie. Możesz malować lewym <img> lub prawym <img> przyciskiem myszy (przypisując każdemu z nich kolor z palety kolorów) i używać dowolnych pędzli zdefiniowanych w prawym górnym rogu edytora. Możesz także używać <img> / <img> oraz kółka myszy <img> do powiększania i zmniejszania, a naciśnięcie <img> / <img> + <img> ustawi płótno w stosunku 1:1 do obrazu (możesz też użyć kontrolek płótna, jak wyjaśniono powyżej). Zauważ również, że możesz przesuwać obraz po płótnie za pomocą środkowego przycisku myszy <img> lub <img> + <img>.</p>
     <p class="dropspot"> </p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down4" href="#">Wartości płótna</a></p>
   <div class="droptext" data-targetname="drop-down4">
-    <p class="dropspot">Ten mały pasek na dole pokazuje różne wartości pozycji myszy oraz szerokości i wysokości narzędzi zaznaczania w edytorze.</p>
+    <p class="dropspot">Ten mały pasek na dole pokazuje różne wartości pozycji myszy oraz szerokości i wysokości narzędzi do zaznaczania w edytorze.</p>
     <p class="dropspot"> </p>
   </div>
-  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Pędzle</a></p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down5" href="#">Szczotki</a></p>
   <div class="droptext" data-targetname="drop-down5">
-    <p class="dropspot">W tym miejscu można wybrać <strong>pędzel </strong>, który będzie używany do malowania. Domyślnie do dyspozycji jest wybór kwadratowych i okrągłych pędzli o różnych rozmiarach, ale można łatwo utworzyć własny pędzel, malując na warstwie obrazu, a następnie zaznaczając fragment, który ma być
-      którą chcesz wykorzystać w nowym pędzlu, a następnie skopiuj ją, korzystając z polecenia <img> / <img> + &quot;<span class="inline">C</span>&quot;. Skopiowany fragment zostanie dodany do pędzli i można nim malować tak jak każdym innym pędzlem, w tym używać różnych dostępnych narzędzi malarskich, takich jak rysowanie linii.</p>
-    <p class="dropspot">Zauważ, że domyślnym kolorem mieszania dla nowego pędzla będzie biały, ale jeśli zmienisz kolor za pomocą próbnika kolorów i będziesz malować tym pędzlem, zostanie on <em>wymieszany </em>z nowym kolorem. Jeśli chcesz usunąć pędzel z listy, po prostu
-      kliknąć w niego i nacisnąć przycisk <img>, a zostanie on usunięty.</p>
-    <p class="note"><b>UWAGA</b>: Pędzle nie są zachowywane między sesjami, a zamknięcie projektu spowoduje usunięcie wszystkich utworzonych pędzli.</p>
+    <p class="dropspot">Tutaj możesz wybrać <strong>pędzel </strong>do malowania. Domyślnie masz do wyboru różnej wielkości kwadratowe i okrągłe pędzle, ale możesz łatwo stworzyć własny pędzel, malując na warstwie obrazu, a następnie wybierając część, której chcesz użyć do nowego pędzla, i używając <img> / <img> + &quot;<span class="inline">C</span>&quot;, aby ją skopiować. Skopiowany fragment zostanie dodany do pędzli i będziesz mógł malować nim tak, jak każdym innym pędzlem, co obejmuje użycie różnych dostępnych narzędzi malarskich, takich jak rysowanie linii.</p>
+    <p class="dropspot">Zauważ, że domyślnym kolorem mieszania dla nowego pędzla będzie biały, ale jeśli zmienisz kolor za pomocą selektora kolorów i będziesz malować tym pędzlem, zostanie on <em>wymieszany </em>z tym nowym kolorem. Jeśli chcesz usunąć pędzel z listy, po prostu kliknij go i naciśnij klawisz <img>, a zostanie on usunięty.</p>
+    <p class="note"><b>UWAGA</b>: Pędzle nie są zachowywane między sesjami, zamknięcie projektu spowoduje usunięcie wszystkich utworzonych pędzli.</p>
   </div>
-  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Próbnik kolorów</a></p>
+  <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down6" href="#">Colour Picker</a></p>
   <div class="droptext" data-targetname="drop-down6">
-    <p class="dropspot">W górnej części tej sekcji znajduje się kilka predefiniowanych <a class="glossterm" data-glossterm="swatche" href="#">próbek</a> kolorów do wyboru, które można przypisać odpowiednio do lewego <img> i prawego <img> przycisku myszy, klikając je jednym z nich (można też zamienić kolory między przyciskami, klikając ikonę strzałki obok próbek). Wybrane kolory zostaną wyświetlone poniżej w postaci próbek obok obrazu myszy, a ich kliknięcie spowoduje otwarcie okna <strong>Próbnik</strong> kolorów:</p>
-    <p class="dropspot"><img>W tym oknie można zdefiniować kolor, korzystając z dostępnych suwaków i gadżetów, lub wprowadzić wartości bezpośrednio dla wartości <a class="glossterm" data-glossterm="ARGB" href="#">ARGB</a> lub <a class="glossterm" data-glossterm="HSV" href="#">HSV</a>.</p>
-    <p class="dropspot">Jeśli przytrzymasz klawisze CTRL/CMD i klikniesz przycisk <img> na dowolnej domyślnej palecie kolorów, zostanie wyświetlone narzędzie do wybierania kolorów, które pozwoli Ci edytować domyślną paletę dla strony <span class="notranslate">sprite</span>. Kliknięcie przycisku &quot;OK&quot; w oknie wybierania kolorów w tym przypadku spowoduje ustawienie palety na nowy kolor i zapisanie jej wraz z edytowaną stroną <span class="notranslate">sprite</span> <span class="notranslate">asset</span>.</p>
-    <p class="dropspot">Te palety kolorów można następnie zamieniać i stosować do różnych stron <span class="notranslate">sprites</span>, korzystając z menu <strong>Opcje </strong>palety kolorów:</p>
+    <p class="dropspot">W górnej części tej sekcji znajduje się kilka predefiniowanych <a class="glossterm" data-glossterm="swatche" href="#">próbek</a> kolorów do wyboru, które można przypisać odpowiednio do lewego <img> i prawego <img> przycisku myszy, klikając je jednym z nich (można również zamienić kolory pomiędzy każdym przyciskiem, klikając ikonę strzałki obok próbek). Wybrane kolory zostaną pokazane poniżej w postaci próbek obok obrazu myszy, a następnie możesz je kliknąć, aby otworzyć okno <strong>Colour Picker</strong> (Próbnik kolorów):</p>
+    <p class="dropspot"><img>Z tego okna można zdefiniować kolor za pomocą dowolnych dostępnych suwaków i gadżetów lub wprowadzić wartości bezpośrednio dla wartości <a class="glossterm" data-glossterm="ARGB" href="#">ARGB</a> lub <a class="glossterm" data-glossterm="HSV" href="#">HSV</a>.</p>
+    <p class="dropspot">Jeśli przytrzymasz CTRL/CMD i klikniesz <img> na którymś z domyślnych wzorników kolorów, wywoła to narzędzie do wybierania kolorów i pozwoli Ci na edycję domyślnej palety dla <span class="notranslate">sprite</span>. Kliknięcie &quot;Okay&quot; w wzorniku kolorów w tym przypadku ustawi paletę na nowy kolor i zapisze ją wraz z edytowanym <span class="notranslate">sprite</span> <span class="notranslate">asset</span>.</p>
+    <p class="dropspot">Te palety kolorów mogą być następnie zamieniane i stosowane do różnych <span class="notranslate">sprites</span> za pomocą menu <strong>Opcje </strong>palety kolorów:</p>
     <p class="dropspot"><img alt="The Image Editor" class="center" src="../assets/Images/Asset_Editors/Editor_Images.png" /></p>
-    <p class="dropspot">Pojedynczy wiersz kolorów poniżej palety przedstawia historię kolorów, a ostatnio wybrany kolor znajduje się po lewej stronie. Ta sekcja <em>nie</em> jest kopiowana podczas korzystania z opcji &quot;Importuj kolory&quot; lub &quot;Kopiuj kolory&quot;, ponieważ dotyczą one tylko głównej palety znajdującej się powyżej.</p>
-    <p class="dropspot">Można więc utworzyć własną paletę kolorów w obrazie <span class="notranslate">sprite</span>, a następnie użyć jej do ustawienia palety dla dowolnej innej strony <span class="notranslate">sprite</span> w przeglądarce <span class="notranslate">Asset</span> lub otworzyć obraz <span class="notranslate">sprite</span> i zaimportować paletę kolorów z dowolnej innej strony <span class="notranslate">sprite</span> w przeglądarce <span class="notranslate">Asset</span>. Ta funkcja palety <span class="notranslate">sprite</span> jest omówiona bardziej szczegółowo w następującym blogu technicznym <span class="notranslate">YoYo Games</span>:</p>
+    <p class="dropspot">Pojedyncza linia kolorów poniżej palety pokazuje historię kolorów, z ostatnio wybranym kolorem po lewej stronie. Ta część <em>nie</em> jest kopiowana przy użyciu opcji &quot;Importuj kolory&quot; lub &quot;Kopiuj kolory&quot;, ponieważ dotyczy to tylko głównej palety powyżej.</p>
+    <p class="dropspot">Możesz więc utworzyć niestandardową paletę kolorów w obrazie <span class="notranslate">sprite</span>, a następnie użyć jej do ustawienia palety dla dowolnej innej strony <span class="notranslate">sprite</span> w przeglądarce <span class="notranslate">Asset</span> lub otworzyć obraz <span class="notranslate">sprite</span> i zaimportować paletę kolorów z dowolnej innej strony <span class="notranslate">sprite</span> w przeglądarce <span class="notranslate">Asset</span>. Ta funkcja palety <span class="notranslate">sprite</span> jest omówiona bardziej szczegółowo w poniższym blogu technicznym:</p>
     <ul class="dropspotlist">
-      <li class="dropspot"><a href="https://www.yoyogames.com/blog/538/gms2-features-you-might-not-know-about">Funkcje<span data-keyref="GameMaker Name">GameMakera</span>, o których mogłeś nie wiedzieć </a></li>
+      <li class="dropspot"><a href="https://www.yoyogames.com/blog/538/gms2-features-you-might-not-know-about">Funkcje<span data-keyref="GameMaker Name">GameMakera</span>, o których możesz nie wiedzieć </a></li>
     </ul>
     <p> </p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down7" href="#">Narzędzia</a></p>
   <div class="droptext" data-targetname="drop-down7">
-    <p class="dropspot">Poniżej znajduje się lista narzędzi domyślnie dostępnych w programie <span data-keyref="GameMaker Name">GameMaker</span> - należy pamiętać, że wszystkich narzędzi można używać za pomocą lewego <img> i prawego <img> przycisku myszy, a większość z nich ma przypisane skróty klawiaturowe (najważniejsze z nich są wymienione tutaj wraz z narzędziem, ale pełna lista znajduje się na stronie
-      na stronie <a href="../IDE_Navigation/Keyboard_Shortcuts.htm">Skróty</a> klawiszowe). Większość narzędzi ma także dodatkowe opcje, które są widoczne w górnej części edytora obrazów, jak pokazano poniżej:</p>
+    <p class="dropspot">Poniżej wymieniamy narzędzia, które są domyślnie dostępne w <span data-keyref="GameMaker Name">GameMakerze</span> - zwróć uwagę, że wszystkie narzędzia mogą być używane za pomocą lewego <img> i prawego <img> przycisku myszy, a większość z nich ma przypisane skróty klawiaturowe (te ważne są wymienione tutaj wraz z narzędziem, ale pełna lista znajduje się na stronie <a href="../IDE_Navigation/Keyboard_Shortcuts.htm">Skróty</a>). Większość narzędzi posiada również dodatkowe opcje, które będą widoczne w górnej części edytora obrazu, jak pokazano poniżej:</p>
     <p class="dropspot"><img alt="Play Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_ImagePlay.png" width="46" /></p>
     <table class="icons" style="margin-left: 32auto">
       <tbody>
         <tr>
           <td class="icons"><img alt="Add Frame Icon" class="icon" src="../assets/Images/Icons/Icon_AddArgument.png" /></td>
           <td class="icons"><strong>Ołówek</strong></td>
-          <td class="text">Jest to narzędzie ołówek. Używa wybranego pędzla do malowania w kolorze wybranym dla przycisku myszy. Rozmiar można ustawić z górnego paska edytora obrazu, a także włączyć lub wyłączyć wygładzanie (interpolację). Należy pamiętać, że można również
-            zmienić rozmiar i skalę dowolnego pędzla, przytrzymując wciśnięty przycisk <img> + &quot;<span class="inline">Z</span>&quot;, a następnie klikając przycisk <img> i przeciągając myszą, aby zmienić proporcje pędzla, lub wybrać jeden z predefiniowanych pędzli w prawym górnym rogu.</td>
+          <td class="text">To jest narzędzie ołówka. Używa wybranego pędzla do malowania w kolorze wybranym dla przycisku myszy, a rozmiar można ustawić z górnego paska edytora obrazu, jak również włączyć/wyłączyć wygładzanie (interpolację). Zauważ, że możesz również zmienić rozmiar i skalę każdego pędzla, przytrzymując <img> + &quot;<span class="inline">Z</span>&quot;, a następnie klikając <img> i przeciągając mysz, aby zmienić proporcje pędzla, lub alternatywnie wybrać jeden z predefiniowanych pędzli z prawej górnej części.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="Onion Skin Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_OnionSkin.png" width="46" /></td>
           <td class="icons"><strong>Gumka</strong></td>
-          <td class="text">Jest to narzędzie wymazywania. Wykorzystuje ono wybrany pędzel do wymazywania obszaru po kliknięciu dowolnym przyciskiem myszy. Wybranie tego narzędzia spowoduje również dodanie dodatkowych narzędzi do górnego paska edytora, umożliwiających skalowanie pędzla lub włączenie/wyłączenie wygładzania<a class="glossterm" data-glossterm="interpolacja liniowa" href="#">(interpolacji liniowej</a>).</td>
+          <td class="text">To jest narzędzie gumki. Używa ono wybranego pędzla do wymazywania obszaru po kliknięciu którymkolwiek z przycisków myszy. Wybranie tego narzędzia spowoduje również dodanie dodatkowych narzędzi do górnego paska edytora, aby umożliwić skalowanie pędzla lub włączyć/wyłączyć wygładzanie<a class="glossterm" data-glossterm="interpolacja liniowa" href="#">(interpolację liniową</a>).</td>
         </tr>
         <tr>
           <td class="icons"><img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" /></td>
           <td class="icons"><strong>Malowanie / Wypełnianie</strong></td>
-          <td class="text">Jest to narzędzie kubełek z farbą (lub wypełnienie). Wypełnia ono obszar obrazu w oparciu o wybrane ustawienie tolerancji alfa, które można zmienić za pomocą suwaka znajdującego się na górnym pasku edytora.</td>
+          <td class="text">To jest narzędzie wiaderko z farbą (lub wypełnienie). Wypełni ono obszar obrazu w oparciu o wybrane ustawienie tolerancji alfa, które można zmienić za pomocą suwaka widocznego na górnym pasku edytora.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="Image Editor Onion Skin" class="center" src="../assets/Images/Asset_Editors/Editor_OnionSkin.png" /></td>
           <td class="icons"><strong>Kolor Usuń</strong></td>
-          <td class="text">Jest to narzędzie do usuwania kolorów. Po jego zaznaczeniu możesz kliknąć <img> lub <img> na dowolnym pikselu obrazu, a wszystkie piksele w tym samym kolorze zostaną usunięte (technicznie rzecz biorąc, zostaną zastąpione kolorem czarnym z alfą równą 0). Na górnym pasku znajduje się suwak tolerancji, za pomocą którego można ustawić tolerancję koloru piksela
-            Tolerancja - im niższa wartość, tym dokładniej kolor musi odpowiadać kolorowi, który został kliknięty, natomiast wyższa wartość powoduje rozszerzenie tolerancji na kolory podobne do koloru klikniętego. Jeśli wcześniej dokonano zaznaczenia za pomocą
-            dowolnego z narzędzi zaznaczania, to efektem będzie tylko kliknięcie pikseli znajdujących się w obrębie zaznaczenia, a usunięte zostaną tylko piksele znajdujące się w obrębie tego zaznaczenia.</td>
+          <td class="text">Jest to narzędzie do usuwania kolorów. Po jego wybraniu możesz następnie kliknąć <img> lub <img> na dowolnym pikselu w obrazie, a wszystkie piksele, które mają ten sam kolor, zostaną usunięte (technicznie są one zastąpione kolorem czarnym z alfą równą 0). Na górnym pasku znajduje się suwak tolerancji, za pomocą którego można ustawić tolerancję koloru piksela - im niższa wartość, tym dokładniej kolor musi pasować do tego, który został kliknięty, natomiast wyższa wartość rozszerzy tę tolerancję na te kolory, które są podobne do klikniętego. Jeśli wcześniej dokonałeś zaznaczenia za pomocą któregoś z narzędzi do zaznaczania, to tylko kliknięcie w piksele znajdujące się w obrębie zaznaczenia da efekt i tylko piksele znajdujące się w obrębie zaznaczenia zostaną usunięte.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="Loop Control Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_ImageLoop.png" width="46" /></td>
-          <td class="icons"><strong>Wymień kolor</strong></td>
-          <td class="text">Jest to narzędzie do zamieniania kolorów. Po jego zaznaczeniu możesz kliknąć <img> lub <img> na dowolnym pikselu obrazu, a wszystkie piksele w tym samym kolorze zostaną zastąpione kolorem przypisanym do użytego przycisku myszy. Na górnym pasku znajduje się suwak tolerancji, za pomocą którego można ustawić tolerancję koloru piksela - im niższa
-            wartość, tym dokładniej kolor musi pasować do tego, który został kliknięty, natomiast wyższa wartość spowoduje rozszerzenie tolerancji na kolory podobne do koloru klikniętego. Jeśli wcześniej dokonano zaznaczenia przy użyciu dowolnego z narzędzi do zaznaczania
-            to tylko kliknięcie w piksele znajdujące się w obrębie zaznaczenia będzie miało wpływ na zmianę koloru.</td>
+          <td class="icons"><strong>Wymiana koloru</strong></td>
+          <td class="text">Jest to narzędzie do zastępowania kolorów. Po jego wybraniu możesz następnie kliknąć <img> lub <img> na dowolnym pikselu w obrazie, a wszystkie piksele, które mają ten sam kolor, zostaną zastąpione kolorem przypisanym do użytego przycisku myszy. Na górnym pasku znajduje się suwak tolerancji, za pomocą którego można ustawić tolerancję koloru piksela - im niższa wartość, tym dokładniej kolor musi odpowiadać temu, który został kliknięty, natomiast wyższa wartość spowoduje rozszerzenie tej tolerancji na te kolory, które są podobne do klikniętego. Jeśli wcześniej dokonałeś zaznaczenia za pomocą któregoś z narzędzi do zaznaczania, to tylko kliknięcie w piksele znajdujące się w obrębie tego zaznaczenia będzie miało wpływ na zmianę koloru.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="Play Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_ImagePlay.png" width="46" /></td>
           <td class="icons"><strong>Linia</strong></td>
-          <td class="text">To narzędzie narysuje linię między dwoma punktami. Kliknij raz za pomocą jednego z przycisków, aby utworzyć pierwszy punkt, a następnie kliknij ponownie w innym miejscu, aby utworzyć kolejny punkt i połączyć je. Linia zostanie narysowana przy użyciu wybranego pędzla, aby utworzyć kontur,
-            Można też edytować niektóre właściwości pędzla, korzystając z górnego paska edytora (rozmiar, <a class="glossterm" data-glossterm="interpolacja liniowa" href="#">interpolacja liniowa</a> itp.).</td>
+          <td class="text">To narzędzie narysuje linię pomiędzy dwoma punktami. Kliknij raz jednym z przycisków, aby utworzyć pierwszy punkt, a następnie kliknij ponownie w innym miejscu, aby utworzyć kolejny punkt i połączyć je. Linia zostanie narysowana przy użyciu wybranego pędzla do stworzenia konturu, a niektóre właściwości pędzla można edytować przy użyciu górnego paska edytora (rozmiar, <a class="glossterm" data-glossterm="interpolacja liniowa" href="#">interpolacja liniowa</a>, itd...).</td>
         </tr>
         <tr>
           <td class="icons"><img alt="Delete Frame Icon" class="icon" src="../assets/Images/Icons/Icon_RemoveFrame.png" /></td>
           <td class="icons"><strong>Prostokąt</strong></td>
-          <td class="text">Narzędzie to umożliwia narysowanie wypełnionego lub obrysowanego prostokąta. Jeśli klikniesz w lewym górnym rogu ikony, zostanie ona obrysowana, natomiast kliknięcie w prawym dolnym rogu spowoduje jej wypełnienie, a jeśli potrzebujesz obu tych opcji, możesz je wybrać na górnym
-            pasku edytora obrazów (lub użyć <img> + <img>, aby
-            wybrać jedną, a następnie drugą opcję na ikonie przybornika), a także ustawić rozmiar i wygładzenie używanego pędzla. Następnie prostokąt zostanie narysowany przy użyciu wybranego pędzla. Pamiętaj, że podczas rysowania możesz przytrzymać przycisk <img> i kliknąć, aby rysować od środka pozycji myszy.</td>
+          <td class="text">To narzędzie narysuje albo wypełniony albo obrysowany prostokąt. Jeśli klikniesz w lewym górnym rogu ikony, zostanie on obrysowany, podczas gdy kliknięcie w prawym dolnym rogu spowoduje wypełnienie. Jeśli potrzebujesz obu opcji, możesz wybrać je z górnego paska edytora obrazów (lub użyć <img> + <img>, aby wybrać jedną, a następnie drugą na ikonie przybornika), a także ustawić rozmiar i wygładzenie używanego pędzla. Prostokąt zostanie narysowany przy użyciu wybranego pędzla. Pamiętaj, że podczas rysowania możesz przytrzymać przycisk <img> i kliknąć, aby rysować od środka pozycji myszy.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" /></td>
           <td class="icons"><strong>Elipsa</strong></td>
-          <td class="text">Narzędzie to umożliwia narysowanie wypełnionej lub obrysowanej elipsy. Jeśli klikniesz w lewym górnym rogu ikony, zostanie ona obrysowana, natomiast kliknięcie w prawym dolnym rogu spowoduje jej wypełnienie, a jeśli potrzebujesz obu tych opcji, możesz je wybrać na górnym pasku
-            edytora obrazów (lub użyć <img> + <img>, aby
-            wybrać jedną, a następnie drugą opcję na ikonie przybornika), a także ustawić rozmiar i wygładzenie używanego pędzla. Elipsa zostanie narysowana przy użyciu wybranego pędzla do utworzenia konturu. Pamiętaj, że podczas rysowania możesz przytrzymać przycisk <img> i kliknąć, aby rysować od środka pozycji myszy.</td>
+          <td class="text">To narzędzie narysuje albo wypełnioną albo obrysowaną elipsę. Jeśli klikniesz w lewym górnym rogu ikony, zostanie ona obrysowana, podczas gdy kliknięcie w prawym dolnym rogu spowoduje wypełnienie. Jeśli potrzebujesz obu opcji, możesz wybrać je z górnego paska edytora obrazów (lub użyć <img> + <img>, aby wybrać jedną, a następnie drugą na ikonie przybornika), a także ustawić rozmiar i wygładzenie używanego pędzla. Elipsa zostanie narysowana przy użyciu wybranego pędzla do stworzenia konturu. Zauważ, że podczas rysowania możesz przytrzymać przycisk <img> i kliknąć, aby rysować od środka pozycji myszy.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /></td>
-          <td class="icons"><strong>Polygon</strong></td>
-          <td class="text">Narzędzie to umożliwia narysowanie wielokąta wypełnionego lub obrysowanego. Jeśli klikniesz w lewym górnym rogu ikony, zostanie ona obrysowana, natomiast kliknięcie w prawym dolnym rogu spowoduje jej wypełnienie, a jeśli potrzebujesz obu tych opcji, możesz je wybrać na górnym pasku
-            edytora obrazów (lub użyć <img> + <img>, aby
-            wybrać jedną, a następnie drugą opcję na ikonie przybornika), a także ustawić rozmiar i wygładzanie używanego pędzla. Kliknij przycisk <img> lub <img>, aby dodać punkty do wielokąta za pomocą wybranego pędzla, a gdy wyniki będą zadowalające, wybierz inne narzędzie, aby zatwierdzić zmiany i wygenerować
-            obrazu. Wielokąt zostanie narysowany przy użyciu wybranego pędzla. W dowolnym momencie można nacisnąć przycisk <img>, aby anulować definiowanie wielokąta.</td>
+          <td class="icons"><strong>Poligon</strong></td>
+          <td class="text">To narzędzie narysuje albo wypełniony albo obrysowany wielokąt. Jeśli klikniesz w lewym górnym rogu ikony, będzie on obrysowany, podczas gdy kliknięcie w prawym dolnym rogu będzie wypełnione, a jeśli potrzebujesz obu, możesz wybrać tę opcję z górnego paska edytora obrazów (lub użyć <img> + <img>, aby wybrać jedno, a następnie drugie na ikonie przybornika), jak również ustawić rozmiar i wygładzenie używanego pędzla. Klikamy <img> lub <img>, aby dodać punkty do wielokąta za pomocą wybranego pędzla, a gdy jesteśmy zadowoleni z rezultatów, wybieramy inne narzędzie, aby zatwierdzić zmiany i wygenerować obraz. Wielokąt zostanie narysowany przy użyciu wybranego pędzla. W każdej chwili możesz nacisnąć <img>, aby anulować definiowanie wielokąta.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="LMB Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_LMB.png" width="21" /></td>
           <td class="icons"><strong>Spline</strong></td>
-          <td class="text">To jest narzędzie splajn. Wykorzystuje ono wybrany pędzel do utworzenia <a class="glossterm" data-glossterm="spline" href="#">splajnu</a>. Kliknij i przytrzymaj jeden z przycisków myszy, aby ustawić punkt, a następnie przeciągnij myszą, aby utworzyć splajn.
-            myszy i powtarzasz, aby dodać kolejne punkty i krzywe. Splajn zostanie narysowany przy użyciu wybranego pędzla, który można edytować za pomocą górnego paska edytora w celu ustawienia rozmiaru i wygładzania. Na górnym pasku znajduje się także ustawienie <strong>Iteracje </strong>, które
-            które określa, jak gładki jest wynikowy splajn (niższe wartości będą bardziej szorstkie, wyższe bardziej gładkie, a domyślną wartością jest 10).</td>
+          <td class="text">To jest narzędzie splajnu. Wykorzystuje ono wybrany pędzel do tworzenia <a class="glossterm" data-glossterm="klinowy" href="#">splajnu</a>. Kliknij i przytrzymaj dowolny przycisk myszy, aby ustawić punkt, a następnie przeciągnij mysz, aby wygenerować splajn, zwalniając mysz i powtarzając, aby dodać kolejne punkty i krzywe. Splajn zostanie narysowany przy użyciu wybranego pędzla, który można edytować przy użyciu górnego paska edytora, aby ustawić rozmiar i wygładzenie. Na górnym pasku znajduje się również ustawienie <strong>Iteracji </strong>, które określa, jak gładki jest wynikowy splajn (niższe wartości będą bardziej szorstkie, wyższe gładsze, a wartość domyślna to 10).</td>
         </tr>
         <tr>
           <td class="icons"><img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" /></td>
           <td class="icons"><strong>Tekst</strong></td>
-          <td class="text"><br> Jest to narzędzie do wprowadzania tekstu. Tworzy ono nową warstwę tekstową, na której można wpisać dowolny tekst. Możesz ustawić adres <span class="notranslate">font</span> oraz formatowanie z górnego paska edytora obrazu.</td>
+          <td class="text"><br>
+            To jest narzędzie do wprowadzania tekstu. Tworzy ono nową warstwę tekstową, na której możesz wpisać dowolny tekst. Możesz ustawić <span class="notranslate">font</span> do użycia, jak również formatowanie z górnego paska edytora obrazu.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /></td>
           <td class="icons"><strong>Kroplomierz do oczu</strong></td>
-          <td class="text">Narzędzie eye-dropper umożliwia próbkowanie koloru z aktualnie edytowanego obrazu.</td>
+          <td class="text">Narzędzie eye-dropper pozwala na próbkowanie koloru z aktualnie edytowanego obrazu.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" /></td>
           <td class="icons"><strong>Wybór prostokąta</strong></td>
-          <td class="text">Za pomocą tego narzędzia można utworzyć prostokątne zaznaczenie. Zaznaczenie można anulować, korzystając z menu Obraz lub naciskając przycisk <img>.</td>
+          <td class="text">Za pomocą tego narzędzia można wygenerować prostokątne zaznaczenie. Możesz anulować zaznaczenie z menu Obraz lub naciskając <img>.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /></td>
           <td class="icons"><strong>Wybór farby</strong></td>
-          <td class="text">Za pomocą tego narzędzia można &quot;zamalować&quot; wybrany obszar, używając dowolnego z dostępnych pędzli, w tym pędzli własnych. Stosowane są wszystkie te same skróty klawiaturowe, co w przypadku narzędzia Ołówek. Zaznaczenie można anulować, korzystając z menu Obraz lub naciskając przycisk <img></td>
+          <td class="text">Za pomocą tego narzędzia można &quot;namalować&quot; wybrany obszar przy użyciu dowolnego pędzla, w tym pędzli własnych. Obowiązują te same skróty klawiaturowe, co w przypadku narzędzia Ołówek. Zaznaczenie można anulować, korzystając z menu Obraz lub naciskając przycisk <img></td>
         </tr>
         <tr>
           <td class="icons"><img alt="Control Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Ctrl.png" width="55" /></td>
           <td class="icons"><strong>Magiczna różdżka</strong></td>
-          <td class="text">Narzędzie zaznaczania Magiczna różdżka zaznacza obszary o tym samym kolorze na podstawie wartości tolerancji ustawionej na górnym pasku edytora. Jeśli zaznaczysz opcję &quot;Tylko kolor&quot;, wartość alfa nie będzie brana pod uwagę. Zaznaczenie można anulować
-            z menu Obraz lub naciskając przycisk <img>.</td>
+          <td class="text">Magiczna różdżka zaznacza obszary o tym samym kolorze na podstawie wartości tolerancji ustawionej na górnym pasku edytora. Jeśli zaznaczysz opcję &quot;Tylko kolor&quot;, to wartość alfa nie będzie brana pod uwagę. Selekcję można anulować z menu Obraz lub naciskając <img>.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="CMD Icon" class="icon" height="20" src="../assets/Images/Icons/Icon_Cmd.png" width="55" /></td>
-          <td class="icons"><strong>Obróć</strong></td>
-          <td class="text">Jest to narzędzie do obracania. Jeśli obszar został zaznaczony za pomocą jednego z narzędzi Zaznaczanie, kliknięcie tego narzędzia umożliwi obrócenie zaznaczonego obszaru o dowolną wartość w zakresie od 0° do 360°. Jeśli nie został zaznaczony żaden obszar obrazu, to
-            umożliwia obracanie bieżącego pędzla. Aby obrócić, wystarczy przytrzymać lewy przycisk myszy <img> i przeciągnąć w lewo lub w prawo albo ustawić wartość
-            bezpośrednio na górnym pasku. Aby zaakceptować zmiany, możesz nacisnąć przycisk <img> lub wybrać inne narzędzie. Należy pamiętać, że zaakceptowanie zmian nie spowoduje zmiany
-            materiału źródłowego, ale raczej utworzy nowy zasób Pędzel, którego będziesz mógł użyć z wybranym obrazem lub pędzlem obróconym o ustawioną wartość. Należy również pamiętać, że skrót klawiaturowy &quot;<span class="inline">Z</span>&quot; może być użyty do obrócenia
-            o 90° oraz że ta opcja nie tworzy nowego pędzla, a jedynie wpływa na sposób rysowania bieżącego pędzla.</td>
+          <td class="icons"><strong>Obrót</strong></td>
+          <td class="text">Jest to narzędzie do obracania. Jeśli zaznaczono obszar za pomocą jednego z narzędzi zaznaczania, to kliknięcie tego narzędzia pozwala obrócić zaznaczony obszar o dowolną wartość w zakresie od 0° do 360°. Jeśli nie jest zaznaczony żaden obszar obrazu, można obrócić bieżący pędzel. Aby obrócić, wystarczy przytrzymać lewy przycisk myszy <img> i przeciągnąć w lewo lub w prawo albo ustawić wartość bezpośrednio na górnym pasku. Aby zaakceptować zmiany możesz nacisnąć przycisk <img> lub wybrać inne narzędzie. Zwróć uwagę, że zaakceptowanie zmian nie spowoduje zmiany materiału źródłowego, a raczej utworzy nowy zasób Brush, który będziesz mógł wykorzystać z wybranym obrazem lub pędzlem obróconym o ustawioną wartość. Zauważ również, że skrót klawiaturowy &quot;<span class="inline">Z</span>&quot; może być użyty do obrócenia dowolnego zaznaczenia lub pędzla o 90° i że ta opcja nie tworzy nowego pędzla, a jedynie wpływa na sposób rysowania bieżącego pędzla.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="Collapse Icon" class="icon" src="../assets/Images/Icons/Icon_Collapse.png" /></td>
           <td class="icons"><strong>Lustro</strong></td>
-          <td class="text">Jest to narzędzie lustrzane. Wybranie tej opcji spowoduje odbicie lustrzane bieżącego pędzla wzdłuż osi pionowej. Opcja ta nie powoduje utworzenia nowego pędzla i wpływa jedynie na sposób rysowania bieżącego pędzla.</td>
+          <td class="text">To jest narzędzie lustrzane. Wybranie go spowoduje odbicie lustrzane bieżącego pędzla wzdłuż osi pionowej. Opcja ta nie tworzy nowego pędzla i wpływa jedynie na sposób rysowania bieżącego pędzla.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="Canvas Grid Icon" class="icon" src="../assets/Images/Icons/Icon_CanvasGrid.png" /></td>
           <td class="icons"><strong>Flip</strong></td>
-          <td class="text">Jest to narzędzie do odwracania. Wybranie tej opcji spowoduje odbicie lustrzane bieżącego pędzla wzdłuż osi poziomej. Opcja ta nie powoduje utworzenia nowego pędzla, a jedynie wpływa na sposób rysowania bieżącego pędzla.</td>
+          <td class="text">Jest to narzędzie do odwracania obrazu. Wybranie go spowoduje odbicie lustrzane bieżącego pędzla wzdłuż osi poziomej. Ta opcja nie tworzy nowego pędzla i wpływa jedynie na sposób rysowania bieżącego pędzla.</td>
         </tr>
         <tr>
           <td class="icons"><img alt="Grid Options Icon" class="icon" height="24" src="../assets/Images/Icons/Icon_CanvasOptions.png" width="10" /></td>
           <td class="icons"><strong>Pan</strong></td>
-          <td class="text">Jest to narzędzie do przesuwania. Po jego wybraniu można kliknąć przycisk <img> i przeciągnąć myszą, aby przesuwać zawartość warstwy w jej obrębie. Należy pamiętać, że
-            że piksele znajdujące się poza obszarem płótna rysunkowego nie będą widoczne, a po ponownej zmianie narzędzia obraz zostanie przycięty do rozmiaru płótna rysunkowego. Należy również pamiętać, że jeśli zaznaczono piksele, to przesuwane będą piksele zaznaczone, a nie zawartość
-            warstwy.</td>
+          <td class="text">Jest to narzędzie do przesuwania. Po jego wybraniu możesz kliknąć <img> i przeciągnąć myszką, aby obrócić zawartość warstwy w jej obrębie. Zauważ, że piksele znajdujące się poza obszarem rysowania nie będą widoczne, a po ponownej zmianie narzędzia obraz zostanie przycięty do rozmiaru obszaru rysowania. Zauważ też, że jeśli zaznaczyłeś, to przesunięte zostaną wybrane piksele, a nie zawartość warstwy.</td>
         </tr>
       </tbody>
     </table>
@@ -232,79 +189,59 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down8" href="#">Edytor warstw</a></p>
   <div class="droptext" data-targetname="drop-down8">
-    <p class="dropspot">W edytorze obrazów można tworzyć <strong>warstwy </strong>dla różnych części obrazu, którymi można manipulować i do których można rysować za pomocą różnych pędzli i narzędzi. Aby utworzyć nową warstwę, wystarczy kliknąć ikonę <img>, a aby ją usunąć - ponownie ikonę <img>. Warstwy można również
-      Można je również porządkować, klikając przycisk <img> na warstwie, a następnie przeciągając warstwę w górę lub w dół na wybraną pozycję.
-      Tworzenie folderów za pomocą przycisku <img>, a następnie przeciąganie do nich warstw. Jeśli dwukrotnie klikniesz przycisk <img> na warstwie (lub użyjesz przycisku <img> i wybierzesz polecenie <strong>Edycja właściwości</strong> warstwy), uzyskasz dostęp do okna Właściwości warstwy.
-      uzyskasz dostęp do okna Właściwości warstwy:</p>
-    <p class="dropspot"><img>W tym miejscu można nadać warstwie nazwę oraz ustawić tryb mieszania (sposób, w jaki ma być &quot;mieszana&quot; z warstwami znajdującymi się pod nią),
-      Możesz wybrać spośród mieszania <em>normalnego</em>, <em>addytywnego</em>, <em>subtraktywnego </em>lub <em>multiplikatywnego </em>. Na koniec możesz ustawić krycie (przezroczystość) warstwy za pomocą suwaka, ale pamiętaj, że kumuluje się ono z rzeczywistą wartością alfa poszczególnych
-      na przykład jeśli piksele mają krycie 50% i ustawisz krycie warstwy na 50%, to końcowe piksele zostaną narysowane z kryciem 25%.</p>
+    <p class="dropspot">W edytorze obrazów można tworzyć <strong>warstwy </strong>dla różnych części obrazu, a warstwy te mogą być manipulowane i rysowane za pomocą różnych pędzli i narzędzi. Aby utworzyć nową warstwę, wystarczy kliknąć ikonę <img>, a aby ją usunąć - ponownie ikonę <img>. Warstwy można również porządkować, klikając <img> na warstwie, a następnie przeciągając warstwę w górę lub w dół do żądanej pozycji, a także można dalej organizować warstwy, tworząc foldery za pomocą przycisku <img>, a następnie przeciągając do nich warstwy. Dwukrotne kliknięcie <img> na warstwie (lub użycie <img> i wybranie opcji <strong>Edycja właściwości</strong> warstwy) daje dostęp do okna Właściwości warstwy:</p>
+    <p class="dropspot"><img>W tym miejscu możesz nadać warstwie nazwę oraz ustawić tryb mieszania (sposób, w jaki ma być &quot;mieszana&quot; z warstwami znajdującymi się poniżej), wybierając spośród mieszania <em>normalnego</em>, <em>addytywnego</em>, <em>subtraktywnego </em>i <em>multiplikatywnego </em>. Na koniec możesz ustawić krycie (przezroczystość) warstwy za pomocą suwaka, ale pamiętaj, że kumuluje się ono z rzeczywistą wartością alfa poszczególnych pikseli - na przykład jeśli masz piksele o kryciu 50% i ustawisz krycie warstwy na 50%, ostateczne piksele zostaną narysowane z kryciem 25%.</p>
   </div>
   <p> </p>
-  <p>Poza narzędziami dostępnymi w samym edytorze obrazów, istnieje także wiele dodatkowych narzędzi dostępnych z paska menu w górnej części IDE:</p>
-  <p><img>Menu te zostały omówione w poniższych sekcjach:</p>
+  <p>Oprócz tych narzędzi w samym edytorze obrazu, istnieje również szereg dodatkowych narzędzi dostępnych z paska menu w górnej części IDE:</p>
+  <p><img>Menu te są wyjaśnione w poniższych sekcjach:</p>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down9" href="#">Obraz</a></p>
   <div class="droptext" data-targetname="drop-down9">
-    <p class="dropspot"><img>W menu Obraz znajdują się następujące opcje (niektóre z nich mogą być dostępne lub nie, w zależności od bieżącego ustawienia ostrości edytora):</p>
+    <p class="dropspot"><img>Menu Obrazek zawiera następujące opcje (niektóre z nich mogą być dostępne lub nie, w zależności od aktualnego ustawienia ostrości edytora):</p>
     <ul class="dropspotlist">
-      <li class="dropspot"><strong>Wytnij ram</strong> kę / zaznaczenie <strong>- </strong> wycina ramkę lub zaznaczenie z obrazu, w zależności od ostrości edytora. W przypadku wycinania zaznaczenia zostanie ono dodane do pędzli.</li>
-      <li class="dropspot"><strong>Kopiuj</strong> ramkę / zaznaczenie <strong>- </strong> kopiuje ramkę lub zaznaczenie z obrazu, w zależności od ostrości edytora. W przypadku kopiowania zaznaczenia zostanie ono dodane do pędzli.</li>
-      <li class="dropspot"><strong>Wklej</strong> ramkę / zaznaczenie <strong>- </strong> wklej ramkę ze schowka lub wklej zaznaczenie ze schowka do obrazu, w zależności od bieżącego fokusu na stronie <span class="notranslate">IDE</span>. Podczas wklejania do obrazu należy pamiętać, że ta opcja
-        ta opcja jest przeznaczona tylko do użytku z danymi ze schowka pochodzącymi z programów zewnętrznych. Podczas wycinania lub kopiowania do schowka z obrazu w Edytorze obrazów jest on dodawany do pędzli w prawym górnym rogu edytora i należy wybrać pędzel, aby
-        rysować za pomocą wyciętego/skopiowanego zaznaczenia, a nie próbować wkleić je do obrazu. Należy również pamiętać, że wiele programów ma problemy z wklejaniem przezroczy ze schowka do edytora obrazów <span data-keyref="GameMaker Name">GameMakera</span> ze względu na format używany przez schowek.</li>
-      <li class="dropspot"><strong>Zaznacz wszystko - </strong> zaznaczenie całego obrazu.</li>
-      <li class="dropspot"><strong>Anuluj</strong> zaznaczenie -<strong>usuwanie</strong> zaznaczenia z obrazu.</li>
-      <li class="dropspot"><strong>Odwróć</strong> zaznaczenie - odwrócenie bieżącego zaznaczenia.</li>
-      <li class="dropspot"><strong>Dodaj</strong> ramkę - dodanie nowej ramki do strony <span class="notranslate">sprite</span>.</li>
-      <li class="dropspot"><strong>Wstaw ram</strong> kę - wstawia nową ramkę po aktualnie wyświetlanej.</li>
-      <li class="dropspot"><strong>Usuń zazna</strong> czone ramki - usuwa zaznaczoną ramkę z witryny <span class="notranslate">sprite</span> (można użyć <img> / <img> + <img> i/lub <img> + <img>, aby zaznaczyć wiele ramek).</li>
-      <li class="dropspot"><strong>Importuj</strong> obraz<strong>(y)</strong> - wczytanie z dysku obrazu, który ma być użyty jako ramka. Należy pamiętać, że można załadować wiele ramek jednocześnie, wybierając w oknie eksploratora wiele pojedynczych plików do zaimportowania. Po wybraniu pliku lub plików
-        zostanie wyświetlone następujące okno Importuj:<br>
-        <img>W tym miejscu możesz wybrać, w jaki sposób importowany obraz ma zostać dodany do bieżącej strony <span class="notranslate">sprite</span>, umożliwiając zmianę rozmiaru całego płótna rysunkowego,
-        przycinanie lub kadrowanie, a także ustawianie pozycji &quot;kotwicy&quot;, w której będą umieszczane nowe obrazy.
+      <li class="dropspot"><strong>Wytnij</strong> ramkę / zaznaczenie <strong>- </strong> Wycina ramkę lub zaznaczenie z obrazu, w zależności od ostrości edytora. Jeśli wycinasz zaznaczenie, to dodasz je do pędzli.</li>
+      <li class="dropspot"><strong>Kopiuj</strong> ramkę / zaznaczenie <strong>- </strong> kopiuje ramkę lub zaznaczenie z obrazu, w zależności od ostrości edytora. W przypadku kopiowania zaznaczenia, spowoduje to dodanie go do pędzli.</li>
+      <li class="dropspot"><strong>Wklejanie</strong> ramki / zaznaczenia <strong>- </strong> wklejanie ramki ze schowka lub wklejanie zaznaczenia ze schowka do obrazu, w zależności od aktualnego skupienia uwagi na obrazie <span class="notranslate">IDE</span>. Podczas wklejania do obrazu należy pamiętać, że ta opcja jest przeznaczona tylko do użycia z danymi ze schowka z zewnętrznych programów. Gdy wycinasz lub kopiujesz do schowka z obrazu w Edytorze obrazów, jest to dodawane do pędzli w prawym górnym rogu edytora i powinieneś wybrać pędzel, aby rysować z wyciętym/skopiowanym zaznaczeniem, a nie próbować wkleić go do obrazu. Należy również pamiętać, że wiele programów będzie miało problemy z wklejaniem przezroczystości ze schowka do edytora obrazu <span data-keyref="GameMaker Name">GameMakera</span> ze względu na format używany przez schowek.</li>
+      <li class="dropspot"><strong>Wybierz wszystko - wybór </strong> całego obrazu.</li>
+      <li class="dropspot"><strong>Anuluj wybór</strong> -<strong>usunięcie</strong> dowolnego wyboru z obrazu.</li>
+      <li class="dropspot"><strong>Odwróć wybór</strong> - Odwrócenie bieżącego wyboru.</li>
+      <li class="dropspot"><strong>Add Frame</strong> - Dodaj nową ramkę do strony <span class="notranslate">sprite</span>.</li>
+      <li class="dropspot"><strong>Insert Frame</strong> - Wstawianie nowej ramki za aktualnie wyświetlaną.</li>
+      <li class="dropspot"><strong>Usuń wybrane</strong> ramki - Usuń wybraną ramkę z <span class="notranslate">sprite</span> (możesz użyć <img> / <img> + <img> i/lub <img> + <img>, aby wybrać wiele ramek).</li>
+      <li class="dropspot"><strong>Importuj</strong> obraz<strong>(y)</strong> - Wczytanie z dysku obrazu, który ma być użyty jako ramka. Zauważ, że możesz załadować wiele ramek jednocześnie, wybierając wiele pojedynczych plików do importu w oknie eksploratora. Po wybraniu pliku lub plików zostanie wyświetlone następujące okno Import:<br>
+        <img>Tutaj możesz wybrać, w jaki sposób importowany obraz ma być dodany do bieżącego <span class="notranslate">sprite</span>, pozwalając na zmianę rozmiaru całego płótna rysunkowego, przycięcie lub pad, a także ustawienie pozycji &quot;kotwicy&quot; dla umieszczenia nowego obrazu (obrazów).
       </li>
-      <li class="dropspot"><strong>Konwertuj na</strong> klatki - ta opcja przekształca pojedynczy obraz w kilka oddzielnych klatek. Najpierw należy utworzyć pojedynczą klatkę zawierającą wszystkie elementy animacji (lub zaimportować pojedynczy obrazek z paskiem), jak pokazano poniżej
-        poniżej:
+      <li class="dropspot"><strong>Convert to Frames</strong> - Opcja ta spowoduje konwersję pojedynczego obrazu na szereg oddzielnych klatek. Musisz najpierw utworzyć pojedynczą klatkę ze wszystkimi częściami animacji w niej (lub zaimportować pojedynczy obrazek paskowy), jak ten pokazany poniżej:<br>
+        <img>Ponieważ jest to pojedynczy obrazek i chcemy go przekonwertować na pojedyncze klatki, możemy skorzystać z tej opcji, która otworzy wtedy poniższe okno:<br>
+        <img>W tym miejscu można ustawić, w jaki sposób pojedynczy obraz ma być podzielony w celu utworzenia klatek, ustawiając liczbę klatek, szerokość i wysokość klatek oraz ewentualne włączenie dowolnych wartości przesunięcia.
+      </li>
+      <li class="dropspot"><strong>Importuj obraz</strong> ek z paskiem - Ta opcja otworzy eksplorator plików i poprosi o wyszukanie pojedynczego pliku z obrazkiem z paskiem, który zostanie użyty do utworzenia ramek. Po wybraniu obrazu otworzy się okno Importuj pasek, dokładnie takie samo jak w przypadku opcji <strong>Konwertuj do</strong> ramek pokazanej powyżej.</li>
+      <li class="dropspot"><strong>Eksport do PNG</strong> - Wybranie tej opcji spowoduje eksport <span class="notranslate">sprite</span> jako pojedynczego obrazu <span class="inline">PNG</span>. Jeśli <span class="notranslate">sprite</span> ma więcej niż jeden obraz, to zostanie utworzony &quot;pasek&quot; <span class="notranslate">sprite</span> ze wszystkimi obrazami, jeden po drugim, a do nazwy pliku zapisu zostanie automatycznie dodany &quot;<span class="inline">_stripX</span>&quot;, gdzie &quot;<span class="inline">X</span>&quot; to liczba eksportowanych klatek. Na przykład, pięć klatek <span class="notranslate">sprite</span> zostanie wyeksportowanych jako &quot;<span class="inline">sprite_name_strip5.png</span>&quot;.</li>
+      <li class="dropspot"><strong>Resize All Fram</strong> es - Po wybraniu tej opcji otworzy się następujące okno, w którym możesz ustawić sposób, w jaki chcesz zmienić rozmiar wszystkich klatek animacji składających się na sprite:<br>
+        <img>Możesz wybrać albo <strong>Skalowanie </strong>obrazu, albo <strong>Zmianę</strong> rozmiaru płótna. Jeśli wybierzesz skalowanie obrazu, wybierzesz po prostu nową szerokość i/lub wysokość każdej klatki, czy ma być ona skalowana przy użyciu tego samego współczynnika proporcji, a także czy ma być skalowana w pikselach czy w procentach. Zauważ, że podczas skalowania możesz włączyć lub wyłączyć <a class="glossterm" data-glossterm="interpolacja liniowa" href="#">interpolację liniową</a>, której włączenie spowoduje, że piksele będą się rozmywać lub &quot;rozmazywać&quot; podczas skalowania obrazu (ogólnie rzecz biorąc, w przypadku sztuki o wysokiej rozdzielczości należy <em>włączyć</em> tę funkcję, natomiast w przypadku sztuki pikselowej należy ją <em>wyłączyć</em>).<br>
         <br>
-        <img>Ponieważ jest to pojedynczy obraz i chcemy go przekonwertować na pojedyncze klatki, możemy użyć tej opcji, co spowoduje otwarcie
-        następujące okno:<br>
-        <img>W tym miejscu można określić, w jaki sposób pojedynczy obraz ma zostać podzielony w celu utworzenia ramek, ustawiając liczbę ramek, szerokość i wysokość
-        szerokość i wysokość ramek oraz ewentualne wartości przesunięcia.
+        Opcja zmiany rozmiaru płótna nie zmieni pikseli w obrazie, ale zwiększy lub zmniejszy rozmiar płótna, na którym rysowane są obrazy. Możesz ustawić miejsce, w którym powinna znajdować się &quot;kotwica&quot; dla zmiany rozmiaru, używając ikon strzałek, a następnie ustawić nowy rozmiar (w pikselach lub w procentach) oraz określić, czy zachować proporcje oryginalnych ramek. Należy pamiętać, że zmniejszenie ramki w stosunku do oryginalnych obrazów <span class="notranslate">sprite</span> spowoduje przycięcie pikseli.
       </li>
-      <li class="dropspot"><strong>Importuj obraz</strong> paska - ta opcja spowoduje otwarcie eksploratora plików i poprosi o wyszukanie pojedynczego pliku obrazu paska, który ma być użyty do tworzenia ramek. Po wybraniu obrazu zostanie otwarte okno Importuj pasek, dokładnie takie samo jak w przypadku
-        opcji <strong>Konwertuj do</strong> ramek pokazanej powyżej.</li>
-      <li class="dropspot"><strong>Eksportuj do PNG</strong> - wybranie tej opcji spowoduje wyeksportowanie strony <span class="notranslate">sprite</span> jako pojedynczego obrazu <span class="inline">PNG</span>. Jeśli na stronie <span class="notranslate">sprite</span> znajduje się więcej niż jeden obraz, zostanie utworzony &quot;pasek&quot; <span class="notranslate">sprite</span> zawierający wszystkie obrazy, jeden po drugim.
-        po sobie, a nazwa pliku zostanie automatycznie uzupełniona o &quot;<span class="inline">_stripX</span>&quot;, gdzie &quot;<span class="inline">X</span>&quot; to liczba wyeksportowanych klatek. Na przykład plik <span class="notranslate">sprite</span> z pięcioma klatkami zostanie
-        zostanie wyeksportowany jako &quot;<span class="inline">sprite_name_strip5.png</span>&quot;.</li>
-      <li class="dropspot">Zmień<strong>rozmiar wszystkich</strong> klatek - Po wybraniu tej opcji otworzy się poniższe okno, w którym możesz określić sposób zmiany rozmiaru wszystkich klatek animacji składających się na sprite:<br>
-        <img>Możesz wybrać opcję <strong>skalowania </strong>obrazu lub <strong>zmiany</strong> rozmiaru płótna.
-        Jeśli wybierzesz skalowanie obrazu, wybierzesz nową szerokość i/lub wysokość dla każdej klatki, a także to, czy mają być skalowane z zachowaniem proporcji obrazu oraz czy mają być skalowane w pikselach czy w procentach. Należy pamiętać, że podczas skalowania można włączyć lub wyłączyć <a class="glossterm" data-glossterm="interpolacja liniowa" href="#">interpolację liniową</a>, której włączenie spowoduje rozmycie lub rozmazanie pikseli podczas skalowania obrazu (w przypadku dzieł sztuki o wysokiej rozdzielczości należy <em>włączyć</em> tę opcję, natomiast w przypadku
-        pikseli powinna być <em>wyłączona</em>).<br>
-        <br> Opcja zmiany rozmiaru płótna nie spowoduje zmiany pikseli obrazu, ale zwiększy lub zmniejszy rozmiar płótna, na którym są rysowane obrazy. Możesz określić, gdzie ma znajdować się &quot;kotwica&quot; dla zmiany rozmiaru, używając
-        ikony strzałek, a następnie ustawić nowy rozmiar (w pikselach lub procentach) oraz określić, czy mają zostać zachowane proporcje oryginalnych ramek. Należy pamiętać, że zmniejszenie ramki w stosunku do oryginalnych obrazów <span class="notranslate">sprite</span> spowoduje przycięcie pikseli.
-      </li>
-      <li class="dropspot"><strong>Przycinanie wszystkich klatek do zazna</strong> czenia - ta opcja jest dostępna tylko wtedy, gdy w głównym oknie rysowania jest zaznaczony obszar obrazu. Po wybraniu tej opcji edytowany obraz (i wszystkie inne klatki animacji)
-        zostaną przycięte do granic zaznaczenia.</li>
-      <li class="dropspot"><strong>Auto Trim All Frames (Automatyczne</strong> przycinanie wszystkich ramek) - ta opcja umożliwia przycinanie wszystkich pikseli o zerowej wartości alfa wokół krawędzi strony <span class="notranslate">sprite</span>. Zostaną wzięte pod uwagę wszystkie ramki obrazu w obrębie strony <span class="notranslate">sprite</span>, więc każda strona zostanie przycięta do krawędzi tej ramki, która ma najdalej położony niezerowy piksel alfa.
-        ramki, która ma najdalej położony niezerowy piksel alfa.<br>
+      <li class="dropspot"><strong>Crop All</strong> Frames To Selection - Ta opcja będzie dostępna tylko wtedy, gdy masz zaznaczony obszar obrazu w głównym płótnie rysunkowym. Gdy wybierzesz tę opcję, edytowany obraz (i wszystkie inne klatki animacji) zostaną przycięte do granic zaznaczenia.</li>
+      <li class="dropspot"><strong>Auto Trim All Frames (Automatyczne</strong> przycinanie wszystkich ramek) - Ta opcja pozwala na przycinanie wszystkich pikseli o zerowej wartości alfa wokół krawędzi strony <span class="notranslate">sprite</span>. Uwzględnione zostaną wszystkie ramki obrazu w obrębie strony <span class="notranslate">sprite</span>, więc każda strona zostanie przycięta do krawędzi tej ramki, która ma najdalszy niezerowy piksel alfa.<br>
         <img>
       </li>
-      <li class="dropspot"><strong>Reverse Frames (Odwróć</strong> ramki) - wybranie tej opcji spowoduje po prostu odwrócenie kolejności ramek na stronie <span class="notranslate">sprite</span>.</li>
-      <li class="dropspot"><strong>Mirror (Odbicie lustrzane) - </strong> ta opcja umożliwia odbicie lustrzane wzdłuż osi pionowej albo bieżącej ramki, albo wszystkich ramek wchodzących w skład strony <span class="notranslate">sprite</span>.</li>
-      <li class="dropspot"><strong>Przerzuć - </strong> ta opcja umożliwia przerzucenie bieżącej ramki lub wszystkich ramek wchodzących w skład strony <span class="notranslate">sprite</span> wzdłuż osi poziomej.</li>
-      <li class="dropspot"><strong>Obróć wszystkie klatki (zgodnie z ruchem wskazówek zegara o 90°)</strong> - ta opcja spowoduje obrócenie wszystkich klatek animacji o 90° zgodnie z ruchem wskazówek zegara.</li>
-      <li class="dropspot"><strong>Obróć wszystkie klatki (przeciwnie do ruchu wskazówek zegara 90°)</strong> - ta opcja spowoduje obrócenie wszystkich klatek animacji o 90° przeciwnie do ruchu wskazówek zegara.</li>
+      <li class="dropspot"><strong>Reverse Fram</strong> es - Wybranie tej opcji spowoduje po prostu odwrócenie kolejności klatek dla strony <span class="notranslate">sprite</span>.</li>
+      <li class="dropspot"><strong>Mirror - </strong> Ta opcja pozwala na odbicie lustrzane bieżącej klatki, wszystkich klatek wchodzących w skład strony <span class="notranslate">sprite</span> wzdłuż osi pionowej.</li>
+      <li class="dropspot"><strong>Flip - </strong> Ta opcja pozwala na obrócenie albo bieżącej klatki, albo wszystkich klatek składających się na stronę <span class="notranslate">sprite</span> wzdłuż osi poziomej.</li>
+      <li class="dropspot"><strong>Rotate all Frames (clockwise 90°)</strong> - opcja ta spowoduje obrót wszystkich klatek animacji o 90° zgodnie z ruchem wskazówek zegara.</li>
+      <li class="dropspot"><strong>Rotate all Frames (anti-clockwise 90°)</strong> - opcja ta spowoduje obrót wszystkich klatek animacji o 90° w kierunku przeciwnym do ruchu wskazówek zegara.</li>
     </ul>
     <p class="dropspot"> </p>
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down10" href="#">Zobacz</a></p>
   <div class="droptext" data-targetname="drop-down10">
-    <p class="dropspot"><img>W menu Widok dostępne są następujące opcje:</p>
+    <p class="dropspot"><img>W menu Widok znajdują się następujące opcje:</p>
     <ul class="dropspotlist">
-      <li class="dropspot"><strong>1:1</strong> - przeskalowanie obrazu do rozmiaru 1:1 z rozdzielczością (tzn. rzeczywistego rozmiaru) i wyśrodkowanie go w oknie edycji obrazu.</li>
-      <li class="dropspot"><strong>Dopasuj do ekranu</strong> - Skalowanie obrazu w celu wypełnienia okna edycji obrazu.</li>
-      <li class="dropspot"><strong>Pokaż siat</strong> kę - przełącza siatkę pikseli. Jest to taki sam przycisk jak przycisk siatki znajdujący się w kontrolkach płótna (opisany w dalszej części tej strony).</li>
-      <li class="dropspot"><strong>Ustawienia</strong> skórki cebuli - zmiana ustawień skórki cebuli. Spowoduje to otwarcie następującego okna, w którym można ustawić ramki wyświetlane przez przycisk skórki cebuli, a także krycie i kolor ramek ze skórką.<br>
+      <li class="dropspot"><strong>1:1</strong> - przeskaluj obraz tak, aby był w proporcji 1:1 z rozdzielczością (tj. rzeczywisty rozmiar) i wyśrodkuj go w oknie edycji obrazu.</li>
+      <li class="dropspot"><strong>Fit Screen</strong> - Skalowanie obrazu, aby wypełnić okno edycji obrazu.</li>
+      <li class="dropspot"><strong>Show grid</strong> - Włącza siatkę pikseli. Jest to ten sam przycisk, który znajduje się w kontrolkach Canvas (wyjaśnione w dalszej części tej strony).</li>
+      <li class="dropspot"><strong>Onion Skin Settings</strong> - Zmiana ustawień skórki cebuli. Spowoduje to otwarcie poniższego okna, w którym można ustawić ramki pokazywane przez przycisk onion skin, a także krycie i kolor skórek.<br>
         <img>
       </li>
     </ul>
@@ -312,13 +249,12 @@
   </div>
   <p><a class="dropspot" data-rhwidget="DropSpot" data-target="drop-down11" href="#">Efekty</a></p>
   <div class="droptext" data-targetname="drop-down11">
-    <p class="dropspot"><img>W menu Efekty można dodawać własne wtyczki efektów, a domyślnie dostępne są następujące efekty:</p>
+    <p class="dropspot"><img>Menu Efekty to miejsce, w którym możesz dodać własne wtyczki efektów, a domyślnie posiada następujące efekty:</p>
     <ul class="dropspotlist">
-      <li class="dropspot"><strong>Rozmycie - </strong> zastosuj do obrazu efekt rozmycia. Można ustawić intensywność oraz typ rozmycia (pudełkowe lub gaussowskie), a także określić, czy rozmycie ma być zastosowane tylko wzdłuż osi poziomej lub pionowej, czy też wzdłuż obu osi. Następnie można wybrać opcję zastosowania
-        tylko do bieżącej warstwy, widocznych warstw lub wszystkich warstw.<br>
+      <li class="dropspot"><strong>Blur - </strong> Zastosuj efekt rozmycia do obrazu. Możesz ustawić intensywność oraz rodzaj rozmycia (pudełkowe lub gaussowskie), a także określić, czy rozmycie ma nastąpić tylko wzdłuż osi poziomej lub pionowej, czy też wzdłuż obu. Następnie możesz wybrać zastosowanie tego efektu tylko do bieżącej warstwy, widocznych warstw lub wszystkich warstw.<br>
         <img>
       </li>
-      <li class="dropspot"><strong>Skala szarości - </strong> odbarwia obraz o określoną wartość. Można wybrać zastosowanie tej funkcji tylko do bieżącej warstwy, widocznych warstw lub wszystkich warstw.<br>
+      <li class="dropspot"><strong>Skala szarości - </strong> odbarwia obraz o określoną wartość. Możesz wybrać, czy chcesz to zastosować tylko do bieżącej warstwy, widocznych warstw czy wszystkich warstw.<br>
         <img>
       </li>
     </ul>
@@ -329,11 +265,11 @@
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Powrót: <a href="The_Asset_Editors.htm">Redaktorzy Aktywów</a></div>
+        <div style="float:left">Powrót: <a href="The_Asset_Editors.htm">Redakcja "Aktywów</a></div>
         <div style="float:right">Następny: <a href="Animation_Curves.htm">Krzywe animacji</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 The Image Editor

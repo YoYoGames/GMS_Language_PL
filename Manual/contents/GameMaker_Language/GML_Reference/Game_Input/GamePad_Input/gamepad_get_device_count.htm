@@ -16,13 +16,14 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>gamepad_get_device_count</h1>
-  <p>Ta funkcja poinformuje Cię o jednej z dwóch rzeczy. Albo liczbę podłączonych game padów, <i>albo</i> liczbę dostępnych &quot;slotów&quot;, do których można podłączyć game pady. Rzeczywista wartość zwracana zależy od platformy i jej wewnętrznej konfiguracji, dlatego też funkcja ta powinna być używana w połączeniu z funkcją <a href="gamepad_is_connected.htm"><span class="inline">gamepad_is_connected()</span></a> aby mieć pewność, że w danej chwili jest podłączona dokładna liczba padów.</p>
+  <p>Funkcja ta podaje albo liczbę podłączonych game padów, <i>albo</i> liczbę dostępnych &quot;slotów&quot;, do których można podłączyć game pady.</p>
+  <p>Rzeczywista wartość zwracana zależy od platformy i wewnętrznej konfiguracji tej platformy i jako taka funkcja powinna być używana w połączeniu z funkcją <a href="gamepad_is_connected.htm"><span class="inline">gamepad_is_connected()</span></a> aby upewnić się co do dokładnej liczby podłączonych klocków w danym momencie.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">gamepad_get_device_count();</p>
   <p> </p>
   <h4>Zwroty:</h4>
-  <p class="code"><span data-keyref="Type_Real"></span></p>
+  <p class="code"><span data-keyref="Type_Real"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Real</a></span></p>
   <p> </p>
   <h4>Przykład:</h4>
   <p class="code">var gp_num = gamepad_get_device_count();<br />
@@ -37,7 +38,7 @@
             global.gp[i] = false;<br />
         }<br />
     }</p>
-  <p>Powyższy kod <span class="notranslate">loops</span> przegląda dostępne gamepady (lub gniazda gamepadów), a następnie sprawdza każdy z nich pod kątem podłączonego gamepada. zwrócona wartość jest następnie używana do ustawienia globalnej tablicy na <span class="inline">true</span> lub <span class="inline">false</span> w celu wykorzystania w przyszłych sprawdzeniach.</p>
+  <p>Powyższy kod <span class="notranslate">loops</span> przez dostępne pady do gier (lub gniazda gamepadów), a następnie sprawdza każdy z nich pod kątem podłączonego gamepada. zwrócona wartość jest następnie używana do ustawienia globalnej tablicy na <span class="inline">true</span> lub <span class="inline">false</span> do użycia w przyszłych kontrolach.</p>
   <p> </p>
   <p> </p>
   <p> </p>
@@ -45,10 +46,10 @@
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Powrót: <a href="Gamepad_Input.htm">Wejście gamepada</a></div>
-        <div style="float:right">Następna: <a href="gamepad_get_description.htm"> gamepad_get_description </a></div>
+        <div style="float:right">Następny: <a href="gamepad_get_description.htm"> gamepad_get_description </a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 gamepad_get_device_count

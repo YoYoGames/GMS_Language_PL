@@ -14,11 +14,12 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>szkielet_animacji_set_ext</h1>
-  <p>Gdy ustawisz zestaw animacji dla animacji szkieletowej <span class="notranslate">sprite</span>, jest on wewnętrznie przypisany do <i>ścieżki 0</i>. Można jednak przypisać kolejne zestawy do następnych ścieżek (1 i wyżej) i w ten sposób na stronie <span class="notranslate">sprite</span> odtwarzać dwie (lub więcej) animacje jednocześnie. Pamiętaj, że program do animacji <span class="notranslate">sprite</span> powinien to uwzględnić, tak aby animacja &quot;bazowa&quot; na ścieżce 0 miała <span class="notranslate">keyframes</span> tylko dla niektórych kości, a na kolejnych ścieżkach <span class="notranslate">keyframes</span> dla pozostałych. Na przykład, jeśli masz animację &quot;chodzenia&quot;, a jej <span class="notranslate">keyframes</span> ma wpływ tylko na nogi <span class="notranslate">sprite</span>, możesz mieć zestaw animacji głowy i animacji ramion, które możesz ustawić odpowiednio w ścieżkach 1 i 2, co pozwoli Ci mieć ruch bazowy i dostosowywać go w czasie rzeczywistym podczas gry.</p>
+  <h1><span data-field="title" data-format="default">szkielet_animacji_set_ext</span></h1>
+  <p>Gdy ustawisz zestaw animacji dla animacji szkieletowej <span class="notranslate">sprite</span>, jest on wewnętrznie przypisany do <i>ścieżki 0</i>. Możesz jednak przypisać kolejne zestawy do dalszych ścieżek (od 1 wzwyż) i w ten sposób sprawić, by Twoja <span class="notranslate">sprite</span> odtwarzała dwie (lub więcej) animacje jednocześnie. Zauważ, że <span class="notranslate">sprite</span> powinien być zaprojektowany w twoim programie do animacji z tą myślą, że &quot;bazowa&quot; animacja w ścieżce 0 ma <span class="notranslate">keyframes</span> tylko dla niektórych kości, a następne ścieżki mają <span class="notranslate">keyframes</span> dla pozostałych. Na przykład, jeśli masz animację &quot;chodzenia&quot;, a jej <span class="notranslate">keyframes</span> wpływa tylko na nogi <span class="notranslate">sprite</span>, możesz wtedy mieć zestaw animacji głowy i animacji ramion, które możesz ustawić odpowiednio w ścieżkach 1 i 2, pozwalając na posiadanie ruchu bazowego i dostosowywanie się do niego w czasie rzeczywistym podczas gry.<br>
+    Animacja jest odtwarzana w pętli, co jest domyślne.</p>
   <p> </p>
   <h4>Składnia:</h4>
-  <p class="code">skeleton_animation_set_ext(animname, track);</p>
+  <p class="code"><span data-field="title" data-format="default">skeleton_animation_set_ext</span>(animname, track, [loop]);</p>
   <table>
     <tbody>
       <tr>
@@ -28,13 +29,18 @@
       </tr>
       <tr>
         <td><span class="notranslate">animname</span></td>
-        <td><span data-keyref="Type_String">String</span></td>
+        <td><span data-keyref="Type_String"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">String</a></span></td>
         <td><span class="notranslate">The name (a string) of the animation set to use.</span></td>
       </tr>
       <tr>
         <td><span class="notranslate">track</span></td>
-        <td><span data-keyref="Type_Real">Real</span></td>
+        <td><span data-keyref="Type_Real"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Real</a></span></td>
         <td><span class="notranslate">The track for the animation set to use.</span></td>
+      </tr>
+      <tr>
+        <td><span class="notranslate">loop</span></td>
+        <td><span data-keyref="Type_Bool"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Boolean</a></span></td>
+        <td><span class="notranslate"><span data-conref="../../../../../../assets/snippets/Tag_optional.hts"> </span> Czy animacja powinna <span class="notranslate">loop</span> czy nie (domyślnie jest <span class="inline2"><span class="inline">true</span></span>)</td>
       </tr>
     </tbody>
   </table>
@@ -46,13 +52,13 @@
   <h4>Przykład:</h4>
   <p class="code">if mouse_check_button(mb_left)<br />
     {<br />
-        skeleton_animation_set_ext(&quot;bodyfight&quot;, 1);<br />
+        <span data-field="title" data-format="default">skeleton_animation_set_ext</span>(&quot;bodyfight&quot;, 1);<br />
     }<br />
     else<br />
     {<br />
-        skeleton_animation_set_ext(&quot;bodywalk&quot;, 1);<br />
+        <span data-field="title" data-format="default">skeleton_animation_set_ext</span>(&quot;bodywalk&quot;, 1);<br />
     }</p>
-  <p>Powyższy kod spowoduje, że po naciśnięciu lewego przycisku myszy zestaw animacji używany przez ścieżkę 1 zostanie zmieniony na zestaw &quot;bodyfight&quot; lub &quot;bodywalk&quot;.</p>
+  <p>Powyższy kod zmieni zestaw animacji używany przez ścieżkę 1 na zestaw &quot;bodyfight&quot; lub zestaw &quot;bodywalk&quot; po wciśnięciu lewego przycisku myszy.</p>
   <p> </p>
   <p> </p>
   <p> </p>
@@ -63,7 +69,7 @@
         <div style="float:right">Następny: <a href="skeleton_animation_get_duration.htm"><span class="notranslate">skeleton_animation_get_duration</span></a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_animation_set_ext

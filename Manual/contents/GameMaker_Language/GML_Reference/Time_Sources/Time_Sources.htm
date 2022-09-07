@@ -15,35 +15,43 @@
 </head>
 <body>
   <h1>Źródła czasu</h1>
-  <p><span data-keyref="Type_Resource_TimeSource">Źródło czasu</span>&quot; to niestandardowy zegar utworzony przez użytkownika. Działa on przez określony czas, a na końcu wygasa.</p>
-  <p> <span data-keyref="Type_Resource_TimeSource">Źródło czasu</span> (TS) ma możliwość wywołania niestandardowej metody (&quot;callback&quot;) w momencie wygaśnięcia.</p>
-  <p><img>Może również powtarzać się określoną liczbę razy lub na zawsze. Każde powtórzenie <span data-keyref="Type_Resource_TimeSource">Źródła Czasu</span> jest nazywane &quot;powtórzeniem&quot;.</p>
+  <p><span data-keyref="Type_Resource_TimeSource">Źródło czasu</span>&quot; to niestandardowy timer, który tworzysz. Działa on przez określony czas, a na końcu wygasa.</p>
+  <p> <span data-keyref="Type_Resource_TimeSource">Źródło czasu</span> (TS) ma możliwość wywołania niestandardowej metody (&quot;callback&quot;) przy wygaśnięciu.</p>
+  <p><img>Jest ono również w stanie powtarzać się określoną ilość razy lub na zawsze. Każde powtórzenie <span data-keyref="Type_Resource_TimeSource">Źródła Czasu</span> jest znane jako &quot;rep&quot;.</p>
   <h2>Jak korzystać ze źródeł czasu?</h2>
-  <p>Utwórz i uruchom <span data-keyref="Type_Resource_TimeSource">źródło czasu</span>, które wywołuje metodę niestandardową:</p>
+  <p>Utwórz i uruchom <span data-keyref="Type_Resource_TimeSource">Źródło czasu</span>, które wywołuje niestandardową metodę:</p>
   <ul class="colour">
-    <li>Wywołaj <a href="time_source_create.htm"><span class="inline">time_source_create()</span></a> / <a data-xref="{title}" href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Create_Time_Source.htm">Utwórz źródło czasu</a>, aby utworzyć <span data-keyref="Type_Resource_TimeSource">źródło czasu</span>
+    <li>Wywołaj <a href="time_source_create.htm"><span class="inline">time_source_create()</span></a> / <a data-xref="{title}" href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Create_Time_Source.htm">Create Time Source</a>, aby utworzyć <a data-xref="{title}" href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Create_Time_Source.htm">źródło</a> <span data-keyref="Type_Resource_TimeSource">czasu</span>
       <ul>
-        <li>Określ, czy strona <span class="notranslate">inherits</span> ma pochodzić z globalnego <span data-keyref="Type_Resource_TimeSource">źródła czasu</span>, <span data-keyref="Type_Resource_TimeSource">źródła czasu</span> gry czy niestandardowego <span data-keyref="Type_Resource_TimeSource">źródła</span> czasu.</li>
-        <li>Określ okres czasu, przez jaki działa, oraz używane jednostki (sekundy lub klatki).</li>
-        <li>Określ niestandardową metodę lub funkcję <span class="notranslate">script</span> wraz z tablicą argumentów, które zostaną przekazane do tej metody.</li>
-        <li>Opcjonalnie można określić liczbę powtórzeń
+        <li>Określ, czy ta strona <span class="notranslate">inherits</span> ma pochodzić z globalnego <span data-keyref="Type_Resource_TimeSource">źródła czasu</span>, <span data-keyref="Type_Resource_TimeSource">źródła</span> czasu gry czy z niestandardowego <span data-keyref="Type_Resource_TimeSource">źródła</span> czasu.</li>
+        <li>Określ okres czasu, przez jaki działa, i używane jednostki (sekundy lub klatki)</li>
+        <li>Określ niestandardową metodę lub funkcję <span class="notranslate">script</span>, z tablicą argumentów, które mają być przekazane do tej metody.</li>
+        <li>Opcjonalnie, określ liczbę powtórzeń.
           <ul>
-            <li>Domyślnie funkcja jest uruchamiana tylko raz</li>
+            <li>Domyślnie jest uruchamiany tylko raz</li>
           </ul>
         </li>
       </ul>
     </li>
-    <li>Wywołaj <a href="time_source_start.htm"><span class="inline">time_source_start()</span></a> / <a data-xref="{title}" href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Start_Time_Source.htm">Start Źródło czasu</a>, aby natychmiast uruchomić to <a data-xref="{title}" href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Start_Time_Source.htm">źródło</a> <span data-keyref="Type_Resource_TimeSource">czasu</span> lub wywołać je później, gdy zajdzie potrzeba jego uruchomienia</li>
+    <li>Zadzwoń na <a href="time_source_start.htm"><span class="inline">time_source_start()</span></a> / <a data-xref="{title}" href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Start_Time_Source.htm">Start Źródło czasu</a>, aby uruchomić to <a data-xref="{title}" href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Start_Time_Source.htm">źródło</a> <span data-keyref="Type_Resource_TimeSource">czasu</span> natychmiast, lub wywołać je później, kiedy trzeba je uruchomić</li>
   </ul>
-  <p>Spowoduje to uruchomienie <span data-keyref="Type_Resource_TimeSource">źródła czasu</span>, a po upływie określonego czasu wygaśnie i wywoła wskazaną metodę.</p>
+  <p>Wykonanie tego spowoduje, że <span data-keyref="Type_Resource_TimeSource">Źródło czasu</span> będzie działać, a po określonym czasie wygaśnie i wywoła twoją określoną metodę.</p>
   <h2>Wbudowane źródła czasu</h2>
-  <p> <span data-keyref="Type_Resource_TimeSource">Źródło czasu</span> może pochodzić ze strony <span class="notranslate">inherit</span> z jednego z dwóch wbudowanych <span data-keyref="Type_Resource_TimeSource">źródeł czasu</span>lub z własnego <span data-keyref="Type_Resource_TimeSource">źródła</span> czasu.</p>
+  <p> <span data-keyref="Type_Resource_TimeSource">Źródło czasu</span> może <span class="notranslate">inherit</span> z jednego z dwóch wbudowanych źródeł <span data-keyref="Type_Resource_TimeSource">czasu</span>lub z własnego źródła <span data-keyref="Type_Resource_TimeSource">czasu</span>.</p>
   <p>Zobacz: <a data-xref="{title}" href="Built_In_Time_Sources.htm">Wbudowane źródła czasu</a></p>
+  <h2 id="h">Proste zegary</h2>
+  <p>Podczas gdy ustawienie źródła czasu nie zajmuje wielu linii kodu, wygodne może być szybkie skonfigurowanie i zarządzanie timerem za pomocą jednej funkcji.</p>
+  <p>Poniższe dwie funkcje zapewniają prostszy, skrótowy sposób tworzenia <span data-keyref="Type_Resource_TimeSource">Źródła czasu</span> i zatrzymywania go: </p>
+  <ul class="Disc">
+    <li><a data-xref="{title}" href="call_later.htm">zadzwonić później</a></li>
+    <li><a data-xref="{title}" href="call_cancel.htm">call_cancel</a></li>
+  </ul>
+  <p class="note"><span class="note">UWAGA</span> Nie można używać funkcji <span data-keyref="Type_Resource_TimeSource">źródła czasu</span> z identyfikatorami <span data-keyref="Type_Resource_TimeSource">źródła czasu</span> używanymi przez te funkcje. Zobacz <a href="call_later.htm">call_later</a>, aby uzyskać więcej informacji.</p>
   <h2>Lista funkcji</h2>
   <p>Do tworzenia i modyfikowania <span data-keyref="Type_Resource_TimeSource">Źródeł czasu</span>służą następujące funkcje:</p>
   <ul class="colour">
     <li><a data-xref="{title}" href="time_source_create.htm">time_source_create</a></li>
-    <li><a data-xref="{title}" href="time_source_destroy.htm">time_source_destroy</a></li>
+    <li><a data-xref="{title}" href="time_source_destroy.htm">zniszczyć źródło czasu</a></li>
     <li><a data-xref="{title}" href="time_source_start.htm">time_source_start</a></li>
     <li><a data-xref="{title}" href="time_source_stop.htm">time_source_stop</a></li>
     <li><a data-xref="{title}" href="time_source_pause.htm">czas_źródła_pauzy</a></li>
@@ -60,23 +68,22 @@
     <li><a data-xref="{title}" href="time_source_get_units.htm">time_source_get_units</a></li>
     <li><a data-xref="{title}" href="time_source_exists.htm">time_source_exists</a></li>
   </ul>
-  <p>Każda funkcja <span class="inline2">get_*</span> zwróci wartość <span class="inline2">undefined</span>, jeśli podane <span data-keyref="Type_Resource_TimeSource">źródło czasu</span> nie istnieje.</p>
-  <p>Do przeliczania okresów czasu służą następujące funkcje pomocnicze:</p>
+  <p>Każda funkcja <span class="inline2">get_*</span> zwróci <span class="inline2">undefined</span>, jeśli określone <span data-keyref="Type_Resource_TimeSource">Źródło czasu</span> nie istnieje.</p>
+  <p>Do przeliczania okresów czasu przewidziane są następujące funkcje pomocnicze:</p>
   <ul class="colour">
-    <li><a data-xref="{title}" href="time_seconds_to_bpm.htm">time_seconds_to_bpm</a></li>
+    <li><a data-xref="{title}" href="time_seconds_to_bpm.htm">czas_sekund_do_bpm</a></li>
     <li><a data-xref="{title}" href="time_bpm_to_seconds.htm">time_bpm_to_seconds</a></li>
   </ul>
   <p> </p>
   <p>Zobacz także: <a href="../../../Drag_And_Drop/Drag_And_Drop_Reference/Time_Sources/Time_Sources_(GML_Visual).htm">GML Visual - Źródła czasu</a></p>
   <h2>Stałe</h2>
-  <p>Następujące stałe są używane w funkcjach <span data-keyref="Type_Resource_TimeSource">Źródła czasu</span>:</p>
+  <p>Następujące stałe są używane z funkcjami <span data-keyref="Type_Resource_TimeSource">Time Source</span>:</p>
   <ul class="colour">
     <li><a data-xref="{title}" href="Built_In_Time_Sources.htm">Wbudowane źródła czasu</a></li>
     <li><a data-xref="{title}" href="Time_Source_Units.htm">Źródło czasu Jednostki</a></li>
     <li><a data-xref="{title}" href="Time_Source_Expiry_Types.htm">Typy wygaśnięcia źródła czasu</a></li>
     <li><a data-xref="{title}" href="Time_Source_States.htm">Państwa źródła czasu</a></li>
   </ul>
-  <p> </p>
   <p> </p>
   <div class="footer">
     <div class="buttons">
@@ -85,7 +92,7 @@
         <div>Następny: <a data-xref="{title}" href="../Physics/Physics.htm">Fizyka</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
 </body>
 </html>

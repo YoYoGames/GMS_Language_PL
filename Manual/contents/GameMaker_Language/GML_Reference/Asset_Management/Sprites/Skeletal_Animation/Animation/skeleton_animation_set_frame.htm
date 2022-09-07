@@ -14,11 +14,11 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>szkielet_animacji_set_frame</h1>
-  <p>Ta funkcja ustawia animację przypisaną do danej ścieżki na podaną przez użytkownika klatkę. Indeks klatki powinien być wartością rzeczywistą z przedziału od 0 do liczby klatek animacji (którą można uzyskać za pomocą funkcji <a href="skeleton_animation_get_frames.htm"><span class="inline">skeleton_animation_get_frames</span></a>). Jeśli podasz wartość spoza tego zakresu, animacja zostanie zapętlona, aby nadrobić różnicę, np. jeśli animacja ma 5 klatek, a ustawisz liczbę klatek na 8, rzeczywista wyświetlana klatka będzie miała wartość 3.</p>
+  <h1><span data-field="title" data-format="default">szkielet_animacji_set_frame</span></h1>
+  <p>Ta funkcja ustawi animację przypisaną do danej ścieżki na podaną przez Ciebie klatkę. Indeks klatki powinien być wartością rzeczywistą z przedziału od 0 do liczby klatek animacji (którą można uzyskać za pomocą funkcji <a href="skeleton_animation_get_frames.htm"><span class="inline">skeleton_animation_get_frames</span></a>). Jeśli podasz wartość spoza tego zakresu, animacja zostanie zapętlona, aby nadrobić różnicę, na przykład jeśli animacja ma 5 klatek i ustawisz klatkę na 8, rzeczywista wyświetlona klatka będzie miała wartość 3.</p>
   <p> </p>
   <h4>Składnia:</h4>
-  <p class="code">skeleton_animation_set_frame(track, index);</p>
+  <p class="code"><span data-field="title" data-format="default">skeleton_animation_set_frame</span>(track, index);</p>
   <table>
     <tbody>
       <tr>
@@ -28,12 +28,12 @@
       </tr>
       <tr>
         <td><span class="notranslate">track</span></td>
-        <td><span data-keyref="Type_Real"><a data-rhwidget="HyperlinkPopover" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span></td>
+        <td><span data-keyref="Type_Real"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Real</a></span></td>
         <td><span class="notranslate">The animation track to set the frame of.</span></td>
       </tr>
       <tr>
         <td><span class="notranslate">index</span></td>
-        <td><span data-keyref="Type_Asset_Sprite"><a data-rhwidget="HyperlinkPopover" href="../../../../../../../The_Asset_Editors/Sprites.htm">Aktywa Sprite</a></span></td>
+        <td><span data-keyref="Type_Real"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Real</a></span></td>
         <td><span class="notranslate">The new index for the animation frame.</span></td>
       </tr>
     </tbody>
@@ -46,9 +46,9 @@
   <h4>Przykład:</h4>
   <p class="code">if global.pause<br />
     {<br />
-        skeleton_animation_set_frame(0, -image_speed);<br />
+        <span data-field="title" data-format="default">skeleton_animation_set_frame</span>(0, -image_speed);<br />
     }</p>
-  <p>Powyższy kod ustawi indeks klatek animacji w ścieżce 0 na ujemną prędkość obrazu, gdy zmienna globalna &quot;pause&quot; będzie miała adres <span class="inline">true</span> (zasadniczo wstrzyma to animację).</p>
+  <p>Powyższy kod ustawi indeks klatki dla animacji w ścieżce 0 na ujemną prędkość obrazu, gdy globalna zmienna &quot;pauza&quot; jest <span class="inline">true</span> (zasadniczo wstrzymując animację).</p>
   <p> </p>
   <p> </p>
   <p> </p>
@@ -56,10 +56,10 @@
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Powrót: <a href="Animation.htm">Animacja</a></div>
-        <div style="float:right">Next: <a data-xref="{title}" href="skeleton_animation_get_event_frames.htm">szkielet_animacji_get_event_frames</a></div>
+        <div style="float:right">Następny: <a href="skeleton_animation_get_position.htm">szkielet_animacja_get_position</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_animation_set_frame

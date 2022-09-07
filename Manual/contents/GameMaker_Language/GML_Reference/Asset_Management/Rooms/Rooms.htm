@@ -15,8 +15,8 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Pokoje</h1>
-  <p>Pokoje tworzy się w <a href="../../../../The_Asset_Editors/Rooms.htm">edytorze</a> pokoi w programie <span data-keyref="GameMaker Name">GameMaker</span><span>. </span>Aby gra działała, musisz mieć przynajmniej jeden pokój <span class="notranslate">room</span>, ale w zależności od typu gry i struktury projektu możesz potrzebować wielu innych. <span class="notranslate">GML</span> W tej sekcji znajdują się wszystkie ogólne funkcje i zmienne związane z <span class="notranslate">rooms</span>, które służą do uzyskiwania informacji o nich oraz do ustawiania w nich określonych właściwości.</p>
-  <p>Do uzyskania podstawowych informacji o dowolnym pomieszczeniu można użyć następujących <a href="../../../GML_Overview/Variables/Global_Variables.htm">zmiennych globalnych</a> i funkcji:</p>
+  <p>Pokoje są tworzone w <a href="../../../../The_Asset_Editors/Rooms.htm">Room Editor</a> w <span data-keyref="GameMaker Name">GameMakerze</span><span> i </span>są miejscem, gdzie wszystko się dzieje w Twojej grze. Aby gra działała, musisz mieć przynajmniej jeden <span class="notranslate">room</span>, ale możesz potrzebować wielu innych w zależności od typu gry i struktury projektu. Ta sekcja zawiera wszystkie ogólne funkcje <span class="notranslate">GML</span> i zmienne związane z <span class="notranslate">rooms</span> i służące do uzyskiwania informacji o nich, jak również do ustawiania pewnych właściwości w nich.</p>
+  <p>Poniższe <a href="../../../GML_Overview/Variables/Global_Variables.htm">zmienne globalne</a> i funkcje mogą być wykorzystane do uzyskania podstawowych informacji o dowolnym pomieszczeniu:</p>
   <ul class="colour">
     <li><a href="room_first.htm"><span class="notranslate">room_first</span></a></li>
     <li><a href="room_last.htm"><span class="notranslate">room_last</span></a></li>
@@ -28,8 +28,11 @@
     <li><a href="room_width.htm"><span class="notranslate">room_width</span></a></li>
     <li><a href="room_persistent.htm"><span class="notranslate">room_persistent</span></a></li>
   </ul>
-  <p> </p>
-  <p>Można także użyć następujących funkcji, aby uzyskać nazwę bieżącego adresu <span class="notranslate">room</span> (zdefiniowanego w <a href="../../../../Introduction/The_Asset_Browser.htm">Przeglądarce zasobów</a>) oraz przemieszczać się między pomieszczeniami:</p>
+  <p class="note"><span class="note">UWAGA</span> Wymienione powyżej zmienne nie będą obowiązywały w <span class="notranslate">script</span>, ponieważ <span class="notranslate">scripts</span> są wykonywane przed załadowaniem pierwszego <span class="notranslate">room</span>.<br>
+    <br>
+    Dotyczy to tylko kodu napisanego w korzeniu <span class="notranslate">script</span>, ale nie funkcji utworzonych wewnątrz <span class="notranslate">scripts</span>, ponieważ te funkcje mogą być wykonywane w dowolnym momencie gry.
+  </p>
+  <p>Możesz również użyć następujących funkcji, aby uzyskać nazwę bieżącego <span class="notranslate">room</span> (jak zdefiniowano w <a href="../../../../Introduction/The_Asset_Browser.htm">Asset Browser</a>), jak również poruszać się pomiędzy pomieszczeniami:</p>
   <ul class="colour">
     <li><a href="room_get_name.htm"><span class="notranslate">room_get_name</span></a></li>
     <li><a href="room_goto.htm"><span class="notranslate">room_goto</span></a></li>
@@ -38,7 +41,7 @@
     <li><a href="room_restart.htm"><span class="notranslate">room_restart</span></a></li>
   </ul>
   <p> </p>
-  <p>Następnie mamy szereg funkcji, których można użyć do zmiany adresu <span class="notranslate">rooms</span> i jego zawartości, a nawet do tworzenia nowych adresów <span class="notranslate">rooms</span> i dodawania do nich nowych elementów. Należy zauważyć, że funkcji tych <i>nie</i> należy <i>nigdy uruchamiać z poziomu strony <span class="notranslate">room</span>, którą chcemy zmienić</i>, lecz najpierw z instancji w innej <span class="notranslate">room</span>. Pamiętaj też, że jeśli zmienisz w ten sposób dowolny adres <span class="notranslate">room</span> <span class="notranslate">asset</span>, zmiana ta będzie <strong>trwała</strong> przez cały czas trwania gry, nawet jeśli wywołasz funkcję room_restart() (zamknięcie i ponowne uruchomienie gry spowoduje jednak zresetowanie właściwości <span class="notranslate">room</span> ).</p>
+  <p>Następnie mamy serię funkcji, które mogą być użyte do zmiany <span class="notranslate">rooms</span> i ich zawartości lub nawet do tworzenia nowych <span class="notranslate">rooms</span> i dodawania do nich. Należy zauważyć, że te funkcje <i>nigdy nie</i> powinny <i>być uruchamiane z wnętrza <span class="notranslate">room</span>, który chcesz zmienić</i>, ale raczej najpierw powinny być uruchamiane z instancji w innym <span class="notranslate">room</span>. Zauważ również, że jeśli zmienisz w ten sposób dowolną <span class="notranslate">room</span> <span class="notranslate">asset</span>, zmiana jest <strong>trwała</strong> i będzie utrzymana przez cały czas trwania gry, nawet jeśli wywołasz funkcję room_restart() (zamknięcie i ponowne uruchomienie gry zresetuje jednak właściwości <span class="notranslate">room</span> ).</p>
   <ul class="colour">
     <li><a href="room_exists.htm"><span class="notranslate">room_exists</span></a></li>
     <li><a href="room_add.htm"><span class="notranslate">room_add</span></a></li>
@@ -56,16 +59,17 @@
     <li><a href="room_get_camera.htm"><span class="notranslate">room_get_camera</span></a></li>
   </ul>
   <p> </p>
-  <p>Istnieje także wiele różnych funkcji związanych z tworzeniem i manipulowaniem różnymi typami elementów, które można umieszczać na warstwach w witrynie <span class="notranslate">room</span>. Funkcje te wymieniono w odpowiednich sekcjach dla każdego typu elementów wymienionych poniżej:</p>
+  <p>Istnieje również szereg różnych funkcji związanych z tworzeniem i manipulowaniem różnymi typami elementów, które mogą być umieszczane na warstwach w serwisie <span class="notranslate">room</span>. Funkcje te są wymienione w odpowiednich sekcjach dla każdego typu elementu wymienionego poniżej:</p>
   <ul class="colour">
     <li><a href="General_Layer_Functions/General_Layer_Functions.htm">Funkcje warstwy ogólnej</a></li>
-    <li><a href="Tile_Map_Layers/Tile_Map_Layers.htm">Warstwy mapy kafelków</a></li>
+    <li><a href="Tile_Map_Layers/Tile_Map_Layers.htm">Warstwy mapy kafelkowej</a></li>
     <li><a href="Background_Layers/Background_Layers.htm">Warstwy tła</a></li>
     <li><a href="Sprite_Layers/Sprite_Layers.htm">Warstwy sprajtów</a></li>
     <li><a href="Sequence_Layers/Sequence_Layers.htm">Warstwy sekwencji</a></li>
+    <li><a href="Filter_Effect_Layers/Filter_Effect_Functions.htm">Funkcje filtrów i efektów</a></li>
   </ul>
   <p> </p>
-  <p>Ważną rzeczą, na którą należy zwrócić uwagę podczas tworzenia warstw <span class="notranslate">room</span>, jest to, że <i>na jednej warstwie można umieścić wiele różnych typów elementów</i>. Można na przykład utworzyć warstwę dla wrogów, a na niej umieścić instancje wrogów oraz pewne elementy <span class="notranslate">sprite</span> <span class="notranslate">assets</span>, które są związane tylko z danym wrogiem. Można też połączyć element tła z elementem mapy <span class="notranslate">tile</span>, aby uzyskać wygląd <span class="notranslate">room</span>. Nie jest to dozwolone w edytorze <span class="notranslate">room</span>, ale podczas dynamicznego tworzenia elementów można to robić, dlatego właśnie istnieją takie funkcje, jak <a href="General_Layer_Functions/layer_get_all_elements.htm"><span class="inline">layer_get_all_elements()</span></a> istnieją.</p>
+  <p>Ważną rzeczą do zapamiętania podczas tworzenia warstw <span class="notranslate">room</span> jest to, że <i>możesz mieć wiele różnych typów elementów na jednej war</i>stwie. Na przykład możesz mieć warstwę dla wrogów, a na niej instancje wroga oraz pewne <span class="notranslate">sprite</span> <span class="notranslate">assets</span>, które są związane tylko z tym wrogiem. Możesz też mieć element tła z elementem mapy <span class="notranslate">tile</span>, aby stworzyć wygląd <span class="notranslate">room</span>. Nie jest to dozwolone w edytorze <span class="notranslate">room</span>, ale podczas dynamicznego tworzenia rzeczy możesz to zrobić, dlatego funkcje takie jak <a href="General_Layer_Functions/layer_get_all_elements.htm"><span class="inline">layer_get_all_elements()</span></a> istnieją.</p>
   <p> </p>
   <p> </p>
   <p> </p>
@@ -73,10 +77,10 @@
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Powrót: <a href="../Asset_Management.htm">Zarządzanie aktywami</a></div>
-        <div style="float:right">Następny: <a data-xref="{title}" href="../Extensions/Extensions.htm">Rozszerzenia</a></div>
+        <div style="float:right">Dalej: <a data-xref="{title}" href="../Extensions/Extensions.htm">Rozszerzenia</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 Rooms

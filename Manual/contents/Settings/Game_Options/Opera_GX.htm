@@ -14,43 +14,57 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>Opera GX Opcje gry</h1>
-  <p>Opcje gry Opera GX umożliwiają modyfikowanie właściwości gry GXC. Dostępne są następujące sekcje:</p>
+  <h1>Opcje gry Opera GX</h1>
+  <p>Opcje gry Opera GX pozwalają na modyfikację właściwości Twojej gry. Dostępne są następujące sekcje:</p>
   <h2>Ogólne</h2>
-  <p><img>W tej sekcji dostępne są następujące opcje:</p>
+  <p><img>To okno pokazuje status logowania do Opera GX. Możesz kliknąć ikonę <img> Refresh, aby zalogować się przy użyciu swojego konta Opera.</p>
+  <p>Masz wtedy do dyspozycji następujące opcje:</p>
   <ul class="colour">
-    <li><strong>GXC GUID</strong>: Jest to identyfikator (ID), który łączy Twój projekt <span class="notranslate">GameMaker</span> z grą na GXC. Gdy ten identyfikator jest pusty, gra jest przesyłana do GXC jako nowa gra. Jeśli zawiera prawidłowy identyfikator GUID, gra GXC powiązana z tym identyfikatorem jest aktualizowana przy każdym nowym przesyłaniu.</li>
-    <li><strong>Nazwa gry</strong>: Jest to nazwa (tytuł) Twojej gry na GXC. Możesz zmienić to pole tylko przed wysłaniem gry na GXC (gdy pole GUID jest puste). Po pierwszym załadowaniu gry możesz zmienić jej nazwę tylko na GXC.</li>
-    <li><strong>Wersja</strong>: Jest to wersja gry, która została ostatnio załadowana. Możesz zmienić to pole tylko przed wysłaniem gry do GXC.</li>
-    <li><strong>Następna wersja:</strong> Jest to numer wersji, która zostanie użyta do następnego załadowania gry na GXC. Możesz go zmienić dopiero po wysłaniu gry na GXC. Nie musisz zmieniać tej wartości ręcznie przy każdym wysyłaniu gry, ponieważ <span class="notranslate">GameMaker</span> automatycznie zwiększy ostatnią cyfrę numeru wersji.</li>
-    <li><strong>Zaloguj się i zsynchronizuj</strong>: Kliknij ten przycisk, aby pobrać informacje z gry GXC powiązanej z podanym identyfikatorem GUID. Jeśli identyfikator GUID jest nieprawidłowy, nie można przeprowadzić synchronizacji.</li>
-    <li><strong>Nazwa zespołu</strong>: Jest ona automatycznie pobierana z GXC podczas synchronizacji projektu. W tym miejscu nie można jej zmienić.</li>
-    <li><strong>Edytuj grę w Operze</strong>: To otwiera GXC DevCloud i przenosi Cię na stronę &quot;Szczegóły gry&quot;. Kliknięcie na tę stronę jest możliwe tylko wtedy, gdy projekt jest zsynchronizowany.</li>
-    <li><strong>Wewnętrzny URL udostępniania</strong>: Otwiera prywatną wersję Twojej gry, tylko jeśli została ona włączona w GXC DevCloud.</li>
-    <li><strong>Public Share URL</strong>: Otwiera publiczną wersję Twojej gry, tylko jeśli została ona włączona w GXC DevCloud.<br>
+    <li><b>Wybierz</b> grę: Z tej listy możesz wybrać istniejącą grę do aktualizacji lub wybrać przesłanie nowej gry.</li>
+    <li><strong>Nazwa</strong> gry: To jest nazwa (tytuł) twojej gry na GX.games.<br>
       <br>
-      Oba te adresy URL mogą być udostępnione innym, aby umożliwić im grę w Twoją grę.
+     <span class="important">WAŻNE</span> Aby przesyłanie na GX.games zakończyło się sukcesem, ważne jest, aby w nazwie gry używać tylko dozwolonych znaków (domyślnie ustawiona jest nazwa projektu <span class="notranslate">GameMaker</span>, więc upewnij się, że wybrałeś poprawną nazwę projektu lub ręcznie zmieniłeś nazwę gry).<br>
+      <br>
+      Jeśli załadujesz grę z tytułem zawierającym niedozwolone znaki, otrzymasz ten błąd: <span><span class="inline2">Nieprawidłowe dane. Sprawdź dane wyjściowe</span></span><br>
+      <br>
+      Dozwolone znaki to: 
+      <ul>
+        <li>a-z, A-Z (z obsługą schematów lokalnych, takich jak å)</li>
+        <li>0-9</li>
+        <li>Whitespace</li>
+        <li>: - ! ? . , ' &amp; ( )</li>
+      </ul>
+    </li>
+    <li><strong>Wersja</strong>: Jest to wersja gry, która została ostatnio przesłana. Możesz zmienić to pole tylko przed wysłaniem gry do GX.games.</li>
+    <li><strong>Następna wersja:</strong> Jest to numer wersji, który zostanie użyty do następnego przesłania gry na GX.games. Możesz go zmienić dopiero po przesłaniu gry na GX.games. Nie musisz zmieniać tego numeru ręcznie przy każdym przesyłaniu, ponieważ <span class="notranslate">GameMaker</span> automatycznie zwiększy ostatnią cyfrę numeru wersji.</li>
+    <li><b>Zarejestruj się na GX.games</b>: Kliknij ten przycisk, aby zarejestrować nowy wpis na GX.games. Jest to ważne tylko wtedy, gdy opcja &quot;<strong>Wybierz grę</strong>&quot; jest ustawiona na &quot;<strong>Nowa</strong> gra&quot;.</li>
+    <li><strong>Wybierz grupę</strong>: Przed wgraniem nowej gry możesz wybrać studio, do którego będzie ona należała.</li>
+    <li><strong>Edytuj grę w Operze</strong>: Otwiera to GX.games DevCloud i przenosi do strony &quot;Szczegóły gry&quot;. Można ją kliknąć tylko wtedy, gdy jesteś zalogowany i twoja gra jest załadowana.</li>
+    <li><strong>Wewnętrzny URL udostępniania</strong>: Otwiera prywatną wersję Twojej gry, tylko jeśli została ona włączona na GX.games DevCloud.</li>
+    <li><strong>Public Share URL</strong>: Otwiera publiczną wersję Twojej gry, tylko jeśli została ona włączona na GX.games DevCloud.<br>
+      <br>
+      Oba te adresy można udostępnić innym osobom, aby umożliwić im granie w Twoją grę.
     </li>
   </ul>
   <h2>Grafika</h2>
-  <p><img>W tym miejscu możesz zmienić następujące szczegóły dotyczące sposobu wyświetlania Twojej gry:</p>
+  <p><img>Tutaj możesz zmienić następujące szczegóły związane z tym, jak będzie wyświetlana Twoja gra:</p>
   <ul class="colour">
-    <li><strong>Wyświetl kurs</strong>or: Określa, czy kursor myszy jest widoczny podczas uruchamiania gry. Przydatne w grach, które nie wymagają obsługi myszy lub używają <a href="../../GameMaker_Language/GML_Reference/General_Game_Control/cursor_sprite.htm">niestandardowego obrazka myszy</a>.</li>
-    <li><strong>Interpoluj kolory między pikselami</strong>: Włącza <a class="glossterm" data-glossterm="interpolacja liniowa">interpolację liniową</a>, która zasadniczo &quot;wygładza&quot; piksele. W przypadku wyraźnej grafiki pikselowej powinno być wyłączone, ale jeśli chcesz uzyskać ładne mieszanki alfa i grafikę o wygładzonych krawędziach, lepiej pozostawić to włączone. Domyślnie opcja ta jest włączona.</li>
-    <li><strong>Skalowanie</strong>: Grę można skonfigurować tak, aby automatycznie skalowała rysowany obszar, <strong>zachowując proporcje </strong>obrazu w przeglądarce, lub aby działała w <strong>pełnej skali</strong>. Opcja pełnego skalowania nie spowoduje wyświetlenia gry na pełnym ekranie w przeglądarce, ale raczej rozciągnie rysowane elementy, aby dopasować je do rozmiaru płótna, określonego przez pierwszą stronę <span class="notranslate">room</span> gry. Domyślnie jest ustawiona na zachowanie proporcji obrazu.</li>
+    <li><strong>Wyświetl</strong> kursor: Kontroluje, czy kursor myszy jest widoczny podczas uruchamiania gry. Przydatne w grach, które nie wymagają użycia myszy lub używają <a href="../../GameMaker_Language/GML_Reference/General_Game_Control/cursor_sprite.htm">niestandardowych sprite</a>'ów myszy.</li>
+    <li><strong>Interpoluj kolory między pikselami</strong>: Włącza <a class="glossterm" data-glossterm="interpolacja liniowa">interpolację liniową</a>, która w zasadzie &quot;wygładza&quot; piksele. Dla ostrej grafiki pikselowej powinno być wyłączone, ale jeśli masz ładne mieszanki alfa i wygładzone krawędzie grafiki, to lepiej zostawić włączone. Ta opcja jest domyślnie włączona.</li>
+    <li><strong>Skalowanie</strong>: Twoja gra może być skonfigurowana tak, aby automatycznie skalować rysowane płótno, aby <strong>zachować proporcje </strong>w przeglądarce, lub możesz wybrać, aby działała w <strong>pełnej skali</strong>. Opcja pełnej skali nie spowoduje wyświetlenia gry na pełnym ekranie w przeglądarce, ale raczej rozciągnie to, co jest rysowane, aby dopasować rozmiar płótna, jak określono w pierwszym <span class="notranslate">room</span> gry. Domyślnie jest to ustawione na zachowanie proporcji.</li>
   </ul>
-  <p>Na koniec jest jeszcze opcja ustawienia rozmiaru <a class="glossterm" data-glossterm="strona tekstury" href="macOS.htm#">strony tekstury</a>. Domyślnym (i najbardziej kompatybilnym) rozmiarem jest 2048x2048, ale można wybrać dowolny rozmiar z zakresu od 256x256 do 8192x8192. Dostępny jest także przycisk oznaczony <strong><strong>Podgląd </strong></strong>który wygeneruje strony <span class="notranslate">texture</span> dla tej platformy, a następnie otworzy okno, w którym będzie można zobaczyć, jak wyglądają. Może to być bardzo przydatne, jeśli chcesz zobaczyć, jaką strukturę mają strony <span class="notranslate">texture</span> i uniknąć sytuacji, w której strony <span class="notranslate">texture</span> byłyby większe (lub mniejsze) niż to konieczne. Więcej informacji na temat stron <span class="notranslate">texture</span> można znaleźć <a href="../Texture_Information/Texture_Pages.htm">tutaj</a>.</p>
+  <p>Wreszcie istnieje możliwość ustawienia rozmiaru <a class="glossterm" data-glossterm="strona z teksturą" href="macOS.htm#">strony tekstury</a>. Domyślny (i najbardziej kompatybilny) rozmiar to 2048x2048, ale można wybrać dowolny pomiędzy 256x256 aż do 8192x8192. Jest też przycisk oznaczony <strong><strong>Podgląd </strong></strong>który wygeneruje strony <span class="notranslate">texture</span> dla tej platformy, a następnie otworzy okno, abyś mógł zobaczyć, jak wyglądają. Może to być bardzo przydatne, jeśli chcesz zobaczyć, jak zbudowane są strony <span class="notranslate">texture</span> i uniknąć sytuacji, w której strony <span class="notranslate">texture</span> będą większe (lub mniejsze) niż to konieczne. Więcej informacji na temat stron <span class="notranslate">texture</span> można znaleźć <a href="../Texture_Information/Texture_Pages.htm">tutaj</a>.</p>
   <p> </p>
   <p> </p>
   <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Wstecz: <a href="../Game_Options.htm">Opcje gry</a></div>
+        <div style="float:left">Powrót: <a href="../Game_Options.htm">Opcje gry</a></div>
         <div style="float:right">Następny: <a href="Windows.htm">Windows</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 Opera GX Game Options

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>string_length</title>
+  <title>długość ciągu</title>
   <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <script src="../../../assets/scripts/main_script.js"></script>
@@ -15,33 +15,35 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1>string_length</h1>
-  <p>Ta funkcja zwraca liczbę znaków składających się na dany adres <span class="notranslate">string</span>. Może to być przydatne, np. przy ustalaniu, kiedy ograniczyć długość znaków w niestandardowym wpisie tekstowym (np. ograniczyć imię gracza do 10 znaków). Pamiętaj, że ta wartość różni się od <a href="string_width.htm"><span class="inline">string_width()</span></a> tym, że mierzy ona liczbę <i>znaków</i> w <span class="notranslate">string</span>, a nie ich szerokość na ekranie w pikselach.</p>
+  <h1>długość ciągu</h1>
+  <p>Ta funkcja zwraca liczbę znaków składających się na dany adres <span class="notranslate">string</span>. Może być przydatna do takich rzeczy jak sprawdzenie, kiedy ograniczyć długość znaków we wpisie tekstowym (np.: ograniczenie nazwy gracza do 10 znaków). Pamiętaj, że różni się to od <a href="string_width.htm"><span class="inline">string_width()</span></a> tym, że mierzy liczbę <i>znaków</i> w <span class="notranslate">string</span>, a nie szerokość w pikselach na ekranie.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">string_length(string);</p>
   <table>
     <tbody>
       <tr>
-        <th>Argument</th><th>Typ</th>
+        <th>Argument</th>
+        <th>Typ</th>
         <th>Opis</th>
-     </tr>
+      </tr>
       <tr>
-        <td><span class="notranslate">string</span></td><td><span data-keyref="Type_String"></span></td>
+        <td><span class="notranslate">string</span></td>
+        <td><span data-keyref="Type_String"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">String</a></span></td>
         <td><span class="notranslate">The string to measure the number of characters of.</span></td>
-     </tr>
+      </tr>
     </tbody>
   </table>
   <p> </p>
   <h4>Zwroty:</h4>
-  <p class="code"><span data-keyref="Type_Real"></span></p>
+  <p class="code"><span data-keyref="Type_Real"><a href="../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Real</a></span></p>
   <p> </p>
   <h4>Przykład:</h4>
   <p class="code">if (string_length(name) &gt; 10)<br />
     {<br />
         name = string_copy(name, 1, 10);<br />
     }</p>
-  <p>Funkcja ta sprawdzi, czy adres <span class="notranslate">string</span> nazwy jest większy niż dziesięć znaków, a jeśli tak, to skopiuje i wykorzysta tylko pierwsze dziesięć znaków.</p>
+  <p>To sprawdzi, czy <span class="notranslate">string</span> nazwy jest większy niż dziesięć znaków, a jeśli tak, to skopiuje i użyje tylko pierwszych dziesięciu znaków.</p>
   <p> </p>
   <p> </p>
   <p> </p>
@@ -52,7 +54,7 @@
         <div style="float:right">Następny: <a href="string_letters.htm"><span class="notranslate">string_letters</span></a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 string_length

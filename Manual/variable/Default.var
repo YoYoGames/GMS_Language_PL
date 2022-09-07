@@ -396,6 +396,22 @@
 <topicmeta>
 <keywords>
 <keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get_mask.htm&quot;&gt;Tile Mask Constant&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
+<keydef keys="Type_Constant_TimeSource_BuiltIn">
+<topicmeta>
+<keywords>
+<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Reference/Time_Sources/Built_In_Time_Sources.htm&quot;&gt;Time Source Constant&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
+<keydef keys="Type_Constant_TimeSource_Expiry">
+<topicmeta>
+<keywords>
+<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Expiry_Types.htm&quot;&gt;Time Source Expiry Constant&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
+<keydef keys="Type_Constant_TimeSource_State">
+<topicmeta>
+<keywords>
+<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Reference/Time_Sources/Time_Source_States.htm&quot;&gt;Time Source State Constant&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
+<keydef keys="Type_Constant_TimeSource_Unit">
+<topicmeta>
+<keywords>
+<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Units.htm&quot;&gt;Time Source Unit Constant&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
 <keydef keys="Type_Constant_TimeZone">
 <topicmeta>
 <keywords>
@@ -632,6 +648,10 @@
 <topicmeta>
 <keywords>
 <keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Reference/Drawing/Surfaces/surface_create.htm&quot;&gt;Surface ID&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
+<keydef keys="Type_ID_TimeSource">
+<topicmeta>
+<keywords>
+<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Reference/Time_Sources/time_source_create.htm&quot;&gt;Time Source ID&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
 <keydef keys="Type_ID_Vertex_Format">
 <topicmeta>
 <keywords>
@@ -687,7 +707,7 @@
 <keydef keys="Type_Real_int64">
 <topicmeta>
 <keywords>
-<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Overview/Data_Types.htm&quot;&gt;int64 (64-bit integer)&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
+<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Overview/Data_Types.htm&quot;&gt;int64 (signed 64-bit integer)&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
 <keydef keys="Type_Real_Not_Found">
 <topicmeta>
 <keywords>
@@ -696,6 +716,10 @@
 <topicmeta>
 <keywords>
 <keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Reference/Asset_Management/Rooms/Tile_Map_Layers/tilemap_get.htm&quot;&gt;Tile Data&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
+<keydef keys="Type_Resource_TimeSource">
+<topicmeta>
+<keywords>
+<keyword>Time Source</keyword></keywords></topicmeta></keydef>
 <keydef keys="Type_String">
 <topicmeta>
 <keywords>
@@ -792,27 +816,27 @@
 <topicmeta>
 <keywords>
 <keyword>N/A</keyword></keywords></topicmeta></keydef>
-<keydef keys="Type_Resource_TimeSource">
+<keydef keys="Unit_Vector_X">
 <topicmeta>
 <keywords>
-<keyword>Time Source</keyword></keywords></topicmeta></keydef>
-<keydef keys="Type_ID_TimeSource">
+<keyword>(1, 0, 0)</keyword></keywords></topicmeta></keydef>
+<keydef keys="Unit_Vector_Y">
 <topicmeta>
 <keywords>
-<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Reference/Time_Sources/time_source_create.htm&quot;&gt;Time Source ID&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
-<keydef keys="Type_Constant_TimeSource_Unit">
+<keyword>(0, 1, 0)</keyword></keywords></topicmeta></keydef>
+<keydef keys="Unit_Vector_Z">
 <topicmeta>
 <keywords>
-<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Units.htm&quot;&gt;Time Source Unit Constant&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
-<keydef keys="Type_Constant_TimeSource_BuiltIn">
+<keyword>(0, 0, 1)</keyword></keywords></topicmeta></keydef>
+<keydef keys="Position_Origin">
 <topicmeta>
 <keywords>
-<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Reference/Time_Sources/Built_In_Time_Sources.htm&quot;&gt;Time Source Constant&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
-<keydef keys="Type_Constant_TimeSource_Expiry">
+<keyword>(0, 0, 0)</keyword></keywords></topicmeta></keydef>
+<keydef keys="Company Name">
 <topicmeta>
 <keywords>
-<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Reference/Time_Sources/Time_Source_Expiry_Types.htm&quot;&gt;Time Source Expiry Constant&lt;/a&gt;</keyword></keywords></topicmeta></keydef>
-<keydef keys="Type_Constant_TimeSource_State">
+<keyword>YoYo Games</keyword></keywords></topicmeta></keydef>
+<keydef keys="Company Structure Suffix">
 <topicmeta>
 <keywords>
-<keyword>&lt;a target=&quot;_blank&quot; href=&quot;GameMaker_Language/GML_Reference/Time_Sources/Time_Source_States.htm&quot;&gt;Time Source State Constant&lt;/a&gt;</keyword></keywords></topicmeta></keydef></map>
+<keyword>Ltd.</keyword></keywords></topicmeta></keydef></map>

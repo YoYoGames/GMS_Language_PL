@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Uzyskaj dane wejściowe</title>
+  <title>Get Input (Rollback)</title>
   <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../../assets/css/default.css" type="text/css" />
   <script src="../../../assets/scripts/main_script.js"></script>
@@ -15,15 +15,15 @@
 </head>
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
-  <h1><img> Uzyskaj dane wejściowe</h1>
-  <p>Ta akcja zwraca stronę <span class="notranslate">struct</span> zawierającą wartości wejściowe dla gracza. Pobiera opcjonalny argument określający identyfikator gracza, dla którego zostaną zwrócone dane wejściowe.</p>
-  <p>Do sprawdzania wejść w grze wieloosobowej zaleca się używanie opcji Jeśli klawisz w <a data-xref="{title}" href="If_Key_Down_(Rollback).htm">dół (Rollback)</a>, Jeśli <a data-xref="{title}" href="If_Key_Up_(Rollback).htm">klawisz</a> <a data-xref="{title}" href="If_Key_Pressed_(Rollback).htm">naciśnięty (</a> Rollback) i <a data-xref="{title}" href="If_Key_Up_(Rollback).htm">Jeśli klawisz w górę (</a> Rollback).</p>
-  <p>W przypadku użycia w instancji gracza, która została utworzona za pomocą polecenia <a data-xref="{title}" href="Define_Player.htm">Zdefiniuj</a> gracza, nie trzeba podawać identyfikatora gracza, więc wystarczy podać <span class="inline2">player_id</span>.</p>
-  <p>Jeśli używasz go w innych instancjach lub w instancjach graczy utworzonych ręcznie, musisz podać identyfikator gracza.</p>
-  <p>Informacje o tym, jakie dane wejściowe są zwracane i jak można je zmienić, można znaleźć w temacie <a data-xref="{title}" href="../../../GameMaker_Language/GML_Reference/Rollback/Defining_Inputs.htm">Definiowanie danych wejściowych</a>.</p>
+  <h1><img> Get Input (Rollback)</h1>
+  <p>Ta akcja zwraca adres <span class="notranslate">struct</span> zawierający wartości wejściowe dla gracza. Przyjmuje opcjonalny argument określający ID gracza, dla którego zostaną zwrócone dane wejściowe.</p>
+  <p>Zaleca się używanie <a data-xref="{title}" href="If_Key_Down_(Rollback).htm">If Key Down (Rollback)</a>, If <a data-xref="{title}" href="If_Key_Pressed_(Rollback).htm">Key Pressed (Roll</a> back) i <a data-xref="{title}" href="If_Key_Up_(Rollback).htm">If Key Up (</a> Rollback) do sprawdzania wejść w multiplayerze.</p>
+  <p>Kiedy jest używany w instancji gracza, która została utworzona przez <a data-xref="{title}" href="Define_Player.htm">Define Player (Rollback)</a>, nie musisz określać ID gracza, więc możesz po prostu podać <span class="inline2">player_id</span>.</p>
+  <p>Kiedy używasz ich w innych instancjach lub instancjach graczy, które zostały utworzone ręcznie, musisz określić ID gracza.</p>
+  <p>Informacje o tym, jakie dane wejściowe są zwracane i jak można je zmienić, można znaleźć w części <a data-xref="{title}" href="../../../GameMaker_Language/GML_Reference/Rollback/Defining_Inputs.htm">Definiowanie</a> danych wejściowych.</p>
   <p> </p>
-  <h4>Składnia działania:</h4>
-  <p><img alt="Get Random Number Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Random/i_Mathematics_Get_Random_Number.png" /></p>
+  <h4>Action Syntax:</h4>
+  <p><img alt="Get Random Number Icon" class="icon" src="../../../assets/Images/Scripting_Reference/Drag_And_Drop/Reference/Rollback/i_get_input.jpg" /></p>
   <h4>Argumenty:</h4>
   <table>
     <tbody>
@@ -33,11 +33,11 @@
       </tr>
       <tr>
         <td><span class="notranslate">Player ID</span></td>
-        <td>Identyfikator gracza, dla którego mają zostać pobrane dane wejściowe</td>
+        <td>ID gracza, który ma otrzymać dane wejściowe</td>
       </tr>
       <tr>
         <td><span class="notranslate">Target</span></td>
-        <td>Zmienna, w której ma być przechowywany zwrócony adres <span class="notranslate">struct</span> </td>
+        <td>Zmienna, w której ma być zapisany zwrócony <span class="notranslate">struct</span> </td>
       </tr>
     </tbody>
   </table>
@@ -47,17 +47,17 @@
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Powrót: <a data-xref="{title}" href="Rollback_Actions.htm">Cofnij Akcje wieloosobowe</a></div>
-        <div style="float:right">Następny: <a data-xref="{title}" href="If_Key_Down_(Rollback).htm">Jeśli klawisz w dół (cofnij)</a></div>
+        <div style="float:left">Wstecz: <a data-xref="{title}" href="Rollback_Actions.htm">Rollback Akcje wieloosobowe</a></div>
+        <div style="float:right">Next: <a data-xref="{title}" href="If_Key_Down_(Rollback).htm">If Key Down (Rollback)</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 Action - Get Input
 -->
   <!-- TAGS
-action_get_input
+action_rollback_get_input
 -->
 </body>
 </html>

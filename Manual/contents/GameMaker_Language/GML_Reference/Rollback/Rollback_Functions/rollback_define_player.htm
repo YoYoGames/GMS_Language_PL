@@ -17,13 +17,13 @@
 </head>
 <body>
   <h1>cofnij_define_player</h1>
-  <p>Ta funkcja mówi systemowi Rollback: <span class="notranslate">object</span>, który powinien być używany dla graczy. Jest to opcjonalne, ale jeśli zostanie użyte, system będzie automatycznie tworzył instancje dla graczy, którzy się łączą i niszczył instancje dla graczy, którzy się rozłączają.</p>
-  <p>Informacje na temat tworzenia gry z tą funkcją lub bez niej można znaleźć w temacie <a data-xref="{text}" href="../Rollback_System.htm#h1">Definiowanie obiektu gracza</a>.</p>
-  <p>Jeśli funkcja ta jest używana, musi być uruchamiana przed funkcją <a href="rollback_join_game.htm">join/create</a>.</p>
-  <p>Każda instancja utworzona za pomocą tej funkcji otrzymuje zmienną <span class="inline"><a href="../Rollback_Variables/player_id.htm">player_id</a></span> i <span class="inline"><a href="../Rollback_Variables/player_local.htm">player_local</a></span>.</p>
+  <p>Ta funkcja definiuje <span class="notranslate">object</span>, który powinien być używany dla graczy w multiplayerze. Jest to opcjonalne, a gdy zostanie użyte, system automatycznie stworzy instancje dla graczy, którzy się łączą i zniszczy instancje dla graczy, którzy się rozłączają.</p>
+  <p>Domyślnie tworzy to instancje graczy w warstwie <span class="inline2">&quot;Instances&quot;</span>, która musi istnieć w twojej grze <span class="notranslate">room</span>. Jeśli chcesz użyć innej warstwy, przekaż jej nazwę jako drugi argument.</p>
+  <p>Aby uzyskać informacje na temat tworzenia gry z lub bez tej funkcji, zobacz <a data-xref="{text}" href="../Rollback_System.htm#h1">Definiowanie obiektu gracza</a>. Jeśli jest używana, ta funkcja musi być uruchomiona przed funkcją <a href="rollback_join_game.htm">join/create</a>.</p>
+  <p>Każda instancja utworzona za pomocą tej funkcji otrzymuje <a href="../Rollback_Variables/Rollback_Variables.htm">zmienne instancji wymienione na tej stronie</a>.</p>
   <p> </p>
   <h4>Składnia:</h4>
-  <p class="code">rollback_define_player(object);</p>
+  <p class="code">rollback_define_player(object, [layer_name]);</p>
   <table>
     <colgroup>
       <col />
@@ -41,6 +41,11 @@
         <td><span data-keyref="Type_Asset_Object"><a href="../../../../../The_Asset_Editors/Objects.htm" target="_blank">Obiekt Aktywa</a></span></td>
         <td><span class="notranslate">The object that will be used for creating player instances.</span></td>
       </tr>
+      <tr>
+        <td><span class="notranslate">layer_name</span></td>
+        <td><span data-keyref="Type_String"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">String</a></span></td>
+        <td><span class="notranslate"><span class="optional">OPTIONAL</span> Nazwa warstwy, na której będą tworzone instancje graczy. Domyślnie <span class="inline2">&quot;Instancje&quot;</span>.</td>
+      </tr>
     </tbody>
   </table>
   <p> </p>
@@ -56,17 +61,17 @@
         rollback_start_game(2, false);<br />
     }
   </p>
-  <p>Powyższy kod definiuje gracza <span class="notranslate">object</span>, a następnie próbuje dołączyć do gry. Jeśli nie został dołączony, rozpoczyna nową grę, w której może brać udział maksymalnie dwóch graczy, a test synchronizacji jest wyłączony.</p>
+  <p>Powyższy kod definiuje gracza <span class="notranslate">object</span>, a następnie próbuje dołączyć do gry. Jeśli nie został dołączony, zamiast tego rozpoczyna nową grę, z maksymalnie 2 graczami i wyłączonym testem synchronizacji.</p>
   <p> </p>
   <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
         <div>Powrót: <a data-xref="{title}" href="Rollback_Functions.htm">Funkcje cofania</a></div>
-        <div>Next: <a data-xref="{title}" href="rollback_display_events.htm">rollback_display_events</a></div>
+        <div>Następny: <a data-xref="{title}" href="rollback_display_events.htm">rollback_display_events</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 rollback_define_player

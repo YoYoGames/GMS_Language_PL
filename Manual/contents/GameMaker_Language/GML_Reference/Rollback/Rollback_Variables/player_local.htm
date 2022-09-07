@@ -16,12 +16,12 @@
 </head>
 <body>
   <h1>gracz_lokalny</h1>
-  <p>Gdy użyjesz <a href="../Rollback_Functions/rollback_define_player.htm"><span class="inline">rollback_define_player()</span></a> do zdefiniowania gracza <span class="notranslate">object</span>, system automatycznie tworzy instancję tego <span class="notranslate">object</span> dla każdego gracza. Każda instancja tego <span class="notranslate">object</span> otrzymuje zmienną <span class="inline">player_local</span>, która mówi, czy instancja gracza jest lokalna, czy nie.</p>
-  <p>Jeśli nie używasz <span class="inline">rollback_define_player()</span>, ta zmienna nie zostanie utworzona dla żadnej strony <span class="notranslate">objects</span>.</p>
-  <p>Możesz użyć tej zmiennej do wskazania, który gracz jest lokalny. Nie jest zalecane używanie tej zmiennej w sposób wpływający na logikę gry, która powinna być taka sama dla graczy lokalnych i zdalnych.</p>
+  <p>Kiedy używasz <a href="../Rollback_Functions/rollback_define_player.htm"><span class="inline">rollback_define_player()</span></a> do zdefiniowania gracza <span class="notranslate">object</span>, system automatycznie tworzy instancję tego <span class="notranslate">object</span> dla każdego gracza. Każda instancja tego <span class="notranslate">object</span> otrzymuje zmienną <span class="inline">player_local</span>, która mówi, czy ta instancja gracza jest lokalna czy nie.</p>
+  <p>Jeśli nie używasz <span class="inline">rollback_define_player()</span>, to ta zmienna nie zostanie utworzona dla żadnego <span class="notranslate">objects</span>.</p>
+  <p>Możesz użyć tej zmiennej do pokazania, który gracz jest lokalny. Nie zaleca się używania tej zmiennej w sposób, który wpływa na twoją logikę gry, która powinna być taka sama dla graczy lokalnych i zdalnych.</p>
   <p> </p>
   <h4>Składnia:</h4>
-  <p class="code">player_id;</p>
+  <p class="code">player_local;</p>
   <p> </p>
   <h4>Zwroty:</h4>
   <p class="code"><span data-keyref="Type_Bool"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Boolean</a></span></p>
@@ -39,10 +39,10 @@
     <div class="buttons">
       <div class="clear">
         <div>Powrót: <a data-xref="{title}" href="Rollback_Variables.htm">Zmienne cofania</a></div>
-        <div>Next: <a data-xref="{title}" href="player_.htm">nazwa_gracza</a></div>
+        <div>Następny: <a data-xref="{title}" href="player_.htm">player_name</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 player_local

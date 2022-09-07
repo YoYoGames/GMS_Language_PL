@@ -15,25 +15,25 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Rozszerzenia systemu Android</h1>
-  <p>Aby utworzyć <span class="notranslate">extension</span> dla <span class="notranslate">Android</span>, trzeba to zrobić w dwóch częściach. Pierwsza część to dodanie samego <span class="notranslate">extension</span> wraz z wymaganymi plikami, a druga to utworzenie funkcji i makr/konstant, których wymaga <span class="notranslate">extension</span>.</p>
-  <p>Funkcje i stałe są dodawane za pomocą plików <strong>zastępczych </strong>, aby je pogrupować, więc dodajesz plik zastępczy, a następnie definiujesz funkcje i makra, jak wyjaśniono w poprzedniej sekcji. Aby jednak dodać resztę plików, należy najpierw zaznaczyć pole wyboru <em>Android </em>w sekcji <b>Extra Platforms</b> edytora, co spowoduje otwarcie właściwości rozszerzenia <span class="notranslate">Android</span>:</p>
+  <p>Aby stworzyć <span class="notranslate">extension</span> dla <span class="notranslate">Android</span> musisz zrobić to w dwóch częściach. Pierwszą częścią byłoby dodanie samego <span class="notranslate">extension</span> wraz z wymaganymi plikami, a drugą jest stworzenie funkcji i makr/konstant, których wymaga <span class="notranslate">extension</span>.</p>
+  <p>Funkcje i stałe są dodawane przy użyciu plików <strong>placeholder </strong>, aby zgrupować je razem, więc dodajesz placeholder, a następnie definiujesz funkcje i makra, jak wyjaśniono w poprzedniej sekcji. Aby dodać resztę plików, musisz najpierw zaznaczyć pole wyboru <em>Androida </em>w sekcji <b>Extra Platforms</b> w edytorze, co spowoduje otwarcie właściwości rozszerzenia <span class="notranslate">Android</span>:</p>
   <p class="dropspot"><img alt="Android Editor" class="center" src="../../assets/Images/Asset_Editors/Editor_Extensions_Android.png" /></p>
-  <p>W tym miejscu można podać następujące dane:</p>
+  <p>Tutaj można podać następujące dane:</p>
   <ul class="colour">
-    <li class="dropspot"><strong>Nazwa</strong> klasy: Strona <span class="notranslate">extension</span> może mieć wiele klas, a każda z nich może mieć swoje własne funkcje i stałe, dlatego należy nadać jej nazwę, która będzie odzwierciedlać jej przeznaczenie.</li>
-    <li class="dropspot"><strong>Uprawnienia systemu Android</strong>: Tutaj możesz dodać wszelkie dodatkowe uprawnienia, których wymaga Twoja aplikacja <span class="notranslate">extension</span>. Jakie to będą uprawnienia, zależy całkowicie od zastosowania <span class="notranslate">extension</span>, dlatego należy <a href="https://developer.android.com/reference/android/Manifest.permission.html">sprawdzić dokumentację dostarczoną przez Google</a> dla platformy <span class="notranslate">Android</span> lub, jeśli używasz SDK innej firmy, dokumentację dołączoną do SDK. Aby dodać nowe uprawnienie, należy kliknąć przycisk <img>, aby dodać uprawnienie zastępcze, a następnie dwukrotnie <img>, aby edytować je zgodnie z wymaganiami. Uprawnienia można usuwać za pomocą przycisku <img>.</li>
-    <li class="dropspot"><b>Wstrzykiwanie kodu</b>: W tym miejscu możesz dodać dowolny kod, który ma być wstrzykiwany (dodawany) do aplikacji <span class="notranslate">Android</span>, gdy gra będzie budowana do testów lub ostatecznej wersji. Upewnij się, że przed wysłaniem gry do sklepu dokładnie sprawdzisz te ustawienia (i swoje uprawnienia), ponieważ nieprawidłowe ustawienia mogą spowodować, że gra nie zostanie wysłana. Więcej informacji można znaleźć w poniższej sekcji.</li>
+    <li class="dropspot"><strong>Nazwa klasy</strong>: Twoja strona <span class="notranslate">extension</span> może mieć wiele klas, przy czym każda klasa ma swoje własne funkcje i stałe, więc powinieneś nadać jej nazwę, która odzwierciedla jej cel.</li>
+    <li class="dropspot"><strong>Android Permissions</strong>: Tutaj możesz dodać wszelkie dodatkowe uprawnienia, których wymaga twoja <span class="notranslate">extension</span>. To, jakie są te uprawnienia, zależy całkowicie od zastosowania, jakie ma <span class="notranslate">extension</span>, dlatego należy <a href="https://developer.android.com/reference/android/Manifest.permission.html">sprawdzić dokumentację dostarczoną przez Google</a> dla platformy <span class="notranslate">Android</span> lub, jeśli używasz SDK innej firmy, dokumentację dołączoną do SDK. Aby dodać nowe uprawnienie, musisz kliknąć na przycisk <img>, aby dodać uprawnienie zastępcze, a następnie wykonać podwójne <img> kliknięcie, aby edytować je do tego, co jest wymagane. Możesz usunąć uprawnienia używając przycisku <img>.</li>
+    <li class="dropspot"><b>Code Injection</b>: Tutaj możesz dodać dowolny kod, który zostanie wstrzyknięty (dodany) do Twojej aplikacji <span class="notranslate">Android</span>, gdy Twoja gra zostanie zbudowana do testów lub ostatecznego wydania. Pamiętaj, aby dokładnie zweryfikować to (i swoje uprawnienia) przed wysłaniem jakiejkolwiek gry do sklepu, ponieważ nieprawidłowe ustawienia spowodują, że Twoja gra nie zostanie przesłana. Więcej informacji znajdziesz w poniższej sekcji.</li>
   </ul>
-  <h2 id="h">Wstrzykiwanie kodu</h2>
-  <p>Każdy kod wprowadzony w oknie &quot;Wstrzykiwanie kodu&quot; będzie musiał zostać podzielony na odrębne grupy XML, jak pokazano na powyższym zrzucie ekranu. Znacznik XML użyty w grupie określi, gdzie kod zostanie wstrzyknięty do aplikacji.</p>
-  <p>Do tworzenia grup wstrzykiwania kodu można użyć następującej składni:</p>
+  <h2 id="h">Wtrysk kodu</h2>
+  <p>Każdy kod wprowadzony w oknie &quot;Code Injection&quot; będzie musiał zostać rozdzielony na odrębne grupy XML, jak pokazano na powyższym zrzucie ekranu. Znacznik XML, którego użyjesz dla grupy, określi, gdzie kod zostanie wstrzyknięty do twojej aplikacji.</p>
+  <p>Możesz użyć następującej składni, aby utworzyć grupy wtrysku kodu:</p>
   <p class="code">&lt;YYTagName&gt;<br />
     <br />
     // Code to inject<br />
     <br />
     &lt;/YYTagName&gt;
   </p>
-  <p>Dla platformy <span class="notranslate">Android</span> dostępne są następujące znaczniki:</p>
+  <p>Dla platformy <span class="notranslate">Android</span> dostępne są następujące tagi:</p>
   <p class="code">YYAndroidTopLevelGradle<br />
     YYAndroidTopLevelGradleBuildscript<br />
     YYAndroidTopLevelGradleBuildscriptRepositories<br />
@@ -53,9 +53,10 @@
     YYAndroidManifestActivityInject<br />
     YYAndroidManifestApplicationInject<br />
     YYAndroidStringValuesInjection<br />
-    YYAndroidLayout
+    YYAndroidLayout<br />
+    <span>YYAndroidProguard</span>
   </p>
-  <p>Miejsce <span class="notranslate">runtime</span>, w które wstrzykiwany jest kod, zależy od typu znacznika:</p>
+  <p>Miejsce <span class="notranslate">runtime</span>, w które wstrzykiwany jest kod, będzie zależało od typu znacznika:</p>
   <table>
     <colgroup>
       <col style="width: 174px;" />
@@ -68,30 +69,30 @@
       </tr>
       <tr>
         <td style=""><strong>Gradle najwyższego poziomu</strong></td>
-        <td style="">RUNTIME {RUNTIME} androidRootFiles {RUNTIME}build.gradle</td>
+        <td style="">{RUNTIME}}, a także w przypadku, gdy nie jest to możliwe, aby nie było to możliwe, a także w przypadku, gdy nie jest to możliwe, aby nie było to możliwe.</td>
       </tr>
       <tr>
         <td style=""><strong>Poziom modułu Gradle</strong></td>
-        <td style="">RUNTIME} androidProjectFiles {RUNTIME}build.gradle</td>
+        <td style="">{RUNTIME}} androidy, które nie są w stanie zbudować plików. gradle</td>
       </tr>
       <tr>
         <td style=""><strong>Manifest systemu Android</strong></td>
-        <td style="">{RUNTIME} androidProjectFiles androidManifest.xml</td>
+        <td style="">{RUNTIME}} androidy - ProjectFiles - AndroidManifest.xml</td>
       </tr>
       <tr>
         <td style=""><strong>Struny</strong></td>
-        <td style="">{RUNTIME} androidy - ProjectFiles -src -mainstreams -strings.xml</td>
+        <td style="">{Tłumaczenie: K. B., K. B., K. B., K. B., K. B., K. B., K. B.</td>
       </tr>
       <tr>
         <td style=""><strong>Układ</strong></td>
-        <td style="">{RUNTIME} androidy ProjectFiles isrcmain.xml</td>
+        <td style="">{RUNTIME}} androidy {RUNNING}ProjectFiles {RUNNINGFILES}}ainterface.xml</td>
       </tr>
     </tbody>
   </table>
-  <p class="note"><strong>UWAGA</strong>: Te <span class="notranslate">paths</span> są tylko dla VM; dla YYC wstrzyknięty kod trafi do katalogu <span class="inline">{RUNTIME}\yyc\</span>, gdzie <span class="notranslate">paths</span> może, ale nie musi, być równoważne z tymi dla VM.</p>
+  <p class="note"><span class="note">UWAGA</span> Te <span class="notranslate">paths</span> są tylko dla VM; dla YYC, wstrzyknięty kod trafi do katalogu <span class="inline">{RUNTIME}\yyc\</span>, gdzie <span class="notranslate">paths</span> może, ale nie musi być odpowiednikiem tych dla VM.</p>
   <h2>Pliki źródłowe</h2>
-  <p>Po prawidłowym skonfigurowaniu należy dodać pliki wymagane do działania pakietu <span class="notranslate">extension</span>. Aby to zrobić, należy kliknąć na przyciski na dole strony: <em>Add SDK (Dodaj SDK</em> ) lub <em>Add Source (Dodaj źródło</em> ), a następnie wybrać pliki, które chcesz dodać. Dodane pliki zostaną zapisane w katalogu <span class="inline">AndroidSource</span> wraz z pakietem <span class="notranslate">extension</span>. Lokalizację tę można otworzyć w dowolnym momencie, klikając prawym przyciskiem myszy <img> na stronie <span class="notranslate">extension</span> i wybierając polecenie <em>Otwórz</em> w Eksploratorze.</p>
-  <p>Informacje na temat tworzenia rodzimych stron <span class="notranslate">extensions</span> dla <span class="notranslate">Android</span> można znaleźć w części <a href="Extended_Examples.htm">Przykłady źródeł</a>.</p>
+  <p>Kiedy już to poprawnie skonfigurujesz, będziesz musiał dodać pliki wymagane do działania twojego pakietu <span class="notranslate">extension</span>. Aby to zrobić, musisz kliknąć na przyciski na dole, albo <em>Add SDK</em> lub <em>Add Source</em>, a następnie przeglądać pliki, które chcesz dodać. Dodane pliki będą przechowywane w katalogu <span class="inline">AndroidSource</span> wraz z twoim <span class="notranslate">extension</span>. Możesz otworzyć tę lokalizację w dowolnym momencie, klikając prawym przyciskiem myszy na <img> na <span class="notranslate">extension</span> i wybierając <em>Open in Explorer</em>.</p>
+  <p>Aby uzyskać informacje na temat tworzenia przez Ciebie natywnego <span class="notranslate">extensions</span> dla <span class="notranslate">Android</span>, zobacz <a href="Extended_Examples.htm">Przykłady źródeł</a>.</p>
   <p> </p>
   <p> </p>
   <div class="footer">
@@ -101,7 +102,7 @@
         <div style="float:right">Następny: <a href="iOS_Extensions.htm">Rozszerzenia systemu iOS</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 Android Extensions

@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="generator" content="Adobe RoboHelp 2020" />
-  <title>cofnij_join_game</title>
+  <title>cofnij_włączenie_gry</title>
   <meta name="topic-status" content="Draft" />
   <link rel="stylesheet" type="text/css" href="../../../../assets/css/default.css" />
   <script src="../../../../assets/scripts/main_script.js"></script>
@@ -16,13 +16,31 @@
   <meta name="search-keywords" content="rollback_join_game" />
 </head>
 <body>
-  <h1>cofnij_join_game</h1>
-  <p>Ta funkcja próbuje dołączyć do gry. Musisz znajdować się pod adresem URL, który zawiera identyfikator wirtualnej strony <span class="notranslate">room</span>, do której chcesz dołączyć.</p>
-  <p>Jeśli dołączono do gry <span class="notranslate">room</span>, zwracana jest wartość <span class="inline2">true</span>, a jeśli nie dołączono do żadnej gry, zwracana jest wartość <span class="inline2">false</span>.</p>
-  <p>Gdy nowy gracz dołącza do gry, w której użytkownik już uczestniczy, wyzwalane jest zdarzenie <strong>cofnięcia</strong>. Więcej informacji można znaleźć w części Zdarzenia <a data-xref="{title}" href="../Rollback_Events.htm">cofania</a>.</p>
+  <h1>cofnij_włączenie_gry</h1>
+  <p>Ta funkcja próbuje dołączyć do gry. Musisz być na stronie URL, która zawiera ID wirtualnej strony <span class="notranslate">room</span>, aby dołączyć.</p>
+  <p>Jeśli <span class="notranslate">room</span> został dołączony, zwraca <span class="inline2">true</span>, a jeśli nie dołączono żadnej gry, zwraca <span class="inline2">false</span>.</p>
+  <p>Kiedy nowy gracz dołącza do gry, w której jesteś już obecny, uruchamiane jest zdarzenie <strong>Rollback Event</strong>. Więcej informacji na ten temat znajduje się w części Rollback <a data-xref="{title}" href="../Rollback_Events.htm">Events</a>.</p>
+  <p>Argument <span class="inline2">dry_run</span> jest opcjonalny, a gdy ustawiony na <span class="inline2">true</span>, pozwala uruchomić funkcję bez faktycznego dołączenia do gry. Jest to używane do sprawdzenia, czy można dołączyć do gry bez faktycznego dołączenia do niej.</p>
   <p> </p>
   <h4>Składnia:</h4>
-  <p class="code">rollback_join_game();</p>
+  <p class="code">rollback_join_game([dry_run]);</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Argument</th>
+        <th>Typ</th>
+        <th>Opis</th>
+      </tr>
+      <tr>
+        <td><span class="notranslate">dry_run</span></td>
+        <td><span data-keyref="Type_Bool"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Boolean</a></span></td>
+        <td><span class="notranslate">Disabled by default (<span class="inline2">false</span>). Gdy jest włączona<span class="inline2">(true</span>), funkcja nie dołącza do gry, a jedynie zwraca <span class="inline2">true</span>, jeśli można do niej dołączyć, lub <span class="inline2">false</span> w przeciwnym wypadku.<br>
+          <br>
+          W ten sposób możesz użyć tej funkcji, aby sprawdzić tylko, czy gracz został zaproszony.
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <p> </p>
   <h4>Zwroty:</h4>
   <p class="code"><span data-keyref="Type_Bool"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Boolean</a></span></p>
@@ -36,18 +54,18 @@
         rollback_create_game(2, false);<br />
     }
   </p>
-  <p>Powyższy kod definiuje gracza <span class="notranslate">object</span>, a następnie próbuje dołączyć do gry. Jeśli nie został dołączony, tworzy nową grę, w której może brać udział maksymalnie dwóch graczy, a test synchronizacji jest wyłączony.</p>
-  <p>Rozszerzony przykład można znaleźć w sekcji <a data-xref="{title}" href="../Creating_Multiplayer.htm">Tworzenie gry wieloosobowej</a>.</p>
+  <p>Powyższy kod definiuje gracza <span class="notranslate">object</span>, a następnie próbuje dołączyć do gry. Jeśli nie został dołączony, tworzy zamiast niego nową grę, z maksymalnie 2 graczami i wyłączonym testem synchronizacji.</p>
+  <p>Rozbudowany przykład znajdziesz w rozdziale <a data-xref="{title}" href="../Creating_Multiplayer.htm">Tworzenie gry wieloosobowej</a>.</p>
   <p> </p>
   <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
         <div>Powrót: <a data-xref="{title}" href="Rollback_Functions.htm">Funkcje cofania</a></div>
-        <div>Next: <a data-xref="{title}" href="rollback_start_game.htm">rollback_start_gry</a></div>
+        <div>Następny: <a data-xref="{title}" href="rollback_start_game.htm">rollback_start_game</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 rollback_join_game

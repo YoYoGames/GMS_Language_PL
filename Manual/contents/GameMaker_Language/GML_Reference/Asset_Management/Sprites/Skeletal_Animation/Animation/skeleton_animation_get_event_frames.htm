@@ -16,8 +16,8 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>szkielet_animacji_get_event_frames</h1>
-  <p>Za pomocą tej funkcji można pobrać wszystkie klatki dla podanego zdarzenia w podanej animacji. Podajesz nazwę animacji szkieletowej (w postaci <span class="notranslate">string</span>, zdefiniowanej w programie, w którym została wykonana animacja, lub zwróconej za pomocą funkcji <span class="inline"><a href="skeleton_animation_get.htm">skeleton_animation_get()</a></span>) oraz nazwę zdarzenia. Funkcja zwraca tablicę zawierającą klatki dla tego zdarzenia.</p>
-  <p>Jeśli podana nazwa zdarzenia nie istnieje, funkcja zwróci tablicę z <strong>-1</strong> jako pierwszym (i jedynym) elementem.</p>
+  <p>Za pomocą tej funkcji można pobrać wszystkie klatki dla danego zdarzenia, w danej animacji. Podajemy nazwę szkieletu animacji (jako <span class="notranslate">string</span>, zdefiniowaną w programie, w którym wykonano animację, lub zwróconą przez funkcję <span class="inline"><a href="skeleton_animation_get.htm">skeleton_animation_get()</a></span>) oraz nazwę zdarzenia. Funkcja zwraca tablicę z klatkami dla tego zdarzenia.</p>
+  <p>Jeśli podana nazwa zdarzenia nie istnieje, funkcja zwróci tablicę z <strong>-1</strong> jako jej pierwszym (i jedynym) elementem.</p>
   <p> </p>
   <h4>Składnia:</h4>
   <p class="code">skeleton_animation_get_event_frames(anim_name, event_name);</p>
@@ -30,19 +30,19 @@
       </tr>
       <tr>
         <td><span class="notranslate">anim_name</span></td>
-        <td><span data-keyref="Type_String"><a data-rhwidget="HyperlinkPopover" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">String</a></span></td>
         <td><span class="notranslate">The animation name to get the frames of.</span></td>
       </tr>
       <tr>
         <td><span class="notranslate">event_name</span></td>
-        <td><span data-keyref="Type_String"><a data-rhwidget="HyperlinkPopover" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">String</a></span></td>
+        <td><span data-keyref="Type_String"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">String</a></span></td>
         <td><span class="notranslate">The event name to get the frames for.</span></td>
       </tr>
     </tbody>
   </table>
   <p> </p>
   <h4>Zwroty:</h4>
-  <p class="code"><span data-keyref="Type_Array"><a data-rhwidget="HyperlinkPopover" href="../../../../../../../GameMaker_Language/GML_Overview/Arrays.htm">Array</a></span> of <span data-keyref="Type_Real"><a data-rhwidget="HyperlinkPopover" href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm">Real</a></span>s</p>
+  <p class="code"><span data-keyref="Type_Array"><a href="../../../../../../../GameMaker_Language/GML_Overview/Arrays.htm" target="_blank">Array</a></span> of <span data-keyref="Type_Real"><a href="../../../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">Real</a></span>s</p>
   <p> </p>
   <h4>Przykład:</h4>
   <p class="code">var _frames = skeleton_animation_get_event_frames(skeleton_animation_get(), &quot;Footstep&quot;);<br />
@@ -62,7 +62,7 @@
         }<br />
     }
   </p>
-  <p>Powyższy kod pobiera ramki dla zdarzenia <span class="inline2">&quot;Krok&quot;</span>. Jeśli zwrócił tablicę z poprawnymi klatkami, przegląda ją pod adresem <span class="notranslate">loops</span> i sprawdza, czy bieżąca klatka jest równa którejś z klatek w tablicy. W takim przypadku odtwarza efekt dźwiękowy kroków i przerywa (zatrzymuje) stronę <span class="notranslate">loop</span>.</p>
+  <p>Powyższy kod pobiera ramki dla zdarzenia <span class="inline2">&quot;Footstep&quot;</span>. Jeśli zwrócił tablicę z poprawnymi klatkami, to <span class="notranslate">loops</span> przez nią i sprawdza, czy bieżąca klatka jest równa którejś z klatek w tablicy. W takim przypadku odtwarza efekt dźwiękowy kroku i przerywa (zatrzymuje) <span class="notranslate">loop</span>.</p>
   <p> </p>
   <p> </p>
   <p> </p>
@@ -70,10 +70,10 @@
     <div class="buttons">
       <div class="clear">
         <div style="float:left">Powrót: <a href="Animation.htm">Animacja</a></div>
-        <div style="float:right">Next: <a data-xref="{title}" href="../Skins/skeleton_skin_get.htm">skeleton_skin_get</a></div>
+        <div style="float:right">Następny: <a href="skeleton_animation_is_looping.htm">szkielet_animacji_jest_loopingiem</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 skeleton_animation_get_event_frames

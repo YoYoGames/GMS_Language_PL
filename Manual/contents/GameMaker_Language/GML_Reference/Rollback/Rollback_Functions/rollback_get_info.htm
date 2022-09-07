@@ -17,8 +17,8 @@
 </head>
 <body>
   <h1>rollback_get_info</h1>
-  <p>Ta funkcja zwraca adres <span class="notranslate">struct</span> zawierający informacje o zawodniku. Powinna być używana tylko podczas ręcznego zarządzania instancjami graczy. Jeśli używasz <a href="rollback_define_player.htm"><span class="inline">rollback_define_player()</span></a>to każda instancja gracza automatycznie otrzyma te informacje jako <a href="../Rollback_Variables/Rollback_Variables.htm">zmienne</a>.</p>
-  <p>Funkcja przyjmuje jako argument identyfikator gracza i zwraca adres <span class="notranslate">struct</span> z następującymi zmiennymi:</p>
+  <p>Funkcja zwraca adres <span class="notranslate">struct</span> zawierający informacje o graczu. Powinna być używana tylko podczas ręcznego zarządzania instancjami graczy. Jeśli używasz <a href="rollback_define_player.htm"><span class="inline">rollback_define_player()</span></a>to każda instancja gracza automatycznie otrzyma te informacje jako <a href="../Rollback_Variables/Rollback_Variables.htm">zmienne</a>.</p>
+  <p>Funkcja przyjmuje jako argument ID gracza i zwraca <span class="notranslate">struct</span> z następującymi zmiennymi:</p>
   <table>
     <tbody>
       <tr>
@@ -29,7 +29,7 @@
       <tr>
         <td><span class="inline">player_avatar_url</span></td>
         <td><span data-keyref="Type_String"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">String</a></span></td>
-        <td>Adres URL wskazujący obrazek awatara gracza</td>
+        <td>URL wskazujący na obrazek awatara gracza</td>
       </tr>
       <tr>
         <td><span class="inline">player_avatar_sprite</span></td>
@@ -39,20 +39,25 @@
       <tr>
         <td><span class="inline">player_name</span></td>
         <td><span data-keyref="Type_String"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">String</a></span></td>
-        <td>Nazwa gracza</td>
+        <td>Nazwa zawodnika</td>
       </tr>
       <tr>
         <td><span class="inline">player_type</span></td>
         <td><span data-keyref="Type_String"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">String</a></span></td>
-        <td>Informuje, czy gracz jest zalogowany w GX.games, czy nie.<br>
+        <td>Informuje, czy gracz jest zalogowany w GX.games czy nie.<br>
           <br>
-          Dla użytkowników-gości będzie to <span class="inline2">&quot;Gość&quot;</span>, a dla użytkowników zalogowanych <span class="inline2">&quot;Użytkownik&quot;</span>.
+          Dla użytkowników gościnnych będzie to <span class="inline2">&quot;Gość&quot;</span>, a dla zalogowanych <span class="inline2">&quot;Użytkownik&quot;</span>.
         </td>
       </tr>
       <tr>
         <td><span class="inline">player_user_id</span></td>
         <td><span data-keyref="Type_String"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm" target="_blank">String</a></span></td>
-        <td>Identyfikator gracza w serwisie GX.games</td>
+        <td>ID gracza w GX.games</td>
+      </tr>
+      <tr>
+        <td><span class="inline">player_prefs</span></td>
+        <td><span data-keyref="Type_Any"><a href="../../../../../GameMaker_Language/GML_Overview/Data_Types.htm#variable" target="_blank">Każdy</a></span></td>
+        <td> <a href="rollback_set_player_prefs.htm">Preferencje</a> ustawione dla gracza</td>
       </tr>
     </tbody>
   </table>
@@ -89,10 +94,10 @@
     <div class="buttons">
       <div class="clear">
         <div>Powrót: <a data-xref="{title}" href="Rollback_Functions.htm">Funkcje cofania</a></div>
-        <div>Next: <a data-xref="{title}" href="rollback_get_input.htm">rollback_get_input</a></div>
+        <div>Następny: <a data-xref="{title}" href="rollback_get_input.htm">rollback_get_input</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 rollback_get_info

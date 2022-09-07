@@ -14,79 +14,77 @@
 </head>
 <body>
   <h1>Ograniczenia cofania</h1>
-  <p>System Rollback ma pewne ograniczenia, o których należy pamiętać. Złamanie któregokolwiek z tych ograniczeń spowoduje, że <a data-xref="{text}" href="Rollback_System.htm#h">Test Sync</a> wyrzuci błąd, informując użytkownika, co jest nie tak.</p>
+  <p>System Rollback ma pewne ograniczenia, o których powinieneś wiedzieć. Złamanie któregokolwiek z tych ograniczeń spowoduje, że <a data-xref="{text}" href="Rollback_System.htm#h">Sync Test</a> wyrzuci błąd, aby dać ci znać, co jest nie tak.</p>
   <h2>Pokoje</h2>
-  <p>Stronę <span class="notranslate">rooms</span> można zmieniać w trakcie trwania gry wieloosobowej, o ile wszyscy gracze są połączeni.</p>
-  <p>Zmiana adresu <span class="notranslate">room</span> spowoduje ponowne uruchomienie procesu synchronizacji w grze.</p>
-  <p>Dane z zarządzanej strony <span class="notranslate">objects</span> <strong>nie </strong>zostaną automatycznie przeniesione, gdy strona <span class="notranslate">room</span> zostanie zmieniona. Można je przenieść ręcznie, używając zmiennych globalnych, trwałej strony <span class="notranslate">object</span> lub zapisując informacje o lokalnym graczu w pliku.</p>
-  <p>Dzięki tym opcjom można zapisać informacje o graczu przed zakończeniem działania strony <span class="notranslate">room</span> i zastosować je ponownie, gdy instancja gracza zostanie utworzona w nowej witrynie <span class="notranslate">room</span>.</p>
-  <h2>Kolejność zdarzeń</h2>
-  <p>Po rozpoczęciu gry wieloosobowej następujące zdarzenia będą przebiegać w podanej kolejności:</p>
+  <p>Możesz zmienić stronę <span class="notranslate">rooms</span>, gdy gra wieloosobowa jest aktywna, o ile wszyscy gracze są połączeni.</p>
+  <p>Zmiana adresu <span class="notranslate">room</span> spowoduje, że gra ponownie uruchomi swój proces synchronizacji.</p>
+  <p>Dane dla zarządzanej <span class="notranslate">objects</span> <strong>nie </strong>zostaną automatycznie przeniesione, gdy <span class="notranslate">room</span> zostanie zmieniony. Możesz je przenieść ręcznie, używając zmiennych globalnych, trwałego <span class="notranslate">object</span> lub zapisując informacje o lokalnym graczu w pliku.</p>
+  <p>Za pomocą tych opcji możesz zapisać informacje o graczu przed zakończeniem <span class="notranslate">room</span> i zastosować je z powrotem, gdy instancja gracza zostanie utworzona w nowym <span class="notranslate">room</span>.</p>
+  <h2>Zamówienie na imprezę</h2>
+  <p>Gdy rozpocznie się gra wieloosobowa, następujące zdarzenia będą przebiegać w podanej kolejności:</p>
   <ul class="colour">
-    <li><a data-xref="{text}" href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm#p">Początek pokoju</a></li>
-    <li><strong>Tworzenie</strong> zdarzeń dla <a href="Rollback_Functions/rollback_define_player.htm">określonych graczy</a></li>
-    <li><a data-xref="{text}" href="Rollback_Events.htm#h">Początek cofania</a>
+    <li><a data-xref="{text}" href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm#p">Room Start</a></li>
+    <li><strong>Tworzenie</strong> zdarzeń dla <a href="Rollback_Functions/rollback_define_player.htm">zdefiniowanych graczy</a></li>
+    <li><a data-xref="{text}" href="Rollback_Events.htm#h">Początek zwijania</a>
       <ul>
-        <li><span class="inline2">rollback_event_param.first_start</span> będzie miał wartość <span class="inline2">true</span></li>
+        <li><span class="inline2">rollback_event_param.first_start</span> będzie <span class="inline2">true</span></li>
       </ul>
     </li>
   </ul>
-  <p>Jeśli zmienisz stronę <span class="notranslate">room</span> w środku gry wieloosobowej, poniższe zdarzenia będą przebiegać w podanej kolejności:</p>
+  <p>Gdy zmienisz stronę <span class="notranslate">room</span> w środku gry wieloosobowej, następujące zdarzenia będą przebiegać w podanej kolejności:</p>
   <ul class="colour">
     <li><a data-xref="{text}" href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm#p1">Koniec pokoju</a></li>
-    <li>Wydarzenia związane z<strong>czyszczeniem</strong> dla <a href="Rollback_Functions/rollback_define_player.htm">określonych graczy </a></li>
-    <li><a data-xref="{text}" href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm#p">Początek pokoju</a></li>
+    <li>Wydarzenia typu<strong>Clean Up</strong> dla <a href="Rollback_Functions/rollback_define_player.htm">określonych graczy </a></li>
+    <li><a data-xref="{text}" href="../../../The_Asset_Editors/Object_Properties/Other_Events.htm#p">Room Start</a></li>
     <li><strong>Tworzenie</strong> zdarzeń dla <a href="Rollback_Functions/rollback_define_player.htm">określonych graczy</a></li>
-    <li><a data-xref="{text}" href="Rollback_Events.htm#h">Początek cofania</a>
+    <li><a data-xref="{text}" href="Rollback_Events.htm#h">Początek zwijania</a>
       <ul>
-        <li><span class="inline2">rollback_event_param.first_start</span> będzie miał wartość <span class="inline2">false</span></li>
+        <li><span class="inline2">rollback_event_param.first_start</span> będzie <span class="inline2">false</span></li>
       </ul>
     </li>
   </ul>
-  <h2>Zniszcz zdarzenie</h2>
-  <p>Zdarzenie <strong>Destroy</strong> dla instancji zwykle uruchamia się zaraz po jej zniszczeniu, na przykład po wywołaniu <span class="inline"><a href="../Asset_Management/Instances/instance_destroy.htm">instance_destroy()</a></span>. Jednak w grze wieloosobowej zdarzenie to może nie zostać uruchomione natychmiast.</p>
-  <p>Wywołanie <span class="inline">instance_destroy()</span> może być łatwo uruchomione przez niewłaściwe przewidywanie, co oznacza, że zniszczenie instancji zostanie wkrótce cofnięte po otrzymaniu prawidłowych danych od odpowiedzialnego gracza.</p>
-  <p>Z tego powodu zdarzenie Zniszcz instancję jest wywoływane dopiero po potwierdzeniu, że instancja miała zostać zniszczona. Oznacza to, że może wystąpić niewielkie opóźnienie między zniszczeniem instancji na ekranie gracza a wywołaniem zdarzenia Zniszcz.</p>
-  <p>Jeśli chcesz, aby coś działo się na ekranie klienta w tej samej klatce, w której niszczona jest instancja, zalecane jest utworzenie własnej funkcji i wywołanie jej wraz z <span class="inline">instance_destroy()</span>.</p>
-  <p>Dotyczy to także zdarzenia <strong>Clean Up</strong> uruchamianego na niszczonej instancji.</p>
+  <h2>Zdarzenie zniszczenia</h2>
+  <p>Zdarzenie <strong>Destroy</strong> dla instancji zwykle uruchamia się zaraz po jej zniszczeniu, na przykład po wywołaniu <span class="inline"><a href="../Asset_Management/Instances/instance_destroy.htm">instance_destroy()</a></span>. Jednak w grze wieloosobowej zdarzenie to może nie być uruchamiane natychmiast.</p>
+  <p>Wywołanie <span class="inline">instance_destroy()</span> może łatwo zostać uruchomione przez błędne przewidywanie, co oznacza, że zniszczenie instancji zostanie wkrótce cofnięte po otrzymaniu prawidłowych danych od odpowiedzialnego gracza.</p>
+  <p>Z tego powodu zdarzenie Destroy instancji jest wywoływane dopiero wtedy, gdy zostanie potwierdzone, że instancja miała zostać zniszczona. Oznacza to, że może wystąpić lekkie opóźnienie pomiędzy zniszczeniem instancji na ekranie gracza, a wywołaniem zdarzenia Destroy.</p>
+  <p>Jeśli chcesz, aby coś działo się na ekranie klienta w tej samej klatce, co zniszczenie instancji, zaleca się utworzenie niestandardowej funkcji i wywołanie jej wraz z <span class="inline">instance_destroy()</span>.</p>
+  <p>Dotyczy to również zdarzenia <strong>Clean Up</strong> uruchamianego na niszczonej instancji.</p>
   <h2>Zarządzanie państwem</h2>
-  <p>Rollback Multiplayer zarządza &quot;stanem&quot; twojej gry pomiędzy klientami, co obejmuje zarządzane instancje i ich zmienne. Takie zarządzane części gry mogą zostać cofnięte w przypadku błędnego przewidywania przez system Rollback.</p>
-  <p>Gdy tworzysz lub niszczysz instancję zarządzaną albo modyfikujesz dowolne właściwości/zmienne w instancji zarządzanej, aktualizujesz stan swojej gry. Ten stan <strong>nie</strong> jest wysyłany do innych graczy, ponieważ tylko dane <a href="Rollback_Functions/rollback_define_input.htm">wejściowe</a> są współdzielone przez wszystkich klientów.</p>
-  <p>Istnieją pewne ograniczenia dotyczące zarządzania stanem gry, których należy przestrzegać, aby zapewnić właściwą synchronizację między graczami.</p>
-  <h3>Stan przed rozpoczęciem gry</h3>
-  <p>Musisz upewnić się, że każdy gracz rozpoczyna grę w tym samym stanie. Oznacza to, że wszystko w grze i jej instancjach zarządzanych musi być takie samo dla wszystkich graczy w momencie wyzwolenia zdarzenia <a href="Rollback_Events.htm">Rollback Start</a>, czyli w momencie faktycznego rozpoczęcia gry.</p>
-  <p>Przed tym momentem możesz uruchomić dowolny kod tworzący lub konfigurujący zarządzane instancje, o ile jest on wykonywany w dokładnie taki sam sposób dla wszystkich klientów. Aby sprawdzić, czy gra została uruchomiona, użyj <span class="inline"><a data-xref="{title}" href="Rollback_Variables/rollback_game_running.htm">rollback_game_running</a></span>.</p>
-  <p>Możesz wykorzystać czas między wywołaniem startu/ dołączenia a zdarzeniem <a href="Rollback_Events.htm">Rollback Start</a>, aby wyświetlić ekran ładowania dla oczekujących graczy.</p>
-  <h3>Państwo na świecie</h3>
-  <p>Zmienne globalne nie mogą wpływać na stan gry, ponieważ nie są one synchronizowane między graczami. Wszystkie wymagane zmienne powinny znajdować się w zarządzanym folderze <span class="notranslate">objects</span>.</p>
-  <p>Jeśli potrzebujesz globalnego dostępu do zmiennych instancji, możesz przechowywać jej referencję w zmiennej globalnej, z której inne instancje mogą czytać:</p>
-  <p class="code">// Create event of your game manager object<br />
-    global.game = self;</p>
+  <p>Rollback Multiplayer zarządza &quot;stanem&quot; twojej gry pomiędzy klientami, co obejmuje zarządzane instancje i ich zmienne. Takie zarządzane części twojej gry są w stanie być cofnięte w przypadku błędnego przewidywania przez system Rollback.</p>
+  <p>Kiedy tworzysz lub niszczysz zarządzaną instancję, lub modyfikujesz jakiekolwiek właściwości/zmienne w zarządzanej instancji, aktualizujesz stan swojej gry. Ten stan <strong>nie</strong> jest wysyłany do innych graczy, ponieważ tylko dane <a href="Rollback_Functions/rollback_define_input.htm">wejściowe</a> są współdzielone dla wszystkich klientów.</p>
+  <p>Istnieją pewne ograniczenia w zarządzaniu stanem gry, których należy przestrzegać, aby zapewnić właściwą synchronizację między graczami.</p>
+  <h3 id="h1">Stan przed rozpoczęciem cofania</h3>
+  <p>Musisz zapewnić, że każdy gracz zaczyna w tym samym stanie gry. Oznacza to, że wszystko o twojej grze i jej zarządzanych instancjach musi być takie samo dla wszystkich graczy, gdy wyzwala się zdarzenie <a href="Rollback_Events.htm">Rollback Start</a>, czyli kiedy gra faktycznie się zaczyna.</p>
+  <p>Możesz uruchomić dowolny kod tworzenia lub konfiguracji dla swoich zarządzanych instancji przed tym punktem, o ile jest to zrobione w dokładnie taki sam sposób dla wszystkich klientów. Aby wiedzieć, czy gra się rozpoczęła, użyj <span class="inline"><a data-xref="{title}" href="Rollback_Variables/rollback_game_running.htm">rollback_game_running</a></span>.</p>
+  <p>Możesz użyć czasu między swoim wywołaniem startu/join a zdarzeniem <a href="Rollback_Events.htm">Rollback Start</a>, aby wyświetlić ekran ładowania dla oczekujących graczy.</p>
+  <p>Gracz powraca do tego samego stanu po <a href="Rollback_Functions/rollback_leave_game.htm">opuszczeniu gry</a>, co oznacza, że użycie <span class="inline"><a data-xref="{title}" href="Rollback_Variables/rollback_game_running.htm">rollback_game_running</a></span> jest konieczne, aby zapewnić, że każda logika gry działa tylko wtedy, gdy gra jest podłączona.</p>
+  <h3>Państwo globalne</h3>
+  <p>Nie możesz mieć zmiennych globalnych wpływających na stan gry, ponieważ nie są one synchronizowane między graczami. Wszystkie wymagane zmienne powinny znajdować się w obrębie zarządzanych <span class="notranslate">objects</span>.</p>
   <h3>Stan zdarzenia losowania</h3>
-  <p>Nie można zmieniać stanu w zdarzeniu Draw, a jego celem musi pozostać jedynie rysowanie grafiki na podstawie stanu ustawionego w poprzednich zdarzeniach. Wszystkie zarządzane strony <span class="notranslate">objects</span> stają się tylko do odczytu podczas zdarzenia Draw, więc nie można w nich zmieniać żadnych zmiennych, a także tworzyć i niszczyć instancji zarządzanych stron <span class="notranslate">objects</span>.</p>
+  <p>Nie możesz zmienić stanu w zdarzeniu Draw, a jego celem musi pozostać jedynie rysowanie grafiki na podstawie stanu ustawionego w poprzednich zdarzeniach. Wszystkie zarządzane <span class="notranslate">objects</span> stają się tylko do odczytu podczas zdarzenia Draw, więc nie można zmieniać w nich żadnych zmiennych, a także nie można tworzyć ani niszczyć instancji zarządzanych <span class="notranslate">objects</span>.</p>
   <h3 id="h">Zmienne czasowe</h3>
-  <p>Nie należy używać zmiennych/funkcji takich jak <span class="inline"><a href="../Maths_And_Numbers/Date_And_Time/current_time.htm">current_time</a></span> lub <span class="inline"><a href="../Maths_And_Numbers/Date_And_Time/get_timer.htm">get_timer()</a></span> do wpływania na logikę gry. Zamiast tego można użyć zmiennej zarządzanej o nazwie <span class="inline"><a data-xref="{title}" href="Rollback_Variables/rollback_current_frame.htm">rollback_current_frame</a></span>. Zwraca ona liczbę klatek, które upłynęły od rozpoczęcia gry wieloosobowej.</p>
-  <p><a href="../Asset_Management/Instances/Instance_Variables/alarm.htm">Zdarzenia alarmowe</a> można bezpiecznie stosować w zarządzanej witrynie <span class="notranslate">objects</span>.</p>
-  <p>Upewnij się też, że nie używasz strony <span class="inline"><a href="../Maths_And_Numbers/Date_And_Time/delta_time.htm">delta_time</a></span>, ponieważ jest ona w dużym stopniu zależna od systemu, na którym działa gra, i nie może być synchronizowana między graczami.</p>
-  <h3>Odniesienia do instancji</h3>
+  <p>Nie używaj zmiennych/funkcji takich jak <span class="inline"><a href="../Maths_And_Numbers/Date_And_Time/current_time.htm">current_time</a></span> lub <span class="inline"><a href="../Maths_And_Numbers/Date_And_Time/get_timer.htm">get_timer()</a></span>, aby wpływać na logikę gry. Zamiast tego można użyć zmiennej zarządzanej o nazwie <span class="inline"><a data-xref="{title}" href="Rollback_Variables/rollback_current_frame.htm">rollback_current_frame</a></span>. Zwraca ona liczbę klatek, które upłynęły od rozpoczęcia gry wieloosobowej.</p>
+  <p><a href="../Asset_Management/Instances/Instance_Variables/alarm.htm">Zdarzenia alarmowe</a> są bezpieczne do stosowania w zarządzanej witrynie <span class="notranslate">objects</span>.</p>
+  <p>Upewnij się również, że nie używasz <span class="inline"><a href="../Maths_And_Numbers/Date_And_Time/delta_time.htm">delta_time</a></span>, ponieważ jest to wysoce zależne od systemu uruchamiającego grę i nie może być zsynchronizowane między graczami.</p>
+  <h3>Odniesienia instancji</h3>
   <p>Identyfikator instancji przechowywany w instancji zarządzanej musi wskazywać na instancję zarządzaną.</p>
-  <p>Jeśli instancja zarządzana ma odwołanie do instancji niezarządzanej, spowoduje to niespójność stanów klienta, ponieważ zmiany w tej instancji nie będą mogły być zarządzane i cofane.</p>
-  <p>Na przykład, jeśli twoja zarządzana instancja <span class="inline2">obj_workstation</span> ma odniesienie do instancji <span class="inline2">obj_anvil</span>, <span class="inline2">obj_anvil</span> musi być instancją zarządzaną <span class="notranslate">object</span>.</p>
-  <h3>Odniesienia do utraconej instancji</h3>
-  <p>Zmienna wewnątrz instancji zarządzanej, zawierająca odniesienie do innej instancji zarządzanej, zostanie ustawiona na <span class="inline2">niezdefiniowaną</span>, jeśli instancja, do której się odnosi, zostanie zniszczona.</p>
-  <p>Oznacza to, że jeśli zmienna w instancji zarządzanej <strong>persistent</strong> zawiera odwołanie do instancji zarządzanej <strong>non-persistent</strong>, zmienna ta zostanie ustawiona na <span class="inline2">undefined</span>, gdy zmieni się adres <span class="notranslate">room</span>, ponieważ instancja non-persistent przestanie istnieć.</p>
+  <p>Jeśli zarządzana instancja ma odniesienie do niezarządzanej instancji, spowoduje to niespójność między stanami klientów, ponieważ zmiany w tej niezarządzanej instancji nie mogą być zarządzane i cofane.</p>
+  <p>Na przykład, jeśli twoja zarządzana instancja <span class="inline2">obj_workstation</span> ma odniesienie do instancji <span class="inline2">obj_anvil</span>, <span class="inline2">obj_anvil</span> musi być zarządzaną instancją <span class="notranslate">object</span>.</p>
+  <h3>Utracone odniesienia do instancji</h3>
+  <p>Zmienna wewnątrz instancji zarządzanej, zawierająca odniesienie do innej instancji zarządzanej, zostanie ustawiona na <span class="inline2">niezdefiniowaną</span>, jeśli instancja referencyjna zostanie zniszczona.</p>
+  <p>Oznacza to, że jeśli zmienna w <strong>trwałej</strong> instancji zarządzanej zawiera odniesienie do <strong>nietrwałej</strong> instancji zarządzanej, zmienna ta zostanie ustawiona na <span class="inline2">niezdefiniowaną</span>, gdy <span class="notranslate">room</span> się zmieni, ponieważ nietrwała instancja przestanie istnieć.</p>
   <h2>Liczby losowe</h2>
-  <p>Stan generowania liczb losowych (RNG) jest zarządzany między graczami, więc używanie funkcji losowych (np. <span class="inline">random()</span>, <span class="inline">choose()</span>, itp.) w logice gry jest całkowicie bezpieczne. System Rollback zapewni, że każdy gracz otrzyma tę samą liczbę losową w tym samym momencie gry.</p>
-  <p>Wydarzenia losowania używają oddzielnego stanu RNG. Oznacza to, że funkcje losowe wywołane w zdarzeniu Losowania nie będą miały wpływu na zwykły stan RNG dla innych zdarzeń i mogą nie być takie same dla różnych graczy.</p>
+  <p>Stan generowania liczb losowych (RNG) jest zarządzany między graczami, więc jest całkowicie bezpieczne używanie funkcji losowych (np. <span class="inline">random()</span>, <span class="inline">choose()</span>, itp.) w logice gry. System Rollback zapewni, że każdy gracz otrzyma ten sam numer losowy w tym samym momencie gry.</p>
+  <p>Zdarzenia Draw używają oddzielnego stanu RNG. Oznacza to, że funkcje losowe wywołane w zdarzeniu Draw nie będą miały wpływu na regularny stan RNG dla innych zdarzeń i mogą nie być takie same dla różnych graczy.</p>
   <h3>Nasiona</h3>
   <p>Nie możesz użyć <span class="inline"><a href="../Maths_And_Numbers/Number_Functions/randomise.htm">randomise()</a></span> lub <a href="../Maths_And_Numbers/Number_Functions/random_set_seed.htm"><span class="inline">random_set_seed()</span></a> aby zmienić nasiona RNG, ponieważ są one zarządzane przez system Rollback.</p>
-  <p>Zarządzany stan RNG zaczyna się dopiero po wywołaniu <a data-xref="{text}" href="Rollback_Events.htm#h">Rollback Start</a>, czyli w momencie rozpoczęcia gry wieloosobowej. Możesz zmienić nasiona przed tym momentem, ale nie będzie to miało żadnego wpływu na stan po punkcie startowym.</p>
-  <h2>Więcej informacji</h2>
-  <p>Więcej informacji na temat systemu Rollback można znaleźć na następnych stronach:</p>
+  <p>Zarządzany stan RNG rozpoczyna się dopiero po wywołaniu <a data-xref="{text}" href="Rollback_Events.htm#h">Rollback Start</a>, czyli po rozpoczęciu gry wieloosobowej. Możesz zmienić nasiona przed tym punktem, co nie będzie miało żadnego wpływu poza punktem startowym.</p>
+  <h2>Dalsza lektura</h2>
+  <p>Przeczytaj kolejne strony, aby uzyskać więcej informacji na temat systemu Rollback:</p>
   <ul class="colour">
-    <li><a data-xref="{title}" href="Rollback_Events.htm">Zdarzenia cofnięcia</a></li>
+    <li><a data-xref="{title}" href="Rollback_Events.htm">Zdarzenia związane z cofaniem</a></li>
     <li><a data-xref="{title}" href="Creating_Multiplayer.htm">Tworzenie gry wieloosobowej</a></li>
-    <li><a data-xref="{title}" href="Rollback_System.htm">System cofania</a></li>
+    <li><a data-xref="{title}" href="Rollback_System.htm">System Rollback</a></li>
     <li><a data-xref="{title}" href="Defining_Inputs.htm">Definiowanie danych wejściowych</a></li>
   </ul>
   <p> </p>
@@ -96,10 +94,10 @@
     <div class="buttons">
       <div class="clear">
         <div>Powrót: <a data-xref="{title}" href="Rollback_Multiplayer.htm">Rollback Multiplayer</a></div>
-        <div>Następny: <a data-xref="{title}" href="Rollback_Events.htm">Cofanie zdarzeń</a></div>
+        <div>Następny: <a data-xref="{title}" href="Rollback_Events.htm">Rollback Events</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
 </body>
 </html>

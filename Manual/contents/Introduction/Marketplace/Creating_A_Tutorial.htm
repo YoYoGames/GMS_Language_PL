@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Tworzenie samouczka</title>
-  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta name="generator" content="Adobe RoboHelp 2020" />
   <link rel="stylesheet" href="../../assets/css/default.css" type="text/css" />
   <script src="../../assets/scripts/main_script.js"></script>
   <meta name="rh-authors" content="Mark Alexander" />
@@ -15,40 +15,27 @@
 <body>
   <!--<div class="body-scroll" style="top: 150px;">-->
   <h1>Tworzenie strony <span class="notranslate">Marketplace</span> Samouczek</h1>
-  <p>Tworzenie samouczka jest podobne do <a href="Creating_A_Marketplace_Asset.htm">tworzenia zwykłego pakietu <span class="notranslate">Marketplace</span> <span class="notranslate">asset</span> </a>, z tą różnicą, że teraz należy dodać określone dołączone pliki oraz stronę z samouczkiem (i opcjonalnie stronę z filmem wideo).
-    Tutorial <span class="notranslate">workspace</span> będzie wyglądał tak:<img>Jak wyjaśniono powyżej dla ogólnego <span class="notranslate">Marketplace</span> <span class="notranslate">Assets</span>, musisz
-    wybrać wydawcę, a następnie nadać samouczkowi nazwę i unikatowy identyfikator (w formacie odwróconego adresu URL), po czym z listy rozwijanej &quot;typ&quot; wybrać Samouczek. Pojawi się wtedy dodatkowa opcja dodania podstawowego pliku HTML, od którego rozpocznie się samouczek, a także
-    a także (opcjonalnie) pliku wideo i adresu URL. Plik wideo powinien wykorzystywać szablon dostarczony z <span class="notranslate">Marketplace</span> - podobnie jak reszta samouczka - który można pobrać <a href="https://marketplace.yoyogames.com/assets/5132/tutorial-templates">tutaj</a>,
-    Kiedy użytkownik wczyta samouczek, film zostanie załadowany do osobnej ramki w <span class="notranslate">IDE</span>. Zauważ, że strony, które podajesz dla strony startowej i strony z filmem, są względne <span class="notranslate">paths</span> w obrębie Included Files, i możesz otworzyć eksplorator, aby wybrać
-    coś innego niż domyślne, którymi <span data-keyref="GameMaker Name">GameMaker</span> wypełnia pola.</p>
-  <p>Właściwe utworzenie samouczka wymaga dodania do projektu samouczka <a href="../../Settings/Included_Files.htm">dołączonych plików</a>, które muszą być dodane w bardzo specyficzny sposób, aby <span class="notranslate">IDE</span> mógł prawidłowo wykryć, które pliki mają być
-    zostaną użyte w samouczku. Podstawowa struktura folderów jest pokazana na poniższym obrazku:<img></p>
+  <p>Tworzenie samouczka jest podobne do <a href="Creating_A_Marketplace_Asset.htm">tworzenia zwykłego pakietu <span class="notranslate">Marketplace</span> <span class="notranslate">asset</span> </a>, tylko teraz musisz dodać określone dołączone pliki, jak również dołączyć początkową stronę samouczka (i opcjonalną stronę wideo). Tutorial <span class="notranslate">workspace</span> będzie wyglądał tak:<img>Jak wyjaśniono powyżej dla ogólnego <span class="notranslate">Marketplace</span> <span class="notranslate">Assets</span>, musisz wybrać wydawcę, a następnie nadać swojemu tutorialowi nazwę i unikalny identyfikator (odwrócony format URL), a następnie w rozwijanym &quot;typie&quot; wybrać Tutorial. To da ci dodatkowe opcje dodania bazowego pliku HTML, od którego rozpocznie się samouczek, jak również (opcjonalnie) pliku wideo i adresu URL. Plik wideo powinien używać szablonu dostarczonego z <span class="notranslate">Marketplace</span> - podobnie jak reszta tutoriala - który możesz uzyskać <a href="https://marketplace.yoyogames.com/assets/5132/tutorial-templates">tutaj</a>, a kiedy użytkownik załaduje tutorial, wideo zostanie załadowane do osobnej ramki w <span class="notranslate">IDE</span>. Zauważ, że strony, które podajesz dla strony startowej i strony wideo są względne <span class="notranslate">paths</span> w ramach Included Files, i możesz otworzyć eksplorator, aby wybrać coś innego niż domyślne, którymi <span data-keyref="GameMaker Name">GameMaker</span> wypełnia pola.</p>
+  <p>Właściwe stworzenie tutoriala wymaga dodania do projektu tutoriala <a href="../../Settings/Included_Files.htm">plików Included Files</a>, które muszą być dodane w bardzo specyficzny sposób, aby <span class="notranslate">IDE</span> mógł prawidłowo wykryć, które pliki mają być użyte w tutorialu. Podstawowa struktura folderów jest pokazana na poniższym obrazku:<img></p>
   <p>Mamy więc dwa główne foldery:</p>
   <ul class="colour">
-    <li class="dropspot"><strong>TutorialContent</strong>: Wszystkie pliki samouczka <span class="inline">HTML</span>, <span class="inline">CSS</span> do ich stylizacji oraz wymagane do nich obrazy (nie obrazy wymagane do zasobów, ale te, które mają być wyświetlane
-      w samouczku), a także szablon wideo, jeśli jest wymagany, znajdują się w tym miejscu. Możesz mieć również podfoldery, jeśli chcesz podzielić tutorial na rozdziały, ale powinieneś mieć przynajmniej jeden plik <span class="inline">HTML</span> 
-      który będzie używany jako strona startowa samouczka.</li>
-    <li class="dropspot"><strong>TutorialResources</strong>: W tym folderze znajdują się dwa kolejne podfoldery z <strong>obrazkami </strong>i materiałami <strong>dźwiękowymi </strong>. Jeśli tutorial wymaga od użytkownika dodania strony <span class="notranslate">sprite</span> (na przykład) i chcesz ją umieścić w tutorialu
-      to umieściłbyś zasób graficzny w folderze Images. Foldery te są importowane do projektu samouczka, a gdy użytkownik otworzy edytor <span class="notranslate">sprite</span> i doda obraz, domyślne okno eksploratora <span class="notranslate">path</span> będzie znajdowało się w tej lokalizacji,
-      Ułatwia to użytkownikowi znalezienie potrzebnej strony <span class="notranslate">assets</span>.</li>
+    <li class="dropspot"><strong>TutorialContent</strong>: Wszystkie pliki tutoriala <span class="inline">HTML</span>, <span class="inline">CSS</span> do ich stylizacji, oraz obrazki do nich wymagane (nie obrazki wymagane do zasobów, ale te, które mają być wyświetlane w tutorialu), jak również szablon wideo, jeśli jest wymagany, trafiają tutaj. Możesz mieć również podfoldery, jeśli chcesz podzielić tutorial np. na rozdziały, ale powinieneś mieć przynajmniej jeden podstawowy plik <span class="inline">HTML</span>, który będzie używany jako strona startowa dla tutoriala.</li>
+    <li class="dropspot"><strong>TutorialResources</strong>: Ten folder ma kolejne dwa podfoldery dla zasobów <strong>Obrazków </strong>i <strong>Dźwięku </strong>. Jeśli Twój tutorial wymaga od użytkownika dodania obrazka <span class="notranslate">sprite</span> (na przykład) i chcesz go umieścić w tutorialu, umieścisz ten zasób w folderze Images. Te foldery są importowane do projektu samouczka i kiedy użytkownik otwiera edytor <span class="notranslate">sprite</span> i chce dodać obrazek, domyślne <span class="notranslate">path</span> dla okna eksploratora będzie w tej lokalizacji, co ułatwi użytkownikowi znalezienie potrzebnego <span class="notranslate">assets</span>.</li>
   </ul>
-  <p>Aby samouczek działał w ramach <span class="notranslate">IDE</span>, <strong>musisz mieć taką strukturę folderów</strong>, a także podstawową stronę startową <span class="inline">HTML</span> z plikiem <span class="inline">CSS</span> do stylizacji. Istnieje wiele specjalnych linków
-    które można wykorzystać w projektach samouczków, aby przejść do części filmu lub otworzyć podręcznik na temat określonej części lub funkcji. Wszystkie te odnośniki są podane w oficjalnych szablonach samouczków na stronie <span class="notranslate">Marketplace</span>.</p>
-  <p class="note"><strong>WAŻNE!</strong> Przed rozpoczęciem tworzenia własnych <a href="https://marketplace.yoyogames.com/assets/5132/tutorial-templates">tutoriali</a> zalecamy <a href="https://marketplace.yoyogames.com/assets/5132/tutorial-templates">pobranie Szablonów Tutoriali z Rynku</a>. Zawierają one
-    przykłady wszystkich ważnych części HTML, jak również CSS i obrazy do odtworzenia przycisków i menu w samouczku, dzięki czemu możesz się martwić o treść, a nie o to, jak ją wyświetlić.</p>
-  <p>Po skonfigurowaniu dołączonych plików i podaniu wymaganych informacji można kliknąć przycisk <em>OK</em>, a samouczek zostanie przesłany na stronę <span class="notranslate">Marketplace</span>. Po zakończeniu pracy otworzy się strona <span class="notranslate">workspace</span> na liście <span class="notranslate">asset</span>, gdzie można go edytować i dodawać ikony,
-    tekst, zrzuty ekranu itp... Po opublikowaniu samouczka <span class="notranslate">asset</span> użytkownicy będą mogli znaleźć go w sekcji <strong>Samouczki </strong>na <a href="../The_Start_Page.htm">stronie startowej</a>, skąd będzie można go pobrać i zainstalować.</p>
+  <p>Aby Twój tutorial działał w <span class="notranslate">IDE</span> <strong>musisz mieć taką strukturę folderów</strong>, jak również bazową stronę startową <span class="inline">HTML</span> z plikiem <span class="inline">CSS</span> do stylizacji. Istnieje wiele specjalnych linków, które mogą być użyte w twoich projektach samouczków, które pozwolą przejść do części filmu lub otworzyć podręcznik na temat konkretnej sekcji lub funkcji, a wszystkie one są podane w oficjalnych szablonach samouczków z <span class="notranslate">Marketplace</span>.</p>
+  <p class="note"><strong>WAŻNE!!!</strong> Zalecamy <a href="https://marketplace.yoyogames.com/assets/5132/tutorial-templates">pobranie Szablonów Tutoriali z Marketplace</a> zanim zaczniesz tworzyć własne <a href="https://marketplace.yoyogames.com/assets/5132/tutorial-templates">tutoriale</a>. Zawierają one przykłady wszystkich ważnych części HTML, jak również CSS i obrazki do odtworzenia przycisków i menu w tutorialu, dzięki czemu możesz się martwić o treść, a nie o to jak ją wyświetlić.</p>
+  <p>Po skonfigurowaniu dołączonych plików i dostarczeniu wymaganych informacji możesz kliknąć przycisk <em>Okay</em>, a tutorial zostanie przesłany na stronę <span class="notranslate">Marketplace</span>, otwierając <span class="notranslate">workspace</span> na liście <span class="notranslate">asset</span> po zakończeniu, abyś mógł go edytować i dodawać ikony, tekst, zrzuty ekranu, itp. Kiedy tutorial <span class="notranslate">asset</span> zostanie opublikowany, użytkownicy będą mogli znaleźć go w sekcji <strong>Tutoriale </strong>na <a href="../The_Start_Page.htm">stronie startowej</a>, gdzie będzie można go pobrać i zainstalować.</p>
   <p> </p>
   <p> </p>
   <p> </p>
   <div class="footer">
     <div class="buttons">
       <div class="clear">
-        <div style="float:left">Powrót: <a href="../The_Marketplace.htm">Rynek</a></div>
-        <div style="float:right">Następny: <a href="Listing_A_Service.htm">Wymienianie usług</a></div>
+        <div style="float:left">Wstecz: <a href="../The_Marketplace.htm">Rynek</a></div>
+        <div style="float:right">Następny: <a href="Listing_A_Service.htm">Listing A Service</a></div>
       </div>
     </div>
-    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2021 Wszystkie prawa zastrzeżone.</span></h5>
+    <h5><span data-keyref="Copyright Notice">© Copyright <span class="notranslate">YoYo Games Ltd.</span> 2022 Wszystkie prawa zastrzeżone</span></h5>
   </div>
   <!-- KEYWORDS
 Marketplace - Creating A Tutorial
