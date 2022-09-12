@@ -1,1 +1,1 @@
-GMS_Language_PL_internal
+Repository for the Polish GameMaker manual
